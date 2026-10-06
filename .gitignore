@@ -4,7 +4,7 @@
 !.env.example
 
 # Datos descargados, índices y cachés locales (se regeneran con la CLI)
-data/
+/data/
 
 # Material de la materia (no se redistribuye)
 docs/consigna.pdf
@@ -15,8 +15,8 @@ docs/clases/
 __pycache__/
 *.py[cod]
 *.egg-info/
-build/
-dist/
+/build/
+/dist/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
