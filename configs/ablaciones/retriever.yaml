@@ -1,0 +1,27 @@
+# Plan de ablación del retriever (Ejercicio 2). Se corre con:
+#   uv run amoblai ablation configs/ablaciones/retriever.yaml
+#
+# `incremental` es el camino que se muestra en la presentación: cada paso agrega
+# un solo cambio respecto del anterior. `grid` completa el factorial; las
+# combinaciones repetidas con los pasos incrementales se saltean.
+# Para sumar DINOv3 (gated) agregar `dinov3` a embedding.name cuando haya acceso.
+
+name: abl-retriever
+base: ../base.yaml
+
+incremental:
+  - name: E0-naive-clip
+    set: { embedding.name: clip, background.method: none, retrieval.category_filter: false }
+  - name: E1-quitar-fondo
+    set: { embedding.name: clip, background.method: sam, retrieval.category_filter: false }
+  - name: E2-filtro-categoria
+    set: { embedding.name: clip, background.method: sam, retrieval.category_filter: true }
+  - name: E3-dinov2
+    set: { embedding.name: dinov2, background.method: sam, retrieval.category_filter: true }
+  - name: E3-siglip2
+    set: { embedding.name: siglip2, background.method: sam, retrieval.category_filter: true }
+
+grid:
+  embedding.name: [clip, siglip2, dinov2]
+  background.method: [none, sam]
+  retrieval.category_filter: [false, true]
