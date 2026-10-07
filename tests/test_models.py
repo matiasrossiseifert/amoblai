@@ -1,10 +1,12 @@
 """Tests con modelos reales de Hugging Face (lentos, requieren red): `uv run pytest -m models`."""
 
+import os
+
 import numpy as np
 import pytest
 from PIL import Image, ImageDraw
 
-from amoblai.config import BackgroundConfig, DetectionConfig, EmbeddingConfig
+from amoblai.config import BackgroundConfig, DetectionConfig, EmbeddingConfig, load_env
 from amoblai.embeddings.registry import build_embedder
 from amoblai.vision.background import build_background_remover
 from amoblai.vision.boxes import Box
@@ -13,8 +15,12 @@ from amoblai.vision.detection import build_detector
 pytestmark = pytest.mark.models
 
 
-@pytest.mark.parametrize("name", ["dinov2", "clip", "siglip2"])
+@pytest.mark.parametrize("name", ["dinov3", "dinov2", "clip", "siglip2"])
 def test_embedders_return_normalized_vectors(name):
+    if name == "dinov3":
+        load_env()
+        if not os.environ.get("HF_TOKEN"):
+            pytest.skip("DINOv3 es gated: requiere HF_TOKEN")
     emb = build_embedder(EmbeddingConfig(name=name, batch_size=2), device="auto")
     imgs = [Image.new("RGB", (64, 64), c) for c in ("red", "blue", "green")]
     vecs = emb.embed_images(imgs)

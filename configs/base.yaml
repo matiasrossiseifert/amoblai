@@ -7,7 +7,7 @@ device: auto          # cuda si hay GPU NVIDIA, si no cpu
 seed: 0
 
 embedding:
-  name: dinov2        # dinov2 | dinov3 (gated) | clip | siglip2
+  name: dinov3        # dinov3 (gated: HF_TOKEN) | dinov2 | clip | siglip2 — ver docs/EXPERIMENTOS.md
   batch_size: 16
 
 preprocess:
@@ -22,7 +22,7 @@ detection:
   box_threshold: 0.30
 
 background:
-  method: sam         # none | sam | rembg
+  method: none        # none | sam | rembg (con DINOv3 y SigLIP 2 rinde más no quitarlo)
   skip_categories: []
 
 retrieval:

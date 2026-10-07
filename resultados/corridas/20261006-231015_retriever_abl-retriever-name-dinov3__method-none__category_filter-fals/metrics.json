@@ -1,0 +1,244 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.3754,
+    "hit@1_ci95": [
+      0.3207,
+      0.4314
+    ],
+    "hit@5": 0.5569,
+    "hit@5_ci95": [
+      0.5123,
+      0.6007
+    ],
+    "hit@10": 0.6185,
+    "hit@10_ci95": [
+      0.5748,
+      0.6588
+    ],
+    "mrr@10": 0.4556,
+    "mrr@10_ci95": [
+      0.4123,
+      0.5022
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.4303,
+    "hit@1_ci95": [
+      0.3674,
+      0.4894
+    ],
+    "hit@5": 0.6716,
+    "hit@5_ci95": [
+      0.6189,
+      0.7227
+    ],
+    "hit@10": 0.7488,
+    "hit@10_ci95": [
+      0.6962,
+      0.7986
+    ],
+    "mrr@10": 0.5363,
+    "mrr@10_ci95": [
+      0.4895,
+      0.5829
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.625,
+      "hit@1_ci95": [
+        0.2857,
+        0.9091
+      ],
+      "hit@5": 1.0,
+      "hit@5_ci95": [
+        1.0,
+        1.0
+      ],
+      "hit@10": 1.0,
+      "hit@10_ci95": [
+        1.0,
+        1.0
+      ],
+      "mrr@10": 0.7542,
+      "mrr@10_ci95": [
+        0.4904,
+        0.9545
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.6693,
+      "hit@1_ci95": [
+        0.5537,
+        0.775
+      ],
+      "hit@5": 0.9134,
+      "hit@5_ci95": [
+        0.8609,
+        0.959
+      ],
+      "hit@10": 0.9449,
+      "hit@10_ci95": [
+        0.9084,
+        0.9764
+      ],
+      "mrr@10": 0.7713,
+      "mrr@10_ci95": [
+        0.6969,
+        0.8445
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.0303,
+      "hit@1_ci95": [
+        0.0,
+        0.0735
+      ],
+      "hit@5": 0.0758,
+      "hit@5_ci95": [
+        0.0154,
+        0.1429
+      ],
+      "hit@10": 0.1061,
+      "hit@10_ci95": [
+        0.0435,
+        0.1865
+      ],
+      "mrr@10": 0.0567,
+      "mrr@10_ci95": [
+        0.0158,
+        0.1064
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.3,
+      "hit@1_ci95": [
+        0.1513,
+        0.4643
+      ],
+      "hit@5": 0.5667,
+      "hit@5_ci95": [
+        0.4,
+        0.7333
+      ],
+      "hit@10": 0.7333,
+      "hit@10_ci95": [
+        0.5938,
+        0.8621
+      ],
+      "mrr@10": 0.4185,
+      "mrr@10_ci95": [
+        0.2848,
+        0.5615
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.2234,
+      "hit@1_ci95": [
+        0.1474,
+        0.3068
+      ],
+      "hit@5": 0.3723,
+      "hit@5_ci95": [
+        0.2857,
+        0.4545
+      ],
+      "hit@10": 0.4681,
+      "hit@10_ci95": [
+        0.3936,
+        0.5435
+      ],
+      "mrr@10": 0.2956,
+      "mrr@10_ci95": [
+        0.2264,
+        0.3691
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0006,
+    "hit@5": 0.0029,
+    "hit@10": 0.0058,
+    "mrr@10": 0.0017
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.2845,
+    "recall@1_ci95": [
+      0.2441,
+      0.3218
+    ],
+    "recall@5": 0.4397,
+    "recall@5_ci95": [
+      0.3921,
+      0.4828
+    ],
+    "recall@10": 0.5086,
+    "recall@10_ci95": [
+      0.458,
+      0.5524
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.381,
+      "chair": 0.9512,
+      "rug": 0.1094,
+      "sofa": 0.7586,
+      "table": 0.5455
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.4621,
+    "f1": 0.5445,
+    "precision": 0.4,
+    "recall": 0.8525,
+    "mean_score_correct": 0.5756,
+    "mean_score_wrong": 0.5003
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32",
+  "threshold_key": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-none__filtro-no",
+  "setup": {
+    "embedding": "dinov3",
+    "background": "none",
+    "category_filter": false,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "name-dinov3__method-none__category_filter-False",
+    "overrides": [
+      "embedding.name=dinov3",
+      "background.method=none",
+      "retrieval.category_filter=false"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 75.62
+}

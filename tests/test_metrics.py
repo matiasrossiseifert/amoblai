@@ -53,3 +53,18 @@ def test_best_f1_threshold():
     assert best["threshold"] == 0.8
     assert best["f1"] == pytest.approx(1.0)
     assert math.isnan(best_f1_threshold([0.5], [False])["threshold"])
+
+
+def test_shared_crop_store_is_content_addressed(tmp_path):
+    import hashlib
+
+    from PIL import Image
+
+    from amoblai.eval.retriever_eval import save_shared_crop
+
+    img = Image.new("RGB", (300, 120), (120, 30, 200))
+    rel = save_shared_crop(img, tmp_path)
+    assert save_shared_crop(img.copy(), tmp_path) == rel  # misma imagen → mismo archivo
+    data = (tmp_path / rel).read_bytes()
+    assert rel == f"recortes/{hashlib.sha256(data).hexdigest()[:20]}.jpg"
+    assert save_shared_crop(Image.new("RGB", (300, 120), "white"), tmp_path) != rel

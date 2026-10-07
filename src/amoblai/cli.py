@@ -240,11 +240,14 @@ def ablation(
     only: Annotated[
         list[str] | None, typer.Option(help="Correr solo estos pasos (por nombre).")
     ] = None,
+    calibrate: Annotated[
+        bool, typer.Option(help="Guardar el umbral calibrado de cada combinación.")
+    ] = False,
 ) -> None:
-    """Corre todas las configuraciones de un plan de ablación del retriever."""
+    """Corre todas las configuraciones de un plan de ablación (retriever o e2e)."""
     from amoblai.eval.ablation import run_ablation
 
-    for d in run_ablation(plan, only):
+    for d in run_ablation(plan, only, calibrate):
         console.print(f"✓ {d}")
 
 

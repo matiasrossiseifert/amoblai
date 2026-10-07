@@ -4,7 +4,7 @@
 # `incremental` es el camino que se muestra en la presentación: cada paso agrega
 # un solo cambio respecto del anterior. `grid` completa el factorial; las
 # combinaciones repetidas con los pasos incrementales se saltean.
-# Para sumar DINOv3 (gated) agregar `dinov3` a embedding.name cuando haya acceso.
+# DINOv3 es gated: requiere HF_TOKEN en .env con la licencia aceptada.
 
 name: abl-retriever
 base: ../base.yaml
@@ -20,10 +20,14 @@ incremental:
     set: { embedding.name: dinov2, background.method: sam, retrieval.category_filter: true }
   - name: E3-siglip2
     set: { embedding.name: siglip2, background.method: sam, retrieval.category_filter: true }
+  - name: E3-dinov3
+    set: { embedding.name: dinov3, background.method: sam, retrieval.category_filter: true }
+  - name: E4-dinov3-sin-quitar-fondo
+    set: { embedding.name: dinov3, background.method: none, retrieval.category_filter: true }
   - name: E4-siglip2-sin-quitar-fondo
     set: { embedding.name: siglip2, background.method: none, retrieval.category_filter: true }
 
 grid:
-  embedding.name: [clip, siglip2, dinov2]
+  embedding.name: [clip, siglip2, dinov2, dinov3]
   background.method: [none, sam]
   retrieval.category_filter: [false, true]

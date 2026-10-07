@@ -54,7 +54,7 @@ class DatasetConfig(_Section):
 
 class EmbeddingConfig(_Section):
     # Alias de un preset (ver embeddings/registry.py) o "custom" con model_id.
-    name: str = "dinov2"
+    name: str = "dinov3"
     model_id: str | None = None
     batch_size: int = 16
 
@@ -87,7 +87,7 @@ class DetectionConfig(_Section):
 
 
 class BackgroundConfig(_Section):
-    method: Literal["none", "sam", "rembg"] = "sam"
+    method: Literal["none", "sam", "rembg"] = "none"
     sam_model_id: str = "facebook/sam-vit-base"
     rembg_model: str = "isnet-general-use"
     # Margen alrededor de la caja al recortar, como fracción del lado mayor de la caja.

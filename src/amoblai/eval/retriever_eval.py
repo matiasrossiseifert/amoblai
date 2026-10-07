@@ -18,6 +18,8 @@ La versión estricta (recorte → SKU exacto, etiquetado a mano) está en strict
 
 from __future__ import annotations
 
+import hashlib
+import io
 import logging
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -40,7 +42,7 @@ from amoblai.eval.metrics import (
     reciprocal_rank,
 )
 from amoblai.indexing.indexer import collection_name, threshold_key
-from amoblai.infra.images import image_digest, load_image, save_image, thumbnail
+from amoblai.infra.images import load_image, thumbnail, to_rgb
 from amoblai.infra.runs import RunContext
 from amoblai.vision.crops import make_crops
 
@@ -163,11 +165,14 @@ def save_shared_crop(image, results_dir: Path) -> str:
     método de fondo (no dependen del embedder ni del filtro): así no se repiten
     en cada corrida de la ablación. Devuelve la ruta relativa a `results_dir`.
     """
-    thumb = thumbnail(image, 224)
-    rel = f"recortes/{image_digest(thumb)[:20]}.jpg"
+    buf = io.BytesIO()
+    to_rgb(thumbnail(image, 224)).save(buf, format="JPEG", quality=85, optimize=True)
+    data = buf.getvalue()
+    rel = f"recortes/{hashlib.sha256(data).hexdigest()[:20]}.jpg"
     path = Path(results_dir) / rel
     if not path.exists():
-        save_image(thumb, path, quality=85)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(data)
     return rel
 
 
@@ -272,8 +277,8 @@ def write_threshold(path: Path, collection: str, calibration: dict[str, Any], ru
         "method": "max F1 (top-1 correcto vs. score) sobre ambientes IKEA",
     }
     header = (
-        "# Umbrales de similitud calibrados por colección (modelo + preprocesamiento)\n"
-        "# y método de fondo de las consultas.\n"
+        "# Umbrales de similitud calibrados por colección (modelo + preprocesamiento),\n"
+        "# método de fondo de las consultas y filtro por categoría.\n"
         "# Los escribe `amoblai eval retriever --calibrate`; editar a mano solo para fijar uno.\n"
     )
     path.write_text(header + yaml.safe_dump(data, allow_unicode=True, sort_keys=True))

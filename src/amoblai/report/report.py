@@ -52,7 +52,7 @@ def _readable_step(step: str, setup: dict[str, Any]) -> str:
     """Los pasos de la grilla se nombran por su configuración; los incrementales, por su nombre."""
     if not step.startswith("name-"):
         return step
-    fondo = "sin fondo" if setup.get("background") == "sam" else "con fondo"
+    fondo = "fondo quitado" if setup.get("background") == "sam" else "con fondo"
     filtro = "con filtro" if setup.get("category_filter") else "sin filtro"
     return f"{setup.get('embedding')} · {fondo} · {filtro}"
 
@@ -230,7 +230,7 @@ def build_report(runs_dir: Path, out_dir: Path) -> dict[str, Path]:
 
     ret = retriever_table(runs)
     if not ret.empty:
-        public = ret.drop(columns=["_ci"])
+        public = ret.drop(columns=["_ci"], errors="ignore")
         public.to_csv(out_dir / "retriever.csv", index=False)
         md = public.to_markdown(index=False)
         (out_dir / "retriever.md").write_text(md + "\n")
@@ -249,7 +249,15 @@ def build_report(runs_dir: Path, out_dir: Path) -> dict[str, Path]:
                 out_dir / "retriever_incremental.png",
             )
             sections += ["![incremental](retriever_incremental.png)", ""]
-        latest = ret.drop_duplicates("paso", keep="first")
+        # Una barra por configuración: si se corrió dos veces (grilla y camino
+        # incremental), se muestra la del camino incremental.
+        ret["_setup"] = (
+            ret[["embedder", "fondo", "filtro_categoria", "recortes"]]
+            .astype(str)
+            .agg("|".join, axis=1)
+        )
+        ret["_incremental"] = ret["paso"].astype(str).str.match(r"^E\d")
+        latest = ret.sort_values("_incremental", ascending=False).drop_duplicates("_setup")
         horizontal_bars(
             latest, "paso", "mrr@10", "MRR@10 por configuración", out_dir / "retriever_mrr.png"
         )
