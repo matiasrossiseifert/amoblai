@@ -1,0 +1,243 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.2369,
+    "hit@1_ci95": [
+      0.1776,
+      0.3012
+    ],
+    "hit@5": 0.4831,
+    "hit@5_ci95": [
+      0.422,
+      0.5436
+    ],
+    "hit@10": 0.6492,
+    "hit@10_ci95": [
+      0.5923,
+      0.6994
+    ],
+    "mrr@10": 0.3421,
+    "mrr@10_ci95": [
+      0.2907,
+      0.4001
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.1915,
+    "hit@1_ci95": [
+      0.1424,
+      0.2461
+    ],
+    "hit@5": 0.3905,
+    "hit@5_ci95": [
+      0.3349,
+      0.4487
+    ],
+    "hit@10": 0.5249,
+    "hit@10_ci95": [
+      0.4673,
+      0.5801
+    ],
+    "mrr@10": 0.2766,
+    "mrr@10_ci95": [
+      0.2318,
+      0.3253
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.5,
+      "hit@1_ci95": [
+        0.0,
+        0.8
+      ],
+      "hit@5": 1.0,
+      "hit@5_ci95": [
+        1.0,
+        1.0
+      ],
+      "hit@10": 1.0,
+      "hit@10_ci95": [
+        1.0,
+        1.0
+      ],
+      "mrr@10": 0.7292,
+      "mrr@10_ci95": [
+        0.4444,
+        0.9
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.3465,
+      "hit@1_ci95": [
+        0.2136,
+        0.478
+      ],
+      "hit@5": 0.6063,
+      "hit@5_ci95": [
+        0.4833,
+        0.7214
+      ],
+      "hit@10": 0.7717,
+      "hit@10_ci95": [
+        0.6769,
+        0.8561
+      ],
+      "mrr@10": 0.4448,
+      "mrr@10_ci95": [
+        0.3229,
+        0.5613
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.1364,
+      "hit@1_ci95": [
+        0.0492,
+        0.2223
+      ],
+      "hit@5": 0.2879,
+      "hit@5_ci95": [
+        0.1667,
+        0.4219
+      ],
+      "hit@10": 0.4545,
+      "hit@10_ci95": [
+        0.3284,
+        0.5782
+      ],
+      "mrr@10": 0.2155,
+      "mrr@10_ci95": [
+        0.1244,
+        0.3101
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.2667,
+      "hit@1_ci95": [
+        0.129,
+        0.4194
+      ],
+      "hit@5": 0.5667,
+      "hit@5_ci95": [
+        0.3927,
+        0.7586
+      ],
+      "hit@10": 0.7333,
+      "hit@10_ci95": [
+        0.5625,
+        0.8966
+      ],
+      "mrr@10": 0.4053,
+      "mrr@10_ci95": [
+        0.2822,
+        0.5526
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.1277,
+      "hit@1_ci95": [
+        0.07,
+        0.2073
+      ],
+      "hit@5": 0.383,
+      "hit@5_ci95": [
+        0.2842,
+        0.4889
+      ],
+      "hit@10": 0.5638,
+      "hit@10_ci95": [
+        0.4483,
+        0.6701
+      ],
+      "mrr@10": 0.2392,
+      "mrr@10_ci95": [
+        0.1784,
+        0.3121
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0234,
+    "hit@5": 0.115,
+    "hit@10": 0.2248,
+    "mrr@10": 0.0671
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.2155,
+    "recall@1_ci95": [
+      0.1696,
+      0.2647
+    ],
+    "recall@5": 0.4483,
+    "recall@5_ci95": [
+      0.3849,
+      0.5125
+    ],
+    "recall@10": 0.5948,
+    "recall@10_ci95": [
+      0.5375,
+      0.6492
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.381,
+      "chair": 0.878,
+      "rug": 0.4062,
+      "sofa": 0.7241,
+      "table": 0.6104
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.8807,
+    "f1": 0.3979,
+    "precision": 0.3333,
+    "recall": 0.4935,
+    "mean_score_correct": 0.8685,
+    "mean_score_wrong": 0.8452
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_clip-openai-clip-vit-base-patch32_d8d42a32",
+  "setup": {
+    "embedding": "clip",
+    "background": "none",
+    "category_filter": true,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "name-clip__method-none__category_filter-True",
+    "overrides": [
+      "embedding.name=clip",
+      "background.method=none",
+      "retrieval.category_filter=true"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 20.04
+}

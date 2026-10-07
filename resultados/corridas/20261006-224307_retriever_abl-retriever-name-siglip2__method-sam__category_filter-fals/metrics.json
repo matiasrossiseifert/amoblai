@@ -1,0 +1,243 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.2523,
+    "hit@1_ci95": [
+      0.1968,
+      0.3055
+    ],
+    "hit@5": 0.4308,
+    "hit@5_ci95": [
+      0.3753,
+      0.4874
+    ],
+    "hit@10": 0.5077,
+    "hit@10_ci95": [
+      0.4535,
+      0.5637
+    ],
+    "mrr@10": 0.3305,
+    "mrr@10_ci95": [
+      0.2791,
+      0.3794
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.2363,
+    "hit@1_ci95": [
+      0.1863,
+      0.2865
+    ],
+    "hit@5": 0.4229,
+    "hit@5_ci95": [
+      0.3684,
+      0.4772
+    ],
+    "hit@10": 0.49,
+    "hit@10_ci95": [
+      0.4347,
+      0.5432
+    ],
+    "mrr@10": 0.3146,
+    "mrr@10_ci95": [
+      0.2667,
+      0.3602
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.5,
+      "hit@1_ci95": [
+        0.0,
+        0.8
+      ],
+      "hit@5": 0.75,
+      "hit@5_ci95": [
+        0.3333,
+        1.0
+      ],
+      "hit@10": 0.75,
+      "hit@10_ci95": [
+        0.3333,
+        1.0
+      ],
+      "mrr@10": 0.6042,
+      "mrr@10_ci95": [
+        0.1667,
+        0.8833
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.3071,
+      "hit@1_ci95": [
+        0.2155,
+        0.3899
+      ],
+      "hit@5": 0.4882,
+      "hit@5_ci95": [
+        0.4,
+        0.5856
+      ],
+      "hit@10": 0.5512,
+      "hit@10_ci95": [
+        0.4552,
+        0.6555
+      ],
+      "mrr@10": 0.3874,
+      "mrr@10_ci95": [
+        0.3074,
+        0.4674
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.1212,
+      "hit@1_ci95": [
+        0.0492,
+        0.2032
+      ],
+      "hit@5": 0.2727,
+      "hit@5_ci95": [
+        0.1641,
+        0.3934
+      ],
+      "hit@10": 0.3485,
+      "hit@10_ci95": [
+        0.2308,
+        0.4688
+      ],
+      "mrr@10": 0.177,
+      "mrr@10_ci95": [
+        0.1032,
+        0.2638
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.1667,
+      "hit@1_ci95": [
+        0.0606,
+        0.3
+      ],
+      "hit@5": 0.4,
+      "hit@5_ci95": [
+        0.2332,
+        0.5808
+      ],
+      "hit@10": 0.5,
+      "hit@10_ci95": [
+        0.3214,
+        0.6788
+      ],
+      "mrr@10": 0.2602,
+      "mrr@10_ci95": [
+        0.1438,
+        0.392
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.2766,
+      "hit@1_ci95": [
+        0.1905,
+        0.3793
+      ],
+      "hit@5": 0.4468,
+      "hit@5_ci95": [
+        0.3441,
+        0.5633
+      ],
+      "hit@10": 0.5426,
+      "hit@10_ci95": [
+        0.4486,
+        0.6484
+      ],
+      "mrr@10": 0.3606,
+      "mrr@10_ci95": [
+        0.2756,
+        0.4576
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0006,
+    "hit@5": 0.0029,
+    "hit@10": 0.0058,
+    "mrr@10": 0.0017
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.2716,
+    "recall@1_ci95": [
+      0.2153,
+      0.3305
+    ],
+    "recall@5": 0.4871,
+    "recall@5_ci95": [
+      0.4159,
+      0.5543
+    ],
+    "recall@10": 0.5733,
+    "recall@10_ci95": [
+      0.5117,
+      0.6309
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.2857,
+      "chair": 0.9024,
+      "rug": 0.3438,
+      "sofa": 0.5172,
+      "table": 0.6883
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.8476,
+    "f1": 0.559,
+    "precision": 0.5696,
+    "recall": 0.5488,
+    "mean_score_correct": 0.8463,
+    "mean_score_wrong": 0.7965
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_siglip2-google-siglip2-base-patch16-224_d8d42a32",
+  "setup": {
+    "embedding": "siglip2",
+    "background": "sam",
+    "category_filter": false,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "name-siglip2__method-sam__category_filter-False",
+    "overrides": [
+      "embedding.name=siglip2",
+      "background.method=sam",
+      "retrieval.category_filter=false"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 83.96
+}

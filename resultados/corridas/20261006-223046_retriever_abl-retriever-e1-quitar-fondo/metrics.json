@@ -1,0 +1,243 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.1385,
+    "hit@1_ci95": [
+      0.0931,
+      0.1854
+    ],
+    "hit@5": 0.2492,
+    "hit@5_ci95": [
+      0.2026,
+      0.2971
+    ],
+    "hit@10": 0.32,
+    "hit@10_ci95": [
+      0.2756,
+      0.3671
+    ],
+    "mrr@10": 0.1864,
+    "mrr@10_ci95": [
+      0.1445,
+      0.2315
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.1318,
+    "hit@1_ci95": [
+      0.095,
+      0.1722
+    ],
+    "hit@5": 0.2363,
+    "hit@5_ci95": [
+      0.1904,
+      0.2837
+    ],
+    "hit@10": 0.3035,
+    "hit@10_ci95": [
+      0.2602,
+      0.3496
+    ],
+    "mrr@10": 0.1783,
+    "mrr@10_ci95": [
+      0.1411,
+      0.2185
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.75,
+      "hit@1_ci95": [
+        0.3333,
+        1.0
+      ],
+      "hit@5": 0.75,
+      "hit@5_ci95": [
+        0.3333,
+        1.0
+      ],
+      "hit@10": 0.875,
+      "hit@10_ci95": [
+        0.5714,
+        1.0
+      ],
+      "mrr@10": 0.7656,
+      "mrr@10_ci95": [
+        0.375,
+        1.0
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.2126,
+      "hit@1_ci95": [
+        0.125,
+        0.3023
+      ],
+      "hit@5": 0.3543,
+      "hit@5_ci95": [
+        0.2656,
+        0.4453
+      ],
+      "hit@10": 0.4252,
+      "hit@10_ci95": [
+        0.3333,
+        0.5231
+      ],
+      "mrr@10": 0.2746,
+      "mrr@10_ci95": [
+        0.1906,
+        0.3609
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.0152,
+      "hit@1_ci95": [
+        0.0,
+        0.0462
+      ],
+      "hit@5": 0.0303,
+      "hit@5_ci95": [
+        0.0,
+        0.0746
+      ],
+      "hit@10": 0.0909,
+      "hit@10_ci95": [
+        0.0294,
+        0.1642
+      ],
+      "mrr@10": 0.0288,
+      "mrr@10_ci95": [
+        0.0046,
+        0.0661
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.1,
+      "hit@1_ci95": [
+        0.0,
+        0.2069
+      ],
+      "hit@5": 0.3,
+      "hit@5_ci95": [
+        0.1427,
+        0.4667
+      ],
+      "hit@10": 0.3667,
+      "hit@10_ci95": [
+        0.2142,
+        0.5333
+      ],
+      "mrr@10": 0.1726,
+      "mrr@10_ci95": [
+        0.0728,
+        0.282
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.0851,
+      "hit@1_ci95": [
+        0.0361,
+        0.1522
+      ],
+      "hit@5": 0.2021,
+      "hit@5_ci95": [
+        0.129,
+        0.2872
+      ],
+      "hit@10": 0.2766,
+      "hit@10_ci95": [
+        0.2,
+        0.3656
+      ],
+      "mrr@10": 0.1331,
+      "mrr@10_ci95": [
+        0.0833,
+        0.202
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0006,
+    "hit@5": 0.0029,
+    "hit@10": 0.0058,
+    "mrr@10": 0.0017
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.1336,
+    "recall@1_ci95": [
+      0.0941,
+      0.1699
+    ],
+    "recall@5": 0.2716,
+    "recall@5_ci95": [
+      0.2217,
+      0.3243
+    ],
+    "recall@10": 0.3405,
+    "recall@10_ci95": [
+      0.2926,
+      0.3902
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.2857,
+      "chair": 0.7317,
+      "rug": 0.0938,
+      "sofa": 0.3793,
+      "table": 0.3377
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.9259,
+    "f1": 0.4386,
+    "precision": 0.3623,
+    "recall": 0.5556,
+    "mean_score_correct": 0.9209,
+    "mean_score_wrong": 0.8825
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_clip-openai-clip-vit-base-patch32_d8d42a32",
+  "setup": {
+    "embedding": "clip",
+    "background": "sam",
+    "category_filter": false,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "E1-quitar-fondo",
+    "overrides": [
+      "embedding.name=clip",
+      "background.method=sam",
+      "retrieval.category_filter=false"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 37.49
+}

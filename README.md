@@ -105,6 +105,19 @@ pipeline se registra en LangSmith (sin subir imágenes).
 
 ## Resultados
 
+Retriever sobre 65 livings y comedores de IKEA (325 recortes con respuesta,
+IC 95% bootstrap por ambiente). Detalle y lecturas en
+[docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md):
+
+| Configuración | hit@1 | hit@10 | MRR@10 |
+|---|---|---|---|
+| Naive: CLIP, sin quitar fondo, sin filtro | 0,126 | 0,345 | 0,179 |
+| DINOv2 + quitar fondo (SAM) + filtro por categoría (default) | 0,345 | 0,686 | 0,452 |
+| **SigLIP 2, sin quitar fondo, filtro por categoría (mejor)** | **0,465** | **0,809** | **0,587** |
+| Azar (con filtro) | 0,023 | 0,225 | 0,067 |
+
+![Camino incremental](resultados/reporte/retriever_incremental.png)
+
 Cada corrida queda en `resultados/corridas/<fecha>_<tipo>_<nombre>/` con su
 config, el commit de git, métricas, imágenes intermedias y costos. El registro
 de experimentos está en [docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md) y las tablas

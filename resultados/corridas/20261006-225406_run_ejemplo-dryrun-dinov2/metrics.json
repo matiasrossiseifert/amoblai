@@ -1,0 +1,74 @@
+{
+  "status": "ok",
+  "timings_s": {
+    "generator1": 0.02,
+    "detection": 6.18,
+    "crops": 0.13,
+    "retrieval": 1.11,
+    "generator2": 0.03
+  },
+  "detections_image1": 6,
+  "accepted": 2,
+  "coverage": 0.3333,
+  "reid": [
+    {
+      "inserted_sku": "202.998.29",
+      "category": "table",
+      "redetected": true,
+      "iou": 0.968,
+      "reid_top1": true,
+      "reid_top5": true,
+      "retrieved_top5": [
+        "202.998.29",
+        "802.622.53",
+        "002.998.25",
+        "102.976.56",
+        "303.050.52"
+      ]
+    },
+    {
+      "inserted_sku": "802.622.53",
+      "category": "table",
+      "redetected": true,
+      "iou": 0.989,
+      "reid_top1": true,
+      "reid_top5": true,
+      "retrieved_top5": [
+        "802.622.53",
+        "202.998.29",
+        "303.050.52",
+        "002.998.25",
+        "102.976.56"
+      ]
+    }
+  ],
+  "reid@1": 1.0,
+  "reid@5": 1.0,
+  "redetected": 1.0,
+  "preservation_final": {
+    "ssim_outside": 0.9461,
+    "mae_outside": 10.416,
+    "outside_frac": 0.5107
+  },
+  "preservation_image1": {
+    "ssim_outside": 1.0,
+    "mae_outside": 0.0,
+    "outside_frac": 0.5107
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0.0,
+    "tokens": 0,
+    "latency_s": 0.01,
+    "by_stage": {
+      "generator2": {
+        "cost_usd": 0,
+        "latency_s": 0.01
+      }
+    }
+  },
+  "wall_time_s": 20.81
+}

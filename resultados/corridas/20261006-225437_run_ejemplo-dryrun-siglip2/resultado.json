@@ -1,0 +1,604 @@
+{
+  "run_id": "20261006-225437_run_ejemplo-dryrun-siglip2",
+  "status": "ok",
+  "prompt": "living cálido con sofá, mesa ratona y alfombra",
+  "image1_source": "provided",
+  "gen2_base": "image1",
+  "gen2_mode": "single",
+  "working_size": [
+    1024,
+    768
+  ],
+  "items": [
+    {
+      "index": 0,
+      "category": "rug",
+      "det_label": "carpet",
+      "det_score": 0.7113,
+      "box": [
+        260.6,
+        579.3,
+        961.9,
+        767.4
+      ],
+      "background_removed": false,
+      "chosen_sku": "402.306.50",
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "402.306.50",
+          "score": 0.82426,
+          "rank": 1,
+          "category": "rug",
+          "name": "DUM",
+          "image_path": "images/objects/402.306.50.jpg"
+        },
+        {
+          "sku": "702.225.21",
+          "score": 0.801336,
+          "rank": 2,
+          "category": "rug",
+          "name": "ALHEDE",
+          "image_path": "images/objects/702.225.21.jpg"
+        },
+        {
+          "sku": "302.225.23",
+          "score": 0.797254,
+          "rank": 3,
+          "category": "rug",
+          "name": "ALHEDE",
+          "image_path": "images/objects/302.225.23.jpg"
+        },
+        {
+          "sku": "201.901.98",
+          "score": 0.790577,
+          "rank": 4,
+          "category": "rug",
+          "name": "GSER",
+          "image_path": "images/objects/201.901.98.jpg"
+        },
+        {
+          "sku": "601.913.46",
+          "score": 0.790577,
+          "rank": 5,
+          "category": "rug",
+          "name": "GSER",
+          "image_path": "images/objects/601.913.46.jpg"
+        },
+        {
+          "sku": "102.290.21",
+          "score": 0.789273,
+          "rank": 6,
+          "category": "rug",
+          "name": "BASNS",
+          "image_path": "images/objects/102.290.21.jpg"
+        },
+        {
+          "sku": "502.773.93",
+          "score": 0.786322,
+          "rank": 7,
+          "category": "rug",
+          "name": "LOHALS",
+          "image_path": "images/objects/502.773.93.jpg"
+        },
+        {
+          "sku": "802.307.90",
+          "score": 0.785506,
+          "rank": 8,
+          "category": "rug",
+          "name": "GSER",
+          "image_path": "images/objects/802.307.90.jpg"
+        },
+        {
+          "sku": "902.592.50",
+          "score": 0.785506,
+          "rank": 9,
+          "category": "rug",
+          "name": "GSER",
+          "image_path": "images/objects/902.592.50.jpg"
+        },
+        {
+          "sku": "502.290.19",
+          "score": 0.781714,
+          "rank": 10,
+          "category": "rug",
+          "name": "BASNS",
+          "image_path": "images/objects/502.290.19.jpg"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "category": "table",
+      "det_label": "side table",
+      "det_score": 0.4428,
+      "box": [
+        909.0,
+        562.7,
+        1023.6,
+        767.1
+      ],
+      "background_removed": false,
+      "chosen_sku": null,
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "202.998.29",
+          "score": 0.779059,
+          "rank": 1,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/202.998.29.jpg"
+        },
+        {
+          "sku": "200.114.13",
+          "score": 0.776908,
+          "rank": 2,
+          "category": "table",
+          "name": "LACK",
+          "image_path": "images/dining table/200.114.13.jpg"
+        },
+        {
+          "sku": "303.050.52",
+          "score": 0.775272,
+          "rank": 3,
+          "category": "table",
+          "name": "NORRKER",
+          "image_path": "images/dining table/303.050.52.jpg"
+        },
+        {
+          "sku": "002.998.25",
+          "score": 0.763226,
+          "rank": 4,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/002.998.25.jpg"
+        },
+        {
+          "sku": "401.366.81",
+          "score": 0.76244,
+          "rank": 5,
+          "category": "table",
+          "name": "VEJMON",
+          "image_path": "images/dining table/401.366.81.jpg"
+        },
+        {
+          "sku": "202.809.57",
+          "score": 0.760985,
+          "rank": 6,
+          "category": "table",
+          "name": "NORNS",
+          "image_path": "images/dining table/202.809.57.jpg"
+        },
+        {
+          "sku": "802.622.53",
+          "score": 0.760768,
+          "rank": 7,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/802.622.53.jpg"
+        },
+        {
+          "sku": "001.050.64",
+          "score": 0.760743,
+          "rank": 8,
+          "category": "table",
+          "name": "LIATORP",
+          "image_path": "images/dining table/001.050.64.jpg"
+        },
+        {
+          "sku": "102.397.13",
+          "score": 0.760291,
+          "rank": 9,
+          "category": "table",
+          "name": "STOCKHOLM",
+          "image_path": "images/dining table/102.397.13.jpg"
+        },
+        {
+          "sku": "702.828.31",
+          "score": 0.752536,
+          "rank": 10,
+          "category": "table",
+          "name": "GUNNERN",
+          "image_path": "images/dining table/702.828.31.jpg"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "category": "sofa",
+      "det_label": "couch",
+      "det_score": 0.4387,
+      "box": [
+        0.4,
+        368.6,
+        263.8,
+        767.5
+      ],
+      "background_removed": false,
+      "chosen_sku": null,
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "398.758.49",
+          "score": 0.774505,
+          "rank": 1,
+          "category": "sofa",
+          "name": "EKTORP",
+          "image_path": "images/couch/398.758.49.jpg"
+        },
+        {
+          "sku": "290.486.62",
+          "score": 0.764695,
+          "rank": 2,
+          "category": "sofa",
+          "name": "HOLMSUND",
+          "image_path": "images/bed/290.486.62.jpg"
+        },
+        {
+          "sku": "598.758.05",
+          "score": 0.762709,
+          "rank": 3,
+          "category": "sofa",
+          "name": "EKTORP",
+          "image_path": "images/couch/598.758.05.jpg"
+        },
+        {
+          "sku": "803.007.16",
+          "score": 0.758023,
+          "rank": 4,
+          "category": "sofa",
+          "name": "HIMMENE",
+          "image_path": "images/bed/803.007.16.jpg"
+        },
+        {
+          "sku": "190.114.33",
+          "score": 0.742506,
+          "rank": 5,
+          "category": "sofa",
+          "name": "KIVIK",
+          "image_path": "images/couch/190.114.33.jpg"
+        },
+        {
+          "sku": "702.450.56",
+          "score": 0.720334,
+          "rank": 6,
+          "category": "sofa",
+          "name": "STOCKHOLM",
+          "image_path": "images/couch/702.450.56.jpg"
+        },
+        {
+          "sku": "390.067.94",
+          "score": 0.718386,
+          "rank": 7,
+          "category": "sofa",
+          "name": "EKTORP",
+          "image_path": "images/couch/390.067.94.jpg"
+        },
+        {
+          "sku": "390.338.01",
+          "score": 0.718039,
+          "rank": 8,
+          "category": "sofa",
+          "name": "STOCKSUND",
+          "image_path": "images/couch/390.338.01.jpg"
+        },
+        {
+          "sku": "290.338.06",
+          "score": 0.715432,
+          "rank": 9,
+          "category": "sofa",
+          "name": "STOCKSUND",
+          "image_path": "images/couch/290.338.06.jpg"
+        },
+        {
+          "sku": "691.292.32",
+          "score": 0.709353,
+          "rank": 10,
+          "category": "sofa",
+          "name": "EKTORP",
+          "image_path": "images/couch/691.292.32.jpg"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "category": "chair",
+      "det_label": "chair",
+      "det_score": 0.4054,
+      "box": [
+        873.8,
+        473.4,
+        1023.6,
+        750.7
+      ],
+      "background_removed": false,
+      "chosen_sku": null,
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "101.168.49",
+          "score": 0.732196,
+          "rank": 1,
+          "category": "chair",
+          "name": "BRJE",
+          "image_path": "images/chair/101.168.49.jpg"
+        },
+        {
+          "sku": "602.178.22",
+          "score": 0.726781,
+          "rank": 2,
+          "category": "chair",
+          "name": "INGOLF",
+          "image_path": "images/chair/602.178.22.jpg"
+        },
+        {
+          "sku": "002.110.88",
+          "score": 0.722462,
+          "rank": 3,
+          "category": "chair",
+          "name": "STEFAN",
+          "image_path": "images/chair/002.110.88.jpg"
+        },
+        {
+          "sku": "402.808.43",
+          "score": 0.721207,
+          "rank": 4,
+          "category": "chair",
+          "name": "NORRARYD",
+          "image_path": "images/chair/402.808.43.jpg"
+        },
+        {
+          "sku": "701.032.50",
+          "score": 0.720939,
+          "rank": 5,
+          "category": "chair",
+          "name": "INGOLF",
+          "image_path": "images/chair/701.032.50.jpg"
+        },
+        {
+          "sku": "598.501.07",
+          "score": 0.719827,
+          "rank": 6,
+          "category": "chair",
+          "name": "HENRIKSDAL",
+          "image_path": "images/chair/598.501.07.jpg"
+        },
+        {
+          "sku": "190.310.06",
+          "score": 0.718567,
+          "rank": 7,
+          "category": "chair",
+          "name": "NILS",
+          "image_path": "images/chair/190.310.06.jpg"
+        },
+        {
+          "sku": "401.822.44",
+          "score": 0.70969,
+          "rank": 8,
+          "category": "chair",
+          "name": "KAUSTBY",
+          "image_path": "images/chair/401.822.44.jpg"
+        },
+        {
+          "sku": "003.015.26",
+          "score": 0.709312,
+          "rank": 9,
+          "category": "chair",
+          "name": "NORRKER",
+          "image_path": "images/chair/003.015.26.jpg"
+        },
+        {
+          "sku": "602.470.51",
+          "score": 0.707556,
+          "rank": 10,
+          "category": "chair",
+          "name": "GAMLEBY",
+          "image_path": "images/chair/602.470.51.jpg"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "category": "table",
+      "det_label": "table",
+      "det_score": 0.3773,
+      "box": [
+        325.1,
+        516.6,
+        504.2,
+        737.4
+      ],
+      "background_removed": false,
+      "chosen_sku": "202.998.29",
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "202.998.29",
+          "score": 0.834356,
+          "rank": 1,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/202.998.29.jpg"
+        },
+        {
+          "sku": "401.366.81",
+          "score": 0.823915,
+          "rank": 2,
+          "category": "table",
+          "name": "VEJMON",
+          "image_path": "images/dining table/401.366.81.jpg"
+        },
+        {
+          "sku": "002.998.25",
+          "score": 0.817998,
+          "rank": 3,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/002.998.25.jpg"
+        },
+        {
+          "sku": "200.114.13",
+          "score": 0.81477,
+          "rank": 4,
+          "category": "table",
+          "name": "LACK",
+          "image_path": "images/dining table/200.114.13.jpg"
+        },
+        {
+          "sku": "802.622.53",
+          "score": 0.813326,
+          "rank": 5,
+          "category": "table",
+          "name": "KRAGSTA",
+          "image_path": "images/dining table/802.622.53.jpg"
+        },
+        {
+          "sku": "303.050.52",
+          "score": 0.810732,
+          "rank": 6,
+          "category": "table",
+          "name": "NORRKER",
+          "image_path": "images/dining table/303.050.52.jpg"
+        },
+        {
+          "sku": "702.828.31",
+          "score": 0.803975,
+          "rank": 7,
+          "category": "table",
+          "name": "GUNNERN",
+          "image_path": "images/dining table/702.828.31.jpg"
+        },
+        {
+          "sku": "202.809.57",
+          "score": 0.798118,
+          "rank": 8,
+          "category": "table",
+          "name": "NORNS",
+          "image_path": "images/dining table/202.809.57.jpg"
+        },
+        {
+          "sku": "202.753.38",
+          "score": 0.789896,
+          "rank": 9,
+          "category": "table",
+          "name": "NORRKER",
+          "image_path": "images/dining table/202.753.38.jpg"
+        },
+        {
+          "sku": "102.976.56",
+          "score": 0.789331,
+          "rank": 10,
+          "category": "table",
+          "name": "LISABO",
+          "image_path": "images/dining table/102.976.56.jpg"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "category": "table",
+      "det_label": "dining table",
+      "det_score": 0.3015,
+      "box": [
+        522.9,
+        411.0,
+        860.6,
+        560.6
+      ],
+      "background_removed": false,
+      "chosen_sku": null,
+      "threshold": 0.8095,
+      "candidates": [
+        {
+          "sku": "001.050.64",
+          "score": 0.805259,
+          "rank": 1,
+          "category": "table",
+          "name": "LIATORP",
+          "image_path": "images/dining table/001.050.64.jpg"
+        },
+        {
+          "sku": "101.762.87",
+          "score": 0.800917,
+          "rank": 2,
+          "category": "table",
+          "name": "HEMNES",
+          "image_path": "images/dining table/101.762.87.jpg"
+        },
+        {
+          "sku": "390.403.40",
+          "score": 0.781962,
+          "rank": 3,
+          "category": "table",
+          "name": "RYGGESTAD",
+          "image_path": "images/dining table/390.403.40.jpg"
+        },
+        {
+          "sku": "602.611.55",
+          "score": 0.778141,
+          "rank": 4,
+          "category": "table",
+          "name": "REGISSR",
+          "image_path": "images/dining table/602.611.55.jpg"
+        },
+        {
+          "sku": "301.162.64",
+          "score": 0.776301,
+          "rank": 5,
+          "category": "table",
+          "name": "BJURSTA",
+          "image_path": "images/dining table/301.162.64.jpg"
+        },
+        {
+          "sku": "501.168.09",
+          "score": 0.776301,
+          "rank": 6,
+          "category": "table",
+          "name": "BJURSTA",
+          "image_path": "images/dining table/501.168.09.jpg"
+        },
+        {
+          "sku": "590.403.44",
+          "score": 0.76876,
+          "rank": 7,
+          "category": "table",
+          "name": "VSTANBY",
+          "image_path": "images/dining table/590.403.44.jpg"
+        },
+        {
+          "sku": "701.162.62",
+          "score": 0.767192,
+          "rank": 8,
+          "category": "table",
+          "name": "BJURSTA",
+          "image_path": "images/dining table/701.162.62.jpg"
+        },
+        {
+          "sku": "102.781.01",
+          "score": 0.767026,
+          "rank": 9,
+          "category": "table",
+          "name": "LIATORP",
+          "image_path": "images/dining table/102.781.01.jpg"
+        },
+        {
+          "sku": "146.300.09",
+          "score": 0.762359,
+          "rank": 10,
+          "category": "table",
+          "name": "INGO",
+          "image_path": "images/dining table/146.300.09.jpg"
+        }
+      ]
+    }
+  ],
+  "timings_s": {
+    "generator1": 0.02,
+    "detection": 0.0,
+    "crops": 0.0,
+    "retrieval": 1.13,
+    "generator2": 0.03
+  },
+  "pending_workdir": null
+}

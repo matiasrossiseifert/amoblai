@@ -1,0 +1,52 @@
+{
+  "productos": {
+    "202.998.29": {
+      "sku": "202.998.29",
+      "nombre": "KRAGSTA",
+      "tipo": "Nest of tables, set of 2",
+      "categoria": "mesa",
+      "color": "White",
+      "medidas": null,
+      "medidas_cm": null,
+      "cantidad": 1,
+      "similitud": 0.809123
+    },
+    "802.622.53": {
+      "sku": "802.622.53",
+      "nombre": "KRAGSTA",
+      "tipo": "Coffee table",
+      "categoria": "mesa",
+      "color": "Black",
+      "medidas": "90 cm",
+      "medidas_cm": [
+        90.0
+      ],
+      "cantidad": 1,
+      "similitud": 0.755442
+    }
+  },
+  "total_unidades": 2,
+  "no_encontrados": [
+    {
+      "categoria": "alfombra",
+      "mejor_similitud": 0.289211,
+      "umbral": 0.5632
+    },
+    {
+      "categoria": "sofá",
+      "mejor_similitud": 0.37923,
+      "umbral": 0.5632
+    },
+    {
+      "categoria": "silla",
+      "mejor_similitud": 0.223345,
+      "umbral": 0.5632
+    },
+    {
+      "categoria": "mesa",
+      "mejor_similitud": 0.560692,
+      "umbral": 0.5632
+    }
+  ],
+  "nota": "El dataset no incluye precios ni links; se agregan solo cuando están disponibles."
+}
