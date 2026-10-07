@@ -93,6 +93,7 @@ Los precios están en `configs/pricing.yaml`.
 Código aparte del núcleo, en `apps/` (ver [apps/README.md](apps/README.md)):
 
 ```bash
+uv run --group apps python apps/paso_a_paso.py  # http://127.0.0.1:7863  probar sin API keys: te da los prompts
 uv run --group apps python apps/usuario.py      # http://127.0.0.1:7860  vista de usuario
 uv run --group apps python apps/flujo.py        # http://127.0.0.1:7861  flujo completo e imágenes intermedias
 uv run --group apps python apps/etiquetado.py   # http://127.0.0.1:7862  etiquetado del set estricto
