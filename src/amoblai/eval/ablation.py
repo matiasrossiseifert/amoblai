@@ -1,13 +1,17 @@
-"""Estudio de ablación del retriever: una corrida por combinación de configuraciones.
+"""Estudios de ablación: una corrida por combinación de configuraciones.
 
 Un plan de ablación (configs/ablaciones/*.yaml) define:
+- `kind`: `retriever` (ambientes de IKEA, gratis) o `e2e` (ambientes vacíos, usa
+  los generadores configurados; con la caché, cambiar solo la entrada o el modo
+  del generador n.º 2 reusa la imagen 1);
 - `base`: config de partida;
 - `grid`: valores por campo; se corre el producto cartesiano;
 - `incremental`: (opcional) el camino E0 → E1 → … que se muestra en la presentación,
   con los overrides de cada paso.
 
 El retrieval es local y gratis, así que conviene correr la grilla completa y
-después leer el camino incremental en el reporte.
+después leer el camino incremental en el reporte. Las ablaciones e2e cuestan
+plata (salvo con el editor manual o en dry-run): conviene una grilla chica.
 """
 
 from __future__ import annotations
@@ -47,6 +51,9 @@ def _yaml_value(value: Any) -> str:
 
 def run_ablation(plan_path: Path, only: list[str] | None = None) -> list[Path]:
     plan = yaml.safe_load(Path(plan_path).read_text())
+    kind = plan.get("kind", "retriever")
+    if kind not in ("retriever", "e2e"):
+        raise ValueError(f"kind desconocido en el plan: {kind!r}")
     base = Path(plan_path).parent / plan["base"]
     done: list[Path] = []
     seen: set[str] = set()
@@ -62,8 +69,13 @@ def run_ablation(plan_path: Path, only: list[str] | None = None) -> list[Path]:
             continue
         seen.add(signature)
         log.info("Ablación %s: %s", name, overrides)
-        run = RunContext(cfg, "retriever", name=cfg.name)
-        metrics = run_retriever_eval(cfg, run)
+        run = RunContext(cfg, kind, name=cfg.name)
+        if kind == "retriever":
+            metrics = run_retriever_eval(cfg, run)
+        else:
+            from amoblai.eval.e2e_eval import run_e2e_eval
+
+            metrics = run_e2e_eval(cfg, run)
         metrics["ablation"] = {"plan": str(plan_path), "step": name, "overrides": overrides}
         run.finish(metrics)
         done.append(run.dir)
