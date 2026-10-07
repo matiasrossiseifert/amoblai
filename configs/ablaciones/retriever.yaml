@@ -20,6 +20,8 @@ incremental:
     set: { embedding.name: dinov2, background.method: sam, retrieval.category_filter: true }
   - name: E3-siglip2
     set: { embedding.name: siglip2, background.method: sam, retrieval.category_filter: true }
+  - name: E4-siglip2-sin-quitar-fondo
+    set: { embedding.name: siglip2, background.method: none, retrieval.category_filter: true }
 
 grid:
   embedding.name: [clip, siglip2, dinov2]
