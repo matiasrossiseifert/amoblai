@@ -16,11 +16,11 @@ from amoblai.data.catalog import Catalog
 from amoblai.embeddings.base import Embedder
 from amoblai.embeddings.registry import build_embedder
 from amoblai.indexing.indexer import (
-    collection_name,
     index_catalog,
     load_or_build_catalog,
     open_store,
     sync_categories,
+    threshold_key,
 )
 from amoblai.infra.cache import ArtifactCache
 from amoblai.retrieval.reranker import NoopReranker, Reranker
@@ -99,7 +99,7 @@ def build_retrieval_components(cfg: AppConfig, use_threshold: bool = True) -> Re
     store = ensure_index(cfg, embedder)
     sync_categories(store, catalog, categories)
     threshold = (
-        resolve_threshold(cfg.retrieval, cfg.paths.thresholds_file, collection_name(cfg))
+        resolve_threshold(cfg.retrieval, cfg.paths.thresholds_file, threshold_key(cfg))
         if use_threshold
         else None
     )

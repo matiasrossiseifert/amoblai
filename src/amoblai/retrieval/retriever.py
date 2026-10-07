@@ -83,14 +83,15 @@ def load_threshold(thresholds_file: Path, collection: str) -> float | None:
     return float(entry["threshold"]) if entry else None
 
 
-def resolve_threshold(cfg: RetrievalConfig, thresholds_file: Path, collection: str) -> float | None:
+def resolve_threshold(cfg: RetrievalConfig, thresholds_file: Path, key: str) -> float | None:
+    """Umbral fijo de la config, o el calibrado para `key` (colección + fondo) si es "auto"."""
     if cfg.threshold == "auto":
-        value = load_threshold(thresholds_file, collection)
+        value = load_threshold(thresholds_file, key)
         if value is None:
             log.warning(
                 "No hay umbral calibrado para %s: no se descarta ningún mueble. "
                 "Calibrar con `amoblai eval retriever --calibrate`.",
-                collection,
+                key,
             )
         return value
     return cfg.threshold
