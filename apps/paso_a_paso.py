@@ -254,7 +254,7 @@ def build() -> gr.Blocks:
                 )
                 with gr.Accordion("Opciones", open=False):
                     gr.Markdown(
-                        "Mejor configuración medida en la ablación: **siglip2** con fondo **none** (ver docs/EXPERIMENTOS.md)."
+                        "Default = mejor configuración medida: **dinov3** sin quitar fondo (**none**). Sin HF_TOKEN usá **siglip2** (ver docs/EXPERIMENTOS.md)."
                     )
                     with gr.Row():
                         embedder = gr.Dropdown(
