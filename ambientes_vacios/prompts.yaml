@@ -1,0 +1,8 @@
+# Pedido del usuario por ambiente (clave = nombre de archivo de la foto).
+# Si un ambiente no está listado, se usa `default`.
+
+default: "Living moderno y luminoso: un sofá gris claro, una mesa ratona de madera clara y una alfombra beige."
+
+rooms:
+  # living_01.jpg: "Estilo nórdico, con un sillón de lectura y una alfombra de lana."
+  # comedor_01.jpg: "Mesa de comedor de madera para seis con sillas negras."
