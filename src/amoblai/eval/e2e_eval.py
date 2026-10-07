@@ -153,6 +153,7 @@ def run_e2e_eval(
         result = pipeline.run(load_image(path), prompt, run=sub)
         metrics = evaluate_result(result, pipeline)
         metrics["usage"] = summarize_usage(result.usage)
+        metrics["pipeline_time_s"] = round(sum(result.timings.values()), 2)
         sub.finish(metrics)
         per_room[path.name] = metrics
         log.info("%s: %s", path.name, {k: v for k, v in metrics.items() if k != "reid"})
@@ -195,6 +196,7 @@ def aggregate_e2e(per_room: dict[str, dict[str, Any]], cfg: AppConfig) -> dict[s
         ),
         "cost_usd_per_room": mean([v["usage"]["cost_usd"] for v in done.values()]),
         "latency_s_per_room": mean([v["usage"]["latency_s"] for v in done.values()]),
+        "pipeline_time_s_per_room": mean([v.get("pipeline_time_s") for v in done.values()]),
         "setup": {
             "embedding": cfg.embedding.name,
             "generator1": f"{cfg.generation.generator1.provider}:{cfg.generation.generator1.model}",
