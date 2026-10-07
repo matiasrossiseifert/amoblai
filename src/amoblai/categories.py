@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import hashlib
+import json
 from collections import Counter
 from collections.abc import Iterable
 from dataclasses import dataclass, field
@@ -57,6 +59,12 @@ class CategoryMap:
                 if label in labels:
                     raise ValueError(f"La etiqueta {label!r} está en dos categorías")
                 labels[label] = cat.key
+
+    def fingerprint(self) -> str:
+        """Hash del mapeo type → categoría (cambia si se edita categories.yaml)."""
+        mapping = {c.key: sorted(c.ikea_types) for c in self.categories.values()}
+        payload = json.dumps(mapping, sort_keys=True).encode()
+        return hashlib.sha256(payload).hexdigest()[:12]
 
     @property
     def scope(self) -> list[str]:

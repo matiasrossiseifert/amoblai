@@ -46,10 +46,11 @@ def open_store(cfg: AppConfig) -> ChromaVectorStore:
 def load_or_build_catalog(cfg: AppConfig, rebuild: bool = False) -> Catalog:
     """Carga la ficha de productos; la regenera desde el dataset si falta o se pide."""
     path = Path(cfg.paths.catalog_file)
+    categories = CategoryMap.load(cfg.paths.categories_file)
     if path.exists() and not rebuild:
-        return Catalog.load(path, cfg.paths.raw_dir)
+        return Catalog.load(path, cfg.paths.raw_dir, categories)
     dataset = IkeaDataset.load(cfg.paths.raw_dir)
-    catalog = Catalog.from_dataset(dataset, CategoryMap.load(cfg.paths.categories_file))
+    catalog = Catalog.from_dataset(dataset, categories)
     catalog.save(path)
     log.info("Catálogo guardado en %s (%d productos)", path, len(catalog))
     return catalog
@@ -93,7 +94,32 @@ def build_index(
     )
 
 
+def sync_categories(store: ChromaVectorStore, catalog: Catalog, categories: CategoryMap) -> int:
+    """Si cambió el mapeo de categorías, actualiza la metadata del índice (sin re-embeber).
+
+    Devuelve cuántos vectores se actualizaron.
+    """
+    fingerprint = categories.fingerprint()
+    if store.metadata.get("categories_hash") == fingerprint:
+        return 0
+    entries = split_catalog(catalog)
+    present = store.existing_ids([e.id for e in entries])
+    todo = [e for e in entries if e.id in present]
+    store.update_metadatas([e.id for e in todo], [e.metadata for e in todo])
+    store.set_metadata({"categories_hash": fingerprint})
+    log.info(
+        "Mapeo de categorías %s aplicado a %d vectores de %s",
+        fingerprint,
+        len(todo),
+        store.collection_name,
+    )
+    return len(todo)
+
+
 def index_catalog(cfg: AppConfig, embedder: Embedder, rebuild_catalog: bool = False) -> IndexStats:
     catalog = load_or_build_catalog(cfg, rebuild=rebuild_catalog)
     entries = split_catalog(catalog, scope_only=cfg.index.scope_only)
-    return build_index(entries, embedder, open_store(cfg), cfg)
+    store = open_store(cfg)
+    stats = build_index(entries, embedder, store, cfg)
+    sync_categories(store, catalog, CategoryMap.load(cfg.paths.categories_file))
+    return stats

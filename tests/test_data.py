@@ -126,3 +126,32 @@ def test_extract_safely_keeps_only_data(tmp_path):
     assert extract_safely(zpath, tmp_path / "out") == 2
     assert (tmp_path / "out" / "images" / "a" / "ok.jpg").exists()
     assert not (tmp_path / "out" / "README.md").exists()
+
+
+def test_editing_the_mapping_updates_catalog_and_index(cfg, components, tmp_path):
+    import yaml
+
+    from amoblai.indexing.indexer import load_or_build_catalog, sync_categories
+
+    data = yaml.safe_load(cfg.paths.categories_file.read_text())
+    data["categories"]["table"]["ikea_types"].append("Table lamp")  # cambio a propósito
+    edited = tmp_path / "cats.yaml"
+    edited.write_text(yaml.safe_dump(data, allow_unicode=True))
+    cfg.paths.categories_file = edited
+    catalog = load_or_build_catalog(cfg)
+    assert catalog.get("100.000.07").category == "table"
+    updated = sync_categories(components.store, catalog, CategoryMap.load(edited))
+    assert updated == 8
+    hits = components.store.query(
+        components.embedder.embed_images([_lamp(catalog)]),
+        k=1,
+        where={"category": "table"},
+    )
+    assert hits[0][0].sku in {"100.000.07", "100.000.05"}
+    assert sync_categories(components.store, catalog, CategoryMap.load(edited)) == 0
+
+
+def _lamp(catalog):
+    from amoblai.infra.images import load_image
+
+    return load_image(catalog.image_path("100.000.07"))

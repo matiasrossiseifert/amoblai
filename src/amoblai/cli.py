@@ -87,7 +87,7 @@ def categories(config: ConfigOpt = None) -> None:
     from amoblai.indexing.indexer import load_or_build_catalog
 
     cfg = _config(config, None)
-    catalog = load_or_build_catalog(cfg, rebuild=True)
+    catalog = load_or_build_catalog(cfg)  # reaplica el mapeo vigente
     report = CategoryMap.load(cfg.paths.categories_file).mapping_report(
         p.type for p in catalog.products.values()
     )
