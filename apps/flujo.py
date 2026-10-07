@@ -333,7 +333,8 @@ def render_eval(run_dir: str | None, room_id: str | None) -> None:
             f"rank del primer relevante: {r['rank']} · {'con' if r['answerable'] else 'sin'} respuesta posible"
         )
         with gr.Row():
-            crop = d / r["crop_path"] if r.get("crop_path") else None
+            # Rutas relativas a resultados/ (almacén compartido de recortes).
+            crop = Path(cfg.paths.results_dir) / r["crop_path"] if r.get("crop_path") else None
             gr.Image(
                 value=image_or_none(crop) if crop else None,
                 label="Consulta",

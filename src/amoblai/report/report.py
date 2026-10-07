@@ -48,6 +48,15 @@ def _ci(value: list[float] | None) -> str:
     return f"[{value[0]:.3f}, {value[1]:.3f}]" if value else ""
 
 
+def _readable_step(step: str, setup: dict[str, Any]) -> str:
+    """Los pasos de la grilla se nombran por su configuración; los incrementales, por su nombre."""
+    if not step.startswith("name-"):
+        return step
+    fondo = "sin fondo" if setup.get("background") == "sam" else "con fondo"
+    filtro = "con filtro" if setup.get("category_filter") else "sin filtro"
+    return f"{setup.get('embedding')} · {fondo} · {filtro}"
+
+
 def retriever_table(runs: list[dict[str, Any]]) -> pd.DataFrame:
     rows = []
     for r in runs:
@@ -58,7 +67,9 @@ def retriever_table(runs: list[dict[str, Any]]) -> pd.DataFrame:
         rows.append(
             {
                 "run_id": r["manifest"]["run_id"],
-                "paso": m.get("ablation", {}).get("step", r["manifest"]["config_name"]),
+                "paso": _readable_step(
+                    m.get("ablation", {}).get("step", r["manifest"]["config_name"]), setup
+                ),
                 "embedder": setup.get("embedding"),
                 "fondo": setup.get("background"),
                 "filtro_categoria": setup.get("category_filter"),
@@ -171,9 +182,10 @@ def grouped_bars(
                 capsize=2,
                 zorder=3,
             )
-        if j == 0:  # rotular solo la primera serie (selectivo)
-            for x, v in zip(xs, values, strict=True):
-                ax.text(x, v + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, color=INK)
+        if j == 0:  # rotular solo la primera serie (selectivo), por encima de la barra de error
+            tops = [v + (yerr[1][i] if yerr is not None else 0.0) for i, v in enumerate(values)]
+            for x, v, top in zip(xs, values, tops, strict=True):
+                ax.text(x, top + 0.02, f"{v:.2f}", ha="center", va="bottom", fontsize=8, color=INK)
     ax.set_xticks(range(n), df[label_col].tolist(), rotation=20, ha="right")
     ax.set_ylim(0, 1.05)
     ax.set_title(title, color=INK, fontsize=11, loc="left")
