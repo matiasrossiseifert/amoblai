@@ -50,7 +50,8 @@ class ImageEditor(Protocol):
 class ManualStepPendingError(Exception):
     """El editor manual preparó la carpeta de trabajo y espera el resultado."""
 
-    def __init__(self, workdir: Path, instructions: str):
-        super().__init__(f"Paso manual pendiente en {workdir}")
+    def __init__(self, workdir: Path, instructions: str, stage: str = ""):
+        super().__init__(f"Paso manual pendiente ({stage}) en {workdir}")
         self.workdir = workdir
         self.instructions = instructions
+        self.stage = stage

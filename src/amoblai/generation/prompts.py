@@ -97,10 +97,18 @@ def generator1_prompt(user_prompt: str, categories: list[str]) -> str:
     return GENERATOR1.format(categories=cats, user_prompt=user_prompt.strip() or "(none)")
 
 
+def unique_skus(items: list[PlacedProduct]) -> list[str]:
+    """SKUs distintos en orden de aparición: cada producto se adjunta una sola vez."""
+    return list(dict.fromkeys(p.sku for p in items))
+
+
 def generator2_single_prompt(items: list[PlacedProduct], size: tuple[int, int], base: str) -> str:
+    """Un renglón por mueble; si varios usan el mismo producto, apuntan a la misma imagen."""
     w, h = size
+    image_of = {sku: i for i, sku in enumerate(unique_skus(items), start=2)}
     lines = []
-    for i, p in enumerate(items, start=2):
+    for p in items:
+        i = image_of[p.sku]
         lines.append(
             f"- The {CATEGORY_EN.get(p.category, p.category)} in the "
             f"{describe_location(p.box, w, h)} (region {box_percent(p.box, w, h)}) -> "
