@@ -128,7 +128,7 @@ class ManualImageEditor:
         waited = 0.0
         if result_path is None:
             if not self.cfg.manual_wait:
-                raise ManualStepPendingError(workdir, instructions)
+                raise ManualStepPendingError(workdir, instructions, request.stage)
             log.warning("Paso manual pendiente. Instrucciones en %s/INSTRUCCIONES.md", workdir)
             print(
                 f"\n{instructions}\nCarpeta: {workdir.resolve()}\nEsperando resultado…", flush=True
@@ -136,7 +136,7 @@ class ManualImageEditor:
             start = time.monotonic()
             while (result_path := find_result(workdir)) is None:
                 if time.monotonic() - start > self.cfg.manual_timeout_s:
-                    raise ManualStepPendingError(workdir, instructions)
+                    raise ManualStepPendingError(workdir, instructions, request.stage)
                 time.sleep(self.poll_s)
             time.sleep(0.5)  # por si el archivo se está terminando de escribir
             waited = time.monotonic() - start

@@ -35,6 +35,7 @@ from amoblai.generation.prompts import (
     generator1_prompt,
     generator2_item_prompt,
     generator2_single_prompt,
+    unique_skus,
 )
 from amoblai.generation.service import EditorService, build_editor_service
 from amoblai.indexing.preprocess import prepare_for_embedding
@@ -274,8 +275,8 @@ class FurnishPipeline:
             request = EditRequest(
                 stage="generator2",
                 prompt=generator2_single_prompt(placed, base.size, gcfg.gen2_base),
-                images=[base, *(self._product_image(p.sku) for p in placed)],
-                image_labels=["ambiente", *(f"producto_{p.sku}" for p in placed)],
+                images=[base, *(self._product_image(sku) for sku in unique_skus(placed))],
+                image_labels=["ambiente", *(f"producto_{sku}" for sku in unique_skus(placed))],
                 mask=result.mask,
             )
             if run:

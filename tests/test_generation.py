@@ -80,6 +80,15 @@ def test_prompts_mention_scope_and_products():
     ]
     p2 = generator2_single_prompt(placed, (100, 100), "image1")
     assert "image 2" in p2 and "KIVIK" in p2 and "front left" in p2
+    # Dos sillas iguales y una mesa: el producto repetido se adjunta una vez.
+    chairs = [
+        PlacedProduct("chair", Box(0, 0, 10, 10), "7", "INGOLF", "Chair", None),
+        PlacedProduct("table", Box(20, 0, 40, 10), "8", "LISABO", "Table", None),
+        PlacedProduct("chair", Box(50, 0, 60, 10), "7", "INGOLF", "Chair", None),
+    ]
+    p3 = generator2_single_prompt(chairs, (100, 100), "original")
+    assert p3.count("product in image 2") == 2 and "product in image 3" in p3
+    assert "image 4" not in p3
 
 
 def test_manual_editor_pending_then_result(tmp_path):
