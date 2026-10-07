@@ -89,6 +89,9 @@ ignore = [
     "RUF003",
 ]
 
+[tool.ruff.lint.per-file-ignores]
+"apps/*" = ["E501"]  # textos largos de la interfaz
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
