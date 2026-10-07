@@ -73,6 +73,24 @@ class RunContext:
         self.write_yaml("config.yaml", config.model_dump(mode="json"))
         self._write_manifest(finished=False)
 
+    @classmethod
+    def reopen(cls, run_dir: Path, config: AppConfig) -> RunContext:
+        """Retoma una corrida existente (p. ej. una que quedó esperando un paso manual)."""
+        run = cls.__new__(cls)
+        run.config = config
+        run.dir = Path(run_dir)
+        manifest = json.loads((run.dir / "manifest.json").read_text())
+        run.kind = manifest["kind"]
+        run.run_id = manifest["run_id"]
+        run.started = datetime.fromisoformat(manifest["started_at"])
+        usage_path = run.dir / "usage.jsonl"
+        run.usage = (
+            [UsageRecord.model_validate_json(x) for x in usage_path.read_text().splitlines() if x]
+            if usage_path.exists()
+            else []
+        )
+        return run
+
     def path(self, rel: str) -> Path:
         p = self.dir / rel
         p.parent.mkdir(parents=True, exist_ok=True)
