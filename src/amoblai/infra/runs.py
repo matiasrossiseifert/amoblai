@@ -161,6 +161,7 @@ class SubRun(RunContext):
 
     def add_usage(self, record: UsageRecord) -> None:
         self.usage.append(record)
+        self.append_jsonl("usage.jsonl", record.model_dump(mode="json"))
         self.parent.add_usage(record)
 
     def finish(self, metrics: dict[str, Any] | None = None) -> None:
