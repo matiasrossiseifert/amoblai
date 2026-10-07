@@ -1,0 +1,243 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.2092,
+    "hit@1_ci95": [
+      0.1569,
+      0.2635
+    ],
+    "hit@5": 0.4585,
+    "hit@5_ci95": [
+      0.403,
+      0.5185
+    ],
+    "hit@10": 0.5877,
+    "hit@10_ci95": [
+      0.532,
+      0.6417
+    ],
+    "mrr@10": 0.3168,
+    "mrr@10_ci95": [
+      0.2681,
+      0.368
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.1692,
+    "hit@1_ci95": [
+      0.1265,
+      0.2123
+    ],
+    "hit@5": 0.3706,
+    "hit@5_ci95": [
+      0.3183,
+      0.4247
+    ],
+    "hit@10": 0.4751,
+    "hit@10_ci95": [
+      0.4193,
+      0.5258
+    ],
+    "mrr@10": 0.2561,
+    "mrr@10_ci95": [
+      0.2127,
+      0.2971
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.75,
+      "hit@1_ci95": [
+        0.3333,
+        1.0
+      ],
+      "hit@5": 0.875,
+      "hit@5_ci95": [
+        0.5714,
+        1.0
+      ],
+      "hit@10": 1.0,
+      "hit@10_ci95": [
+        1.0,
+        1.0
+      ],
+      "mrr@10": 0.825,
+      "mrr@10_ci95": [
+        0.5333,
+        1.0
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.2913,
+      "hit@1_ci95": [
+        0.1812,
+        0.3966
+      ],
+      "hit@5": 0.5512,
+      "hit@5_ci95": [
+        0.4354,
+        0.6667
+      ],
+      "hit@10": 0.6614,
+      "hit@10_ci95": [
+        0.5565,
+        0.7632
+      ],
+      "mrr@10": 0.4033,
+      "mrr@10_ci95": [
+        0.294,
+        0.5106
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.0303,
+      "hit@1_ci95": [
+        0.0,
+        0.076
+      ],
+      "hit@5": 0.2273,
+      "hit@5_ci95": [
+        0.125,
+        0.3433
+      ],
+      "hit@10": 0.3939,
+      "hit@10_ci95": [
+        0.2615,
+        0.5224
+      ],
+      "mrr@10": 0.1151,
+      "mrr@10_ci95": [
+        0.0704,
+        0.1736
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.1667,
+      "hit@1_ci95": [
+        0.0345,
+        0.3
+      ],
+      "hit@5": 0.5,
+      "hit@5_ci95": [
+        0.3,
+        0.7037
+      ],
+      "hit@10": 0.6667,
+      "hit@10_ci95": [
+        0.5,
+        0.8214
+      ],
+      "mrr@10": 0.3081,
+      "mrr@10_ci95": [
+        0.186,
+        0.4416
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.1915,
+      "hit@1_ci95": [
+        0.1111,
+        0.2917
+      ],
+      "hit@5": 0.4468,
+      "hit@5_ci95": [
+        0.3684,
+        0.5477
+      ],
+      "hit@10": 0.5638,
+      "hit@10_ci95": [
+        0.4615,
+        0.6634
+      ],
+      "mrr@10": 0.3011,
+      "mrr@10_ci95": [
+        0.2344,
+        0.3912
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0234,
+    "hit@5": 0.115,
+    "hit@10": 0.2248,
+    "mrr@10": 0.0671
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.2069,
+    "recall@1_ci95": [
+      0.1609,
+      0.2479
+    ],
+    "recall@5": 0.4698,
+    "recall@5_ci95": [
+      0.4068,
+      0.5302
+    ],
+    "recall@10": 0.5991,
+    "recall@10_ci95": [
+      0.5361,
+      0.661
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.381,
+      "chair": 0.9024,
+      "rug": 0.375,
+      "sofa": 0.6552,
+      "table": 0.6623
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.895,
+    "f1": 0.4918,
+    "precision": 0.3913,
+    "recall": 0.6618,
+    "mean_score_correct": 0.8995,
+    "mean_score_wrong": 0.8429
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_clip-openai-clip-vit-base-patch32_d8d42a32",
+  "setup": {
+    "embedding": "clip",
+    "background": "sam",
+    "category_filter": true,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "E2-filtro-categoria",
+    "overrides": [
+      "embedding.name=clip",
+      "background.method=sam",
+      "retrieval.category_filter=true"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 29.04
+}

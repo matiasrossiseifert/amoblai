@@ -1,0 +1,17 @@
+# Umbrales de similitud calibrados por colección (modelo + preprocesamiento)
+# y método de fondo de las consultas.
+# Los escribe `amoblai eval retriever --calibrate`; editar a mano solo para fijar uno.
+catalog_dinov2-facebook-dinov2-base_d8d42a32__fondo-sam:
+  f1: 0.5734
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.4713
+  recall: 0.7321
+  run_id: 20261006-222011_retriever_base-dinov2-detector-v2
+  threshold: 0.5632
+catalog_siglip2-google-siglip2-base-patch16-224_d8d42a32__fondo-none:
+  f1: 0.6842
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.6797
+  recall: 0.6887
+  run_id: 20261006-225226_retriever_abl-retriever-e4-siglip2-sin-quitar-fondo
+  threshold: 0.8095

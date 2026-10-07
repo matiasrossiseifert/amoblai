@@ -1,0 +1,101 @@
+name: ejemplo-dryrun-dinov2
+device: auto
+seed: 0
+paths:
+  raw_dir: data/raw/ikea
+  catalog_file: data/processed/catalog.json
+  chroma_dir: data/chroma
+  cache_dir: data/cache
+  results_dir: resultados
+  runs_dir: resultados/corridas
+  generations_dir: resultados/generaciones
+  spend_ledger: resultados/gastos.jsonl
+  empty_rooms_dir: ambientes_vacios
+  labels_file: anotaciones/estricto.jsonl
+  categories_file: configs/categories.yaml
+  pricing_file: configs/pricing.yaml
+  thresholds_file: configs/umbrales.yaml
+dataset:
+  repo: IvonaTau/ikea
+  commit: 6f316e3fecf8ce95069eaef5f2021405c536168a
+  eval_room_types:
+  - Living Room
+  - Dining
+embedding:
+  name: dinov2
+  model_id: null
+  batch_size: 16
+preprocess:
+  pad_to_square: true
+  pad_margin: 0.05
+  background_color:
+  - 255
+  - 255
+  - 255
+index:
+  scope_only: false
+detection:
+  provider: grounding_dino
+  model_id: null
+  box_threshold: 0.3
+  nms_iou: 0.5
+  cross_category_iou: 0.8
+  min_area_frac: 0.004
+  max_area_frac: 0.9
+  max_detections: 12
+background:
+  method: sam
+  sam_model_id: facebook/sam-vit-base
+  rembg_model: isnet-general-use
+  crop_margin: 0.04
+  skip_categories: []
+retrieval:
+  top_k: 10
+  category_filter: true
+  threshold: auto
+rerank:
+  enabled: false
+generation:
+  working_max_side: 1536
+  generator1:
+    provider: manual
+    model: gpt-image-2
+    quality: medium
+    size_policy: free
+    input_fidelity: null
+    reference_max_side: 768
+    manual_app: chatgpt
+    manual_wait: true
+    manual_timeout_s: 3600.0
+    timeout_s: 300.0
+  generator2:
+    provider: manual
+    model: gpt-image-2
+    quality: medium
+    size_policy: free
+    input_fidelity: null
+    reference_max_side: 768
+    manual_app: chatgpt
+    manual_wait: true
+    manual_timeout_s: 3600.0
+    timeout_s: 300.0
+  gen2_base: image1
+  gen2_mode: single
+  mask_dilation: 0.1
+  composite: false
+  feather_px: 12
+budget:
+  dry_run: true
+  max_calls_per_run: 20
+  max_usd_per_run: 3.0
+  max_usd_total: 50.0
+eval:
+  ks:
+  - 1
+  - 5
+  - 10
+  bootstrap_samples: 1000
+  seed: 0
+  max_rooms: null
+  save_crops: true
+  ssim_box_dilation: 0.1

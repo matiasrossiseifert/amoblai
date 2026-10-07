@@ -1,0 +1,53 @@
+{
+  "productos": {
+    "402.306.50": {
+      "sku": "402.306.50",
+      "nombre": "DUM",
+      "tipo": "Rug, high pile",
+      "categoria": "alfombra",
+      "color": "Light brown",
+      "medidas": "200x300 cm",
+      "medidas_cm": [
+        200.0,
+        300.0
+      ],
+      "cantidad": 1,
+      "similitud": 0.82426
+    },
+    "202.998.29": {
+      "sku": "202.998.29",
+      "nombre": "KRAGSTA",
+      "tipo": "Nest of tables, set of 2",
+      "categoria": "mesa",
+      "color": "White",
+      "medidas": null,
+      "medidas_cm": null,
+      "cantidad": 1,
+      "similitud": 0.834356
+    }
+  },
+  "total_unidades": 2,
+  "no_encontrados": [
+    {
+      "categoria": "mesa",
+      "mejor_similitud": 0.779059,
+      "umbral": 0.8095
+    },
+    {
+      "categoria": "sofá",
+      "mejor_similitud": 0.774505,
+      "umbral": 0.8095
+    },
+    {
+      "categoria": "silla",
+      "mejor_similitud": 0.732196,
+      "umbral": 0.8095
+    },
+    {
+      "categoria": "mesa",
+      "mejor_similitud": 0.805259,
+      "umbral": 0.8095
+    }
+  ],
+  "nota": "El dataset no incluye precios ni links; se agregan solo cuando están disponibles."
+}

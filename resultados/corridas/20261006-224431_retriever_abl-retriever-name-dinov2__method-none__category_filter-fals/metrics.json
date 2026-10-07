@@ -1,0 +1,243 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.0985,
+    "hit@1_ci95": [
+      0.0644,
+      0.1339
+    ],
+    "hit@5": 0.3385,
+    "hit@5_ci95": [
+      0.2876,
+      0.388
+    ],
+    "hit@10": 0.4369,
+    "hit@10_ci95": [
+      0.3865,
+      0.4879
+    ],
+    "mrr@10": 0.1953,
+    "mrr@10_ci95": [
+      0.1613,
+      0.2301
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.1269,
+    "hit@1_ci95": [
+      0.0896,
+      0.1634
+    ],
+    "hit@5": 0.4005,
+    "hit@5_ci95": [
+      0.3441,
+      0.4555
+    ],
+    "hit@10": 0.5274,
+    "hit@10_ci95": [
+      0.469,
+      0.581
+    ],
+    "mrr@10": 0.238,
+    "mrr@10_ci95": [
+      0.1999,
+      0.2771
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.25,
+      "hit@1_ci95": [
+        0.0,
+        0.4
+      ],
+      "hit@5": 0.75,
+      "hit@5_ci95": [
+        0.3333,
+        1.0
+      ],
+      "hit@10": 0.75,
+      "hit@10_ci95": [
+        0.3333,
+        1.0
+      ],
+      "mrr@10": 0.4583,
+      "mrr@10_ci95": [
+        0.1667,
+        0.65
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.126,
+      "hit@1_ci95": [
+        0.0615,
+        0.2063
+      ],
+      "hit@5": 0.5512,
+      "hit@5_ci95": [
+        0.4375,
+        0.6667
+      ],
+      "hit@10": 0.6772,
+      "hit@10_ci95": [
+        0.5555,
+        0.7983
+      ],
+      "mrr@10": 0.2816,
+      "mrr@10_ci95": [
+        0.2139,
+        0.3596
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.0152,
+      "hit@1_ci95": [
+        0.0,
+        0.0526
+      ],
+      "hit@5": 0.0455,
+      "hit@5_ci95": [
+        0.0,
+        0.1045
+      ],
+      "hit@10": 0.0909,
+      "hit@10_ci95": [
+        0.0303,
+        0.1618
+      ],
+      "mrr@10": 0.0328,
+      "mrr@10_ci95": [
+        0.0053,
+        0.0756
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.0333,
+      "hit@1_ci95": [
+        0.0,
+        0.1071
+      ],
+      "hit@5": 0.2667,
+      "hit@5_ci95": [
+        0.129,
+        0.4138
+      ],
+      "hit@10": 0.4,
+      "hit@10_ci95": [
+        0.2414,
+        0.5714
+      ],
+      "mrr@10": 0.1423,
+      "mrr@10_ci95": [
+        0.0694,
+        0.2267
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.1277,
+      "hit@1_ci95": [
+        0.0698,
+        0.1951
+      ],
+      "hit@5": 0.2447,
+      "hit@5_ci95": [
+        0.1609,
+        0.3407
+      ],
+      "hit@10": 0.3404,
+      "hit@10_ci95": [
+        0.24,
+        0.4388
+      ],
+      "mrr@10": 0.1872,
+      "mrr@10_ci95": [
+        0.1239,
+        0.2565
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0006,
+    "hit@5": 0.0029,
+    "hit@10": 0.0058,
+    "mrr@10": 0.0017
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.1121,
+    "recall@1_ci95": [
+      0.076,
+      0.1483
+    ],
+    "recall@5": 0.306,
+    "recall@5_ci95": [
+      0.2616,
+      0.3475
+    ],
+    "recall@10": 0.4009,
+    "recall@10_ci95": [
+      0.3603,
+      0.4406
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.2381,
+      "chair": 0.9024,
+      "rug": 0.0938,
+      "sofa": 0.4138,
+      "table": 0.4286
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.6298,
+    "f1": 0.2889,
+    "precision": 0.2241,
+    "recall": 0.4062,
+    "mean_score_correct": 0.5888,
+    "mean_score_wrong": 0.5164
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_dinov2-facebook-dinov2-base_d8d42a32",
+  "setup": {
+    "embedding": "dinov2",
+    "background": "none",
+    "category_filter": false,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "name-dinov2__method-none__category_filter-False",
+    "overrides": [
+      "embedding.name=dinov2",
+      "background.method=none",
+      "retrieval.category_filter=false"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 106.11
+}
