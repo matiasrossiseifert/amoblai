@@ -167,7 +167,8 @@ def render_run(run_dir: str | None) -> None:
         if (d / "config.yaml").exists()
         else next(p for p in d.parents if (p / "config.yaml").exists())
     )
-    run_cfg = read_json(run_root / "metrics.json") or {}
+    # Una sub-corrida (un ambiente de una eval e2e) tiene sus propias métricas y uso.
+    run_cfg = read_json(d / "metrics.json") or read_json(run_root / "metrics.json") or {}
     conf = yaml.safe_load((run_root / "config.yaml").read_text())
     g = conf["generation"]
     gr.Markdown(
@@ -243,7 +244,7 @@ def render_run(run_dir: str | None) -> None:
     gr.Markdown("## Salida, uso y costos")
     with gr.Row():
         gr.JSON(value=read_json(d / "lista_compra.json"), label="Lista de compra")
-        usage = read_jsonl(run_root / "usage.jsonl")
+        usage = read_jsonl(d / "usage.jsonl") or read_jsonl(run_root / "usage.jsonl")
         gr.Dataframe(
             value=[
                 [
