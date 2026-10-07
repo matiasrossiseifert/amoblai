@@ -17,7 +17,7 @@ un módulo de `src/amoblai/`; las decisiones de diseño están justificadas al f
 | Ficha por SKU | `data/catalog.py` | `Product` con nombre, tipo, categoría, color, medidas (texto y cm), descripción limpia e imágenes. Se guarda una vez por SKU en `data/processed/catalog.json`. |
 | Preprocesamiento | `indexing/preprocess.py` | RGB, fondo blanco y padding a cuadrado (el mismo proceso que siguen los recortes). |
 | Splitting | `indexing/splitter.py` | Una entrada por imagen de producto (`id = SKU#i`) con metadata: `sku`, `category`, `raw_type`, `name`, `dimN_cm`, `size_raw`, `color`. |
-| Embedding | `embeddings/hf.py`, `embeddings/registry.py` | DINOv2 (default), CLIP, SigLIP 2 o DINOv3, locales con Hugging Face; fp16 en GPU, fp32 en CPU, por lotes; vectores L2-normalizados. |
+| Embedding | `embeddings/hf.py`, `embeddings/registry.py` | DINOv3 (default), DINOv2, CLIP o SigLIP 2, locales con Hugging Face; fp16 en GPU, fp32 en CPU, por lotes; vectores L2-normalizados. |
 | Vector DB | `vectorstore/chroma.py` | ChromaDB persistente, HNSW con espacio **coseno explícito**, una colección por modelo + preprocesamiento. |
 
 ### Consulta: `amoblai run` / `pipeline/query.py`
@@ -25,7 +25,7 @@ un módulo de `src/amoblai/`; las decisiones de diseño están justificadas al f
 | Caja del diagrama | Módulo | Qué hace |
 |---|---|---|
 | Pre-retrieval: Generador 1 | `generation/` + `prompts.GENERATOR1` | Amobla el ambiente vacío con muebles genéricos de las 5 categorías → **imagen 1**. Transforma foto + texto en consultas del mismo dominio que el catálogo (idea tipo HyDE: generar un "documento hipotético" y buscar con él). |
-| Detección y recorte | `vision/detection.py`, `vision/background.py`, `vision/crops.py` | Grounding DINO u OWLv2 con etiquetas en inglés; NMS; fondo quitado con SAM guiado por la caja; pegado sobre blanco y padding a cuadrado. |
+| Detección y recorte | `vision/detection.py`, `vision/background.py`, `vision/crops.py` | Grounding DINO u OWLv2 con etiquetas en inglés, clasificación por frase y NMS; opcionalmente fondo quitado con SAM guiado por la caja; padding a cuadrado sobre blanco. |
 | Retrieval: embedding + búsqueda ANN + filtro | `retrieval/retriever.py` | Mismo embedder que el índice; ANN coseno; **metadata filtering** por la categoría detectada; umbral calibrado por colección. |
 | Post-retrieval: reranking | `retrieval/reranker.py` | Interfaz `Reranker`. En la v1, `NoopReranker` (top-1). El VLM es la iteración del Ejercicio 4. |
 | Generación: Generador 2 | `generation/` + `prompts.GENERATOR2_*` | Recibe la imagen 1 **o** la foto original, las fotos de los productos elegidos y un prompt; reemplaza cada mueble genérico por el real. Dos modos: todo en una llamada, o un mueble por llamada con máscara. |
@@ -90,7 +90,11 @@ soporta más vistas por scraping. La ficha completa vive aparte, una vez por SKU
 (fondo blanco, padding a cuadrado, sin center-crop). Sin el padding, el
 center-crop de los procesadores corta los extremos de un sofá.
 
-**Quitar fondo con SAM guiado por la caja.** Un recorte de un living tiene varios
+**Quitar el fondo: opcional y decidido por la ablación.** La hipótesis de la
+propuesta era que quitarlo achica la brecha de dominio con el catálogo. La
+ablación (docs/EXPERIMENTOS.md) muestra que depende del embedder: ayuda a
+DINOv2 pero perjudica a DINOv3 y SigLIP 2, así que el default es no quitarlo.
+Cuando se quita, se usa SAM guiado por la caja: un recorte de un living tiene varios
 objetos destacados; un modelo de objeto saliente puede elegir el equivocado. Con
 la caja del detector como prompt, la máscara apunta al mueble detectado. Se
 limpia (componente mayor dentro de la caja, huecos rellenos). Las alfombras,

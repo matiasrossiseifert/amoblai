@@ -28,6 +28,10 @@ uv sync --extra gpu --group dev --group apps
 cp .env.example .env   # completar las claves que se vayan a usar
 ```
 
+El embedder por defecto es DINOv3, que es *gated* en Hugging Face: hace falta
+aceptar la licencia de `facebook/dinov3-vitb16-pretrain-lvd1689m` y poner
+`HF_TOKEN` en `.env`. Sin token: `--set embedding.name=siglip2` (segundo mejor).
+
 El dispositivo se elige solo (`device: auto`): GPU en fp16 si hay CUDA, si no CPU.
 Opcional: `uv sync --extra rembg` para la eliminación de fondo alternativa.
 
@@ -46,7 +50,7 @@ comerciales; nunca se commitean (`data/` está en `.gitignore`).
 
 ```bash
 # 1. Indexing pipeline (una vez por embedder; incremental)
-uv run amoblai index                                  # DINOv2 (default)
+uv run amoblai index                                  # DINOv3 (default; requiere HF_TOKEN)
 uv run amoblai index --set embedding.name=clip        # otro embedder
 
 # 2. Evaluación del retriever sobre livings y comedores de IKEA (+ calibra el umbral)
@@ -113,8 +117,9 @@ IC 95% bootstrap por ambiente). Detalle y lecturas en
 | Configuración | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|
 | Naive: CLIP, sin quitar fondo, sin filtro | 0,126 | 0,345 | 0,179 |
-| DINOv2 + quitar fondo (SAM) + filtro por categoría (default) | 0,345 | 0,686 | 0,452 |
-| **SigLIP 2, sin quitar fondo, filtro por categoría (mejor)** | **0,465** | **0,809** | **0,587** |
+| DINOv2 + quitar fondo (SAM) + filtro por categoría | 0,345 | 0,686 | 0,452 |
+| SigLIP 2, sin quitar fondo, filtro por categoría | 0,465 | 0,809 | 0,587 |
+| **DINOv3, sin quitar fondo, filtro por categoría (default)** | **0,508** | **0,819** | **0,603** |
 | Azar (con filtro) | 0,023 | 0,225 | 0,067 |
 
 ![Camino incremental](resultados/reporte/retriever_incremental.png)

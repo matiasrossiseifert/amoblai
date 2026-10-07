@@ -102,11 +102,12 @@ media del top-1: 0,638 cuando es correcto, 0,481 cuando no.
 ## R3 — Ablación del retriever
 
 - **Plan**: `configs/ablaciones/retriever.yaml` — grilla completa embedder (CLIP,
-  SigLIP 2, DINOv2) × quitar fondo (SAM / no) × filtro por categoría (sí / no),
-  más el camino incremental E0 → E4. Mismo detector (v2) y mismos 65 ambientes
-  en todas las corridas; 325 recortes con respuesta posible en cada una.
+  SigLIP 2, DINOv2, DINOv3) × quitar fondo (SAM / no) × filtro por categoría
+  (sí / no), más el camino incremental E0 → E4. Mismo detector (v2) y mismos 65
+  ambientes en todas las corridas; 325 recortes con respuesta posible en cada una.
 - **Corridas**: `resultados/corridas/*_retriever_abl-retriever-*`; tablas y
-  gráficos en `resultados/reporte/`.
+  gráficos en `resultados/reporte/`. DINOv3 se sumó cuando llegó el acceso
+  (mismo día, mismas detecciones y máscaras en caché).
 
 ### Camino incremental (para la presentación)
 
@@ -117,7 +118,9 @@ media del top-1: 0,638 cuando es correcto, 0,481 cuando no.
 | E2 | + filtro por categoría (metadata filtering) | 0,209 [0,16–0,26] | 0,459 | 0,588 | 0,317 | 0,599 |
 | E3 | CLIP → DINOv2 | 0,345 [0,29–0,40] | 0,597 | 0,686 | 0,452 | 0,651 |
 | E3' | CLIP → SigLIP 2 | 0,323 [0,27–0,38] | 0,615 | 0,711 | 0,445 | 0,698 |
-| **E4** | SigLIP 2 **sin** quitar fondo | **0,465 [0,40–0,53]** | **0,754** | **0,809** | **0,587** | **0,763** |
+| E3'' | CLIP → DINOv3 | 0,468 [0,42–0,52] | 0,689 | 0,757 | 0,562 | 0,720 |
+| **E4** | DINOv3 **sin** quitar fondo (**default**) | **0,508 [0,44–0,57]** | 0,714 | **0,819** | **0,603** | 0,741 |
+| E4' | SigLIP 2 **sin** quitar fondo | 0,465 [0,40–0,53] | **0,754** | 0,809 | 0,587 | **0,763** |
 
 Baseline aleatorio (con filtro): hit@1 0,023, hit@10 0,225, MRR@10 0,067.
 Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
@@ -128,7 +131,8 @@ Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
 |---|---|---|---|---|
 | CLIP | 0,139 / 0,186 | 0,209 / 0,317 | 0,126 / 0,179 | 0,237 / 0,342 |
 | DINOv2 | 0,262 / 0,350 | 0,345 / 0,452 | 0,099 / 0,195 | 0,252 / 0,381 |
-| SigLIP 2 | 0,252 / 0,331 | 0,323 / 0,445 | 0,400 / 0,507 | **0,465 / 0,587** |
+| SigLIP 2 | 0,252 / 0,331 | 0,323 / 0,445 | 0,400 / 0,507 | 0,465 / 0,587 |
+| DINOv3 | 0,385 / 0,455 | 0,468 / 0,562 | 0,375 / 0,456 | **0,508 / 0,603** |
 
 **Lecturas**:
 - **El filtro por categoría ayuda siempre**, con cualquier embedder y
@@ -136,29 +140,30 @@ Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
   RAG con mayor efecto: sin filtro, los muebles se confunden con productos de
   otras categorías del catálogo completo (lámparas, estantes…).
 - **Quitar el fondo interactúa con el embedder.** Con DINOv2 ayuda mucho
-  (0,25 → 0,34 con filtro): sus features autosupervisadas se distraen con el
-  fondo del ambiente. Con SigLIP 2 perjudica (0,46 → 0,32) y con CLIP es
-  neutro o negativo. Hipótesis: las máscaras de SAM recortan partes del mueble
-  (patas, brazos, alfombras tapadas) y los embeddings alineados con texto
-  aprovechan el contexto. SigLIP 2 sin fondo es mejor que SigLIP 2 con SAM en
-  las cinco categorías.
-- **Mejor configuración: SigLIP 2, recorte con fondo, filtro por categoría**:
-  hit@1 0,465, MRR@10 0,587, recall por ítem@10 0,763. Por categoría (hit@1):
-  sillón 0,88, silla 0,63, mesa 0,41, sofá 0,37, alfombra 0,21.
+  (0,25 → 0,34 con filtro): sus features se distraen con el fondo del
+  ambiente. Con DINOv3 (0,51 → 0,47) y SigLIP 2 (0,46 → 0,32) perjudica, y con
+  CLIP es neutro o negativo. Hipótesis: las máscaras de SAM recortan partes del
+  mueble (patas, brazos, alfombras tapadas) y los embeddings más fuertes
+  aprovechan el contexto o son robustos al fondo. La hipótesis de la propuesta
+  ("quitar el fondo achica la brecha de dominio") solo se cumple para DINOv2.
+- **DINOv3 es el mejor embedder** en todas las combinaciones con filtro.
+  **Default: DINOv3, recorte con fondo, filtro por categoría** — hit@1 0,508,
+  MRR@10 0,603, hit@10 0,819. Por categoría (hit@1): silla 0,73, sillón 0,63,
+  mesa 0,43, sofá 0,40, alfombra 0,23. Los intervalos de DINOv3 y SigLIP 2 (sin
+  quitar fondo) se solapan: con 65 ambientes no se pueden separar con
+  confianza. SigLIP 2 tiene mejor hit@5 y recall por ítem.
+- Lo más difícil sigue siendo alfombras y sofás (oclusión y perspectiva).
 - **Umbral**: SigLIP 2 comprime las similitudes (top-1 correcto 0,82 vs.
-  incorrecto 0,77), así que su umbral (0,81) separa peor que el de DINOv2
-  (0,64 vs. 0,48). Los umbrales calibrados están en `configs/umbrales.yaml`,
-  por colección y método de fondo.
-- La default de `configs/base.yaml` sigue siendo DINOv2 + SAM (a la espera de
-  DINOv3). Para usar la mejor: `embedding.name: siglip2` y
-  `background.method: none`.
+  incorrecto 0,77), así que su umbral (0,81) separa peor. Los umbrales
+  calibrados están en `configs/umbrales.yaml`, por colección, método de fondo y
+  filtro.
 
 ## Pendientes
 
 - Repetir la grilla en la RTX 3070 (debería dar lo mismo salvo diferencias
-  numéricas de fp16) y sumar DINOv3 cuando haya acceso.
-- Probar `background.skip_categories: [rug]` con DINOv2 (las alfombras se
-  segmentan mal) y el filtro por grupo de asientos.
+  numéricas de fp16).
+- Filtro por grupo de asientos (sofá + sillón + silla): el detector confunde
+  silla ↔ sillón y con filtro duro eso es un error de retrieval.
 - Set estricto etiquetado a mano y su evaluación.
 - Evaluación de punta a punta (`configs/ablaciones/e2e.yaml`): entrada del
   generador n.º 2 (imagen 1 vs. original) × modo (una llamada vs. un mueble por
