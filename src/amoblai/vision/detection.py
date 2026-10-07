@@ -23,6 +23,9 @@ from amoblai.vision.boxes import Box
 
 log = logging.getLogger(__name__)
 
+# Se incrementa cuando cambia cómo se calculan las detecciones (invalida la caché).
+DETECTOR_VERSION = 2
+
 DEFAULT_MODELS = {
     "grounding_dino": "IDEA-Research/grounding-dino-tiny",
     "owlv2": "google/owlv2-base-patch16-ensemble",
@@ -50,24 +53,27 @@ class Detector(Protocol):
     def detect(self, image: Image.Image) -> list[Detection]: ...
 
 
-def match_label(text: str, label_to_category: dict[str, str]) -> tuple[str, str] | None:
-    """Mapea la etiqueta devuelta por el detector a (frase, categoría).
-
-    Grounding DINO a veces devuelve frases parciales o fusionadas ("coffee table",
-    "table", "chair table"): se elige la frase configurada más larga contenida en
-    el texto y, si ninguna está contenida, la primera que contenga al texto.
-    """
-    text = text.strip().lower()
-    if not text:
-        return None
-    contained = [lbl for lbl in label_to_category if lbl in text]
-    if contained:
-        best = max(contained, key=len)
-        return best, label_to_category[best]
-    for lbl, cat in label_to_category.items():
-        if text in lbl:
-            return lbl, cat
-    return None
+def phrase_token_positions(tokenizer, labels: list[str]) -> tuple[str, list[list[int]]]:
+    """Texto para Grounding DINO ("sofa. couch. ...") y las posiciones de token de cada frase."""
+    text, spans = "", []
+    for label in labels:
+        start = len(text)
+        text += label
+        spans.append((start, len(text)))
+        text += ". "
+    text = text.strip()
+    offsets = tokenizer(text, return_offsets_mapping=True)["offset_mapping"]
+    positions: list[list[int]] = [[] for _ in labels]
+    for tok, (s, e) in enumerate(offsets):
+        if e <= s:
+            continue  # tokens especiales
+        for i, (a, b) in enumerate(spans):
+            if s >= a and e <= b:
+                positions[i].append(tok)
+    missing = [labels[i] for i, p in enumerate(positions) if not p]
+    if missing:
+        raise ValueError(f"Frases sin tokens en el prompt del detector: {missing}")
+    return text, positions
 
 
 def nms(dets: list[Detection], iou_threshold: float) -> list[Detection]:
@@ -105,30 +111,44 @@ class GroundingDinoDetector:
         self.model = (
             AutoModelForZeroShotObjectDetection.from_pretrained(model_id).to(self.device).eval()
         )
-        # Formato que espera Grounding DINO: frases en minúscula separadas por punto.
-        self.text = " ".join(f"{label}." for label in label_to_category)
+        self.labels = list(label_to_category)
+        self.text, self.phrase_tokens = phrase_token_positions(
+            self.processor.tokenizer, self.labels
+        )
         self._torch = torch
 
     def detect(self, image: Image.Image) -> list[Detection]:
+        """Asigna cada caja a la frase con mayor probabilidad.
+
+        El post-procesamiento estándar arma la etiqueta con todos los tokens que
+        superan un umbral y devuelve frases fusionadas ("armchair chair chair"):
+        no distingue silla de sillón. Acá se puntúa cada frase con el máximo de
+        sus tokens y se elige la mejor (clasificación a nivel de frase).
+        """
+        torch = self._torch
         inputs = self.processor(images=image, text=self.text, return_tensors="pt").to(self.device)
-        with self._torch.inference_mode():
+        with torch.inference_mode():
             outputs = self.model(**inputs)
-        res = self.processor.post_process_grounded_object_detection(
-            outputs,
-            inputs["input_ids"],
-            threshold=self.cfg.box_threshold,
-            text_threshold=self.cfg.text_threshold,
-            target_sizes=[image.size[::-1]],
-        )[0]
-        labels = res.get("text_labels") or res.get("labels")
+        probs = outputs.logits[0].sigmoid().float().cpu()  # (consultas, tokens)
+        phrase_scores = torch.stack(
+            [probs[:, positions].max(dim=1).values for positions in self.phrase_tokens], dim=1
+        )
+        scores, best = phrase_scores.max(dim=1)
+        keep = scores > self.cfg.box_threshold
+        w, h = image.size
         dets = []
-        for box, score, text in zip(
-            res["boxes"].tolist(), res["scores"].tolist(), labels, strict=True
+        for (cx, cy, bw, bh), score, idx in zip(
+            outputs.pred_boxes[0].float().cpu()[keep].tolist(),
+            scores[keep].tolist(),
+            best[keep].tolist(),
+            strict=True,
         ):
-            matched = match_label(str(text), self.label_to_category)
-            if matched:
-                dets.append(Detection(Box.from_list(box), matched[1], matched[0], float(score)))
-        return postprocess(dets, self.cfg, *image.size)
+            box = Box((cx - bw / 2) * w, (cy - bh / 2) * h, (cx + bw / 2) * w, (cy + bh / 2) * h)
+            label = self.labels[idx]
+            dets.append(
+                Detection(box.clip(w, h), self.label_to_category[label], label, float(score))
+            )
+        return postprocess(dets, self.cfg, w, h)
 
 
 class Owlv2Detector:
@@ -176,7 +196,9 @@ class CachedDetector:
     ):
         self.detector = detector
         self.cache = cache
-        self.config_key = stable_hash({"cfg": cfg.model_dump(mode="json"), "labels": labels})
+        self.config_key = stable_hash(
+            {"cfg": cfg.model_dump(mode="json"), "labels": labels, "version": DETECTOR_VERSION}
+        )
 
     def detect(self, image: Image.Image) -> list[Detection]:
         key = self.cache.key({"image": image_digest(image), "detector": self.config_key})
