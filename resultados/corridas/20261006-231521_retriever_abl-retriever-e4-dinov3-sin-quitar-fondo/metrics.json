@@ -1,0 +1,244 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.5077,
+    "hit@1_ci95": [
+      0.4418,
+      0.5695
+    ],
+    "hit@5": 0.7138,
+    "hit@5_ci95": [
+      0.6667,
+      0.7578
+    ],
+    "hit@10": 0.8185,
+    "hit@10_ci95": [
+      0.7731,
+      0.8576
+    ],
+    "mrr@10": 0.603,
+    "mrr@10_ci95": [
+      0.5519,
+      0.6501
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.4104,
+    "hit@1_ci95": [
+      0.3509,
+      0.4673
+    ],
+    "hit@5": 0.5771,
+    "hit@5_ci95": [
+      0.5218,
+      0.6275
+    ],
+    "hit@10": 0.6617,
+    "hit@10_ci95": [
+      0.6019,
+      0.7116
+    ],
+    "mrr@10": 0.4875,
+    "mrr@10_ci95": [
+      0.4339,
+      0.5368
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.625,
+      "hit@1_ci95": [
+        0.2857,
+        0.9091
+      ],
+      "hit@5": 1.0,
+      "hit@5_ci95": [
+        1.0,
+        1.0
+      ],
+      "hit@10": 1.0,
+      "hit@10_ci95": [
+        1.0,
+        1.0
+      ],
+      "mrr@10": 0.7917,
+      "mrr@10_ci95": [
+        0.5623,
+        0.9545
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.7323,
+      "hit@1_ci95": [
+        0.6218,
+        0.8359
+      ],
+      "hit@5": 0.937,
+      "hit@5_ci95": [
+        0.8905,
+        0.9764
+      ],
+      "hit@10": 0.9528,
+      "hit@10_ci95": [
+        0.9159,
+        0.9839
+      ],
+      "mrr@10": 0.8229,
+      "mrr@10_ci95": [
+        0.7534,
+        0.8935
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.2273,
+      "hit@1_ci95": [
+        0.1343,
+        0.3281
+      ],
+      "hit@5": 0.4091,
+      "hit@5_ci95": [
+        0.2923,
+        0.5324
+      ],
+      "hit@10": 0.5758,
+      "hit@10_ci95": [
+        0.4444,
+        0.7
+      ],
+      "mrr@10": 0.3177,
+      "mrr@10_ci95": [
+        0.2195,
+        0.4187
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.4,
+      "hit@1_ci95": [
+        0.2414,
+        0.5714
+      ],
+      "hit@5": 0.7,
+      "hit@5_ci95": [
+        0.5152,
+        0.8667
+      ],
+      "hit@10": 0.9333,
+      "hit@10_ci95": [
+        0.8333,
+        1.0
+      ],
+      "mrr@10": 0.5522,
+      "mrr@10_ci95": [
+        0.4127,
+        0.6947
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.4255,
+      "hit@1_ci95": [
+        0.3409,
+        0.5263
+      ],
+      "hit@5": 0.6064,
+      "hit@5_ci95": [
+        0.5169,
+        0.6941
+      ],
+      "hit@10": 0.7553,
+      "hit@10_ci95": [
+        0.6702,
+        0.8397
+      ],
+      "mrr@10": 0.5063,
+      "mrr@10_ci95": [
+        0.4304,
+        0.587
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0234,
+    "hit@5": 0.115,
+    "hit@10": 0.2248,
+    "mrr@10": 0.0671
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.431,
+    "recall@1_ci95": [
+      0.3775,
+      0.4867
+    ],
+    "recall@5": 0.6379,
+    "recall@5_ci95": [
+      0.5808,
+      0.6917
+    ],
+    "recall@10": 0.7414,
+    "recall@10_ci95": [
+      0.6878,
+      0.7904
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.381,
+      "chair": 0.9756,
+      "rug": 0.5625,
+      "sofa": 0.8621,
+      "table": 0.8182
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.3826,
+    "f1": 0.6568,
+    "precision": 0.5542,
+    "recall": 0.8061,
+    "mean_score_correct": 0.519,
+    "mean_score_wrong": 0.3734
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32",
+  "threshold_key": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-none__filtro-si",
+  "setup": {
+    "embedding": "dinov3",
+    "background": "none",
+    "category_filter": true,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "E4-dinov3-sin-quitar-fondo",
+    "overrides": [
+      "embedding.name=dinov3",
+      "background.method=none",
+      "retrieval.category_filter=true"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 84.3
+}

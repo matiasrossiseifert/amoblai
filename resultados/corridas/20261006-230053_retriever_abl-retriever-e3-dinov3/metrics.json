@@ -1,0 +1,244 @@
+{
+  "crops_total": 402,
+  "crops_answerable": 325,
+  "crops_unanswerable": 77,
+  "crops_per_category": {
+    "rug": 71,
+    "table": 102,
+    "sofa": 44,
+    "chair": 169,
+    "armchair": 16
+  },
+  "retrieval": {
+    "n": 325,
+    "hit@1": 0.4677,
+    "hit@1_ci95": [
+      0.4157,
+      0.5181
+    ],
+    "hit@5": 0.6892,
+    "hit@5_ci95": [
+      0.6366,
+      0.7422
+    ],
+    "hit@10": 0.7569,
+    "hit@10_ci95": [
+      0.71,
+      0.8018
+    ],
+    "mrr@10": 0.5625,
+    "mrr@10_ci95": [
+      0.5172,
+      0.6076
+    ]
+  },
+  "retrieval_literal": {
+    "n": 402,
+    "hit@1": 0.3781,
+    "hit@1_ci95": [
+      0.33,
+      0.4278
+    ],
+    "hit@5": 0.5572,
+    "hit@5_ci95": [
+      0.5037,
+      0.6118
+    ],
+    "hit@10": 0.6119,
+    "hit@10_ci95": [
+      0.5539,
+      0.6658
+    ],
+    "mrr@10": 0.4547,
+    "mrr@10_ci95": [
+      0.407,
+      0.5012
+    ]
+  },
+  "per_category": {
+    "armchair": {
+      "n": 8,
+      "hit@1": 0.75,
+      "hit@1_ci95": [
+        0.4286,
+        1.0
+      ],
+      "hit@5": 1.0,
+      "hit@5_ci95": [
+        1.0,
+        1.0
+      ],
+      "hit@10": 1.0,
+      "hit@10_ci95": [
+        1.0,
+        1.0
+      ],
+      "mrr@10": 0.8542,
+      "mrr@10_ci95": [
+        0.6429,
+        1.0
+      ]
+    },
+    "chair": {
+      "n": 127,
+      "hit@1": 0.6063,
+      "hit@1_ci95": [
+        0.5122,
+        0.6889
+      ],
+      "hit@5": 0.8346,
+      "hit@5_ci95": [
+        0.7758,
+        0.8929
+      ],
+      "hit@10": 0.8898,
+      "hit@10_ci95": [
+        0.84,
+        0.937
+      ],
+      "mrr@10": 0.7069,
+      "mrr@10_ci95": [
+        0.6437,
+        0.7662
+      ]
+    },
+    "rug": {
+      "n": 66,
+      "hit@1": 0.2424,
+      "hit@1_ci95": [
+        0.1451,
+        0.3548
+      ],
+      "hit@5": 0.4091,
+      "hit@5_ci95": [
+        0.2958,
+        0.5429
+      ],
+      "hit@10": 0.5,
+      "hit@10_ci95": [
+        0.3824,
+        0.6272
+      ],
+      "mrr@10": 0.3241,
+      "mrr@10_ci95": [
+        0.225,
+        0.4401
+      ]
+    },
+    "sofa": {
+      "n": 30,
+      "hit@1": 0.3333,
+      "hit@1_ci95": [
+        0.1667,
+        0.5
+      ],
+      "hit@5": 0.7333,
+      "hit@5_ci95": [
+        0.5484,
+        0.8966
+      ],
+      "hit@10": 0.9,
+      "hit@10_ci95": [
+        0.7667,
+        1.0
+      ],
+      "mrr@10": 0.4998,
+      "mrr@10_ci95": [
+        0.3632,
+        0.6266
+      ]
+    },
+    "table": {
+      "n": 94,
+      "hit@1": 0.4574,
+      "hit@1_ci95": [
+        0.382,
+        0.5465
+      ],
+      "hit@5": 0.6489,
+      "hit@5_ci95": [
+        0.5651,
+        0.7439
+      ],
+      "hit@10": 0.6915,
+      "hit@10_ci95": [
+        0.5937,
+        0.7907
+      ],
+      "mrr@10": 0.5299,
+      "mrr@10_ci95": [
+        0.4529,
+        0.614
+      ]
+    }
+  },
+  "random_baseline": {
+    "hit@1": 0.0234,
+    "hit@5": 0.115,
+    "hit@10": 0.2248,
+    "mrr@10": 0.0671
+  },
+  "items": {
+    "n": 232,
+    "recall@1": 0.4655,
+    "recall@1_ci95": [
+      0.4118,
+      0.5185
+    ],
+    "recall@5": 0.6638,
+    "recall@5_ci95": [
+      0.609,
+      0.7178
+    ],
+    "recall@10": 0.7198,
+    "recall@10_ci95": [
+      0.6681,
+      0.7699
+    ],
+    "recall@10_per_category": {
+      "armchair": 0.381,
+      "chair": 0.9756,
+      "rug": 0.5,
+      "sofa": 0.8621,
+      "table": 0.8052
+    }
+  },
+  "threshold_calibration": {
+    "threshold": 0.5167,
+    "f1": 0.6899,
+    "precision": 0.6166,
+    "recall": 0.7829,
+    "mean_score_correct": 0.6113,
+    "mean_score_wrong": 0.421
+  },
+  "groups": 65,
+  "rooms": 65,
+  "collection": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32",
+  "threshold_key": "catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-sam__filtro-si",
+  "setup": {
+    "embedding": "dinov3",
+    "background": "sam",
+    "category_filter": true,
+    "detector": "grounding_dino"
+  },
+  "ablation": {
+    "plan": "configs/ablaciones/retriever.yaml",
+    "step": "E3-dinov3",
+    "overrides": [
+      "embedding.name=dinov3",
+      "background.method=sam",
+      "retrieval.category_filter=true"
+    ]
+  },
+  "usage": {
+    "api_calls": 0,
+    "manual_steps": 0,
+    "cached_calls": 0,
+    "cost_usd": 0,
+    "estimated_cost_usd_dry_run": 0,
+    "tokens": 0,
+    "latency_s": 0,
+    "by_stage": {}
+  },
+  "wall_time_s": 561.76
+}

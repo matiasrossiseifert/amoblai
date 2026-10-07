@@ -1,14 +1,42 @@
-# Umbrales de similitud calibrados por colección (modelo + preprocesamiento)
-# y método de fondo de las consultas.
+# Umbrales de similitud calibrados por colección (modelo + preprocesamiento),
+# método de fondo de las consultas y filtro por categoría.
 # Los escribe `amoblai eval retriever --calibrate`; editar a mano solo para fijar uno.
-catalog_dinov2-facebook-dinov2-base_d8d42a32__fondo-sam:
+catalog_dinov2-facebook-dinov2-base_d8d42a32__fondo-sam__filtro-si:
   f1: 0.5734
   method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
   precision: 0.4713
   recall: 0.7321
   run_id: 20261006-222011_retriever_base-dinov2-detector-v2
   threshold: 0.5632
-catalog_siglip2-google-siglip2-base-patch16-224_d8d42a32__fondo-none:
+catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-none__filtro-no:
+  f1: 0.5445
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.4
+  recall: 0.8525
+  run_id: 20261006-231015_retriever_abl-retriever-name-dinov3__method-none__category_filter-fals
+  threshold: 0.4621
+catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-none__filtro-si:
+  f1: 0.6568
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.5542
+  recall: 0.8061
+  run_id: 20261006-231521_retriever_abl-retriever-e4-dinov3-sin-quitar-fondo
+  threshold: 0.3826
+catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-sam__filtro-no:
+  f1: 0.6049
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.4587
+  recall: 0.888
+  run_id: 20261006-231255_retriever_abl-retriever-name-dinov3__method-sam__category_filter-false
+  threshold: 0.5181
+catalog_dinov3-facebook-dinov3-vitb16-pretrain-lvd1689m_d8d42a32__fondo-sam__filtro-si:
+  f1: 0.6899
+  method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
+  precision: 0.6166
+  recall: 0.7829
+  run_id: 20261006-230053_retriever_abl-retriever-e3-dinov3
+  threshold: 0.5167
+catalog_siglip2-google-siglip2-base-patch16-224_d8d42a32__fondo-none__filtro-si:
   f1: 0.6842
   method: max F1 (top-1 correcto vs. score) sobre ambientes IKEA
   precision: 0.6797
