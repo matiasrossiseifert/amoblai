@@ -39,8 +39,8 @@ from amoblai.eval.metrics import (
     random_mrr,
     reciprocal_rank,
 )
-from amoblai.indexing.indexer import collection_name
-from amoblai.infra.images import load_image, save_image, thumbnail
+from amoblai.indexing.indexer import collection_name, threshold_key
+from amoblai.infra.images import image_digest, load_image, save_image, thumbnail
 from amoblai.infra.runs import RunContext
 from amoblai.vision.crops import make_crops
 
@@ -100,10 +100,9 @@ def run_retriever_eval(
             n_universe = (
                 per_category[res.category] if cfg.retrieval.category_filter else total_items
             )
-            crop_rel = None
-            if cfg.eval.save_crops:
-                crop_rel = f"recortes/{Path(room.room_id).stem}_{crop.index:02d}_{res.category}.jpg"
-                save_image(thumbnail(crop.query, 224), run.path(crop_rel), quality=85)
+            crop_rel = (
+                save_shared_crop(crop.query, cfg.paths.results_dir) if cfg.eval.save_crops else None
+            )
             records.append(
                 {
                     "room_id": room.room_id,
@@ -144,6 +143,7 @@ def run_retriever_eval(
     metrics = compute_retriever_metrics(records, room_items, cfg)
     metrics["rooms"] = len(rooms)
     metrics["collection"] = collection_name(cfg)
+    metrics["threshold_key"] = threshold_key(cfg)
     metrics["setup"] = {
         "embedding": cfg.embedding.name,
         "background": cfg.background.method,
@@ -152,8 +152,23 @@ def run_retriever_eval(
     }
     if calibrate and "threshold_calibration" in metrics:
         cal = metrics["threshold_calibration"]
-        write_threshold(cfg.paths.thresholds_file, metrics["collection"], cal, run.run_id)
+        write_threshold(cfg.paths.thresholds_file, metrics["threshold_key"], cal, run.run_id)
     return metrics
+
+
+def save_shared_crop(image, results_dir: Path) -> str:
+    """Guarda la miniatura del recorte en un almacén compartido por contenido.
+
+    Los recortes son iguales entre corridas con el mismo detector y el mismo
+    método de fondo (no dependen del embedder ni del filtro): así no se repiten
+    en cada corrida de la ablación. Devuelve la ruta relativa a `results_dir`.
+    """
+    thumb = thumbnail(image, 224)
+    rel = f"recortes/{image_digest(thumb)[:20]}.jpg"
+    path = Path(results_dir) / rel
+    if not path.exists():
+        save_image(thumb, path, quality=85)
+    return rel
 
 
 def compute_retriever_metrics(
@@ -257,7 +272,8 @@ def write_threshold(path: Path, collection: str, calibration: dict[str, Any], ru
         "method": "max F1 (top-1 correcto vs. score) sobre ambientes IKEA",
     }
     header = (
-        "# Umbrales de similitud calibrados por colección (modelo + preprocesamiento).\n"
+        "# Umbrales de similitud calibrados por colección (modelo + preprocesamiento)\n"
+        "# y método de fondo de las consultas.\n"
         "# Los escribe `amoblai eval retriever --calibrate`; editar a mano solo para fijar uno.\n"
     )
     path.write_text(header + yaml.safe_dump(data, allow_unicode=True, sort_keys=True))

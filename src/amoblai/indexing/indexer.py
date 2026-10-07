@@ -39,6 +39,15 @@ def collection_name(cfg: AppConfig) -> str:
     )
 
 
+def threshold_key(cfg: AppConfig) -> str:
+    """Clave del umbral calibrado: colección + cómo se procesan las consultas.
+
+    La distribución de similitudes depende del embedder y también de si a los
+    recortes se les quita el fondo, así que cada combinación tiene su umbral.
+    """
+    return f"{collection_name(cfg)}__fondo-{cfg.background.method}"
+
+
 def open_store(cfg: AppConfig) -> ChromaVectorStore:
     return ChromaVectorStore(cfg.paths.chroma_dir, collection_name(cfg))
 
