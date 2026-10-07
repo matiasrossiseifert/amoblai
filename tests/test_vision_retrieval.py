@@ -9,7 +9,7 @@ from amoblai.retrieval.retriever import Retriever, load_threshold, resolve_thres
 from amoblai.vision.background import clean_mask
 from amoblai.vision.boxes import Box, box_percent, describe_location
 from amoblai.vision.crops import make_crops
-from amoblai.vision.detection import Detection, match_label, nms, postprocess
+from amoblai.vision.detection import Detection, nms, phrase_token_positions, postprocess
 from tests.conftest import ROOM_BOXES, FakeDetector, make_room_image
 
 
@@ -23,12 +23,21 @@ def test_box_geometry():
     assert box_percent(Box(0, 0, 150, 300), 300, 300) == "x 0–50%, y 0–100%"
 
 
-def test_match_label_prefers_longest_phrase():
-    labels = {"table": "table", "coffee table": "table", "chair": "chair", "armchair": "armchair"}
-    assert match_label("coffee table", labels) == ("coffee table", "table")
-    assert match_label("armchair", labels) == ("armchair", "armchair")
-    assert match_label("chair table", labels)[1] in {"chair", "table"}
-    assert match_label("lamp", labels) is None
+class WordTokenizer:
+    """Tokenizador mínimo con offsets: palabras y puntos (como BERT, más [CLS]/[SEP])."""
+
+    def __call__(self, text, return_offsets_mapping=False):
+        import re
+
+        offsets = [(0, 0)] + [m.span() for m in re.finditer(r"\w+|\.", text)] + [(0, 0)]
+        return {"offset_mapping": offsets}
+
+
+def test_phrase_token_positions_separates_chair_and_armchair():
+    text, positions = phrase_token_positions(WordTokenizer(), ["armchair", "chair", "dining chair"])
+    assert text == "armchair. chair. dining chair."
+    # [CLS]=0, armchair=1, .=2, chair=3, .=4, dining=5, chair=6, .=7
+    assert positions == [[1], [3], [5, 6]]
 
 
 def test_nms_and_cross_category_resolution():

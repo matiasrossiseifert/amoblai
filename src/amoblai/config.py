@@ -78,7 +78,6 @@ class DetectionConfig(_Section):
     provider: Literal["grounding_dino", "owlv2"] = "grounding_dino"
     model_id: str | None = None
     box_threshold: float = 0.30
-    text_threshold: float = 0.25
     # NMS dentro de la misma categoría y entre categorías (resuelve "chair" vs "armchair").
     nms_iou: float = 0.5
     cross_category_iou: float = 0.8

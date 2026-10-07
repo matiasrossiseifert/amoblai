@@ -20,7 +20,6 @@ index:
 detection:
   provider: grounding_dino
   box_threshold: 0.30
-  text_threshold: 0.25
 
 background:
   method: sam         # none | sam | rembg
