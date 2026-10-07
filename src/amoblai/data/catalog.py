@@ -101,9 +101,14 @@ class Catalog:
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
 
     @classmethod
-    def load(cls, path: Path, raw_dir: Path) -> Catalog:
+    def load(cls, path: Path, raw_dir: Path, categories: CategoryMap | None = None) -> Catalog:
+        """Carga la ficha; con `categories`, reaplica el mapeo (por si se editó el YAML)."""
         data = json.loads(Path(path).read_text())
-        return cls({sku: Product.model_validate(v) for sku, v in data.items()}, raw_dir)
+        catalog = cls({sku: Product.model_validate(v) for sku, v in data.items()}, raw_dir)
+        if categories is not None:
+            for product in catalog.products.values():
+                product.category = categories.category_of_type(product.type)
+        return catalog
 
     def __len__(self) -> int:
         return len(self.products)

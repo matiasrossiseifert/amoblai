@@ -56,6 +56,20 @@ class ChromaVectorStore:
     def count(self) -> int:
         return self.collection.count()
 
+    @property
+    def metadata(self) -> dict[str, Any]:
+        return dict(self.collection.metadata or {})
+
+    def set_metadata(self, values: dict[str, Any]) -> None:
+        self.collection.modify(metadata={**self.metadata, **values})
+
+    def update_metadatas(self, ids: Sequence[str], metadatas: Sequence[dict[str, Any]]) -> None:
+        """Reemplaza la metadata de vectores existentes sin volver a embeber."""
+        for start in range(0, len(ids), 500):
+            self.collection.update(
+                ids=list(ids[start : start + 500]), metadatas=list(metadatas[start : start + 500])
+            )
+
     def existing_ids(self, ids: Sequence[str]) -> set[str]:
         found: set[str] = set()
         for start in range(0, len(ids), 500):
