@@ -189,3 +189,29 @@ def test_openai_editor_builds_request_and_parses_usage():
     expected = (100 * 5 + 2000 * 8 + 272 * 30) / 1e6
     assert result.usage.cost_usd == pytest.approx(expected, rel=1e-3)
     assert np.asarray(result.image)[100, 150, 2] > 200
+
+
+def test_gemini_editor_parses_image_and_usage():
+    from amoblai.generation.editors.gemini_editor import GeminiImageEditor
+
+    pricing = PricingTable.load(ROOT / "configs" / "pricing.yaml")
+    editor = GeminiImageEditor.__new__(GeminiImageEditor)
+    editor.cfg = EditorConfig(provider="gemini", model="gemini-3.1-flash-image")
+    editor.model, editor.pricing = "gemini-3.1-flash-image", pricing
+    captured = {}
+
+    def generate_content(model, contents, config):
+        captured.update(model=model, contents=contents, config=config)
+        out = Image.new("RGB", (1536, 1024), "green")
+        part = SimpleNamespace(inline_data=SimpleNamespace(data=to_png_bytes(out)))
+        cand = SimpleNamespace(content=SimpleNamespace(parts=[part]), finish_reason="STOP")
+        usage = SimpleNamespace(prompt_token_count=1500, candidates_token_count=1120)
+        return SimpleNamespace(candidates=[cand], usage_metadata=usage)
+
+    editor.client = SimpleNamespace(models=SimpleNamespace(generate_content=generate_content))
+    result = editor.edit(_request(size=(300, 200), mask=True))
+    assert captured["config"].image_config.aspect_ratio == "3:2"
+    assert isinstance(captured["contents"][0], str) and len(captured["contents"]) == 3
+    assert result.image.size == (300, 200)
+    assert result.meta["mask_ignored"]
+    assert result.usage.cost_usd == pytest.approx((1500 * 0.5 + 1120 * 60) / 1e6, rel=1e-3)
