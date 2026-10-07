@@ -49,7 +49,10 @@ def _yaml_value(value: Any) -> str:
     return yaml.safe_dump(value, default_flow_style=True).strip().removesuffix("...").strip()
 
 
-def run_ablation(plan_path: Path, only: list[str] | None = None) -> list[Path]:
+def run_ablation(
+    plan_path: Path, only: list[str] | None = None, calibrate: bool = False
+) -> list[Path]:
+    """Corre el plan. Con `calibrate`, guarda el umbral de cada combinación (solo retriever)."""
     plan = yaml.safe_load(Path(plan_path).read_text())
     kind = plan.get("kind", "retriever")
     if kind not in ("retriever", "e2e"):
@@ -71,7 +74,7 @@ def run_ablation(plan_path: Path, only: list[str] | None = None) -> list[Path]:
         log.info("Ablación %s: %s", name, overrides)
         run = RunContext(cfg, kind, name=cfg.name)
         if kind == "retriever":
-            metrics = run_retriever_eval(cfg, run)
+            metrics = run_retriever_eval(cfg, run, calibrate=calibrate)
         else:
             from amoblai.eval.e2e_eval import run_e2e_eval
 
