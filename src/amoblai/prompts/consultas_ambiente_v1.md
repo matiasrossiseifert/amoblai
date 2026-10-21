@@ -4,7 +4,7 @@ notes: >
   Para evaluar el retrieval por texto con el ground truth del dataset IKEA: el modelo mira una
   foto de ambiente amoblado del catálogo y, por cada mueble del alcance que ve, escribe la
   búsqueda que encontraría ese producto, en las mismas ocho líneas que las descripciones
-  (describe_product_v2) y con un kind de roomrag/kinds.py, igual que el paso plan. Es el
+  (describe_product_v2) y con un kind de catalog/kinds.py, igual que el paso plan. Es el
   equivalente en texto del recorte de la v0 (retrieval por imagen). No ve el catálogo ni las
   anotaciones del ambiente.
 ---

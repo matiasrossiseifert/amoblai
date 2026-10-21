@@ -1,0 +1,18 @@
+# Ablación del retrieval por texto: `uv run amoblai evaluar` (gratis, todo local).
+# Cada método combina embedder, text, filter, store, query y rerank (evaluation/retrieval.py);
+# lo que falta toma el default: text description, filter kind, store chroma, query full.
+name: ablacion-retrieval
+grid:  # producto cartesiano: el camino incremental y la grilla completa
+  embedder: [hashing, bge, qwen3]
+  text: [description, seller]
+  filter: [kind, type, none]
+methods:
+  # el nombre comercial adelante de nuestras descripciones
+  - {embedder: bge, text: name+description}
+  - {embedder: qwen3, text: name+description}
+  # base vectorial: ChromaDB (HNSW) contra la búsqueda exacta con numpy
+  - {embedder: qwen3, filter: type, store: exact}
+  - {embedder: qwen3, filter: kind, store: exact}
+  # query rewriting (pre-retrieval): las ocho líneas contra solo la línea Type y solo el kind
+  - {embedder: qwen3, filter: type, query: type}
+  - {embedder: qwen3, filter: type, query: kind}

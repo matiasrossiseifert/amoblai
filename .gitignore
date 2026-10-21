@@ -3,12 +3,19 @@
 .env.*
 !.env.example
 
-# Datos descargados, índices y cachés locales (se regeneran con la CLI)
-/data/
+# Dataset descargado, lo procesado desde él y cachés (descripciones, vectores, ChromaDB):
+# se regeneran con la CLI
+/datos/dataset/
+/datos/procesados/
+/datos/cache/
 
-# Material de la materia (no se redistribuye)
-docs/consigna.pdf
-docs/clases/
+# Fotos del dataset IKEA dentro de las corridas: las copias que arma el generador manual y las
+# hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
+/datos/resultados/amoblar/*/manual/[0-9]_product_*
+/datos/resultados/amoblar/**/2_candidates*.jpg
+
+# Documentación, consigna y material de la materia: solo local
+/docs/
 
 # Python / herramientas
 .venv/
@@ -35,8 +42,3 @@ flagged/
 
 # Temporales de escritura atómica
 *.tmp
-
-# Fotos del dataset IKEA dentro de las corridas: las copias que arma el generador manual y las
-# hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
-resultados/amoblar/*/manual/[0-9]_product_*
-resultados/amoblar/**/2_candidates*.jpg

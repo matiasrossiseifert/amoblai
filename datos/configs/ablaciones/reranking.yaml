@@ -1,0 +1,7 @@
+# Post-retrieval: un VLM reordena el top-10 de la búsqueda mirando las fotos de los candidatos.
+# Paga (Claude Haiku 5.5, evaluation.rerankers en amoblai.yaml): `uv run amoblai evaluar
+# --ablacion datos/configs/ablaciones/reranking.yaml --pagar`. Las respuestas quedan en caché.
+name: ablacion-reranking
+methods:
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: type, rerank: haiku}

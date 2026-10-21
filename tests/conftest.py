@@ -1,4 +1,4 @@
-"""Fixtures: un dataset IKEA sintético y un catálogo de roomrag armado con él (sin red)."""
+"""Fixtures: un dataset IKEA sintético y el catálogo armado con él (sin red)."""
 
 from __future__ import annotations
 
@@ -8,7 +8,8 @@ from pathlib import Path
 
 import pytest
 from PIL import Image, ImageDraw
-from roomrag.config import Config, RagConfig
+
+from amoblai.config import Config, RagConfig
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOM_ID = "ikea-living-test__1-s4.jpg"
@@ -107,12 +108,12 @@ def dataset_root(tmp_path: Path) -> Path:
 
 @pytest.fixture
 def catalog_dir(tmp_path: Path, dataset_root: Path) -> Path:
-    """El catálogo de roomrag armado como lo arma `amoblai catalogo`, con descripciones falsas."""
-    from amoblai.catalogo_ikea import build_catalog_items, write_catalog_files
+    """El catálogo armado como lo arma `amoblai catalogo`, con descripciones falsas."""
+    from amoblai.catalog.ikea import build_catalog_items, write_catalog_files
 
     out = tmp_path / "catalogo"
     items = build_catalog_items(
-        dataset_root, ROOT / "configs" / "categories.yaml", out / "items.jsonl"
+        dataset_root, ROOT / "datos" / "configs" / "categories.yaml", out / "items.jsonl"
     )
     lots = out / "descripciones"
     lots.mkdir(parents=True)
@@ -177,7 +178,7 @@ def cfg(tmp_path: Path, catalog_dir: Path) -> Config:
             "generators": {
                 "manual": {"kind": "manual"},
                 "nano_banana_2": {
-                    "kind": "amoblai.generacion:FalNanoBanana",
+                    "kind": "amoblai.furnish.image_models:FalNanoBanana",
                     "usd_per_image": {"1K": 0.08},
                     "poll_s": 0,
                 },

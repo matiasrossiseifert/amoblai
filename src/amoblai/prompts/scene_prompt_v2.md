@@ -1,8 +1,8 @@
 ---
 version: scene_prompt_v2
 notes: >
-  The scene step, second version (roomrag's is scene_prompt_v1). The first image of the TP
-  (resultados/amoblar/prueba-alvear2) showed two problems. The image model put the whole group
+  The scene step, second version (after scene_prompt_v1). The first image of the TP
+  (datos/resultados/amoblar/prueba-alvear2) showed two problems. The image model put the whole group
   near the camera, though the prompt said "midway down the room", leaving the back of a long
   room empty. And the products looked pasted in: lit like the catalog photos (studio shots on
   white, many of them renders), not like the room, which is lit from the balcony at the back.
