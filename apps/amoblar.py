@@ -130,14 +130,17 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
     )
 
 
-def go(photo, request, generator, use_claude, pay_image, state):
+def go(photo, view, request, generator, use_claude, pay_image, state):
     if photo is None or not (request or "").strip():
         raise gr.Error("Subí la foto del ambiente y escribí el pedido.")
     out = ROOT / "resultados" / "amoblar" / f"app-{time.strftime('%Y%m%d-%H%M%S')}"
     out.mkdir(parents=True)
     src = out / "entrada.jpg"
     Image.fromarray(photo).convert("RGB").save(src, quality=95)
-    state = {"out": str(out), "photo": str(src), "request": request.strip()}
+    state = {"out": str(out), "photo": str(src), "request": request.strip(), "views": []}
+    if view is not None:
+        Image.fromarray(view).convert("RGB").save(out / "entrada_2.jpg", quality=95)
+        state["views"] = [str(out / "entrada_2.jpg")]
     return advance(state, generator, use_claude, pay_image)
 
 
@@ -145,7 +148,9 @@ def advance(state, generator, use_claude, pay_image):
     cfg = config(generator, use_claude, pay_image)
     out, log = Path(state["out"]), []
     try:
-        run_flow(state["photo"], state["request"], cfg, out, log=log.append)
+        run_flow(
+            state["photo"], state["request"], cfg, out, log=log.append, views=state.get("views", [])
+        )
     except Exception as e:
         log.append(f"ERROR: {type(e).__name__}: {e}")
     return (*render(out, cfg, log), state)
@@ -174,7 +179,14 @@ def build() -> gr.Blocks:
         state = gr.State({})
         with gr.Row():
             photo = gr.Image(
-                label="Foto del ambiente", type="numpy", sources=["upload", "clipboard"]
+                label="Foto del ambiente (la que se amobla)",
+                type="numpy",
+                sources=["upload", "clipboard"],
+            )
+            view = gr.Image(
+                label="Otra foto del mismo ambiente (opcional, solo para entender el espacio)",
+                type="numpy",
+                sources=["upload", "clipboard"],
             )
             with gr.Column():
                 request = gr.Textbox(
@@ -219,7 +231,7 @@ def build() -> gr.Blocks:
             result = gr.Image(label="Subí la imagen que generaste", type="numpy")
             send = gr.Button("Listo, seguir")
         outs = [status, pieces, sheets, shopping, prompt, final, manual_box, manual_imgs, state]
-        run_btn.click(go, [photo, request, generator, use_claude, pay_image, state], outs)
+        run_btn.click(go, [photo, view, request, generator, use_claude, pay_image, state], outs)
         cont_btn.click(continue_run, [generator, use_claude, pay_image, state], outs)
         send.click(upload_result, [result, generator, use_claude, pay_image, state], outs)
     return demo

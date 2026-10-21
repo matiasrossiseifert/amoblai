@@ -137,15 +137,21 @@ def amoblar(
     nombre: Annotated[
         str | None, typer.Option(help="Nombre de la corrida (default: nombre de la foto).")
     ] = None,
+    vista: Annotated[
+        list[Path] | None,
+        typer.Option(help="Otra foto del mismo ambiente, solo para entenderlo (repetible)."),
+    ] = None,
     config: ConfigOpt = CONFIG,
     overrides: SetOpt = None,
 ) -> None:
-    """El flujo completo (plan → retrieve → choose → scene → generate); se retoma donde quedó."""
+    """El flujo completo (plan → retrieve → choose → scene → generate); se retoma donde quedó.
+
+    Las --vista van a Claude junto con la foto; el modelo de imagen amobla solo la foto."""
     from roomrag.flow import run_flow
 
     cfg = cfg_for(config, [*(overrides or []), f"furnish.generator={generador}"], paid=pagar)
     out = Path(cfg.runs_dir) / (nombre or foto.stem)
-    run_flow(foto, pedido, cfg, out, log=console.print)
+    run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
     console.print(f"Corrida: {out}")
 
 

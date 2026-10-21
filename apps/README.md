@@ -4,7 +4,8 @@
 uv run --group apps python apps/amoblar.py      # http://127.0.0.1:7860
 ```
 
-Foto del ambiente + pedido → cada paso del flujo, a medida que se hace:
+Foto del ambiente (y, opcional, otra foto del mismo ambiente desde otro ángulo, que solo ve
+Claude) + pedido → cada paso del flujo, a medida que se hace:
 
 1. **plan** (Claude): cómo leyó el ambiente y las piezas, con su kind, sus límites y su consulta.
 2. **retrieve**: los candidatos del catálogo de cada pieza (las mismas hojas que ve Claude).
