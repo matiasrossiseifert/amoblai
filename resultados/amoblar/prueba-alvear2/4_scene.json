@@ -1,0 +1,50 @@
+{
+  "answer": {
+    "prompt": "Image 1 is the room to edit. Images 2 to 5 are each one product to add. Keep image 1 exactly as it is: same framing, camera, white walls, wood plank floor, balcony door, doorway on the right, and daylight. Only add the products.\n\nImage 2 (sofa): place it against the long left wall, midway between the front opening and the balcony door, facing the right wall. It is about as long as the rug and reaches less than halfway up the wall.\n\nImage 3 (armchair): place it on the right side of the room near the balcony door, angled toward the sofa. It is smaller than the sofa, and its back is about as high as the bottom third of the door.\n\nImage 4 (rug, 180 cm wide, 224 cm deep): lay it flat in the middle of the floor in front of the sofa, with its long side running down the room. It covers about half the floor's width, and the front edges of the sofa and armchair rest on it.\n\nImage 5 (round coffee table): place it on the rug in front of the sofa. It is low, about knee height, and about half the sofa's length across.\n\nReproduce each product exactly as in its photo: same shape, proportions, colors, materials and details, not a similar one. Give each product the soft shadows and window light this room would cast. The result must look like a real photograph, not a render.",
+    "placements": [
+      {
+        "id": "691.249.46",
+        "where": "against left wall, midway, facing right"
+      },
+      {
+        "id": "391.505.88",
+        "where": "right side near balcony door, angled to sofa"
+      },
+      {
+        "id": "002.852.58",
+        "where": "center floor in front of sofa"
+      },
+      {
+        "id": "302.397.12",
+        "where": "on rug in front of sofa"
+      }
+    ]
+  },
+  "model": "claude-opus-5-5",
+  "cost_usd": 0.032292,
+  "prompt": "scene_prompt_v1",
+  "meta": {
+    "status": "completed",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 4013,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 812,
+      "output_tokens_details": {
+        "thinking_tokens": 250
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "images": 6,
+    "latency_s": 9.26
+  },
+  "text": "{\"prompt\": \"Image 1 is the room to edit. Images 2 to 5 are each one product to add. Keep image 1 exactly as it is: same framing, camera, white walls, wood plank floor, balcony door, doorway on the right, and daylight. Only add the products.\\n\\nImage 2 (sofa): place it against the long left wall, midway between the front opening and the balcony door, facing the right wall. It is about as long as the rug and reaches less than halfway up the wall.\\n\\nImage 3 (armchair): place it on the right side of the room near the balcony door, angled toward the sofa. It is smaller than the sofa, and its back is about as high as the bottom third of the door.\\n\\nImage 4 (rug, 180 cm wide, 224 cm deep): lay it flat in the middle of the floor in front of the sofa, with its long side running down the room. It covers about half the floor's width, and the front edges of the sofa and armchair rest on it.\\n\\nImage 5 (round coffee table): place it on the rug in front of the sofa. It is low, about knee height, and about half the sofa's length across.\\n\\nReproduce each product exactly as in its photo: same shape, proportions, colors, materials and details, not a similar one. Give each product the soft shadows and window light this room would cast. The result must look like a real photograph, not a render.\", \"placements\": [{\"id\": \"691.249.46\", \"where\": \"against left wall, midway, facing right\"}, {\"id\": \"391.505.88\", \"where\": \"right side near balcony door, angled to sofa\"}, {\"id\": \"002.852.58\", \"where\": \"center floor in front of sofa\"}, {\"id\": \"302.397.12\", \"where\": \"on rug in front of sofa\"}]}",
+  "views": 1
+}
