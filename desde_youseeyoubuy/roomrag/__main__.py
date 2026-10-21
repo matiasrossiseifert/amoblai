@@ -2,7 +2,8 @@
 
 build                       describe and embed the catalog (only what the cache lacks)
 search "<query>" [-k N]     the nearest products, no filters (try the index)
-run <photo> "<request>"     the whole flow into <runs_dir>/<name> (resumes if it exists)
+run <photo> "<request>"     the whole flow into <runs_dir>/<name> (resumes if it exists);
+                            --view <photo>: another photo of the same room (repeatable)
 """
 
 from __future__ import annotations
@@ -21,6 +22,7 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--set", action="append", default=[], dest="sets")
     ap.add_argument("-k", type=int, default=None)
     ap.add_argument("--name", default=None, help="run folder name (run)")
+    ap.add_argument("--view", action="append", default=[], dest="views", help="run: other photo")
     a = ap.parse_args(argv)
     over: dict = {}
     for s in a.sets:
@@ -48,7 +50,7 @@ def main(argv: list[str] | None = None) -> None:
 
         photo, request = a.args
         out = Path(cfg.runs_dir) / (a.name or Path(photo).stem)
-        run_flow(photo, request, cfg, out)
+        run_flow(photo, request, cfg, out, views=a.views)
         print(out)
 
 

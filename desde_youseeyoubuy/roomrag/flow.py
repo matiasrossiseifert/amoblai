@@ -3,6 +3,7 @@ order. Each step writes its file; a step whose file exists is not done again (no
 twice), so a run resumes where it stopped.
 
     room.jpg, request.json
+    room_2.jpg ...      other photos of the same room (views), for the LLM only
     1_searches.json     plan: the room as the LLM read it, the pieces and their searches
     2_candidates.json   retrieve: each piece's candidates (+ 2_candidates*.jpg, numbered)
     3_choice.json       choose: one product per piece, and why
@@ -18,7 +19,7 @@ resumed); one with `rerun` is not saved, so the step runs every time (it keeps i
 from __future__ import annotations
 
 import json
-from collections.abc import Callable
+from collections.abc import Callable, Sequence
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -43,6 +44,11 @@ class Run:
     def room(self) -> Path:
         return self.out / "room.jpg"
 
+    @property
+    def views(self) -> list[Path]:
+        """The other photos of the room (room_2.jpg, room_3.jpg...), in order."""
+        return sorted(self.out.glob("room_*.jpg"), key=lambda p: int(p.stem.split("_")[1]))
+
     def pieces(self) -> list[dict]:
         return self.data["plan"]["answer"]["pieces"][: self.cfg.furnish.max_pieces]
 
@@ -57,7 +63,7 @@ class Run:
 
 
 def _plan(run: Run) -> dict:
-    rec = st.plan(run.cfg, run.room, run.request)
+    rec = st.plan(run.cfg, run.room, run.request, run.views)
     run.log(f"pieces: {[p['piece'] for p in rec['answer']['pieces']]}")
     return rec
 
@@ -70,7 +76,7 @@ def _retrieve(run: Run) -> dict:
 
 
 def _choose(run: Run) -> dict:
-    rec = st.choose(run.cfg, run.room, run.request, run.candidates())
+    rec = st.choose(run.cfg, run.room, run.request, run.candidates(), run.views)
     for c in rec["answer"]["choices"]:
         run.log(f"chosen: {c['id']}: {c.get('why')}")
     return rec
@@ -79,9 +85,8 @@ def _choose(run: Run) -> dict:
 def _scene(run: Run) -> dict:
     pieces = [p for p, _ in run.candidates()]
     room = run.data["plan"]["answer"].get("room", "")
-    return st.scene(
-        run.cfg, run.room, run.request, room, list(zip(pieces, run.chosen(), strict=True))
-    )
+    picks = list(zip(pieces, run.chosen(), strict=True))
+    return st.scene(run.cfg, run.room, run.request, room, picks, run.views)
 
 
 def _generate(run: Run) -> dict:
@@ -116,17 +121,23 @@ def run_flow(
     out: Path,
     log: Callable[[str], None] = print,
     extras: dict | None = None,
+    views: Sequence[str | Path] = (),
 ) -> Run:
-    """Runs (or resumes) every step; stops after a step that is `pending`."""
+    """Runs (or resumes) every step; stops after a step that is `pending`. `views`: other photos
+    of the same room, from other angles, for the LLM to understand it (the image model gets
+    `photo` alone)."""
     out.mkdir(parents=True, exist_ok=True)
     run = Run(cfg, out, request, log, extras or {})
-    if not run.room.exists():
-        im = ImageOps.exif_transpose(Image.open(photo)).convert("RGB")
-        im.save(run.room, quality=92)
+    copies = {run.room: photo, **{out / f"room_{i}.jpg": v for i, v in enumerate(views, 2)}}
+    for dst, src in copies.items():
+        if not dst.exists():
+            im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
+            im.save(dst, quality=92)
+    info = {"photo": str(photo), "request": request}
+    if views:
+        info["views"] = [str(v) for v in views]
     (out / "request.json").write_text(
-        json.dumps(
-            {"photo": str(photo), "request": request, **(extras or {}).get("request_info", {})}
-        )
+        json.dumps({**info, **(extras or {}).get("request_info", {})})
     )
     for name in cfg.furnish.steps:
         key, file, fn = step_for(name)
