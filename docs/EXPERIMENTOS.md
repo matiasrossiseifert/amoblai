@@ -137,6 +137,14 @@ devuelve el costo). Lo que se ve:
 - Las sombras de contacto son suaves y creíbles; la escala relativa entre los muebles y el
   ambiente es razonable a ojo (sin medidas no se puede verificar).
 
+**Cómo la vimos nosotros**: los productos se ven pegados ("falsos") y la disposición no tiene
+sentido en un living tan largo: cuatro muebles juntos adelante y todo el fondo vacío; iban más
+atrás, y el ambiente pide más muebles (una biblioteca, por ejemplo). Lo primero es del modelo de
+imagen y del prompt, no del plan: el plan y el prompt pedían el sofá a mitad del living. Lo
+segundo es del pedido (cuatro piezas) y del alcance del catálogo. El prompt de scene v2
+(`src/amoblai/prompts/scene_prompt_v2.md`, corrida `prueba-alvear2-scene-v2`, US$0,04) ataca la
+ubicación y la luz; su imagen está pendiente. Ver FUTURO.md.
+
 **Lo que mostró la prueba** (y se arregló antes de generar):
 1. **Medidas que no llegaban al LLM.** roomrag solo pasaba la medida de un candidato si tenía
    ancho, profundidad y alto; las alfombras y las mesas del dataset tienen ancho y profundidad.
