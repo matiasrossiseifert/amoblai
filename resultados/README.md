@@ -1,21 +1,12 @@
 # Resultados
 
-Todo lo que producen las corridas. El repo es privado, así que se commitea para
-compartirlo en el equipo y entre máquinas.
+Todo lo que producen las corridas. El repo es privado: se commitea para compartirlo.
 
 | Carpeta / archivo | Contenido |
 |---|---|
-| `corridas/<fecha>_<tipo>_<nombre>/` | Una carpeta por corrida: `config.yaml` (config resuelta), `manifest.json` (commit de git, versiones, máquina), `metrics.json`, `usage.jsonl` y los artefactos. |
-| `generaciones/<proveedor>/<hash>/` | Caché de imágenes generadas (API o a mano): `image.png` + `meta.json` con prompt, modelo, tokens y USD. El hash depende de las entradas y la config: repetir una corrida no vuelve a pagar. Las del editor manual incluyen además las entradas, `prompt.txt`, `INSTRUCCIONES.md` y `meta.yaml` (app usada). |
-| `gastos.jsonl` | Una línea por llamada paga (tokens y USD). Lo usa `budget.max_usd_total`. |
-| `reporte/` | Tablas (`.md`, `.csv`) y gráficos comparativos: `uv run amoblai report`. |
-| `mapeo_categorias.md` | Mapeo `type` del dataset → categorías del alcance, con conteos. |
-
-Tipos de corrida: `retriever` (evaluación sobre IKEA), `strict` (set
-etiquetado), `e2e` (ambientes vacíos, con una subcarpeta por ambiente), `run`
-(CLI) y `app` (webapps).
-
-Artefactos de una corrida del pipeline: `00_original.jpg`, `01_imagen1.jpg`,
-`02_detecciones.jpg`, `03_recortes/` (crudo y consulta), `05_mascara.png`,
-`05_pasos/` (modo un mueble por llamada), `06_final.jpg`, `lista_compra.json`,
-`resultado.json` (candidatos y similitudes de cada mueble) y los prompts usados.
+| `amoblar/<nombre>/` | Una corrida del flujo: `room.jpg`, `request.json`, `1_searches.json` (plan), `2_candidates.json` y `2_candidates*.jpg` (retrieve), `3_choice.json` (choose), `4_scene.json` (scene), `5_image.json` y `final.png` (generate), y `manual/` si la imagen se hace a mano. Cada archivo trae el modelo, el prompt y el costo de su paso. |
+| `evaluacion/<fecha>_<nombre>/` | Una evaluación del retrieval por texto: `corrida.json` (índice, embedders, commit), `metricas.json` (por método) y `rankings.jsonl` (el top-10 de cada consulta). |
+| `reporte/` | Tablas y gráficos de las evaluaciones: `uv run amoblai reporte`. |
+| `gastos.jsonl` | Una línea por llamada paga (cuenta, modelo, US$). Lo usan los topes de `configs/amoblai.yaml`; `uv run amoblai gastos` lo resume. |
+| `mapeo_categorias.md` | El mapeo `type` de IKEA → categorías del alcance, con conteos. |
+| `v0_imagen/` | Todo lo de la v0 (retrieval por imagen): corridas, recortes y reporte. |

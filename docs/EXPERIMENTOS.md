@@ -1,9 +1,124 @@
 # Registro de experimentos
 
-Registro continuo: cada experimento con su configuración, los resultados y lo
-que se aprendió. Las corridas completas (config resuelta, commit, métricas,
-artefactos) están en `resultados/corridas/`; las tablas comparativas se generan
-con `uv run amoblai report` en `resultados/reporte/`.
+Registro continuo: cada experimento con su configuración, los resultados y lo que se aprendió.
+
+- **v1 (actual): RAG por texto** con roomrag. Evaluaciones en `resultados/evaluacion/`, corridas
+  del flujo en `resultados/amoblar/`, reporte en `resultados/reporte/` (`uv run amoblai reporte`).
+- **v0 (deprecada): retrieval por imagen.** Sus corridas están en `resultados/v0_imagen/` y su
+  código en `deprecated/`. Se conserva abajo porque es la línea de base de la v1 (mismo ground
+  truth) y la historia de cómo se llegó al diseño actual.
+
+# v1: RAG por texto
+
+## Metodología del retrieval
+
+- **Datos**: los mismos 65 ambientes de IKEA (livings y comedores con productos anotados del
+  catálogo) que la v0. El catálogo son los 275 productos del alcance, cada uno con su
+  descripción de ocho líneas (`catalogo/descripciones.jsonl`).
+- **Consultas** (`evaluacion/ikea/consultas.json`, prompt `consultas_ambiente_v1`): subagentes
+  de Claude Code miraron cada foto, sin ver el catálogo ni las anotaciones, y escribieron una
+  consulta por mueble del alcance que se ve (228 en total), en las mismas ocho líneas y con su
+  kind, como lo hace el paso `plan`. Es el equivalente en texto del recorte de la v0: mide el
+  retrieval aislado, con consultas fijas para todos los métodos.
+- **Relevantes de una consulta**: los SKUs anotados en ese ambiente de la misma categoría del TP
+  (sofá, sillón, silla, mesa, alfombra) que su kind; 207 consultas tienen al menos uno. Es la
+  misma definición permisiva que en la v0 (las anotaciones no dicen dónde está cada producto).
+- **Métricas**: hit@k (1, 3, 5, 10), MRR@10, recall por ítem anotado, baseline aleatorio sobre
+  lo que deja pasar el filtro, IC 95% por bootstrap de ambientes (1000 remuestreos).
+- **Métodos**: embedder (hashing de palabras, BGE-base, Qwen3-Embedding-0.6B; locales) × texto
+  del producto (nuestras ocho líneas, el texto del vendedor, el nombre comercial adelante) ×
+  filtro (kind, tipo grueso, ninguno).
+- Comando: `uv run amoblai evaluar` (todo local y gratis; los vectores quedan en caché).
+
+## T1: ablación del retrieval por texto
+
+Corrida `resultados/evaluacion/20261021-133226_ablacion-texto` (CPU).
+
+| Embedder | Texto | Filtro | hit@1 [IC 95%] | hit@3 | hit@10 | MRR@10 | recall ítem@10 |
+|---|---|---|---|---|---|---|---|
+| hashing | vendedor | ninguno | 0,145 [0,09–0,20] | 0,213 | 0,440 | 0,208 | 0,417 |
+| hashing | vendedor | kind | 0,193 [0,13–0,27] | 0,329 | 0,696 | 0,314 | 0,653 |
+| hashing | descripción | ninguno | 0,560 [0,49–0,63] | 0,787 | 0,927 | 0,692 | 0,880 |
+| hashing | descripción | tipo | 0,560 [0,49–0,63] | 0,802 | 0,932 | 0,696 | 0,880 |
+| hashing | descripción | kind | 0,546 [0,48–0,61] | 0,754 | 0,894 | 0,670 | 0,843 |
+| BGE | vendedor | kind | 0,237 [0,17–0,30] | 0,411 | 0,647 | 0,348 | 0,620 |
+| BGE | descripción | tipo | 0,502 [0,44–0,56] | 0,734 | 0,918 | 0,634 | 0,893 |
+| BGE | descripción | kind | 0,498 [0,43–0,56] | 0,710 | 0,894 | 0,620 | 0,852 |
+| BGE | nombre + descripción | kind | 0,459 [0,40–0,52] | 0,671 | 0,850 | 0,581 | 0,815 |
+| Qwen3 | vendedor | kind | 0,208 [0,16–0,27] | 0,387 | 0,657 | 0,328 | 0,625 |
+| **Qwen3** | **descripción** | **tipo** | **0,618 [0,56–0,68]** | **0,802** | 0,908 | **0,717** | 0,889 |
+| Qwen3 | descripción | kind | 0,599 [0,54–0,66] | 0,763 | 0,874 | 0,690 | 0,833 |
+| Qwen3 | nombre + descripción | kind | 0,483 [0,42–0,54] | 0,720 | 0,841 | 0,603 | 0,801 |
+
+(Tabla completa con todas las combinaciones en `resultados/reporte/retrieval_texto.md`.)
+Azar con filtro por tipo: hit@1 0,020, hit@10 0,189, MRR@10 0,056.
+
+**Camino incremental** (para la presentación, `resultados/reporte/camino_texto.png`):
+T0 naive (hashing, texto del vendedor, sin filtro) 0,145 → T1 + nuestras descripciones 0,560 →
+T2 + filtro por tipo 0,560 → T3 Qwen3-Embedding **0,618** (hit@1).
+
+**Lecturas**:
+- **Lo que más pesa son las descripciones propias**: con cualquier embedder, hit@1 pasa de
+  0,15-0,24 (texto del vendedor) a 0,50-0,62. La frase de marketing de IKEA no describe el
+  mueble; las ocho líneas sí, y en el mismo formato que la consulta.
+- **El nombre comercial adelante empeora** (0,60 → 0,48 con Qwen3): agrega tokens que la consulta
+  no tiene. Coincide con lo que midió YouSeeYouBuy.
+- **Los filtros ayudan mucho con el texto del vendedor y casi nada con nuestras descripciones**,
+  que ya dicen qué es cada cosa en la línea Type. El filtro por **kind** resta un poco frente al
+  filtro por **tipo** (0,599 vs. 0,618 con Qwen3; los IC se solapan): cuando la consulta y el
+  producto discrepan en el kind fino ("side table" vs. "coffee table"), el filtro deja afuera al
+  producto correcto. El flujo usa el kind (lo decide el plan); es un candidato para iterar.
+- **Qwen3-Embedding es el mejor embedder**; BGE queda por debajo del hashing de palabras en hit@1.
+  Ojo con el hashing: consultas y descripciones las escribió la misma familia de modelos con el
+  mismo formato y vocabulario, lo que favorece el solapamiento de palabras. En el flujo real
+  pasa lo mismo (el plan también es Claude), así que no es un sesgo de la evaluación sola.
+- **Por categoría** (Qwen3, filtro por tipo, hit@1): silla 0,86 (44 consultas), sillón 0,72 (18),
+  mesa 0,68 (68), sofá 0,63 (24), alfombra 0,30 (53). Las alfombras son lo más difícil: hay 94
+  en el catálogo, muchas parecidas, y en las fotos quedan tapadas por los muebles.
+- **Fotos repetidas**: varios SKUs comparten la misma foto en el dataset (distintas medidas del
+  mismo modelo). Sus descripciones son casi iguales, así que el retrieval no puede separarlos;
+  la métrica permisiva lo compensa en parte.
+
+## T1 contra la v0 (mismo ground truth)
+
+| | unidad | hit@1 | hit@10 | MRR@10 |
+|---|---|---|---|---|
+| v0 imagen: DINOv3, recorte con fondo, filtro por categoría | 325 recortes | 0,508 [0,44–0,57] | 0,819 | 0,603 |
+| v1 texto: Qwen3, descripción, filtro por tipo | 207 consultas | **0,618 [0,56–0,68]** | **0,908** | **0,717** |
+
+Las unidades no son idénticas (un recorte por detección contra una consulta por producto visto),
+pero el ground truth y la definición de relevante sí. Además la v1 no necesita generar una
+primera imagen: el costo por corrida baja a la de una sola generación.
+
+## T2: prueba del flujo completo
+
+Corrida `resultados/amoblar/prueba-living-commons` (foto `ambientes_vacios/living_commons_01.jpg`,
+Wikimedia Commons, CC BY-SA 3.0). Pedido: "un living nórdico y cálido: un sofá, un sillón para
+leer, una mesa ratona y una alfombra".
+
+- **plan** (Claude Opus 5.5): leyó el ambiente ("piso de tablas muy oscuro, pared de ladrillo,
+  paredes beige, tres ventanas con persianas blancas") y pidió 4 piezas con sus límites de tamaño
+  (el sillón hasta 90 x 95 cm, la mesa hasta 120 cm, la alfombra hasta 300 x 250 cm).
+- **retrieve**: 3 candidatos por pieza, todos del kind pedido.
+- **choose**: sofá blanco de brazos rectos con patas de abedul, sillón de cuero coñac curvado,
+  mesa ratona de fresno claro y alfombra crema de pelo largo: "blanco, madera clara y crema dan una
+  base nórdica luminosa contra el piso oscuro y el ladrillo; el cuero y la alfombra suman calidez".
+- **scene**: un prompt que ubica cada producto por lo que se ve (de espaldas a la puerta, mirando
+  a la pared de ladrillo; el sillón junto a la ventana de la pared beige) y da proporciones
+  relativas (el sofá, el doble de ancho que una ventana).
+- **Costo**: plan US$0,043 + choose US$0,041 + scene US$0,037 = **US$0,12** (Claude).
+- **generate**: *pendiente* (la imagen por fal, US$0,08, espera aprobación).
+
+## Pendientes de la v1
+
+- Evaluación de punta a punta sobre ambientes vacíos: re-identificación del producto en la imagen
+  final, preservación del ambiente, cobertura (piezas con producto), costo y latencia.
+- Evaluación con calificaciones (2/1/0) del top-3 para pedidos reales, como en YouSeeYouBuy
+  (`roomrag/evaluate.py`): mide la relevancia para el pedido, no solo encontrar el SKU anotado.
+- Ejercicio 4 (iteración): candidatos en `FUTURO.md` (filtro por tipo en vez de kind, consultas
+  de estilo sin kind, dos fotos del ambiente).
+
+# v0: retrieval por imagen (deprecada)
 
 ## Metodología
 
@@ -26,7 +141,7 @@ con `uv run amoblai report` en `resultados/reporte/`.
   dentro del mismo universo de búsqueda); IC 95% por bootstrap de ambientes
   (1000 remuestreos), porque los recortes de un ambiente no son independientes.
 - **Versión estricta**: recortes etiquetados a mano con su SKU exacto
-  (`anotaciones/estricto.jsonl`, herramienta `apps/etiquetado.py`). *Pendiente
+  (`deprecated/anotaciones/estricto.jsonl`, herramienta `deprecated/apps/etiquetado.py`). *Pendiente
   de etiquetar.*
 - **Umbral**: se calibra por colección maximizando F1 de "aceptar ⇔ el top-1 es
   correcto" (los recortes sin respuesta posible cuentan como negativos).
@@ -48,7 +163,7 @@ Detector Grounding DINO tiny, SAM ViT-B, embedders en su variante base.
 ## R1 — Línea de base: DINOv2 + SAM + filtro por categoría (detector v1)
 
 - **Corrida**: `20261006-203639_retriever_base-dinov2`
-- **Config**: `configs/base.yaml` (DINOv2 base, fondo quitado con SAM, filtro por
+- **Config**: `deprecated/configs/base.yaml` (DINOv2 base, fondo quitado con SAM, filtro por
   categoría, Grounding DINO con el post-procesamiento estándar de transformers).
 
 | | hit@1 | hit@5 | hit@10 | MRR@10 |
@@ -101,12 +216,12 @@ media del top-1: 0,638 cuando es correcto, 0,481 cuando no.
 
 ## R3 — Ablación del retriever
 
-- **Plan**: `configs/ablaciones/retriever.yaml` — grilla completa embedder (CLIP,
+- **Plan**: `deprecated/configs/ablaciones/retriever.yaml` — grilla completa embedder (CLIP,
   SigLIP 2, DINOv2, DINOv3) × quitar fondo (SAM / no) × filtro por categoría
   (sí / no), más el camino incremental E0 → E4. Mismo detector (v2) y mismos 65
   ambientes en todas las corridas; 325 recortes con respuesta posible en cada una.
-- **Corridas**: `resultados/corridas/*_retriever_abl-retriever-*`; tablas y
-  gráficos en `resultados/reporte/`. DINOv3 se sumó cuando llegó el acceso
+- **Corridas**: `resultados/v0_imagen/corridas/*_retriever_abl-retriever-*`; tablas y
+  gráficos en `resultados/v0_imagen/reporte/`. DINOv3 se sumó cuando llegó el acceso
   (mismo día, mismas detecciones y máscaras en caché).
 
 ### Camino incremental (para la presentación)
@@ -155,10 +270,10 @@ Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
 - Lo más difícil sigue siendo alfombras y sofás (oclusión y perspectiva).
 - **Umbral**: SigLIP 2 comprime las similitudes (top-1 correcto 0,82 vs.
   incorrecto 0,77), así que su umbral (0,81) separa peor. Los umbrales
-  calibrados están en `configs/umbrales.yaml`, por colección, método de fondo y
+  calibrados están en `deprecated/configs/umbrales.yaml`, por colección, método de fondo y
   filtro.
 
-## Pendientes
+## Pendientes que quedaron de la v0
 
 - Repetir la grilla en la RTX 3070 (debería dar lo mismo salvo diferencias
   numéricas de fp16).

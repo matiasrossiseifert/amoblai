@@ -1,0 +1,33 @@
+---
+version: consultas_ambiente_v1
+notes: >
+  Para evaluar el retrieval por texto con el ground truth del dataset IKEA: el modelo mira una
+  foto de ambiente amoblado del catálogo y, por cada mueble del alcance que ve, escribe la
+  búsqueda que encontraría ese producto, en las mismas ocho líneas que las descripciones
+  (describe_product_v2) y con un kind de roomrag/kinds.py, igual que el paso plan. Es el
+  equivalente en texto del recorte de la v0 (retrieval por imagen). No ve el catálogo ni las
+  anotaciones del ambiente.
+---
+Image 1 is a photo of a furnished room from a furniture store's catalog. Every piece of furniture in it is a product the store sells.
+
+For each piece you can see that is a sofa, an armchair, a chair, a table or a rug, write the search that would find that exact product in the store's catalog. Describe the piece as it is in the photo: what it is, its shape, materials, colors and the details that make it recognizable.
+- One entry per distinct product: several identical chairs are one entry; two different chairs are two.
+- Leave out a piece when less than half of it is visible.
+- Leave out everything else: shelves, beds, lamps, cushions, plants, decoration.
+
+Answer with JSON only:
+- "room": one sentence, the room as you read it (what it is, its style and palette).
+- "pieces", for each piece:
+  - "piece": what it is and where it is in the photo, in a few words.
+  - "kinds": the one kind of the piece, from this list:
+{kinds}
+  - "query": the product in these eight lines, in this order. English, short phrases separated by commas, no full sentences, no brand, no measurements, nothing about what it is not. The Type line starts with the kind.
+
+Type: the kind, then what it is, two to six words
+Use: what it is for, then the rooms it belongs in
+Style: one to three of: Scandinavian, mid-century modern, minimalist, Japandi, industrial, rustic, farmhouse, bohemian, coastal, traditional, classic, art deco, glam, retro, contemporary, modern
+Materials: the main materials and finishes you see
+Colors: the main color first, then the others, in plain names
+Shape: silhouette and details (legs or base, arms, back, edges), size and visual weight for its type
+Feel: two to four words
+Goes with: the colors, materials and kinds of rooms it suits

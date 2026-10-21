@@ -14,10 +14,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar dependencias (torch CPU)
-        run: uv sync --extra cpu --group dev
+        run: uv sync --extra cpu --extra imagen --group dev
       - name: Ruff
         run: |
           uv run ruff check src tests apps
           uv run ruff format --check src tests apps
-      - name: Tests (sin modelos ni red)
+      - name: Tests del TP y de roomrag (sin modelos ni red)
         run: uv run pytest -q
+      - name: Tests de la v0 (deprecated)
+        run: PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini -q

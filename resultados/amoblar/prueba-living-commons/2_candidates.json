@@ -1,0 +1,240 @@
+{
+  "pieces": [
+    {
+      "piece": "a three-seat sofa facing the brick wall, with its back to the passage by the door",
+      "spec": {
+        "piece": "a three-seat sofa facing the brick wall, with its back to the passage by the door",
+        "why": "it anchors the living room in the middle of the open space, and a light gray or oatmeal upholstered sofa on light wooden legs brings the Nordic softness and contrasts with the dark floor and brick",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seat upholstered sofa\nUse: everyday seating and relaxing; living room\nStyle: Scandinavian, contemporary\nMaterials: textured woven fabric, light oak wood legs\nColors: warm light gray, oatmeal, natural oak\nShape: clean lines, soft cushions, low arms, slim tapered wooden legs, medium visual weight\nFeel: warm, cozy, airy\nGoes with: dark wood floor, dark exposed brick, beige walls, white trim; Nordic warm living room"
+      },
+      "candidates": [
+        {
+          "id": "691.249.46",
+          "name": "NORSBORG",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/couch/691.249.46.jpg"
+          ],
+          "description": "Type: three-seat sofa with track arms\nUse: seating, lounging, family gatherings; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: woven fabric upholstery, solid birch wooden legs\nColors: off-white, very light cool grey, light natural wood\nShape: long straight frame, three loose back and seat cushions, slim track arms with a side pocket, round tapered wooden legs, raised and light\nFeel: airy, bright, calm, fresh\nGoes with: light wood floors, white walls, soft grey or pastel textiles; Scandinavian or minimalist living rooms\n",
+          "score": 0.829658031463623,
+          "kind": "sofa"
+        },
+        {
+          "id": "290.338.06",
+          "name": "STOCKSUND",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/couch/290.338.06.jpg"
+          ],
+          "description": "Type: three-seat sofa with rolled arms\nUse: seating, lounging; living room, family room\nStyle: traditional, classic, Scandinavian\nMaterials: woven fabric upholstery, turned light wood legs\nColors: dark charcoal grey, natural light wood legs\nShape: low scrolled arms, two loose back cushions and two seat cushions, piped edges, turned tapered legs, medium visual weight\nFeel: cozy, elegant, warm\nGoes with: light wood, white walls, cream and mustard textiles; classic, Scandinavian or traditional living rooms\n",
+          "score": 0.8196218013763428,
+          "kind": "sofa"
+        },
+        {
+          "id": "190.114.33",
+          "name": "KIVIK",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/couch/190.114.33.jpg"
+          ],
+          "description": "Type: three-seat sofa with wide arms\nUse: seating, lounging, napping; living room, family room\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven fabric upholstery, soft deep cushions\nColors: light warm grey, pale greige\nShape: low wide frame, broad box arms, two deep seat cushions, two loose back cushions, hidden feet, long and bulky\nFeel: calm, relaxed, roomy, soft\nGoes with: white walls, light wood, wool throws, black accents; Scandinavian, minimalist or modern living rooms\n",
+          "score": 0.8181298971176147,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a reading armchair next to the beige wall's window, angled toward the sofa",
+      "spec": {
+        "piece": "a reading armchair next to the beige wall's window, angled toward the sofa",
+        "why": "the window gives it natural light for reading, and a lounge chair in light wood with cream boucl\u00e9 or fabric adds the warm texture this Nordic room needs",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 90,
+        "max_depth_cm": 95,
+        "max_height_cm": null,
+        "query": "Type: armchair, reading lounge chair\nUse: reading and relaxing by the window; living room\nStyle: Scandinavian, mid-century modern\nMaterials: light oak or ash wood frame, cream boucle or wool fabric\nColors: cream, natural light wood\nShape: enveloping high back, curved wooden arms, comfortable deep seat, medium visual weight\nFeel: cozy, warm, inviting\nGoes with: gray oatmeal sofa, dark wood floor, dark brick wall, beige walls; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "390.108.90",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/chair/390.108.90.jpg"
+          ],
+          "description": "Type: cantilever bentwood lounge armchair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: layer-glued bent wood frame in a dark brown stain, padded woven fabric cushion\nColors: medium grey heathered fabric, dark brown wood\nShape: long one-piece cushion with a padded headrest, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: relaxed, cozy, calm, timeless\nGoes with: dark wood, grey or white walls, wool rugs; Scandinavian or modern living rooms\n",
+          "score": 0.8163487911224365,
+          "kind": "armchair"
+        },
+        {
+          "id": "102.335.32",
+          "name": "NOLMYRA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/chair/102.335.32.jpg"
+          ],
+          "description": "Type: armless lounge easy chair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: bent birch veneer frame, grey perforated mesh seat shell\nColors: light grey, light natural birch\nShape: one-piece curved seat and back shell sloping low, armless, open wooden frame with square legs and side stretchers, light and airy, compact\nFeel: relaxed, light, casual, fresh\nGoes with: light wood, white walls, grey textiles; Scandinavian living rooms, small apartments, student rooms\n",
+          "score": 0.7905172109603882,
+          "kind": "armchair"
+        },
+        {
+          "id": "391.505.88",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/chair/391.505.88.jpg"
+          ],
+          "description": "Type: cantilever bentwood leather lounge armchair\nUse: relaxing, reading; living room, study, reading corner\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: layer-glued bent wood frame in a dark brown stain, cognac leather cushion with diamond stitching\nColors: warm cognac brown, dark brown wood\nShape: tall one-piece cushion quilted in a diamond pattern, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: warm, inviting, relaxed, classic\nGoes with: walnut or dark wood, cream walls, wool rugs, brass lamps; mid-century or classic living rooms and studies\n",
+          "score": 0.7880577445030212,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a coffee table in front of the sofa, at the center of the seating area",
+      "spec": {
+        "piece": "a coffee table in front of the sofa, at the center of the seating area",
+        "why": "it ties the sofa and armchair together, and light oak with soft round shapes brightens the dark floor and repeats the wood of the other pieces",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 120,
+        "max_depth_cm": null,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, low wooden table\nUse: placing books, cups and decor in front of the sofa; living room\nStyle: Scandinavian, Japandi\nMaterials: solid light oak wood\nColors: natural light oak\nShape: round or rounded rectangle, low, solid legs, simple lines, light visual weight\nFeel: warm, natural, calm\nGoes with: oatmeal sofa, cream armchair, wool rug, dark wood floor, dark brick; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "702.976.58",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 118.0,
+            "depth": 50.0
+          },
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/dining table/702.976.58.jpg"
+          ],
+          "description": "Type: light wood coffee table\nUse: holding drinks, books and decor; living room, reading corner\nStyle: Scandinavian, Japandi, mid-century modern\nMaterials: ash veneer top with striped grain, solid wood legs\nColors: light natural ash, pale blond wood with honey stripes\nShape: thin top with rounded corners and beveled edge, four round tapered legs splayed outward, light and open, low\nFeel: airy, calm, natural, warm\nGoes with: white or beige sofas, wool and linen textiles, plants; Scandinavian or Japandi living rooms\n",
+          "score": 0.8162930011749268,
+          "kind": "coffee table"
+        },
+        {
+          "id": "902.976.57",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 70.0,
+            "depth": 70.0
+          },
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/dining table/902.976.57.jpg"
+          ],
+          "description": "Type: square light wood coffee table\nUse: holding drinks, books and plants; living room, small apartments\nStyle: Scandinavian, Japandi, minimalist\nMaterials: ash veneer top with visible striped grain, solid wood legs\nColors: pale blond ash, light warm wood\nShape: square top with softly rounded corners and a beveled edge, four slender tapered legs angled outward, compact and light\nFeel: natural, calm, airy, friendly\nGoes with: light grey or white sofas, rattan, green plants; Scandinavian or Japandi living rooms\n",
+          "score": 0.8121651411056519,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 0.764994740486145,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a large rug under the sofa, armchair and coffee table",
+      "spec": {
+        "piece": "a large rug under the sofa, armchair and coffee table",
+        "why": "on such a dark floor, a light wool rug with texture defines the living area and is the piece that brings the most warmth to the room",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 250,
+        "max_height_cm": null,
+        "query": "Type: rug, large textured area rug\nUse: defining and warming the seating area; living room\nStyle: Scandinavian, minimalist\nMaterials: wool, natural fibers\nColors: ivory, cream, warm beige, subtle tone-on-tone pattern\nShape: rectangular, large, soft low or medium pile, woven texture\nFeel: soft, warm, cozy\nGoes with: dark wood floor, light oak furniture, oatmeal sofa, beige walls, dark brick; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "102.290.21",
+          "name": "BASNS",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 200.0
+          },
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/objects/102.290.21.jpg"
+          ],
+          "description": "Type: chunky flatwoven area rug\nUse: adding texture underfoot; living room, bedroom, home office\nStyle: Scandinavian, rustic, minimalist\nMaterials: thick handwoven-look flat weave, coarse twisted yarns\nColors: dark grey, off-white, black, salt-and-pepper mix\nShape: rectangle with nubby wavy weave texture, plain edges, flat and sturdy, medium size, solid visual weight\nFeel: cosy, natural, earthy, calm\nGoes with: light wood, white or grey walls, wool and linen textiles; Scandinavian, Japandi or rustic rooms\n",
+          "score": 0.804334819316864,
+          "kind": "rug"
+        },
+        {
+          "id": "002.852.58",
+          "name": "SATTRUP",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 180.0,
+            "depth": 224.0
+          },
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/objects/002.852.58.jpg"
+          ],
+          "description": "Type: striped flatwoven area rug\nUse: covering floors, defining a seating area; living room, bedroom, dining room\nStyle: Scandinavian, contemporary, bohemian\nMaterials: flatwoven cotton-look fibers, nubby stitched weave, three joined panels\nColors: charcoal and beige speckle, soft peach-beige, olive grey, thin green edge line\nShape: rectangular, three wide vertical panels in different tones, slightly offset pieced look, flat and low, nubby texture\nFeel: relaxed, crafted, natural, calm\nGoes with: light wood, white or grey sofas, green plants; Scandinavian or bohemian living rooms and bedrooms\n",
+          "score": 0.7828719615936279,
+          "kind": "rug"
+        },
+        {
+          "id": "302.837.81",
+          "name": "GSER",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 170.0,
+            "depth": 240.0
+          },
+          "source": "data/processed/items_roomrag.jsonl",
+          "photos": [
+            "data/raw/ikea/images/objects/302.837.81.jpg"
+          ],
+          "description": "Type: shaggy high-pile area rug\nUse: softening floors around a sofa or bed; living room, bedroom\nStyle: Scandinavian, contemporary, minimalist\nMaterials: long loose shag pile, soft fluffy yarn\nColors: warm off-white, cream, light beige flecks\nShape: rectangle with deep loose shag texture, fluffy uneven surface, thick and soft, medium-large, cushy visual weight\nFeel: cosy, soft, bright, inviting\nGoes with: white or light grey sofas, light wood, white walls, pastel textiles; Scandinavian or contemporary bedrooms and living rooms\n",
+          "score": 0.7816699743270874,
+          "kind": "rug"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

@@ -1,7 +1,7 @@
 [project]
 name = "amoblai"
 version = "0.1.0"
-description = "Amoblado virtual con RAG sobre un catálogo real de muebles (TP 73.69 LLM, ITBA)"
+description = "Amoblado virtual con RAG por texto sobre un catálogo real de muebles (TP 73.69 LLM, ITBA)"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 authors = [
@@ -10,21 +10,16 @@ authors = [
     { name = "Junior Rambau" },
 ]
 dependencies = [
-    "chromadb>=1.5",
-    "google-genai>=2.0",
     "httpx>=0.27",
-    "langsmith>=0.4",
     "matplotlib>=3.9",
     "numpy>=2.0",
     "openai>=2.0",
     "pandas>=2.2",
     "pillow>=11.0",
     "pydantic>=2.9",
-    "pydantic-settings>=2.6",
+    "python-dotenv>=1.0",
     "pyyaml>=6.0",
     "rich>=13.9",
-    "scikit-image>=0.24",
-    "scipy>=1.14",
     "tabulate>=0.9",
     "transformers>=5.0",
     "typer>=0.15",
@@ -36,7 +31,16 @@ dependencies = [
 #   uv sync --extra gpu   (RTX 3070: wheels CUDA 12.6)
 cpu = ["torch>=2.6", "torchvision>=0.21"]
 gpu = ["torch>=2.6", "torchvision>=0.21"]
-# Eliminación de fondo alternativa (rembg + onnxruntime), opcional.
+# La v0 (retrieval por imagen, deprecated/): vector store, segmentación, Gemini, trazas.
+imagen = [
+    "chromadb>=1.5",
+    "google-genai>=2.0",
+    "langsmith>=0.4",
+    "pydantic-settings>=2.6",
+    "scikit-image>=0.24",
+    "scipy>=1.14",
+]
+# Eliminación de fondo alternativa de la v0 (rembg + onnxruntime), opcional.
 rembg = ["rembg>=2.0.60", "onnxruntime>=1.19"]
 
 [project.scripts]
@@ -51,7 +55,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/amoblai"]
+packages = ["src/amoblai", "desde_youseeyoubuy/roomrag"]
 
 [tool.uv]
 conflicts = [[{ extra = "cpu" }, { extra = "gpu" }]]
@@ -80,6 +84,8 @@ explicit = true
 line-length = 100
 target-version = "py311"
 src = ["src", "tests", "apps"]
+# El núcleo de YouSeeYouBuy y la v0 congelada siguen su propio estilo.
+extend-exclude = ["deprecated", "desde_youseeyoubuy"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
@@ -91,9 +97,10 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "apps/*" = ["E501"]  # textos largos de la interfaz
+"tests/*" = ["E501"]  # descripciones de ejemplo
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "desde_youseeyoubuy/tests"]
 pythonpath = ["."]
 addopts = "-m 'not models'"
 markers = [

@@ -1,0 +1,14 @@
+# Catálogo de roomrag para el TP: los productos IKEA del alcance (roomrag/catalog.py).
+# Lo genera `amoblai catalogo` desde el dataset y catalogo/correcciones.yaml.
+name: ikea
+items:
+- data/processed/items_roomrag.jsonl
+kinds_file: catalogo/kinds.yaml
+categories:
+  091.195.18: desk
+  191.197.25: desk
+  290.007.16: desk
+  290.047.76: desk
+  299.321.81: desk
+  691.335.97: desk
+  899.309.28: desk

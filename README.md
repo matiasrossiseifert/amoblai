@@ -1,170 +1,115 @@
 # amoblai
 
-Amoblado virtual con RAG sobre un catálogo real de muebles. Trabajo práctico de
-73.69 Large Language Models (ITBA, 2026).
+Amoblado virtual con RAG sobre un catálogo real de muebles. Trabajo práctico de 73.69 Large
+Language Models (ITBA, 2026).
 
-**Entrada:** foto de un ambiente vacío + pedido en texto libre.
-**Salida:** la misma foto amoblada con productos reales del catálogo IKEA y la
-lista de compra en JSON.
+**Entrada:** una foto del ambiente y el pedido en texto libre ("un living nórdico y cálido").
+**Salida:** los productos del catálogo IKEA que hacen falta (lista de compra) y la foto del
+ambiente con ellos.
 
-El catálogo funciona como memoria no paramétrica: un generador de imagen amobla
-el ambiente con muebles genéricos (pre-retrieval), cada mueble se recorta y se
-busca en un índice vectorial de fotos de producto (retrieval con metadata
-filtering), y un segundo generador reemplaza cada mueble genérico por el
-producto real recuperado. Detalle en [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md).
+El catálogo es la memoria no paramétrica. Un LLM con visión lee la foto y el pedido y escribe,
+para cada mueble que hace falta, el producto ideal en el mismo formato que las descripciones
+del catálogo (pre-retrieval); la búsqueda aplica filtros duros (tipo, medidas) y trae los más
+cercanos por embeddings (retrieval); el LLM elige la mejor combinación mirando las fotos
+(post-retrieval) y escribe el prompt con el que un modelo de imagen pone esos productos en la
+foto. Detalle en [docs/ARQUITECTURA.md](docs/ARQUITECTURA.md).
 
-![Arquitectura](docs/arquitectura.png)
+El núcleo RAG es `roomrag` (`desde_youseeyoubuy/`), compartido con el proyecto YouSeeYouBuy. La
+primera versión del TP, que recuperaba por imagen, está en [deprecated/](deprecated/).
+
+## Resultados
+
+Retrieval sobre 65 livings y comedores de IKEA con productos anotados (207 consultas con
+respuesta; IC 95% bootstrap por ambiente). Detalle y lecturas en
+[docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md):
+
+| Configuración | hit@1 | hit@10 | MRR@10 |
+|---|---|---|---|
+| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,145 | 0,440 | 0,208 |
+| + nuestras descripciones de ocho líneas | 0,560 | 0,927 | 0,692 |
+| **+ Qwen3-Embedding, filtro por tipo (default)** | **0,618** | 0,908 | **0,717** |
+| v0 (por imagen, DINOv3), mismo ground truth | 0,508 | 0,819 | 0,603 |
+| Azar | 0,020 | 0,189 | 0,056 |
+
+![Camino incremental](resultados/reporte/camino_texto.png)
+
+Una corrida completa del flujo (plan, choose y scene con Claude Opus 5.5) cuesta unos US$0,12
+más la imagen (US$0,08 con Nano Banana 2).
 
 ## Instalación
 
 Requisitos: Python 3.11+ y [uv](https://docs.astral.sh/uv/).
 
 ```bash
-# Máquina sin GPU NVIDIA (o CI):
-uv sync --extra cpu --group dev --group apps
-# Máquina con GPU NVIDIA (RTX 3070, wheels CUDA 12.6):
-uv sync --extra gpu --group dev --group apps
-
-cp .env.example .env   # completar las claves que se vayan a usar
+uv sync --extra cpu --group dev --group apps     # sin GPU NVIDIA
+uv sync --extra gpu --group dev --group apps     # con GPU NVIDIA (CUDA 12.6)
+cp .env.example .env                             # ANTHROPIC_API_KEY, FAL_KEY, OPENAI_API_KEY
 ```
 
-El embedder por defecto es DINOv3, que es *gated* en Hugging Face: hace falta
-aceptar la licencia de `facebook/dinov3-vitb16-pretrain-lvd1689m` y poner
-`HF_TOKEN` en `.env`. Sin token: `--set embedding.name=siglip2` (segundo mejor).
-
-El dispositivo se elige solo (`device: auto`): GPU en fp16 si hay CUDA, si no CPU.
-Opcional: `uv sync --extra rembg` para la eliminación de fondo alternativa.
-
-## Datos
-
-```bash
-uv run amoblai data download   # dataset IKEA (Tautkute et al., 2017) en data/raw/ikea
-uv run amoblai data info       # resumen: productos, imágenes, ambientes por tipo
-uv run amoblai categories      # mapeo type → categoría en resultados/mapeo_categorias.md
-```
-
-Las imágenes del dataset son de IKEA y solo pueden usarse sin fines
-comerciales; nunca se commitean (`data/` está en `.gitignore`).
+Para la v0 (deprecated/) se suma `--extra imagen`.
 
 ## Uso
 
 ```bash
-# 1. Indexing pipeline (una vez por embedder; incremental)
-uv run amoblai index                                  # DINOv3 (default; requiere HF_TOKEN)
-uv run amoblai index --set embedding.name=clip        # otro embedder
+uv run amoblai data download     # dataset IKEA (Tautkute et al., 2017) en data/raw/ikea
+uv run amoblai catalogo          # catálogo de roomrag: productos, descripciones, kinds
+uv run amoblai indice            # descripciones → embeddings (en caché, gratis)
+uv run amoblai buscar "Type: coffee table, round
+Materials: light oak" --kind "coffee table"
 
-# 2. Evaluación del retriever sobre livings y comedores de IKEA (+ calibra el umbral)
-uv run amoblai eval retriever --calibrate
+# El flujo completo (se retoma donde quedó; nada se paga dos veces)
+uv run amoblai amoblar ambientes_vacios/living_commons_01.jpg "un living nórdico y cálido" \
+    --set 'budget.allow_paid_steps=[furnish.plan, furnish.choose, furnish.scene]'   # Claude sí, imagen a mano
+uv run amoblai amoblar foto.jpg "un comedor para seis" --generador nano_banana_2 --pagar
 
-# 3. Amoblar un ambiente
-uv run amoblai run ambientes_vacios/living_01.jpg -p "living nórdico, sofá gris y alfombra clara"
-#    sin gastar: generadores en dry-run y una foto de IKEA como imagen 1
-uv run amoblai run foto.jpg --set budget.dry_run=true \
-    --image1 data/raw/ikea/images/room_scenes/<foto>.jpg
-
-# 4. Evaluación de punta a punta sobre ambientes_vacios/
-uv run amoblai eval e2e --set generation.gen2_base=original
-
-# 5. Ablación del retriever y reporte
-uv run amoblai ablation configs/ablaciones/retriever.yaml
-uv run amoblai report                                  # resultados/reporte/
+uv run amoblai evaluar           # ablación del retrieval (local, gratis)
+uv run amoblai reporte           # tablas y gráficos en resultados/reporte/
+uv run amoblai gastos            # lo gastado por cuenta contra sus topes
 ```
 
-Cualquier campo de la config (`configs/base.yaml`, documentado en
-`src/amoblai/config.py`) se puede pisar con `--set seccion.campo=valor` o con un
-YAML propio que herede con `extends: base.yaml`.
-
-### Generadores y costos
-
-`generation.generator1.provider` y `generation.generator2.provider`:
-
-| Proveedor | Qué hace |
-|---|---|
-| `manual` (default) | Prepara una carpeta con las imágenes, el prompt e instrucciones, y espera a que se genere la imagen a mano en ChatGPT o Gemini. No gasta API. |
-| `openai` | gpt-image por API (`OPENAI_API_KEY`). |
-| `gemini` | Modelos de imagen de Gemini por API (`GEMINI_API_KEY`). |
-| `dry_run` | No llama a nada: devuelve la base marcada y estima el costo. |
-
-Controles: `budget.dry_run`, `budget.max_calls_per_run`, `budget.max_usd_per_run`,
-`budget.max_usd_total` (suma `resultados/gastos.jsonl`). La calidad se elige con
-`generation.generatorN.quality` (`low`/`medium` para desarrollo, `high` solo
-para las finales). Toda generación se guarda en `resultados/generaciones/`
-indexada por un hash de las entradas: repetir una corrida no vuelve a pagar.
-Los precios están en `configs/pricing.yaml`.
-
-### Webapps de prueba
-
-Código aparte del núcleo, en `apps/` (ver [apps/README.md](apps/README.md)):
+La webapp de prueba muestra cada paso (ver [apps/README.md](apps/README.md)):
 
 ```bash
-uv run --group apps python apps/paso_a_paso.py  # http://127.0.0.1:7863  probar sin API keys: te da los prompts
-uv run --group apps python apps/usuario.py      # http://127.0.0.1:7860  vista de usuario
-uv run --group apps python apps/flujo.py        # http://127.0.0.1:7861  flujo completo e imágenes intermedias
-uv run --group apps python apps/etiquetado.py   # http://127.0.0.1:7862  etiquetado del set estricto
+uv run --group apps python apps/amoblar.py      # http://127.0.0.1:7860
 ```
 
-### Trazas (opcional)
+### Costos y topes
 
-Con `LANGSMITH_TRACING=true` y `LANGSMITH_API_KEY` en `.env`, cada etapa del
-pipeline se registra en LangSmith (sin subir imágenes).
-
-## Resultados
-
-Retriever sobre 65 livings y comedores de IKEA (325 recortes con respuesta,
-IC 95% bootstrap por ambiente). Detalle y lecturas en
-[docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md):
-
-| Configuración | hit@1 | hit@10 | MRR@10 |
-|---|---|---|---|
-| Naive: CLIP, sin quitar fondo, sin filtro | 0,126 | 0,345 | 0,179 |
-| DINOv2 + quitar fondo (SAM) + filtro por categoría | 0,345 | 0,686 | 0,452 |
-| SigLIP 2, sin quitar fondo, filtro por categoría | 0,465 | 0,809 | 0,587 |
-| **DINOv3, sin quitar fondo, filtro por categoría (default)** | **0,508** | **0,819** | **0,603** |
-| Azar (con filtro) | 0,023 | 0,225 | 0,067 |
-
-![Camino incremental](resultados/reporte/retriever_incremental.png)
-
-Cada corrida queda en `resultados/corridas/<fecha>_<tipo>_<nombre>/` con su
-config, el commit de git, métricas, imágenes intermedias y costos. El registro
-de experimentos está en [docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md) y las tablas
-comparativas en `resultados/reporte/`.
+Las llamadas pagas se rechazan salvo que se habiliten (`--pagar`, `budget.allow_paid` o
+`budget.allow_paid_steps`) y nunca superan el tope de su cuenta en `configs/amoblai.yaml`
+(`budget.accounts`). Cada una queda en `resultados/gastos.jsonl`. El generador `manual` (default)
+deja una carpeta con las imágenes y el prompt para generar a mano en ChatGPT o Gemini.
 
 ## Estructura
 
 ```
-configs/            base.yaml, categories.yaml, pricing.yaml, umbrales.yaml, ablaciones/
-src/amoblai/
-  data/             data loading del dataset IKEA y catálogo por SKU
-  indexing/         preprocesamiento, splitting e indexing pipeline
-  embeddings/       DINOv2, DINOv3, CLIP, SigLIP 2 (Hugging Face)
-  vectorstore/      ChromaDB (coseno)
-  vision/           detección, quitar fondo, recortes
-  retrieval/        retriever con metadata filtering y umbral; interfaz de reranking
-  generation/       generadores (OpenAI, Gemini, manual, dry-run), caché y costos
-  pipeline/         pipeline de consulta y lista de compra
-  eval/             métricas del retriever, set estricto, e2e, ablación
-  report/           tablas y gráficos
-  infra/            caché, presupuesto, uso, corridas, dispositivo, trazas
-apps/               webapps de prueba (Gradio), separadas del núcleo
-ambientes_vacios/   fotos de ambientes vacíos + prompts.yaml
-anotaciones/        set estricto etiquetado a mano
-resultados/         corridas, generaciones, reportes, gastos (se commitea)
-docs/               ARQUITECTURA.md, EXPERIMENTOS.md, propuesta y diagrama
-tests/              pytest (dataset sintético, sin red ni modelos)
+configs/            amoblai.yaml (roomrag: catálogo, embedders, LLM, generadores, topes),
+                    categories.yaml (type de IKEA → alcance)
+catalogo/           ikea.yaml, descripciones (escritas por subagentes), kinds, correcciones
+evaluacion/ikea/    consultas de evaluación por ambiente (escritas por subagentes)
+src/amoblai/        lo propio del TP: data loading del dataset, catálogo, validadores,
+                    generadores (fal, OpenAI), evaluación, reporte, CLI
+desde_youseeyoubuy/ roomrag (el núcleo RAG compartido), su LEEME y CAMBIOS.md
+apps/               la webapp de prueba
+ambientes_vacios/   fotos de ambientes vacíos (con sus créditos)
+resultados/         corridas, evaluaciones, reporte y gastos (se commitea); v0_imagen/
+deprecated/         la v0 (retrieval por imagen), completa
+docs/               ARQUITECTURA.md, EXPERIMENTOS.md, propuesta y diagrama original
+tests/              pytest sin red (dataset sintético; Claude y fal simulados)
 ```
 
 ## Desarrollo
 
 ```bash
-uv run pytest            # tests rápidos (sin modelos)
-uv run pytest -m models  # tests que bajan modelos de Hugging Face
-uv run ruff check . && uv run ruff format --check .
+uv run pytest                                   # tests del TP y de roomrag
+PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini   # los de la v0
+uv run ruff check src tests apps && uv run ruff format --check src tests apps
 ```
 
-Mejoras fuera del alcance de la v1: [FUTURO.md](FUTURO.md).
+Mejoras fuera del alcance: [FUTURO.md](FUTURO.md).
 
 ## Créditos
 
-Dataset: I. Tautkute et al., *What Looks Good with my Sofa: Multimodal Search
-Engine for Interior Design*, FedCSIS 2017. Imágenes propiedad de IKEA, uso no
-comercial.
+Dataset: I. Tautkute et al., *What Looks Good with my Sofa: Multimodal Search Engine for
+Interior Design*, FedCSIS 2017 (imágenes de IKEA, uso no comercial). Núcleo RAG: roomrag, de
+YouSeeYouBuy. Fotos de terceros: `ambientes_vacios/CREDITOS.md`.

@@ -1,0 +1,144 @@
+"""One furnishing run: a room photo and a request -> a run folder, the steps of `furnish.steps` in
+order. Each step writes its file; a step whose file exists is not done again (nothing is paid
+twice), so a run resumes where it stopped.
+
+    room.jpg, request.json
+    1_searches.json     plan: the room as the LLM read it, the pieces and their searches
+    2_candidates.json   retrieve: each piece's candidates (+ 2_candidates*.jpg, numbered)
+    3_choice.json       choose: one product per piece, and why
+    4_scene.json        scene: the image model's prompt
+    5_image.json        generate: the image (final.png), or `pending` (manual)
+
+A step is a function step(run: Run) -> dict. Another project adds its own by naming them in
+`furnish.steps` as "package.module:function" (YouSeeYouBuy: its 3D placement instead of scene and
+generate); its file is <function>.json. A record with `pending` stops the run unsaved (to be
+resumed); one with `rerun` is not saved, so the step runs every time (it keeps its own files).
+"""
+
+from __future__ import annotations
+
+import json
+from collections.abc import Callable
+from dataclasses import dataclass, field
+from pathlib import Path
+
+from PIL import Image, ImageOps
+
+from . import steps as st
+from .config import Config
+from .generate import load_attr
+from .search import Hit
+
+
+@dataclass
+class Run:
+    cfg: Config
+    out: Path
+    request: str
+    log: Callable[[str], None] = print
+    extras: dict = field(default_factory=dict)  # what another project's steps need
+    data: dict = field(default_factory=dict)  # each step's record, by step name
+
+    @property
+    def room(self) -> Path:
+        return self.out / "room.jpg"
+
+    def pieces(self) -> list[dict]:
+        return self.data["plan"]["answer"]["pieces"][: self.cfg.furnish.max_pieces]
+
+    def candidates(self) -> list[tuple[dict, list[Hit]]]:
+        """Each piece the search found something for, and its candidates."""
+        found = self.data["retrieve"]["pieces"]
+        return [(f["spec"], [Hit(**h) for h in f["candidates"]]) for f in found]
+
+    def chosen(self) -> list[Hit]:
+        """The chosen product of each of those pieces, in the same order."""
+        return st.chosen(self.data["retrieve"], self.data["choose"])
+
+
+def _plan(run: Run) -> dict:
+    rec = st.plan(run.cfg, run.room, run.request)
+    run.log(f"pieces: {[p['piece'] for p in rec['answer']['pieces']]}")
+    return rec
+
+
+def _retrieve(run: Run) -> dict:
+    rec = st.retrieve(run.cfg, run.pieces(), run.out)
+    if rec["empty"]:
+        run.log(f"nothing in the catalog for: {rec['empty']}")
+    return rec
+
+
+def _choose(run: Run) -> dict:
+    rec = st.choose(run.cfg, run.room, run.request, run.candidates())
+    for c in rec["answer"]["choices"]:
+        run.log(f"chosen: {c['id']}: {c.get('why')}")
+    return rec
+
+
+def _scene(run: Run) -> dict:
+    pieces = [p for p, _ in run.candidates()]
+    room = run.data["plan"]["answer"].get("room", "")
+    return st.scene(
+        run.cfg, run.room, run.request, room, list(zip(pieces, run.chosen(), strict=True))
+    )
+
+
+def _generate(run: Run) -> dict:
+    rec = st.generate(
+        run.cfg, run.data["scene"]["answer"]["prompt"], run.room, run.chosen(), run.out
+    )
+    run.log(f"image: {rec['image'] or 'pending: ' + str(rec['meta'].get('job'))}")
+    return rec
+
+
+STEPS: dict[str, tuple[str, Callable[[Run], dict]]] = {
+    "plan": ("1_searches.json", _plan),
+    "retrieve": ("2_candidates.json", _retrieve),
+    "choose": ("3_choice.json", _choose),
+    "scene": ("4_scene.json", _scene),
+    "generate": ("5_image.json", _generate),
+}
+
+
+def step_for(name: str) -> tuple[str, str, Callable[[Run], dict]]:
+    """(key, file, function) of a step named in the config."""
+    if name in STEPS:
+        return name, *STEPS[name]
+    key = name.rpartition(":")[2]
+    return key, f"{key}.json", load_attr(name)
+
+
+def run_flow(
+    photo: str | Path,
+    request: str,
+    cfg: Config,
+    out: Path,
+    log: Callable[[str], None] = print,
+    extras: dict | None = None,
+) -> Run:
+    """Runs (or resumes) every step; stops after a step that is `pending`."""
+    out.mkdir(parents=True, exist_ok=True)
+    run = Run(cfg, out, request, log, extras or {})
+    if not run.room.exists():
+        im = ImageOps.exif_transpose(Image.open(photo)).convert("RGB")
+        im.save(run.room, quality=92)
+    (out / "request.json").write_text(
+        json.dumps(
+            {"photo": str(photo), "request": request, **(extras or {}).get("request_info", {})}
+        )
+    )
+    for name in cfg.furnish.steps:
+        key, file, fn = step_for(name)
+        f = out / file
+        if f.exists():
+            run.data[key] = json.loads(f.read_text())
+            continue
+        rec = fn(run)
+        run.data[key] = rec
+        if rec.get("pending"):
+            log(f"{key}: waiting; run again when it is done")
+            break
+        if not rec.get("rerun"):
+            st.write(f, rec)
+    return run

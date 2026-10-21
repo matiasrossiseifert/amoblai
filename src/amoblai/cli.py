@@ -1,4 +1,8 @@
-"""Puntos de entrada de la línea de comandos: `uv run amoblai --help`."""
+"""Puntos de entrada de la línea de comandos: `uv run amoblai --help`.
+
+El flujo es el de roomrag (desde_youseeyoubuy/roomrag): plan → retrieve → choose → scene →
+generate. Acá está lo propio del TP: el catálogo IKEA, la evaluación y los generadores.
+"""
 
 from __future__ import annotations
 
@@ -9,262 +13,198 @@ from typing import Annotated
 
 import typer
 from rich.console import Console
-from rich.logging import RichHandler
-
-from amoblai.config import AppConfig, load_config, load_env
+from rich.table import Table
 
 app = typer.Typer(
-    help="amoblai: amoblado virtual con RAG sobre un catálogo real de muebles.",
-    no_args_is_help=True,
+    help="amoblai: amoblado virtual con RAG sobre el catálogo IKEA.", no_args_is_help=True
 )
-data_app = typer.Typer(help="Descarga e inspección del dataset IKEA.", no_args_is_help=True)
-eval_app = typer.Typer(help="Evaluación del retriever y de punta a punta.", no_args_is_help=True)
+data_app = typer.Typer(help="Dataset IKEA.", no_args_is_help=True)
 app.add_typer(data_app, name="data")
-app.add_typer(eval_app, name="eval")
 console = Console()
 
-ConfigOpt = Annotated[
-    Path | None,
-    typer.Option("--config", "-c", help="YAML de configuración (default: configs/base.yaml)."),
-]
+CONFIG = Path("configs/amoblai.yaml")
+RAW = Path("data/raw/ikea")
+ITEMS = Path("data/processed/items_roomrag.jsonl")
+
+ConfigOpt = Annotated[Path, typer.Option("--config", "-c", help="Config de roomrag.")]
 SetOpt = Annotated[
-    list[str] | None,
-    typer.Option("--set", "-s", help="Override puntual: seccion.campo=valor (repetible)."),
+    list[str] | None, typer.Option("--set", "-s", help="Override: seccion.campo=valor (repetible).")
 ]
-NameOpt = Annotated[str | None, typer.Option("--name", "-n", help="Nombre de la corrida.")]
+
+
+def load_env() -> None:
+    from dotenv import load_dotenv
+
+    load_dotenv(".env", override=False)
+
+
+def cfg_for(config: Path, overrides: list[str] | None = None, paid: bool = False):
+    from roomrag.config import deep_merge, load_config, parse_override
+
+    over: dict = {}
+    for expr in overrides or []:
+        over = deep_merge(over, parse_override(expr))
+    if paid:
+        over = deep_merge(over, {"budget": {"allow_paid": True}})
+    return load_config(config, over)
 
 
 @app.callback()
 def main(verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False) -> None:
     load_env()
-    logging.basicConfig(
-        level=logging.DEBUG if verbose else logging.INFO,
-        format="%(message)s",
-        handlers=[RichHandler(console=console, show_path=False, rich_tracebacks=True)],
-    )
-    for noisy in ("httpx", "httpcore", "urllib3", "chromadb", "PIL"):
-        logging.getLogger(noisy).setLevel(logging.WARNING)
-
-
-def _config(config: Path | None, overrides: list[str] | None, name: str | None = None) -> AppConfig:
-    extra = list(overrides or [])
-    if name:
-        extra.append(f"name={name}")
-    return load_config(config, extra)
+    logging.basicConfig(level=logging.DEBUG if verbose else logging.WARNING, format="%(message)s")
 
 
 @data_app.command("download")
-def data_download(
-    config: ConfigOpt = None,
-    force: Annotated[bool, typer.Option(help="Volver a descargar aunque ya exista.")] = False,
-) -> None:
+def data_download(force: Annotated[bool, typer.Option(help="Volver a descargar.")] = False) -> None:
     """Descarga el dataset IKEA (fijado a un commit) en data/raw/ikea."""
     from amoblai.data.download import download_dataset
 
-    cfg = _config(config, None)
-    download_dataset(cfg.paths.raw_dir, cfg.dataset.repo, cfg.dataset.commit, force=force)
+    download_dataset(RAW, force=force)
+    console.print(f"Dataset en {RAW}")
 
 
-@data_app.command("info")
-def data_info(config: ConfigOpt = None) -> None:
-    """Resumen del dataset: productos, imágenes, ambientes por tipo."""
-    from collections import Counter
+@app.command()
+def catalogo(
+    lotes: Annotated[
+        int, typer.Option(help="Además, armar lotes de N productos para los subagentes (0 = no).")
+    ] = 0,
+) -> None:
+    """Arma el catálogo de roomrag: productos del alcance, descripciones, kinds y correcciones."""
+    from amoblai.catalogo_ikea import build_catalog_items, write_catalog_files
 
-    from amoblai.data.ikea import IkeaDataset
+    items = build_catalog_items(RAW, Path("configs/categories.yaml"), ITEMS)
+    console.print(f"{len(items)} productos del alcance en {ITEMS}")
+    if lotes:
+        from amoblai.descripciones import make_batches
 
-    cfg = _config(config, None)
-    ds = IkeaDataset.load(cfg.paths.raw_dir)
-    console.print(ds.stats)
+        paths = make_batches(items, Path("data/processed/describir"), lotes, Path("."))
+        console.print(f"{len(paths)} lotes para describir en data/processed/describir/")
+    if any(Path("catalogo/descripciones").glob("lote_*.jsonl")):
+        stats = write_catalog_files(
+            ITEMS,
+            Path("catalogo/descripciones"),
+            Path("catalogo/descripciones.jsonl"),
+            Path("catalogo/kinds.yaml"),
+            Path("catalogo/correcciones.yaml"),
+            Path("catalogo/ikea.yaml"),
+        )
+        console.print(f"catalogo/ikea.yaml: {stats}")
+
+
+@app.command()
+def indice(config: ConfigOpt = CONFIG, overrides: SetOpt = None) -> None:
+    """Indexing pipeline de roomrag: descripciones → embeddings (en caché)."""
+    from roomrag.index import build_index
+
+    idx = build_index(cfg_for(config, overrides), log=console.print)
     console.print(
-        "Ambientes en disco por tipo:", dict(Counter(r.room_type for r in ds.rooms.values()))
+        f"{idx.meta['products']} productos ({idx.meta['left_out']} sin descripción): {idx.path}"
     )
 
 
 @app.command()
-def categories(config: ConfigOpt = None) -> None:
-    """Escribe resultados/mapeo_categorias.md con el mapeo type → categoría y sus conteos."""
-    from amoblai.categories import CategoryMap
-    from amoblai.indexing.indexer import load_or_build_catalog
-
-    cfg = _config(config, None)
-    catalog = load_or_build_catalog(cfg)  # reaplica el mapeo vigente
-    report = CategoryMap.load(cfg.paths.categories_file).mapping_report(
-        p.type for p in catalog.products.values()
-    )
-    out = Path(cfg.paths.results_dir) / "mapeo_categorias.md"
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(report)
-    console.print(f"Mapeo escrito en {out}")
-
-
-@app.command()
-def index(
-    config: ConfigOpt = None,
+def buscar(
+    consulta: Annotated[
+        str, typer.Argument(help="Texto (idealmente en las ocho líneas del catálogo).")
+    ],
+    kind: Annotated[str | None, typer.Option(help="Filtrar por kind (roomrag/kinds.py).")] = None,
+    k: Annotated[int, typer.Option(help="Cuántos traer.")] = 5,
+    config: ConfigOpt = CONFIG,
     overrides: SetOpt = None,
-    rebuild_catalog: Annotated[
-        bool, typer.Option(help="Regenerar data/processed/catalog.json.")
-    ] = False,
 ) -> None:
-    """Indexing pipeline: catálogo → preprocesamiento → splitting → embeddings → ChromaDB."""
-    from amoblai.components import get_embedder
-    from amoblai.indexing.indexer import index_catalog
+    """Prueba el índice: los productos más cercanos a una consulta."""
+    from roomrag.filters import Filters
+    from roomrag.index import build_index, index_is_current, open_index
+    from roomrag.search import search
 
-    cfg = _config(config, overrides)
-    stats = index_catalog(cfg, get_embedder(cfg), rebuild_catalog=rebuild_catalog)
-    console.print(stats)
+    cfg = cfg_for(config, overrides)
+    if not index_is_current(cfg):
+        build_index(cfg, log=lambda _: None)
+    cfg.rag.top_k = k
+    for h in search(open_index(cfg), consulta, Filters(kinds=[kind] if kind else []), cfg):
+        console.print(f"{h.score or 0:.3f}  {h.id}  {h.kind or h.category:<14} {h.name}")
 
 
 @app.command()
-def run(
-    room: Annotated[Path, typer.Argument(help="Foto del ambiente vacío.")],
-    prompt: Annotated[
-        str, typer.Option("--prompt", "-p", help="Pedido del usuario (estilo, colores, muebles).")
-    ] = "",
-    image1: Annotated[
-        Path | None,
-        typer.Option(help="Usar esta imagen como imagen 1 (saltea el generador n.º 1)."),
+def amoblar(
+    foto: Annotated[Path, typer.Argument(help="Foto del ambiente.")],
+    pedido: Annotated[str, typer.Argument(help="Lo que pide el usuario, en texto libre.")],
+    generador: Annotated[str, typer.Option(help="manual | nano_banana_2 | openai")] = "manual",
+    pagar: Annotated[
+        bool, typer.Option("--pagar", help="Habilitar las llamadas pagas (dentro de los topes).")
+    ] = False,
+    nombre: Annotated[
+        str | None, typer.Option(help="Nombre de la corrida (default: nombre de la foto).")
     ] = None,
-    config: ConfigOpt = None,
+    config: ConfigOpt = CONFIG,
     overrides: SetOpt = None,
-    name: NameOpt = None,
-    evaluate: Annotated[
-        bool, typer.Option("--eval", help="Calcular también las métricas de punta a punta.")
-    ] = False,
 ) -> None:
-    """Amobla un ambiente: imagen final + lista de compra (guardadas en resultados/corridas/)."""
-    from amoblai.infra.images import load_image
-    from amoblai.infra.runs import RunContext
-    from amoblai.pipeline.query import FurnishPipeline
+    """El flujo completo (plan → retrieve → choose → scene → generate); se retoma donde quedó."""
+    from roomrag.flow import run_flow
 
-    cfg = _config(config, overrides, name)
-    pipeline = FurnishPipeline.from_config(cfg)
-    ctx = RunContext(cfg, "run", name=name or room.stem)
-    result = pipeline.run(
-        load_image(room), prompt, run=ctx, image1=load_image(image1) if image1 else None
+    cfg = cfg_for(config, [*(overrides or []), f"furnish.generator={generador}"], paid=pagar)
+    out = Path(cfg.runs_dir) / (nombre or foto.stem)
+    run_flow(foto, pedido, cfg, out, log=console.print)
+    console.print(f"Corrida: {out}")
+
+
+@app.command()
+def evaluar(
+    embedders: Annotated[
+        str, typer.Option(help="Embedders separados por coma.")
+    ] = "hashing,bge,qwen3",
+    nombre: Annotated[str, typer.Option(help="Nombre de la corrida.")] = "ablacion-texto",
+    config: ConfigOpt = CONFIG,
+) -> None:
+    """Retrieval por texto sobre los 65 ambientes IKEA: hit@k, MRR, recall (ablación)."""
+    from amoblai.evaluacion import default_methods, run_eval
+
+    cfg = cfg_for(config)
+    methods = default_methods([e.strip() for e in embedders.split(",") if e.strip()])
+    run = run_eval(
+        cfg,
+        Path("evaluacion/ikea/consultas.json"),
+        RAW,
+        Path("resultados/evaluacion"),
+        methods,
+        nombre,
     )
-    metrics: dict = {"status": result.status, "timings_s": result.timings}
-    if evaluate and result.final is not None:
-        from amoblai.eval.e2e_eval import evaluate_result
-
-        metrics |= evaluate_result(result, pipeline)
-    ctx.finish(metrics)
-    console.print_json(json.dumps(result.shopping_list, ensure_ascii=False))
-    if result.pending:
-        console.print(
-            f"[yellow]Paso manual pendiente:[/] {result.pending.workdir}\n"
-            "Volvé a correr el mismo comando cuando esté el resultado."
+    data = json.loads((run / "metricas.json").read_text())
+    table = Table("método", "consultas", "hit@1", "hit@10", "MRR@10", "recall ítem@10")
+    for name, m in data.items():
+        table.add_row(
+            name,
+            str(m["answerable"]),
+            f"{m['hit@1']:.3f}",
+            f"{m['hit@10']:.3f}",
+            f"{m['mrr@10']:.3f}",
+            str(m["recall_item@10"]),
         )
-    console.print(f"Corrida: {ctx.dir}")
-
-
-@eval_app.command("retriever")
-def eval_retriever(
-    config: ConfigOpt = None,
-    overrides: SetOpt = None,
-    name: NameOpt = None,
-    calibrate: Annotated[
-        bool, typer.Option(help="Guardar el umbral calibrado en configs/umbrales.yaml.")
-    ] = False,
-    strict: Annotated[
-        bool,
-        typer.Option(help="Correr también la evaluación estricta (anotaciones/estricto.jsonl)."),
-    ] = False,
-) -> None:
-    """Hit rate@k, MRR y recall sobre los livings y comedores de IKEA."""
-    from amoblai.components import build_retrieval_components
-    from amoblai.eval.retriever_eval import run_retriever_eval
-    from amoblai.eval.strict_eval import run_strict_eval
-    from amoblai.infra.runs import RunContext
-
-    cfg = _config(config, overrides, name)
-    ctx = RunContext(cfg, "retriever", name=name)
-    comps = build_retrieval_components(cfg, use_threshold=False)
-    metrics = run_retriever_eval(cfg, ctx, comps, calibrate=calibrate)
-    if strict:
-        metrics |= run_strict_eval(cfg, ctx, comps)
-    ctx.finish(metrics)
-    console.print_json(
-        json.dumps(
-            {
-                k: metrics[k]
-                for k in ("retrieval", "items", "random_baseline", "threshold_calibration")
-                if k in metrics
-            }
-        )
-    )
-    console.print(f"Corrida: {ctx.dir}")
-
-
-@eval_app.command("strict")
-def eval_strict(config: ConfigOpt = None, overrides: SetOpt = None, name: NameOpt = None) -> None:
-    """Evaluación estricta con los recortes etiquetados a mano (SKU exacto)."""
-    from amoblai.eval.strict_eval import run_strict_eval
-    from amoblai.infra.runs import RunContext
-
-    cfg = _config(config, overrides, name)
-    ctx = RunContext(cfg, "strict", name=name)
-    metrics = run_strict_eval(cfg, ctx)
-    ctx.finish(metrics)
-    console.print_json(json.dumps(metrics))
-
-
-@eval_app.command("e2e")
-def eval_e2e(
-    config: ConfigOpt = None,
-    overrides: SetOpt = None,
-    name: NameOpt = None,
-    rooms: Annotated[
-        Path | None, typer.Option(help="Carpeta de ambientes vacíos (default: ambientes_vacios/).")
-    ] = None,
-    limit: Annotated[
-        int | None, typer.Option(help="Procesar solo los primeros N ambientes.")
-    ] = None,
-) -> None:
-    """Re-identificación, preservación (SSIM), cobertura, costo y latencia en ambientes vacíos."""
-    from amoblai.eval.e2e_eval import run_e2e_eval
-    from amoblai.infra.runs import RunContext
-
-    cfg = _config(config, overrides, name)
-    ctx = RunContext(cfg, "e2e", name=name)
-    metrics = run_e2e_eval(cfg, ctx, rooms, limit)
-    ctx.finish(metrics)
-    console.print_json(
-        json.dumps({k: v for k, v in metrics.items() if k != "per_room"}, default=str)
-    )
-    console.print(f"Corrida: {ctx.dir}")
+    console.print(table)
+    console.print(f"Corrida: {run}")
 
 
 @app.command()
-def ablation(
-    plan: Annotated[Path, typer.Argument(help="Plan de ablación (configs/ablaciones/*.yaml).")],
-    only: Annotated[
-        list[str] | None, typer.Option(help="Correr solo estos pasos (por nombre).")
-    ] = None,
-    calibrate: Annotated[
-        bool, typer.Option(help="Guardar el umbral calibrado de cada combinación.")
-    ] = False,
-) -> None:
-    """Corre todas las configuraciones de un plan de ablación (retriever o e2e)."""
-    from amoblai.eval.ablation import run_ablation
+def reporte() -> None:
+    """Tablas y gráficos de las evaluaciones (incluye la v0 por imagen para comparar)."""
+    from amoblai.reporte import build_report
 
-    for d in run_ablation(plan, only, calibrate):
-        console.print(f"✓ {d}")
-
-
-@app.command()
-def report(
-    config: ConfigOpt = None,
-    out: Annotated[
-        Path | None, typer.Option(help="Carpeta de salida (default: resultados/reporte).")
-    ] = None,
-) -> None:
-    """Tablas y gráficos comparativos de todas las corridas."""
-    from amoblai.report.report import build_report
-
-    cfg = _config(config, None)
-    written = build_report(cfg.paths.runs_dir, out or Path(cfg.paths.results_dir) / "reporte")
-    for k, p in written.items():
+    for k, p in build_report(Path("resultados/evaluacion"), Path("resultados/reporte")).items():
         console.print(f"{k}: {p}")
+
+
+@app.command()
+def gastos(config: ConfigOpt = CONFIG) -> None:
+    """Lo gastado por cuenta (resultados/gastos.jsonl) contra sus topes."""
+    from roomrag.budget import Ledger
+
+    cfg = cfg_for(config)
+    table = Table("cuenta", "gastado (US$)", "tope (US$)")
+    for account, cap in {**cfg.budget.accounts, "(resto)": cfg.budget.max_usd_total}.items():
+        pool = None if account == "(resto)" else account
+        table.add_row(account, f"{Ledger(cfg.budget.ledger, cap, pool).spent():.4f}", f"{cap:.2f}")
+    console.print(table)
 
 
 if __name__ == "__main__":  # pragma: no cover

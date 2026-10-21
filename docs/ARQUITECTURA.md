@@ -1,141 +1,93 @@
-# Arquitectura (v1)
+# Arquitectura (v1: RAG por texto)
 
-La v1 implementa el diagrama de la propuesta aprobada. Cada caja corresponde a
-un módulo de `src/amoblai/`; las decisiones de diseño están justificadas al final.
+Entrada: una foto del ambiente y el pedido del usuario en texto libre. Salida: los productos
+del catálogo IKEA que hacen falta (la lista de compra) y el ambiente amoblado con ellos.
 
-![Diagrama de arquitectura](arquitectura.png)
+El núcleo es `roomrag` (en `desde_youseeyoubuy/roomrag/`), el mismo paquete que usa el proyecto
+YouSeeYouBuy: el TP lo instala tal cual y le suma lo propio (el catálogo IKEA, los generadores
+de imagen, la evaluación y las apps, en `src/amoblai/`). La v0, que recuperaba por imagen
+(recortes de un ambiente generado + embeddings de imagen), está en `deprecated/`, con su
+arquitectura en `deprecated/docs/ARQUITECTURA_v0.md`.
 
-(Fuente editable: `docs/arquitectura.excalidraw`.)
-
-## Mapa diagrama → código
-
-### Indexing pipeline (offline, una única vez): `amoblai index`
-
-| Caja del diagrama | Módulo | Qué hace |
-|---|---|---|
-| Catálogo IKEA (data loading) | `data/download.py`, `data/ikea.py`, `data/safe_pickle.py` | Descarga el dataset fijado a un commit; carga los pickles con un unpickler restringido; une todo por SKU; deduplica imágenes; arma el ground truth por ambiente. |
-| Ficha por SKU | `data/catalog.py` | `Product` con nombre, tipo, categoría, color, medidas (texto y cm), descripción limpia e imágenes. Se guarda una vez por SKU en `data/processed/catalog.json`. |
-| Preprocesamiento | `indexing/preprocess.py` | RGB, fondo blanco y padding a cuadrado (el mismo proceso que siguen los recortes). |
-| Splitting | `indexing/splitter.py` | Una entrada por imagen de producto (`id = SKU#i`) con metadata: `sku`, `category`, `raw_type`, `name`, `dimN_cm`, `size_raw`, `color`. |
-| Embedding | `embeddings/hf.py`, `embeddings/registry.py` | DINOv3 (default), DINOv2, CLIP o SigLIP 2, locales con Hugging Face; fp16 en GPU, fp32 en CPU, por lotes; vectores L2-normalizados. |
-| Vector DB | `vectorstore/chroma.py` | ChromaDB persistente, HNSW con espacio **coseno explícito**, una colección por modelo + preprocesamiento. |
-
-### Consulta: `amoblai run` / `pipeline/query.py`
-
-| Caja del diagrama | Módulo | Qué hace |
-|---|---|---|
-| Pre-retrieval: Generador 1 | `generation/` + `prompts.GENERATOR1` | Amobla el ambiente vacío con muebles genéricos de las 5 categorías → **imagen 1**. Transforma foto + texto en consultas del mismo dominio que el catálogo (idea tipo HyDE: generar un "documento hipotético" y buscar con él). |
-| Detección y recorte | `vision/detection.py`, `vision/background.py`, `vision/crops.py` | Grounding DINO u OWLv2 con etiquetas en inglés, clasificación por frase y NMS; opcionalmente fondo quitado con SAM guiado por la caja; padding a cuadrado sobre blanco. |
-| Retrieval: embedding + búsqueda ANN + filtro | `retrieval/retriever.py` | Mismo embedder que el índice; ANN coseno; **metadata filtering** por la categoría detectada; umbral calibrado por colección. |
-| Post-retrieval: reranking | `retrieval/reranker.py` | Interfaz `Reranker`. En la v1, `NoopReranker` (top-1). El VLM es la iteración del Ejercicio 4. |
-| Generación: Generador 2 | `generation/` + `prompts.GENERATOR2_*` | Recibe la imagen 1 **o** la foto original, las fotos de los productos elegidos y un prompt; reemplaza cada mueble genérico por el real. Dos modos: todo en una llamada, o un mueble por llamada con máscara. |
-| Lista de compra | `pipeline/output.py` | JSON SKU → ficha (nombre, categoría, tipo, medidas, cantidad, similitud); precio y link solo si existen. |
-
-### Generadores intercambiables (`generation/`)
-
-```
-ImageEditor (Protocol)            EditorService
-├── OpenAIImageEditor   ─┐        ├── caché por hash(proveedor, modelo, prompt, imágenes, máscara)
-├── GeminiImageEditor    ├──────▶ ├── BudgetGuard: dry-run, tope de llamadas y de USD
-├── ManualImageEditor    │        └── SpendLedger: resultados/gastos.jsonl
-└── DryRunEditor        ─┘
+```mermaid
+flowchart LR
+  subgraph IDX["Indexing pipeline (una vez)"]
+    A["Catálogo IKEA<br/>275 productos del alcance"] --> B["Descripciones<br/>8 líneas por producto<br/>(subagentes mirando la foto)"]
+    A --> K["Metadata: tipo, kind,<br/>medidas"]
+    B --> E["Embedding de texto<br/>Qwen3 / BGE / hashing"]
+    E --> V[("Índice<br/>vectores + metadata")]
+    K --> V
+  end
+  U["Foto del ambiente<br/>+ pedido"] --> P["plan (Claude)<br/>pre-retrieval:<br/>piezas, kinds, medidas<br/>y la consulta en 8 líneas"]
+  P --> R["retrieve<br/>filtros duros (kind, medidas)<br/>+ k vecinos por coseno"]
+  V --> R
+  R --> C["choose (Claude)<br/>post-retrieval:<br/>la mejor combinación<br/>mirando las fotos"]
+  C --> S["scene (Claude)<br/>prompt para el<br/>modelo de imagen"]
+  S --> G["generate<br/>Nano Banana 2 (fal)<br/>o a mano"]
+  C --> L["Lista de compra<br/>(SKU → ficha)"]
+  G --> F["Ambiente amoblado"]
 ```
 
-Contrato: la imagen devuelta tiene el tamaño de la base. Cada proveedor adapta
-el tamaño a su API (`generation/geometry.py`: tamaño libre múltiplo de 16 para
-gpt-image-2, tamaños fijos con letterbox, relación de aspecto para Gemini) y
-vuelve a la geometría original, así las cajas de la imagen 1 siguen valiendo
-sobre la foto original.
+## Los pasos y el código
 
-El **editor manual** prepara `resultados/generaciones/manual/<hash>/` con las
-imágenes de entrada, `prompt.txt`, `INSTRUCCIONES.md` y `meta.yaml`, y espera a
-que alguien deje `resultado.png` generado a mano en ChatGPT o Gemini. Registra
-la app usada. Nunca automatiza las webs de chat.
+| Paso (terminología RAG) | Dónde | Qué hace |
+|---|---|---|
+| **Data loading** | `amoblai/data/` (`download`, `ikea`, `catalog`) | Descarga el dataset fijado a un commit, carga los pickles con un unpickler restringido y une todo por SKU. |
+| **Preprocesamiento** | `amoblai/catalogo_ikea.py`, `configs/categories.yaml`, `catalogo/correcciones.yaml` | Elige los productos del alcance (sofá, sillón, silla, mesa, alfombra), los lleva al formato de roomrag (tipo, kind, medidas sin ambigüedad, fotos) y aplica las correcciones a mano (7 escritorios que IKEA tipifica como mesas). |
+| **Splitting** | `catalogo/descripciones.jsonl` | La unidad que se indexa es la descripción de un producto: ocho líneas fijas (Type, Use, Style, Materials, Colors, Shape, Feel, Goes with), 60 a 90 palabras, escritas por subagentes de Claude Code mirando la foto con el prompt `describe_product_v2` de roomrag. Sin marca, precio ni medidas (el tamaño va por filtro). |
+| **Embedding** | `roomrag/embed.py` | Modelos de texto locales de Hugging Face (Qwen3-Embedding-0.6B por defecto, BGE-base) o hashing de palabras; vectores normalizados (el producto interno es el coseno). |
+| **Vector store** | `roomrag/index.py` | Índice en `data/cache/roomrag/`: un vector por producto, en el orden de `items.jsonl`, con la metadata (tipo, kind, medidas) para los filtros; descripciones y vectores en caché por contenido. Con 275 productos la búsqueda exacta alcanza; un ANN (HNSW) entra en el mismo lugar. |
+| **Pre-retrieval: query rewriting** | `roomrag/steps.py: plan`, `prompts/search_query_v2.md` | Claude lee la foto y el pedido como un decorador: decide las piezas (1 a 4), el kind de cada una (filtro duro), el máximo que puede medir y escribe **el producto ideal en las mismas ocho líneas que el catálogo**. La consulta y los documentos quedan en el mismo formato y vocabulario (idea tipo HyDE). |
+| **Retrieval con metadata filtering** | `roomrag/search.py`, `roomrag/filters.py` | Primero los filtros duros (kind, medidas con un 15% de holgura), después los k más cercanos por coseno (3 candidatos por pieza). Una pieza sin nada en el catálogo queda anotada y el flujo sigue. |
+| **Post-retrieval: reranking/selección** | `roomrag/steps.py: choose`, `prompts/choose_combination_v1.md` | Claude ve la foto del ambiente y las fotos de todos los candidatos y elige uno por pieza: la mejor **combinación**, no el mejor de cada uno por separado. |
+| **Generación** | `roomrag/steps.py: scene`, `amoblai/generacion.py` | Claude escribe el prompt del modelo de imagen (dónde va cada producto, hacia dónde mira, qué tamaño tiene al lado de lo que ya está). El modelo de imagen recibe la foto, las fotos de los productos elegidos y ese prompt: Nano Banana 2 por fal, gpt-image por OpenAI, o a mano en ChatGPT/Gemini. |
 
-### Evaluación (`eval/`) y reporte (`report/`)
+## Decisiones
 
-- `retriever_eval.py`: hit rate@k, MRR, recall por ítem, baseline aleatorio, IC bootstrap, calibración del umbral.
-- `strict_eval.py`: set etiquetado a mano (`anotaciones/estricto.jsonl`).
-- `e2e_eval.py`: re-identificación, SSIM fuera de las cajas, cobertura, costo y latencia.
-- `ablation.py`: planes de ablación (`configs/ablaciones/*.yaml`).
-- `report/report.py`: tablas y gráficos de todas las corridas.
+**Por qué texto y no imagen (v0 → v1).** La v0 generaba primero un ambiente con muebles
+genéricos, los detectaba y recortaba, y buscaba cada recorte por imagen. Además de caro (dos
+generaciones por corrida) y frágil (detector, segmentación), el producto elegido dependía de lo
+que se le ocurriera al primer generador. Con texto, el LLM decide qué hace falta y cómo tiene
+que ser, y la búsqueda compara cosas comparables. Con el mismo ground truth (65 ambientes
+IKEA), el retrieval por texto supera al mejor por imagen (ver docs/EXPERIMENTOS.md).
 
-### Infraestructura (`infra/`)
+**Descripciones propias, no las del vendedor.** El texto de IKEA es una frase de marketing
+("lightweight and easy to move"). Las ocho líneas describen lo que importa para elegir un
+mueble para un ambiente, en un formato fijo para todo el catálogo. Es la diferencia más grande
+de la ablación (hit@1 0,15 → 0,56 con el mismo embedder).
 
-`cache.py` (caché direccionada por contenido), `budget.py`, `usage.py` (tokens →
-USD con `configs/pricing.yaml`), `runs.py` (carpeta por corrida con config,
-manifest con commit de git, métricas y artefactos), `device.py`, `tracing.py`
-(LangSmith opcional).
+**El tipo y el tamaño van como filtros, no como palabras en el vector.** Un vector no sabe que
+un sillón no es una silla, ni que un sofá de 2,40 m no entra en 2 m. Los `kinds`
+(`roomrag/kinds.py`) son el filtro más fino: "silla de comedor" vs. "silla de escritorio" vs.
+"sillón". Se asignaron mirando la foto de cada producto (no solo el `type` de IKEA).
 
-## Decisiones de diseño
+**Las descripciones las escriben subagentes, sin API.** Cada subagente recibió un lote de ~35
+productos, miró las fotos y escribió las descripciones con el mismo prompt que usaría un
+describer por API, y las validó con `python -m amoblai.descripciones` (ocho líneas en orden,
+largo, estilos de la lista fija, sin marca, nombre comercial ni medidas). El índice se puede
+reconstruir con un describer por API (`anthropic_vision`) cambiando una línea de la config.
 
-**Qué se indexa: todo el catálogo.** Son 2189 imágenes (unos minutos por modelo
-en CPU). Cada vector lleva `category` = una de las 5 del alcance u `other`. Si
-solo se indexara el alcance, la ablación "sin filtro por categoría" no tendría
-distractores y no mediría nada. Indexando todo, mide cuánto aporta el metadata
-filtering, y sumar categorías no obliga a reindexar. El alcance se aplica en el
-prompt del generador n.º 1, en las etiquetas del detector y en el filtro.
+**Claude para plan, choose y scene.** Claude Opus 5.5 (effort `medium`) mira fotos y escribe
+JSON. Cada llamada pasa por el tope de gasto de su cuenta y queda en `resultados/gastos.jsonl`
+(una corrida completa ≈ US$0,12).
 
-**Mapeo de categorías explícito** (`configs/categories.yaml`): los 677 valores de
-`type` del dataset se reducen a 5 categorías con una lista revisable; los
-dudosos excluidos están documentados con su motivo. `amoblai categories` genera
-`resultados/mapeo_categorias.md` con los conteos.
+**Generación: Nano Banana 2 por fal.** En la prueba de YouSeeYouBuy, Gemini conservó la forma
+de los muebles mejor que gpt-image; con `aspect_ratio: auto` dibuja en la proporción de la
+foto. El generador `manual` deja una carpeta con las imágenes en orden y el prompt para hacerlo
+a mano.
 
-**Splitting = una imagen.** La unidad recuperable es una foto de producto, no el
-producto: hoy hay 2 SKUs con dos fotos distintas (dos vectores), y el esquema
-soporta más vistas por scraping. La ficha completa vive aparte, una vez por SKU
-(patrón multi-vector / parent document).
+**Caché y reanudación.** Cada paso escribe su archivo en la carpeta de la corrida
+(`1_searches.json`, `2_candidates.json`, `3_choice.json`, `4_scene.json`, `5_image.json`,
+`final.png`); si existe, no se repite. Nada se paga dos veces.
 
-**Preprocesamiento simétrico.** Catálogo y recortes pasan por el mismo proceso
-(fondo blanco, padding a cuadrado, sin center-crop). Sin el padding, el
-center-crop de los procesadores corta los extremos de un sofá.
+**LangChain no.** El flujo son cinco pasos fijos con imágenes de entrada; roomrag los
+implementa con httpx, con reintentos, tope de gasto y tests sin red (`httpx.MockTransport`).
+Un framework de orquestación no agrega nada acá.
 
-**Quitar el fondo: opcional y decidido por la ablación.** La hipótesis de la
-propuesta era que quitarlo achica la brecha de dominio con el catálogo. La
-ablación (docs/EXPERIMENTOS.md) muestra que depende del embedder: ayuda a
-DINOv2 pero perjudica a DINOv3 y SigLIP 2, así que el default es no quitarlo.
-Cuando se quita, se usa SAM guiado por la caja: un recorte de un living tiene varios
-objetos destacados; un modelo de objeto saliente puede elegir el equivocado. Con
-la caja del detector como prompt, la máscara apunta al mueble detectado. Se
-limpia (componente mayor dentro de la caja, huecos rellenos). Las alfombras,
-tapadas por otros muebles, salen mal segmentadas: `background.skip_categories`
-permite no quitarles el fondo (experimento pendiente).
+## Lo que no hace la v1
 
-**Coseno explícito + vectores normalizados.** El default de Chroma es L2; se
-configura `cosine` y además se normalizan los vectores, así ambos criterios
-ordenan igual.
-
-**Umbral calibrado por colección.** Las escalas de coseno de DINO, CLIP y SigLIP
-no son comparables. `amoblai eval retriever --calibrate` elige el umbral que
-maximiza F1 de "aceptar ⇔ el top-1 es correcto" sobre los ambientes de IKEA (los
-recortes sin respuesta posible cuentan como negativos) y lo guarda en
-`configs/umbrales.yaml`.
-
-**Advanced RAG en la v1.** (1) Transformación de la consulta en el
-pre-retrieval: el generador n.º 1 convierte foto + texto en recortes del mismo
-dominio que los documentos. (2) Metadata filtering por categoría. El reranking
-con un VLM es la iteración del Ejercicio 4.
-
-**LangChain: no; LangSmith: sí.** El retrieval es imagen → imagen con embeddings
-propios de Hugging Face; los wrappers de LangChain para Chroma y multimodal
-agregan una capa sin aportar (habría que envolver el embedder y perder el
-control de lotes, fp16 y metadata). Las etapas se instrumentan con `@traceable`
-de LangSmith, que no requiere LangChain: trazas con entradas resumidas (sin subir
-imágenes), tiempos y salidas. Se activa con `LANGSMITH_TRACING=true` en `.env`.
-
-**Caché y costos.** Toda generación pasa por `EditorService`: si la misma
-entrada ya se generó (por API o a mano), se reusa sin pagar. Las imágenes
-generadas viven en `resultados/generaciones/` y se commitean, así el equipo
-comparte un mismo set de imágenes 1 entre experimentos y máquinas. Las cachés
-recomputables (detecciones, máscaras) quedan en `data/cache/`.
-
-**Reproducibilidad.** Dataset fijado a un commit, `uv.lock`, config resuelta y
-commit de git en cada corrida, semillas fijas para el bootstrap.
-
-## Limitaciones conocidas de la v1
-
-- El ground truth de IKEA no tiene posiciones: la métrica del retriever es permisiva (ver `docs/EXPERIMENTOS.md`).
-- Las alfombras se segmentan mal (quedan tapadas por otros muebles).
-- El detector confunde silla ↔ sillón ↔ sofá; con filtro duro, un error del detector es un error del retrieval (ver FUTURO.md: filtro por grupo).
-- Después del generador n.º 1 el texto del usuario no influye en la elección del producto: lo resolvería el reranking con VLM (Ejercicio 4).
-- Las máscaras de gpt-image son orientativas y Gemini no recibe máscara: sin compositing, el generador puede retocar fuera de las cajas (se mide con el SSIM).
+- No ubica los muebles con precisión ni a escala: lo decide el modelo de imagen a partir del
+  prompt (el 3D es de YouSeeYouBuy). Ver FUTURO.md.
+- El modelo de imagen puede deformar un producto o retocar el ambiente: el prompt pide cada
+  producto exactamente como en su foto y el resto igual, pero no está garantizado.
+- Precios y links: el dataset no los tiene.
