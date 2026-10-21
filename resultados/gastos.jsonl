@@ -12,3 +12,4 @@
 {"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.04644, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:33:55"}
 {"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.032292, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:34:04"}
 {"step": "furnish.generate", "provider": "nano_banana_2", "model": "fal-ai/nano-banana-2/edit", "cost_usd": 0.08, "cost_source": "estimate", "cached": false, "pool": "fal", "time": "2026-10-21T14:37:30"}
+{"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.037404, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:58:05"}

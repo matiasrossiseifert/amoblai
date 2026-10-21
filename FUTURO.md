@@ -5,6 +5,25 @@ Cada idea que surge va acá en lugar de implementarse. Formato: **qué**: por qu
 
 ## Candidatos para la iteración (Ejercicio 4)
 
+- **Que el modelo de imagen ubique los muebles donde se le pide**: en la primera imagen
+  (prueba-alvear2) el prompt decía "a mitad del living" y el modelo puso todo cerca de la cámara,
+  con el fondo vacío. `src/amoblai/prompts/scene_prompt_v2.md` ancla cada producto a algo visible
+  a esa profundidad, da su tamaño en el cuadro y dice que el piso cerca de la cámara queda libre;
+  falta probarlo (prueba-alvear2-scene-v2, una imagen). Si no alcanza: una imagen guía con un
+  rectángulo dibujado donde va cada producto (Claude da las coordenadas en scene; va al modelo
+  como referencia, o se pinta y se pide borrarlo), o un modelo que acepte máscaras. (S-M)
+- **Que los productos no se vean pegados**: las fotos del catálogo son de estudio sobre blanco
+  (muchas, renders) y v1 pedía cada producto "exactly as in its photo", con lo que el modelo
+  copia también la luz pareja del estudio. v2 pide solo el diseño y la luz, el balance de blancos,
+  el grano y la nitidez del ambiente. Además: salida en 2K (más cara; confirmar el precio de fal)
+  y comparar con gpt-image. (S)
+- **Más muebles para ambientes grandes**: un living largo con cuatro piezas queda vacío. Ampliar
+  el alcance a guardado (el dataset tiene 49 bibliotecas, estanterías y vitrinas, y 7 muebles
+  bajos de TV), iluminación (19 lámparas de pie y de mesa) y pufs o bancos; describirlos con
+  subagentes como el resto (gratis) y dejar que el plan complete el ambiente (hasta 6 piezas)
+  cuando el pedido lo deja abierto o el lugar lo pide. Accesorios (almohadones, plantas,
+  cuadros: también están en el dataset) suman realismo; si no son del catálogo, no van en la
+  lista de compra. (M)
 - **Una vista del ambiente contra dos**: ya se puede mandar otra foto del mismo ambiente desde
   otro ángulo (`amoblai amoblar --vista`): va a Claude en plan, choose y scene para que entienda
   el tamaño y la forma del cuarto, y los muebles se agregan solo en la foto principal. Falta
@@ -62,8 +81,8 @@ Cada idea que surge va acá en lugar de implementarse. Formato: **qué**: por qu
   duro más. (M)
 - **Otras tiendas y catálogos**: un loader por fuente y sus descripciones; roomrag no depende del
   catálogo. YouSeeYouBuy ya tiene 708 productos de otras fuentes. (M por tienda)
-- **Más tipos de ambientes y categorías**: dormitorios, oficinas; taburetes, pufs, bancos,
-  lámparas, aparadores (hoy fuera del alcance aprobado). Implica describirlos y sumar kinds. (S-M)
+- **Más tipos de ambientes**: dormitorios, oficinas, con sus categorías (camas, mesas de luz,
+  escritorios). Implica describirlos y sumar kinds. (S-M)
 - **Fotos de ambientes vacíos propias** para la evaluación de punta a punta. (S)
 
 ## Producto

@@ -7,6 +7,7 @@ from PIL import Image
 from roomrag import http
 from roomrag.budget import BudgetExceeded, Ledger, PaidCallsDisabled
 from roomrag.flow import run_flow
+from roomrag.prompts import load_prompt
 from roomrag.search import Hit
 from roomrag.steps import _size
 
@@ -236,3 +237,14 @@ def test_the_llm_gets_the_measures_the_catalog_has():
     assert _size(hit(full)) == "220 cm wide, 90 cm deep, 80 cm high"  # como antes
     assert _size(hit({"width": 140, "depth": 200})) == "140 cm wide, 200 cm deep"  # alfombra
     assert _size(hit(None)) == "size unknown"  # los asientos: el dataset no trae medidas
+
+
+def test_scene_prompt_v2_takes_the_same_inputs_as_v1():
+    from tests.conftest import ROOT
+
+    filled = {}
+    for name in ("scene_prompt_v1.md", "src/amoblai/prompts/scene_prompt_v2.md"):
+        tmpl = load_prompt(name, ROOT)
+        filled[tmpl.version] = tmpl.fill(request="un sofá", room="a room", products="image 2. x")
+    assert set(filled) == {"scene_prompt_v1", "scene_prompt_v2"}
+    assert all('"prompt"' in t and "image 2. x" in t for t in filled.values())
