@@ -1,0 +1,11 @@
+# Correcciones a mano del tipo y el kind de productos donde el dato de IKEA no coincide con la
+# foto (revisado por los subagentes que describieron el catálogo y por nosotros). El tipo es un
+# filtro duro: un escritorio tipificado como mesa aparecería en búsquedas de mesas de comedor.
+# `amoblai catalogo` aplica esto a catalogo/kinds.yaml y a catalogo/ikea.yaml.
+"091.195.18": {category: desk, kind: desk, motivo: "KLIMPEN/NIPEN: escritorio con cajonera (IKEA: Table with drawers)"}
+"191.197.25": {category: desk, kind: desk, motivo: "HISSMON/KRILLE: escritorio con ruedas (IKEA: Table)"}
+"290.007.16": {category: desk, kind: desk, motivo: "LINNMON/LERBERG: tapa sobre caballetes (IKEA: Table)"}
+"290.047.76": {category: desk, kind: desk, motivo: "TORNLIDEN/ADILS: escritorio (IKEA: Table)"}
+"299.321.81": {category: desk, kind: desk, motivo: "LINNMON/ADILS: escritorio (IKEA: Table)"}
+"691.335.97": {category: desk, kind: desk, motivo: "LINNMON/ADILS: escritorio (IKEA: Table)"}
+"899.309.28": {category: desk, kind: desk, motivo: "LINNMON/NIPEN: escritorio (IKEA: Table)"}

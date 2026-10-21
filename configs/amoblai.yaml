@@ -1,0 +1,64 @@
+# Config del flujo de amoblado del TP (roomrag: desde_youseeyoubuy/roomrag). Cada campo está
+# explicado en desde_youseeyoubuy/roomrag/config.py. Rutas de entrada relativas a `root` (la
+# raíz del repo); cache_dir, runs_dir y budget.ledger relativas a donde se corre (la raíz).
+name: amoblai
+root: .
+cache_dir: data/cache/roomrag     # descripciones, vectores e índices: se regeneran gratis
+runs_dir: resultados/amoblar      # una carpeta por corrida (se commitea)
+
+rag:
+  catalog: catalogo/ikea.yaml     # lo genera `amoblai catalogo`
+  mode: rag                       # o whole_catalog: todo lo que pasa los filtros, sin ranking
+  top_k: 3
+  describer: written              # las ocho líneas escritas por subagentes mirando las fotos
+  describers:
+    written: {kind: written, file: catalogo/descripciones.jsonl}
+    fields: {kind: fields}        # línea de base: el texto del vendedor (nombre, colores, desc)
+  embedder: qwen3                 # el mejor de la ablación (docs/EXPERIMENTOS.md)
+  embedders:
+    hashing: {kind: hashing, dim: 1024}                                   # gratis, sin modelo
+    bge: {kind: local, model: BAAI/bge-base-en-v1.5, pooling: cls}        # MIT, local
+    qwen3: {kind: local, model: Qwen/Qwen3-Embedding-0.6B, pooling: last} # Apache-2.0, local
+    openai:                                                               # pago: no usar sin permiso
+      kind: openai_embeddings
+      model: text-embedding-3-large
+      models: {text-embedding-3-large: {usd_per_m: 0.13}}
+
+furnish:
+  steps: [plan, retrieve, choose, scene, generate]
+  max_pieces: 4
+  candidates: 3                   # por pieza: el LLM ve 3 fotos de cada una y elige la combinación
+  photo_max_side: 1024
+  # Claude (API de Anthropic) para plan, choose y scene. Precios por 1M de tokens, consultados
+  # el 2026-10-21. Opus 5.5 siempre piensa; effort (low..max) regula cuánto (default medium).
+  llm:
+    kind: anthropic
+    model: claude-opus-5-5
+    effort: medium
+    max_tokens: 16000
+    timeout_s: 300
+    models:
+      claude-opus-5-5: {usd_per_m: {input: 4.0, output: 20.0}, estimate_usd: 0.15}
+      claude-sonnet-5-5: {usd_per_m: {input: 2.0, output: 10.0}, estimate_usd: 0.08}
+  generator: manual               # gratis: deja una carpeta para pegar en ChatGPT o Gemini
+  generators:
+    manual: {kind: manual}
+    nano_banana_2:                # Nano Banana 2 (Gemini 3.1 Flash Image) por fal
+      kind: "amoblai.generacion:FalNanoBanana"
+      endpoint: fal-ai/nano-banana-2/edit
+      resolution: 1K
+      aspect_ratio: auto          # dibuja en la proporción de la foto
+      usd_per_image: {1K: 0.08, 2K: 0.12, 4K: 0.16}
+    openai:                       # gpt-image por images.edit; queda poco saldo: no usar sin permiso
+      kind: "amoblai.generacion:OpenAIImage"
+      model: gpt-image-2
+      quality: medium
+      estimate_usd: 0.12
+
+budget:
+  # Lo que no tiene cuenta propia (OpenAI) queda en 0: cualquier llamada se rechaza.
+  max_usd_total: 0.0
+  # Topes propios. anthropic: lo que podemos gastar sin volver a preguntar; fal: una imagen.
+  accounts: {anthropic: 1.0, fal: 0.10}
+  allow_paid: false               # se habilita a propósito con --pagar (o --set budget.allow_paid=true)
+  ledger: resultados/gastos.jsonl
