@@ -36,6 +36,7 @@ flagged/
 # Temporales de escritura atómica
 *.tmp
 
-# Copias de fotos del dataset IKEA que el generador manual arma en cada corrida (el flujo las
-# vuelve a copiar al reanudarse): no se commitean.
+# Fotos del dataset IKEA dentro de las corridas: las copias que arma el generador manual y las
+# hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
 resultados/amoblar/*/manual/[0-9]_product_*
+resultados/amoblar/**/2_candidates*.jpg

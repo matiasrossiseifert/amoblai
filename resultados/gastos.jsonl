@@ -1,3 +1,10 @@
 {"step": "furnish.plan", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.04332, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T13:34:32"}
 {"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.040536, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T13:34:56"}
 {"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.036716, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T13:35:09"}
+{"step": "furnish.plan", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.040488, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:06:05"}
+{"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.044872, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:06:29"}
+{"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.031852, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:06:39"}
+{"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.043492, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:08:07"}
+{"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.032836, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:08:19"}
+{"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.044288, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:10:49"}
+{"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.04168, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T14:11:03"}

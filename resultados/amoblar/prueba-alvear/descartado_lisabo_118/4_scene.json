@@ -1,0 +1,50 @@
+{
+  "answer": {
+    "prompt": "Image 1 is the room to edit. Images 2 to 5 are products to add, one each. Place them in image 1 exactly as its camera sees the room.\n\nImage 2 (three-seat sofa): against the long right-hand wall, centered below the row of wall outlets, its back to the wall, facing left toward the balcony door. It spans about a third of the visible wall length; its back sits well below the outlet plates.\n\nImage 5 (shaggy rug, 170 x 240 cm): on the wood floor in front of the sofa, long side parallel to the right wall, with the sofa's front legs on it. It fills much of the open floor between the sofa and the glass door.\n\nImage 4 (coffee table, 118 x 50 cm): centered on the rug in front of the sofa, long side parallel to it, about half the sofa's length.\n\nImage 3 (leather armchair): on the left, near the black-framed balcony door in the window light, front legs on the rug's edge, angled toward the sofa and coffee table.\n\nReproduce each product exactly as in its photo: same shape, proportions, colors, materials and details, not a similar one. Keep everything else in image 1 unchanged: framing, camera, walls, floor, door, balcony and light. Only add the products, with natural shadows and daylight from the balcony. Output a realistic photograph, not a render.",
+    "placements": [
+      {
+        "id": "691.249.46",
+        "where": "against right wall under outlets, facing window"
+      },
+      {
+        "id": "391.505.88",
+        "where": "left, by balcony door, angled to sofa"
+      },
+      {
+        "id": "702.976.58",
+        "where": "centered on rug in front of sofa"
+      },
+      {
+        "id": "302.837.81",
+        "where": "floor center, under sofa front legs"
+      }
+    ]
+  },
+  "model": "claude-opus-5-5",
+  "cost_usd": 0.032836,
+  "prompt": "scene_prompt_v1",
+  "meta": {
+    "status": "completed",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 4024,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 837,
+      "output_tokens_details": {
+        "thinking_tokens": 254
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "images": 6,
+    "latency_s": 11.42
+  },
+  "text": "{\"prompt\": \"Image 1 is the room to edit. Images 2 to 5 are products to add, one each. Place them in image 1 exactly as its camera sees the room.\\n\\nImage 2 (three-seat sofa): against the long right-hand wall, centered below the row of wall outlets, its back to the wall, facing left toward the balcony door. It spans about a third of the visible wall length; its back sits well below the outlet plates.\\n\\nImage 5 (shaggy rug, 170 x 240 cm): on the wood floor in front of the sofa, long side parallel to the right wall, with the sofa's front legs on it. It fills much of the open floor between the sofa and the glass door.\\n\\nImage 4 (coffee table, 118 x 50 cm): centered on the rug in front of the sofa, long side parallel to it, about half the sofa's length.\\n\\nImage 3 (leather armchair): on the left, near the black-framed balcony door in the window light, front legs on the rug's edge, angled toward the sofa and coffee table.\\n\\nReproduce each product exactly as in its photo: same shape, proportions, colors, materials and details, not a similar one. Keep everything else in image 1 unchanged: framing, camera, walls, floor, door, balcony and light. Only add the products, with natural shadows and daylight from the balcony. Output a realistic photograph, not a render.\", \"placements\": [{\"id\": \"691.249.46\", \"where\": \"against right wall under outlets, facing window\"}, {\"id\": \"391.505.88\", \"where\": \"left, by balcony door, angled to sofa\"}, {\"id\": \"702.976.58\", \"where\": \"centered on rug in front of sofa\"}, {\"id\": \"302.837.81\", \"where\": \"floor center, under sofa front legs\"}]}",
+  "views": 1
+}
