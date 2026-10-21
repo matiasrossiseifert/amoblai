@@ -37,7 +37,7 @@ CAMINO = [
     ("T2' filtro por kind (más fino)", "hashing|description|filtro-kind"),
     ("T3 Qwen3-Embedding", "qwen3|description|filtro-type"),
     ("T3' BGE", "bge|description|filtro-type"),
-    ("T4 + reranking (VLM)", "qwen3|description|filtro-type|rerank-haiku"),
+    ("T4 + reranking (VLM)", "qwen3|description|filtro-type|rerank-opus"),
 ]
 
 # Advanced RAG sobre el mejor método: cada fila cambia una sola cosa.
@@ -46,7 +46,7 @@ AVANZADO = [
     ("búsqueda exacta", "qwen3|description|filtro-type|exact"),
     ("consulta: solo Type", "qwen3|description|filtro-type|consulta-type"),
     ("consulta: solo el kind", "qwen3|description|filtro-type|consulta-kind"),
-    ("+ reranking (Haiku 5.5)", "qwen3|description|filtro-type|rerank-haiku"),
+    ("+ reranking (Opus 5.5)", "qwen3|description|filtro-type|rerank-opus"),
 ]
 
 

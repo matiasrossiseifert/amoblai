@@ -253,3 +253,5 @@
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-haiku-5-5", "cost_usd": 0.000998, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T16:15:29"}
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-haiku-5-5", "cost_usd": 0.000763, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T16:15:29"}
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-haiku-5-5", "cost_usd": 0.000871, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T16:15:30"}
+{"step": "eval.rerank", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.01762, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T16:38:04"}
+{"step": "eval.rerank", "provider": "anthropic", "model": "claude-sonnet-5-5", "cost_usd": 0.00881, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-21T16:38:06"}

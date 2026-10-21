@@ -61,17 +61,25 @@ furnish:
 
 evaluation:
   # Ablación de post-retrieval: un VLM reordena el top de la búsqueda mirando las fotos de los
-  # candidatos (evaluation/retrieval.py). Haiku 5.5 por costo: ~US$0,0007 por consulta.
+  # candidatos (evaluation/retrieval.py). Los mismos modelos y effort que el flujo; Haiku no.
   rerank_top: 10
   rerankers:
-    haiku:
+    opus:
       kind: anthropic
-      model: claude-haiku-5-5
-      effort: low
-      max_tokens: 4000
-      timeout_s: 120
+      model: claude-opus-5-5
+      effort: medium
+      max_tokens: 16000
+      timeout_s: 300
       models:
-        claude-haiku-5-5: {usd_per_m: {input: 0.10, output: 0.50}, estimate_usd: 0.003}
+        claude-opus-5-5: {usd_per_m: {input: 4.0, output: 20.0}, estimate_usd: 0.06}
+    sonnet:
+      kind: anthropic
+      model: claude-sonnet-5-5
+      effort: medium
+      max_tokens: 16000
+      timeout_s: 300
+      models:
+        claude-sonnet-5-5: {usd_per_m: {input: 2.0, output: 10.0}, estimate_usd: 0.03}
 
 budget:
   # Lo que no tiene cuenta propia (OpenAI) queda en 0: cualquier llamada se rechaza.
