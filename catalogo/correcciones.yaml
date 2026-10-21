@@ -1,4 +1,4 @@
-# Correcciones a mano del tipo y el kind de productos donde el dato de IKEA no coincide con la
+# Correcciones a mano del tipo y el kind (y exclusiones) de productos donde el dato de IKEA no coincide con la
 # foto (revisado por los subagentes que describieron el catálogo y por nosotros). El tipo es un
 # filtro duro: un escritorio tipificado como mesa aparecería en búsquedas de mesas de comedor.
 # `amoblai catalogo` aplica esto a catalogo/kinds.yaml y a catalogo/ikea.yaml.
@@ -9,3 +9,14 @@
 "299.321.81": {category: desk, kind: desk, motivo: "LINNMON/ADILS: escritorio (IKEA: Table)"}
 "691.335.97": {category: desk, kind: desk, motivo: "LINNMON/ADILS: escritorio (IKEA: Table)"}
 "899.309.28": {category: desk, kind: desk, motivo: "LINNMON/NIPEN: escritorio (IKEA: Table)"}
+
+# Productos que comparten la foto con otra medida del mismo modelo y cuya forma no es la de la
+# foto (una mesa de 118x50 con la foto de la cuadrada): el modelo de imagen dibujaría otra cosa
+# y la lista de compra no coincidiría con la imagen. Se dejan afuera; queda el SKU de la foto.
+"702.976.58": {excluir: true, motivo: "LISABO 118x50: la foto es la mesa cuadrada (902.976.57, 70x70)"}
+"190.117.77": {excluir: true, motivo: "MELLTORP 125x75: la foto es la mesa cuadrada (390.117.81, 75x75)"}
+"002.773.95": {excluir: true, motivo: "LOHALS 200x300: la foto es la de 80x150 (203.074.81)"}
+"202.703.12": {excluir: true, motivo: "OSTED 160x230: la foto es el pasillo de 80x240 (402.804.90)"}
+"802.307.90": {excluir: true, motivo: "GÅSER 170x240: la foto es el pasillo de 56x150 (902.592.50)"}
+"402.279.02": {excluir: true, motivo: "LAPPLJUNG RUTA 200x200: la foto es la de 200x300 (402.605.19)"}
+"703.130.07": {excluir: true, motivo: "HAMPEN 133x195: la foto es la cuadrada de 80x80 (903.130.11)"}

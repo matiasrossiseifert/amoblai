@@ -26,7 +26,7 @@ Desde la raíz del repo, con las dependencias de la v0:
 
 ```bash
 uv sync --extra cpu --extra imagen --group dev --group apps
-PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini            # tests
+PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini deprecated/tests   # tests
 PYTHONPATH=deprecated uv run python -m amoblai_imagen.cli --help        # CLI
 PYTHONPATH=deprecated uv run python -m amoblai_imagen.cli eval retriever --calibrate
 uv run --group apps python deprecated/apps/flujo.py                     # app de flujo

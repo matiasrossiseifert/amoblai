@@ -1,0 +1,1262 @@
+{
+  "hashing|description|filtro-kind": {
+    "method": {
+      "embedder": "hashing",
+      "text": "description",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5707,
+    "hit@1_ic95": [
+      0.4973,
+      0.6498
+    ],
+    "hit@3": 0.7778,
+    "hit@3_ic95": [
+      0.7113,
+      0.8442
+    ],
+    "hit@5": 0.8485,
+    "hit@5_ic95": [
+      0.785,
+      0.9072
+    ],
+    "hit@10": 0.8939,
+    "hit@10_ic95": [
+      0.8406,
+      0.9454
+    ],
+    "mrr@10": 0.6882,
+    "mrr@10_ic95": [
+      0.6288,
+      0.7536
+    ],
+    "literal_hit@10": 0.7946,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.5437,
+    "recall_item@1_ic95": [
+      0.4719,
+      0.6165
+    ],
+    "recall_item@10": 0.8447,
+    "recall_item@10_ic95": [
+      0.7972,
+      0.8973
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.6667,
+      "chair": 0.6818,
+      "rug": 0.3556,
+      "sofa": 0.375,
+      "table": 0.6866
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "hashing|description|filtro-type": {
+    "method": {
+      "embedder": "hashing",
+      "text": "description",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5859,
+    "hit@1_ic95": [
+      0.5147,
+      0.6633
+    ],
+    "hit@3": 0.8283,
+    "hit@3_ic95": [
+      0.774,
+      0.8844
+    ],
+    "hit@5": 0.8939,
+    "hit@5_ic95": [
+      0.8474,
+      0.9378
+    ],
+    "hit@10": 0.9343,
+    "hit@10_ic95": [
+      0.899,
+      0.9683
+    ],
+    "mrr@10": 0.716,
+    "mrr@10_ic95": [
+      0.6638,
+      0.776
+    ],
+    "literal_hit@10": 0.8304,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.5485,
+    "recall_item@1_ic95": [
+      0.4755,
+      0.6179
+    ],
+    "recall_item@10": 0.8835,
+    "recall_item@10_ic95": [
+      0.8382,
+      0.9305
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.6667,
+      "chair": 0.6818,
+      "rug": 0.3556,
+      "sofa": 0.375,
+      "table": 0.7313
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "hashing|description|filtro-none": {
+    "method": {
+      "embedder": "hashing",
+      "text": "description",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5859,
+    "hit@1_ic95": [
+      0.5147,
+      0.6633
+    ],
+    "hit@3": 0.8131,
+    "hit@3_ic95": [
+      0.7548,
+      0.8732
+    ],
+    "hit@5": 0.8939,
+    "hit@5_ic95": [
+      0.8474,
+      0.9378
+    ],
+    "hit@10": 0.9293,
+    "hit@10_ic95": [
+      0.8932,
+      0.9648
+    ],
+    "mrr@10": 0.7118,
+    "mrr@10_ic95": [
+      0.6608,
+      0.7716
+    ],
+    "literal_hit@10": 0.8571,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.5485,
+    "recall_item@1_ic95": [
+      0.4755,
+      0.6179
+    ],
+    "recall_item@10": 0.8835,
+    "recall_item@10_ic95": [
+      0.8382,
+      0.9305
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.6667,
+      "chair": 0.6818,
+      "rug": 0.3556,
+      "sofa": 0.375,
+      "table": 0.7313
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "hashing|seller|filtro-kind": {
+    "method": {
+      "embedder": "hashing",
+      "text": "seller",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.202,
+    "hit@1_ic95": [
+      0.1357,
+      0.2746
+    ],
+    "hit@3": 0.3434,
+    "hit@3_ic95": [
+      0.2727,
+      0.4176
+    ],
+    "hit@5": 0.5253,
+    "hit@5_ic95": [
+      0.4591,
+      0.5897
+    ],
+    "hit@10": 0.6869,
+    "hit@10_ic95": [
+      0.6281,
+      0.7474
+    ],
+    "mrr@10": 0.324,
+    "mrr@10_ic95": [
+      0.2657,
+      0.3868
+    ],
+    "literal_hit@10": 0.6116,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.1893,
+    "recall_item@1_ic95": [
+      0.1286,
+      0.2558
+    ],
+    "recall_item@10": 0.6553,
+    "recall_item@10_ic95": [
+      0.5952,
+      0.7213
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1667,
+      "chair": 0.2273,
+      "rug": 0.0667,
+      "sofa": 0.25,
+      "table": 0.2687
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "hashing|seller|filtro-type": {
+    "method": {
+      "embedder": "hashing",
+      "text": "seller",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1566,
+    "hit@1_ic95": [
+      0.102,
+      0.2188
+    ],
+    "hit@3": 0.2727,
+    "hit@3_ic95": [
+      0.2062,
+      0.3495
+    ],
+    "hit@5": 0.3788,
+    "hit@5_ic95": [
+      0.3134,
+      0.4528
+    ],
+    "hit@10": 0.5505,
+    "hit@10_ic95": [
+      0.487,
+      0.6126
+    ],
+    "mrr@10": 0.2532,
+    "mrr@10_ic95": [
+      0.2001,
+      0.3119
+    ],
+    "literal_hit@10": 0.4911,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.1408,
+    "recall_item@1_ic95": [
+      0.0948,
+      0.1934
+    ],
+    "recall_item@10": 0.5243,
+    "recall_item@10_ic95": [
+      0.4625,
+      0.5891
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.2273,
+      "rug": 0.0667,
+      "sofa": 0.2083,
+      "table": 0.1642
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "hashing|seller|filtro-none": {
+    "method": {
+      "embedder": "hashing",
+      "text": "seller",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1465,
+    "hit@1_ic95": [
+      0.0957,
+      0.2067
+    ],
+    "hit@3": 0.2222,
+    "hit@3_ic95": [
+      0.1592,
+      0.2933
+    ],
+    "hit@5": 0.2828,
+    "hit@5_ic95": [
+      0.2139,
+      0.3568
+    ],
+    "hit@10": 0.4343,
+    "hit@10_ic95": [
+      0.3705,
+      0.5027
+    ],
+    "mrr@10": 0.213,
+    "mrr@10_ic95": [
+      0.1619,
+      0.2722
+    ],
+    "literal_hit@10": 0.4643,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.1359,
+    "recall_item@1_ic95": [
+      0.0904,
+      0.1889
+    ],
+    "recall_item@10": 0.4175,
+    "recall_item@10_ic95": [
+      0.36,
+      0.4796
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.2273,
+      "rug": 0.0667,
+      "sofa": 0.125,
+      "table": 0.1642
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "bge|description|filtro-kind": {
+    "method": {
+      "embedder": "bge",
+      "text": "description",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5152,
+    "hit@1_ic95": [
+      0.4461,
+      0.5867
+    ],
+    "hit@3": 0.7222,
+    "hit@3_ic95": [
+      0.6635,
+      0.7784
+    ],
+    "hit@5": 0.7828,
+    "hit@5_ic95": [
+      0.7273,
+      0.8415
+    ],
+    "hit@10": 0.8939,
+    "hit@10_ic95": [
+      0.8418,
+      0.9435
+    ],
+    "mrr@10": 0.634,
+    "mrr@10_ic95": [
+      0.5781,
+      0.6911
+    ],
+    "literal_hit@10": 0.7946,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.4951,
+    "recall_item@1_ic95": [
+      0.426,
+      0.5687
+    ],
+    "recall_item@10": 0.8544,
+    "recall_item@10_ic95": [
+      0.8027,
+      0.9086
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.5556,
+      "chair": 0.6364,
+      "rug": 0.1778,
+      "sofa": 0.5417,
+      "table": 0.6418
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "bge|description|filtro-type": {
+    "method": {
+      "embedder": "bge",
+      "text": "description",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5202,
+    "hit@1_ic95": [
+      0.4521,
+      0.5912
+    ],
+    "hit@3": 0.7475,
+    "hit@3_ic95": [
+      0.69,
+      0.8065
+    ],
+    "hit@5": 0.8081,
+    "hit@5_ic95": [
+      0.76,
+      0.8634
+    ],
+    "hit@10": 0.9192,
+    "hit@10_ic95": [
+      0.8812,
+      0.9585
+    ],
+    "mrr@10": 0.6486,
+    "mrr@10_ic95": [
+      0.5952,
+      0.7025
+    ],
+    "literal_hit@10": 0.817,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.5,
+    "recall_item@1_ic95": [
+      0.4335,
+      0.5735
+    ],
+    "recall_item@10": 0.8981,
+    "recall_item@10_ic95": [
+      0.8512,
+      0.9444
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.5,
+      "chair": 0.6364,
+      "rug": 0.1778,
+      "sofa": 0.5417,
+      "table": 0.6716
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "bge|description|filtro-none": {
+    "method": {
+      "embedder": "bge",
+      "text": "description",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5202,
+    "hit@1_ic95": [
+      0.4521,
+      0.5912
+    ],
+    "hit@3": 0.7374,
+    "hit@3_ic95": [
+      0.6784,
+      0.7989
+    ],
+    "hit@5": 0.803,
+    "hit@5_ic95": [
+      0.7536,
+      0.858
+    ],
+    "hit@10": 0.9192,
+    "hit@10_ic95": [
+      0.8812,
+      0.9585
+    ],
+    "mrr@10": 0.6463,
+    "mrr@10_ic95": [
+      0.5921,
+      0.7006
+    ],
+    "literal_hit@10": 0.8348,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.5,
+    "recall_item@1_ic95": [
+      0.4335,
+      0.5735
+    ],
+    "recall_item@10": 0.8981,
+    "recall_item@10_ic95": [
+      0.8512,
+      0.9444
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.5,
+      "chair": 0.6364,
+      "rug": 0.1778,
+      "sofa": 0.5417,
+      "table": 0.6716
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "bge|seller|filtro-kind": {
+    "method": {
+      "embedder": "bge",
+      "text": "seller",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.2424,
+    "hit@1_ic95": [
+      0.1727,
+      0.3077
+    ],
+    "hit@3": 0.4242,
+    "hit@3_ic95": [
+      0.348,
+      0.505
+    ],
+    "hit@5": 0.5101,
+    "hit@5_ic95": [
+      0.4307,
+      0.5911
+    ],
+    "hit@10": 0.6667,
+    "hit@10_ic95": [
+      0.59,
+      0.7415
+    ],
+    "mrr@10": 0.3589,
+    "mrr@10_ic95": [
+      0.2946,
+      0.4201
+    ],
+    "literal_hit@10": 0.5938,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.2233,
+    "recall_item@1_ic95": [
+      0.1594,
+      0.2857
+    ],
+    "recall_item@10": 0.6359,
+    "recall_item@10_ic95": [
+      0.5556,
+      0.7143
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1667,
+      "chair": 0.3409,
+      "rug": 0.0667,
+      "sofa": 0.25,
+      "table": 0.3134
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "bge|seller|filtro-type": {
+    "method": {
+      "embedder": "bge",
+      "text": "seller",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1919,
+    "hit@1_ic95": [
+      0.1372,
+      0.25
+    ],
+    "hit@3": 0.3687,
+    "hit@3_ic95": [
+      0.3035,
+      0.4411
+    ],
+    "hit@5": 0.4545,
+    "hit@5_ic95": [
+      0.3814,
+      0.5388
+    ],
+    "hit@10": 0.5909,
+    "hit@10_ic95": [
+      0.5148,
+      0.6684
+    ],
+    "mrr@10": 0.3034,
+    "mrr@10_ic95": [
+      0.2478,
+      0.3623
+    ],
+    "literal_hit@10": 0.5312,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.1748,
+    "recall_item@1_ic95": [
+      0.1256,
+      0.226
+    ],
+    "recall_item@10": 0.5825,
+    "recall_item@10_ic95": [
+      0.5048,
+      0.6621
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.2955,
+      "rug": 0.0667,
+      "sofa": 0.2083,
+      "table": 0.2239
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "bge|seller|filtro-none": {
+    "method": {
+      "embedder": "bge",
+      "text": "seller",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1919,
+    "hit@1_ic95": [
+      0.1372,
+      0.25
+    ],
+    "hit@3": 0.3636,
+    "hit@3_ic95": [
+      0.2984,
+      0.4355
+    ],
+    "hit@5": 0.4495,
+    "hit@5_ic95": [
+      0.3743,
+      0.534
+    ],
+    "hit@10": 0.5707,
+    "hit@10_ic95": [
+      0.4928,
+      0.6514
+    ],
+    "mrr@10": 0.2992,
+    "mrr@10_ic95": [
+      0.2428,
+      0.3587
+    ],
+    "literal_hit@10": 0.5357,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.1748,
+    "recall_item@1_ic95": [
+      0.1256,
+      0.226
+    ],
+    "recall_item@10": 0.568,
+    "recall_item@10_ic95": [
+      0.4925,
+      0.6446
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.2955,
+      "rug": 0.0667,
+      "sofa": 0.2083,
+      "table": 0.2239
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "qwen3|description|filtro-kind": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.6162,
+    "hit@1_ic95": [
+      0.5534,
+      0.6796
+    ],
+    "hit@3": 0.7727,
+    "hit@3_ic95": [
+      0.7106,
+      0.8361
+    ],
+    "hit@5": 0.8333,
+    "hit@5_ic95": [
+      0.7788,
+      0.8895
+    ],
+    "hit@10": 0.8788,
+    "hit@10_ic95": [
+      0.8284,
+      0.9246
+    ],
+    "mrr@10": 0.7093,
+    "mrr@10_ic95": [
+      0.6577,
+      0.7645
+    ],
+    "literal_hit@10": 0.7812,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.5874,
+    "recall_item@1_ic95": [
+      0.5221,
+      0.6555
+    ],
+    "recall_item@10": 0.835,
+    "recall_item@10_ic95": [
+      0.7826,
+      0.8873
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "chair": 0.8636,
+      "rug": 0.3111,
+      "sofa": 0.5833,
+      "table": 0.6418
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "qwen3|description|filtro-type": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.6364,
+    "hit@1_ic95": [
+      0.5754,
+      0.699
+    ],
+    "hit@3": 0.8131,
+    "hit@3_ic95": [
+      0.7559,
+      0.87
+    ],
+    "hit@5": 0.8586,
+    "hit@5_ic95": [
+      0.8134,
+      0.9077
+    ],
+    "hit@10": 0.9141,
+    "hit@10_ic95": [
+      0.8762,
+      0.9514
+    ],
+    "mrr@10": 0.7374,
+    "mrr@10_ic95": [
+      0.6893,
+      0.7854
+    ],
+    "literal_hit@10": 0.8125,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.6068,
+    "recall_item@1_ic95": [
+      0.5423,
+      0.6742
+    ],
+    "recall_item@10": 0.8932,
+    "recall_item@10_ic95": [
+      0.8522,
+      0.933
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "chair": 0.8636,
+      "rug": 0.3111,
+      "sofa": 0.625,
+      "table": 0.6866
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "qwen3|description|filtro-none": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.6364,
+    "hit@1_ic95": [
+      0.5754,
+      0.699
+    ],
+    "hit@3": 0.8131,
+    "hit@3_ic95": [
+      0.7559,
+      0.87
+    ],
+    "hit@5": 0.8586,
+    "hit@5_ic95": [
+      0.8134,
+      0.9077
+    ],
+    "hit@10": 0.904,
+    "hit@10_ic95": [
+      0.8661,
+      0.9415
+    ],
+    "mrr@10": 0.7353,
+    "mrr@10_ic95": [
+      0.6864,
+      0.7843
+    ],
+    "literal_hit@10": 0.8214,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.6068,
+    "recall_item@1_ic95": [
+      0.5423,
+      0.6742
+    ],
+    "recall_item@10": 0.8835,
+    "recall_item@10_ic95": [
+      0.8379,
+      0.9251
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "chair": 0.8636,
+      "rug": 0.3111,
+      "sofa": 0.625,
+      "table": 0.6866
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "qwen3|seller|filtro-kind": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "seller",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.2121,
+    "hit@1_ic95": [
+      0.1582,
+      0.266
+    ],
+    "hit@3": 0.4091,
+    "hit@3_ic95": [
+      0.3367,
+      0.478
+    ],
+    "hit@5": 0.5101,
+    "hit@5_ic95": [
+      0.4363,
+      0.5821
+    ],
+    "hit@10": 0.6768,
+    "hit@10_ic95": [
+      0.599,
+      0.75
+    ],
+    "mrr@10": 0.3398,
+    "mrr@10_ic95": [
+      0.283,
+      0.395
+    ],
+    "literal_hit@10": 0.6027,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.199,
+    "recall_item@1_ic95": [
+      0.149,
+      0.2445
+    ],
+    "recall_item@10": 0.6456,
+    "recall_item@10_ic95": [
+      0.5766,
+      0.709
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.4545,
+      "rug": 0.0444,
+      "sofa": 0.1667,
+      "table": 0.209
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "qwen3|seller|filtro-type": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "seller",
+      "filter": "type"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1667,
+    "hit@1_ic95": [
+      0.1176,
+      0.2195
+    ],
+    "hit@3": 0.3182,
+    "hit@3_ic95": [
+      0.2526,
+      0.3854
+    ],
+    "hit@5": 0.4141,
+    "hit@5_ic95": [
+      0.3436,
+      0.4852
+    ],
+    "hit@10": 0.6212,
+    "hit@10_ic95": [
+      0.5464,
+      0.6946
+    ],
+    "mrr@10": 0.2805,
+    "mrr@10_ic95": [
+      0.2302,
+      0.3328
+    ],
+    "literal_hit@10": 0.5536,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.1505,
+    "recall_item@1_ic95": [
+      0.1073,
+      0.1982
+    ],
+    "recall_item@10": 0.5922,
+    "recall_item@10_ic95": [
+      0.5294,
+      0.6529
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.3864,
+      "rug": 0.0444,
+      "sofa": 0.125,
+      "table": 0.1343
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "qwen3|seller|filtro-none": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "seller",
+      "filter": "none"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.1667,
+    "hit@1_ic95": [
+      0.1176,
+      0.2195
+    ],
+    "hit@3": 0.3182,
+    "hit@3_ic95": [
+      0.2526,
+      0.3854
+    ],
+    "hit@5": 0.399,
+    "hit@5_ic95": [
+      0.3264,
+      0.4686
+    ],
+    "hit@10": 0.6061,
+    "hit@10_ic95": [
+      0.5301,
+      0.6777
+    ],
+    "mrr@10": 0.2772,
+    "mrr@10_ic95": [
+      0.2266,
+      0.3305
+    ],
+    "literal_hit@10": 0.5491,
+    "azar_hit@1": 0.0049,
+    "azar_hit@10": 0.0489,
+    "azar_mrr@10": 0.0144,
+    "recall_item@1": 0.1505,
+    "recall_item@1_ic95": [
+      0.1073,
+      0.1982
+    ],
+    "recall_item@10": 0.5874,
+    "recall_item@10_ic95": [
+      0.5258,
+      0.6474
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.1111,
+      "chair": 0.3864,
+      "rug": 0.0444,
+      "sofa": 0.125,
+      "table": 0.1343
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.3
+  },
+  "bge|name+description|filtro-kind": {
+    "method": {
+      "embedder": "bge",
+      "text": "name+description",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.4848,
+    "hit@1_ic95": [
+      0.4187,
+      0.5529
+    ],
+    "hit@3": 0.6919,
+    "hit@3_ic95": [
+      0.6355,
+      0.7472
+    ],
+    "hit@5": 0.7677,
+    "hit@5_ic95": [
+      0.7123,
+      0.8245
+    ],
+    "hit@10": 0.8485,
+    "hit@10_ic95": [
+      0.7922,
+      0.9016
+    ],
+    "mrr@10": 0.6001,
+    "mrr@10_ic95": [
+      0.5464,
+      0.6534
+    ],
+    "literal_hit@10": 0.7545,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.466,
+    "recall_item@1_ic95": [
+      0.402,
+      0.533
+    ],
+    "recall_item@10": 0.8155,
+    "recall_item@10_ic95": [
+      0.7633,
+      0.8757
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.3889,
+      "chair": 0.5909,
+      "rug": 0.2222,
+      "sofa": 0.4583,
+      "table": 0.6269
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  },
+  "qwen3|name+description|filtro-kind": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "name+description",
+      "filter": "kind"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.5051,
+    "hit@1_ic95": [
+      0.4354,
+      0.5797
+    ],
+    "hit@3": 0.7424,
+    "hit@3_ic95": [
+      0.6814,
+      0.8011
+    ],
+    "hit@5": 0.7828,
+    "hit@5_ic95": [
+      0.7206,
+      0.8453
+    ],
+    "hit@10": 0.8384,
+    "hit@10_ic95": [
+      0.7801,
+      0.8969
+    ],
+    "mrr@10": 0.6233,
+    "mrr@10_ic95": [
+      0.5688,
+      0.6814
+    ],
+    "literal_hit@10": 0.7455,
+    "azar_hit@1": 0.0373,
+    "azar_hit@10": 0.316,
+    "azar_mrr@10": 0.0996,
+    "recall_item@1": 0.4854,
+    "recall_item@1_ic95": [
+      0.4154,
+      0.5606
+    ],
+    "recall_item@10": 0.801,
+    "recall_item@10_ic95": [
+      0.7544,
+      0.8543
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "chair": 0.6591,
+      "rug": 0.2222,
+      "sofa": 0.4583,
+      "table": 0.5522
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.2
+  }
+}

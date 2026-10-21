@@ -18,3 +18,21 @@ de la próxima actualización.
 - Lo propio del TP vive en `src/amoblai/`: el catálogo IKEA (`catalogo_ikea.py`), los
   generadores de fal y OpenAI (`generacion.py`, con la interfaz de `generate.py`), la
   evaluación con el ground truth de IKEA y las apps.
+
+## Otras vistas del ambiente (`views`) — steps.py, flow.py, __main__.py
+
+- `run_flow(..., views=[...])` (y `python -m roomrag run ... --view <foto>`): otras fotos del
+  mismo ambiente desde otros ángulos. Se guardan en la corrida como `room_2.jpg`, `room_3.jpg`...
+  (`Run.views`) y van a `plan`, `choose` y `scene` **después** de las imágenes propias del paso,
+  con una nota (`view_blocks`): sirven solo para entender el tamaño y la forma del cuarto; la
+  imagen 1 sigue siendo la que se amobla. En `scene`, la nota pide no mencionarlas en el prompt,
+  porque `generate` sigue mandando solo la foto principal y los productos.
+- Sin vistas, el contenido de cada llamada es el mismo de antes (los prompts no cambian de
+  versión). El registro de cada paso suma `"views": n` cuando hubo.
+
+## Medidas parciales en los prompts — steps.py `_size`
+
+- Antes, un candidato sin las tres medidas era "size unknown". Ahora van las que tenga (una
+  alfombra o una mesa del dataset IKEA: "170 cm wide, 240 cm deep"). Con las tres, el texto es
+  el mismo. Lo mostró la prueba del flujo: Claude eligió una alfombra de 140 x 200 cm y escribió
+  "about 2 x 3 m" en el prompt de la imagen.

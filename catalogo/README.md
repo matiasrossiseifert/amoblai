@@ -11,8 +11,11 @@ dataset bajado: `uv run amoblai data download`).
 | `kinds.yaml` | El kind de cada producto (filtro duro) | `amoblai catalogo` (lotes + correcciones) |
 | `correcciones.yaml` | Correcciones a mano de tipo y kind | Nosotros |
 
-**Productos**: los 275 de IKEA del alcance (mapeo `configs/categories.yaml`): 94 alfombras, 73
-mesas, 64 sillas y sillones, 37 sofás y 7 escritorios (que IKEA tipifica como "Table").
+**Productos**: 268 de IKEA del alcance (mapeo `configs/categories.yaml`): 89 alfombras, 71
+mesas, 64 sillas y sillones, 37 sofás y 7 escritorios (que IKEA tipifica como "Table"). Se
+describieron 275; 7 quedan afuera porque su foto es la de otra medida del mismo modelo (ver
+abajo). **Medidas**: los asientos no tienen ninguna en el dataset; las mesas y alfombras, ancho y
+profundidad (cuando las tienen).
 
 **Cómo se escribieron las descripciones**: 8 subagentes, ~35 productos cada uno. Cada uno leyó
 el prompt de roomrag, miró cada foto, escribió las ocho líneas (Type, Use, Style, Materials,
@@ -28,13 +31,14 @@ medidas), eligió el kind mirando la foto y validó su lote con
   (armchair → dining chair, discutible).
 - **Escritorios tipificados como mesa** (7, corregidos en `correcciones.yaml`): KLIMPEN/NIPEN,
   HISSMON/KRILLE, LINNMON/LERBERG, LINNMON/ADILS (x2), LINNMON/NIPEN, TORNLIDEN/ADILS.
-- **Fotos repetidas entre SKUs** (mismo modelo en distintas medidas o colores): LISABO
-  702.976.58 / 902.976.57, INGATORP 802.170.72 / 902.224.07, BJURSTA 301.162.64 / 501.168.09,
-  GÅSER 802.307.90 / 902.592.50, HAMPEN 703.130.07 / 903.130.11, LAPPLJUNG RUTA 402.279.02 /
-  402.605.19, DUM 402.712.59 / 702.836.75, OSTED 402.804.90 / 502.703.15 / 702.805.11. Las
-  descripciones son casi iguales: el retrieval no puede separarlos.
-- **Foto que no coincide con las medidas**: OSTED 202.703.12 y GÅSER 802.307.90 (se ven como
-  pasillos), HAMPEN 703.130.07 (se ve cuadrada), MELLTORP 190.117.77.
+- **Fotos repetidas entre SKUs** (el mismo modelo en otra medida): 16 grupos, casi todos
+  alfombras de proporción parecida (MORUM, OSTED, PERSISK HAMADAN...), que quedan: la foto sirve
+  para las dos medidas, y el retrieval no puede separarlas. En 7 la forma no coincide y se
+  **excluyó** el SKU que no es el de la foto (`excluir` en `correcciones.yaml`, decidido mirando
+  la foto): LISABO 702.976.58 (118x50, la foto es la de 70x70), MELLTORP 190.117.77 (125x75, la
+  foto es la de 75x75), LOHALS 002.773.95, OSTED 202.703.12 y GÅSER 802.307.90 (la foto es un
+  pasillo), LAPPLJUNG RUTA 402.279.02 y HAMPEN 703.130.07. Sin eso, el modelo de imagen dibuja
+  un producto y la lista de compra recomienda otro.
 - **Muebles infantiles dentro del alcance**: sillones SUNDVIK, IKEA PS LÖMSK, POPPTORP; varias
   alfombras de cuarto de chicos. Quedan, con "kids room" en Use.
 - **Fotos con varios productos**: SIGNE 002.973.60 (ocho variantes de color), TÅNUM 302.126.75

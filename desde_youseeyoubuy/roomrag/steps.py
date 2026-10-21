@@ -9,12 +9,15 @@
     scene     the LLM writes the image model's prompt (where each product goes, how it faces)
     generate  the image model (generate.py) puts the products in the room
 
-Every LLM call goes through the paid gate and the spend ledger.
+Every LLM call goes through the paid gate and the spend ledger. Other photos of the same room
+(`views`, other angles) go to plan, choose and scene after the step's own images, only for the
+LLM to understand the room; the room photo is still image 1, and the image model gets it alone.
 """
 
 from __future__ import annotations
 
 import json
+from collections.abc import Sequence
 from dataclasses import asdict
 from pathlib import Path
 
@@ -72,6 +75,36 @@ def photo(cfg: Config, hit: Hit) -> Path:
     return cfg.path(hit.photos[0])
 
 
+def view_blocks(cfg: Config, views: Sequence[Path], first: int, for_scene: bool = False) -> list:
+    """The other photos of the room, numbered from `first`, and what they are for. None: []."""
+    if not views:
+        return []
+    last = first + len(views) - 1
+    which = (
+        f"Image {first} is another photo"
+        if first == last
+        else f"Images {first} to {last} are other photos"
+    )
+    note = (
+        f"{which} of this same room, from another angle, only to understand the room: its size, "
+        "its layout and what image 1 leaves out of frame. Image 1 is the photo that gets the "
+        "furniture: place everything in image 1, as its camera sees the room."
+    )
+    if for_scene:
+        note += (
+            " The image model will get image 1 and the products' photos only: do not mention"
+            " these other photos in its prompt."
+        )
+    blocks = [image_block(v, cfg.furnish.photo_max_side) for v in views]
+    return [*blocks, text_block(note)]
+
+
+def with_views(rec: dict, views: Sequence[Path]) -> dict:
+    if views:
+        rec["views"] = len(views)
+    return rec
+
+
 # plan ------------------------------------------------------------------------------------------
 
 
@@ -84,11 +117,12 @@ def check_kinds(piece: dict) -> list[str]:
     return [k for k in asked if k.lower() not in known]
 
 
-def plan(cfg: Config, room_photo: Path, request: str) -> dict:
+def plan(cfg: Config, room_photo: Path, request: str, views: Sequence[Path] = ()) -> dict:
     """Which pieces the request needs in this room, and one search for each."""
     tmpl = load_prompt(cfg.furnish.query_prompt, cfg.root)
     content = [
         image_block(room_photo, cfg.furnish.photo_max_side),
+        *view_blocks(cfg, views, 2),
         text_block(tmpl.fill(request=request, kinds=kinds_text())),
     ]
     a, data = ask(cfg, "furnish.plan", content)
@@ -96,7 +130,7 @@ def plan(cfg: Config, room_photo: Path, request: str) -> dict:
         raise ProviderError("furnish.plan: no pieces in the answer")
     rec = answer_record(a, tmpl, data)
     rec["unknown_kinds"] = [k for p in data["pieces"] for k in check_kinds(p)]
-    return rec
+    return with_views(rec, views)
 
 
 # retrieve --------------------------------------------------------------------------------------
@@ -173,14 +207,18 @@ def retrieve(cfg: Config, pieces: list[dict], out: Path | None = None) -> dict:
 
 
 def _size(h: Hit) -> str:
+    """The measures the catalog has (a rug or a table top: width and depth only)."""
     d = h.dimensions_cm or {}
-    if not all(d.get(a) for a in ("width", "depth", "height")):
-        return "size unknown"
-    return f"{d['width']:.0f} cm wide, {d['depth']:.0f} cm deep, {d['height']:.0f} cm high"
+    words = (("width", "wide"), ("depth", "deep"), ("height", "high"))
+    return ", ".join(f"{d[a]:.0f} cm {w}" for a, w in words if d.get(a)) or "size unknown"
 
 
 def choose(
-    cfg: Config, room_photo: Path, request: str, found: list[tuple[dict, list[Hit]]]
+    cfg: Config,
+    room_photo: Path,
+    request: str,
+    found: list[tuple[dict, list[Hit]]],
+    views: Sequence[Path] = (),
 ) -> dict:
     """The room photo, then every candidate's photo, piece by piece; one product per piece."""
     tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)
@@ -192,6 +230,7 @@ def choose(
             lines.append(f"  image {n}. {h.id}: {h.kind or h.category}, {type_line(h)}, {_size(h)}")
             content.append(image_block(photo(cfg, h), cfg.furnish.photo_max_side))
     text = tmpl.fill(request=request, pieces=len(found), images=n, candidates="\n".join(lines))
+    content += view_blocks(cfg, views, n + 1)
     content.append(text_block(text))
     a, data = ask(cfg, "furnish.choose", content)
     choices = data.get("choices") or []
@@ -202,7 +241,7 @@ def choose(
             raise ProviderError(
                 f"furnish.choose: {c.get('id')!r} is not a candidate for {piece['piece']!r}"
             )
-    return answer_record(a, tmpl, data)
+    return with_views(answer_record(a, tmpl, data), views)
 
 
 def chosen(found: dict, choice: dict) -> list[Hit]:
@@ -217,7 +256,12 @@ def chosen(found: dict, choice: dict) -> list[Hit]:
 
 
 def scene(
-    cfg: Config, room_photo: Path, request: str, room: str, picks: list[tuple[dict, Hit]]
+    cfg: Config,
+    room_photo: Path,
+    request: str,
+    room: str,
+    picks: list[tuple[dict, Hit]],
+    views: Sequence[Path] = (),
 ) -> dict:
     """The LLM writes the image model's prompt from the room, each piece and its chosen
     product's photo: where each one goes and how it faces."""
@@ -228,11 +272,12 @@ def scene(
     ]
     content = [image_block(room_photo, cfg.furnish.photo_max_side)]
     content += [image_block(photo(cfg, h), cfg.furnish.photo_max_side) for _, h in picks]
+    content += view_blocks(cfg, views, len(picks) + 2, for_scene=True)
     content.append(text_block(tmpl.fill(request=request, room=room, products="\n".join(lines))))
     a, data = ask(cfg, "furnish.scene", content)
     if not data.get("prompt"):
         raise ProviderError("furnish.scene: no prompt in the answer")
-    return answer_record(a, tmpl, data)
+    return with_views(answer_record(a, tmpl, data), views)
 
 
 def generate(cfg: Config, prompt: str, room_photo: Path, picks: list[Hit], out: Path) -> dict:
