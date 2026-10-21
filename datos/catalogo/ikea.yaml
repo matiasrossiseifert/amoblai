@@ -1,0 +1,14 @@
+# El catálogo del TP: los productos IKEA del alcance (catalog/loader.py).
+# Lo genera `amoblai catalogo` desde el dataset y datos/catalogo/correcciones.yaml.
+name: ikea
+items:
+- datos/procesados/items.jsonl
+kinds_file: datos/catalogo/kinds.yaml
+categories:
+  091.195.18: desk
+  191.197.25: desk
+  290.007.16: desk
+  290.047.76: desk
+  299.321.81: desk
+  691.335.97: desk
+  899.309.28: desk

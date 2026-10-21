@@ -27,18 +27,18 @@ class _Section(BaseModel):
 
 
 class PathsConfig(_Section):
-    raw_dir: Path = Path("data/raw/ikea")
-    catalog_file: Path = Path("data/processed/catalog.json")
-    chroma_dir: Path = Path("data/chroma")
+    raw_dir: Path = Path("datos/dataset/ikea")
+    catalog_file: Path = Path("datos/procesados/catalog.json")
+    chroma_dir: Path = Path("datos/cache/v0/chroma")
     # Cachés locales y recomputables (detecciones, máscaras): no se commitean.
-    cache_dir: Path = Path("data/cache")
+    cache_dir: Path = Path("datos/cache/v0")
     # Resultados que se commitean (el repo es privado).
-    results_dir: Path = Path("resultados/v0_imagen")
-    runs_dir: Path = Path("resultados/v0_imagen/corridas")
+    results_dir: Path = Path("datos/resultados/v0_imagen")
+    runs_dir: Path = Path("datos/resultados/v0_imagen/corridas")
     # Imágenes generadas (API o a mano): cuestan plata o tiempo, se comparten por git.
-    generations_dir: Path = Path("resultados/v0_imagen/generaciones")
-    spend_ledger: Path = Path("resultados/v0_imagen/gastos.jsonl")
-    empty_rooms_dir: Path = Path("ambientes_vacios")
+    generations_dir: Path = Path("datos/resultados/v0_imagen/generaciones")
+    spend_ledger: Path = Path("datos/resultados/v0_imagen/gastos.jsonl")
+    empty_rooms_dir: Path = Path("datos/ambientes_vacios")
     labels_file: Path = Path("deprecated/anotaciones/estricto.jsonl")
     categories_file: Path = Path("deprecated/configs/categories.yaml")
     pricing_file: Path = Path("deprecated/configs/pricing.yaml")

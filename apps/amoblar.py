@@ -1,4 +1,4 @@
-"""Webapp de prueba del flujo de amoblado (roomrag): cada paso, a medida que se hace.
+"""Webapp de prueba del flujo de amoblado: cada paso, a medida que se hace.
 
     uv run --group apps python apps/amoblar.py      (http://127.0.0.1:7860)
 
@@ -9,8 +9,9 @@
 5. generate: la imagen final por API (Nano Banana 2 en fal) o a mano (te da las imágenes en
    orden y el prompt para pegar en ChatGPT o Gemini, y subís el resultado).
 
-Las llamadas pagas solo salen si se tilda la casilla, dentro de los topes de configs/amoblai.yaml.
-La app no tiene lógica propia: usa roomrag y amoblai, y muestra la carpeta de la corrida.
+Las llamadas pagas solo salen si se tilda la casilla, dentro de los topes de
+datos/configs/amoblai.yaml. La app no tiene lógica propia: corre el flujo de amoblai y muestra
+la carpeta de la corrida.
 """
 
 from __future__ import annotations
@@ -23,12 +24,14 @@ from pathlib import Path
 import gradio as gr
 from dotenv import load_dotenv
 from PIL import Image
-from roomrag.budget import Ledger
-from roomrag.config import deep_merge, load_config
-from roomrag.flow import run_flow
+
+from amoblai import paths
+from amoblai.config import deep_merge, load_config
+from amoblai.furnish.flow import run_flow
+from amoblai.infra.budget import Ledger
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG = ROOT / "configs" / "amoblai.yaml"
+CONFIG = ROOT / paths.CONFIG
 LLM_STEPS = ["furnish.plan", "furnish.choose", "furnish.scene"]
 os.environ.setdefault("GRADIO_ANALYTICS_ENABLED", "False")
 
@@ -88,7 +91,7 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
     if choice:
         md.append(f"**Por qué esta combinación:** {choice['answer'].get('why', '')}")
         items = {}
-        for line in (ROOT / "data/processed/items_roomrag.jsonl").read_text().splitlines():
+        for line in (ROOT / paths.ITEMS).read_text().splitlines():
             it = json.loads(line)
             items[it["id"]] = it
         for f, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
@@ -133,7 +136,7 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
 def go(photo, view, request, generator, use_claude, pay_image, state):
     if photo is None or not (request or "").strip():
         raise gr.Error("Subí la foto del ambiente y escribí el pedido.")
-    out = ROOT / "resultados" / "amoblar" / f"app-{time.strftime('%Y%m%d-%H%M%S')}"
+    out = ROOT / paths.RUNS / f"app-{time.strftime('%Y%m%d-%H%M%S')}"
     out.mkdir(parents=True)
     src = out / "entrada.jpg"
     Image.fromarray(photo).convert("RGB").save(src, quality=95)
@@ -240,4 +243,4 @@ def build() -> gr.Blocks:
 if __name__ == "__main__":
     os.chdir(ROOT)
     load_dotenv(ROOT / ".env", override=False)
-    build().launch(server_port=7860, allowed_paths=[str(ROOT / "resultados"), str(ROOT / "data")])
+    build().launch(server_port=7860, allowed_paths=[str(ROOT / paths.DATOS)])
