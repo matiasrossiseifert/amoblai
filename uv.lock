@@ -143,10 +143,7 @@ name = "amoblai"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "chromadb" },
-    { name = "google-genai" },
     { name = "httpx" },
-    { name = "langsmith" },
     { name = "matplotlib" },
     { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
     { name = "numpy", version = "2.5.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
@@ -154,12 +151,9 @@ dependencies = [
     { name = "pandas" },
     { name = "pillow" },
     { name = "pydantic" },
-    { name = "pydantic-settings" },
+    { name = "python-dotenv" },
     { name = "pyyaml" },
     { name = "rich" },
-    { name = "scikit-image" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
     { name = "tabulate" },
     { name = "transformers" },
     { name = "typer" },
@@ -175,6 +169,15 @@ cpu = [
 gpu = [
     { name = "torch", version = "2.14.1+cu126", source = { registry = "https://download.pytorch.org/whl/cu126" } },
     { name = "torchvision", version = "0.29.1+cu126", source = { registry = "https://download.pytorch.org/whl/cu126" } },
+]
+imagen = [
+    { name = "chromadb" },
+    { name = "google-genai" },
+    { name = "langsmith" },
+    { name = "pydantic-settings" },
+    { name = "scikit-image" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-7-amoblai-cpu' and extra == 'extra-7-amoblai-gpu')" },
 ]
 rembg = [
     { name = "onnxruntime" },
@@ -192,10 +195,10 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "chromadb", specifier = ">=1.5" },
-    { name = "google-genai", specifier = ">=2.0" },
+    { name = "chromadb", marker = "extra == 'imagen'", specifier = ">=1.5" },
+    { name = "google-genai", marker = "extra == 'imagen'", specifier = ">=2.0" },
     { name = "httpx", specifier = ">=0.27" },
-    { name = "langsmith", specifier = ">=0.4" },
+    { name = "langsmith", marker = "extra == 'imagen'", specifier = ">=0.4" },
     { name = "matplotlib", specifier = ">=3.9" },
     { name = "numpy", specifier = ">=2.0" },
     { name = "onnxruntime", marker = "extra == 'rembg'", specifier = ">=1.19" },
@@ -203,12 +206,13 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.2" },
     { name = "pillow", specifier = ">=11.0" },
     { name = "pydantic", specifier = ">=2.9" },
-    { name = "pydantic-settings", specifier = ">=2.6" },
+    { name = "pydantic-settings", marker = "extra == 'imagen'", specifier = ">=2.6" },
+    { name = "python-dotenv", specifier = ">=1.0" },
     { name = "pyyaml", specifier = ">=6.0" },
     { name = "rembg", marker = "extra == 'rembg'", specifier = ">=2.0.60" },
     { name = "rich", specifier = ">=13.9" },
-    { name = "scikit-image", specifier = ">=0.24" },
-    { name = "scipy", specifier = ">=1.14" },
+    { name = "scikit-image", marker = "extra == 'imagen'", specifier = ">=0.24" },
+    { name = "scipy", marker = "extra == 'imagen'", specifier = ">=1.14" },
     { name = "tabulate", specifier = ">=0.9" },
     { name = "torch", marker = "extra == 'cpu'", specifier = ">=2.6", index = "https://download.pytorch.org/whl/cpu", conflict = { package = "amoblai", extra = "cpu" } },
     { name = "torch", marker = "extra == 'gpu'", specifier = ">=2.6", index = "https://download.pytorch.org/whl/cu126", conflict = { package = "amoblai", extra = "gpu" } },
@@ -217,7 +221,7 @@ requires-dist = [
     { name = "transformers", specifier = ">=5.0" },
     { name = "typer", specifier = ">=0.15" },
 ]
-provides-extras = ["cpu", "gpu", "rembg"]
+provides-extras = ["cpu", "gpu", "imagen", "rembg"]
 
 [package.metadata.requires-dev]
 apps = [{ name = "gradio", specifier = ">=5.0" }]
