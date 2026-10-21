@@ -7,7 +7,8 @@
   las ocho líneas del catálogo y con su kind. Las escribieron 5 subagentes de Claude Code con
   `src/amoblai/prompts/consultas_ambiente_v1.md`, mirando solo la foto (sin el catálogo ni las
   anotaciones), y las validaron con `uv run python -m amoblai.consultas <lote> <entrada>`.
-- `consultas.json`: los lotes juntos (228 consultas), con el prompt y quién las escribió en `_meta`.
+- `consultas.json`: los lotes juntos (228 consultas; 198 tienen un relevante en el catálogo), con
+  el prompt y quién las escribió en `_meta`.
 
 Nota: el prompt mostraba los kinds agrupados por tipo ("- chair: desk chair, dining chair,
 armchair"); varios subagentes pusieron primero el tipo ("chair") y el validador los obligó a

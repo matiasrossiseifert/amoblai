@@ -19,17 +19,19 @@ primera versión del TP, que recuperaba por imagen, está en [deprecated/](depre
 
 ## Resultados
 
-Retrieval sobre 65 livings y comedores de IKEA con productos anotados (207 consultas con
+Retrieval sobre 65 livings y comedores de IKEA con productos anotados (198 consultas con
 respuesta; IC 95% bootstrap por ambiente). Detalle y lecturas en
 [docs/EXPERIMENTOS.md](docs/EXPERIMENTOS.md):
 
 | Configuración | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|
-| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,145 | 0,440 | 0,208 |
-| + nuestras descripciones de ocho líneas | 0,560 | 0,927 | 0,692 |
-| **+ Qwen3-Embedding, filtro por tipo (default)** | **0,618** | 0,908 | **0,717** |
-| v0 (por imagen, DINOv3), mismo ground truth | 0,508 | 0,819 | 0,603 |
-| Azar | 0,020 | 0,189 | 0,056 |
+| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,146 | 0,434 | 0,213 |
+| + nuestras descripciones de ocho líneas | 0,586 | 0,929 | 0,712 |
+| **+ Qwen3-Embedding, filtro por tipo** | **0,636** | 0,914 | **0,737** |
+| Azar | 0,020 | 0,194 | 0,058 |
+
+Con el catálogo completo de 275 productos (el mismo que la v0), el texto da 0,618 de hit@1
+contra 0,508 del mejor retrieval por imagen (DINOv3), con el mismo ground truth.
 
 ![Camino incremental](resultados/reporte/camino_texto.png)
 
@@ -58,7 +60,8 @@ uv run amoblai buscar "Type: coffee table, round
 Materials: light oak" --kind "coffee table"
 
 # El flujo completo (se retoma donde quedó; nada se paga dos veces)
-uv run amoblai amoblar ambientes_vacios/living_commons_01.jpg "un living nórdico y cálido" \
+uv run amoblai amoblar ambientes_vacios/ambiente2-alvear/alvear1.jpg "un living nórdico y cálido" \
+    --vista ambientes_vacios/ambiente2-alvear/alvear2.jpg \
     --set 'budget.allow_paid_steps=[furnish.plan, furnish.choose, furnish.scene]'   # Claude sí, imagen a mano
 uv run amoblai amoblar foto.jpg "un comedor para seis" --generador nano_banana_2 --pagar
 
@@ -91,7 +94,7 @@ src/amoblai/        lo propio del TP: data loading del dataset, catálogo, valid
                     generadores (fal, OpenAI), evaluación, reporte, CLI
 desde_youseeyoubuy/ roomrag (el núcleo RAG compartido), su LEEME y CAMBIOS.md
 apps/               la webapp de prueba
-ambientes_vacios/   fotos de ambientes vacíos (con sus créditos)
+ambientes_vacios/   fotos de ambientes vacíos, dos vistas de cada uno (ver CREDITOS.md)
 resultados/         corridas, evaluaciones, reporte y gastos (se commitea); v0_imagen/
 deprecated/         la v0 (retrieval por imagen), completa
 docs/               ARQUITECTURA.md, EXPERIMENTOS.md, propuesta y diagrama original
@@ -102,7 +105,7 @@ tests/              pytest sin red (dataset sintético; Claude y fal simulados)
 
 ```bash
 uv run pytest                                   # tests del TP y de roomrag
-PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini   # los de la v0
+PYTHONPATH=deprecated uv run pytest -c deprecated/pytest.ini deprecated/tests   # los de la v0
 uv run ruff check src tests apps && uv run ruff format --check src tests apps
 ```
 

@@ -13,16 +13,17 @@ Registro continuo: cada experimento con su configuración, los resultados y lo q
 ## Metodología del retrieval
 
 - **Datos**: los mismos 65 ambientes de IKEA (livings y comedores con productos anotados del
-  catálogo) que la v0. El catálogo son los 275 productos del alcance, cada uno con su
-  descripción de ocho líneas (`catalogo/descripciones.jsonl`).
+  catálogo) que la v0. El catálogo son los 268 productos del alcance (275 menos 7 cuya foto no
+  los muestra, ver T1), cada uno con su descripción de ocho líneas (`catalogo/descripciones.jsonl`).
 - **Consultas** (`evaluacion/ikea/consultas.json`, prompt `consultas_ambiente_v1`): subagentes
   de Claude Code miraron cada foto, sin ver el catálogo ni las anotaciones, y escribieron una
   consulta por mueble del alcance que se ve (228 en total), en las mismas ocho líneas y con su
   kind, como lo hace el paso `plan`. Es el equivalente en texto del recorte de la v0: mide el
   retrieval aislado, con consultas fijas para todos los métodos.
 - **Relevantes de una consulta**: los SKUs anotados en ese ambiente de la misma categoría del TP
-  (sofá, sillón, silla, mesa, alfombra) que su kind; 207 consultas tienen al menos uno. Es la
-  misma definición permisiva que en la v0 (las anotaciones no dicen dónde está cada producto).
+  (sofá, sillón, silla, mesa, alfombra) que su kind; 198 consultas tienen al menos uno en el
+  catálogo. Es la misma definición permisiva que en la v0 (las anotaciones no dicen dónde está
+  cada producto).
 - **Métricas**: hit@k (1, 3, 5, 10), MRR@10, recall por ítem anotado, baseline aleatorio sobre
   lo que deja pasar el filtro, IC 95% por bootstrap de ambientes (1000 remuestreos).
 - **Métodos**: embedder (hashing de palabras, BGE-base, Qwen3-Embedding-0.6B; locales) × texto
@@ -32,40 +33,40 @@ Registro continuo: cada experimento con su configuración, los resultados y lo q
 
 ## T1: ablación del retrieval por texto
 
-Corrida `resultados/evaluacion/20261021-133226_ablacion-texto` (CPU).
+Corrida `resultados/evaluacion/20261021-141030_ablacion-texto-268` (CPU), 198 consultas.
 
 | Embedder | Texto | Filtro | hit@1 [IC 95%] | hit@3 | hit@10 | MRR@10 | recall ítem@10 |
 |---|---|---|---|---|---|---|---|
-| hashing | vendedor | ninguno | 0,145 [0,09–0,20] | 0,213 | 0,440 | 0,208 | 0,417 |
-| hashing | vendedor | kind | 0,193 [0,13–0,27] | 0,329 | 0,696 | 0,314 | 0,653 |
-| hashing | descripción | ninguno | 0,560 [0,49–0,63] | 0,787 | 0,927 | 0,692 | 0,880 |
-| hashing | descripción | tipo | 0,560 [0,49–0,63] | 0,802 | 0,932 | 0,696 | 0,880 |
-| hashing | descripción | kind | 0,546 [0,48–0,61] | 0,754 | 0,894 | 0,670 | 0,843 |
-| BGE | vendedor | kind | 0,237 [0,17–0,30] | 0,411 | 0,647 | 0,348 | 0,620 |
-| BGE | descripción | tipo | 0,502 [0,44–0,56] | 0,734 | 0,918 | 0,634 | 0,893 |
-| BGE | descripción | kind | 0,498 [0,43–0,56] | 0,710 | 0,894 | 0,620 | 0,852 |
-| BGE | nombre + descripción | kind | 0,459 [0,40–0,52] | 0,671 | 0,850 | 0,581 | 0,815 |
-| Qwen3 | vendedor | kind | 0,208 [0,16–0,27] | 0,387 | 0,657 | 0,328 | 0,625 |
-| **Qwen3** | **descripción** | **tipo** | **0,618 [0,56–0,68]** | **0,802** | 0,908 | **0,717** | 0,889 |
-| Qwen3 | descripción | kind | 0,599 [0,54–0,66] | 0,763 | 0,874 | 0,690 | 0,833 |
-| Qwen3 | nombre + descripción | kind | 0,483 [0,42–0,54] | 0,720 | 0,841 | 0,603 | 0,801 |
+| hashing | vendedor | ninguno | 0,146 [0,10–0,21] | 0,222 | 0,434 | 0,213 | 0,417 |
+| hashing | vendedor | kind | 0,202 [0,14–0,27] | 0,343 | 0,687 | 0,324 | 0,655 |
+| hashing | descripción | ninguno | 0,586 [0,51–0,66] | 0,813 | 0,929 | 0,712 | 0,883 |
+| hashing | descripción | tipo | 0,586 [0,51–0,66] | 0,828 | 0,934 | 0,716 | 0,883 |
+| hashing | descripción | kind | 0,571 [0,50–0,65] | 0,778 | 0,894 | 0,688 | 0,845 |
+| BGE | vendedor | kind | 0,242 [0,17–0,31] | 0,424 | 0,667 | 0,359 | 0,636 |
+| BGE | descripción | tipo | 0,520 [0,45–0,59] | 0,748 | 0,919 | 0,649 | 0,898 |
+| BGE | descripción | kind | 0,515 [0,45–0,59] | 0,722 | 0,894 | 0,634 | 0,854 |
+| BGE | nombre + descripción | kind | 0,485 [0,42–0,55] | 0,692 | 0,849 | 0,600 | 0,816 |
+| Qwen3 | vendedor | kind | 0,212 [0,16–0,27] | 0,409 | 0,677 | 0,340 | 0,646 |
+| **Qwen3** | **descripción** | **tipo** | **0,636 [0,58–0,70]** | **0,813** | 0,914 | **0,737** | 0,893 |
+| Qwen3 | descripción | kind | 0,616 [0,55–0,68] | 0,773 | 0,879 | 0,709 | 0,835 |
+| Qwen3 | nombre + descripción | kind | 0,505 [0,44–0,58] | 0,742 | 0,838 | 0,623 | 0,801 |
 
-(Tabla completa con todas las combinaciones en `resultados/reporte/retrieval_texto.md`.)
-Azar con filtro por tipo: hit@1 0,020, hit@10 0,189, MRR@10 0,056.
+(Tabla completa con todas las combinaciones en `resultados/reporte/README.md`.)
+Azar con filtro por tipo: hit@1 0,020, hit@10 0,194, MRR@10 0,058.
 
 **Camino incremental** (para la presentación, `resultados/reporte/camino_texto.png`):
-T0 naive (hashing, texto del vendedor, sin filtro) 0,145 → T1 + nuestras descripciones 0,560 →
-T2 + filtro por tipo 0,560 → T3 Qwen3-Embedding **0,618** (hit@1).
+T0 naive (hashing, texto del vendedor, sin filtro) 0,146 → T1 + nuestras descripciones 0,586 →
+T2 + filtro por tipo 0,586 → T3 Qwen3-Embedding **0,636** (hit@1).
 
 **Lecturas**:
 - **Lo que más pesa son las descripciones propias**: con cualquier embedder, hit@1 pasa de
-  0,15-0,24 (texto del vendedor) a 0,50-0,62. La frase de marketing de IKEA no describe el
+  0,15-0,24 (texto del vendedor) a 0,52-0,64. La frase de marketing de IKEA no describe el
   mueble; las ocho líneas sí, y en el mismo formato que la consulta.
-- **El nombre comercial adelante empeora** (0,60 → 0,48 con Qwen3): agrega tokens que la consulta
+- **El nombre comercial adelante empeora** (0,62 → 0,51 con Qwen3): agrega tokens que la consulta
   no tiene. Coincide con lo que midió YouSeeYouBuy.
 - **Los filtros ayudan mucho con el texto del vendedor y casi nada con nuestras descripciones**,
   que ya dicen qué es cada cosa en la línea Type. El filtro por **kind** resta un poco frente al
-  filtro por **tipo** (0,599 vs. 0,618 con Qwen3; los IC se solapan): cuando la consulta y el
+  filtro por **tipo** (0,616 vs. 0,636 con Qwen3; los IC se solapan): cuando la consulta y el
   producto discrepan en el kind fino ("side table" vs. "coffee table"), el filtro deja afuera al
   producto correcto. El flujo usa el kind (lo decide el plan); es un candidato para iterar.
 - **Qwen3-Embedding es el mejor embedder**; BGE queda por debajo del hashing de palabras en hit@1.
@@ -73,18 +74,25 @@ T2 + filtro por tipo 0,560 → T3 Qwen3-Embedding **0,618** (hit@1).
   mismo formato y vocabulario, lo que favorece el solapamiento de palabras. En el flujo real
   pasa lo mismo (el plan también es Claude), así que no es un sesgo de la evaluación sola.
 - **Por categoría** (Qwen3, filtro por tipo, hit@1): silla 0,86 (44 consultas), sillón 0,72 (18),
-  mesa 0,68 (68), sofá 0,63 (24), alfombra 0,30 (53). Las alfombras son lo más difícil: hay 94
+  mesa 0,69 (67), sofá 0,63 (24), alfombra 0,31 (45). Las alfombras son lo más difícil: hay 89
   en el catálogo, muchas parecidas, y en las fotos quedan tapadas por los muebles.
-- **Fotos repetidas**: varios SKUs comparten la misma foto en el dataset (distintas medidas del
-  mismo modelo). Sus descripciones son casi iguales, así que el retrieval no puede separarlos;
-  la métrica permisiva lo compensa en parte.
+
+**El catálogo de 275 a 268.** La primera corrida
+(`20261021-133226_ablacion-texto`) usó los 275 productos: el mejor método dio 0,618 [0,56–0,68]
+sobre 207 consultas, con las mismas conclusiones. Después, la prueba del flujo (T2) mostró que
+varios SKUs comparten la foto con otra medida del mismo modelo, y en 7 la forma no coincide (una
+mesa de 118 x 50 cm con la foto de la cuadrada de 70 x 70; una alfombra de 170 x 240 con la foto
+del pasillo): el modelo de imagen dibujaría otro producto que el de la lista de compra. Se
+dejaron afuera (`catalogo/correcciones.yaml`, `excluir`), mirando la forma de cada foto; 9
+consultas se quedaron sin su único relevante.
 
 ## T1 contra la v0 (mismo ground truth)
 
 | | unidad | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|---|
 | v0 imagen: DINOv3, recorte con fondo, filtro por categoría | 325 recortes | 0,508 [0,44–0,57] | 0,819 | 0,603 |
-| v1 texto: Qwen3, descripción, filtro por tipo | 207 consultas | **0,618 [0,56–0,68]** | **0,908** | **0,717** |
+| v1 texto: Qwen3, descripción, filtro por tipo (mismo catálogo de 275) | 207 consultas | **0,618 [0,56–0,68]** | **0,908** | **0,717** |
+| v1 texto, catálogo actual de 268 | 198 consultas | 0,636 [0,58–0,70] | 0,914 | 0,737 |
 
 Las unidades no son idénticas (un recorte por detección contra una consulta por producto visto),
 pero el ground truth y la definición de relevante sí. Además la v1 no necesita generar una
@@ -92,22 +100,45 @@ primera imagen: el costo por corrida baja a la de una sola generación.
 
 ## T2: prueba del flujo completo
 
-Corrida `resultados/amoblar/prueba-living-commons` (foto `ambientes_vacios/living_commons_01.jpg`,
-Wikimedia Commons, CC BY-SA 3.0). Pedido: "un living nórdico y cálido: un sofá, un sillón para
-leer, una mesa ratona y una alfombra".
+Corrida `resultados/amoblar/prueba-alvear`. Foto que se amobla:
+`ambientes_vacios/ambiente2-alvear/alvear1.jpg` (la esquina del ventanal de un living largo);
+vista extra: `alvear2.jpg` (el mismo ambiente entero, desde la abertura del otro extremo), que
+va a Claude en plan, choose y scene pero no al modelo de imagen. Pedido: "un living nórdico y
+cálido: un sofá, un sillón para leer, una mesa ratona y una alfombra".
 
-- **plan** (Claude Opus 5.5): leyó el ambiente ("piso de tablas muy oscuro, pared de ladrillo,
-  paredes beige, tres ventanas con persianas blancas") y pidió 4 piezas con sus límites de tamaño
-  (el sillón hasta 90 x 95 cm, la mesa hasta 120 cm, la alfombra hasta 300 x 250 cm).
+- **plan** (Claude Opus 5.5): "an empty, bright living room with a full-width black-framed sliding
+  glass door to a balcony, white walls, white baseboards and a warm mid-tone oak plank floor".
+  Pidió 4 piezas: el sofá contra "la pared larga de la derecha" (lo largo lo ve en la segunda
+  foto) hasta 260 cm, el sillón de lectura junto al ventanal, la mesa ratona hasta 110 x 70 cm y la
+  alfombra hasta 300 x 230 cm.
 - **retrieve**: 3 candidatos por pieza, todos del kind pedido.
-- **choose**: sofá blanco de brazos rectos con patas de abedul, sillón de cuero coñac curvado,
-  mesa ratona de fresno claro y alfombra crema de pelo largo: "blanco, madera clara y crema dan una
-  base nórdica luminosa contra el piso oscuro y el ladrillo; el cuero y la alfombra suman calidez".
-- **scene**: un prompt que ubica cada producto por lo que se ve (de espaldas a la puerta, mirando
-  a la pared de ladrillo; el sillón junto a la ventana de la pared beige) y da proporciones
-  relativas (el sofá, el doble de ancho que una ventana).
-- **Costo**: plan US$0,043 + choose US$0,041 + scene US$0,037 = **US$0,12** (Claude).
-- **generate**: *pendiente* (la imagen por fal, US$0,08, espera aprobación).
+- **choose**: sofá blanco de brazos rectos con patas de abedul (691.249.46), sillón de cuero
+  coñac con estructura curvada (391.505.88), mesa ratona cuadrada de fresno de 70 x 70 cm
+  (902.976.57) y alfombra crema de pelo largo de 170 x 240 cm (302.837.81): "white, cream and
+  pale wood keep the bright room calm and Scandinavian; the cognac leather and the plush rug add
+  warmth, and the chair's dark bentwood frame picks up the black window frames".
+- **scene**: un prompt de 219 palabras que ubica cada producto por lo que se ve (el sofá centrado
+  bajo la fila de enchufes de la pared derecha, el sillón delante de la parte izquierda del
+  ventanal), con las medidas del catálogo y sin mencionar la segunda foto.
+- **generate**: *pendiente* (una imagen por fal, US$0,08, espera aprobación).
+
+**Lo que mostró la prueba** (y se arregló antes de seguir):
+1. **Medidas que no llegaban al LLM.** roomrag solo pasaba la medida de un candidato si tenía
+   ancho, profundidad y alto; las alfombras y las mesas del dataset tienen ancho y profundidad.
+   Claude recibía "size unknown", eligió una alfombra de 140 x 200 cm y escribió en el prompt
+   "unos 2 x 3 m". Ahora pasan las medidas que haya; con ellas eligió la de 170 x 240.
+2. **Fotos que no son del producto.** Con las medidas, eligió la LISABO de 118 x 50 cm, cuya foto
+   es la de 70 x 70: se excluyeron los 7 casos así (ver T1).
+3. **Los asientos no tienen medidas en el dataset** (sofás, sillones y sillas: ninguno), así que
+   el límite del plan no los filtra y el prompt da su tamaño a ojo. Ver FUTURO.md.
+
+Los intermedios descartados están en la carpeta de la corrida (`descartado_sin_medidas/`,
+`descartado_lisabo_118/`). Una primera prueba sobre una foto de Wikimedia Commons se descartó
+porque la foto era poco realista (posterizada y oscura).
+
+**Costo** (Claude, `resultados/gastos.jsonl`): plan US$0,041 + choose US$0,044 + scene
+US$0,042 = **US$0,13** la corrida final; con las dos repeticiones de choose y scene y la prueba
+descartada, US$0,40 en total.
 
 ## Pendientes de la v1
 
@@ -115,8 +146,8 @@ leer, una mesa ratona y una alfombra".
   final, preservación del ambiente, cobertura (piezas con producto), costo y latencia.
 - Evaluación con calificaciones (2/1/0) del top-3 para pedidos reales, como en YouSeeYouBuy
   (`roomrag/evaluate.py`): mide la relevancia para el pedido, no solo encontrar el SKU anotado.
-- Ejercicio 4 (iteración): candidatos en `FUTURO.md` (filtro por tipo en vez de kind, consultas
-  de estilo sin kind, dos fotos del ambiente).
+- Ejercicio 4 (iteración): candidatos en `FUTURO.md` (una vista contra dos, filtro por tipo en
+  vez de kind, consultas de estilo sin kind, medidas del ambiente).
 
 # v0: retrieval por imagen (deprecada)
 

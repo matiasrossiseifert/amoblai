@@ -12,13 +12,13 @@ arquitectura en `deprecated/docs/ARQUITECTURA_v0.md`.
 ```mermaid
 flowchart LR
   subgraph IDX["Indexing pipeline (una vez)"]
-    A["Catálogo IKEA<br/>275 productos del alcance"] --> B["Descripciones<br/>8 líneas por producto<br/>(subagentes mirando la foto)"]
+    A["Catálogo IKEA<br/>268 productos del alcance"] --> B["Descripciones<br/>8 líneas por producto<br/>(subagentes mirando la foto)"]
     A --> K["Metadata: tipo, kind,<br/>medidas"]
     B --> E["Embedding de texto<br/>Qwen3 / BGE / hashing"]
     E --> V[("Índice<br/>vectores + metadata")]
     K --> V
   end
-  U["Foto del ambiente<br/>+ pedido"] --> P["plan (Claude)<br/>pre-retrieval:<br/>piezas, kinds, medidas<br/>y la consulta en 8 líneas"]
+  U["Foto del ambiente<br/>(+ otra vista)<br/>+ pedido"] --> P["plan (Claude)<br/>pre-retrieval:<br/>piezas, kinds, medidas<br/>y la consulta en 8 líneas"]
   P --> R["retrieve<br/>filtros duros (kind, medidas)<br/>+ k vecinos por coseno"]
   V --> R
   R --> C["choose (Claude)<br/>post-retrieval:<br/>la mejor combinación<br/>mirando las fotos"]
@@ -33,10 +33,10 @@ flowchart LR
 | Paso (terminología RAG) | Dónde | Qué hace |
 |---|---|---|
 | **Data loading** | `amoblai/data/` (`download`, `ikea`, `catalog`) | Descarga el dataset fijado a un commit, carga los pickles con un unpickler restringido y une todo por SKU. |
-| **Preprocesamiento** | `amoblai/catalogo_ikea.py`, `configs/categories.yaml`, `catalogo/correcciones.yaml` | Elige los productos del alcance (sofá, sillón, silla, mesa, alfombra), los lleva al formato de roomrag (tipo, kind, medidas sin ambigüedad, fotos) y aplica las correcciones a mano (7 escritorios que IKEA tipifica como mesas). |
+| **Preprocesamiento** | `amoblai/catalogo_ikea.py`, `configs/categories.yaml`, `catalogo/correcciones.yaml` | Elige los productos del alcance (sofá, sillón, silla, mesa, alfombra), los lleva al formato de roomrag (tipo, kind, medidas sin ambigüedad, fotos) y aplica las correcciones a mano: 7 escritorios que IKEA tipifica como mesas y 7 SKUs excluidos porque su foto es la de otra medida del mismo modelo. |
 | **Splitting** | `catalogo/descripciones.jsonl` | La unidad que se indexa es la descripción de un producto: ocho líneas fijas (Type, Use, Style, Materials, Colors, Shape, Feel, Goes with), 60 a 90 palabras, escritas por subagentes de Claude Code mirando la foto con el prompt `describe_product_v2` de roomrag. Sin marca, precio ni medidas (el tamaño va por filtro). |
 | **Embedding** | `roomrag/embed.py` | Modelos de texto locales de Hugging Face (Qwen3-Embedding-0.6B por defecto, BGE-base) o hashing de palabras; vectores normalizados (el producto interno es el coseno). |
-| **Vector store** | `roomrag/index.py` | Índice en `data/cache/roomrag/`: un vector por producto, en el orden de `items.jsonl`, con la metadata (tipo, kind, medidas) para los filtros; descripciones y vectores en caché por contenido. Con 275 productos la búsqueda exacta alcanza; un ANN (HNSW) entra en el mismo lugar. |
+| **Vector store** | `roomrag/index.py` | Índice en `data/cache/roomrag/`: un vector por producto, en el orden de `items.jsonl`, con la metadata (tipo, kind, medidas) para los filtros; descripciones y vectores en caché por contenido. Con 268 productos la búsqueda exacta alcanza; un ANN (HNSW) entra en el mismo lugar. |
 | **Pre-retrieval: query rewriting** | `roomrag/steps.py: plan`, `prompts/search_query_v2.md` | Claude lee la foto y el pedido como un decorador: decide las piezas (1 a 4), el kind de cada una (filtro duro), el máximo que puede medir y escribe **el producto ideal en las mismas ocho líneas que el catálogo**. La consulta y los documentos quedan en el mismo formato y vocabulario (idea tipo HyDE). |
 | **Retrieval con metadata filtering** | `roomrag/search.py`, `roomrag/filters.py` | Primero los filtros duros (kind, medidas con un 15% de holgura), después los k más cercanos por coseno (3 candidatos por pieza). Una pieza sin nada en el catálogo queda anotada y el flujo sigue. |
 | **Post-retrieval: reranking/selección** | `roomrag/steps.py: choose`, `prompts/choose_combination_v1.md` | Claude ve la foto del ambiente y las fotos de todos los candidatos y elige uno por pieza: la mejor **combinación**, no el mejor de cada uno por separado. |
@@ -76,6 +76,12 @@ de los muebles mejor que gpt-image; con `aspect_ratio: auto` dibuja en la propor
 foto. El generador `manual` deja una carpeta con las imágenes en orden y el prompt para hacerlo
 a mano.
 
+**Otra vista del ambiente, solo para el LLM.** Con `--vista`, otra foto del mismo ambiente desde
+otro ángulo va a plan, choose y scene después de las imágenes de cada paso (la numeración de los
+prompts no cambia), con una nota: sirve para entender el tamaño y la forma del cuarto, y todo se
+ubica en la imagen 1. El modelo de imagen recibe solo la foto que se amobla: el prompt de scene
+no menciona la otra.
+
 **Caché y reanudación.** Cada paso escribe su archivo en la carpeta de la corrida
 (`1_searches.json`, `2_candidates.json`, `3_choice.json`, `4_scene.json`, `5_image.json`,
 `final.png`); si existe, no se repite. Nada se paga dos veces.
@@ -90,4 +96,6 @@ Un framework de orquestación no agrega nada acá.
   prompt (el 3D es de YouSeeYouBuy). Ver FUTURO.md.
 - El modelo de imagen puede deformar un producto o retocar el ambiente: el prompt pide cada
   producto exactamente como en su foto y el resto igual, pero no está garantizado.
+- No sabe cuánto mide el ambiente: los límites de tamaño del plan son una estimación a ojo, y
+  los asientos no tienen medidas en el dataset (solo las mesas y las alfombras). Ver FUTURO.md.
 - Precios y links: el dataset no los tiene.
