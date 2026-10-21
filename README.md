@@ -35,8 +35,9 @@ contra 0,508 del mejor retrieval por imagen (DINOv3), con el mismo ground truth.
 
 ![Camino incremental](resultados/reporte/camino_texto.png)
 
-Una corrida completa del flujo (plan, choose y scene con Claude Opus 5.5) cuesta unos US$0,12
-más la imagen (US$0,08 con Nano Banana 2).
+Una corrida completa del flujo cuesta unos US$0,21: plan, choose y scene con Claude Opus 5.5
+(US$0,13) y la imagen con Nano Banana 2 (US$0,08). Ejemplo en
+`resultados/amoblar/prueba-alvear2/antes_despues.jpg` (detalle en docs/EXPERIMENTOS.md, T2).
 
 ## Instalación
 
