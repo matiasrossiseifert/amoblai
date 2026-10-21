@@ -43,6 +43,23 @@ def test_catalog_files_apply_corrections_and_load_in_roomrag(catalog_dir):
     assert {json.loads(r)["id"] for r in rows} == set(cat)
 
 
+def test_a_product_whose_photo_does_not_show_it_is_left_out(catalog_dir):
+    from amoblai.catalogo_ikea import write_catalog_files
+
+    fixes = catalog_dir / "correcciones.yaml"
+    fixes.write_text(fixes.read_text() + '"100.000.06": {excluir: true, motivo: "otra foto"}\n')
+    stats = write_catalog_files(
+        catalog_dir / "items.jsonl",
+        catalog_dir / "descripciones",
+        catalog_dir / "descripciones.jsonl",
+        catalog_dir / "kinds.yaml",
+        fixes,
+        catalog_dir / "ikea.yaml",
+    )
+    cat = {p.id for p in load_catalog(catalog_dir / "ikea.yaml", ".").products}
+    assert stats["excluded"] == 1 and "100.000.06" not in cat and len(cat) == 6
+
+
 def test_check_text_accepts_the_reference_format():
     assert check_text(SAMPLE) == ([], [])
 

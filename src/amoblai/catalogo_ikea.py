@@ -125,13 +125,18 @@ def write_catalog_files(
     catalog_yaml: Path,
 ) -> dict[str, int]:
     """Junta las descripciones de los subagentes, aplica las correcciones a mano y escribe el
-    YAML del catálogo que lee roomrag (items, kinds y tipos corregidos)."""
+    YAML del catálogo que lee roomrag (items, kinds y tipos corregidos). Una corrección con
+    `excluir: true` saca el producto de los items (su foto no lo muestra)."""
     import yaml
 
     from amoblai.descripciones import merge
 
     n, _ = merge(sorted(Path(descriptions_dir).glob("lote_*.jsonl")), descriptions_out, kinds_out)
     corrections = load_corrections(corrections_path)
+    excluded = {str(pid) for pid, fix in corrections.items() if fix.get("excluir")}
+    if excluded:
+        items = [json.loads(line) for line in Path(items_path).read_text().splitlines()]
+        write_items([it for it in items if it["id"] not in excluded], items_path)
     kinds = yaml.safe_load(kinds_out.read_text()) or {}
     for pid, fix in corrections.items():
         if "kind" in fix:
@@ -155,4 +160,9 @@ def write_catalog_files(
         "# Lo genera `amoblai catalogo` desde el dataset y catalogo/correcciones.yaml.\n"
     )
     catalog_yaml.write_text(header + yaml.safe_dump(catalog, allow_unicode=True, sort_keys=False))
-    return {"descriptions": n, "kinds": len(kinds), "corrections": len(corrections)}
+    return {
+        "descriptions": n,
+        "kinds": len(kinds),
+        "corrections": len(corrections),
+        "excluded": len(excluded),
+    }
