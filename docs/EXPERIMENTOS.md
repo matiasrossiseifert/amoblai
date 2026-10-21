@@ -100,29 +100,44 @@ primera imagen: el costo por corrida baja a la de una sola generación.
 
 ## T2: prueba del flujo completo
 
-Corrida `resultados/amoblar/prueba-alvear`. Foto que se amobla:
-`ambientes_vacios/ambiente2-alvear/alvear1.jpg` (la esquina del ventanal de un living largo);
-vista extra: `alvear2.jpg` (el mismo ambiente entero, desde la abertura del otro extremo), que
-va a Claude en plan, choose y scene pero no al modelo de imagen. Pedido: "un living nórdico y
-cálido: un sofá, un sillón para leer, una mesa ratona y una alfombra".
+Pedido: "un living nórdico y cálido: un sofá, un sillón para leer, una mesa ratona y una
+alfombra". Ambiente: `ambientes_vacios/ambiente2-alvear/`, un living largo con ventanal al
+balcón, con dos fotos: `alvear1.jpg` (la esquina del ventanal) y `alvear2.jpg` (el ambiente
+entero, desde la abertura del otro extremo). Se corrió el RAG con cada una como foto que se
+amobla y la otra como vista extra (va a Claude en plan, choose y scene, no al modelo de imagen),
+y se generó la imagen sobre `alvear2`, que muestra todo el piso libre.
 
-- **plan** (Claude Opus 5.5): "an empty, bright living room with a full-width black-framed sliding
-  glass door to a balcony, white walls, white baseboards and a warm mid-tone oak plank floor".
-  Pidió 4 piezas: el sofá contra "la pared larga de la derecha" (lo largo lo ve en la segunda
-  foto) hasta 260 cm, el sillón de lectura junto al ventanal, la mesa ratona hasta 110 x 70 cm y la
-  alfombra hasta 300 x 230 cm.
-- **retrieve**: 3 candidatos por pieza, todos del kind pedido.
-- **choose**: sofá blanco de brazos rectos con patas de abedul (691.249.46), sillón de cuero
-  coñac con estructura curvada (391.505.88), mesa ratona cuadrada de fresno de 70 x 70 cm
-  (902.976.57) y alfombra crema de pelo largo de 170 x 240 cm (302.837.81): "white, cream and
-  pale wood keep the bright room calm and Scandinavian; the cognac leather and the plush rug add
-  warmth, and the chair's dark bentwood frame picks up the black window frames".
-- **scene**: un prompt de 219 palabras que ubica cada producto por lo que se ve (el sofá centrado
-  bajo la fila de enchufes de la pared derecha, el sillón delante de la parte izquierda del
-  ventanal), con las medidas del catálogo y sin mencionar la segunda foto.
-- **generate**: *pendiente* (una imagen por fal, US$0,08, espera aprobación).
+| | `prueba-alvear` (amobla alvear1) | `prueba-alvear2` (amobla alvear2) |
+|---|---|---|
+| Cómo leyó el ambiente | "an empty, bright living room with a full-width black-framed sliding glass door to a balcony..." | "an empty, long, bright living room [...] a black-framed sliding door to a balcony at the far end" |
+| Sofá | 691.249.46: blanco, 3 cuerpos, brazos rectos, patas de abedul; contra la pared larga de la derecha | el mismo; contra la pared larga de la izquierda, a mitad del ambiente |
+| Sillón para leer | 391.505.88: cuero coñac, estructura curvada oscura; junto al ventanal | el mismo |
+| Mesa ratona | 902.976.57: cuadrada de fresno, 70 x 70 cm | 302.397.12: redonda, baja, de nogal |
+| Alfombra | 302.837.81: crema de pelo largo, 170 x 240 cm | 002.852.58: tejida a rayas beige y gris, 180 x 224 cm |
+| Claude (plan + choose + scene) | US$0,13 | US$0,13 |
 
-**Lo que mostró la prueba** (y se arregló antes de seguir):
+El sofá y el sillón salieron primeros del ranking en las dos; la mesa y la alfombra cambian con
+el lugar que se ve (con el living entero eligió una mesa más grande). En los dos, el prompt de
+scene ubica cada producto por lo que se ve, da las medidas del catálogo y no menciona la otra
+foto.
+
+**La imagen** (`resultados/amoblar/prueba-alvear2/final.png`, comparación en
+`antes_despues.jpg`): Nano Banana 2 en fal, 1K, 24 s, US$0,08 (precio configurado: fal no
+devuelve el costo). Lo que se ve:
+
+- **El ambiente queda igual**: el encuadre, la abertura, el ventanal, la puerta de la derecha, el
+  piso y la luz.
+- **Los cuatro productos se reconocen**: el sofá de brazos rectos con patas claras, el sillón de
+  cuero acolchado en rombos con su estructura oscura, la mesa redonda de nogal y la alfombra de
+  tres franjas. Se pierde algún detalle chico (el ribete verde de la alfombra).
+- **La ubicación respeta el prompt a medias**: el sofá va contra la pared izquierda mirando a la
+  derecha, la mesa sobre la alfombra y el sillón a la derecha, orientado hacia el sofá. Pero el
+  grupo queda en el primer tercio del ambiente, no "a mitad", y el sillón no está "cerca del
+  balcón".
+- Las sombras de contacto son suaves y creíbles; la escala relativa entre los muebles y el
+  ambiente es razonable a ojo (sin medidas no se puede verificar).
+
+**Lo que mostró la prueba** (y se arregló antes de generar):
 1. **Medidas que no llegaban al LLM.** roomrag solo pasaba la medida de un candidato si tenía
    ancho, profundidad y alto; las alfombras y las mesas del dataset tienen ancho y profundidad.
    Claude recibía "size unknown", eligió una alfombra de 140 x 200 cm y escribió en el prompt
@@ -132,13 +147,12 @@ cálido: un sofá, un sillón para leer, una mesa ratona y una alfombra".
 3. **Los asientos no tienen medidas en el dataset** (sofás, sillones y sillas: ninguno), así que
    el límite del plan no los filtra y el prompt da su tamaño a ojo. Ver FUTURO.md.
 
-Los intermedios descartados están en la carpeta de la corrida (`descartado_sin_medidas/`,
+Los intermedios descartados están en `resultados/amoblar/prueba-alvear/` (`descartado_sin_medidas/`,
 `descartado_lisabo_118/`). Una primera prueba sobre una foto de Wikimedia Commons se descartó
 porque la foto era poco realista (posterizada y oscura).
 
-**Costo** (Claude, `resultados/gastos.jsonl`): plan US$0,041 + choose US$0,044 + scene
-US$0,042 = **US$0,13** la corrida final; con las dos repeticiones de choose y scene y la prueba
-descartada, US$0,40 en total.
+**Costo de una corrida completa**: US$0,13 de Claude + US$0,08 de la imagen = **US$0,21**. En
+total, con las pruebas y repeticiones: Claude US$0,53, fal US$0,08 (`resultados/gastos.jsonl`).
 
 ## Pendientes de la v1
 

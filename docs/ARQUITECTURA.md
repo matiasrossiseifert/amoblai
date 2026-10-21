@@ -69,7 +69,7 @@ reconstruir con un describer por API (`anthropic_vision`) cambiando una línea d
 
 **Claude para plan, choose y scene.** Claude Opus 5.5 (effort `medium`) mira fotos y escribe
 JSON. Cada llamada pasa por el tope de gasto de su cuenta y queda en `resultados/gastos.jsonl`
-(una corrida completa ≈ US$0,12).
+(plan, choose y scene ≈ US$0,13 por corrida; la imagen, US$0,08 más).
 
 **Generación: Nano Banana 2 por fal.** En la prueba de YouSeeYouBuy, Gemini conservó la forma
 de los muebles mejor que gpt-image; con `aspect_ratio: auto` dibuja en la proporción de la
