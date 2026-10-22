@@ -1,0 +1,134 @@
+{
+  "qwen3|description|filtro-type": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "type",
+      "store": "chroma",
+      "query": "full",
+      "rerank": null
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.6364,
+    "hit@1_ic95": [
+      0.5754,
+      0.699
+    ],
+    "hit@3": 0.8131,
+    "hit@3_ic95": [
+      0.7559,
+      0.87
+    ],
+    "hit@5": 0.8586,
+    "hit@5_ic95": [
+      0.8134,
+      0.9077
+    ],
+    "hit@10": 0.9141,
+    "hit@10_ic95": [
+      0.8762,
+      0.9514
+    ],
+    "mrr@10": 0.7374,
+    "mrr@10_ic95": [
+      0.6893,
+      0.7854
+    ],
+    "literal_hit@10": 0.8125,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.6068,
+    "recall_item@1_ic95": [
+      0.5423,
+      0.6742
+    ],
+    "recall_item@10": 0.8932,
+    "recall_item@10_ic95": [
+      0.8522,
+      0.933
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "chair": 0.8636,
+      "rug": 0.3111,
+      "sofa": 0.625,
+      "table": 0.6866
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 0.7
+  },
+  "qwen3|description|filtro-type|rerank-opus": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "type",
+      "store": "chroma",
+      "query": "full",
+      "rerank": "opus"
+    },
+    "searches": 228,
+    "answerable": 198,
+    "hit@1": 0.803,
+    "hit@1_ic95": [
+      0.7454,
+      0.8664
+    ],
+    "hit@3": 0.8889,
+    "hit@3_ic95": [
+      0.8442,
+      0.9348
+    ],
+    "hit@5": 0.899,
+    "hit@5_ic95": [
+      0.8564,
+      0.9441
+    ],
+    "hit@10": 0.9141,
+    "hit@10_ic95": [
+      0.8762,
+      0.9514
+    ],
+    "mrr@10": 0.8474,
+    "mrr@10_ic95": [
+      0.7978,
+      0.8992
+    ],
+    "literal_hit@10": 0.8125,
+    "azar_hit@1": 0.0202,
+    "azar_hit@10": 0.1939,
+    "azar_mrr@10": 0.0578,
+    "recall_item@1": 0.7621,
+    "recall_item@1_ic95": [
+      0.6991,
+      0.8292
+    ],
+    "recall_item@10": 0.8932,
+    "recall_item@10_ic95": [
+      0.8522,
+      0.933
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7778,
+      "chair": 0.9545,
+      "rug": 0.6,
+      "sofa": 0.75,
+      "table": 0.8657
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "chair": 44,
+      "rug": 45,
+      "sofa": 24,
+      "armchair": 18
+    },
+    "segundos": 106.0
+  }
+}
