@@ -1,6 +1,6 @@
 # Retrieval por texto (65 ambientes IKEA)
 
-Corridas: `20261021-161057_ablacion-retrieval`, `20261021-161311_ablacion-reranking`.
+Corridas: `20261021-161057_ablacion-retrieval`, `20261022-175001_ablacion-reranking`.
 
 | método                                      | corrida                            | embedder   | texto            | filtro   | base   | consulta   | rerank   |   consultas |   hit@1 | hit@1_ic95     |   hit@3 |   hit@10 |   mrr@10 | mrr@10_ic95    |   recall_item@10 |   azar_hit@1 |
 |:--------------------------------------------|:-----------------------------------|:-----------|:-----------------|:---------|:-------|:-----------|:---------|------------:|--------:|:---------------|--------:|---------:|---------:|:---------------|-----------------:|-------------:|
@@ -27,8 +27,8 @@ Corridas: `20261021-161057_ablacion-retrieval`, `20261021-161311_ablacion-rerank
 | qwen3|description|filtro-kind|exact         | 20261021-161057_ablacion-retrieval | qwen3      | description      | kind     | exact  | full       |          |         198 |  0.6162 | [0.553, 0.680] |  0.7727 |   0.8788 |   0.7093 | [0.658, 0.764] |           0.835  |       0.0373 |
 | qwen3|description|filtro-type|consulta-type | 20261021-161057_ablacion-retrieval | qwen3      | description      | type     | chroma | type       |          |         198 |  0.3535 | [0.281, 0.432] |  0.6364 |   0.8434 |   0.5098 | [0.454, 0.567] |           0.8204 |       0.0202 |
 | qwen3|description|filtro-type|consulta-kind | 20261021-161057_ablacion-retrieval | qwen3      | description      | type     | chroma | kind       |          |         198 |  0.0404 | [0.014, 0.073] |  0.0909 |   0.2374 |   0.082  | [0.053, 0.117] |           0.2136 |       0.0202 |
-| qwen3|description|filtro-type               | 20261021-161311_ablacion-reranking | qwen3      | description      | type     | chroma | full       |          |         198 |  0.6364 | [0.575, 0.699] |  0.8131 |   0.9141 |   0.7374 | [0.689, 0.785] |           0.8932 |       0.0202 |
-| qwen3|description|filtro-type|rerank-haiku  | 20261021-161311_ablacion-reranking | qwen3      | description      | type     | chroma | full       | haiku    |         198 |  0.7677 | [0.708, 0.829] |  0.8687 |   0.9141 |   0.8228 | [0.775, 0.875] |           0.8932 |       0.0202 |
+| qwen3|description|filtro-type               | 20261022-175001_ablacion-reranking | qwen3      | description      | type     | chroma | full       |          |         198 |  0.6364 | [0.575, 0.699] |  0.8131 |   0.9141 |   0.7374 | [0.689, 0.785] |           0.8932 |       0.0202 |
+| qwen3|description|filtro-type|rerank-opus   | 20261022-175001_ablacion-reranking | qwen3      | description      | type     | chroma | full       | opus     |         198 |  0.803  | [0.745, 0.866] |  0.8889 |   0.9141 |   0.8474 | [0.798, 0.899] |           0.8932 |       0.0202 |
 
 ## Base vectorial, query rewriting y reranking
 

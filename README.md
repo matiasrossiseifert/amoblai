@@ -49,13 +49,15 @@ respuesta; IC 95% bootstrap por ambiente). Tablas completas en
 | Naive: texto del vendedor, hashing de palabras, sin filtro | 0,146 | 0,429 | 0,212 |
 | + nuestras descripciones de ocho líneas | 0,586 | 0,929 | 0,712 |
 | + Qwen3-Embedding, filtro por tipo, ChromaDB | 0,636 | 0,914 | 0,737 |
-| **+ reranking con VLM (Claude Haiku 5.5, top-10)** | **0,768** | 0,914 | **0,823** |
+| **+ reranking con VLM (Claude Opus 5.5, top-10)** | **0,803** | 0,914 | **0,847** |
 | Azar | 0,020 | 0,194 | 0,058 |
 
 - **Query rewriting:** con la consulta en las ocho líneas del catálogo, hit@1 da 0,636. Con solo
   la línea Type cae a 0,353, y con solo el nombre del mueble (sin reescribir) a 0,040.
 - **Base vectorial:** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 228
   consultas.
+- **Reranking:** Opus mira las fotos del top-10 y sube hit@1 de 0,636 a 0,803 (US$0,020 por
+  consulta).
 - **Texto contra imagen:** con el mismo ground truth y el catálogo completo, el retrieval por
   texto da 0,618 de hit@1 y el mejor retrieval por imagen de la v0 (DINOv3) da 0,508.
 

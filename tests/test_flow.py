@@ -168,7 +168,7 @@ def test_the_vlm_reranks_the_top_and_its_answers_are_cached(
         return httpx.Response(
             200,
             json={
-                "model": "claude-haiku-5-5",
+                "model": "claude-opus-5-5",
                 "stop_reason": "end_turn",
                 "content": [{"type": "text", "text": json.dumps({"ranking": answer})}],
                 "usage": {"input_tokens": 3000, "output_tokens": 200},
@@ -178,7 +178,7 @@ def test_the_vlm_reranks_the_top_and_its_answers_are_cached(
     monkeypatch.setattr(http, "TRANSPORT", httpx.MockTransport(reverse))
     monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
     cfg.evaluation.rerank_top = 3
-    cfg.evaluation.rerankers = {"haiku": {**CLAUDE, "model": "claude-opus-5-5"}}
+    cfg.evaluation.rerankers = {"opus": CLAUDE}
     queries = {
         ROOM_ID: {
             "room": "living",
@@ -189,7 +189,7 @@ def test_the_vlm_reranks_the_top_and_its_answers_are_cached(
     qpath.write_text(json.dumps(queries))
     methods = [
         Method("hashing", "description", "none"),
-        Method("hashing", "description", "none", rerank="haiku"),
+        Method("hashing", "description", "none", rerank="opus"),
     ]
     with pytest.raises(PaidCallsDisabled):
         run_eval(cfg, qpath, dataset_root, tmp_path / "evals", methods, name="r", n_boot=10)

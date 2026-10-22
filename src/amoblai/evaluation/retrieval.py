@@ -265,6 +265,8 @@ def rank(
         top = cfg.evaluation.rerank_top
 
         def one(row: dict) -> list[str]:
+            if not row["relevant"]:  # no entra en las métricas: no se paga
+                return row["ranked"]
             head = rerank(cfg, method.rerank, row["query"], [by_id[i] for i in row["ranked"][:top]])
             return head + row["ranked"][top:]
 
