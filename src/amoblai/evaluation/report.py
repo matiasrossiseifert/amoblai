@@ -9,7 +9,13 @@ consultas anteriores van aparte, en su propia tabla. Escribe en `datos/resultado
 - `avanzado.png`: base vectorial (ChromaDB vs. exacta), query rewriting y reranking;
 - `texto_vs_imagen.png`: el mejor método por texto contra la mejor configuración de la v0 (por
   imagen, datos/resultados/v0_imagen), sobre los mismos 65 ambientes y el mismo catálogo (la
-  corrida `V0_TWIN`, con los 275 productos del primer alcance).
+  corrida `V0_TWIN`, con los 275 productos del primer alcance);
+- `curva_k.png`: hit@k hasta k=50 (cuántos candidatos pasarle al LLM que elige);
+- `dimension.png`: hit@1 y MRR@10 según la dimensión del embedding (Matryoshka);
+- la reproducibilidad: los mismos métodos con las consultas escritas otras dos veces (las
+  corridas con `replica` en corrida.json), promedio y desvío;
+- la imagen generada: las métricas de cada corrida del flujo con imagen
+  (`6_metricas_imagen.json`, evaluation/image.py) y la vara de las fotos reales.
 Cada gráfico va con su tabla (los valores exactos están en el .md).
 """
 
@@ -48,7 +54,9 @@ AVANZADO = [
     ("búsqueda exacta", "qwen3|description|filtro-type|exact"),
     ("consulta: solo Type", "qwen3|description|filtro-type|consulta-type"),
     ("consulta: solo el kind", "qwen3|description|filtro-type|consulta-kind"),
-    ("+ reranking (Opus 5.5)", "qwen3|description|filtro-type|rerank-opus"),
+    ("+ reranking cross-encoder (MiniLM)", "qwen3|description|filtro-type|rerank-minilm-reranker"),
+    ("+ reranking cross-encoder (Qwen3)", "qwen3|description|filtro-type|rerank-qwen3-reranker"),
+    ("+ reranking VLM (Opus 5.5)", "qwen3|description|filtro-type|rerank-opus"),
 ]
 
 
@@ -95,6 +103,10 @@ def table(run: Path) -> pd.DataFrame:
                 "mrr@10": m["mrr@10"],
                 "mrr@10_ic95": m["mrr@10_ic95"],
                 "recall_item@10": m["recall_item@10"],
+                "context_precision@10": m.get("context_precision@10"),
+                "ndcg@10": m.get("ndcg@10"),
+                "context_recall@3": m.get("context_recall@3"),
+                "context_recall@10": m.get("context_recall@10"),
                 "azar_hit@1": m["azar_hit@1"],
             }
         )
@@ -169,6 +181,286 @@ def bars(
     plt.close(fig)
 
 
+def lines(
+    xs: list[float],
+    series: dict[str, list[float]],
+    title: str,
+    xlabel: str,
+    path: Path,
+    log_x: bool = False,
+) -> None:
+    fig, ax = plt.subplots(figsize=(7, 4.2), facecolor=SURFACE)
+    for j, (name, ys) in enumerate(series.items()):
+        ax.plot(xs, ys, marker="o", color=SERIES[j % len(SERIES)], label=name, zorder=2)
+        ax.text(xs[-1], ys[-1] + 0.015, f"{ys[-1]:.2f}", fontsize=8, color=INK, ha="center")
+    if log_x:
+        ax.set_xscale("log", base=2)
+        ax.set_xticks(xs, [str(int(x)) for x in xs])
+    else:
+        ax.set_xticks(xs, [str(int(x)) for x in xs])
+    ax.set_ylim(0, 1.05)
+    ax.set_xlabel(xlabel, color=INK2, fontsize=9)
+    ax.set_title(title, color=INK, fontsize=11, loc="left")
+    _style(ax)
+    ax.legend(frameon=False, fontsize=9, labelcolor=INK2, loc="lower right")
+    fig.tight_layout()
+    fig.savefig(path, dpi=150, facecolor=SURFACE)
+    plt.close(fig)
+
+
+def replica_of(run: Path) -> str | None:
+    return json.loads((run / "corrida.json").read_text()).get("replica")
+
+
+def k_curve(runs: list[Path], out_dir: Path) -> list[str]:
+    """hit@k hasta k=50 de los métodos principales: cuántos candidatos hacen falta."""
+    data: dict[str, dict] = {}
+    for r in runs:
+        for name, m in json.loads((r / "metricas.json").read_text()).items():
+            if "curva_hit@k" in m:
+                data[name] = m
+    keys = [
+        ("Qwen3, filtro por tipo", "qwen3|description|filtro-type"),
+        ("BGE, filtro por tipo", "bge|description|filtro-type"),
+        ("hashing, filtro por tipo", "hashing|description|filtro-type"),
+    ]
+    keys = [(lab, k) for lab, k in keys if k in data]
+    if not keys:
+        return []
+    ks = [int(k) for k in data[keys[0][1]]["curva_hit@k"]]
+    lines(
+        ks,
+        {lab: [data[k]["curva_hit@k"][str(x)] for x in ks] for lab, k in keys},
+        "hit@k: ¿el producto correcto está entre los k candidatos?",
+        "k (candidatos por pieza)",
+        out_dir / "curva_k.png",
+    )
+    head = "| método | " + " | ".join(f"k={k}" for k in ks) + " |"
+    md = ["## ¿Cuántos candidatos? La curva de hit@k", "", head, "|---|" + "---|" * len(ks)]
+    for lab, k in keys:
+        md.append(
+            f"| {lab} | " + " | ".join(f"{data[k]['curva_hit@k'][str(x)]:.3f}" for x in ks) + " |"
+        )
+    md += ["", "![curva k](curva_k.png)", ""]
+    return md
+
+
+def dimension_section(by: pd.DataFrame, out_dir: Path) -> list[str]:
+    """Qwen3 + filtro por tipo con los vectores truncados (Matryoshka)."""
+    base = "qwen3|description|filtro-type"
+    dims = [(int(n.rsplit("dim-", 1)[1]), n) for n in by.index if n.startswith(base + "|dim-")]
+    if not dims or base not in by.index:
+        return []
+    dims = [*sorted(dims), (1024, base)]
+    xs = [d for d, _ in dims]
+    lines(
+        xs,
+        {
+            "hit@1": [by.loc[n, "hit@1"] for _, n in dims],
+            "MRR@10": [by.loc[n, "mrr@10"] for _, n in dims],
+            "hit@10": [by.loc[n, "hit@10"] for _, n in dims],
+        },
+        "Qwen3-Embedding truncado (Matryoshka): dimensión del vector",
+        "dimensión",
+        out_dir / "dimension.png",
+        log_x=True,
+    )
+    md = [
+        "## Dimensión del embedding (Matryoshka)",
+        "",
+        "| dimensión | bytes por vector | hit@1 | hit@10 | MRR@10 |",
+        "|---|---|---|---|---|",
+    ]
+    for d, n in dims:
+        md.append(
+            f"| {d} | {4 * d} | {by.loc[n, 'hit@1']:.3f} | {by.loc[n, 'hit@10']:.3f} "
+            f"| {by.loc[n, 'mrr@10']:.3f} |"
+        )
+    md += ["", "![dimensión](dimension.png)", ""]
+    return md
+
+
+def chunks_section(by: pd.DataFrame) -> list[str]:
+    base = "qwen3|description|filtro-type"
+    rows = [
+        ("un documento por producto (ChromaDB)", base),
+        ("cada línea un chunk, el producto vale su mejor línea", base + "|chunks-lines-max"),
+        ("línea contra línea del mismo rótulo, promedio", base + "|chunks-lines-aligned"),
+    ]
+    rows = [(lab, n) for lab, n in rows if n in by.index]
+    if len(rows) < 2:
+        return []
+    md = [
+        "## Splitting: ¿un documento por producto o un chunk por línea?",
+        "",
+        "| splitting | hit@1 | hit@10 | MRR@10 |",
+        "|---|---|---|---|",
+    ]
+    for lab, n in rows:
+        md.append(
+            f"| {lab} | {by.loc[n, 'hit@1']:.3f} {_ci(by.loc[n, 'hit@1_ic95'])} "
+            f"| {by.loc[n, 'hit@10']:.3f} | {by.loc[n, 'mrr@10']:.3f} |"
+        )
+    return [*md, ""]
+
+
+def _ci(v) -> str:
+    return f"[{v[0]:.2f}–{v[1]:.2f}]" if isinstance(v, list | tuple) else ""
+
+
+def replicas_section(main: pd.DataFrame, replicas: list[Path]) -> list[str]:
+    """Los mismos métodos con las consultas escritas tres veces: promedio ± desvío."""
+    if not replicas:
+        return []
+    by_rep = {replica_of(r): table(r).set_index("método") for r in replicas}
+    names = sorted({n for t in by_rep.values() for n in t.index})
+    base = main.set_index("método")
+    md = [
+        "## Reproducibilidad: tres escrituras independientes de las consultas",
+        "",
+        "La búsqueda es determinística: lo que varía es quién escribe la consulta (en el flujo, "
+        "el paso plan). Las mismas fotos y los mismos prompts, tres subagentes distintos por "
+        "lote. Promedio ± desvío estándar (n=3) y el rango.",
+        "",
+        "| método | consultas (r1/r2/r3) | hit@1 | MRR@10 | hit@10 |",
+        "|---|---|---|---|---|",
+    ]
+    for n in names:
+        tabs = [base] + [by_rep[r] for r in sorted(by_rep)]
+        if not all(n in t.index for t in tabs):
+            continue
+        cells = []
+        for metric in ("hit@1", "mrr@10", "hit@10"):
+            vals = pd.Series([float(t.loc[n, metric]) for t in tabs])
+            cells.append(
+                f"{vals.mean():.3f} ± {vals.std(ddof=1):.3f} ({vals.min():.3f}–{vals.max():.3f})"
+            )
+        counts = "/".join(str(int(t.loc[n, "consultas"])) for t in tabs)
+        md.append(f"| {n} | {counts} | " + " | ".join(cells) + " |")
+    return [*md, ""]
+
+
+def image_section(runs_dir: Path, reference: Path) -> list[str]:
+    """Las métricas de la imagen generada (evaluation/image.py) y la vara de fotos reales."""
+    found = sorted(Path(runs_dir).glob("*/6_metricas_imagen.json"))
+    if not found:
+        return []
+    md = [
+        "## La imagen generada",
+        "",
+        "Fidelidad: cada producto de la lista buscado en la imagen final (Grounding DINO), "
+        "recortado y comparado con su foto del catálogo (DINOv3); *identificado* = el más "
+        "parecido al recorte entre los productos de su tipo es él. Ambiente: SSIM fuera de los "
+        "muebles y fracción de puntos SIFT de la foto original reencontrados (RANSAC). Pedido: "
+        "SigLIP 2 entre el pedido y la imagen final, menos lo mismo con la foto vacía; puesto "
+        "del pedido real entre él y seis pedidos de contraste.",
+        "",
+        "| corrida | generador | detectados | identificados@1 | coseno | inventadas "
+        "| SSIM fuera | SIFT | pedido Δ (puesto) |",
+        "|---|---|---|---|---|---|---|---|---|",
+    ]
+    for f in found:
+        r = json.loads(f.read_text())
+        fi, a, q = r["fidelidad"], r["ambiente"], r["pedido_imagen"]
+        md.append(
+            f"| {r['corrida']} | {r['generador']} | {fi['detectados']}/{fi['productos']} "
+            f"| {fi['identificados@1']} | {fi['coseno_medio']} | {len(r['inventadas'])} "
+            f"| {a['ssim_fuera_de_los_muebles']} | {a.get('sift_reencontrados')} "
+            f"| {q['delta']:+.3f} ({q['puesto_entre_contrastes']}/{q['contrastes'] + 1}) |"
+        )
+    md.append("")
+    for f in found:
+        r = json.loads(f.read_text())
+        md += [
+            f"### `{r['corrida']}` por producto",
+            "",
+            "| producto | kind | puesto | coseno |",
+            "|---|---|---|---|",
+        ]
+        for p in r["productos"]:
+            pos = f"{p['puesto']}/{p['entre']}" if p["detectado"] else "no se detectó"
+            md.append(f"| {p['id']} | {p['kind']} | {pos} | {p.get('coseno')} |")
+        md.append("")
+    if Path(reference).exists():
+        ref = json.loads(Path(reference).read_text())
+        md += [
+            "### La vara: la misma identificación con fotos reales (ambientes IKEA)",
+            "",
+            f"{ref['recortes']} recortes de {ref['ambientes']} ambientes: hit@1 {ref['hit@1']:.3f} "
+            f"{_ci(ref['hit@1_ic95'])}, MRR@10 {ref['mrr@10']:.3f}, coseno medio "
+            f"{ref['coseno_medio']:.3f}.",
+            "",
+            "| grupo | hit@1 | recortes |",
+            "|---|---|---|",
+            *[f"| {g} | {v[0]:.2f} | {v[1]} |" for g, v in ref["hit@1_por_grupo"].items()],
+            "",
+        ]
+    return md
+
+
+def space_section(space: Path, out_dir: Path) -> list[str]:
+    """El espacio de embeddings (evaluation/space.py)."""
+    if not Path(space).exists():
+        return []
+    r = json.loads(Path(space).read_text())
+    md = [
+        "## El espacio de embeddings",
+        "",
+        f"{r['productos']} descripciones. Separabilidad: de cada producto, ¿su vecino más "
+        "cercano es de su mismo kind / tipo?, y el silhouette por kind (coseno).",
+        "",
+        "| embedder | vecino del mismo kind | vecino del mismo tipo | silhouette por kind |",
+        "|---|---|---|---|",
+    ]
+    for e, m in r["separabilidad"].items():
+        md.append(
+            f"| {e} | {m['vecino_mismo_kind']:.3f} | {m['vecino_mismo_tipo']:.3f} "
+            f"| {m['silhouette_kind']:.3f} |"
+        )
+    md += [
+        "",
+        "| consulta | mejor coseno | coseno del 10.º | kinds del top-10 |",
+        "|---|---|---|---|",
+    ]
+    for name, q in r["consultas"].items():
+        md.append(
+            f"| {name.replace('_', ' ')} | {q['mejor_coseno']:.3f} | {q['coseno_10']:.3f} "
+            f"| {', '.join(q['kinds_top10'])} |"
+        )
+    md.append("")
+    if (Path(out_dir) / "umap.png").exists():
+        md += ["![umap](umap.png)", ""]
+    return md
+
+
+def answer_section(runs_dir: Path) -> list[str]:
+    """RAGAS sobre la respuesta en texto del flujo (evaluation/answer.py)."""
+    found = sorted(Path(runs_dir).glob("*/7_metricas_respuesta.json"))
+    if not found:
+        return []
+    md = [
+        "## La respuesta en texto: faithfulness y answer relevance (RAGAS)",
+        "",
+        "Faithfulness: de las afirmaciones de hecho del porqué de cada producto, cuántas se "
+        "infieren de lo que vio el sistema (pedido, foto del ambiente, foto, descripción y medida "
+        "de cada producto). Answer relevance: coseno medio (Qwen3) entre el pedido original y tres "
+        "pedidos que un juez que no lo vio infiere de la respuesta; la vara es el mismo coseno con "
+        "pedidos de contraste. Jueces: subagentes de Claude Code.",
+        "",
+        "| corrida | afirmaciones | faithfulness | answer relevance | vara | no sostenidas |",
+        "|---|---|---|---|---|---|",
+    ]
+    for f in found:
+        r = json.loads(f.read_text())
+        fi, rel = r.get("fidelidad", {}), r.get("relevancia", {})
+        bad = "; ".join(fi.get("no_sostenidas") or [])
+        md.append(
+            f"| {r['corrida']} | {fi.get('afirmaciones')} | {fi.get('faithfulness')} "
+            f"| {rel.get('answer_relevance')} | {rel.get('vara_contrastes')} | {bad} |"
+        )
+    return [*md, ""]
+
+
 def category_tables(run: Path, df: pd.DataFrame) -> list[str]:
     """hit@1 por categoría y por pasada de consultas, de los métodos de `run` que están en
     `df`: dónde anda bien y dónde no."""
@@ -210,12 +502,18 @@ def category_tables(run: Path, df: pd.DataFrame) -> list[str]:
 
 
 def build_report(
-    eval_root: Path, out_dir: Path, v0_runs: Path = paths.RESULTS / "v0_imagen" / "corridas"
+    eval_root: Path,
+    out_dir: Path,
+    v0_runs: Path = paths.RESULTS / "v0_imagen" / "corridas",
+    runs_dir: Path = paths.RUNS,
+    image_reference: Path = paths.IMAGE_REFERENCE,
 ) -> dict[str, Path]:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     written: dict[str, Path] = {}
-    all_runs = sorted(latest_runs(eval_root), key=lambda d: d.name)  # por fecha
+    every = sorted(latest_runs(eval_root), key=lambda d: d.name)  # por fecha
+    replicas = [r for r in every if replica_of(r)]
+    all_runs = [r for r in every if not replica_of(r)]
     if not all_runs:
         return written
     current = setup(all_runs[-1])
@@ -283,6 +581,18 @@ def build_report(
         )
         md += ["![camino](camino_texto.png)", ""]
         written["camino"] = out_dir / "camino_texto.png"
+
+    md += k_curve(runs, out_dir)
+    if (out_dir / "curva_k.png").exists():
+        written["curva_k"] = out_dir / "curva_k.png"
+    md += dimension_section(by, out_dir)
+    if (out_dir / "dimension.png").exists():
+        written["dimension"] = out_dir / "dimension.png"
+    md += chunks_section(by)
+    md += replicas_section(df, replicas)
+    md += image_section(runs_dir, image_reference)
+    md += answer_section(runs_dir)
+    md += space_section(paths.RESULTS / "evaluacion_espacio" / "espacio.json", out_dir)
 
     twin = [r for r in all_runs if r.name.split("_", 1)[1] == V0_TWIN]
     v0 = v0_best(v0_runs)
