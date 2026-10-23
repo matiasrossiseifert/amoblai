@@ -14,8 +14,12 @@ vecinos más cercanos por coseno) y se mira el ranking:
   así que las dos se comparan con el mismo ground truth; en lámparas y decoración, el kind,
   porque la categoría junta cosas que no se reemplazan (un almohadón no responde a una búsqueda
   de florero). Las anotaciones no dicen dónde está cada producto: la métrica es permisiva.
-- hit rate@k y MRR@10 sobre las consultas con al menos un relevante; recall@k por ítem anotado;
-  baseline aleatorio sobre lo que deja pasar el filtro; IC 95% por bootstrap de ambientes.
+- hit rate@k, MRR@10, context precision@10 (la de RAGAS de la clase 11) y NDCG@10 sobre las
+  consultas con al menos un relevante; context recall@10 por ambiente (de sus productos anotados,
+  cuántos trae el contexto de sus consultas) y recall@k por ítem anotado; la curva de hit@k hasta
+  k=50 (cuántos candidatos pasarle al reranker); la calibración del score (AUROC de "el primero es
+  correcto"); baseline aleatorio sobre lo que deja pasar el filtro; IC 95% por bootstrap de
+  ambientes.
 
 Un método (las ablaciones de datos/configs/ablaciones/*.yaml) combina:
 - `embedder`: hashing, bge, qwen3 (rag.embedders);
@@ -26,7 +30,15 @@ Un método (las ablaciones de datos/configs/ablaciones/*.yaml) combina:
   (numpy sobre todos los vectores);
 - `query`, el query rewriting: `full` (las ocho líneas, como las escribe el plan), `type` (solo
   la línea Type) o `kind` (solo el nombre del kind: sin reescribir);
-- `rerank`: un VLM reordena los `evaluation.rerank_top` primeros mirando las fotos (pago).
+- `dim`: los vectores truncados a sus primeras `dim` componentes y renormalizados (Qwen3-Embedding
+  se entrenó con Matryoshka: la dimensión se elige sin reentrenar);
+- `chunks`, cómo se parte cada descripción: `whole` (un documento por producto), `lines-max`
+  (cada línea un chunk; el producto puntúa con su mejor línea contra la consulta entera) o
+  `lines-aligned` (línea contra línea del mismo rótulo, Colors con Colors...: el promedio);
+  partida, la búsqueda es exacta (numpy);
+- `rerank`: los `evaluation.rerank_top` primeros reordenados por un VLM que mira las fotos
+  (pago) o por un cross-encoder local que lee la consulta y la descripción juntas (gratis,
+  `LOCAL_RERANKERS`).
 """
 
 from __future__ import annotations
@@ -48,13 +60,18 @@ from typing import Any
 import numpy as np
 import yaml
 
+from amoblai.catalog.descriptions import LABELS
 from amoblai.catalog.kinds import KINDS
 from amoblai.catalog.loader import Product, load_catalog
 from amoblai.config import Config
 from amoblai.evaluation.metrics import (
+    auroc,
+    best_f1_threshold,
     bootstrap_ci,
+    context_precision_at_k,
     first_relevant_rank,
     hit_at_k,
+    ndcg_at_k,
     random_hit_at_k,
     random_mrr,
     reciprocal_rank,
@@ -73,6 +90,9 @@ from amoblai.rag.search import as_hit
 from amoblai.rag.store import ChromaStore
 
 KS = (1, 3, 5, 10)
+LOCAL_RERANKERS = ("minilm-reranker", "qwen3-reranker")  # cross-encoders locales (gratis)
+CURVE = (1, 2, 3, 5, 10, 15, 20, 30, 50)  # hit@k: cuántos candidatos le llegan al reranker
+DEPTH = max(CURVE)  # cuántos trae la búsqueda; en rankings.jsonl.gz quedan los max(KS) primeros
 
 # Lo que se embebe de cada producto (item del índice, producto del catálogo).
 TEXTS: dict[str, Callable[[dict, Product], str]] = {
@@ -133,6 +153,8 @@ class Method:
     store: str = "chroma"  # chroma | exact
     query: str = "full"  # full | type | kind
     rerank: str | None = None  # un reranker de evaluation.rerankers
+    dim: int | None = None  # truncar los vectores (Matryoshka)
+    chunks: str = "whole"  # whole | lines-max | lines-aligned
 
     @property
     def name(self) -> str:
@@ -141,13 +163,17 @@ class Method:
             name += f"|{self.store}"
         if self.query != "full":
             name += f"|consulta-{self.query}"
+        if self.dim:
+            name += f"|dim-{self.dim}"
+        if self.chunks != "whole":
+            name += f"|chunks-{self.chunks}"
         if self.rerank:
             name += f"|rerank-{self.rerank}"
         return name
 
     @property
     def paid(self) -> bool:
-        return self.rerank is not None
+        return self.rerank is not None and self.rerank not in LOCAL_RERANKERS
 
 
 def load_ablation(path: Path) -> tuple[str, list[Method]]:
@@ -214,6 +240,68 @@ QUERIES: dict[str, Callable[[Search], str]] = {
 }
 
 
+def truncate(vectors: np.ndarray, dim: int) -> np.ndarray:
+    """Las primeras `dim` componentes de cada vector, renormalizadas (Matryoshka)."""
+    v = vectors[:, :dim]
+    return v / np.linalg.norm(v, axis=1, keepdims=True).clip(min=1e-12)
+
+
+def labeled_lines(text: str) -> dict[str, str]:
+    """{rótulo: línea} de un texto en las ocho líneas ("Colors: light oak" va a "Colors")."""
+    out: dict[str, str] = {}
+    for line in text.splitlines():
+        if ":" in line and line.strip():
+            out.setdefault(line.split(":", 1)[0].strip(), line.strip())
+    return out
+
+
+def chunk_scores(
+    method: Method, doc_texts: list[str], query_texts: list[str], embed: Callable
+) -> np.ndarray:
+    """(consultas, productos): el score de cada producto con su descripción partida en líneas.
+    `embed`: textos -> vectores de largo 1 (en caché).
+
+    - `lines-max`: la consulta entera contra cada línea; el producto vale lo de su mejor línea
+      (cada línea es un chunk que apunta a su producto).
+    - `lines-aligned`: cada línea de la consulta contra la línea del mismo rótulo del producto
+      (Colors con Colors): el promedio sobre los rótulos que tienen los dos."""
+
+    def vectors(texts: list[str]) -> np.ndarray:
+        v = embed(texts)
+        return truncate(v, method.dim) if method.dim else v
+
+    docs = [labeled_lines(t) for t in doc_texts]
+    if method.chunks == "lines-max":
+        lines = [ln for d in docs for ln in d.values()]
+        sims = vectors(query_texts) @ vectors(lines).T  # (consultas, líneas)
+        starts = np.cumsum([0] + [len(d) for d in docs[:-1]])
+        return np.maximum.reduceat(sims, starts, axis=1)
+    if method.chunks != "lines-aligned":
+        raise ValueError(f"chunks {method.chunks!r}: whole, lines-max o lines-aligned")
+    queries = [labeled_lines(t) for t in query_texts]
+    total = np.zeros((len(queries), len(docs)))
+    count = np.zeros((len(queries), len(docs)))
+    for label in LABELS:
+        d_has = np.array([label in d for d in docs])
+        q_has = np.array([label in q for q in queries])
+        if not d_has.any() or not q_has.any():
+            continue
+        dv = vectors([d[label] for d in docs if label in d])
+        qv = vectors([q[label] for q in queries if label in q])
+        block = np.zeros((len(queries), len(docs)))
+        block[np.ix_(q_has, d_has)] = qv @ dv.T
+        total += block
+        count += np.outer(q_has, d_has)
+    return total / count.clip(min=1)
+
+
+def top_k(scores: np.ndarray, k: int, allowed: np.ndarray) -> list[tuple[int, float]]:
+    """Los k mejores (fila, score) entre los permitidos, de mayor a menor."""
+    scores = np.where(allowed, scores, -np.inf)
+    order = np.argsort(-scores, kind="stable")[:k]
+    return [(int(i), float(scores[i])) for i in order if np.isfinite(scores[i])]
+
+
 def _candidate(answer: str, ids: list[str]) -> str | None:
     """Un id de la respuesta: el id tal cual, o el número de imagen ("image 3", "3")."""
     answer = str(answer).strip()
@@ -236,6 +324,86 @@ def _rerank_request(cfg: Config, reranker: str, query: str, items: list[dict]):
     key = {"llm": params, "prompt": tmpl.version, "text": text}
     sha = hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()[:24]
     return params, hits, text, Path(cfg.cache_dir) / "rerank" / f"{sha}.json"
+
+
+class CrossEncoder:
+    """Un reranker que lee la consulta y el documento juntos (el cross-encoder de la demo de
+    Advanced RAG) y les da un score: `head: classification`, un BERT entrenado para eso (el logit
+    de relevancia, MS MARCO); `head: yes_no`, un LLM chico (Qwen3-Reranker, de la familia del
+    embedder): la probabilidad de "yes" a "¿el documento cumple la consulta?". Los scores quedan en
+    caché por consulta y candidatos."""
+
+    PREFIX = (
+        "<|im_start|>system\nJudge whether the Document meets the requirements based on the "
+        'Query and the Instruct provided. Note that the answer can only be "yes" or "no".'
+        "<|im_end|>\n<|im_start|>user\n"
+    )
+    SUFFIX = "<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+
+    def __init__(self, cfg: Config, params: dict):
+        self.cfg = cfg
+        self.model_id = params["model"]
+        self.instruction = params.get("instruction", "")
+        self.batch = int(params.get("batch", 8))
+        self.head = params.get("head", "yes_no")
+        self._loaded = None
+
+    def _load(self):
+        if self._loaded is None and self.head == "classification":
+            from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+            tok = AutoTokenizer.from_pretrained(self.model_id)
+            model = AutoModelForSequenceClassification.from_pretrained(self.model_id).eval()
+            self._loaded = tok, model, None, None
+        if self._loaded is None:
+            from transformers import AutoModelForCausalLM, AutoTokenizer
+
+            tok = AutoTokenizer.from_pretrained(self.model_id, padding_side="left")
+            model = AutoModelForCausalLM.from_pretrained(self.model_id).eval()
+            yes, no = tok.convert_tokens_to_ids("yes"), tok.convert_tokens_to_ids("no")
+            self._loaded = tok, model, yes, no
+        return self._loaded
+
+    def scores(self, query: str, docs: list[str]) -> list[float]:
+        key = {"model": self.model_id, "instruction": self.instruction, "q": query, "d": docs}
+        if self.head == "classification":
+            key = {"model": self.model_id, "q": query, "d": docs}
+        sha = hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()[:24]
+        f = Path(self.cfg.cache_dir) / "rerank_local" / f"{sha}.json"
+        if f.exists():
+            return json.loads(f.read_text())
+        import torch
+
+        tok, model, yes, no = self._load()
+        if self.head == "classification":
+            with torch.inference_mode():
+                enc = tok(
+                    [query] * len(docs),
+                    docs,
+                    padding=True,
+                    truncation=True,
+                    max_length=512,
+                    return_tensors="pt",
+                )
+                out = model(**enc).logits[:, 0].float().tolist()
+            f.parent.mkdir(parents=True, exist_ok=True)
+            f.write_text(json.dumps([round(x, 6) for x in out]))
+            return out
+        texts = [
+            f"{self.PREFIX}<Instruct>: {self.instruction}\n<Query>: {query}\n<Document>: {d}"
+            f"{self.SUFFIX}"
+            for d in docs
+        ]
+        out: list[float] = []
+        with torch.inference_mode():
+            for i in range(0, len(texts), self.batch):
+                enc = tok(texts[i : i + self.batch], padding=True, return_tensors="pt")
+                logits = model(**enc).logits[:, -1, :]
+                pair = torch.stack([logits[:, no], logits[:, yes]], dim=1).float()
+                out += torch.softmax(pair, dim=1)[:, 1].tolist()
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps([round(x, 6) for x in out]))
+        return out
 
 
 def rerank(cfg: Config, reranker: str, query: str, items: list[dict]) -> list[str]:
@@ -273,20 +441,34 @@ def rank(
     embedder = get_embedder(method.embedder, cfg)
     ledger = ledger_for(cfg.budget, embedder.account)
     texts = [TEXTS[method.text](it, catalog[it["id"]]) for it in index.items]
-    docs, _ = vectors_cached(texts, embedder, cfg, ledger)
-    queries, _ = vectors_cached([QUERIES[method.query](s) for s in searches], embedder, cfg, ledger)
-    ranked = Index(index.path, index.meta, index.items, docs)
-    if method.store == "chroma":
-        ranked.store = ChromaStore(None, f"eval-{method.embedder}-{method.text}")
-        ranked.store.create(index.items, docs, cfg.rag.hnsw)
+    query_texts = [QUERIES[method.query](s) for s in searches]
+
+    def embed(xs: list[str]) -> np.ndarray:
+        return vectors_cached(xs, embedder, cfg, ledger)[0]
+
+    chunked = None
+    if method.chunks != "whole":  # partida: búsqueda exacta sobre los chunks
+        chunked = chunk_scores(method, texts, query_texts, embed)
+        docs = queries = None
+    else:
+        docs, queries = embed(texts), embed(query_texts)
+        if method.dim:
+            docs, queries = truncate(docs, method.dim), truncate(queries, method.dim)
+        ranked = Index(index.path, index.meta, index.items, docs)
+        if method.store == "chroma":
+            name = f"eval-{method.embedder}-{method.text}-{method.dim or 'full'}"
+            ranked.store = ChromaStore(None, name)
+            ranked.store.create(index.items, docs, cfg.rag.hnsw)
     rows = []
-    for s, q in zip(searches, queries, strict=True):
+    for n, s in enumerate(searches):
         f = filters_for(method, s.kind)
         allowed = np.array([f.allows(it) for it in index.items], bool)
-        if method.store == "exact":
-            hits = ranked.nearest(q, k, allowed)
+        if chunked is not None:
+            hits = top_k(chunked[n], k, allowed)
+        elif method.store == "exact":
+            hits = ranked.nearest(queries[n], k, allowed)
         else:
-            hits = ranked.query(q, k, f.where())
+            hits = ranked.query(queries[n], k, f.where())
         ids = [index.items[i]["id"] for i, _ in hits]
         rows.append(
             {
@@ -315,13 +497,24 @@ def rank(
                 )[3].exists()
             ]
 
+        local = (
+            CrossEncoder(cfg, cfg.evaluation.rerankers[method.rerank])
+            if method.rerank in LOCAL_RERANKERS
+            else None
+        )
+
         def one(row: dict) -> list[str]:
             if not row["relevant"]:  # no entra en las métricas: no se paga
                 return row["ranked"]
-            head = rerank(cfg, method.rerank, row["query"], [by_id[i] for i in row["ranked"][:top]])
+            head_ids = row["ranked"][:top]
+            if local is not None:
+                sc = local.scores(row["query"], [by_id[i]["description"] for i in head_ids])
+                head = [i for _, i in sorted(zip(sc, head_ids, strict=True), key=lambda t: -t[0])]
+            else:
+                head = rerank(cfg, method.rerank, row["query"], [by_id[i] for i in head_ids])
             return head + row["ranked"][top:]
 
-        with ThreadPoolExecutor(max(1, workers)) as pool:
+        with ThreadPoolExecutor(1 if local else max(1, workers)) as pool:
             for row, new in zip(rows, pool.map(one, rows), strict=True):
                 score = dict(zip(row["ranked"], row["scores"], strict=True))
                 row["ranked"], row["scores"] = new, [score[i] for i in new]
@@ -342,6 +535,40 @@ def metrics(rows: list[dict], n_boot: int = 1000, seed: int = 0) -> dict[str, An
     rr = [reciprocal_rank(r["rank"], max(KS)) for r in answerable]
     out["mrr@10"] = round(float(np.mean(rr)), 4)
     out["mrr@10_ic95"] = [round(v, 4) for v in bootstrap_ci(rr, groups, n_boot, seed)]
+    # Las de la clase 11: context precision@K (RAGAS) y NDCG@K (sistemas de recomendación).
+    for name, fn in (("context_precision@10", context_precision_at_k), ("ndcg@10", ndcg_at_k)):
+        vals = [fn(r["ranked"], r["relevant"], 10) for r in answerable]
+        out[name] = round(float(np.mean(vals)), 4)
+        out[f"{name}_ic95"] = [round(v, 4) for v in bootstrap_ci(vals, groups, n_boot, seed)]
+    # Context recall@K por ambiente: de sus productos anotados que buscan sus consultas, cuántos
+    # están en el contexto (la unión de los top-K de sus consultas). K=3 es lo que el flujo le
+    # pasa al LLM por pieza (furnish.candidates); K=10, lo que mira el reranker.
+    for k in (3, 10):
+        gt: dict[str, set] = defaultdict(set)
+        ctx: dict[str, set] = defaultdict(set)
+        for r in rows:
+            gt[r["room_id"]].update(r["relevant"])
+            ctx[r["room_id"]].update(r["ranked"][:k])
+        rooms = [room for room in gt if gt[room]]
+        vals = [len(gt[room] & ctx[room]) / len(gt[room]) for room in rooms]
+        out[f"context_recall@{k}"] = round(float(np.mean(vals)), 4) if vals else None
+        if vals:
+            out[f"context_recall@{k}_ic95"] = [
+                round(v, 4) for v in bootstrap_ci(vals, rooms, n_boot, seed)
+            ]
+    # La curva de hit@k: cuántos candidatos hacen falta para que el correcto llegue al reranker.
+    out["curva_hit@k"] = {
+        str(k): round(float(np.mean([hit_at_k(r["rank"], k) for r in answerable])), 4)
+        for k in CURVE
+    }
+    # ¿El score dice cuándo el primero está bien? (para avisar "no encontré algo así")
+    firsts = [(r["scores"][0], r["rank"] == 1) for r in answerable if r["scores"]]
+    if firsts:
+        scores, ok = zip(*firsts, strict=True)
+        out["confianza_auroc"] = round(auroc(scores, ok), 4)
+        out["confianza_umbral_f1"] = {
+            k: round(v, 4) for k, v in best_f1_threshold(scores, ok).items()
+        }
     out["literal_hit@10"] = round(
         float(np.mean([hit_at_k(r["rank_any"], 10) for r in rows if r["relevant_any"]])), 4
     )
@@ -413,7 +640,7 @@ def estimate_reranks(
     out = {}
     for m in methods:
         if m.paid:
-            n = len(rank(cfg, index, m, searches, max(KS), estimate=True))
+            n = len(rank(cfg, index, m, searches, DEPTH, estimate=True))
             params = cfg.evaluation.rerankers[m.rerank]
             usd = params["models"][params["model"]].get("estimate_usd", 0.0)
             out[m.name] = (n, round(n * usd, 2))
@@ -437,8 +664,10 @@ def run_eval(
     methods: list[Method],
     name: str = "texto",
     n_boot: int = 1000,
+    replica: str | None = None,
 ) -> Path:
-    """Corre todos los métodos y guarda una carpeta con config, métricas y rankings."""
+    """Corre todos los métodos y guarda una carpeta con config, métricas y rankings. `replica`:
+    las consultas son otra escritura independiente de las mismas (reproducibilidad)."""
     index = build_index(cfg, log=lambda _: None)  # las descripciones: el describer `written`
     catalog_ids = {p.id: product_group(p) for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     searches = load_searches(queries_path, raw_dir, catalog_ids)
@@ -447,8 +676,10 @@ def run_eval(
     rankings: list[dict] = []
     for m in methods:  # todo antes de escribir: una corrida que falla no deja nada a medias
         t0 = time.perf_counter()
-        rows = rank(cfg, index, m, searches, max(KS))
-        rankings += rows
+        rows = rank(cfg, index, m, searches, DEPTH)
+        rankings += [  # los primeros max(KS): la curva hasta DEPTH ya está en las métricas
+            {**r, "ranked": r["ranked"][: max(KS)], "scores": r["scores"][: max(KS)]} for r in rows
+        ]
         results[m.name] = {
             "method": asdict(m),
             **metrics(rows, n_boot),
@@ -463,6 +694,7 @@ def run_eval(
         "queries": str(queries_path),
         "queries_meta": json.loads(Path(queries_path).read_text()).get("_meta"),
         "rooms": len({s.room_id for s in searches}),
+        "replica": replica,
         "catalog": cfg.rag.catalog,
         "index": index.meta,
         "embedders": {e: cfg.rag.embedders[e] for e in sorted({m.embedder for m in methods})},

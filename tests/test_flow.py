@@ -117,6 +117,9 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
         Method("hashing", "description", "kind", store="exact"),
         Method("hashing", "description", "kind", query="kind"),
         Method("hashing", "seller", "none"),
+        Method("hashing", "description", "kind", dim=256),
+        Method("hashing", "description", "kind", chunks="lines-max"),
+        Method("hashing", "description", "kind", chunks="lines-aligned"),
     ]
     run = run_eval(cfg, qpath, dataset_root, tmp_path / "evals", methods, name="t", n_boot=50)
     m = json.loads((run / "metricas.json").read_text())
@@ -134,11 +137,29 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
     assert ours["answerable"] == 3  # el sillón no está anotado en el ambiente: sin relevantes
     assert ours["hit@1"] == 1.0 and ours["recall_item@10"] == 1.0
     assert ours["azar_hit@1"] < 1.0
+    assert ours["context_precision@10"] == ours["ndcg@10"] == 1.0
+    assert ours["context_recall@3"] == ours["context_recall@10"] == 1.0
+    assert ours["curva_hit@k"]["1"] == ours["curva_hit@k"]["50"] == 1.0
+    for variant in ("dim-256", "chunks-lines-max", "chunks-lines-aligned"):
+        assert m[f"hashing|description|filtro-kind|{variant}"]["hit@1"] == 1.0
     assert (run / "rankings.jsonl.gz").exists() and json.loads((run / "corrida.json").read_text())[
         "rooms"
     ] == 1
     written = build_report(tmp_path / "evals", tmp_path / "reporte", v0_runs=tmp_path / "nada")
     assert "Retrieval por texto" in written["reporte"].read_text()
+
+
+def test_the_class_metrics_on_the_slide_example():
+    from amoblai.evaluation.metrics import auroc, context_precision_at_k, ndcg_at_k
+
+    # Clase 11: dos chunks, solo el segundo relevante -> (0 * 0 + 0.5 * 1) / 1 = 0.5
+    assert context_precision_at_k(["vinos", "paris"], ["paris"], 2) == 0.5
+    assert context_precision_at_k(["a", "b", "c"], ["a", "c"], 3) == (1 + 2 / 3) / 2
+    assert context_precision_at_k(["a", "b"], ["z"], 2) == 0.0
+    assert ndcg_at_k(["a", "b"], ["a"], 10) == 1.0
+    assert abs(ndcg_at_k(["b", "a"], ["a"], 10) - 1 / 1.5849625) < 1e-6
+    assert auroc([0.9, 0.8, 0.3], [True, True, False]) == 1.0
+    assert auroc([0.5, 0.5], [True, False]) == 0.5
 
 
 def test_relevance_groups_split_lamps_and_decoration_by_kind():
@@ -175,6 +196,8 @@ def test_an_ablation_is_a_grid_plus_loose_methods(tmp_path):
     assert not any(m.paid for m in methods)
     real = load_ablation(ROOT / "datos" / "configs" / "ablaciones" / "reranking.yaml")[1]
     assert [m.paid for m in real] == [False, True]
+    local = load_ablation(ROOT / "datos" / "configs" / "ablaciones" / "reranking-local.yaml")[1]
+    assert not any(m.paid for m in local)  # los cross-encoders corren acá, gratis
 
 
 def test_the_vlm_reranks_the_top_and_its_answers_are_cached(
