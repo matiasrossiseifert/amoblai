@@ -96,3 +96,36 @@ def test_separability_counts_neighbours_of_the_same_kind():
     v /= np.linalg.norm(v, axis=1, keepdims=True)
     m = separability(v, ["sofa", "sofa", "rug", "rug"], ["sofa", "sofa", "rug", "rug"])
     assert m["vecino_mismo_kind"] == m["vecino_mismo_tipo"] == 1.0 and m["silhouette_kind"] > 0.5
+
+
+def test_graded_relevance_scores_the_top3_and_checks_the_judge(tmp_path):
+    import gzip
+    import json
+
+    from amoblai.evaluation.graded import score
+
+    rows = [
+        {
+            "method": "m",
+            "room_id": "r1",
+            "piece": 0,
+            "ranked": ["a", "b", "c", "d"],
+            "relevant": ["b"],
+        },
+        {"method": "m", "room_id": "r2", "piece": 1, "ranked": ["e", "f", "g"], "relevant": []},
+    ]
+    run = tmp_path / "run"
+    run.mkdir()
+    (run / "rankings.jsonl.gz").write_bytes(
+        gzip.compress("\n".join(json.dumps(r) for r in rows).encode())
+    )
+    answers = tmp_path / "graduada"
+    answers.mkdir()
+    (answers / "lote_01.json").write_text(
+        json.dumps({"r1#0": {"a": 1, "b": 2, "c": 0}, "r2#1": {"e": 0, "f": 0, "g": 1}})
+    )
+    r = score(run, "m", answers)
+    todas = r["consultas"]["todas"]
+    assert todas["n"] == 2 and todas["util1"] == 0.5 and todas["util3"] == 1.0
+    assert r["consultas"]["sin anotado"]["exacto3"] == 0.0
+    assert r["acuerdo_con_gt"] == {"anotados_en_top3": 1, "anotado_con_2": 1.0, "otros_con_2": 0.0}

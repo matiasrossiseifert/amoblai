@@ -398,6 +398,37 @@ def image_section(runs_dir: Path, reference: Path) -> list[str]:
     return md
 
 
+def graded_section(graded: Path) -> list[str]:
+    """La relevancia graduada del top-3 (evaluation/graded.py)."""
+    if not Path(graded).exists():
+        return []
+    r = json.loads(Path(graded).read_text())
+    md = [
+        "## Relevancia graduada del top-3 (juez)",
+        "",
+        f"Método `{r['method']}`. Un juez (subagente) califica cada uno de los tres primeros "
+        "candidatos contra la pieza que se ve en el ambiente: 2 el mismo o indistinguible, 1 una "
+        "alternativa aceptable, 0 no sirve. *útil@k*: alguno de los k primeros con 1 o 2.",
+        "",
+        "| consultas | n | nota del 1.º | útil@1 | útil@3 | un 2 en el top-3 | NDCG@3 |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    for g, m in r["consultas"].items():
+        md.append(
+            f"| {g} | {m['n']} | {m['nota1']:.2f} | {m['util1']:.3f} {_ci(m['util1_ic95'])} "
+            f"| {m['util3']:.3f} {_ci(m['util3_ic95'])} | {m['exacto3']:.3f} | {m['ndcg3']:.3f} |"
+        )
+    a = r.get("acuerdo_con_gt")
+    if a:
+        md += [
+            "",
+            f"Acuerdo con el ground truth: de {a['anotados_en_top3']} productos anotados que "
+            f"aparecen en el top-3, el juez le dio 2 al {100 * a['anotado_con_2']:.0f}%; a los "
+            f"demás candidatos, al {100 * (a['otros_con_2'] or 0):.0f}%.",
+        ]
+    return [*md, ""]
+
+
 def space_section(space: Path, out_dir: Path) -> list[str]:
     """El espacio de embeddings (evaluation/space.py)."""
     if not Path(space).exists():
@@ -591,6 +622,7 @@ def build_report(
     md += chunks_section(by)
     md += replicas_section(df, replicas)
     md += image_section(runs_dir, image_reference)
+    md += graded_section(paths.RESULTS / "evaluacion_graduada" / "graduada.json")
     md += answer_section(runs_dir)
     md += space_section(paths.RESULTS / "evaluacion_espacio" / "espacio.json", out_dir)
 

@@ -1,0 +1,59 @@
+{
+ "run": "20261022-213008_ablacion-retrieval",
+ "method": "qwen3|description|filtro-type",
+ "consultas": {
+  "todas": {
+   "n": 150,
+   "nota1": 1.0733,
+   "util1": 0.7467,
+   "util1_ic95": [
+    0.6779,
+    0.8182
+   ],
+   "util3": 0.84,
+   "util3_ic95": [
+    0.7817,
+    0.8947
+   ],
+   "exacto3": 0.4267,
+   "ndcg3": 0.7833
+  },
+  "con anotado": {
+   "n": 75,
+   "nota1": 1.4133,
+   "util1": 0.8667,
+   "util1_ic95": [
+    0.7837,
+    0.9429
+   ],
+   "util3": 0.9467,
+   "util3_ic95": [
+    0.8873,
+    0.9877
+   ],
+   "exacto3": 0.6933,
+   "ndcg3": 0.8845
+  },
+  "sin anotado": {
+   "n": 75,
+   "nota1": 0.7333,
+   "util1": 0.6267,
+   "util1_ic95": [
+    0.5132,
+    0.726
+   ],
+   "util3": 0.7333,
+   "util3_ic95": [
+    0.6267,
+    0.8312
+   ],
+   "exacto3": 0.16,
+   "ndcg3": 0.6821
+  }
+ },
+ "acuerdo_con_gt": {
+  "anotados_en_top3": 59,
+  "anotado_con_2": 0.8136,
+  "otros_con_2": 0.0482
+ }
+}

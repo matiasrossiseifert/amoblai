@@ -7,6 +7,7 @@
     evaluar-imagen  la imagen generada (fidelidad, ambiente, pedido)
     evaluar-respuesta  RAGAS sobre el porqué de la lista (faithfulness, answer relevance)
     evaluar-espacio  el espacio de embeddings: separabilidad por kind y UMAP
+    evaluar-graduada  relevancia graduada (2/1/0) del top-3, con un juez
     gastos          lo gastado contra los topes
 
 Las rutas están en paths.py (todo en datos/).
@@ -349,6 +350,34 @@ def evaluar_espacio(config: ConfigOpt = paths.CONFIG) -> None:
     for name, q in r["consultas"].items():
         console.print(f"{name}: mejor coseno {q['mejor_coseno']}, top-10 {q['kinds_top10']}")
     console.print(f"→ {OUT}")
+
+
+@app.command("evaluar-graduada")
+def evaluar_graduada(
+    armar: Annotated[
+        int, typer.Option(help="Armar los lotes para los jueces con N consultas (0 = puntuar).")
+    ] = 0,
+    metodo: Annotated[str, typer.Option(help="El método de la ablación.")] = (
+        "qwen3|description|filtro-type"
+    ),
+) -> None:
+    """Relevancia graduada del top-3 (2 el mismo, 1 alternativa aceptable, 0 no sirve): el
+    context precision de RAGAS con el juez etiquetando, el NDCG graduado y el acuerdo del juez con
+    el ground truth. Los jueces son subagentes (gratis): primero --armar, después puntuar."""
+    from amoblai.evaluation.graded import ANSWERS, BATCHES, make_batches, score
+    from amoblai.evaluation.report import latest_runs
+
+    if armar:
+        run = [r for r in latest_runs(paths.EVAL_RUNS) if r.name.endswith("_ablacion-retrieval")]
+        batches = make_batches(cfg_for(paths.CONFIG), run[-1], metodo, n=armar)
+        console.print(f"{len(batches)} lotes en {BATCHES}/ (respuestas en {ANSWERS}/)")
+        return
+    meta = json.loads((BATCHES / "meta.json").read_text())
+    r = score(paths.EVAL_RUNS / meta["run"], meta["method"])
+    out = paths.RESULTS / "evaluacion_graduada" / "graduada.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(r, ensure_ascii=False, indent=1))
+    console.print(json.dumps(r, ensure_ascii=False, indent=1))
 
 
 @app.command()
