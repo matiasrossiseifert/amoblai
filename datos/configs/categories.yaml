@@ -1,4 +1,8 @@
-# Mapeo explícito y revisable: valores de `type` del dataset IKEA → categorías del alcance v1.
+# Mapeo explícito y revisable: valores de `type` del dataset IKEA → categorías del alcance.
+#
+# - El alcance de la v1: living, comedor y escritorio. Primero fueron cinco categorías (sofá,
+#   sillón, silla, mesa, alfombra); después se sumaron estanterías, muebles de guardado,
+#   cómodas, lámparas, pufs, banquetas, bancos, escritorios y decoración (docs/catalogo.md).
 #
 # - Los `type` que no figuran acá quedan con category = "other": se indexan igual
 #   (sirven como distractores en la ablación sin filtro), pero nunca se buscan.
@@ -46,6 +50,9 @@ categories:
       - Chair with armrests
       - Chair with long cover
       - Folding chair
+      - Swivel chair                # sillas de escritorio (kind desk chair)
+      - Swivel chair with armrests
+      - Desk chair
 
   table:
     name_es: mesa
@@ -78,13 +85,178 @@ categories:
       - Sheepskin                   # dudoso → incluido
       - Cow hide                    # dudoso → incluido
 
+  desk:
+    name_es: escritorio
+    detector_labels: [desk]
+    ikea_types:
+      - Desk
+      - Standing desk
+      - Desk with add-on unit
+
+  shelf:
+    name_es: estantería
+    detector_labels: [bookcase, shelf]
+    ikea_types:
+      - Bookcase
+      - Shelving unit
+      - Shelving unit with drawers
+      - Shelf unit
+      - Corner shelf unit
+      - Wall shelf
+      - Shelf
+      - Picture ledge
+
+  cabinet:
+    name_es: mueble de guardado
+    detector_labels: [cabinet, sideboard, tv stand]
+    ikea_types:
+      - TV bench
+      - TV bench with sliding doors
+      - Sideboard
+      - Sideboard basic unit
+      - Glass-door cabinet
+      - Glass-door cabinet with 2 doors
+      - Glass-door cabinet with 3 drawers
+      - Glass-door cabinet with 4 drawers
+      - Bookcase with glass door
+      - Cabinet
+      - Cabinet with doors
+      - Cabinet with panel,glass-door
+      - Cabinet with shelf unit
+      - Shelf unit with door
+      - Shelf unit with doors
+      - Storage combination
+      - Storage combination with doors
+      - Storage combination with drawers
+      - Storage combination w doors,drawers
+      - Storage combination with boxes
+      - Drawer unit
+      - Drawer unit on castors
+      - Lockable cabinet
+
+  dresser:
+    name_es: cómoda
+    detector_labels: [chest of drawers, dresser]
+    ikea_types:
+      - Chest of 2 drawers
+      - Chest of 3 drawers
+      - Chest of 3 drawers,1 door
+      - Chest of 4 drawers
+      - Chest of 4 drawers,2 compartments
+      - Chest of 5 drawers
+      - Chest of 6 drawers
+      - Chest of 7 drawers
+      - Chest of 8 drawers
+      - Chest of 9 drawers
+
+  ottoman:
+    name_es: puf
+    detector_labels: [ottoman, pouf, footstool]
+    ikea_types:
+      - Footstool
+      - Footstool with storage
+      - Pouffe
+
+  stool:
+    name_es: banqueta
+    detector_labels: [stool, bar stool]
+    ikea_types:
+      - Stool
+      - Bar stool
+      - Bar stool with backrest
+
+  bench:
+    name_es: banco
+    detector_labels: [bench]
+    ikea_types:
+      - Bench
+      - Storage bench
+
+  lamp:
+    name_es: lámpara
+    detector_labels: [lamp, pendant lamp, floor lamp]
+    ikea_types:
+      - Pendant lamp
+      - Pendant lamp double
+      - Pendant lamp, 3-armed
+      - Ceiling lamp
+      - Ceiling,wall lamp
+      - Floor lamp
+      - Floor lamp with 2 shades
+      - Floor lamp with wireless charging
+      - Floor,reading lamp
+      - LED floor,read lamp
+      - Table lamp
+      - Table lamp with wireless charging
+      - Wall lamp
+      - LED wall lamp
+      - Work lamp
+      - LED work lamp
+      - LED work lamp w wireless charging
+      - LED work,wall lamp
+      - Wall,clamp spotlight
+      - LED wall,clamp spotlight
+
+  deco:
+    name_es: decoración
+    detector_labels: [cushion, vase, plant, picture frame, mirror, curtains]
+    ikea_types:
+      - Cushion
+      - Cushion cover                # la funda: lo que se ve del almohadón
+      - Throw
+      - Curtains, 1 pair
+      - Curtains with tie-backs, 1 pair
+      - Sheer curtains, 1 pair
+      - Vase
+      - Vase, set of 2
+      - Vase, set of 3
+      - Plant pot
+      - Plant pot with saucer
+      - Self-watering plant pot
+      - Hanging planter
+      - Potted plant
+      - Artificial potted plant
+      - Frame
+      - Frame for 2 pictures
+      - Frame, set of 4
+      - Picture
+      - Picture, set of 3
+      - Picture, set of 9
+      - Mirror
+      - Standing mirror
+      - Wall clock
+      - Basket
+      - Basket, set of 2
+      - Basket, set of 4
+      - Basket with lid
+      - Candle holder, set of 2
+      - Candle holder, set of 3
+      - Candlestick for 3 candles
+      - Candlestick,candleholder, set of 3
+      - Block candle holder
+      - Lantern for block candle
+      - Tealight holder
+      - Scented candle in glass
+
 excluded:
   - { type: Cover two-seat sofa, reason: "se vende la funda, no el sofá" }
   - { type: Cover for chaise longue, reason: "se vende la funda, no el mueble" }
-  - { type: Swivel chair, reason: "sillas de oficina, fuera de living/comedor" }
-  - { type: Swivel chair with armrests, reason: "sillas de oficina, fuera de living/comedor" }
   - { type: Junior chair, reason: "silla infantil" }
-  - { type: Stool, reason: "taburete: el detector 'chair' no lo representa (ver FUTURO.md)" }
-  - { type: Bar stool, reason: "taburete (ver FUTURO.md)" }
-  - { type: Bar stool with backrest, reason: "taburete (ver FUTURO.md)" }
+  - { type: Junior desk chair, reason: "silla infantil" }
+  - { type: Children's stool, reason: "banqueta infantil" }
+  - { type: Children's desk, reason: "escritorio infantil" }
+  - { type: Step stool, reason: "escalón de cocina o baño, no un asiento" }
   - { type: Wall-mounted drop-leaf table, reason: "mesa de pared, no es un mueble apoyado" }
+  - { type: Bench with shoe storage, reason: "zapatero de recibidor, fuera de living y comedor" }
+  - { type: Lamp shade, reason: "se vende la pantalla sola, sin la base ni el cable" }
+  - { type: Pendant lamp shade, reason: "se vende la pantalla sola" }
+  - { type: Floor lamp base, reason: "se vende la base sola, sin la pantalla" }
+  - { type: Table lamp base, reason: "se vende la base sola" }
+  - { type: Cord set, reason: "el cable de una lámpara colgante" }
+  - { type: Open cabinet, reason: "módulos de cocina" }
+  - { type: High cabinet, reason: "casi todos de baño" }
+  - { type: Wall cabinet, reason: "de cocina o baño" }
+  - { type: Wardrobe, reason: "dormitorio: fuera del alcance (como camas y ropa de cama)" }
+  - { type: Box with lid, reason: "cajas de guardado: accesorios, no decoración ni muebles" }
+  - { type: Storage box, reason: "cajas de guardado infantiles" }
+  - { type: Bedside table, reason: "dormitorio: fuera del alcance" }

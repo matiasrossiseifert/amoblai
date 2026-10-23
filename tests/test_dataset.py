@@ -56,9 +56,13 @@ def test_parse_size(size, expected):
 
 def test_the_category_map_of_the_scope_is_valid():
     cmap = CategoryMap.load(ROOT / "datos" / "configs" / "categories.yaml")
-    assert cmap.scope == ["sofa", "armchair", "chair", "table", "rug"]
+    assert cmap.scope[:5] == ["sofa", "armchair", "chair", "table", "rug"]
+    assert {"shelf", "cabinet", "lamp", "deco"} <= set(cmap.scope)
     assert cmap.category_of_type("Coffee table") == "table"
-    assert cmap.category_of_type("Swivel chair") == OTHER
+    assert cmap.category_of_type("Swivel chair") == "chair"
+    assert cmap.category_of_type("Cushion cover") == "deco"
+    assert cmap.category_of_type("Lamp shade") == OTHER  # la pantalla sola
+    assert cmap.category_of_type("Bed frame") == OTHER
 
 
 def test_a_type_in_two_categories_is_an_error(tmp_path):

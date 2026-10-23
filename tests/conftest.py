@@ -52,7 +52,7 @@ PRODUCTS = {
         "133x195 cm",
         "Type: rug, flatwoven stripes\nUse: covering floors; living room\nStyle: coastal\nMaterials: cotton\nColors: light blue, white\nShape: rectangular, thin\nFeel: airy, fresh\nGoes with: white sofas; coastal rooms",
     ),
-    "100.000.07": ("Table lamp", (250, 250, 120), "", ""),  # fuera del alcance
+    "100.000.07": ("Bed frame", (250, 250, 120), "", ""),  # fuera del alcance
     "100.000.08": (
         "Table",
         (80, 80, 80),

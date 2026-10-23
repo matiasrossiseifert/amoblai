@@ -2,8 +2,8 @@
 
 - ``written`` (free): descriptions written ahead, read from JSON-lines files, one
   {"id", "text", "by", "prompt"} a line. Ours (datos/catalogo/descripciones.jsonl) were written
-  by subagents in Claude Code, looking at each product's photo with prompts/describe_product_v2.md,
-  not through the API.
+  by subagents in Claude Code, looking at each product's photo with prompts/describe_product_v3.md
+  (the first furniture with v2, the same format), not through the API.
 - ``fields`` (free): the product's own fields (name, type, colors, materials, description): the
   seller's words, uneven from one store to the next; a baseline.
 - ``anthropic_vision`` / ``openai_chat_vision``: an LLM (llm.py) looks at the product's photos
