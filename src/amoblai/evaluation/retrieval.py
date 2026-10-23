@@ -31,6 +31,7 @@ Un método (las ablaciones de datos/configs/ablaciones/*.yaml) combina:
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import itertools
 import json
@@ -455,9 +456,8 @@ def run_eval(
         }
     run_dir = Path(out_root) / f"{started}_{name}"
     run_dir.mkdir(parents=True)
-    (run_dir / "rankings.jsonl").write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
-    )
+    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
+        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
     meta = {
         "name": name,
         "queries": str(queries_path),
