@@ -1,15 +1,19 @@
 """Evaluación del retrieval por texto con el ground truth del dataset IKEA.
 
-Para cada foto de ambiente (65 livings y comedores con productos anotados del catálogo), las
-consultas de `datos/evaluacion_ikea/consultas.json`: una por mueble del alcance que se ve, en
+Para cada foto de ambiente (los livings y comedores con productos anotados del catálogo), las
+consultas de `datos/evaluacion_ikea/consultas.json`: una por producto del alcance que se ve, en
 las ocho líneas del catálogo y con su kind (las escribieron subagentes mirando la foto, sin ver
-el catálogo ni las anotaciones). Cada consulta pasa por la búsqueda (filtros duros, después los
+el catálogo ni las anotaciones: primero las de sofás, sillones, sillas, mesas y alfombras, con
+`consultas_ambiente_v1`; después las de lo que sumó la ampliación del catálogo, con
+`consultas_ambiente_v2`). Cada consulta pasa por la búsqueda (filtros duros, después los
 vecinos más cercanos por coseno) y se mira el ranking:
 
-- **relevantes de una consulta**: los SKUs anotados en ese ambiente de la misma categoría del TP
-  (sofá, sillón, silla, mesa, alfombra: datos/configs/categories.yaml) que su kind. Es la misma
-  definición que la v0 (retrieval por imagen), así que las dos se comparan con el mismo ground
-  truth. Las anotaciones no dicen dónde está cada producto: la métrica es permisiva.
+- **relevantes de una consulta**: los SKUs anotados en ese ambiente del mismo grupo que su kind
+  (`group_of`): en los muebles, la misma categoría del TP (sofá, sillón, silla, mesa, alfombra,
+  estantería...: datos/configs/categories.yaml), la definición de la v0 (retrieval por imagen),
+  así que las dos se comparan con el mismo ground truth; en lámparas y decoración, el kind,
+  porque la categoría junta cosas que no se reemplazan (un almohadón no responde a una búsqueda
+  de florero). Las anotaciones no dicen dónde está cada producto: la métrica es permisiva.
 - hit rate@k y MRR@10 sobre las consultas con al menos un relevante; recall@k por ítem anotado;
   baseline aleatorio sobre lo que deja pasar el filtro; IC 95% por bootstrap de ambientes.
 
@@ -27,6 +31,7 @@ Un método (las ablaciones de datos/configs/ablaciones/*.yaml) combina:
 
 from __future__ import annotations
 
+import gzip
 import hashlib
 import itertools
 import json
@@ -77,6 +82,8 @@ TEXTS: dict[str, Callable[[dict, Product], str]] = {
 }
 
 # kind (catalog/kinds.py) -> categoría del TP (la de la v0 y de datos/configs/categories.yaml).
+# En las categorías que sumó la ampliación, la categoría es el tipo grueso del kind.
+EXPANSION = ("desk", "shelf", "cabinet", "dresser", "ottoman", "stool", "bench", "lamp", "deco")
 KIND_TO_TP = {
     "sofa": "sofa",
     "sofa bed": "sofa",
@@ -88,9 +95,34 @@ KIND_TO_TP = {
     "side table": "table",
     "nightstand": "table",
     "console table": "table",
-    "desk": "table",
     "rug": "rug",
+    **{k: t for k, t in KINDS.items() if t in EXPANSION},
 }
+# En lámparas y decoración el grupo de relevancia es el kind, salvo los que una foto no separa.
+FINE = ("lamp", "deco")
+SAME_GROUP = {
+    "ceiling lamp": "pendant lamp",  # colgante o pegada al techo: desde abajo se ven igual
+    "desk lamp": "table lamp",  # las dos van sobre un mueble
+    "plant pot": "plant",  # la planta se ve con su maceta
+    "picture frame": "wall art",  # el cuadro se ve con su marco
+}
+
+
+def group_of(kind: str) -> str:
+    """El grupo de relevancia de un kind: su categoría del TP, o en lámparas y decoración el
+    kind mismo (SAME_GROUP junta los que se confunden)."""
+    tp = KIND_TO_TP[kind]
+    return SAME_GROUP.get(kind, kind) if tp in FINE else tp
+
+
+def product_group(p: Product) -> str:
+    """El grupo de relevancia de un producto del catálogo: el de su categoría del TP (la del
+    `type` de IKEA), o el de su kind en lámparas y decoración. Un escritorio que IKEA tipifica
+    como mesa (correcciones.yaml) es escritorio."""
+    tp = p.info["category_tp"]
+    if p.category == "desk":
+        return "desk"
+    return group_of(p.kind) if tp in FINE and p.kind in KIND_TO_TP else tp
 
 
 @dataclass(frozen=True)
@@ -141,14 +173,15 @@ class Search:
     piece: int
     kind: str
     query: str
-    relevant: list[str]  # mismo tipo que el kind
+    relevant: list[str]  # del mismo grupo que el kind
     relevant_any: list[str]  # cualquier producto anotado del catálogo
+    prompt: str = "consultas_ambiente_v1"  # la pasada que escribió la consulta
 
 
 def load_searches(queries_path: Path, raw_dir: Path, catalog_ids: dict[str, str]) -> list[Search]:
     """Consultas con sus relevantes, a partir del ground truth del dataset.
 
-    `catalog_ids`: {SKU: categoría del TP} de los productos del catálogo."""
+    `catalog_ids`: {SKU: grupo de relevancia} de los productos del catálogo (product_group)."""
     from amoblai.dataset.ikea import IkeaDataset
 
     ds = IkeaDataset.load(raw_dir)
@@ -157,9 +190,10 @@ def load_searches(queries_path: Path, raw_dir: Path, catalog_ids: dict[str, str]
         gt = sorted(s for s in ds.rooms[room_id].skus if s in catalog_ids)
         for i, p in enumerate(rec["pieces"]):
             kind = p["kinds"][0]
-            group = KIND_TO_TP[kind]
+            group = group_of(kind)
+            relevant = [s for s in gt if catalog_ids[s] == group]
             searches.append(
-                Search(room_id, i, kind, p["query"], [s for s in gt if catalog_ids[s] == group], gt)
+                Search(room_id, i, kind, p["query"], relevant, gt, p.get("prompt", Search.prompt))
             )
     return searches
 
@@ -189,9 +223,8 @@ def _candidate(answer: str, ids: list[str]) -> str | None:
     return ids[int(n) - 1] if n.isdigit() and 1 <= int(n) <= len(ids) else None
 
 
-def rerank(cfg: Config, reranker: str, query: str, items: list[dict]) -> list[str]:
-    """Los ids de `items` reordenados por el VLM `reranker` mirando sus fotos (pago; la
-    respuesta queda en caché: la misma consulta con los mismos candidatos no se paga dos veces)."""
+def _rerank_request(cfg: Config, reranker: str, query: str, items: list[dict]):
+    """Lo que el VLM recibe para reordenar `items` y el archivo de la caché de su respuesta."""
     params = cfg.evaluation.rerankers[reranker]
     tmpl = load_prompt(cfg.evaluation.rerank_prompt, cfg.root)
     hits = [as_hit(it, None) for it in items]
@@ -202,7 +235,13 @@ def rerank(cfg: Config, reranker: str, query: str, items: list[dict]) -> list[st
     text = tmpl.fill(query=query, n=len(hits), candidates="\n".join(lines))
     key = {"llm": params, "prompt": tmpl.version, "text": text}
     sha = hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()[:24]
-    f = Path(cfg.cache_dir) / "rerank" / f"{sha}.json"
+    return params, hits, text, Path(cfg.cache_dir) / "rerank" / f"{sha}.json"
+
+
+def rerank(cfg: Config, reranker: str, query: str, items: list[dict]) -> list[str]:
+    """Los ids de `items` reordenados por el VLM `reranker` mirando sus fotos (pago; la
+    respuesta queda en caché: la misma consulta con los mismos candidatos no se paga dos veces)."""
+    params, hits, text, f = _rerank_request(cfg, reranker, query, items)
     if f.exists():
         return json.loads(f.read_text())["ranking"]
     content = [image_block(photo(cfg, h), cfg.furnish.photo_max_side) for h in hits]
@@ -224,9 +263,12 @@ def rank(
     searches: list[Search],
     k: int,
     workers: int = 8,
+    estimate: bool = False,
 ) -> list[dict]:
     """El top-k de cada búsqueda con un método (los vectores se cachean; con `store: chroma`,
-    una colección de ChromaDB en memoria con los vectores de ese embedder y ese texto)."""
+    una colección de ChromaDB en memoria con los vectores de ese embedder y ese texto). Con
+    `estimate`, en un método con reranking, solo las filas cuyo reranking no está en la caché
+    (lo que costaría correrlo)."""
     catalog = {p.id: p for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     embedder = get_embedder(method.embedder, cfg)
     ledger = ledger_for(cfg.budget, embedder.account)
@@ -263,6 +305,15 @@ def rank(
     if method.rerank:
         by_id = {it["id"]: it for it in index.items}
         top = cfg.evaluation.rerank_top
+        if estimate:  # sin pagar: cuántas respuestas faltan en la caché
+            return [
+                r
+                for r in rows
+                if r["relevant"]
+                and not _rerank_request(
+                    cfg, method.rerank, r["query"], [by_id[i] for i in r["ranked"][:top]]
+                )[3].exists()
+            ]
 
         def one(row: dict) -> list[str]:
             if not row["relevant"]:  # no entra en las métricas: no se paga
@@ -336,6 +387,36 @@ def metrics(rows: list[dict], n_boot: int = 1000, seed: int = 0) -> dict[str, An
         t: round(float(np.mean(v)), 4) for t, v in sorted(by_kind.items())
     }
     out["consultas_por_categoria"] = dict(Counter(KIND_TO_TP[r["kind"]] for r in answerable))
+    by_pass: dict[str, list[dict]] = defaultdict(list)
+    for r in answerable:
+        by_pass[r.get("prompt", Search.prompt)].append(r)
+    out["por_pasada"] = {
+        name: {
+            "consultas": len(rs),
+            "hit@1": round(float(np.mean([hit_at_k(r["rank"], 1) for r in rs])), 4),
+            "hit@10": round(float(np.mean([hit_at_k(r["rank"], 10) for r in rs])), 4),
+            "mrr@10": round(float(np.mean([reciprocal_rank(r["rank"], max(KS)) for r in rs])), 4),
+        }
+        for name, rs in sorted(by_pass.items())
+    }
+    return out
+
+
+def estimate_reranks(
+    cfg: Config, queries_path: Path, raw_dir: Path, methods: list[Method]
+) -> dict[str, tuple[int, float]]:
+    """Por método pago: cuántas llamadas al VLM faltan en la caché y cuánto costarían (según el
+    estimate_usd del modelo). No llama a ninguna API."""
+    index = build_index(cfg, log=lambda _: None)
+    catalog_ids = {p.id: product_group(p) for p in load_catalog(cfg.rag.catalog, cfg.root).products}
+    searches = load_searches(queries_path, raw_dir, catalog_ids)
+    out = {}
+    for m in methods:
+        if m.paid:
+            n = len(rank(cfg, index, m, searches, max(KS), estimate=True))
+            params = cfg.evaluation.rerankers[m.rerank]
+            usd = params["models"][params["model"]].get("estimate_usd", 0.0)
+            out[m.name] = (n, round(n * usd, 2))
     return out
 
 
@@ -359,9 +440,7 @@ def run_eval(
 ) -> Path:
     """Corre todos los métodos y guarda una carpeta con config, métricas y rankings."""
     index = build_index(cfg, log=lambda _: None)  # las descripciones: el describer `written`
-    catalog_ids = {
-        p.id: p.info["category_tp"] for p in load_catalog(cfg.rag.catalog, cfg.root).products
-    }
+    catalog_ids = {p.id: product_group(p) for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     searches = load_searches(queries_path, raw_dir, catalog_ids)
     started = time.strftime("%Y%m%d-%H%M%S")
     results: dict[str, Any] = {}
@@ -377,9 +456,8 @@ def run_eval(
         }
     run_dir = Path(out_root) / f"{started}_{name}"
     run_dir.mkdir(parents=True)
-    (run_dir / "rankings.jsonl").write_text(
-        "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
-    )
+    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
+        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
     meta = {
         "name": name,
         "queries": str(queries_path),

@@ -29,7 +29,7 @@ class RagConfig(_Cfg):
     top_k: int = 3
     # Keys of `describers` and `embedders` (describe.py, embed.py).
     describer: str = "written"
-    describe_prompt: str = "describe_product_v2.md"
+    describe_prompt: str = "describe_product_v3.md"
     embedder: str = "hashing"
     describers: dict[str, dict[str, Any]] = Field(
         default_factory=lambda: {"fields": {"kind": "fields"}}
@@ -54,12 +54,12 @@ class FurnishConfig(_Cfg):
     # The LLM that reads the photos and writes (llm.py): kind anthropic | openai_chat, model,
     # its prices (`models`), effort...
     llm: dict[str, Any] = Field(default_factory=dict)
-    max_pieces: int = 4  # pieces of the plan carried on to the search (most important first)
+    max_pieces: int = 6  # pieces of the plan carried on to the search (most important first)
     candidates: int = 3  # products the search brings for each piece
     # The plan's most-it-can-measure comes from a photo: the search allows this much more.
     size_slack: float = 0.15
     photo_max_side: int = 1024  # photos sent to the LLM
-    query_prompt: str = "search_query_v2.md"
+    query_prompt: str = "search_query_v3.md"
     choose_prompt: str = "choose_combination_v1.md"
     scene_prompt: str = "scene_prompt_v1.md"
     # The image model that puts the chosen products in the room (generate.py).

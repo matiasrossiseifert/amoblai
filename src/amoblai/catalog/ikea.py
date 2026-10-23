@@ -1,17 +1,20 @@
 """Del dataset IKEA al catálogo que se indexa (un producto por línea, JSON-lines).
 
-Entran los productos del alcance de la v1 (sofá, sillón, silla, mesa, alfombra; mapeo en
-`datos/configs/categories.yaml`) que tienen foto. Para cada uno:
+Entran los productos del alcance (living, comedor y escritorio: muebles, lámparas y
+decoración; mapeo en `datos/configs/categories.yaml`) que tienen foto. Para cada uno:
 
-- `category`: el tipo grueso (`sofa`, `chair`, `table`, `rug`); el sillón es una `chair` con
-  kind `armchair`, como en catalog/kinds.py.
+- `category`: el tipo grueso de catalog/kinds.py (`sofa`, `chair`, `table`, `lamp`, `deco`...);
+  el sillón es una `chair` con kind `armchair`.
 - `kind`: el tipo fino. Acá va uno por defecto según el `type` de IKEA; el definitivo lo asigna
   el subagente que describe el producto mirando la foto (`datos/catalogo/kinds.yaml`), y pisa
   este.
-- `dimensions_cm`: solo cuando no es ambiguo. Con tres medidas, en muebles IKEA da ancho x
-  profundidad x alto; en mesas y alfombras con dos, ancho x largo (va como ancho y profundidad).
-  Una sola medida (un diámetro, un alto) no se interpreta: sin medidas los filtros de tamaño
-  dejan pasar el producto.
+- `dimensions_cm`: solo cuando no es ambiguo. Con tres medidas, en asientos, mesas y
+  escritorios IKEA da ancho x profundidad x alto; en mesas, escritorios y alfombras con dos,
+  ancho x largo (va como ancho y profundidad). En estanterías, muebles de guardado, cómodas y
+  bancos el orden de las otras cambia de un producto a otro (ancho x alto, ancho x alto x
+  profundidad...): va solo el ancho, que es siempre la primera. Una sola medida en el resto (un
+  diámetro, un alto) no se interpreta, ni las de lámparas y decoración: sin medidas los filtros
+  de tamaño dejan pasar el producto.
 - `colors` y `description`: el texto del vendedor, para la línea de base `describer: fields`.
 """
 
@@ -30,6 +33,15 @@ ROOMRAG_CATEGORY = {
     "chair": "chair",
     "table": "table",
     "rug": "rug",
+    "desk": "desk",
+    "shelf": "shelf",
+    "cabinet": "cabinet",
+    "dresser": "dresser",
+    "ottoman": "ottoman",
+    "stool": "stool",
+    "bench": "bench",
+    "lamp": "lamp",
+    "deco": "deco",
 }
 
 # Kind por defecto según el `type` de IKEA; el resto toma el de su categoría.
@@ -44,6 +56,55 @@ DEFAULT_KIND_BY_TYPE = {
     "Nest of tables, set of 2": "side table",
     "Tray table": "side table",
     "Console table": "console table",
+    "Swivel chair": "desk chair",
+    "Swivel chair with armrests": "desk chair",
+    "Desk chair": "desk chair",
+    "Wall shelf": "wall shelf",
+    "Shelf": "wall shelf",
+    "Picture ledge": "wall shelf",
+    "TV bench": "TV stand",
+    "TV bench with sliding doors": "TV stand",
+    "Sideboard": "sideboard",
+    "Sideboard basic unit": "sideboard",
+    "Glass-door cabinet": "display cabinet",
+    "Glass-door cabinet with 2 doors": "display cabinet",
+    "Glass-door cabinet with 3 drawers": "display cabinet",
+    "Glass-door cabinet with 4 drawers": "display cabinet",
+    "Bookcase with glass door": "display cabinet",
+    "Cabinet with panel,glass-door": "display cabinet",
+    "Drawer unit": "file cabinet",
+    "Drawer unit on castors": "file cabinet",
+    "Lockable cabinet": "file cabinet",
+    "Bar stool": "bar stool",
+    "Bar stool with backrest": "bar stool",
+}
+# En lámparas y decoración, por la primera palabra del `type` que aparece en esta lista
+# ("LED work,wall lamp" es de escritorio; "Ceiling,wall lamp", de techo).
+KIND_BY_WORD = {
+    "lamp": [
+        ("pendant", "pendant lamp"),
+        ("ceiling", "ceiling lamp"),
+        ("floor", "floor lamp"),
+        ("table", "table lamp"),
+        ("work", "desk lamp"),
+        ("wall", "wall lamp"),
+    ],
+    "deco": [
+        ("cushion", "cushion"),
+        ("throw", "throw"),
+        ("curtains", "curtains"),
+        ("vase", "vase"),
+        ("potted plant", "plant"),
+        ("plant", "plant pot"),
+        ("frame", "picture frame"),
+        ("picture", "wall art"),
+        ("mirror", "mirror"),
+        ("clock", "wall clock"),
+        ("basket", "basket"),
+        ("candle", "candle holder"),
+        ("lantern", "candle holder"),
+        ("tealight", "candle holder"),
+    ],
 }
 DEFAULT_KIND_BY_CATEGORY = {
     "sofa": "sofa",
@@ -51,20 +112,39 @@ DEFAULT_KIND_BY_CATEGORY = {
     "chair": "dining chair",
     "table": "dining table",
     "rug": "rug",
+    "desk": "desk",
+    "shelf": "bookcase",
+    "cabinet": "storage cabinet",
+    "dresser": "dresser",
+    "ottoman": "ottoman",
+    "stool": "low stool",
+    "bench": "bench",
+    "lamp": "table lamp",
+    "deco": "vase",
 }
+WIDTH_ONLY = ("shelf", "cabinet", "dresser", "bench")
 
 
 def dimensions(product: Product) -> dict[str, float] | None:
     d = product.dims_cm
-    if len(d) == 3 and product.category in ("sofa", "armchair", "chair", "table"):
+    seats = ("sofa", "armchair", "chair", "ottoman", "stool")
+    if len(d) == 3 and product.category in (*seats, "table", "desk"):
         return {"width": d[0], "depth": d[1], "height": d[2]}
-    if len(d) == 2 and product.category in ("table", "rug"):
+    if len(d) == 2 and product.category in ("table", "desk", "rug"):
         return {"width": d[0], "depth": d[1]}
+    if d and product.category in WIDTH_ONLY:
+        return {"width": d[0]}
     return None
 
 
 def default_kind(product: Product) -> str:
-    return DEFAULT_KIND_BY_TYPE.get(product.type, DEFAULT_KIND_BY_CATEGORY[product.category])
+    if product.type in DEFAULT_KIND_BY_TYPE:
+        return DEFAULT_KIND_BY_TYPE[product.type]
+    words = product.type.lower()
+    for word, kind in KIND_BY_WORD.get(product.category, []):
+        if word in words:
+            return kind
+    return DEFAULT_KIND_BY_CATEGORY[product.category]
 
 
 def to_item(product: Product, raw_prefix: str) -> dict:

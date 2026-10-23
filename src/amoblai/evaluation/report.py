@@ -1,13 +1,15 @@
 """Reporte de las evaluaciones del retrieval por texto (datos/resultados/evaluacion/*).
 
-Junta la última corrida de cada ablación (si un método está en varias, manda la más reciente) y
-escribe en `datos/resultados/reporte/`:
+Junta la última corrida de cada ablación hecha sobre el mismo catálogo y las mismas consultas que
+la más reciente (si un método está en varias, manda la más reciente); las de un catálogo o unas
+consultas anteriores van aparte, en su propia tabla. Escribe en `datos/resultados/reporte/`:
 - `reporte.md` y `retrieval_texto.csv`: una fila por método;
 - `camino_texto.png`: el camino incremental (naive → nuestras descripciones → filtro → mejor
   embedder → reranking), con IC 95%;
 - `avanzado.png`: base vectorial (ChromaDB vs. exacta), query rewriting y reranking;
 - `texto_vs_imagen.png`: el mejor método por texto contra la mejor configuración de la v0 (por
-  imagen, datos/resultados/v0_imagen), sobre los mismos 65 ambientes.
+  imagen, datos/resultados/v0_imagen), sobre los mismos 65 ambientes y el mismo catálogo (la
+  corrida `V0_TWIN`, con los 275 productos del primer alcance).
 Cada gráfico va con su tabla (los valores exactos están en el .md).
 """
 
@@ -48,6 +50,18 @@ AVANZADO = [
     ("consulta: solo el kind", "qwen3|description|filtro-type|consulta-kind"),
     ("+ reranking (Opus 5.5)", "qwen3|description|filtro-type|rerank-opus"),
 ]
+
+
+# La corrida por texto que se compara con la v0: el mismo catálogo que vio la v0.
+V0_TWIN = "ablacion-texto"
+
+
+def setup(run: Path) -> tuple:
+    """Sobre qué se corrió: cuántos productos tenía el índice y qué consultas."""
+    meta = json.loads((run / "corrida.json").read_text())
+    queries = meta.get("queries_meta") or {}
+    passes = tuple(p["prompt"] for p in queries.get("passes", []))
+    return (meta["index"].get("products"), queries.get("prompt"), passes)
 
 
 def latest_runs(root: Path) -> list[Path]:
@@ -155,29 +169,73 @@ def bars(
     plt.close(fig)
 
 
+def category_tables(run: Path, df: pd.DataFrame) -> list[str]:
+    """hit@1 por categoría y por pasada de consultas, de los métodos de `run` que están en
+    `df`: dónde anda bien y dónde no."""
+    data = json.loads((run / "metricas.json").read_text())
+    names = [n for n in data if n in set(df["método"])]
+    if not names or "hit@1_por_categoria" not in data[names[0]]:
+        return []
+    cats = sorted({c for n in names for c in data[n]["hit@1_por_categoria"]})
+    counts = data[names[0]]["consultas_por_categoria"]
+    lines = [
+        "## hit@1 por categoría",
+        "",
+        "| método | " + " | ".join(f"{c} ({counts.get(c, 0)})" for c in cats) + " |",
+        "|---|" + "---|" * len(cats),
+    ]
+    for n in names:
+        per = data[n]["hit@1_por_categoria"]
+        lines.append(f"| {n} | " + " | ".join(f"{per.get(c, 0):.2f}" for c in cats) + " |")
+    lines.append("")
+    if any(len(data[n].get("por_pasada", {})) > 1 for n in names):
+        passes = sorted(data[names[0]]["por_pasada"])
+        lines += [
+            "## Por pasada de consultas (v1: muebles del primer alcance; v2: la ampliación)",
+            "",
+            "| método | " + " | ".join(f"{p} hit@1 / MRR" for p in passes) + " |",
+            "|---|" + "---|" * len(passes),
+        ]
+        for n in names:
+            pp = data[n]["por_pasada"]
+            cells = [
+                f"{pp[p]['hit@1']:.3f} / {pp[p]['mrr@10']:.3f} ({pp[p]['consultas']})"
+                if p in pp
+                else "—"
+                for p in passes
+            ]
+            lines.append(f"| {n} | " + " | ".join(cells) + " |")
+        lines.append("")
+    return lines
+
+
 def build_report(
     eval_root: Path, out_dir: Path, v0_runs: Path = paths.RESULTS / "v0_imagen" / "corridas"
 ) -> dict[str, Path]:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     written: dict[str, Path] = {}
-    runs = latest_runs(eval_root)
-    if not runs:
+    all_runs = sorted(latest_runs(eval_root), key=lambda d: d.name)  # por fecha
+    if not all_runs:
         return written
-    runs.sort(key=lambda d: d.name)  # por fecha: la más reciente pisa
+    current = setup(all_runs[-1])
+    runs = [r for r in all_runs if setup(r) == current]
+    older = [r for r in all_runs if setup(r) != current]
     df = pd.concat([table(r) for r in runs]).drop_duplicates("método", keep="last")
     public = df.copy()
     for c in ("hit@1_ic95", "mrr@10_ic95"):
         public[c] = public[c].map(lambda v: f"[{v[0]:.3f}, {v[1]:.3f}]")
     public.to_csv(out_dir / "retrieval_texto.csv", index=False)
+    products = current[0]
     md = [
-        "# Retrieval por texto (65 ambientes IKEA)",
+        f"# Retrieval por texto ({products} productos, ambientes IKEA)",
         "",
         "Corridas: " + ", ".join(f"`{r}`" for r in sorted(set(df["corrida"]))) + ".",
         "",
         public.to_markdown(index=False),
         "",
     ]
+    md += category_tables(runs[-1], df)
 
     by = df.set_index("método")
     avanzado = [(lab, key) for lab, key in AVANZADO if key in by.index]
@@ -226,9 +284,11 @@ def build_report(
         md += ["![camino](camino_texto.png)", ""]
         written["camino"] = out_dir / "camino_texto.png"
 
-    best_text = df[df["rerank"] == ""].sort_values("hit@1", ascending=False).iloc[0]
+    twin = [r for r in all_runs if r.name.split("_", 1)[1] == V0_TWIN]
     v0 = v0_best(v0_runs)
-    if v0:
+    if v0 and twin:
+        tw = table(twin[-1])
+        best_text = tw[tw["rerank"] == ""].sort_values("hit@1", ascending=False).iloc[0]
         labels = [
             f"v0 imagen: {v0['setup']['embedding']} (fondo {v0['setup']['background']})",
             f"v1 texto: {best_text['método']}",
@@ -261,6 +321,18 @@ def build_report(
             "",
         ]
         written["texto_vs_imagen"] = out_dir / "texto_vs_imagen.png"
+    if older:
+        md += [
+            "## Corridas anteriores (otro catálogo u otras consultas)",
+            "",
+            "No se mezclan con las de arriba: cambian el universo de búsqueda o las consultas.",
+            "",
+        ]
+        for r in older:
+            n, _, ps = setup(r)
+            t = table(r)[["método", "consultas", "hit@1", "hit@10", "mrr@10"]]
+            label = f"{n} productos" + (f", consultas + {', '.join(ps)}" if ps else "")
+            md += [f"### `{r.name}` ({label})", "", t.to_markdown(index=False), ""]
     (out_dir / "README.md").unlink(missing_ok=True)  # el nombre viejo
     (out_dir / "reporte.md").write_text("\n".join(md) + "\n")
     written["reporte"] = out_dir / "reporte.md"

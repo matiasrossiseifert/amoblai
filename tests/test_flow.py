@@ -1,6 +1,8 @@
+import gzip
 import io
 import json
 import re
+from pathlib import Path
 
 import httpx
 import pytest
@@ -120,7 +122,10 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
     m = json.loads((run / "metricas.json").read_text())
     ours = m["hashing|description|filtro-kind"]
     # ChromaDB (HNSW) y la búsqueda exacta ordenan igual
-    rows = [json.loads(x) for x in (run / "rankings.jsonl").read_text().splitlines()]
+    rows = [
+        json.loads(x)
+        for x in gzip.decompress((run / "rankings.jsonl.gz").read_bytes()).splitlines()
+    ]
     by = {}
     for r in rows:
         by.setdefault(r["method"], []).append(r["ranked"])
@@ -129,11 +134,29 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
     assert ours["answerable"] == 3  # el sillón no está anotado en el ambiente: sin relevantes
     assert ours["hit@1"] == 1.0 and ours["recall_item@10"] == 1.0
     assert ours["azar_hit@1"] < 1.0
-    assert (run / "rankings.jsonl").exists() and json.loads((run / "corrida.json").read_text())[
+    assert (run / "rankings.jsonl.gz").exists() and json.loads((run / "corrida.json").read_text())[
         "rooms"
     ] == 1
     written = build_report(tmp_path / "evals", tmp_path / "reporte", v0_runs=tmp_path / "nada")
     assert "Retrieval por texto" in written["reporte"].read_text()
+
+
+def test_relevance_groups_split_lamps_and_decoration_by_kind():
+    from amoblai.catalog.loader import Product
+    from amoblai.evaluation.retrieval import group_of, product_group
+
+    def product(category, kind, tp):
+        return Product(
+            Path("."), {"id": "1", "category": category, "kind": kind, "category_tp": tp}
+        )
+
+    assert group_of("side table") == group_of("coffee table") == "table"
+    assert group_of("cushion") == "cushion" != group_of("vase")
+    assert group_of("plant pot") == group_of("plant") and group_of("desk lamp") == "table lamp"
+    assert group_of("TV stand") == group_of("sideboard") == "cabinet"
+    assert product_group(product("deco", "picture frame", "deco")) == group_of("wall art")
+    assert product_group(product("chair", "armchair", "chair")) == "chair"  # su tipo de IKEA
+    assert product_group(product("desk", "desk", "table")) == "desk"  # corregido a escritorio
 
 
 def test_an_ablation_is_a_grid_plus_loose_methods(tmp_path):
@@ -195,7 +218,10 @@ def test_the_vlm_reranks_the_top_and_its_answers_are_cached(
         run_eval(cfg, qpath, dataset_root, tmp_path / "evals", methods, name="r", n_boot=10)
     cfg.budget.allow_paid = True
     run = run_eval(cfg, qpath, dataset_root, tmp_path / "evals", methods, name="r", n_boot=10)
-    rows = [json.loads(x) for x in (run / "rankings.jsonl").read_text().splitlines()]
+    rows = [
+        json.loads(x)
+        for x in gzip.decompress((run / "rankings.jsonl.gz").read_bytes()).splitlines()
+    ]
     base, reranked = rows[0]["ranked"], rows[1]["ranked"]
     assert reranked[:3] == base[:3][::-1] and reranked[3:] == base[3:]
     assert (

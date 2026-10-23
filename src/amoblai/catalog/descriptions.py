@@ -1,12 +1,16 @@
 """Las descripciones del catálogo: lotes para los subagentes que las escriben y su validación.
 
 Las descripciones no las escribe ninguna API: las escriben subagentes de Claude Code mirando la
-foto de cada producto, con el prompt `prompts/describe_product_v2.md`. Cada subagente
-recibe un lote (`data/processed/describir/lote_NN.json`), escribe un JSON-lines
-(`catalogo/descripciones/lote_NN.jsonl`) y lo valida con:
+foto de cada producto, con el prompt `prompts/describe_product_v3.md` (los lotes 01 a 08, de
+los muebles del primer alcance, con `describe_product_v2.md`: el mismo formato). Cada subagente
+recibe un lote (`datos/procesados/describir/lote_NN.json`), escribe un JSON-lines
+(`datos/catalogo/descripciones/lote_NN.jsonl`) y lo valida con:
 
-    uv run python -m amoblai.catalog.descriptions catalogo/descripciones/lote_NN.jsonl \\
-        data/processed/describir/lote_NN.json
+    uv run python -m amoblai.catalog.descriptions datos/catalogo/descripciones/lote_NN.jsonl \\
+        datos/procesados/describir/lote_NN.json
+
+Cada línea puede traer una `nota`: lo que el subagente vio dudoso (la foto no es el producto,
+es infantil, es de baño...), para revisar a mano; `merge` no la copia.
 
 `merge` junta los lotes en `catalogo/descripciones.jsonl` (lo que lee el describer `written`) y
 `catalogo/kinds.yaml` (el kind de cada producto, que pisa el de por defecto).
@@ -55,13 +59,26 @@ def kinds_by_type() -> dict[str, list[str]]:
     return out
 
 
-def make_batches(items: list[dict], out_dir: Path, size: int, root: Path) -> list[Path]:
-    """Lotes de `size` productos para los subagentes, con las fotos en rutas absolutas."""
+def described(parts: list[Path]) -> set[str]:
+    """Los ids que ya tienen descripción en estos lotes escritos."""
+    return {
+        json.loads(line)["id"]
+        for part in parts
+        for line in Path(part).read_text().splitlines()
+        if line.strip()
+    }
+
+
+def make_batches(
+    items: list[dict], out_dir: Path, size: int, root: Path, first: int = 1
+) -> list[Path]:
+    """Lotes de `size` productos para los subagentes, con las fotos en rutas absolutas,
+    numerados desde `first`."""
     allowed = kinds_by_type()
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = []
-    for n, start in enumerate(range(0, len(items), size), start=1):
+    for n, start in enumerate(range(0, len(items), size), start=first):
         batch = [
             {
                 "id": it["id"],
