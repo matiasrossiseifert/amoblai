@@ -475,6 +475,9 @@ def test_the_plan_gets_the_kinds_and_unknown_kinds_are_dropped(tmp_path, monkeyp
     assert rec["unknown_kinds"] == ["throne"]
     prompt = seen[0]["messages"][0]["content"][-1]["text"]
     assert "- chair: desk chair, dining chair, armchair" in prompt and "{kinds}" not in prompt
+    assert (
+        "- lamp: pendant lamp" in prompt and "one to 6" in prompt and "{max_pieces}" not in prompt
+    )
 
 
 def test_two_kinds_share_the_candidates_and_the_sizes_get_slack(tmp_path, monkeypatch):

@@ -126,7 +126,9 @@ def plan(cfg: Config, room_photo: Path, request: str, views: Sequence[Path] = ()
     content = [
         image_block(room_photo, cfg.furnish.photo_max_side),
         *view_blocks(cfg, views, 2),
-        text_block(tmpl.fill(request=request, kinds=kinds_text())),
+        text_block(
+            tmpl.fill(request=request, kinds=kinds_text(), max_pieces=cfg.furnish.max_pieces)
+        ),
     ]
     a, data = ask(cfg, "furnish.plan", content)
     if not data.get("pieces"):
