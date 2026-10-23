@@ -24,7 +24,7 @@ def test_items_only_in_scope_with_the_catalog_types(catalog_dir):
         json.loads(x)["id"]: json.loads(x)
         for x in (catalog_dir / "items.jsonl").read_text().splitlines()
     }
-    assert "100.000.07" not in items  # la lámpara queda afuera
+    assert "100.000.07" not in items  # la cama queda afuera
     assert items["100.000.04"]["category"] == "chair" and items["100.000.04"]["kind"] == "armchair"
     assert items["100.000.05"]["kind"] == "coffee table"
     assert items["100.000.01"]["dimensions_cm"] == {"width": 200.0, "depth": 90.0, "height": 80.0}
@@ -123,3 +123,85 @@ def test_room_queries_validation(tmp_path):
     errors = validate_queries(out, batch)
     assert any("r2: falta" in e for e in errors) and any("kinds" in e for e in errors)
     assert check_query(query) == []
+
+
+@pytest.mark.parametrize(
+    ("ikea_type", "category", "kind"),
+    [
+        ("Swivel chair", "chair", "desk chair"),
+        ("LED work,wall lamp", "lamp", "desk lamp"),  # la primera palabra de la lista
+        ("Ceiling,wall lamp", "lamp", "ceiling lamp"),
+        ("Floor,reading lamp", "lamp", "floor lamp"),
+        ("Cushion cover", "deco", "cushion"),
+        ("Artificial potted plant", "deco", "plant"),
+        ("Hanging planter", "deco", "plant pot"),
+        ("Frame for 2 pictures", "deco", "picture frame"),
+        ("Lantern for block candle", "deco", "candle holder"),
+        ("TV bench", "cabinet", "TV stand"),
+        ("Chest of 3 drawers", "dresser", "dresser"),
+    ],
+)
+def test_default_kind_of_the_new_types(ikea_type, category, kind):
+    from amoblai.catalog.ikea import default_kind
+    from amoblai.dataset.products import Product
+
+    assert default_kind(Product(sku="1", name="X", type=ikea_type, category=category)) == kind
+
+
+def test_storage_furniture_keeps_only_its_width():
+    from amoblai.catalog.ikea import dimensions
+    from amoblai.dataset.products import Product
+
+    def dims(category, numbers):
+        return dimensions(Product(sku="1", name="X", type="T", category=category, dims_cm=numbers))
+
+    assert dims("shelf", [200.0, 237.0, 30.0]) == {"width": 200.0}  # ancho x alto x prof.
+    assert dims("dresser", [80.0, 78.0]) == {"width": 80.0}  # ancho x alto
+    assert dims("desk", [120.0, 60.0]) == {"width": 120.0, "depth": 60.0}
+    assert dims("lamp", [38.0]) is None and dims("deco", [50.0, 50.0]) is None
+
+
+def test_only_the_products_without_a_description_go_to_new_lots(tmp_path, catalog_dir):
+    from amoblai.catalog.descriptions import described
+
+    items = [json.loads(x) for x in (catalog_dir / "items.jsonl").read_text().splitlines()]
+    done = described(sorted((catalog_dir / "descripciones").glob("lote_*.jsonl")))
+    assert done == {it["id"] for it in items}
+    (batch,) = make_batches(items[:2], tmp_path / "lotes", 10, catalog_dir, first=9)
+    assert batch.name == "lote_09.json"
+
+
+def test_a_second_pass_of_queries_goes_after_the_first(tmp_path):
+    from amoblai.evaluation.queries import EXPANSION_TYPES, extend, load_queries
+
+    queries = tmp_path / "consultas.json"
+    first = {"piece": "sofa", "kinds": ["sofa"], "query": "Type: sofa"}
+    queries.write_text(
+        json.dumps({"_meta": {"prompt": "v1", "rooms": 1}, "r1": {"room": "a", "pieces": [first]}})
+    )
+    part = tmp_path / "lote_01.json"
+    lamp = {"piece": "lamp", "kinds": ["pendant lamp"], "query": "Type: pendant lamp"}
+    part.write_text(
+        json.dumps({"r1": {"room": "b", "pieces": [lamp]}, "r2": {"room": "c", "pieces": []}})
+    )
+    assert extend(queries, [part], "v2", "test") == 1
+    rooms = load_queries(queries)
+    assert rooms["r1"]["room"] == "a" and rooms["r1"]["pieces"] == [first, {**lamp, "prompt": "v2"}]
+    assert rooms["r2"]["pieces"] == []
+    meta = json.loads(queries.read_text())["_meta"]
+    assert meta["passes"] == [{"prompt": "v2", "by": "test", "pieces": 1}] and meta["rooms"] == 2
+    assert "lamp" in EXPANSION_TYPES
+
+
+def test_v2_query_lots_carry_their_kinds(tmp_path):
+    from amoblai.evaluation.queries import EXPANSION_TYPES, make_batches
+
+    (batch,) = make_batches([{"room_id": "r1", "photo": "x.jpg"}], tmp_path, 5, EXPANSION_TYPES)
+    query = SAMPLE.replace("Type: wide lounge accent chair", "Type: cushion, square linen")
+    out = tmp_path / "out.json"
+    piece = {"piece": "cushion", "kinds": ["cushion"], "query": query}
+    out.write_text(json.dumps({"r1": {"room": "a living room", "pieces": [piece]}}))
+    assert validate_queries(out, batch) == []
+    piece["kinds"] = ["sofa"]  # fuera de esta pasada
+    out.write_text(json.dumps({"r1": {"room": "a living room", "pieces": [piece]}}))
+    assert any("kinds" in e for e in validate_queries(out, batch))

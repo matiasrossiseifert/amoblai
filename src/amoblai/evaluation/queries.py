@@ -1,14 +1,18 @@
 """Las consultas de evaluación: por cada foto de ambiente de IKEA, las búsquedas de sus muebles.
 
-Subagentes de Claude Code miran cada foto (sin ver el catálogo ni las anotaciones) y escriben,
-con `prompts/consultas_ambiente_v1.md`, una consulta por mueble del alcance que ven. Cada uno
-recibe un lote (`data/processed/consultas/lote_NN.json`), escribe
-`evaluacion/ikea/consultas/lote_NN.json` y lo valida con:
+Subagentes de Claude Code miran cada foto (sin ver el catálogo ni las anotaciones) y escriben
+una consulta por producto del alcance que ven: con `prompts/consultas_ambiente_v1.md`, las de
+sofás, sillones, sillas, mesas y alfombras (SCOPE_TYPES); con `consultas_ambiente_v2.md`, las de
+lo que sumó la ampliación del catálogo (EXPANSION_TYPES). Cada uno recibe un lote
+(`datos/procesados/consultas[_v2]/lote_NN.json`, con los kinds que valen en cada ambiente),
+escribe `datos/evaluacion_ikea/consultas[_v2]/lote_NN.json` y lo valida con:
 
-    uv run python -m amoblai.evaluation.queries evaluacion/ikea/consultas/lote_NN.json \\
-        data/processed/consultas/lote_NN.json
+    uv run python -m amoblai.evaluation.queries datos/evaluacion_ikea/consultas/lote_NN.json \\
+        datos/procesados/consultas/lote_NN.json
 
-`merge` junta los lotes en `evaluacion/ikea/consultas.json`: {room_id: {"room", "pieces"}}.
+`merge` junta los lotes en `datos/evaluacion_ikea/consultas.json`: {room_id: {"room",
+"pieces"}}; `extend` le suma las piezas de otra pasada (cada una con su `prompt`), después de las
+que ya estaban, sin tocarlas.
 """
 
 from __future__ import annotations
@@ -20,17 +24,28 @@ from pathlib import Path
 from amoblai.catalog.descriptions import LABELS, STYLES
 
 SCOPE_TYPES = ("sofa", "chair", "table", "rug")
+EXPANSION_TYPES = (
+    "desk",
+    "shelf",
+    "cabinet",
+    "dresser",
+    "ottoman",
+    "stool",
+    "bench",
+    "lamp",
+    "deco",
+)
 
 
-def scope_kinds() -> dict[str, str]:
+def scope_kinds(types: tuple[str, ...] = SCOPE_TYPES) -> dict[str, str]:
     from amoblai.catalog.kinds import KINDS
 
-    return {k: t for k, t in KINDS.items() if t in SCOPE_TYPES}
+    return {k: t for k, t in KINDS.items() if t in types}
 
 
-def kinds_text() -> str:
+def kinds_text(types: tuple[str, ...] = SCOPE_TYPES) -> str:
     by_type: dict[str, list[str]] = {}
-    for kind, typ in scope_kinds().items():
+    for kind, typ in scope_kinds(types).items():
         by_type.setdefault(typ, []).append(kind)
     return "\n".join(f"    - {t}: {', '.join(ks)}" for t, ks in by_type.items())
 
@@ -53,13 +68,18 @@ def eval_rooms(raw_dir: Path, items: list[dict], room_types: tuple[str, ...]) ->
     return sorted(rooms, key=lambda r: r["room_id"])
 
 
-def make_batches(rooms: list[dict], out_dir: Path, size: int) -> list[Path]:
+def make_batches(
+    rooms: list[dict], out_dir: Path, size: int, types: tuple[str, ...] = SCOPE_TYPES
+) -> list[Path]:
+    """Lotes de `size` ambientes, cada uno con los kinds que valen (los de `types`)."""
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    kinds = sorted(scope_kinds(types))
     paths = []
     for n, start in enumerate(range(0, len(rooms), size), start=1):
         path = out_dir / f"lote_{n:02d}.json"
-        path.write_text(json.dumps(rooms[start : start + size], ensure_ascii=False, indent=1))
+        batch = [{**r, "kinds": kinds} for r in rooms[start : start + size]]
+        path.write_text(json.dumps(batch, ensure_ascii=False, indent=1))
         paths.append(path)
     return paths
 
@@ -81,8 +101,10 @@ def check_query(query: str) -> list[str]:
 
 
 def validate(out_file: Path, batch_file: Path) -> list[str]:
-    batch = {r["room_id"] for r in json.loads(Path(batch_file).read_text())}
-    kinds = scope_kinds()
+    rooms = json.loads(Path(batch_file).read_text())
+    batch = {r["room_id"] for r in rooms}
+    kinds = rooms[0].get("kinds") if rooms else None  # los lotes de la v1 no los traen
+    kinds = set(kinds) if kinds else set(scope_kinds())
     try:
         data = json.loads(Path(out_file).read_text())
     except json.JSONDecodeError as e:
@@ -123,6 +145,25 @@ def merge(parts: list[Path], out: Path, prompt_version: str, by: str) -> int:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=1))
     return len(rooms)
+
+
+def extend(queries: Path, parts: list[Path], prompt_version: str, by: str) -> int:
+    """Suma a `queries` las piezas de otra pasada (lotes en `parts`), cada una con su `prompt`,
+    detrás de las que ya tenía cada ambiente; un ambiente nuevo entra con su `room`. Devuelve
+    cuántas piezas sumó."""
+    data = json.loads(Path(queries).read_text())
+    added = 0
+    for part in sorted(parts):
+        for room_id, rec in json.loads(Path(part).read_text()).items():
+            entry = data.setdefault(room_id, {"room": rec["room"], "pieces": []})
+            entry["pieces"] += [{**p, "prompt": prompt_version} for p in rec["pieces"]]
+            added += len(rec["pieces"])
+    meta = data.pop("_meta")
+    meta.setdefault("passes", []).append({"prompt": prompt_version, "by": by, "pieces": added})
+    meta["rooms"] = len(data)
+    out = {"_meta": meta, **{k: data[k] for k in sorted(data)}}
+    Path(queries).write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    return added
 
 
 def load_queries(path: Path) -> dict[str, dict]:

@@ -70,7 +70,10 @@ def data_download(force: Annotated[bool, typer.Option(help="Volver a descargar."
 @app.command()
 def catalogo(
     lotes: Annotated[
-        int, typer.Option(help="Además, armar lotes de N productos para los subagentes (0 = no).")
+        int,
+        typer.Option(
+            help="Además, armar lotes de N productos sin descripción para los subagentes (0 = no)."
+        ),
     ] = 0,
 ) -> None:
     """Arma el catálogo que se indexa: productos, descripciones, kinds y correcciones."""
@@ -79,11 +82,14 @@ def catalogo(
     items = build_catalog_items(paths.RAW, paths.CATEGORIES, paths.ITEMS)
     console.print(f"{len(items)} productos del alcance en {paths.ITEMS}")
     if lotes:
-        from amoblai.catalog.descriptions import make_batches
+        from amoblai.catalog.descriptions import described, make_batches
 
+        written = sorted(paths.DESCRIPTION_BATCHES.glob("lote_*.jsonl"))
+        done = described(written)
+        todo = [it for it in items if it["id"] not in done]
         out = paths.PROCESSED / "describir"
-        batches = make_batches(items, out, lotes, Path("."))
-        console.print(f"{len(batches)} lotes para describir en {out}/")
+        batches = make_batches(todo, out, lotes, Path("."), first=len(written) + 1)
+        console.print(f"{len(todo)} sin descripción: {len(batches)} lotes en {out}/")
     if any(paths.DESCRIPTION_BATCHES.glob("lote_*.jsonl")):
         stats = write_catalog_files(
             paths.ITEMS,
@@ -167,14 +173,25 @@ def evaluar(
     pagar: Annotated[
         bool, typer.Option("--pagar", help="Habilitar los métodos pagos (reranking con un VLM).")
     ] = False,
+    estimar: Annotated[
+        bool,
+        typer.Option(
+            "--estimar", help="Solo contar las llamadas pagas que faltan en la caché y su costo."
+        ),
+    ] = False,
     config: ConfigOpt = paths.CONFIG,
 ) -> None:
-    """Retrieval por texto sobre los 65 ambientes IKEA: hit@k, MRR, recall, por método."""
-    from amoblai.evaluation.retrieval import load_ablation, run_eval
+    """Retrieval por texto sobre los ambientes IKEA: hit@k, MRR, recall, por método."""
+    from amoblai.evaluation.retrieval import estimate_reranks, load_ablation, run_eval
 
     name, methods = load_ablation(ablacion)
-    if any(m.paid for m in methods) and not pagar:
-        raise typer.BadParameter(f"{ablacion} tiene métodos pagos: correr con --pagar")
+    if estimar or (any(m.paid for m in methods) and not pagar):
+        cost = estimate_reranks(cfg_for(config), paths.EVAL_QUERIES, paths.RAW, methods)
+        for method, (n, usd) in cost.items():
+            console.print(f"{method}: {n} llamadas sin caché, unos US${usd}")
+        if not estimar:
+            raise typer.BadParameter(f"{ablacion} tiene métodos pagos: correr con --pagar")
+        return
     run = run_eval(
         cfg_for(config, paid=pagar), paths.EVAL_QUERIES, paths.RAW, paths.EVAL_RUNS, methods, name
     )
