@@ -188,11 +188,16 @@ def lines(
     xlabel: str,
     path: Path,
     log_x: bool = False,
+    marks: dict[float, str] | None = None,
 ) -> None:
     fig, ax = plt.subplots(figsize=(7, 4.2), facecolor=SURFACE)
+    for x, label in (marks or {}).items():
+        ax.axvline(x, color=GRID, linewidth=1.2, zorder=1)
+        ax.text(x, 0.03, f" {label}", fontsize=8, color=INK2, rotation=90, va="bottom")
     for j, (name, ys) in enumerate(series.items()):
         ax.plot(xs, ys, marker="o", color=SERIES[j % len(SERIES)], label=name, zorder=2)
-        ax.text(xs[-1], ys[-1] + 0.015, f"{ys[-1]:.2f}", fontsize=8, color=INK, ha="center")
+        if j == 0 or len(series) < 3 or log_x:
+            ax.text(xs[-1], ys[-1] + 0.015, f"{ys[-1]:.2f}", fontsize=8, color=INK, ha="center")
     if log_x:
         ax.set_xscale("log", base=2)
         ax.set_xticks(xs, [str(int(x)) for x in xs])
@@ -234,6 +239,7 @@ def k_curve(runs: list[Path], out_dir: Path) -> list[str]:
         "hit@k: ¿el producto correcto está entre los k candidatos?",
         "k (candidatos por pieza)",
         out_dir / "curva_k.png",
+        marks={3: "el flujo hoy (3)", 10: "el reranker (10)"},
     )
     head = "| método | " + " | ".join(f"k={k}" for k in ks) + " |"
     md = ["## ¿Cuántos candidatos? La curva de hit@k", "", head, "|---|" + "---|" * len(ks)]
