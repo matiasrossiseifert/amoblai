@@ -36,7 +36,7 @@ flowchart LR
 | Retrieval | `rag/search.py`, `rag/filters.py` | Filtros duros de metadata (kind, medidas) como `where` de ChromaDB, después los k más cercanos por coseno. |
 | Post-retrieval: reranking | `furnish/steps.py` (`choose`) | Claude mira la foto y los candidatos de cada pieza y elige la mejor combinación. |
 | Generación | `furnish/steps.py` (`scene`), `furnish/image_models.py` | Claude escribe el prompt; el modelo de imagen (Nano Banana 2 por fal, gpt-image o a mano) pone los productos en la foto. |
-| Evaluación | `evaluation/` | Métricas sobre los livings y comedores IKEA anotados y las ablaciones de `datos/configs/ablaciones/`. |
+| Evaluación | `evaluation/` | Retrieval sobre los livings y comedores IKEA anotados (hit@k, MRR, context precision/recall, NDCG) y sus ablaciones (`datos/configs/ablaciones/`); relevancia graduada con un juez; la imagen generada (fidelidad de producto, ambiente preservado); RAGAS sobre la respuesta; el espacio de embeddings. |
 
 ## Resultados
 
@@ -45,12 +45,12 @@ ampliado (855 productos): 552 consultas con respuesta, 199 de muebles (sofás, s
 mesas, alfombras) y 353 de lo que sumó la ampliación (lámparas, deco, guardado, estanterías...).
 IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md`.
 
-| Configuración | hit@1 | hit@10 | MRR@10 |
-|---|---|---|---|
-| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,076 | 0,319 | 0,143 |
-| + nuestras descripciones de ocho líneas | 0,493 | 0,870 | 0,616 |
-| **+ Qwen3-Embedding, filtro por tipo, ChromaDB** | **0,533** [0,49–0,57] | 0,895 | **0,651** |
-| Azar (con el filtro por tipo) | 0,016 | 0,155 | 0,046 |
+| Configuración | hit@1 | hit@10 | MRR@10 | context precision@10 | context recall@3 |
+|---|---|---|---|---|---|
+| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,076 | 0,317 | 0,143 | 0,142 | 0,204 |
+| + nuestras descripciones de ocho líneas | 0,493 | 0,870 | 0,616 | 0,602 | 0,745 |
+| **+ Qwen3-Embedding, filtro por tipo, ChromaDB** | **0,533** [0,49–0,57] | 0,895 | **0,651** | 0,630 | 0,782 |
+| Azar (con el filtro por tipo) | 0,016 | 0,155 | 0,046 | | |
 
 - **Por pasada:** en los muebles del primer alcance, hit@1 0,633 (0,636 con el catálogo de 268:
   587 productos más casi no lo mueven); en lo nuevo, 0,476. Por categoría: sillas 0,84,
@@ -66,6 +66,31 @@ IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/rep
   consultas con filtro por tipo (con filtro por kind, en 863; el primero coincide en todas).
 - **Texto contra imagen:** con el mismo ground truth y el catálogo que vio la v0 (275), el
   retrieval por texto da 0,618 de hit@1 y el mejor retrieval por imagen de la v0 (DINOv3), 0,508.
+- **Reproducibilidad:** con las consultas escritas tres veces por subagentes independientes,
+  el mejor método da hit@1 0,544 ± 0,026 y MRR 0,655 ± 0,017. Qwen3 le gana a BGE, a hashing y
+  al filtro por kind en las tres escrituras.
+- **Cuántos candidatos (k):** hit@3 0,728, hit@5 0,813, hit@10 0,895, hit@20 0,958. El flujo le
+  pasa 3 por pieza al LLM que elige: una de cada cuatro piezas no tiene el correcto entre las
+  opciones.
+- **Dimensión del embedding:** Qwen3 truncado (Matryoshka) da 0,427 con 32 componentes, 0,507
+  con 128 y 0,533 con 512, igual que con 1024.
+- **Splitting:** un documento por producto (0,533) gana a un chunk por línea (0,268) y a comparar
+  línea contra línea (0,511).
+- **Reranking con un cross-encoder de texto** (MiniLM de MS MARCO, gratis): empeora (0,417). El
+  que sirve mira las fotos.
+- **Relevancia graduada** (un juez califica el top-3 con 2/1/0 contra la pieza del ambiente,
+  sobre 150 consultas): el primer candidato sirve en el 75% de los casos y alguno del top-3 en el
+  84%, también cuando el producto exacto no está en el catálogo (63% y 73%). El juez le da 2 al
+  anotado en el 81% de los casos y a los demás en el 5%.
+- **La imagen generada** (prueba-alvear2):
+  - los 4 productos aparecen;
+  - 2 de 4 se reconocen como el producto exacto al comparar el recorte con la foto del catálogo
+    (DINOv3), con coseno medio 0,65; con fotos reales de IKEA, ese reconocimiento da 0,444 y
+    coseno 0,41;
+  - SSIM fuera de los muebles 0,975, y la cámara no se movió (SIFT).
+- **RAGAS sobre la respuesta en texto:** faithfulness del porqué 0,89 a 0,96 (lo que no se
+  sostiene son medidas que el catálogo no tiene); answer relevance 0,69 a 0,73, contra 0,37 de
+  pedidos no relacionados.
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 ![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)
@@ -103,6 +128,11 @@ uv run amoblai amoblar foto.jpg "un comedor para seis" --generador nano_banana_2
 uv run amoblai evaluar                                                        # gratis, local
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking.yaml --estimar  # cuánto costaría
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking.yaml --pagar
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/reproducibilidad.yaml --replica r2
+uv run amoblai evaluar-graduada  # relevancia graduada del top-3 (--armar N: los lotes del juez)
+uv run amoblai evaluar-imagen --referencia   # la imagen generada, y la vara con fotos reales
+uv run amoblai evaluar-respuesta # faithfulness y answer relevance (RAGAS) del porqué
+uv run amoblai evaluar-espacio   # el espacio de embeddings: vecinos del mismo kind, UMAP
 uv run amoblai reporte           # tablas y gráficos en datos/resultados/reporte/
 uv run amoblai gastos            # lo gastado por cuenta contra sus topes
 ```
