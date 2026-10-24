@@ -13,9 +13,12 @@
 # hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
 /datos/resultados/amoblar/*/manual/[0-9]_product_*
 /datos/resultados/amoblar/**/2_candidates*.jpg
+# Los recortes de la evaluación de la imagen (llevan la foto del catálogo al lado)
+/datos/resultados/amoblar/**/6_recortes*.jpg
 
 # Documentación, consigna y material de la materia: solo local
 /docs/
+/material-clases/
 
 # Python / herramientas
 .venv/

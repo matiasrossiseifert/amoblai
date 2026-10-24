@@ -1,0 +1,15 @@
+# Reproducibilidad (clase 11: "promedio de ejecuciones, desvío estándar"). La búsqueda es
+# determinística; lo que varía es quién escribe la consulta (en el flujo, el paso plan). Las
+# consultas se escribieron tres veces, de forma independiente, con los mismos prompts y las
+# mismas fotos: la original (datos/evaluacion_ikea/consultas.json) y dos réplicas
+# (datos/evaluacion_ikea/replicas/). Se corre con `uv run amoblai evaluar --ablacion
+# datos/configs/ablaciones/reproducibilidad.yaml --replica r2` (y r3); la original sale de la
+# ablación del retrieval. Gratis, todo local.
+name: reproducibilidad
+methods:
+  - {embedder: hashing, text: seller, filter: none}
+  - {embedder: hashing, text: description, filter: none}
+  - {embedder: hashing, text: description, filter: type}
+  - {embedder: bge, filter: type}
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: kind}

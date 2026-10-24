@@ -30,11 +30,13 @@ CORRECTIONS = CATALOG / "correcciones.yaml"
 CATALOG_YAML = CATALOG / "ikea.yaml"
 
 EVAL_QUERIES = DATOS / "evaluacion_ikea" / "consultas.json"
+REPLICAS = DATOS / "evaluacion_ikea" / "replicas"  # las mismas consultas, otros escritores
 EMPTY_ROOMS = DATOS / "ambientes_vacios"
 
 RESULTS = DATOS / "resultados"
 RUNS = RESULTS / "amoblar"
 EVAL_RUNS = RESULTS / "evaluacion"
+IMAGE_REFERENCE = RESULTS / "evaluacion_imagen" / "referencia_ikea.json"
 REPORT = RESULTS / "reporte"
 LEDGER = RESULTS / "gastos.jsonl"
 

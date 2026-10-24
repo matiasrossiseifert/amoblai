@@ -1,9 +1,10 @@
-"""Métricas de retrieval (hit rate@k, MRR, recall), baseline aleatorio e intervalos bootstrap."""
+"""Métricas de retrieval (hit rate@k, MRR, context precision, NDCG, recall), baseline aleatorio,
+intervalos bootstrap y la calibración del score (AUROC, umbral)."""
 
 from __future__ import annotations
 
 from collections.abc import Iterable, Sequence
-from math import comb
+from math import comb, log2
 
 import numpy as np
 
@@ -26,6 +27,39 @@ def reciprocal_rank(rank: int | None, k: int | None = None) -> float:
     if rank is None or (k is not None and rank > k):
         return 0.0
     return 1.0 / rank
+
+
+def context_precision_at_k(ranked: Sequence[str], relevant: Iterable[str], k: int) -> float:
+    """Context precision@K de RAGAS (clase 11): Σ_k (Precision@k · v_k) / relevantes en el top K,
+    con v_k = 1 si el k-ésimo es relevante. 0 si no hay ninguno en el top K."""
+    rel = set(relevant)
+    found, total = 0, 0.0
+    for i, item in enumerate(ranked[:k], start=1):
+        if item in rel:
+            found += 1
+            total += found / i
+    return total / found if found else 0.0
+
+
+def ndcg_at_k(ranked: Sequence[str], relevant: Iterable[str], k: int) -> float:
+    """NDCG@k con relevancia binaria: DCG del ranking sobre el DCG del ranking ideal (todos los
+    relevantes primero)."""
+    rel = set(relevant)
+    dcg = sum(1 / log2(i + 1) for i, item in enumerate(ranked[:k], start=1) if item in rel)
+    ideal = sum(1 / log2(i + 1) for i in range(1, min(len(rel), k) + 1))
+    return dcg / ideal if ideal else 0.0
+
+
+def auroc(scores: Sequence[float], positive: Sequence[bool]) -> float:
+    """Área bajo la curva ROC (Mann-Whitney): la probabilidad de que un positivo al azar tenga más
+    score que un negativo al azar (los empates cuentan medio). NaN si falta una de las clases."""
+    pos = np.asarray([s for s, p in zip(scores, positive, strict=True) if p], float)
+    neg = np.asarray([s for s, p in zip(scores, positive, strict=True) if not p], float)
+    if not len(pos) or not len(neg):
+        return float("nan")
+    greater = (pos[:, None] > neg[None, :]).sum()
+    ties = (pos[:, None] == neg[None, :]).sum()
+    return float((greater + 0.5 * ties) / (len(pos) * len(neg)))
 
 
 def random_hit_at_k(n_items: int, n_relevant: int, k: int) -> float:

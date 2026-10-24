@@ -4,6 +4,10 @@
     indice          indexing pipeline (ChromaDB)   buscar     probar la búsqueda
     amoblar         el flujo: plan → retrieve → choose → scene → generate
     evaluar         una ablación del retrieval     reporte    tablas y gráficos
+    evaluar-imagen  la imagen generada (fidelidad, ambiente, pedido)
+    evaluar-respuesta  RAGAS sobre el porqué de la lista (faithfulness, answer relevance)
+    evaluar-espacio  el espacio de embeddings: separabilidad por kind y UMAP
+    evaluar-graduada  relevancia graduada (2/1/0) del top-3, con un juez
     gastos          lo gastado contra los topes
 
 Las rutas están en paths.py (todo en datos/).
@@ -179,21 +183,37 @@ def evaluar(
             "--estimar", help="Solo contar las llamadas pagas que faltan en la caché y su costo."
         ),
     ] = False,
+    replica: Annotated[
+        str | None,
+        typer.Option(
+            help="Otra escritura de las consultas (r2, r3: datos/evaluacion_ikea/replicas/), "
+            "para medir cuánto varía el resultado con quien las escribe."
+        ),
+    ] = None,
     config: ConfigOpt = paths.CONFIG,
 ) -> None:
     """Retrieval por texto sobre los ambientes IKEA: hit@k, MRR, recall, por método."""
     from amoblai.evaluation.retrieval import estimate_reranks, load_ablation, run_eval
 
     name, methods = load_ablation(ablacion)
+    queries = paths.EVAL_QUERIES
+    if replica:
+        queries, name = paths.REPLICAS / f"consultas_{replica}.json", f"{name}-{replica}"
     if estimar or (any(m.paid for m in methods) and not pagar):
-        cost = estimate_reranks(cfg_for(config), paths.EVAL_QUERIES, paths.RAW, methods)
+        cost = estimate_reranks(cfg_for(config), queries, paths.RAW, methods)
         for method, (n, usd) in cost.items():
             console.print(f"{method}: {n} llamadas sin caché, unos US${usd}")
         if not estimar:
             raise typer.BadParameter(f"{ablacion} tiene métodos pagos: correr con --pagar")
         return
     run = run_eval(
-        cfg_for(config, paid=pagar), paths.EVAL_QUERIES, paths.RAW, paths.EVAL_RUNS, methods, name
+        cfg_for(config, paid=pagar),
+        queries,
+        paths.RAW,
+        paths.EVAL_RUNS,
+        methods,
+        name,
+        replica=replica,
     )
     data = json.loads((run / "metricas.json").read_text())
     table = Table("método", "consultas", "hit@1", "hit@10", "MRR@10", "recall ítem@10")
@@ -208,6 +228,156 @@ def evaluar(
         )
     console.print(table)
     console.print(f"Corrida: {run}")
+
+
+@app.command("evaluar-imagen")
+def evaluar_imagen(
+    corridas: Annotated[
+        list[Path] | None,
+        typer.Argument(
+            help="Corridas de datos/resultados/amoblar/ (default: las que tienen imagen)."
+        ),
+    ] = None,
+    referencia: Annotated[
+        bool,
+        typer.Option(
+            "--referencia",
+            help="Además, la vara: la misma identificación con las fotos reales de IKEA.",
+        ),
+    ] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """La imagen generada, gratis y local: ¿muestra los productos de la lista (fidelidad), sin
+    inventar otros, en el mismo ambiente (SSIM, SIFT) y con lo que se pidió (SigLIP 2)?"""
+    from amoblai.evaluation.image import Models, evaluate_run, reference
+
+    cfg = cfg_for(config)
+    models = Models(Path(cfg.cache_dir) / "imagen")
+    if referencia:
+        ref = reference(cfg, paths.EVAL_QUERIES, paths.RAW, paths.IMAGE_REFERENCE, models)
+        console.print(
+            f"Fotos reales IKEA: {ref['recortes']} recortes, hit@1 {ref['hit@1']}, "
+            f"MRR@10 {ref['mrr@10']}, coseno {ref['coseno_medio']} → {paths.IMAGE_REFERENCE}"
+        )
+    runs = corridas or [
+        d
+        for d in sorted(paths.RUNS.glob("*"))
+        if (d / "5_image.json").exists()
+        and not json.loads((d / "5_image.json").read_text()).get("pending")
+    ]
+    table = Table(
+        "corrida",
+        "presencia",
+        "identificados@1",
+        "coseno",
+        "inventadas",
+        "SSIM fuera",
+        "SIFT",
+        "pedido Δ",
+    )
+    for run in runs:
+        r = evaluate_run(cfg, run, models)
+        f, a, q = r["fidelidad"], r["ambiente"], r["pedido_imagen"]
+        table.add_row(
+            run.name,
+            f"{f['detectados']}/{f['productos']}",
+            str(f["identificados@1"]),
+            str(f["coseno_medio"]),
+            str(len(r["inventadas"])),
+            str(a["ssim_fuera_de_los_muebles"]),
+            str(a.get("sift_reencontrados")),
+            f"{q['delta']:+.3f} (puesto {q['puesto_entre_contrastes']})",
+        )
+    console.print(table)
+
+
+@app.command("evaluar-respuesta")
+def evaluar_respuesta(
+    corridas: Annotated[
+        list[Path] | None,
+        typer.Argument(help="Corridas de datos/resultados/amoblar/ (default: las que eligieron)."),
+    ] = None,
+    juez: Annotated[
+        str,
+        typer.Option(
+            help="archivo: un subagente de Claude Code lee la tarea y escribe la respuesta "
+            "(gratis); opus: Claude por la API (pago, con --pagar)."
+        ),
+    ] = "archivo",
+    pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar el juez pago.")] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """RAGAS del lado del generador sobre la respuesta en texto (el porqué de cada producto):
+    faithfulness (sus afirmaciones se infieren de lo que vio el sistema) y answer relevance (los
+    pedidos que un juez infiere de la respuesta, contra el original)."""
+    from amoblai.evaluation.answer import JUDGE_DIR, JUDGES, judge_with_claude, score, write_tasks
+
+    if juez not in ("archivo", "opus"):
+        raise typer.BadParameter("--juez: archivo u opus")
+    if juez == "opus" and not pagar:
+        raise typer.BadParameter("el juez opus es pago: correr con --pagar")
+    cfg = cfg_for(config, paid=pagar)
+    runs = corridas or [d for d in sorted(paths.RUNS.glob("*")) if (d / "3_choice.json").exists()]
+    for run in runs:
+        missing = [n for n in JUDGES if not (JUDGE_DIR / run.name / f"{n}.json").exists()]
+        if missing and juez == "opus":
+            for name in missing:
+                judge_with_claude(cfg, run, name)
+        elif missing:
+            for task in write_tasks(cfg, run):
+                if task.stem in missing:
+                    console.print(f"{run.name}: falta el juez {task.stem}, tarea en {task}")
+        r = score(cfg, run)
+        if r:
+            fid = r.get("fidelidad", {})
+            rel = r.get("relevancia", {})
+            console.print(
+                f"{run.name}: faithfulness {fid.get('faithfulness')} "
+                f"({fid.get('afirmaciones')} afirmaciones), answer relevance "
+                f"{rel.get('answer_relevance')} (vara {rel.get('vara_contrastes')})"
+            )
+
+
+@app.command("evaluar-espacio")
+def evaluar_espacio(config: ConfigOpt = paths.CONFIG) -> None:
+    """El espacio de embeddings del catálogo: ¿el vecino más cercano es del mismo kind? (por
+    embedder) y la UMAP con una consulta del dominio y una de afuera. Gratis, local."""
+    from amoblai.evaluation.space import OUT, analyze
+
+    r = analyze(cfg_for(config))
+    for e, m in r["separabilidad"].items():
+        console.print(f"{e}: {m}")
+    for name, q in r["consultas"].items():
+        console.print(f"{name}: mejor coseno {q['mejor_coseno']}, top-10 {q['kinds_top10']}")
+    console.print(f"→ {OUT}")
+
+
+@app.command("evaluar-graduada")
+def evaluar_graduada(
+    armar: Annotated[
+        int, typer.Option(help="Armar los lotes para los jueces con N consultas (0 = puntuar).")
+    ] = 0,
+    metodo: Annotated[str, typer.Option(help="El método de la ablación.")] = (
+        "qwen3|description|filtro-type"
+    ),
+) -> None:
+    """Relevancia graduada del top-3 (2 el mismo, 1 alternativa aceptable, 0 no sirve): el
+    context precision de RAGAS con el juez etiquetando, el NDCG graduado y el acuerdo del juez con
+    el ground truth. Los jueces son subagentes (gratis): primero --armar, después puntuar."""
+    from amoblai.evaluation.graded import ANSWERS, BATCHES, make_batches, score
+    from amoblai.evaluation.report import latest_runs
+
+    if armar:
+        run = [r for r in latest_runs(paths.EVAL_RUNS) if r.name.endswith("_ablacion-retrieval")]
+        batches = make_batches(cfg_for(paths.CONFIG), run[-1], metodo, n=armar)
+        console.print(f"{len(batches)} lotes en {BATCHES}/ (respuestas en {ANSWERS}/)")
+        return
+    meta = json.loads((BATCHES / "meta.json").read_text())
+    r = score(paths.EVAL_RUNS / meta["run"], meta["method"])
+    out = paths.RESULTS / "evaluacion_graduada" / "graduada.json"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(r, ensure_ascii=False, indent=1))
+    console.print(json.dumps(r, ensure_ascii=False, indent=1))
 
 
 @app.command()

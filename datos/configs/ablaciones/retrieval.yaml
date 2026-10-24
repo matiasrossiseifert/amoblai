@@ -16,3 +16,16 @@ methods:
   # query rewriting (pre-retrieval): las ocho líneas contra solo la línea Type y solo el kind
   - {embedder: qwen3, filter: type, query: type}
   - {embedder: qwen3, filter: type, query: kind}
+  # Dimensión del embedding (la pregunta de la clase): Qwen3-Embedding se entrenó con Matryoshka,
+  # así que los vectores se truncan a sus primeras d componentes sin reentrenar.
+  - {embedder: qwen3, filter: type, dim: 32}
+  - {embedder: qwen3, filter: type, dim: 64}
+  - {embedder: qwen3, filter: type, dim: 128}
+  - {embedder: qwen3, filter: type, dim: 256}
+  - {embedder: qwen3, filter: type, dim: 512}
+  # Splitting: un documento por producto contra cada línea un chunk (búsqueda exacta)
+  - {embedder: qwen3, filter: type, chunks: lines-max}
+  - {embedder: qwen3, filter: type, chunks: lines-aligned}
+  # Post-retrieval gratis: un cross-encoder (BERT de MS MARCO) reordena el top-10 leyendo la
+  # consulta y cada descripción juntas, como en la demo de Advanced RAG
+  - {embedder: qwen3, filter: type, rerank: minilm-reranker}

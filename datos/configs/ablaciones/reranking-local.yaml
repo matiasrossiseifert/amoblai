@@ -1,0 +1,8 @@
+# Post-retrieval con un cross-encoder local más grande: Qwen3-Reranker-0.6B (de la familia del
+# embedder) reordena el top-10 leyendo consulta y descripción juntas. Gratis pero lento en CPU
+# (unos segundos por par: horas para las 552 consultas): `uv run amoblai evaluar --ablacion
+# datos/configs/ablaciones/reranking-local.yaml`. Los scores quedan en caché.
+name: ablacion-reranking-local
+methods:
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: type, rerank: qwen3-reranker}
