@@ -1,0 +1,5000 @@
+{
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m"
+ },
+ "recortes": 545,
+ "ambientes": 64,
+ "hit@1": 0.444,
+ "hit@1_ic95": [
+  0.3878,
+  0.5018
+ ],
+ "mrr@10": 0.5558,
+ "coseno_medio": 0.4114,
+ "hit@1_por_grupo": {
+  "armchair": [
+   0.8,
+   5
+  ],
+  "bench": [
+   1.0,
+   2
+  ],
+  "cabinet": [
+   0.617,
+   47
+  ],
+  "chair": [
+   0.7459,
+   122
+  ],
+  "curtains": [
+   0.1111,
+   27
+  ],
+  "cushion": [
+   0.2421,
+   95
+  ],
+  "desk": [
+   0.0,
+   1
+  ],
+  "floor lamp": [
+   0.4444,
+   18
+  ],
+  "mirror": [
+   0.3333,
+   3
+  ],
+  "ottoman": [
+   0.6667,
+   3
+  ],
+  "pendant lamp": [
+   0.4444,
+   18
+  ],
+  "plant": [
+   0.1,
+   20
+  ],
+  "rug": [
+   0.2963,
+   54
+  ],
+  "shelf": [
+   0.1429,
+   21
+  ],
+  "sofa": [
+   0.4828,
+   29
+  ],
+  "stool": [
+   0.7273,
+   11
+  ],
+  "table": [
+   0.75,
+   16
+  ],
+  "vase": [
+   0.5,
+   10
+  ],
+  "wall art": [
+   0.2558,
+   43
+  ]
+ },
+ "filas": [
+  {
+   "room_id": "ikea-a-clean-way-to-display-or-tidy-away.__1364309466684-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5164,
+   "n": 66,
+   "top": "002.809.39"
+  },
+  {
+   "room_id": "ikea-a-clean-way-to-display-or-tidy-away.__1364309466684-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 14,
+   "cos": 0.3204,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-a-clean-way-to-display-or-tidy-away.__1364309466684-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.2706,
+   "n": 71,
+   "top": "202.809.57"
+  },
+  {
+   "room_id": "ikea-a-clean-way-to-display-or-tidy-away.__1364309466684-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 12,
+   "cos": 0.2067,
+   "n": 37,
+   "top": "091.302.38"
+  },
+  {
+   "room_id": "ikea-a-clean-way-to-display-or-tidy-away.__1364309466684-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.3659,
+   "n": 66,
+   "top": "302.809.47"
+  },
+  {
+   "room_id": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 22,
+   "cos": 0.1141,
+   "n": 89,
+   "top": "302.837.81"
+  },
+  {
+   "room_id": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.592,
+   "n": 78,
+   "top": "400.441.96"
+  },
+  {
+   "room_id": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5649,
+   "n": 78,
+   "top": "401.822.44"
+  },
+  {
+   "room_id": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6306,
+   "n": 78,
+   "top": "500.583.76"
+  },
+  {
+   "room_id": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5592,
+   "n": 66,
+   "top": "502.135.89"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.1854,
+   "n": 89,
+   "top": "302.837.81"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.6961,
+   "n": 37,
+   "top": "802.991.95"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 2,
+   "cos": 0.403,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.3846,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.3816,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 2,
+   "cos": 0.539,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.4929,
+   "n": 66,
+   "top": "599.026.58"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 21,
+   "cos": 0.4101,
+   "n": 255,
+   "top": "402.572.20"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "ottoman",
+   "grupo": "ottoman",
+   "rank": 1,
+   "cos": 0.7567,
+   "n": 12,
+   "top": "702.991.91"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 8,
+   "cos": 0.313,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.598,
+   "n": 255,
+   "top": "402.958.73"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 14,
+   "cos": 0.3671,
+   "n": 255,
+   "top": "402.572.20"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 50,
+   "cos": 0.0963,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.5615,
+   "n": 255,
+   "top": "402.958.73"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.5833,
+   "n": 255,
+   "top": "402.958.73"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 5,
+   "cos": 0.3572,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 83,
+   "cos": 0.0979,
+   "n": 255,
+   "top": "103.210.29"
+  },
+  {
+   "room_id": "ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 10,
+   "cos": 0.3168,
+   "n": 255,
+   "top": "402.301.98"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.2273,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 3,
+   "cos": 0.4965,
+   "n": 102,
+   "top": "100.895.82"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 5,
+   "cos": 0.5283,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 2,
+   "cos": 0.2806,
+   "n": 37,
+   "top": "598.758.05"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 2,
+   "cos": 0.5546,
+   "n": 66,
+   "top": "902.608.33"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 26,
+   "cos": 0.174,
+   "n": 66,
+   "top": "402.397.21"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 5,
+   "cos": 0.4258,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.4686,
+   "n": 255,
+   "top": "103.210.29"
+  },
+  {
+   "room_id": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.2797,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.1113,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 2,
+   "cos": 0.8164,
+   "n": 12,
+   "top": "303.083.95"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 4,
+   "cos": 0.6663,
+   "n": 102,
+   "top": "803.296.30"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.4997,
+   "n": 78,
+   "top": "602.470.51"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6264,
+   "n": 78,
+   "top": "902.639.02"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.7425,
+   "n": 78,
+   "top": "402.177.95"
+  },
+  {
+   "room_id": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.7363,
+   "n": 78,
+   "top": "402.177.95"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 123,
+   "cos": 0.1143,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 7,
+   "cos": 0.2399,
+   "n": 37,
+   "top": "598.758.05"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "rug",
+   "grupo": "rug",
+   "rank": 25,
+   "cos": 0.1845,
+   "n": 89,
+   "top": "503.208.48"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6404,
+   "n": 78,
+   "top": "602.178.22"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6411,
+   "n": 78,
+   "top": "602.178.22"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6041,
+   "n": 78,
+   "top": "602.178.22"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 2,
+   "cos": 0.482,
+   "n": 66,
+   "top": "902.135.87"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.302,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 3,
+   "cos": 0.3577,
+   "n": 63,
+   "top": "203.022.85"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.4172,
+   "n": 66,
+   "top": "402.688.79"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 63,
+   "cos": 0.1739,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 60,
+   "cos": 0.083,
+   "n": 89,
+   "top": "302.837.81"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 52,
+   "cos": 0.1021,
+   "n": 89,
+   "top": "503.208.48"
+  },
+  {
+   "room_id": "ikea-a-setting-as-traditional-as-your-sunday-roast__1364308405892-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 110,
+   "cos": 0.1064,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6243,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6366,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6781,
+   "n": 78,
+   "top": "602.460.80"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.675,
+   "n": 78,
+   "top": "602.460.80"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.5167,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.3462,
+   "n": 102,
+   "top": "002.286.06"
+  },
+  {
+   "room_id": "ikea-a-sunny-space-for-celebrating-or-just-having-breakfast__1364308409238-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 50,
+   "cos": 0.1327,
+   "n": 63,
+   "top": "490.473.17"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 43,
+   "cos": 0.2564,
+   "n": 102,
+   "top": "101.696.92"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.7635,
+   "n": 102,
+   "top": "401.928.51"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.3556,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.7384,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5207,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.3254,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 5,
+   "cos": 0.2563,
+   "n": 255,
+   "top": "002.811.56"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 2,
+   "cos": 0.2449,
+   "n": 63,
+   "top": "000.114.28"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.3042,
+   "n": 37,
+   "top": "098.744.98"
+  },
+  {
+   "room_id": "ikea-a-table-that-rises-to-the-occasion__1364319304125-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 8,
+   "cos": 0.4796,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 7,
+   "cos": 0.2143,
+   "n": 89,
+   "top": "503.208.48"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 5,
+   "cos": 0.6076,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4055,
+   "n": 78,
+   "top": "190.310.06"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.4511,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 21,
+   "cos": 0.2391,
+   "n": 37,
+   "top": "203.062.93"
+  },
+  {
+   "room_id": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "detector": "footstool",
+   "grupo": "ottoman",
+   "rank": 9,
+   "cos": 0.1237,
+   "n": 12,
+   "top": "598.847.15"
+  },
+  {
+   "room_id": "ikea-all-round-beauty__1364308497184-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 11,
+   "cos": 0.5504,
+   "n": 102,
+   "top": "602.152.05"
+  },
+  {
+   "room_id": "ikea-all-round-beauty__1364308497184-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6203,
+   "n": 78,
+   "top": "402.177.95"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 8,
+   "cos": 0.225,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 5,
+   "cos": 0.3322,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 5,
+   "cos": 0.3067,
+   "n": 63,
+   "top": "903.012.25"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 24,
+   "cos": 0.176,
+   "n": 66,
+   "top": "990.469.09"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 44,
+   "cos": 0.1715,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 9,
+   "cos": 0.2152,
+   "n": 66,
+   "top": "500.772.47"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 2,
+   "cos": 0.4486,
+   "n": 63,
+   "top": "203.022.85"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 3,
+   "cos": 0.3213,
+   "n": 63,
+   "top": "203.022.85"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.2114,
+   "n": 255,
+   "top": "902.049.03"
+  },
+  {
+   "room_id": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 40,
+   "cos": 0.1403,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.4092,
+   "n": 37,
+   "top": "291.614.03"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 4,
+   "cos": 0.1774,
+   "n": 89,
+   "top": "403.053.77"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "rug",
+   "grupo": "rug",
+   "rank": 15,
+   "cos": 0.1338,
+   "n": 89,
+   "top": "503.208.48"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 11,
+   "cos": 0.4005,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5554,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 3,
+   "cos": 0.5726,
+   "n": 102,
+   "top": "403.702.83"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5466,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6232,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5448,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 39,
+   "cos": 0.2656,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.6263,
+   "n": 71,
+   "top": "503.222.39"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 38,
+   "cos": 0.1758,
+   "n": 255,
+   "top": "703.273.11"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6105,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.4654,
+   "n": 255,
+   "top": "403.191.62"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.7165,
+   "n": 71,
+   "top": "503.222.39"
+  },
+  {
+   "room_id": "ikea-bamboo-for-something-fresh-and-new__1364315949258-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 8,
+   "cos": 0.2925,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6445,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5294,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.7695,
+   "n": 12,
+   "top": "101.356.59"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.543,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.539,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.6644,
+   "n": 12,
+   "top": "101.356.59"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 1,
+   "cos": 0.6754,
+   "n": 255,
+   "top": "403.112.84"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 2,
+   "cos": 0.5703,
+   "n": 255,
+   "top": "603.112.83"
+  },
+  {
+   "room_id": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.2815,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 4,
+   "cos": 0.3614,
+   "n": 37,
+   "top": "598.758.05"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.5055,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.3621,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.5713,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.5868,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 14,
+   "cos": 0.4088,
+   "n": 255,
+   "top": "602.607.59"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 8,
+   "cos": 0.1826,
+   "n": 71,
+   "top": "301.256.97"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 20,
+   "cos": 0.3023,
+   "n": 255,
+   "top": "402.572.20"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 32,
+   "cos": 0.1819,
+   "n": 255,
+   "top": "203.033.03"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 27,
+   "cos": 0.3117,
+   "n": 255,
+   "top": "402.572.20"
+  },
+  {
+   "room_id": "ikea-bring-home-some-warm-tropical-inspired-style__1364309327772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 13,
+   "cos": 0.3071,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.292,
+   "n": 89,
+   "top": "602.290.33"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 10,
+   "cos": 0.2261,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 1,
+   "cos": 0.7848,
+   "n": 255,
+   "top": "403.112.84"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 53,
+   "cos": 0.2565,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.438,
+   "n": 102,
+   "top": "302.865.67"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 3,
+   "cos": 0.42,
+   "n": 66,
+   "top": "502.432.99"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "armchair",
+   "grupo": "armchair",
+   "rank": 1,
+   "cos": 0.6056,
+   "n": 78,
+   "top": "802.396.82"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 1,
+   "cos": 0.3054,
+   "n": 255,
+   "top": "403.112.84"
+  },
+  {
+   "room_id": "ikea-carefully-collected-artfully-displayed__1364309649206-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 3,
+   "cos": 0.2711,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 3,
+   "cos": 0.6517,
+   "n": 37,
+   "top": "290.338.11"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.543,
+   "n": 102,
+   "top": "602.165.49"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.4233,
+   "n": 255,
+   "top": "903.210.30"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 9,
+   "cos": 0.2444,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 8,
+   "cos": 0.4763,
+   "n": 255,
+   "top": "902.621.39"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.3127,
+   "n": 66,
+   "top": "902.608.14"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.3485,
+   "n": 66,
+   "top": "902.608.14"
+  },
+  {
+   "room_id": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.5402,
+   "n": 71,
+   "top": "802.622.53"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.1495,
+   "n": 89,
+   "top": "503.208.48"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 16,
+   "cos": 0.262,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.648,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5913,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6582,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6286,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6896,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6189,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-contemporary-workspace-by-day-gathering-with-friends-by-night__1364308404935-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 7,
+   "cos": 0.3239,
+   "n": 255,
+   "top": "103.210.29"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 34,
+   "cos": 0.1849,
+   "n": 255,
+   "top": "668.040.47"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.201,
+   "n": 89,
+   "top": "203.146.60"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6345,
+   "n": 78,
+   "top": "591.278.08"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.604,
+   "n": 78,
+   "top": "591.278.08"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4246,
+   "n": 78,
+   "top": "591.278.08"
+  },
+  {
+   "room_id": "ikea-cool-scandinavian-style-for-warm-family-gatherings__1364308401869-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.503,
+   "n": 78,
+   "top": "591.278.08"
+  },
+  {
+   "room_id": "ikea-country-cottage-dining__1364308410057-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 3,
+   "cos": 0.5132,
+   "n": 78,
+   "top": "401.822.44"
+  },
+  {
+   "room_id": "ikea-country-cottage-dining__1364308410057-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5892,
+   "n": 78,
+   "top": "002.110.88"
+  },
+  {
+   "room_id": "ikea-country-cottage-dining__1364308410057-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 6,
+   "cos": 0.3673,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-country-cottage-dining__1364308410057-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 82,
+   "cos": 0.0374,
+   "n": 89,
+   "top": "302.836.77"
+  },
+  {
+   "room_id": "ikea-country-cottage-dining__1364308410057-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5863,
+   "n": 66,
+   "top": "702.135.93"
+  },
+  {
+   "room_id": "ikea-crafted-for-pleasure__1364308507288-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.1799,
+   "n": 89,
+   "top": "902.394.22"
+  },
+  {
+   "room_id": "ikea-crafted-for-pleasure__1364308507288-s4.jpg",
+   "detector": "armchair",
+   "grupo": "armchair",
+   "rank": 1,
+   "cos": 0.7485,
+   "n": 78,
+   "top": "902.396.67"
+  },
+  {
+   "room_id": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 9,
+   "cos": 0.4741,
+   "n": 89,
+   "top": "302.837.81"
+  },
+  {
+   "room_id": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 1,
+   "cos": 0.3107,
+   "n": 255,
+   "top": "468.040.05"
+  },
+  {
+   "room_id": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 79,
+   "cos": 0.1699,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 1,
+   "cos": 0.5146,
+   "n": 63,
+   "top": "990.234.08"
+  },
+  {
+   "room_id": "ikea-dine-wherever-you-want__1364308412079-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.7476,
+   "n": 255,
+   "top": "602.384.19"
+  },
+  {
+   "room_id": "ikea-dine-wherever-you-want__1364308412079-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6849,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-dine-wherever-you-want__1364308412079-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.8505,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-dine-wherever-you-want__1364308412079-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.8253,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2104,
+   "n": 89,
+   "top": "702.647.28"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "mirror",
+   "grupo": "mirror",
+   "rank": 3,
+   "cos": 0.3675,
+   "n": 255,
+   "top": "902.452.39"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.3874,
+   "n": 37,
+   "top": "391.504.42"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.2111,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.5806,
+   "n": 255,
+   "top": "402.590.64"
+  },
+  {
+   "room_id": "ikea-display-all-your-memorabilia-and-more__1364319313408-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.3242,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "stool",
+   "grupo": "stool",
+   "rank": 2,
+   "cos": 0.5141,
+   "n": 12,
+   "top": "002.461.96"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6177,
+   "n": 78,
+   "top": "902.142.85"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.2178,
+   "n": 66,
+   "top": "599.026.58"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.5952,
+   "n": 78,
+   "top": "602.460.80"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 6,
+   "cos": 0.1858,
+   "n": 255,
+   "top": "668.040.47"
+  },
+  {
+   "room_id": "ikea-dramatic-dynamic-black-and-white__1364308380848-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 3,
+   "cos": 0.3069,
+   "n": 78,
+   "top": "602.460.80"
+  },
+  {
+   "room_id": "ikea-enough-space-for-a-table__1364308412317-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.7836,
+   "n": 78,
+   "top": "101.150.67"
+  },
+  {
+   "room_id": "ikea-enough-space-for-a-table__1364308412317-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.698,
+   "n": 78,
+   "top": "101.150.67"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.5418,
+   "n": 37,
+   "top": "390.338.01"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 27,
+   "cos": 0.2601,
+   "n": 255,
+   "top": "601.325.21"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.4331,
+   "n": 255,
+   "top": "502.647.34"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6611,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.4896,
+   "n": 71,
+   "top": "702.781.03"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 25,
+   "cos": 0.1419,
+   "n": 255,
+   "top": "402.958.73"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.3574,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 2,
+   "cos": 0.3928,
+   "n": 102,
+   "top": "800.895.74"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 6,
+   "cos": 0.6073,
+   "n": 66,
+   "top": "902.135.87"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.4359,
+   "n": 255,
+   "top": "602.607.59"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 10,
+   "cos": 0.4024,
+   "n": 66,
+   "top": "302.271.15"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 11,
+   "cos": 0.5086,
+   "n": 66,
+   "top": "302.271.15"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 38,
+   "cos": 0.344,
+   "n": 102,
+   "top": "301.486.94"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6782,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.3984,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 9,
+   "cos": 0.1342,
+   "n": 89,
+   "top": "203.146.60"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 236,
+   "cos": 0.0235,
+   "n": 255,
+   "top": "301.784.26"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 133,
+   "cos": 0.0993,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 2,
+   "cos": 0.5899,
+   "n": 102,
+   "top": "202.806.84"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5677,
+   "n": 78,
+   "top": "391.278.09"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6213,
+   "n": 78,
+   "top": "391.278.09"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 5,
+   "cos": 0.4746,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 63,
+   "cos": 0.1528,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 130,
+   "cos": 0.0969,
+   "n": 255,
+   "top": "301.784.26"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6131,
+   "n": 78,
+   "top": "391.278.09"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.2484,
+   "n": 255,
+   "top": "402.958.73"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.3395,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 8,
+   "cos": 0.3247,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.194,
+   "n": 37,
+   "top": "799.019.69"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.528,
+   "n": 78,
+   "top": "391.278.09"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 5,
+   "cos": 0.4201,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 2,
+   "cos": 0.6944,
+   "n": 102,
+   "top": "402.511.19"
+  },
+  {
+   "room_id": "ikea-for-an-inviting-integrated-home-workspace__1364312032497-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 2,
+   "cos": 0.2809,
+   "n": 37,
+   "top": "290.486.62"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.6372,
+   "n": 102,
+   "top": "401.928.51"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6915,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6043,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.627,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 44,
+   "cos": 0.1287,
+   "n": 63,
+   "top": "402.467.74"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 9,
+   "cos": 0.0986,
+   "n": 89,
+   "top": "002.973.60"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 47,
+   "cos": 0.0668,
+   "n": 89,
+   "top": "002.973.60"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 2,
+   "cos": 0.1567,
+   "n": 63,
+   "top": "000.114.28"
+  },
+  {
+   "room_id": "ikea-for-small-scale-family-dinners__1364312032954-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 6,
+   "cos": 0.2323,
+   "n": 63,
+   "top": "000.114.28"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 93,
+   "cos": 0.0902,
+   "n": 255,
+   "top": "001.384.32"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 2,
+   "cos": 0.4673,
+   "n": 255,
+   "top": "403.112.84"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.2355,
+   "n": 89,
+   "top": "602.307.91"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 1,
+   "cos": 0.7066,
+   "n": 255,
+   "top": "603.112.83"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 3,
+   "cos": 0.3112,
+   "n": 102,
+   "top": "401.522.80"
+  },
+  {
+   "room_id": "ikea-get-the-trend-artisan__1364321210884-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.2655,
+   "n": 89,
+   "top": "203.074.81"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 6,
+   "cos": 0.154,
+   "n": 89,
+   "top": "202.852.62"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.7143,
+   "n": 102,
+   "top": "902.078.07"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.4697,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.2699,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.3704,
+   "n": 102,
+   "top": "802.600.94"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5272,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6333,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.5238,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.1998,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-greet-the-morning-with-some-modern-scandinavian-design__1364308407420-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 18,
+   "cos": 0.0749,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.4958,
+   "n": 102,
+   "top": "102.897.22"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.5981,
+   "n": 37,
+   "top": "091.302.38"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6211,
+   "n": 66,
+   "top": "103.286.67"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6177,
+   "n": 255,
+   "top": "603.210.17"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.475,
+   "n": 66,
+   "top": "103.286.67"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 2,
+   "cos": 0.3669,
+   "n": 66,
+   "top": "500.772.47"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6443,
+   "n": 255,
+   "top": "602.863.87"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 20,
+   "cos": 0.4684,
+   "n": 255,
+   "top": "903.210.30"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.3931,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5681,
+   "n": 66,
+   "top": "103.286.67"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 33,
+   "cos": 0.187,
+   "n": 63,
+   "top": "302.176.54"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6567,
+   "n": 255,
+   "top": "602.863.87"
+  },
+  {
+   "room_id": "ikea-have-fun-with-flexible-stackable-storage-__1364315971483-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.3481,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-keep-creative-order-with-adjustable-shelves__1364308423652-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.3506,
+   "n": 89,
+   "top": "702.647.28"
+  },
+  {
+   "room_id": "ikea-keep-creative-order-with-adjustable-shelves__1364308423652-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 12,
+   "cos": 0.2771,
+   "n": 63,
+   "top": "490.473.17"
+  },
+  {
+   "room_id": "ikea-keep-creative-order-with-adjustable-shelves__1364308423652-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 5,
+   "cos": 0.4264,
+   "n": 78,
+   "top": "290.066.95"
+  },
+  {
+   "room_id": "ikea-keep-creative-order-with-adjustable-shelves__1364308423652-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 3,
+   "cos": 0.3813,
+   "n": 63,
+   "top": "903.012.25"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 3,
+   "cos": 0.1667,
+   "n": 89,
+   "top": "201.901.98"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 4,
+   "cos": 0.4603,
+   "n": 102,
+   "top": "102.911.31"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.5851,
+   "n": 37,
+   "top": "002.729.20"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.383,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.4124,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "footstool",
+   "grupo": "ottoman",
+   "rank": 1,
+   "cos": 0.7752,
+   "n": 12,
+   "top": "702.729.12"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.338,
+   "n": 255,
+   "top": "402.812.77"
+  },
+  {
+   "room_id": "ikea-lean-in-to-leather-for-a-natural-way-to-unwind__1364309326057-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.4961,
+   "n": 71,
+   "top": "201.571.08"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 1,
+   "cos": 0.504,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 2,
+   "cos": 0.6711,
+   "n": 102,
+   "top": "500.894.05"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.4615,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.652,
+   "n": 78,
+   "top": "002.110.88"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 4,
+   "cos": 0.5555,
+   "n": 78,
+   "top": "602.178.22"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 46,
+   "cos": 0.1181,
+   "n": 78,
+   "top": "502.345.82"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 5,
+   "cos": 0.4705,
+   "n": 78,
+   "top": "401.822.44"
+  },
+  {
+   "room_id": "ikea-made-for-long-dinner-parties-and-quick-catch-ups__1364316015294-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.4184,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.3691,
+   "n": 89,
+   "top": "302.878.21"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 4,
+   "cos": 0.3402,
+   "n": 37,
+   "top": "799.019.69"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 2,
+   "cos": 0.3416,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.345,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 5,
+   "cos": 0.4033,
+   "n": 255,
+   "top": "000.783.34"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.7004,
+   "n": 71,
+   "top": "301.571.03"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 12,
+   "cos": 0.3789,
+   "n": 255,
+   "top": "002.917.68"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 5,
+   "cos": 0.3705,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 22,
+   "cos": 0.2479,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.3894,
+   "n": 255,
+   "top": "201.510.12"
+  },
+  {
+   "room_id": "ikea-make-a-statement-with-sleek-living-room-storage__1364308451970-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.5569,
+   "n": 255,
+   "top": "602.607.64"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5275,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5035,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5494,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4585,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5557,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 1,
+   "cos": 0.3588,
+   "n": 255,
+   "top": "468.040.05"
+  },
+  {
+   "room_id": "ikea-meals-in-modern-comfort__1364308412564-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4688,
+   "n": 78,
+   "top": "202.013.33"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.3058,
+   "n": 89,
+   "top": "602.290.33"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "bench",
+   "grupo": "bench",
+   "rank": 1,
+   "cos": 0.4734,
+   "n": 14,
+   "top": "902.868.47"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.7872,
+   "n": 102,
+   "top": "002.286.06"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4129,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5287,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.481,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5534,
+   "n": 78,
+   "top": "702.068.04"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 15,
+   "cos": 0.2806,
+   "n": 78,
+   "top": "602.470.51"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.3721,
+   "n": 66,
+   "top": "302.809.47"
+  },
+  {
+   "room_id": "ikea-mix-natural-pine-with-elegant-black__1364308379835-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 3,
+   "cos": 0.4369,
+   "n": 66,
+   "top": "902.397.33"
+  },
+  {
+   "room_id": "ikea-modern-kitchen-dining__1364308409816-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6378,
+   "n": 78,
+   "top": "701.032.50"
+  },
+  {
+   "room_id": "ikea-modern-kitchen-dining__1364308409816-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 2,
+   "cos": 0.6795,
+   "n": 102,
+   "top": "602.152.05"
+  },
+  {
+   "room_id": "ikea-modern-kitchen-dining__1364308409816-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6633,
+   "n": 78,
+   "top": "701.032.50"
+  },
+  {
+   "room_id": "ikea-modern-kitchen-dining__1364308409816-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.7028,
+   "n": 12,
+   "top": "202.493.30"
+  },
+  {
+   "room_id": "ikea-natural-warmth__1364308376454-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.3276,
+   "n": 89,
+   "top": "002.394.12"
+  },
+  {
+   "room_id": "ikea-natural-warmth__1364308376454-s4.jpg",
+   "detector": "mirror",
+   "grupo": "mirror",
+   "rank": 1,
+   "cos": 0.2405,
+   "n": 255,
+   "top": "602.499.60"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 3,
+   "cos": 0.3696,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 20,
+   "cos": 0.1893,
+   "n": 89,
+   "top": "203.146.60"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 28,
+   "cos": 0.1662,
+   "n": 71,
+   "top": "400.636.32"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.4637,
+   "n": 78,
+   "top": "991.278.11"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 23,
+   "cos": 0.1948,
+   "n": 66,
+   "top": "500.772.47"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 7,
+   "cos": 0.4471,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.2827,
+   "n": 37,
+   "top": "591.249.99"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.3921,
+   "n": 78,
+   "top": "991.278.11"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "bench",
+   "grupo": "bench",
+   "rank": 1,
+   "cos": 0.5128,
+   "n": 14,
+   "top": "802.753.40"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.3095,
+   "n": 78,
+   "top": "991.278.11"
+  },
+  {
+   "room_id": "ikea-nordic-style-where-design-and-quality-meet__1364315947250-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 2,
+   "cos": 0.4254,
+   "n": 71,
+   "top": "202.959.25"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2468,
+   "n": 89,
+   "top": "002.394.12"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 11,
+   "cos": 0.1554,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.3594,
+   "n": 255,
+   "top": "702.812.52"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 7,
+   "cos": 0.2372,
+   "n": 255,
+   "top": "502.689.06"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 10,
+   "cos": 0.3344,
+   "n": 255,
+   "top": "200.780.50"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 2,
+   "cos": 0.4721,
+   "n": 102,
+   "top": "603.047.44"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 15,
+   "cos": 0.4167,
+   "n": 255,
+   "top": "302.917.76"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 7,
+   "cos": 0.2945,
+   "n": 255,
+   "top": "602.323.99"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 2,
+   "cos": 0.2614,
+   "n": 255,
+   "top": "202.975.71"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 15,
+   "cos": 0.2298,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-not-just-for-books__1364315972080-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 1,
+   "cos": 0.2621,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 6,
+   "cos": 0.3485,
+   "n": 37,
+   "top": "391.109.84"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 191,
+   "cos": 0.0391,
+   "n": 255,
+   "top": "001.185.23"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.7374,
+   "n": 102,
+   "top": "002.286.06"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 22,
+   "cos": 0.1438,
+   "n": 89,
+   "top": "202.035.63"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 128,
+   "cos": 0.1006,
+   "n": 255,
+   "top": "203.033.03"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6972,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.5734,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6466,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6286,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 2,
+   "cos": 0.3623,
+   "n": 71,
+   "top": "102.976.56"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 114,
+   "cos": 0.1002,
+   "n": 255,
+   "top": "001.185.23"
+  },
+  {
+   "room_id": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 85,
+   "cos": 0.1217,
+   "n": 255,
+   "top": "900.379.90"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2332,
+   "n": 89,
+   "top": "302.836.77"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.6736,
+   "n": 12,
+   "top": "242.862.05"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 36,
+   "cos": 0.1803,
+   "n": 255,
+   "top": "800.680.10"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4982,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4053,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5099,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5155,
+   "n": 78,
+   "top": "402.288.12"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 4,
+   "cos": 0.1655,
+   "n": 255,
+   "top": "001.185.23"
+  },
+  {
+   "room_id": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 4,
+   "cos": 0.3518,
+   "n": 255,
+   "top": "402.301.98"
+  },
+  {
+   "room_id": "ikea-show-your-bold-playful-and-organised-side__1364308468417-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.303,
+   "n": 89,
+   "top": "702.647.28"
+  },
+  {
+   "room_id": "ikea-show-your-bold-playful-and-organised-side__1364308468417-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 21,
+   "cos": 0.3679,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-show-your-bold-playful-and-organised-side__1364308468417-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 17,
+   "cos": 0.4174,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 45,
+   "cos": 0.1224,
+   "n": 89,
+   "top": "202.852.62"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 12,
+   "cos": 0.5486,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 18,
+   "cos": 0.3793,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 13,
+   "cos": 0.365,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6738,
+   "n": 78,
+   "top": "991.278.11"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.4859,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.4566,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 4,
+   "cos": 0.2592,
+   "n": 63,
+   "top": "402.797.31"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6144,
+   "n": 78,
+   "top": "991.278.11"
+  },
+  {
+   "room_id": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.3753,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-sleek-storage-for-your-favourite-things__1364308434915-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2927,
+   "n": 89,
+   "top": "902.873.66"
+  },
+  {
+   "room_id": "ikea-sleek-storage-for-your-favourite-things__1364308434915-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 1,
+   "cos": 0.6597,
+   "n": 255,
+   "top": "402.301.98"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2742,
+   "n": 89,
+   "top": "603.074.79"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.3291,
+   "n": 37,
+   "top": "191.297.91"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.4636,
+   "n": 102,
+   "top": "003.313.78"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6339,
+   "n": 66,
+   "top": "303.034.87"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 5,
+   "cos": 0.4335,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 9,
+   "cos": 0.2529,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 4,
+   "cos": 0.4252,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 15,
+   "cos": 0.2373,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "mirror",
+   "grupo": "mirror",
+   "rank": 16,
+   "cos": 0.208,
+   "n": 255,
+   "top": "500.382.13"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 23,
+   "cos": 0.3262,
+   "n": 255,
+   "top": "202.975.71"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4952,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5369,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.3854,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 13,
+   "cos": 0.1477,
+   "n": 255,
+   "top": "002.824.05"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 185,
+   "cos": 0.0412,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4174,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 52,
+   "cos": 0.0995,
+   "n": 255,
+   "top": "002.824.05"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.5748,
+   "n": 102,
+   "top": "802.600.94"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 5,
+   "cos": 0.1352,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 2,
+   "cos": 0.4397,
+   "n": 37,
+   "top": "799.019.69"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "desk",
+   "grupo": "desk",
+   "rank": 3,
+   "cos": 0.3563,
+   "n": 20,
+   "top": "302.994.85"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6026,
+   "n": 255,
+   "top": "302.811.50"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 2,
+   "cos": 0.4874,
+   "n": 63,
+   "top": "202.796.09"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.5711,
+   "n": 255,
+   "top": "302.811.50"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.5727,
+   "n": 255,
+   "top": "302.811.50"
+  },
+  {
+   "room_id": "ikea-smart-storage-made-to-suit-your-space__1364309395772-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 1,
+   "cos": 0.3451,
+   "n": 63,
+   "top": "490.473.17"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 43,
+   "cos": 0.1268,
+   "n": 89,
+   "top": "203.146.60"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 68,
+   "cos": 0.1371,
+   "n": 255,
+   "top": "203.033.03"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5196,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 9,
+   "cos": 0.5751,
+   "n": 102,
+   "top": "803.296.30"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6498,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6423,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.4678,
+   "n": 66,
+   "top": "902.135.87"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.5512,
+   "n": 12,
+   "top": "001.522.82"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "stool",
+   "grupo": "stool",
+   "rank": 2,
+   "cos": 0.2605,
+   "n": 12,
+   "top": "200.339.19"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6005,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-space-to-share-good-times-and-tall-stories__1364308408022-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.3892,
+   "n": 66,
+   "top": "902.135.87"
+  },
+  {
+   "room_id": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "detector": "sofa",
+   "grupo": "sofa",
+   "rank": 2,
+   "cos": 0.4503,
+   "n": 37,
+   "top": "091.302.38"
+  },
+  {
+   "room_id": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 5,
+   "cos": 0.2967,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 35,
+   "cos": 0.202,
+   "n": 89,
+   "top": "202.035.63"
+  },
+  {
+   "room_id": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "detector": "bookcase",
+   "grupo": "shelf",
+   "rank": 5,
+   "cos": 0.3557,
+   "n": 63,
+   "top": "903.012.25"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 36,
+   "cos": 0.2027,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 2,
+   "cos": 0.412,
+   "n": 37,
+   "top": "290.486.62"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.4231,
+   "n": 255,
+   "top": "602.607.64"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.4074,
+   "n": 66,
+   "top": "503.006.66"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5198,
+   "n": 66,
+   "top": "503.006.66"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6383,
+   "n": 66,
+   "top": "503.006.66"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.4418,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.4742,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-store-and-display-with-some-bright-pops-of-colour__1364308452332-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 16,
+   "cos": 0.281,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 46,
+   "cos": 0.1461,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 2,
+   "cos": 0.4769,
+   "n": 102,
+   "top": "303.047.26"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.7361,
+   "n": 37,
+   "top": "390.067.94"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 4,
+   "cos": 0.5484,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 10,
+   "cos": 0.2762,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "picture frame",
+   "grupo": "wall art",
+   "rank": 9,
+   "cos": 0.2884,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.3521,
+   "n": 255,
+   "top": "802.640.30"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.5847,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 3,
+   "cos": 0.3808,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 36,
+   "cos": 0.1698,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-striped-scandinavian-style__1364308424350-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.3531,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "rug",
+   "grupo": "rug",
+   "rank": 5,
+   "cos": 0.1388,
+   "n": 89,
+   "top": "203.146.60"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6848,
+   "n": 78,
+   "top": "003.015.26"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4834,
+   "n": 78,
+   "top": "003.015.26"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.7114,
+   "n": 102,
+   "top": "401.928.51"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6386,
+   "n": 66,
+   "top": "302.271.15"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.4004,
+   "n": 66,
+   "top": "202.422.77"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 23,
+   "cos": 0.1447,
+   "n": 255,
+   "top": "202.438.37"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 1,
+   "cos": 0.3944,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4745,
+   "n": 78,
+   "top": "003.015.26"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.4226,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.3838,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.2576,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 8,
+   "cos": 0.299,
+   "n": 89,
+   "top": "402.605.19"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.3316,
+   "n": 37,
+   "top": "598.758.05"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.3552,
+   "n": 71,
+   "top": "301.256.97"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.5118,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6106,
+   "n": 66,
+   "top": "603.022.93"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6643,
+   "n": 66,
+   "top": "603.022.93"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 71,
+   "cos": 0.1095,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-stylish-storage-for-small-living-rooms__1364308426451-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 7,
+   "cos": 0.2158,
+   "n": 255,
+   "top": "202.121.62"
+  },
+  {
+   "room_id": "ikea-stylish-surrounds-for-dinner-party-discussions__1364308407739-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2574,
+   "n": 89,
+   "top": "402.605.19"
+  },
+  {
+   "room_id": "ikea-stylish-surrounds-for-dinner-party-discussions__1364308407739-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 3,
+   "cos": 0.5232,
+   "n": 78,
+   "top": "591.278.08"
+  },
+  {
+   "room_id": "ikea-stylish-surrounds-for-dinner-party-discussions__1364308407739-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 5,
+   "cos": 0.5339,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-stylish-surrounds-for-dinner-party-discussions__1364308407739-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 31,
+   "cos": 0.1364,
+   "n": 66,
+   "top": "402.397.21"
+  },
+  {
+   "room_id": "ikea-stylish-surrounds-for-dinner-party-discussions__1364308407739-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 22,
+   "cos": 0.1323,
+   "n": 66,
+   "top": "402.397.21"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 8,
+   "cos": 0.2894,
+   "n": 37,
+   "top": "598.758.05"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "armchair",
+   "grupo": "armchair",
+   "rank": 1,
+   "cos": 0.4563,
+   "n": 78,
+   "top": "502.345.82"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 5,
+   "cos": 0.1192,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.5395,
+   "n": 12,
+   "top": "003.014.99"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.2557,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 2,
+   "cos": 0.2772,
+   "n": 63,
+   "top": "000.114.28"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 48,
+   "cos": 0.0478,
+   "n": 63,
+   "top": "402.467.74"
+  },
+  {
+   "room_id": "ikea-take-afternoon-tea-to-new-heights__1364319303286-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 81,
+   "cos": 0.094,
+   "n": 255,
+   "top": "502.688.74"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 1,
+   "cos": 0.2787,
+   "n": 89,
+   "top": "603.074.79"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 9,
+   "cos": 0.1692,
+   "n": 37,
+   "top": "098.744.98"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.5716,
+   "n": 102,
+   "top": "302.313.01"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4988,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4796,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.235,
+   "n": 71,
+   "top": "802.622.53"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.4494,
+   "n": 255,
+   "top": "902.620.78"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 7,
+   "cos": 0.2254,
+   "n": 89,
+   "top": "302.837.81"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 41,
+   "cos": 0.1754,
+   "n": 102,
+   "top": "700.291.61"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6958,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.2945,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-take-your-time-in-a-timelessly-elegant-setting__1364308402494-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.2886,
+   "n": 78,
+   "top": "802.340.19"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 26,
+   "cos": 0.1006,
+   "n": 89,
+   "top": "003.232.98"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 32,
+   "cos": 0.3873,
+   "n": 102,
+   "top": "302.313.01"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 52,
+   "cos": 0.0988,
+   "n": 66,
+   "top": "802.970.21"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.536,
+   "n": 78,
+   "top": "602.178.22"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6609,
+   "n": 66,
+   "top": "402.688.79"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4585,
+   "n": 78,
+   "top": "598.501.07"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.3771,
+   "n": 78,
+   "top": "598.501.07"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 2,
+   "cos": 0.3621,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5781,
+   "n": 66,
+   "top": "402.688.79"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6277,
+   "n": 66,
+   "top": "402.688.79"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.3381,
+   "n": 78,
+   "top": "598.501.07"
+  },
+  {
+   "room_id": "ikea-the-perfect-setting-for-family-time__1364308402177-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4359,
+   "n": 78,
+   "top": "598.501.07"
+  },
+  {
+   "room_id": "ikea-the-simple-way-to-dine__1364308410298-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 1,
+   "cos": 0.8729,
+   "n": 102,
+   "top": "500.894.05"
+  },
+  {
+   "room_id": "ikea-the-simple-way-to-dine__1364308410298-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6046,
+   "n": 78,
+   "top": "002.110.88"
+  },
+  {
+   "room_id": "ikea-the-simple-way-to-dine__1364308410298-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.5657,
+   "n": 78,
+   "top": "401.822.44"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 7,
+   "cos": 0.2194,
+   "n": 89,
+   "top": "003.146.56"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 1,
+   "cos": 0.5055,
+   "n": 255,
+   "top": "403.112.84"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 7,
+   "cos": 0.5274,
+   "n": 37,
+   "top": "391.504.42"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 3,
+   "cos": 0.6251,
+   "n": 102,
+   "top": "603.047.44"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.7776,
+   "n": 255,
+   "top": "002.976.66"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.6072,
+   "n": 66,
+   "top": "503.238.04"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.5218,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.6776,
+   "n": 71,
+   "top": "102.397.13"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 51,
+   "cos": 0.1516,
+   "n": 66,
+   "top": "500.772.47"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.4277,
+   "n": 255,
+   "top": "602.976.73"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 18,
+   "cos": 0.2557,
+   "n": 63,
+   "top": "990.234.08"
+  },
+  {
+   "room_id": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 21,
+   "cos": 0.2943,
+   "n": 255,
+   "top": "402.878.87"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 12,
+   "cos": 0.1245,
+   "n": 89,
+   "top": "002.399.59"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.6567,
+   "n": 37,
+   "top": "091.292.30"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "floor lamp",
+   "grupo": "floor lamp",
+   "rank": 1,
+   "cos": 0.5425,
+   "n": 102,
+   "top": "301.486.94"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.4102,
+   "n": 78,
+   "top": "402.808.43"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "armchair",
+   "grupo": "armchair",
+   "rank": 1,
+   "cos": 0.3732,
+   "n": 78,
+   "top": "202.016.82"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 16,
+   "cos": 0.3553,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.576,
+   "n": 66,
+   "top": "603.210.98"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 16,
+   "cos": 0.4228,
+   "n": 255,
+   "top": "502.841.95"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 14,
+   "cos": 0.3528,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 1,
+   "cos": 0.5959,
+   "n": 66,
+   "top": "503.296.22"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 12,
+   "cos": 0.1398,
+   "n": 255,
+   "top": "302.640.37"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 6,
+   "cos": 0.3694,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 26,
+   "cos": 0.1711,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.3758,
+   "n": 255,
+   "top": "802.640.30"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "curtains",
+   "grupo": "curtains",
+   "rank": 15,
+   "cos": 0.2344,
+   "n": 255,
+   "top": "500.460.48"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 4,
+   "cos": 0.4144,
+   "n": 255,
+   "top": "602.607.59"
+  },
+  {
+   "room_id": "ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.3588,
+   "n": 71,
+   "top": "302.608.07"
+  },
+  {
+   "room_id": "ikea-unfold-some-good-old-fashioned-hospitality__1364308388471-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 38,
+   "cos": 0.0628,
+   "n": 89,
+   "top": "002.973.60"
+  },
+  {
+   "room_id": "ikea-unfold-some-good-old-fashioned-hospitality__1364308388471-s4.jpg",
+   "detector": "pendant lamp",
+   "grupo": "pendant lamp",
+   "rank": 3,
+   "cos": 0.6613,
+   "n": 102,
+   "top": "903.259.43"
+  },
+  {
+   "room_id": "ikea-unfold-some-good-old-fashioned-hospitality__1364308388471-s4.jpg",
+   "detector": "vase",
+   "grupo": "vase",
+   "rank": 155,
+   "cos": 0.064,
+   "n": 255,
+   "top": "668.040.47"
+  },
+  {
+   "room_id": "ikea-unfold-some-good-old-fashioned-hospitality__1364308388471-s4.jpg",
+   "detector": "shelf",
+   "grupo": "shelf",
+   "rank": 1,
+   "cos": 0.4423,
+   "n": 63,
+   "top": "302.522.80"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "couch",
+   "grupo": "sofa",
+   "rank": 1,
+   "cos": 0.5912,
+   "n": 37,
+   "top": "190.114.33"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "carpet",
+   "grupo": "rug",
+   "rank": 35,
+   "cos": 0.1639,
+   "n": 89,
+   "top": "201.901.98"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 121,
+   "cos": 0.1275,
+   "n": 255,
+   "top": "001.185.23"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "side table",
+   "grupo": "table",
+   "rank": 1,
+   "cos": 0.3128,
+   "n": 71,
+   "top": "401.366.81"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "armchair",
+   "grupo": "armchair",
+   "rank": 2,
+   "cos": 0.3059,
+   "n": 78,
+   "top": "490.904.81"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 129,
+   "cos": 0.1029,
+   "n": 255,
+   "top": "668.040.47"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.5127,
+   "n": 78,
+   "top": "791.278.07"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.2087,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "tv stand",
+   "grupo": "cabinet",
+   "rank": 11,
+   "cos": 0.1379,
+   "n": 66,
+   "top": "500.772.47"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "cabinet",
+   "grupo": "cabinet",
+   "rank": 38,
+   "cos": 0.2262,
+   "n": 66,
+   "top": "603.022.93"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 2,
+   "cos": 0.334,
+   "n": 255,
+   "top": "802.812.42"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.6575,
+   "n": 255,
+   "top": "302.811.50"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "plant",
+   "grupo": "plant",
+   "rank": 17,
+   "cos": 0.2392,
+   "n": 255,
+   "top": "668.040.47"
+  },
+  {
+   "room_id": "ikea-useful-storage-above-and-below-the-tv__1364319316728-s4.jpg",
+   "detector": "cushion",
+   "grupo": "cushion",
+   "rank": 1,
+   "cos": 0.4992,
+   "n": 255,
+   "top": "302.811.50"
+  },
+  {
+   "room_id": "ikea-with-space-for-just-a-few__1364308410846-s4.jpg",
+   "detector": "stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.8472,
+   "n": 12,
+   "top": "901.840.47"
+  },
+  {
+   "room_id": "ikea-with-space-for-just-a-few__1364308410846-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 2,
+   "cos": 0.6469,
+   "n": 78,
+   "top": "002.460.78"
+  },
+  {
+   "room_id": "ikea-with-space-for-just-a-few__1364308410846-s4.jpg",
+   "detector": "chair",
+   "grupo": "chair",
+   "rank": 1,
+   "cos": 0.6382,
+   "n": 78,
+   "top": "102.191.78"
+  },
+  {
+   "room_id": "ikea-with-space-for-just-a-few__1364308410846-s4.jpg",
+   "detector": "bar stool",
+   "grupo": "stool",
+   "rank": 1,
+   "cos": 0.5483,
+   "n": 12,
+   "top": "901.840.47"
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+ "corrida": "prueba-alvear2",
+ "pedido": "un living nórdico y cálido: un sofá, un sillón para leer, una mesa ratona y una alfombra",
+ "fidelidad": {
+  "afirmaciones": 25,
+  "faithfulness": 0.96,
+  "sobre_productos": 0.9375,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "The rug is large enough to sit under the front of both the sofa and the armchair"
+  ],
+  "juez": "subagente de Claude Code"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amoblar el living con un estilo nórdico y cálido: un sofá de tres cuerpos, un sillón para leer, una mesa ratona y una alfombra",
+   "Un living escandinavo luminoso con toques de madera y cuero, con sofá, sillón, mesa de centro y alfombra",
+   "Armame un living minimalista y relajado, con un sillón grande, un sillón individual, una mesita ratona redonda y una alfombra que defina la zona de estar"
+  ],
+  "answer_relevance": 0.7261,
+  "vara_contrastes": 0.3743,
+  "juez": "subagente de Claude Code"
+ }
+}
