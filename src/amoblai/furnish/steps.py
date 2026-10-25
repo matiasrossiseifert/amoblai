@@ -17,6 +17,7 @@ LLM to understand the room; the room photo is still image 1, and the image model
 from __future__ import annotations
 
 import json
+import shutil
 from collections.abc import Sequence
 from dataclasses import asdict
 from pathlib import Path
@@ -27,7 +28,8 @@ from amoblai.catalog.kinds import KINDS, kinds_text
 from amoblai.config import Config
 from amoblai.furnish.generate import get_generator
 from amoblai.furnish.llm import Answer, image_block, make_llm, parse_json, text_block
-from amoblai.infra.budget import check_spend, ledger_for
+from amoblai.furnish.room import preservation
+from amoblai.infra.budget import BudgetExceeded, check_spend, ledger_for
 from amoblai.infra.http import ProviderError
 from amoblai.prompts import PromptTemplate, load_prompt
 from amoblai.rag.filters import Filters
@@ -319,36 +321,79 @@ def scene(
     return with_views(answer_record(a, tmpl, data), views)
 
 
+def room_kept(cfg: Config, room_photo: Path, image: Path) -> dict:
+    """Is the image still the room of the photo? SIFT + RANSAC between the two
+    (evaluation/image.py): enough points of the original found again, and the camera still."""
+    rc = cfg.furnish.room_check
+    m = preservation(Image.open(room_photo), Image.open(image), [])
+    shift = m.get("sift_desplazamiento_mediano")
+    ok = (
+        m.get("sift_inliers", 0) >= rc["min_inliers"]
+        and shift is not None
+        and (shift <= rc["max_shift"])
+    )
+    keys = ("ssim", "sift_inliers", "sift_reencontrados", "sift_desplazamiento_mediano")
+    return {"ok": bool(ok), **{k: m.get(k) for k in keys}}
+
+
 def generate(cfg: Config, prompt: str, room_photo: Path, picks: list[Hit], out: Path) -> dict:
     """The image model gets the room photo, the chosen products' photos (in that order) and the
-    prompt. `pending`: the image is not there yet (the manual generator waits for a person)."""
+    prompt. `pending`: the image is not there yet (the manual generator waits for a person).
+    A paid image that is no longer the user's room (room_kept) is kept aside as
+    final_intento_N.png and the model tries again (furnish.room_check): the first image that
+    keeps the room wins, or, if none does, the one that keeps it best."""
     gen = get_generator(cfg.furnish.generator, cfg)
     images = [room_photo, *(photo(cfg, h) for h in picks)]
     ledger = ledger_for(cfg.budget, gen.account)
-    check_spend(
-        ledger,
-        gen.estimate_cost(images),
-        paid=gen.paid,
-        allow_paid=cfg.budget.allow_paid,
-        what=f"furnish.generate ({gen.name})",
-    )
-    g = gen.generate(prompt, images, out)
-    if gen.paid:
-        ledger.record(
-            step="furnish.generate",
-            provider=gen.name,
-            model=g.model,
-            cost_usd=g.cost_usd,
-            cost_source=g.cost_source,
-            cached=False,
+    tries = max(1, int(cfg.furnish.room_check["attempts"])) if gen.paid else 1
+    attempts: list[dict] = []
+    g = None
+    for n in range(1, tries + 1):
+        try:
+            check_spend(
+                ledger,
+                gen.estimate_cost(images),
+                paid=gen.paid,
+                allow_paid=cfg.budget.allow_paid,
+                what=f"furnish.generate ({gen.name})",
+            )
+        except BudgetExceeded:
+            if not attempts:
+                raise
+            break  # no room in the cap for another try: the best one so far
+        g = gen.generate(prompt, images, out)
+        if gen.paid:
+            ledger.record(
+                step="furnish.generate",
+                provider=gen.name,
+                model=g.model,
+                cost_usd=g.cost_usd,
+                cost_source=g.cost_source,
+                cached=False,
+            )
+        if not g.image or not gen.paid:
+            break
+        kept = Path(out) / f"final_intento_{n}.png"
+        shutil.copyfile(g.image, kept)
+        attempts.append(
+            {"image": kept.name, "cost_usd": g.cost_usd, **room_kept(cfg, room_photo, kept)}
         )
+        if attempts[-1]["ok"]:
+            break
+    best = next((a for a in attempts if a["ok"]), None) or max(
+        attempts, key=lambda a: a["sift_inliers"] or 0, default=None
+    )
+    if best:
+        shutil.copyfile(Path(out) / best["image"], g.image)
     return {
         "generator": gen.name,
         "image": g.image and str(Path(g.image).name),
         "pending": g.image is None,
         "model": g.model,
-        "cost_usd": g.cost_usd,
+        "cost_usd": round(sum(a["cost_usd"] for a in attempts), 4) if attempts else g.cost_usd,
         "meta": g.meta,
+        "attempts": attempts,
+        "room_check": {k: v for k, v in best.items() if k != "cost_usd"} if best else None,
     }
 
 

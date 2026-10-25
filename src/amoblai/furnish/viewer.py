@@ -164,6 +164,9 @@ def run_data(run: Path, root: Path, out_dir: Path) -> dict[str, Any] | None:
             "generator": image.get("generator"),
             "model": image.get("model"),
             "pending": image.get("pending"),
+            "attempts": [
+                {**a, "image": rel(run / a["image"])} for a in image.get("attempts") or []
+            ],
         }
         if image
         else None,
