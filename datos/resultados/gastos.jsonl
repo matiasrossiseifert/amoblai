@@ -452,3 +452,9 @@
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.020764, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-22T17:51:45"}
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.022948, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-22T17:51:47"}
 {"step": "eval.rerank", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.0227, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-22T17:51:48"}
+{"step": "furnish.plan", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.057232, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-25T12:06:12"}
+{"step": "furnish.choose", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.0532, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-25T12:06:45"}
+{"step": "furnish.scene", "provider": "anthropic", "model": "claude-opus-5-5", "cost_usd": 0.032208, "cost_source": "api", "cached": false, "pool": "anthropic", "time": "2026-10-25T12:06:56"}
+{"step": "furnish.generate", "provider": "nano_banana_2", "model": "fal-ai/nano-banana-2/edit", "cost_usd": 0.08, "cost_source": "estimate", "cached": false, "pool": "fal", "time": "2026-10-25T12:07:25"}
+{"step": "furnish.generate", "provider": "nano_banana_2", "model": "fal-ai/nano-banana-2/edit", "cost_usd": 0.08, "cost_source": "estimate", "cached": false, "pool": "fal", "time": "2026-10-25T12:22:01"}
+{"step": "furnish.generate", "provider": "nano_banana_2", "model": "fal-ai/nano-banana-2/edit", "cost_usd": 0.08, "cost_source": "estimate", "cached": false, "pool": "fal", "time": "2026-10-25T12:22:58"}

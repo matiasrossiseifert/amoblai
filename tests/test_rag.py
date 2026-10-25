@@ -476,7 +476,9 @@ def test_the_plan_gets_the_kinds_and_unknown_kinds_are_dropped(tmp_path, monkeyp
     prompt = seen[0]["messages"][0]["content"][-1]["text"]
     assert "- chair: desk chair, dining chair, armchair" in prompt and "{kinds}" not in prompt
     assert (
-        "- lamp: pendant lamp" in prompt and "one to 6" in prompt and "{max_pieces}" not in prompt
+        "- lamp: pendant lamp" in prompt
+        and "as many as the request and the room call for" in prompt
+        and "{max_pieces}" not in prompt
     )
 
 

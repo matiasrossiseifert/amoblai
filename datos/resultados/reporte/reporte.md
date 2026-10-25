@@ -167,7 +167,19 @@ Fidelidad: cada producto de la lista buscado en la imagen final (Grounding DINO)
 
 | corrida | generador | detectados | identificados@1 | coseno | inventadas | SSIM fuera | SIFT | pedido Δ (puesto) |
 |---|---|---|---|---|---|---|---|---|
-| prueba-alvear2 | nano_banana_2 | 4/4 | 0.5 | 0.6535 | 0 | 0.9747 | 0.5521 | +0.077 (1/7) |
+| experimento | nano_banana_2 | 6/6 | 0.6667 | 0.5342 | 1 | 0.8291 | 0.1329 | +0.061 (1/7) |
+| prueba-alvear2 | nano_banana_2 | 4/4 | 0.75 | 0.6824 | 0 | 0.9747 | 0.5521 | +0.077 (1/7) |
+
+### `experimento` por producto
+
+| producto | kind | puesto | coseno |
+|---|---|---|---|
+| 703.233.51 | bookcase | 1/63 | 0.7967 |
+| 391.505.88 | armchair | 1/78 | 0.8509 |
+| 402.712.59 | rug | 9/89 | 0.1819 |
+| 302.865.67 | floor lamp | 1/102 | 0.2782 |
+| 102.397.13 | side table | 1/71 | 0.6031 |
+| 802.841.94 | curtains | 10/255 | 0.4941 |
 
 ### `prueba-alvear2` por producto
 
@@ -175,7 +187,7 @@ Fidelidad: cada producto de la lista buscado en la imagen final (Grounding DINO)
 |---|---|---|---|
 | 691.249.46 | sofa | 7/37 | 0.6662 |
 | 391.505.88 | armchair | 1/78 | 0.8996 |
-| 002.852.58 | rug | 10/89 | 0.1699 |
+| 002.852.58 | rug | 1/89 | 0.2853 |
 | 302.397.12 | coffee table | 1/71 | 0.8785 |
 
 ### La vara: la misma identificación con fotos reales (ambientes IKEA)
@@ -222,6 +234,7 @@ Faithfulness: de las afirmaciones de hecho del porqué de cada producto, cuánta
 
 | corrida | afirmaciones | faithfulness | answer relevance | vara | no sostenidas |
 |---|---|---|---|---|---|
+| experimento | 34 | 0.9706 | 0.6038 | 0.3951 | It is the only round rug available |
 | prueba-alvear | 27 | 0.8889 | 0.6901 | 0.3743 | The floor is oak; The rug is the largest option; The rug reaches under the sofa's front legs, the table and the armchair |
 | prueba-alvear2 | 25 | 0.96 | 0.7261 | 0.3743 | The rug is large enough to sit under the front of both the sofa and the armchair |
 | prueba-alvear2-scene-v2 | 26 | 0.9231 | 0.7158 | 0.3743 | The rug is large enough to go under the front of both the sofa and the armchair; The table's size suits a three-seat sofa |
