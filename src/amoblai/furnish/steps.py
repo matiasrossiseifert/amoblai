@@ -273,6 +273,12 @@ def scene(
     """The LLM writes the image model's prompt from the room, each piece and its chosen
     product's photo: where each one goes and how it faces."""
     tmpl = load_prompt(cfg.furnish.scene_prompt, cfg.root)
+    if not cfg.furnish.scene_llm:  # the template alone: the image model places the products
+        products = "\n".join(
+            f"image {i + 2}: {type_line(h)}, {size_text(h)}" for i, (_, h) in enumerate(picks)
+        )
+        text = tmpl.fill(request=request, products=products, last=len(picks) + 1)
+        return {"answer": {"prompt": text}, "model": None, "cost_usd": 0.0, "prompt": tmpl.version}
     lines = [
         f"image {i + 2}. {h.id}: {type_line(h)}, {size_text(h)}; it is the piece: {p['piece']}"
         for i, (p, h) in enumerate(picks)
