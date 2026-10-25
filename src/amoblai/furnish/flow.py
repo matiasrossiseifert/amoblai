@@ -78,14 +78,14 @@ def _retrieve(run: Run) -> dict:
 def _choose(run: Run) -> dict:
     rec = st.choose(run.cfg, run.room, run.request, run.candidates(), run.views)
     for c in rec["answer"]["choices"]:
-        run.log(f"chosen: {c['id']}: {c.get('why')}")
+        q = st.quantity(c)
+        run.log(f"chosen: {c['id']} x{q}: {c.get('why')}" if q else f"left out: {c.get('why')}")
     return rec
 
 
 def _scene(run: Run) -> dict:
-    pieces = [p for p, _ in run.candidates()]
     room = run.data["plan"]["answer"].get("room", "")
-    picks = list(zip(pieces, run.chosen(), strict=True))
+    picks = st.picks(run.data["retrieve"], run.data["choose"])
     return st.scene(run.cfg, run.room, run.request, room, picks, run.views)
 
 

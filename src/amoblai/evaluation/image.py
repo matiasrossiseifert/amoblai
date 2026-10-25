@@ -486,7 +486,9 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
     request = json.loads((run_dir / "request.json").read_text())["request"]
     choices = json.loads((run_dir / "3_choice.json").read_text())["answer"]["choices"]
     catalog = _catalog(cfg)
-    products = [catalog[c["id"]] for c in choices if c.get("id") in catalog]
+    products = [
+        catalog[c["id"]] for c in choices if c.get("id") in catalog and c.get("quantity", 1)
+    ]
     labels = detector_labels()
     after_dets = [d for d in models.detect(final, labels) if d.score >= BOX_THRESHOLD]
     before_dets = [d for d in models.detect(before_path, labels) if d.score >= BOX_THRESHOLD]

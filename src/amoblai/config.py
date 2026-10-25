@@ -60,7 +60,7 @@ class FurnishConfig(_Cfg):
     size_slack: float = 0.15
     photo_max_side: int = 1024  # photos sent to the LLM
     query_prompt: str = "search_query_v4.md"
-    choose_prompt: str = "choose_combination_v1.md"
+    choose_prompt: str = "choose_combination_v2.md"
     scene_prompt: str = "scene_prompt_v1.md"
     # False: the scene prompt is the template filled in (scene_prompt_libre_*: the image model
     # arranges the products itself), with no LLM call.

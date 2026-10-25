@@ -60,7 +60,11 @@ def build_tasks(cfg: Config, run_dir: Path) -> dict[str, dict]:
     choice = json.loads((run_dir / "3_choice.json").read_text())["answer"]
     catalog = {p.id: p for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     texts = _descriptions()
-    chosen = [catalog[c["id"]] for c in choice["choices"] if c.get("id") in catalog]
+    chosen = [
+        catalog[c["id"]]
+        for c in choice["choices"]
+        if c.get("id") in catalog and c.get("quantity", 1)
+    ]
     listing = "\n\n".join(
         f"{p.id} ({p.kind}, {_size(p.info.get('dimensions_cm'))}):\n{texts.get(p.id, '')}"
         for p in chosen
