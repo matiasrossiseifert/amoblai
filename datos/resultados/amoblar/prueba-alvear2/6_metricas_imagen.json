@@ -50,17 +50,17 @@
    "categoria": "rug",
    "detectado": true,
    "detector": "carpet",
-   "score_detector": 0.521,
+   "score_detector": 0.407,
    "box": [
     290,
-    534,
-    972,
-    761
+    540,
+    558,
+    763
    ],
-   "puesto": 10,
+   "puesto": 1,
    "entre": 89,
-   "coseno": 0.1699,
-   "mas_parecido": "502.773.93"
+   "coseno": 0.2853,
+   "mas_parecido": "002.852.58"
   },
   {
    "id": "302.397.12",
@@ -85,15 +85,28 @@
   "productos": 4,
   "detectados": 4,
   "presencia": 1.0,
-  "coseno_medio": 0.6535,
-  "identificados@1": 0.5,
-  "mrr": 0.5607
+  "coseno_medio": 0.6824,
+  "identificados@1": 0.75,
+  "mrr": 0.7857
  },
  "inventadas": [],
+ "repetidas": [
+  {
+   "detector": "carpet",
+   "categoria": "rug",
+   "score": 0.521,
+   "box": [
+    290,
+    534,
+    972,
+    761
+   ]
+  }
+ ],
  "ambiente": {
   "ssim": 0.8451,
   "ssim_fuera_de_los_muebles": 0.9747,
-  "fraccion_fuera_de_los_muebles": 0.6988,
+  "fraccion_fuera_de_los_muebles": 0.6983,
   "sift_puntos_original": 326,
   "sift_matches": 186,
   "sift_inliers": 180,
