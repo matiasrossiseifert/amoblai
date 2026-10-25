@@ -65,6 +65,12 @@ class FurnishConfig(_Cfg):
     # False: the scene prompt is the template filled in (scene_prompt_libre_*: the image model
     # arranges the products itself), with no LLM call.
     scene_llm: bool = True
+    # After a paid image: is it still the user's room? SIFT against the original photo (at least
+    # `min_inliers` points found again, the camera moved at most `max_shift` of the width); if
+    # not, the image is kept aside and it tries again, up to `attempts` images in all.
+    room_check: dict[str, float] = Field(
+        default_factory=lambda: {"attempts": 3, "min_inliers": 50, "max_shift": 0.01}
+    )
     # The image model that puts the chosen products in the room (generate.py).
     generator: str = "manual"
     generators: dict[str, dict[str, Any]] = Field(

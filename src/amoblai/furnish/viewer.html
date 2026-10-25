@@ -168,8 +168,11 @@ function runPage(r) {
   }
   if (r.image) {
     const body = r.image.final ? `<div class="final">${fig(r.image.final, "la imagen final")}</div>` : `<p>${r.image.pending ? "Pendiente: imagen a mano (carpeta manual/)." : "Sin imagen."}</p>`;
+    const att = (r.image.attempts || []);
+    const check = att.length ? `<p>Control del ambiente (SIFT contra la foto original): ${att.map((a, i) => `intento ${i + 1}: ${a.ok ? '<span class="ok">✓ es el mismo cuarto</span>' : '<span class="bad">✗ cambió el cuarto</span>'} (${a.sift_inliers} puntos, desplazamiento ${num(a.sift_desplazamiento_mediano)})`).join(" · ")}</p>
+      ${att.length > 1 ? `<details><summary>los intentos</summary><div class="imgs">${att.map((a, i) => fig(a.image, `intento ${i + 1}: ${a.ok ? "pasa" : "descartado"}`)).join("")}</div></details>` : ""}` : "";
     h += msg("tool", `Modelo de imagen · ${e(r.image.generator || "")} ${r.image.model ? chip(r.image.model) : ""}`,
-      `${body}${r.extras.length ? `<div class="imgs">${r.extras.map(x => fig(x, x.split("/").pop())).join("")}</div>` : ""}`);
+      `${body}${check}${r.extras.length ? `<div class="imgs">${r.extras.map(x => fig(x, x.split("/").pop())).join("")}</div>` : ""}`);
   }
   const mi = r.metrics_image;
   if (mi) {

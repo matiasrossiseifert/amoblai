@@ -14,9 +14,9 @@ from amoblai.evaluation.image import (
     inside,
     iou,
     nms,
-    preservation,
     rank_among,
 )
+from amoblai.furnish.room import preservation
 from tests.conftest import ROOT
 
 
@@ -173,3 +173,50 @@ def test_the_runs_page_reads_each_run_and_marks_reused_steps(tmp_path):
     assert by["base"]["cost"] == 0.09 and by["base-libre"]["cost"] == 0.0
     assert by["base-libre"]["steps"][0]["reused_from"] == "base"
     assert by["base"]["search"][0]["candidates"][0]["chosen"]
+
+
+class TwoTriesGenerator:
+    """Paid and fake: first another room (noise), then the user's room with a red box."""
+
+    paid = True
+    account = None
+
+    def __init__(self, params, cfg, name):
+        self.name, self.calls = name, 0
+
+    def estimate_cost(self, images):
+        return 0.01
+
+    def generate(self, prompt, images, out):
+        from amoblai.furnish.generate import Generated
+
+        self.calls += 1
+        room = Image.open(images[0]).convert("RGB")
+        if self.calls == 1:
+            noise = np.random.default_rng(7).random((40, 60, 3)) * 255
+            img = Image.fromarray(noise.astype("uint8")).resize(room.size)
+        else:
+            img = room.copy()
+            ImageDraw.Draw(img).rectangle((100, 200, 300, 400), fill=(200, 30, 30))
+        dst = Path(out) / "final.png"
+        img.save(dst)
+        return Generated(dst, "fake", 0.01, "estimate", {})
+
+
+def test_an_image_that_is_not_the_room_is_set_aside_and_tried_again(tmp_path, cfg):
+    from amoblai.furnish import steps as st
+
+    rng = np.random.default_rng(0)
+    room = tmp_path / "room.jpg"
+    Image.fromarray((rng.random((40, 60, 3)) * 255).astype("uint8")).resize((900, 600)).save(
+        room, quality=95
+    )
+    cfg.furnish.generators["dos"] = {"kind": "tests.test_metrics:TwoTriesGenerator"}
+    cfg.furnish.generator = "dos"
+    cfg.budget.allow_paid = True
+    cfg.budget.max_usd_total = 1.0
+    cfg.budget.ledger = str(tmp_path / "gastos.jsonl")
+    rec = st.generate(cfg, "amoblalo", room, [], tmp_path)
+    assert [a["ok"] for a in rec["attempts"]] == [False, True]
+    assert rec["room_check"]["image"] == "final_intento_2.png" and rec["cost_usd"] == 0.02
+    assert Image.open(tmp_path / "final.png").getpixel((200, 300)) == (200, 30, 30)
