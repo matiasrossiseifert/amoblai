@@ -1,0 +1,342 @@
+{
+  "pieces": [
+    {
+      "piece": "una estanter\u00eda para libros contra la pared blanca de la izquierda",
+      "spec": {
+        "piece": "una estanter\u00eda para libros contra la pared blanca de la izquierda",
+        "why": "Responde al pedido de los libros, y en madera oscura c\u00e1lida, tipo nogal, retoma el tono del piso; los detalles en negro dialogan con el marco del ventanal.",
+        "kinds": [
+          "bookcase",
+          "wall shelf"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": 35,
+        "max_height_cm": 240,
+        "query": "Type: bookcase, open shelving for books\nUse: storing and displaying books; reading room\nStyle: contemporary, mid-century modern, industrial\nMaterials: walnut wood, black metal\nColors: dark walnut brown, black\nShape: tall open shelves, slim black frame, clean lines, medium visual weight\nFeel: warm, orderly, bookish\nGoes with: dark wood-look floor, white walls, black window frames, concrete ceiling"
+      },
+      "candidates": [
+        {
+          "id": "703.233.51",
+          "name": "BILLY",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 80.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.233.51.jpg"
+          ],
+          "description": "Type: medium-height open bookcase\nUse: storing books, displaying decor; living room, home office, bedroom\nStyle: Scandinavian, traditional, minimalist\nMaterials: ash-patterned wood veneer in a brown stain, fibreboard back\nColors: medium warm brown, walnut-toned wood grain\nShape: simple boxy upright frame, two adjustable shelves above a base shelf, recessed plinth, flat top, straight edges, open front, medium visual weight\nFeel: warm, practical, orderly, familiar\nGoes with: cream or white walls, warm wood, leather or green accents; traditional studies, Scandinavian living rooms, home offices\n",
+          "score": 0.7750452160835266,
+          "kind": "bookcase"
+        },
+        {
+          "id": "390.477.04",
+          "name": "EKBY HEMNES,EKBY HLL",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 79.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/390.477.04.jpg"
+          ],
+          "description": "Type: dark wood wall shelf with metal brackets\nUse: displaying books, frames and plants; living room, dining room, home office, bedroom\nStyle: traditional, farmhouse, industrial\nMaterials: black-brown stained wood shelf, black painted steel brackets\nColors: dark black-brown, black\nShape: long rectangular shelf on two upright flat brackets with a curled support arm, straight edges, sturdy but slim, medium visual weight\nFeel: warm, classic, grounded, crafted\nGoes with: white or cream walls, dark wood, brass, leather and books; farmhouse, traditional or industrial rooms\n",
+          "score": 0.7300920486450195,
+          "kind": "wall shelf"
+        },
+        {
+          "id": "399.266.79",
+          "name": "EKBY HEMNES,EKBY VALTER",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 79.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/399.266.79.jpg"
+          ],
+          "description": "Type: dark solid wood wall shelf\nUse: displaying books, ceramics and photos; living room, dining room, bedroom, home office\nStyle: traditional, Scandinavian, farmhouse\nMaterials: black-brown stained solid wood shelf, black-brown wooden brackets with a diagonal brace\nColors: dark black-brown, deep espresso\nShape: long thick-edged plank resting on two angular wooden brackets, visible wood grain, simple sturdy outline, medium visual weight\nFeel: warm, solid, homely, calm\nGoes with: white or sage walls, warm wood, linen, brass or ceramic accents; farmhouse, traditional or Scandinavian rooms\n",
+          "score": 0.7184589505195618,
+          "kind": "wall shelf"
+        }
+      ]
+    },
+    {
+      "piece": "un sill\u00f3n de lectura en el rinc\u00f3n junto al ventanal",
+      "spec": {
+        "piece": "un sill\u00f3n de lectura en el rinc\u00f3n junto al ventanal",
+        "why": "Es el lugar para sentarse a leer con luz natural; un tapizado c\u00e1lido en tono crudo o terracota con patas de madera suaviza el hormig\u00f3n y combina con el piso.",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 90,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: armchair, upholstered reading chair\nUse: reading and lounging; reading corner by the window\nStyle: mid-century modern, contemporary, Scandinavian\nMaterials: boucle or textured fabric, walnut wood legs\nColors: warm cream, rust or terracotta\nShape: deep seat, rounded back, wooden legs, compact, medium visual weight\nFeel: cozy, enveloping, warm\nGoes with: dark wood-look floor, white walls, black window frames, concrete ceiling"
+      },
+      "candidates": [
+        {
+          "id": "202.396.99",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.396.99.jpg"
+          ],
+          "description": "Type: high-back wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: mid-century modern, classic, contemporary\nMaterials: velvet upholstery, padded frame, attached neck cushion, solid wood legs in a warm brown stain\nColors: deep black, warm medium brown wood\nShape: tall upright back with subtle wings and a half-moon headrest pillow, rounded flared arms, thick seat cushion, four tapered wooden legs, tailored and slim, medium visual weight\nFeel: elegant, dramatic, refined, cozy\nGoes with: walnut or oak, brass accents, warm rugs, grey or green walls; mid-century or classic living rooms\n",
+          "score": 0.7864897847175598,
+          "kind": "armchair"
+        },
+        {
+          "id": "391.505.88",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/391.505.88.jpg"
+          ],
+          "description": "Type: cantilever bentwood leather lounge armchair\nUse: relaxing, reading; living room, study, reading corner\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: layer-glued bent wood frame in a dark brown stain, cognac leather cushion with diamond stitching\nColors: warm cognac brown, dark brown wood\nShape: tall one-piece cushion quilted in a diamond pattern, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: warm, inviting, relaxed, classic\nGoes with: walnut or dark wood, cream walls, wool rugs, brass lamps; mid-century or classic living rooms and studies\n",
+          "score": 0.7743808627128601,
+          "kind": "armchair"
+        },
+        {
+          "id": "502.954.72",
+          "name": "RDVIKEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/502.954.72.jpg"
+          ],
+          "description": "Type: woven lounge chair on wire base\nUse: relaxing, reading; living room, bedroom, sunroom\nStyle: mid-century modern, contemporary, bohemian\nMaterials: hand-woven rattan seat shell, black powder-coated steel frame\nColors: dark chocolate brown, black\nShape: deep scooped one-piece seat and back shell, low and reclined, armless, splayed steel wire base with crossed rods, light and open, medium visual weight\nFeel: relaxed, earthy, sculptural, airy\nGoes with: warm wood, cream or white walls, black accents, plants; mid-century, bohemian or modern living rooms\n",
+          "score": 0.7651342153549194,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "una alfombra circular bajo el sill\u00f3n, en el centro del rinc\u00f3n de lectura",
+      "spec": {
+        "piece": "una alfombra circular bajo el sill\u00f3n, en el centro del rinc\u00f3n de lectura",
+        "why": "Es la alfombra redonda que pidieron; un tejido texturado en crudo y beige calienta el suelo y define la zona de lectura sin tapar el piso.",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": 200,
+        "max_height_cm": null,
+        "query": "Type: rug, round textured rug\nUse: warming the floor and defining the reading corner; reading room\nStyle: Scandinavian, Japandi, contemporary\nMaterials: wool, jute\nColors: cream, warm beige, soft sand\nShape: round, about 160 to 200 cm, low pile or woven texture\nFeel: soft, cozy, natural\nGoes with: dark wood-look floor, white walls, walnut furniture"
+      },
+      "candidates": [
+        {
+          "id": "832.351.10",
+          "name": "LUDDE",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/832.351.10.jpg"
+          ],
+          "description": "Type: natural sheepskin rug\nUse: soft throw on a floor, chair or bench; living room, bedroom, reading corner, nursery\nStyle: Scandinavian, rustic, Japandi\nMaterials: genuine sheepskin with long thick wool\nColors: creamy white, warm ivory\nShape: organic hide shape with irregular rounded edges, long fluffy fleece, small and light\nFeel: cozy, soft, warm, natural\nGoes with: light wood, linen, white walls, grey textiles; Scandinavian, Japandi or rustic cabins and bedrooms\n",
+          "score": 0.7707841992378235,
+          "kind": "rug"
+        },
+        {
+          "id": "302.290.77",
+          "name": "TEJN",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.290.77.jpg"
+          ],
+          "description": "Type: faux sheepskin rug\nUse: softening a floor, chair or bench; living room, bedroom, reading nook\nStyle: Scandinavian, minimalist, bohemian\nMaterials: long soft faux fur pile, hide-shaped backing\nColors: creamy white\nShape: organic sheepskin outline with rounded lobes, long fluffy fur, small and soft, light visual weight\nFeel: cosy, soft, warm, hygge\nGoes with: light wood, white or grey walls, wool throws, black accents; Scandinavian, Japandi or bohemian bedrooms and living rooms\n",
+          "score": 0.7576579451560974,
+          "kind": "rug"
+        },
+        {
+          "id": "402.712.59",
+          "name": "DUM",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.712.59.jpg"
+          ],
+          "description": "Type: round shaggy high-pile rug\nUse: softening a floor spot, under a coffee table or beside a bed; living room, bedroom, nursery\nStyle: contemporary, minimalist, Scandinavian\nMaterials: thick long shag pile yarn\nColors: light warm beige, off-white\nShape: circular, deep plush shag, solid color, soft rounded edge, medium visual weight\nFeel: cozy, soft, airy, calm\nGoes with: white walls, light wood, cream and pale grey textiles; Scandinavian or minimalist bedrooms and living rooms\n",
+          "score": 0.7564254403114319,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara de pie junto al sill\u00f3n",
+      "spec": {
+        "piece": "una l\u00e1mpara de pie junto al sill\u00f3n",
+        "why": "Da luz c\u00e1lida para leer de noche, m\u00e1s acogedora que el plaf\u00f3n del techo; con base negra y pantalla de lino une el marco negro y los textiles.",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 45,
+        "max_depth_cm": 45,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, reading lamp with shade\nUse: warm reading light; reading corner\nStyle: mid-century modern, contemporary\nMaterials: black metal, linen shade, wood accents\nColors: black, warm off-white\nShape: slim stem, fabric shade or arc head, light visual weight\nFeel: warm, soft, intimate\nGoes with: black window frames, walnut wood, white walls"
+      },
+      "candidates": [
+        {
+          "id": "601.109.01",
+          "name": "LERSTA",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/601.109.01.jpg"
+          ],
+          "description": "Type: slim aluminium floor reading lamp\nUse: reading light beside a sofa, an armchair or a bed; living room, bedroom, home office\nStyle: minimalist, industrial, Scandinavian\nMaterials: brushed aluminium shade, pole and base, black cord with inline switch\nColors: brushed silver, black\nShape: thin straight pole with a curved neck holding a small cone shade, adjustable head, round flat base, tall and very slender, light visual weight\nFeel: simple, practical, airy, functional\nGoes with: grey or white sofas, light wood, metal accents; minimalist, Scandinavian or industrial rooms\n",
+          "score": 0.7477861642837524,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "800.895.74",
+          "name": "BAROMETER",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/800.895.74.jpg"
+          ],
+          "description": "Type: balance-arm floor reading lamp\nUse: reading light beside an armchair or a sofa; living room, bedroom, study\nStyle: industrial, classic, retro\nMaterials: nickel-plated steel shade, arm, pole and stepped round base, black cord with foot switch\nColors: brushed silver nickel, black\nShape: small dome shade at the end of a long horizontal swing arm with a knob counterweight, tall straight pole, heavy stepped base, light and linear\nFeel: refined, studious, vintage, elegant\nGoes with: leather armchairs, dark wood, bookshelves; classic studies, industrial or traditional living rooms\n",
+          "score": 0.740688681602478,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "302.865.67",
+          "name": "SAMTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.865.67.jpg"
+          ],
+          "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.7403446435928345,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "una mesita auxiliar al lado del sill\u00f3n",
+      "spec": {
+        "piece": "una mesita auxiliar al lado del sill\u00f3n",
+        "why": "Sirve para apoyar el libro, la taza o los anteojos mientras se lee, y en madera de nogal repite el tono del piso y de la estanter\u00eda.",
+        "kinds": [
+          "side table"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": 60,
+        "query": "Type: side table, small round wooden\nUse: holding a cup and books beside the armchair; reading corner\nStyle: mid-century modern, Japandi\nMaterials: walnut wood\nColors: dark walnut brown\nShape: small round top, pedestal or three legs, light visual weight\nFeel: warm, simple, handy\nGoes with: dark wood-look floor, walnut bookcase, cream armchair"
+      },
+      "candidates": [
+        {
+          "id": "102.397.13",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/102.397.13.jpg"
+          ],
+          "description": "Type: organic-shaped nesting tables\nUse: holding drinks, books and lamps, coffee or side table; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer tops, solid wood legs in a walnut tone\nColors: medium warm walnut brown\nShape: set of two softly rounded pebble-shaped tops, thin edges, four round splayed tapered legs, smaller table tucks under the larger, low and light\nFeel: warm, organic, elegant, relaxed\nGoes with: cream or grey sofas, black or brass accents, woven rugs; mid-century or Scandinavian living rooms\n",
+          "score": 0.7658731341362,
+          "kind": "side table"
+        },
+        {
+          "id": "002.998.25",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/002.998.25.jpg"
+          ],
+          "description": "Type: round nesting side tables\nUse: holding drinks, lamps and books; living room, bedroom, reading corner\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: solid wood frame, black stained and lacquered finish\nColors: black, dark charcoal\nShape: set of two round tops with a raised lip edge, four splayed tapered legs, cross-shaped stretchers, smaller table slides under the larger, slim and light\nFeel: graphic, tidy, versatile, calm\nGoes with: light wood floors, white walls, grey or cream sofas; Scandinavian or modern living rooms\n",
+          "score": 0.7475053668022156,
+          "kind": "side table"
+        },
+        {
+          "id": "802.972.43",
+          "name": "RISSNA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.972.43.jpg"
+          ],
+          "description": "Type: round two-tier side table\nUse: holding a lamp, books and drinks; living room, bedroom, reading corner\nStyle: contemporary, modern, mid-century modern\nMaterials: beige lacquered round top and shelf, dark brown stained solid wood frame\nColors: warm beige, dark brown\nShape: thick round top and matching lower shelf, four square posts on a crossed X-shaped base, compact, medium visual weight\nFeel: soft, warm, grounded, cozy\nGoes with: brown leather, cream or taupe textiles, dark wood; contemporary living rooms and warm neutral bedrooms\n",
+          "score": 0.7315890789031982,
+          "kind": "side table"
+        }
+      ]
+    },
+    {
+      "piece": "cortinas de lino en el ventanal corrido",
+      "spec": {
+        "piece": "cortinas de lino en el ventanal corrido",
+        "why": "Suavizan el vidrio y el aluminio negro, filtran la luz para leer sin reflejos y aportan la calidez textil que pide un ambiente acogedor.",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer linen panels\nUse: softening and filtering window light; reading room\nStyle: Scandinavian, Japandi, contemporary\nMaterials: linen\nColors: natural oatmeal, warm white\nShape: light flowing panels, floor length, light visual weight\nFeel: airy, soft, warm\nGoes with: white walls, black window frames, dark wood-look floor"
+      },
+      "candidates": [
+        {
+          "id": "702.809.12",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.809.12.jpg"
+          ],
+          "description": "Type: pair of linen curtains\nUse: dressing windows, softening light and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, Japandi\nMaterials: semi-sheer washed linen with a slub texture, hidden tab top\nColors: dark charcoal grey\nShape: two long straight panels that hang in soft vertical folds from a rod, gathered tab-top heading, fine uneven weave, light and flowing\nFeel: calm, natural, relaxed, soft\nGoes with: light wood, white or grey walls, natural textiles, black accents; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 0.8649631142616272,
+          "kind": "curtains"
+        },
+        {
+          "id": "802.841.94",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.841.94.jpg"
+          ],
+          "description": "Type: pair of linen curtains\nUse: dressing windows, filtering light and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, Japandi, coastal\nMaterials: semi-sheer washed linen with a slub texture, hidden tab top\nColors: natural beige, warm sand\nShape: two long straight panels that fall in soft vertical folds from a rod, gathered tab-top heading, fine uneven weave, light and airy\nFeel: calm, warm, natural, airy\nGoes with: light wood, white walls, rattan, cream or white textiles; Scandinavian, Japandi or coastal rooms\n",
+          "score": 0.8520129919052124,
+          "kind": "curtains"
+        },
+        {
+          "id": "502.841.95",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.841.95.jpg"
+          ],
+          "description": "Type: pair of white linen curtains\nUse: filtering daylight and softening windows; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: semi-sheer woven linen with a slubby natural texture, hidden tab heading\nColors: white, faint warm off-white\nShape: two long straight panels hanging in loose soft folds from a rod, airy translucent weave, plain hems, light and flowing\nFeel: airy, calm, natural, bright\nGoes with: light wood floors, white walls, rattan, pale grey or sand textiles; Scandinavian, coastal or Japandi rooms\n",
+          "score": 0.8468153476715088,
+          "kind": "curtains"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}
