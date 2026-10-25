@@ -84,8 +84,8 @@ IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/rep
   anotado en el 81% de los casos y a los demás en el 5%.
 - **La imagen generada** (prueba-alvear2):
   - los 4 productos aparecen;
-  - 2 de 4 se reconocen como el producto exacto al comparar el recorte con la foto del catálogo
-    (DINOv3), con coseno medio 0,65; con fotos reales de IKEA, ese reconocimiento da 0,444 y
+  - 3 de 4 se reconocen como el producto exacto al comparar el recorte con la foto del catálogo
+    (DINOv3), con coseno medio 0,68; con fotos reales de IKEA, ese reconocimiento da 0,444 y
     coseno 0,41;
   - SSIM fuera de los muebles 0,975, y la cámara no se movió (SIFT).
 - **RAGAS sobre la respuesta en texto:** faithfulness del porqué 0,89 a 0,96 (lo que no se
