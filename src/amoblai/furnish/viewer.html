@@ -153,10 +153,10 @@ function runPage(r) {
   if (r.search.length) {
     const blocks = r.search.map((s, i) => `<div class="piece"><p><b>${i + 1}. ${e(s.piece)}</b></p><div class="cands">${s.candidates.map(c => `
       <div class="cand ${c.chosen ? "chosen" : ""}">${c.photo ? `<a href="${e(c.photo)}" target="_blank"><img loading="lazy" src="${e(c.photo)}"></a>` : ""}
-      ${c.chosen ? `<div class="tag">✓ elegido</div>` : c.rank ? `<div class="s">puesto ${c.rank} para Claude</div>` : ""}
+      ${c.chosen ? `<div class="tag">✓ elegido${c.quantity > 1 ? " × " + c.quantity : ""}</div>` : c.rank ? `<div class="s">puesto ${c.rank} para Claude</div>` : ""}
       <div class="id">${e(c.id)} · ${e(c.name)}</div><div>${e(c.type)}</div><div class="s">${e(c.kind)} · ${e(c.size)}</div>
       <details><summary>descripción</summary><pre>${e(c.description)}</pre></details></div>`).join("")}</div>
-      ${s.chosen_why ? `<p><b>Por qué:</b> ${e(s.chosen_why)}</p>` : ""}</div>`).join("");
+      ${s.left_out ? `<p class="bad">Se dejó afuera (cantidad 0).</p>` : ""}${s.chosen_why ? `<p><b>Por qué:</b> ${e(s.chosen_why)}</p>` : ""}</div>`).join("");
     const ch = r.steps.find(s => s.step === "choose");
     h += msg("tool", "Catálogo · retrieve (filtros + coseno) y Claude · choose (elige la combinación mirando las fotos)",
       `${blocks}${r.choice_why ? `<div class="note"><b>La combinación:</b> ${e(r.choice_why)}</div>` : ""}${ch && ch.tokens ? `<p><small>choose: ${e(ch.tokens)}</small></p>` : ""}`);

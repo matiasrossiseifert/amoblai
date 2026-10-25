@@ -95,11 +95,13 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
             it = json.loads(line)
             items[it["id"]] = it
         for f, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
+            if not c.get("quantity", 1):
+                continue  # el LLM la dejó afuera
             it = items.get(c["id"], {})
             shopping.append(
                 [
                     f["piece"],
-                    c["id"],
+                    f"{c['id']} x{c.get('quantity', 1)}",
                     it.get("name", ""),
                     it.get("kind", ""),
                     it.get("size_raw") or "—",

@@ -538,6 +538,24 @@ def test_the_choice_is_one_candidate_per_piece_and_is_logged(tmp_path, monkeypat
     monkeypatch.setattr(http, "TRANSPORT", httpx.MockTransport(claude_server(seen, [wrong])))
     with pytest.raises(ProviderError, match="not a candidate"):
         st.choose(cfg, room, "un comedor", found)
+    # how many of each: four chairs, and the table left out (none of its candidates suits)
+    some = {
+        "choices": [
+            {"piece": 1, "id": "p2", "quantity": 4},
+            {"piece": 2, "id": None, "quantity": 0},
+        ]
+    }
+    monkeypatch.setattr(http, "TRANSPORT", httpx.MockTransport(claude_server(seen, [some])))
+    rec = st.choose(cfg, room, "un comedor para cuatro", found)
+    assert [c["quantity"] for c in rec["answer"]["choices"]] == [4, 0]
+    retrieve = {
+        "pieces": [
+            {"piece": s["piece"], "spec": s, "candidates": [vars(h) for h in hs]} for s, hs in found
+        ]
+    }
+    picks = st.picks(retrieve, rec)
+    assert [(p["quantity"], h.id) for p, h in picks] == [(4, "p2")]
+    assert st.units(picks[0][0]) == ", 4 units" and st.units({"piece": "x"}) == ""
 
 
 def test_the_whole_flow_resumes_and_waits_for_the_manual_image(tmp_path, monkeypatch):

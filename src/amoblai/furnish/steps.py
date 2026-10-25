@@ -225,7 +225,8 @@ def choose(
     found: list[tuple[dict, list[Hit]]],
     views: Sequence[Path] = (),
 ) -> dict:
-    """The room photo, then every candidate's photo, piece by piece; one product per piece."""
+    """The room photo, then every candidate's photo, piece by piece; one product per piece, and
+    how many units of it (`quantity`, 1 if the prompt doesn't ask: 0 leaves the piece out)."""
     tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)
     lines, content, n = [], [image_block(room_photo, cfg.furnish.photo_max_side)], 1
     for k, (piece, hits) in enumerate(found, 1):
@@ -244,22 +245,45 @@ def choose(
     if len(choices) != len(found):
         raise ProviderError(f"furnish.choose: {len(choices)} choices for {len(found)} pieces")
     for (piece, hits), c in zip(found, choices, strict=True):
-        if c.get("id") not in {h.id for h in hits}:
+        c["quantity"] = quantity(c)
+        if c["quantity"] and c.get("id") not in {h.id for h in hits}:
             raise ProviderError(
                 f"furnish.choose: {c.get('id')!r} is not a candidate for {piece['piece']!r}"
             )
     return with_views(answer_record(a, tmpl, data), views)
 
 
-def chosen(found: dict, choice: dict) -> list[Hit]:
-    """The chosen product of each piece, from the retrieve and choose files."""
+def quantity(choice: dict) -> int:
+    """How many units of a choice go in the room (1 when the answer doesn't say)."""
+    try:
+        return max(0, int(choice.get("quantity", 1)))
+    except (TypeError, ValueError):
+        return 1
+
+
+def picks(found: dict, choice: dict) -> list[tuple[dict, Hit]]:
+    """Each piece that goes in the room (quantity > 0) with its chosen product, from the
+    retrieve and choose files; the piece carries its `quantity`."""
     out = []
     for p, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
-        out.append(next(Hit(**h) for h in p["candidates"] if h["id"] == c["id"]))
+        if quantity(c):
+            hit = next(Hit(**h) for h in p["candidates"] if h["id"] == c["id"])
+            out.append(({**p["spec"], "quantity": quantity(c)}, hit))
     return out
 
 
+def chosen(found: dict, choice: dict) -> list[Hit]:
+    """The chosen product of each piece that goes in the room, in order."""
+    return [h for _, h in picks(found, choice)]
+
+
 # scene and generate ----------------------------------------------------------------------------
+
+
+def units(piece: dict) -> str:
+    """What tells the image model a piece goes more than once (", 2 units"), or nothing."""
+    q = piece.get("quantity", 1)
+    return f", {q} units" if q > 1 else ""
 
 
 def scene(
@@ -275,12 +299,14 @@ def scene(
     tmpl = load_prompt(cfg.furnish.scene_prompt, cfg.root)
     if not cfg.furnish.scene_llm:  # the template alone: the image model places the products
         products = "\n".join(
-            f"image {i + 2}: {type_line(h)}, {size_text(h)}" for i, (_, h) in enumerate(picks)
+            f"image {i + 2}: {type_line(h)}, {size_text(h)}{units(p)}"
+            for i, (p, h) in enumerate(picks)
         )
         text = tmpl.fill(request=request, products=products, last=len(picks) + 1)
         return {"answer": {"prompt": text}, "model": None, "cost_usd": 0.0, "prompt": tmpl.version}
     lines = [
-        f"image {i + 2}. {h.id}: {type_line(h)}, {size_text(h)}; it is the piece: {p['piece']}"
+        f"image {i + 2}. {h.id}: {type_line(h)}, {size_text(h)}{units(p)}; it is the piece: "
+        f"{p['piece']}"
         for i, (p, h) in enumerate(picks)
     ]
     content = [image_block(room_photo, cfg.furnish.photo_max_side)]

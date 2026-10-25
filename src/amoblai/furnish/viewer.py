@@ -90,12 +90,14 @@ def run_data(run: Path, root: Path, out_dir: Path) -> dict[str, Any] | None:
                         "type": _type_line(h.get("description", "")),
                         "description": h.get("description", ""),
                         "photo": rel((h.get("photos") or [None])[0]),
-                        "chosen": h["id"] == pick.get("id"),
+                        "chosen": h["id"] == pick.get("id") and pick.get("quantity", 1) > 0,
+                        "quantity": pick.get("quantity", 1) if h["id"] == pick.get("id") else None,
                         "rank": ranking.index(h["id"]) + 1 if h["id"] in ranking else None,
                     }
                     for h in piece.get("candidates", [])
                 ],
                 "chosen_why": pick.get("why"),
+                "left_out": pick.get("quantity", 1) == 0,
             }
         )
     steps, step_files = [], []
