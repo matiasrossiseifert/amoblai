@@ -129,3 +129,16 @@ def test_graded_relevance_scores_the_top3_and_checks_the_judge(tmp_path):
     assert todas["n"] == 2 and todas["util1"] == 0.5 and todas["util3"] == 1.0
     assert r["consultas"]["sin anotado"]["exacto3"] == 0.0
     assert r["acuerdo_con_gt"] == {"anotados_en_top3": 1, "anotado_con_2": 1.0, "otros_con_2": 0.0}
+
+
+def test_an_armchair_takes_the_detection_that_looks_like_it_not_the_top_score():
+    chair = Product(
+        Path("."), {"id": "c", "category": "chair", "kind": "armchair", "category_tp": "armchair"}
+    )
+    dets = [
+        Det((0, 0, 30, 30), "stool", "bar stool", 0.6),  # unas mesitas nido
+        Det((40, 0, 90, 60), "chair", "chair", 0.4),  # el sillón
+    ]
+    looks = {0: 0.1, 1: 0.9}
+    got = assign([chair], dets, lambda p, d: looks[dets.index(d)])
+    assert got == {"c": 1}

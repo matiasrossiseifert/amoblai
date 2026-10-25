@@ -356,8 +356,9 @@ def rank_among(vec: np.ndarray, relevant: set[str], candidates: dict[str, np.nda
 
 def assign(products: list[Product], dets: list[Det], score: Callable[[Product, Det], float]):
     """Cada producto con una detección de su categoría (o, si no hay, de su familia), sin
-    repetir. Con un solo producto de una categoría, la detección de más score; con varios, la
-    asignación que maximiza el parecido (Hungarian)."""
+    repetir: entre las detecciones candidatas (las de más score, hasta el doble de productos),
+    la asignación que maximiza el parecido con la foto de cada producto (Hungarian). Por score
+    solo, un sillón se queda con la detección de unas mesitas que el detector vio como banqueta."""
     from scipy.optimize import linear_sum_assignment
 
     out: dict[str, int] = {}
@@ -384,12 +385,9 @@ def assign(products: list[Product], dets: list[Det], score: Callable[[Product, D
             cands = sorted(cands, key=lambda i: -dets[i].score)[: max(len(ps), 1) * 2]
             if not cands:
                 continue
-            if len(ps) == 1:
-                pick = {ps[0].id: cands[0]}
-            else:
-                cost = np.array([[-score(p, dets[i]) for i in cands] for p in ps])
-                rows, cols = linear_sum_assignment(cost)
-                pick = {ps[r].id: cands[c] for r, c in zip(rows, cols, strict=True)}
+            cost = np.array([[-score(p, dets[i]) for i in cands] for p in ps])
+            rows, cols = linear_sum_assignment(cost)
+            pick = {ps[r].id: cands[c] for r, c in zip(rows, cols, strict=True)}
             out.update(pick)
             used.update(pick.values())
     return out
@@ -541,8 +539,14 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
         )
         sheet.append((Image.open(p.photos()[0]), cropped, text))
     assigned = set(picked.values())
-    extras = [
-        {"detector": d.label, "score": round(d.score, 3), "box": [round(v) for v in d.box]}
+    listed = {p.info["category_tp"] for p in products}
+    unassigned = [
+        {
+            "detector": d.label,
+            "categoria": d.category,
+            "score": round(d.score, 3),
+            "box": [round(v) for v in d.box],
+        }
         for i, d in enumerate(after_dets)
         if i not in assigned
         # una parte de un producto de la lista (los almohadones del sofá) no es inventada
@@ -550,6 +554,10 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
         # ni lo que ya estaba en la foto original (un radiador, un placard)
         and not any(iou(_scaled(d.box, after, before), b.box) > 0.3 for b in before_dets)
     ]
+    # Otra de una categoría de la lista puede ser el par de un producto (dos paños de cortina,
+    # un juego de sillas): va aparte de las inventadas.
+    extras = [e for e in unassigned if e["categoria"] not in listed]
+    repeated = [e for e in unassigned if e["categoria"] in listed]
     found = [r for r in per_product if r["detectado"]]
     texts = [request, *CONTRAST]
     sims = models.align(texts, [after, before])
@@ -578,8 +586,9 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
             else None,
         },
         "inventadas": extras,
+        "repetidas": repeated,
         "ambiente": preservation(
-            before, after, [after_dets[i].box for i in assigned] + [e["box"] for e in extras]
+            before, after, [after_dets[i].box for i in assigned] + [e["box"] for e in unassigned]
         ),
         "pedido_imagen": {
             "pedido": request,
