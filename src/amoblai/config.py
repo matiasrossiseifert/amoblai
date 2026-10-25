@@ -62,6 +62,9 @@ class FurnishConfig(_Cfg):
     query_prompt: str = "search_query_v3.md"
     choose_prompt: str = "choose_combination_v1.md"
     scene_prompt: str = "scene_prompt_v1.md"
+    # False: the scene prompt is the template filled in (scene_prompt_libre_*: the image model
+    # arranges the products itself), with no LLM call.
+    scene_llm: bool = True
     # The image model that puts the chosen products in the room (generate.py).
     generator: str = "manual"
     generators: dict[str, dict[str, Any]] = Field(

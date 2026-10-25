@@ -15,6 +15,8 @@
 /datos/resultados/amoblar/**/2_candidates*.jpg
 # Los recortes de la evaluación de la imagen (llevan la foto del catálogo al lado)
 /datos/resultados/amoblar/**/6_recortes*.jpg
+# La página de las corridas (amoblai corridas): apunta a fotos que git no tiene
+/datos/resultados/amoblar/index.html
 
 # Documentación, consigna y material de la materia: solo local
 /docs/

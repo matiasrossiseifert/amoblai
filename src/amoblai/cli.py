@@ -3,6 +3,7 @@
     data download   el dataset IKEA                catalogo   el catálogo que se indexa
     indice          indexing pipeline (ChromaDB)   buscar     probar la búsqueda
     amoblar         el flujo: plan → retrieve → choose → scene → generate
+    corridas        la página para mirar cada corrida (datos/resultados/amoblar/index.html)
     evaluar         una ablación del retrieval     reporte    tablas y gráficos
     evaluar-imagen  la imagen generada (fidelidad, ambiente, pedido)
     evaluar-respuesta  RAGAS sobre el porqué de la lista (faithfulness, answer relevance)
@@ -167,6 +168,15 @@ def amoblar(
     out = Path(cfg.runs_dir) / (nombre or foto.stem)
     run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
     console.print(f"Corrida: {out}")
+
+
+@app.command()
+def corridas() -> None:
+    """Arma datos/resultados/amoblar/index.html: cada corrida paso a paso (pedido, plan,
+    candidatos, elección, prompt de la imagen, imagen, métricas y costo). Se abre del disco."""
+    from amoblai.furnish.viewer import build
+
+    console.print(f"file://{build(paths.RUNS).resolve()}")
 
 
 @app.command()

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<style>
+:root {
+  --bg: #f6f5f2; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e3e1db;
+  --user: #2f6fde; --user-ink: #ffffff; --claude: #fbf3ea; --claude-line: #ecd8c2;
+  --tool: #eef3f1; --tool-line: #cfe0d9; --ok: #1f8a4c; --bad: #c0392b; --accent: #c2611f;
+  --chip: #f0eee8; --pick: #1f8a4c;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161615; --panel: #1f1f1d; --ink: #ecebe6; --muted: #a09e97; --line: #34332f;
+    --user: #3d7bea; --claude: #2a241d; --claude-line: #4a3b2b; --tool: #1d2725;
+    --tool-line: #2f403b; --ok: #4cc27f; --bad: #ff6b5b; --accent: #e38a4a; --chip: #2b2a27;
+    --pick: #4cc27f;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.app { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
+aside { background: var(--panel); border-right: 1px solid var(--line); padding: 16px 12px;
+  position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+aside h1 { font-size: 16px; margin: 0 4px 2px; }
+aside .built { color: var(--muted); font-size: 12px; margin: 0 4px 14px; }
+aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+  margin: 18px 4px 6px; }
+.item { display: block; padding: 8px 10px; border-radius: 8px; color: inherit; text-decoration: none;
+  margin-bottom: 2px; }
+.item:hover { background: var(--chip); }
+.item.active { background: var(--claude); outline: 1px solid var(--claude-line); }
+.item .t { font-weight: 600; font-size: 14px; }
+.item .s { color: var(--muted); font-size: 12px; }
+.item.start .t { color: var(--accent); }
+main { padding: 24px 28px 80px; max-width: 1060px; width: 100%; }
+.head h2 { margin: 0 0 2px; font-size: 20px; }
+.head .meta { color: var(--muted); font-size: 13px; }
+.note { margin: 10px 0 0; padding: 10px 12px; background: var(--panel); border-left: 3px solid var(--accent);
+  border-radius: 6px; font-size: 14px; }
+.flow { display: flex; flex-wrap: wrap; align-items: stretch; gap: 6px; margin: 16px 0 22px;
+  padding: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.flow .st { background: var(--chip); border-radius: 8px; padding: 6px 9px; font-size: 13px; font-weight: 600;
+  display: flex; flex-direction: column; justify-content: center; }
+.flow .st small { font-weight: 400; color: var(--muted); font-size: 11.5px; }
+.flow .ar { color: var(--muted); align-self: center; }
+.msg { display: flex; margin: 14px 0; }
+.msg.user { justify-content: flex-end; }
+.bubble { max-width: 100%; width: 100%; border-radius: 14px; padding: 12px 14px; border: 1px solid var(--line);
+  background: var(--panel); }
+.user .bubble { background: var(--user); color: var(--user-ink); border: 0; max-width: 72%; width: auto; }
+.claude .bubble { background: var(--claude); border-color: var(--claude-line); }
+.tool .bubble { background: var(--tool); border-color: var(--tool-line); }
+.who { font-size: 12px; font-weight: 700; color: var(--muted); margin-bottom: 4px; }
+.user .who { color: rgba(255,255,255,.85); }
+.bubble p { margin: 4px 0; }
+figure { margin: 8px 0 0; }
+figure img { max-width: 100%; border-radius: 8px; display: block; border: 1px solid var(--line); }
+figcaption { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.user figcaption { color: rgba(255,255,255,.85); }
+.user figure img { max-height: 360px; width: auto; }
+.imgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.chip { display: inline-block; background: var(--chip); border-radius: 999px; padding: 1px 8px;
+  font-size: 12px; margin-right: 4px; color: var(--ink); }
+.ok { color: var(--ok); font-weight: 700; } .bad { color: var(--bad); font-weight: 700; }
+details { margin-top: 6px; } summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+pre { white-space: pre-wrap; font-size: 12.5px; background: var(--panel); padding: 8px; border-radius: 6px;
+  border: 1px solid var(--line); margin: 6px 0; }
+.piece { padding: 8px 0; border-top: 1px dashed var(--claude-line); }
+.piece:first-of-type { border-top: 0; }
+.cands { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; margin: 6px 0 4px; }
+.cand { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 8px; font-size: 12.5px; }
+.cand.chosen { outline: 2px solid var(--pick); border-color: var(--pick); }
+.cand img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; border-radius: 6px;
+  border: 1px solid var(--line); }
+.cand .id { font-weight: 700; }
+.cand .tag { color: var(--pick); font-weight: 700; font-size: 12px; }
+.cand .s { color: var(--muted); }
+.final img { max-height: 720px; width: auto; max-width: 100%; }
+table { border-collapse: collapse; font-size: 13px; margin: 6px 0; width: 100%; }
+th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.cost { color: var(--muted); font-size: 13px; margin-top: 26px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 12px 0; }
+.card h3 { margin: 0 0 6px; font-size: 15px; }
+.thumb { width: 72px; height: 54px; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; }
+  aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  main { padding: 16px; }
+  .user .bubble { max-width: 92%; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside id="side"></aside>
+  <main id="main"></main>
+</div>
+<script>
+const DATA = __DATA__;
+const e = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+const fig = (src, cap) => src ? `<figure><a href="${e(src)}" target="_blank"><img loading="lazy" src="${e(src)}"></a>${cap ? `<figcaption>${e(cap)}</figcaption>` : ""}</figure>` : "";
+const msg = (cls, who, body) => `<div class="msg ${cls}"><div class="bubble"><div class="who">${who}</div>${body}</div></div>`;
+const usd = x => "US$" + (x || 0).toFixed(3);
+const chip = x => `<span class="chip">${e(x)}</span>`;
+const num = x => x == null ? "—" : (typeof x === "number" ? x.toFixed(3) : e(x));
+
+function side(active) {
+  const runs = DATA.runs.map(r => `<a class="item ${active === r.id ? "active" : ""}" href="#${encodeURIComponent(r.id)}">
+    <div class="t">${e(r.id)}</div>
+    <div class="s">${e((r.request || "").slice(0, 70))}${(r.request || "").length > 70 ? "…" : ""}</div>
+    <div class="s">${e(r.when)} · ${r.search.length} piezas · ${r.image && r.image.final ? "con imagen" : "sin imagen"} · ${usd(r.cost)}</div></a>`).join("");
+  document.getElementById("side").innerHTML = `<h1>Corridas de amoblai</h1>
+    <div class="built">armado ${e(DATA.built)} · <code>uv run amoblai corridas</code></div>
+    <a class="item start ${active === "start" ? "active" : ""}" href="#start"><div class="t">Todas las corridas</div>
+    <div class="s">resumen y comparación</div></a>
+    <h2>Corridas (más nuevas arriba)</h2>${runs}`;
+}
+
+function flow(r) {
+  const st = r.steps.map(s => {
+    let tag = s.prompt || "";
+    if (s.step === "scene" && r.scene && !r.scene.llm) tag += " · sin LLM";
+    const paid = s.reused_from ? `reusado de ${s.reused_from}` : usd(s.cost) + (s.latency ? " · " + s.latency.toFixed(0) + " s" : "");
+    return `<div class="st">${e(s.step)}<small>${e(tag)}</small><small>${e(paid)}</small></div>`;
+  });
+  st.splice(1, 0, `<div class="st">retrieve<small>filtros + coseno (ChromaDB)</small><small>gratis</small></div>`);
+  return `<div class="flow">${st.join('<div class="ar">→</div>')}</div>`;
+}
+
+function limits(l) {
+  const n = {max_width_cm: "ancho", max_depth_cm: "prof.", max_height_cm: "alto"};
+  return Object.entries(l || {}).filter(([, v]) => v).map(([k, v]) => `${n[k]} ≤ ${v} cm`).join(", ");
+}
+
+function runPage(r) {
+  let h = `<div class="head"><h2>${e(r.id)}</h2><div class="meta">${e(r.when)} · carpeta <code>datos/resultados/amoblar/${e(r.id)}</code> · ${usd(r.cost)} · ${r.latency} s</div>
+    ${r.same_choice.length ? `<div class="note">Misma elección de productos que: ${r.same_choice.map(x => `<a href="#${encodeURIComponent(x)}">${e(x)}</a>`).join(", ")} (reusa plan y choose; cambia la escena o la imagen).</div>` : ""}</div>${flow(r)}`;
+  h += msg("user", "Pedido", `<p>${e(r.request)}</p><div class="imgs">${fig(r.photo, "la foto que se amobla")}${r.views.map(v => fig(v, "otra vista (solo para entender el cuarto)")).join("")}</div>`);
+  const plan = r.steps.find(s => s.step === "plan");
+  if (r.pieces.length) {
+    const ps = r.pieces.map((p, i) => `<div class="piece"><p><b>${i + 1}. ${e(p.piece)}</b></p>
+      <p>${p.kinds.map(chip).join("")} ${e(limits(p.limits))}</p>${p.why ? `<p>${e(p.why)}</p>` : ""}
+      <details><summary>la búsqueda que escribió (las ocho líneas del catálogo)</summary><pre>${e(p.query)}</pre></details></div>`).join("");
+    h += msg("claude", `Claude · plan: lee el cuarto y decide qué buscar ${plan ? chip(plan.prompt) : ""}`,
+      `${r.room ? `<p><i>${e(r.room)}</i></p>` : ""}${ps}${plan && plan.tokens ? `<p><small>${e(plan.tokens)}</small></p>` : ""}`);
+  }
+  if (r.search.length) {
+    const blocks = r.search.map((s, i) => `<div class="piece"><p><b>${i + 1}. ${e(s.piece)}</b></p><div class="cands">${s.candidates.map(c => `
+      <div class="cand ${c.chosen ? "chosen" : ""}">${c.photo ? `<a href="${e(c.photo)}" target="_blank"><img loading="lazy" src="${e(c.photo)}"></a>` : ""}
+      ${c.chosen ? `<div class="tag">✓ elegido</div>` : c.rank ? `<div class="s">puesto ${c.rank} para Claude</div>` : ""}
+      <div class="id">${e(c.id)} · ${e(c.name)}</div><div>${e(c.type)}</div><div class="s">${e(c.kind)} · ${e(c.size)}</div>
+      <details><summary>descripción</summary><pre>${e(c.description)}</pre></details></div>`).join("")}</div>
+      ${s.chosen_why ? `<p><b>Por qué:</b> ${e(s.chosen_why)}</p>` : ""}</div>`).join("");
+    const ch = r.steps.find(s => s.step === "choose");
+    h += msg("tool", "Catálogo · retrieve (filtros + coseno) y Claude · choose (elige la combinación mirando las fotos)",
+      `${blocks}${r.choice_why ? `<div class="note"><b>La combinación:</b> ${e(r.choice_why)}</div>` : ""}${ch && ch.tokens ? `<p><small>choose: ${e(ch.tokens)}</small></p>` : ""}`);
+  }
+  if (r.scene) {
+    const who = r.scene.llm ? `Claude · scene: escribe el prompt de la imagen ${chip(r.scene.prompt_version)}` : `Plantilla · scene sin LLM ${chip(r.scene.prompt_version)}`;
+    const pl = r.scene.placements.length ? `<table><tr><th>producto</th><th>dónde</th></tr>${r.scene.placements.map(p => `<tr><td>${e(p.id)}</td><td>${e(p.where)}</td></tr>`).join("")}</table>` : "";
+    h += msg("claude", who, `${pl}<details ${r.scene.llm ? "" : "open"}><summary>el prompt para el modelo de imagen</summary><pre>${e(r.scene.text)}</pre></details>`);
+  }
+  if (r.image) {
+    const body = r.image.final ? `<div class="final">${fig(r.image.final, "la imagen final")}</div>` : `<p>${r.image.pending ? "Pendiente: imagen a mano (carpeta manual/)." : "Sin imagen."}</p>`;
+    h += msg("tool", `Modelo de imagen · ${e(r.image.generator || "")} ${r.image.model ? chip(r.image.model) : ""}`,
+      `${body}${r.extras.length ? `<div class="imgs">${r.extras.map(x => fig(x, x.split("/").pop())).join("")}</div>` : ""}`);
+  }
+  const mi = r.metrics_image;
+  if (mi) {
+    const f = mi.fidelidad, a = mi.ambiente, q = mi.pedido_imagen;
+    const rows = mi.productos.map(p => `<tr><td>${e(p.id)}</td><td>${e(p.kind)}</td><td>${p.detectado ? e(p.detector) : '<span class="bad">no se detectó</span>'}</td>
+      <td class="num">${p.puesto ? (p.puesto === 1 ? `<span class="ok">1</span>` : p.puesto) + " / " + p.entre : "—"}</td><td class="num">${num(p.coseno)}</td></tr>`).join("");
+    h += msg("tool", "Métricas de la imagen · evaluar-imagen (gratis, local)", `
+      <p>Fidelidad: ${f.detectados}/${f.productos} productos detectados, ${(f["identificados@1"] * 100).toFixed(0)}% identificados como el producto exacto, coseno medio ${num(f.coseno_medio)}
+      (la vara con fotos reales de IKEA: 44% y 0,41).</p>
+      <table><tr><th>producto</th><th>kind</th><th>lo detectó como</th><th class="num">puesto entre los de su tipo</th><th class="num">coseno con su foto</th></tr>${rows}</table>
+      <p>Inventadas: ${mi.inventadas.length ? mi.inventadas.map(x => chip(x.detector)).join("") : "ninguna"} · repetidas: ${(mi.repetidas || []).length ? mi.repetidas.map(x => chip(x.detector)).join("") : "ninguna"}</p>
+      <p>Ambiente: SSIM fuera de los muebles ${num(a.ssim_fuera_de_los_muebles)} · puntos SIFT reencontrados ${num(a.sift_reencontrados)} · desplazamiento mediano ${num(a.sift_desplazamiento_mediano)} (0 = la cámara no se movió)</p>
+      <p>Pedido ↔ imagen (SigLIP 2): ${q.delta >= 0 ? "+" : ""}${q.delta.toFixed(3)} sobre la foto vacía · el pedido queda ${q.puesto_entre_contrastes}.º de ${q.contrastes + 1}</p>
+      ${r.crops ? `<details><summary>cada foto del catálogo al lado de su recorte</summary>${fig(r.crops)}</details>` : ""}`);
+  }
+  const ma = r.metrics_answer;
+  if (ma) {
+    const fi = ma.fidelidad || {}, rel = ma.relevancia || {};
+    h += msg("tool", "RAGAS sobre el porqué · evaluar-respuesta (jueces: subagentes)", `
+      <p>Faithfulness: ${num(fi.faithfulness)} (${fi.afirmaciones || 0} afirmaciones)${(fi.no_sostenidas || []).length ? ` · no se sostienen: ${fi.no_sostenidas.map(x => `<i>${e(x)}</i>`).join("; ")}` : ""}</p>
+      <p>Answer relevance: ${num(rel.answer_relevance)} (vara ${num(rel.vara_contrastes)})</p>
+      ${(rel.pedidos_generados || []).length ? `<details><summary>los pedidos que el juez infirió sin ver el original</summary><ul>${rel.pedidos_generados.map(x => `<li>${e(x)}</li>`).join("")}</ul></details>` : ""}`);
+  }
+  const rows = r.steps.map(s => `<tr><td>${e(s.step)}</td><td>${e(s.model || "—")}</td><td>${e(s.tokens || "")}</td><td class="num">${s.reused_from ? `reusado de <a href="#${encodeURIComponent(s.reused_from)}">${e(s.reused_from)}</a>` : usd(s.cost)}</td><td class="num">${s.latency && !s.reused_from ? s.latency.toFixed(1) + " s" : "—"}</td></tr>`).join("");
+  h += `<div class="card"><h3>Costo y latencia</h3><table><tr><th>paso</th><th>modelo</th><th>tokens</th><th class="num">costo</th><th class="num">latencia</th></tr>${rows}
+    <tr><td><b>total</b></td><td></td><td></td><td class="num"><b>${usd(r.cost)}</b></td><td class="num"><b>${r.latency} s</b></td></tr></table></div>`;
+  return h;
+}
+
+function start() {
+  const rows = DATA.runs.map(r => {
+    const f = r.metrics_image && r.metrics_image.fidelidad;
+    return `<tr><td>${r.image && r.image.final ? `<a href="#${encodeURIComponent(r.id)}"><img class="thumb" src="${e(r.image.final)}"></a>` : (r.photo ? `<img class="thumb" src="${e(r.photo)}">` : "")}</td>
+      <td><a href="#${encodeURIComponent(r.id)}"><b>${e(r.id)}</b></a><br><small>${e(r.when)}</small></td>
+      <td><small>${e(r.request)}</small></td><td class="num">${r.search.length}</td>
+      <td><small>${e(r.scene ? r.scene.prompt_version + (r.scene.llm ? "" : " (sin LLM)") : "—")}</small></td>
+      <td class="num">${f ? (f["identificados@1"] * 100).toFixed(0) + "%" : "—"}</td><td class="num">${usd(r.cost)}</td></tr>`;
+  }).join("");
+  return `<div class="head"><h2>Todas las corridas</h2><div class="meta">Cada corrida se lee como un chat: el pedido, lo que decidió cada paso y el resultado. Arriba de cada una, el pipeline que usó y lo que costó cada paso.</div></div>
+    <div class="card"><table><tr><th></th><th>corrida</th><th>pedido</th><th class="num">piezas</th><th>escena</th><th class="num">identificados</th><th class="num">costo</th></tr>${rows}</table></div>`;
+}
+
+function route() {
+  const id = decodeURIComponent(location.hash.slice(1)) || "start";
+  const r = DATA.runs.find(x => x.id === id);
+  document.getElementById("main").innerHTML = r ? runPage(r) : start();
+  side(r ? id : "start");
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+route();
+</script>
+</body>
+</html>
