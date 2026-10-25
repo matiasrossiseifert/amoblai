@@ -142,3 +142,34 @@ def test_an_armchair_takes_the_detection_that_looks_like_it_not_the_top_score():
     looks = {0: 0.1, 1: 0.9}
     got = assign([chair], dets, lambda p, d: looks[dets.index(d)])
     assert got == {"c": 1}
+
+
+def test_the_runs_page_reads_each_run_and_marks_reused_steps(tmp_path):
+    import json
+
+    from amoblai.furnish.viewer import build
+
+    runs = tmp_path / "amoblar"
+    plan = {
+        "answer": {"room": "un cuarto", "pieces": [{"piece": "un sofá", "kinds": ["sofa"]}]},
+        "cost_usd": 0.05,
+        "prompt": "search_query_v3",
+    }
+    cands = {"pieces": [{"piece": "un sofá", "candidates": [{"id": "1", "name": "A"}]}]}
+    choice = {"answer": {"choices": [{"piece": 1, "id": "1", "why": "va"}]}, "cost_usd": 0.04}
+    for name in ("base", "base-libre"):
+        d = runs / name
+        d.mkdir(parents=True)
+        (d / "request.json").write_text(json.dumps({"request": "un living"}))
+        for f, data in (
+            ("1_searches.json", plan),
+            ("2_candidates.json", cands),
+            ("3_choice.json", choice),
+        ):
+            (d / f).write_text(json.dumps(data))
+    page = build(runs, root=tmp_path).read_text()
+    data = json.loads(page[page.index("const DATA = ") + 13 : page.index(";\nconst e =")])
+    by = {r["id"]: r for r in data["runs"]}
+    assert by["base"]["cost"] == 0.09 and by["base-libre"]["cost"] == 0.0
+    assert by["base-libre"]["steps"][0]["reused_from"] == "base"
+    assert by["base"]["search"][0]["candidates"][0]["chosen"]
