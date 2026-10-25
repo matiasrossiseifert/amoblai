@@ -54,12 +54,12 @@ class FurnishConfig(_Cfg):
     # The LLM that reads the photos and writes (llm.py): kind anthropic | openai_chat, model,
     # its prices (`models`), effort...
     llm: dict[str, Any] = Field(default_factory=dict)
-    max_pieces: int = 6  # pieces of the plan carried on to the search (most important first)
+    max_pieces: int | None = None  # pieces of the plan carried on (most important first); None: all
     candidates: int = 3  # products the search brings for each piece
     # The plan's most-it-can-measure comes from a photo: the search allows this much more.
     size_slack: float = 0.15
     photo_max_side: int = 1024  # photos sent to the LLM
-    query_prompt: str = "search_query_v3.md"
+    query_prompt: str = "search_query_v4.md"
     choose_prompt: str = "choose_combination_v1.md"
     scene_prompt: str = "scene_prompt_v1.md"
     # False: the scene prompt is the template filled in (scene_prompt_libre_*: the image model
