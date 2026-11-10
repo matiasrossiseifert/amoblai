@@ -72,6 +72,28 @@ def data_download(force: Annotated[bool, typer.Option(help="Volver a descargar."
     console.print(f"Dataset en {paths.RAW}")
 
 
+@data_app.command("ambientes")
+def data_ambientes() -> None:
+    """Baja las fotos públicas de ambientes vacíos (datos/ambientes_vacios/publicas.yaml: de
+    dónde es cada una, su autor y su licencia). No se commitean."""
+    import httpx
+    import yaml
+
+    fotos = yaml.safe_load((paths.EMPTY_ROOMS / "publicas.yaml").read_text())["fotos"]
+    headers = {"User-Agent": "amoblai-tp/0.1 (university project)"}
+    n = 0
+    for f in fotos:
+        dst = Path(f["archivo"])
+        if dst.exists():
+            continue
+        r = httpx.get(f["url_descarga"], headers=headers, follow_redirects=True, timeout=120)
+        r.raise_for_status()
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        dst.write_bytes(r.content)
+        n += 1
+    console.print(f"{n} fotos bajadas ({len(fotos)} en publicas.yaml)")
+
+
 @app.command()
 def catalogo(
     lotes: Annotated[
