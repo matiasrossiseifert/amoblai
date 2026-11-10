@@ -368,11 +368,8 @@ def assign(products: list[Product], dets: list[Det], score: Callable[[Product, D
         for p in products:
             if p.id in out:
                 continue
-            key = (
-                p.info["category_tp"]
-                if level == "category"
-                else FAMILY.get(p.info["category_tp"], p.info["category_tp"])
-            )
+            tp = p.info.get("category_tp", p.category)  # ABO no la trae: es la misma categoría
+            key = tp if level == "category" else FAMILY.get(tp, tp)
             groups.setdefault(key, []).append(p)
         for key, ps in groups.items():
             cands = [
@@ -460,7 +457,7 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
         row: dict[str, Any] = {
             "id": p.id,
             "kind": p.kind,
-            "categoria": p.info["category_tp"],
+            "categoria": p.info.get("category_tp", p.category),
             "detectado": p.id in picked,
         }
         cropped = None
@@ -487,7 +484,7 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
         )
         sheet.append((Image.open(p.photos()[0]), cropped, text))
     assigned = set(picked.values())
-    listed = {p.info["category_tp"] for p in products}
+    listed = {p.info.get("category_tp", p.category) for p in products}
     unassigned = [
         {
             "detector": d.label,

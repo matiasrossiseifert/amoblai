@@ -13,6 +13,9 @@
 # hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
 /datos/resultados/amoblar/*/manual/[0-9]_product_*
 /datos/resultados/amoblar/**/2_candidates*.jpg
+/datos/resultados/punta_a_punta/**/2_candidates*.jpg
+# La copia de la foto del ambiente en cada variante (la original está en datos/ambientes_vacios/)
+/datos/resultados/punta_a_punta/**/room.jpg
 # Los recortes de la evaluación de la imagen (llevan la foto del catálogo al lado)
 /datos/resultados/amoblar/**/6_recortes*.jpg
 # La página de las corridas (amoblai corridas): apunta a fotos que git no tiene
@@ -47,3 +50,6 @@ flagged/
 
 # Temporales de escritura atómica
 *.tmp
+
+# Fotos públicas de ambientes vacíos: se bajan con `amoblai data ambientes` (publicas.yaml)
+/datos/ambientes_vacios/publicas/

@@ -5,14 +5,16 @@ Language Models (ITBA, 2026).
 
 **Entrada:** una foto del ambiente (y, opcional, otra foto del mismo ambiente desde otro ángulo) y
 el pedido en texto libre ("un living nórdico y cálido"). **Salida:** los productos del catálogo
-IKEA que hacen falta (lista de compra) y la foto del ambiente con ellos.
+que hacen falta, con cuántas unidades de cada uno (lista de compra), y la foto del ambiente con
+ellos. El catálogo junta dos: IKEA (Tautkute et al., 819 productos) y Amazon Berkeley Objects
+(683).
 
 ## Cómo funciona
 
 ```mermaid
 flowchart LR
   subgraph IDX["Indexing pipeline (una vez)"]
-    A["Catálogo IKEA<br/>855 productos"] --> B["Descripciones<br/>en 8 líneas"]
+    A["Catálogo IKEA + ABO<br/>819 + 683 productos"] --> B["Descripciones<br/>en 8 líneas"]
     B --> E["Embedding<br/>Qwen3"]
     E --> V[("ChromaDB<br/>HNSW + metadata")]
   end
@@ -41,27 +43,29 @@ flowchart LR
 ## Resultados
 
 Retrieval sobre los 65 livings y comedores de IKEA con productos anotados, con el catálogo
-ampliado (855 productos): 552 consultas con respuesta, 199 de muebles (sofás, sillones, sillas,
-mesas, alfombras) y 353 de lo que sumó la ampliación (lámparas, deco, guardado, estanterías...).
-IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md`.
+ampliado y revisado (819 productos: se sacaron 36 con la foto de otro producto o que no son de
+living ni comedor). Hay 549 consultas con respuesta: muebles (sofás, sillones, sillas, mesas,
+alfombras) y lo que sumó la ampliación (lámparas, deco, guardado, estanterías...). IC 95%
+bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md`.
 
 | Configuración | hit@1 | hit@10 | MRR@10 | context precision@10 | context recall@3 |
 |---|---|---|---|---|---|
-| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,076 | 0,317 | 0,143 | 0,142 | 0,204 |
-| + nuestras descripciones de ocho líneas | 0,493 | 0,870 | 0,616 | 0,602 | 0,745 |
-| **+ Qwen3-Embedding, filtro por tipo, ChromaDB** | **0,533** [0,49–0,57] | 0,895 | **0,651** | 0,630 | 0,782 |
-| Azar (con el filtro por tipo) | 0,016 | 0,155 | 0,046 | | |
+| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,077 | 0,312 | 0,142 | 0,141 | 0,205 |
+| + nuestras descripciones de ocho líneas | 0,495 | 0,871 | 0,618 | 0,604 | 0,745 |
+| + Qwen3-Embedding, filtro por tipo, ChromaDB | 0,535 [0,49–0,58] | 0,893 | 0,654 | 0,632 | 0,785 |
+| **+ reranking: Claude Opus 5.5 ordena el top-10 mirando las fotos** | **0,687** | 0,893 | **0,760** | | |
+| Azar (con el filtro por tipo) | 0,017 | 0,161 | | | |
 
 - **Por pasada:** en los muebles del primer alcance, hit@1 0,633 (0,636 con el catálogo de 268:
   587 productos más casi no lo mueven); en lo nuevo, 0,476. Por categoría: sillas 0,84,
-  muebles de guardado 0,73, mesas 0,69, lámparas 0,59, deco 0,35, alfombras 0,31. Deco y
+  muebles de guardado 0,72, mesas 0,69, lámparas 0,59, deco 0,36, alfombras 0,31. Deco y
   alfombras son lo difícil: muchos productos parecidos (53 almohadones, 89 alfombras) y la
   anotación de IKEA no dice cuál de los del ambiente es.
-- **Reranking:** con el catálogo de 268 y las consultas de muebles, Opus 5.5 mirando las fotos
-  del top-10 subió hit@1 de 0,636 a 0,803 y MRR de 0,737 a 0,847 (US$0,020 por consulta). Sobre
-  el catálogo ampliado falta correrlo (`evaluar --estimar`: 367 consultas sin caché).
-- **Query rewriting:** con la consulta en las ocho líneas del catálogo, hit@1 da 0,533. Con solo
-  la línea Type cae a 0,292, y con solo el nombre del kind (sin reescribir) a 0,063.
+- **Reranking:** Opus 5.5 mirando las fotos del top-10 sube hit@1 de 0,535 a 0,687 en el
+  catálogo final (US$0,02 por consulta). Con el catálogo de 268 y solo muebles, de 0,636 a
+  0,803: el catálogo final tiene más productos parecidos.
+- **Query rewriting:** con la consulta en las ocho líneas del catálogo, hit@1 da 0,535. Con solo
+  la línea Type cae a 0,293, y con solo el nombre del kind (sin reescribir) a 0,064.
 - **Base vectorial:** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
   consultas con filtro por tipo (con filtro por kind, en 863; el primero coincide en todas).
 - **Texto contra imagen:** con el mismo ground truth y el catálogo que vio la v0 (275), el
@@ -69,14 +73,14 @@ IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/rep
 - **Reproducibilidad:** con las consultas escritas tres veces por subagentes independientes,
   el mejor método da hit@1 0,544 ± 0,026 y MRR 0,655 ± 0,017. Qwen3 le gana a BGE, a hashing y
   al filtro por kind en las tres escrituras.
-- **Cuántos candidatos (k):** hit@3 0,728, hit@5 0,813, hit@10 0,895, hit@20 0,958. El flujo le
-  pasa 3 por pieza al LLM que elige: una de cada cuatro piezas no tiene el correcto entre las
-  opciones.
-- **Dimensión del embedding:** Qwen3 truncado (Matryoshka) da 0,427 con 32 componentes, 0,507
-  con 128 y 0,533 con 512, igual que con 1024.
-- **Splitting:** un documento por producto (0,533) gana a un chunk por línea (0,268) y a comparar
-  línea contra línea (0,511).
-- **Reranking con un cross-encoder de texto** (MiniLM de MS MARCO, gratis): empeora (0,417). El
+- **Cuántos candidatos (k):** si el VLM elige entre los primeros k, acierta 0,637 con 3, 0,667
+  con 5 y 0,689 con 8 (sale del mismo reranking). El techo, hit@k, es 0,732, 0,812 y 0,876. El
+  flujo le pasa 5 por pieza.
+- **Dimensión del embedding:** Qwen3 truncado (Matryoshka) da 0,428 con 32 componentes, 0,506
+  con 128 y 0,532 con 512, casi igual que con 1024.
+- **Splitting:** un documento por producto (0,535) gana a un chunk por línea (0,273) y a comparar
+  línea contra línea (0,514).
+- **Reranking con un cross-encoder de texto** (MiniLM de MS MARCO, gratis): empeora (0,419). El
   que sirve mira las fotos.
 - **Relevancia graduada** (un juez califica el top-3 con 2/1/0 contra la pieza del ambiente,
   sobre 150 consultas): el primer candidato sirve en el 75% de los casos y alguno del top-3 en el
@@ -92,12 +96,25 @@ IC 95% bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/rep
   sostiene son medidas que el catálogo no tiene); answer relevance 0,69 a 0,73, contra 0,37 de
   pedidos no relacionados.
 
+- **Qué catálogo, de punta a punta:** se usaron 11 ambientes vacíos reales, cada uno con un pedido
+  escrito como lo escribiría un usuario. Un juez (Opus, de a pares, en los dos órdenes) compara
+  las listas.
+  - Solo, ABO le pierde a IKEA 4 a 0 en los 5 ambientes propios, cuyos pedidos son nórdicos.
+  - IKEA + ABO le gana a IKEA solo 8 a 2 (1 empate). En los nórdicos empatan; en los 6 públicos,
+    con pedidos industrial, clásico, bohemio y otros, gana 6 a 0, y el porcentaje de productos
+    útiles sube de 0,46 a 0,71.
+  - Con ABO como distractores, el retrieval sobre el ground truth de IKEA casi no cambia: hit@1
+    pasa de 0,535 a 0,525.
+  - El flujo usa los dos catálogos. Las evaluaciones con ground truth, solo IKEA. Resultados en
+    `datos/resultados/punta_a_punta/`.
+
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 ![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)
 
-Una corrida completa del flujo cuesta unos US$0,21: plan, choose y scene con Claude Opus 5.5
-(US$0,13) y la imagen con Nano Banana 2 (US$0,08). Ejemplo:
-`datos/resultados/amoblar/prueba-alvear2/antes_despues.jpg`.
+Una corrida completa del flujo cuesta unos US$0,30: plan y choose con Claude Opus 5.5 (US$0,07
+y US$0,16, con 5 candidatos por pieza) y la imagen con Nano Banana 2 (US$0,08 por intento; si el
+control SIFT la rechaza, se reintenta hasta 3 veces). Ejemplos: `datos/resultados/amoblar/caballito-living/`
+y `datos/resultados/amoblar/caballito-comedor/`.
 
 ## Instalación
 
@@ -114,6 +131,9 @@ cp .env.example .env                             # ANTHROPIC_API_KEY, FAL_KEY, O
 ```bash
 uv run amoblai data download     # dataset IKEA (Tautkute et al., 2017) en datos/dataset/
 uv run amoblai catalogo          # el catálogo: productos, descripciones, kinds, correcciones
+uv run amoblai catalogo-abo      # el catálogo alternativo (ABO): metadata, fotos, selección
+                                 #   (--describir --pagar: las descripciones que falten, por la API)
+uv run amoblai data ambientes    # las fotos públicas de ambientes vacíos (publicas.yaml)
 uv run amoblai indice            # descripciones → embeddings → ChromaDB (en caché, gratis)
 uv run amoblai buscar "Type: armchair, lounge reading chair
 Materials: bentwood, leather" --kind armchair
@@ -133,6 +153,8 @@ uv run amoblai evaluar-graduada  # relevancia graduada del top-3 (--armar N: los
 uv run amoblai evaluar-imagen --referencia   # la imagen generada, y la vara con fotos reales
 uv run amoblai evaluar-respuesta # faithfulness y answer relevance (RAGAS) del porqué
 uv run amoblai evaluar-espacio   # el espacio de embeddings: vecinos del mismo kind, UMAP
+uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar
+                                 # variantes del flujo en ambientes reales, comparadas por un juez
 uv run amoblai reporte           # tablas y gráficos en datos/resultados/reporte/
 uv run amoblai gastos            # lo gastado por cuenta contra sus topes
 ```
@@ -186,6 +208,11 @@ PYTHONPATH=deprecated uv run python -m amoblai_imagen.cli --help
 
 - **Dataset:** I. Tautkute et al., *What Looks Good with my Sofa: Multimodal Search Engine for
   Interior Design*, FedCSIS 2017 (imágenes de IKEA, uso no comercial).
-- **Fotos de ambientes** (`datos/ambientes_vacios/`): departamentos reales, de uso privado. Se
-  usan solo para probar el sistema en este repositorio privado; ni ellas ni las imágenes
-  generadas a partir de ellas se publican.
+- **Catálogo alternativo:** J. Collins et al., *ABO: Dataset and Benchmarks for Real-World 3D
+  Object Understanding*, CVPR 2022 (Amazon Berkeley Objects, CC BY-NC 4.0). Las descripciones
+  de los productos las escribió Claude Opus 5.5 mirando cada foto.
+- **Fotos de ambientes** (`datos/ambientes_vacios/`): las de `ambiente1` a `ambiente3` son
+  departamentos reales, de uso privado. Se usan solo para probar el sistema en este repositorio
+  privado; ni ellas ni las imágenes generadas a partir de ellas se publican. Las de `publicas/`
+  no se commitean: `publicas.yaml` dice de dónde es cada una, su autor y su licencia (Unsplash,
+  Pexels o Creative Commons).

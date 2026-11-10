@@ -1,0 +1,11 @@
+# El catálogo revisado (2026-11-09): las mismas búsquedas sobre el catálogo con las 43 exclusiones
+# y kinds corregidos de datos/catalogo/correcciones.yaml. Se compara con la corrida anterior
+# (datos/resultados/evaluacion/20261023-173217_ablacion-retrieval, catálogo de 855).
+# `uv run amoblai evaluar --ablacion datos/configs/ablaciones/catalogo.yaml` (gratis).
+name: ablacion-catalogo-revisado
+methods:
+  - {embedder: hashing, filter: type}
+  - {embedder: bge, filter: type}
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: kind}
+  - {embedder: qwen3, filter: none}

@@ -1,0 +1,5 @@
+# IKEA y ABO juntos: un catálogo más grande para ver si más opciones dan mejores listas.
+name: todos
+catalogs:
+- datos/catalogo/ikea.yaml
+- datos/catalogo/abo/abo.yaml

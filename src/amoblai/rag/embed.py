@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import threading
 import time
 import unicodedata
 from dataclasses import dataclass, field
@@ -34,6 +35,9 @@ from amoblai.infra.http import (
     lookup_model,
     request_with_retries,
 )
+
+# importar transformers y cargar un modelo desde varios hilos a la vez falla (import parcial)
+_LOAD_LOCK = threading.Lock()
 
 
 @dataclass
@@ -232,6 +236,10 @@ class LocalEmbedder:
         return 0.0
 
     def _load(self):
+        with _LOAD_LOCK:
+            return self._load_locked()
+
+    def _load_locked(self):
         if self._loaded is None:
             from transformers import AutoModel, AutoTokenizer
 

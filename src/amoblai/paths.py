@@ -28,6 +28,9 @@ DESCRIPTIONS = CATALOG / "descripciones.jsonl"
 KINDS_FILE = CATALOG / "kinds.yaml"
 CORRECTIONS = CATALOG / "correcciones.yaml"
 CATALOG_YAML = CATALOG / "ikea.yaml"
+# El catálogo alternativo (Amazon Berkeley Objects, catalog/abo.py)
+ABO_CATALOG = CATALOG / "abo"
+ABO_YAML = ABO_CATALOG / "abo.yaml"
 
 EVAL_QUERIES = DATOS / "evaluacion_ikea" / "consultas.json"
 REPLICAS = DATOS / "evaluacion_ikea" / "replicas"  # las mismas consultas, otros escritores
@@ -43,4 +46,6 @@ LEDGER = RESULTS / "gastos.jsonl"
 RAW = DATOS / "dataset" / "ikea"
 PROCESSED = DATOS / "procesados"
 ITEMS = PROCESSED / "items.jsonl"
+ABO = DATOS / "dataset" / "abo"
+ABO_ITEMS = PROCESSED / "abo_items.jsonl"
 CACHE = DATOS / "cache"

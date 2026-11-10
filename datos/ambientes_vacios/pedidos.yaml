@@ -1,0 +1,81 @@
+# Ambientes vacíos reales con el pedido de un usuario que sabe pedir (qué ambiente es, qué piezas,
+# el estilo), para la evaluación de punta a punta (evaluation/endtoend.py). Las fotos propias están
+# en el repo; las públicas se bajan con `amoblai data ambientes` (publicas.yaml dice de dónde y con
+# qué licencia).
+ambientes:
+  - slug: caballito-living
+    foto: datos/ambientes_vacios/ambiente1-caballito/caballito2.jpg
+    pedido: >-
+      Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso
+      para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una
+      mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un
+      mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.
+  - slug: caballito-comedor
+    foto: datos/ambientes_vacios/ambiente1-caballito/caballito1.jpg
+    pedido: >-
+      Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas
+      negras, una lámpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la
+      derecha. Estilo nórdico, simple.
+  - slug: alvear-escritorio
+    foto: datos/ambientes_vacios/ambiente2-alvear/alvear1.jpg
+    pedido: >-
+      Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla
+      cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón
+      con una lámpara de pie para leer. Estilo nórdico, maderas claras.
+  - slug: alvear-living-comedor
+    foto: datos/ambientes_vacios/ambiente2-alvear/alvear2.jpg
+    pedido: >-
+      Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un
+      sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para
+      seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.
+  - slug: experimento-lectura
+    foto: datos/ambientes_vacios/ambiente3-experimento/experimento.jpg
+    pedido: >-
+      Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca
+      grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena
+      parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer
+      con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra
+      redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.
+  # Fotos públicas (publicas.yaml: autor y licencia), con pedidos de otros estilos además del
+  # nórdico, para que la comparación de catálogos no dependa de la estética de IKEA.
+  - slug: publica-loft-industrial
+    foto: datos/ambientes_vacios/publicas/loft-vigas-escalera-sol.jpg
+    pedido: >-
+      Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de
+      cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una
+      biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal
+      y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.
+  - slug: publica-living-clasico
+    foto: datos/ambientes_vacios/publicas/living-molduras-casetonado-chimenea.jpg
+    pedido: >-
+      Una sala antigua con molduras y chimenea. Quiero un living clásico y elegante alrededor de la
+      chimenea: un sofá tapizado en terciopelo verde oscuro, dos sillones enfrentados, una mesa
+      ratona de madera oscura, una alfombra grande de diseño tradicional, una lámpara de pie con
+      pantalla de tela y un espejo grande con marco sobre la chimenea.
+  - slug: publica-comedor-clasico-moderno
+    foto: datos/ambientes_vacios/publicas/living-comedor-casa-nueva-escalera.jpg
+    pedido: >-
+      En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera
+      oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande
+      sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual,
+      cálido.
+  - slug: publica-living-japandi
+    foto: datos/ambientes_vacios/publicas/living-vinilico-gris-balcon.jpg
+    pedido: >-
+      Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la
+      derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de
+      papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón.
+      Pocas cosas, todas en tonos neutros.
+  - slug: publica-living-bohemio
+    foto: datos/ambientes_vacios/publicas/living-parquet-balcon-toldos.jpg
+    pedido: >-
+      Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán,
+      una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas
+      de cerámica y una estantería baja con libros. Que se vea vivido y alegre.
+  - slug: publica-estudio-sobrio
+    foto: datos/ambientes_vacios/publicas/dormitorio-madera-oscura-ventanas-esquina.jpg
+    pedido: >-
+      Quiero convertir este cuarto en un estudio para trabajar desde casa, moderno y sobrio: un
+      escritorio de madera oscura frente a la ventana, una silla de oficina negra ergonómica, una
+      biblioteca baja contra la pared, una lámpara de escritorio y un sillón chico de cuero para leer
+      en el rincón. Negro, madera oscura y gris.

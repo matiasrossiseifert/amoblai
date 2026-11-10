@@ -139,7 +139,7 @@ def product_group(p: Product) -> str:
     """El grupo de relevancia de un producto del catálogo: el de su categoría del TP (la del
     `type` de IKEA), o el de su kind en lámparas y decoración. Un escritorio que IKEA tipifica
     como mesa (correcciones.yaml) es escritorio."""
-    tp = p.info["category_tp"]
+    tp = p.info.get("category_tp", p.category)  # ABO no la trae: es la misma categoría
     if p.category == "desk":
         return "desk"
     return group_of(p.kind) if tp in FINE and p.kind in KIND_TO_TP else tp
