@@ -11,10 +11,14 @@ Chroma returns the cosine distance (1 - cos); `query` gives back the similarity.
 from __future__ import annotations
 
 import re
+import threading
 from pathlib import Path
 from typing import Any
 
 import numpy as np
+
+# crear clientes de ChromaDB desde varios hilos a la vez falla (los bindings de Rust)
+_CLIENT_LOCK = threading.Lock()
 
 AXES = ("width", "depth", "height")
 MISSING = -1.0  # a size the catalog doesn't have
@@ -45,7 +49,8 @@ class ChromaStore:
             self.client = chromadb.EphemeralClient(settings=settings)
         else:
             Path(path).mkdir(parents=True, exist_ok=True)
-            self.client = chromadb.PersistentClient(path=str(path), settings=settings)
+            with _CLIENT_LOCK:
+                self.client = chromadb.PersistentClient(path=str(path), settings=settings)
         self.name = collection_name(name)
 
     def create(self, items: list[dict], vectors: np.ndarray, hnsw: dict | None = None) -> None:

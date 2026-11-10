@@ -59,7 +59,7 @@ def run_variant(
         log(f"{out.name}/{room['slug']}: listo")
         return d
 
-    # el primero solo: carga el embedder (importar transformers desde varios hilos falla)
+    # el primero solo: carga el embedder y el índice antes de abrir los hilos
     first = [one(rooms[0])] if rooms else []
     with ThreadPoolExecutor(workers) as pool:
         return first + list(pool.map(one, rooms[1:]))
