@@ -3,10 +3,12 @@
 # los dos juntos. El mismo plan para las tres (no depende del catálogo); 5 candidatos por pieza.
 # `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar`
 ambientes: datos/ambientes_vacios/pedidos.yaml
+solo: [caballito-living, caballito-comedor, alvear-escritorio, alvear-living-comedor, experimento-lectura]
 salida: datos/resultados/punta_a_punta/catalogos
 plan_de: ikea
+sufijo: _5ambientes      # juez_<a>_vs_<b>_5ambientes.json (catalogos_estilos.yaml usa los 11)
 variantes:
-  ikea: {}
+  ikea: {rag.catalog: datos/catalogo/ikea.yaml, rag.describer: written}
   abo: {rag.catalog: datos/catalogo/abo/abo.yaml, rag.describer: written_abo}
   todos: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos}
 comparaciones:

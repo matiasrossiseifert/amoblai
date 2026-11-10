@@ -7,10 +7,13 @@ cache_dir: datos/cache            # descripciones, vectores e índices de Chroma
 runs_dir: datos/resultados/amoblar  # una carpeta por corrida (se commitea)
 
 rag:
-  catalog: datos/catalogo/ikea.yaml  # lo genera `amoblai catalogo`
+  # El catálogo del flujo: IKEA + Amazon Berkeley Objects (2026-11-10, punta a punta en 11 ambientes:
+  # le gana a IKEA solo 8 a 2; en los pedidos nórdicos empatan, en los de otros estilos gana 6 a 0).
+  # Las evaluaciones con el ground truth de IKEA usan siempre datos/catalogo/ikea.yaml (cli.IKEA_GT).
+  catalog: datos/catalogo/todos.yaml
   mode: rag                       # o whole_catalog: todo lo que pasa los filtros, sin ranking
   top_k: 3
-  describer: written              # las ocho líneas escritas por subagentes mirando las fotos
+  describer: written_todos        # las ocho líneas: IKEA por subagentes, ABO por la API (mismo formato)
   describers:
     written: {kind: written, file: datos/catalogo/descripciones.jsonl}
     # el catálogo ABO (rag.catalog: datos/catalogo/abo/abo.yaml) y los dos juntos (todos.yaml)

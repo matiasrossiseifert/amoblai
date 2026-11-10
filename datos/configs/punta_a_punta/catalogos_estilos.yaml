@@ -1,0 +1,12 @@
+# IKEA contra IKEA + ABO en los 11 ambientes de pedidos.yaml: los 5 propios (pedidos nórdicos o
+# cálidos) y 6 públicos con pedidos de otros estilos. ABO solo ya perdió 4 a 0 en los propios
+# (catalogos.yaml); la decisión que queda es si sumarlo le da variedad al catálogo de IKEA.
+# Las corridas y los juicios de los 5 propios ya están (misma salida y caché): no se pagan de nuevo.
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/catalogos
+plan_de: ikea
+variantes:
+  ikea: {rag.catalog: datos/catalogo/ikea.yaml, rag.describer: written}
+  todos: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos}
+comparaciones:
+  - [ikea, todos]

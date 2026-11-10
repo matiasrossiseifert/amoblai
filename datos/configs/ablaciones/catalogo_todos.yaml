@@ -1,0 +1,7 @@
+# Las búsquedas de los ambientes IKEA sobre el catálogo IKEA + ABO (todos.yaml, 1502 productos):
+# cuánto empeora encontrar el producto IKEA anotado cuando hay 683 productos de Amazon más.
+# `uv run amoblai evaluar --ablacion datos/configs/ablaciones/catalogo_todos.yaml \
+#    -s rag.catalog=datos/catalogo/todos.yaml -s rag.describer=written_todos` (gratis)
+name: ablacion-catalogo-todos
+methods:
+  - {embedder: qwen3, filter: type}
