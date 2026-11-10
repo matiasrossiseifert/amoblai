@@ -384,6 +384,63 @@ def evaluar_respuesta(
             )
 
 
+@app.command("evaluar-punta-a-punta")
+def evaluar_punta_a_punta(
+    experimento: Annotated[
+        Path, typer.Argument(help="El experimento (datos/configs/punta_a_punta/*.yaml).")
+    ],
+    pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar las llamadas pagas.")] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """Variantes del flujo (plan → retrieve → choose) sobre ambientes reales vacíos y un juez
+    que compara sus listas de a pares, en los dos órdenes (evaluation/endtoend.py). Lo que ya
+    está (corridas, respuestas del juez) no se vuelve a pagar."""
+    import yaml
+
+    from amoblai.evaluation import endtoend as e2e
+
+    load_env()
+    exp = yaml.safe_load(experimento.read_text())
+    rooms = e2e.load_rooms(Path(exp["ambientes"]))
+    root = Path(exp["salida"])
+    first = exp.get("plan_de")
+    order = sorted(exp["variantes"], key=lambda v: v != first)  # la del plan, primero
+    for name in order:
+        over = [f"{k}={v}" for k, v in (exp["variantes"][name] or {}).items()]
+        cfg = cfg_for(config, over, paid=pagar)
+        from amoblai.rag.index import build_index, index_is_current
+
+        if not index_is_current(cfg):
+            build_index(cfg, log=console.print)
+        plan_from = root / first if first and name != first else None
+        e2e.run_variant(cfg, rooms, root / name, plan_from=plan_from, log=console.print)
+    cfg = cfg_for(config, paid=pagar)
+    llm = dict(cfg.evaluation.rerankers["opus"])
+    for a, b in exp.get("comparaciones") or []:
+        res = e2e.compare(cfg, llm, rooms, root, a, b)
+        out = root / f"juez_{a}_vs_{b}.json"
+        out.write_text(json.dumps(res, ensure_ascii=False, indent=1))
+        t = Table(title=f"{a} vs {b} ({res['ambientes']} ambientes, {res['empates']} empates)")
+        for col in ("variante", "gana", "útil", "aceptable", "pedido", "ambiente", "conjunto"):
+            t.add_column(col)
+        for v, s in res["resumen"].items():
+            t.add_row(
+                v,
+                str(s["gana"]),
+                f"{s['util']:.2f}",
+                f"{s['aceptable']:.2f}",
+                f"{s['request']:.2f}",
+                f"{s['room']:.2f}",
+                f"{s['together']:.2f}",
+            )
+        console.print(t)
+        console.print(
+            f"acuerdo entre órdenes {res['acuerdo_entre_ordenes']:.2f}; "
+            f"votos a la posición A {res['votos_por_posicion_A']:.2f}; "
+            f"US${res['costo_usd']:.2f}: {out}"
+        )
+
+
 @app.command("evaluar-espacio")
 def evaluar_espacio(config: ConfigOpt = paths.CONFIG) -> None:
     """El espacio de embeddings del catálogo: ¿el vecino más cercano es del mismo kind? (por

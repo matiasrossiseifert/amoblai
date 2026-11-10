@@ -1,0 +1,38 @@
+# Ambientes vacíos reales con el pedido de un usuario que sabe pedir (qué ambiente es, qué piezas,
+# el estilo), para la evaluación de punta a punta (evaluation/endtoend.py). Las fotos propias están
+# en el repo; las públicas se bajan con `amoblai data ambientes` (publicas.yaml dice de dónde y con
+# qué licencia).
+ambientes:
+  - slug: caballito-living
+    foto: datos/ambientes_vacios/ambiente1-caballito/caballito2.jpg
+    pedido: >-
+      Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso
+      para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una
+      mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un
+      mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.
+  - slug: caballito-comedor
+    foto: datos/ambientes_vacios/ambiente1-caballito/caballito1.jpg
+    pedido: >-
+      Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas
+      negras, una lámpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la
+      derecha. Estilo nórdico, simple.
+  - slug: alvear-escritorio
+    foto: datos/ambientes_vacios/ambiente2-alvear/alvear1.jpg
+    pedido: >-
+      Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla
+      cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón
+      con una lámpara de pie para leer. Estilo nórdico, maderas claras.
+  - slug: alvear-living-comedor
+    foto: datos/ambientes_vacios/ambiente2-alvear/alvear2.jpg
+    pedido: >-
+      Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un
+      sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para
+      seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.
+  - slug: experimento-lectura
+    foto: datos/ambientes_vacios/ambiente3-experimento/experimento.jpg
+    pedido: >-
+      Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca
+      grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena
+      parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer
+      con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra
+      redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.

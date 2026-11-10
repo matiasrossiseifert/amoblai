@@ -1,0 +1,14 @@
+# Qué catálogo da mejores listas en ambientes reales vacíos: IKEA (819 productos, fotos de 500 px,
+# los asientos sin medidas), Amazon Berkeley Objects (fotos de 1024 px, casi todo con medidas) y
+# los dos juntos. El mismo plan para las tres (no depende del catálogo); 5 candidatos por pieza.
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/catalogos
+plan_de: ikea
+variantes:
+  ikea: {}
+  abo: {rag.catalog: datos/catalogo/abo/abo.yaml, rag.describer: written_abo}
+  todos: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos}
+comparaciones:
+  - [ikea, abo]
+  - [ikea, todos]
