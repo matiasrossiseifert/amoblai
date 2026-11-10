@@ -1,0 +1,37 @@
+Image 1 is a photo of a furnished room from a home furnishing store's catalog. Every piece of furniture, lamp and decorative object in it is a product the store sells.
+
+For each product you can see that is one of these, write the search that would find that exact product in the store's catalog:
+- shelves and bookcases; storage furniture (sideboards, TV stands, cabinets, chests of drawers); desks;
+- ottomans, poufs, stools and benches;
+- lamps: pendant, ceiling, floor, table, desk and wall lamps;
+- decoration: cushions, throws, curtains, vases, plants and plant pots, picture frames and wall art, mirrors, wall clocks, baskets, candle holders.
+
+Describe the product as it is in the photo: what it is, its shape, materials, colors and the details that make it recognizable.
+- One entry per distinct product: several identical cushions or frames are one entry; two different cushions are two.
+- Leave out a product when less than half of it is visible, and a small object you can't see well enough to describe its shape and colors.
+- Leave out everything else: sofas, armchairs, chairs, tables and rugs (searched separately), beds, books, tableware, kitchen things, flowers in a vase without the vase.
+
+Answer with JSON only:
+- "room": one sentence, the room as you read it (what it is, its style and palette).
+- "pieces", for each product:
+  - "piece": what it is and where it is in the photo, in a few words.
+  - "kinds": the one kind of the product, from this list:
+    - desk: desk
+    - shelf: bookcase, wall shelf
+    - cabinet: sideboard, TV stand, display cabinet, storage cabinet, file cabinet, wardrobe
+    - dresser: dresser
+    - ottoman: ottoman
+    - stool: bar stool, low stool
+    - bench: bench
+    - lamp: pendant lamp, ceiling lamp, floor lamp, table lamp, desk lamp, wall lamp
+    - deco: cushion, throw, curtains, vase, plant pot, plant, picture frame, wall art, mirror, wall clock, basket, candle holder
+  - "query": the product in these eight lines, in this order. English, short phrases separated by commas, no full sentences, no brand, no measurements, nothing about what it is not. The Type line starts with the kind.
+
+Type: the kind, then what it is, two to six words
+Use: what it is for, then the rooms it belongs in
+Style: one to three of: Scandinavian, mid-century modern, minimalist, Japandi, industrial, rustic, farmhouse, bohemian, coastal, traditional, classic, art deco, glam, retro, contemporary, modern
+Materials: the main materials and finishes you see
+Colors: the main color first, then the others, in plain names
+Shape: silhouette and details (legs or base, doors and drawers, shade, pattern, outline), size and visual weight for its type
+Feel: two to four words
+Goes with: the colors, materials and kinds of rooms it suits

@@ -1,0 +1,350 @@
+{
+ "guide": "Each item is one search: a photo of a furnished room (look at the piece named), the\npiece, the search the system ran for it, and the top candidates it returned from the catalog.\nGrade each candidate, by looking at its photo against the piece in the room photo:\n2 = the same product, or one you cannot tell apart (same shape, material and color);\n1 = an acceptable alternative: the same kind of piece, close in style and color, that someone\n    who wanted that piece could buy instead;\n0 = not useful: another kind of piece, or clearly different.\nJudge what you see, not the names.",
+ "items": [
+  {
+   "key": "ikea-not-just-for-books__1364315972080-s4.jpg#0",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-not-just-for-books__1364315972080-s4.jpg",
+   "piece": "two cognac leather armchairs by the window",
+   "search": "Type: armchair, cantilever bentwood easy chair\nUse: relaxing and reading, living room, reading corner\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: layer-glued bent wood frame, black-brown stain, leather cushion\nColors: cognac, orange-brown, black-brown\nShape: springy cantilever frame, curved wooden arms, high back with headrest, thick one-piece cushion, quilted stitching, medium visual weight\nFeel: comfortable, warm, classic\nGoes with: dark blue walls, wood floors, striped rugs, black furniture, reading corners",
+   "candidates": [
+    {
+     "id": "391.505.88",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/391.505.88.jpg",
+     "description": "Type: cantilever bentwood leather lounge armchair\nUse: relaxing, reading; living room, study, reading corner\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: layer-glued bent wood frame in a dark brown stain, cognac leather cushion with diamond stitching\nColors: warm cognac brown, dark brown wood\nShape: tall one-piece cushion quilted in a diamond pattern, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: warm, inviting, relaxed, classic\nGoes with: walnut or dark wood, cream walls, wool rugs, brass lamps; mid-century or classic living rooms and studies\n"
+    },
+    {
+     "id": "390.108.90",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/390.108.90.jpg",
+     "description": "Type: cantilever bentwood lounge armchair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: layer-glued bent wood frame in a dark brown stain, padded woven fabric cushion\nColors: medium grey heathered fabric, dark brown wood\nShape: long one-piece cushion with a padded headrest, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: relaxed, cozy, calm, timeless\nGoes with: dark wood, grey or white walls, wool rugs; Scandinavian or modern living rooms\n"
+    },
+    {
+     "id": "490.904.81",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/490.904.81.jpg",
+     "description": "Type: bentwood rocking armchair\nUse: rocking, relaxing, reading; living room, nursery, bedroom\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: layer-glued bent birch veneer frame, padded fabric cushion\nColors: off-white cushion, light natural birch\nShape: long one-piece cushion with a headrest pad, curved bentwood arms, sweeping rocker runners, reclined seat, open and light frame, medium visual weight\nFeel: soothing, airy, calm, cozy\nGoes with: light wood, white walls, soft textiles, pastel tones; Scandinavian nurseries and living rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg#11",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "piece": "white fabric cube pouf in the middle of the room",
+   "search": "Type: ottoman, white square footstool\nUse: footrest, extra seat or storage, living rooms, bedrooms\nStyle: Scandinavian, minimalist\nMaterials: white fabric cover, padded top\nColors: white\nShape: square box pouf, padded lid with soft edges, fabric covered sides, small size\nFeel: simple, soft, clean\nGoes with: white storage, natural rugs, bright living rooms",
+   "candidates": [
+    {
+     "id": "202.634.77",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.634.77.jpg",
+     "description": "Type: cube storage pouffe\nUse: extra seating, resting feet, hiding small things inside; living room, bedroom, hallway\nStyle: minimalist, contemporary, Scandinavian\nMaterials: smooth white woven fabric cover, padded lift-off lid, small black plastic feet\nColors: off-white, black feet\nShape: square box with a padded overhanging lid, straight sides, tiny feet, crisp edges, compact and solid\nFeel: clean, practical, simple, calm\nGoes with: white or light wood furniture, grey textiles, any accent color; minimalist or Scandinavian living rooms and bedrooms\n"
+    },
+    {
+     "id": "502.666.91",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.666.91.jpg",
+     "description": "Type: cube storage pouffe\nUse: extra seating, resting feet, hiding small things inside; living room, bedroom, hallway\nStyle: contemporary, modern, minimalist\nMaterials: bright yellow woven fabric cover, padded lift-off lid, small black plastic feet\nColors: vivid sunny yellow, black feet\nShape: square box with a padded overhanging lid, straight sides, tiny feet, crisp edges, compact and solid\nFeel: cheerful, bold, playful, practical\nGoes with: white or grey furniture, light wood, black accents; contemporary or Scandinavian living rooms and bedrooms\n"
+    },
+    {
+     "id": "090.113.96",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/090.113.96.jpg",
+     "description": "Type: upholstered storage footstool\nUse: resting feet, extra seating, storing blankets inside; living room, family room\nStyle: contemporary, Scandinavian, minimalist\nMaterials: smooth woven cotton-blend cover, piped edges, padded lid cushion, small grey plastic feet\nColors: light warm grey, mid grey feet\nShape: low rectangular box with a thick padded top cushion and piped seams, short hidden feet, soft rounded corners, low and bulky\nFeel: cozy, soft, relaxed, practical\nGoes with: matching grey sofas, light wood, white walls, pale textiles; Scandinavian or contemporary living rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg#9",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-round-up-your-friends-in-contemporary-scandinavian-style__1364308404294-s4.jpg",
+   "piece": "trailing plant on top of the shelving unit",
+   "search": "Type: plant, trailing pothos\nUse: cascading greenery on top of shelves, living room, dining room, kitchen\nStyle: Scandinavian, bohemian\nMaterials: green heart-shaped leaves, white pot\nColors: green, white\nShape: long trailing vines with heart-shaped leaves hanging down, white round pot, medium size\nFeel: lush, fresh, relaxed\nGoes with: white shelving, light walls, Scandinavian interiors",
+   "candidates": [
+    {
+     "id": "668.040.47",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/668.040.47.jpg",
+     "description": "Type: trailing ivy houseplant\nUse: greenery on a shelf, a windowsill or in a hanging planter; living room, home office, bedroom\nStyle: bohemian, Scandinavian, contemporary\nMaterials: live ivy with glossy lobed leaves, terracotta-colored plastic nursery pot\nColors: deep green, variegated light green and cream, terracotta\nShape: bushy mound of small lobed leaves with long trailing vines that spill over the edge, small pot, loose and flowing\nFeel: fresh, natural, lively, relaxed\nGoes with: wood shelves, white walls, woven baskets, ceramic cachepots; bohemian or Scandinavian rooms\n"
+    },
+    {
+     "id": "702.766.51",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/702.766.51.jpg",
+     "description": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n"
+    },
+    {
+     "id": "900.379.90",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/900.379.90.jpg",
+     "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg#6",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-storage-that-makes-room-for-living__1364308451581-s4.jpg",
+   "piece": "light wood frame with a white mat and a line drawing on the white shelf",
+   "search": "Type: picture frame, light wood with mat\nUse: displaying prints and photos on shelves or walls, living rooms, bedrooms\nStyle: Scandinavian, minimalist\nMaterials: light wood frame, white mount, glass\nColors: light wood, white, grey\nShape: rectangular portrait frame, slim natural wood profile, wide white mat, leaning on a shelf, medium size\nFeel: calm, natural, light\nGoes with: white shelves, pastel walls, Scandinavian living rooms",
+   "candidates": [
+    {
+     "id": "203.033.03",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.033.03.jpg",
+     "description": "Type: thin light wood picture frame with mat\nUse: displaying a print, poster or photo on a wall; living room, bedroom, home office\nStyle: Scandinavian, minimalist, Japandi\nMaterials: slim frame in a light birch-effect finish, white mat board, glass front\nColors: light natural wood, white mat\nShape: tall rectangular frame with a very slim flat profile, wide white mount around the picture, clean and light\nFeel: calm, clean, airy, simple\nGoes with: art prints, light wood furniture, white walls, black accents; Scandinavian, Japandi or minimalist rooms\n"
+    },
+    {
+     "id": "200.783.33",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/200.783.33.jpg",
+     "description": "Type: white picture frame with wide mat\nUse: displaying a poster, print or photo on a wall; living room, bedroom, home office, hallway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white painted frame, off-white mount board, clear front\nColors: white, warm off-white mat, light grey insert\nShape: tall portrait rectangle with a slim flat frame, generous mat border around a large picture window, quiet on the wall, large but light\nFeel: airy, clean, soft, calm\nGoes with: white or pastel walls, light wood, botanical or watercolor prints; Scandinavian, minimalist or coastal rooms\n"
+    },
+    {
+     "id": "901.551.58",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.551.58.jpg",
+     "description": "Type: white picture frame with mat\nUse: displaying a photo, print or poster on a wall or a shelf; living room, bedroom, home office, hallway\nStyle: classic, Scandinavian, traditional\nMaterials: painted wood-look frame with a moulded profile, off-white passe-partout mat, clear front panel\nColors: white frame, warm off-white mat\nShape: portrait rectangle with a stepped, softly profiled border and a wide mat around the picture, flat to the wall, light and tidy\nFeel: neat, bright, gentle, timeless\nGoes with: black and white photos, botanical prints, light wood, pale walls; Scandinavian, classic or farmhouse rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg#15",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "piece": "terracotta pot with flowering plant on the TV bench",
+   "search": "Type: plant pot, terracotta plant pot\nUse: pot for indoor plants, living room, kitchen, windowsill\nStyle: rustic, Scandinavian\nMaterials: terracotta\nColors: terracotta brown\nShape: small round tapered pot with a rim\nFeel: natural, warm, earthy\nGoes with: green plants, dark wood, white walls",
+   "candidates": [
+    {
+     "id": "302.580.41",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/302.580.41.jpg",
+     "description": "Type: terracotta plant pot with saucer\nUse: growing a potted plant on a windowsill, floor or shelf; living room, kitchen, balcony\nStyle: rustic, farmhouse, Scandinavian\nMaterials: unglazed terracotta clay, matching saucer\nColors: warm terracotta orange, earthy clay\nShape: classic round pot tapering toward the base, thick rim, deep matching saucer, simple and sturdy, medium size\nFeel: earthy, warm, natural, homey\nGoes with: green leafy plants, white walls, light wood, linen; rustic, farmhouse, Mediterranean or Scandinavian rooms\n"
+    },
+    {
+     "id": "502.580.40",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/502.580.40.jpg",
+     "description": "Type: terracotta plant pot with saucer\nUse: growing herbs or houseplants on a windowsill, a shelf or a table; living room, kitchen, sunroom\nStyle: rustic, farmhouse, bohemian\nMaterials: unglazed terracotta clay, matching deep saucer\nColors: warm terracotta orange\nShape: classic tapered round pot with a thick rolled rim, sitting in a wide deep saucer, sturdy and compact\nFeel: earthy, warm, natural, homey\nGoes with: green plants, herbs, white walls, rattan, light wood; rustic, Mediterranean or bohemian rooms\n"
+    },
+    {
+     "id": "702.858.58",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/702.858.58.jpg",
+     "description": "Type: plant pot with saucer\nUse: holding a potted plant on a floor, a windowsill or a shelf; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte molded plastic with a smooth finish, matching saucer\nColors: light warm beige, greige\nShape: classic tapered round pot with a thick rolled rim band, wide shallow saucer underneath, simple and sturdy, medium visual weight\nFeel: calm, soft, natural, practical\nGoes with: green plants, light wood, white or beige walls, linen textiles; Scandinavian, Japandi or minimalist rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-tucked-away-on-display__1364319313963-s4.jpg#10",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "piece": "light gray sheer curtains at the window, left",
+   "search": "Type: curtains, light gray semi-sheer\nUse: window curtains that filter light, living room, dining room, bedroom\nStyle: Scandinavian, minimalist\nMaterials: light linen-look fabric\nColors: light gray, white\nShape: long panels to the floor, tab top, light translucent fabric, soft folds\nFeel: airy, soft, calm\nGoes with: white walls, gray textiles, wood furniture",
+   "candidates": [
+    {
+     "id": "002.975.67",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.975.67.jpg",
+     "description": "Type: pair of light grey sheer curtains\nUse: softening daylight and adding privacy at a window; living room, bedroom, dining room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: lightweight semi-sheer woven fabric, rod pocket heading\nColors: light warm grey, greige\nShape: two long straight panels hanging in soft vertical folds from a rod pocket, gathered top, plain hem, light and flowing\nFeel: soft, airy, calm, light\nGoes with: white walls, light wood, linen, grey sofas; Scandinavian, minimalist or modern rooms\n"
+    },
+    {
+     "id": "202.975.71",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.975.71.jpg",
+     "description": "Type: white light-filtering curtains, pair\nUse: softening daylight, adding light privacy at a window; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: lightweight semi-sheer woven fabric, hidden tab heading\nColors: white\nShape: two full-length straight panels hanging in soft relaxed folds, plain fabric, gently translucent, airy and light\nFeel: airy, bright, fresh, calm\nGoes with: white walls, light wood floors, linen sofas, green plants; Scandinavian, minimalist or coastal rooms\n"
+    },
+    {
+     "id": "502.841.95",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.841.95.jpg",
+     "description": "Type: pair of white linen curtains\nUse: filtering daylight and softening windows; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: semi-sheer woven linen with a slubby natural texture, hidden tab heading\nColors: white, faint warm off-white\nShape: two long straight panels hanging in loose soft folds from a rod, airy translucent weave, plain hems, light and flowing\nFeel: airy, calm, natural, bright\nGoes with: light wood floors, white walls, rattan, pale grey or sand textiles; Scandinavian, coastal or Japandi rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg#2",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-adjust-this-modular-media-storage-the-way-you-like__1364308494435-s4.jpg",
+   "piece": "low oak and white TV bench under the TV",
+   "search": "Type: TV stand, low TV bench with drawers\nUse: media storage, living room\nStyle: modern, contemporary, Scandinavian\nMaterials: oak-effect veneer, white lacquered fronts\nColors: oak, white\nShape: long low bench, white drawer fronts with long cutout grip handles, open compartment for devices, flat base, medium visual weight\nFeel: clean, modern, tidy\nGoes with: white walls, dark floors, grey sofas, modern living rooms",
+   "candidates": [
+    {
+     "id": "802.970.21",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.970.21.jpg",
+     "description": "Type: long wooden TV bench with drawers\nUse: holding a TV and media devices, storing games and remotes; living room, family room\nStyle: farmhouse, traditional, Scandinavian\nMaterials: solid wood with a white stain that shows the grain, dark round metal knobs\nColors: soft white, dark grey knobs\nShape: long low cabinet with three open cubbies above three drawers, small round knobs, overhanging flat top, framed side panels, short square legs, sturdy and wide, medium visual weight\nFeel: fresh, homey, calm, classic\nGoes with: light wood floors, linen textiles, blue or grey walls; farmhouse, country or Scandinavian living rooms\n"
+    },
+    {
+     "id": "502.432.99",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.432.99.jpg",
+     "description": "Type: low open TV bench\nUse: holding a TV, media devices and books; living room, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board top and legs, lower open shelf\nColors: white, slightly warm white\nShape: thick flat top on four chunky square legs, one open shelf near the floor, simple table-like frame, open and light, compact\nFeel: simple, casual, airy, fresh\nGoes with: light wood floors, grey sofas, white walls, colorful accents; Scandinavian or minimalist living rooms and small apartments\n"
+    },
+    {
+     "id": "503.376.98",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.376.98.jpg",
+     "description": "Type: TV bench with glass-front drawers\nUse: holding a TV and media devices, storing games and cables; living room, bedroom\nStyle: contemporary, minimalist, modern\nMaterials: black laminated board, frosted glass drawer fronts, black bar handles\nColors: black, smoky frosted glass\nShape: low rectangular cabinet with two open shelves above two wide drawers with framed frosted glass panes, slim bar handles, cable hole, recessed plinth, solid and boxy, medium visual weight\nFeel: sleek, dark, practical, understated\nGoes with: grey or white walls, light or dark wood floors, chrome accents; modern living rooms and compact apartments\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg#10",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-a-cosy-space-for-coffee-and-conversation__1364308407140-s4.jpg",
+   "piece": "gold frame at the bottom of the gallery wall",
+   "search": "Type: picture frame, gold-colored frame\nUse: displaying photos and prints, living room, dining room, hallway\nStyle: traditional, classic\nMaterials: gold finish frame, glass\nColors: gold, white\nShape: rectangular frame, wide profile with molded edge, white mount\nFeel: warm, vintage\nGoes with: gallery walls, grey walls, dark wood",
+   "candidates": [
+    {
+     "id": "602.323.99",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.323.99.jpg",
+     "description": "Type: ornate gold picture frame with mat\nUse: displaying photos, prints or artwork on a wall or shelf; living room, bedroom, hallway, dining room\nStyle: traditional, classic, glam\nMaterials: molded frame with an antiqued gold-leaf-look finish, off-white mat board, clear glazing\nColors: antique gold, warm off-white mat\nShape: upright rectangle with a wide stepped and grooved molding, brushed metallic texture, cream mat around the picture, medium visual weight\nFeel: elegant, warm, vintage\nGoes with: dark walls, deep green or navy, velvet, dark wood; traditional, classic or glam rooms\n"
+    },
+    {
+     "id": "202.867.80",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.867.80.jpg",
+     "description": "Type: black moulded picture frame with mat\nUse: displaying a photo or print on a wall or shelf; living room, bedroom, hallway, home office\nStyle: classic, traditional, contemporary\nMaterials: moulded frame in a glossy black finish, white mat board, glass front\nColors: black, white mat\nShape: rectangular frame with a rounded, stepped profile moulding, wide white mount around the picture, compact and graphic\nFeel: elegant, classic, crisp, timeless\nGoes with: black-and-white photos, gallery walls, white or grey walls, dark wood; classic or traditional rooms\n"
+    },
+    {
+     "id": "002.917.87",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.917.87.jpg",
+     "description": "Type: silver picture frame with mat\nUse: displaying photos or prints on a wall, desk or sideboard; living room, bedroom, home office\nStyle: classic, glam, contemporary\nMaterials: frame with a brushed silver metallic finish, rounded profile, white mat, clear front panel\nColors: silver, white mat, grey\nShape: portrait rectangle with a slim rounded frame and a wide white mat, simple and polished, light visual weight\nFeel: elegant, polished, refined, bright\nGoes with: chrome, glass, white or grey walls, black and white photos; classic, glam or modern rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg#7",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "piece": "long white curtain between the cabinet and the doorway",
+   "search": "Type: curtains, long white curtain\nUse: window curtain, living room, bedroom\nStyle: Scandinavian, traditional\nMaterials: cotton fabric\nColors: white, off-white\nShape: full-length panel with heading tape, gathered soft folds\nFeel: soft, airy, calm\nGoes with: white walls, dark wood, neutral palettes",
+   "candidates": [
+    {
+     "id": "202.975.71",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.975.71.jpg",
+     "description": "Type: white light-filtering curtains, pair\nUse: softening daylight, adding light privacy at a window; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: lightweight semi-sheer woven fabric, hidden tab heading\nColors: white\nShape: two full-length straight panels hanging in soft relaxed folds, plain fabric, gently translucent, airy and light\nFeel: airy, bright, fresh, calm\nGoes with: white walls, light wood floors, linen sofas, green plants; Scandinavian, minimalist or coastal rooms\n"
+    },
+    {
+     "id": "900.468.43",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/900.468.43.jpg",
+     "description": "Type: white eyelet curtains, one pair\nUse: dressing a window, filtering daylight and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, classic\nMaterials: heavy woven cotton-look fabric, metal eyelets along the header\nColors: soft white, silver eyelets\nShape: two long straight panels hanging in deep even folds from a rod threaded through ring eyelets, smooth plain weave, full length, soft but substantial\nFeel: clean, bright, calm, airy\nGoes with: light wood, grey sofas, linen, white walls; Scandinavian, minimalist or classic rooms\n"
+    },
+    {
+     "id": "203.129.01",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.129.01.jpg",
+     "description": "Type: white tie-top curtains, pair\nUse: filtering daylight and adding privacy at a window; living room, bedroom\nStyle: Scandinavian, coastal, farmhouse\nMaterials: lightweight woven cotton-look fabric, fabric ties at the top, sheer upper band\nColors: white\nShape: two full-length straight panels hung by knotted ties over the rod, slightly translucent band near the top, soft relaxed folds, light and airy\nFeel: airy, fresh, gentle, romantic\nGoes with: white walls, light wood, linen bedding, soft pastels; Scandinavian, coastal or cottage rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg#8",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-all-set-for-after-school-entertainment__1364308430311-s4.jpg",
+   "piece": "white adjustable floor lamp, right",
+   "search": "Type: floor lamp, adjustable reading floor lamp\nUse: reading light, living room, bedroom\nStyle: Scandinavian, industrial, farmhouse\nMaterials: lacquered metal\nColors: white\nShape: slim pole, angled adjustable arm, small bell-shaped metal shade\nFeel: vintage, functional\nGoes with: white sofas, white rooms, Scandinavian living rooms",
+   "candidates": [
+    {
+     "id": "601.109.01",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/601.109.01.jpg",
+     "description": "Type: slim aluminium floor reading lamp\nUse: reading light beside a sofa, an armchair or a bed; living room, bedroom, home office\nStyle: minimalist, industrial, Scandinavian\nMaterials: brushed aluminium shade, pole and base, black cord with inline switch\nColors: brushed silver, black\nShape: thin straight pole with a curved neck holding a small cone shade, adjustable head, round flat base, tall and very slender, light visual weight\nFeel: simple, practical, airy, functional\nGoes with: grey or white sofas, light wood, metal accents; minimalist, Scandinavian or industrial rooms\n"
+    },
+    {
+     "id": "102.897.22",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.897.22.jpg",
+     "description": "Type: double-head white floor lamp\nUse: reading and ambient light beside a sofa or armchair; living room, home office, bedroom\nStyle: Scandinavian, retro, modern\nMaterials: white lacquered metal shades, silver-grey metal pole and round base, inline switch\nColors: white, light silver grey\nShape: two adjustable bell shades on short arms near the top of a slim pole, pointing in different directions, flat round base, tall, light and open\nFeel: friendly, practical, bright, airy\nGoes with: light wood, white walls, grey textiles, pops of color; Scandinavian or retro living rooms and studies\n"
+    },
+    {
+     "id": "301.486.94",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/301.486.94.jpg",
+     "description": "Type: grey adjustable floor reading lamp\nUse: reading light beside an armchair, sofa or desk; living room, home office, bedroom\nStyle: industrial, retro, Scandinavian\nMaterials: grey lacquered steel shade, arm and pole, round metal base\nColors: medium grey, silver joints\nShape: small bell shade on a long two-part jointed arm that reaches out from a tall slim pole, round flat base, mechanical architect style, light and open\nFeel: practical, focused, studious, vintage\nGoes with: grey or white walls, light wood, leather armchairs; industrial, retro or Scandinavian living rooms and studies\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg#17",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-sit-pretty-table-and-chairs-that-adapt-to-every-occasion__1364308403349-s4.jpg",
+   "piece": "white picture frames with white mats standing on the right shelves",
+   "search": "Type: picture frame, white with mat\nUse: displaying photos and prints on shelves or walls, living rooms, bedrooms, hallways\nStyle: Scandinavian, minimalist\nMaterials: white painted wood frame, white mount, glass\nColors: white\nShape: rectangular frame, slim flat profile, wide white mat around the picture, small size\nFeel: clean, fresh, simple\nGoes with: white shelves, botanical prints, light neutral rooms",
+   "candidates": [
+    {
+     "id": "701.531.55",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/701.531.55.jpg",
+     "description": "Type: white box picture frame with mat\nUse: framing photos, posters or art prints for a wall, a shelf or a desk; living room, bedroom, home office\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white painted frame with a deep flat profile, off-white mat, clear front panel, back stand\nColors: white, warm off-white mat\nShape: rectangular frame with deep box sides, a broad mat border that centers the picture, stands upright on a back leg or hangs, clean and simple\nFeel: clean, bright, orderly, calm\nGoes with: gallery walls, picture ledges, light wood, white walls, monochrome prints; Scandinavian or minimalist rooms\n"
+    },
+    {
+     "id": "200.783.33",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/200.783.33.jpg",
+     "description": "Type: white picture frame with wide mat\nUse: displaying a poster, print or photo on a wall; living room, bedroom, home office, hallway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white painted frame, off-white mount board, clear front\nColors: white, warm off-white mat, light grey insert\nShape: tall portrait rectangle with a slim flat frame, generous mat border around a large picture window, quiet on the wall, large but light\nFeel: airy, clean, soft, calm\nGoes with: white or pastel walls, light wood, botanical or watercolor prints; Scandinavian, minimalist or coastal rooms\n"
+    },
+    {
+     "id": "000.783.34",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.783.34.jpg",
+     "description": "Type: white tabletop picture frame\nUse: displaying a photo or small print on a desk, shelf or sideboard, also on a wall; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte white painted frame, white mat, clear front panel, black fold-out back stand\nColors: white, cream mat, black stand\nShape: portrait rectangle with a deep box profile, thin mat around the opening, stands upright on a back leg, compact\nFeel: clean, simple, personal, fresh\nGoes with: family photos, art cards, white shelves, light wood desks; Scandinavian or minimalist rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg#10",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-breakfast-for-four-dinner-for-six__1364315950047-s4.jpg",
+   "piece": "black plant pot with herbs on the windowsill",
+   "search": "Type: plant pot, small black plant pot\nUse: holding herbs or houseplants, windowsill, kitchen, dining room\nStyle: minimalist, modern, Scandinavian\nMaterials: glazed ceramic\nColors: black\nShape: small round pot, slightly tapered, plain with a rim\nFeel: simple, fresh, graphic\nGoes with: green plants, black window frames, white walls",
+   "candidates": [
+    {
+     "id": "602.425.29",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/602.425.29.jpg",
+     "description": "Type: white ceramic plant pot\nUse: holding a potted plant on a windowsill, shelf or table; living room, kitchen, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed white ceramic with embossed relief patterns\nColors: glossy white\nShape: small tapered pot with a slightly flared rim, comes in assorted reliefs such as vertical ribs, wavy lines, stacked rings and wide bands, simple and compact\nFeel: fresh, clean, cheerful\nGoes with: green plants, white shelves, light wood, colorful textiles; Scandinavian or minimalist rooms\n"
+    },
+    {
+     "id": "002.857.91",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/002.857.91.jpg",
+     "description": "Type: dark grey plant pot with saucer\nUse: growing a houseplant or herbs on a windowsill, shelf or floor; living room, kitchen, home office\nStyle: minimalist, contemporary, modern\nMaterials: matte molded plastic, matching saucer\nColors: dark grey, charcoal\nShape: tapered cylindrical pot with a rolled flared rim, sits in a wide shallow saucer, simple and sturdy, compact\nFeel: understated, practical, calm, grounded\nGoes with: green plants, concrete, light wood, white walls; minimalist, industrial or modern rooms\n"
+    },
+    {
+     "id": "201.822.83",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/201.822.83.jpg",
+     "description": "Type: white ceramic plant pot\nUse: holding a potted plant on a windowsill, shelf or table; living room, kitchen, bedroom, home office\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed white ceramic with embossed relief patterns\nColors: glossy white\nShape: round tapered cachepot shown in four relief designs, cable-knit ovals, vertical ribs, wide horizontal bands and fine horizontal ridges, compact and tidy\nFeel: fresh, clean, crafted, calm\nGoes with: green plants, light wood, white walls, linen; Scandinavian, minimalist or farmhouse rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg#0",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-set-your-table-with-scandinavian-style__1364308408633-s4.jpg",
+   "piece": "oval white dining table",
+   "search": "Type: dining table, oval table on crossed legs\nUse: dining and gatherings, dining room, kitchen\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: white laminate top, solid birch legs, metal fittings\nColors: white, light wood, natural birch\nShape: oval top with rounded ends, crossed X-shaped splayed wooden legs, thin metal stretcher, slim profile, medium visual weight\nFeel: light, graceful, airy\nGoes with: white chairs, checkered rugs, pale floors, pastel walls",
+   "candidates": [
+    {
+     "id": "990.403.42",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/dining table/990.403.42.jpg",
+     "description": "Type: oval dining table with crossed legs\nUse: dining, gathering, working at a table; dining room, kitchen\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: white laminate top with birch edge, solid birch crossed legs, thin steel tension rods\nColors: white, light natural birch, silver\nShape: long oval top with rounded ends, X-shaped wooden legs at each end joined by a round stretcher, wire braces, light and open\nFeel: airy, crafted, fresh, sociable\nGoes with: light wood or white chairs, white walls, pendant lamps; Scandinavian or modern dining rooms\n"
+    },
+    {
+     "id": "390.403.35",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/dining table/390.403.35.jpg",
+     "description": "Type: rounded rectangular dining table\nUse: dining, hosting dinners; dining room, kitchen\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white laminated top, white powder-coated steel wire legs\nColors: white\nShape: long top with softly rounded corners, thin edge, two angular wire-frame leg sets with diagonal braces, light and open, airy visual weight\nFeel: airy, bright, clean, graphic\nGoes with: wire, molded plastic or light wood chairs, white walls, pastel accents; Scandinavian or modern dining rooms\n"
+    },
+    {
+     "id": "702.943.39",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/dining table/702.943.39.jpg",
+     "description": "Type: rectangular wooden dining table\nUse: dining, working at a table; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: ash veneer top with clear lacquer, solid wood legs\nColors: light natural ash, pale blond wood\nShape: thin top with soft rounded corners and beveled edge, four slender round tapered legs slightly splayed, fixed right under the top, light and open\nFeel: airy, warm, calm, natural\nGoes with: white walls, light wood or black chairs, woven textiles; Scandinavian or Japandi dining rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg#9",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-classic-comfort-in-every-detail__1364308470745-s4.jpg",
+   "piece": "dark wood picture frame with a photo on the cabinet",
+   "search": "Type: picture frame, dark wood photo frame\nUse: displaying photos, living room, hallway, bedroom\nStyle: traditional, rustic, classic\nMaterials: stained wood frame, glass, white mat\nColors: dark brown, white\nShape: rectangular frame with wide dark brown wooden profile and white mat, leaning on a cabinet\nFeel: warm, classic, personal\nGoes with: black cabinets, grey wood walls, farmhouse interiors",
+   "candidates": [
+    {
+     "id": "202.867.80",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.867.80.jpg",
+     "description": "Type: black moulded picture frame with mat\nUse: displaying a photo or print on a wall or shelf; living room, bedroom, hallway, home office\nStyle: classic, traditional, contemporary\nMaterials: moulded frame in a glossy black finish, white mat board, glass front\nColors: black, white mat\nShape: rectangular frame with a rounded, stepped profile moulding, wide white mount around the picture, compact and graphic\nFeel: elegant, classic, crisp, timeless\nGoes with: black-and-white photos, gallery walls, white or grey walls, dark wood; classic or traditional rooms\n"
+    },
+    {
+     "id": "002.917.68",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.917.68.jpg",
+     "description": "Type: black picture frame with mat\nUse: displaying photos or art prints on a wall, desk or shelf; living room, home office, hallway\nStyle: classic, contemporary, minimalist\nMaterials: frame with a matte black finish, stepped profile, white mat, clear front panel\nColors: black, white mat, grey backing\nShape: portrait rectangle with a deep stepped frame and a wide white mat around a smaller opening, crisp edges, medium visual weight\nFeel: graphic, crisp, classic, tidy\nGoes with: black and white photos, prints, white or grey walls, light wood; classic, modern or Scandinavian rooms\n"
+    },
+    {
+     "id": "302.917.76",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.917.76.jpg",
+     "description": "Type: black picture frame with mat\nUse: displaying a photo, print or artwork on a wall or shelf; living room, bedroom, home office\nStyle: minimalist, modern, Scandinavian\nMaterials: frame in a matte black wood-grain finish, white mat board, glass front\nColors: black, white mat\nShape: rectangular frame with a flat, slightly stepped profile, wide white mount around the picture, deep sides, clean and graphic\nFeel: crisp, graphic, calm, classic\nGoes with: black-and-white photos, art prints, white walls, light or dark wood; minimalist, modern or Scandinavian rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-lots-of-room-to-dine-in__1364308411084-s4.jpg#1",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-lots-of-room-to-dine-in__1364308411084-s4.jpg",
+   "piece": "white metal chairs with perforated seats in the front",
+   "search": "Type: dining chair, white perforated metal chair\nUse: seating at the table, dining room, kitchen, café, balcony\nStyle: modern, industrial, minimalist\nMaterials: powder-coated aluminium\nColors: white\nShape: open curved backrest frame with a slim middle rail, seat perforated with round holes, slim straight legs, stackable, light visual weight\nFeel: light, airy, practical\nGoes with: white tables, colorful rugs, modern dining rooms and cafés",
+   "candidates": [
+    {
+     "id": "102.191.78",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/102.191.78.jpg",
+     "description": "Type: plastic and metal chair\nUse: dining, working at a desk; kitchen, dining room, home office, cafe\nStyle: minimalist, modern, Scandinavian\nMaterials: molded white plastic seat and back, white powder-coated steel tube legs\nColors: white\nShape: small rounded backrest with a grid of round holes, perforated contoured seat, armless, four slim tubular legs, light and open, compact\nFeel: simple, airy, practical, casual\nGoes with: white or light wood tables, pastel or bright accents; minimalist kitchens, student rooms, small offices\n"
+    },
+    {
+     "id": "902.142.85",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/902.142.85.jpg",
+     "description": "Type: perforated plastic dining chair\nUse: dining, extra seating, working at a desk; kitchen, dining room, home office, dorm room\nStyle: modern, minimalist, industrial\nMaterials: molded plastic seat and back with round perforations, black powder-coated steel tube frame\nColors: black\nShape: rounded rectangular backrest with a grid of holes, perforated seat, slim tubular steel legs and back posts, simple upright frame, light and compact\nFeel: practical, casual, graphic, simple\nGoes with: white or light wood tables, grey walls, black accents; small kitchens, student rooms, industrial or modern spaces\n"
+    },
+    {
+     "id": "902.177.93",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/902.177.93.jpg",
+     "description": "Type: metal folding chair\nUse: extra dining seating, quick guest seating; kitchen, dining room, balcony, small apartment\nStyle: modern, industrial, contemporary\nMaterials: powder-coated steel frame, perforated steel seat and back\nColors: dark grey, charcoal black\nShape: folding X-frame with slim tubular legs, rounded back panel with a sunburst pattern of small holes, perforated seat, front footrest bar, folds flat, light and compact\nFeel: practical, sleek, casual, airy\nGoes with: wood or concrete tables, white walls, black accents; industrial lofts, small apartments, balconies\n"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,842 @@
+[
+ {
+  "id": "490.468.17",
+  "name": "BEST",
+  "type_ikea": "Shelf unit with door",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/490.468.17.jpg"
+  ]
+ },
+ {
+  "id": "491.234.05",
+  "name": "TROFAST",
+  "type_ikea": "Storage combination with boxes",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 99.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/491.234.05.jpg"
+  ]
+ },
+ {
+  "id": "498.759.62",
+  "name": "STUVA",
+  "type_ikea": "Storage combination with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/498.759.62.jpg"
+  ]
+ },
+ {
+  "id": "498.887.09",
+  "name": "STUVA",
+  "type_ikea": "Storage combination with drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/498.887.09.jpg"
+  ]
+ },
+ {
+  "id": "500.772.47",
+  "name": "HENSVIK",
+  "type_ikea": "Cabinet with shelf unit",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/500.772.47.jpg"
+  ]
+ },
+ {
+  "id": "502.135.89",
+  "name": "HEMNES",
+  "type_ikea": "Glass-door cabinet with 3 drawers",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.135.89.jpg"
+  ]
+ },
+ {
+  "id": "502.432.99",
+  "name": "LACK",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.432.99.jpg"
+  ]
+ },
+ {
+  "id": "502.649.27",
+  "name": "ALEX",
+  "type_ikea": "Drawer unit on castors",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 67.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.649.27.jpg"
+  ]
+ },
+ {
+  "id": "502.970.46",
+  "name": "HEMNES",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 149.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.970.46.jpg"
+  ]
+ },
+ {
+  "id": "503.006.66",
+  "name": "BRIMNES",
+  "type_ikea": "Cabinet with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.006.66.jpg"
+  ]
+ },
+ {
+  "id": "503.238.04",
+  "name": "BILLY",
+  "type_ikea": "Bookcase with glass door",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.238.04.jpg"
+  ]
+ },
+ {
+  "id": "503.286.65",
+  "name": "LIXHULT",
+  "type_ikea": "Cabinet",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 25.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.286.65.jpg"
+  ]
+ },
+ {
+  "id": "503.286.70",
+  "name": "LIXHULT",
+  "type_ikea": "Cabinet",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 35.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.286.70.jpg"
+  ]
+ },
+ {
+  "id": "503.296.22",
+  "name": "HEMNES",
+  "type_ikea": "Cabinet with panel,glass-door",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.296.22.jpg"
+  ]
+ },
+ {
+  "id": "503.376.98",
+  "name": "BRIMNES",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.376.98.jpg"
+  ]
+ },
+ {
+  "id": "590.474.06",
+  "name": "BEST",
+  "type_ikea": "Shelf unit with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/590.474.06.jpg"
+  ]
+ },
+ {
+  "id": "599.026.58",
+  "name": "VITTSJ",
+  "type_ikea": "Storage combination",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 151.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/599.026.58.jpg"
+  ]
+ },
+ {
+  "id": "602.397.15",
+  "name": "STOCKHOLM",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.397.15.jpg"
+  ]
+ },
+ {
+  "id": "602.961.26",
+  "name": "HELMER",
+  "type_ikea": "Drawer unit on castors",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 28.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.961.26.jpg"
+  ]
+ },
+ {
+  "id": "603.022.93",
+  "name": "BRUSALI",
+  "type_ikea": "Cabinet with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.022.93.jpg"
+  ]
+ },
+ {
+  "id": "603.034.81",
+  "name": "MALSJ",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 103.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.034.81.jpg"
+  ]
+ },
+ {
+  "id": "603.210.98",
+  "name": "FABRIKR",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 57.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.210.98.jpg"
+  ]
+ },
+ {
+  "id": "603.277.74",
+  "name": "MALSJ",
+  "type_ikea": "TV bench with sliding doors",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.277.74.jpg"
+  ]
+ },
+ {
+  "id": "702.135.93",
+  "name": "HEMNES",
+  "type_ikea": "Glass-door cabinet with 3 drawers",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.135.93.jpg"
+  ]
+ },
+ {
+  "id": "703.286.69",
+  "name": "LIXHULT",
+  "type_ikea": "Cabinet",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/703.286.69.jpg"
+  ]
+ },
+ {
+  "id": "790.575.26",
+  "name": "BEST",
+  "type_ikea": "Storage combination with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/790.575.26.jpg"
+  ]
+ },
+ {
+  "id": "802.961.25",
+  "name": "HELMER",
+  "type_ikea": "Drawer unit on castors",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 28.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.961.25.jpg"
+  ]
+ },
+ {
+  "id": "802.970.21",
+  "name": "HEMNES",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 149.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.970.21.jpg"
+  ]
+ },
+ {
+  "id": "890.066.16",
+  "name": "STUVA",
+  "type_ikea": "Storage combination",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 210.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/890.066.16.jpg"
+  ]
+ },
+ {
+  "id": "890.177.85",
+  "name": "STUVA",
+  "type_ikea": "Storage combination w doors,drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/890.177.85.jpg"
+  ]
+ },
+ {
+  "id": "890.289.15",
+  "name": "STUVA",
+  "type_ikea": "Storage combination with drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/890.289.15.jpg"
+  ]
+ },
+ {
+  "id": "890.291.18",
+  "name": "STUVA",
+  "type_ikea": "Storage combination with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/890.291.18.jpg"
+  ]
+ },
+ {
+  "id": "891.020.95",
+  "name": "TROFAST",
+  "type_ikea": "Storage combination",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 94.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/891.020.95.jpg"
+  ]
+ },
+ {
+  "id": "902.135.87",
+  "name": "HEMNES",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.135.87.jpg"
+  ]
+ },
+ {
+  "id": "902.397.33",
+  "name": "STOCKHOLM",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.397.33.jpg"
+  ]
+ },
+ {
+  "id": "902.608.14",
+  "name": "ARKELSTORP",
+  "type_ikea": "Sideboard",
+  "category": "cabinet",
+  "default_kind": "sideboard",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 93.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.608.14.jpg"
+  ]
+ },
+ {
+  "id": "902.608.33",
+  "name": "REGISSR",
+  "type_ikea": "Glass-door cabinet with 4 drawers",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.608.33.jpg"
+  ]
+ },
+ {
+  "id": "990.066.06",
+  "name": "STUVA",
+  "type_ikea": "Storage combination w doors,drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.066.06.jpg"
+  ]
+ },
+ {
+  "id": "990.469.09",
+  "name": "BEST",
+  "type_ikea": "Shelf unit with door",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.469.09.jpg"
+  ]
+ },
+ {
+  "id": "990.473.91",
+  "name": "BEST",
+  "type_ikea": "Shelf unit with doors",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.473.91.jpg"
+  ]
+ }
+]

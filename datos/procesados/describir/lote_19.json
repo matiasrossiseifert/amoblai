@@ -1,0 +1,762 @@
+[
+ {
+  "id": "001.660.95",
+  "name": "SKOJIG",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.660.95.jpg"
+  ]
+ },
+ {
+  "id": "001.696.59",
+  "name": "JANSJ",
+  "type_ikea": "LED work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.696.59.jpg"
+  ]
+ },
+ {
+  "id": "001.993.12",
+  "name": "SMILA HJRTA",
+  "type_ikea": "Wall lamp",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.993.12.jpg"
+  ]
+ },
+ {
+  "id": "002.142.18",
+  "name": "JANSJ",
+  "type_ikea": "LED floor,read lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.142.18.jpg"
+  ]
+ },
+ {
+  "id": "002.267.49",
+  "name": "SNIG",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.267.49.jpg"
+  ]
+ },
+ {
+  "id": "002.286.06",
+  "name": "STOCKHOLM",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.286.06.jpg"
+  ]
+ },
+ {
+  "id": "002.387.66",
+  "name": "VITEMLLA",
+  "type_ikea": "Wall lamp",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.387.66.jpg"
+  ]
+ },
+ {
+  "id": "002.482.18",
+  "name": "RSTID",
+  "type_ikea": "Pendant lamp, 3-armed",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.482.18.jpg"
+  ]
+ },
+ {
+  "id": "002.632.80",
+  "name": "LVNGEN",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.632.80.jpg"
+  ]
+ },
+ {
+  "id": "002.675.08",
+  "name": "VARV",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.675.08.jpg"
+  ]
+ },
+ {
+  "id": "002.806.37",
+  "name": "RSTID",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.806.37.jpg"
+  ]
+ },
+ {
+  "id": "002.806.99",
+  "name": "VARV",
+  "type_ikea": "Floor lamp with wireless charging",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.806.99.jpg"
+  ]
+ },
+ {
+  "id": "003.101.06",
+  "name": "SINNERLIG",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.101.06.jpg"
+  ]
+ },
+ {
+  "id": "003.218.69",
+  "name": "SNIG",
+  "type_ikea": "Wall lamp",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.218.69.jpg"
+  ]
+ },
+ {
+  "id": "003.313.78",
+  "name": "RANARP",
+  "type_ikea": "Floor,reading lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.313.78.jpg"
+  ]
+ },
+ {
+  "id": "100.895.82",
+  "name": "BAROMETER",
+  "type_ikea": "Work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/100.895.82.jpg"
+  ]
+ },
+ {
+  "id": "101.229.11",
+  "name": "MELODI",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.229.11.jpg"
+  ]
+ },
+ {
+  "id": "101.467.66",
+  "name": "FORS",
+  "type_ikea": "Work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.467.66.jpg"
+  ]
+ },
+ {
+  "id": "101.696.92",
+  "name": "TIVED",
+  "type_ikea": "LED wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.696.92.jpg"
+  ]
+ },
+ {
+  "id": "101.841.74",
+  "name": "HOLM",
+  "type_ikea": "Floor lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.841.74.jpg"
+  ]
+ },
+ {
+  "id": "102.142.32",
+  "name": "JANSJ",
+  "type_ikea": "LED work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.142.32.jpg"
+  ]
+ },
+ {
+  "id": "102.460.25",
+  "name": "VITEMLLA",
+  "type_ikea": "Ceiling lamp",
+  "category": "lamp",
+  "default_kind": "ceiling lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.460.25.jpg"
+  ]
+ },
+ {
+  "id": "102.897.22",
+  "name": "SVIRVEL",
+  "type_ikea": "Floor lamp with 2 shades",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.897.22.jpg"
+  ]
+ },
+ {
+  "id": "102.911.31",
+  "name": "STOCKHOLM",
+  "type_ikea": "Floor lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.911.31.jpg"
+  ]
+ },
+ {
+  "id": "103.101.63",
+  "name": "JANSJ",
+  "type_ikea": "LED wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/103.101.63.jpg"
+  ]
+ },
+ {
+  "id": "103.123.84",
+  "name": "STAN",
+  "type_ikea": "Ceiling,wall lamp",
+  "category": "lamp",
+  "default_kind": "ceiling lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/103.123.84.jpg"
+  ]
+ },
+ {
+  "id": "202.080.42",
+  "name": "KLABB",
+  "type_ikea": "Floor lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.080.42.jpg"
+  ]
+ },
+ {
+  "id": "202.313.11",
+  "name": "RANARP",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.313.11.jpg"
+  ]
+ },
+ {
+  "id": "202.387.51",
+  "name": "VITEMLLA",
+  "type_ikea": "Wall lamp",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.387.51.jpg"
+  ]
+ },
+ {
+  "id": "202.806.84",
+  "name": "RIGGAD",
+  "type_ikea": "LED work lamp w wireless charging",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.806.84.jpg"
+  ]
+ },
+ {
+  "id": "203.031.19",
+  "name": "NYFORS",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.031.19.jpg"
+  ]
+ },
+ {
+  "id": "301.471.66",
+  "name": "OTTAVA",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/301.471.66.jpg"
+  ]
+ },
+ {
+  "id": "301.486.94",
+  "name": "ARD",
+  "type_ikea": "Floor,reading lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/301.486.94.jpg"
+  ]
+ },
+ {
+  "id": "301.904.47",
+  "name": "MASKROS",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/301.904.47.jpg"
+  ]
+ },
+ {
+  "id": "302.313.01",
+  "name": "RANARP",
+  "type_ikea": "Floor,reading lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.313.01.jpg"
+  ]
+ },
+ {
+  "id": "302.865.67",
+  "name": "SAMTID",
+  "type_ikea": "Floor,reading lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.865.67.jpg"
+  ]
+ },
+ {
+  "id": "303.047.26",
+  "name": "ANTIFONI",
+  "type_ikea": "Floor,reading lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.047.26.jpg"
+  ]
+ },
+ {
+  "id": "303.101.62",
+  "name": "JANSJ",
+  "type_ikea": "LED wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.101.62.jpg"
+  ]
+ },
+ {
+  "id": "401.499.33",
+  "name": "SKOJIG",
+  "type_ikea": "Ceiling lamp",
+  "category": "lamp",
+  "default_kind": "ceiling lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.499.33.jpg"
+  ]
+ },
+ {
+  "id": "401.522.80",
+  "name": "BJA",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.522.80.jpg"
+  ]
+ }
+]

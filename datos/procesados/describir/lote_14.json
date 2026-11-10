@@ -1,0 +1,1002 @@
+[
+ {
+  "id": "303.003.61",
+  "name": "FISKBO",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.003.61.jpg"
+  ]
+ },
+ {
+  "id": "303.097.81",
+  "name": "BEGRLIG",
+  "type_ikea": "Vase",
+  "category": "deco",
+  "default_kind": "vase",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.097.81.jpg"
+  ]
+ },
+ {
+  "id": "303.131.46",
+  "name": "SINNERLIG",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/303.131.46.jpg"
+  ]
+ },
+ {
+  "id": "303.170.26",
+  "name": "URSULA",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.170.26.jpg"
+  ]
+ },
+ {
+  "id": "303.201.37",
+  "name": "VIGDIS",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.201.37.jpg"
+  ]
+ },
+ {
+  "id": "303.265.06",
+  "name": "RENREPE",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.265.06.jpg"
+  ]
+ },
+ {
+  "id": "303.541.08",
+  "name": "GRFIBBLA",
+  "type_ikea": "Throw",
+  "category": "deco",
+  "default_kind": "throw",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.541.08.jpg"
+  ]
+ },
+ {
+  "id": "380.062.00",
+  "name": "FRCK",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/380.062.00.jpg"
+  ]
+ },
+ {
+  "id": "401.866.28",
+  "name": "PEKANNT",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/401.866.28.jpg"
+  ]
+ },
+ {
+  "id": "401.903.81",
+  "name": "HENRIKA",
+  "type_ikea": "Throw",
+  "category": "deco",
+  "default_kind": "throw",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.903.81.jpg"
+  ]
+ },
+ {
+  "id": "401.927.33",
+  "name": "BYHOLMA",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.927.33.jpg"
+  ]
+ },
+ {
+  "id": "402.121.61",
+  "name": "HERMINE",
+  "type_ikea": "Throw",
+  "category": "deco",
+  "default_kind": "throw",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.121.61.jpg"
+  ]
+ },
+ {
+  "id": "402.301.98",
+  "name": "SANELA",
+  "type_ikea": "Curtains, 1 pair",
+  "category": "deco",
+  "default_kind": "curtains",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.301.98.jpg"
+  ]
+ },
+ {
+  "id": "402.331.49",
+  "name": "ENSIDIG",
+  "type_ikea": "Vase",
+  "category": "deco",
+  "default_kind": "vase",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.331.49.jpg"
+  ]
+ },
+ {
+  "id": "402.364.78",
+  "name": "ROSIG",
+  "type_ikea": "Cushion",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.364.78.jpg"
+  ]
+ },
+ {
+  "id": "402.572.20",
+  "name": "OTTIL",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.572.20.jpg"
+  ]
+ },
+ {
+  "id": "402.590.64",
+  "name": "VIGDIS",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.590.64.jpg"
+  ]
+ },
+ {
+  "id": "402.812.77",
+  "name": "KERKULLA",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.812.77.jpg"
+  ]
+ },
+ {
+  "id": "402.820.69",
+  "name": "RIMFORSA",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.820.69.jpg"
+  ]
+ },
+ {
+  "id": "402.878.87",
+  "name": "STABEKK",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.878.87.jpg"
+  ]
+ },
+ {
+  "id": "402.886.79",
+  "name": "LANGESUND",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.886.79.jpg"
+  ]
+ },
+ {
+  "id": "402.958.73",
+  "name": "PJTTERYD",
+  "type_ikea": "Picture, set of 3",
+  "category": "deco",
+  "default_kind": "wall art",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.958.73.jpg"
+  ]
+ },
+ {
+  "id": "403.000.11",
+  "name": "MATREDAL",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.000.11.jpg"
+  ]
+ },
+ {
+  "id": "403.097.71",
+  "name": "TGNG",
+  "type_ikea": "Vase",
+  "category": "deco",
+  "default_kind": "vase",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.097.71.jpg"
+  ]
+ },
+ {
+  "id": "403.112.84",
+  "name": "VRVIND",
+  "type_ikea": "Vase",
+  "category": "deco",
+  "default_kind": "vase",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.112.84.jpg"
+  ]
+ },
+ {
+  "id": "403.191.62",
+  "name": "GRNBY",
+  "type_ikea": "Picture, set of 9",
+  "category": "deco",
+  "default_kind": "wall art",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.191.62.jpg"
+  ]
+ },
+ {
+  "id": "403.202.12",
+  "name": "VRSTJRNA",
+  "type_ikea": "Throw",
+  "category": "deco",
+  "default_kind": "throw",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.202.12.jpg"
+  ]
+ },
+ {
+  "id": "403.210.37",
+  "name": "STRANDKL",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.210.37.jpg"
+  ]
+ },
+ {
+  "id": "468.040.05",
+  "name": "CHRYSALIDOCARPUS LUTESCENS",
+  "type_ikea": "Potted plant",
+  "category": "deco",
+  "default_kind": "plant",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+  ]
+ },
+ {
+  "id": "500.382.13",
+  "name": "HOVET",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/500.382.13.jpg"
+  ]
+ },
+ {
+  "id": "500.460.48",
+  "name": "MATILDA",
+  "type_ikea": "Sheer curtains, 1 pair",
+  "category": "deco",
+  "default_kind": "curtains",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/500.460.48.jpg"
+  ]
+ },
+ {
+  "id": "501.491.31",
+  "name": "GODMORGON",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/501.491.31.jpg"
+  ]
+ },
+ {
+  "id": "501.552.78",
+  "name": "SNDRUM",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/501.552.78.jpg"
+  ]
+ },
+ {
+  "id": "501.861.09",
+  "name": "KALASA",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/501.861.09.jpg"
+  ]
+ },
+ {
+  "id": "502.431.62",
+  "name": "ENUDDEN",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.431.62.jpg"
+  ]
+ },
+ {
+  "id": "502.433.17",
+  "name": "KNARRA",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.433.17.jpg"
+  ]
+ },
+ {
+  "id": "502.523.97",
+  "name": "DRMMARE",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.523.97.jpg"
+  ]
+ },
+ {
+  "id": "502.580.40",
+  "name": "INGEFRA",
+  "type_ikea": "Plant pot with saucer",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/502.580.40.jpg"
+  ]
+ },
+ {
+  "id": "502.629.33",
+  "name": "BLEKVIVA",
+  "type_ikea": "Curtains with tie-backs, 1 pair",
+  "category": "deco",
+  "default_kind": "curtains",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.629.33.jpg"
+  ]
+ },
+ {
+  "id": "502.647.34",
+  "name": "HAVERDAL",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.647.34.jpg"
+  ]
+ }
+]

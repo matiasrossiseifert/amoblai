@@ -1,0 +1,602 @@
+[
+ {
+  "id": "391.109.84",
+  "name": "NOCKEBY",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/391.109.84.jpg"
+  ]
+ },
+ {
+  "id": "391.250.99",
+  "name": "NORSBORG",
+  "type_ikea": "3-seat sofa with 2 chaise longues",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/391.250.99.jpg"
+  ]
+ },
+ {
+  "id": "391.504.42",
+  "name": "NOCKEBY",
+  "type_ikea": "Two-seat sofa w chaise longue left",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/391.504.42.jpg"
+  ]
+ },
+ {
+  "id": "398.758.49",
+  "name": "EKTORP",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/398.758.49.jpg"
+  ]
+ },
+ {
+  "id": "590.337.20",
+  "name": "STOCKSUND",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/590.337.20.jpg"
+  ]
+ },
+ {
+  "id": "591.110.44",
+  "name": "NOCKEBY",
+  "type_ikea": "Two-seat sofa w chaise longue right",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/591.110.44.jpg"
+  ]
+ },
+ {
+  "id": "591.249.99",
+  "name": "NORSBORG",
+  "type_ikea": "Two-seat sofa with chaise longue",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/591.249.99.jpg"
+  ]
+ },
+ {
+  "id": "598.758.05",
+  "name": "EKTORP",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/598.758.05.jpg"
+  ]
+ },
+ {
+  "id": "601.985.93",
+  "name": "KIVIK",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/601.985.93.jpg"
+  ]
+ },
+ {
+  "id": "690.106.19",
+  "name": "KLIPPAN",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/690.106.19.jpg"
+  ]
+ },
+ {
+  "id": "691.110.34",
+  "name": "NOCKEBY",
+  "type_ikea": "Two-seat sofa w chaise longue left",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/691.110.34.jpg"
+  ]
+ },
+ {
+  "id": "691.249.46",
+  "name": "NORSBORG",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/691.249.46.jpg"
+  ]
+ },
+ {
+  "id": "691.292.32",
+  "name": "EKTORP",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/691.292.32.jpg"
+  ]
+ },
+ {
+  "id": "702.450.56",
+  "name": "STOCKHOLM",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/702.450.56.jpg"
+  ]
+ },
+ {
+  "id": "799.019.69",
+  "name": "SDERHAMN",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/799.019.69.jpg"
+  ]
+ },
+ {
+  "id": "802.991.95",
+  "name": "DAGARN",
+  "type_ikea": "Two-seat sofa with chaise longue",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/802.991.95.jpg"
+  ]
+ },
+ {
+  "id": "803.007.16",
+  "name": "HIMMENE",
+  "type_ikea": "Three-seat sofa-bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/bed/803.007.16.jpg"
+  ]
+ },
+ {
+  "id": "891.872.40",
+  "name": "LYCKSELE LVS",
+  "type_ikea": "Two-seat sofa-bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/891.872.40.jpg"
+  ]
+ },
+ {
+  "id": "902.651.09",
+  "name": "KNOPPARP",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/902.651.09.jpg"
+  ]
+ },
+ {
+  "id": "903.007.25",
+  "name": "FRIHETEN",
+  "type_ikea": "Three-seat sofa-bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/903.007.25.jpg"
+  ]
+ },
+ {
+  "id": "001.050.64",
+  "name": "LIATORP",
+  "type_ikea": "Console table",
+  "category": "table",
+  "default_kind": "console table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 37.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/001.050.64.jpg"
+  ]
+ },
+ {
+  "id": "002.908.15",
+  "name": "NORRKER",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 125.0,
+   "depth": 74.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/002.908.15.jpg"
+  ]
+ },
+ {
+  "id": "002.998.25",
+  "name": "KRAGSTA",
+  "type_ikea": "Nest of tables, set of 2",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/002.998.25.jpg"
+  ]
+ },
+ {
+  "id": "091.195.18",
+  "name": "KLIMPEN,NIPEN",
+  "type_ikea": "Table with drawers",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 120.0,
+   "depth": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/091.195.18.jpg"
+  ]
+ },
+ {
+  "id": "101.762.87",
+  "name": "HEMNES",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 90.0,
+   "depth": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/101.762.87.jpg"
+  ]
+ },
+ {
+  "id": "102.224.06",
+  "name": "INGATORP",
+  "type_ikea": "Drop-leaf table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/102.224.06.jpg"
+  ]
+ },
+ {
+  "id": "102.397.13",
+  "name": "STOCKHOLM",
+  "type_ikea": "Nest of tables, set of 2",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/102.397.13.jpg"
+  ]
+ },
+ {
+  "id": "102.781.01",
+  "name": "LIATORP",
+  "type_ikea": "Console table",
+  "category": "table",
+  "default_kind": "console table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 37.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/102.781.01.jpg"
+  ]
+ },
+ {
+  "id": "102.976.56",
+  "name": "LISABO",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 45.0,
+   "depth": 45.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/102.976.56.jpg"
+  ]
+ },
+ {
+  "id": "146.300.09",
+  "name": "INGO",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 120.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/146.300.09.jpg"
+  ]
+ },
+ {
+  "id": "190.117.77",
+  "name": "MELLTORP",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 125.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/190.117.77.jpg"
+  ]
+ },
+ {
+  "id": "191.197.25",
+  "name": "HISSMON,KRILLE",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 140.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/191.197.25.jpg"
+  ]
+ },
+ {
+  "id": "200.114.13",
+  "name": "LACK",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 55.0,
+   "depth": 55.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/200.114.13.jpg"
+  ]
+ },
+ {
+  "id": "201.571.08",
+  "name": "STRIND",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/201.571.08.jpg"
+  ]
+ },
+ {
+  "id": "202.047.51",
+  "name": "BJURSTA",
+  "type_ikea": "Extendable table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/202.047.51.jpg"
+  ]
+ }
+]

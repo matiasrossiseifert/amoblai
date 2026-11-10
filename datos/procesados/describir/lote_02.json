@@ -1,0 +1,568 @@
+[
+ {
+  "id": "202.013.33",
+  "name": "PREBEN",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/202.013.33.jpg"
+  ]
+ },
+ {
+  "id": "391.278.09",
+  "name": "LEIFARNE",
+  "type_ikea": "Chair with armrests",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/391.278.09.jpg"
+  ]
+ },
+ {
+  "id": "400.441.96",
+  "name": "KAUSTBY",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/400.441.96.jpg"
+  ]
+ },
+ {
+  "id": "401.822.44",
+  "name": "KAUSTBY",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/401.822.44.jpg"
+  ]
+ },
+ {
+  "id": "402.177.95",
+  "name": "FRODE",
+  "type_ikea": "Folding chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/402.177.95.jpg"
+  ]
+ },
+ {
+  "id": "402.288.12",
+  "name": "IDOLF",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/402.288.12.jpg"
+  ]
+ },
+ {
+  "id": "402.753.42",
+  "name": "NORRKER",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/402.753.42.jpg"
+  ]
+ },
+ {
+  "id": "402.805.17",
+  "name": "JANINGE",
+  "type_ikea": "Chair with armrests",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/402.805.17.jpg"
+  ]
+ },
+ {
+  "id": "402.808.43",
+  "name": "NORRARYD",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/402.808.43.jpg"
+  ]
+ },
+ {
+  "id": "500.583.76",
+  "name": "AGEN",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/500.583.76.jpg"
+  ]
+ },
+ {
+  "id": "591.278.08",
+  "name": "LEIFARNE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/591.278.08.jpg"
+  ]
+ },
+ {
+  "id": "598.501.07",
+  "name": "HENRIKSDAL",
+  "type_ikea": "Chair with long cover",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/598.501.07.jpg"
+  ]
+ },
+ {
+  "id": "602.178.22",
+  "name": "INGOLF",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/602.178.22.jpg"
+  ]
+ },
+ {
+  "id": "602.460.80",
+  "name": "JANINGE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/602.460.80.jpg"
+  ]
+ },
+ {
+  "id": "602.470.51",
+  "name": "GAMLEBY",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/602.470.51.jpg"
+  ]
+ },
+ {
+  "id": "603.347.36",
+  "name": "BERNHARD",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/603.347.36.jpg"
+  ]
+ },
+ {
+  "id": "701.032.50",
+  "name": "INGOLF",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/701.032.50.jpg"
+  ]
+ },
+ {
+  "id": "702.068.04",
+  "name": "IKEA PS 2012",
+  "type_ikea": "Chair with armrests",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/702.068.04.jpg"
+  ]
+ },
+ {
+  "id": "791.278.07",
+  "name": "LEIFARNE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/791.278.07.jpg"
+  ]
+ },
+ {
+  "id": "801.638.04",
+  "name": "BERNHARD",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/801.638.04.jpg"
+  ]
+ },
+ {
+  "id": "802.251.66",
+  "name": "IDOLF",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/802.251.66.jpg"
+  ]
+ },
+ {
+  "id": "802.340.19",
+  "name": "LMSTA",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/802.340.19.jpg"
+  ]
+ },
+ {
+  "id": "891.278.02",
+  "name": "LEIFARNE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/891.278.02.jpg"
+  ]
+ },
+ {
+  "id": "902.142.85",
+  "name": "ADDE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/902.142.85.jpg"
+  ]
+ },
+ {
+  "id": "902.177.93",
+  "name": "FRODE",
+  "type_ikea": "Folding chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/902.177.93.jpg"
+  ]
+ },
+ {
+  "id": "902.639.02",
+  "name": "IVAR",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/902.639.02.jpg"
+  ]
+ },
+ {
+  "id": "903.347.30",
+  "name": "BERNHARD",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/903.347.30.jpg"
+  ]
+ },
+ {
+  "id": "991.278.06",
+  "name": "LEIFARNE",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/991.278.06.jpg"
+  ]
+ },
+ {
+  "id": "991.278.11",
+  "name": "SVENBERTIL",
+  "type_ikea": "Chair",
+  "category": "chair",
+  "default_kind": "dining chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/chair/991.278.11.jpg"
+  ]
+ },
+ {
+  "id": "002.394.12",
+  "name": "STOCKHOLM",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.394.12.jpg"
+  ]
+ },
+ {
+  "id": "002.399.59",
+  "name": "RUMMET",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 100.0,
+   "depth": 133.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.399.59.jpg"
+  ]
+ },
+ {
+  "id": "002.773.95",
+  "name": "LOHALS",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.773.95.jpg"
+  ]
+ },
+ {
+  "id": "002.804.92",
+  "name": "OSTED",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.804.92.jpg"
+  ]
+ },
+ {
+  "id": "002.852.58",
+  "name": "SATTRUP",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 180.0,
+   "depth": 224.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.852.58.jpg"
+  ]
+ },
+ {
+  "id": "002.973.60",
+  "name": "SIGNE",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 55.0,
+   "depth": 85.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.973.60.jpg"
+  ]
+ }
+]

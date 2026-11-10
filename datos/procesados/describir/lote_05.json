@@ -1,0 +1,554 @@
+[
+ {
+  "id": "702.962.63",
+  "name": "STICKAT",
+  "type_ikea": "Rug, braided",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/702.962.63.jpg"
+  ]
+ },
+ {
+  "id": "702.992.28",
+  "name": "PERSISK HAMADAN",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 100.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/702.992.28.jpg"
+  ]
+ },
+ {
+  "id": "703.130.07",
+  "name": "HAMPEN",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 195.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/703.130.07.jpg"
+  ]
+ },
+ {
+  "id": "703.323.55",
+  "name": "HEMMAHOS",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 50.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/703.323.55.jpg"
+  ]
+ },
+ {
+  "id": "801.048.62",
+  "name": "STOCKHOLM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/801.048.62.jpg"
+  ]
+ },
+ {
+  "id": "801.982.95",
+  "name": "MORUM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/801.982.95.jpg"
+  ]
+ },
+ {
+  "id": "802.307.90",
+  "name": "GSER",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/802.307.90.jpg"
+  ]
+ },
+ {
+  "id": "802.703.09",
+  "name": "OSTED",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 160.0,
+   "depth": 230.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/802.703.09.jpg"
+  ]
+ },
+ {
+  "id": "802.725.63",
+  "name": "SPRINGA",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/802.725.63.jpg"
+  ]
+ },
+ {
+  "id": "832.351.10",
+  "name": "LUDDE",
+  "type_ikea": "Sheepskin",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/832.351.10.jpg"
+  ]
+ },
+ {
+  "id": "902.364.90",
+  "name": "RARING",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.364.90.jpg"
+  ]
+ },
+ {
+  "id": "902.394.22",
+  "name": "STOCKHOLM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 250.0,
+   "depth": 350.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.394.22.jpg"
+  ]
+ },
+ {
+  "id": "902.592.50",
+  "name": "GSER",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 56.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.592.50.jpg"
+  ]
+ },
+ {
+  "id": "902.726.66",
+  "name": "SNABBFOTAD",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.726.66.jpg"
+  ]
+ },
+ {
+  "id": "902.873.66",
+  "name": "MLBY",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.873.66.jpg"
+  ]
+ },
+ {
+  "id": "902.962.62",
+  "name": "STICKAT",
+  "type_ikea": "Rug, braided",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/902.962.62.jpg"
+  ]
+ },
+ {
+  "id": "903.130.11",
+  "name": "HAMPEN",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/903.130.11.jpg"
+  ]
+ },
+ {
+  "id": "903.194.90",
+  "name": "DUM",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/903.194.90.jpg"
+  ]
+ },
+ {
+  "id": "002.729.20",
+  "name": "TIMSFORS",
+  "type_ikea": "Two-seat sofa with chaise longue",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/002.729.20.jpg"
+  ]
+ },
+ {
+  "id": "091.292.30",
+  "name": "EKTORP",
+  "type_ikea": "Two-seat sofa and chaise longue",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/091.292.30.jpg"
+  ]
+ },
+ {
+  "id": "091.302.38",
+  "name": "KLIPPAN",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/091.302.38.jpg"
+  ]
+ },
+ {
+  "id": "098.744.98",
+  "name": "IKEA PS LVS",
+  "type_ikea": "Two-seat sofa-bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/098.744.98.jpg"
+  ]
+ },
+ {
+  "id": "190.114.33",
+  "name": "KIVIK",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/190.114.33.jpg"
+  ]
+ },
+ {
+  "id": "190.526.21",
+  "name": "KLIPPAN",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/190.526.21.jpg"
+  ]
+ },
+ {
+  "id": "190.948.24",
+  "name": "STOCKSUND",
+  "type_ikea": "Chaise longue",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/190.948.24.jpg"
+  ]
+ },
+ {
+  "id": "191.297.91",
+  "name": "STOCKSUND",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/191.297.91.jpg"
+  ]
+ },
+ {
+  "id": "191.504.62",
+  "name": "NOCKEBY",
+  "type_ikea": "Two-seat sofa w chaise longue right",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/191.504.62.jpg"
+  ]
+ },
+ {
+  "id": "203.062.93",
+  "name": "KLIPPAN",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/203.062.93.jpg"
+  ]
+ },
+ {
+  "id": "290.338.06",
+  "name": "STOCKSUND",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/290.338.06.jpg"
+  ]
+ },
+ {
+  "id": "290.338.11",
+  "name": "STOCKSUND",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/290.338.11.jpg"
+  ]
+ },
+ {
+  "id": "290.486.62",
+  "name": "HOLMSUND",
+  "type_ikea": "Three-seat sofa-bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/bed/290.486.62.jpg"
+  ]
+ },
+ {
+  "id": "291.614.03",
+  "name": "VALLENTUNA",
+  "type_ikea": "3-seat sofa with bed",
+  "category": "sofa",
+  "default_kind": "sofa bed",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/291.614.03.jpg"
+  ]
+ },
+ {
+  "id": "302.651.12",
+  "name": "KNOPPARP",
+  "type_ikea": "Two-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/302.651.12.jpg"
+  ]
+ },
+ {
+  "id": "390.067.94",
+  "name": "EKTORP",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/390.067.94.jpg"
+  ]
+ },
+ {
+  "id": "390.338.01",
+  "name": "STOCKSUND",
+  "type_ikea": "Three-seat sofa",
+  "category": "sofa",
+  "default_kind": "sofa",
+  "allowed_kinds": [
+   "sofa",
+   "sofa bed"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/couch/390.338.01.jpg"
+  ]
+ }
+]

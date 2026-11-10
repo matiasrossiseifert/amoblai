@@ -1,0 +1,437 @@
+[
+ {
+  "id": "702.921.04",
+  "name": "MOSSLANDA",
+  "type_ikea": "Picture ledge",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 115.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.921.04.jpg"
+  ]
+ },
+ {
+  "id": "703.233.51",
+  "name": "BILLY",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/703.233.51.jpg"
+  ]
+ },
+ {
+  "id": "799.296.47",
+  "name": "EKBY JRPEN,EKBY BJRNUM",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/799.296.47.jpg"
+  ]
+ },
+ {
+  "id": "801.439.53",
+  "name": "EKBY STEN",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/801.439.53.jpg"
+  ]
+ },
+ {
+  "id": "802.456.40",
+  "name": "HEMNES",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.456.40.jpg"
+  ]
+ },
+ {
+  "id": "802.758.87",
+  "name": "KALLAX",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 77.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.758.87.jpg"
+  ]
+ },
+ {
+  "id": "803.034.37",
+  "name": "VITTSJ",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 51.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.034.37.jpg"
+  ]
+ },
+ {
+  "id": "890.067.96",
+  "name": "IVAR",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 89.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/890.067.96.jpg"
+  ]
+ },
+ {
+  "id": "898.703.40",
+  "name": "EKBY JRPEN,EKBY BJRNUM",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/898.703.40.jpg"
+  ]
+ },
+ {
+  "id": "899.206.94",
+  "name": "EKBY STEN,EKBY VALTER",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/899.206.94.jpg"
+  ]
+ },
+ {
+  "id": "902.523.76",
+  "name": "STENSTORP",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.523.76.jpg"
+  ]
+ },
+ {
+  "id": "902.821.80",
+  "name": "LACK",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 110.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.821.80.jpg"
+  ]
+ },
+ {
+  "id": "902.921.03",
+  "name": "MOSSLANDA",
+  "type_ikea": "Picture ledge",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 115.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.921.03.jpg"
+  ]
+ },
+ {
+  "id": "903.012.25",
+  "name": "BRIMNES",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/903.012.25.jpg"
+  ]
+ },
+ {
+  "id": "990.234.08",
+  "name": "BILLY,OXBERG",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.234.08.jpg"
+  ]
+ },
+ {
+  "id": "001.522.82",
+  "name": "INGOLF",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.522.82.jpg"
+  ]
+ },
+ {
+  "id": "002.461.96",
+  "name": "MARIUS",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.461.96.jpg"
+  ]
+ },
+ {
+  "id": "002.753.44",
+  "name": "NORRKER",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.753.44.jpg"
+  ]
+ },
+ {
+  "id": "003.014.99",
+  "name": "NORRKER",
+  "type_ikea": "Bar stool with backrest",
+  "category": "stool",
+  "default_kind": "bar stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.014.99.jpg"
+  ]
+ },
+ {
+  "id": "101.356.59",
+  "name": "MARIUS",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.356.59.jpg"
+  ]
+ },
+ {
+  "id": "198.503.88",
+  "name": "NILS",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/198.503.88.jpg"
+  ]
+ },
+ {
+  "id": "200.339.19",
+  "name": "ALSEDA",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/200.339.19.jpg"
+  ]
+ },
+ {
+  "id": "202.493.30",
+  "name": "ODDVAR",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.493.30.jpg"
+  ]
+ },
+ {
+  "id": "242.862.05",
+  "name": "FROSTA",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/242.862.05.jpg"
+  ]
+ },
+ {
+  "id": "303.083.95",
+  "name": "RSKOG",
+  "type_ikea": "Bar stool",
+  "category": "stool",
+  "default_kind": "bar stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.083.95.jpg"
+  ]
+ },
+ {
+  "id": "803.083.93",
+  "name": "RSKOG",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.083.93.jpg"
+  ]
+ },
+ {
+  "id": "901.840.47",
+  "name": "MARIUS",
+  "type_ikea": "Stool",
+  "category": "stool",
+  "default_kind": "low stool",
+  "allowed_kinds": [
+   "bar stool",
+   "low stool"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.840.47.jpg"
+  ]
+ }
+]

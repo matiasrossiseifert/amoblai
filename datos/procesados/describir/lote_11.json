@@ -1,0 +1,876 @@
+[
+ {
+  "id": "002.387.14",
+  "name": "LILLHJDEN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/002.387.14.jpg"
+  ]
+ },
+ {
+  "id": "090.066.63",
+  "name": "VGSBERG,SPORREN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/090.066.63.jpg"
+  ]
+ },
+ {
+  "id": "102.604.60",
+  "name": "GREGOR",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/102.604.60.jpg"
+  ]
+ },
+ {
+  "id": "103.203.41",
+  "name": "KULLABERG",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/103.203.41.jpg"
+  ]
+ },
+ {
+  "id": "202.800.33",
+  "name": "SKRUVSTA",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/202.800.33.jpg"
+  ]
+ },
+ {
+  "id": "202.927.76",
+  "name": "MOLTE",
+  "type_ikea": "Desk chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/202.927.76.jpg"
+  ]
+ },
+ {
+  "id": "290.066.95",
+  "name": "VGSBERG,SPORREN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/290.066.95.jpg"
+  ]
+ },
+ {
+  "id": "302.332.44",
+  "name": "LILLHJDEN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/302.332.44.jpg"
+  ]
+ },
+ {
+  "id": "302.625.28",
+  "name": "FEODOR",
+  "type_ikea": "Swivel chair with armrests",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/302.625.28.jpg"
+  ]
+ },
+ {
+  "id": "302.882.36",
+  "name": "FEODOR",
+  "type_ikea": "Swivel chair with armrests",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/302.882.36.jpg"
+  ]
+ },
+ {
+  "id": "702.790.70",
+  "name": "ROBERGET",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/702.790.70.jpg"
+  ]
+ },
+ {
+  "id": "790.066.93",
+  "name": "VGSBERG,SPORREN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/790.066.93.jpg"
+  ]
+ },
+ {
+  "id": "790.462.60",
+  "name": "SNILLE",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/790.462.60.jpg"
+  ]
+ },
+ {
+  "id": "890.066.83",
+  "name": "VGSBERG,SPORREN",
+  "type_ikea": "Swivel chair",
+  "category": "chair",
+  "default_kind": "desk chair",
+  "allowed_kinds": [
+   "desk chair",
+   "dining chair",
+   "armchair"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/chair/890.066.83.jpg"
+  ]
+ },
+ {
+  "id": "000.171.33",
+  "name": "VASEN",
+  "type_ikea": "Vase",
+  "category": "deco",
+  "default_kind": "vase",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.171.33.jpg"
+  ]
+ },
+ {
+  "id": "000.780.32",
+  "name": "RIBBA",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.780.32.jpg"
+  ]
+ },
+ {
+  "id": "000.783.34",
+  "name": "RIBBA",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.783.34.jpg"
+  ]
+ },
+ {
+  "id": "001.185.23",
+  "name": "PACHIRA AQUATICA",
+  "type_ikea": "Potted plant",
+  "category": "deco",
+  "default_kind": "plant",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+  ]
+ },
+ {
+  "id": "001.228.22",
+  "name": "HEMNES",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.228.22.jpg"
+  ]
+ },
+ {
+  "id": "001.286.21",
+  "name": "STUVA",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.286.21.jpg"
+  ]
+ },
+ {
+  "id": "001.384.32",
+  "name": "BRANS",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.384.32.jpg"
+  ]
+ },
+ {
+  "id": "001.590.14",
+  "name": "BYHOLMA",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.590.14.jpg"
+  ]
+ },
+ {
+  "id": "001.658.02",
+  "name": "KARDEMUMMA",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/001.658.02.jpg"
+  ]
+ },
+ {
+  "id": "001.737.36",
+  "name": "KARDEMUMMA",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/001.737.36.jpg"
+  ]
+ },
+ {
+  "id": "001.747.69",
+  "name": "VIRSERUM",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.747.69.jpg"
+  ]
+ },
+ {
+  "id": "001.903.83",
+  "name": "HENRIKA",
+  "type_ikea": "Throw",
+  "category": "deco",
+  "default_kind": "throw",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.903.83.jpg"
+  ]
+ },
+ {
+  "id": "002.134.88",
+  "name": "RGKORN",
+  "type_ikea": "Plant pot",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/002.134.88.jpg"
+  ]
+ },
+ {
+  "id": "002.173.87",
+  "name": "KNAPPER",
+  "type_ikea": "Standing mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.173.87.jpg"
+  ]
+ },
+ {
+  "id": "002.459.17",
+  "name": "BEST",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.459.17.jpg"
+  ]
+ },
+ {
+  "id": "002.518.52",
+  "name": "LUNDAMO",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.518.52.jpg"
+  ]
+ },
+ {
+  "id": "002.673.58",
+  "name": "NATTLJUS",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.673.58.jpg"
+  ]
+ },
+ {
+  "id": "002.688.76",
+  "name": "RIBBA",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.688.76.jpg"
+  ]
+ },
+ {
+  "id": "002.811.56",
+  "name": "HENRIKA",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.811.56.jpg"
+  ]
+ },
+ {
+  "id": "002.824.05",
+  "name": "BRANS",
+  "type_ikea": "Basket",
+  "category": "deco",
+  "default_kind": "basket",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.824.05.jpg"
+  ]
+ },
+ {
+  "id": "002.857.91",
+  "name": "JUJUBR",
+  "type_ikea": "Plant pot with saucer",
+  "category": "deco",
+  "default_kind": "plant pot",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/002.857.91.jpg"
+  ]
+ },
+ {
+  "id": "002.863.85",
+  "name": "GULLKLOCKA",
+  "type_ikea": "Cushion cover",
+  "category": "deco",
+  "default_kind": "cushion",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.863.85.jpg"
+  ]
+ },
+ {
+  "id": "002.886.81",
+  "name": "LANGESUND",
+  "type_ikea": "Mirror",
+  "category": "deco",
+  "default_kind": "mirror",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.886.81.jpg"
+  ]
+ },
+ {
+  "id": "002.917.68",
+  "name": "GUNNABO",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.917.68.jpg"
+  ]
+ },
+ {
+  "id": "002.917.87",
+  "name": "SILVERHJDEN",
+  "type_ikea": "Frame",
+  "category": "deco",
+  "default_kind": "picture frame",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.917.87.jpg"
+  ]
+ },
+ {
+  "id": "002.975.67",
+  "name": "VIVAN",
+  "type_ikea": "Curtains, 1 pair",
+  "category": "deco",
+  "default_kind": "curtains",
+  "allowed_kinds": [
+   "cushion",
+   "throw",
+   "curtains",
+   "vase",
+   "plant pot",
+   "plant",
+   "picture frame",
+   "wall art",
+   "mirror",
+   "wall clock",
+   "basket",
+   "candle holder"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.975.67.jpg"
+  ]
+ }
+]
