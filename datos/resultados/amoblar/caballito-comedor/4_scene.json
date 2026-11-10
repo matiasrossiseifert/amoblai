@@ -1,0 +1,8 @@
+{
+  "answer": {
+    "prompt": "Edit image 1. It is a photo of the client's own room, and the result must still be that same room, exactly: the same camera position, angle, lens and framing; the same walls, ceiling, floor, light fixture and outlets; the same windows, with the same frames, in the same places. Do not add, remove, move or enlarge any wall, window, door or opening, do not extend, rotate or crop the room, and do not change its light. Wherever no new furniture goes, the result is image 1 unchanged.\n\nImages 2 to 5 are the products to add, one photo each:\nimage 2: rectangular solid wood dining table, 125 cm wide, 74 cm deep\nimage 3: wooden dining chair, size unknown, 4 units\nimage 4: white bell pendant lamp, size unknown\nimage 5: open cube sideboard on metal base, size unknown\n\nAdd exactly these products and nothing else: no other furniture, lamps, plants, rugs or decoration than these (books on the shelves of a bookcase are fine). Each one must be the product of its photo, not a similar one: the same design, proportions, colors and materials. A product listed with \"2 units\" goes twice.\n\nThe client asked: \"Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas negras, una l\u00e1mpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la derecha. Estilo n\u00f3rdico, simple.\". Arrange the products as an interior designer would for that, against the walls and on the floor that image 1 shows, each at its real size for this room, lit by this room's light. The result must look like a real photograph of image 1's room."
+  },
+  "model": null,
+  "cost_usd": 0.0,
+  "prompt": "scene_prompt_libre_v4"
+}

@@ -1,0 +1,199 @@
+{
+  "answer": {
+    "room": "un living comedor largo y vac\u00edo, de estilo contempor\u00e1neo sencillo: paredes y z\u00f3calos blancos, piso de tablas anchas de roble en tono miel medio, ventanal corredizo de marco gris oscuro al fondo que da a un balc\u00f3n con verde, y un paso abierto a la derecha hacia el resto de la casa",
+    "pieces": [
+      {
+        "piece": "un sof\u00e1 grande de tres cuerpos, contra la pared izquierda en la mitad del ambiente",
+        "why": "es la pieza que define la zona de estar en el centro del largo; un sof\u00e1 crema de l\u00edneas n\u00f3rdicas y patas de madera clara da calidez sobre las paredes blancas",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, large three-seater\nUse: lounging and conversation; living room\nStyle: Scandinavian, contemporary\nMaterials: textured boucle or linen-blend upholstery, light oak legs\nColors: warm cream, off-white\nShape: low and deep, soft rounded arms, loose seat cushions, slim wooden legs, medium visual weight\nFeel: warm, cozy, relaxed\nGoes with: white walls, honey oak plank floor, light wood; Nordic living room"
+      },
+      {
+        "piece": "un sill\u00f3n para leer, frente al sof\u00e1 del otro lado de la mesa ratona, mirando hacia el ventanal",
+        "why": "completa la zona de estar y da un rinc\u00f3n de lectura; un sill\u00f3n de estructura de madera clara y tapizado crema o verde salvia suma el toque de verde pedido",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 85,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: armchair, reading lounge chair\nUse: reading and relaxing; living room\nStyle: Scandinavian, mid-century modern\nMaterials: solid light oak or ash frame, wool or boucle upholstery\nColors: cream, sage green accent\nShape: high back, open wooden armrests, generous cushioned seat, light visual weight\nFeel: cozy, inviting, crafted\nGoes with: cream sofa, honey oak floor, white walls; Nordic living room"
+      },
+      {
+        "piece": "una mesa ratona entre el sof\u00e1 y el sill\u00f3n, en el centro de la zona de estar",
+        "why": "une sof\u00e1 y sill\u00f3n; una mesa baja de roble claro y bordes redondeados es liviana a la vista y no corta el recorrido del ambiente largo",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 120,
+        "max_depth_cm": 70,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, low wooden\nUse: serving and display in the seating area; living room\nStyle: Scandinavian, Japandi\nMaterials: solid light oak\nColors: natural light oak\nShape: oval or rounded rectangle, low, solid legs, lower shelf optional, medium visual weight\nFeel: natural, calm, warm\nGoes with: cream sofa, light oak armchair, honey oak floor; Nordic living room"
+      },
+      {
+        "piece": "una alfombra grande bajo el sof\u00e1, el sill\u00f3n y la mesa ratona, en la mitad del ambiente",
+        "why": "delimita la zona de estar dentro del espacio largo y suaviza el piso de madera con textura crema",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 240,
+        "max_height_cm": null,
+        "query": "Type: rug, large wool area rug\nUse: anchoring the seating area; living room\nStyle: Scandinavian, minimalist\nMaterials: wool, natural fibers, low or medium pile\nColors: cream, oatmeal, subtle beige pattern\nShape: rectangular, soft textured weave, subtle tone-on-tone pattern\nFeel: soft, warm, cozy\nGoes with: cream sofa, light oak furniture, honey oak floor; Nordic living room"
+      },
+      {
+        "piece": "una mesa de comedor para seis, cerca del ventanal al fondo, centrada en el ancho",
+        "why": "la luz del ventanal es ideal para comer; una mesa rectangular de roble claro y patas robustas mantiene el tono n\u00f3rdico y c\u00e1lido",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: dining table, rectangular for six\nUse: dining for six people; dining room\nStyle: Scandinavian, Japandi\nMaterials: solid light oak or ash\nColors: natural light oak\nShape: rectangular, about 180-200 cm long, rounded corners, sturdy legs, medium visual weight\nFeel: warm, natural, welcoming\nGoes with: honey oak floor, white walls, cream textiles; Nordic living dining room"
+      },
+      {
+        "piece": "seis sillas de comedor alrededor de la mesa, junto al ventanal",
+        "why": "acompa\u00f1an la mesa para seis; sillas de madera clara con asiento tejido o tapizado crema aportan textura y calidez",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": 55,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: dining chair, wooden with woven seat\nUse: seating at the dining table; dining room\nStyle: Scandinavian, mid-century modern\nMaterials: solid light oak or beech, paper cord or cream fabric seat\nColors: natural light wood, cream\nShape: curved backrest, slim legs, light visual weight\nFeel: crafted, warm, light\nGoes with: light oak dining table, honey oak floor, white walls; Nordic dining room"
+      },
+      {
+        "piece": "una l\u00e1mpara colgante sobre la mesa de comedor",
+        "why": "marca la zona del comedor y da luz c\u00e1lida de noche; una pantalla de papel o madera clara es cl\u00e1sica del estilo n\u00f3rdico",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, large shade over dining table\nUse: lighting the dining table; dining room\nStyle: Scandinavian, Japandi\nMaterials: rice paper, wood veneer or linen\nColors: warm white, natural wood\nShape: large rounded or dome shade, soft diffused glow, light visual weight\nFeel: warm, soft, airy\nGoes with: light oak dining table, cream textiles, white ceiling; Nordic dining room"
+      },
+      {
+        "piece": "una l\u00e1mpara de pie junto al sill\u00f3n de lectura",
+        "why": "el rinc\u00f3n de lectura necesita luz propia; una l\u00e1mpara de pie con base de madera clara y pantalla de lino da luz c\u00e1lida",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, reading lamp with fabric shade\nUse: reading light beside armchair; living room\nStyle: Scandinavian, minimalist\nMaterials: light oak, linen shade\nColors: natural wood, cream\nShape: slim tripod or straight stem, drum shade, light visual weight\nFeel: warm, calm, cozy\nGoes with: light oak armchair, cream sofa, white walls; Nordic living room"
+      },
+      {
+        "piece": "un aparador bajo contra la pared derecha, junto al comedor",
+        "why": "da guardado para vajilla y manteler\u00eda cerca de la mesa y aprovecha el largo del ambiente sin recargarlo",
+        "kinds": [
+          "sideboard"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 85,
+        "query": "Type: sideboard, low with doors\nUse: storing dishes and table linen; dining room\nStyle: Scandinavian, Japandi\nMaterials: light oak, oak veneer, slatted or cane doors\nColors: natural light oak\nShape: long and low, slim legs, clean lines, medium visual weight\nFeel: orderly, warm, natural\nGoes with: light oak dining table, honey oak floor, white walls; Nordic living dining room"
+      },
+      {
+        "piece": "cortinas livianas en el ventanal del fondo",
+        "why": "suavizan el marco oscuro del ventanal, filtran la luz y suman calidez textil en crema",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer linen panels\nUse: filtering light at sliding glass door; living dining room\nStyle: Scandinavian, minimalist\nMaterials: linen, linen blend\nColors: cream, natural off-white\nShape: floor-length, soft folds, airy\nFeel: light, soft, calm\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room"
+      },
+      {
+        "piece": "almohadones para el sof\u00e1 y el sill\u00f3n",
+        "why": "suman capas de textura y el toque de verde pedido sobre el tapizado crema",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, textured throw pillows\nUse: decorating the sofa and armchair; living room\nStyle: Scandinavian, bohemian\nMaterials: wool, linen, boucle, knit\nColors: cream, oatmeal, sage green, olive green\nShape: square and lumbar, textured weaves\nFeel: cozy, soft, warm\nGoes with: cream sofa, light oak, honey oak floor; Nordic living room"
+      },
+      {
+        "piece": "una manta tejida sobre el sof\u00e1",
+        "why": "refuerza la sensaci\u00f3n c\u00e1lida y acogedora del living n\u00f3rdico",
+        "kinds": [
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: throw, chunky knit blanket\nUse: warmth and decoration on sofa; living room\nStyle: Scandinavian\nMaterials: wool or cotton knit\nColors: cream, warm ivory\nShape: chunky knit texture, fringed edges\nFeel: cozy, soft, warm\nGoes with: cream sofa, sage cushions, light oak; Nordic living room"
+      },
+      {
+        "piece": "una planta grande en maceta, en el rinc\u00f3n entre la zona de estar y el comedor",
+        "why": "trae el verde pedido y conecta visualmente con el verde del balc\u00f3n",
+        "kinds": [
+          "plant"
+        ],
+        "max_width_cm": 70,
+        "max_depth_cm": 70,
+        "max_height_cm": null,
+        "query": "Type: plant, large indoor floor plant\nUse: adding greenery; living dining room\nStyle: Scandinavian, bohemian\nMaterials: live foliage, ceramic or woven basket planter\nColors: lush green, cream or natural planter\nShape: tall, leafy, fiddle leaf fig or olive tree, medium visual weight\nFeel: fresh, natural, lively\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room"
+      },
+      {
+        "piece": "cuadros sobre el sof\u00e1, en la pared izquierda",
+        "why": "dan un punto focal a la pared larga y blanca sin romper la calma del estilo",
+        "kinds": [
+          "wall art"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: wall art, framed abstract prints set\nUse: decorating wall above sofa; living room\nStyle: Scandinavian, minimalist\nMaterials: paper print, light oak frames\nColors: cream, beige, sage green, soft terracotta\nShape: pair or trio of rectangular frames, organic abstract shapes, light visual weight\nFeel: calm, warm, artistic\nGoes with: cream sofa, light oak, white walls; Nordic living room"
+      },
+      {
+        "piece": "un florero de cer\u00e1mica sobre la mesa de comedor o el aparador",
+        "why": "un \u00faltimo detalle natural con ramas verdes que une comedor y balc\u00f3n",
+        "kinds": [
+          "vase"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: vase, handmade ceramic\nUse: displaying branches or flowers; dining room\nStyle: Scandinavian, Japandi\nMaterials: matte stoneware ceramic\nColors: cream, warm off-white\nShape: organic rounded form, medium height, textured glaze\nFeel: natural, calm, crafted\nGoes with: light oak dining table, sideboard, green branches; Nordic dining room"
+      }
+    ]
+  },
+  "model": "claude-opus-5-5",
+  "cost_usd": 0.107864,
+  "prompt": "search_query_v4",
+  "meta": {
+    "status": "completed",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 2666,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 4860,
+      "output_tokens_details": {
+        "thinking_tokens": 479
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "images": 1,
+    "latency_s": 44.17
+  },
+  "text": "```json\n{\"room\": \"un living comedor largo y vac\u00edo, de estilo contempor\u00e1neo sencillo: paredes y z\u00f3calos blancos, piso de tablas anchas de roble en tono miel medio, ventanal corredizo de marco gris oscuro al fondo que da a un balc\u00f3n con verde, y un paso abierto a la derecha hacia el resto de la casa\", \"pieces\": [\n{\"piece\": \"un sof\u00e1 grande de tres cuerpos, contra la pared izquierda en la mitad del ambiente\", \"why\": \"es la pieza que define la zona de estar en el centro del largo; un sof\u00e1 crema de l\u00edneas n\u00f3rdicas y patas de madera clara da calidez sobre las paredes blancas\", \"kinds\": [\"sofa\"], \"max_width_cm\": 260, \"max_depth_cm\": 100, \"max_height_cm\": null, \"query\": \"Type: sofa, large three-seater\\nUse: lounging and conversation; living room\\nStyle: Scandinavian, contemporary\\nMaterials: textured boucle or linen-blend upholstery, light oak legs\\nColors: warm cream, off-white\\nShape: low and deep, soft rounded arms, loose seat cushions, slim wooden legs, medium visual weight\\nFeel: warm, cozy, relaxed\\nGoes with: white walls, honey oak plank floor, light wood; Nordic living room\"},\n{\"piece\": \"un sill\u00f3n para leer, frente al sof\u00e1 del otro lado de la mesa ratona, mirando hacia el ventanal\", \"why\": \"completa la zona de estar y da un rinc\u00f3n de lectura; un sill\u00f3n de estructura de madera clara y tapizado crema o verde salvia suma el toque de verde pedido\", \"kinds\": [\"armchair\"], \"max_width_cm\": 85, \"max_depth_cm\": 90, \"max_height_cm\": null, \"query\": \"Type: armchair, reading lounge chair\\nUse: reading and relaxing; living room\\nStyle: Scandinavian, mid-century modern\\nMaterials: solid light oak or ash frame, wool or boucle upholstery\\nColors: cream, sage green accent\\nShape: high back, open wooden armrests, generous cushioned seat, light visual weight\\nFeel: cozy, inviting, crafted\\nGoes with: cream sofa, honey oak floor, white walls; Nordic living room\"},\n{\"piece\": \"una mesa ratona entre el sof\u00e1 y el sill\u00f3n, en el centro de la zona de estar\", \"why\": \"une sof\u00e1 y sill\u00f3n; una mesa baja de roble claro y bordes redondeados es liviana a la vista y no corta el recorrido del ambiente largo\", \"kinds\": [\"coffee table\"], \"max_width_cm\": 120, \"max_depth_cm\": 70, \"max_height_cm\": 45, \"query\": \"Type: coffee table, low wooden\\nUse: serving and display in the seating area; living room\\nStyle: Scandinavian, Japandi\\nMaterials: solid light oak\\nColors: natural light oak\\nShape: oval or rounded rectangle, low, solid legs, lower shelf optional, medium visual weight\\nFeel: natural, calm, warm\\nGoes with: cream sofa, light oak armchair, honey oak floor; Nordic living room\"},\n{\"piece\": \"una alfombra grande bajo el sof\u00e1, el sill\u00f3n y la mesa ratona, en la mitad del ambiente\", \"why\": \"delimita la zona de estar dentro del espacio largo y suaviza el piso de madera con textura crema\", \"kinds\": [\"rug\"], \"max_width_cm\": 300, \"max_depth_cm\": 240, \"max_height_cm\": null, \"query\": \"Type: rug, large wool area rug\\nUse: anchoring the seating area; living room\\nStyle: Scandinavian, minimalist\\nMaterials: wool, natural fibers, low or medium pile\\nColors: cream, oatmeal, subtle beige pattern\\nShape: rectangular, soft textured weave, subtle tone-on-tone pattern\\nFeel: soft, warm, cozy\\nGoes with: cream sofa, light oak furniture, honey oak floor; Nordic living room\"},\n{\"piece\": \"una mesa de comedor para seis, cerca del ventanal al fondo, centrada en el ancho\", \"why\": \"la luz del ventanal es ideal para comer; una mesa rectangular de roble claro y patas robustas mantiene el tono n\u00f3rdico y c\u00e1lido\", \"kinds\": [\"dining table\"], \"max_width_cm\": 200, \"max_depth_cm\": 100, \"max_height_cm\": null, \"query\": \"Type: dining table, rectangular for six\\nUse: dining for six people; dining room\\nStyle: Scandinavian, Japandi\\nMaterials: solid light oak or ash\\nColors: natural light oak\\nShape: rectangular, about 180-200 cm long, rounded corners, sturdy legs, medium visual weight\\nFeel: warm, natural, welcoming\\nGoes with: honey oak floor, white walls, cream textiles; Nordic living dining room\"},\n{\"piece\": \"seis sillas de comedor alrededor de la mesa, junto al ventanal\", \"why\": \"acompa\u00f1an la mesa para seis; sillas de madera clara con asiento tejido o tapizado crema aportan textura y calidez\", \"kinds\": [\"dining chair\"], \"max_width_cm\": 55, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: dining chair, wooden with woven seat\\nUse: seating at the dining table; dining room\\nStyle: Scandinavian, mid-century modern\\nMaterials: solid light oak or beech, paper cord or cream fabric seat\\nColors: natural light wood, cream\\nShape: curved backrest, slim legs, light visual weight\\nFeel: crafted, warm, light\\nGoes with: light oak dining table, honey oak floor, white walls; Nordic dining room\"},\n{\"piece\": \"una l\u00e1mpara colgante sobre la mesa de comedor\", \"why\": \"marca la zona del comedor y da luz c\u00e1lida de noche; una pantalla de papel o madera clara es cl\u00e1sica del estilo n\u00f3rdico\", \"kinds\": [\"pendant lamp\"], \"max_width_cm\": null, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: pendant lamp, large shade over dining table\\nUse: lighting the dining table; dining room\\nStyle: Scandinavian, Japandi\\nMaterials: rice paper, wood veneer or linen\\nColors: warm white, natural wood\\nShape: large rounded or dome shade, soft diffused glow, light visual weight\\nFeel: warm, soft, airy\\nGoes with: light oak dining table, cream textiles, white ceiling; Nordic dining room\"},\n{\"piece\": \"una l\u00e1mpara de pie junto al sill\u00f3n de lectura\", \"why\": \"el rinc\u00f3n de lectura necesita luz propia; una l\u00e1mpara de pie con base de madera clara y pantalla de lino da luz c\u00e1lida\", \"kinds\": [\"floor lamp\"], \"max_width_cm\": 50, \"max_depth_cm\": 50, \"max_height_cm\": null, \"query\": \"Type: floor lamp, reading lamp with fabric shade\\nUse: reading light beside armchair; living room\\nStyle: Scandinavian, minimalist\\nMaterials: light oak, linen shade\\nColors: natural wood, cream\\nShape: slim tripod or straight stem, drum shade, light visual weight\\nFeel: warm, calm, cozy\\nGoes with: light oak armchair, cream sofa, white walls; Nordic living room\"},\n{\"piece\": \"un aparador bajo contra la pared derecha, junto al comedor\", \"why\": \"da guardado para vajilla y manteler\u00eda cerca de la mesa y aprovecha el largo del ambiente sin recargarlo\", \"kinds\": [\"sideboard\"], \"max_width_cm\": 180, \"max_depth_cm\": 45, \"max_height_cm\": 85, \"query\": \"Type: sideboard, low with doors\\nUse: storing dishes and table linen; dining room\\nStyle: Scandinavian, Japandi\\nMaterials: light oak, oak veneer, slatted or cane doors\\nColors: natural light oak\\nShape: long and low, slim legs, clean lines, medium visual weight\\nFeel: orderly, warm, natural\\nGoes with: light oak dining table, honey oak floor, white walls; Nordic living dining room\"},\n{\"piece\": \"cortinas livianas en el ventanal del fondo\", \"why\": \"suavizan el marco oscuro del ventanal, filtran la luz y suman calidez textil en crema\", \"kinds\": [\"curtains\"], \"max_width_cm\": null, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: curtains, sheer linen panels\\nUse: filtering light at sliding glass door; living dining room\\nStyle: Scandinavian, minimalist\\nMaterials: linen, linen blend\\nColors: cream, natural off-white\\nShape: floor-length, soft folds, airy\\nFeel: light, soft, calm\\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room\"},\n{\"piece\": \"almohadones para el sof\u00e1 y el sill\u00f3n\", \"why\": \"suman capas de textura y el toque de verde pedido sobre el tapizado crema\", \"kinds\": [\"cushion\"], \"max_width_cm\": null, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: cushion, textured throw pillows\\nUse: decorating the sofa and armchair; living room\\nStyle: Scandinavian, bohemian\\nMaterials: wool, linen, boucle, knit\\nColors: cream, oatmeal, sage green, olive green\\nShape: square and lumbar, textured weaves\\nFeel: cozy, soft, warm\\nGoes with: cream sofa, light oak, honey oak floor; Nordic living room\"},\n{\"piece\": \"una manta tejida sobre el sof\u00e1\", \"why\": \"refuerza la sensaci\u00f3n c\u00e1lida y acogedora del living n\u00f3rdico\", \"kinds\": [\"throw\"], \"max_width_cm\": null, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: throw, chunky knit blanket\\nUse: warmth and decoration on sofa; living room\\nStyle: Scandinavian\\nMaterials: wool or cotton knit\\nColors: cream, warm ivory\\nShape: chunky knit texture, fringed edges\\nFeel: cozy, soft, warm\\nGoes with: cream sofa, sage cushions, light oak; Nordic living room\"},\n{\"piece\": \"una planta grande en maceta, en el rinc\u00f3n entre la zona de estar y el comedor\", \"why\": \"trae el verde pedido y conecta visualmente con el verde del balc\u00f3n\", \"kinds\": [\"plant\"], \"max_width_cm\": 70, \"max_depth_cm\": 70, \"max_height_cm\": null, \"query\": \"Type: plant, large indoor floor plant\\nUse: adding greenery; living dining room\\nStyle: Scandinavian, bohemian\\nMaterials: live foliage, ceramic or woven basket planter\\nColors: lush green, cream or natural planter\\nShape: tall, leafy, fiddle leaf fig or olive tree, medium visual weight\\nFeel: fresh, natural, lively\\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room\"},\n{\"piece\": \"cuadros sobre el sof\u00e1, en la pared izquierda\", \"why\": \"dan un punto focal a la pared larga y blanca sin romper la calma del estilo\", \"kinds\": [\"wall art\"], \"max_width_cm\": 200, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: wall art, framed abstract prints set\\nUse: decorating wall above sofa; living room\\nStyle: Scandinavian, minimalist\\nMaterials: paper print, light oak frames\\nColors: cream, beige, sage green, soft terracotta\\nShape: pair or trio of rectangular frames, organic abstract shapes, light visual weight\\nFeel: calm, warm, artistic\\nGoes with: cream sofa, light oak, white walls; Nordic living room\"},\n{\"piece\": \"un florero de cer\u00e1mica sobre la mesa de comedor o el aparador\", \"why\": \"un \u00faltimo detalle natural con ramas verdes que une comedor y balc\u00f3n\", \"kinds\": [\"vase\"], \"max_width_cm\": null, \"max_depth_cm\": null, \"max_height_cm\": null, \"query\": \"Type: vase, handmade ceramic\\nUse: displaying branches or flowers; dining room\\nStyle: Scandinavian, Japandi\\nMaterials: matte stoneware ceramic\\nColors: cream, warm off-white\\nShape: organic rounded form, medium height, textured glaze\\nFeel: natural, calm, crafted\\nGoes with: light oak dining table, sideboard, green branches; Nordic dining room\"}\n]}\n```",
+  "unknown_kinds": []
+}
