@@ -1,0 +1,35 @@
+{
+  "product": "402.958.73",
+  "text": "Type: set of three printed canvas pictures\nUse: decorating a wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: retro, contemporary, bohemian\nMaterials: printed canvas stretched on frames\nColors: light beige ground, pastel green, pink, lilac, orange, yellow, grey lettering\nShape: three square panels hung side by side, collage of vintage luggage tags and travel labels with city names and airport codes, light graphic layout\nFeel: playful, wanderlust, cheerful, nostalgic\nGoes with: light wood, white walls, pastel accents; retro, eclectic or youthful living rooms and home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.958.73",
+      "name": "PJTTERYD",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": null,
+      "type_ikea": "Picture, set of 3",
+      "category_tp": "deco",
+      "size_raw": "25x25 cm",
+      "colors": [
+        "Global travels"
+      ],
+      "description": "The picture has extra depth and life, because it's printed on high quality canvas."
+    },
+    "photos": [
+      "d806412d2ff26c8c"
+    ]
+  }
+}

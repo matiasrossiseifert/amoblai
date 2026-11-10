@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07662RXRZ",
+  "text": "Type: abstract geometric canvas art\nUse: wall decoration above a sofa, bed or console; living room, bedroom, home office\nStyle: contemporary, modern, mid-century modern\nMaterials: painted-look canvas, gallery wrap\nColors: white, coral red, tan, sky blue, gold line, grey\nShape: tall portrait rectangle, frameless, chevron blocks, cube, hexagon outline, dotted circle, large\nFeel: light, playful, airy\nGoes with: white walls, light wood, coral or blue accents; modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07662RXRZ",
+      "name": "Amazon Brand \u2013 Rivet Modern Abstract Shapes Wall Art Decor on Canvas - 26 x 48 Inches",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 121.9,
+        "depth": 91.4,
+        "height": 3.8
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multicolor"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": "Abstract",
+      "description": "Contemporary shapes create this abstract painting on canvas and form the building blocks of modern style. The painting\u2019s striking combination of color and pattern adds instant visual interest for rooms both innovative and elegant. 36\"W x 48\"H Printed canvas with hand painted details Abstract shapes, angles, and bright color adds interest to your home or office Hanging materials not included",
+      "image_path": "db/db911479.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f9b500d80fb380ca"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "690.481.70",
+  "text": "Type: white gloss wall shelf with metal brackets\nUse: displaying books, plants and decor above a desk or sofa; living room, home office, bedroom, bathroom\nStyle: modern, minimalist, contemporary\nMaterials: high-gloss white board, polished aluminium brackets\nColors: glossy white, silver\nShape: long thin board clamped at each end by slim angular metal brackets screwed to the wall, straight edges, sleek and floating, low visual weight\nFeel: sleek, bright, clean, crisp\nGoes with: white walls, chrome or glass, grey textiles; modern, minimalist or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "690.481.70",
+      "name": "EKBY TONY,EKBY BJRNUM",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 119.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "119x28 cm",
+      "colors": [
+        "High-gloss white",
+        "aluminium"
+      ],
+      "description": "Solid wood is a durable natural material."
+    },
+    "photos": [
+      "31f74d0f68f6f3df"
+    ]
+  }
+}

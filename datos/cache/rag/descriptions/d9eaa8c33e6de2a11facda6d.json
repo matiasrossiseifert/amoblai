@@ -1,0 +1,38 @@
+{
+  "product": "802.725.63",
+  "text": "Type: running track kids play rug\nUse: playing, racing toy cars and sitting on the floor; kids room, playroom, nursery\nStyle: contemporary, modern\nMaterials: soft low pile with a printed pattern\nColors: bright tomato red, white\nShape: rectangle printed like a running track with six numbered lanes, white lane lines and curved start marks, flat\nFeel: playful, sporty, energetic\nGoes with: white or light wood kids furniture, red and primary accents; children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.725.63",
+      "name": "SPRINGA",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "133x160 cm",
+      "colors": [
+        "Red"
+      ],
+      "description": "The latex backing keeps the rug in place when the child runs,plays on it."
+    },
+    "photos": [
+      "02f21d3ca9739ee1"
+    ]
+  }
+}

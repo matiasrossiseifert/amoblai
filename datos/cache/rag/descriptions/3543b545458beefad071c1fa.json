@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07PY83NQL",
+  "text": "Type: five-globe linear pendant\nUse: light over a dining table or kitchen island; dining room, kitchen, living room\nStyle: mid-century modern, contemporary, minimalist\nMaterials: matte black steel, opal frosted glass globes\nColors: white, matte black\nShape: long rectangular canopy with five black cords at staggered heights, round glass globes with black caps, wide and airy\nFeel: playful, soft, balanced\nGoes with: wood dining tables, white walls, black accents; modern or mid-century dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07PY83NQL",
+      "name": "Amazon Brand \u2013 Rivet Modern Steel and Glass Pendant Lamp, 28.5\"H - Matte Black",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 80.5,
+        "depth": 21.6,
+        "height": 72.4
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Matte Black"
+      ],
+      "materials": [
+        "Steel"
+      ],
+      "style": "Modern",
+      "description": "This unique pendant lamp features five hanging globes, casting consistent light over an oblong area. The pendant lamp is like a modern chandelier, useful for lighting a whole room or a specific oblong area. 31.7\"W x 8.5\"D x 28.5\"H; hanging length: 28.5\"H Steel and glass Adds ambient light without sacrificing style; perfect over a kitchen island or to highlight a gallery wall Bulb not included Expert installation required Indoor use only",
+      "image_path": "44/44a8f8d5.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "bf4954214256c8fe"
+    ]
+  }
+}

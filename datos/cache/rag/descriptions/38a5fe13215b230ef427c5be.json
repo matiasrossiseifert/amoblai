@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07WJS58FV",
+  "text": "Type: wooden storage bin\nUse: storing blankets, magazines or plants; living room, bedroom, entryway\nStyle: farmhouse, rustic\nMaterials: whitewashed distressed wood, galvanized metal lining, jute rope handles\nColors: white washed, warm natural wood, grey metal\nShape: square tapered box wider at top, rough plank texture, rope loop handles, medium and solid\nFeel: rustic, warm, homey\nGoes with: reclaimed wood, white shiplap, galvanized and black metal; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07WJS58FV",
+      "name": "Stone & Beam Modern Farmhouse Wood and Galvanized Metal Decor Storage Bin Basket, 14 Inch, White Washed (Renewed)",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": {
+        "width": 35.5,
+        "depth": 35.5,
+        "height": 25.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "This clean, crisp storage bin will boost your style while concealing clutter or storing treasured items.  With white-washed wood on the outside, galvanized metal on the inside and hemp ropes for handles, this piece will blend with most any d\u00e9cor. 14\"D x 14\"W x 10\"H This bin looks attractive on a shelf, or out in full view as a catch-all for clutter Fir wood, engineered wood, galvanized metal, hemp rope For indoor use",
+      "image_path": "48/480a280f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "82ea4cab319b76c6"
+    ]
+  }
+}

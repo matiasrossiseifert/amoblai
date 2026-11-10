@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSBD8DM",
+  "text": "Type: four-door buffet sideboard\nUse: storing tableware, serving, media storage; dining room, living room\nStyle: traditional, coastal, contemporary\nMaterials: brown wood, woven cane door panels, silver metal bar pulls\nColors: warm medium brown, silver\nShape: long rectangular case, four framed cane-panel doors, long vertical pulls, open base frame with stretchers, square legs, substantial\nFeel: warm, refined, relaxed\nGoes with: rattan, linen, cream walls, brushed nickel; traditional, coastal or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSBD8DM",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown",
+      "category": "cabinet",
+      "kind": "sideboard",
+      "dimensions_cm": {
+        "width": 172.7,
+        "depth": 50.8,
+        "height": 82.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CABINET",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "68\u201dW x 20\u201dD x 32.3\u201dH Rubber Wood, MDF with a mahogany veneer. Buffet arrives assembled; adjustable shelves and handles require assembly Free returns for 30 days.1 year warranty. This cabinet has 4 doors with slow-closing hinges and 3 adjustable shelves",
+      "image_path": "4c/4cded7e5.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d47198a1605fd907"
+    ]
+  }
+}

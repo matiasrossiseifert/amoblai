@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072ZMVR53",
+  "text": "Type: hairpin leg coffee table\nUse: holding drinks, books and remotes; living room\nStyle: mid-century modern, industrial, retro\nMaterials: walnut wood veneer top, black metal hairpin legs\nColors: warm medium walnut brown, black\nShape: thick rectangular top with rounded corners, slim hidden front drawer, four splayed black hairpin legs, light and open\nFeel: retro, warm, relaxed\nGoes with: walnut, mustard or teal textiles, black accents; mid-century or industrial living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B072ZMVR53",
+      "name": "Amazon Brand \u2013 Rivet Hairpin Mid-Century Modern Wood and Metal Coffee Table, Walnut and Black",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 119.9,
+        "depth": 39.9,
+        "height": 59.9
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Coffee Table",
+      "description": "This modern coffee table appears to float on dark metal legs shaped much like hairpins. The wood top has walnut veneer for a classic touch that helps this piece blend with your existing styles. 47.2\"L x 23.6\"W x 15.7\"H Engineered wood with walnut veneer; dark painted metal legs Contemporary A convenient coffee table with simple style Simple assembly in 15-30 minutes Free returns for 30 days. 1-year warranty.",
+      "image_path": "5d/5d6bf1f8.jpg",
+      "image_px": [
+        2560,
+        1369
+      ]
+    },
+    "photos": [
+      "f82cb6099fa36021"
+    ]
+  }
+}

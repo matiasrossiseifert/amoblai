@@ -1,0 +1,38 @@
+{
+  "product": "802.307.90",
+  "text": "Type: large shaggy area rug\nUse: soft base under a sofa, coffee table or bed; living room, bedroom\nStyle: contemporary, minimalist, modern\nMaterials: long dense synthetic shag pile\nColors: dark charcoal grey with a slight green-grey cast\nShape: plain rectangle with thick fluffy shag, soft edges, solid color, plush and heavy-looking\nFeel: cozy, soft, grounding\nGoes with: light grey or white sofas, pale wood, chrome or black accents; modern, minimalist or Scandinavian living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "802.307.90",
+      "name": "GSER",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "170x240 cm",
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "The high pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "85fca559bd83bafd"
+    ]
+  }
+}

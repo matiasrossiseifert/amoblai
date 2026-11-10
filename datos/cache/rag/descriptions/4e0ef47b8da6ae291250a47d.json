@@ -1,0 +1,37 @@
+{
+  "product": "890.067.96",
+  "text": "Type: open pine shelving unit\nUse: storing books, baskets and everyday things; living room, home office, hallway, storage room\nStyle: Scandinavian, rustic, minimalist\nMaterials: untreated solid pine, slim metal cross-brace wires\nColors: pale natural pine, warm blond wood, silver\nShape: two perforated ladder-style side frames with crossbars, four open shelves, X-shaped wire bracing at the back, utilitarian and open, medium visual weight\nFeel: natural, honest, practical, warm\nGoes with: white walls, woven baskets, linen, green plants; Scandinavian, rustic or cabin rooms, workrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "890.067.96",
+      "name": "IVAR",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 89.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "89x50x179 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Untreated solid wood is a durable natural material which is even more hardwearing and easy to look after if you oil or wax the surface."
+    },
+    "photos": [
+      "ef14fcda658dc77b"
+    ]
+  }
+}

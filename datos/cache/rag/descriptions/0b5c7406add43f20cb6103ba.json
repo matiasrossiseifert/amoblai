@@ -1,0 +1,38 @@
+{
+  "product": "302.992.30",
+  "text": "Type: hand-knotted Persian area rug\nUse: anchoring a seating or dining area; living room, dining room, study, bedroom\nStyle: traditional, classic, bohemian\nMaterials: hand-knotted wool-look short pile, fine dense knotting\nColors: deep brick red, dark navy, rust orange, ivory accents\nShape: rectangle with a central diamond medallion, small tribal motifs, wide geometric border, flat low pile, medium size, richly patterned\nFeel: warm, rich, timeless, crafted\nGoes with: dark or warm wood, leather, brass, cream walls; traditional, classic or bohemian living rooms and studies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.992.30",
+      "name": "PERSISK HAMADAN",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 140.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "140x200 cm",
+      "colors": [
+        "Handmade assorted patterns"
+      ],
+      "description": "Hand-knotted by skilled craftspeople, and therefore unique in design and size."
+    },
+    "photos": [
+      "b2191f94a0a20e94"
+    ]
+  }
+}

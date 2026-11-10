@@ -1,0 +1,35 @@
+{
+  "product": "703.273.11",
+  "text": "Type: three-arm black metal candlestick\nUse: holding three taper candles on a dining table, a sideboard or a mantel; dining room, living room\nStyle: minimalist, Scandinavian, modern\nMaterials: matte black painted metal\nColors: matte black\nShape: central tube with two curved arms that rise into three tall cylindrical cups, wide shallow round tray base, sculptural and graphic, medium visual weight\nFeel: graphic, sculptural, calm, modern\nGoes with: white tapers, light wood tables, linen, white walls; Scandinavian, minimalist or modern dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "703.273.11",
+      "name": "ENIGHET",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Candlestick for 3 candles",
+      "category_tp": "deco",
+      "size_raw": "22 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Elegant candlestick that both give an atmospheric light and is beautiful in its own right."
+    },
+    "photos": [
+      "3066005ab0042c98"
+    ]
+  }
+}

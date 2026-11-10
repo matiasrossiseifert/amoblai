@@ -1,0 +1,36 @@
+{
+  "product": "791.278.07",
+  "text": "Type: molded shell dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: modern, minimalist, contemporary\nMaterials: molded plastic shell, chrome-plated steel tube legs\nColors: white, silver chrome\nShape: one-piece curved scoop shell with a tall rounded back, armless, four thin straight metal legs, light and open, compact\nFeel: clean, bright, fresh, practical\nGoes with: white or glass tables, grey walls, chrome accents; modern kitchens, minimalist dining rooms, bright home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "791.278.07",
+      "name": "LEIFARNE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "broringe chrome-plated"
+      ],
+      "description": "You sit comfortably thanks to the restful flexibility of the scooped seat and shaped back."
+    },
+    "photos": [
+      "22b33c83af4800b0"
+    ]
+  }
+}

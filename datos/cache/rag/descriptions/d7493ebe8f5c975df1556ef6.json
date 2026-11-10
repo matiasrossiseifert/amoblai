@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JM1XVHS",
+  "text": "Type: geometric jacquard throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: rustic, bohemian, farmhouse\nMaterials: woven jacquard fabric\nColors: cream, warm rust, mustard ochre, olive grey\nShape: square, horizontal bands of diamonds, crosses, hearts and zigzags, flat woven texture, knife edges, large\nFeel: warm, earthy, lively\nGoes with: leather, natural wood, cream and rust tones; rustic, bohemian or southwestern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JM1XVHS",
+      "name": "Amazon Brand \u2013 Stone & Beam Rustic Geometric Throw Pillow - 20 x 20 Inch, Earth Tones",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 50.8,
+        "depth": 50.8,
+        "height": 15.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Earth Tones"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Made in USA and imported Patterned woven stripe brings a unique, southwester flair to your space in soft, earthy tones. Back of pillow is solid taupe-colored fabric. Hidden zipper at bottom of pillow. 20\"L x 20\"W Pillow cover and insert Spot clean. Pillow insert arrives in vacuum-sealed bag. Carefully remove insert from packaging. and let it fully expand before putting inside of pillow cover.",
+      "image_path": "eb/ebaaf5a6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d4ed9b5faefdd4b1"
+    ]
+  }
+}

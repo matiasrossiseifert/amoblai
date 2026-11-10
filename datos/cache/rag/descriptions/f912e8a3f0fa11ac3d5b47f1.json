@@ -1,0 +1,37 @@
+{
+  "product": "502.638.38",
+  "text": "Type: tall narrow white bookcase\nUse: storing books, DVDs and decor in a slim space; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white foil-finished board\nColors: white\nShape: tall slender upright box with straight sides, several adjustable open shelves, flat top, low plinth base, plain clean front, compact footprint\nFeel: simple, tidy, neutral, light\nGoes with: white walls, light wood floors, colorful book spines, plants; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.638.38",
+      "name": "BILLY",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 40.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "40x28x202 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Shallow shelves help you to use small wall spaces effectively by accommodating small items in a minimum of space."
+    },
+    "photos": [
+      "4a811f5b759fcc6f"
+    ]
+  }
+}

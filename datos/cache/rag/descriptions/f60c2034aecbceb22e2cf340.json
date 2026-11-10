@@ -1,0 +1,47 @@
+{
+  "product": "abo-B00BS4VHBS",
+  "text": "Type: quilted reversible sherpa throw\nUse: warmth draped over a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, rustic, farmhouse\nMaterials: micro mink plush face, sherpa fleece reverse, bound edges\nColors: warm taupe brown, matching sherpa side\nShape: rectangular, chevron quilted stitching, fleecy textured reverse, satin-like binding, medium weight\nFeel: cozy, soft, warm\nGoes with: cream, grey or brown upholstery, wood tones, knit cushions; farmhouse, rustic or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B00BS4VHBS",
+      "name": "Pinzon Quilted Reversible Micro Mink Sherpa Throw, Taupe",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 177.8,
+        "depth": 127.0,
+        "height": 1.3
+      },
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME",
+      "colors": [
+        "Taupe"
+      ],
+      "materials": [
+        "microfiber"
+      ],
+      "style": null,
+      "description": "Reversible super-soft throw offers cozy warmth Chevron-quilted micro mink on one side dyed-to-match sherpa on the other Available in 3 colors: Chocolate, Gray, and Taupe Great for gift giving machine washable",
+      "image_path": "8f/8fde07e4.jpg",
+      "image_px": [
+        2560,
+        1873
+      ]
+    },
+    "photos": [
+      "fe2296d4c078b059"
+    ]
+  }
+}

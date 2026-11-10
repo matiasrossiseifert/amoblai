@@ -1,0 +1,38 @@
+{
+  "product": "902.782.77",
+  "text": "Type: bamboo desk with three drawers\nUse: working, writing, studying; home office, study, bedroom, living room corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: solid bamboo top and drawer fronts, white powder-coated steel legs\nColors: warm golden bamboo, white\nShape: slim box-like rectangular top with a row of three shallow drawers and small wooden knobs, thin splayed legs joined by a low rail, light and airy, compact\nFeel: warm, light, natural, fresh\nGoes with: white walls, light wood floors, green plants, white or wood chairs; Scandinavian or Japandi home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.782.77",
+      "name": "LILLSEN",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 102.0,
+        "depth": 49.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "102x49 cm",
+      "colors": [
+        "Bamboo"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "5f6e275fc8e91f78"
+    ]
+  }
+}

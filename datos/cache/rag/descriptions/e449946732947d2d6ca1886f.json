@@ -1,0 +1,35 @@
+{
+  "product": "802.870.84",
+  "text": "Type: arched white table clock\nUse: telling time on a desk, a shelf, a sideboard or a bedside; home office, living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte white plastic case, white face, black hands, light turquoise second hand and dial ring\nColors: off-white, light turquoise, black\nShape: freestanding block with a rounded arched top and flat front, round inset dial with slim hour marks, compact and soft-edged\nFeel: calm, fresh, clean, friendly\nGoes with: white or light wood desks, pastel accents, white walls; Scandinavian or minimalist home offices and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "802.870.84",
+      "name": "POFFARE",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can place the clock in different locations  on a wall, over a door or standing on a surface  then turn the clock face to suit the location."
+    },
+    "photos": [
+      "a2441fe1a0b637ca"
+    ]
+  }
+}

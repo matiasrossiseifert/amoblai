@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B4ZFF2T",
+  "text": "Type: chevron runner rug\nUse: covering a walkway; hallway, entryway, bedroom, kitchen\nStyle: contemporary, minimalist, modern\nMaterials: plush pile with carved high-low texture\nColors: medium cool grey, charcoal grey\nShape: long narrow rectangle, tone-on-tone carved zigzag chevron pattern, plain edges, soft dense pile, light visual weight\nFeel: calm, soft, understated\nGoes with: mid or dark wood floors, white walls, wicker baskets; minimalist, modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4ZFF2T",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Chevron Runner Hallway Rug, 7' 6\" x 2' 3\", Grey",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 68.6,
+        "height": 0.6
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": "Grey",
+      "description": "This modern rug brings sophistication to any room with its graceful interlocked chevron pattern. Low- and high-pile loops are combined to create a three-dimensional look and feel. The durable fabric is ready for high-traffic areas. 7' 6\" x 2' 3\" High-low medium pile is easy to clean Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "5d/5d7de307.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "92a54b6fb28a5e29"
+    ]
+  }
+}

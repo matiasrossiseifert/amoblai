@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07FKNC3RD",
+  "text": "Type: three-seat reclining sofa\nUse: seating, reclining, watching TV; living room, family room\nStyle: contemporary, traditional\nMaterials: leatherette upholstery, padded pillow-top arms, recliner mechanisms\nColors: dark chocolate brown\nShape: three pillowed back cushions, padded rolled arms, side recliner levers, upholstered to the floor, deep and bulky, heavy visual weight\nFeel: plush, cozy, comfortable\nGoes with: cream walls, light rugs, wood side tables, warm neutrals; family or media living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07FKNC3RD",
+      "name": "Amazon Brand - Solimo Delphi Three Seater Leatherette Recliner (Brown)",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 213.0,
+        "depth": 94.0,
+        "height": 97.0
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "CHAIR",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Comfortable three-seater recliner with high-quality leatherette and an attractive design in brown color Made with strong and durable seams to ensure longevity. Leatherette does not lose color with rubbing Passed durability testing with 100 kg on each seat and backrest for 25,000 cycles; Passed armrest stability testing with 40 kg dynamic loading for 10,000 cycles Meets the European Standard EN 1728 for performance and stringent European Safety Requirement Standard EN 12520 Warranty on manufacturing defects: 3 years Maximum weight load per seat: 160 kg Free from harmful chemicals like formaldehyde, AZO Dye and lead Lightweight recliner for easy shifting",
+      "image_path": "4a/4ac95502.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "6edfd275459808e5"
+    ]
+  }
+}

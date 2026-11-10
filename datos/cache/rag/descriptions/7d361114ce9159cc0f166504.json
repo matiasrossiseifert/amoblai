@@ -1,0 +1,35 @@
+{
+  "product": "001.903.83",
+  "text": "Type: textured dark grey throw blanket\nUse: covering the legs on a sofa or armchair, draping over a bed; living room, bedroom\nStyle: contemporary, Scandinavian, minimalist\nMaterials: soft woven fabric with a nubby pebbled weave, contrasting border band\nColors: charcoal grey, black, dark grey\nShape: folded rectangle with a dense pebbled texture, black band along the edges, soft heavy drape, medium visual weight\nFeel: cozy, warm, understated, soft\nGoes with: grey or black sofas, wool, leather, light wood; contemporary, Scandinavian or minimalist living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.903.83",
+      "name": "HENRIKA",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "120x180 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "cc7dc8e80b5c3c6c"
+    ]
+  }
+}

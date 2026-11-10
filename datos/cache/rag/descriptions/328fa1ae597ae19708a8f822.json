@@ -1,0 +1,39 @@
+{
+  "product": "602.290.33",
+  "text": "Type: large block-check flatwoven rug\nUse: anchoring a living or dining area; living room, dining room, bedroom\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: flatwoven wool-like yarn\nColors: dark chocolate brown, taupe, slate blue-grey, black, light beige, lilac grey\nShape: rectangular, flat, rows of color blocks in a symmetric patchwork grid, crisp edges, large and grounding\nFeel: warm, structured, earthy, calm\nGoes with: walnut or oak wood, leather, grey sofas, brass accents; Scandinavian, mid-century or modern living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "602.290.33",
+      "name": "STOCKHOLM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 250.0,
+        "depth": 350.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "250x350 cm",
+      "colors": [
+        "Handmade",
+        "chequered brown"
+      ],
+      "description": "Handwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages."
+    },
+    "photos": [
+      "292372f435f509ee"
+    ]
+  }
+}

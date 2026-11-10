@@ -1,0 +1,38 @@
+{
+  "product": "303.050.52",
+  "text": "Type: square bar-height table\nUse: casual dining, drinks, standing or stool seating; kitchen, dining nook, bar area\nStyle: Scandinavian, minimalist, industrial\nMaterials: solid birch with clear lacquer, black metal footrest bars\nColors: pale natural birch, black\nShape: small square top with rounded corners, tall splayed square legs, low frame with a black footrest on each side, compact, light visual weight\nFeel: casual, sociable, light, natural\nGoes with: birch or black bar stools, white walls, black accents; Scandinavian kitchens, bar corners or small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.050.52",
+      "name": "NORRKER",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 74.0,
+        "depth": 74.0
+      },
+      "type_ikea": "Bar table",
+      "category_tp": "table",
+      "size_raw": "74x74 cm",
+      "colors": [
+        "White birch"
+      ],
+      "description": "Durable and hard-wearing; meets the requirements on furniture for public use."
+    },
+    "photos": [
+      "1899fa55e03739cb"
+    ]
+  }
+}

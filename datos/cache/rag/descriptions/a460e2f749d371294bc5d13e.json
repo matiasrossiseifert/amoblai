@@ -1,0 +1,35 @@
+{
+  "product": "202.800.33",
+  "text": "Type: upholstered tub swivel chair on casters\nUse: working at a desk, sitting and relaxing; home office, bedroom, living room\nStyle: retro, mid-century modern, contemporary\nMaterials: smooth white upholstered shell, loose padded seat cushion, chrome-look steel five-star base, gas lift, casters\nColors: bright white, silver grey, black casters\nShape: deep rounded egg-like shell that wraps the back and arms in one curve, cushioned seat, slim column on a five-star base with casters, enveloping, medium visual weight\nFeel: cozy, playful, bright, sheltered\nGoes with: white or glossy desks, pastel or bold accents, chrome; retro, modern or Scandinavian home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.800.33",
+      "name": "SKRUVSTA",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Idhult white"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "2d49ec376b6b910e"
+    ]
+  }
+}

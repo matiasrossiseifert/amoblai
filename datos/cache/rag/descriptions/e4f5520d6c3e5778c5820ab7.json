@@ -1,0 +1,37 @@
+{
+  "product": "002.422.78",
+  "text": "Type: metal glass-door display cabinet\nUse: showing and storing glassware, ceramics, books or collections; living room, dining room, home office\nStyle: industrial, retro, contemporary\nMaterials: powder-coated steel frame, clear tempered glass doors and sides, glass shelves\nColors: dark charcoal grey steel, clear glass\nShape: tall narrow vitrine with slim frames, glass on all sides, one hinged door with a small knob, two glass shelves, splayed legs joined by a cross stretcher, light and see-through\nFeel: airy, nostalgic, curated, crisp\nGoes with: dark wood, concrete, leather, green plants; industrial, retro or modern living and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.422.78",
+      "name": "FABRIKR",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 57.0
+      },
+      "type_ikea": "Glass-door cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "57x150 cm",
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "With a glass-door cabinet you can show off as well as protect your glassware or your favourite collection."
+    },
+    "photos": [
+      "aafd4f8c0406bed3"
+    ]
+  }
+}

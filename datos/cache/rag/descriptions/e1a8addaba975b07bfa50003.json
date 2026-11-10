@@ -1,0 +1,45 @@
+{
+  "product": "abo-B075YMJCH9",
+  "text": "Type: framed black and white giraffe photo\nUse: wall decoration; living room, home office, bedroom, gallery wall\nStyle: modern, contemporary, minimalist\nMaterials: photographic print, white mat, black wood frame\nColors: black, white, grey\nShape: small horizontal rectangle, front-facing giraffe portrait, wide white mat, slim black frame, compact\nFeel: quirky, graphic, playful\nGoes with: black and white decor, grey walls, natural wood; modern or safari-themed rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YMJCH9",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Black and White Giraffe Portrait Photo Print Framed Wall Art Decor - 13 x 15 Inch Frame, Black",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": {
+        "width": 38.1,
+        "depth": 33.0,
+        "height": 3.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": "Contemporary",
+      "description": "A whimsical giraffe challenges you to a stare-down in this photo. The high quality, black and white giclee print will bring a striking touch of nature into your home. It arrives ready to hang in a black frame. 15\"W x 13\"H Black finish frame, paper and glass Modern print of an eye-catching nature subject Ready to hang, all hardware included",
+      "image_path": "d7/d7e63bcc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "44b6b8d4310dd9c6"
+    ]
+  }
+}

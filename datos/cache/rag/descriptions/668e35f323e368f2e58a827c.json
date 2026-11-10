@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSLG6WN",
+  "text": "Type: rustic stoneware plant pot\nUse: holding an indoor plant on a table, shelf or sill; living room, bedroom, home office\nStyle: bohemian, rustic, Japandi\nMaterials: speckled stoneware, partly white glazed, raw clay base\nColors: warm white, tan brown\nShape: cylindrical pot with narrower raw clay base, rows of dashes and dots in tribal pattern, compact\nFeel: earthy, warm, handmade\nGoes with: rattan, jute, natural wood, terracotta; bohemian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSLG6WN",
+      "name": "Amazon Brand \u2013 Stone & Beam Emerick Rustic Stoneware Planter Pot - 6 Inch, Brown and White",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [
+        "Stone"
+      ],
+      "style": "Planter",
+      "description": "The natural earth tones in this stoneware planter will match well with any interior design. With or without a plant, this beautiful stoneware pot will add a stylish touch to your office or any room in your home. It can fit nicely on a windowsill or desktop. Exterior: 6.69\" Diameter x 6.3\"H; Interior: 6.125\" Diameter x 5.625\"H 100% stoneware For small plants Wipes clean with soft, dry cloth Designed for indoor or artificial plants; no drainage hole",
+      "image_path": "f4/f4eca028.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "9b87e879df34f853"
+    ]
+  }
+}

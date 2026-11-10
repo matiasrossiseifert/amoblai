@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075ZBW1PX",
+  "text": "Type: leather swivel armchair\nUse: working at a desk, dining, lounging; home office, dining room, living room\nStyle: mid-century modern, industrial, contemporary\nMaterials: distressed leather upholstery, black metal base\nColors: warm cognac brown, black\nShape: boxy shell with angled sloping arms, low back, deep seat, four-prong splayed metal swivel base, solid compact\nFeel: warm, sleek, inviting\nGoes with: walnut, black metal, white walls; industrial or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075ZBW1PX",
+      "name": "Amazon Brand \u2013 Rivet Vibe Swivel Leather Office Chair, 25.2\"W, Medium Brown",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 64.0,
+        "depth": 63.0,
+        "height": 74.9
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Brown Leather"
+      ],
+      "materials": [
+        "Leather; Matel base"
+      ],
+      "style": null,
+      "description": "While designed for the office, this swivel chair adds refreshing style to any room. The Mid-century inspired square silhouette features top grain leather upholstery on low-profile back and arms. Four metal legs extend outward from the swivel base. 25.2\"W x 24.8\" x29.5\"H Top grain leather upholstery; black metal swivel base and legs Suitable for any room, the leather upholstery shows natural markings No assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "37/374f244d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "24e36ecf196fff8c"
+    ]
+  }
+}

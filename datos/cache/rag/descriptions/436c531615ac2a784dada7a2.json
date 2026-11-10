@@ -1,0 +1,45 @@
+{
+  "product": "abo-B082JH9VVD",
+  "text": "Type: woven willow globe pendant\nUse: ambient ceiling light; living room, dining room, bedroom\nStyle: bohemian, coastal, rustic\nMaterials: woven natural willow, white cloth cord\nColors: light natural beige, white\nShape: large round globe shade with dense woven bands alternating with open slatted bands, hangs on cord, sizable but airy\nFeel: warm, relaxed, natural\nGoes with: light wood, linen, white walls, plants; bohemian or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082JH9VVD",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Woven Globe Pendant Light with White Cloth Cord, 18\"H, Natural Willow",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 45.7,
+        "depth": 45.7,
+        "height": 49.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Natural Twine"
+      ],
+      "materials": [],
+      "style": "Mid-Century Modern",
+      "description": "This pendant light will offer a rustic farmhouse feel and add warmth to any area of your home. You can use it to cast a lovely glow over a kitchen table, a bed, a counter, or an island. The natural woven look offers a farmhouse vibe with a modern twist and complements any decor. 18\"W x 18\"D x 18\" H; hanging length: 79.5\"H Natural twine shade with a white cloth cord With hints of rustic design, this pendant lamp is ideal for any room in your home. 1 60-watt E26 bulb required; bulb not included Expert installation required For indoor use only",
+      "image_path": "6e/6e5e966a.jpg",
+      "image_px": [
+        1522,
+        1138
+      ]
+    },
+    "photos": [
+      "2a82dd28a0ccac2c"
+    ]
+  }
+}

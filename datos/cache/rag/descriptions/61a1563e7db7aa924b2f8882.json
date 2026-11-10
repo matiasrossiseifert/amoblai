@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07C8WYFPM",
+  "text": "Type: faux fur throw pillow\nUse: decorating and resting on a sofa, bed or armchair; living room, bedroom\nStyle: glam, contemporary, modern\nMaterials: soft plush faux fur\nColors: charcoal grey, cool grey\nShape: square, shaggy fluffy pile, soft rounded edges, large and plump\nFeel: cozy, soft, warm, luxurious\nGoes with: velvet sofas, white or grey bedding, silver or brass accents; glam or modern bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07C8WYFPM",
+      "name": "Amazon Brand \u2013 Rivet Glam Soft Faux Fur Throw Pillow - 20 x 20 Inch, Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 50.8,
+        "depth": 50.8,
+        "height": 17.8
+      },
+      "brand": "Rivet",
+      "product_type": "PILLOW",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Add a touch of luxurious texture to your room with this plush pillow. Amazingly soft faux fur exudes a bit of glam along with warmth and coziness. The modern grey color will enhance your transitional or modern-style bedroom. Pillow cover features hidden bottom zipper 20\"L x 20\"W, Pillow cover dimensions are measured from seam to seam when cover is laid flat.",
+      "image_path": "b6/b66aad79.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3d65750be62f598b"
+    ]
+  }
+}

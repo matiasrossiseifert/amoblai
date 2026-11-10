@@ -1,0 +1,36 @@
+{
+  "product": "402.121.61",
+  "text": "Type: plaid cotton throw with fringe\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: farmhouse, bohemian, traditional\nMaterials: soft woven cotton with a checked pattern, twisted multicolor fringe\nColors: light beige, soft pink, lavender grey, hints of green\nShape: rectangular throw with a large open plaid of pink and grey stripes, long twisted tasseled fringe on the ends, light and drapey\nFeel: sweet, relaxed, soft, cheerful\nGoes with: white or cream sofas, pastel cushions, light wood; cottage, farmhouse or bohemian bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.121.61",
+      "name": "HERMINE",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "120x180 cm",
+      "colors": [
+        "Beige",
+        "pink"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "0c4088e99a0393ed"
+    ]
+  }
+}

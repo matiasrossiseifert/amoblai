@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0718ZKMW1",
+  "text": "Type: rectangular overlay wall mirror\nUse: decorating a wall, reflecting light; living room, dining room, bedroom, above a sideboard or fireplace\nStyle: traditional, glam, classic\nMaterials: champagne gold painted frame and fretwork overlay, mirror glass\nColors: champagne gold, pale warm beige\nShape: large rectangle with a raised oval and stepped Greek-key-like fretwork overlay over the glass, flat profile, substantial size\nFeel: elegant, refined, light\nGoes with: cream or soft grey walls, crystal, upholstered furniture; traditional or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0718ZKMW1",
+      "name": "Amazon Brand \u2013 Stone & Beam Wall Decor Mirror, 30\" x 40\", Champagne Gold",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 76.2,
+        "height": 2.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME",
+      "colors": [
+        "Gold"
+      ],
+      "materials": [
+        "Glass, polyurethane"
+      ],
+      "style": "Modern",
+      "description": "This mirror is an eye-catching and functional piece of art that hangs vertically or horizontally to accent entryways and transitional areas. The intersecting designs create a frame to add a subtle design statement. 30\" x 40\"; hangs vertically (40\"H) or horizontally (30\"H) Modern design with touch of metallic glam Mirrored glass with pale gold framing design Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "4b/4b10a4ac.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3dd0e4a7836aac0b"
+    ]
+  }
+}

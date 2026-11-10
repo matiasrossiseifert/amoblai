@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSJKY8H",
+  "text": "Type: planter on geometric stand\nUse: holding an indoor plant; on the floor or a low surface in a living room, bedroom, home office\nStyle: modern, glam, minimalist\nMaterials: textured cement-look pot, gold-finish metal wire stand\nColors: light warm grey, gold\nShape: wide tapered bowl resting in a ring on an open triangular wire base, light and open, medium size\nFeel: chic, airy, graphic\nGoes with: white walls, brass accents, green plants; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSJKY8H",
+      "name": "Amazon Brand \u2013 Rivet planters",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [
+        "Iron"
+      ],
+      "style": null,
+      "description": "This casual planter in cement and gold tones looks great on a table with your favorite plant or fairy garden. The open gold stand brings interest and beauty to your airy indoor garden, while the neutral tones help bring together the other colors in the room. 12.2\" diameter x 15.94\"H 100% iron This casual cement-hued planter in a gold-toned stand looks great with most decors. Wipe clean with a soft, dry cloth.",
+      "image_path": "2c/2c5712f9.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c01c8fd100bb7965"
+    ]
+  }
+}

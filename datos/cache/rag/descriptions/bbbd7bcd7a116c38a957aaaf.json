@@ -1,0 +1,36 @@
+{
+  "product": "591.110.44",
+  "text": "Type: sofa with right-side chaise longue\nUse: seating, lounging, putting feet up; living room, den, TV room\nStyle: contemporary, minimalist, modern\nMaterials: woven fabric upholstery, chrome-plated metal legs and base\nColors: charcoal black, dark warm grey, silver\nShape: L-shaped corner form, wide boxy track arms, loose back cushions, chaise on the right, slim metal legs, low and substantial\nFeel: sleek, grounded, cozy, urban\nGoes with: light grey walls, glass and metal tables, white or wood accents; modern or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "591.110.44",
+      "name": "NOCKEBY",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa w chaise longue right",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Ten dark grey",
+        "chrome-plated"
+      ],
+      "description": "You get extra soft comfort and support because the thick seat cushions have a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "9c7fedec01cbadfc"
+    ]
+  }
+}

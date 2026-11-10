@@ -1,0 +1,35 @@
+{
+  "product": "803.101.93",
+  "text": "Type: gooseneck LED desk lamp\nUse: focused reading and task light at a desk or bedside; home office, study, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: copper-colored metal flexible gooseneck arm, small metal LED head, round metal base, black cord\nColors: shiny rose copper, black cord\nShape: slim flexible arm that rises and arcs over into a tiny teardrop head, small round weighted base, very thin and light, compact\nFeel: sleek, warm, delicate, modern\nGoes with: white desks, light or dark wood, blush and grey tones, brass or copper accents; contemporary or glam home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "803.101.93",
+      "name": "JANSJ",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED work lamp",
+      "category_tp": "lamp",
+      "size_raw": "60 cm",
+      "colors": [
+        "Copper-colour"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "9198d40a6f6793c2"
+    ]
+  }
+}

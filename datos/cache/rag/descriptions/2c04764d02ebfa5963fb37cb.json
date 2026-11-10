@@ -1,0 +1,37 @@
+{
+  "product": "903.012.25",
+  "text": "Type: tall bookcase with drawers\nUse: storing books, displaying decor, hidden storage in drawers; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white painted particleboard, framed drawer fronts, slim white bar handles\nColors: white, soft cream white\nShape: tall narrow upright frame, four open shelves above two deep drawers with recessed panel fronts, plinth base, straight edges, slender, medium visual weight\nFeel: clean, tidy, bright, practical\nGoes with: white or pale walls, light wood, soft textiles; Scandinavian, minimalist or contemporary rooms, small spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "903.012.25",
+      "name": "BRIMNES",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "60x190 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Adjustable shelves, so you can customise your storage as needed."
+    },
+    "photos": [
+      "e81e3602049f6815"
+    ]
+  }
+}

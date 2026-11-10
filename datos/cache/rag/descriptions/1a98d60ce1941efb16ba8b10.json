@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07PQS58XN",
+  "text": "Type: ladder bookcase\nUse: storing books and decor; living room, bedroom, home office\nStyle: contemporary, minimalist, classic\nMaterials: solid rubber wood in an espresso finish\nColors: dark warm espresso brown\nShape: tall narrow leaning-style frame with angled side rails, five open shelves widening toward the bottom, no back, light and open\nFeel: tidy, warm, simple\nGoes with: cream walls, light floors, neutral textiles; traditional or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07PQS58XN",
+      "name": "AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 66.0,
+        "depth": 38.2,
+        "height": 189.2
+      },
+      "brand": "AmazonBasics",
+      "product_type": "SHELF",
+      "colors": [
+        "Espresso"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": "Classic",
+      "description": "5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware",
+      "image_path": "dc/dc67991a.jpg",
+      "image_px": [
+        985,
+        2560
+      ]
+    },
+    "photos": [
+      "0275a9a3ee0237e5"
+    ]
+  }
+}

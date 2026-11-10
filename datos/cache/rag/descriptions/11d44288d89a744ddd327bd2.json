@@ -1,0 +1,39 @@
+{
+  "product": "302.608.07",
+  "text": "Type: drop-leaf coffee table with drawer\nUse: holding drinks, books and remotes, storing small things; living room, family room, small apartment\nStyle: farmhouse, traditional, rustic\nMaterials: solid pine top and folding leaves with a clear finish, black stained frame\nColors: light warm pine, black\nShape: rectangular top with two rounded drop leaves, front drawer with a black knob, open lower shelf, square legs, compact when folded, medium visual weight\nFeel: cozy, homey, versatile, warm\nGoes with: cream or grey sofas, natural wood, black accents; farmhouse, cottage or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.608.07",
+      "name": "ARKELSTORP",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 65.0,
+        "depth": 140.0,
+        "height": 52.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "65x140x52 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Solid wood is a durable natural material."
+    },
+    "photos": [
+      "e4b180828b8a02a8"
+    ]
+  }
+}

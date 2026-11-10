@@ -1,0 +1,35 @@
+{
+  "product": "003.191.78",
+  "text": "Type: tab-top curtains with tie-backs, pair\nUse: dressing a window, softening daylight, adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: woven cotton fabric with a soft slub texture, matching fabric tie-backs\nColors: medium cool grey\nShape: two full-length straight panels hung from wide fabric tabs on a rod, gathered at mid-height by tie-back straps into an hourglass drape, soft vertical folds, medium visual weight\nFeel: calm, soft, homely, relaxed\nGoes with: white walls, light wood, linen upholstery, grey or blue textiles; Scandinavian, farmhouse or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "003.191.78",
+      "name": "LENDA",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains with tie-backs, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "140x300 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The curtains lower the general light level and provide privacy by preventing people outside from seeing directly into the room."
+    },
+    "photos": [
+      "096cfa6b67264b2c"
+    ]
+  }
+}

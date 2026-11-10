@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMN1BC",
+  "text": "Type: high-back upholstered dining chair, set of two\nUse: dining; dining room, kitchen\nStyle: contemporary, modern, mid-century modern\nMaterials: textured woven fabric upholstery, dark stained solid wood legs\nColors: dark navy blue, dark espresso brown\nShape: tall gently curved back with flared sides, armless, padded seat, four slim slightly splayed legs, upright and tailored\nFeel: refined, cool, cozy\nGoes with: dark wood or glass tables, white or grey walls, brass accents; modern or transitional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YMN1BC",
+      "name": "Amazon Brand \u2013 Stone & Beam High-Back Dining Room Table Chairs, 38\"H, Set of 2, Navy",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 58.4,
+        "depth": 48.3,
+        "height": 96.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [
+        "Stone"
+      ],
+      "style": null,
+      "description": "Simple lines and classic modern style give these chairs timeless versatility. High backs, firm padding and performance fabric make them comfortable and durable for the long haul, and they will blend with traditional, modern and transitional decor. 23\"W x 19\"D x 38\"H 95% polyester/5% nylon on hardwood frame. Solid hardwood frame, performance fabric and timeless style for durable versatility. No assembly required. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "f0/f0ae405f.jpg",
+      "image_px": [
+        2560,
+        1553
+      ]
+    },
+    "photos": [
+      "981e7ffaf196a35d"
+    ]
+  }
+}

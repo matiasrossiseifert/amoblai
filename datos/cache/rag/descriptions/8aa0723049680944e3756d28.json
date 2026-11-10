@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMY2J7",
+  "text": "Type: upholstered dining chair, set of two\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: mid-century modern, modern, minimalist\nMaterials: woven fabric upholstery, black metal legs\nColors: navy blue, light grey seat, black\nShape: curved high scoop back, padded seat, four slim tapered legs, armless, slender and light\nFeel: sleek, calm, tailored\nGoes with: wood or marble tables, grey walls, black accents; modern or mid-century dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YMY2J7",
+      "name": "Amazon Brand \u2013 Rivet Roger 2-Pack Mid-Century 2-Tone Accent Chairs, 34.8\"H, Navy and Grey",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 59.4,
+        "depth": 49.0,
+        "height": 88.4
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Gray (Seat)"
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "style": null,
+      "description": "Two-tone upholstery adds a modern flair to a classic mid-century design. Light padding on grey seats and curved navy backs add comfort to pieces that can multi-task at your dining room table, as extra seating in a living room, or as desk chairs. 19.3\"W x 23.4\"D x 34.8\"H. Seat height is 19.1\". Polyester fabric on wood frame; metal legs with black finish A multi-tasking chair easily moved from room to room; durable finish on legs. Assemble in 10 minutes or less. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "49/4916a7f2.jpg",
+      "image_px": [
+        2560,
+        1886
+      ]
+    },
+    "photos": [
+      "8d0a21e9d37f6b8d"
+    ]
+  }
+}

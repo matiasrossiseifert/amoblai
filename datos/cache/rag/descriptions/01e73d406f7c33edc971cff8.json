@@ -1,0 +1,35 @@
+{
+  "product": "202.493.30",
+  "text": "Type: solid pine wooden stool\nUse: extra seating, step, plant stand or side table; dining room, kitchen, bedroom, hallway\nStyle: rustic, Scandinavian, farmhouse\nMaterials: untreated solid pine with visible knots and grain, metal bolts\nColors: pale natural pine, warm honey\nShape: square seat with an overhanging rounded edge, deep apron, four straight square legs, square stretcher frame halfway down, sturdy and compact\nFeel: natural, simple, honest, warm\nGoes with: white walls, light wood, linen, woven baskets; rustic, Scandinavian or cabin rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "202.493.30",
+      "name": "ODDVAR",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "Pine"
+      ],
+      "description": "Solid wood is a hardwearing natural material, which can be sanded and surface treated as required."
+    },
+    "photos": [
+      "a02e518b66d4f232"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "702.962.63",
+  "text": "Type: round braided rug\nUse: soft spot for play and sitting on the floor; kids room, nursery, playroom, bedroom\nStyle: contemporary, bohemian\nMaterials: braided fabric cord coiled in a tight spiral, flat weave\nColors: bright cyan blue, hot pink center\nShape: flat circle of coiled braid, bullseye pattern with a wide blue ring around a pink middle, thin and light\nFeel: playful, cheerful, bold\nGoes with: white or light wood furniture, colorful toys, bright accents; kids rooms and playful modern spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "702.962.63",
+      "name": "STICKAT",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "type_ikea": "Rug, braided",
+      "category_tp": "rug",
+      "size_raw": "75 cm",
+      "colors": [
+        "Turquoise",
+        "lilac"
+      ],
+      "description": "You can turn the rug over and use it longer, as it looks the same on both sides."
+    },
+    "photos": [
+      "56d0ed6091e64688"
+    ]
+  }
+}

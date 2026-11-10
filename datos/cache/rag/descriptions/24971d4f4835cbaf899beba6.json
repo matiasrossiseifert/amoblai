@@ -1,0 +1,38 @@
+{
+  "product": "903.020.60",
+  "text": "Type: square side table\nUse: holding drinks, a lamp or books; living room, bedroom, kids' room\nStyle: minimalist, contemporary, modern\nMaterials: lacquered board with a smooth painted finish\nColors: bright green, saturated grass green\nShape: thick flat square top, four chunky square legs flush at the corners, simple block form, compact\nFeel: cheerful, bold, playful, simple\nGoes with: white or grey walls, white furniture, colorful textiles; kids' rooms, student rooms and playful living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "903.020.60",
+      "name": "LACK",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 55.0,
+        "depth": 55.0
+      },
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "55x55 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "Easy to assemble."
+    },
+    "photos": [
+      "b7049c9834f5b9d7"
+    ]
+  }
+}

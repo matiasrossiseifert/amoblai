@@ -1,0 +1,35 @@
+{
+  "product": "091.292.30",
+  "text": "Type: slipcovered sofa with chaise longue\nUse: seating, lounging with legs up; living room, family room, TV room\nStyle: traditional, classic, farmhouse\nMaterials: removable fabric slipcover, soft loose cushions\nColors: medium grey, cool tone\nShape: rounded rolled arms, loose back and seat cushions, chaise on the right, skirted base hiding the legs, deep and bulky\nFeel: cozy, relaxed, homey\nGoes with: white walls, light or painted wood, linen and cream textiles; farmhouse, coastal or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "091.292.30",
+      "name": "EKTORP",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa and chaise longue",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Nordvalla dark grey"
+      ],
+      "description": "Seat cushions filled with high resilience foam and polyester fibre wadding give comfortable support for your body, and easily regain their shape when you get up."
+    },
+    "photos": [
+      "733fc0527f8d4618"
+    ]
+  }
+}

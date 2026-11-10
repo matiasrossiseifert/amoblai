@@ -1,0 +1,45 @@
+{
+  "product": "abo-B075X4C8FC",
+  "text": "Type: geometric jacquard throw blanket\nUse: layering on an armchair, sofa or bed; living room, bedroom\nStyle: bohemian, Scandinavian, contemporary\nMaterials: woven jacquard, reversible, fringed ends\nColors: white, black\nShape: rectangular throw, black diamond and triangle motifs on white, reversible pattern, twisted white fringe, medium weight\nFeel: graphic, crisp, relaxed\nGoes with: cognac leather, warm wood, black and white rugs; bohemian, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075X4C8FC",
+      "name": "Amazon Brand \u2013 Rivet Geometric Diamond Jacquard Reversible Throw Blanket, 50\" x 60\", Black / White",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 127.0,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Made in Portugal, this throw features a modern geometric design. The bold color palette, artful fringe and jacquard pattern on the reverse side make it particularly beautiful when draped over the edge of a sofa or arm chair. 50\"W x 60\"L 50% cotton/50% acrylic Dry clean for best results. Can be washed on delicate cycle and line dried.",
+      "image_path": "f3/f33023a7.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4a50f412c574936b"
+    ]
+  }
+}

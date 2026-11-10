@@ -1,0 +1,35 @@
+{
+  "product": "002.142.18",
+  "text": "Type: slim gooseneck LED floor reading lamp\nUse: focused reading light beside a sofa, armchair or bed; living room, bedroom, home office\nStyle: minimalist, modern, contemporary\nMaterials: thin black metal pole, flexible gooseneck neck, small LED spotlight head, round weighted base, foot switch on the cord\nColors: matte black\nShape: very tall thin stem that ends in a hooked gooseneck curve, tiny adjustable bell head, small round base, extremely light and linear, almost invisible\nFeel: sleek, discreet, graphic\nGoes with: black accents, white walls, light wood, grey upholstery; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.142.18",
+      "name": "JANSJ",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED floor,read lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "The LED light source consumes up to 85% less energy and lasts 20 times longer than incandescent bulbs."
+    },
+    "photos": [
+      "4f79027cfcb408a8"
+    ]
+  }
+}

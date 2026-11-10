@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082QDKRC5",
+  "text": "Type: three-seat leather sofa\nUse: seating, lounging; living room\nStyle: mid-century modern, contemporary\nMaterials: smooth leather upholstery, dark wood plinth base and legs\nColors: warm cognac brown, dark brown wood\nShape: curved continuous back flowing into flared sloping arms, tight seat and back, low wooden plinth, splayed tapered legs, medium size, tailored\nFeel: warm, rich, inviting\nGoes with: walnut wood, cream walls, green plants, brass; mid-century or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082QDKRC5",
+      "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 193.0,
+        "depth": 87.0,
+        "height": 83.0
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Cognac"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": "Sofa",
+      "description": "Tapered legs, a rounded back and armrests, and a chic cognac-colored genuine leather upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame, genuine leather upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty",
+      "image_path": "1b/1bc35811.jpg",
+      "image_px": [
+        2560,
+        1707
+      ]
+    },
+    "photos": [
+      "0f87d7fd3d8b21af"
+    ]
+  }
+}

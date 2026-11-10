@@ -1,0 +1,45 @@
+{
+  "product": "abo-B0831YLF39",
+  "text": "Type: upholstered cocktail ottoman\nUse: footrest, extra seat, coffee table alternative; living room\nStyle: traditional, contemporary, classic\nMaterials: linen-look upholstery, subtle tufted top, piped edges, dark wood base\nColors: light warm oatmeal, dark espresso\nShape: rectangular padded top over upholstered base, slim wood plinth with tapered legs, low and broad\nFeel: soft, elegant, calm\nGoes with: neutral sofas, dark wood, white walls; transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0831YLF39",
+      "name": "Amazon Brand \u2013 Stone & Beam Lyon Upholstered Ottoman, 45.5\"W, Linen",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 115.6,
+        "depth": 64.8,
+        "height": 50.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Linen"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "The generous size of this fully padded ottoman provides plenty of room for putting your feet up and relaxing. The clean, modern lines and linen-colored upholstery bring a distinctive flair to your living room or family room. Durable, easy-care performance fabric makes cleaning a breeze. 45.5\"W x 25.5\"D x 20\"H; leg height: 6\"H Upholstered in 100% polyester fabric; fully padded solid wood frame with mortise and tenon construction Sinuous spring support system with durable foam-padded cushions Assemble in 15 minutes or less Spills should be spot cleaned and rinsed with water. Free returns for 30 days. 3-year warranty. This item is made to order just for you.",
+      "image_path": "06/06021c55.jpg",
+      "image_px": [
+        2560,
+        1461
+      ]
+    },
+    "photos": [
+      "2912812903308b5a"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "702.781.03",
+  "text": "Type: rectangular side table with glass top\nUse: holding a lamp, books and drinks beside a sofa or bed; living room, bedroom\nStyle: traditional, classic, coastal\nMaterials: grey painted wood, clear glass top insert, wooden lower shelf\nColors: soft mid grey, clear glass\nShape: framed glass top over a shallow display recess, molded edges, lower shelf, four slightly tapered legs, upright, medium visual weight\nFeel: elegant, calm, orderly, soft\nGoes with: grey or white sofas, linen, silver accents; classic living rooms, coastal or traditional bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.781.03",
+      "name": "LIATORP",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 57.0,
+        "depth": 40.0
+      },
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "57x40 cm",
+      "colors": [
+        "Grey",
+        "glass"
+      ],
+      "description": "Separate shelf for magazines, etc. helps you keep your things organised and the table top clear."
+    },
+    "photos": [
+      "28848f46e0132c3b"
+    ]
+  }
+}

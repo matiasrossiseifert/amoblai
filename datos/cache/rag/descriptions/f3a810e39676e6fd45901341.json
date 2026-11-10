@@ -1,0 +1,36 @@
+{
+  "product": "302.701.42",
+  "text": "Type: white metal lantern for a pillar candle\nUse: holding a block candle on a table, floor or windowsill; living room, dining room, patio\nStyle: farmhouse, coastal, traditional\nMaterials: white powder-coated steel, clear glass panels\nColors: white, clear glass\nShape: square lantern with a hinged glass door, slatted cupola top, round carrying ring, flat square base, tall and light\nFeel: cozy, inviting, fresh, romantic\nGoes with: white candles, light wood, natural linen, green plants; farmhouse, coastal or Scandinavian rooms and porches\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.701.42",
+      "name": "BORRBY",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Lantern for block candle",
+      "category_tp": "deco",
+      "size_raw": "28 cm",
+      "colors": [
+        "In",
+        "outdoor white"
+      ],
+      "description": "Suitable for both indoor and outdoor use."
+    },
+    "photos": [
+      "ef067e3d4ef365d0"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071HSMWGB",
+  "text": "Type: nickel dome pendant lamp\nUse: light over a dining table or island; dining room, kitchen\nStyle: farmhouse, industrial, modern\nMaterials: brushed nickel metal\nColors: silver grey\nShape: deep rounded dome shade with stepped cylindrical neck, hangs on cord, medium size\nFeel: clean, bright, classic\nGoes with: white cabinets, grey tones, wood; farmhouse or modern kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071HSMWGB",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Round Ceiling Pendant Chandelier Fixture - 12 Inch Shade, 12.5 - 60.5 Inch Cord, Brushed Nickel",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 30.5,
+        "depth": 30.5,
+        "height": 153.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Brushed Nickel"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Modern",
+      "description": "This simple, sleek dome pendant has brushed nickel finish for a modern look. A white finish on the inside of the hood enhances the illumination. The base and hood can be angled to accommodate sloped ceilings over a kitchen island or bar area. 12\" Diameter. Enclosed rods can adjust height from 12.5\" to 60.5\". Metal rods and hood with brushed-nickel finish Sleek, simple modern style that can be used on sloped ceilings 60-watt vintage bulb included Professional installation recommended. Intended for indoor use only",
+      "image_path": "17/17e181a8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4ff11218927dfa38"
+    ]
+  }
+}

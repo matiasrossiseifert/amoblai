@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071FJR3S6",
+  "text": "Type: wide six-drawer dresser\nUse: storing clothes; bedroom\nStyle: industrial, contemporary, modern\nMaterials: oak veneer with visible grain, brushed nickel metal base, metal bar pulls\nColors: medium warm brown oak, brushed silver\nShape: long low rectangular case, two columns of three drawers, long bar handles, raised on open metal sled frame, substantial yet lifted\nFeel: sleek, warm, urban\nGoes with: grey or white walls, concrete, chrome accents; industrial or modern bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071FJR3S6",
+      "name": "Amazon Brand \u2013 Stone & Beam Glenwood Industrial Metal Dresser, 60\"W, Oak",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 48.3,
+        "height": 88.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "DRESSER",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Dresser",
+      "description": "This industrial double dresser features robust metal pulls on its six drawers and a matching metal piece on the bottom. Solid hardwood construction is finished with quarter-sawn oak veneer and wire-brushed for a distressed look. 60\"W x 19\"D x 35\"H Solid hardwood with oak veneer and metal drawer pulls A bold industrial design is softened by a classic wood finish to blend with modern d\u00e9cor. Self-closing drawers are suspended on concealed ball-bearing extension glides. No assembly needed. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "05/05cb2c2e.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "aef3a76539e2c77b"
+    ]
+  }
+}

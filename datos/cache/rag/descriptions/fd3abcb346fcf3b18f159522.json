@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072ZMHBJ7",
+  "text": "Type: low glass-top TV console\nUse: holding a TV and media devices, storage; living room\nStyle: industrial, modern, minimalist\nMaterials: walnut veneer drawers, black metal frame, clear glass top\nColors: warm medium walnut brown, black, clear\nShape: long low open rectangular metal frame, glass top, floating three-drawer walnut box, slim lines, light and airy\nFeel: sleek, airy, graphic\nGoes with: walnut, black accents, white walls, leather; industrial, modern or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B072ZMHBJ7",
+      "name": "Amazon Brand \u2013 Rivet King Street Industrial Three-Drawer TV Media Console, Walnut, Black Metal, Glass",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 150.1,
+        "depth": 39.9,
+        "height": 39.9
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Oak"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "TV Stand",
+      "description": "A wooden console appears to float within a metal frame on this modern entertainment center. A tempered glass top will hold a wide-screen TV while your other AV equipment can be stored on the shelf below. 59.1\"L x 15.7\"W x 15.7\"H Engineered wood, walnut veneer drawers, metal legs and tempered glass top Modern Industrial Three drawers provide storage space No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "ac/ac8cc7e3.jpg",
+      "image_px": [
+        2560,
+        1422
+      ]
+    },
+    "photos": [
+      "78e89bdc81185cf2"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "002.806.37",
+  "text": "Type: classic pleated shade table lamp\nUse: reading and mood light on a side table, nightstand or desk; living room, bedroom, home office\nStyle: classic, traditional, contemporary\nMaterials: nickel-plated metal base and stem, pleated white fabric shade, pull-chain switch\nColors: white, silver nickel\nShape: tapered pleated empire shade on a slim straight stem, domed stepped round base, small pull chain, medium height, light visual weight\nFeel: elegant, homey, soft, timeless\nGoes with: dark or light wood, white or grey walls, silver accents; classic, traditional or transitional rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.806.37",
+      "name": "RSTID",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "white"
+      ],
+      "description": "The textile shade provides a diffused and decorative light."
+    },
+    "photos": [
+      "159f403ae494aa7e"
+    ]
+  }
+}

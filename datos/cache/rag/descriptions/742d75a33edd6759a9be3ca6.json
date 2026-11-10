@@ -1,0 +1,35 @@
+{
+  "product": "602.880.89",
+  "text": "Type: round mirror with light wood frame\nUse: wall mirror that adds light and depth; living room, hallway, bedroom\nStyle: Scandinavian, rustic, farmhouse\nMaterials: solid pine frame with visible grain in a clear natural finish, glass mirror\nColors: light warm pine, silver mirror\nShape: circle in a rounded molded wooden ring with a soft raised profile, visible wavy grain, medium visual weight\nFeel: warm, natural, cozy\nGoes with: light wood, linen, white walls, green plants; Scandinavian, rustic or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.880.89",
+      "name": "STABEKK",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "75 cm",
+      "colors": [
+        "Light brown"
+      ],
+      "description": "Made of solid wood, which is a hardwearing and warm natural material."
+    },
+    "photos": [
+      "dd9970a1d5d86373"
+    ]
+  }
+}

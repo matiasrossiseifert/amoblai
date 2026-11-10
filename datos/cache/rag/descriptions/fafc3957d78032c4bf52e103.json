@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSGPJLM",
+  "text": "Type: window pane wall mirror\nUse: reflecting light, decorating a wall; living room, bedroom, entryway, above a console or dresser\nStyle: industrial, farmhouse, rustic\nMaterials: metal frame with distressed antique finish, mirror glass\nColors: antique grey, muted blue-grey\nShape: tall rectangle with rounded corners, cross mullions dividing four panes like an old window, slim frame, medium size, light visual weight\nFeel: vintage, relaxed, airy\nGoes with: weathered wood, white or grey walls, black iron accents; farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSGPJLM",
+      "name": "Amazon Brand \u2013 Stone & Beam Vintage Window Mirror -28 Inch, Antique Grey Blue",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [],
+      "materials": [
+        "iron"
+      ],
+      "style": "Antique",
+      "description": "Complete your room with this beautifully simple antique-blue/grey mirror. Arriving ready to hang, this mirror has a durable iron frame and a distressed finish that creates a vintage look. Its modern take on the classic antique-mirror design makes this mirror perfect for transitional-style home d\u00e9cor. 28.15\"H x 18.3\"W x 0.98\"D Mirror glass with an iron frame This casual mirror's antique styling blends well with both modern and vintage home-d\u00e9cor styles. No hanging materials needed",
+      "image_path": "3b/3b3de1fc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4cc5f74bd741ab2a"
+    ]
+  }
+}

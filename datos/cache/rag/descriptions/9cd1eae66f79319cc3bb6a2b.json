@@ -1,0 +1,37 @@
+{
+  "product": "590.337.20",
+  "text": "Type: two-seat sofa with rolled arms\nUse: seating, conversation, relaxing; living room, sitting room, reading nook\nStyle: traditional, classic, contemporary\nMaterials: woven fabric upholstery with piping, turned wooden legs in a black finish\nColors: charcoal grey, dark cool grey, black\nShape: low rounded rolled arms, loose back and seat cushions, piped edges, short turned legs, compact and softly curved\nFeel: elegant, cozy, refined, inviting\nGoes with: dark wood, brass accents, patterned rugs, warm neutrals; classic or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "590.337.20",
+      "name": "STOCKSUND",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Nolhaga dark grey",
+        "black",
+        "wood"
+      ],
+      "description": "You get extra soft comfort and support because the thick cushion has a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "2da6fdd0f116dfc6"
+    ]
+  }
+}

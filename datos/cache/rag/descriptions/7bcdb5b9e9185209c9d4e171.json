@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07RJFG6XB",
+  "text": "Type: two-seat leatherette sofa\nUse: sitting, lounging; living room, home office\nStyle: contemporary, modern\nMaterials: smooth faux leather upholstery, dark wooden block feet\nColors: black, dark brown feet\nShape: plump padded back with tufted square panels, flared rolled arms, single long seat cushion with stitched sections, low hidden feet, compact but bulky\nFeel: sleek, solid, practical\nGoes with: white or grey walls, light wood, patterned rugs; modern living rooms and offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07RJFG6XB",
+      "name": "Amazon Brand - Solimo Newport Leatherette 2 Seater Sofa (Black)",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 1350.0,
+        "depth": 810.0,
+        "height": 850.0
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "SOFA",
+      "colors": [
+        "Eerie Black"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Comfortable two-seater sofa made from high-quality leatherette with a sleek design in black color Passed 30+ safety and quality tests and does not lose color with rubbing Passed durability testing with 100 kg on each seat and backrest for 25,000 cycles; Passed armrest stability testing with 40 kg dynamic loading for 10,000 cycles Meets Indian Standards IS 12674/ IS 5416 for performance and stringent European Safety Requirement Standard EN 12520 Warranty on manufacturing defects: 3 years Lightweight sofa for easy shifting and good ground clearance for easy cleaning below the sofa. Free from toxins and harmful chemicals like formaldehyde and AZO Dye Please note: Sofa is delivered with the legs in a detached condition. The cavity where sofa legs will be placed is protected by a plastic cap. This will be removed during assembly and replaced with sofa legs",
+      "image_path": "58/58f02003.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "915c903858e70e62"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "002.804.92",
+  "text": "Type: flatwoven hallway runner rug\nUse: covering walkways, softening floors; hallway, entryway, kitchen, beside the bed\nStyle: minimalist, rustic, contemporary\nMaterials: tightly flatwoven sisal-look fiber, fabric-bound edges\nColors: dark brown, chocolate brown edging\nShape: long narrow runner, flat tight weave, solid tone, neat bound border, low and slim\nFeel: grounded, warm, understated, practical\nGoes with: light wood floors, white walls, oak or walnut furniture; hallways, entryways, rustic or minimalist homes\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "002.804.92",
+      "name": "OSTED",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x240 cm",
+      "colors": [
+        "Brown"
+      ],
+      "description": "The rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant."
+    },
+    "photos": [
+      "1b50a3431ad75741"
+    ]
+  }
+}

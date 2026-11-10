@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QD6V6H2",
+  "text": "Type: side table with bookshelf\nUse: holding a lamp, drinks and books beside a sofa or bed; living room, bedroom, home office\nStyle: contemporary, industrial, modern\nMaterials: wood veneer with oak grain, black metal frame leg\nColors: warm dark walnut brown, black\nShape: rectangular top, solid side panel with open cubby shelves on one end, black metal rectangular leg frame on the other, middle shelf, compact and asymmetric\nFeel: practical, warm, tidy\nGoes with: dark wood, black metal, cream walls; modern or industrial living rooms and reading corners\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QD6V6H2",
+      "name": "Amazon Brand \u2013 Stone & Beam Contemporary Side Table with Bookshelf, 21.6\"W, Black Oak",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 78.7,
+        "depth": 66.0,
+        "height": 104.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Black Oak"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "This square table brings functionality to any room with 1 side devoted to shelving that is great for storing books or other items. The height allows it to be used as a side table or a small desk. Butt joints connect the legs and shelving, adding a modern look to the sleek black finish. 21.6\"W x 21.6\"D x 25.6\"H Engineered wood with metal This stylish table offers a modern look and functionality great for any room. Shelving on 1 side of this table makes it great as a side table or a desk in any room. Assemble in 15-30 minutes Wipe with a soft cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "0c/0c1fddef.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e082d8cc614360c3"
+    ]
+  }
+}

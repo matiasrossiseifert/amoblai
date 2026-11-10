@@ -1,0 +1,36 @@
+{
+  "product": "190.310.06",
+  "text": "Type: upholstered dining armchair\nUse: dining, sitting; dining room, kitchen, home office\nStyle: modern, Scandinavian, contemporary\nMaterials: woven fabric slipcover, padded frame, solid wood legs in a black stain\nColors: dark charcoal grey, black\nShape: square straight back, low boxy arms, padded seat with a fitted cover, four straight square black legs, tailored and clean, medium visual weight\nFeel: comfortable, tailored, calm, solid\nGoes with: dark or light wood tables, white walls, black accents; modern or Scandinavian dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "190.310.06",
+      "name": "NILS",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "skiftebo dark grey"
+      ],
+      "description": "You sit comfortably thanks to the padded seat, padded back and armrests."
+    },
+    "photos": [
+      "3745f8b964ff6976"
+    ]
+  }
+}

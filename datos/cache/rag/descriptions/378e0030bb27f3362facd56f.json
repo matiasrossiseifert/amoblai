@@ -1,0 +1,36 @@
+{
+  "product": "901.638.65",
+  "text": "Type: floor lamp with pleated fabric shade\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom, reading corner\nStyle: classic, traditional, contemporary\nMaterials: brushed nickel-plated metal stem and domed base, white pleated fabric shade, pull-chain switch\nColors: white, brushed silver nickel\nShape: tapered empire shade with fine pleats, slim straight stem, round stepped domed base, tall and slender, light visual weight\nFeel: elegant, soft, calm, timeless\nGoes with: white or grey walls, dark or light wood, linen upholstery; classic, traditional or contemporary living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "901.638.65",
+      "name": "RSTID",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "white"
+      ],
+      "description": "The textile shade provides a diffused and decorative light."
+    },
+    "photos": [
+      "7149dce58f1ae8a5"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "203.125.19",
+  "text": "Type: floral print cotton cushion\nUse: comfort and pattern on a sofa, armchair or bed; living room, bedroom\nStyle: farmhouse, traditional, Scandinavian\nMaterials: printed cotton, piped edge in matching blue\nColors: medium blue, white, light grey details\nShape: square cushion with a dense small-scale pattern of white flower heads and trailing stems, thin piped border, soft and plump, medium size\nFeel: fresh, cheerful, homey, gentle\nGoes with: white or cream sofas, light wood, blue and white ceramics, striped cushions; farmhouse, cottage or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "203.125.19",
+      "name": "LVKOJA",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Blue",
+        "white"
+      ],
+      "description": "You can easily vary the look because the two sides have different designs."
+    },
+    "photos": [
+      "cb4f7ea012685b1c"
+    ]
+  }
+}

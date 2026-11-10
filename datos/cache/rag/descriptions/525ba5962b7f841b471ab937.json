@@ -1,0 +1,45 @@
+{
+  "product": "abo-B084HV7BDJ",
+  "text": "Type: geometric wire baskets, set of two\nUse: storing blankets, magazines or plants; living room, bedroom, home office, on the floor or shelf\nStyle: modern, industrial, contemporary\nMaterials: metal wire\nColors: silver, light champagne\nShape: open round baskets with flared faceted sides, diamond wire pattern, looped handles, light and open\nFeel: airy, light, graphic\nGoes with: white walls, grey textiles, glass and chrome; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B084HV7BDJ",
+      "name": "Rivet Modern Tall Geometric Wire Baskets, Set of 2, 13.25\"H and 10.75\"H, Silver",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": {
+        "width": 45.1,
+        "depth": 45.1,
+        "height": 33.7
+      },
+      "brand": "Rivet",
+      "product_type": "BASKET",
+      "colors": [
+        "Silver"
+      ],
+      "materials": [],
+      "style": "Tall Geometric",
+      "description": "These matching wire baskets are just the thing you've been looking for to bring a sense of functionality and modern art to your living space. Breathtaking empty or in use, they are the perfect modern addition to any room in your home. Large: 13.25\"H x 17.75\" diameter; small: 10.75\"H x 13.25\" diameter 2 nesting baskets formed of metal wire with a silver finish Useful for storing small items This stunning work of craftsmanship showcases the perfect marriage of functionality and grace. Avoid moisture and wipe clean with a soft, dry cloth.",
+      "image_path": "6e/6e5ff17c.jpg",
+      "image_px": [
+        2560,
+        1653
+      ]
+    },
+    "photos": [
+      "16f39e2959458cdd"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4W5TQZ",
+  "text": "Type: two-drawer nightstand with metal base\nUse: bedside storage, holding a lamp; bedroom\nStyle: mid-century modern, industrial, contemporary\nMaterials: solid wood with fluted drawer fronts, bronze-finish metal base and pulls\nColors: warm medium brown wood, dark bronze\nShape: rectangular case, two drawers with scalloped vertical fluting, small bar pulls, slim open metal legs with X-shaped stretcher, raised and fairly light\nFeel: warm, textured, crafted\nGoes with: walnut tones, black or bronze metal, cream textiles; mid-century or loft bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4W5TQZ",
+      "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Modern Wood Nightstand, 24\", Brown, Metal Base",
+      "category": "table",
+      "kind": "nightstand",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 43.2,
+        "height": 61.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "Warm wood with vertical lines and a criss-cross metal base give this mid-century nightstand a clean, sleek look. Two spacious drawers store accessories and essentials such as reading glasses and remote controls. 24\"W x 17\"D x 24\"H; Leg Height: 6.75\" Two storage drawers No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "40/4046fb70.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a6300bba0a550ca3"
+    ]
+  }
+}

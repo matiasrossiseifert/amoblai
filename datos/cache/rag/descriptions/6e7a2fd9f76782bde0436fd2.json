@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JLZJFVL",
+  "text": "Type: graphic jacquard throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: mid-century modern, retro\nMaterials: woven jacquard fabric\nColors: cream, warm grey, coral red, dark brown\nShape: square, horizontal rows of half-circle scallops with fine striped bands, knife edges, medium size\nFeel: lively, graphic, retro\nGoes with: grey sofas, walnut wood, orange accents; mid-century modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JLZJFVL",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Graphic Throw Pillow - 17 x 17 Inch, Blue / Red",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 30.5,
+        "height": 10.2
+      },
+      "brand": "Rivet",
+      "product_type": "PILLOW",
+      "colors": [
+        "Blue/Red"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Made in the United States and imported The 3-tone geometric pattern on this modern throw pillow is as bold as it is beautiful, making a contemporary statement with style. A solid cream back adds high contrast and drama. 17\"L x 17\"W Modern geometric pattern brings attitude to your decor. Back of pillow is solid cream-colored fabric. Hidden zipper at bottom of pillow. Pillow cover and insert Spot clean. Pillow insert arrives in vacuum sealed bag. Carefully remove insert from packaging and let it fully expand before putting inside of pillow cover.",
+      "image_path": "dd/dd4e4d99.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "661d6baefb81587a"
+    ]
+  }
+}

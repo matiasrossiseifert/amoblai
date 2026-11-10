@@ -1,0 +1,36 @@
+{
+  "product": "802.340.19",
+  "text": "Type: rattan bistro dining armchair\nUse: dining, sitting at a table, relaxing; dining room, kitchen, sunroom\nStyle: bohemian, classic, traditional\nMaterials: hand-woven rattan on a rattan frame, black stained finish\nColors: black, dark charcoal\nShape: oval back with an open diamond lattice weave, curved looped arms, round woven seat, slim legs with cross stretchers, Parisian caf\u00e9 silhouette, light and open\nFeel: elegant, crafted, airy, charming\nGoes with: marble or light wood tables, white walls, green plants; French bistro, bohemian or classic dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.340.19",
+      "name": "LMSTA",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Rattan",
+        "black"
+      ],
+      "description": "Each piece of furniture is unique as it is handmade."
+    },
+    "photos": [
+      "8e2a3f864de3a186"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "302.732.30",
+  "text": "Type: orange maze print cushion\nUse: comfort and play on a sofa, bed or floor; children's room, playroom\nStyle: retro, contemporary\nMaterials: printed cotton fabric\nColors: bright orange, white lines, yellow dots, small black, blue, red and green icons\nShape: square cushion printed with a video-game style maze of white lines, dotted paths and little characters, plump and soft, medium size\nFeel: playful, bold, fun, energetic\nGoes with: bright colors, white furniture, gaming corners, simple bedding; kids' rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.732.30",
+      "name": "SLINGRIG",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "40x40 cm",
+      "colors": [
+        "White",
+        "orange"
+      ],
+      "description": "Gives good support when reading or playing computer games."
+    },
+    "photos": [
+      "45024ff9f7679308"
+    ]
+  }
+}

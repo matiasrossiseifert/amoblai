@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4Y45GY",
+  "text": "Type: six-drawer studded dresser\nUse: storing clothes; bedroom\nStyle: industrial, rustic, traditional\nMaterials: stained wood frame, black faux leather drawer fronts with nailhead trim, black knobs\nColors: warm medium brown, black\nShape: long low case, two columns of three drawers edged in studs, round knobs, overhanging top, slightly flared legs, substantial\nFeel: rugged, warm, characterful\nGoes with: leather, dark wood, cream walls; industrial or lodge bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4Y45GY",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Dresser, 60\"W, Weathered Oak",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 43.2,
+        "height": 86.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "DRESSER",
+      "colors": [
+        "Weathered Oak"
+      ],
+      "materials": [
+        "Oak"
+      ],
+      "style": null,
+      "description": "A great addition to any bedroom, this handcrafted transitional dresser blends effortlessly with most d\u00e9cor. Its natural oak finish brings out the wood grain detail. 17\"L x 60\"W x 34\"H 100% constructed by hand Assemble in 30 minutes-1 hour with two people Free returns for 30 days. 3-year warranty",
+      "image_path": "90/90db14a6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "bf624f9ab5d64525"
+    ]
+  }
+}

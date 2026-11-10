@@ -1,0 +1,37 @@
+{
+  "product": "291.805.43",
+  "text": "Type: tall chest of six drawers\nUse: storing clothes, toys and crafts; children's room, playroom, bedroom\nStyle: Scandinavian, contemporary, minimalist\nMaterials: white painted board, round plastic knobs\nColors: white, multicolored knobs in green, blue, pink, yellow and orange\nShape: tall narrow box with four shallow and two deep drawers, one round colored knob centered on each, flat top, plinth base, compact and upright\nFeel: cheerful, playful, bright, tidy\nGoes with: white walls, light wood, colorful toys and textiles; playful Scandinavian children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "291.805.43",
+      "name": "STUVA,FLJA",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Storage combination with drawers",
+      "category_tp": "cabinet",
+      "size_raw": "60x50x128 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "4795698725cabdf8"
+    ]
+  }
+}

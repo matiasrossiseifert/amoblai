@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07BLDHK7W",
+  "text": "Type: rectangular storage ottoman bench\nUse: seating and hidden storage; bedroom, living room, entryway\nStyle: contemporary, modern, minimalist\nMaterials: woven fabric upholstery, dark block feet\nColors: medium cool grey, black\nShape: boxy rectangular body, button-tufted lift-up lid, low padded end rails, short square feet, low and bulky\nFeel: soft, practical, calm\nGoes with: grey and white textiles, light or dark wood; modern bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07BLDHK7W",
+      "name": "Amazon Basics Rectangular Storage Ottoman Bench with Fabric Upholstery, Large - Anchor Grey",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 87.6,
+        "depth": 45.1,
+        "height": 45.1
+      },
+      "brand": "Amazon Basics",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Slate Grey"
+      ],
+      "materials": [
+        "Fabric"
+      ],
+      "style": "Contemporary",
+      "description": "This product was previously sold as First Hill and now as Amazon Basics Rectangular ottoman bench with lift-open lid and roomy interior storage Durable wood construction with rubberwood feet for strength and stability Linen-look fabric upholstery with a dramatic tufted finish for timeless, sophisticated style Child-safety hinge prevents lid from slamming shut; ideal for an entryway, living room, family room, or bedroom Measures 20 x 51 x 17.5 inches (LxWxH)",
+      "image_path": "44/4452c39a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "9b685e0c9f9fc0a7"
+    ]
+  }
+}

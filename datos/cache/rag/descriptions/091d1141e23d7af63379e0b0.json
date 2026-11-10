@@ -1,0 +1,35 @@
+{
+  "product": "301.931.39",
+  "text": "Type: oval wall mirror with scrolls\nUse: reflecting light and decorating a wall, checking an outfit; hallway, bedroom, living room\nStyle: traditional, classic, glam\nMaterials: mirror glass, thin dark metal frame, wrought scroll ornaments\nColors: dark grey-black metal, silver mirror\nShape: tall narrow oval with a slim metal rim, curled filigree scrolls climbing the upper left and lower right sides, ornate yet airy\nFeel: romantic, elegant, whimsical, vintage\nGoes with: white or pastel walls, distressed wood, wrought iron, floral textiles; traditional, French country or romantic bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "301.931.39",
+      "name": "EKNE",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "70x150 cm",
+      "colors": [
+        "Oval"
+      ],
+      "description": "Provided with safety film - reduces damage if glass is broken."
+    },
+    "photos": [
+      "0854b2488ffcd782"
+    ]
+  }
+}

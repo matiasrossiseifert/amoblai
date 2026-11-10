@@ -1,0 +1,35 @@
+{
+  "product": "802.925.75",
+  "text": "Type: perforated metal wall clock\nUse: telling time on a wall; living room, home office, kitchen\nStyle: industrial, modern, minimalist\nMaterials: perforated steel face with a dotted pattern, matching perforated hands\nColors: medium grey, dark grey\nShape: flat round disc covered in small round holes, two wide flat hands in the same perforated metal, clean blank dial, graphic and light\nFeel: graphic, cool, sleek, modern\nGoes with: concrete, black metal, grey or white walls, dark wood; industrial, modern or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.925.75",
+      "name": "SIPPRA",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "The steel mesh creates shadows and texture, giving the hands and clock face a feeling of dimension."
+    },
+    "photos": [
+      "34d7f9b0955d449d"
+    ]
+  }
+}

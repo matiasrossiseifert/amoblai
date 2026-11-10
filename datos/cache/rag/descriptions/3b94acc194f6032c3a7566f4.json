@@ -1,0 +1,41 @@
+{
+  "product": "abo-B001BQ3P18",
+  "text": "Type: glass shelf etagere\nUse: displaying books and decor; living room, dining room, home office\nStyle: contemporary, modern, minimalist\nMaterials: solid oak frame in dark stain, glass shelves, metal cross braces\nColors: dark espresso brown, clear glass, silver\nShape: tall open frame with square posts, five glass shelves, X-braced sides, no back, light and airy\nFeel: refined, airy, elegant\nGoes with: white walls, chrome, neutral fabrics; contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B001BQ3P18",
+      "name": "Pinzon Jonesport Solid Oak and Glass Shelf",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Kona"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Beautiful modern hardwood and glass shelf offers great storage and display spaces Solid oak frame with 8mm glass shelves; holds up to 30 pounds per shelf Open front and sides for easy accessibility; arrives ready to assemble Coordinates with the Pinzon Jonesport Office Furniture Collection; kona brown finish Measures 28 inches wide by 16-1/2 inches deep by 65-1/4 inches high",
+      "image_path": "ca/cae300c4.jpg",
+      "image_px": [
+        1096,
+        1647
+      ]
+    },
+    "photos": [
+      "10248d2529fe0e88"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "102.976.56",
+  "text": "Type: square wooden side table\nUse: holding drinks, lamps and books; living room, bedroom, beside a sofa or bed\nStyle: Scandinavian, Japandi, mid-century modern\nMaterials: ash veneer top, solid birch legs, clear lacquer\nColors: light natural ash, pale blonde wood\nShape: square top with softly cut rounded corners, beveled edge, four round tapered legs set slightly outward, compact and light\nFeel: warm, calm, natural, crafted\nGoes with: white walls, linen sofas, black accents, green plants; Scandinavian or Japandi living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.976.56",
+      "name": "LISABO",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 45.0,
+        "depth": 45.0
+      },
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "45x45 cm",
+      "colors": [
+        "Ash veneer"
+      ],
+      "description": "The table surface in ash veneer and legs in solid birch give a warm, natural feeling to your room"
+    },
+    "photos": [
+      "2480e017ffa6b950"
+    ]
+  }
+}

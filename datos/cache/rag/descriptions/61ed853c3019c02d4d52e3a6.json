@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07374QGD8",
+  "text": "Type: three-light linear pendant chandelier\nUse: light over a dining table or island; dining room, kitchen\nStyle: industrial, farmhouse, rustic\nMaterials: pipe-style metal frame in gunmetal finish, clear glass drum shades\nColors: dark gunmetal black, clear glass\nShape: horizontal pipe bar on two downrods, three sockets with wide short clear drum shades, exposed bulbs, long and linear, medium visual weight\nFeel: utilitarian, warm, open\nGoes with: reclaimed wood tables, white or brick walls, black metal accents; industrial or farmhouse dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07374QGD8",
+      "name": "Amazon Brand \u2013 Stone & Beam Industrial Triple Glass Shade Ceiling Hanging Pendant Chandelier Fixture - 23 x 7 x 36 Inches, Gunmetal Black",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 58.4,
+        "depth": 17.8,
+        "height": 91.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "This smartly designed industrial pendant chandelier will add a sophisticated twist to a modern kitchen, dining room or bar area. Black metal is paired with three clear glass shades. Modern industrial Metal hardware with gunmetal black finish, clear glass shades Provides ample light along with a strong, modern style statement 36\"H x \"23\"W x 7\"D. Rods can be removed to adjust to 22\"H. Product is hardwired (professional installation recommended) Intended for indoor use only",
+      "image_path": "ce/ce013242.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "247df572e7774d3c"
+    ]
+  }
+}

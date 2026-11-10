@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WH6N3Q",
+  "text": "Type: barn door style wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, entryway, on a wall\nStyle: farmhouse, rustic, industrial\nMaterials: knotty fir wood frame, black iron rail and roller hardware, mirror glass\nColors: warm medium natural wood, black\nShape: square, plank frame hanging from black barn door track with two strap rollers, medium weight\nFeel: rustic, charming, sturdy\nGoes with: reclaimed wood, black metal, white shiplap; farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073WH6N3Q",
+      "name": "Amazon Brand \u2013 Stone & Beam Square Vintage-Look Sliding Mirror, 31.25\"H, Natural",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 79.4,
+        "depth": 5.7,
+        "height": 79.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "Iron"
+      ],
+      "style": "vintage",
+      "description": "A simple mirror gets a clever twist, thanks to sliding barn-door hardware. Housed in a natural-look wood frame and mounted on a black iron rod, this mirror will be a conversation piece enhancing any casual, relaxed style room. Vintage look with a touch of rustic Glass, solid fir wood frame, black iron rod 31.25\"W x 2.25\"D x 31.25\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "fc/fc9ab9cf.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c29a4ba0ecfd5ce3"
+    ]
+  }
+}

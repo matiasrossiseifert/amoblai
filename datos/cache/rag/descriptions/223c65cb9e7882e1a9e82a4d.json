@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7BDFPT",
+  "text": "Type: velvet dining chair, set of two\nUse: dining, desk seating; dining room, home office\nStyle: glam, modern, contemporary\nMaterials: velvet upholstery, brushed brass-finish metal base\nColors: deep red, warm brass\nShape: square low upholstered back, armless, padded seat, geometric metal base with crossed stretchers, compact and boxy\nFeel: bold, rich, chic\nGoes with: marble or dark wood tables, neutral walls, gold accents; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7BDFPT",
+      "name": "Amazon Brand \u2013 Rivet Eastern Modern Velvet Dining Kitchen Chairs, 32 Inch Height, Set of 2, Orange",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 59.9,
+        "depth": 50.8,
+        "height": 82.3
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Orange"
+      ],
+      "materials": [
+        "Velvet"
+      ],
+      "style": null,
+      "description": "Get your glam on with this chic modern dining chair set. Plush velvet cushions are paired with a geometric leg base that's finished in bronze for added luster. These eye-catching chairs will be right at home in a modern or industrial style room. 20\"W x 23.6\"D x 32.4\"H; Seat Height: 18.8\"H ; Seat Depth: 17.3\"D; Seat Back Height: 13.7\"H; Arm Height: 18.8\"H Modern industrial with glamorous velvet Use as dining room chair or as extra chair in living room or bedroom No assembly required Free returns for 30 days. 1-year warranty. Velvet upholstery on metal base",
+      "image_path": "79/79b68470.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "770ea9147778369b"
+    ]
+  }
+}

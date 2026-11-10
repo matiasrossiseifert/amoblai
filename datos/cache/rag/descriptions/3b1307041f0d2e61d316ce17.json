@@ -1,0 +1,45 @@
+{
+  "product": "abo-B003PBOMJ6",
+  "text": "Type: tall oak side table\nUse: lamp or phone stand beside a sofa or in a hallway; living room, hallway, bedroom\nStyle: rustic, farmhouse, traditional\nMaterials: solid oak in a natural lacquered finish, dark metal drop handle\nColors: light warm honey oak, black iron\nShape: small square top with rounded edges, single drawer, lower shelf, four square tapered legs, tall and compact\nFeel: warm, homely, sturdy\nGoes with: cream walls, wool textiles, other oak furniture; country cottage or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B003PBOMJ6",
+      "name": "kovalenthor Console Table - Black, for Entryway for Living Room (Grey)",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 36.0,
+        "depth": 36.0,
+        "height": 74.0
+      },
+      "brand": "kovalenthor",
+      "product_type": "TABLE",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "8e/8e7d0a8e.jpg",
+      "image_px": [
+        1572,
+        2560
+      ]
+    },
+    "photos": [
+      "629c6d79a93edc86"
+    ]
+  }
+}

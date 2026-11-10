@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JLGCKKJ",
+  "text": "Type: linen-look seamed cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, farmhouse\nMaterials: linen-look woven fabric, frayed raw-edge seams\nColors: light flax beige, cream\nShape: square, solid color with diagonal angled seam lines and exposed frayed edges, knife edges, compact\nFeel: calm, natural, understated\nGoes with: white, beige and oatmeal tones, light wood, rattan; Japandi, coastal or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07JLGCKKJ",
+      "name": "Amazon Brand \u2013 Stone & Beam Casual Lines Throw Pillow - 17 x 17 Inch, Flax",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 14.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Linen"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Made in the United States and imported The serged stitch lines and flaxen linen fabric make this casual throw pillow ideal for contemporary color schemes and sophiticated places, but versatile enough to pair with any d\u00e9cor. 17\"L x 17\"W Spot Clean.",
+      "image_path": "8f/8fb71dfa.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1da4c4feb3f73272"
+    ]
+  }
+}

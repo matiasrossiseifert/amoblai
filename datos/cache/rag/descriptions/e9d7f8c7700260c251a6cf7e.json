@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HZ57QKK",
+  "text": "Type: rolled arm loveseat\nUse: sitting, lounging; living room, family room\nStyle: traditional, classic, contemporary\nMaterials: woven fabric upholstery, piped edges, dark wood feet\nColors: dark indigo navy, dark brown feet\nShape: rounded rolled arms, two plush back cushions, two seat cushions, piping, short block feet, deep and soft\nFeel: cozy, calm, classic\nGoes with: white or cream walls, brass, warm wood; traditional or coastal living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HZ57QKK",
+      "name": "Amazon Brand \u2013 Stone & Beam Kristin Loveseat, 76\"W, Indigo",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 215.9,
+        "depth": 95.2,
+        "height": 106.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Transitional",
+      "description": "Add style and comfort to your home with this classic loveseat. With a time-tested traditional design, this loveseat is an ideal accent for many home-decor styles, and its beautiful indigo hue brightens the room with color. Its cushions are reversible to extend this loveseat\u2019s life. Overall: 76\"W x 37\"D x 37.5\"H; Seat Height: 21.5\"H; Seat Depth 24\"D; Seat Back Height: 30\"H; Arm Height: 32\"H; Leg Height: 2.5\"H Solid-wood frame with mortise-and-tenon construction and 8-guage sinuous spring support system, fully padded and upholstered with performance fabric Traditional design is both fashionable and practical. Loose back and seat cushions are removable and reversible to ensure durability and comfort. No assembly required Free returns for 30 days. 3-year warranty. This item is made to order just for you.",
+      "image_path": "7b/7bf60c77.jpg",
+      "image_px": [
+        2560,
+        1474
+      ]
+    },
+    "photos": [
+      "554b71858236bc6f"
+    ]
+  }
+}

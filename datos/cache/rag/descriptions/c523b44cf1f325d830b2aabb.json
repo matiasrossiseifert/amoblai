@@ -1,0 +1,35 @@
+{
+  "product": "402.805.17",
+  "text": "Type: plastic dining armchair\nUse: dining, working at a desk; dining room, kitchen, caf\u00e9 corner, home office\nStyle: minimalist, modern, Scandinavian\nMaterials: molded reinforced polypropylene plastic, matte finish\nColors: light grey, cool grey\nShape: curved rectangular backrest on slim rear posts, short flat armrests, smooth seat, four straight slightly tapered legs, clean lines, light visual weight\nFeel: calm, clean, practical, fresh\nGoes with: white or light wood tables, grey and concrete tones; modern kitchens, Scandinavian or minimalist dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.805.17",
+      "name": "JANINGE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "You can stack the chairs, so they take less space when you're not using them."
+    },
+    "photos": [
+      "4098c5ed3aff22a9"
+    ]
+  }
+}

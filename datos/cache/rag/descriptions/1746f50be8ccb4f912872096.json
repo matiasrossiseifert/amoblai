@@ -1,0 +1,35 @@
+{
+  "product": "302.651.12",
+  "text": "Type: compact two-seat loveseat\nUse: seating; small living room, studio, kids room, teen room, entryway\nStyle: contemporary, modern, minimalist\nMaterials: quilted fabric cover, chrome steel sled legs\nColors: dark charcoal grey, chrome\nShape: low boxy shape with even-height back and arms, square quilted grid, tubular sled legs, small and light\nFeel: casual, compact, youthful\nGoes with: white walls, light wood, bright accents; small apartments, teen rooms or modern spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.651.12",
+      "name": "KNOPPARP",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "KNOPPARP sofa is very durable thanks to the metal construction and strong supporting fabric."
+    },
+    "photos": [
+      "fa0eac0a943fc351"
+    ]
+  }
+}

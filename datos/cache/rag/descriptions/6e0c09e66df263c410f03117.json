@@ -1,0 +1,38 @@
+{
+  "product": "203.074.81",
+  "text": "Type: jute flatwoven rug\nUse: adding natural texture by a door or bed; entryway, hallway, bedroom, living room\nStyle: coastal, rustic, bohemian\nMaterials: thick woven jute, chunky ribbed weave\nColors: warm natural tan, light straw, hints of rust\nShape: small rectangle with coarse vertical ribbed texture, plain edges, flat but chunky, compact\nFeel: earthy, warm, organic, relaxed\nGoes with: light wood, rattan, white walls, linen and cotton; coastal, bohemian or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.074.81",
+      "name": "LOHALS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 150.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x150 cm",
+      "colors": [
+        "Natural"
+      ],
+      "description": "Jute is a durable and recyclable material with natural colour variations."
+    },
+    "photos": [
+      "5d2bfd3995048c04"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "290.338.06",
+  "text": "Type: three-seat sofa with rolled arms\nUse: seating, lounging; living room, family room\nStyle: traditional, classic, Scandinavian\nMaterials: woven fabric upholstery, turned light wood legs\nColors: dark charcoal grey, natural light wood legs\nShape: low scrolled arms, two loose back cushions and two seat cushions, piped edges, turned tapered legs, medium visual weight\nFeel: cozy, elegant, warm\nGoes with: light wood, white walls, cream and mustard textiles; classic, Scandinavian or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "290.338.06",
+      "name": "STOCKSUND",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Nolhaga dark grey",
+        "light brown",
+        "wood"
+      ],
+      "description": "You get extra soft comfort and support because the thick cushion has a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "f384a050151b8e2f"
+    ]
+  }
+}

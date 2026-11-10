@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071SHHZTC",
+  "text": "Type: ombr\u00e9 wool area rug\nUse: color statement under seating; living room, bedroom, home office\nStyle: modern, contemporary, minimalist\nMaterials: wool, fine low pile\nColors: bright red, warm orange-red\nShape: rectangular, solid fade from red to coral, finely textured surface, clean edges, medium-large\nFeel: bold, warm, energetic\nGoes with: dark wood, grey or white furniture, neutral walls; modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071SHHZTC",
+      "name": "Amazon Brand \u2013 Rivet Modern Ombr&eacute; Wool Rug, 5' x 8', Red",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4,
+        "height": 0.6
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Red"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Modern",
+      "description": "Pile: 100% Wool, Backing: 100% Canvas Imported Deep and light hues fade into each other in this ombr\u00e9 pattern rug. Subtle yet striking, this 100% wool rug is high on style and softness. Area rug features an ombr\u00e9 pattern Hand-tufted with 100% wool fibers Plush .65'' pile suits high-traffic indoor areas Pair with a rug pad (sold separately) 5' x 8' Ships tightly rolled in a protective bag",
+      "image_path": "8f/8ffe969d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7ed5114066a9961a"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "090.178.26",
+  "text": "Type: low white bookcase combination\nUse: books, records and display along a wall or under a window; living room, home office, study\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white laminated wood-based panels, adjustable shelves\nColors: white\nShape: three low open bookcases side by side forming one long unit, two shelves each, plinth base, straight clean edges, long and horizontal\nFeel: clean, bright, orderly, practical\nGoes with: light wood floors, white walls, colorful books, plants; Scandinavian or minimalist living rooms and home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "090.178.26",
+      "name": "BILLY",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 240.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "240x106x28 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Adjustable shelves; adapt space between shelves according to your needs."
+    },
+    "photos": [
+      "c98c1cd66baf6ce8"
+    ]
+  }
+}

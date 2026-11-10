@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07DW4VYQW",
+  "text": "Type: round pedestal side table\nUse: holding a lamp or drinks beside seating or bed; living room, bedroom\nStyle: classic, traditional, farmhouse\nMaterials: painted wood, turned pedestal\nColors: white\nShape: round top with apron, turned column, four curved splayed feet, compact and light\nFeel: charming, soft, classic\nGoes with: floral fabrics, light wood, pastel walls; cottage, farmhouse or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DW4VYQW",
+      "name": "Ravenna Home Morley Classic Round Pedestal Side End Table, 20\"W",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": null,
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "84/84d24cbf.jpg",
+      "image_px": [
+        1291,
+        1756
+      ]
+    },
+    "photos": [
+      "274bbcf0f0c13032"
+    ]
+  }
+}

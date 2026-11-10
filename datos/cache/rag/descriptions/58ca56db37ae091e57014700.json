@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082XMFBY2",
+  "text": "Type: globe stick floor lamp\nUse: ambient light in a corner or beside a sofa; living room, bedroom, home office\nStyle: mid-century modern, glam, art deco\nMaterials: white opal glass globe, brass pole, black marble base\nColors: white, warm gold brass, black marble\nShape: very thin tall stick, single round glass globe on top, short black cylinder marble base, minimal and airy\nFeel: elegant, refined, airy\nGoes with: velvet, brass accents, white or dark walls, walnut; mid-century, glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082XMFBY2",
+      "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": {
+        "width": 22.9,
+        "depth": 22.9,
+        "height": 175.3
+      },
+      "brand": "Rivet",
+      "product_type": "LAMP",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Acrylic"
+      ],
+      "style": "Floor",
+      "description": "This floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.",
+      "image_path": "97/97aa5bc7.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "078fc0a972aefcf0"
+    ]
+  }
+}

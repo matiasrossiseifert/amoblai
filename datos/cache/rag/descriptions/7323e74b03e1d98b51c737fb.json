@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8HYSLD",
+  "text": "Type: farmhouse wood coffee table\nUse: holding drinks, books and baskets; living room\nStyle: farmhouse, rustic, traditional\nMaterials: solid wood with light natural stain\nColors: light warm natural tan wood\nShape: rectangular top with thick apron, chunky square legs with peg details, V-shaped side braces, open lower shelf, sturdy and substantial\nFeel: warm, homey, relaxed\nGoes with: white or linen sofas, woven textures, black iron accents; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B8HYSLD",
+      "name": "Amazon Brand \u2013 Stone & Beam Bruckner Casual Wood Coffee Table, 50\"W, Brown",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 71.1,
+        "depth": 50.8,
+        "height": 127.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Modern farm_House",
+      "description": "This handsome coffee table features simple lines and a warm finish that's ideal for any casual room next to your favorite chair or sofa. It's the perfect perch for your page-turner book or a serving tray. 28\"L x 50\"W x 20\"H Rubber and poplar hardwoods; birch veneer A transitional piece with touches of modern, rustic and global styles Rattan adds texture to your room along with storage space Assembly in 30 minutes or less; assemble and attach bases Free returns for 30 days. 3-year warranty.",
+      "image_path": "60/60755a25.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e69ff9065611e8e4"
+    ]
+  }
+}

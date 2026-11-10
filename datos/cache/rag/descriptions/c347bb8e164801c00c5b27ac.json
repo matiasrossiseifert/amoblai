@@ -1,0 +1,38 @@
+{
+  "product": "390.117.81",
+  "text": "Type: small square dining table\nUse: dining for two, breakfast, small work surface; kitchen, small dining room, studio apartment\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white melamine top, white powder-coated steel frame\nColors: white\nShape: flat square top, thin metal apron, four slim square legs at the corners, simple boxy silhouette, compact and light\nFeel: clean, simple, bright, practical\nGoes with: white or light wood chairs, colorful seat cushions, pale walls; small kitchens, studios or modern dining nooks\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "390.117.81",
+      "name": "MELLTORP",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 75.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "75x75 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The melamine table top is moisture resistant, stain resistant and easy to keep clean."
+    },
+    "photos": [
+      "ffc5972133150a23"
+    ]
+  }
+}

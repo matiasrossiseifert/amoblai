@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DYJVQZZ",
+  "text": "Type: upholstered wooden dining bench\nUse: seating at a dining table, bed end; dining room, bedroom, entryway\nStyle: traditional, classic, contemporary\nMaterials: wood frame, tufted faux leather seat\nColors: dark bittersweet brown, warm medium brown wood\nShape: long padded seat with button tufting, wood apron, four square tapered legs, backless, armless\nFeel: warm, rich, inviting\nGoes with: cherry or walnut dining tables, cream walls; traditional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DYJVQZZ",
+      "name": "Red Hook Barcelona Wooden Bench with Faux-Leather Upholstered Cushion - Bittersweet Brown",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 121.9,
+        "depth": 43.2,
+        "height": 40.6
+      },
+      "brand": "Red Hook",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "faux_leather"
+      ],
+      "style": null,
+      "description": "2-person bench for casual seating in an entryway, eat-in kitchen, or dining room Wood construction with a dark-brown finish; tapered legs offer reliable stability Cushioned seat upholstered in vinyl faux leather; beautiful stitch work and button tufting Simple assembly required (instructions, hardware, and tools included) Measures 49.5 by 15.8 by 19.3 inches (LxWxH)",
+      "image_path": "64/64ae65e3.jpg",
+      "image_px": [
+        2324,
+        2324
+      ]
+    },
+    "photos": [
+      "c74ddaf14dc1f442"
+    ]
+  }
+}

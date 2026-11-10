@@ -1,0 +1,39 @@
+{
+  "product": "001.050.64",
+  "text": "Type: console table with glass top\nUse: display, storage, holding keys and decor; living room, hallway, entryway, behind a sofa\nStyle: classic, traditional, Scandinavian\nMaterials: painted wood in a white finish, clear glass top panel\nColors: white, clear glass\nShape: long narrow top, two open display compartments under glass, full-length lower shelf, slender tapered legs, light and open\nFeel: bright, elegant, airy, tidy\nGoes with: white or pale walls, silver or glass accents, light grey textiles; classic or traditional living rooms and entryways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.050.64",
+      "name": "LIATORP",
+      "category": "table",
+      "kind": "console table",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 37.0
+      },
+      "type_ikea": "Console table",
+      "category_tp": "table",
+      "size_raw": "133x37 cm",
+      "colors": [
+        "White",
+        "glass"
+      ],
+      "description": "Can be placed behind a sofa, along a wall, or be used as a room divider."
+    },
+    "photos": [
+      "dcc6f0a0f8e8f866"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "598.758.05",
+  "text": "Type: two-seat slipcovered loveseat\nUse: seating, relaxing, reading; living room, sitting room, guest room\nStyle: classic, farmhouse, coastal\nMaterials: removable cotton-look fabric slipcover, thick padded cushions\nColors: bright white\nShape: rolled scroll arms, two loose back and seat cushions, pleated skirt down to the floor, deep soft seat, rounded and cushy, compact\nFeel: cozy, fresh, relaxed, homey\nGoes with: light wood, pale blue or sage accents, linen throws, wicker; farmhouse, coastal or cottage living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "598.758.05",
+      "name": "EKTORP",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Blekinge white"
+      ],
+      "description": "The cover is easy to keep clean as it is removable and can be machine washed."
+    },
+    "photos": [
+      "6d82c1b2255c1fe0"
+    ]
+  }
+}

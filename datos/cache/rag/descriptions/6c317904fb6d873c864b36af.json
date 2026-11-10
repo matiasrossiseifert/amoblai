@@ -1,0 +1,43 @@
+{
+  "product": "abo-B071P9JNF7",
+  "text": "Type: wide storage sideboard\nUse: storing tableware or media gear; dining room, living room\nStyle: rustic, industrial, farmhouse\nMaterials: weathered reclaimed wood, black metal sled legs, black metal bar pulls\nColors: light greyish wood, black\nShape: wide rectangular case, two plank doors, four drawers in center and a long bottom drawer, raised on three black metal sled bases, solid and substantial\nFeel: rugged, earthy, relaxed\nGoes with: grey or white walls, black metal, linen, concrete; industrial, rustic or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071P9JNF7",
+      "name": "Stone & Beam Audio Video Media Cabinets",
+      "category": "cabinet",
+      "kind": "sideboard",
+      "dimensions_cm": {
+        "width": 78.2,
+        "depth": 77.2,
+        "height": 118.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "34/341b52ff.jpg",
+      "image_px": [
+        1500,
+        948
+      ]
+    },
+    "photos": [
+      "6c7476c58aed08f6"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "302.225.23",
+  "text": "Type: small shaggy high-pile rug\nUse: a soft landing by a bed or sofa; bedroom, living room, children's room\nStyle: contemporary, Scandinavian, minimalist\nMaterials: dense long shag pile, soft curly yarn\nColors: light warm grey, off-white flecks\nShape: small rectangle with thick tight shag texture, plush and soft underfoot, compact, cushy\nFeel: cosy, soft, warm, calm\nGoes with: white or grey walls, light wood, white bedding, knit throws; Scandinavian or contemporary bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "302.225.23",
+      "name": "ALHEDE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 150.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "80x150 cm",
+      "colors": [
+        "Off-white"
+      ],
+      "description": "The dense, thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "f967ba862045b9d5"
+    ]
+  }
+}

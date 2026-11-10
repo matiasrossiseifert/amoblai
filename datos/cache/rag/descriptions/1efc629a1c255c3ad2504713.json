@@ -1,0 +1,37 @@
+{
+  "product": "502.135.89",
+  "text": "Type: glass-door display cabinet with drawers\nUse: displaying dishes, glassware and books, storing linens in drawers; dining room, living room\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid wood with a dark stained finish, clear glass door panes, inner shelves, metal knobs\nColors: dark black-brown, dark grey knobs\nShape: tall upright cabinet with two framed glass doors over three stacked drawers, small round knobs, flat cornice top, short square legs, solid and stately, heavy visual weight\nFeel: warm, sturdy, classic, cozy\nGoes with: white walls, warm wood floors, cream or rustic textiles; traditional, farmhouse or country dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "502.135.89",
+      "name": "HEMNES",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "Glass-door cabinet with 3 drawers",
+      "category_tp": "cabinet",
+      "size_raw": "90x197 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Solid wood has a natural feel."
+    },
+    "photos": [
+      "114d1acce1057e2b"
+    ]
+  }
+}

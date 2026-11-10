@@ -1,0 +1,38 @@
+{
+  "product": "702.453.39",
+  "text": "Type: high-gloss desk with two drawers\nUse: working at a laptop, studying, a dressing table; home office, bedroom, living room\nStyle: modern, minimalist, contemporary\nMaterials: high-gloss white lacquered board, white steel legs\nColors: glossy bright white\nShape: long narrow shallow top, two wide flush drawers under the top, slim rectangular U-shaped metal legs at each end, sleek, light and open\nFeel: sleek, bright, clean, crisp\nGoes with: grey or black chairs, chrome, white walls, colorful accents; modern, minimalist or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.453.39",
+      "name": "BEST BURS",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 40.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "120x40 cm",
+      "colors": [
+        "High-gloss white"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "47473230764d2002"
+    ]
+  }
+}

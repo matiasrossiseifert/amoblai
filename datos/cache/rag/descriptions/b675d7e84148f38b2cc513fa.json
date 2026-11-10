@@ -1,0 +1,45 @@
+{
+  "product": "abo-B079V31LH9",
+  "text": "Type: metallic velvet throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: glam, contemporary, modern\nMaterials: sheen velvet with distressed metallic foil print\nColors: light silver grey, champagne, metallic silver\nShape: square, solid with crackled shimmer texture, smooth lustrous surface, knife edges, compact\nFeel: elegant, luminous, luxurious\nGoes with: grey or white sofas, mirrored and chrome accents, crystal; glam or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B079V31LH9",
+      "name": "Amazon Brand \u2013 Rivet Modern Metallic Velvet Decorative Throw Pillow, Soft and Luxurious, 17\" x 17\", Silver",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 14.0
+      },
+      "brand": "Rivet",
+      "product_type": "PILLOW",
+      "colors": [
+        "Silver"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This pillow's subtle metallic sheen delivers a hint of luxe along with coziness. A distressed-look woven pattern on the front offers a vintage touch; the back is striated velvet. This versatile pillow will blend easily with other solids and patterns. 17\" x 17\" Front: 65% Polyester, 35% Metallic ; Back: 100% Polyester Polyester fiber-filled insert included Insert can be easily removed via a bottom zipper on the cover Wipe with damp white cloth and allow to air dry",
+      "image_path": "50/504e68ed.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "960d482f1afc8d03"
+    ]
+  }
+}

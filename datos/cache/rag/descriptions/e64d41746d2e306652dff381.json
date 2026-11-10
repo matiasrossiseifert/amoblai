@@ -1,0 +1,35 @@
+{
+  "product": "102.894.11",
+  "text": "Type: open-weave bamboo basket\nUse: holding throws, plants or firewood on the floor; living room, bedroom, hallway\nStyle: bohemian, Japandi, coastal\nMaterials: woven bamboo strips\nColors: light natural bamboo, pale honey\nShape: wide round tub that tapers slightly toward the base, large airy grid of interlaced strips, rim bound with a flat band, open top, large but visually light\nFeel: natural, airy, relaxed, warm\nGoes with: green plants, linen, light wood, white walls; bohemian, Japandi or coastal rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.894.11",
+      "name": "GADDIS",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "50 cm",
+      "colors": [
+        "Natural"
+      ],
+      "description": "Each basket is woven by hand and is therefore unique."
+    },
+    "photos": [
+      "c162201c345538be"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "102.590.70",
+  "text": "Type: striped rectangular lumbar cushion\nUse: back support and a color accent on a sofa, armchair or bench; living room, bedroom, sunroom\nStyle: contemporary, coastal, retro\nMaterials: woven cotton-blend fabric with printed stripes\nColors: teal blue, sky blue, olive green, charcoal black, light grey, white\nShape: long rectangle with narrow vertical stripes of varied widths, flat seamed edges, softly filled, compact\nFeel: lively, fresh, casual, cool\nGoes with: grey or white sofas, light wood, rattan, blue or green accents; coastal, contemporary or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.590.70",
+      "name": "KERMADD",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "40x65 cm",
+      "colors": [
+        "Green",
+        "blue"
+      ],
+      "description": "The zipper makes the cover easy to remove."
+    },
+    "photos": [
+      "2289e1666c9ded64"
+    ]
+  }
+}

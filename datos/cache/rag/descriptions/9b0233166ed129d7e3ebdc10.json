@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07M7NSYC4",
+  "text": "Type: coffee table with drawers\nUse: storage and serving in front of a sofa; living room\nStyle: traditional, classic, contemporary\nMaterials: painted wood, satin nickel knobs\nColors: deep raspberry red, silver\nShape: rectangular, two front drawers with round knobs, geometric square fretwork cutouts on the sides, lower shelf, straight square legs, medium visual weight\nFeel: cheerful, bold, homey\nGoes with: cream, white or navy, patterned textiles, light wood; eclectic or traditional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07M7NSYC4",
+      "name": "Amazon Brand \u2013 Ravenna Home Classic Coffee Table with Side Cutouts, 42\"W, Merlot Wood",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 106.7,
+        "depth": 61.0,
+        "height": 50.8
+      },
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "42\" W X 24\" D X 20\" H Solid wood Classic wood coffee table with cutout sides to lend a more transitional feel 2 drawers with side-mounted ball bearing slides Assemble in 15-30 minutes Wipe clean with soft, dry cloth.",
+      "image_path": "79/79ed40e4.jpg",
+      "image_px": [
+        2560,
+        1559
+      ]
+    },
+    "photos": [
+      "39530b9ff8f58311"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WHB42L",
+  "text": "Type: geometric gold wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, entryway, above a console or sideboard\nStyle: glam, art deco, contemporary\nMaterials: gold-finished metal wire frame, mirror glass\nColors: warm gold\nShape: elongated octagon, wide open wireframe border of diamond and hexagon facets around a cut-corner rectangular mirror, medium-large, light and open\nFeel: glamorous, sparkling, graphic\nGoes with: white or navy walls, velvet, marble, brass accents; glam or art deco rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073WHB42L",
+      "name": "Amazon Brand \u2013 Stone & Beam Diamond Shape Metal Frame Hanging Decorative Wall Mirror, 34.25 Inch Height, Gold Finish",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 57.1,
+        "depth": 5.1,
+        "height": 87.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "Modern",
+      "description": "This mirror is a work of art, ready to make a modern style statement in your home. The gold finish of the layered diamond shapes gives it a 3D effect with a touch of glam, making it ideal for a modern style bedroom or living room. Modern design with touch of glam Glass, iron with gold finish 22.5W x 2\"D x 34.25\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "62/62ab6cf2.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b674c88d5e10183d"
+    ]
+  }
+}

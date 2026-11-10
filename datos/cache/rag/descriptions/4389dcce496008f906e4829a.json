@@ -1,0 +1,35 @@
+{
+  "product": "803.111.59",
+  "text": "Type: set of three pillar candle holders\nUse: holding pillar or block candles on a dining table, a sideboard or a mantel; dining room, living room\nStyle: traditional, classic, glam\nMaterials: light grey painted metal, lace-like cutout rim on each cup\nColors: light grey, pale dove grey\nShape: three tall pedestal holders in different heights, deep round cups with a scalloped lace edge, turned stems with ring details, domed round bases, elegant and slender\nFeel: romantic, elegant, soft, decorative\nGoes with: white candles, linen tablecloths, pale wood, silver accents; classic, traditional or romantic dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "803.111.59",
+      "name": "HRFIN",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Candlestick,candleholder, set of 3",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "satile and can be used in different ways  as a candlestick, block candle holder or large tealight holder."
+    },
+    "photos": [
+      "734eb0e83f9ae3ad"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "702.922.98",
+  "text": "Type: artificial potted orchid\nUse: lasting decoration on a table, a desk, a shelf or a windowsill; living room, home office, bedroom\nStyle: contemporary, Scandinavian, minimalist\nMaterials: artificial plastic flowers and leaves, green stem on a support stake, dark grey plastic pot\nColors: soft pink flowers, fresh green leaves, dark charcoal grey\nShape: single tall arching flower stem with a cluster of pink blooms and buds, broad glossy leaves at the base, small round pot, slender and upright\nFeel: fresh, delicate, elegant, easy\nGoes with: white surfaces, light wood, ceramic cachepots, pastel tones; Scandinavian, minimalist or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.922.98",
+      "name": "FEJKA",
+      "category": "deco",
+      "kind": "plant",
+      "dimensions_cm": null,
+      "type_ikea": "Artificial potted plant",
+      "category_tp": "deco",
+      "size_raw": "9 cm",
+      "colors": [
+        "Orchid pink"
+      ],
+      "description": "Lifelike artificial plant that remain just as fresh-looking year after year."
+    },
+    "photos": [
+      "74ff30e77bc8f731"
+    ]
+  }
+}

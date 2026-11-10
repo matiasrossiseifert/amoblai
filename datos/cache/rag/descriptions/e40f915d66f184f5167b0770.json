@@ -1,0 +1,37 @@
+{
+  "product": "990.234.08",
+  "text": "Type: glass-door bookcase wall\nUse: storing and displaying books, collections and china; living room, home office, home library, dining room\nStyle: Scandinavian, classic, traditional\nMaterials: birch wood veneer, framed glass-panel doors, small metal knobs\nColors: light natural birch, clear glass\nShape: wide floor-to-ceiling run of five sections, four behind tall glass doors with glass top cabinets, an open center column of shelves, flat top, plinth base, large and substantial\nFeel: orderly, bright, scholarly, calm\nGoes with: white walls, light wood floors, reading chairs, warm lighting; Scandinavian or classic living rooms, home libraries\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "990.234.08",
+      "name": "BILLY,OXBERG",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 200.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "200x237x30 cm",
+      "colors": [
+        "Birch veneer"
+      ],
+      "description": "Adjustable shelves, so you can customise your storage as needed."
+    },
+    "photos": [
+      "0cf8f1aec29ccd90"
+    ]
+  }
+}

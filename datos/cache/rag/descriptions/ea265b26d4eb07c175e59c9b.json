@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07C8MSCX6",
+  "text": "Type: striped throw pillow\nUse: decorating and resting on a sofa, bed or armchair; living room, bedroom\nStyle: farmhouse, coastal, contemporary\nMaterials: woven cotton-look fabric, fine pinstripe weave\nColors: warm grey, off-white\nShape: square, horizontal stripes of varied width, knife edges, compact\nFeel: relaxed, casual, calm\nGoes with: white or linen sofas, light wood, navy or neutral accents; farmhouse or coastal living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07C8MSCX6",
+      "name": "Amazon Brand \u2013 Stone & Beam Casual Striped Throw Pillow - 17 x 17 Inch, Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 15.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Recycled cotton"
+      ],
+      "style": null,
+      "description": "Recycled cotton makes this pillow cozy and casual. Woven yarn-dyed stripes offer a classic feel that blends with any style room. For a different look, flip it over to the solid flax-colored side with ribbed texture. Pillow cover features hidden bottom zipper 17\"L x 17\"W, Pillow cover dimensions are measured from seam to seam when cover is laid flat. Spot clean with damp white cloth and allow to air dry",
+      "image_path": "fc/fcbffaba.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ec5072caa3f5d1ad"
+    ]
+  }
+}

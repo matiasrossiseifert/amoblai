@@ -1,0 +1,37 @@
+{
+  "product": "303.113.12",
+  "text": "Type: pale green three-drawer chest\nUse: storing clothes and linens, top for a lamp or decor; bedroom, living room, hallway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: painted fiberboard in a smooth matte finish\nColors: light sage green, soft grey-green\nShape: plain boxy cabinet with three wide flush drawers, handleless fronts with a top-edge grip recess, slim overhanging top, recessed plinth, clean sharp edges, medium visual weight\nFeel: soft, calm, fresh, gentle\nGoes with: white walls, light oak, natural linen, green plants; Scandinavian or minimalist bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.113.12",
+      "name": "MALM",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 3 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x78 cm",
+      "colors": [
+        "Light green"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "39abefd1d599ff03"
+    ]
+  }
+}

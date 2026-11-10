@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07HSK628P",
+  "text": "Type: faceted metal planter\nUse: holding a potted plant; living room, home office, bedroom, on a floor, shelf or console\nStyle: industrial, modern, glam\nMaterials: metal with an iridescent burnished gold finish\nColors: antique gold, bronze, blue and purple patina tints\nShape: hexagonal faceted geometric body, wide open top, squat and chunky, medium size\nFeel: bold, moody, earthy, luxe\nGoes with: dark wood, black metal, leather, green plants; industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSK628P",
+      "name": "Amazon Brand \u2013 Rivet Industrial Hexagonal Planter, 9.06\"H, Gold",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "This beautiful, industrial-style metal planter comes in a gold tone. A hexagonal shape brings visual interest to this piece that is sure to draw some attention. The size makes it a great choice for use on a table or other flat surface. 9.45\"D x 8.27\"W x 9.06\"H 100% iron This metal planter is made of 100% iron and comes in a gold tone. Wipe clean with a soft, dry cloth.",
+      "image_path": "2c/2ca142cc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "24162ada34f92ca9"
+    ]
+  }
+}

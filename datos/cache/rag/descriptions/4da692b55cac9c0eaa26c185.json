@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QFP4PV5",
+  "text": "Type: mid-century two-seat sofa\nUse: sitting, lounging; living room, apartment, home office\nStyle: mid-century modern, retro, contemporary\nMaterials: textured woven fabric, tufted back, down-filled cushions, wood legs\nColors: dark charcoal grey, warm walnut brown legs\nShape: sloped flared arms, button-tufted back cushions, two seat cushions, arm bolster pillows, splayed tapered round legs, compact and lifted\nFeel: cozy, retro, casual\nGoes with: walnut wood, mustard or teal accents, white walls; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QFP4PV5",
+      "name": "Amazon Brand \u2013 Rivet Brooker Down-Filled Mid-Century Sofa, 76\"W, Quarry",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 194.0,
+        "depth": 97.0,
+        "height": 88.0
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Quarry"
+      ],
+      "materials": [
+        "Hardwood"
+      ],
+      "style": null,
+      "description": "This mid-century sofa with removable and reversible down-filled cushions offers comfort, while the hardwood frame and tapered legs increase its daily wear-and-tear durability. Whether used as a focus piece or a foundational piece, tufted back cushions add a touch of elegance to any room. 76\"W x 38\"D x 35\"H Solid hardwood frame, down-filled cushions, tapered wood legs Removable and reversible down-filled cushions This mid-century sofa adds elegance and comfort to any room. Assemble in 15 minutes or less Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "34/3457507f.jpg",
+      "image_px": [
+        2560,
+        1630
+      ]
+    },
+    "photos": [
+      "0c380efdaa15f381"
+    ]
+  }
+}

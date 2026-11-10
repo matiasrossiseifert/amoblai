@@ -1,0 +1,35 @@
+{
+  "product": "468.040.05",
+  "text": "Type: areca palm in a nursery pot\nUse: adding greenery and softness to a corner or beside a sofa; living room, home office, dining room\nStyle: bohemian, coastal, Scandinavian\nMaterials: live plant with feathery fronds, terracotta-colored plastic grower pot\nColors: fresh bright green, yellow-green stems, terracotta orange pot\nShape: tall upright clump of slender cane stems with arching feathery fronds, full and airy, large floor plant\nFeel: fresh, lush, tropical, relaxed\nGoes with: woven baskets, rattan, light wood, white walls; bohemian, coastal or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "468.040.05",
+      "name": "CHRYSALIDOCARPUS LUTESCENS",
+      "category": "deco",
+      "kind": "plant",
+      "dimensions_cm": null,
+      "type_ikea": "Potted plant",
+      "category_tp": "deco",
+      "size_raw": "24 cm",
+      "colors": [
+        "Areca palm"
+      ],
+      "description": null
+    },
+    "photos": [
+      "15c1bf7791266afc"
+    ]
+  }
+}

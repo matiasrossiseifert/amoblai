@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0725Z9MX3",
+  "text": "Type: speckled wool area rug\nUse: anchoring a seating area, adding texture; living room, bedroom, home office\nStyle: minimalist, contemporary, Scandinavian\nMaterials: wool, low textured pile\nColors: light warm beige, chestnut brown, cream speckles\nShape: rectangular, solid tone with subtle heathered speckle texture, plain edges, flat low profile, medium size\nFeel: warm, calm, natural, cozy\nGoes with: wood floors, charcoal or grey sofas, white walls; minimalist, Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0725Z9MX3",
+      "name": "Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 152.4,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Chestnut"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": null,
+      "description": "100% Wool Imported Gradated tones of chestnut give this rug a beautiful texture and a calming feel. Hand-tufted of 100% wool, this contemporary rug is durable and ready to blend with your existing styles. Transitional style Hand-tufted in India of 100% wool Timeless look with durability for high-traffic areas 5' x 7'6\" Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.",
+      "image_path": "cb/cbc47d7c.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d395c801b6a94af1"
+    ]
+  }
+}

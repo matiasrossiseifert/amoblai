@@ -1,0 +1,36 @@
+{
+  "product": "490.473.17",
+  "text": "Type: wall cube and low shelf storage combination\nUse: storing books, media and decor across a wall; living room, home office, bedroom\nStyle: Scandinavian, modern, minimalist\nMaterials: white and dark grey finished board, white doors, white metal legs\nColors: white, dark charcoal grey\nShape: staggered cluster of open and doored square wall cubes above two long low open shelf units on slim legs, asymmetric compartments, playful checkerboard layout, wide and spread out\nFeel: graphic, playful, orderly, light\nGoes with: light wood floors, white walls, black and grey accents, plants; Scandinavian or modern living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "490.473.17",
+      "name": "VALJE",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": null,
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "grey"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "170d72a39b7061e2"
+    ]
+  }
+}

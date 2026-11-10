@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075Z7HQK5",
+  "text": "Type: cross-leg console desk\nUse: working at a laptop, display; home office, bedroom, entryway\nStyle: mid-century modern, contemporary, Scandinavian\nMaterials: white gloss lacquer, walnut veneer drawer, painted wood legs, metal pull\nColors: glossy white, warm walnut brown\nShape: box top with open cubby and single drawer, crossed X-shaped legs at each end, slim and light\nFeel: fresh, playful, airy\nGoes with: white walls, light wood, pastel accents; Scandinavian or modern small spaces\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075Z7HQK5",
+      "name": "Amazon Brand \u2013 Rivet Modern Cross Legged Home Office Computer Desk Console, 42\"W, White Gloss and Walnut",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 106.7,
+        "depth": 39.9,
+        "height": 79.0
+      },
+      "brand": "Rivet",
+      "product_type": "DESK",
+      "colors": [
+        "White/Brown"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Modern",
+      "description": "High gloss white lacquer finish and walnut veneer; silver hardware Versatile piece with one storage compartment and one drawer on the front This two-tone desk is anything but your ordinary workstation. Modern inspired design with a high gloss white lacquer finish is accented by warm walnut veneer, then mixed with crossed legs for a sleek, contemporary touch. 42\"W x 15.7\"D x 31.1\"H Easy assembly in 15-30 minutes. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "3e/3e6c029b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "65494e0858d9d3b7"
+    ]
+  }
+}

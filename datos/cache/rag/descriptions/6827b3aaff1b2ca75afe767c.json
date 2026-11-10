@@ -1,0 +1,35 @@
+{
+  "product": "902.396.67",
+  "text": "Type: round swivel tub accent chair\nUse: lounging, reading; living room, bedroom, lounge\nStyle: contemporary, retro, art deco\nMaterials: velvet upholstery, padded cylindrical body, loose lumbar cushion, dark round swivel base\nColors: vivid emerald green, black base\nShape: curved enclosed tub back that wraps into a cylindrical body, armless, deep round seat, small back cushion, low disc swivel base, compact and rounded\nFeel: bold, lively, plush, playful\nGoes with: white or blush pink walls, brass accents, light wood; contemporary, retro or art deco living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.396.67",
+      "name": "STOCKHOLM",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel easy chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Sandbacka green"
+      ],
+      "description": "This chair is made from moulded high resilience foam that provides comfort and support  and keeps its shape for years."
+    },
+    "photos": [
+      "08152d48d0b67987"
+    ]
+  }
+}

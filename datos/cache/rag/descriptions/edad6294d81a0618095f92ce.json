@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8PXTVL",
+  "text": "Type: round wooden wall clock\nUse: telling time, wall decoration; on a feature wall; living room, dining room, home office\nStyle: industrial, farmhouse, retro\nMaterials: black stained wood face, engraved natural wood numerals, metal hands\nColors: dark black, warm natural wood\nShape: large solid round disc, carved Arabic numerals, vintage Paris lettering, ornate spade hands, bold\nFeel: vintage, warm, graphic\nGoes with: natural wood, white or grey walls, galvanized metal; farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B8PXTVL",
+      "name": "Amazon Brand \u2013 Stone & Beam Round Battery Operated Vintage Decorative Wall Clock - 23 Inch, Black Wood",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": {
+        "width": 59.7,
+        "depth": 59.7,
+        "height": 59.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CLOCK",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "hardwood"
+      ],
+      "style": null,
+      "description": "Along with telling you the time, this replica of a 1965 French clock is ready to add an artsy vintage touch to your wall. Beige accents against a black background give it a striking contrast that will be eye-catching in most any d\u00e9cor. 23.5\" Diameter Hardwood clock face with iron hands Ready to hang, all hardware included",
+      "image_path": "cc/cc9f405c.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "63b6a9aed39a439f"
+    ]
+  }
+}

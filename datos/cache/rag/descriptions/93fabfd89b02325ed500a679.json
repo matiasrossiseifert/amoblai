@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7MQD5P",
+  "text": "Type: nesting coffee tables, set of two\nUse: holding drinks and books in front of a sofa; living room\nStyle: mid-century modern, Scandinavian, retro\nMaterials: fir wood, herringbone pattern top, solid wood legs\nColors: light warm natural wood, soft brown\nShape: oblong teardrop tops, three round splayed tapered legs each, smaller table slides under the larger, low and light\nFeel: playful, warm, airy\nGoes with: light wood, white walls, linen and wool textiles; mid-century or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7MQD5P",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Oblong End/Side/Nesting Tables, Firwood",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 119.0,
+        "depth": 55.9,
+        "height": 59.1
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Firwood"
+      ],
+      "materials": [
+        "Engineered Wood"
+      ],
+      "style": null,
+      "description": "Global-inspired wood grain patterns give these nesting tables an eye-catching finish, while the oblong shape and angled legs are mid-century inspired. This handsome pair can hold snack trays and remote controls, or stack together to save room. Large: 46.87x23.25x22; Small 31.5x15.75x19.25 Engineered wood and fiberboard Mid-century with globally-inspired touches Can nestle together to accommodate small spaces Simple assembly in 30 minutes or less; just screw on legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "41/41e843bb.jpg",
+      "image_px": [
+        2560,
+        1860
+      ]
+    },
+    "photos": [
+      "9f4787642f6ee836"
+    ]
+  }
+}

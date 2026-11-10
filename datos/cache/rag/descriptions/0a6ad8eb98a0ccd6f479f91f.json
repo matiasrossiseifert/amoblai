@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QBMQ4LN",
+  "text": "Type: leather three-seat sofa\nUse: seating, lounging; living room, den, home office\nStyle: modern, industrial, contemporary\nMaterials: distressed top-grain leather, small dark feet\nColors: dark brown, warm chestnut tones\nShape: wide flat track arms, two back and seat cushions, boxy low profile, hidden feet, heavy and solid\nFeel: rugged, warm, lived-in\nGoes with: reclaimed wood, black metal, brick, wool throws; industrial or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QBMQ4LN",
+      "name": "Amazon Brand \u2013 Stone & Beam Abigail Leather Sofa, 86\"W, Dark Brown",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 218.4,
+        "depth": 104.1,
+        "height": 88.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Dark Brown"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": null,
+      "description": "Comfort meets class in this attractive transitional-style sofa. The angular shape makes a statement in your home decor, and four dark-colored legs add elegance to the piece. The back and seat cushions are reversible to prolong the life of this sofa. 86\"W x 41\"D x 35\"H; seat height: 20\"H; seat depth: 40\"D; seat back height: 15\"H; arm height: 25\"H; leg height: 1.5\"H Sturdy wood frame with rich 100% top grain leather The removable seat and back cushions ensure durability and comfort. Classy angular design pairs well with contemporary-style home decor. Assemble in 15 minutes or less Vacuum or wipe with a dry cloth. Spot clean if needed. Free returns for 30 days. 3-year warranty.",
+      "image_path": "1e/1e477c97.jpg",
+      "image_px": [
+        2560,
+        1311
+      ]
+    },
+    "photos": [
+      "47ece7312a503238"
+    ]
+  }
+}

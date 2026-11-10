@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P1KF8D",
+  "text": "Type: sunset seascape canvas print\nUse: wall decoration; living room, bedroom, home office, above a sofa or bed\nStyle: coastal, contemporary, modern\nMaterials: gallery-wrapped canvas, brushed watercolor-like photographic print\nColors: soft pale blue, deep navy, warm orange, lavender, white\nShape: horizontal rectangle, frameless, low horizon with flying seagulls and reflections, medium-large, airy\nFeel: serene, dreamy, calm, airy\nGoes with: white or soft blue walls, light wood, linen, navy accents; coastal or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073P1KF8D",
+      "name": "Amazon Brand \u2013 Rivet Seagulls Across the Sunset Horizon Canvas Print, 36\" x 24\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 3.8,
+        "height": 91.4
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": null,
+      "description": "After a long day, this tranquil print will help you relax. Birds sweep through a sunset horizon with all the blues, purples and oranges you remember from vacations with friends and family. This natural scene will blend with any existing style. A contemporary print of a classic, timeless scene Hand-stretched canvas on wood. Ready to hang with hardware included. 36\" x 24\" Made to order",
+      "image_path": "7d/7df4ebd1.jpg",
+      "image_px": [
+        2560,
+        1714
+      ]
+    },
+    "photos": [
+      "678c90e6efd83b60"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07RG78QJS",
+  "text": "Type: minimalist open coffee table\nUse: holding drinks, books and decor in front of a sofa; living room\nStyle: minimalist, modern, contemporary\nMaterials: engineered wood, wenge laminate finish\nColors: dark chocolate brown\nShape: low rectangle, flat top over a lower shelf, slab panel supports at ends and center, no legs, compact and boxy\nFeel: clean, simple, grounded\nGoes with: white or light grey sofas, light rugs, white walls; minimalist or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07RG78QJS",
+      "name": "Amazon Brand - Solimo Essential Engineered Wood Coffee Table (Wenge Finish)",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 93.0,
+        "depth": 45.0,
+        "height": 33.4
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Sturdy structure made of premium quality engineered wood Made from European standard particle board to ensure durability Spacious table top and shelves, for placing magazines, ornaments, etc. Aesthetic, easy-to-clean design with smooth edges diminish chances of scrapes and cuts Rigorously tested for safety and quality, underwent 15+ safety and quality checks Long-lasting table resistant to humidity, stains and hot water Includes a 3-year warranty on manufacturing defects",
+      "image_path": "31/31347f65.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "371b2155e8b709a5"
+    ]
+  }
+}

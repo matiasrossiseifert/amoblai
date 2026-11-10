@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07P28673J",
+  "text": "Type: three-seat tufted sofa\nUse: sitting, lounging; living room\nStyle: mid-century modern, contemporary\nMaterials: woven textured fabric, polished chrome metal legs\nColors: dark teal blue, silver\nShape: three button-tufted back cushions, long single bench seat, flared sloping track arms, slim tapered metal legs, raised and light\nFeel: tailored, rich, calm\nGoes with: white or warm grey walls, walnut wood, brass or chrome accents; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07P28673J",
+      "name": "Rivet Abel Mid-Century Sofa Fabric and Metal - Parent",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "66/6608dcfe.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b8b544f133a6e336"
+    ]
+  }
+}

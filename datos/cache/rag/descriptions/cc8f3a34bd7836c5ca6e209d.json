@@ -1,0 +1,38 @@
+{
+  "product": "402.612.55",
+  "text": "Type: round metal tray table\nUse: holding drinks, a plant or books, serving with a lift-off tray; living room, bedroom, balcony\nStyle: contemporary, retro, minimalist\nMaterials: powder-coated steel, removable tray top\nColors: pale butter yellow\nShape: round lift-off tray with a raised rim, four thin straight rod legs, cross brace near the floor, compact and light, open silhouette\nFeel: cheerful, light, playful, airy\nGoes with: white or pastel rooms, light wood, rattan and plants; Scandinavian, bohemian or modern living rooms and balconies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.612.55",
+      "name": "GLADOM",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 45.0,
+        "depth": 53.0
+      },
+      "type_ikea": "Tray table",
+      "category_tp": "table",
+      "size_raw": "45x53 cm",
+      "colors": [
+        "Light yellow"
+      ],
+      "description": "You can use the removable tray for serving."
+    },
+    "photos": [
+      "0ca3b9ffcc478ff3"
+    ]
+  }
+}

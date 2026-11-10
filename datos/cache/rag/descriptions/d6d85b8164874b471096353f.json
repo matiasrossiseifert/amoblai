@@ -1,0 +1,35 @@
+{
+  "product": "402.886.79",
+  "text": "Type: round blue framed wall mirror\nUse: adding light and a pop of color on a wall; hallway, bedroom, bathroom, living room\nStyle: retro, contemporary, modern\nMaterials: mirror glass with a glossy lacquered blue border, bevelled edge\nColors: bright cobalt blue, silver reflection\nShape: perfect circle with a wide smooth colored rim and a slim flat profile, clean and graphic, medium sized\nFeel: bold, cheerful, fresh, playful\nGoes with: white walls, light wood, white or yellow accents; retro, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.886.79",
+      "name": "LANGESUND",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "50 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Provided with safety film - reduces damage if glass is broken."
+    },
+    "photos": [
+      "11b5bbfe68214c33"
+    ]
+  }
+}

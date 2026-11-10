@@ -1,0 +1,36 @@
+{
+  "product": "991.278.11",
+  "text": "Type: bent plywood dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: molded birch veneer shell, solid birch legs, grey metal underframe\nColors: pale natural birch, light blond wood, grey\nShape: one-piece curved shell with a pinched waist and a rounded back, armless, four splayed round tapered legs, slim and light, compact\nFeel: warm, calm, natural, airy\nGoes with: light wood tables, white walls, linen and green plants; Scandinavian, Japandi or mid-century modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "991.278.11",
+      "name": "SVENBERTIL",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Birch",
+        "ernfrid birch"
+      ],
+      "description": null
+    },
+    "photos": [
+      "86dee4848c3d4834"
+    ]
+  }
+}

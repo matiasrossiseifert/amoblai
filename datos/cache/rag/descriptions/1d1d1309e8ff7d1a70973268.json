@@ -1,0 +1,37 @@
+{
+  "product": "390.288.90",
+  "text": "Type: wide white nine-drawer chest\nUse: storing clothes, linens and media, long top for a TV or decor; bedroom, living room\nStyle: minimalist, Scandinavian, modern\nMaterials: white matte painted fiberboard, black slot grips\nColors: white, black grip accents\nShape: long low chest with three columns of three drawers, wider middle column, flush handleless fronts with black cut-out grips at the top edge, flat top, low plinth, clean geometric lines, broad and substantial\nFeel: clean, orderly, bright, calm\nGoes with: light wood floors, grey or white walls, black accents; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "390.288.90",
+      "name": "NORDLI",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 160.0
+      },
+      "type_ikea": "Chest of 9 drawers",
+      "category_tp": "dresser",
+      "size_raw": "160x75 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "cf03d3786450e51f"
+    ]
+  }
+}

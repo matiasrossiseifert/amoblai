@@ -1,0 +1,35 @@
+{
+  "product": "603.323.65",
+  "text": "Type: house-shaped soft cushion\nUse: play, cuddling and decoration on a bed or a floor; children's room, playroom\nStyle: contemporary, Scandinavian\nMaterials: printed cotton fabric, soft polyester filling\nColors: bright red, black and white stripes, sky blue, sunny yellow, grey\nShape: little house outline with a striped roof, grey chimney, printed window with curtains and a blue door, plump and rounded, small\nFeel: playful, cheerful, cozy, bright\nGoes with: primary colors, white furniture, light wood; colorful children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "603.323.65",
+      "name": "HEMMAHOS",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "30x50 cm",
+      "colors": [
+        "Red"
+      ],
+      "description": "A house with its own chimney and everything! Just big enough to fit in the bed, and nice and soft against your childs cheek."
+    },
+    "photos": [
+      "0b26a8c8f7f078d7"
+    ]
+  }
+}

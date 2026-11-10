@@ -1,0 +1,33 @@
+{
+  "product": "101.821.65",
+  "text": "Type: frameless rectangular wall mirror\nUse: grooming, reflecting light, making a space feel larger; bathroom, hallway, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: plain mirror glass, small metal mounting clips\nColors: silver reflective glass\nShape: plain upright rectangle, flat edgeless glass held by discreet clips at top and bottom, flush to the wall, light and visually weightless\nFeel: clean, airy, bright, simple\nGoes with: white tiles, white or grey walls, chrome fittings, light wood; minimalist, modern or Scandinavian bathrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "101.821.65",
+      "name": "GODMORGON",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "80x96 cm",
+      "colors": [],
+      "description": "Fittings are adjustable in depth, give space for lighting cords."
+    },
+    "photos": [
+      "1bf1dc6e0b2d63fd"
+    ]
+  }
+}

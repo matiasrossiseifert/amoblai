@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075HQZ4XK",
+  "text": "Type: plug-in cone wall sconce\nUse: reading light; bedroom, living room, home office; mounted beside a bed or chair\nStyle: mid-century modern, retro, minimalist\nMaterials: black metal shade with white interior, brushed nickel arm and oval backplate\nColors: black, silver nickel, white\nShape: tapered cone shade with nickel band, curved slim arm, oval wall plate with rocker switch, medium size\nFeel: graphic, crisp, retro\nGoes with: walnut wood, white or grey walls, metal accents; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075HQZ4XK",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Plug-In Light Wall Mounted Sconce - 11 x 8 x 16.5 Inches, Black and Brushed Nickel",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": {
+        "width": 27.9,
+        "depth": 20.3,
+        "height": 41.9
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Black/Brushed Nickel"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "11\"W x 8\"D x 16.5\"H Black metal shade, brushed nickel arm and wall plate Convenient plug-in sconce provides soft light. Rotary on/off switch. Bulb not included Easily assembled and mounted on wall Intended for indoor use only This mid-century modern wall sconce is sleek and easy to install. Just mount on the wall and plug the cord into a standard outlet. With a black metal cone shade and brushed-nickel hardware, it will brighten up any room or reading area.",
+      "image_path": "3e/3e5de571.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4f0dd31d6954e088"
+    ]
+  }
+}

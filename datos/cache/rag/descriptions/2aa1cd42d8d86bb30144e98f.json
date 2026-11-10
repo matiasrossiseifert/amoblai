@@ -1,0 +1,35 @@
+{
+  "product": "802.733.60",
+  "text": "Type: round printed floor cushion\nUse: extra seating or decoration on a floor or a sofa; living room, children's room, teen room\nStyle: industrial, contemporary, modern\nMaterials: photo-printed fabric, soft thick filling\nColors: rusty brown, copper, yellow stripe, speckled grey\nShape: round thick pouf-like cushion printed to look like a manhole cover with a grid pattern and a yellow road line, speckled gravel-print sides, low and chunky\nFeel: playful, quirky, urban, bold\nGoes with: concrete greys, black metal, brick, street art; industrial lofts or playful teen rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.733.60",
+      "name": "FUFFENS",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "57 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Easy to clean; machine wash, warm (40C)."
+    },
+    "photos": [
+      "a97d95731bc72250"
+    ]
+  }
+}

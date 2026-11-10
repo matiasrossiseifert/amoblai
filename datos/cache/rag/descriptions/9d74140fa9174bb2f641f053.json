@@ -1,0 +1,38 @@
+{
+  "product": "291.026.30",
+  "text": "Type: storage frame with pink bins\nUse: sorting toys, crafts or clothes in slide-out bins; children's room, playroom\nStyle: Scandinavian, minimalist\nMaterials: solid pine frame in a light whitewashed finish, white and pink plastic bins\nColors: pale whitewashed pine, pink, white\nShape: low open wooden frame with three upright compartments, shallow white bins above deep pink bins on side rails, flat top, compact and boxy\nFeel: sweet, cheerful, tidy, soft\nGoes with: pastel walls, light wood, white furniture, soft rugs; Scandinavian children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "291.026.30",
+      "name": "TROFAST",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 94.0
+      },
+      "type_ikea": "Storage combination with boxes",
+      "category_tp": "cabinet",
+      "size_raw": "94x44x52 cm",
+      "colors": [
+        "Pine white",
+        "pink"
+      ],
+      "description": "A playful and sturdy storage series for storing and organising toys, sitting, playing and relaxing."
+    },
+    "photos": [
+      "2b501bc906606e90"
+    ]
+  }
+}

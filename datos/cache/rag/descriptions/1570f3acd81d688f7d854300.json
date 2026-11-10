@@ -1,0 +1,36 @@
+{
+  "product": "201.571.08",
+  "text": "Type: round two-tier side table on casters\nUse: holding drinks, lamps and books, bedside use; living room, bedroom\nStyle: modern, contemporary, art deco\nMaterials: white tempered glass tops, nickel-plated steel frame, casters\nColors: white, silver\nShape: two round glass tiers, thin tubular metal frame, slim straight legs, two wheels, light and open\nFeel: airy, sleek, bright, light\nGoes with: white or grey rooms, chrome or glass accents, velvet sofas; modern or glam living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "201.571.08",
+      "name": "STRIND",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": null,
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "50 cm",
+      "colors": [
+        "White",
+        "nickel-plated"
+      ],
+      "description": "Separate shelf for magazines, etc. helps you keep your things organised and the table top clear."
+    },
+    "photos": [
+      "3e160219f6a46eec"
+    ]
+  }
+}

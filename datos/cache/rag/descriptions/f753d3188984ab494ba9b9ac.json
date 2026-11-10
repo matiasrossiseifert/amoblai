@@ -1,0 +1,37 @@
+{
+  "product": "001.165.95",
+  "text": "Type: tall white bookcase with crown molding\nUse: displaying books and decor; living room, home office, library\nStyle: traditional, classic, farmhouse\nMaterials: white painted wood-based panels, beadboard-look grooved back, decorative molded top and plinth\nColors: soft white\nShape: tall open bookcase with adjustable shelves, carved shelf brackets, crown cornice and shaped base, vertical grooved back, substantial visual weight\nFeel: elegant, bright, timeless, stately\nGoes with: white or cream walls, dark wood floors, blue or grey accents; traditional, classic or farmhouse living rooms and studies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "001.165.95",
+      "name": "LIATORP",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 96.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "96x214 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Cornice and plinth rail help create a uniform expression when two or more units are connected together."
+    },
+    "photos": [
+      "99e410cca8a941c7"
+    ]
+  }
+}

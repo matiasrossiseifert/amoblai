@@ -1,0 +1,35 @@
+{
+  "product": "380.062.00",
+  "text": "Type: extendable wall makeup mirror\nUse: close-up grooming, shaving and makeup; bathroom, dressing area, bedroom\nStyle: contemporary, modern, industrial\nMaterials: polished stainless steel frame, bracket and scissor arm, mirror glass\nColors: shiny silver chrome, reflective glass\nShape: small round mirror in a thin metal ring, pivoting on a folding accordion arm that pulls out from a slim wall bracket, tilts and swivels, compact and light\nFeel: practical, sleek, functional, tidy\nGoes with: white tiles, chrome fixtures, grey or white walls; modern bathrooms or dressing corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "380.062.00",
+      "name": "FRCK",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Stainless steel"
+      ],
+      "description": "One side with magnifying mirror glass."
+    },
+    "photos": [
+      "df38efdc87f5f7e6"
+    ]
+  }
+}

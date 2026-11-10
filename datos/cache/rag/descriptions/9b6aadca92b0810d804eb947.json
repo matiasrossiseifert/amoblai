@@ -1,0 +1,35 @@
+{
+  "product": "602.499.60",
+  "text": "Type: round mirror with walnut frame\nUse: wall mirror that adds light and depth; living room, hallway, bedroom, dining room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer frame with a fine grain, glass mirror\nColors: warm medium walnut brown, silver mirror\nShape: perfect circle set in a deep curved wooden rim that wraps around the edge like a shallow drum, thin band visible from the front, large and sculptural\nFeel: warm, refined, timeless\nGoes with: walnut or oak furniture, leather, brass, white walls; mid-century modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.499.60",
+      "name": "STOCKHOLM",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "80 cm",
+      "colors": [
+        "Walnut veneer"
+      ],
+      "description": "Provided with safety film - reduces damage if glass is broken."
+    },
+    "photos": [
+      "44f0e863e43bbc16"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8K18WV",
+  "text": "Type: map-shaped wall shelf\nUse: displaying small objects and books; living room, home office, bedroom\nStyle: contemporary, industrial, modern\nMaterials: sheet metal, distressed painted finish\nColors: dark brown-black, worn copper edges\nShape: outline of a country map divided into seven open cubbies, shallow box form, graphic, medium visual weight\nFeel: playful, graphic, bold\nGoes with: light walls, wood and leather, metal accents; industrial, eclectic or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B8K18WV",
+      "name": "Amazon Brand \u2013 Stone & Beam Contemporary United States Floating Wall Shelf - 28 x 18 x 4 Inch, Black Metal",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 73.0,
+        "depth": 10.8,
+        "height": 47.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SHELF",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Stone"
+      ],
+      "style": null,
+      "description": "You'll have a tough time finding a more clever combination of wall art and storage solution. This set of black metal shelves in the shape of the United States will be a conversation starter along with a place to display small items or stash keys. 28.75\" W x 18.5\" H x 4.25\" D Iron with black finish Ready to hang, all hardware included",
+      "image_path": "12/12caafd6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "24cbab3ec0dcf099"
+    ]
+  }
+}

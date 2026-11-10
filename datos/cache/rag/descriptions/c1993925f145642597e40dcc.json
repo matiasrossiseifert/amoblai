@@ -1,0 +1,47 @@
+{
+  "product": "abo-B084HV67GW",
+  "text": "Type: oval cutout wall mirror\nUse: decorating a wall, small accent; entryway, bedroom, living room\nStyle: modern, glam, minimalist\nMaterials: thin gold metal frame, mirror glass\nColors: gold, silver mirror\nShape: elongated pill-shaped frame with open cutout ends and a central rectangular mirror, slim and light\nFeel: playful, sleek, airy\nGoes with: white or blush walls, brass accents, marble; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B084HV67GW",
+      "name": "Amazon Brand - Rivet Modern Cutout Hanging Mirror, 23\"H, Gold",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 25.4,
+        "depth": 3.2,
+        "height": 58.4
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Brass"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "Oval",
+      "description": "This stunning oval cutout mirror with its modern take on simplicity and grace is a beautiful addition to any home. Spruce up your living space with some functional modern art and enjoy the results. 23\"H x 10\"W x 1.25\"D Mirrored glass with a gold finished metal frame Can be used as a standard mirror or an accent piece This elegant work of modern craftsmanship is 100% handmade and hand painted. Avoid moisture and wipe clean with a soft, dry cloth. Hardware not included.",
+      "image_path": "e8/e88756f0.jpg",
+      "image_px": [
+        2560,
+        1087
+      ]
+    },
+    "photos": [
+      "e6b6ad4c8f388f3d"
+    ]
+  }
+}

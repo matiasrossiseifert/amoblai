@@ -1,0 +1,35 @@
+{
+  "product": "702.902.23",
+  "text": "Type: white gateleg table with drawers\nUse: dining, flexible eating space, storage; small kitchen, dining room, studio apartment\nStyle: Scandinavian, minimalist, traditional\nMaterials: white painted solid wood, wooden drop leaves\nColors: white, all-white\nShape: narrow central column of stacked small drawers, two fold-down leaves on swing-out gate legs, boxy when folded, open when extended\nFeel: practical, bright, flexible, tidy\nGoes with: white or light wood chairs, pale walls, colorful accents; small Scandinavian kitchens and compact dining areas\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "702.902.23",
+      "name": "NORDEN",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Gateleg table",
+      "category_tp": "table",
+      "size_raw": "26,89,152x80 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Table with drop-leaves seats 2-4; makes it possible to adjust the table size according to need."
+    },
+    "photos": [
+      "a2179218c8e9e5bd"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "790.403.38",
+  "text": "Type: rectangular industrial dining table\nUse: dining, gathering, working at a table; dining room, kitchen\nStyle: industrial, rustic, modern\nMaterials: dark stained solid wood top, black powder-coated steel pipe frame\nColors: dark brown-black wood, matte black metal\nShape: long plank-style top on tubular pipe legs with round feet, crossed X-shaped bracing underneath, sturdy, medium visual weight\nFeel: rugged, urban, solid, moody\nGoes with: brick walls, leather or metal chairs, concrete floors; industrial lofts and rustic dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "790.403.38",
+      "name": "RYGGESTAD",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 78.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "170x78 cm",
+      "colors": [
+        "Black",
+        "karpalund black"
+      ],
+      "description": "Theres a natural and living feeling of wood, as knots and other marks remain on the surface."
+    },
+    "photos": [
+      "6f56e42390da9b49"
+    ]
+  }
+}

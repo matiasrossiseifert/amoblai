@@ -1,0 +1,36 @@
+{
+  "product": "101.561.09",
+  "text": "Type: black metal lantern for a block candle\nUse: holding a candle for soft light on a table, floor or windowsill; living room, dining room, hallway, terrace\nStyle: traditional, rustic, farmhouse\nMaterials: black powder-coated steel, clear glass panels\nColors: black, clear glass\nShape: square box lantern with four glass sides, a hinged door, a slotted roof crown and a ring handle on top, upright and open, medium size\nFeel: cozy, warm, nostalgic, inviting\nGoes with: dark wood, white walls, wool throws, green plants; rustic, farmhouse or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "101.561.09",
+      "name": "BORRBY",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Lantern for block candle",
+      "category_tp": "deco",
+      "size_raw": "28 cm",
+      "colors": [
+        "In",
+        "outdoor black"
+      ],
+      "description": "Suitable for both indoor and outdoor use."
+    },
+    "photos": [
+      "6ee58edb76376429"
+    ]
+  }
+}

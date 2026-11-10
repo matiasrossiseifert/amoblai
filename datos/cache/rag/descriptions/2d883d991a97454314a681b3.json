@@ -1,0 +1,38 @@
+{
+  "product": "503.323.23",
+  "text": "Type: hopscotch kids' play rug\nUse: playing hopscotch and floor games; kids' room, playroom, nursery\nStyle: contemporary, modern, Scandinavian\nMaterials: short printed low pile, smooth surface\nColors: medium cool grey, white, red, yellow, green and blue numbers\nShape: rectangular, flat, chalk-style hopscotch squares running lengthwise with bright hand-drawn numbers, compact\nFeel: playful, cheerful, active, fun\nGoes with: white or light wood kids' furniture, bright accents, grey walls; children's bedrooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "503.323.23",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "100x160 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Playing hopscotch on one or two legs helps your child develop both motor and balance skills."
+    },
+    "photos": [
+      "e6cd36ad3fdf5520"
+    ]
+  }
+}

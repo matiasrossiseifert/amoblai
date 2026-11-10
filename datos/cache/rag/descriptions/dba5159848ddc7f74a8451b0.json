@@ -1,0 +1,35 @@
+{
+  "product": "303.047.26",
+  "text": "Type: chrome architect floor lamp\nUse: reading and task light beside an armchair, sofa or desk; living room, home office, study\nStyle: industrial, modern, retro\nMaterials: polished chrome-plated steel shade, jointed arms and pole, round metal base\nColors: polished silver chrome, black joints\nShape: small bell shade on a long two-part jointed arm with tension cables, tall slim pole, round flat base, mechanical drafting lamp look, light and open\nFeel: sleek, focused, studious, crisp\nGoes with: dark wood, leather, white or grey walls, black accents; industrial, modern or retro studies and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.047.26",
+      "name": "ANTIFONI",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor,reading lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "9ea3f8391d5bf426"
+    ]
+  }
+}

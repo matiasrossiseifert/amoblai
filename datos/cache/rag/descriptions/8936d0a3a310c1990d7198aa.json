@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSF5CK9",
+  "text": "Type: textured bohemian area rug\nUse: grounding a chair or seating corner; living room, bedroom, home office\nStyle: bohemian, contemporary, farmhouse\nMaterials: woven yarn with raised high-low pile, short fringe\nColors: cream white, grey, charcoal\nShape: rectangular, raised cream trellis and diamond bands over herringbone stripes, fringed ends, medium size\nFeel: cozy, tactile, casual\nGoes with: dark wood, woven baskets, neutral walls; boho or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSF5CK9",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Textured Subtle Bohemian Area Rug, 4 x 6 Foot, Grey and White Multicolor",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "stone"
+      ],
+      "style": "Bohemian",
+      "description": "Bring a sense of bohemian luxury into your home with this fashionable rug. The muted hues emphasize the beautiful diamond pattern, and the textured shapes make this rug soft and irresistible. 4' x 6' 79% wool, 21% cotton Preserving the global craft tradition, this beautifully textured rug is handcrafted by Craftmark-certified artisans. Flatweave (pile is not applicable) Pair with rug pad (sold separately)",
+      "image_path": "d2/d224cd78.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7f5368c4618c3e58"
+    ]
+  }
+}

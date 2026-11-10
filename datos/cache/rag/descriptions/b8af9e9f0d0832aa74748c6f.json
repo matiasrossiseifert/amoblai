@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07P7VBMKP",
+  "text": "Type: TV console with cube shelves\nUse: TV and media storage, open organizing; living room, bedroom, home office\nStyle: contemporary, minimalist, modern\nMaterials: laminated engineered wood, matte finish\nColors: solid black\nShape: rectangular open unit, seven open compartments with adjustable shelves, cable holes, plinth base, no doors, boxy and solid\nFeel: practical, bold, simple\nGoes with: white or grey walls, light wood, metal accents; modern or minimalist rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07P7VBMKP",
+      "name": "AmazonBasics Modern 50-Inch Wood TV Console and Cube Organizer - Solid Black",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 120.7,
+        "depth": 39.9,
+        "height": 63.5
+      },
+      "brand": "AmazonBasics",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Solid Black"
+      ],
+      "materials": [
+        "MDF & Particle board"
+      ],
+      "style": null,
+      "description": "TV console and storage solution for the modern home Perfect for placing televisions, media players, gaming consoles, decor, and more Sturdy wood construction that\u2019s built to last Open-faced cubby hole storage makes it easy to access essentials Minimal, modern look blends in nicely with both contemporary and traditional decor",
+      "image_path": "a6/a686d992.jpg",
+      "image_px": [
+        2560,
+        1608
+      ]
+    },
+    "photos": [
+      "341fc2c24965af91"
+    ]
+  }
+}

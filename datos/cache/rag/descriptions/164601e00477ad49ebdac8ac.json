@@ -1,0 +1,35 @@
+{
+  "product": "303.097.81",
+  "text": "Type: clear glass jar vase\nUse: holding cut flowers, branches or decorative fillers on a dining table, sideboard or shelf; dining room, living room\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: clear transparent glass, thick rolled rim, heavy flat base\nColors: clear, colorless transparent\nShape: wide cylindrical body with rounded shoulders narrowing to a short neck and a rolled lip, like an oversized storage jar, sturdy and medium sized\nFeel: fresh, simple, airy, light\nGoes with: green stems, white flowers, light wood, linen; Scandinavian, farmhouse or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "303.097.81",
+      "name": "BEGRLIG",
+      "category": "deco",
+      "kind": "vase",
+      "dimensions_cm": null,
+      "type_ikea": "Vase",
+      "category_tp": "deco",
+      "size_raw": "29 cm",
+      "colors": [
+        "Clear glass"
+      ],
+      "description": "The glass vase is mouth blown by a skilled craftsperson."
+    },
+    "photos": [
+      "c3e816d0be59269f"
+    ]
+  }
+}

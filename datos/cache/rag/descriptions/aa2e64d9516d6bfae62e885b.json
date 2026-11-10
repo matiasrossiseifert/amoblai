@@ -1,0 +1,33 @@
+{
+  "product": "000.379.80",
+  "text": "Type: white bell pendant lamp\nUse: general light over a dining table, kitchen island or desk; dining room, kitchen, home office, hallway\nStyle: Scandinavian, minimalist, modern\nMaterials: white matte plastic shade, white fabric cord, white ceiling cup\nColors: white\nShape: bell-shaped shade with a narrow neck that flares to a wide open rim, hangs on a thin cord from a domed ceiling cup, simple smooth outline, medium size, light visual weight\nFeel: clean, bright, simple, friendly\nGoes with: light wood tables, white walls, black chairs; Scandinavian, minimalist or modern dining rooms and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "000.379.80",
+      "name": "MELODI",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "28 cm",
+      "colors": [],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "17d88b301d8b80eb"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B078JJHJFX",
+  "text": "Type: rectangular ceramic window sill planter\nUse: growing herbs or succulents on a window sill or shelf; living room, home office, kitchen window\nStyle: contemporary, rustic, coastal\nMaterials: glossy reactive glazed ceramic, textured matte base\nColors: light sea green, dark slate blue-grey\nShape: long narrow trough with flared sides, two-tone band, low and compact\nFeel: fresh, earthy, calm\nGoes with: white walls, natural wood, green plants; coastal or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B078JJHJFX",
+      "name": "Amazon Brand \u2013 Rivet Modern Ceramic Indoor Window Sill Planter Box Pot - 3 x 12 x 3 Inch, Green and Blue",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 31.0,
+        "depth": 8.5,
+        "height": 8.0
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [
+        "Ceramic"
+      ],
+      "style": null,
+      "description": "This crisp, cool green and grey planter will add a beautiful touch of color to your window sill. The bottom of the piece is hand-painted, while the main body is fired with a reactive glaze, making each of these charming pieces unique. 3.35\"D x 12\"W x 3.15\"H Designed to hold plants; does not have drainage Ceramic stoneware Fired with reactive glaze and hand-painted. No two will be exactly alike.",
+      "image_path": "9c/9c954dba.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "49f8b66355fed90a"
+    ]
+  }
+}

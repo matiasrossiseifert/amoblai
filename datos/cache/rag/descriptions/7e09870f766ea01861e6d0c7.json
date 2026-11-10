@@ -1,0 +1,37 @@
+{
+  "product": "503.238.04",
+  "text": "Type: tall glass-door bookcase\nUse: displaying and storing books, collections and glassware; living room, home office, dining room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: laminated board in a beige finish, two framed glass doors, adjustable shelves, small knobs\nColors: light warm beige, clear glass\nShape: tall narrow upright case with two full-height glass doors split by a mid rail, many evenly spaced shelves, small knobs, plain plinth base, slim and tall, medium visual weight\nFeel: calm, orderly, soft, neutral\nGoes with: white or cream walls, light wood, warm neutral textiles; Scandinavian living rooms, studies and home libraries\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.238.04",
+      "name": "BILLY",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Bookcase with glass door",
+      "category_tp": "cabinet",
+      "size_raw": "80x30x202 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "Glass doors keep your favourite items free from dust but still visible."
+    },
+    "photos": [
+      "281abc65440fa977"
+    ]
+  }
+}

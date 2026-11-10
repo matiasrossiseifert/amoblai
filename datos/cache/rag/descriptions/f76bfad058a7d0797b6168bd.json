@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07GNSXX6B",
+  "text": "Type: drum shade pendant chandelier\nUse: overhead light over a dining table or bed; dining room, bedroom, living room\nStyle: classic, traditional, contemporary\nMaterials: white fabric drum shade, black metal frame\nColors: off-white, black\nShape: wide shallow drum shade, four candle-style arms with finial below, long downrod, broad, medium visual weight\nFeel: soft, elegant, balanced\nGoes with: neutral walls, dark wood, linen fabrics; transitional or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07GNSXX6B",
+      "name": "Amazon Brand \u2013 Stone & Beam Classic Ceiling Pendant Chandelier Fixture With White Drum Shade- 20 x 20 x 42 Inches, Black",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 50.8,
+        "depth": 50.8,
+        "height": 106.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Classic",
+      "description": "A modern spin on the classic chandelier, this light fixture has four arms covered by one rectangular shade. The metal hardware combines with a white fabric shade to blend with your existing styles. Modern with classic touches Metal hardware with black finish and fabric shade Creates a warm ambiance for a living room or dining room 42\"H x 20\"W x 20\"D Product is hardwired (professional installation recommended) For indoor use only",
+      "image_path": "56/565548ec.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "10c17a339b0916d7"
+    ]
+  }
+}

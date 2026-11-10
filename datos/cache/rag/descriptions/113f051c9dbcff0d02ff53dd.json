@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8FHTJ4",
+  "text": "Type: wall-mounted storage cabinet\nUse: storing small items on a wall; living room, entryway, home office\nStyle: farmhouse, rustic\nMaterials: distressed solid wood, black metal handles\nColors: warm natural brown wood, black\nShape: shallow wall cabinet, three open cubbies on top, two barn doors with X-brace panels, arched handles, compact\nFeel: rustic, warm, homey\nGoes with: white shiplap, black iron, galvanized metal, cream textiles; farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B8FHTJ4",
+      "name": "Amazon Brand \u2013 Stone & Beam Farmhouse Wall Mounted Cabinet Storage Organzier - 23 x19 x 6 Inch, Natural Wood",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 48.9,
+        "depth": 17.1,
+        "height": 59.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CABINET",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Farmhouse",
+      "description": "This wall cabinet provides vintage style along with storage space for spices, mail and more in your kitchen or entryway. Display small objects or stash your keys in the three cubbies on the bottom. The distressed finish adds to the antique appeal. 19.25\" W x 23.25\" H x 6.75\" D Constructed from hardwood; iron hinges and door pulls Ready to hang, all hardware included",
+      "image_path": "1e/1e0b766a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "49dd76c5f3a474d0"
+    ]
+  }
+}

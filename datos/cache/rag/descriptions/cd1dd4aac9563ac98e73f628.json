@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7B5LVF",
+  "text": "Type: drop-leaf dining table with drawers\nUse: dining, storage, space saving; dining room, kitchen, small apartment\nStyle: mid-century modern, industrial, rustic\nMaterials: wood with herringbone veneer, dark metal bar pulls\nColors: warm honey brown, dark bronze\nShape: compact narrow cabinet body with three drawers, two fold-down leaves with chevron pattern, short square legs, boxy when folded\nFeel: practical, warm, crafted\nGoes with: black metal accents, cream walls, compact chairs; mid-century or small modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7B5LVF",
+      "name": "Amazon Brand \u2013 Rivet Ian Mid-Century Modern Industrial Wood Kitchen Dining Table, Storage, Brown",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 73.7,
+        "height": 76.2
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "This table is space-saving design at its best. An extra leaf allows you to lengthen it when needed, while drawers provide storage. The modern design and butterscotch finish allow it to blend with contemporary, transitional or industrial styles. 29.02\"L x 19-60\"W x 30\"H Sturdy hardwoods with acacia veneer Modern design that's understated enough to fit with a range of d\u00e9cor Provides compact storage space along with a place to eat meals No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "47/47afc6ca.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f6158dcc7156d4f1"
+    ]
+  }
+}

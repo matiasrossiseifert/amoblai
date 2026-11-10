@@ -1,0 +1,35 @@
+{
+  "product": "100.895.82",
+  "text": "Type: adjustable nickel work lamp\nUse: task light for reading and working at a desk; home office, study, bedroom\nStyle: industrial, retro, classic\nMaterials: nickel-plated steel shade, arm and base, knurled metal joints\nColors: silver nickel, black cord\nShape: bell shade on a jointed arm with ball-end pivots and a counterbalance rod, straight stem on a stepped round base, mechanical look, medium visual weight\nFeel: crafted, vintage, sturdy, studious\nGoes with: dark wood desks, leather, black or grey walls, metal accents; industrial or classic home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "100.895.82",
+      "name": "BAROMETER",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "2ffc3a57ce9a97b2"
+    ]
+  }
+}

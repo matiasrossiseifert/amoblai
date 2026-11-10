@@ -1,0 +1,36 @@
+{
+  "product": "391.505.88",
+  "text": "Type: cantilever bentwood leather lounge armchair\nUse: relaxing, reading; living room, study, reading corner\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: layer-glued bent wood frame in a dark brown stain, cognac leather cushion with diamond stitching\nColors: warm cognac brown, dark brown wood\nShape: tall one-piece cushion quilted in a diamond pattern, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: warm, inviting, relaxed, classic\nGoes with: walnut or dark wood, cream walls, wool rugs, brass lamps; mid-century or classic living rooms and studies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "391.505.88",
+      "name": "PONG",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Black-brown",
+        "seglora natural"
+      ],
+      "description": "Highly durable full-grain leather which is soft and has a natural look and feel."
+    },
+    "photos": [
+      "93bd522b8aa20f96"
+    ]
+  }
+}

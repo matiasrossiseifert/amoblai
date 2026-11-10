@@ -1,0 +1,36 @@
+{
+  "product": "003.221.71",
+  "text": "Type: woven seagrass belly basket with handles\nUse: holding throws, plants or magazines on the floor; living room, bedroom, entryway\nStyle: bohemian, coastal, Scandinavian\nMaterials: hand-woven seagrass, partly dyed black, braided seagrass rim and handles\nColors: black, light natural straw\nShape: rounded belly that narrows toward a wide open top, zigzag chevron weave in contrasting bands, two looped braided handles, sturdy yet light\nFeel: natural, crafted, relaxed, warm\nGoes with: green plants, light wood, linen, white or terracotta walls; bohemian, coastal or Japandi rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "003.221.71",
+      "name": "FLDIS",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "37 cm",
+      "colors": [
+        "Seagrass",
+        "black"
+      ],
+      "description": "You can choose how you want to use this basket  turned up with handles or turned down to display the contents."
+    },
+    "photos": [
+      "ef7ac5e4df65bca6"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "802.753.40",
+  "text": "Type: solid wood dining bench\nUse: seating at a dining table, a spot to sit in a hallway; dining room, kitchen, hallway\nStyle: Scandinavian, minimalist, rustic\nMaterials: solid birch with a whitewashed matte lacquer, visible pegged joints\nColors: pale whitewashed birch, light warm wood\nShape: long flat seat with rounded corners, four splayed square legs, low center stretcher, visible dowel joints, light and simple, slim\nFeel: airy, natural, calm, crafted\nGoes with: light wood tables, white walls, linen, black or green accents; Scandinavian, Japandi or farmhouse dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.753.40",
+      "name": "NORRKER",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 103.0
+      },
+      "type_ikea": "Bench",
+      "category_tp": "bench",
+      "size_raw": "103 cm",
+      "colors": [
+        "White birch"
+      ],
+      "description": "Durable and hard-wearing; meets the requirements on furniture for public use."
+    },
+    "photos": [
+      "3ee236e09e813ce5"
+    ]
+  }
+}

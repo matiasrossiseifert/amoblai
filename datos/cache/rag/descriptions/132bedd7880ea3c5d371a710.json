@@ -1,0 +1,35 @@
+{
+  "product": "802.214.27",
+  "text": "Type: drop-leaf dining table with drawer\nUse: dining, flexible eating space; small kitchen, dining room, studio apartment\nStyle: traditional, classic, farmhouse\nMaterials: black-brown stained solid wood and veneer, metal knob\nColors: black-brown, dark espresso\nShape: compact rectangular center top with two hinged leaves that fold down, small front drawer, turned legs with low stretchers, narrow when folded\nFeel: cozy, practical, timeless, warm\nGoes with: white walls, black or wood chairs, cream textiles; small classic kitchens and farmhouse dining corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.214.27",
+      "name": "INGATORP",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Drop-leaf table",
+      "category_tp": "table",
+      "size_raw": "59,88,117x78 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Table with drop-leaves seats 2-4; makes it possible to adjust the table size according to need."
+    },
+    "photos": [
+      "c9de2e1d24a5bf37"
+    ]
+  }
+}

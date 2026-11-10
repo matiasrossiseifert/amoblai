@@ -1,0 +1,36 @@
+{
+  "product": "402.572.20",
+  "text": "Type: circle patterned cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: mid-century modern, retro, contemporary\nMaterials: woven jacquard fabric with a subtle sheen\nColors: off-white ground, sand beige, pale aqua, light grey, tan\nShape: square cushion with rows of large two-tone circles threaded on thin vertical lines like beads, soft and full\nFeel: light, calm, playful, airy\nGoes with: beige or grey sofas, light wood, aqua or sand accents; mid-century, retro or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.572.20",
+      "name": "OTTIL",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Beige",
+        "multicolour"
+      ],
+      "description": "Jacquard weave gives the cushion cover a pattern with a subtle, slightly raised relief."
+    },
+    "photos": [
+      "bb528079df2162f6"
+    ]
+  }
+}

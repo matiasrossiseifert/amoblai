@@ -1,0 +1,37 @@
+{
+  "product": "398.647.80",
+  "text": "Type: dark wall shelf with wooden brackets\nUse: holding books, frames and decor above a desk or sideboard; living room, home office, dining room\nStyle: Scandinavian, minimalist, modern\nMaterials: black-brown wood-effect board, black-brown stained solid wood brackets\nColors: dark black-brown\nShape: long flat shelf on two angled triangular brackets with a diagonal strut, simple straight lines, matching dark finish throughout, sturdy yet light\nFeel: grounded, calm, tidy, warm\nGoes with: white walls, light wood floors, black frames, green plants; Scandinavian, modern or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "398.647.80",
+      "name": "EKBY JRPEN,EKBY VALTER",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 119.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "119x28 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "4369d092d0a52ee4"
+    ]
+  }
+}

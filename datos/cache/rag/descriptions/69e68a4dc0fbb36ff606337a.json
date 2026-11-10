@@ -1,0 +1,35 @@
+{
+  "product": "301.784.26",
+  "text": "Type: slim light wood framed wall mirror\nUse: reflecting light, checking an outfit, making a space feel larger; hallway, bedroom, living room\nStyle: Scandinavian, minimalist, Japandi\nMaterials: mirror glass, thin frame in a light oak or birch effect finish\nColors: light natural wood, silver mirror\nShape: tall rectangle with a very narrow flat frame, clean straight lines, simple and light\nFeel: calm, airy, clean, natural\nGoes with: light wood furniture, white walls, linen and wool textiles; Scandinavian, Japandi or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "301.784.26",
+      "name": "STAVE",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "70x160 cm",
+      "colors": [
+        "White stained oak effect"
+      ],
+      "description": "Can be hung horizontally or vertically."
+    },
+    "photos": [
+      "8fef6b017b8b952f"
+    ]
+  }
+}

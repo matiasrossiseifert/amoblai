@@ -1,0 +1,37 @@
+{
+  "product": "502.214.19",
+  "text": "Type: pine five-drawer chest\nUse: storing clothes and linens; bedroom, hallway, guest room\nStyle: Scandinavian, rustic, farmhouse\nMaterials: solid untreated knotty pine, round wooden knobs\nColors: pale natural pine, warm honey knots\nShape: upright chest with a shallow top drawer over four deeper ones, two round knobs on each, slightly overhanging top, straight square legs with a low apron, light frame\nFeel: natural, warm, simple, casual\nGoes with: white walls, linen bedding, wool throws, black or green accents; Scandinavian, rustic or farmhouse bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.214.19",
+      "name": "TARVA",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 79.0
+      },
+      "type_ikea": "Chest of 5 drawers",
+      "category_tp": "dresser",
+      "size_raw": "79x127 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "5d95214b9cf27f6e"
+    ]
+  }
+}

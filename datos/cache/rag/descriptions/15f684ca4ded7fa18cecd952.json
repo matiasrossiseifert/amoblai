@@ -1,0 +1,38 @@
+{
+  "product": "590.272.67",
+  "text": "Type: long low chest of eight drawers\nUse: storing clothes, linens and media, low top for a TV or decor; bedroom, living room\nStyle: minimalist, Scandinavian, modern\nMaterials: white matte painted fiberboard, red drawer fronts, black slot grips\nColors: white, bright red accent drawers, black\nShape: long low chest with four columns of two drawers, one column fronted in red, flush handleless fronts with black cut-out grips, flat top, low plinth, broad and low\nFeel: crisp, graphic, playful, orderly\nGoes with: white walls, light wood floors, red or black accents; Scandinavian or modern living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "590.272.67",
+      "name": "NORDLI",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 160.0
+      },
+      "type_ikea": "Chest of 8 drawers",
+      "category_tp": "dresser",
+      "size_raw": "160x52 cm",
+      "colors": [
+        "White",
+        "red"
+      ],
+      "description": "You can use one modular chest of drawers or combine several to get a storage solution that perfectly suits your space."
+    },
+    "photos": [
+      "bc37c39c1a4b3d33"
+    ]
+  }
+}

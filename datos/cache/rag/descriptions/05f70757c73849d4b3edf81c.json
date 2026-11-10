@@ -1,0 +1,45 @@
+{
+  "product": "abo-B077X5Y6GM",
+  "text": "Type: mini concrete planters, set of three\nUse: holding succulents or air plants; on a desk, shelf or windowsill in a living room, home office, bedroom\nStyle: industrial, minimalist, modern\nMaterials: textured cast concrete, painted rim\nColors: light warm grey, white, blush, pale blue\nShape: low round puck with a center well and diamond-crosshatch sides, very small and squat\nFeel: tactile, soft, playful\nGoes with: white desks, pastel accents, succulents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B077X5Y6GM",
+      "name": "Amazon Brand \u2013 Rivet Urban Concrete Circular Blue Gold White Planters",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 11.4,
+        "depth": 11.4,
+        "height": 3.8
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Crosshatch markes decorate the sides of these one-of-a-kind planters. Designed for succulents and air plants, these planters are perfect to decorate a table or window sill. Each planter is handmade by a local artist in northeast Indiana. 4.5\" Diameter x 1.5\"H Designed for small succulents and air plants Felt pads underneath prevent scratching surfaces Made by hand in the United States No additional drip tray required as the bottom is solid Since each piece is handmade expect variations",
+      "image_path": "51/51b8a83b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d8fb28c006899dc4"
+    ]
+  }
+}

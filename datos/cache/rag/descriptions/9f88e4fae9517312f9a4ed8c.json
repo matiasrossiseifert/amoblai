@@ -1,0 +1,43 @@
+{
+  "product": "abo-B0153TOJSG",
+  "text": "Type: blackout curtain panels, set of two\nUse: blocking light, privacy; bedroom, living room, home office\nStyle: minimalist, contemporary, modern\nMaterials: smooth woven polyester, rod pocket top\nColors: warm beige\nShape: long plain panels, gathered rod pocket header, even vertical folds, matte solid fabric, floor length, simple and quiet\nFeel: calm, cozy, neutral\nGoes with: white walls, light wood, black rods, grey upholstery; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0153TOJSG",
+      "name": "AmazonBasics Room Darkening Blackout Window Panel Curtains - Pack of 2, 52 x 84 Inch, Beige",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "brand": "AmazonBasics",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Beige"
+      ],
+      "materials": [
+        "100% Polyester"
+      ],
+      "style": "Rod Pockets",
+      "description": "Blackout curtain blocks out sunlight and harmful UV rays, reduces outside noise, and ensures total privacy Creates energy-saving insulating barrier against heat and cold, keeping room cooler in the summer and warmer in the winter 2 panels made of innovative triple-weave fabric; no stiff liner; elegantly frames windows with a sophisticated drape Rod pocket fits any standard or decorative rod; includes 2 Velcro ties for pulling back the curtains Made in OEKO-TEX Standard 100 factory, an independent certification system that ensures textiles meet high safety and environmental standards. The color may appear slightly different from photographs depending on the lighting where the curtains are hung",
+      "image_path": "b1/b1f98f0b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e74ea6a81cbd9724"
+    ]
+  }
+}

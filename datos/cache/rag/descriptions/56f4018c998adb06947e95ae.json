@@ -1,0 +1,36 @@
+{
+  "product": "602.976.73",
+  "text": "Type: botanical print cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, mid-century modern, bohemian\nMaterials: woven cotton fabric with a printed pattern\nColors: off-white background, charcoal, grey, sand beige, black\nShape: square plump cushion with large stylized leaves, ferns and seed pods, dotted and veined details, dense allover pattern, medium size\nFeel: natural, calm, lively\nGoes with: grey or beige sofas, light wood, green plants, linen; Scandinavian, mid-century or bohemian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.976.73",
+      "name": "SYSSAN",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "White",
+        "beige"
+      ],
+      "description": "Cotton velvet gives depth to the colour and softness to the touch."
+    },
+    "photos": [
+      "206ed425b21f3787"
+    ]
+  }
+}

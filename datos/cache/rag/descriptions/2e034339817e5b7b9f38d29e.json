@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07P5LN16X",
+  "text": "Type: leather loveseat\nUse: seating for two; living room, home office, small apartment\nStyle: mid-century modern, retro, modern\nMaterials: aniline-look leather, button-tufted back, dark wood legs\nColors: warm caramel tan, dark brown\nShape: track arms, buttoned back, two seat cushions, splayed tapered legs, compact and raised\nFeel: warm, inviting, vintage\nGoes with: walnut wood, white or green walls, brass, wool rugs; mid-century or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07P5LN16X",
+      "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Loveseat with Tufted Back, 64.2\"W, Caramel",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 163.1,
+        "depth": 90.9,
+        "height": 84.1
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Caramel"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Mid-Century modern",
+      "description": "This modern loveseat sports a tufted back, a strong profile, and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 64.2\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this loveseat as practical as it is stylish. A tufted back adds elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "e9/e9440008.jpg",
+      "image_px": [
+        2560,
+        1406
+      ]
+    },
+    "photos": [
+      "9756ab302e6a02b8"
+    ]
+  }
+}

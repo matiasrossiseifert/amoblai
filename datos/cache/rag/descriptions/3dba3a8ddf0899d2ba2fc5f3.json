@@ -1,0 +1,35 @@
+{
+  "product": "701.032.50",
+  "text": "Type: cross-back wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: farmhouse, Scandinavian, traditional\nMaterials: solid wood with a white painted finish\nColors: white, warm off-white\nShape: curved top rail over an X-shaped cross back, flat solid seat with a straight apron, square tapered legs, upright frame, medium visual weight\nFeel: bright, fresh, homely, classic\nGoes with: white or light wood tables, pale walls, linen textiles; farmhouse kitchens, Scandinavian or cottage dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "701.032.50",
+      "name": "INGOLF",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Solid wood is a hardwearing natural material."
+    },
+    "photos": [
+      "0892b21aa4e848a5"
+    ]
+  }
+}

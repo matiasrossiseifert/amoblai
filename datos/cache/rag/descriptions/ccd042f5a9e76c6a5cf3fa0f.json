@@ -1,0 +1,35 @@
+{
+  "product": "403.191.62",
+  "text": "Type: set of nine black and white photo prints\nUse: creating a gallery wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: industrial, modern, contemporary\nMaterials: printed photographic images\nColors: black, white, shades of grey\nShape: nine rectangular prints in mixed sizes showing a city skyline, skyscrapers and suspension bridges, arranged as a grid collage, graphic and high contrast\nFeel: urban, dramatic, sleek, moody\nGoes with: black frames, grey or white walls, leather, metal; industrial, modern or loft-style rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "403.191.62",
+      "name": "GRNBY",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": null,
+      "type_ikea": "Picture, set of 9",
+      "category_tp": "deco",
+      "size_raw": "179x112 cm",
+      "colors": [
+        "Sights of the city"
+      ],
+      "description": "Motif created by Hkan Strand."
+    },
+    "photos": [
+      "319bc22878ba589d"
+    ]
+  }
+}

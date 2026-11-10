@@ -1,0 +1,35 @@
+{
+  "product": "303.131.46",
+  "text": "Type: set of four dark ceramic plant pots\nUse: holding small plants, succulents or herbs on a windowsill, shelf or desk; living room, home office, kitchen\nStyle: minimalist, Japandi, contemporary\nMaterials: matte ceramic with a fine sandy texture\nColors: dark charcoal grey, matte\nShape: four small pots in different sculptural profiles, a footed cup, a rounded cylinder, a flared top rim and a bulbous top over a narrow base, compact and solid\nFeel: calm, earthy, sculptural, modern\nGoes with: green plants, light wood, concrete, white or grey walls; Japandi, minimalist or industrial rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.131.46",
+      "name": "SINNERLIG",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "15 cm",
+      "colors": [
+        "Assorted models black"
+      ],
+      "description": "Waterproof because it has been treated on the inside."
+    },
+    "photos": [
+      "6bab403564edfd86"
+    ]
+  }
+}

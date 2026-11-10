@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YQ8Q3T",
+  "text": "Type: rustic oak sideboard\nUse: storing tableware and linens, serving surface; dining room, living room\nStyle: rustic, farmhouse, traditional\nMaterials: solid oak with distressed finish, metal knob pulls\nColors: warm honey oak, antique pewter\nShape: long rectangular case, overhanging top, three drawers over three paneled doors, short square legs, sturdy and substantial\nFeel: warm, homely, solid\nGoes with: cream walls, linen textiles, wrought iron accents; farmhouse or country dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YQ8Q3T",
+      "name": "Amazon Brand \u2013 Stone & Beam Parson Rustic Buffet Sideboard Storage Cabinet 56\"W, Oak Wood",
+      "category": "cabinet",
+      "kind": "sideboard",
+      "dimensions_cm": {
+        "width": 142.2,
+        "depth": 45.7,
+        "height": 81.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CABINET",
+      "colors": [
+        "Buffet"
+      ],
+      "materials": [
+        "Hardwood"
+      ],
+      "style": "Rustic",
+      "description": "This beautiful buffet features sturdy, durable construction and timeless oak finish. Its transitional style has just the right touches of traditional and rustic, while concealed ball-bearing glides support smooth, self-closing drawers. 56\"W x 18\"D x 32\"H Hardwood frame and drawers with oak veneer Self-closing drawers move smoothly, thanks to concealed ball-bearing extension glides Free returns for 30 days. 3-year warranty. Assembly is required. Wipe with soft dry cloth.",
+      "image_path": "33/3370b158.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "922dbd2167aac3af"
+    ]
+  }
+}

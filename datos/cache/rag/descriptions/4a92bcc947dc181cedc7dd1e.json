@@ -1,0 +1,45 @@
+{
+  "product": "abo-B084DQ6BV4",
+  "text": "Type: windowpane arched mantel mirror\nUse: decorating a wall or leaning on a mantel; living room, bedroom, dining room\nStyle: traditional, glam, bohemian\nMaterials: gold metal frame, mirror glass panes\nColors: gold, silver mirror\nShape: rectangle with ogee pointed arch top, grid of window panes, Moorish-inspired tracery, medium size, light\nFeel: elegant, romantic, exotic\nGoes with: cream walls, velvet, brass accents, rich colors; glam, bohemian or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B084DQ6BV4",
+      "name": "Amazon Brand - Ravenna Home Vintage Windowpane Metal Mantel Mirror, 25\"H, Gold",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 51.4,
+        "depth": 1.9,
+        "height": 63.5
+      },
+      "brand": "Ravenna Home",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [
+        "Metal"
+      ],
+      "style": "vintage",
+      "description": "25\"H x 20.25\"L x 0.75\"D Mirrored glass with solid metal decorative frame in a gold finish The windowpane effect of this mirror creates dimension in any space, making it stylish as well as functional. The chic gold color gives this mirror's classic frame a fresh look. Avoid moisture. Wipes clean with a soft, dry cloth. Hanging hardware not included. No assembly required.",
+      "image_path": "ad/ad740df4.jpg",
+      "image_px": [
+        2079,
+        2560
+      ]
+    },
+    "photos": [
+      "0fed0017814343ae"
+    ]
+  }
+}

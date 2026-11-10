@@ -1,0 +1,40 @@
+{
+  "product": "002.987.98",
+  "text": "Type: flatwoven runner rug\nUse: covering floors in walkways and work spots; hallway, kitchen, entryway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: tight flat weave, space-dyed melange yarn, slim dark bound edges\nColors: grey-beige melange, light cream streaks, charcoal edges\nShape: long narrow rectangle, fine horizontal streaked texture, thin flat profile, slim dark border, light visual weight\nFeel: calm, understated, practical\nGoes with: grey or beige floors, light wood, white walls, black accents; Scandinavian or modern hallways and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.987.98",
+      "name": "HODDE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x200 cm",
+      "colors": [
+        "In",
+        "outdoor grey",
+        "black"
+      ],
+      "description": "Durable, stain resistant and easy to care for since the rug is made of synthetic fibres."
+    },
+    "photos": [
+      "a0518f5a308adb98"
+    ]
+  }
+}

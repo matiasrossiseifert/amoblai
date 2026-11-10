@@ -1,0 +1,37 @@
+{
+  "product": "402.426.29",
+  "text": "Type: dark wood three-drawer chest\nUse: storing clothes and linens, top for lamps and decor; bedroom, hallway, living room\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid pine with a black-brown stain that shows the grain, round wooden knobs\nColors: dark black-brown, deep espresso\nShape: wide low chest with three deep drawers, two small round knobs on each, inset fronts within a framed carcass, overhanging top, short square legs, solid medium visual weight\nFeel: warm, sturdy, classic, homey\nGoes with: white walls, light linen, warm wood floors, black accents; traditional or farmhouse bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.426.29",
+      "name": "HEMNES",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 108.0
+      },
+      "type_ikea": "Chest of 3 drawers",
+      "category_tp": "dresser",
+      "size_raw": "108x95 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "97fa9c7553d5cabc"
+    ]
+  }
+}

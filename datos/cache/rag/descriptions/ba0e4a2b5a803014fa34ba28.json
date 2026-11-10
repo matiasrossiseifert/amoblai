@@ -1,0 +1,36 @@
+{
+  "product": "001.530.69",
+  "text": "Type: leather dining chair on chrome sled base\nUse: dining, sitting at a desk; dining room, kitchen, home office\nStyle: modern, minimalist, contemporary\nMaterials: white leather-covered molded seat shell, chrome-plated steel tube frame\nColors: bright white, silver chrome\nShape: one-piece curved seat and back with a straight top edge, armless, slim chrome tubes bent into two sled runners, slim and light, compact\nFeel: clean, sleek, bright, airy\nGoes with: glass or white tables, chrome accents, grey or white walls; modern or minimalist dining rooms and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "001.530.69",
+      "name": "BERNHARD",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Chrome-plated",
+        "mjuk white"
+      ],
+      "description": "You sit comfortably thanks to the restful flexibility of the seat."
+    },
+    "photos": [
+      "f23600a9b7b4871c"
+    ]
+  }
+}

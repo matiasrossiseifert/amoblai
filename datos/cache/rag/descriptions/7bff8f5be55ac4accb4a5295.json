@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07VTNCW96",
+  "text": "Type: round metal ring wall shelf\nUse: displaying plants, candles and decor; living room, bedroom, home office\nStyle: rustic, farmhouse, industrial\nMaterials: galvanized metal band, natural wood shelves\nColors: grey galvanized metal, light natural wood\nShape: large circular hoop with two thin horizontal wooden shelves, open center, light and graphic\nFeel: rustic, airy, relaxed\nGoes with: white or cream walls, light wood, greenery; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07VTNCW96",
+      "name": "Stone & Beam Modern Rustic Round Wood and Galvanized Metal Wall Shelf Decor, 24 Inch (Renewed)",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 15.2,
+        "height": 61.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "Wooden shelves surrounded by a round galvanized metal frame bring together rustic and industrial touches. This piece doubles as eye-catching wall art while holding spices in a kitchen or treasured objects in a living room or hallway. 6\"D x 24\"W x 24\"H Fir wood, galvanized metal Ready to hang, all hardware included",
+      "image_path": "04/04820016.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "bbb201193cd079ef"
+    ]
+  }
+}

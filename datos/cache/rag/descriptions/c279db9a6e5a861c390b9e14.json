@@ -1,0 +1,35 @@
+{
+  "product": "603.000.91",
+  "text": "Type: white globe shade table lamp\nUse: soft ambient light on a side table, a sideboard or a bedside table; living room, bedroom\nStyle: Japandi, Scandinavian, minimalist\nMaterials: textured white woven-look shade, white painted metal stem and round base\nColors: white, soft warm white glow\nShape: wide oval lantern shade with a fine horizontal texture threaded on a slim straight stem, round flat base, tall and light\nFeel: soft, calm, airy, serene\nGoes with: light wood, linen, white walls, green plants; Japandi, Scandinavian or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "603.000.91",
+      "name": "SOLLEFTE",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can create a soft, cosy atmosphere in your home with a paper lamp that spreads a diffused and decorative light."
+    },
+    "photos": [
+      "87d33a84b7734414"
+    ]
+  }
+}

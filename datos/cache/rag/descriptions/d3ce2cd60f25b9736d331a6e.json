@@ -1,0 +1,38 @@
+{
+  "product": "703.023.01",
+  "text": "Type: white desk with open shelves\nUse: studying, working, a laptop corner; home office, bedroom, study\nStyle: farmhouse, traditional, Scandinavian\nMaterials: white stained wood-grain foil board, grooved legs\nColors: white, faint wood grain\nShape: rectangular top with a slight overhang, a solid side panel on one end and a three-cubby open shelf unit on the other, fluted corner legs, rear stretcher, compact\nFeel: homey, bright, tidy, gentle\nGoes with: white or light wood chairs, pastel tones, linen; farmhouse, cottage or Scandinavian bedrooms and studies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "703.023.01",
+      "name": "BRUSALI",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 90.0,
+        "depth": 52.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "90x52 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can collect cables and extension leads on the shelf under the table top so theyre hidden but still close at hand."
+    },
+    "photos": [
+      "4b197c7b36d9f808"
+    ]
+  }
+}

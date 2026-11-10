@@ -1,0 +1,35 @@
+{
+  "product": "302.920.21",
+  "text": "Type: tall dark-framed wall mirror\nUse: checking an outfit, reflecting light; hallway, bedroom, entryway\nStyle: modern, minimalist, industrial\nMaterials: mirror glass, dark grey framed edge\nColors: dark charcoal grey, silver mirror\nShape: tall slim rectangle with softly rounded corners, narrow flat frame, clean and graphic, light visual weight\nFeel: sleek, practical, calm, modern\nGoes with: grey or white walls, black metal, light wood, concrete; modern, minimalist or industrial hallways and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.920.21",
+      "name": "GRUA",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "45x140 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "The mirror can be hung vertically or horizontally to suit your needs and your space."
+    },
+    "photos": [
+      "12b2a7f0415d26b9"
+    ]
+  }
+}

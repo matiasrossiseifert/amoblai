@@ -1,0 +1,47 @@
+{
+  "product": "abo-B074VL1JQG",
+  "text": "Type: medallion patterned throw pillow\nUse: decorating and resting on a sofa, bed or armchair; living room, bedroom\nStyle: bohemian, traditional, coastal\nMaterials: woven jacquard fabric\nColors: aqua blue, dark teal, off-white\nShape: square, large lacy medallion and floral tile pattern, knife edges, compact\nFeel: fresh, detailed, lively\nGoes with: white or navy sofas, light wood, rattan; coastal or bohemian living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B074VL1JQG",
+      "name": "Amazon Brand \u2013 Stone & Beam Medallion Decorative Throw Pillow, 17\" x 17\", Aqua",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 7.6
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Aqua"
+      ],
+      "materials": [
+        "Rayon/polyester/cotton"
+      ],
+      "style": null,
+      "description": "This artisanal pillow features medallion shapes with hints of Moroccan tile. The eye-catching design is a perfect blend of modern and classic, while a velvet back, resilient pillow insert and hidden zipper provide high quality touches. Sophisticated, artisanal style has modern and classic touches Rayon/polyester/cotton blend front with velvet back Pillow Cover Front:42% Rayon, 30% Polyester, 28% Cotton. Pillow Cover Back: 100% Polyester. Insert Shell: 100% Cotton. Stuffing: 100% Polyester Made in USA and Imported Removable plush fiber-filled insert included Pillow cover features hidden bottom zipper 17\" x 17\" Spot clean with damp white cloth and allow to air dry",
+      "image_path": "55/55ba9408.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "0037407996677820"
+    ]
+  }
+}

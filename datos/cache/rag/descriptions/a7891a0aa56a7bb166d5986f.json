@@ -1,0 +1,36 @@
+{
+  "product": "903.200.97",
+  "text": "Type: rattan rocking chair\nUse: rocking, relaxing, reading; living room, bedroom, nursery\nStyle: Scandinavian, Japandi, bohemian\nMaterials: hand-woven rattan back and seat, pale solid wood frame and runners, dark grey steel rods\nColors: light natural rattan, pale wood, dark grey\nShape: large rounded oval woven back, open lattice weave, thin wooden armrests on steel rods, slim spindle frame, curved wooden rockers, light and airy\nFeel: airy, crafted, calm, natural\nGoes with: light wood, white walls, linen, plants; Scandinavian, Japandi or bohemian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "903.200.97",
+      "name": "GRNADAL",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Rocking-chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Grey",
+        "natural"
+      ],
+      "description": "Handwoven backrest and seat, making each and every GRNADAL one of a kind."
+    },
+    "photos": [
+      "affe5bed235801d4"
+    ]
+  }
+}

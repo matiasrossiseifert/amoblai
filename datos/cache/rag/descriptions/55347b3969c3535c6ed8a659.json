@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7J8HFV",
+  "text": "Type: square nesting side tables, set of two\nUse: flexible surfaces beside seating; living room, bedroom\nStyle: industrial, modern, minimalist\nMaterials: black metal frame, tempered mirror glass top\nColors: matte black, silver grey mirror\nShape: open cube frame, thin square tubing, inset mirrored top, smaller one tucks under larger, light and open\nFeel: crisp, graphic, airy\nGoes with: grey or white walls, leather, concrete; industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7J8HFV",
+      "name": "Amazon Brand \u2013 Rivet Modern Square Nesting End/Side Tables, Black Metal and Tempered Mirror Glass",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 64.0,
+        "depth": 60.5,
+        "height": 46.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Gray"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "These modern nesting tables make entertaining easy while delivering an elegant touch. Black metal frames and distressed mirror glass tops add to the sleek look. This set is compact when nested, and brings a handsome touch to a room when apart. Large: 20x16.14x21.26; Small 16.14x14.17x17.32 Metal and tempered glass Clean, sleek lines give a simple and handsome look Keep nestled next to a couch or separate for maximum functionality Simple assembly in 30 minutes or less; just screw on legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "00/0006a876.jpg",
+      "image_px": [
+        2509,
+        2083
+      ]
+    },
+    "photos": [
+      "e7f586207a76811c"
+    ]
+  }
+}

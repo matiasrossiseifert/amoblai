@@ -1,0 +1,47 @@
+{
+  "product": "abo-B084MN72YQ",
+  "text": "Type: tray-top coffee table\nUse: serving and storing items in front of a sofa; living room\nStyle: industrial, mid-century modern, modern\nMaterials: wood trays in walnut finish, dark metal frame\nColors: warm walnut brown, dark gunmetal grey\nShape: rectangular, two removable rimmed trays of unequal size, thin square-tube open frame with center supports and low stretchers, light and open\nFeel: warm, practical, refined\nGoes with: leather, brass or black accents, warm neutral walls; industrial or mid-century living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B084MN72YQ",
+      "name": "Amazon Brand \u2013 Rivet Modern Industrial Coffee Table with Metal Base and Trays, 42.1\"W, Walnut Finish",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 106.9,
+        "depth": 55.1,
+        "height": 38.6
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "MDF"
+      ],
+      "style": "Coffee Table",
+      "description": "This gorgeous coffee table is the perfect marriage of industrial chic and stylish practicality. The unique and appealing top with its split tray design helps keep objects secure, while the warm walnut finish complements the dark patina of the metal base. 42.1\"W x 21.7\"D x 15.2\"H Durable MDF wood with walnut-finished pine veneer atop a sturdy metal base The coffee table has a dual-tray top supported by a strong metal base. Industrial without being utilitarian, this contemporary piece will complement any interior design. Assemble in 15 minutes or less Using a soft, damp cloth, wipe in the direction of the wood grain. Free returns for 30 days; 1-year warranty.",
+      "image_path": "1d/1d6d859e.jpg",
+      "image_px": [
+        2560,
+        1526
+      ]
+    },
+    "photos": [
+      "ee8b969c158e8d29"
+    ]
+  }
+}

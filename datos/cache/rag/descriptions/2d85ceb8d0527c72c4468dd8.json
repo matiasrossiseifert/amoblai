@@ -1,0 +1,35 @@
+{
+  "product": "002.857.91",
+  "text": "Type: dark grey plant pot with saucer\nUse: growing a houseplant or herbs on a windowsill, shelf or floor; living room, kitchen, home office\nStyle: minimalist, contemporary, modern\nMaterials: matte molded plastic, matching saucer\nColors: dark grey, charcoal\nShape: tapered cylindrical pot with a rolled flared rim, sits in a wide shallow saucer, simple and sturdy, compact\nFeel: understated, practical, calm, grounded\nGoes with: green plants, concrete, light wood, white walls; minimalist, industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.857.91",
+      "name": "JUJUBR",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot with saucer",
+      "category_tp": "deco",
+      "size_raw": "12 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Ideal for orchids, as the inner ledge keeps the plant away from excess water at the bottom of the pot."
+    },
+    "photos": [
+      "2bd850fb73653b68"
+    ]
+  }
+}

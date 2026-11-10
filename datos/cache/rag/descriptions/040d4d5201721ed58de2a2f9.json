@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4VXZZC",
+  "text": "Type: three-drawer bedroom chest\nUse: storing clothes; bedroom, living room\nStyle: traditional, classic, contemporary\nMaterials: wood with washed painted finish, brass ring pulls\nColors: dark cool navy blue, gold\nShape: tall chest, three framed drawers with raised molding, ring pulls, chamfered corners, square tapered legs with cuffed feet, medium and refined\nFeel: elegant, calm, tailored\nGoes with: white or grey walls, brass, light linens; classic or coastal bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4VXZZC",
+      "name": "Amazon Brand \u2013 Stone & Beam Gould Contemporary Wood Bedroom Dresser Chest, 18\", Washed Navy and Gold",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 106.7,
+        "depth": 45.7,
+        "height": 99.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "DRESSER",
+      "colors": [
+        "Washed Navy"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Chest of Drawers",
+      "description": "42\"L x 18\"W x 39.1\"H Three drawers for optimal storage Assemble in 30 minutes-1 hour with two people Free returns for 30 days. 3-year warranty This 3-drawer dresser is as big on style as it is on storage. The washed navy finish will give your room the perfect pop of color. Elaborate gold hardware and a felt lined top drawer round out the feel of glamour and luxury.",
+      "image_path": "69/69416ca0.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "317f62045ecdb5e1"
+    ]
+  }
+}

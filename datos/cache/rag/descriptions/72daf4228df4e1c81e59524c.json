@@ -1,0 +1,38 @@
+{
+  "product": "702.647.28",
+  "text": "Type: geometric flatwoven area rug\nUse: anchoring a seating area, statement floor piece; living room, bedroom, study\nStyle: contemporary, Scandinavian, bohemian\nMaterials: flatwoven wool-like yarn with a ribbed texture\nColors: light warm beige, aqua blue, taupe brown, blush pink, lemon yellow, navy\nShape: rectangular, flat, nested elongated diamonds and crossing lines drawn as thin colored strokes, airy linear pattern, light visual weight\nFeel: airy, artful, cheerful, light\nGoes with: light wood, white walls, pastel textiles, brass or black accents; Scandinavian, modern or eclectic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "702.647.28",
+      "name": "IKEA PS 2014",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 128.0,
+        "depth": 180.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "128x180 cm",
+      "colors": [
+        "Handmade multicolour"
+      ],
+      "description": "Handwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages."
+    },
+    "photos": [
+      "5a334031561b242f"
+    ]
+  }
+}

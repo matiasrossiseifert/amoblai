@@ -1,0 +1,38 @@
+{
+  "product": "091.195.18",
+  "text": "Type: desk with drawer pedestal\nUse: working, studying, writing; home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: painted wood and fiberboard in white, metal label-holder handles\nColors: white, silver\nShape: rectangular top, four-drawer pedestal on one side, two slender turned legs on the other, label-frame pulls, asymmetric and light\nFeel: neat, charming, bright, practical\nGoes with: white walls, light wood floors, pastel or grey accents; classic, farmhouse or cottage home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "091.195.18",
+      "name": "KLIMPEN,NIPEN",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Table with drawers",
+      "category_tp": "table",
+      "size_raw": "120x60 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Can be placed in the middle of a room because the back is finished."
+    },
+    "photos": [
+      "1dc303ef4ea58b9e"
+    ]
+  }
+}

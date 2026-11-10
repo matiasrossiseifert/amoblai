@@ -1,0 +1,38 @@
+{
+  "product": "903.130.11",
+  "text": "Type: small square shag rug\nUse: soft spot beside a bed or in front of a chair; bedroom, living room, kids room\nStyle: contemporary, minimalist, Scandinavian\nMaterials: long thick synthetic shag pile\nColors: medium grey, cool tone\nShape: small square with dense fluffy shag, soft uneven edges, solid color, plush\nFeel: cozy, soft, relaxed\nGoes with: white or grey furniture, light wood, black accents; modern, Scandinavian or minimalist bedrooms and reading corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "903.130.11",
+      "name": "HAMPEN",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 80.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "80x80 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Durable, stain resistant and easy to care for since the rug is made of synthetic fibres."
+    },
+    "photos": [
+      "e84b7412ac435310"
+    ]
+  }
+}

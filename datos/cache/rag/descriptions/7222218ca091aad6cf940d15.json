@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07GZY7JFV",
+  "text": "Type: molded plastic dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: mid-century modern, Scandinavian, minimalist\nMaterials: molded plastic shell, solid wood dowel legs, black metal cross bracing\nColors: black, light natural wood\nShape: one-piece curved bucket seat, armless, four splayed dowel legs with wire cross base, light and compact\nFeel: clean, graphic, casual\nGoes with: white round tables, light wood, white walls; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07GZY7JFV",
+      "name": "Phoenix Home Dining Chair, Single, Black",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 53.3,
+        "depth": 47.0,
+        "height": 82.5
+      },
+      "brand": "Phoenix Home",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Mid-Century Modern",
+      "description": "Dining chair with mid-century modern style; ideal for the dining room, living room, or general home or office use Single full-piece polypropylene plastic bucket seat molded for ergonomic comfort; matte black color Solid-wood and wire base provides strength, stability, and accenting color Non-marking feet protect floors from scratches; quick and easy to assemble Measures 21 by 18.5 by 32.5 inches (LxWxH); seat measures 17 by 18 by 17.5 inches (LxWxH)",
+      "image_path": "fb/fb9dd3fa.jpg",
+      "image_px": [
+        2102,
+        2102
+      ]
+    },
+    "photos": [
+      "7e1623c29553c5e9"
+    ]
+  }
+}

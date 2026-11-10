@@ -1,0 +1,35 @@
+{
+  "product": "242.862.05",
+  "text": "Type: round bentwood stacking stool\nUse: extra seating, bedside table, plant stand; dining room, kitchen, living room, bedroom\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: birch veneer seat, bent laminated birch plywood legs\nColors: pale natural birch, light blond wood\nShape: round disc seat on four L-shaped legs that curve sharply under the rim, exposed layered plywood edges, stackable, compact and light\nFeel: light, friendly, classic, airy\nGoes with: white walls, light wood, colorful textiles; Scandinavian, mid-century or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "242.862.05",
+      "name": "FROSTA",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "Birch plywood"
+      ],
+      "description": "The stool can be stacked, so you can keep several on hand and store them on the same space as one."
+    },
+    "photos": [
+      "1457c892d9ccae99"
+    ]
+  }
+}

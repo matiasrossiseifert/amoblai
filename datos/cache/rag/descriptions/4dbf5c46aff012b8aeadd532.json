@@ -1,0 +1,35 @@
+{
+  "product": "602.713.76",
+  "text": "Type: long-hair sheepskin rug\nUse: draping on a chair, bench or bed, or softening a floor spot; living room, bedroom, reading nook\nStyle: rustic, Scandinavian, bohemian\nMaterials: natural sheepskin with long thick fleece\nColors: warm taupe brown, darker chestnut tips\nShape: organic hide outline with rounded lobes, deep shaggy fluffy wool, small and soft\nFeel: cozy, warm, natural, inviting\nGoes with: warm wood, leather, cream and rust textiles; rustic, cabin, Scandinavian or bohemian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "602.713.76",
+      "name": "SKOLD",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "type_ikea": "Sheepskin",
+      "category_tp": "rug",
+      "size_raw": "90 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "Wool is soil-repellent and hard-wearing."
+    },
+    "photos": [
+      "ef8fd01b3eadb5cb"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JLST382",
+  "text": "Type: patterned knit throw blanket\nUse: light layering on a chair, sofa or bed; living room, bedroom\nStyle: contemporary, coastal, Scandinavian\nMaterials: soft woven knit, fringed ends\nColors: white, navy, light blue, teal\nShape: rectangular throw, horizontal bands of zigzag lines, diamonds and chevrons, short white fringe, light and thin\nFeel: fresh, airy, relaxed\nGoes with: cognac leather, white walls, grey rugs, blue accents; coastal, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JLST382",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Jagged Lines Throw Blanket - 60 x 50 Inch, Tonal Blue",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 127.0,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Tonal Blue"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Imported The fun pattern, tonal blue coloring, and twisted fringe of this throw blanket can add cool style to any indoor space. A cotton-acrylic blend, this throw is comfortable as well as stylish. 60\"L x 50\"W Twisted, self tassels 1 throw blanket For best results, dry-clean. This throw can be washed on delicate cycle and line dried. Supersoft to the touch",
+      "image_path": "2c/2c2f7ce4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "737c31345bdf8463"
+    ]
+  }
+}

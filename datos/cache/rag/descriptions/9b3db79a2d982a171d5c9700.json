@@ -1,0 +1,35 @@
+{
+  "product": "703.116.97",
+  "text": "Type: woven bamboo pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: Japandi, bohemian, Scandinavian\nMaterials: hand-woven bamboo shade in layered tiers, dark grey cord and ceiling cup\nColors: light natural bamboo, dark grey\nShape: three stacked cylinders of open lattice weave with a wider middle tier, casts patterned light, hangs on a long cord, large but light and airy\nFeel: warm, natural, relaxed, calm\nGoes with: light wood, linen, rattan, green plants, white walls; Japandi, bohemian or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "703.116.97",
+      "name": "SINNERLIG",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Bamboo"
+      ],
+      "description": "Each handmade shade is unique."
+    },
+    "photos": [
+      "076c2c96dcf6da88"
+    ]
+  }
+}

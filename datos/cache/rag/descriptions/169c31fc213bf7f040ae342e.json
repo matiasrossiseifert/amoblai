@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DBDX446",
+  "text": "Type: faux leather two-seat sofa\nUse: seating; living room, home office, den\nStyle: modern, contemporary, classic\nMaterials: smooth faux leather, piped seams, dark wood legs\nColors: dark chocolate brown\nShape: square track arms, two back and seat cushions, tapered block legs, tailored and medium\nFeel: warm, sturdy, polished\nGoes with: dark wood, cream walls, plaid textiles, brass; traditional dens or modern offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DBDX446",
+      "name": "Amazon Brand \u2013 Ravenna Home Modern Faux Leather Loveseat Sofa, 86.5\"W, Brown",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 219.7,
+        "depth": 88.3,
+        "height": 96.5
+      },
+      "brand": "Ravenna Home",
+      "product_type": "SOFA",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Artificial Leather"
+      ],
+      "style": "Transitional",
+      "description": "Metal frame; faux leather upholstery The handsome style and faux leather will complement any d\u00e9cor Less than 15 minutes assembly required Free returns for 30 days. 1-year warranty. 34.75\"L x 86.5\"W x 38\"H",
+      "image_path": "53/5354d150.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b8c4e6572e7968a9"
+    ]
+  }
+}

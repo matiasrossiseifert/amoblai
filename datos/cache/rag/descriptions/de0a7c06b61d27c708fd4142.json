@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QK2JLGZ",
+  "text": "Type: two-drawer nightstand\nUse: bedside storage and lamp surface; bedroom\nStyle: coastal, farmhouse, contemporary\nMaterials: wood with wire-brushed finish, woven grasscloth drawer fronts, round metal knobs\nColors: light grey taupe, sand beige, silver\nShape: rectangular case with two textured drawers, small knobs, raised on a square-legged base with X stretcher, substantial\nFeel: relaxed, soft, natural\nGoes with: white linen, rattan, light wood, soft blues; coastal or farmhouse bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QK2JLGZ",
+      "name": "Amazon Brand \u2013 Stone & Beam Seahurst Nightstand, 30\"W, Grey Taupe",
+      "category": "table",
+      "kind": "nightstand",
+      "dimensions_cm": {
+        "width": 76.2,
+        "depth": 45.7,
+        "height": 73.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Grey Taupe Wood"
+      ],
+      "materials": [
+        "Acrylic"
+      ],
+      "style": "Nightstand",
+      "description": "Make your evenings even more serene with this grey-taupe nightstand. No bedroom set is complete without a nightstand of similar style and quality\u2014it turns a bed into a bower. 30\"W x 18\"D x 29\"H Grey-taupe finish, oak veneers, rubberwood solids, nickel acrylic hardware The casual contemporary style of this collection makes it the perfect addition or update to your bedroom. Two drawers with plenty of storage for any bedside essentials. Assemble in 15 minutes or less Free returns for 30 days. 3-year warranty. Wipe clean with a soft, dry cloth.",
+      "image_path": "8c/8c56a7f3.jpg",
+      "image_px": [
+        1660,
+        1672
+      ]
+    },
+    "photos": [
+      "cfa37d606e9bd15f"
+    ]
+  }
+}

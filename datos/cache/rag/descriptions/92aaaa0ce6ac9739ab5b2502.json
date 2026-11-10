@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07JHV32HX",
+  "text": "Type: fabric storage basket, set of two\nUse: storing clothes, toys, blankets on shelves; bedroom, living room, home office\nStyle: coastal, contemporary\nMaterials: canvas fabric, lined interior, cotton rope handles\nColors: navy and white stripes, cream, grey lining\nShape: soft rectangular bin with pinstriped upper band and plain lower band, rope loop handles, medium and lightweight\nFeel: fresh, casual, tidy\nGoes with: white shelving, light wood, navy and white textiles; coastal or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JHV32HX",
+      "name": "AmazonBasics Fabric Storage Basket Container with Rope Handles, Set of 2, Medium",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": {
+        "width": 39.9,
+        "depth": 21.1,
+        "height": 30.0
+      },
+      "brand": "AmazonBasics",
+      "product_type": "BASKET",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "Medium-size attractive storage basket (2-pack) for neatly storing everyday items Made of non-woven fabric and high-quality cardboard for reliable structure Ideal for a bedroom, playroom, or living room; simple, classic style for easy coordinating Side loop handles for easy carrying or pulling off a shelf; folds for compact storage Measures 15.7 by 11.8 by 8.3 inches each; backed by an AmazonBasics 1-year limited warranty",
+      "image_path": "70/700ea297.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ef123298fdfeb9eb"
+    ]
+  }
+}

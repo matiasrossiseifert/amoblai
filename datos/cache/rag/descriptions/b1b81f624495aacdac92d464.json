@@ -1,0 +1,35 @@
+{
+  "product": "202.617.32",
+  "text": "Type: linen cushion\nUse: back support and decoration on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, Japandi\nMaterials: washed linen with a fine slub texture\nColors: light warm beige, greige\nShape: square plain cushion, soft rounded corners, clean seamed edges, slightly crumpled natural texture, medium size\nFeel: calm, natural, soft, relaxed\nGoes with: white or grey sofas, light oak, wool throws, stone tones; Scandinavian, Japandi or minimalist living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "202.617.32",
+      "name": "VIGDIS",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "The cushion cover is made of ramie, a hard-wearing natural material with a slightly irregular texture."
+    },
+    "photos": [
+      "0ca76d26dc9636d8"
+    ]
+  }
+}

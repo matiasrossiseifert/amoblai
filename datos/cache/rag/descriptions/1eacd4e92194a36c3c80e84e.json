@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JXF7251",
+  "text": "Type: vine pattern throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, Scandinavian, modern\nMaterials: woven jacquard fabric with raised texture\nColors: ivory, black\nShape: square, vertical winding leafy vines with bold leaves, knife edges, compact\nFeel: graphic, natural, fresh\nGoes with: white or cream sofas, black accents, light wood, plants; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JXF7251",
+      "name": "Amazon Brand \u2013 Stone & Beam Contemporary Vine Throw Pillow - 17 x 17 Inch, Black / Ivory",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 14.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Black/Ivory"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Made in USA and imported Black and white vine pattern in chenille yarns adds texture and brings a modern touch to your decor.\u00a0Solid black back balances the pattern on the front. Hidden zipper at bottom of pillow. 17\"L x 17\"W Pillow cover and insert Spot clean. Pillow arrives in vacuum-sealed bag. Carefully remove pillow from packaging and let it fully expand.",
+      "image_path": "84/84c39dae.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "17f565b15007d06c"
+    ]
+  }
+}

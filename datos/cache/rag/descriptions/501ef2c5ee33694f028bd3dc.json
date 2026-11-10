@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07MJL5QVL",
+  "text": "Type: Moroccan lattice area rug\nUse: anchoring a seating area; living room, bedroom, home office\nStyle: contemporary, traditional, classic\nMaterials: low pile woven synthetic fibers\nColors: warm chocolate brown, cream\nShape: medium rectangle, bold quatrefoil trellis pattern, thin cream border, flat low pile, medium visual weight\nFeel: warm, cozy, grounded\nGoes with: taupe or brown sofas, cream ottomans, dark wood floors; traditional or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07MJL5QVL",
+      "name": "Ravenna Home Prospect Rug, 5'W x 7'6\"L, Moroccan Lattice Design",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 152.4,
+        "height": 0.6
+      },
+      "brand": "Ravenna Home",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "Polyester"
+      ],
+      "style": "Transitional",
+      "description": "5'W x 7'6\"L 100% microfiber polyester Power-loomed low .25\" pile; suits any indoor space The low .25\" pile makes this transitional rug ideal for high traffic areas. Pair with a rug pad (sold separately)",
+      "image_path": "de/def1cbb1.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "28bb889aba8e9e07"
+    ]
+  }
+}

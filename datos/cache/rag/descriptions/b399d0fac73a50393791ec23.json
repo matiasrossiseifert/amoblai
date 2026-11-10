@@ -1,0 +1,37 @@
+{
+  "product": "291.805.24",
+  "text": "Type: storage bench with deep drawer\nUse: seating and toy storage, a spot to sit and play; children's room, playroom, family living room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: smooth white painted board, round plastic knobs\nColors: bright white, green and yellow knobs\nShape: low boxy bench with one deep full-width drawer, flat seat top, two round colored knobs, plinth base, compact and solid\nFeel: playful, cheerful, tidy, bright\nGoes with: white walls, light wood, colorful toys and textiles; children's rooms and playful Scandinavian spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "291.805.24",
+      "name": "STUVA,FLJA",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "Storage bench",
+      "category_tp": "bench",
+      "size_raw": "90x50x50 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "With the included colourful stickers, you can quickly label drawers and cabinets in your own personal way."
+    },
+    "photos": [
+      "aa0ebb764aabfbe3"
+    ]
+  }
+}

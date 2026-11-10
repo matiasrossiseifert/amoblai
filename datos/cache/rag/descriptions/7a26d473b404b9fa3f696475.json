@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QF9Y248",
+  "text": "Type: channel-tufted swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, mid-century modern, glam\nMaterials: velvety faux suede upholstery, chrome base, casters\nColors: light warm grey, silver chrome, black\nShape: rounded tub back with vertical channel tufting, curved arms, padded seat, gas lift, five-star chrome base on wheels, compact\nFeel: cozy, soft, stylish\nGoes with: white or light wood desks, pastel walls, chrome accents; contemporary home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QF9Y248",
+      "name": "Amazon Brand \u2013 Rivet Modern Upholstered Swivel Office Chair, 25\"W, Gray",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 63.5,
+        "depth": 58.4,
+        "height": 76.5
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Textile"
+      ],
+      "style": null,
+      "description": "This modern swivel chair is perfect for a home office with its gray stain-resistant fabric upholstery that blends with any design taste. The adjustable height and tilt mechanism allow for maximum sitting comfort. 25\"W x 23\"D x 30.1\u201333.1\"H Fabric upholstery over plywood and metal frame; foam padding; metal base with rollers This modern chair with adjustable height has a 360-degree swivel mechanism; a tilt lock; and waterproof and stain-resistant fabric upholstery. The gray fabric and ribbed upholstery detailing of this swivel chair add an elegant flair to your home office. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "e7/e7fe9fc4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1aff9d48d4899a5a"
+    ]
+  }
+}

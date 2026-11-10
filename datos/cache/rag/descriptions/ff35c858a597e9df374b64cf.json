@@ -1,0 +1,35 @@
+{
+  "product": "502.285.76",
+  "text": "Type: capsule-shaped white wall lamp\nUse: soft accent or bedside light on a wall; bedroom, hallway, bathroom, living room\nStyle: minimalist, modern, Scandinavian\nMaterials: white lacquered metal top, white opal glass lower half, white round wall plate\nColors: white, milky white\nShape: vertical pill shape with rounded ends held out from a round wall disc on a short stem, smooth and seamless, compact and light\nFeel: clean, soft, calm, sleek\nGoes with: white or pale grey walls, light wood, chrome or white fittings; minimalist or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.285.76",
+      "name": "STAN",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Provides an even light that is good for illuminating around a mirror and sink."
+    },
+    "photos": [
+      "b51114cde59585c4"
+    ]
+  }
+}

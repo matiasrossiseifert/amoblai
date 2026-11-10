@@ -1,0 +1,35 @@
+{
+  "product": "101.028.66",
+  "text": "Type: eyelet curtains, pair\nUse: dressing a window, filtering daylight, adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: thick woven cotton-blend fabric, metal eyelets\nColors: light warm beige, cream, silver eyelets\nShape: two straight full-length panels hung on a rod through metal rings, deep even pleats from the eyelet heading, smooth matte surface, soft but substantial\nFeel: calm, soft, warm, serene\nGoes with: white or cream walls, light wood, linen sofas, natural textures; Scandinavian, Japandi or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "101.028.66",
+      "name": "MERETE",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "145x300 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "The thick curtains darken the room and provide privacy by preventing people outside from seeing into the room."
+    },
+    "photos": [
+      "d565ad6ac6d20d62"
+    ]
+  }
+}

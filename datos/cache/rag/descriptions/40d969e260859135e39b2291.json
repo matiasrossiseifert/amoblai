@@ -1,0 +1,38 @@
+{
+  "product": "703.323.55",
+  "text": "Type: small kids rug with a house print\nUse: playing and sitting on the floor, bedside mat; kids room, nursery, playroom\nStyle: contemporary, modern\nMaterials: short low pile fabric with a printed pattern\nColors: bright sky blue, black, white\nShape: small rectangle with a hand-drawn house front, window and door below, black and white vertical stripes above, thin dark border, flat\nFeel: playful, cheerful, graphic\nGoes with: white kids furniture, primary colors, black and white accents; children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "703.323.55",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "50x75 cm",
+      "colors": [
+        "Turquoise"
+      ],
+      "description": "If you combine many rugs you can create a colourful street with its own zebra crossing."
+    },
+    "photos": [
+      "a6dd486619d6aa57"
+    ]
+  }
+}

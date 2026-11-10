@@ -1,0 +1,45 @@
+{
+  "product": "abo-B082XMB45H",
+  "text": "Type: adjustable spotlight wall sconce\nUse: reading and directed light; bedroom, living room, home office; mounted beside a bed or desk\nStyle: Scandinavian, minimalist, modern\nMaterials: matte black metal shade with white interior, light wood cap, round black backplate\nColors: matte black, light natural wood, white\nShape: bell-shaped tilting shade with wooden top, short swivel arm, round plate, plug-in cord, small and compact\nFeel: simple, warm, cozy\nGoes with: light wood, white walls, black accents; Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082XMB45H",
+      "name": "Amazon Brand \u2013 Rivet Scandinavian Wall Sconce, 8\"H, Matte Black",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": {
+        "width": 12.7,
+        "depth": 12.7,
+        "height": 20.3
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": "Sconce",
+      "description": "This hooded wall sconce can offer directed spotlighting of a bookcase or favorite painting, or it can simply help to brighten a dark corner or hallway. Matte-black with a little pop of pale woodgrain, the sconce is both subtle and stylish. This wall sconce is made out of metal and wood. This wall sconce will allow you to add light and style to dim corners and hallways. This sconce has a modern design with classic touches that make it neatly blend with any room. 5\"W x 5\"D x 8\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.",
+      "image_path": "24/24122980.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e468afc734d4b92b"
+    ]
+  }
+}

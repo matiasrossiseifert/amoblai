@@ -1,0 +1,35 @@
+{
+  "product": "902.857.82",
+  "text": "Type: hanging planter with bamboo rod\nUse: hanging a trailing plant from a ceiling hook or a rail; living room, kitchen, balcony\nStyle: Scandinavian, minimalist, modern\nMaterials: white plastic bowl, bamboo central rod, white metal hook\nColors: white, light warm bamboo\nShape: wide shallow round bowl with tapered sides, hung from a single upright bamboo rod in the middle ending in a curved hook, simple and graphic, light visual weight\nFeel: fresh, clean, airy, natural\nGoes with: trailing plants, light wood, white walls, rattan; Scandinavian, Japandi or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.857.82",
+      "name": "BITTERGURKA",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Hanging planter",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Hang your herbs by a window, then unhook and bring to the table or cooking pot for fresh herbs with every meal."
+    },
+    "photos": [
+      "b9b9ba30b6b9c915"
+    ]
+  }
+}

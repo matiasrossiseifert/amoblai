@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07P7NTK44",
+  "text": "Type: tufted leather barrel armchair\nUse: lounging, reading; living room, study, home office\nStyle: mid-century modern, classic, traditional\nMaterials: distressed leather upholstery, button tufting, stained wood legs\nColors: dark chocolate brown, warm mid-brown wood\nShape: curved barrel back flowing into arms, button-tufted inner back, thick cushion seat, short tapered wood legs, wide and enveloping, substantial\nFeel: warm, rich, clubby, cozy\nGoes with: walnut, brass, rich rugs, deep green or cream walls; mid-century or library-style rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07P7NTK44",
+      "name": "Amazon Brand \u2013 Stone & Beam Leila Tufted Leather Armchair, 44\"W, Sod",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 111.8,
+        "depth": 91.4,
+        "height": 78.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Sod"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": null,
+      "description": "Vintage design and chic leather upholstery combine in this piece, making it the perfect fit for modern and classic decor schemes. Foam-padded cushions and solid wood legs ensure that this armchair is functional and comfortable as well as a stylish addition to any lounge area. 44\"W x 36\"D x 31\" Sturdy wood frame and solid wood legs in a dark walnut finish with rich 100% top-grain leather. Foam cushions provide lasting support and comfort. Treat yourself to luxury with this striking vintage-look armchair. The classic upholstery and solid wood legs in an espresso finish exude opulence. Rich leather upholstery adds sophistication and comfort to any space. Assemble in 15 minutes or less Vacuum or wipe with a dry cloth. Spot clean if needed. Free returns for 30 days. 3-year warranty.",
+      "image_path": "fe/fe5470e4.jpg",
+      "image_px": [
+        1579,
+        1352
+      ]
+    },
+    "photos": [
+      "428360b37214961c"
+    ]
+  }
+}

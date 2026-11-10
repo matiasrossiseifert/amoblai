@@ -1,0 +1,36 @@
+{
+  "product": "001.737.36",
+  "text": "Type: embossed white ceramic plant pot\nUse: covering the grower pot of a houseplant on a windowsill, shelf or desk; living room, home office, kitchen\nStyle: Scandinavian, minimalist, modern\nMaterials: glossy glazed ceramic with a raised relief pattern\nColors: glossy bright white\nShape: slightly tapered round pot with a wide rim, embossed motifs such as stripes, rings or chain-like lines, compact and tidy\nFeel: fresh, crisp, light, clean\nGoes with: leafy green plants, light wood, white shelves and walls; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.737.36",
+      "name": "KARDEMUMMA",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "12 cm",
+      "colors": [
+        "White",
+        "assorted patterns"
+      ],
+      "description": "Glazed; makes the plant pot waterproof."
+    },
+    "photos": [
+      "7d89f1adb691c1ad"
+    ]
+  }
+}

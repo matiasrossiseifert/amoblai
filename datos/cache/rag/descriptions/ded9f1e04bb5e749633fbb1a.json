@@ -1,0 +1,36 @@
+{
+  "product": "101.150.67",
+  "text": "Type: plastic folding chair\nUse: extra seating, dining; kitchen, dining room, small apartment, balcony\nStyle: modern, minimalist, contemporary\nMaterials: glossy white plastic seat and back, chrome-plated steel frame\nColors: white, silver chrome\nShape: rounded rectangular back with a cut-out handle, flat seat, slim tubular folding legs crossing at the sides, armless, folds flat, very light and compact\nFeel: practical, bright, light, casual\nGoes with: white or glass tables, chrome, bright colors; small modern kitchens, studios\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "101.150.67",
+      "name": "NISSE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Folding chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "High-gloss white",
+        "chrome-plated"
+      ],
+      "description": "You can fold the chair, so it takes less space when you're not using it."
+    },
+    "photos": [
+      "e838c2021d68825c"
+    ]
+  }
+}

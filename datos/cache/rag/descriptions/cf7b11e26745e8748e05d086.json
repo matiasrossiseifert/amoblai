@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P19TFJ",
+  "text": "Type: black and white city skyline canvas\nUse: wall decoration; living room, bedroom, home office, above a sofa or desk\nStyle: modern, contemporary, industrial\nMaterials: printed canvas, unframed\nColors: white, grey, black\nShape: long panoramic rectangle, dense downtown towers, hillside behind, soft sun flare bokeh circles, slim and horizontal\nFeel: urban, bright, dreamy\nGoes with: grey or white walls, chrome, black metal, glass; modern or urban loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P19TFJ",
+      "name": "Amazon Brand \u2013 Rivet Seattle Sun Flare in Black and White Canvas Print of Seattle, 30\" x 10\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 76.0,
+        "depth": 25.0,
+        "height": 4.0
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": "Seattle",
+      "description": "Camera flares become part of the metro landscape in this artistic photo of Seattle. Perhaps taken through the glass window of a plane about to land there, this photo will add a contemporary and cosmopolitan look to your room. A contemporary, sophisticated addition to your room Hand-stretched canvas on wood. 30\" x 10\" Ready to hang with hardware included. Made to order",
+      "image_path": "99/99952389.jpg",
+      "image_px": [
+        2560,
+        872
+      ]
+    },
+    "photos": [
+      "75e84ab1f58f662a"
+    ]
+  }
+}

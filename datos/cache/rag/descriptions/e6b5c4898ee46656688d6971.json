@@ -1,0 +1,35 @@
+{
+  "product": "202.361.20",
+  "text": "Type: pedestal block candle holder\nUse: holding a pillar candle on a table, shelf or mantel; living room, dining room\nStyle: traditional, classic, rustic\nMaterials: smooth glazed ceramic with a soft satin sheen\nColors: dark grey-brown, charcoal\nShape: baluster-turned stem with rounded knobs, wide flat drip plate on top, broad round foot, tall and slender candlestick silhouette\nFeel: elegant, moody, warm, timeless\nGoes with: white or ivory candles, dark wood, linen tablecloths, brass accents; traditional, classic or farmhouse dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.361.20",
+      "name": "ERSTTA",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Block candle holder",
+      "category_tp": "deco",
+      "size_raw": "21 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "It's easy to make a decorative candle arrangement by combining several ERSTTA block candle holders in different heights."
+    },
+    "photos": [
+      "84d385f98bf7a529"
+    ]
+  }
+}

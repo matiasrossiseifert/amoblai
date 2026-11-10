@@ -1,0 +1,36 @@
+{
+  "product": "702.669.87",
+  "text": "Type: slim black LED desk lamp\nUse: focused task light for working or reading at a desk; home office, study, bedroom\nStyle: minimalist, modern, industrial\nMaterials: black coated steel tube frame, brushed aluminium LED head and base end, black cord\nColors: black, brushed silver\nShape: single continuous bent tube rising from a triangular loop base, narrow bar light head on a flexible neck, very thin and graphic, small footprint\nFeel: sleek, graphic, discreet, modern\nGoes with: dark wood or white desks, grey walls, metal accents; minimalist, modern or industrial home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.669.87",
+      "name": "HRTE",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "silver-colour"
+      ],
+      "description": "Easy to use in different places as you can power the lamp through the USB port on your computer or an ordinary power socket."
+    },
+    "photos": [
+      "69936983b05191f4"
+    ]
+  }
+}

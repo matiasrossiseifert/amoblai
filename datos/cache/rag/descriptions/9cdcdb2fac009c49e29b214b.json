@@ -1,0 +1,36 @@
+{
+  "product": "598.501.07",
+  "text": "Type: slipcovered upholstered dining chair\nUse: dining, formal sitting at a table; dining room, kitchen, bedroom vanity\nStyle: classic, traditional, farmhouse\nMaterials: removable cotton-look fabric slipcover over a padded frame, white painted wooden feet\nColors: white, soft bright white fabric\nShape: tall straight padded back, padded seat, floor-length skirt with corner pleats covering the legs, upright and full, medium visual weight\nFeel: soft, elegant, fresh, airy\nGoes with: dark or white wood tables, linen textiles, neutral walls; classic, farmhouse or shabby chic dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "598.501.07",
+      "name": "HENRIKSDAL",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with long cover",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "blekinge white"
+      ],
+      "description": "You sit comfortably thanks to the high back and seat with polyester wadding."
+    },
+    "photos": [
+      "d215e29922ab69fd"
+    ]
+  }
+}

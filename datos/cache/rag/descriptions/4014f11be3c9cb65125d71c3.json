@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07BMTN83C",
+  "text": "Type: trellis woven throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: modern, traditional, contemporary\nMaterials: woven jacquard fabric, stitched texture\nColors: cool slate grey, light beige\nShape: square, all-over Moroccan trellis and quatrefoil pattern, fine dotted stitching, knife edges, large\nFeel: tailored, calm, classic\nGoes with: grey or white sofas, chrome or dark wood, navy accents; modern or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07BMTN83C",
+      "name": "Amazon Brand \u2013 Stone & Beam Woven Trellis Modern Decorative Throw Pillow, 20\" x 20\", Slate Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 50.8,
+        "depth": 50.8,
+        "height": 17.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Slate Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "A classic trellis design with a subtle geometric update, along with neutral colors of slate and ivory, make this pillow a standout in a traditional or modern bedroom. For a different look, reverse it to the solid flax-colored side. Pillow cover features hidden bottom zipper 20\"L x 20\"W, Pillow cover dimensions are measured from seam to seam when cover is laid flat. Spot clean with damp white cloth and allow to air dry",
+      "image_path": "6f/6f9208fd.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4bfd69b8ba4054af"
+    ]
+  }
+}

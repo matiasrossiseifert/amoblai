@@ -1,0 +1,38 @@
+{
+  "product": "146.300.09",
+  "text": "Type: rectangular pine dining table\nUse: dining, everyday meals, crafts; kitchen, dining room, cabin\nStyle: rustic, Scandinavian, farmhouse\nMaterials: solid pine, untreated natural wood with visible knots\nColors: light warm natural pine, honey\nShape: rectangular top, plain apron, four straight square legs, simple boxy frame, medium visual weight\nFeel: warm, honest, homey, simple\nGoes with: wooden or white chairs, white walls, cotton textiles, woven baskets; rustic, farmhouse or Scandinavian kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "146.300.09",
+      "name": "INGO",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "120x75 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": null
+    },
+    "photos": [
+      "3852297c1fd65f2d"
+    ]
+  }
+}

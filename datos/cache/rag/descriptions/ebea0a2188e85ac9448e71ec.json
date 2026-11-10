@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8P1JF7",
+  "text": "Type: glass and concrete candle holder\nUse: holding a pillar candle on a table or shelf; living room, dining room, bedroom\nStyle: mid-century modern, minimalist, industrial\nMaterials: clear glass, textured concrete base\nColors: clear, dark grey\nShape: short wide glass cylinder set in a grooved concrete band base, compact and solid\nFeel: calm, grounded, understated\nGoes with: walnut, grey stone, black metal, white walls; mid-century, minimalist or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B8P1JF7",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Concrete and Glass Decor Candle Holder, 4\"H, Grey",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": {
+        "width": 11.7,
+        "depth": 11.7,
+        "height": 10.5
+      },
+      "brand": "Rivet",
+      "product_type": "CANDLE_HOLDER",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Glass"
+      ],
+      "style": "Short",
+      "description": "Add a modern industrial touch to your room, along with romantic candlelight, with this concrete and glass candle holder. Designed to hold a 3-inch diameter candle, the glass can be removed for a different effect, or for cleaning. 4.625\" Diameter x 4.125\" H An attractive d\u00e9cor item even when unlit Concrete base with glass cover Can be separated for cleaning",
+      "image_path": "ed/ed0c8c06.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b3182e2241ce868a"
+    ]
+  }
+}

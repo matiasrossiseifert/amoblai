@@ -1,0 +1,35 @@
+{
+  "product": "301.510.35",
+  "text": "Type: white tabletop picture frame on a stand\nUse: displaying two photos back to back on a desk, shelf or table; living room, bedroom, home office\nStyle: minimalist, modern, contemporary\nMaterials: glossy white plastic frame and base, clear plastic front\nColors: white\nShape: upright rectangular frame with a slim border, short round stem and disc foot, shows a picture on each side, compact and light\nFeel: clean, simple, light, cheerful\nGoes with: white desks, light wood shelves, colorful photos, any palette; minimalist, modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "301.510.35",
+      "name": "TOLSBY",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame for 2 pictures",
+      "category_tp": "deco",
+      "size_raw": "10x15 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can display one picture on each side as the frame has no back panel."
+    },
+    "photos": [
+      "1e809d3a44b9904f"
+    ]
+  }
+}

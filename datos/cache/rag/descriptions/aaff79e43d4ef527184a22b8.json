@@ -1,0 +1,37 @@
+{
+  "product": "400.337.63",
+  "text": "Type: solid pine two-door cabinet\nUse: closed storage for linens, supplies or tableware, on the floor or the wall; living room, hallway, home office\nStyle: rustic, Scandinavian, farmhouse\nMaterials: untreated solid pine with visible knots and grain\nColors: light natural pine, warm honey knots\nShape: boxy square cabinet with two flat full-height doors meeting at a center seam, plain edges, simple and solid, medium visual weight\nFeel: warm, natural, honest, calm\nGoes with: white walls, linen, woven baskets, black accents; rustic, farmhouse or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "400.337.63",
+      "name": "IVAR",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "80x30x83 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Untreated solid wood is a durable natural material which is even more hardwearing and easy to look after if you oil or wax the surface."
+    },
+    "photos": [
+      "096d64052c058402"
+    ]
+  }
+}

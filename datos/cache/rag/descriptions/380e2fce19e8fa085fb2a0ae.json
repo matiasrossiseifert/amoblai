@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07P3CVFPG",
+  "text": "Type: upholstered ottoman with wood frame\nUse: footrest, extra seating; living room, bedroom\nStyle: mid-century modern, contemporary\nMaterials: soft fabric upholstery, loose seat cushion, dark stained solid wood base frame\nColors: warm beige, dark brown wood\nShape: rectangular, plush cushion on upholstered box, exposed wood rail frame with square legs, medium size, grounded\nFeel: warm, calm, inviting\nGoes with: walnut wood, cream and earth tones, leather accents; mid-century or transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07P3CVFPG",
+      "name": "Stone & Beam Genesse  Mid-Century Genesse Accent Chair - Parent",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "OTTOMAN",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "2d/2d9c15ae.jpg",
+      "image_px": [
+        2560,
+        1975
+      ]
+    },
+    "photos": [
+      "d63b9ea49979cb87"
+    ]
+  }
+}

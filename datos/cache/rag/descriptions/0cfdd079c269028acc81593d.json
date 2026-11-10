@@ -1,0 +1,35 @@
+{
+  "product": "102.142.32",
+  "text": "Type: white gooseneck LED desk lamp\nUse: focused task light for reading and working at a desk; home office, study, bedroom\nStyle: minimalist, Scandinavian, modern\nMaterials: flexible metal gooseneck arm, glossy white plastic, small LED spotlight head, weighted round base\nColors: white\nShape: tall slender S-curved gooseneck rising from a flat round base, tiny bell-shaped head that bends in any direction, light and graphic, compact footprint\nFeel: clean, practical, bright, understated\nGoes with: white or light wood desks, pastel accents, white walls; minimalist, Scandinavian or modern home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "102.142.32",
+      "name": "JANSJ",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED work lamp",
+      "category_tp": "lamp",
+      "size_raw": "60 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "db9718eb86d09114"
+    ]
+  }
+}

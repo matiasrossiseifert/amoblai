@@ -1,0 +1,35 @@
+{
+  "product": "803.156.52",
+  "text": "Type: black gooseneck clip-on LED lamp\nUse: focused light clamped to a desk, shelf or headboard; home office, study, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: glossy black metal LED head, flexible black gooseneck, black plastic spring clamp, black cord\nColors: glossy black\nShape: tiny teardrop head on a thin curved gooseneck, sprung clip with gripping jaws, small and very light, easy to aim\nFeel: practical, discreet, sleek, compact\nGoes with: white or wood desks, bookshelves, black accents; minimalist or contemporary home offices and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "803.156.52",
+      "name": "JANSJ",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED wall,clamp spotlight",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm is adjustable."
+    },
+    "photos": [
+      "3376f968f716099a"
+    ]
+  }
+}

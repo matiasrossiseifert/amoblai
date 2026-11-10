@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QJLBQCW",
+  "text": "Type: striped ceramic table lamp\nUse: accent and bedside light; bedroom, living room; on a nightstand, side table or shelf\nStyle: coastal, contemporary, farmhouse\nMaterials: glossy reactive-glazed ceramic base, linen-look fabric shade, nickel neck\nColors: creamy white, slate blue, grey\nShape: rounded gourd-shaped base with drippy blue bands, tall cylindrical drum shade, compact\nFeel: fresh, soft, breezy\nGoes with: white walls, light wood, blue and grey textiles; coastal or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QJLBQCW",
+      "name": "Amazon Brand \u2013 Stone & Beam Table Lamp, 16\"H, White and Blue Stripe",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 23.5,
+        "depth": 23.5,
+        "height": 31.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LAMP",
+      "colors": [
+        "Green/White"
+      ],
+      "materials": [
+        "ceramic"
+      ],
+      "style": null,
+      "description": "Hues of blue-crackle highlights upon the white ceramic base of this striking lamp lend a true artisanal flair that blends with a variety of styles and decor. 8.5\"W x 8.5\"D x 15.5\"H White ceramic base with blue decoration; brushed-nickel accents; off-white linen drum shade This colorful ceramic lamp is paired with an off-white linen drum shade to cast perfect ambient light. Includes 1 60-watt equivalent LED bulb included",
+      "image_path": "e3/e3a51c0f.jpg",
+      "image_px": [
+        840,
+        1596
+      ]
+    },
+    "photos": [
+      "c66b9c329f783069"
+    ]
+  }
+}

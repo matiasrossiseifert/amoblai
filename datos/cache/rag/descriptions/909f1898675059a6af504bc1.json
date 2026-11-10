@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B4YRZ1Q",
+  "text": "Type: black cone pendant lamp\nUse: accent or task light from the ceiling; dining room, living room, home office\nStyle: mid-century modern, retro, modern\nMaterials: matte black metal, brushed nickel collar\nColors: matte black, silver\nShape: tilted flared cone shade with short rear cone and nickel ring, hangs on a straight rigid downrod from round canopy, slim and compact\nFeel: graphic, sleek, quirky\nGoes with: walnut wood, white walls, black and nickel accents; mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4YRZ1Q",
+      "name": "Amazon Brand \u2013 Rivet J1052-C1 - Rivet Carrie Pendant BZ+MBK",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 22.9,
+        "depth": 22.9,
+        "height": 25.4
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Bz+mbk"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Placeholder1",
+      "image_path": "50/502c5645.jpg",
+      "image_px": [
+        1000,
+        1000
+      ]
+    },
+    "photos": [
+      "9c6ceb4527934c0d"
+    ]
+  }
+}

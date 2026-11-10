@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DYK2Y61",
+  "text": "Type: storage ottoman bench\nUse: seating and storage; bedroom, living room, entryway; at the foot of a bed\nStyle: contemporary, classic, modern\nMaterials: faux leather upholstery, stitched panels, wood feet\nColors: dark brown cocoa, black\nShape: long rectangular box with lift-up tufted lid, vertical stitched panels, short square feet, low and bulky\nFeel: cozy, solid, practical\nGoes with: dark wood, cream bedding, warm neutrals; classic or contemporary bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DYK2Y61",
+      "name": "Red Hook Meknes Rectangular Faux Leather Storage Ottoman Bench - Dark Cocoa",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 76.2,
+        "depth": 76.2,
+        "height": 81.3
+      },
+      "brand": "Red Hook",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Dark Cocoa"
+      ],
+      "materials": [
+        "faux_leather"
+      ],
+      "style": null,
+      "description": "Large rectangular-shaped storage ottoman works well as a coffee table, footrest, or bench Hidden storage space inside\u2014great for extra throw pillows, blankets, books, shoes, games, or other items Sturdy hinges, including child-safety hinges to ensure a slow, quiet, finger-safe closure (no slamming shut) Hand constructed using solid and engineered woods; faux-leather upholstery with beautiful stitching; traditional, sophisticated style Measures 48 by 17.7 by 16.4 inches; minimal assembly required (simply screw on the legs)",
+      "image_path": "8f/8ff234b7.jpg",
+      "image_px": [
+        2560,
+        1226
+      ]
+    },
+    "photos": [
+      "52fb9956a043f9bf"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "302.126.75",
+  "text": "Type: small handwoven rag rug\nUse: a soft spot by a bed, sink or door; bathroom, kitchen, bedroom, entryway\nStyle: bohemian, farmhouse, rustic\nMaterials: woven fabric strips, cotton warp threads tied at the corners\nColors: assorted mix, dark red, pink, navy and blue, or light white, green and aqua\nShape: small rectangle with streaky horizontal rag weave, tied string tassels at the corners, flat and thin, compact\nFeel: casual, homey, colorful, crafted\nGoes with: white walls, light wood, colorful textiles; farmhouse, bohemian or cottage kitchens and bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.126.75",
+      "name": "TNUM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 60.0,
+        "depth": 90.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "60x90 cm",
+      "colors": [
+        "Assorted colours"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "67bf039cef34c761"
+    ]
+  }
+}

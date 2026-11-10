@@ -1,0 +1,37 @@
+{
+  "product": "703.233.51",
+  "text": "Type: medium-height open bookcase\nUse: storing books, displaying decor; living room, home office, bedroom\nStyle: Scandinavian, traditional, minimalist\nMaterials: ash-patterned wood veneer in a brown stain, fibreboard back\nColors: medium warm brown, walnut-toned wood grain\nShape: simple boxy upright frame, two adjustable shelves above a base shelf, recessed plinth, flat top, straight edges, open front, medium visual weight\nFeel: warm, practical, orderly, familiar\nGoes with: cream or white walls, warm wood, leather or green accents; traditional studies, Scandinavian living rooms, home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "703.233.51",
+      "name": "BILLY",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "80x28x106 cm",
+      "colors": [
+        "Brown ash veneer"
+      ],
+      "description": "Adjustable shelves; adapt space between shelves according to your needs."
+    },
+    "photos": [
+      "ccc6854a67334b0c"
+    ]
+  }
+}

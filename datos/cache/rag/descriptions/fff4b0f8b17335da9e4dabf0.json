@@ -1,0 +1,43 @@
+{
+  "product": "abo-B072LXGN7L",
+  "text": "Type: rustic trestle sofa table\nUse: behind-sofa or entry display; living room, hallway, dining room\nStyle: rustic, farmhouse, industrial\nMaterials: distressed solid pine, saw-marked texture\nColors: dark weathered brown\nShape: thick plank top, chunky square legs, V-shaped diagonal braces, low stretcher, sturdy and heavy\nFeel: earthy, rugged, warm\nGoes with: linen, iron, leather, cream walls; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B072LXGN7L",
+      "name": "Stone & Beam Sofa Tables",
+      "category": "table",
+      "kind": "console table",
+      "dimensions_cm": {
+        "width": 112.0,
+        "depth": 31.4,
+        "height": 60.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "e1/e12c547a.jpg",
+      "image_px": [
+        2000,
+        1236
+      ]
+    },
+    "photos": [
+      "90ea5e2fa1023487"
+    ]
+  }
+}

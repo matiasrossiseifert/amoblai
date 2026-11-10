@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSHKHHD",
+  "text": "Type: geometric runner rug\nUse: covering a walkway; hallway, kitchen, entryway, bedroom\nStyle: contemporary, minimalist, modern\nMaterials: low-pile woven fibers with a textured line pattern\nColors: light grey, taupe, off-white\nShape: long narrow rectangle, repeating triangles of nested lines forming a geometric grid, tone-on-tone texture, flat low pile, light visual weight\nFeel: clean, airy, calm\nGoes with: dark wood floors, white or grey cabinets, silver hardware; modern or minimalist rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSHKHHD",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Runner Rug, 2' 10\" x 7' 10\", Grey and Taupe",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 238.8,
+        "depth": 86.4
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "polyester"
+      ],
+      "style": "Transitional",
+      "description": "Upgrade your hallway or other narrow floor space with this beautiful rug. With a classic geometric pattern updated to suit modern tastes, this rug is a perfect addition to transitional-style home d\u00e9cor, and its taupe and gray tones will blend well with most color themes. 2'10\"W x 7'10\"L Imported. 49% polyester, 29% polypropylene, 16% jute, 6% cotton Machine made with a textured geometric pattern Medium .39\" pile suits any indoor space Pair with rug pad (sold separately)",
+      "image_path": "73/7332fc9a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a752fa4b4110a617"
+    ]
+  }
+}

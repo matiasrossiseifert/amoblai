@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QGFZ28Y",
+  "text": "Type: side table with drawer\nUse: bedside storage, holding a lamp; bedroom, living room\nStyle: traditional, farmhouse, classic\nMaterials: painted wood, turned spindle legs, metal knob\nColors: white, silver knob\nShape: rectangular top with molded edge, one drawer, four spool-turned legs, open lower shelf, upright and compact\nFeel: charming, fresh, cottage\nGoes with: pastel or white bedding, light wood floors, floral textiles; farmhouse or cottage bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QGFZ28Y",
+      "name": "Amazon Brand \u2013 Ravenna Home Mid-Century Side Table with Carved Legs, 18.11\"W",
+      "category": "table",
+      "kind": "nightstand",
+      "dimensions_cm": {
+        "width": 46.0,
+        "depth": 38.1,
+        "height": 53.0
+      },
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Medium-density Fibreboard"
+      ],
+      "style": null,
+      "description": "18.11\"W x 15\"D x 20.87\"H Birch+MDF This classic, clean-lined end table offers casual style. Carved stylish legs, storage drawer, and open shelf Assemble in 15-30 minutes Use a soft, damp cloth to dust wood furniture, and wipe in the direction of the grain. Free returns for 30 days. 1-year warranty.",
+      "image_path": "e1/e153247c.jpg",
+      "image_px": [
+        2210,
+        2560
+      ]
+    },
+    "photos": [
+      "2b8d33fc25362176"
+    ]
+  }
+}

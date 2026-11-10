@@ -1,0 +1,36 @@
+{
+  "product": "703.084.16",
+  "text": "Type: fringed fleece throw\nUse: warmth and color on a sofa, an armchair or a bed; living room, bedroom, children's room\nStyle: contemporary, Scandinavian\nMaterials: soft polyester fleece, short cut fringe along the ends, zigzag stitched edges\nColors: bright grass green, turquoise blue, navy, pale cream\nShape: folded flat rectangular blanket with a short cut fringe on the ends, smooth plain surface, light and thin\nFeel: cozy, cheerful, casual, soft\nGoes with: white or grey sofas, bright accents, light wood; casual family living rooms and children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "703.084.16",
+      "name": "MAJJE",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "120x180 cm",
+      "colors": [
+        "Green",
+        "blue"
+      ],
+      "description": "The fleece throw feels soft against your skin and can be machine washed."
+    },
+    "photos": [
+      "9846b91992b21f17"
+    ]
+  }
+}

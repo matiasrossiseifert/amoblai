@@ -1,0 +1,47 @@
+{
+  "product": "abo-B083YFPSHW",
+  "text": "Type: embossed ceramic plant pot\nUse: holding an indoor plant; on a shelf, table or floor in a living room, bedroom, home office\nStyle: bohemian, art deco, contemporary\nMaterials: glazed stoneware with embossed relief, ribbed interior\nColors: warm coral pink, cream highlights\nShape: rounded cylinder with a slightly tapered base, all-over fan motif, medium size, solid\nFeel: warm, cheerful, crafted\nGoes with: cream walls, rattan, light wood, green plants; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B083YFPSHW",
+      "name": "Amazon Brand \u2013 Stone & Beam Large Fan-Embossed Planter, 7.5\"H, Arabesque Coral Pink",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 20.8,
+        "depth": 20.8,
+        "height": 19.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PLANTER",
+      "colors": [
+        "Arabesque"
+      ],
+      "materials": [
+        "Ceramic"
+      ],
+      "style": "Fan",
+      "description": "This eye-catching planter is the perfect vessel for a plant, flower, or other greenery of your choice, or you can choose to keep it empty or use it to display other items in your home. The arabesque color will look great in any room or outdoor space. 8.2\" diameter x 7.5\"H; 7.5\" interior diameter 100% ceramic stoneware This natural stoneware pot is perfect for showing off your favorite flower or plant and includes a drainage hole. With an embossed fan pattern in arabesque glaze, there's no wrong way to display this classic pot. Fill it with your favorite plant or keep it empty. No assembly required Hand wash with a wet cloth.",
+      "image_path": "6d/6d0d0148.jpg",
+      "image_px": [
+        1186,
+        1200
+      ]
+    },
+    "photos": [
+      "a0cdf0e51b19a77f"
+    ]
+  }
+}

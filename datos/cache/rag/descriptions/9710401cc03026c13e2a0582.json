@@ -1,0 +1,35 @@
+{
+  "product": "602.418.17",
+  "text": "Type: rectangular mirror with dark wood frame\nUse: checking your look, adding light and depth; bathroom, hallway, bedroom, living room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: solid wood frame stained dark brown, glass mirror\nColors: dark brown, silver mirror\nShape: horizontal rectangle in a thin box-like frame with square edges, plain flat profile, simple and light visual weight\nFeel: calm, warm, tidy\nGoes with: dark wood, white walls, white tiles, black or brass accents; Scandinavian or minimalist bathrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.418.17",
+      "name": "MOLGER",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "80x60 cm",
+      "colors": [
+        "Dark brown"
+      ],
+      "description": "Can be hung horizontally or vertically."
+    },
+    "photos": [
+      "5ada4f607eb37c27"
+    ]
+  }
+}

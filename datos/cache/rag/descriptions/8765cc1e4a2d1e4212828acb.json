@@ -1,0 +1,45 @@
+{
+  "product": "abo-B079TXJCR5",
+  "text": "Type: woven throw cushion\nUse: accent comfort on a sofa, armchair or bed; living room, bedroom\nStyle: farmhouse, traditional, contemporary\nMaterials: woven linen-look fabric with fine windowpane check, whipstitched edge\nColors: light warm grey, faint rust and cream check lines, white stitching\nShape: square, subtle grid pattern, slub texture, contrast whipstitch around the edge, medium size\nFeel: soft, cozy, understated\nGoes with: grey or beige sofas, cream throws, natural wood; farmhouse or traditional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B079TXJCR5",
+      "name": "Amazon Brand \u2013 Stone & Beam Whipstitch Edge Decorative Throw Pillow, 18\" x 18\", Light Grey with White Whipstitch",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 45.7,
+        "depth": 45.7,
+        "height": 12.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Light Gray With White Whipstitch"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Look closely: This seemingly solid light grey pillow actually has a subtle plaid of burnt siena thread. Whip-stitching around the edges gives it a clean, crisp look. This pillow is versatile enough to blend with any style bedding. 18\" x 18\" 75% Polyester, 15% Cotton, 10% Lycra Polyester fiber-filled insert Made in India Brush, vacuum or spot clean with damp white cloth and allow to air dry",
+      "image_path": "fe/fef2d840.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "35508d3d3de47504"
+    ]
+  }
+}

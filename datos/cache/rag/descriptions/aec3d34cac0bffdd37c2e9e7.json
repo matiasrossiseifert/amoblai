@@ -1,0 +1,35 @@
+{
+  "product": "700.108.78",
+  "text": "Type: perforated star wall lamp\nUse: night light and decoration on a wall; children's room, nursery\nStyle: contemporary, modern\nMaterials: deep blue plastic shade with tiny pin-hole perforations, white cord with inline switch\nColors: deep royal blue, white dots of light\nShape: large five-pointed star with faceted raised ridges, tiny holes that scatter dots of light, mounts flat on the wall, bold and graphic\nFeel: magical, playful, cozy, dreamy\nGoes with: white or yellow walls, moon and cloud decor, colourful textiles; children's rooms and nurseries\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "700.108.78",
+      "name": "SMILA STJRNA",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": "28 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Gives a soft mood light."
+    },
+    "photos": [
+      "dad928d2ce527efb"
+    ]
+  }
+}

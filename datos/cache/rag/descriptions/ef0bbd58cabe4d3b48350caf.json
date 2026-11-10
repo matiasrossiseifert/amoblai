@@ -1,0 +1,38 @@
+{
+  "product": "301.256.97",
+  "text": "Type: round metal side table with shelf\nUse: holding a lamp, drinks or a plant beside a seat or bed; living room, bedroom, entryway\nStyle: contemporary, minimalist, retro\nMaterials: white powder-coated steel top and frame, small round metal shelf\nColors: white\nShape: thin round top, small round shelf halfway down, slender rod frame ending in curved outward-flaring feet, delicate and open, light visual weight\nFeel: airy, graceful, light, fresh\nGoes with: white or pastel walls, light wood, soft textiles; small living rooms, bedrooms, Scandinavian or modern apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "301.256.97",
+      "name": "LINDVED",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 68.0
+      },
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "50x68 cm",
+      "colors": [
+        "White"
+      ],
+      "description": null
+    },
+    "photos": [
+      "2d082de2546b32a8"
+    ]
+  }
+}

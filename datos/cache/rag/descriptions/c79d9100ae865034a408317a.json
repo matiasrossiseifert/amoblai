@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082QD7WY8",
+  "text": "Type: channel tufted storage bench ottoman\nUse: seating, storage, footrest; bedroom, living room, entryway\nStyle: modern, contemporary, glam\nMaterials: black faux leather, channel tufting, dark wood legs, hinged lid\nColors: black, dark espresso\nShape: long rectangular box with lift-up lid, vertical channel stitching on top, four tapered legs, sleek and medium-weight\nFeel: sleek, polished, tailored\nGoes with: white or grey walls, chrome or brass, dark wood; modern bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082QD7WY8",
+      "name": "Amazon Brand \u2013 Rivet Maple Channel Tufted Vegan Leather Storage Ottoman with a Soft-Close Hinge, 45.3\"W, Black",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 115.0,
+        "depth": 48.0,
+        "height": 47.0
+      },
+      "brand": "Rivet",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Polyurethane"
+      ],
+      "style": "Ottoman",
+      "description": "Storage is made simple and convenient with this stylish channel-top ottoman. A solid wood frame and tapered legs provide a sturdy base, and a high-quality galvanized, soft-close hinge makes it easy to shut small items away but keep them within reach. Black faux leather upholstery matches any decor. 45.3\"W x 18.9\"D x 18.5\"H; seat height: 18.5\"H; seat depth: 18.9\"D; leg height: 6.3\"H Solid wood frame and legs, faux leather upholstery Store small items and help reduce clutter in your home with this ottoman. Made with a soft-close hinge for easy use. Assemble in 15 minutes or less Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty",
+      "image_path": "b6/b6ed1c2c.jpg",
+      "image_px": [
+        2560,
+        1434
+      ]
+    },
+    "photos": [
+      "38527607afbe1432"
+    ]
+  }
+}

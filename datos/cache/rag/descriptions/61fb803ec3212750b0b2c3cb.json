@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YLTF8J",
+  "text": "Type: vintage wine list typography print\nUse: wall decoration; dining room, living room, near a bar cart\nStyle: farmhouse, traditional, retro\nMaterials: printed linen-texture panel, off-white wood frame\nColors: black, off-white, cream\nShape: tall portrait rectangle, stacked bold uppercase wine names, ornamental crest bands top and bottom, distressed print, wide pale frame\nFeel: nostalgic, convivial, graphic\nGoes with: dark wood, white walls, black iron, wine racks; farmhouse, bistro or traditional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YLTF8J",
+      "name": "Amazon Brand \u2013 Stone & Beam Vintage Black and White Red Wine List, White Frame, 15\" x 27\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 68.6,
+        "depth": 38.1,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Paper"
+      ],
+      "style": "Red Wine",
+      "description": "This vintage list of red wines is the perfect word art for a wine-lover's wall. The stark contrast of white type on a black background housed in a white frame allows this piece to blend with traditional, modern or even industrial d\u00e9cor. 15\"W x 27\"H Print on paper in plastic frame with wood texture finish A reproduction of a vintage red wine list Ready to hang, all hardware included",
+      "image_path": "f8/f893a3cc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6b2f24b5d3780873"
+    ]
+  }
+}

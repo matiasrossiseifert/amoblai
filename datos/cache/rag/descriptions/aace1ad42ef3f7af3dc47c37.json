@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSLG6XK",
+  "text": "Type: round wall mirror with shelf\nUse: reflecting light, holding small items; entryway, bedroom, living room\nStyle: rustic, farmhouse, coastal\nMaterials: distressed painted wood frame, natural wood inner edge, mirror glass\nColors: white, light natural wood, silver\nShape: circular deep frame with a low horizontal shelf across the bottom, clean outline, medium size\nFeel: bright, soft, relaxed\nGoes with: white or pastel walls, light wood, rattan; farmhouse or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSLG6XK",
+      "name": "Amazon Brand \u2013 Rivet Rustic Mirror Wall Shelf, 24\"H, White",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [
+        "Wood"
+      ],
+      "style": "vintage",
+      "description": "Made from fir wood with a distressed white finish, this circular mirrored wall shelf is a perfect accent for rustic d\u00e9cor. The mirror reflects the beautiful natural grain of the wood\u2019s inside rim, and the shelf is just the right size for displaying small treasures. 24\"H x 24\"W x 4\"D Fir wood with MDF and mirror This mirror shelf's distressed white finish works well with a variety of home-d\u00e9cor themes, including modern simple and vintage. No hanging materials needed",
+      "image_path": "a2/a26e2c41.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ff7d409893e76dd7"
+    ]
+  }
+}

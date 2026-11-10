@@ -1,0 +1,35 @@
+{
+  "product": "502.647.34",
+  "text": "Type: grey wood grain picture frame\nUse: displaying a photo or print on a shelf, a desk or a wall; living room, bedroom, home office\nStyle: rustic, farmhouse, coastal\nMaterials: wide frame with a textured brushed wood grain in a grey wash finish, white mat, clear front panel\nColors: light weathered grey, white mat\nShape: rectangular frame with a broad flat bevelled border and mitered corners, small white mat around the picture, chunky and solid\nFeel: rustic, calm, weathered, natural\nGoes with: whitewashed wood, linen, blue or grey tones; coastal, farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.647.34",
+      "name": "HAVERDAL",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "13x18 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Can be used hanging or standing, both horizontally and vertically, to fit in the space available."
+    },
+    "photos": [
+      "a04bba4a09becab8"
+    ]
+  }
+}

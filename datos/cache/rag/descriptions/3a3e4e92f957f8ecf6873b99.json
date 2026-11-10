@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07TYPPFXQ",
+  "text": "Type: hanging closet organizer\nUse: storing shoes, folded clothes and accessories; inside a wardrobe in a bedroom\nStyle: minimalist, contemporary\nMaterials: canvas fabric, stitched edges, hook-and-loop hanging strap\nColors: cream beige, off-white trim\nShape: tall narrow column, ten open cubbies, soft collapsible sides, hangs from a rod by a top strap, lightweight, slim\nFeel: neat, soft, practical\nGoes with: white closets, light wood, neutral textiles; minimalist or Scandinavian bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07TYPPFXQ",
+      "name": "AmazonBasics Hanging Closet Shelf - 10-Tier, Canvas",
+      "category": "cabinet",
+      "kind": "wardrobe",
+      "dimensions_cm": {
+        "width": 15.2,
+        "depth": 6.3,
+        "height": 30.5
+      },
+      "brand": "AmazonBasics",
+      "product_type": "SHELF",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "10-tier hanging closet organizer shelf for clothing, linens, and more Creates instant shelf space in your closet Fastener attaches to any standard closet rod for easy installation; no assembly required Durable canvas construction that holds its structure well Wipe clean with cold water and a sponge",
+      "image_path": "22/2239c8d5.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8dfa9f261db341cf"
+    ]
+  }
+}

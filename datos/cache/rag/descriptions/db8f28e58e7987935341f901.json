@@ -1,0 +1,35 @@
+{
+  "product": "600.937.65",
+  "text": "Type: black metal corner shelving unit\nUse: displaying plants, books and small decor in a corner; living room, bedroom, bathroom\nStyle: traditional, farmhouse, classic\nMaterials: black powder-coated steel frame, quarter-round glass and perforated metal shelves\nColors: matte black, clear glass\nShape: tall slim triangular tower that fits a corner, vertical rods along the back, scrolled wrought-iron crest and finials on top, curved front edges, ball feet, light and see-through\nFeel: romantic, vintage, airy, delicate\nGoes with: white walls, pale wood, wicker, green plants; farmhouse, cottage or classic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "600.937.65",
+      "name": "RNNSKR",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": null,
+      "type_ikea": "Corner shelf unit",
+      "category_tp": "shelf",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "Removable shelves, easy to clean."
+    },
+    "photos": [
+      "ec8a48f9ddddd7f5"
+    ]
+  }
+}

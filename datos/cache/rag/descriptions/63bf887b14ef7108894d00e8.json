@@ -1,0 +1,38 @@
+{
+  "product": "103.286.67",
+  "text": "Type: small metal cabinet with door\nUse: storing small things on the floor, a shelf or a wall; living room, home office, hallway\nStyle: retro, industrial, contemporary\nMaterials: powder-coated steel, metal door with a small tab pull\nColors: bright azure blue\nShape: cube-shaped box with one flush hinged door, tiny tab handle, crisp square edges, small feet, compact and stackable\nFeel: bold, playful, fresh, practical\nGoes with: white walls, light wood, other bright colors, black accents; retro, industrial or playful modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "103.286.67",
+      "name": "LIXHULT",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 35.0
+      },
+      "type_ikea": "Cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "35x35 cm",
+      "colors": [
+        "Metal",
+        "blue"
+      ],
+      "description": "Helps you keep track of small items like chargers, keys and wallets, or more bulky items like handbags and toys. It all depends on which of the 3 cabinet sizes you choose."
+    },
+    "photos": [
+      "7e4249c1a629ef31"
+    ]
+  }
+}

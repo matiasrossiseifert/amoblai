@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X5B8CQ",
+  "text": "Type: geometric cotton tassel throw\nUse: layering on an armchair, sofa or bed; living room, bedroom\nStyle: bohemian, contemporary, rustic\nMaterials: woven cotton, raised tufted motifs, large tassels\nColors: black, cream white\nShape: rectangular throw, bold Greek key and triangle global pattern, raised cream squares, oversized corner and edge tassels, substantial\nFeel: graphic, bold, crafted\nGoes with: cognac leather, warm wood, black and white rugs; bohemian or eclectic modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075X5B8CQ",
+      "name": "Amazon Brand \u2013 Rivet High Contrast Black and White Global Geometric 100% Cotton Throw Blanket",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 127.0,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Gray"
+      ],
+      "materials": [
+        "100% cotton"
+      ],
+      "style": null,
+      "description": "High contrast black and white and oversized tassels make this throw a standout that can even be hung as wall art. Hand-woven and hand-tied, this global-inspired piece is also soft enough to use as a blanket or snuggle up in on the sofa. 50\"W x 60\"L Hand woven of 100% cotton Spot clean only.",
+      "image_path": "a0/a0642040.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1ba377c708566ba4"
+    ]
+  }
+}

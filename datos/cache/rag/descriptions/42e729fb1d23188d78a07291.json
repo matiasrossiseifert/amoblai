@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P17T1P",
+  "text": "Type: framed XO typography print\nUse: wall decoration; bedroom, living room, home office, gallery wall\nStyle: modern, glam, minimalist\nMaterials: metallic gold foil print on white paper, white wood frame\nColors: white, metallic gold\nShape: vertical rectangle, two tall condensed letters XO filling the print, slim white frame, light and graphic, medium size\nFeel: playful, romantic, chic\nGoes with: white walls, gold and brass accents, blush pink, marble; glam or modern bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073P17T1P",
+      "name": "Amazon Brand \u2013 Rivet XO Gold Metalic Print Wall Art in White Wood Frame, 21\" x 15\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 38.1,
+        "depth": 1.3,
+        "height": 53.3
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "The alphabet symbols for hugs and kisses will set the stage for your apartment to be a welcoming place. The metallic gold foil letters are printed on a white background for a touch of glam. The piece is attractively housed in a white wood frame. A contemporary, artsy take on recognizable symbols of love Modern gold foil printed on wood for a simple, contemporary touch 21\" x 15\" Ready to hang with hardware included. Made to order",
+      "image_path": "07/07c8887f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "544f00ce246ae023"
+    ]
+  }
+}

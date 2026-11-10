@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07P65HGV8",
+  "text": "Type: upholstered tub dining armchair\nUse: dining, seating; dining room, living room\nStyle: contemporary, farmhouse, classic\nMaterials: linen-look slipcover fabric, medium wood tapered legs\nColors: warm light greige, medium brown wood\nShape: curved low tub back flowing into arms, fitted skirted slipcover, short tapered legs, compact and rounded\nFeel: cozy, relaxed, soft\nGoes with: rustic wood tables, white walls, natural textures; farmhouse or transitional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07P65HGV8",
+      "name": "Stone & Beam Dining Chair \"H,-P",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "07/07fa845f.jpg",
+      "image_px": [
+        1500,
+        1500
+      ]
+    },
+    "photos": [
+      "050b60d5a2933a89"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "301.396.23",
+  "text": "Type: white shaggy curly throw\nUse: warmth and texture on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, bohemian, contemporary\nMaterials: soft thick looped pile fabric, sheepskin-like texture\nColors: white, warm off-white\nShape: rectangular blanket covered in dense curly loops, plush and fluffy surface, soft bulky folds, cloud-like texture, medium visual weight\nFeel: cozy, soft, warm, inviting\nGoes with: grey or beige sofas, light wood, knitted cushions, wool rugs; Scandinavian, bohemian or contemporary living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "301.396.23",
+      "name": "OFELIA",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "130x170 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "f455732757cfb714"
+    ]
+  }
+}

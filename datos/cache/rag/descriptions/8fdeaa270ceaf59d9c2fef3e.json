@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7DL3H8",
+  "text": "Type: upholstered swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, mid-century modern\nMaterials: woven linen-look fabric, polished chrome base, casters\nColors: medium warm grey, silver chrome, black\nShape: rounded bucket shell with low wraparound arms, height-adjustable gas lift, five-star chrome base on wheels, compact\nFeel: soft, polished, cozy\nGoes with: white or wood desks, light walls, chrome accents; contemporary home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7DL3H8",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Office Desk Chair, 33\"-36\", Grey/Chrome",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 58.4,
+        "depth": 55.9,
+        "height": 61.0
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Grey/Chrome"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "With both height and tilt adjustments along with 360 degree swivel, this chair is functional and comfortable. The classic grey upholstery is paired with a metal base on casters, for a look that blends with modern or industrial decor. 22.6\"W x 24\"D x 33\"-36\"H Poplar, eucalyptus, iron base, and polyester fabric Mid-century minimalist, retro style 360 degree swivel function; height and tilt of chair can be adjusted Assembly in 15 minutes or less; simply screw on seat and casters Free returns for 30 days. 1-year warranty.",
+      "image_path": "3e/3e3cb069.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3487b47586d031b3"
+    ]
+  }
+}

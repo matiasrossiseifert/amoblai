@@ -1,0 +1,36 @@
+{
+  "product": "902.049.03",
+  "text": "Type: textured woven throw blanket\nUse: warming up on a sofa or an armchair, layering at the foot of a bed; living room, bedroom\nStyle: Scandinavian, Japandi, minimalist\nMaterials: soft loosely woven cotton-blend fabric with a slubby texture\nColors: natural beige, warm off-white\nShape: flat rectangular blanket with a subtle grid weave, uneven slubbed surface, simple hemmed edges, folds softly, light but cozy\nFeel: soft, warm, calm, cozy\nGoes with: grey or white sofas, light wood, linen cushions, neutral palettes; Scandinavian, Japandi or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.049.03",
+      "name": "GURLI",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "120x180 cm",
+      "colors": [
+        "White",
+        "beige"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "104345aca602b5bf"
+    ]
+  }
+}

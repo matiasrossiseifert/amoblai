@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YLKDM3",
+  "text": "Type: framed whale illustration print\nUse: wall decoration; living room, bedroom, home office, hallway\nStyle: coastal, rustic, traditional\nMaterials: printed illustration, grey wood frame with grain texture\nColors: white, slate blue, grey, beige\nShape: large portrait rectangle, eight whales stacked horizontally, white background, medium grey frame, substantial size\nFeel: nautical, calm, curious\nGoes with: white or blue-grey walls, weathered wood, navy textiles; coastal or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YLKDM3",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Rustic 8 Whale Print, Grey Frame, 30\" x 42\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 106.7,
+        "depth": 76.2,
+        "height": 1.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multicolor"
+      ],
+      "materials": [
+        "paper"
+      ],
+      "style": "Whale I",
+      "description": "This documentary-style print of eight different types of whales adds a natural touch to a nautical or rustic d\u00e9cor. A grey frame complements the its neutral colors. This print would be particularly at home in a man cave or on a fisherman's wall. 30\"W x 42\"H Print on paper in frame with grey finish A nature print ideal for a rustic style room or nautical d\u00e9cor Ready to hang, all hardware included",
+      "image_path": "12/129c742c.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fc2219c9c8436948"
+    ]
+  }
+}

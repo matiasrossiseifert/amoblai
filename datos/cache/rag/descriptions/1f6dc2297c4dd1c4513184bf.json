@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSFBRWL",
+  "text": "Type: shag diamond area rug\nUse: softening the floor under seating; living room, bedroom, home office\nStyle: bohemian, Scandinavian, contemporary\nMaterials: plush shag pile, knotted tassel fringe\nColors: off-white, charcoal black lines\nShape: rectangular, irregular hand-drawn diamond lattice, thick fluffy pile, tasseled short ends, medium size\nFeel: cozy, soft, relaxed\nGoes with: leather and warm wood, white walls, black accents; Moroccan-inspired, Scandinavian or boho rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSFBRWL",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Area Rug, 5' 3\" x 7' 7\", Off White",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 234.7,
+        "depth": 161.5
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "Polypropylene"
+      ],
+      "style": "Contemporary",
+      "description": "Add energy to your home decor with this unique contemporary-style rug. With a muted color palette that enhances the geometric pattern, this rug will provide the perfect finishing touch to your interior design. 5' 3\" x 7' 7\" 100% polypropylene Machine-made for durability and excellent value. Deep 1.25\" pile makes this rug comforting and luxurious.",
+      "image_path": "8d/8dc3cbf4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "45bc54661b1aa0a1"
+    ]
+  }
+}

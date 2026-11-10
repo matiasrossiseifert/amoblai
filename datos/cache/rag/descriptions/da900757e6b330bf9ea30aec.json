@@ -1,0 +1,37 @@
+{
+  "product": "290.428.77",
+  "text": "Type: stepped storage frame with bins\nUse: sorting toys, crafts or supplies in slide-out bins; children's room, playroom, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white painted board frame, white plastic bins, slide rails\nColors: white\nShape: three columns stepping up in height like stairs, six slide-in bins of two sizes, open compartments, flat tops for display, compact and friendly\nFeel: tidy, friendly, bright, practical\nGoes with: white walls, light wood, colorful toys and rugs; Scandinavian children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "290.428.77",
+      "name": "TROFAST",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 99.0
+      },
+      "type_ikea": "Storage combination with boxes",
+      "category_tp": "cabinet",
+      "size_raw": "99x44x94 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "A playful and sturdy storage series for storing and organising toys, sitting, playing and relaxing."
+    },
+    "photos": [
+      "2cfbe31fe803b1b5"
+    ]
+  }
+}

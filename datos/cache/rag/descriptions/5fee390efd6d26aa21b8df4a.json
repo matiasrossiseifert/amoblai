@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071J4VYW4",
+  "text": "Type: Persian-style medallion area rug\nUse: anchoring a sofa or dining area; living room, dining room, bedroom\nStyle: traditional, classic, bohemian\nMaterials: low-pile woven synthetic\nColors: brick red, gold, cream, sage green\nShape: rectangular, central ornate medallion on red field, floral motifs, wide multiple borders, large\nFeel: warm, rich, inviting\nGoes with: cream sofas, warm wood floors, white walls; traditional or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071J4VYW4",
+      "name": "Amazon Brand \u2013 Stone & Beam Contemporary Medallion Area Rug, 7' 10\" x 10', Brick",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 304.8,
+        "depth": 238.8,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Brick"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "0",
+      "description": "100% Polypropylene Imported Get the look of classic opulence with modern durability in this Persian style rug. Warm brick red tones highlight an intricate floral border that frames a traditional medallion pattern, giving this rug the finest antique look. Antique look with contemporary functionality Machine woven. Made in Turkey. 100% Polypropylene Exceptional durability for high traffic areas 7'10\" x 10' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow up to a week for synthetic fibers to settle",
+      "image_path": "6f/6fce6a8d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1d17e42cfaedc36e"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8XC5QS",
+  "text": "Type: wall clock with mail organizer\nUse: telling time, sorting mail and papers; on a wall by an entry or desk; home office, living room\nStyle: farmhouse, rustic, industrial\nMaterials: natural rough-sawn wood, black metal numerals and hands\nColors: light warm wood, black\nShape: tall rectangular panel, square open Roman numeral clock on top, stacked slanted slot pockets below, vertical and substantial\nFeel: practical, warm, rustic\nGoes with: natural wood, white walls, black metal; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B8XC5QS",
+      "name": "Amazon Brand \u2013 Stone & Beam Farmhouse Decor Wall Clock and Mail Storage Organizer - 38 Inch, Wood with Black Detail",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": {
+        "width": 96.5,
+        "depth": 36.2,
+        "height": 3.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CLOCK",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "hardwood"
+      ],
+      "style": "casual",
+      "description": "With a vintage clock and slots for storing mail, this piece will keep you organized while providing wall d\u00e9cor. Iron and wood with a distressed finish give it a charming rustic look ideal for modern, farmhouse or industrial settings. 14.25\" W x 38\" H Constructed from hardwood with iron accents on the clock face Ready to hang, all hardware included",
+      "image_path": "cf/cf23f160.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e6b01fe84d7256f5"
+    ]
+  }
+}

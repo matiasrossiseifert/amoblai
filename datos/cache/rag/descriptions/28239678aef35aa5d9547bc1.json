@@ -1,0 +1,45 @@
+{
+  "product": "abo-B083TM26BQ",
+  "text": "Type: round storage ottoman pouf\nUse: footrest, extra seat, hidden storage; living room, bedroom\nStyle: modern, glam, contemporary\nMaterials: textured woven fabric upholstery, lift-off lid, brushed gold metal band\nColors: medium blue, gold\nShape: compact drum cylinder, padded removable lid, thin metallic ring between lid and base, no legs\nFeel: fresh, polished, playful\nGoes with: white, grey and blush tones, brass accents; modern or glam living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B083TM26BQ",
+      "name": "Rivet Asher Modern Storage Ottoman, 15.75\"W, Fabric, Navy (Renewed)",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 40.0,
+        "depth": 40.0,
+        "height": 40.6
+      },
+      "brand": "Rivet",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Complete your modern-style interior decorating with this tastefully elegant ottoman. With a sleek design and a storage compartment under its lid, this ottoman is an ideal combination of style, comfort, and functionality. 15.75\"W x 15.75\"D x 16\"H; seat height: 16\"H; seat depth: 15.75\"D Solid-wood frame with 100% polyester upholstery Storage ottoman with comfortable navy fabric This ottoman's simple elegance perfectly complements a modern-style room. No assembly required Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "a5/a54a3a25.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2728dc432d6b4a3b"
+    ]
+  }
+}

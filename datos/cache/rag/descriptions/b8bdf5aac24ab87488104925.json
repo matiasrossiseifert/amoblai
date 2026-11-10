@@ -1,0 +1,45 @@
+{
+  "product": "abo-B073P1KFXW",
+  "text": "Type: framed black and white photo print\nUse: wall decoration; living room, bedroom, home office, above a sofa or desk\nStyle: modern, industrial, minimalist\nMaterials: photographic print, white mat, black wood frame\nColors: black, white, soft grey\nShape: landscape rectangle, wide white mat, slim black frame, bridge tower and suspension cables, small and light\nFeel: urban, graphic, crisp\nGoes with: white or grey walls, black metal, chrome accents; modern, industrial or urban loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P1KFXW",
+      "name": "Amazon Brand \u2013 Rivet Black and White Matted Print Wall Art of Brooklyn Bridge, Black Frame, 15\" x 13\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 38.1,
+        "depth": 2.9,
+        "height": 33.0
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": "Contemporary",
+      "description": "This black and white photo study of a detail of the Brooklyn Bridge is a handsome architectural piece. Matted and framed in a contemporary black frame, this piece will be at home in a modern, industrial setting. Modern black and white photo study of iconic subject On paper and encased behind glass in black finish frame; arrives ready to hang 15\" x 13\" Made to order",
+      "image_path": "e2/e23436d9.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "81f953ca334de634"
+    ]
+  }
+}

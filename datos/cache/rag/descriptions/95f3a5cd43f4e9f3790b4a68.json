@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075ZBVZST",
+  "text": "Type: mid-century computer desk\nUse: working at a desk, writing; home office, bedroom\nStyle: mid-century modern, Scandinavian, retro\nMaterials: walnut veneer, solid wood legs\nColors: warm medium walnut brown\nShape: rectangular top with curved raised back and side rails, single slim drawer, four round tapered splayed legs, light and open\nFeel: warm, sleek, inviting\nGoes with: white walls, brass, mustard or teal accents; mid-century modern home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075ZBVZST",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Curved Wood Table Home Office Computer Desk, 48.4\"L, Walnut",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 122.9,
+        "depth": 56.4,
+        "height": 79.0
+      },
+      "brand": "Rivet",
+      "product_type": "DESK",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Contemporary",
+      "description": "48.4\"W x 22.2\"D x 31.1\"H Walnut veneer finish Simple, practical style with one-drawer storage A classic mid-century design, this desk features iconic clean lines and curves along the back edges for a style that blends with modern or contemporary d\u00e9cor. It features an open work area with a middle drawer underneath for storage. Easy assembly in 15-30 minutes. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "e5/e5e2bf5b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d99b1b9b7fc53a81"
+    ]
+  }
+}

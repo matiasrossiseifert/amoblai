@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HZ5RT6C",
+  "text": "Type: slipcovered sofa with chaise\nUse: lounging, seating for family and guests; living room, family room\nStyle: coastal, traditional, farmhouse\nMaterials: cotton-blend slipcover fabric, skirted hem\nColors: dark navy blue\nShape: L-shaped sectional with right-side chaise, rolled arms, three loose back cushions, two seat cushions, box-pleat skirt hiding legs, large and soft\nFeel: relaxed, cozy, casual\nGoes with: white walls, light wood, striped textiles, natural fibers; coastal or farmhouse living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HZ5RT6C",
+      "name": "Stone & Beam Carrigan Casual Sofa Chaise, 95\"W, Navy",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 254.0,
+        "depth": 94.0,
+        "height": 111.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [
+        "Cotton"
+      ],
+      "style": null,
+      "description": "Overall: 95\"W x 39\"D x 37\"H; seat height: 22.5\"H; seat depth: 28\"D; seat back height: 32.5\"H; arm height: 27\"H; leg height: 3\"H; chaise depth: 70.5\"D; chaise width: 34.5\"W Removable slipcover in 100% cotton fabric; fully padded solid-wood frame with mortise-and-tenon construction and 8-gauge sinuous spring support system Slipcover is removable for easy cleaning and refreshing. Loose back and seat cushions are removable and reversible to ensure durability and comfort. Assemble in 15-30 minutes Free returns for 30 days. 3-year warranty. This item is made to order just for you.",
+      "image_path": "d0/d0fe7fb8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "55aea65a68d3630c"
+    ]
+  }
+}

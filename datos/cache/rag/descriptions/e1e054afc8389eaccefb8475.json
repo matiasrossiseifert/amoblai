@@ -1,0 +1,35 @@
+{
+  "product": "503.056.16",
+  "text": "Type: wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: traditional, classic, retro\nMaterials: woven fabric upholstery with button tufting, padded frame, solid wood tapered legs\nColors: olive green, light brown wood\nShape: tall back with flared wings, button-tufted backrest, scrolled rolled arms, thick seat cushion with piping, four tapered wooden legs, upright and generous, medium visual weight\nFeel: cozy, classic, inviting, cheerful\nGoes with: warm wood, cream or white walls, brass lamps, patterned rugs; traditional or classic living rooms, reading corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.056.16",
+      "name": "STRANDMON",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Wing chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Skiftebo green"
+      ],
+      "description": "You can really loosen up and relax in comfort because the high back on this chair provides extra support for your neck."
+    },
+    "photos": [
+      "22086a2899951633"
+    ]
+  }
+}

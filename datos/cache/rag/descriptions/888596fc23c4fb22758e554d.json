@@ -1,0 +1,38 @@
+{
+  "product": "890.177.85",
+  "text": "Type: storage cabinet with doors and drawers\nUse: storing clothes, toys and supplies; children's room, bedroom, home office\nStyle: minimalist, Scandinavian, contemporary\nMaterials: laminated board, matte black door fronts, white drawer fronts with cut-out finger grips\nColors: white, matte black\nShape: narrow upright box with two black doors on top and three white drawers below, rectangular cut-out handles, flat top, sits flush on the floor, crisp graphic contrast, medium visual weight\nFeel: graphic, tidy, playful, practical\nGoes with: light wood, white walls, black and white accents, colorful textiles; Scandinavian children's rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "890.177.85",
+      "name": "STUVA",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Storage combination w doors,drawers",
+      "category_tp": "cabinet",
+      "size_raw": "60x50x128 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "Low storage makes it easier for children to reach and organise their things."
+    },
+    "photos": [
+      "eb17dae0ec6d4b55"
+    ]
+  }
+}

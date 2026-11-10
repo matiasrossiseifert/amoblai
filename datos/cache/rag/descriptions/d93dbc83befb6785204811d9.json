@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0857JM2NC",
+  "text": "Type: wooden dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid beech frame, woven paper cord rattan seat\nColors: light natural wood, pale beige seat\nShape: curved panel back rail, straight flat arms on round posts, woven seat, round tapered legs with stretchers, light and open\nFeel: airy, calm, crafted\nGoes with: light oak tables, white walls, linen textiles; Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0857JM2NC",
+      "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Beech and Rattan Dining Chair with Arms, 21.9\"W, Natural",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 55.6,
+        "depth": 49.5,
+        "height": 76.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [
+        "Beech"
+      ],
+      "style": "Firm",
+      "description": "This simple, well-crafted chair, made of solid beech, is light and casual, evoking the simplicity of mid-century design. Its sturdy craftsmanship will make it last, while its soft, woven seat will keep it a joy to sit in. 21.9\"W x 19.5\"D x 30\"H Beech legs and arms with a woven paper-rope seat This chair is light, breezy, and simple to move and fit in any room in the house. Its handwoven seat is attractive and easy to sink into. This chair's natural mid-century look ensures it will work with different decors. No assembly required Using a soft, damp cloth, wipe in the direction of the grain. Free returns for 30 days; 3-year warranty.",
+      "image_path": "e0/e0f84ad9.jpg",
+      "image_px": [
+        1500,
+        1895
+      ]
+    },
+    "photos": [
+      "e98e154254a31834"
+    ]
+  }
+}

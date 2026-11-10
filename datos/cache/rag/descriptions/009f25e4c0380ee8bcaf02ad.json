@@ -1,0 +1,39 @@
+{
+  "product": "691.335.97",
+  "text": "Type: simple white table on round legs\nUse: working at a desk, casual dining, crafts; home office, kids' room, small kitchen\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board top, white painted steel tube legs\nColors: white, all-white\nShape: flat rectangular slab top, four thin cylindrical legs set at the corners, light and open, compact\nFeel: basic, bright, practical, airy\nGoes with: white or pastel walls, light wood, colorful office chairs; student rooms, minimalist home offices and small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "691.335.97",
+      "name": "LINNMON,ADILS",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "100x60 cm",
+      "colors": [
+        "White",
+        "blue"
+      ],
+      "description": "Pre-drilled holes for legs, for easy assembly."
+    },
+    "photos": [
+      "b86dde1f9ccc9ad8"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07DW477M8",
+  "text": "Type: barrel accent armchair\nUse: extra seating, reading; living room, bedroom\nStyle: mid-century modern, traditional\nMaterials: textured woven fabric, brass nailhead trim, dark stained wood legs\nColors: medium cool blue, dark brown, antique brass\nShape: rounded barrel back flowing into arms, nailhead trim on seat rail, slightly splayed tapered legs, compact\nFeel: cozy, charming, inviting\nGoes with: warm wood, white or cream walls, brass accents; transitional or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DW477M8",
+      "name": "Amazon Brand \u2013 Ravenna Home Ryleigh Rounded Mid-Century Barrel Accent Chair, 27.5\"W",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "brand": "Right2Home",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "a9/a9369173.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fef8cece6607afa6"
+    ]
+  }
+}

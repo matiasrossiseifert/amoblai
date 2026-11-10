@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07CT6K8FB",
+  "text": "Type: upholstered swivel desk chair\nUse: sitting at a desk or dining table; home office, dining room\nStyle: mid-century modern, contemporary\nMaterials: woven striped upholstery, solid wood swivel base\nColors: grey and white, warm medium brown wood\nShape: curved scoop back, padded seat, chevron stripe pattern, four splayed tapered wooden legs with cross base, armless, compact\nFeel: playful, cozy, graphic\nGoes with: walnut desks, white walls, grey textiles; mid-century or modern home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07CT6K8FB",
+      "name": "Rivet Edgemont Contemporary Home Office Desk Chair, 24\"H, Swivel, Zebra Print",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "da/da2958cc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "63e7e906f78495b1"
+    ]
+  }
+}

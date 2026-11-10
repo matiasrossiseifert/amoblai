@@ -1,0 +1,38 @@
+{
+  "product": "990.004.83",
+  "text": "Type: black rectangular dining table\nUse: dining, working at a table; kitchen, dining room, small apartments\nStyle: minimalist, modern, industrial\nMaterials: black wood-effect laminate top, black powder-coated steel legs and frame\nColors: black, dark charcoal\nShape: thin rectangular top on a slim apron, four straight thin square metal legs, light and open, compact\nFeel: simple, sleek, practical, graphic\nGoes with: white or wood chairs, white walls, black accents; small modern kitchens and minimalist dining corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "990.004.83",
+      "name": "TREND",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 110.0,
+        "depth": 67.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "110x67 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "The melamine table top is moisture resistant, stain resistant and easy to keep clean."
+    },
+    "photos": [
+      "3360b9354a67ef14"
+    ]
+  }
+}

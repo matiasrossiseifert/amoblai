@@ -1,0 +1,36 @@
+{
+  "product": "690.473.40",
+  "text": "Type: striped skirted club armchair\nUse: relaxing, reading; living room, bedroom, guest room\nStyle: traditional, coastal, farmhouse\nMaterials: cotton slipcover upholstery, padded frame, loose seat cushion\nColors: soft red and white stripes, light pink overall\nShape: square upright back, rolled arms, boxy seat cushion with piping, pleated skirt reaching the floor, deep and roomy, medium visual weight\nFeel: cheerful, homey, playful, cozy\nGoes with: white walls, light wood, navy or red accents; coastal, cottage or farmhouse living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "690.473.40",
+      "name": "JENNYLUND",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Mobacka red",
+        "beige"
+      ],
+      "description": "A range of coordinated covers makes it easy for you to give your furniture a new look."
+    },
+    "photos": [
+      "b290a247df8a6f49"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "190.117.77",
+  "text": "Type: simple white dining table\nUse: dining, everyday meals, working; kitchen, dining nook, small apartment\nStyle: minimalist, Scandinavian, modern\nMaterials: white melamine top, white powder-coated steel legs\nColors: white\nShape: thin flat top with squared corners, narrow apron, four slim straight metal legs, clean lines, light and open\nFeel: fresh, clean, airy, practical\nGoes with: colorful or wooden chairs, white walls, light wood floors; minimalist or Scandinavian kitchens and dining nooks\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "190.117.77",
+      "name": "MELLTORP",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 125.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "125x75 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The melamine table top is moisture resistant, stain resistant and easy to keep clean."
+    },
+    "photos": [
+      "ffc5972133150a23"
+    ]
+  }
+}

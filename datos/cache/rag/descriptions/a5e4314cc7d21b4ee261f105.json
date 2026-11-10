@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071SHHZT2",
+  "text": "Type: ombr\u00e9 wool area rug\nUse: softening a floor by a sofa or bed; living room, bedroom, home office\nStyle: minimalist, modern, contemporary\nMaterials: wool, fine flat-woven striated texture\nColors: charcoal, taupe, light warm grey\nShape: rectangular, gradient fading from light to dark in soft horizontal bands, clean edges, medium size\nFeel: calm, subtle, grounded\nGoes with: light wood floors, teal or grey walls, black accents; minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071SHHZT2",
+      "name": "Amazon Brand \u2013 Rivet Modern Ombr&eacute; Wool Rug, 4' x 6', Charcoal",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 1.7
+      },
+      "brand": "nuLOOM",
+      "product_type": "RUG",
+      "colors": [
+        "Charcoal"
+      ],
+      "materials": [
+        "Pile: 100% Wool, Backing: 100% Canvas"
+      ],
+      "style": "Modern",
+      "description": "Pile: 100% Wool, Backing: 100% Canvas Imported Deep and light hues fade into each other in this ombr\u00e9 pattern rug. Subtle yet striking, this 100% wool rug is high on style and softness. Area rug features an ombr\u00e9 pattern Hand-tufted with 100% wool fibers Plush .65'' pile suits high-traffic indoor areas Pair with a rug pad (sold separately) 4' x 6' Ships tightly rolled in a protective bag",
+      "image_path": "3b/3b4da1cd.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "57b5c593d1a5e4c3"
+    ]
+  }
+}

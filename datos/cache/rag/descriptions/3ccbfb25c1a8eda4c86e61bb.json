@@ -1,0 +1,37 @@
+{
+  "product": "201.286.96",
+  "text": "Type: white shelf insert\nUse: extra shelf inside a storage frame, holding toys, books and boxes; children's room, playroom, home office\nStyle: minimalist, Scandinavian, modern\nMaterials: white melamine-finished board, small metal fittings at the corners\nColors: white\nShape: plain flat rectangular panel with straight edges, slots into a cabinet frame on small pins, simple and slim, compact\nFeel: clean, practical, neutral, bright\nGoes with: white storage frames, colorful boxes and toys, light wood; Scandinavian or modern kids' rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "201.286.96",
+      "name": "STUVA GRUNDLIG",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 56.0
+      },
+      "type_ikea": "Shelf",
+      "category_tp": "shelf",
+      "size_raw": "56x26 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "With STUVA GRUNDLIG interior fittings you can easily store and organise your things."
+    },
+    "photos": [
+      "c8a925753e3f14f7"
+    ]
+  }
+}

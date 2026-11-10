@@ -1,0 +1,35 @@
+{
+  "product": "702.433.16",
+  "text": "Type: large woven storage basket\nUse: storing blankets, magazines or toys on a floor or a shelf; living room, bedroom, home office\nStyle: Scandinavian, coastal, minimalist\nMaterials: open-woven flat strips of off-white fiber, reinforced top band with small metal rivets\nColors: off-white, natural cream\nShape: square tapered basket with a wide open top, a loose checkered weave with small gaps along the upper rows, sturdy flat rim, roomy and light\nFeel: airy, fresh, natural, practical\nGoes with: light wood, white shelving, linen throws, pale walls; Scandinavian or coastal rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.433.16",
+      "name": "KNARRA",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "38x29x16 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Collecting newspapers, toys, hats and gloves in baskets makes it easier to find what you need and keeps the room looking neat and uncluttered."
+    },
+    "photos": [
+      "bd726a7bee0c979c"
+    ]
+  }
+}

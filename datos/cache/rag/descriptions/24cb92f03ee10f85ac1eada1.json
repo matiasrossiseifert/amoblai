@@ -1,0 +1,35 @@
+{
+  "product": "602.740.06",
+  "text": "Type: green linen-look cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, bohemian, contemporary\nMaterials: woven linen-look fabric with a fine slub texture, plain sewn edge\nColors: medium leaf green, slightly warm\nShape: square plump cushion with a solid colored surface, softly rounded corners, simple flat seam, medium size\nFeel: fresh, natural, relaxed\nGoes with: natural wood, rattan, cream or grey sofas, green plants; Scandinavian or bohemian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.740.06",
+      "name": "VIGDIS",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "The cushion cover is made of ramie, a hard-wearing natural material with a slightly irregular texture."
+    },
+    "photos": [
+      "d1a07e057f56c08c"
+    ]
+  }
+}

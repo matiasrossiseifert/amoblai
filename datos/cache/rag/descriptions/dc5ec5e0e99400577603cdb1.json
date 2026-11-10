@@ -1,0 +1,37 @@
+{
+  "product": "402.917.66",
+  "text": "Type: white picture ledge\nUse: leaning frames, art prints and books against the wall; living room, bedroom, hallway, home office\nStyle: minimalist, Scandinavian, modern\nMaterials: white painted board, small brass-colored screw covers\nColors: white, brass dots\nShape: long narrow shelf with a raised front lip and low back panel, straight clean lines, slim and discreet, low profile\nFeel: clean, gallery-like, light, tidy\nGoes with: white walls, black or wood frames, art prints, light wood; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.917.66",
+      "name": "MOSSLANDA",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 55.0
+      },
+      "type_ikea": "Picture ledge",
+      "category_tp": "shelf",
+      "size_raw": "55 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The picture ledge has a special groove to keep smaller frames at the perfect angle."
+    },
+    "photos": [
+      "99442c2d12968a86"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B079V9LW6Z",
+  "text": "Type: tufted woven cotton throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, modern, farmhouse\nMaterials: woven cotton, raised tufted loops, textured weave\nColors: black, white\nShape: square, horizontal bands of checks with rows of chunky black tufted blocks and a rope stitch line, knife edges, compact\nFeel: tactile, graphic, cozy\nGoes with: white or grey sofas, natural wood, black and white decor; bohemian or modern farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B079V9LW6Z",
+      "name": "Amazon Brand \u2013 Rivet Modern 100% Cotton Tufted Contrast Decorative Throw Pillow, 17\" x 17\", Black White",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 12.7
+      },
+      "brand": "Rivet",
+      "product_type": "HOME",
+      "colors": [
+        "Black, White"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Tufts of square Black yarn add a three-dimensional look and feel to this modern high-contrast pillow. A reverse side of solid Black gives you an alternative look, and the pillow can be thrown in the wash for convenient cleaning. 17\" x 17\" 100 % Cotton Polyester fiber-filled insert included Made in india Brush, vacuum or spot clean with damp white cloth and allow to air dry",
+      "image_path": "6a/6a32d954.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7bc67b2e9fe700f3"
+    ]
+  }
+}

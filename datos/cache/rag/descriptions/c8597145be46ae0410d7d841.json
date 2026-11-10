@@ -1,0 +1,36 @@
+{
+  "product": "602.470.27",
+  "text": "Type: gateleg dining table with drop leaves\nUse: dining, flexible seating for guests; dining room, kitchen, small apartments\nStyle: farmhouse, traditional, rustic\nMaterials: solid pine top in a light antique stain, painted solid wood base\nColors: honey pine, light warm grey base\nShape: long oval top from two folding half-round leaves, small central drawer with knob, swing-out gate legs with stretchers, light and open\nFeel: homey, warm, cottage, flexible\nGoes with: grey or cream painted chairs, natural wood, white walls; farmhouse kitchens and country dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.470.27",
+      "name": "GAMLEBY",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Gateleg table",
+      "category_tp": "table",
+      "size_raw": "67,134,201x78 cm",
+      "colors": [
+        "Light antique stain",
+        "grey"
+      ],
+      "description": "Its quick and easy to change the size of the table to suit your different needs. It extends to seat from 2 to 6 people."
+    },
+    "photos": [
+      "9c32c39e60dc566d"
+    ]
+  }
+}

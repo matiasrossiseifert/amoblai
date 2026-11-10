@@ -1,0 +1,36 @@
+{
+  "product": "602.470.51",
+  "text": "Type: two-tone wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: farmhouse, rustic, traditional\nMaterials: solid pine, antique-stained seat, painted frame\nColors: light warm grey frame, light honey-brown wood seat\nShape: curved top rail, center bow-tie splat with a round cutout, flat solid seat, square straight legs with an H-shaped stretcher, upright frame, medium visual weight\nFeel: homely, gentle, country, warm\nGoes with: pine or grey painted tables, cream walls, checked or floral textiles; farmhouse kitchens, cottage dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "602.470.51",
+      "name": "GAMLEBY",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Light antique stain",
+        "grey"
+      ],
+      "description": "Easy to move thanks to the hole in the backrest."
+    },
+    "photos": [
+      "af28f57ef19ad42b"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+[
+ {
+  "box": [
+   0.9,
+   1123.8,
+   1023.2,
+   1431.1
+  ],
+  "category": "rug",
+  "label": "carpet",
+  "score": 0.7048752903938293
+ },
+ {
+  "box": [
+   185.3,
+   705.7,
+   764.9,
+   1289.3
+  ],
+  "category": "table",
+  "label": "dining table",
+  "score": 0.5250213742256165
+ },
+ {
+  "box": [
+   565.0,
+   612.2,
+   904.9,
+   1228.6
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.4824005663394928
+ },
+ {
+  "box": [
+   31.5,
+   610.6,
+   436.9,
+   1302.1
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.44387564063072205
+ }
+]

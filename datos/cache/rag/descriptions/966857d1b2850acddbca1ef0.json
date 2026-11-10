@@ -1,0 +1,36 @@
+{
+  "product": "603.288.20",
+  "text": "Type: yellow and grey knitted throw\nUse: keeping warm on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, contemporary, retro\nMaterials: chunky knit cotton with a textured bubble stitch, ribbed solid border\nColors: mustard yellow, light grey, white\nShape: long rectangle with fine horizontal stripes of nubby knit, wide ribbed mustard band at the ends, soft drape, medium weight\nFeel: cozy, cheerful, warm\nGoes with: grey or white sofas, light wood, mustard accents, wool textures; Scandinavian or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "603.288.20",
+      "name": "ORMHASSEL",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "120x180 cm",
+      "colors": [
+        "Yellow",
+        "grey"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "848b3ebd9902e617"
+    ]
+  }
+}

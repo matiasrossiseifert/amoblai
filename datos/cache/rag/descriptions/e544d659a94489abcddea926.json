@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07HSPJ11F",
+  "text": "Type: stoneware lantern candle holders, set of two\nUse: holding pillar candles; on a table, shelf or mantel; living room, dining room\nStyle: rustic, farmhouse, coastal\nMaterials: glazed stoneware, raw clay rim and base, braided macrame rope handle\nColors: cream white with speckles, warm clay, natural rope\nShape: cylindrical jar body with rows of rectangular cutouts, open top, rope carry handle, compact\nFeel: warm, relaxed, cozy\nGoes with: natural wood, linen, white walls, sandy tones; farmhouse, coastal or bohemian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSPJ11F",
+      "name": "Amazon Brand \u2013 Rivet Modern Cylindrical Stoneware Candle Holder Lantern Home Decor Set - Set of 2, Gray and Cream",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "These 2 stoneware lanterns boast an elegant reactive glaze with flecks of blue. Light from a votive candle can shine through the rectangular cutouts, and the handles provide easy transport. 6.57\" Diameter x 10.04\"H; 6.55\" Diameter x 8.25\"H 100% stoneware Can be used with candles or on their own",
+      "image_path": "92/92f88240.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f2356f8b89208ba5"
+    ]
+  }
+}

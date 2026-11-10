@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JKJSTYT",
+  "text": "Type: textured woven throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: modern, minimalist, Scandinavian\nMaterials: nubby woven fabric\nColors: light warm grey, off-white\nShape: square, small checked weave forming diagonal lines meeting in an X at the center, raised texture, knife edges, medium size\nFeel: calm, soft, subtle\nGoes with: white and grey sofas, light wood, black accents; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07JKJSTYT",
+      "name": "Amazon Brand \u2013 Rivet Modern Texture Throw Pillow - 18 x 18 Inch, Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 45.7,
+        "depth": 45.7,
+        "height": 8.9
+      },
+      "brand": "Rivet",
+      "product_type": "PILLOW",
+      "colors": [
+        "Gray"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "The light gray field of this beautiful modern throw pillow is studded with sequin-like circles of white yarn that form a stylish asymmetrical chevron pattern that meets in the middle to create an \u201cX\u201d shape. Cotton/polyester Imported 18\"L x 18\"W The zipper on this pillow is placed on the back. It has a machine-woven base with added texture and a luxe handfeel. 1 throw pillow Spot clean with a damp cloth, and then allow to air dry. Rather than pulling at any loose threads, please use scissors to trim them.",
+      "image_path": "e9/e9a48725.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7ed3b8fdacda7282"
+    ]
+  }
+}

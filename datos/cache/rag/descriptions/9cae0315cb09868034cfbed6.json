@@ -1,0 +1,35 @@
+{
+  "product": "003.000.13",
+  "text": "Type: tall wood-framed wall mirror\nUse: checking an outfit, reflecting light; hallway, bedroom, bathroom, living room\nStyle: traditional, classic, farmhouse\nMaterials: painted wood frame in a matte finish, bevelled mirror glass\nColors: black-brown, silver reflective glass\nShape: tall narrow rectangle, flat frame topped by a projecting crown cornice and resting on a stepped plinth base, slim side rails, upright and stately, medium visual weight\nFeel: elegant, formal, timeless, calm\nGoes with: white or grey walls, dark wood, brass or chrome accents, crisp linens; classic, traditional or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "003.000.13",
+      "name": "SOKNEDAL",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "70x190 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Full-length mirror."
+    },
+    "photos": [
+      "3d343e4da107114c"
+    ]
+  }
+}

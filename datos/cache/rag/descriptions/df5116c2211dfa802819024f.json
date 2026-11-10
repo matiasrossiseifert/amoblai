@@ -1,0 +1,47 @@
+{
+  "product": "abo-B001CD1GC0",
+  "text": "Type: arched chrome table lamp\nUse: reading and ambient light; living room, bedroom, home office; on a side table, desk or console\nStyle: contemporary, modern, art deco\nMaterials: polished chrome, white fabric shade\nColors: silver chrome, white\nShape: curved arm rising from a round disc base and hanging a wide drum shade, small lever detail at the base, open and sculptural\nFeel: sleek, polished, graphic\nGoes with: white or grey walls, glass and black accents; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B001CD1GC0",
+      "name": "Pinzon Galaxy 28-Inch Table Lamp, Chrome",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 55.9,
+        "depth": 50.8,
+        "height": 71.1
+      },
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME_LIGHTING_AND_LAMPS",
+      "colors": [
+        "Chrome"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Modern",
+      "description": "Modern design table lamp adds artistic complement as well as utility to any d\u00e9cor Chrome-plated metal base with shallow straight drum cotton shade; silver cord Requires 1 bulb up to 100 watts; UL listed; 1-way switch Some easy assembly required on arrival; other colors available Measures 28 inches high by 19 inches wide; weighs approximately 10 pounds",
+      "image_path": "0a/0a50ffba.jpg",
+      "image_px": [
+        1494,
+        1692
+      ]
+    },
+    "photos": [
+      "860c2e1ec5186527"
+    ]
+  }
+}

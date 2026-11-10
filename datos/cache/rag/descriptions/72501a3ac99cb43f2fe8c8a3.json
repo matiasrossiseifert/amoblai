@@ -1,0 +1,37 @@
+{
+  "product": "000.114.28",
+  "text": "Type: stainless steel rail wall shelf\nUse: holding dishes, jars and utensils above a counter, towels in a bathroom; kitchen, bathroom, laundry room\nStyle: industrial, minimalist, modern\nMaterials: brushed stainless steel rails, steel side brackets, small steel S-hooks\nColors: brushed silver stainless steel\nShape: long flat shelf of parallel round rods on two slim wall brackets, small hooks hanging below, airy and open, light visual weight\nFeel: clean, practical, crisp, utilitarian\nGoes with: white tiles, stainless appliances, wood countertops, black accents; industrial or modern kitchens and bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "000.114.28",
+      "name": "GRUNDTAL",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "80 cm",
+      "colors": [
+        "Stainless steel"
+      ],
+      "description": "Saves space on the worktop."
+    },
+    "photos": [
+      "c09c466ae74e156c"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07DYJ43BZ",
+  "text": "Type: swivel tufted bowl accent chair\nUse: vanity seating, accent seating, desk seating; bedroom, living room, home office\nStyle: glam, retro, modern\nMaterials: faux leather upholstery, button tufting, chrome gas-lift column and base\nColors: pure white, polished silver chrome\nShape: round scooped bowl seat with diamond tufting, adjustable height pedestal, round disc base, swivel, compact and sculptural\nFeel: playful, bright, chic\nGoes with: white or pastel walls, chrome, mirrors, pink accents; glam bedrooms or vanity corners\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DYJ43BZ",
+      "name": "JC Home Pompei Adjustable-Height Round-Back Button-Tufted Swivel Accent Chair, Pure White",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 94.0,
+        "depth": 88.9,
+        "height": 101.6
+      },
+      "brand": "JC Home",
+      "product_type": "CHAIR",
+      "colors": [
+        "White"
+      ],
+      "materials": [],
+      "style": "Modern",
+      "description": "Contemporary swivel accent chair adds trendy style to any home or office Broad, high, round-shaped back with button-tufting and diamond-shaped accents Leatherette upholstery (durable vinyl) in white; wide disc-shaped polished-chrome base for stability Adjustable height and tilt for optimal comfort; 500-pound weight capacity; assembly required Measures approximately 26.8 by 24.8 by 32.5 inches (LxWxH)",
+      "image_path": "48/4810039e.jpg",
+      "image_px": [
+        2558,
+        2558
+      ]
+    },
+    "photos": [
+      "b366166ba0560e6e"
+    ]
+  }
+}

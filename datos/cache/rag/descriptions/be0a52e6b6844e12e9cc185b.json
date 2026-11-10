@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QD5SLYJ",
+  "text": "Type: ribbed ceramic table lamp\nUse: accent and bedside light; bedroom, living room, home office; on a nightstand, side table or shelf\nStyle: contemporary, rustic, coastal\nMaterials: reactive-glazed ceramic base with textured ribbing, linen-look fabric shade\nColors: dark navy blue, warm brown flecks, white\nShape: slim bottle-shaped base with horizontal textured bands, tall cylindrical drum shade, compact\nFeel: earthy, cozy, crafted\nGoes with: natural wood, white or cream walls, blue textiles; farmhouse, coastal or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QD5SLYJ",
+      "name": "Amazon Brand \u2013 Stone & Beam Glazed Ceramic Table Lamp, 19\"H, Dark Blue",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 24.8,
+        "depth": 24.8,
+        "height": 36.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LAMP",
+      "colors": [
+        "Dark Blue"
+      ],
+      "materials": [
+        "ceramic"
+      ],
+      "style": "Classic",
+      "description": "This ceramic lamp's textured pattern with a glossy dark-blue glazed finish has a true classic look that will add a touch of sophistication to any room. 9\"W x 9\"D x 19\"H Dark-blue textured reactive glazed ceramic base; brushed-nickel accents; off-white linen drum shade This bold ceramic lamp is paired with an off-white linen drum shade to cast perfect ambient light. Includes 1 60-watt equivalent LED bulb included",
+      "image_path": "ac/ace16f3a.jpg",
+      "image_px": [
+        848,
+        1739
+      ]
+    },
+    "photos": [
+      "4e10d85b4f6eaf1f"
+    ]
+  }
+}

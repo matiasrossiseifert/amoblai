@@ -1,0 +1,47 @@
+{
+  "product": "abo-B079V7XFKW",
+  "text": "Type: leather throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom, home office\nStyle: rustic, industrial, mid-century modern\nMaterials: top grain leather, piped edge\nColors: warm saddle brown, cognac\nShape: square, smooth slightly distressed surface, piped edges, boxy and full\nFeel: warm, rugged, classic\nGoes with: wool or linen sofas, dark wood, black metal, cream textiles; rustic, lodge or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B079V7XFKW",
+      "name": "Amazon Brand \u2013 Stone & Beam Rustic 100% Top Grain Leather Decorative Throw Pillow, Badlands Saddle",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 48.3,
+        "depth": 48.3,
+        "height": 12.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Badlands Saddle"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": null,
+      "description": "This handsome, sturdy leather pillow will add style and texture to a couch or chair. The rich 100% top grain leather in a saddle color gives it an outdoorsy, western flair. Beautiful natural markings in the hide make each pillow unique. 19\"x 19\" Full grain leather Removable polyester fiber-filled insert included Pillow cover features a zipper closure Brush, vacuum or spot clean with damp white cloth and allow to air dry",
+      "image_path": "98/9853e71a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "14dba1fb0414ad87"
+    ]
+  }
+}

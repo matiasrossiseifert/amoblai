@@ -1,0 +1,35 @@
+{
+  "product": "102.911.31",
+  "text": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "102.911.31",
+      "name": "STOCKHOLM",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb GU10 400 lumen. View more product information The textile shade provides a diffused and decorative light."
+    },
+    "photos": [
+      "dca554d0dbc43858"
+    ]
+  }
+}

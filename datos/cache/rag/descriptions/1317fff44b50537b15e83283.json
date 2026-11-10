@@ -1,0 +1,38 @@
+{
+  "product": "690.017.85",
+  "text": "Type: storage bench with large drawer\nUse: seating plus storage for toys or shoes; children's room, playroom, hallway\nStyle: minimalist, contemporary, Scandinavian\nMaterials: smooth painted board, matte black drawer front, cut-out handles\nColors: black front, white frame\nShape: low boxy bench with a flat white top, one deep full-width black drawer, two cut-out finger pulls along the top edge, plinth base, compact and graphic\nFeel: graphic, tidy, bold, practical\nGoes with: white walls, light wood, black and white textiles; Scandinavian children's rooms or modern entryways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "690.017.85",
+      "name": "STUVA",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "Storage bench",
+      "category_tp": "bench",
+      "size_raw": "90x50x50 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "Low storage makes it easier for children to reach and organise their things."
+    },
+    "photos": [
+      "db5ba9fc218732eb"
+    ]
+  }
+}

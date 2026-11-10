@@ -1,0 +1,35 @@
+{
+  "product": "790.462.60",
+  "text": "Type: plastic shell swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: glossy molded white plastic shell, silver grey steel five-star base and column, black casters\nColors: glossy white, silver grey, black\nShape: one-piece scooped shell with a wide rounded back and gently flared sides, armless, slim column on a five-star base with casters, simple and light, compact\nFeel: clean, simple, fresh, practical\nGoes with: white or light wood desks, grey or bright accents; minimalist, modern or student home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "790.462.60",
+      "name": "SNILLE",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "a639902a13cd522b"
+    ]
+  }
+}

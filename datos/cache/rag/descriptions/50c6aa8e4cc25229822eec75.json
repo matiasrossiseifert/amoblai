@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSDY12Q",
+  "text": "Type: wishbone dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid wood frame in matte white finish, woven paper cord seat\nColors: soft white, natural beige seat\nShape: curved top rail forming the arms, Y-shaped back, woven seat, round legs with stretchers, open and light, compact\nFeel: airy, calm, crafted\nGoes with: light wood tables, white walls, natural textures; Scandinavian, Japandi or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSDY12Q",
+      "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Wishbone Dining Chair, 22.4\"W, White / Natural",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 57.9,
+        "depth": 56.9,
+        "height": 73.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": null,
+      "description": "This dining chair combines Mid-Century modern and Scandinavian-inspired styles for beautiful form, functionality and comfort. With a woven rattan seat, solid beech wood frame and partially open-back this piece works for the dining room or anywhere you need extra seating. 22.4\"W x 22.8\"D x 28.75\"H. Seat height: 18\" Solid beech wood frame with a woven paper rattan seat This versatile, transitional chair blends well with traditional and modern styles. Arrives fully assembled Avoid moisture. Wipe away dust and debris with a soft, dry cloth Free returns for 30 days. 3-year warranty.",
+      "image_path": "eb/ebf00746.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3fdfcac56d1a48e2"
+    ]
+  }
+}

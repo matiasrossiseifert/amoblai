@@ -1,0 +1,36 @@
+{
+  "product": "302.580.41",
+  "text": "Type: terracotta plant pot with saucer\nUse: growing a potted plant on a windowsill, floor or shelf; living room, kitchen, balcony\nStyle: rustic, farmhouse, Scandinavian\nMaterials: unglazed terracotta clay, matching saucer\nColors: warm terracotta orange, earthy clay\nShape: classic round pot tapering toward the base, thick rim, deep matching saucer, simple and sturdy, medium size\nFeel: earthy, warm, natural, homey\nGoes with: green leafy plants, white walls, light wood, linen; rustic, farmhouse, Mediterranean or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.580.41",
+      "name": "INGEFRA",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot with saucer",
+      "category_tp": "deco",
+      "size_raw": "15 cm",
+      "colors": [
+        "Outdoor",
+        "terracotta"
+      ],
+      "description": "The porous terracotta holds excess water, so the plant can draw out moisture when needed."
+    },
+    "photos": [
+      "f4e0efb8faee750f"
+    ]
+  }
+}

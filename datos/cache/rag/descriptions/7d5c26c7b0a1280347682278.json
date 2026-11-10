@@ -1,0 +1,37 @@
+{
+  "product": "602.961.26",
+  "text": "Type: narrow metal drawer unit on casters\nUse: storing papers, stationery and small supplies beside a desk; home office, study, craft room\nStyle: industrial, retro, modern\nMaterials: powder-coated steel body and drawers, chrome pulls with label holders, small casters\nColors: bright green, silver chrome\nShape: tall slim box with six shallow drawers, bin-pull style metal handles, flat top, small casters, compact and upright, light visual weight\nFeel: cheerful, bold, functional, fresh\nGoes with: white desks, light wood, grey or black accents; industrial, retro or playful home offices and studios\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.961.26",
+      "name": "HELMER",
+      "category": "cabinet",
+      "kind": "file cabinet",
+      "dimensions_cm": {
+        "width": 28.0
+      },
+      "type_ikea": "Drawer unit on castors",
+      "category_tp": "cabinet",
+      "size_raw": "28x69 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "Slot for label on each drawer so you can easily keep things organised and find what you are looking for."
+    },
+    "photos": [
+      "a2ffcb4af7bb54d8"
+    ]
+  }
+}

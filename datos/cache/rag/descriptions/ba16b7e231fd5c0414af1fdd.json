@@ -1,0 +1,35 @@
+{
+  "product": "803.288.24",
+  "text": "Type: striped pop-up storage basket with lid\nUse: storing toys, laundry, blankets or clutter; bedroom, children's room, living room\nStyle: contemporary, Scandinavian\nMaterials: polyester fabric over a flexible spiral wire frame, fabric lid, loop handles\nColors: black and white stripes, bright yellow lid and handles\nShape: tall round drum with soft collapsible sides, fitted lid with a strap pull, side loop handle, light and easy to move\nFeel: playful, cheerful, casual, practical\nGoes with: white walls, black accents, yellow or bold primary colors; playful Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "803.288.24",
+      "name": "FLYTTBAR",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket with lid",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Yellow"
+      ],
+      "description": "Colourful, freestanding basket with room for everything from toys and clothes to important personal items."
+    },
+    "photos": [
+      "4c766a3980aafb22"
+    ]
+  }
+}

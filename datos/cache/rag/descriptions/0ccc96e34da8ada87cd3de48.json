@@ -1,0 +1,33 @@
+{
+  "product": "301.904.47",
+  "text": "Type: white dandelion globe pendant lamp\nUse: ambient decorative light over a dining table, sitting area or bed; living room, dining room, bedroom\nStyle: contemporary, Scandinavian, bohemian\nMaterials: white paper flower-shaped petals on a wire frame, white fabric cord, white ceiling cup\nColors: white, warm glow inside\nShape: large sphere covered in many radiating star-shaped petals like a dandelion seed head, casts patterned shadows, hangs on a cord, large but light and airy\nFeel: whimsical, airy, soft, dreamy\nGoes with: white walls, light wood, pastel textiles, green plants; Scandinavian, bohemian or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "301.904.47",
+      "name": "MASKROS",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "55 cm",
+      "colors": [],
+      "description": "Gives decorative patterns on the ceiling and on the wall."
+    },
+    "photos": [
+      "9e615b4a5e817dec"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QD6V6N8",
+  "text": "Type: metal frame coffee table\nUse: holding drinks and decor in front of a sofa; living room\nStyle: industrial, modern, rustic\nMaterials: patchwork wood block top in mixed tones, dark metal tube frame\nColors: light natural wood, honey brown, dark gunmetal\nShape: rectangular inset top in a thin open box frame, slim square legs joined by low stretchers, light and open, medium size\nFeel: airy, textured, casual\nGoes with: leather or canvas sofas, brick or white walls, black metal accents; industrial or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QD6V6N8",
+      "name": "Amazon Brand \u2013 Rivet Industrial Coffee Table with Multisquare Wood Design, 47.24\"W",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 59.7,
+        "height": 40.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Natural/Golden"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "The multisquare wooden plank tabletop creates a natural and textured look that will catch the eye in any space. A bronze frame creates a sturdy base, stable enough for this piece to work wherever you need storage. This unique piece comes fully assembled and has easy care, making it a must-have addition. 47.24\"W x 25.59\"D x 15.75\"H Tabletop made with unique multisquare wood parquetry design inset in a metal base This coffee table is a mix of modern aesthetics and traditional craftwork. The bronze frame has clean lines and modern styling. Fully assembled table No assembly required Clean with a soft, damp cloth. Avoid placing furniture\u00a0near heat vents or open windows. Free returns for 30 days. 1-year warranty.",
+      "image_path": "72/7290ed9e.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fb7e9efbc2059614"
+    ]
+  }
+}

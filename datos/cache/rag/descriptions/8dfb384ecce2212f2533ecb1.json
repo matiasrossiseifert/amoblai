@@ -1,0 +1,36 @@
+{
+  "product": "391.504.42",
+  "text": "Type: sofa with left-side chaise longue\nUse: seating, lounging, putting feet up; living room, den\nStyle: contemporary, Scandinavian, minimalist\nMaterials: woven fabric upholstery, dark stained wooden legs and base\nColors: off-white, warm cream, dark brown\nShape: L-shaped corner form, wide boxy track arms, loose back and seat cushions, chaise on the left, low dark rectangular legs, substantial and grounded\nFeel: soft, calm, bright, tailored\nGoes with: dark or light wood, beige and grey tones, black accents; contemporary or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "391.504.42",
+      "name": "NOCKEBY",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa w chaise longue left",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Tallmyra light beige",
+        "wood"
+      ],
+      "description": "You get extra soft comfort and support because the thick seat cushions have a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "e083c06dce2cfa7a"
+    ]
+  }
+}

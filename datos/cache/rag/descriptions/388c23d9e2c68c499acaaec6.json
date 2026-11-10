@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HZ6GJ5J",
+  "text": "Type: sectional sofa with chaise\nUse: seating, lounging; living room, family room\nStyle: traditional, classic, contemporary\nMaterials: woven fabric upholstery, piped edges, dark wood block feet\nColors: dark indigo blue, dark brown\nShape: rolled arms, three back cushions, two seat cushions plus right-side chaise, low block feet, large and substantial\nFeel: cozy, relaxed, welcoming\nGoes with: white or cream walls, warm wood, brass accents; classic or transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HZ6GJ5J",
+      "name": "Amazon Brand \u2013 Stone & Beam Kristin Sofa Chaise, 96.5\"W, Indigo",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 248.9,
+        "depth": 95.2,
+        "height": 96.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Transitional",
+      "description": "Add style and comfort to your home with this classic sofa chaise. With a time-tested traditional design, this sofa is an ideal accent for many home-decor styles, and its beautiful indigo hue brightens the room with color. Its cushions are reversible to extend this sofa\u2019s life. Overall: 96.5\"W x 37\"D x 37.5\"H; Seat Height: 21.5\"H; Seat Depth 24\"D; Seat Back Height: 30\"H; Arm Height: 32\"H; Leg Height: 2.5\"H; chaise depth: 68.5\"D; chaise width: 32\"W Solid-wood frame with mortise-and-tenon construction and 8-guage sinuous spring support system, fully padded and upholstered with performance fabric Traditional design is both fashionable and practical. Loose back and seat cushions are removable and reversible to ensure durability and comfort. No assembly required Free returns for 30 days. 3-year warranty. This item is made to order just for you.",
+      "image_path": "f7/f7723445.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "5ccf0d7aada82ffd"
+    ]
+  }
+}

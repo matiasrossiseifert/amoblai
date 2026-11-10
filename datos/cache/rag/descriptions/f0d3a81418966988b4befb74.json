@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07KXP7MT7",
+  "text": "Type: upholstered accent armchair\nUse: lounging, reading; living room, bedroom, home office\nStyle: mid-century modern, contemporary, modern\nMaterials: textured woven fabric, chrome metal legs\nColors: dark charcoal grey, silver\nShape: sloped flared track arms, two-button tufted loose back cushion, deep seat, slim tapered metal legs, compact and clean-lined\nFeel: sleek, understated, cozy\nGoes with: white walls, chrome or glass, light wood, cool greys; modern or mid-century living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07KXP7MT7",
+      "name": "Rivet Abel Mid-Century Accent Chair Fabric and Metal",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "f7/f7181c6a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3c34c0c076383cc8"
+    ]
+  }
+}

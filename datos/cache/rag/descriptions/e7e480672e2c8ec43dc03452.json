@@ -1,0 +1,37 @@
+{
+  "product": "802.758.87",
+  "text": "Type: square cube shelving unit\nUse: storing books, baskets and records, dividing a room; living room, home office, bedroom, hallway\nStyle: Scandinavian, minimalist, modern\nMaterials: white painted particleboard, thick smooth panels\nColors: bright white\nShape: compact square box divided into four equal open cubes, thick flat frame, open back, sits directly on the floor, crisp edges, bold grid look, medium visual weight\nFeel: tidy, graphic, versatile, fresh\nGoes with: woven or fabric storage boxes, light wood, colorful accents; Scandinavian, minimalist or modern rooms, small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.758.87",
+      "name": "KALLAX",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 77.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "77x147 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Choose whether you want to place it vertically or horizontally and use it as a shelf or sideboard."
+    },
+    "photos": [
+      "61fb57f18a9987d7"
+    ]
+  }
+}

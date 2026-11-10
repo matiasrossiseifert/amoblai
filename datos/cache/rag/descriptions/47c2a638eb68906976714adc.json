@@ -1,0 +1,38 @@
+{
+  "product": "503.286.70",
+  "text": "Type: metal cabinet on slim legs\nUse: storing small items, books and supplies; living room, home office, bedroom, hallway\nStyle: industrial, retro, modern\nMaterials: powder-coated steel body, door and legs, small tab pull\nColors: bright tomato red\nShape: narrow upright box with one full-height flat door, tiny tab pull, four thin straight legs raising it off the floor, clean sharp edges, slim and light, compact\nFeel: bold, playful, graphic, cheerful\nGoes with: white or grey walls, light wood, black accents; industrial, Scandinavian or retro living rooms and home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.286.70",
+      "name": "LIXHULT",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 35.0
+      },
+      "type_ikea": "Cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "35x60 cm",
+      "colors": [
+        "Metal",
+        "red"
+      ],
+      "description": "Helps you keep track of small items like chargers, keys and wallets, or more bulky items like handbags and toys. It all depends on which of the 3 cabinet sizes you choose."
+    },
+    "photos": [
+      "a30335926a8cc7f5"
+    ]
+  }
+}

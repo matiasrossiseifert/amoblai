@@ -1,0 +1,38 @@
+{
+  "product": "702.976.58",
+  "text": "Type: light wood coffee table\nUse: holding drinks, books and decor; living room, reading corner\nStyle: Scandinavian, Japandi, mid-century modern\nMaterials: ash veneer top with striped grain, solid wood legs\nColors: light natural ash, pale blond wood with honey stripes\nShape: thin top with rounded corners and beveled edge, four round tapered legs splayed outward, light and open, low\nFeel: airy, calm, natural, warm\nGoes with: white or beige sofas, wool and linen textiles, plants; Scandinavian or Japandi living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "702.976.58",
+      "name": "LISABO",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 118.0,
+        "depth": 50.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "118x50 cm",
+      "colors": [
+        "Ash veneer"
+      ],
+      "description": "The table surface in ash veneer and legs in solid birch give a warm, natural feeling to your room"
+    },
+    "photos": [
+      "5ba43142f8b7ebc4"
+    ]
+  }
+}

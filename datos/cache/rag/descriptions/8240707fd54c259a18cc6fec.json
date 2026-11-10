@@ -1,0 +1,35 @@
+{
+  "product": "302.332.44",
+  "text": "Type: gingham upholstered swivel desk chair\nUse: working at a desk; home office, study, bedroom\nStyle: farmhouse, classic, Scandinavian\nMaterials: woven fabric upholstery in a small gingham check, button tufting, piped edges, dark grey steel five-star base, casters\nColors: grey and white check, dark grey\nShape: tall rounded rectangular back with four tufted buttons, wide padded seat with a piped edge, armless, slim column on a five-star base with casters, medium visual weight\nFeel: homey, charming, soft, relaxed\nGoes with: white or painted wood desks, grey and linen tones, country accents; farmhouse, cottage or Scandinavian home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.332.44",
+      "name": "LILLHJDEN",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Sgmyra grey patterned"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "b36e5eaab52a03cc"
+    ]
+  }
+}

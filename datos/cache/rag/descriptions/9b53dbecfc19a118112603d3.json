@@ -1,0 +1,35 @@
+{
+  "product": "002.224.40",
+  "text": "Type: wooden folding chair\nUse: extra seating, dining; dining room, kitchen, small apartment\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: solid wood in a black stain finish\nColors: black, dark brown\nShape: flat curved top rail with a round hand hole, slatted seat, slim folding legs with stretchers, armless, folds flat, light and compact\nFeel: practical, simple, light, casual\nGoes with: wooden tables, white walls, dark accents; small dining rooms, kitchens, studios\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.224.40",
+      "name": "TERJE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Folding chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "You can fold the chair, so it takes less space when you're not using it."
+    },
+    "photos": [
+      "ef9bd11c610265f7"
+    ]
+  }
+}

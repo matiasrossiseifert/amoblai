@@ -1,0 +1,35 @@
+{
+  "product": "202.134.87",
+  "text": "Type: woven rattan plant pot\nUse: holding a potted floor plant; living room, bedroom, hallway\nStyle: bohemian, Scandinavian, coastal\nMaterials: hand-woven rattan in a two-tone weave, grey-stained and natural strands\nColors: dark grey, natural beige rattan\nShape: tall round basket that tapers slightly toward the base, dense diagonal weave, two cut-out handles below the rim, sturdy and textured\nFeel: natural, earthy, warm, crafted\nGoes with: large green plants, light wood, linen, white or grey walls; bohemian, Scandinavian or coastal rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.134.87",
+      "name": "RGKORN",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "32 cm",
+      "colors": [
+        "Rattan"
+      ],
+      "description": "A plastic inner pot makes the plant pot waterproof."
+    },
+    "photos": [
+      "4f86357a666c5980"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "001.258.11",
+  "text": "Type: aluminum dome pendant lamp\nUse: focused light over a dining table, kitchen island or work desk; dining room, kitchen, home office\nStyle: industrial, retro, modern\nMaterials: brushed aluminum shade and ceiling cup, black cord, white inner shade\nColors: silver aluminum, black, white inside\nShape: wide flared dome shade with a narrow neck, hangs on a long thin black cord from a matching ceiling cup, classic workshop silhouette, medium size and weight\nFeel: crisp, utilitarian, cool, graphic\nGoes with: dark or reclaimed wood tables, concrete, black metal chairs, white tiles; industrial or modern kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "001.258.11",
+      "name": "FOTO",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "25 cm",
+      "colors": [
+        "Aluminium"
+      ],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb E27 400 lumen globe opal white. View more product information Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "395cbe77d633c42f"
+    ]
+  }
+}

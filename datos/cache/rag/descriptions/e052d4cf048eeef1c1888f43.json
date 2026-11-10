@@ -1,0 +1,37 @@
+{
+  "product": "902.691.50",
+  "text": "Type: dark oak chest with door and drawers\nUse: storing clothes, linens and media, top for a TV or decor; bedroom, living room, dining room\nStyle: Japandi, minimalist, modern\nMaterials: oak veneer stained dark brown with open grain, solid wood drawer lips\nColors: dark brown, near-black espresso\nShape: wide low cabinet with a single door beside three stacked drawers, slanted overhanging lips as pulls, recessed wooden plinth with block feet, solid and grounded\nFeel: warm, grounded, calm, sophisticated\nGoes with: white or warm grey walls, linen, light ceramics, brass accents; Japandi, modern or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.691.50",
+      "name": "OPPLAND",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 120.0
+      },
+      "type_ikea": "Chest of 3 drawers,1 door",
+      "category_tp": "dresser",
+      "size_raw": "120x80 cm",
+      "colors": [
+        "Brown stained ash veneer"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "a0bdddd4f192f492"
+    ]
+  }
+}

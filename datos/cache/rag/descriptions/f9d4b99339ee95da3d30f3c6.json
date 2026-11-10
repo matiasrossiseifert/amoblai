@@ -1,0 +1,38 @@
+{
+  "product": "002.785.78",
+  "text": "Type: galvanized steel shelving unit\nUse: storing boxes, tools, plants and supplies; garage, balcony, utility room, storage room\nStyle: industrial, minimalist\nMaterials: galvanized steel frame and shelves\nColors: light silver grey metal\nShape: tall narrow open frame with four flat sheet shelves, thin square posts, bare metal look, see-through and light\nFeel: utilitarian, practical, raw, cool\nGoes with: concrete, plywood, green plants, black accents; industrial lofts, utility rooms and balconies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.785.78",
+      "name": "HYLLIS",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "60x27x140 cm",
+      "colors": [
+        "In",
+        "outdoor"
+      ],
+      "description": "Suitable for both indoor and outdoor use."
+    },
+    "photos": [
+      "983f9c6aa0285ecc"
+    ]
+  }
+}

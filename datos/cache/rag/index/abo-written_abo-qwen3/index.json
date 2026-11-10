@@ -1,0 +1,36 @@
+{
+  "schema": "amoblai.index/4",
+  "catalog": "abo",
+  "catalog_file": "datos/catalogo/abo/abo.yaml",
+  "catalog_sha": "b646f260b35e4b7ab9877698",
+  "describer": {
+    "name": "written_abo",
+    "key": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    }
+  },
+  "embedder": {
+    "name": "qwen3",
+    "key": {
+      "kind": "local",
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": null,
+      "pooling": "last",
+      "max_length": 512
+    }
+  },
+  "vector_store": {
+    "kind": "chromadb",
+    "space": "cosine",
+    "hnsw": {
+      "ef_search": 100,
+      "max_neighbors": 16
+    }
+  },
+  "products": 683,
+  "left_out": 76,
+  "built": "2026-11-10T00:34:18",
+  "cost_usd": 0.0
+}

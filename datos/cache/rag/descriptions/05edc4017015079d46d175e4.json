@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4YLTP5",
+  "text": "Type: chevron wool runner rug\nUse: covering a hallway or bedside floor; hallway, bedroom, living room\nStyle: modern, contemporary, Scandinavian\nMaterials: hand-tufted wool, solid and heathered blocks\nColors: ivory, sky blue, forest green, grey, charcoal\nShape: long narrow runner, color-blocked chevron stripes, clean edges, low pile\nFeel: fresh, playful, cool\nGoes with: white walls, dark wood floors, blue or green accents; modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4YLTP5",
+      "name": "Amazon Brand \u2013 Rivet Modern Chevron Wool Runner Rug, 2' 6\" x 8', Blue, Green, Ivory",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 76.2,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Blue, Green, Ivory"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Blue Multi",
+      "description": "New style chevron in blue, green and ivory will enliven your space with color and pattern. This vibrant runner will define a conversation area and add a focal point to your hallway. The soft wool blend is easy to maintain. 2' 6\" x 8' Loop construction is easy to maintain. Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "9b/9bbd5c53.jpg",
+      "image_px": [
+        1530,
+        1530
+      ]
+    },
+    "photos": [
+      "af47e0302755cbe5"
+    ]
+  }
+}

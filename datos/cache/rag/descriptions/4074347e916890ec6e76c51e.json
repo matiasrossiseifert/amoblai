@@ -1,0 +1,35 @@
+{
+  "product": "602.967.01",
+  "text": "Type: red velvet cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: classic, glam, traditional\nMaterials: soft velvet with a gentle sheen\nColors: deep raspberry red\nShape: square plump cushion with a smooth plush surface that catches the light, softly rounded corners, plain edges, medium size\nFeel: rich, warm, cozy\nGoes with: grey, cream or navy sofas, dark wood, brass accents, festive tones; classic, glam or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.967.01",
+      "name": "SANELA",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Dark pink"
+      ],
+      "description": "Cotton velvet gives depth to the colour and softness to the touch."
+    },
+    "photos": [
+      "6da2d69b8db4d915"
+    ]
+  }
+}

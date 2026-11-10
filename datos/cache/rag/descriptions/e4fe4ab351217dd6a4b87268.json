@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSHMVM8",
+  "text": "Type: southwestern patterned area rug\nUse: colorful base for seating; living room, bedroom, dining room\nStyle: bohemian, contemporary\nMaterials: woven pile yarn\nColors: cream, magenta red, orange, navy, light blue\nShape: rectangular, rows of diamond motifs in stripes, zigzag edges, medium size, low pile\nFeel: lively, warm, eclectic\nGoes with: dark wood, woven baskets, white walls; boho or southwestern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSHMVM8",
+      "name": "Amazon Brand \u2013 Stone & Beam Southwestern Contemporary Area Rug, 5 x 8 Foot, Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "stone"
+      ],
+      "style": "Contemporary",
+      "description": "Bring a Southwestern flair into your home decor with this gorgeous rug. Bold diamond shapes rendered in rich colors create a captivating design that\u2019s sure to capture attention wherever you place the rug in your home. 5' x 8' 100% polypropylene Machine made 0.75 High",
+      "image_path": "54/54e4b681.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a957252ea7416ac1"
+    ]
+  }
+}

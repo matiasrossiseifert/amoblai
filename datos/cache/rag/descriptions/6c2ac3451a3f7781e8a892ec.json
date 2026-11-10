@@ -1,0 +1,43 @@
+{
+  "product": "abo-B001ELJB7C",
+  "text": "Type: tall six-drawer chest\nUse: storing clothes; bedroom\nStyle: contemporary, modern, classic\nMaterials: cherry veneer with flame grain, dark lacquered finish, slim metal pulls\nColors: dark reddish espresso brown, silver\nShape: tall narrow case, gently bowed drawer fronts, slatted open side panels, slender tapered legs, recessed bar pulls, elegant and upright\nFeel: rich, refined, polished\nGoes with: cream bedding, warm neutral walls, chrome accents; contemporary or transitional bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B001ELJB7C",
+      "name": "Pinzon Walthum 6-Drawer Chest",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": null,
+      "brand": "Pinzon",
+      "product_type": "DRESSER",
+      "colors": [
+        "Java"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "Beautiful chest has 6 drawers with French dovetail fronts and English backs on double wood glides Solid rubberwood and ash veneer with dark Java finish; brushed aluminum handles 75-pound capacity; larger drawers are 28-1/4 inches long by 14 inches deep by 6-1/4 inches high Coordinates with the Pinzon Walthum Bedroom Furniture Collection Measures 58 inches high by 34 inches wide by 20 inches deep",
+      "image_path": "31/317ea554.jpg",
+      "image_px": [
+        1222,
+        1800
+      ]
+    },
+    "photos": [
+      "f46f6139e24fbd5d"
+    ]
+  }
+}

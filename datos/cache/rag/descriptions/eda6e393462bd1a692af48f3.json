@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072ZK8897",
+  "text": "Type: small two-door storage cabinet\nUse: storage, display surface; living room, bedroom, entryway\nStyle: mid-century modern, minimalist, contemporary\nMaterials: glossy white lacquer, walnut-tone wood legs and inset\nColors: glossy white, dark warm brown\nShape: boxy cabinet, two flat doors with curved wood finger-pull cutout between, four splayed tapered wooden legs, compact and raised\nFeel: clean, light, playful\nGoes with: walnut wood, white walls, muted colors; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B072ZK8897",
+      "name": "Amazon Brand \u2013 Rivet Modern Lacquer and Wood Cabinet, 23.6\"L, Glossy White and Wood",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 59.9,
+        "depth": 35.1,
+        "height": 78.0
+      },
+      "brand": "Rivet",
+      "product_type": "CABINET",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Beech Wood Legs; Solid Hardwood"
+      ],
+      "style": "Contemporary",
+      "description": "High-gloss white lacquer is combined with wood trim and legs for a true style statement piece. Along with providing extra storage space, this handsome cabinet gives you an eye-catching focal point for an entryway or hallway. 13.8\" W x 23.6\"L x30.7\" H Beech wood legs; solid hardwood coated with white lacquer finish An ultra contemporary style perfect for a modern space This snazzy piece provides storage space along with high style Easy assembly in 15-30 minutes. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "c2/c2526e1d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "59389fccdd4223ed"
+    ]
+  }
+}

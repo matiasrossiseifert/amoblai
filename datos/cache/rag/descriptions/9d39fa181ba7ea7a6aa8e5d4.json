@@ -1,0 +1,43 @@
+{
+  "product": "abo-B00104G7WK",
+  "text": "Type: double-chaise sectional sofa\nUse: lounging, seating, stretching out; living room, family room\nStyle: traditional, coastal, contemporary\nMaterials: woven textured upholstery base, cream cotton cushions, dark wood block feet\nColors: warm wheat beige, cream white, dark brown\nShape: two deep chaise extensions, rolled arms, loose oversized back pillows, box cushions, low block feet, large and bulky\nFeel: relaxed, cozy, inviting\nGoes with: natural fibers, light wood, white walls, sandy tones; coastal or casual family rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B00104G7WK",
+      "name": "Pinzon Capitola Double-Chaise Sectional Sofa with 8 Pillows",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "SOFA",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "Double chaise sectional sofa in versatile tones with 8 included throw pillows Hardwood frame; foam cushions; coil springs for comfort; hand crafted in the USA 100-percent-cotton fabric needs only spot cleaning; seat cushions are 6 inches thick Left and right sections each measure 36 inches high by 63 wide by 30 inches deep Center section measures 36 inches high by 36 inches wide by 30 inches deep",
+      "image_path": "be/be213465.jpg",
+      "image_px": [
+        1500,
+        766
+      ]
+    },
+    "photos": [
+      "4470fb65060aff2e"
+    ]
+  }
+}

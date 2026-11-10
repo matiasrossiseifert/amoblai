@@ -1,0 +1,35 @@
+{
+  "product": "402.745.21",
+  "text": "Type: storage bench with lift-up seat\nUse: seating plus storage for towels, laundry or shoes; bathroom, hallway, bedroom\nStyle: farmhouse, traditional, coastal\nMaterials: white painted wood with beadboard panels, square wooden legs\nColors: soft white\nShape: boxy chest on four short square legs, flat overhanging lid, vertical grooved beadboard panels on the front and sides, framed edges, compact and sturdy\nFeel: fresh, homely, clean, calm\nGoes with: white tiles, light wood, pale blue or grey tones; cottage, coastal or farmhouse bathrooms and entryways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.745.21",
+      "name": "SILVERN",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": null,
+      "type_ikea": "Storage bench",
+      "category_tp": "bench",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "There's plenty of room inside the bench to store and organise your towels and other bathroom things."
+    },
+    "photos": [
+      "ffdff907be3767a1"
+    ]
+  }
+}

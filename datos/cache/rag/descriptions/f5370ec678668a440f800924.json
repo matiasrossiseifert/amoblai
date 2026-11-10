@@ -1,0 +1,35 @@
+{
+  "product": "203.195.92",
+  "text": "Type: tab-top curtains with tie-backs, pair\nUse: filtering daylight and adding privacy at a window; children's room, playroom, bedroom\nStyle: Scandinavian, contemporary, retro\nMaterials: lightweight white cotton fabric, multicolored fabric loops, matching fabric tie-backs\nColors: white, mint green, sky blue, bright orange, light grey\nShape: two full-length panels hung from wide tab loops in alternating colors, gathered to the sides with soft fabric bands, light and airy\nFeel: playful, cheerful, bright, fresh\nGoes with: white walls, light wood, pastel or bright accents, children's furniture; Scandinavian kids' rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.195.92",
+      "name": "HIMMELSK",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains with tie-backs, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "120x300 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "With the curtains you can create that extra cosiness while shutting out the daylight and gaining more privacy if needed."
+    },
+    "photos": [
+      "2c1f6bd326e10965"
+    ]
+  }
+}

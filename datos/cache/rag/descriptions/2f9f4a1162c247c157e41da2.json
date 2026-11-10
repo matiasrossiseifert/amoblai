@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07MFXNYB2",
+  "text": "Type: scrolled metal console table\nUse: entry or behind-sofa surface for decor and lamps; living room, hallway\nStyle: traditional, classic\nMaterials: dark oak-look wood top, black wrought metal base\nColors: dark grey oak, black\nShape: long narrow rectangular top with clipped corners, ornate scrollwork apron, curved cabriole-style legs with curled feet, low stretcher with finial, slim and decorative\nFeel: ornate, old-world, elegant\nGoes with: dark wood, warm neutral walls, mirrors, iron accents; traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07MFXNYB2",
+      "name": "Amazon Brand \u2013 Ravenna Home Wood and Metal End Table, 44\"W, Dark Oak, Black Metal",
+      "category": "table",
+      "kind": "console table",
+      "dimensions_cm": {
+        "width": 111.8,
+        "depth": 80.0,
+        "height": 30.5
+      },
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Traditional",
+      "description": "44.0\"W x 12.0\"D x 31.5\"H Made with select hardwood, flat-cut oak veneers, and metal Deep hues and mixed-material construction make this chic table a must-have. Intricate metal curls and curves define this attractive console table both above and below. Openwork details highlight the edge of a sturdy brown wooden top in a slender 12\"-deep profile. No assembly required",
+      "image_path": "ec/ec1898e2.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "0ac7dad7d4f64fa6"
+    ]
+  }
+}

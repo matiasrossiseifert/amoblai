@@ -1,0 +1,46 @@
+{
+  "product": "abo-B07HK8ML99",
+  "text": "Type: semi-flush glass ceiling lamp\nUse: general ceiling light; living room, bedroom, dining room, hallway\nStyle: industrial, farmhouse, contemporary\nMaterials: clear glass bowl shade, oil-rubbed bronze metal, exposed filament bulb\nColors: clear, dark bronze black, warm amber glow\nShape: wide rounded drum of clear glass held by three curved arms from a round canopy, visible bulb in a short socket, medium size, light and open\nFeel: airy, warm, vintage\nGoes with: wood tones, white or grey walls, black hardware; farmhouse, industrial or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HK8ML99",
+      "name": "Amazon Brand \u2013 Stone & Beam Contemporary Flush-Mount Ceiling Light withBulb and Glass Shade - 14 x 14 x 7.25 Inches, Oil-Rubbed Bronze",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": {
+        "width": 25.4,
+        "height": 27.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Oil-rubbed Bronze"
+      ],
+      "materials": [
+        "Alloy Steel"
+      ],
+      "style": "Contemporary",
+      "description": "This semiflush ceiling light brings sleek contemporary style to any space. The painted steel mount features elegant curved rods, supporting a clear glass ring to amplify the clean, light from within. 14\"W x 14\"D x 7.25\"H Painted steel light, clear glass Semiflush light, mid-century meets contemporary style Bulb included Professional installation recommended For indoor use only",
+      "image_path": "b0/b0802674.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6185d1d39528fc50"
+    ]
+  }
+}

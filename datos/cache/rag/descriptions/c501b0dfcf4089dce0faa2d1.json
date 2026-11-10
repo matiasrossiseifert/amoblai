@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4FZWCN",
+  "text": "Type: sectional sofa with chaise\nUse: lounging, seating; living room, family room\nStyle: traditional, contemporary, classic\nMaterials: woven upholstery fabric, contrast piping, dark wood legs\nColors: warm tan beige, dark brown\nShape: left-facing chaise, three back cushions, two seat cushions, sloped track arms, short tapered legs, long and substantial\nFeel: welcoming, relaxed, warm\nGoes with: cream walls, warm wood, soft neutral textiles; traditional or transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4FZWCN",
+      "name": "Amazon Brand \u2013 Stone & Beam Isabel Traditional Sectional, 100\"W, Tan",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 162.3,
+        "depth": 77.5,
+        "height": 106.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Tan"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": null,
+      "description": "Between the chaise lounge, sofa and ottoman, this sectional has plenty of room for family, friends and pets. Even better, it features performance fabric and hidden storage, making it a stylish and highly functional addition to your room. Polyester performance fabric on wood frame Streamlined design fits a modern or transitional room Hidden compartments beneath the chaise and ottoman are handy for storing remote controls Easy assembly in 30 minutes or less; screw on legs and attach sectional pieces together Free returns for 30 days. 1-year warranty. 100\"W x 39.70 73.60\"D x 37.4\"H",
+      "image_path": "30/30fd7d0e.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c3ab5ba34bbc3e28"
+    ]
+  }
+}

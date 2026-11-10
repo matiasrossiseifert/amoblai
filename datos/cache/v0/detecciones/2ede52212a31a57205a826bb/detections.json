@@ -1,0 +1,112 @@
+[
+ {
+  "box": [
+   296.2,
+   482.4,
+   889.7,
+   642.5
+  ],
+  "category": "rug",
+  "label": "carpet",
+  "score": 0.7871963381767273
+ },
+ {
+  "box": [
+   833.0,
+   272.0,
+   953.0,
+   451.6
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.4772115647792816
+ },
+ {
+  "box": [
+   0.3,
+   293.1,
+   166.2,
+   598.5
+  ],
+  "category": "sofa",
+  "label": "couch",
+  "score": 0.470424085855484
+ },
+ {
+  "box": [
+   610.7,
+   288.3,
+   822.3,
+   614.9
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.4199807345867157
+ },
+ {
+  "box": [
+   440.4,
+   320.4,
+   734.5,
+   616.9
+  ],
+  "category": "table",
+  "label": "dining table",
+  "score": 0.4190662205219269
+ },
+ {
+  "box": [
+   832.6,
+   347.1,
+   937.3,
+   451.1
+  ],
+  "category": "table",
+  "label": "side table",
+  "score": 0.4132923185825348
+ },
+ {
+  "box": [
+   343.7,
+   288.9,
+   550.0,
+   617.2
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.3984518349170685
+ },
+ {
+  "box": [
+   370.1,
+   271.8,
+   537.2,
+   466.9
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.3765239119529724
+ },
+ {
+  "box": [
+   597.5,
+   271.8,
+   748.6,
+   498.4
+  ],
+  "category": "armchair",
+  "label": "armchair",
+  "score": 0.3151370882987976
+ },
+ {
+  "box": [
+   37.7,
+   328.6,
+   237.2,
+   595.3
+  ],
+  "category": "table",
+  "label": "dining table",
+  "score": 0.3140324354171753
+ }
+]

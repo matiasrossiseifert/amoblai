@@ -1,0 +1,45 @@
+{
+  "product": "abo-B075X3ZD3F",
+  "text": "Type: oversized ombre woven throw\nUse: warmth and layering on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, coastal, modern\nMaterials: brushed chunky weave, fuzzy soft yarn, fringe\nColors: indigo blue, white, light blue heathered\nShape: large rectangle, ombre stripe fading to deep blue at the ends, nubby brushed texture, thick fringed edge, plush and generous\nFeel: cozy, relaxed, soft, fresh\nGoes with: grey or greige upholstery, white walls, light wood; coastal or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075X3ZD3F",
+      "name": "Amazon Brand \u2013 Rivet Super Soft Oversized Ombre Stripe Brushed Weave Throw Blanket, 60\" x 80\", Indigo, White",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 203.2,
+        "depth": 152.4,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Indigo"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This super soft, snuggly throw will invite you to watch TV or curl up with a book. Beautifully variated ombre striping is accented by decorative fringe. It's available in pleasing neutral colors to blend with any style room 60\"W x 80\"L 100% polyester yarns Spot clean only. Light shedding may occur at first",
+      "image_path": "79/7969a064.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "efb6c8c51e20c255"
+    ]
+  }
+}

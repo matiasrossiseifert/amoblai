@@ -1,0 +1,38 @@
+{
+  "product": "403.146.78",
+  "text": "Type: floral flatwoven area rug with fringe\nUse: anchoring a seating or dining area; living room, bedroom, dining room\nStyle: traditional, farmhouse, classic\nMaterials: flatwoven yarn, short fringe on both ends\nColors: off-white cream, dove grey, charcoal grey\nShape: rectangular, flat, allover branching flowers and leaves, double frame border with a dark charcoal outer band, fringed ends, light\nFeel: soft, gentle, romantic, calm\nGoes with: white or painted wood, linen, grey and cream textiles; farmhouse, cottage or traditional rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "403.146.78",
+      "name": "ALVINE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "170x240 cm",
+      "colors": [
+        "Handmade grey"
+      ],
+      "description": "Handwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages."
+    },
+    "photos": [
+      "9a762001a10d9338"
+    ]
+  }
+}

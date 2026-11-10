@@ -1,0 +1,35 @@
+{
+  "product": "702.766.51",
+  "text": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.766.51",
+      "name": "ALOE VERA",
+      "category": "deco",
+      "kind": "plant",
+      "dimensions_cm": null,
+      "type_ikea": "Potted plant",
+      "category_tp": "deco",
+      "size_raw": "12 cm",
+      "colors": [
+        "Aloe"
+      ],
+      "description": null
+    },
+    "photos": [
+      "bd436b184be010e2"
+    ]
+  }
+}

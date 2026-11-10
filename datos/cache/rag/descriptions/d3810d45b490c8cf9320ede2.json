@@ -1,0 +1,43 @@
+{
+  "product": "abo-B01J2N7C10",
+  "text": "Type: faux fur throw blanket\nUse: warmth and layering on a sofa, armchair or bed; living room, bedroom\nStyle: glam, contemporary, classic\nMaterials: plush faux fur with ribbed texture, soft reverse\nColors: ivory, warm cream\nShape: large rectangular throw, raised channeled stripes in a block pattern, deep pile, finished edges, generous and soft drape\nFeel: cozy, luxurious, soft, warm\nGoes with: beige, taupe and blush upholstery, light wood, neutral walls; glam, classic or contemporary rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B01J2N7C10",
+      "name": "Pinzon Faux Fur Throw Blanket 63\" x 87\", Ivory",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Ivory"
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "style": null,
+      "description": "Faux fur throw for sumptuous softness and a luxurious layer of cozy warmth About 1/2-inch thick on one side and velvety soft fabric on the reverse Made of 100% polyester; faux fur, so it\u2019s animal friendly (no animals harmed) Ivory color for neutral, yet sophisticated beauty; measures 63 by 87 inches Made in OEKO-TEX Standard 100 factory, an independent certification system that ensures textiles meet high safety and environmental standards.",
+      "image_path": "47/47f5161c.jpg",
+      "image_px": [
+        1829,
+        1851
+      ]
+    },
+    "photos": [
+      "0f315ba28253b9b4"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "299.321.81",
+  "text": "Type: compact rectangular table on round legs\nUse: working at a desk, homework, crafts; home office, kids room, study, small kitchen\nStyle: contemporary, minimalist, retro\nMaterials: white laminated top, blue powder-coated steel legs\nColors: white, bright blue\nShape: thin flat rectangular top, four slender round tubular legs set at the corners, open underneath, compact, light visual weight\nFeel: playful, fresh, simple, bright\nGoes with: white walls, colorful accents, plastic or metal chairs; kids rooms, student rooms or modern home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "299.321.81",
+      "name": "LINNMON,ADILS",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "100x60 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Pre-drilled holes for legs, for easy assembly."
+    },
+    "photos": [
+      "7edf468d380af098"
+    ]
+  }
+}

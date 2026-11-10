@@ -1,0 +1,38 @@
+{
+  "product": "191.297.91",
+  "text": "Type: three-seat sofa with floral print\nUse: seating, lounging; living room, family room\nStyle: traditional, classic, farmhouse\nMaterials: printed fabric upholstery, turned wood legs\nColors: medium grey, white floral print, black legs\nShape: low scrolled arms, two loose back cushions and two seat cushions, piped edges, turned tapered legs, medium visual weight\nFeel: romantic, cozy, graceful\nGoes with: white walls, dark wood, grey or cream textiles; cottage, farmhouse or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "191.297.91",
+      "name": "STOCKSUND",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Hovsten grey",
+        "white",
+        "black",
+        "wood"
+      ],
+      "description": "You get extra soft comfort and support because the thick cushion has a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "939facd9fd8bdf24"
+    ]
+  }
+}

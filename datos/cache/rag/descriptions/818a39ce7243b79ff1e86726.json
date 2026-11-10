@@ -1,0 +1,36 @@
+{
+  "product": "603.209.56",
+  "text": "Type: cat print lumbar cushion\nUse: on a bed, sofa or reading nook; children's room, bedroom, living room\nStyle: Scandinavian, retro, modern\nMaterials: woven cotton fabric with a printed pattern\nColors: black, off-white\nShape: long rectangular cushion with a dense repeating pattern of stylized cat faces with big eyes and whiskers, plain edges, high-contrast graphic print, medium size\nFeel: playful, graphic, quirky\nGoes with: white walls, black accents, light wood, bright colors; Scandinavian kids' rooms or playful bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "603.209.56",
+      "name": "MATTRAM",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "30x60 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "The polyester filling holds its shape and gives your body soft support."
+    },
+    "photos": [
+      "9976ea5e39f87bea"
+    ]
+  }
+}

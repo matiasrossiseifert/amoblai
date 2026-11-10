@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07DVSWVRC",
+  "text": "Type: TV console with glass doors\nUse: holding a TV and media storage; living room, bedroom\nStyle: farmhouse, traditional, coastal\nMaterials: painted wood, framed glass panel doors, brushed nickel handles\nColors: light cool grey, silver\nShape: long low case, two glass-paned side cabinets, central open shelves with cable cutout, arched apron base, medium visual weight\nFeel: tidy, calm, classic\nGoes with: white or grey walls, light wood floors, soft blues; farmhouse, coastal or traditional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DVSWVRC",
+      "name": "Ravenna Home Peterson Modern Glass Cabinet Storage TV Media Entertainment Console Stand, 46\"W",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": null,
+      "brand": "Ravenna Home",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "52/5255123f.jpg",
+      "image_px": [
+        2560,
+        1638
+      ]
+    },
+    "photos": [
+      "f73c380a5cbcdb79"
+    ]
+  }
+}

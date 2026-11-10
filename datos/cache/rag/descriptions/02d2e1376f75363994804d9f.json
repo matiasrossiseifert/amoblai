@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B82PXCM",
+  "text": "Type: extendable farmhouse trestle dining table\nUse: family dining, entertaining; dining room, kitchen\nStyle: farmhouse, rustic, coastal\nMaterials: pine plank top, painted distressed wood base\nColors: white base, warm honey brown top\nShape: rectangular plank top with breadboard ends, white trestle legs with diagonal braces and low stretcher, sturdy, medium to large\nFeel: cozy, bright, homey\nGoes with: white or wood chairs, light walls, linen textiles; farmhouse or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B82PXCM",
+      "name": "Amazon Brand \u2013 Stone & Beam Bradhurst Casual Farmhouse Wood Dining Kitchen Table, 61\"-84\"L, White",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 214.1,
+        "depth": 90.2,
+        "height": 78.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Hardwood Comprised Of 60% Reclaimed Fir Wood"
+      ],
+      "style": "0",
+      "description": "A natural wood top rests on an angular, white painted base for a modern refresh of the classic rustic table. You'll delight in the crisp, clean expandable design as well as the fact it's made of 60% reclaimed fir wood, ready to enhance a farmhouse-style space. 60.6-84.3\"L x 35.5\"D x 30.7\"H Made of hardwood comprised of 60% reclaimed fir wood Ideal for modern farmhouse setting but also works with transitional or traditional d\u00e9cor An extra leaf is provided to expand the table if needed Assembly in 30 minutes or less. Free returns for 30 days. 3-year warranty.",
+      "image_path": "3f/3fb4816b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "0578a1142a54f703"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSGPG2D",
+  "text": "Type: round floating wall shelf\nUse: displaying small decor and plants on a wall; living room, bedroom, home office\nStyle: industrial, contemporary, modern\nMaterials: iron frame, natural wood shelves\nColors: dark gunmetal, light natural wood\nShape: thin circular metal frame, four staggered shelves with vertical dividers, wall-mounted, light and open, geometric\nFeel: artistic, airy, playful\nGoes with: white walls, plants, black and wood accents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSGPG2D",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Round Floating Iron 4 Shelf Wall Unit - 29.72\" W, Natural Wood and Silver",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [
+        "Iron"
+      ],
+      "style": null,
+      "description": "This round unit offers a modern take on shelving with 4 multi-level shelves for displaying a wide array of household items. The rubberwood shelves are held in place by silver-colored iron bars, which also form the circular frame. 29.72\"H x 29.72\"W x 6.7\"D 85% rubberwood; 15% iron Shelf unit Avoid moisture. This item wipes clean with a soft, dry cloth. Hanging hardware is included.",
+      "image_path": "5e/5e5793c6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2c96e0574cff3c36"
+    ]
+  }
+}

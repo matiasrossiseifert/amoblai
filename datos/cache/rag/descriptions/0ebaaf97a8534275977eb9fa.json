@@ -1,0 +1,38 @@
+{
+  "product": "603.074.79",
+  "text": "Type: trellis patterned low-pile rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: contemporary, classic, modern\nMaterials: short dense low pile\nColors: dark charcoal grey, white\nShape: rectangular, flat low pile, allover white Moroccan lantern trellis outline on a solid grey ground, clean edges, medium visual weight\nFeel: elegant, crisp, balanced\nGoes with: white or grey sofas, light wood, chrome or black metal; contemporary, classic or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "603.074.79",
+      "name": "HOVSLUND",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 160.0,
+        "depth": 230.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "160x230 cm",
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "Suitable for use underneath your dining table, as the flat-woven surface makes it easy to pull out chairs and clean."
+    },
+    "photos": [
+      "4e0238b90a7f6845"
+    ]
+  }
+}

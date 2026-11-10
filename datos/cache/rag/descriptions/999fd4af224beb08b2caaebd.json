@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07HSG7KWF",
+  "text": "Type: armless leather swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: modern, mid-century modern, minimalist\nMaterials: leather upholstery with channel stitching, polished chrome four-star base, casters\nColors: cool dark grey, chrome silver\nShape: slim armless shell with horizontal channel-tufted back, thin padded seat, height lever, four-prong chrome base on casters, compact and sleek\nFeel: sleek, understated, cool\nGoes with: white or glass desks, light wood, black accents, white walls; modern or Scandinavian offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSG7KWF",
+      "name": "Amazon Brand \u2013 Rivet Modern Leather Swivel Desk Armless Office Chair 30.6 Inch Height, Adjustable Height, Grey",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 61.9,
+        "depth": 54.1,
+        "height": 73.9
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [
+        "Leather"
+      ],
+      "style": null,
+      "description": "This high-backed modern desk chair lends any office an air of sleek sophistication with its chromed base and genuine gray leather seat, while its ability to swivel gives it an ergonomic edge over its stationary counterparts. 25.88\"W x 22.8\"D x 30.6\"H; Seat Height: 18.72-23.2\u201dH; Seat Depth: 17.16\u201dD; Seat Back Height: 21.45\u201dH 100% Genuine Leather A chromed base helps achieve a contemporary style for your work space . Carefully crafted gray genuine leather creates a welcoming atmosphere in your office. Simple assembly in 15-30 minutes Wipes clean with a soft, dry cloth. Avoid moisture. Free returns for 30 days. 1-year warranty.",
+      "image_path": "27/272abe88.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f0fa2318fc1c5b46"
+    ]
+  }
+}

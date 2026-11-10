@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B7DMPX7",
+  "text": "Type: herringbone-front sideboard\nUse: storage, TV or display surface; living room, dining room\nStyle: mid-century modern, glam, contemporary\nMaterials: white lacquered case, limed wood chevron veneer fronts, brass handles and legs\nColors: white, light greige wood, gold\nShape: long low rectangular case, two doors flanking three drawers, chevron pattern, slim tab pulls, thin metal legs, raised and light\nFeel: elegant, bright, refined\nGoes with: white walls, light wood, brass accents; modern, glam or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7DMPX7",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood Media TV Console Stand Table, 59\"H, White &amp; Gray",
+      "category": "cabinet",
+      "kind": "sideboard",
+      "dimensions_cm": {
+        "width": 150.1,
+        "depth": 50.0,
+        "height": 77.0
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "With multiple doors, drawers and shelving, this console is ready to store dishes, books, electronics and more. White painted finish and ash veneers are paired with minimalist bronze legs, resulting in a head-turning mid-century piece. 19.7\"W x 59.1\"D x 30.3\"H Engineered hardwood and fiberboard; metal legs Minimalist, mid-century modern design Can serve as a sideboard in a kitchen area or as a media console in the living space Assembly in 1 hour or less; screw on legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "9e/9ecfe888.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6c9f111f0bfebede"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QJLYCBS",
+  "text": "Type: compact media cabinet\nUse: holding a TV and media devices, storage; living room, bedroom\nStyle: modern, mid-century modern, contemporary\nMaterials: grey wood-grain veneer, herringbone door pattern, black metal legs\nColors: warm grey, black\nShape: low rectangular case, herringbone drop door on one side, two open shelves on the other, slim black metal legs with side braces, compact and light\nFeel: modern, calm, textured\nGoes with: grey or white walls, black metal, light woods; modern or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QJLYCBS",
+      "name": "Amazon Brand \u2013 Rivet Modern Media Cabinet, 47\"W, Gray",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 119.4,
+        "depth": 40.6,
+        "height": 40.6
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "The shelving and pullout drawer in this sleek, modern media cabinet offer plenty of storage space for electronic and multimedia components. The strong lines and metal legs produce a contemporary flair, while the patterned panels add that touch of elegance every home needs. 47\"W x 16\"D x 16\"H Engineered wood with metal legs This modern media console makes a wonderful accent piece in any home. The shelving and 1 pull drawer make this media cabinet great for storage. Assemble in 15-30 minutes Wipe clean with a dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "78/782066a8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1613f417ba923d01"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07CSXJ714",
+  "text": "Type: counter-height reclaimed wood dining table\nUse: casual dining with bar stools; dining room, kitchen, open-plan living\nStyle: rustic, farmhouse, industrial\nMaterials: reclaimed fir planks, natural distressed finish\nColors: light warm honey wood\nShape: thick plank rectangular top, two ladder-rung trestle ends with horizontal slats, tall and long, chunky solid frame\nFeel: rustic, relaxed, sociable\nGoes with: metal or wood bar stools, white walls, black iron accents; farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07CSXJ714",
+      "name": "Stone & Beam Reclaimed Fir Ladder-Rung Counter Bar Dining Table, 36\"H",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "d0/d01a0991.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2be83d707e1fc80a"
+    ]
+  }
+}

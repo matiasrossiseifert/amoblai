@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X53WD9",
+  "text": "Type: textured tassel throw blanket\nUse: layering on an armchair, sofa or bed; living room, bedroom\nStyle: bohemian, rustic, contemporary\nMaterials: woven cotton with ribbed texture, twisted rope tassels\nColors: cream, natural off-white\nShape: rectangular throw, horizontal ribbed bands, thick twisted rope fringe with knotted tassel ends, chunky and substantial\nFeel: earthy, crafted, warm, relaxed\nGoes with: cognac leather, warm wood, black and white rugs; bohemian, rustic or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075X53WD9",
+      "name": "Rivet Modern Global-Inspired Textured Tassel Throw Blanket",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 127.0,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [
+        "Gray"
+      ],
+      "materials": [
+        "100% cotton"
+      ],
+      "style": null,
+      "description": "This throw is a comfy, functional work of art. Inspired by archaelogical finds in Mexico's Tulum ruins, it features layers of texture and oversized, hand-tied tassels. Use on a bed, drape over your sofa or hang on the wall for a true style statement. 50\"W x 60\"L 100% cotton Spot clean only.",
+      "image_path": "fb/fb8ff3db.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "be9388d32d0794b6"
+    ]
+  }
+}

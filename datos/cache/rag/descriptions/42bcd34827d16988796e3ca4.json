@@ -1,0 +1,35 @@
+{
+  "product": "602.323.99",
+  "text": "Type: ornate gold picture frame with mat\nUse: displaying photos, prints or artwork on a wall or shelf; living room, bedroom, hallway, dining room\nStyle: traditional, classic, glam\nMaterials: molded frame with an antiqued gold-leaf-look finish, off-white mat board, clear glazing\nColors: antique gold, warm off-white mat\nShape: upright rectangle with a wide stepped and grooved molding, brushed metallic texture, cream mat around the picture, medium visual weight\nFeel: elegant, warm, vintage\nGoes with: dark walls, deep green or navy, velvet, dark wood; traditional, classic or glam rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.323.99",
+      "name": "VIRSERUM",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "30x40 cm",
+      "colors": [
+        "Gold-colour"
+      ],
+      "description": "Fits A4 size pictures if used with the mount."
+    },
+    "photos": [
+      "b424191039963685"
+    ]
+  }
+}

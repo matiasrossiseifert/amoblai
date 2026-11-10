@@ -1,0 +1,35 @@
+{
+  "product": "503.112.88",
+  "text": "Type: gold metal tealight holder\nUse: holding a tealight on a table or shelf; living room, dining room\nStyle: glam, art deco, contemporary\nMaterials: polished metal with a mirror-like gold finish\nColors: bright warm gold\nShape: flared sculptural cup that opens into curled petal-like flaps, like a calla lily, narrow base and wide mouth, small and eye-catching\nFeel: festive, luminous, elegant\nGoes with: dark or white tables, marble, velvet, black or green accents; glam, art deco or contemporary dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.112.88",
+      "name": "STILLHET",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Tealight holder",
+      "category_tp": "deco",
+      "size_raw": "7 cm",
+      "colors": [
+        "Gold-colour"
+      ],
+      "description": "Use the tealight holder with a lit tealight or alone, as a beautiful object in its own right."
+    },
+    "photos": [
+      "54bb24bc66beb5e8"
+    ]
+  }
+}

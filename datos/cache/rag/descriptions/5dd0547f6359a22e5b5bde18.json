@@ -1,0 +1,35 @@
+{
+  "product": "202.390.10",
+  "text": "Type: velvet eyelet curtains, pair\nUse: dressing a window, dimming light, adding privacy; living room, bedroom\nStyle: contemporary, glam, classic\nMaterials: soft cotton velvet with a subtle sheen, metal eyelet heading\nColors: light turquoise, soft aqua blue\nShape: two full-length straight panels with deep, even folds from an eyelet top, plain solid fabric, heavy and fluid drape\nFeel: soft, rich, calm, luxurious\nGoes with: white or grey walls, brass or chrome accents, velvet cushions, light wood; contemporary, glam or classic living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.390.10",
+      "name": "SANELA",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "140x300 cm",
+      "colors": [
+        "Light turquoise"
+      ],
+      "description": "The thick curtains darken the room and provide privacy by preventing people outside from seeing into the room."
+    },
+    "photos": [
+      "19643bb0ad4219b9"
+    ]
+  }
+}

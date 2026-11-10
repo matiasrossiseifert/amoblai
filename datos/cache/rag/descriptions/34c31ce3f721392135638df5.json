@@ -1,0 +1,35 @@
+{
+  "product": "702.214.23",
+  "text": "Type: extendable dining table with turned legs\nUse: dining, hosting guests; dining room, kitchen\nStyle: traditional, classic, farmhouse\nMaterials: painted solid wood frame, painted wood-based top, turned solid wood legs\nColors: off-white, warm cream white\nShape: rectangular top with a slim lip edge and apron, four tapered turned legs with carved collars, graceful, medium visual weight\nFeel: elegant, soft, homey, timeless\nGoes with: white or pale wood chairs, light grey walls, linen textiles; country kitchens, classic or farmhouse dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.214.23",
+      "name": "INGATORP",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Extendable table",
+      "category_tp": "table",
+      "size_raw": "155,215x87 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "1 extension leaf included."
+    },
+    "photos": [
+      "91d95eb8ed081ff6"
+    ]
+  }
+}

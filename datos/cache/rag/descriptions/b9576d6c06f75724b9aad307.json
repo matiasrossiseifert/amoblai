@@ -1,0 +1,36 @@
+{
+  "product": "500.774.69",
+  "text": "Type: opal glass globe wall lamp\nUse: soft light beside a mirror or along a hallway wall; bathroom, hallway, bedroom\nStyle: traditional, classic, retro\nMaterials: white opal glass globe, brushed nickel-plated metal arm and round wall plate\nColors: milky white, brushed silver\nShape: round glass ball resting in a cup holder at the end of a curved swan-neck arm, stepped circular backplate, compact and light\nFeel: soft, gentle, nostalgic, tidy\nGoes with: white tiles, chrome or nickel fittings, pale walls; classic or traditional bathrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "500.774.69",
+      "name": "LILLHOLMEN",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "white"
+      ],
+      "description": "Flexible; can be mounted with the light turned downwards or upwards."
+    },
+    "photos": [
+      "fcd4c8d6189e0587"
+    ]
+  }
+}

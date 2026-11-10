@@ -1,0 +1,35 @@
+{
+  "product": "799.019.69",
+  "text": "Type: deep three-seat sofa\nUse: seating, lounging, napping; living room, den, lounge\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven fabric upholstery, chrome-plated metal legs\nColors: dark charcoal grey, silver\nShape: low wide seat platform, thin slab arms with rounded corners, loose back pillows and scatter cushions, slim metal legs, deep and relaxed\nFeel: laid-back, casual, cozy, modern\nGoes with: light grey walls, light wood, white or yellow accents; contemporary or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "799.019.69",
+      "name": "SDERHAMN",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Samsta dark grey"
+      ],
+      "description": "The various sections of the seating series can be connected together in different combinations or used separately."
+    },
+    "photos": [
+      "531747f045ec1128"
+    ]
+  }
+}

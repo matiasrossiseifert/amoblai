@@ -1,0 +1,37 @@
+{
+  "product": "503.233.85",
+  "text": "Type: yellow cube shelving unit\nUse: storing books, toys and storage boxes, room divider; living room, children's room, home office\nStyle: contemporary, modern, retro\nMaterials: painted board with a smooth bright finish\nColors: sunny yellow\nShape: upright rectangular frame with eight square open cubes in two columns, thick flat panels, open back, chunky and boxy, works upright or on its side\nFeel: cheerful, bold, playful, energetic\nGoes with: white or grey walls, light wood, grey textiles, black accents; modern, retro or kids' rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.233.85",
+      "name": "KALLAX",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 77.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "77x147 cm",
+      "colors": [
+        "Yellow"
+      ],
+      "description": "Choose whether you want to place it vertically or horizontally and use it as a shelf or sideboard."
+    },
+    "photos": [
+      "8c5bef0d1c829963"
+    ]
+  }
+}

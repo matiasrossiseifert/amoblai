@@ -1,0 +1,35 @@
+{
+  "product": "401.928.51",
+  "text": "Type: enamelled metal dome pendant lamp\nUse: light over a dining table, a kitchen island or a desk; dining room, kitchen, home office\nStyle: industrial, retro, Scandinavian\nMaterials: lacquered metal shade with a glossy finish, black fabric cord, matching ceiling cup\nColors: warm off-white cream, black cord, white inner shade\nShape: wide flared dome shade with a narrow neck, hangs on a long thin cord, clean rounded outline, medium size, light visual weight\nFeel: soft, friendly, workshop-inspired, warm\nGoes with: light wood tables, white or beige walls, black accents; Scandinavian, farmhouse or industrial kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "401.928.51",
+      "name": "FOTO",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Off-white"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "b0e2faeaa91797bc"
+    ]
+  }
+}

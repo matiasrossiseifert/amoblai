@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QL9RTFQ",
+  "text": "Type: armless low-back task chair\nUse: working at a desk; home office, bedroom, study\nStyle: minimalist, contemporary\nMaterials: black mesh fabric upholstery, padded foam, black plastic five-star base, casters\nColors: black\nShape: contoured padded back with lumbar stitching, armless, cushioned seat, height lever, five-star base on casters, compact and light\nFeel: simple, practical, unobtrusive\nGoes with: black or white desks, small rooms, neutral walls; modern or minimalist home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QL9RTFQ",
+      "name": "AmazonBasics Low-Back Task Chair with Swivel Casters - Black (Renewed)",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 48.9,
+        "height": 97.2
+      },
+      "brand": "AmazonBasics",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Textile"
+      ],
+      "style": "Low-Back Task Chair",
+      "description": "Comfortable task chair upholstered in black fabric Padded seat and back for all-day comfort and support Pneumatic seat-height adjustment; 360-degree swivel; smooth-rolling casters 250-pound maximum weight capacity; assembly instructions included Measures 25.2 by 18.7 by 34.6 to 37.8 inches (LxWxH); 1-year limited warranty",
+      "image_path": "51/51f3427e.jpg",
+      "image_px": [
+        953,
+        1500
+      ]
+    },
+    "photos": [
+      "147b44383a82dfcf"
+    ]
+  }
+}

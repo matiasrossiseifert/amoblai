@@ -1,0 +1,35 @@
+{
+  "product": "902.433.15",
+  "text": "Type: woven rectangular storage basket\nUse: storing magazines, remotes, toys or throws on shelves; living room, bedroom, home office\nStyle: rustic, Scandinavian, contemporary\nMaterials: flat woven strips in a dark stained finish, rigid rim\nColors: dark charcoal brown, almost black\nShape: open rectangular box with a chunky basket weave, an open lattice row below the rim that works as handholds, sturdy, medium size\nFeel: earthy, tidy, grounded, warm\nGoes with: shelving units, light or dark wood, beige and white textiles; rustic, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.433.15",
+      "name": "KNARRA",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "38x29x16 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Collecting newspapers, toys, hats and gloves in baskets makes it easier to find what you need and keeps the room looking neat and uncluttered."
+    },
+    "photos": [
+      "a0a48e2d0f71aa16"
+    ]
+  }
+}

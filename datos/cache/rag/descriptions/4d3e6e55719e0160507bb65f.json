@@ -1,0 +1,37 @@
+{
+  "product": "402.797.31",
+  "text": "Type: bent metal wall shelf\nUse: displaying books, frames and small decor; living room, bedroom, home office, hallway\nStyle: minimalist, modern, contemporary\nMaterials: powder-coated bent steel sheet\nColors: off-white, warm light cream\nShape: wide U-shaped open profile with a top lip, tall back panel and flat bottom shelf, thin folded edges, sculptural yet simple, light visual weight\nFeel: soft, clean, quiet, graphic\nGoes with: white or pastel walls, light wood, ceramics, brass accents; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.797.31",
+      "name": "BOTKYRKA",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "80x20 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The wall shelf makes it easy for you to see and reach the things you use every day."
+    },
+    "photos": [
+      "c5134ad9d4265569"
+    ]
+  }
+}

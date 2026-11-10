@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07PBYX3B6",
+  "text": "Type: two-seat track arm sofa\nUse: sitting, lounging; living room, den\nStyle: contemporary, modern\nMaterials: woven textured fabric, removable cushions, wooden bun feet\nColors: dark navy blue, warm brown feet\nShape: square track arms, two loose back and seat cushions, boxy frame, short round wooden feet, solid and sturdy\nFeel: cozy, casual, dependable\nGoes with: white or light grey walls, light wood, warm brass accents; modern family living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07PBYX3B6",
+      "name": "Amazon Brand \u2013 Rivet Andrews Contemporary Sofa Couch with Removable Cushions, 82\"W, Wathet Blue",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 208.0,
+        "depth": 94.0,
+        "height": 92.0
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Wathet Blue"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Modern",
+      "description": "This sofa features removable cushions in an attractive easy-care blue fabric that will bring class to your living room or den or any room you add it to. Foam padding offers comfort, but the solid hardwood frame ensures stability and support. 82\"W x 37\"D x 36\"H Solid hardwood frame with tapered wood legs Reversible and removable back and seat cushions Contemporary style and easy-care fabric combine to make this a welcome addition to any room. No assembly required Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "3d/3d22ef2f.jpg",
+      "image_px": [
+        2560,
+        1339
+      ]
+    },
+    "photos": [
+      "08603ece8984afce"
+    ]
+  }
+}

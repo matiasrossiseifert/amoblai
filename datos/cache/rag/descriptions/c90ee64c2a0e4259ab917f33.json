@@ -1,0 +1,33 @@
+{
+  "product": "902.807.08",
+  "text": "Type: white table lamp with charging base\nUse: ambient bedside or side table light, charging a phone on its base; bedroom, living room, home office\nStyle: Scandinavian, contemporary, minimalist\nMaterials: white paneled fabric-like shade, slim white metal stem, white oval base with a charging pad, grey cord\nColors: white, soft grey cord\nShape: tall rounded drum shade with soft vertical panels, thin straight stem, flat oval base, light and slender\nFeel: calm, soft, tidy, practical\nGoes with: white or light wood nightstands, pale textiles, grey tones; Scandinavian or minimalist bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.807.08",
+      "name": "VARV",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp with wireless charging",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb E27 600 lumen globe opal white. View more product information You can easily wirelessly charge your smartphone, just place it on the built-in charger and charging begins."
+    },
+    "photos": [
+      "3107a197f8c9e2b6"
+    ]
+  }
+}

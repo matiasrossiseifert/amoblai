@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B4YRZ1S",
+  "text": "Type: three-light ceiling spotlight\nUse: directional accent and task lighting; living room, home office, hallway\nStyle: mid-century modern, retro, modern\nMaterials: matte black metal cone shades, brushed nickel bands and swivel joints\nColors: matte black, silver\nShape: round flat canopy with three adjustable flared cone spotlights on short swivel stems, compact, graphic\nFeel: playful, crisp, graphic\nGoes with: white walls, walnut wood, black and chrome accents; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4YRZ1S",
+      "name": "J1140-R3 - Rivet Carrie Flush Mount BN+MBK",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": {
+        "width": 35.6,
+        "depth": 25.4,
+        "height": 15.2
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Bn+mbk"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Placeholder1",
+      "image_path": "c7/c7516498.jpg",
+      "image_px": [
+        1000,
+        1001
+      ]
+    },
+    "photos": [
+      "379c10fef4fe6e86"
+    ]
+  }
+}

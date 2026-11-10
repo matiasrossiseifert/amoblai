@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QFB4LWJ",
+  "text": "Type: patterned stoneware plant pot\nUse: holding an indoor plant; on a shelf, table or floor in a living room, bedroom, home office\nStyle: Scandinavian, rustic, contemporary\nMaterials: glazed stoneware with etched texture, glossy white interior\nColors: light cool grey, white\nShape: straight cylinder on a recessed foot, all-over white cross pattern, medium size, compact\nFeel: fresh, tidy, light\nGoes with: white walls, light wood, black accents; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QFB4LWJ",
+      "name": "Amazon Brand \u2013 Rivet Rustic Cross-Patterned Stoneware Planter, 6.3\"H, White and Gray",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 19.0,
+        "depth": 19.0,
+        "height": 16.0
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [
+        "Stoneware"
+      ],
+      "style": "Swiss Cross",
+      "description": "Accent your rustic-themed home decor with this attractive cross-patterned planter. Whether it houses your favorite houseplant or is placed as a home-accent piece, this planter is sure to capture attention, and its 100% stoneware construction makes it durable as well as attractive. 7.48\" diameter x 6.3\"H 100% stoneware Bring this durable stoneware planter to life with colorful flowers, or use it as a simple home-decor piece. Wipe clean with a soft, dry cloth.",
+      "image_path": "89/892247b4.jpg",
+      "image_px": [
+        2209,
+        2209
+      ]
+    },
+    "photos": [
+      "f9baaa7d11de8702"
+    ]
+  }
+}

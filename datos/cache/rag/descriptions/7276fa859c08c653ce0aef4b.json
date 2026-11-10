@@ -1,0 +1,35 @@
+{
+  "product": "102.397.13",
+  "text": "Type: organic-shaped nesting tables\nUse: holding drinks, books and lamps, coffee or side table; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer tops, solid wood legs in a walnut tone\nColors: medium warm walnut brown\nShape: set of two softly rounded pebble-shaped tops, thin edges, four round splayed tapered legs, smaller table tucks under the larger, low and light\nFeel: warm, organic, elegant, relaxed\nGoes with: cream or grey sofas, black or brass accents, woven rugs; mid-century or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.397.13",
+      "name": "STOCKHOLM",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": null,
+      "type_ikea": "Nest of tables, set of 2",
+      "category_tp": "table",
+      "size_raw": null,
+      "colors": [
+        "Walnut veneer"
+      ],
+      "description": "The table surface in walnut veneer and legs in solid walnut give a warm, natural feeling to your room."
+    },
+    "photos": [
+      "55067d5ad3dffdf6"
+    ]
+  }
+}

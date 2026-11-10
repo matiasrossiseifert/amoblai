@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QGWQM5D",
+  "text": "Type: velvet dining chair, set of two\nUse: dining, sitting at a vanity or desk; dining room, home office\nStyle: mid-century modern, glam, contemporary\nMaterials: soft velvet upholstery, gold-finish metal legs\nColors: dark forest green, shiny gold\nShape: armless one-piece shell with curved back and waist cutouts, padded seat, four slim splayed legs, light and compact\nFeel: luxe, elegant, rich\nGoes with: marble or white tables, brass accents, blush or cream walls; glam or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QGWQM5D",
+      "name": "Rivet Mid-Century Luxe Velvet Dining Chair, 34.1\"H, Set of 2, Dark Green",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 86.6,
+        "depth": 49.5,
+        "height": 59.4
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Dark Green"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "These mid-century casual dining chairs in dark green offer a touch of glam with easy-care luxe velvet upholstery and a Hollywood regency flavor. Rounded edges on the seat and back along with golden powder-coated legs accent this simple design that comes as a set of 2. 21\"W x 21.5\"D x 41\"H Easy-care fabric on wood frame with metal legs Soft, rounded edges on the seat and back These casual dining chairs with a mid-century look offer a touch of glam with luxe velvet upholstery that rests on golden powder-coated legs. Simple assembly in 15-30 minutes Vacuum or wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "51/51119907.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1d9154e7124c5db3"
+    ]
+  }
+}

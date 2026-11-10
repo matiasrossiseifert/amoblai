@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07QB8JZ7J",
+  "text": "Type: flatwoven diamond pattern rug\nUse: defining a seating or work area; living room, bedroom, home office\nStyle: modern, contemporary, Scandinavian\nMaterials: flat woven fibers, textured weave\nColors: cream, slate blue grey, mustard gold\nShape: rectangular, central band of small intersecting diamonds fading into cream ends, flat thin profile, medium size\nFeel: relaxed, textured, fresh, subtle\nGoes with: dark or light wood floors, grey upholstery, woven baskets; modern, Scandinavian or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QB8JZ7J",
+      "name": "Rivet Modern Flatwoven Rug with Intersecting Diamonds, 5' x 8', Blue and Gray with Gold",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4,
+        "height": 0.5
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [],
+      "style": "Modern",
+      "description": "This contemporary rug will add texture, depth, and color wherever you have a bare floor or need to create visual interest in a room. Its classic coloring ensures that it will pair with many color schemes. Flatwoven wool and cotton mean this soft rug will bring warmth to any room. 5'W x 8'L 77% wool, 16% cotton, 7% Lurex Transitional design in colors that can be paired with any decor Flatweave (pile is not applicable) Pair with a rug pad (sold separately)",
+      "image_path": "65/65b537d8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2a4586a2826655cf"
+    ]
+  }
+}

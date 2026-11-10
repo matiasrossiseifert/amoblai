@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSL753S",
+  "text": "Type: vintage-look fringed area rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: bohemian, rustic, contemporary\nMaterials: woven fibers with a worn vintage finish, white knotted fringe\nColors: warm grey, charcoal, ivory\nShape: large rectangle, small all-over geometric pattern framed by banded tribal borders, fringed short ends, low pile, medium visual weight\nFeel: muted, earthy, relaxed, timeless\nGoes with: dark wood floors, woven baskets, neutral upholstery; rustic, farmhouse or bohemian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSL753S",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Vintage-Look Runner Rug, 7' 6\" x 9' 6\", Ivory",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 289.6,
+        "depth": 228.6
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "stone"
+      ],
+      "style": "Modern",
+      "description": "Tie your room together with this elegant rug. A vintage-distressed look combined with muted colors and a classy fringe accent make this rug\u2019s geometric design an ideal accent for modern-style home decor. 7' 6\" x 9' 6\" 100% polypropylene Machine-made for durability and excellent value. Deep 0.75\" pile makes this rug comforting and warmly luxurious.",
+      "image_path": "c0/c0feb180.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "22093916939a5f4c"
+    ]
+  }
+}

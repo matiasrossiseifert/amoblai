@@ -1,0 +1,45 @@
+{
+  "product": "abo-B082VM3G6N",
+  "text": "Type: leather footstool ottoman\nUse: footrest, extra seating; living room, bedroom, home office\nStyle: mid-century modern, contemporary, classic\nMaterials: leather upholstery, cushion top with welted edge, dark wood legs\nColors: warm cognac tan, dark brown\nShape: compact rectangle, plump cushion on upholstered base, four tapered square legs, raised and light\nFeel: warm, refined, cozy\nGoes with: walnut wood, cream and green tones, brass; mid-century or classic living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082VM3G6N",
+      "name": "Amazon Brand \u2013 Stone & Beam Wingard Leather Ottoman, 26.4\"W, Cognac",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 67.0,
+        "depth": 42.0,
+        "height": 48.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Cognac"
+      ],
+      "materials": [],
+      "style": "Ottoman",
+      "description": "This classic leather ottoman in Cognac most certainly has contemporary flair. Spruce up any room with this charming piece, ready to support your feet or serve as extra seating. Solid wood frame with 100% top-grain leather; assemble in 15 minutes or less Product Dimensions: 26.38\"W x 16.54\"D x 18.9\"H Care Instructions: Avoid moisture; wipe down with a clean, soft cloth Free returns for 30 days; 3-year warranty",
+      "image_path": "f4/f4147e40.jpg",
+      "image_px": [
+        1455,
+        1398
+      ]
+    },
+    "photos": [
+      "cfd2dc43560ff64c"
+    ]
+  }
+}

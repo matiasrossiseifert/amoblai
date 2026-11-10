@@ -1,0 +1,35 @@
+{
+  "product": "302.313.01",
+  "text": "Type: off-white swing-arm floor reading lamp\nUse: reading light beside a sofa, armchair or desk; living room, home office, bedroom\nStyle: farmhouse, industrial, retro\nMaterials: off-white powder-coated steel, brass-tone details, braided textile cord\nColors: off-white, brass, grey cord\nShape: tall pole with a long counterbalanced horizontal arm, dome shade on one end, brass pivot joint and socket, round heavy base, linear and graphic, medium visual weight\nFeel: nostalgic, warm, crafted, focused\nGoes with: warm wood, linen, white walls, brass accents; farmhouse, Scandinavian or vintage-style living rooms and studies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.313.01",
+      "name": "RANARP",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor,reading lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Off-white"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "25c019e3c0d8f25e"
+    ]
+  }
+}

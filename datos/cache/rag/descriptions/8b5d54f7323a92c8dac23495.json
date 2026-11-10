@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JKJSKMF",
+  "text": "Type: leather throw cushion\nUse: accent on a sofa, armchair or bed; living room, bedroom, home office\nStyle: rustic, industrial, classic\nMaterials: full-grain leather with natural creasing, stitched seams\nColors: warm medium brown, cognac tones\nShape: square, four panels joined by crossed center seams, knife edges, slim, medium size\nFeel: warm, rugged, timeless\nGoes with: cream, grey or navy upholstery, wool throws, dark wood, iron; rustic, industrial or lodge rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07JKJSKMF",
+      "name": "Amazon Brand \u2013 Stone & Beam Classic Leather Throw Pillow - 18 x 18 Inch, Brown",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 45.7,
+        "depth": 45.7,
+        "height": 7.6
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Imported This gorgeous leather throw pillow is made from 100% genuine leather. The brown hide is a delight to the senses and speaks of old-world, traditional class and sophistication. 18\"L x 18\"W Pieced 100% leather; hidden zipper closure Pillow cover and insert Spot clean only.",
+      "image_path": "fe/fea5c2dc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "806579e56b5d77e6"
+    ]
+  }
+}

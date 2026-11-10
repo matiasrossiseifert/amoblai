@@ -1,0 +1,35 @@
+{
+  "product": "403.702.83",
+  "text": "Type: articulated clamp-on work lamp\nUse: task light for working, reading or crafts at a desk; home office, study, workshop\nStyle: industrial, retro, modern\nMaterials: silver-painted steel shade with vent slots, spring-balanced steel arms, black clamp base, black cord\nColors: silver grey, black\nShape: deep dome shade on a long jointed arm with exposed springs, clamps to a desk edge, adjustable and angular, medium visual weight\nFeel: practical, studious, mechanical, classic\nGoes with: wooden or white desks, grey and black accents, pegboards; industrial or modern home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "403.702.83",
+      "name": "TERTIAL",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Silver-colour"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp arm and head are adjustable."
+    },
+    "photos": [
+      "0d711a9d2570b0f2"
+    ]
+  }
+}

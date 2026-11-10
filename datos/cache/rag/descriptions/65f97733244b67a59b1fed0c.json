@@ -1,0 +1,45 @@
+{
+  "product": "abo-B084W2RH8Z",
+  "text": "Type: upholstered dining chair, set of two\nUse: dining, occasional seating; dining room, home office\nStyle: contemporary, minimalist, classic\nMaterials: woven textured fabric upholstery, dark stained wood legs\nColors: cool cadet blue, dark espresso brown\nShape: straight squared back, armless, padded box seat, four tapered square legs, clean and compact\nFeel: calm, tailored, cozy\nGoes with: walnut or white tables, grey or white walls, brass accents; contemporary or classic dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B084W2RH8Z",
+      "name": "Amazon Brand \u2013 Stone & Beam Linden Classic Upholstered Dining Chair, 18.9\"W, Set of 2, Cadet Blue",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 62.0,
+        "depth": 48.0,
+        "height": 87.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Cadet"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This set of two classically styled armless dining chairs are upholstered in a cadet-blue fabric that makes them equally perfect for a classic dining room or eat-in kitchen. Their luxury and practicality means they evoke both romantic dinners for two and fabulous banquets for the whole family. 18.9\"W x 24.4\"D x 34.3\"H; seat height: 19.3\"H; seat depth: 18.5\"D; seat back height: 19.7\"H; leg height: 14.6\"H Solid wood frame High back provides extra support and added flair. Simple dining chair boasts beautiful fabric. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "e8/e88fbf9e.jpg",
+      "image_px": [
+        2560,
+        1679
+      ]
+    },
+    "photos": [
+      "de1981350780af49"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "603.086.38",
+  "text": "Type: pair of patterned grommet curtains\nUse: dressing windows and softening light; living room, bedroom, dining room\nStyle: Scandinavian, contemporary, retro\nMaterials: woven cotton with a printed pattern, metal ring grommets\nColors: white, cobalt blue, navy, light blue, soft pink\nShape: two long straight panels on a rod with a grommet heading, vertical bands of dots, ovals and diamonds, regular soft folds, medium visual weight\nFeel: cheerful, light, playful\nGoes with: white walls, light wood, blue or pink accents, grey sofas; Scandinavian or retro rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "603.086.38",
+      "name": "MOSSFLOX",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "145x300 cm",
+      "colors": [
+        "Multicolour"
+      ],
+      "description": "The curtains lower the general light level and provide privacy by preventing people outside from seeing directly into the room."
+    },
+    "photos": [
+      "d31ac3a2073779d7"
+    ]
+  }
+}

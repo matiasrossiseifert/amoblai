@@ -1,0 +1,38 @@
+{
+  "product": "203.323.53",
+  "text": "Type: small illustrated kids rug\nUse: a soft spot by a bed or door; children's room, playroom, entryway\nStyle: contemporary, retro\nMaterials: short soft low pile, bound edge\nColors: black, bright pink, white\nShape: small rectangle drawn like a house front, pink door and window below, tall white windows above, flat, compact\nFeel: playful, quirky, cheerful\nGoes with: white walls, pink or black accents, light wood; playful kids' rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.323.53",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "50x75 cm",
+      "colors": [
+        "Pink"
+      ],
+      "description": "If you combine many rugs you can create a colourful street with its own zebra crossing."
+    },
+    "photos": [
+      "c9105870ca602c67"
+    ]
+  }
+}

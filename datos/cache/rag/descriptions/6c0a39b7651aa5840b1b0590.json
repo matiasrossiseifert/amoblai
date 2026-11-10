@@ -1,0 +1,39 @@
+{
+  "product": "691.625.99",
+  "text": "Type: industrial pine desk on pipe legs\nUse: working, crafts, a computer setup; home office, studio, living room\nStyle: industrial, rustic, farmhouse\nMaterials: solid pine top with knots, black powder-coated steel tube frame\nColors: light natural pine, black\nShape: thick rectangular plank top on four pipe legs with round feet, a large X cross brace and low stretchers, plumbing-joint details, open and sturdy\nFeel: rugged, warm, workmanlike, casual\nGoes with: black metal, brick walls, leather, raw wood; industrial lofts, rustic or farmhouse workspaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "691.625.99",
+      "name": "KULLABERG",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 110.0,
+        "depth": 70.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "110x70 cm",
+      "colors": [
+        "Pine",
+        "black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "87fb2641230e42cd"
+    ]
+  }
+}

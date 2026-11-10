@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B78G4QH",
+  "text": "Type: round extending dining table\nUse: dining, gathering; dining room, kitchen\nStyle: farmhouse, rustic, contemporary\nMaterials: wood with parquet-pattern top, birch finish\nColors: light warm natural wood, honey tan\nShape: round top splitting for an extension leaf, radiating veneer pattern, deep apron, four square splayed legs, cross stretcher base, sturdy\nFeel: warm, sociable, relaxed\nGoes with: white or cream chairs, linen, light walls; farmhouse or casual dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B78G4QH",
+      "name": "Amazon Brand \u2013 Stone & Beam Jon Casual Farmhouse Wood Dining Table, 54\"-72\"W, Birch Finish",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 137.2,
+        "height": 76.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Beige"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "54\"L x 54-72\"W x 30\"H Solid hardwood made of poplar; birch veneer A simple design and rustic finish make it casual and ideal for a modern farmhouse d\u00e9cor A great table for dining or doing homework and crafts Assembly in 30 minutes or less; attach base to top Free returns for 30 days. 3-year warranty. This handsome rustic table is ideal for a lake house -- or for adding a warm natural touch to your home. The solid hardwood and sturdy construction will last through many family dinners, and an extra leaf allows you to extend the round table to a longer oval when needed.",
+      "image_path": "72/72760d6a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "aec782da04c6fba1"
+    ]
+  }
+}

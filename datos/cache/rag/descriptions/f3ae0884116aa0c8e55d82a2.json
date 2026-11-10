@@ -1,0 +1,35 @@
+{
+  "product": "503.222.39",
+  "text": "Type: round wire storage table with lid\nUse: storing throws, toys or magazines, holding drinks; living room, bedroom, kids room\nStyle: contemporary, Scandinavian, minimalist\nMaterials: white powder-coated steel wire basket, solid white lid with a finger slot\nColors: white\nShape: round drum shape, lift-off flat top with a slot handle, open triangular wire pattern on the sides, rests directly on the floor, light and see-through\nFeel: airy, fresh, playful, tidy\nGoes with: white walls, light wood, plants and soft textiles; Scandinavian or modern living rooms and small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "503.222.39",
+      "name": "KVISTBRO",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": null,
+      "type_ikea": "Storage table",
+      "category_tp": "table",
+      "size_raw": "61 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can store everything from throws and pillows to newspapers and yarn in the basket - or let it stay empty to give an open, spacious feeling."
+    },
+    "photos": [
+      "91995961072da0ec"
+    ]
+  }
+}

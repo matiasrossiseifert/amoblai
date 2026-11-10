@@ -1,0 +1,35 @@
+{
+  "product": "602.229.32",
+  "text": "Type: natural cowhide rug\nUse: layering on a floor, beside a sofa or bed; living room, bedroom, study\nStyle: modern, rustic, mid-century modern\nMaterials: natural cowhide with short glossy hair\nColors: deep black, faint dark brown shading\nShape: irregular organic hide outline with curved edges and leg points, flat and thin, medium visual weight\nFeel: dramatic, sleek, natural, bold\nGoes with: leather, chrome or black metal, white walls, dark wood; modern, industrial or mid-century rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.229.32",
+      "name": "KOLDBY",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "type_ikea": "Cow hide",
+      "category_tp": "rug",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "The cowhide is naturally durable and will last for many years."
+    },
+    "photos": [
+      "a07f851c7447fa4b"
+    ]
+  }
+}

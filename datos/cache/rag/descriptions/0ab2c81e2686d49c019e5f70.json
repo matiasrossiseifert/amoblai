@@ -1,0 +1,38 @@
+{
+  "product": "002.973.60",
+  "text": "Type: small striped cotton rug with fringe\nUse: softening the floor by the bed, sink or door; bedroom, bathroom, kitchen, entryway\nStyle: farmhouse, Scandinavian, coastal\nMaterials: flatwoven cotton, knotted fringe ends\nColors: cream base, stripes in red, navy, green, grey or pink\nShape: small rectangle, vertical pinstripes of varied widths, tasseled fringe on both short ends, flat and light\nFeel: fresh, homely, casual, cheerful\nGoes with: white or light wood furniture, colorful accents, tile floors; farmhouse kitchens, cottage bathrooms, Scandinavian bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "002.973.60",
+      "name": "SIGNE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 55.0,
+        "depth": 85.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "55x85 cm",
+      "colors": [
+        "Assorted colours"
+      ],
+      "description": "Easy to keep clean since it is machine washable."
+    },
+    "photos": [
+      "883814d3cd565210"
+    ]
+  }
+}

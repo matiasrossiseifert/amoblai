@@ -1,0 +1,39 @@
+{
+  "product": "302.878.21",
+  "text": "Type: large geometric low-pile area rug\nUse: anchoring a living or dining area; living room, dining room, home office\nStyle: modern, Scandinavian, contemporary\nMaterials: short dense cut pile, thin bound edge\nColors: black, off-white\nShape: large rectangle in a grid of squares split diagonally into black and white triangles, flat and soft, bold graphic contrast\nFeel: graphic, bold, crisp, energetic\nGoes with: white walls, black metal, light wood, grey textiles; modern, Scandinavian or industrial living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.878.21",
+      "name": "SILLERUP",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 200.0,
+        "depth": 300.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "200x300 cm",
+      "colors": [
+        "Black",
+        "white"
+      ],
+      "description": "Durable, stain resistant and easy to care for since the rug is made of synthetic fibres."
+    },
+    "photos": [
+      "e542304283339538"
+    ]
+  }
+}

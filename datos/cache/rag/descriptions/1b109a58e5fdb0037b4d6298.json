@@ -1,0 +1,36 @@
+{
+  "product": "102.604.60",
+  "text": "Type: woven-back swivel desk armchair\nUse: working at a desk; home office, study, living room corner\nStyle: contemporary, bohemian, modern\nMaterials: woven synthetic rattan back and seat frame, padded fabric seat cushion, black steel tube armrests and five-star base, casters\nColors: black brown, charcoal grey cushion, black\nShape: low rounded open-weave back wrapping into slim tubular armrests, thick padded seat, column on a five-star base with casters, medium visual weight\nFeel: textured, relaxed, cozy, understated\nGoes with: dark wood or black desks, natural fibers, warm grey tones; contemporary or bohemian home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.604.60",
+      "name": "GREGOR",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "svanby grey"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "940c9c655583aca1"
+    ]
+  }
+}

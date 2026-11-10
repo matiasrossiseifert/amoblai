@@ -1,0 +1,35 @@
+{
+  "product": "200.899.25",
+  "text": "Type: soft fleece throw with scalloped edges\nUse: warmth on a sofa, armchair or bed, napping, layering; living room, bedroom\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: soft brushed polyester fleece\nColors: off-white, warm cream\nShape: folded rectangle, smooth plush surface, scalloped cut edges along the hem, light and thin, drapey\nFeel: cozy, soft, warm, gentle\nGoes with: grey or beige sofas, light wood, wool, white bedding; Scandinavian, farmhouse or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "200.899.25",
+      "name": "POLARVIDE",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "130x170 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The fleece throw feels soft against your skin and can be machine washed."
+    },
+    "photos": [
+      "6d9651a62d162c79"
+    ]
+  }
+}

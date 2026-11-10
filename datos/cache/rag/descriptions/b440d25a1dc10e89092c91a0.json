@@ -1,0 +1,47 @@
+{
+  "product": "abo-B086VZ46KQ",
+  "text": "Type: leather power recliner chair\nUse: lounging, watching TV, reading; living room, den\nStyle: modern, contemporary\nMaterials: smooth leather upholstery, padded cushions\nColors: dark charcoal, near black\nShape: boxy square track arms, cushioned back, reclining footrest, base hidden to the floor, bulky and solid\nFeel: comfortable, sturdy, relaxed\nGoes with: grey or white walls, dark wood, metal accents; modern living rooms or media rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B086VZ46KQ",
+      "name": "Amazon Brand \u2013 Stone & Beam Alcoff Leather Power Recliner Chair, 40\"W, Charcoal",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 101.6,
+        "height": 106.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Charcoal"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": "Power Reclining Chair",
+      "description": "No assembly required This item is made to order just for you Package Dimensions: 44.0 L x 42.0 H x 44.0 W(inches) Vacuum or wipe with a dry cloth. Spot clean if needed",
+      "image_path": "e2/e2dd08d4.jpg",
+      "image_px": [
+        2560,
+        1829
+      ]
+    },
+    "photos": [
+      "8969fe5579e23d2d"
+    ]
+  }
+}
