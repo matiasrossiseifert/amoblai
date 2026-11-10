@@ -36,3 +36,46 @@ ambientes:
       parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer
       con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra
       redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.
+  # Fotos públicas (publicas.yaml: autor y licencia), con pedidos de otros estilos además del
+  # nórdico, para que la comparación de catálogos no dependa de la estética de IKEA.
+  - slug: publica-loft-industrial
+    foto: datos/ambientes_vacios/publicas/loft-vigas-escalera-sol.jpg
+    pedido: >-
+      Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de
+      cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una
+      biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal
+      y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.
+  - slug: publica-living-clasico
+    foto: datos/ambientes_vacios/publicas/living-molduras-casetonado-chimenea.jpg
+    pedido: >-
+      Una sala antigua con molduras y chimenea. Quiero un living clásico y elegante alrededor de la
+      chimenea: un sofá tapizado en terciopelo verde oscuro, dos sillones enfrentados, una mesa
+      ratona de madera oscura, una alfombra grande de diseño tradicional, una lámpara de pie con
+      pantalla de tela y un espejo grande con marco sobre la chimenea.
+  - slug: publica-comedor-clasico-moderno
+    foto: datos/ambientes_vacios/publicas/living-comedor-casa-nueva-escalera.jpg
+    pedido: >-
+      En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera
+      oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande
+      sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual,
+      cálido.
+  - slug: publica-living-japandi
+    foto: datos/ambientes_vacios/publicas/living-vinilico-gris-balcon.jpg
+    pedido: >-
+      Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la
+      derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de
+      papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón.
+      Pocas cosas, todas en tonos neutros.
+  - slug: publica-living-bohemio
+    foto: datos/ambientes_vacios/publicas/living-parquet-balcon-toldos.jpg
+    pedido: >-
+      Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán,
+      una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas
+      de cerámica y una estantería baja con libros. Que se vea vivido y alegre.
+  - slug: publica-estudio-sobrio
+    foto: datos/ambientes_vacios/publicas/dormitorio-madera-oscura-ventanas-esquina.jpg
+    pedido: >-
+      Quiero convertir este cuarto en un estudio para trabajar desde casa, moderno y sobrio: un
+      escritorio de madera oscura frente a la ventana, una silla de oficina negra ergonómica, una
+      biblioteca baja contra la pared, una lámpara de escritorio y un sillón chico de cuero para leer
+      en el rincón. Negro, madera oscura y gris.
