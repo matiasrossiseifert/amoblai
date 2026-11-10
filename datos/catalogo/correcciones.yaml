@@ -20,3 +20,50 @@
 "802.307.90": {excluir: true, motivo: "GÅSER 170x240: la foto es el pasillo de 56x150 (902.592.50)"}
 "402.279.02": {excluir: true, motivo: "LAPPLJUNG RUTA 200x200: la foto es la de 200x300 (402.605.19)"}
 "703.130.07": {excluir: true, motivo: "HAMPEN 133x195: la foto es la cuadrada de 80x80 (903.130.11)"}
+
+# Revisión del catálogo ampliado (2026-11-09): productos que los subagentes marcaron como dudosos al
+# describirlos, revisados mirando la foto. Se excluye lo que no es un mueble o deco de living o
+# comedor, o cuya foto es de otro producto; se corrige el kind donde la foto dice otra cosa.
+"000.114.28": {excluir: true, motivo: "accesorio de cocina para colgar de una barra o un riel"}
+"001.033.43": {excluir: true, motivo: "la foto es la de tres cajones (801.033.44)"}
+"001.228.22": {excluir: true, motivo: "la foto es el espejo alto de 74x165 (101.212.52)"}
+"001.286.21": {excluir: true, motivo: "es la estructura de un mueble infantil de guardado, no un portarretratos"}
+"001.747.69": {excluir: true, motivo: "la foto es el marco tallado SNÖDRUM (501.552.78); el VIRSERUM tiene otra"}
+"002.459.17": {category: cabinet, kind: storage cabinet, motivo: "es la estructura de un mueble de guardado (BESTÅ), no un portarretratos"}
+"002.691.40": {excluir: true, motivo: "la foto es una cómoda alta de seis cajones, no la de dos"}
+"002.785.78": {excluir: true, motivo: "estantería de depósito, de acero galvanizado"}
+"101.665.75": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"102.828.29": {excluir: true, motivo: "botiquín de baño"}
+"102.881.95": {excluir: true, motivo: "botiquín de baño"}
+"200.339.19": {category: ottoman, kind: ottoman, motivo: "es un puf de fibra trenzada"}
+"201.286.96": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"202.017.38": {excluir: true, motivo: "es un escalón infantil, no un puf"}
+"202.758.14": {excluir: true, motivo: "la foto es la de 2x4 cubos, 77x147 (203.002.86)"}
+"203.086.97": {excluir: true, motivo: "es la estructura de un mueble infantil de guardado, no un portarretratos"}
+"245.244.85": {excluir: true, motivo: "espejo de aumento de baño"}
+"298.766.51": {excluir: true, motivo: "la foto es la de 128 de alto, no la de 192"}
+"301.221.99": {excluir: true, motivo: "la foto es un florero gris (TÅGNG 403.097.71); BLADET es de vidrio transparente"}
+"302.176.54": {excluir: true, motivo: "la foto es la baja de tres estantes, 42x84 (602.236.20)"}
+"302.197.09": {excluir: true, motivo: "accesorio de cocina para colgar de una barra o un riel"}
+"380.062.00": {excluir: true, motivo: "espejo de aumento de baño"}
+"401.665.74": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"402.608.35": {excluir: true, motivo: "la foto es la de dos puertas (202.608.36, 118 de ancho), no la de 78"}
+"402.820.69": {excluir: true, motivo: "accesorio de cocina para colgar de una barra o un riel"}
+"490.017.91": {excluir: true, motivo: "la foto es la de 128 de alto, no la de 192"}
+"490.212.04": {excluir: true, motivo: "la foto es la de nueve cajones (390.288.90)"}
+"491.234.05": {excluir: true, motivo: "la foto es la escalonada de 94 de alto (290.428.77)"}
+"498.887.09": {category: dresser, kind: dresser, motivo: "es una cajonera"}
+"500.772.47": {category: shelf, kind: bookcase, motivo: "en la foto es una estantería abierta"}
+"503.209.28": {excluir: true, motivo: "la foto es la cortina gris (402.301.98); esta es gris verdosa"}
+"599.026.58": {category: shelf, kind: bookcase, motivo: "en la foto es una estantería abierta"}
+"601.665.73": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"601.913.65": {excluir: true, motivo: "barra de luz para el espejo del baño"}
+"602.510.38": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"603.034.81": {excluir: true, motivo: "la foto es la vitrina angosta de 60x186 (303.034.87)"}
+"603.086.95": {excluir: true, motivo: "es la estructura de un mueble infantil de guardado, no un portarretratos"}
+"702.937.16": {excluir: true, motivo: "la foto es la de seis cajones (202.937.14)"}
+"801.439.53": {excluir: true, motivo: "es un estante suelto (la tabla sola), no un producto completo"}
+"890.066.16": {excluir: true, motivo: "la foto muestra varios muebles juntos (cajonera, banco y ropero)"}
+"890.289.15": {category: dresser, kind: dresser, motivo: "es una cajonera"}
+"902.196.12": {excluir: true, motivo: "la foto es la cómoda alta de cinco cajones (202.805.99)"}
+"902.608.14": {category: cabinet, kind: storage cabinet, motivo: "en la foto es más alto que ancho: un armario, no un aparador"}
