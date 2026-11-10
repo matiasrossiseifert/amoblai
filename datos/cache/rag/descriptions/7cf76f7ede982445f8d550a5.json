@@ -1,0 +1,38 @@
+{
+  "product": "202.753.38",
+  "text": "Type: small square dining table\nUse: dining for two, breakfast; kitchen, small dining room, studio apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquered finish\nColors: pale natural birch\nShape: square top with softly rounded corners, plain apron, four sturdy square legs splayed slightly outward, simple and compact, light visual weight\nFeel: calm, light, natural, friendly\nGoes with: birch or white chairs, white walls, linen and greenery; Scandinavian or Japandi kitchens and compact dining corners\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "202.753.38",
+      "name": "NORRKER",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 74.0,
+        "depth": 74.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "74x74 cm",
+      "colors": [
+        "White birch"
+      ],
+      "description": "Durable and hard-wearing; meets the requirements on furniture for public use."
+    },
+    "photos": [
+      "32d0e73b84a6a208"
+    ]
+  }
+}

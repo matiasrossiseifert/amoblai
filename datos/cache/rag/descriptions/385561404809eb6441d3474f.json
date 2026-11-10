@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0719STLRW",
+  "text": "Type: large red mosaic wool rug\nUse: anchoring a large seating or dining area; living room, dining room, bedroom\nStyle: bohemian, traditional, rustic\nMaterials: wool, low textured pile\nColors: deep red, pink, cream, green, navy accents\nShape: rectangular, large diamond medallion with scattered geometric tile motifs, no border, oversized, bold\nFeel: warm, vibrant, eclectic, cozy\nGoes with: dark wood floors, grey or neutral upholstery, woven baskets; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0719STLRW",
+      "name": "Rivet Red Mosaic Multi-Print Wool Rug, 7'10\" x 11', Red",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 335.3,
+        "depth": 238.8,
+        "height": 1.7
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Red"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Transitional",
+      "description": "Pile: 100% Wool, Backing: 100% Canvas Imported The vibrant red in this tribal print rug is sure to make a bold style statement in any room. Its intricate details and beautifully matched color palette create a bold centerpiece for neutral d\u00e9cor. Tribal design in red 100% wool fibers hand-tufted in India Medium, .65'' pile suits high-traffic, transitional indoor areas Pair with a rug pad (sold separately) 7'10\" x 11' Ships tightly rolled in a protective bag Unroll, allow a few days for fibers to settle",
+      "image_path": "84/84d46503.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a6d75d85af8379cd"
+    ]
+  }
+}

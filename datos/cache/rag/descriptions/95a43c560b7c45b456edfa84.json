@@ -1,0 +1,36 @@
+{
+  "product": "902.642.18",
+  "text": "Type: egg-shaped swivel pod chair with canopy\nUse: hiding, reading, playing; kids' room, playroom\nStyle: retro, modern, contemporary\nMaterials: molded plastic shell and pedestal base, fabric pull-down canopy, padded seat pad\nColors: bright orange, light orange fabric\nShape: enclosed egg-shaped shell with a gathered fabric hood, rounded cocoon interior, round seat pad, swivel pedestal on a disc foot, compact and sculptural\nFeel: playful, cozy, fun, sheltered\nGoes with: bright colors, white walls, playful rugs; kids' rooms and retro or modern playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "902.642.18",
+      "name": "IKEA PS LMSK",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Orange",
+        "light orange"
+      ],
+      "description": "With the hood pulled down the armchair is a secret hiding-place for the child."
+    },
+    "photos": [
+      "ee573351a0abcc73"
+    ]
+  }
+}

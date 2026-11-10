@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QC876Z6",
+  "text": "Type: waterfall wood coffee table\nUse: holding drinks and books in front of a sofa; living room\nStyle: minimalist, mid-century modern, modern\nMaterials: wood veneer with a smooth satin finish, solid wood\nColors: warm medium brown wood\nShape: waterfall form with a flat top flowing into two solid panel sides, open front and back, clean square edges, compact, simple\nFeel: warm, calm, understated\nGoes with: cream or grey sofas, white walls, brass or black accents; mid-century or minimalist living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QC876Z6",
+      "name": "Amazon Brand \u2013 Rivet Modern Coffee Table, 39.37\"W, Pine Veneer and Natural Wood",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 55.0,
+        "height": 42.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [
+        "Pine"
+      ],
+      "style": null,
+      "description": "Constructed with simple miter joints and straight lines, this pine veneer coffee table in a natural color offers a sleek look. The moderate size allows plenty of room for magazines, coffee cups, and, of course, feet. Enjoy relaxing while the table adds comfort and functionality to any room. 39.37\"W x 21.65\"D x 16.54\"H 85% MDF, 10% solid pine, 5% pine veneer The simple design brings a modern look to this coffee table. The pine veneer in a natural color comes together with miter joints to create a sleek-looking contemporary coffee table. No assembly required Wipe with a soft, damp cloth; dry thoroughly. Free returns for 30 days. 1-year warranty.",
+      "image_path": "2c/2c55f5fa.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e51c171cff98964a"
+    ]
+  }
+}

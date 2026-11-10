@@ -1,0 +1,38 @@
+{
+  "product": "302.703.16",
+  "text": "Type: natural fiber flatwoven rug\nUse: adding natural texture to a seating area; living room, bedroom, dining room\nStyle: coastal, Japandi, rustic\nMaterials: tightly woven sisal-look plant fiber, bound fabric edge\nColors: warm natural tan, light beige border\nShape: rectangle with fine herringbone-like weave, narrow bound border, thin and firm, medium size, light visual weight\nFeel: earthy, warm, natural, calm\nGoes with: light or warm wood, rattan, cream walls, linen textiles; coastal, Japandi or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.703.16",
+      "name": "OSTED",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 195.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "133x195 cm",
+      "colors": [
+        "Natural"
+      ],
+      "description": "The rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant."
+    },
+    "photos": [
+      "b102d6604a8f7550"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "product": "abo-B0019FLS0G",
+  "text": "Type: striped rolled-arm armchair\nUse: lounging, reading; living room, bedroom\nStyle: traditional, coastal, classic\nMaterials: striped cotton-like upholstery fabric, dark wood tapered legs\nColors: cream white, light grey stripes, dark espresso\nShape: rounded tight back, scrolled rolled arms, deep seat, wide vertical stripes, short tapered dark legs, medium and generous\nFeel: fresh, relaxed, inviting\nGoes with: white walls, navy or grey accents, natural wood; coastal or classic living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0019FLS0G",
+      "name": "Pinzon Crescent Bay Armchair, Stripe",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "brand": "Pinzon",
+      "product_type": "CHAIR",
+      "colors": [
+        "Stripe"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Handsome arm chair in versatile, blue and beige wide-striped fabric enhances any decor Hardwood frame; foam cushion; helical springs for comfort; hand crafted in the USA 100-percent organic cotton fabric needs only spot cleaning for care; no assembly required Coordinates with the Pinzon Crescent Bay Furniture Collection Chair measures 37 inches high by 34 inches wide by 34 inches deep",
+      "image_path": "e5/e5ce2214.jpg",
+      "image_px": [
+        1500,
+        1353
+      ]
+    },
+    "photos": [
+      "8a332651991aad7c"
+    ]
+  }
+}

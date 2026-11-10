@@ -1,0 +1,37 @@
+{
+  "product": "902.727.27",
+  "text": "Type: tall bright blue four-drawer chest\nUse: storing clothes and small items; bedroom, children's room, hallway\nStyle: contemporary, Scandinavian, retro\nMaterials: blue painted fiberboard in a smooth matte finish\nColors: bright azure blue\nShape: narrow upright chest of four equal drawers, flush handleless fronts with slim gaps as grips, flat top, straight square legs, slim and light\nFeel: bold, cheerful, playful, fresh\nGoes with: white walls, light wood floors, yellow or white accents; playful modern bedrooms or children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.727.27",
+      "name": "NORDLI",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 48.0
+      },
+      "type_ikea": "Chest of 4 drawers",
+      "category_tp": "dresser",
+      "size_raw": "48x125 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "e387100a345554ec"
+    ]
+  }
+}

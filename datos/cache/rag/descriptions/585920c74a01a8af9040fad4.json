@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07QHKV56Y",
+  "text": "Type: geometric lattice area rug\nUse: anchoring a seating area; living room, bedroom, home office\nStyle: modern, contemporary, bohemian\nMaterials: flat-woven synthetic fibers, low pile\nColors: warm terracotta beige, cream\nShape: rectangular, interlocking hexagon and square lattice, tribal triangle bands at the ends, flat flat-woven texture, thin and light, medium-large\nFeel: warm, graphic, earthy\nGoes with: dark wood floors, grey upholstery, woven baskets; modern or bohemian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QHKV56Y",
+      "name": "Amazon Brand \u2013 Rivet Modern Lattice-Patterned Rug, 5' x 8', Beige and Cream",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [],
+      "style": "Modern",
+      "description": "A beige and cream geometric pattern creates a rug that is textured enough to create an accent anywhere it is placed but subtle enough to work with almost any room\u2019s color scheme. The soft pile adds a warm and stylish cushioning to your bare floors. 5'W x 8'L Front: 91% cotton, 8% polyester, 1% viscose; backing: 100% cotton Modern geometric design in classic neutrals The medium pile makes this rug ideal for moderate traffic areas. Pair with rug pad (sold separately)",
+      "image_path": "14/14b79640.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1156bc15f37e5430"
+    ]
+  }
+}

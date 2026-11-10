@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071FJR46L",
+  "text": "Type: nightstand with drawer\nUse: bedside storage and lamp surface; bedroom, living room\nStyle: industrial, contemporary, modern\nMaterials: oak wood with dark stain, brushed metal base and pull\nColors: dark warm brown, pewter grey\nShape: rectangular box with open cubby above one drawer, long bar handle, raised on open metal sled frame base, solid and compact\nFeel: warm, grounded, refined\nGoes with: grey or white bedding, dark wood, metal lamps; industrial or modern bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071FJR46L",
+      "name": "Amazon Brand \u2013 Stone & Beam Glenwood Industrial Metal Accent Nightstand End Table, 23\"H, Oak",
+      "category": "table",
+      "kind": "nightstand",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 40.6,
+        "height": 58.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Wood; Metal drawer pull and base"
+      ],
+      "style": "Nightstand",
+      "description": "This industrial nightstand features a metal drawer pull and matching metal base. The open space over the drawer is perfect for stashing your keys and remote control, and a back-mounted outlet makes charging and plugging in convenient for a lamp or a phone charger. 24\"W x 16\"D x 23\"H A bold industrial design is softened by a classic wood finish to blend with modern d\u00e9cor. No assembly needed. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty. Solid hardwood with oak veneer, wire-brushed for a distressed look. Metal drawer pull and base",
+      "image_path": "5c/5c237c07.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2ff5666c169f331e"
+    ]
+  }
+}

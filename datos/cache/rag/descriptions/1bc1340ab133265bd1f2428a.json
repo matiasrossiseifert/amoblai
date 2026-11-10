@@ -1,0 +1,36 @@
+{
+  "product": "702.978.42",
+  "text": "Type: set of two knitted hanging baskets\nUse: storing small toys and odds and ends, hung from a hook or set on a shelf; children's room, playroom\nStyle: contemporary, Scandinavian\nMaterials: knitted polyester cord, contrasting knitted hanging loop\nColors: bright green, hot pink loop\nShape: two soft round baskets in different sizes with ribbed knitted walls and a single loop handle, slouchy and flexible, small and light\nFeel: playful, soft, cheerful, bright\nGoes with: white furniture, light wood, bold colors, peg rails; colorful children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.978.42",
+      "name": "STICKAT",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket, set of 2",
+      "category_tp": "deco",
+      "size_raw": "20 cm",
+      "colors": [
+        "Green",
+        "pink"
+      ],
+      "description": "Space-saving baskets that help to keep your childrens belongings organised."
+    },
+    "photos": [
+      "2fc6d01e15b84713"
+    ]
+  }
+}

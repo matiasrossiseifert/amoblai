@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07KXYGHGZ",
+  "text": "Type: velvet accent armchair\nUse: lounging, reading, extra seating; living room, bedroom\nStyle: mid-century modern, contemporary, glam\nMaterials: velvet upholstery, black metal frame, brass leg caps\nColors: cool blue-grey, black, brass\nShape: high soft back, padded wraparound arms with zigzag stitching, cushioned seat, slim black metal sled-like legs with gold tips, light and open\nFeel: elegant, plush, refined\nGoes with: charcoal, walnut, brass, marble; modern or mid-century living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07KXYGHGZ",
+      "name": "Rivet Willard Mid-Century Modern Willard Accent Chair Fabric Leather and Metal",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [],
+      "style": "Mid-Century Modern",
+      "description": "",
+      "image_path": "aa/aa8e27d4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c6cb5aa73234b9cd"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X4T5L6",
+  "text": "Type: rounded tufted loveseat settee\nUse: sitting, conversation; living room, bedroom, entryway\nStyle: traditional, farmhouse, classic\nMaterials: linen-look fabric, button tufting, exposed wood frame\nColors: light sand beige, warm honey wood\nShape: curved barrel back with deep button tufting, exposed wood trim on back and arms, single seat cushion, splayed tapered wooden legs, compact\nFeel: warm, elegant, inviting\nGoes with: cream walls, natural wood, linen textiles; farmhouse, French country or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075X4T5L6",
+      "name": "Amazon Brand \u2013 Stone & Beam Laurel Rounded Loveseat Sofa Settee Couch, 57.1\"W, Sand",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 145.0,
+        "depth": 78.0,
+        "height": 81.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Linen"
+      ],
+      "materials": [
+        "linen/viscose blend"
+      ],
+      "style": "Mid-Century modern",
+      "description": "57.1\u201dW x 30.7\u201dD x 31.9\u201dH Sturdy hardwood frame with linen/viscose blend upholstery Elegant, vintage style with highly durable fabric for easy care and long life Curl up with a good book on this sleek rounded vintage loveseat. The exposed rustic wood frame and neutral linen-like upholstery allow it to blend with any d\u00e9cor while the tufted back and removable foam cushion promise good looks and durability. No assembly required. Wipe with a soft dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "cd/cd681854.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "82d2ef86bec72c20"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "402.288.12",
+  "text": "Type: bistro-style wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: Scandinavian, classic, minimalist\nMaterials: solid wood frame with a white painted finish, curved wooden backrest\nColors: white, soft off-white\nShape: wide curved backrest panel on two rear posts, rounded seat, four slim round legs joined by a ring stretcher, bentwood caf\u00e9 look, light and open\nFeel: bright, airy, simple, friendly\nGoes with: white or light wood tables, pastel or grey walls; Scandinavian kitchens, cottage or bright dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "402.288.12",
+      "name": "IDOLF",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You sit comfortably thanks to the shaped back."
+    },
+    "photos": [
+      "06979012edcb868c"
+    ]
+  }
+}

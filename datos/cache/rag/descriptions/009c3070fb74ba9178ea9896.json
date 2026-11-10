@@ -1,0 +1,35 @@
+{
+  "product": "702.790.70",
+  "text": "Type: perforated plastic swivel desk armchair\nUse: working at a desk, studying; home office, study, teen bedroom\nStyle: retro, contemporary, modern\nMaterials: glossy molded plastic shell with a pierced dot pattern, painted steel five-star base, black casters\nColors: turquoise, aqua blue, black\nShape: rounded shell back curving into low armrests, perforated sunburst dot pattern on the back and seat, slim column on a five-star base with casters, light and compact\nFeel: cheerful, playful, fresh, bright\nGoes with: white desks, light wood, coral or yellow accents; retro, playful or colorful home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "702.790.70",
+      "name": "ROBERGET",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Turquoise"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "caafd09593d8afe2"
+    ]
+  }
+}

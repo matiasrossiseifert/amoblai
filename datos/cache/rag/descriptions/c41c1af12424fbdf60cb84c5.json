@@ -1,0 +1,37 @@
+{
+  "product": "303.034.87",
+  "text": "Type: tall single-door glass vitrine\nUse: displaying glassware, china or collections, closed storage below; dining room, living room\nStyle: traditional, classic\nMaterials: black-stained wood with visible grain, clear glass door and sides, glass shelves, small brass knob\nColors: black-brown, clear glass, brass\nShape: tall narrow cabinet with a stepped crown molding, glazed door over a solid lower panel, glass side panels, plinth base, slim and stately\nFeel: elegant, formal, rich, timeless\nGoes with: white or cream walls, brass, crystal, patterned rugs; traditional or classic dining rooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.034.87",
+      "name": "MALSJ",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Glass-door cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "60x186 cm",
+      "colors": [
+        "Black stained"
+      ],
+      "description": "The glass shelves are adjustable so you can customise your storage as needed."
+    },
+    "photos": [
+      "c606b4a7523930c0"
+    ]
+  }
+}

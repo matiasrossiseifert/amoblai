@@ -1,0 +1,35 @@
+{
+  "product": "303.541.08",
+  "text": "Type: grey wool throw with fringe\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: Scandinavian, traditional, rustic\nMaterials: soft brushed wool-blend weave with a small jacquard pattern, knotted fringe ends\nColors: medium grey, light heather grey\nShape: long rectangular throw with an allover small diamond lattice pattern, fuzzy surface, fringed short edges, drapes softly when folded\nFeel: cozy, warm, soft, wintry\nGoes with: white or cream sofas, light wood, sheepskin, grey tones; Scandinavian, cabin or rustic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.541.08",
+      "name": "GRFIBBLA",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "150x200 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Made of pure new wool, the throw is soft and cushiony to the touch and long lasting."
+    },
+    "photos": [
+      "6eae48346af6ccd0"
+    ]
+  }
+}

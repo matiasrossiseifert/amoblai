@@ -1,0 +1,38 @@
+{
+  "product": "501.613.21",
+  "text": "Type: slatted storage chest table\nUse: storing blankets or toys, holding drinks in front of a sofa; living room, bedroom, balcony\nStyle: rustic, bohemian, coastal\nMaterials: solid acacia in an open lattice of slats, oiled finish\nColors: warm golden brown acacia\nShape: rectangular box shape with a lift-off top, open grid lattice on all sides, plain block base, chunky and solid, medium visual weight\nFeel: warm, natural, relaxed, earthy\nGoes with: rattan, jute rugs, green plants, white walls; bohemian, coastal or rustic living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "501.613.21",
+      "name": "HOL",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 98.0,
+        "depth": 50.0
+      },
+      "type_ikea": "Storage table",
+      "category_tp": "table",
+      "size_raw": "98x50 cm",
+      "colors": [
+        "Acacia"
+      ],
+      "description": "Solid wood, a durable natural material."
+    },
+    "photos": [
+      "18a2654b14839982"
+    ]
+  }
+}

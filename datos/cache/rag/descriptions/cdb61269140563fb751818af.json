@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075HXLWSB",
+  "text": "Type: hexagonal wall planter\nUse: holding small plants or succulents; mounted on a wall in a living room, bedroom, home office\nStyle: modern, minimalist, industrial\nMaterials: matte earthenware with a concrete look, keyhole hanger\nColors: cool medium grey, dark grey interior\nShape: flat-backed hexagon with an open upper front pocket, compact and shallow\nFeel: graphic, clean, calm\nGoes with: white walls, succulents, wood accents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075HXLWSB",
+      "name": "Amazon Brand \u2013 Rivet Hexagonal Wall Mount Planter, 7.7\"H, Modern Earthenware, Grey",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 19.6,
+        "depth": 15.5,
+        "height": 6.3
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Earthenware"
+      ],
+      "style": null,
+      "description": "This hexagon-shaped vase planter makes a wonderful decorative piece for your wall, and its concrete-like appearance adds a bit of an industrial touch. The neutral tone looks great with or without plants or flowers, by itself or in a group of wall vases. Modern shape with neutral coloring to blend with any style room. 100% earthenware 6.1\"W X 2.3\"D X 7.7\"H; interior 5.71\"W x 2.1\"D x 6.89\"H Durable piece with hole on back for easy mounting on wall",
+      "image_path": "ea/ea4421c0.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "305b28bed7d837ec"
+    ]
+  }
+}

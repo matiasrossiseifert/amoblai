@@ -1,0 +1,35 @@
+{
+  "product": "103.123.84",
+  "text": "Type: frosted glass ceiling and wall lamp\nUse: general light in a hallway, entry or small room; hallway, bathroom, bedroom, kitchen\nStyle: minimalist, Scandinavian, retro\nMaterials: frosted opal glass shade, white mounting cap\nColors: white, milky frosted white\nShape: rounded capsule-shaped glass cylinder with a domed end, short white cylindrical base mounted flush, compact, simple and solid\nFeel: clean, calm, soft\nGoes with: white walls, white tiles, light wood, chrome or white fixtures; minimalist or Scandinavian hallways and bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "103.123.84",
+      "name": "STAN",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Ceiling,wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Gives a diffused light; good for spreading light into larger areas of a bathroom."
+    },
+    "photos": [
+      "22bc45512bc98642"
+    ]
+  }
+}

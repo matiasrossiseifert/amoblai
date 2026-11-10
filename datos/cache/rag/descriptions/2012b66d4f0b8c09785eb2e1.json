@@ -1,0 +1,36 @@
+{
+  "product": "103.203.41",
+  "text": "Type: industrial swivel work chair\nUse: working at a desk, crafts, drawing; home office, study, studio\nStyle: industrial, rustic, Scandinavian\nMaterials: solid pine seat and backrest with a clear lacquer, black powder-coated steel frame, height-adjustable center column\nColors: light honey pine, matte black\nShape: small rectangular wooden backrest on a looped steel rod, flat seat, armless, four splayed steel legs joined by a round footring, open and light, compact\nFeel: utilitarian, crafted, warm, vintage\nGoes with: raw wood desks, black metal, concrete or brick walls; industrial or rustic home offices and studios\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "103.203.41",
+      "name": "KULLABERG",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Pine",
+        "black"
+      ],
+      "description": "A desk chair inspired by old-fashioned industrial-style chairs, complete with modern functions."
+    },
+    "photos": [
+      "af42dfeb7050b004"
+    ]
+  }
+}

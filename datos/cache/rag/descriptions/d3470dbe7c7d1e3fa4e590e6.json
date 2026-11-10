@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07HSH22K8",
+  "text": "Type: two-drawer storage cabinet\nUse: storage, bedside or accent piece; bedroom, living room\nStyle: mid-century modern, retro\nMaterials: walnut veneer wood, brass knobs\nColors: warm medium walnut brown, brass\nShape: boxy case, open shelf above two drawers, small round knobs, splayed tapered legs, light and compact\nFeel: warm, sleek, retro\nGoes with: white walls, mustard or green accents, brass; mid-century bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSH22K8",
+      "name": "Amazon Brand \u2013 Rivet Modern Cabinet with Inner Shelf, 15\"W, Walnut",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 70.1,
+        "depth": 38.1,
+        "height": 74.9
+      },
+      "brand": "Rivet",
+      "product_type": "CABINET",
+      "colors": [],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Mid-Century Modern",
+      "description": "This cabinet boasts timeless, mid-century elegance with a walnut veneer that complements a broad variety of decors. The 2 large drawers provide ample storage, and the top inner shelf offers easy access to books, tablets, and other items. 27.6\"W x 15.0\"D x 29.5\"H Solid wood and MDF with walnut veneer Classic mid-century style with simple design One top inner shelf with 2 drawers for ample storage space Assemble in 15-30 minutes Free returns for 30 days. 1-year warranty",
+      "image_path": "0b/0b5ac752.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7736755a3889c885"
+    ]
+  }
+}

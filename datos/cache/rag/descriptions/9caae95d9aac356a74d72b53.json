@@ -1,0 +1,36 @@
+{
+  "product": "700.894.33",
+  "text": "Type: glass cone shade table lamp\nUse: reading or ambient light on a desk, a side table or a bedside table; living room, bedroom, home office\nStyle: traditional, classic, retro\nMaterials: translucent glass shade, nickel-plated steel S-curved stem and round stepped base\nColors: brushed silver, translucent white\nShape: wide angled cone shade hanging from a graceful curved arm, round stepped base, medium visual weight, elegant outline\nFeel: homely, elegant, timeless, soft\nGoes with: wood desks, cream walls, nickel accents; traditional, classic or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "700.894.33",
+      "name": "KROBY",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "glass"
+      ],
+      "description": "Each shade of mouth blown glass is unique."
+    },
+    "photos": [
+      "f9c851176947157f"
+    ]
+  }
+}

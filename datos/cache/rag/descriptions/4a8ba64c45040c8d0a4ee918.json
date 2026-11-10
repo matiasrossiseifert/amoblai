@@ -1,0 +1,35 @@
+{
+  "product": "803.296.30",
+  "text": "Type: black metal dome pendant lamp\nUse: light over a dining table, kitchen island or work table; dining room, kitchen, home office\nStyle: industrial, retro, farmhouse\nMaterials: matte black painted steel shade, brass-colored fittings, black-and-white braided textile cord, black ceiling cup\nColors: matte black, brass, white shade interior\nShape: wide flared dome shade with a narrow neck and brass yoke, hangs on a braided cord, classic workshop silhouette, medium visual weight\nFeel: bold, grounded, vintage, warm\nGoes with: wood dining tables, brick, concrete, black and brass accents; industrial or farmhouse kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "803.296.30",
+      "name": "RANARP",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "36fc6792cc7e2365"
+    ]
+  }
+}

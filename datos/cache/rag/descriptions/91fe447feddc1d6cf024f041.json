@@ -1,0 +1,36 @@
+{
+  "product": "191.278.10",
+  "text": "Type: bentwood shell dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: molded birch veneer seat shell, chrome-plated steel legs\nColors: pale natural birch, silver chrome\nShape: one-piece curved plywood seat and back with a waisted backrest, armless, four slim straight tubular legs, light and open, compact\nFeel: light, airy, clean, warm\nGoes with: light wood or white tables, chrome, white walls; Scandinavian or mid-century kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "191.278.10",
+      "name": "SVENBERTIL",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Birch",
+        "broringe chrome-plated"
+      ],
+      "description": "You sit comfortably thanks to the restful flexibility of the scooped seat and shaped back."
+    },
+    "photos": [
+      "4bf7f6a25c0df83b"
+    ]
+  }
+}

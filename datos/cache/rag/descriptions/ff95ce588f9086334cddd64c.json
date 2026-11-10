@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07C8WMV19",
+  "text": "Type: faux fur throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: glam, modern, Scandinavian\nMaterials: soft shaggy faux fur\nColors: light warm grey, greige\nShape: square, plush mottled pile, knife edges, plump and full\nFeel: cozy, soft, luxurious\nGoes with: white, grey or velvet sofas, knit throws, brass accents; glam or Scandinavian bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07C8WMV19",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Soft Faux Fur Throw Pillow - 20 x 20 Inch, Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 50.8,
+        "depth": 50.8,
+        "height": 17.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "style": null,
+      "description": "Add a touch of luxury to your room with this plush pillow. Amazingly soft faux fur exudes glamour along with warmth and coziness. For a different look, flip it over to the solid grey side. Neutral grey will enhance any style bedroom. Pillow cover features hidden bottom zipper 20\"L x 20\"W, Pillow cover dimensions are measured from seam to seam when cover is laid flat. Removable plush fiber-filled insert included Spot clean with damp white cloth and allow to air dry",
+      "image_path": "78/785f5338.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "18284c86e47bee7a"
+    ]
+  }
+}

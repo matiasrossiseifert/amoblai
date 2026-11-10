@@ -1,0 +1,36 @@
+{
+  "product": "101.168.49",
+  "text": "Type: slat-back dining chair with padded seat\nUse: dining; dining room, kitchen\nStyle: traditional, Scandinavian, classic\nMaterials: solid wood frame in a brown-black stain, padded seat with white fabric cover\nColors: dark brown-black, white seat\nShape: tall upright back with four vertical slats, armless, cushioned seat, four straight square legs, slim and upright, light visual weight\nFeel: tidy, classic, calm, homey\nGoes with: dark wood tables, white walls, black and white schemes; classic or Scandinavian dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "101.168.49",
+      "name": "BRJE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Brown-black",
+        "gobo white"
+      ],
+      "description": "The cover is easy to take off and put on."
+    },
+    "photos": [
+      "ae46399a86c5e422"
+    ]
+  }
+}

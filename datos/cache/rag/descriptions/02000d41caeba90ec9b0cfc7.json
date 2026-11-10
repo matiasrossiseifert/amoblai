@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07374SBFL",
+  "text": "Type: dome arc floor lamp\nUse: reading light over a chair or sofa; living room, bedroom, home office\nStyle: mid-century modern, modern, minimalist\nMaterials: brushed nickel metal\nColors: cool silver brushed nickel\nShape: slim straight pole curving over at the top, hanging round metal dome shade, round disc base, light and compact\nFeel: sleek, clean, cool\nGoes with: grey fabrics, white walls, black or chrome accents, light wood; modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07374SBFL",
+      "name": "Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 25.4,
+        "height": 149.9
+      },
+      "brand": "Rivet",
+      "product_type": "LAMP",
+      "colors": [
+        "Brushed Nickel"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "Modern style Brushed nickel finish from base to adjustable sleek metal shade Provides ample light while fitting in a small space 10\"Wx17\"Dx59\"H Easily assembled in 15 minutes Curl up with a good book under this adjustable floor reading lamp, which shines highly focused light. The brushed nickel finish and simple, minimalist design will add just the right modern splash to your d\u00e9cor.",
+      "image_path": "91/91b1ee86.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6018b2978ed50394"
+    ]
+  }
+}

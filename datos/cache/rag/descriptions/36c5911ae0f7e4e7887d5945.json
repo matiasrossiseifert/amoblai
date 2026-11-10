@@ -1,0 +1,38 @@
+{
+  "product": "502.703.15",
+  "text": "Type: small natural fibre rug\nUse: covering a small floor spot, at a door or beside a bed or desk; entryway, hallway, bedroom, kitchen\nStyle: coastal, Scandinavian, rustic\nMaterials: tightly woven natural sisal-like fibre, fabric-bound edges\nColors: warm natural tan, light brown\nShape: rectangular, flat, fine woven texture, neat bound border, compact and light\nFeel: natural, earthy, calm\nGoes with: white walls, light or warm wood, rattan, linen; coastal, Japandi or Scandinavian homes\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.703.15",
+      "name": "OSTED",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 140.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x140 cm",
+      "colors": [
+        "Natural"
+      ],
+      "description": "The rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant."
+    },
+    "photos": [
+      "2d2a6fea717eb88e"
+    ]
+  }
+}

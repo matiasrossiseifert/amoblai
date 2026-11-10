@@ -1,0 +1,35 @@
+{
+  "product": "302.397.12",
+  "text": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.397.12",
+      "name": "STOCKHOLM",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": null,
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "93 cm",
+      "colors": [
+        "Walnut veneer"
+      ],
+      "description": "The table surface in walnut veneer and legs in solid walnut give a warm, natural feeling to your room."
+    },
+    "photos": [
+      "d846466871fa020f"
+    ]
+  }
+}

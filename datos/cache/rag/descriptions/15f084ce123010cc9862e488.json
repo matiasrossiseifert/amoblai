@@ -1,0 +1,35 @@
+{
+  "product": "002.975.67",
+  "text": "Type: pair of light grey sheer curtains\nUse: softening daylight and adding privacy at a window; living room, bedroom, dining room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: lightweight semi-sheer woven fabric, rod pocket heading\nColors: light warm grey, greige\nShape: two long straight panels hanging in soft vertical folds from a rod pocket, gathered top, plain hem, light and flowing\nFeel: soft, airy, calm, light\nGoes with: white walls, light wood, linen, grey sofas; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.975.67",
+      "name": "VIVAN",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "145x300 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution."
+    },
+    "photos": [
+      "67fcf78bb168b17a"
+    ]
+  }
+}

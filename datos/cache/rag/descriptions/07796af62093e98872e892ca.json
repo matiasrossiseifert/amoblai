@@ -1,0 +1,36 @@
+{
+  "product": "802.418.16",
+  "text": "Type: woven water hyacinth plant pot\nUse: covering a potted plant on a floor or a shelf; living room, bedroom, home office\nStyle: bohemian, coastal, rustic\nMaterials: woven water hyacinth over a white plastic inner liner\nColors: greyish brown, warm taupe, white liner\nShape: round tapered cachepot with a chunky braided weave and a rolled braided rim, thick textured surface, medium visual weight\nFeel: natural, warm, earthy, relaxed\nGoes with: green leafy plants, light or dark wood, linen, jute rugs; bohemian, coastal or rustic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "802.418.16",
+      "name": "DRUVFLDER",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "12 cm",
+      "colors": [
+        "Water hyacinth",
+        "grey"
+      ],
+      "description": "Handmade by a skilled craftsman."
+    },
+    "photos": [
+      "aad39cd122f7ba7f"
+    ]
+  }
+}

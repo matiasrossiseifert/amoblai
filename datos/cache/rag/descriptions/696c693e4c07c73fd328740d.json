@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WGSN2W",
+  "text": "Type: small round floating wall mirror\nUse: decorating a wall, small accent; entryway, bedroom, living room, home office\nStyle: industrial, modern\nMaterials: dark bronze metal, brass corner details, mirror glass\nColors: dark bronze black, antique brass\nShape: round mirror with thick rim suspended on side pivots within an open square frame, compact\nFeel: rugged, graphic, crafted\nGoes with: brick, dark wood, leather, black metal; industrial or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073WGSN2W",
+      "name": "Amazon Brand \u2013 Stone & Beam Industrial Square Floating Metal Wall Mirror, 12 Inch Height, Black",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 30.5,
+        "depth": 10.2,
+        "height": 30.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "iron"
+      ],
+      "style": null,
+      "description": "With round glass appearing to float in a four-sided black iron frame, this industrial mirror will turn heads. It's also super functional and sized to be easily displayed on a bureau top, bookcase shelf, or mounted on a wall. Industrial design with black iron frame Glass, iron frame with black finish 12\"W x 4\"D x 12\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "be/bece77a1.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "61dfc9c74f925806"
+    ]
+  }
+}

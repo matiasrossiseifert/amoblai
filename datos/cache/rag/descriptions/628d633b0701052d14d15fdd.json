@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082QCY5RF",
+  "text": "Type: three-seat upholstered sofa\nUse: seating, lounging; living room\nStyle: mid-century modern, contemporary\nMaterials: textured woven fabric, dark wood plinth base and legs\nColors: dark grey, dark brown wood\nShape: curved continuous back flowing into flared sloping arms, tight seat and back, low wooden plinth, splayed tapered legs, medium size, tailored\nFeel: cozy, refined, calm\nGoes with: walnut wood, white or cream walls, brass accents; mid-century or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B082QCY5RF",
+      "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 193.0,
+        "depth": 87.0,
+        "height": 83.0
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Dark Grey"
+      ],
+      "materials": [
+        "Fabric"
+      ],
+      "style": "Sofa",
+      "description": "Tapered legs, a rounded back and armrests, and a chic dark-gray upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame; polyester, linen, and rayon upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty",
+      "image_path": "a2/a23d4e01.jpg",
+      "image_px": [
+        2560,
+        1470
+      ]
+    },
+    "photos": [
+      "ea90f1217e7c584b"
+    ]
+  }
+}

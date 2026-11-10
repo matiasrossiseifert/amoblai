@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4MKCLM",
+  "text": "Type: large rectangular storage ottoman\nUse: footrest, extra seat, storage; living room, bedroom\nStyle: traditional, contemporary\nMaterials: woven upholstery fabric, self piping, fabric pull tab, dark wood legs\nColors: warm tan beige, dark brown\nShape: long low box with lift-up padded lid, front pull tab, short tapered legs, low and wide\nFeel: soft, calm, practical\nGoes with: beige or white walls, warm wood, neutral sofas; transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4MKCLM",
+      "name": "Amazon Brand \u2013 Stone & Beam Isabel Traditional Large Storage Ottoman, 68\"W, Tan",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 60.3,
+        "depth": 34.9,
+        "height": 50.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Tan"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": null,
+      "description": "67.7\"W x 29.5\"D x 18.9\"H Polyester performance fabric on wood frame Streamlined design fits a modern or transitional room Use as an ottoman, for storage, or as an extra seat. Easy assembly in less than 15 minutes; just screw in legs Free returns for 30 days. 1-year warranty. This ottoman is a multi-tasker, providing a comfy foot rest along with storage space. It can accommodate a tray of snacks or be an extra seat for guests, too. Built to last, its performance fabric will resist stains along with wear and tear.",
+      "image_path": "2b/2b8ad168.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e5a084be0a0de083"
+    ]
+  }
+}

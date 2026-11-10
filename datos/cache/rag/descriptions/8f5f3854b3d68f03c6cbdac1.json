@@ -1,0 +1,47 @@
+{
+  "product": "abo-B083YFS2FR",
+  "text": "Type: embossed ceramic planter\nUse: holding a small indoor plant; on a shelf, windowsill or side table; living room, bedroom, home office\nStyle: bohemian, contemporary, Scandinavian\nMaterials: matte glazed ceramic, embossed floral relief, ribbed interior\nColors: soft warm white, light beige interior\nShape: rounded cup shape with gently curved base, all-over medallion flower pattern, small to medium\nFeel: soft, light, delicate\nGoes with: light wood, rattan, cream and beige textiles; Scandinavian or boho rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B083YFS2FR",
+      "name": "Amazon Brand \u2013 Stone & Beam Medium Floral-Embossed Planter, 6\"H, Cloud Dancer White",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 17.0,
+        "depth": 17.0,
+        "height": 15.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PLANTER",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Ceramic"
+      ],
+      "style": "Floral",
+      "description": "This eye-catching planter is the perfect vessel for a plant, flower, or other greenery of your choice, or you can choose to keep it empty or use it to display other items in your home. The white color will look great in any room or outdoor space. 6.7\" diameter x 6\"H; 6\" interior diameter 100% ceramic stoneware This natural stoneware pot is perfect for showing off your favorite flower or plant and includes a drainage hole. With an embossed floral pattern in white glaze, there's no wrong way to display this classic pot. Fill it with your favorite plant or keep it empty. No assembly required Hand wash with a wet cloth.",
+      "image_path": "5e/5ec45c45.jpg",
+      "image_px": [
+        1672,
+        1778
+      ]
+    },
+    "photos": [
+      "cb23faf2b97b2826"
+    ]
+  }
+}

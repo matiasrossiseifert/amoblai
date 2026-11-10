@@ -1,0 +1,35 @@
+{
+  "product": "902.376.54",
+  "text": "Type: vintage-style round wall clock\nUse: telling the time at a glance; living room, kitchen, dining room, home office\nStyle: traditional, retro, farmhouse\nMaterials: painted metal case, chrome-finish inner ring, glass front, printed dial\nColors: warm cream beige, aged parchment dial, black numerals and hands, silver\nShape: large round face framed by a deep rolled rim, black Roman numerals and diamond markers, ornate spade hands, station-clock look, medium visual weight\nFeel: nostalgic, warm, classic, homey\nGoes with: dark or warm wood, cream walls, brass or chrome accents; traditional, farmhouse or vintage rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.376.54",
+      "name": "SKOVEL",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": "35 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "7f39d45806c13735"
+    ]
+  }
+}

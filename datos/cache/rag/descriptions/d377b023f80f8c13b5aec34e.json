@@ -1,0 +1,35 @@
+{
+  "product": "802.807.42",
+  "text": "Type: adjustable white desk lamp\nUse: directed light for reading and working at a desk; home office, study, bedroom\nStyle: Scandinavian, contemporary, retro\nMaterials: white plastic shade, silver-grey painted metal stem and base, white cord with switch\nColors: white, light silver grey\nShape: rounded bucket-shaped shade on a swivel joint, sliding side arm, gently S-curved stem, round flat base, compact and light\nFeel: friendly, practical, soft, tidy\nGoes with: white or light wood desks, grey accents, pale walls; Scandinavian or contemporary home offices and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.807.42",
+      "name": "SVIRVEL",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can easily direct the light where you want it because the lamp head is adjustable."
+    },
+    "photos": [
+      "7dba8d291ad24e1a"
+    ]
+  }
+}

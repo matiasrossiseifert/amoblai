@@ -1,0 +1,39 @@
+{
+  "product": "abo-B00E5LLBVM",
+  "text": "Type: velvet plush throw blanket\nUse: warmth on a sofa or bed; living room, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: velvety plush fleece, bound edges\nColors: sage green, soft grey green\nShape: plain rectangular throw, smooth solid surface, narrow self-bound border, lightweight and soft, folds compactly\nFeel: calm, soft, cozy\nGoes with: cream, grey and natural wood, green plants, neutral bedding; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B00E5LLBVM",
+      "name": "Pinzon Velvet Plush Throw",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "The softest most elegant throw you can ever imagine; This throw is made of high denier and high filament micro plush The feel of velvet fit for royalty High denier, high filament micro plush 50s60 inch's in size",
+      "image_path": "bb/bbd26e98.jpg",
+      "image_px": [
+        2560,
+        1673
+      ]
+    },
+    "photos": [
+      "3e1b5dcc22f17421"
+    ]
+  }
+}

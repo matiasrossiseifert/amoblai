@@ -1,0 +1,47 @@
+{
+  "product": "abo-B001CD1GFM",
+  "text": "Type: stacked orb table lamp\nUse: light on a nightstand, console or side table; living room, bedroom\nStyle: glam, art deco, contemporary\nMaterials: polished nickel metal, black glossy drum shade\nColors: bright silver nickel, black\nShape: column of stacked shiny balls, round base, tall tapered black drum shade, tall for a table lamp\nFeel: glamorous, shiny, bold\nGoes with: mirrored nightstands, black and white decor, grey walls, velvet; glam or Hollywood regency rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B001CD1GFM",
+      "name": "Pinzon Polished Nickel Orb Table Lamp with Black Shade",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 35.6,
+        "depth": 25.4,
+        "height": 91.4
+      },
+      "brand": "Pinzon by Amazon",
+      "product_type": "LAMP",
+      "colors": [
+        "Polished Nickel"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Modern",
+      "description": "Bright silver table lamp with classic black drum shade beautifully enhances urban and modern decors Chrome-plated metal base; cotton shade; silver cord; matching finial Requires 1 bulb up to 100 watts; UL listed; 3-way switch for adjustable lighting Arrives assembled for immediate enjoyment; matching floor lamp available separately Measures 36 inches high by 14 inches wide; weighs approximately 10 pounds",
+      "image_path": "d6/d6344595.jpg",
+      "image_px": [
+        724,
+        1664
+      ]
+    },
+    "photos": [
+      "c51a8c379a22a9d9"
+    ]
+  }
+}

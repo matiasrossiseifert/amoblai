@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7J3B5M",
+  "text": "Type: square end table with shelf\nUse: holding a lamp or drinks beside a sofa; living room, bedroom\nStyle: industrial, rustic, farmhouse\nMaterials: reclaimed fir wood, parquet starburst top, black metal legs\nColors: warm natural wood, honey brown, black\nShape: square framed top, lower shelf, black flat bar legs with angular open feet, medium and open\nFeel: rugged, warm, crafted\nGoes with: leather, black metal, brick or white walls; industrial or rustic living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7J3B5M",
+      "name": "Amazon Brand \u2013 Stone & Beam Bernice Industrial Reclaimed Fir Wood Side End Table, 20\"W, Natural and Black",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 50.0,
+        "height": 50.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Natural/Black"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": "Side Table",
+      "description": "Beautiful parquet-patterned wood is paired with modern black-finished metal for the ultimate mix of rustic, modern and industrial styles. Made of reclaimed fir wood, it's a style focal point along with serving as a side table. 19.7\"W x 19.7\"D x 19.7\"H; Leg Height: 4.92\"H Reclaimed fir wood top and lower shelf, metal legs Rustic, modern and industrial styles combine in a piece that will blend with most any room Ideal table next to a sofa for a lamp; lower shelf provides extra storage No assembly required Free returns for 30 days. 3-year warranty.",
+      "image_path": "83/83b9fecc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4c07f58474900355"
+    ]
+  }
+}

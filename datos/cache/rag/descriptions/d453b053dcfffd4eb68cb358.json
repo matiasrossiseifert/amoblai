@@ -1,0 +1,36 @@
+{
+  "product": "991.278.06",
+  "text": "Type: molded shell dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: mid-century modern, Scandinavian, retro\nMaterials: molded plastic shell, solid birch legs, grey metal underframe\nColors: light sky blue, light natural birch, grey\nShape: one-piece curved scoop shell with a tall rounded back, armless, four splayed round tapered wooden legs, slim and light, compact\nFeel: fresh, cheerful, airy, soft\nGoes with: white or light wood tables, pastel or white walls; Scandinavian or mid-century modern dining rooms, bright kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "991.278.06",
+      "name": "LEIFARNE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Light blue",
+        "ernfrid birch"
+      ],
+      "description": null
+    },
+    "photos": [
+      "882c167330fe4957"
+    ]
+  }
+}

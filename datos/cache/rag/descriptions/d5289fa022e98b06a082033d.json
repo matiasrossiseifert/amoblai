@@ -1,0 +1,38 @@
+{
+  "product": "490.017.91",
+  "text": "Type: tall cabinet with doors and drawers\nUse: storing clothes, toys, books and supplies; children's room, bedroom, playroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: painted board, matte black doors, white drawers, cut-out handles\nColors: black, white\nShape: tall narrow cabinet with two black doors on top and three white drawers below, rectangular cut-out pulls, flat top, plinth base, slim and graphic\nFeel: graphic, tidy, bold, modern\nGoes with: white walls, light wood, black and white textiles; Scandinavian children's rooms or modern bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "490.017.91",
+      "name": "STUVA",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Storage combination w doors,drawers",
+      "category_tp": "cabinet",
+      "size_raw": "60x50x192 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "You can keep both hanging and folded clothes in this wardrobe, since it has a clothes rail, shelf and drawers."
+    },
+    "photos": [
+      "eb17dae0ec6d4b55"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "890.066.16",
+  "text": "Type: children's storage combination with bench\nUse: storing clothes and toys, sitting on the bench chest; children's room, playroom, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board, flat fronts with cut-out finger grips\nColors: white, black grip insets\nShape: wide grouping of a tall six-drawer chest, a low storage bench chest and a tall two-door wardrobe over three drawers, rectangular cut-out handles, clean flat fronts, large but simple visual weight\nFeel: tidy, bright, practical, calm\nGoes with: light wood floors, pastel or bright textiles, white walls; Scandinavian children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "890.066.16",
+      "name": "STUVA",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 210.0
+      },
+      "type_ikea": "Storage combination",
+      "category_tp": "cabinet",
+      "size_raw": "210x50x192 cm",
+      "colors": [
+        "White",
+        "white"
+      ],
+      "description": "Deep enough to hold standard-sized adult hangers."
+    },
+    "photos": [
+      "442e0dd90301ed7e"
+    ]
+  }
+}

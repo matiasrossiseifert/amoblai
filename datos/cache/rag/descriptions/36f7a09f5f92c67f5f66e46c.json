@@ -1,0 +1,39 @@
+{
+  "product": "402.255.02",
+  "text": "Type: small striped flatwoven rug\nUse: covering a small floor spot, by a bed, door or sink; hallway, kitchen, bedroom, entryway\nStyle: minimalist, modern, Scandinavian\nMaterials: flatwoven fibre with a fine ribbed texture\nColors: dark charcoal grey, crisp white stripes\nShape: rectangular, flat and thin, evenly spaced thin pinstripes running lengthwise, clean edges, compact\nFeel: graphic, crisp, tidy\nGoes with: white or grey walls, light wood, black accents; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.255.02",
+      "name": "SFTEN",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 150.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x150 cm",
+      "colors": [
+        "Black",
+        "white"
+      ],
+      "description": "Easy to keep clean since it is machine washable."
+    },
+    "photos": [
+      "6380e5b870bb09d5"
+    ]
+  }
+}

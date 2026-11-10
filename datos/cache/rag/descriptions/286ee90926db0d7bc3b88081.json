@@ -1,0 +1,35 @@
+{
+  "product": "202.313.11",
+  "text": "Type: off-white metal bell pendant lamp\nUse: light over a dining table, kitchen island or counter; dining room, kitchen, living room\nStyle: farmhouse, industrial, retro\nMaterials: off-white powder-coated steel shade, brass-tone socket, black and white braided textile cord, white ceiling cup\nColors: off-white, brass, black and white cord\nShape: rounded bell shade with a short neck and wide flared rim, brass collar with wing details, hangs on a patterned cord, medium size, vintage factory outline\nFeel: nostalgic, warm, crafted, friendly\nGoes with: warm wood, white tiles, brass, black accents; farmhouse, industrial or Scandinavian kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.313.11",
+      "name": "RANARP",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "23 cm",
+      "colors": [
+        "Off-white"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "c04004375b12d788"
+    ]
+  }
+}

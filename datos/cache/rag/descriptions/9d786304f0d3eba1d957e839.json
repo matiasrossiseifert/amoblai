@@ -1,0 +1,35 @@
+{
+  "product": "202.811.36",
+  "text": "Type: flanged cotton cushion\nUse: comfort and decoration on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: sturdy woven cotton canvas, flat flange border, hidden zipper\nColors: warm beige, sand\nShape: square plain cushion with a flat flanged edge around all four sides, smooth tight weave, plump and simple, medium size\nFeel: calm, neutral, soft, easygoing\nGoes with: grey, white or brown sofas, light wood, other solid or patterned cushions; Scandinavian, minimalist or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.811.36",
+      "name": "GURLI",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "The zipper makes the cover easy to remove."
+    },
+    "photos": [
+      "6bf4791379da9a44"
+    ]
+  }
+}

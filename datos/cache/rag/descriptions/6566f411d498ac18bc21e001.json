@@ -1,0 +1,35 @@
+{
+  "product": "601.505.53",
+  "text": "Type: tall clear glass vase\nUse: holding tall flowers or branches on a table, sideboard or floor; living room, dining room, hallway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: clear glass with a thick heavy base\nColors: transparent clear glass\nShape: tall tapered tumbler shape that widens toward the open top, straight sides, plain rim, sturdy weighted bottom, simple and versatile\nFeel: fresh, light, clean\nGoes with: any palette, white walls, wood tables, green branches; minimalist, Scandinavian or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "601.505.53",
+      "name": "BLADET",
+      "category": "deco",
+      "kind": "vase",
+      "dimensions_cm": null,
+      "type_ikea": "Vase",
+      "category_tp": "deco",
+      "size_raw": "30 cm",
+      "colors": [
+        "Clear glass"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "02e4b0e12ba68c13"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WGP8YJ",
+  "text": "Type: distressed wood wall mirror\nUse: decorating a wall, reflecting light; bedroom, living room, entryway, above a dresser\nStyle: farmhouse, rustic, traditional\nMaterials: wood frame with distressed white paint, mirror glass\nColors: warm white, cream, hints of brown\nShape: tall rectangle with curved concave pagoda-like top shoulders, narrow molded frame, chipped edges, medium size, light\nFeel: vintage, soft, charming\nGoes with: natural wood, linen, soft pastels, white walls; farmhouse, cottage or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073WGP8YJ",
+      "name": "Amazon Brand \u2013 Stone & Beam Curved Vintage-Look Wood Frame Wall Mirror - 28-Inch Height, White",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 40.6,
+        "depth": 2.5,
+        "height": 71.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": "vintage",
+      "description": "Straight lines are paired with graceful curves that peak at the top on this antique-style mirror. Distressed white paint on a hardwood frame adds more vintage charm. This mirror will look right at home in a classic style room. Antique-style shape and finish Made of glass and hardwood with distressed white finish 16\"W x 1\"D x 28\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "65/659dbf9b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e62fc19a02f18237"
+    ]
+  }
+}

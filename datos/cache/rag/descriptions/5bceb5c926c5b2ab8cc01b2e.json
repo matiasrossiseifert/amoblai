@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075Z8THZJ",
+  "text": "Type: bucket dining chair, set of two\nUse: dining, occasional seating; dining room, kitchen\nStyle: mid-century modern, industrial, retro\nMaterials: distressed faux-suede microfiber with contrast stitching, black metal sled base\nColors: warm tan brown, black\nShape: armless curved bucket shell seat and back, slim black sled legs with crossbar, low and compact\nFeel: relaxed, warm, casual\nGoes with: wood tables, black metal, cognac tones; industrial or mid-century dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075Z8THZJ",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Microfiber Dining Chair, 30.5\"H, 2-Pack, Brown",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 53.0,
+        "depth": 47.0,
+        "height": 77.5
+      },
+      "brand": "Rivet",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Microfiber fabric; Hardwood frame; Metal legs"
+      ],
+      "style": null,
+      "description": "18.5\"W x 20.9\"D x 30.5\"H Microfiber fabric over hardwood frame; metal legs have black finish Along with seating, these chairs bring retro fun to a dining table, living room or desk Assemble in 15 minutes. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty. Simple sloped seats are paired with tall black metal bases for a classic Mid-century style. The microfiber has a distressed finish to give these bar stools a hint of vintage style -- but with the modern conveniences of easy cleaning and durability.",
+      "image_path": "02/0253d524.jpg",
+      "image_px": [
+        2560,
+        1646
+      ]
+    },
+    "photos": [
+      "f88bdb467caf98c2"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07L87VDGF",
+  "text": "Type: deep-seat three-seat sofa\nUse: seating, lounging; living room\nStyle: contemporary, modern\nMaterials: polyester woven fabric, dark feet\nColors: warm greige, taupe\nShape: wide track arms, two deep seat cushions, plump back cushions and throw pillows, hidden low feet, bulky and low\nFeel: cozy, soft, relaxed\nGoes with: light wood, cream walls, textured throws; modern or casual living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07L87VDGF",
+      "name": "Rivet Polyester Grey Sofa",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [],
+      "materials": [
+        "Polyester"
+      ],
+      "style": null,
+      "description": "",
+      "image_path": "2c/2c7915dd.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "14bb72da84049f75"
+    ]
+  }
+}

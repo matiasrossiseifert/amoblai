@@ -1,0 +1,38 @@
+{
+  "product": "002.399.59",
+  "text": "Type: illustrated kids' play rug\nUse: playing on the floor, softening floors; kids' room, nursery, playroom\nStyle: contemporary, modern\nMaterials: low pile synthetic fibers with a printed illustration\nColors: bright pink, turquoise blue, lime green, white, grey\nShape: rectangular, cartoon bird's-eye view of a bedroom with a bed, rugs, a little chair and table, thin pink border, small and flat\nFeel: playful, cheerful, imaginative, bright\nGoes with: white kids' furniture, pastel walls, pink or green accents; children's bedrooms, nurseries, playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.399.59",
+      "name": "RUMMET",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 133.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "100x133 cm",
+      "colors": [
+        "Multicolour"
+      ],
+      "description": "The design shows the colourful interior of a house and your child can have fun playing on the rug with their dolls and doll furniture."
+    },
+    "photos": [
+      "29a34c3a30ab8ba6"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "700.783.35",
+  "text": "Type: white deep box picture frame\nUse: displaying photos or art prints on a wall, a shelf or a desk; living room, home office, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: white painted frame with a deep square profile, off-white mat, clear front panel, folding back stand\nColors: white, off-white mat\nShape: rectangular portrait frame with a wide flat front, deep boxy edges, a broad mat around the picture, stands upright or hangs, compact and clean\nFeel: clean, light, tidy, simple\nGoes with: gallery walls, picture ledges, light wood, black and white prints; Scandinavian or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "700.783.35",
+      "name": "RIBBA",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "13x18 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Can be used hanging or standing, both horizontally and vertically, to fit in the space available."
+    },
+    "photos": [
+      "95c51f93d8d7788e"
+    ]
+  }
+}

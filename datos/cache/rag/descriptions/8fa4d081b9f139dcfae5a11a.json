@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075HXSW3N",
+  "text": "Type: triangular wall planter\nUse: holding small plants or succulents; mounted on a wall in a living room, bedroom, home office\nStyle: modern, minimalist, industrial\nMaterials: matte earthenware with a concrete look\nColors: cool medium grey\nShape: inverted triangle with a faceted pointed front, flat back for the wall, compact and slim\nFeel: graphic, clean, understated\nGoes with: white or light walls, succulents, black or wood accents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075HXSW3N",
+      "name": "Amazon Brand \u2013 Rivet Triangular Wall Mount Planter, 7\"H, Modern Earthenware, Grey",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 17.8,
+        "depth": 14.0,
+        "height": 5.4
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "earthenware"
+      ],
+      "style": null,
+      "description": "This triangular vase makes a wonderful decorative piece for your wall. It's glazed for a concrete-like appearance, adding a bit of an industrial touch. The neutral tone looks great with or without plants, by itself or in a group of vases. Modern shape with neutral coloring to blend with any style room. 100% earthenware 5.5\"W X 2.1\"D X 7\"H; interior 4.725\"W x 1.77\"D x 6.1\"H Durable piece with hole on back for easy mounting on wall",
+      "image_path": "f9/f9022b1d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7a979e9e9610ca47"
+    ]
+  }
+}

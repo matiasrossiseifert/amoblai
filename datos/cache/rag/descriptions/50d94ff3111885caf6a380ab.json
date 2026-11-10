@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WHZKB2",
+  "text": "Type: tall rectangular wall mirror\nUse: full-length dressing view, decorating a wall; bedroom, entryway, living room\nStyle: industrial, mid-century modern, modern\nMaterials: solid wood top and bottom panels, thin black iron frame, mirror glass\nColors: warm medium brown wood, black, silver mirror\nShape: tall narrow rectangle, wood blocks at top and bottom, slim metal side edges, slender and light\nFeel: warm, sleek, practical\nGoes with: walnut tones, black metal, white or grey walls; industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073WHZKB2",
+      "name": "Amazon Brand \u2013 Rivet Wood and Iron Rectangular Hanging Wall Mirror, 44.25 Inch Height, Brown and Black",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 34.3,
+        "depth": 4.4,
+        "height": 112.4
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "classic",
+      "description": "This modern mirror artfully combines wood and iron to form a frame with hints of classic and industrial style. The natural color of the wide rubber wood plank paired with narrow black iron trim makes it a striking addition to any room. Classic, modern and industrial touches help it blend anywhere Glass, solid rubber wood and iron with black finish 13.5\"W x 1.75\"D x 44.25\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "1e/1e6ce3ab.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fc4feb52d3de86a3"
+    ]
+  }
+}

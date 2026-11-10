@@ -1,0 +1,35 @@
+{
+  "product": "602.460.80",
+  "text": "Type: armless plastic dining chair\nUse: dining, working at a desk; kitchen, dining room, kids' room, caf\u00e9 corner\nStyle: modern, minimalist, contemporary\nMaterials: molded reinforced polypropylene plastic, matte finish\nColors: bright sunny yellow\nShape: curved rectangular backrest on slim rear posts, smooth flat seat, four straight slightly tapered legs, clean lines, compact and light\nFeel: cheerful, bold, playful, fresh\nGoes with: white tables, light wood, grey or white walls; colorful modern kitchens, kids' rooms, Scandinavian dining spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.460.80",
+      "name": "JANINGE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Yellow"
+      ],
+      "description": "You can stack the chairs, so they take less space when you're not using them."
+    },
+    "photos": [
+      "df41d7eb35c94ce0"
+    ]
+  }
+}

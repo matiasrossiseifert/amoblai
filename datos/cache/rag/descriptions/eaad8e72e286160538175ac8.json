@@ -1,0 +1,45 @@
+{
+  "product": "abo-B073P7FSB7",
+  "text": "Type: framed blueprint US map print\nUse: wall decoration; home office, living room, study, above a desk or sofa\nStyle: contemporary, traditional, coastal\nMaterials: blueprint-style print, navy fabric mat, white wood frame\nColors: cobalt blue, navy, white\nShape: large horizontal rectangle, detailed vintage map in white lines, deep navy border, white frame, substantial\nFeel: crisp, intellectual, nautical, classic\nGoes with: white walls, navy accents, leather, dark wood; home offices, coastal or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P7FSB7",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Blueprint Map of the U.S., White Frame, 35.5\" x 51.5\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 130.8,
+        "depth": 90.2,
+        "height": 2.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Blue"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This handsome map of the United States is in blueprint style to add a modern industrial look to your home. Printed and framed in the U.S., it's housed in a frame with white finish, ready to add a sophisticated touch to your room. 51.5\"W x 35.5\"H Print on paper in a frame with a white finish Modern industrial blueprint-style map Ready to hang, all hardware included",
+      "image_path": "45/45b43fa6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7c48986878d3600a"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7J8GGS",
+  "text": "Type: low open bookcase\nUse: displaying books and decor, console surface; living room, home office, entryway\nStyle: industrial, mid-century modern, contemporary\nMaterials: medium-tone wood shelves, dark slim metal frame\nColors: warm medium wood brown, dark charcoal\nShape: long low rectangular frame, staggered offset middle shelves forming a step, thin square tube edges, open on all sides, light and graphic\nFeel: crafted, warm, airy, architectural\nGoes with: leather, black metal, white or grey walls, warm wood; industrial, loft or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B7J8GGS",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood and Metal Bookcase, 14\"W, Wood and Dark Metal",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 119.9,
+        "depth": 80.0,
+        "height": 36.1
+      },
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [
+        "Elm"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": null,
+      "description": "A bi-level shelf adds architectural interest to this modern industrial bookcase. Tall and narrow, it's perfect against a wall or behind a sofa, and for holding books, photos and even electronics. Wood and metal give it modern industrial style. 14.2\"W x 47.2\"D x 31.5\"H Fiberboard with elm and metal finish Wood and iron together create a modern industrial piece with hints of rustic Compact design for small spaces No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "59/59dd7c33.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c871d57be5007e48"
+    ]
+  }
+}

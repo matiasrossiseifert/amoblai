@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QK35B7K",
+  "text": "Type: cane dining armchair\nUse: dining, reading corner seating; dining room, living room\nStyle: coastal, bohemian, traditional\nMaterials: solid light wood frame, woven rattan cane back, sides and seat\nColors: light warm natural wood, honey cane\nShape: cane panel back, curved sloping arms with cane sides, cane seat, slightly curved legs, open and airy, medium size\nFeel: breezy, warm, relaxed\nGoes with: light wood or white tables, linen, green plants; coastal, boho or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QK35B7K",
+      "name": "Amazon Brand \u2013 Stone & Beam Solid Wood Rustic Dining Chair, 33.5\"H, Natural",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 57.8,
+        "depth": 55.2,
+        "height": 83.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Blue"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "A rattan design in the back, seat, and arms of this rustic-style dining chair with a natural finish provides a contemporary and transitional design perfect for any decor. The solid wood frame and ease of care help keep it looking new through the daily wear and tear of home or office life. 22\"W x 22\"D x 33.5\"H 10% hardwood, 88% rubberwood, 2% rattan Contemporary rattan design with a solid wood frame and natural finish Simple assembly in less than 15 minutes Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "6b/6b9cd888.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ff18ed668c47857c"
+    ]
+  }
+}

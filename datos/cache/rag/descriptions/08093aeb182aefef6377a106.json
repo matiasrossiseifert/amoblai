@@ -1,0 +1,37 @@
+{
+  "product": "500.772.47",
+  "text": "Type: open bookcase with hutch top\nUse: displaying and storing books, toys and boxes on open shelves; children's room, nursery, bedroom\nStyle: farmhouse, traditional, Scandinavian\nMaterials: white painted board, striped beadboard-look back panel, adjustable shelves\nColors: white, soft cream back panel\nShape: tall two-part unit with a shallow shelf hutch on a deeper open base, scalloped wavy crown, gently curved cut-out feet, several open shelves, medium visual weight\nFeel: sweet, gentle, airy, homey\nGoes with: pastel textiles, light wood, white walls, soft patterns; cottage or Scandinavian nurseries and children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "500.772.47",
+      "name": "HENSVIK",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 75.0
+      },
+      "type_ikea": "Cabinet with shelf unit",
+      "category_tp": "cabinet",
+      "size_raw": "75x161 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "85512aeb429cc90e"
+    ]
+  }
+}

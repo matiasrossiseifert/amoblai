@@ -1,0 +1,35 @@
+{
+  "product": "102.640.00",
+  "text": "Type: rectangular seagrass storage baskets, pair\nUse: organizing small items, magazines or toiletries on a shelf; living room, bathroom, bedroom, home office\nStyle: coastal, Scandinavian, Japandi\nMaterials: woven seagrass, cotton fabric binding around the rim and base\nColors: light natural straw, off-white trim\nShape: open-top rectangular boxes with straight sides, fine vertical weave, fabric-bound edges, compact and light\nFeel: natural, tidy, calm, warm\nGoes with: light wood shelves, white walls, linen, green plants; coastal, Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.640.00",
+      "name": "SLNAN",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "25x16x16 cm",
+      "colors": [
+        "Seagrass"
+      ],
+      "description": "Seagrass has natural colour variations which makes every basket unique."
+    },
+    "photos": [
+      "81eaaece11d1aedd"
+    ]
+  }
+}

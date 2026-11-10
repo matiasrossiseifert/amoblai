@@ -1,0 +1,36 @@
+{
+  "product": "500.894.05",
+  "text": "Type: frosted glass cone pendant lamp\nUse: light over a dining table or a kitchen counter; dining room, kitchen, hallway\nStyle: traditional, classic, Scandinavian\nMaterials: white frosted glass shade, nickel-plated metal fitting and link chain, white cord threaded through the chain\nColors: soft white, brushed silver\nShape: wide shallow cone shade under a cylindrical metal collar, hangs from an open link chain, simple and medium-sized, light visual weight\nFeel: soft, homely, timeless, calm\nGoes with: white or wood dining tables, nickel accents, pale walls; traditional, farmhouse or classic kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "500.894.05",
+      "name": "KROBY",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "glass"
+      ],
+      "description": "The height is easy to adjust by using the S-hook or cutting the chain."
+    },
+    "photos": [
+      "817d7a7a3b6bbfd0"
+    ]
+  }
+}

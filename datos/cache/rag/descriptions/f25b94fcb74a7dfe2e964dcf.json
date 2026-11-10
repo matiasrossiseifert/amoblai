@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07L9BVBCJ",
+  "text": "Type: two-tier wire storage shelf\nUse: storage, side surface, printer stand; home office, living room, bedroom\nStyle: industrial, minimalist, modern\nMaterials: black powder-coated steel wire, solid black top panel\nColors: matte black\nShape: low rectangular open unit, four round tubular posts with leveling feet, solid top shelf, zigzag-edged wire bottom shelf, compact and utilitarian\nFeel: practical, sturdy, no-nonsense\nGoes with: black metal, grey or white walls, simple desks; industrial, minimalist or utility-focused rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07L9BVBCJ",
+      "name": "AmazonBasics 2-Tier Stackable Storage Shelf",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 58.9,
+        "depth": 33.8,
+        "height": 56.4
+      },
+      "brand": "AmazonBasics",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [
+        "Engineered Wood"
+      ],
+      "style": null,
+      "description": "Two-tiered shelving unit system with modular, stackable design Durable metal frame with powder-coated black finish Lightweight and compact design; great for small spaces Stackable design allows you to stack one on top of another for four levels of storage Includes one wire mesh shelf on the lower level and one MDF wood shelf on top",
+      "image_path": "92/92a0ade2.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b079c7b800327b09"
+    ]
+  }
+}

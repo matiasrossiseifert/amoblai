@@ -1,0 +1,36 @@
+{
+  "product": "201.822.83",
+  "text": "Type: white ceramic plant pot\nUse: holding a potted plant on a windowsill, shelf or table; living room, kitchen, bedroom, home office\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed white ceramic with embossed relief patterns\nColors: glossy white\nShape: round tapered cachepot shown in four relief designs, cable-knit ovals, vertical ribs, wide horizontal bands and fine horizontal ridges, compact and tidy\nFeel: fresh, clean, crafted, calm\nGoes with: green plants, light wood, white walls, linen; Scandinavian, minimalist or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "201.822.83",
+      "name": "KARDEMUMMA",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "21 cm",
+      "colors": [
+        "White",
+        "assorted patterns"
+      ],
+      "description": null
+    },
+    "photos": [
+      "9627f2008721f44a"
+    ]
+  }
+}

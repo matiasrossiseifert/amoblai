@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QGWM3CY",
+  "text": "Type: spindle-back dining chair, set of two\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: farmhouse, Scandinavian, modern\nMaterials: solid wood in a matte black painted finish\nColors: matte black\nShape: curved top rail over vertical spindles, armless, sculpted wood seat, splayed round legs with H-stretcher, light and open, compact\nFeel: graphic, crisp, casual\nGoes with: natural wood tables, white walls, rattan accents; farmhouse or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QGWM3CY",
+      "name": "Amazon Brand \u2013 Stone & Beam Classic Spindle-Back Armless Wood Dining Chair, 19\"W, Set of 2, Black",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 48.3,
+        "height": 78.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This set of 2 traditional dining chairs features an updated take on the classic spindle-backed style, lending an air of homespun charm to any setting. The beautiful glossy black finish adds the final touch of sophistication. 19.7\"D x 19\"W x 31\"H Set of 2 chairs Solid rubberwood with a black finish and comfortable back These dining chairs are crafted in a simple, modern design that can blend with traditional and modern styles. Simple assembly in less than 15 minutes Use a dampened, soft and clean cloth with water only. Wipe in the direction of the grain. Free returns for 30 days. 3-year warranty.",
+      "image_path": "40/40661190.jpg",
+      "image_px": [
+        2560,
+        1854
+      ]
+    },
+    "photos": [
+      "2d063c266d01426b"
+    ]
+  }
+}

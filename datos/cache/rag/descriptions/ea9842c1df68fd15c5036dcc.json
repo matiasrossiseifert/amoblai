@@ -1,0 +1,35 @@
+{
+  "product": "832.351.10",
+  "text": "Type: natural sheepskin rug\nUse: soft throw on a floor, chair or bench; living room, bedroom, reading corner, nursery\nStyle: Scandinavian, rustic, Japandi\nMaterials: genuine sheepskin with long thick wool\nColors: creamy white, warm ivory\nShape: organic hide shape with irregular rounded edges, long fluffy fleece, small and light\nFeel: cozy, soft, warm, natural\nGoes with: light wood, linen, white walls, grey textiles; Scandinavian, Japandi or rustic cabins and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "832.351.10",
+      "name": "LUDDE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "type_ikea": "Sheepskin",
+      "category_tp": "rug",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Wool is soil-repellent and hard-wearing."
+    },
+    "photos": [
+      "8f72412006f9cbb3"
+    ]
+  }
+}

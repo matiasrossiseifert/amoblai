@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YLRJLP",
+  "text": "Type: framed aerial snowy road print\nUse: wall decoration; living room, bedroom, home office\nStyle: modern, Scandinavian, minimalist\nMaterials: photographic print, white mat, brushed silver frame\nColors: white, dark green-grey, black, silver\nShape: landscape rectangle, wide white mat, aerial view of curving road through snowy pine forest, slim metallic frame, medium size\nFeel: quiet, crisp, wintry\nGoes with: white or grey walls, light wood, chrome accents; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YLRJLP",
+      "name": "Amazon Brand \u2013 Rivet Modern Black and White Winding Road in Snow Print Wall Art Decor - 18 x 22 Inch Frame, Silver",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 55.9,
+        "depth": 45.7,
+        "height": 3.2
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Paper"
+      ],
+      "style": "Contemporary",
+      "description": "An empty road winds through snow-covered woods in this black and white aerial photo. Stark contrast and interesting shapes give this photo the look of abstract art. It is handsomely matted in a silver frame to add the perfect modern touch to your home. 22\"W x18\"H Photo print on paper with silver frame Modern photo print Ready to hang, all hardware included",
+      "image_path": "8b/8b4ce3db.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "43f0a6d4baa7eb7a"
+    ]
+  }
+}

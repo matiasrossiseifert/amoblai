@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0723DD7ZJ",
+  "text": "Type: overdyed floral wool area rug\nUse: anchoring a seating or bed area; living room, bedroom, dining room\nStyle: bohemian, traditional, contemporary\nMaterials: wool, low tufted pile\nColors: bright pink, red, navy accents\nShape: rectangular, Persian-inspired vine and floral all-over pattern with wide border, soft low pile, medium-large\nFeel: bold, vibrant, playful\nGoes with: grey upholstery, dark wood, white walls, woven baskets; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0723DD7ZJ",
+      "name": "Amazon Brand \u2013 Rivet Pink Global Floral Wool Rug, 5' x 8', Pink",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4,
+        "height": 1.7
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Pink"
+      ],
+      "materials": [
+        "Pile: 100% Wool, Backing: 100% Canvas"
+      ],
+      "style": "Bohemian",
+      "description": "Pile: 100% Wool, Backing: 100% Canvas Imported Hailing from India, this boho-vibing runner rug invokes an aura of wanderlust in soft, hand-tufted wool that will keep looking great in even the most traveled spaces. Area rug features a global, bohemian design with floral motifs Hand-tufted with 100% wool fibers Plush .65'' pile suits high-traffic indoor areas Pair with a rug pad (sold separately) 5' x 8' Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle",
+      "image_path": "70/70d48cff.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3da1d5d5d0d96a82"
+    ]
+  }
+}

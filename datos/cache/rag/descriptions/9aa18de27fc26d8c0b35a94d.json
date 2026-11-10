@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSBD6TF",
+  "text": "Type: velvet shell dining chair, set of two\nUse: dining; dining room, kitchen\nStyle: mid-century modern, contemporary, glam\nMaterials: textured velvet upholstery, black metal legs\nColors: rouge red, black\nShape: rounded beetle-like shell back, curved seat, armless, four slim splayed black legs, light and sculptural\nFeel: bold, playful, warm\nGoes with: white or marble tables, black accents, light wood; modern or eclectic dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSBD6TF",
+      "name": "Amazon Brand \u2013 Rivet Weedin Contemporary Velvet Dining Kitchen Chair 33 Inch Height, Set of 2, Rouge Red",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 58.4,
+        "depth": 50.8,
+        "height": 83.8
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Rouge Velvet"
+      ],
+      "materials": [
+        "Velvet"
+      ],
+      "style": null,
+      "description": "The gorgeous rouge asymmetrical weave pattern of this contemporary dining chair pairs perfectly with the sleek rounded design to make a truly modern statement of style and sophistication. Smooth black metal legs complete the motif and lend sturdy support to the cushioned wooden frame. Metal legs lend extra support to the solid wooden frame. Avoid moisture. Wipes clean with soft, dry cloth. 23\"D x 20\"W x 33\"H Free returns for 30 days. 1-year warranty",
+      "image_path": "0c/0ca97a05.jpg",
+      "image_px": [
+        2560,
+        1476
+      ]
+    },
+    "photos": [
+      "a2588b21f06ac492"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B08B8TV5PR",
+  "text": "Type: fabric drum pendant lamp\nUse: general light over a table or room center; living room, dining room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven linen-look fabric shade, matte black metal rod and canopy\nColors: light warm beige, matte black\nShape: wide round drum shade with diffuser, hangs on a slim black rod from round canopy, medium, soft\nFeel: soft, warm, calm\nGoes with: light wood, neutral textiles, white walls, black accents; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B08B8TV5PR",
+      "name": "Amazon Basics Pendant Lamp - 15.7\" x 15.7\" x 60\", Matte Black",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 39.9,
+        "depth": 39.9,
+        "height": 152.4
+      },
+      "brand": "Amazon Basics",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Matte Black"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Modern",
+      "description": "Fabric shade: gracefully diffuses light and offers a round shape for a visually pleasing profile Metal base: sturdy metal base offers long-lasting strength and a sleek appearance Modern style: coordinates effortlessly with surrounding contemporary or transitional decor Small size: relatively small size makes it a great choice for a bedroom, kitchen, living room, or office Simple set-up and warranty: designed to hang from the ceiling; assembles quickly and easily (screwdriver and light bulb needed, not included); backed by an Amazon Basics 1-year limited warranty",
+      "image_path": "5a/5a77199a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7fd827663bc463b1"
+    ]
+  }
+}

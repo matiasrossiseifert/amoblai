@@ -1,0 +1,33 @@
+{
+  "product": "002.518.52",
+  "text": "Type: tall narrow frameless wall mirror\nUse: checking an outfit, reflecting light in a narrow space; hallway, bedroom, kids room, living room\nStyle: retro, contemporary, Scandinavian\nMaterials: mirror glass with a frosted sandblasted dot pattern, frameless edges\nColors: silver mirror, frosted white dots\nShape: long slim vertical strip, flat and frameless, large frosted half-circles alternating along both edges, light and slender\nFeel: playful, light, bright, fresh\nGoes with: white walls, light wood, pastel or bold accents; Scandinavian, retro or playful rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.518.52",
+      "name": "LUNDAMO",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "20x120 cm",
+      "colors": [],
+      "description": "The mirror can be hung vertically or horizontally to suit your needs and your space."
+    },
+    "photos": [
+      "6a7158627734f9cc"
+    ]
+  }
+}

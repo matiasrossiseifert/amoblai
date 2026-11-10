@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WJ2J8P",
+  "text": "Type: wide wood framed wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, dining room, on a wall\nStyle: rustic, farmhouse, Scandinavian\nMaterials: natural solid wood frame with visible grain, mirror glass\nColors: light warm natural wood\nShape: large upright rectangle, wide beveled chunky wood frame, substantial\nFeel: warm, natural, grounded\nGoes with: light wood, white or beige walls, linen; rustic or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073WJ2J8P",
+      "name": "Amazon Brand \u2013 Stone & Beam Rustic Wood Frame Hanging Wall Mirror, 39.75 Inch Height, Natural",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 65.4,
+        "depth": 5.1,
+        "height": 101.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "rustic",
+      "description": "This mirror's frame has the appearance of weathered, unstained wood, giving it a rustic touch. Its versatile size makes it easy to place in a traditional-style bedroom, hallway or living room. Natural wood color frame for classic style with a hint of rustic. Glass, solid rubber wood with distressed finish 25.75\"W x 39.75\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "35/35b70930.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "0d82a853bfb6a167"
+    ]
+  }
+}

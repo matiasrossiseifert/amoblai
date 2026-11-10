@@ -1,0 +1,38 @@
+{
+  "product": "303.197.23",
+  "text": "Type: star-patterned kids rug\nUse: a soft play spot on the floor; children's room, nursery, bedroom\nStyle: Scandinavian, contemporary, minimalist\nMaterials: short soft cut pile, bound edge\nColors: pale grey, mid grey stars and side bands\nShape: rectangle with scattered five-point stars, wide darker bands down both long sides, flat and soft, medium size, light visual weight\nFeel: gentle, calm, dreamy, soft\nGoes with: white walls, light wood, pastel or grey textiles; Scandinavian nurseries and kids' bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "303.197.23",
+      "name": "HIMMELSK",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "133x160 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The rugs thick piles dampens sound, creating a snug feeling, and are soft to walk on for all sizes of feet."
+    },
+    "photos": [
+      "d00f8d8bbb0f1711"
+    ]
+  }
+}

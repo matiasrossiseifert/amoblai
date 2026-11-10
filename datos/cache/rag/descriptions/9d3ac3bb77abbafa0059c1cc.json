@@ -1,0 +1,39 @@
+{
+  "product": "500.870.72",
+  "text": "Type: square glass-top coffee table with drawer\nUse: holding drinks and books, displaying small items under the glass, storage; living room, family room\nStyle: traditional, classic, farmhouse\nMaterials: white painted wood, clear glass top, metal knob\nColors: white, clear glass, dark grey knob\nShape: square top with an inset glass panel, shallow display drawer, open lower shelf, four tapered legs, molded edges, medium visual weight\nFeel: elegant, bright, homey, tidy\nGoes with: white or cream sofas, grey and blue accents, light floors; classic, coastal or farmhouse living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "500.870.72",
+      "name": "LIATORP",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 93.0,
+        "depth": 93.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "93x93 cm",
+      "colors": [
+        "White",
+        "glass"
+      ],
+      "description": "Practical storage space underneath the table top."
+    },
+    "photos": [
+      "c4993a596079c31a"
+    ]
+  }
+}

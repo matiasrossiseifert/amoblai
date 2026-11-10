@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072Y6Y96S",
+  "text": "Type: upholstered reception armchair\nUse: guest seating, reading; home office, living room, bedroom\nStyle: classic, traditional, contemporary\nMaterials: faux leather upholstery, mahogany finished wood legs\nColors: black, dark reddish mahogany\nShape: boxy track-arm silhouette, straight upright back, cushioned seat, four square tapered wooden legs, compact and tidy\nFeel: formal, neat, dependable\nGoes with: dark wood desks, cream or grey walls, brass accents; traditional offices or classic living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B072Y6Y96S",
+      "name": "AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 69.0,
+        "depth": 66.5,
+        "height": 88.0
+      },
+      "brand": "AmazonBasics",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Caressoft upholstery; Mahogany wood finish legs"
+      ],
+      "style": "Transitional",
+      "description": "Reception chair provides a comfortable place to sit\u2014ideal for a lobby or waiting room Supremely soft and durable Caressoft upholstery in solid black Mahogany wood finish legs with a slight outward flare for added stability 250-pound weight capacity; sleek contemporary style Measures 26.5 by 26.5 by 35.5 inches (LxWxH); weighs 30.6 pounds; backed by an AmazonBasics one-year limited warranty",
+      "image_path": "fc/fc802ff2.jpg",
+      "image_px": [
+        2173,
+        2560
+      ]
+    },
+    "photos": [
+      "551c9710809a9958"
+    ]
+  }
+}

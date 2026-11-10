@@ -1,0 +1,38 @@
+{
+  "product": "503.069.89",
+  "text": "Type: low red metal coffee table on casters\nUse: holding drinks, magazines or a TV, moving around easily; living room, kids room, studio\nStyle: industrial, retro, contemporary\nMaterials: red powder-coated steel, visible screws, rubber wheels\nColors: bright red, white wheels\nShape: rectangular top with rounded edges, open lower shelf, square tube legs, four swivel casters, cart-like, compact\nFeel: bold, playful, energetic, practical\nGoes with: white or grey walls, black accents, light wood floors; retro, industrial or modern living rooms and kids rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.069.89",
+      "name": "IKEA PS 2012",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 70.0,
+        "depth": 42.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "70x42 cm",
+      "colors": [
+        "Red"
+      ],
+      "description": "The castors make it easy to move the table if needed."
+    },
+    "photos": [
+      "7831762ecee0e6b8"
+    ]
+  }
+}

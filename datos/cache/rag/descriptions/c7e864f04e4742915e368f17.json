@@ -1,0 +1,38 @@
+{
+  "product": "890.291.18",
+  "text": "Type: tall two-door storage cabinet\nUse: storing clothes, toys and supplies behind doors; children's room, bedroom, home office\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white laminated board body, birch wood-look doors, cut-out finger grip\nColors: light natural birch, white\nShape: narrow upright box with two full-height doors meeting at the center, rectangular cut-out handle, flat top, sits flush on the floor, simple and slim, medium visual weight\nFeel: warm, light, calm, tidy\nGoes with: white walls, light wood floors, pastel textiles; Scandinavian children's rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "890.291.18",
+      "name": "STUVA",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Storage combination with doors",
+      "category_tp": "cabinet",
+      "size_raw": "60x50x128 cm",
+      "colors": [
+        "White",
+        "birch"
+      ],
+      "description": "Low storage makes it easier for children to reach and organise their things."
+    },
+    "photos": [
+      "c6bf2d0166c67cfc"
+    ]
+  }
+}

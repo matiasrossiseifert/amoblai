@@ -1,0 +1,37 @@
+{
+  "product": "203.002.86",
+  "text": "Type: green open cube bookcase\nUse: holding books, toys and storage boxes, room divider; living room, playroom, home office\nStyle: contemporary, modern, Scandinavian\nMaterials: painted board with a smooth uniform finish\nColors: vivid green, deep emerald shadows inside\nShape: tall boxy frame divided into a two-by-four grid of square cubbies, thick flat edges, open back usable from both sides, sturdy and chunky visual weight\nFeel: bold, fun, energetic, fresh\nGoes with: white or grey walls, natural wood, fabric bins, pops of color; modern, eclectic or children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "203.002.86",
+      "name": "KALLAX",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 77.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "77x147 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "You can use the furniture as a room divider because it looks good from every angle."
+    },
+    "photos": [
+      "c48b5221157d9a49"
+    ]
+  }
+}

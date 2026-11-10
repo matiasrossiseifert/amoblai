@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071LTB14G",
+  "text": "Type: two-seat pull-out sofa bed\nUse: seating, guest sleeping; living room, guest room, home office\nStyle: contemporary, modern\nMaterials: woven fabric upholstery, contrast piping, dark wood feet\nColors: light cool grey, dark grey piping, dark brown feet\nShape: wide boxy arms, two seat and two back cushions, deep base with pull-out, low block feet, solid and chunky\nFeel: practical, cozy, neutral\nGoes with: white walls, light wood, black or navy accents; modern or compact apartment rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B071LTB14G",
+      "name": "Rivet Elliot Easy-Pull Modern Sofa Bed, 71\"W, Grey",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 181.1,
+        "depth": 87.1,
+        "height": 89.9
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "wood legs"
+      ],
+      "style": null,
+      "description": "This modern sofa is a comfortable place for you and your friends to enjoy many game nights. Getting late? Just remove the cushions and pull out the bed for guests who may or may not have planned to crash overnight. 36.6''D x 71.3 \u201dW x 35.4 ''H Solid beech wood legs with espresso-color finish Modern Practical, clean design will fit with your existing style. No assembly. Product arrives in one piece. Free returns for 30 days. 1-year warranty.",
+      "image_path": "cd/cdf53f9a.jpg",
+      "image_px": [
+        2560,
+        1403
+      ]
+    },
+    "photos": [
+      "e2f3a292ee925fec"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "003.266.97",
+  "text": "Type: solid velvet square cushion\nUse: comfort and a color accent on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, Scandinavian, glam\nMaterials: soft cotton velvet with a subtle sheen\nColors: warm golden yellow, ochre\nShape: square, plump and soft, plain smooth surface, neat straight seams, medium size\nFeel: warm, sunny, cozy, inviting\nGoes with: grey, navy or green sofas, light wood, brass accents, white walls; Scandinavian, contemporary or mid-century rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "003.266.97",
+      "name": "SANELA",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Light yellow"
+      ],
+      "description": "Cotton velvet gives depth to the colour and softness to the touch."
+    },
+    "photos": [
+      "90930879e5c5fb6e"
+    ]
+  }
+}

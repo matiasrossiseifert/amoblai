@@ -1,0 +1,38 @@
+{
+  "product": "602.809.41",
+  "text": "Type: small square solid pine coffee table\nUse: holding drinks, books and plants; living room, cabin, kids' room\nStyle: rustic, Scandinavian, farmhouse\nMaterials: untreated solid pine with visible knots and grain\nColors: pale natural pine, light warm wood\nShape: square plank top with a simple apron, four straight square legs, sturdy and plain, compact and fairly tall for its type\nFeel: natural, honest, warm, simple\nGoes with: white walls, linen and wool textiles, other natural woods; cabins, rustic or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "602.809.41",
+      "name": "NORNS",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 59.0,
+        "depth": 59.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "59x59 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Untreated solid pine is a durable natural material that can be painted, oiled or stained according to preference."
+    },
+    "photos": [
+      "943f50b582f18ce9"
+    ]
+  }
+}

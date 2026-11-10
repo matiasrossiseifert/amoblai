@@ -1,0 +1,590 @@
+[
+ {
+  "id": "598.929.37",
+  "name": "TORSBY",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 135.0,
+   "depth": 85.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/598.929.37.jpg"
+  ]
+ },
+ {
+  "id": "602.071.54",
+  "name": "BOKSEL",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 79.0,
+   "depth": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/602.071.54.jpg"
+  ]
+ },
+ {
+  "id": "602.470.27",
+  "name": "GAMLEBY",
+  "type_ikea": "Gateleg table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/602.470.27.jpg"
+  ]
+ },
+ {
+  "id": "602.611.55",
+  "name": "REGISSR",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 118.0,
+   "depth": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/602.611.55.jpg"
+  ]
+ },
+ {
+  "id": "602.806.77",
+  "name": "SVALSTA",
+  "type_ikea": "Nest of tables, set of 2",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/602.806.77.jpg"
+  ]
+ },
+ {
+  "id": "602.809.41",
+  "name": "NORNS",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 59.0,
+   "depth": 59.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/602.809.41.jpg"
+  ]
+ },
+ {
+  "id": "690.403.53",
+  "name": "RYDEBCK",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 150.0,
+   "depth": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/690.403.53.jpg"
+  ]
+ },
+ {
+  "id": "691.335.97",
+  "name": "LINNMON,ADILS",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 100.0,
+   "depth": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/691.335.97.jpg"
+  ]
+ },
+ {
+  "id": "701.162.62",
+  "name": "BJURSTA",
+  "type_ikea": "Extendable table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/701.162.62.jpg"
+  ]
+ },
+ {
+  "id": "702.214.23",
+  "name": "INGATORP",
+  "type_ikea": "Extendable table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.214.23.jpg"
+  ]
+ },
+ {
+  "id": "702.781.03",
+  "name": "LIATORP",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 57.0,
+   "depth": 40.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.781.03.jpg"
+  ]
+ },
+ {
+  "id": "702.828.31",
+  "name": "GUNNERN",
+  "type_ikea": "Pedestal table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.828.31.jpg"
+  ]
+ },
+ {
+  "id": "702.902.23",
+  "name": "NORDEN",
+  "type_ikea": "Gateleg table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.902.23.jpg"
+  ]
+ },
+ {
+  "id": "702.943.39",
+  "name": "LISABO",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 140.0,
+   "depth": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.943.39.jpg"
+  ]
+ },
+ {
+  "id": "702.976.58",
+  "name": "LISABO",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 118.0,
+   "depth": 50.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/702.976.58.jpg"
+  ]
+ },
+ {
+  "id": "790.403.38",
+  "name": "RYGGESTAD",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/790.403.38.jpg"
+  ]
+ },
+ {
+  "id": "791.407.00",
+  "name": "VRARYD",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 150.0,
+   "depth": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/791.407.00.jpg"
+  ]
+ },
+ {
+  "id": "802.133.09",
+  "name": "VITTSJ",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.133.09.jpg"
+  ]
+ },
+ {
+  "id": "802.170.72",
+  "name": "INGATORP",
+  "type_ikea": "Extendable table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.170.72.jpg"
+  ]
+ },
+ {
+  "id": "802.214.27",
+  "name": "INGATORP",
+  "type_ikea": "Drop-leaf table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.214.27.jpg"
+  ]
+ },
+ {
+  "id": "802.611.83",
+  "name": "MALMSTA",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.611.83.jpg"
+  ]
+ },
+ {
+  "id": "802.622.53",
+  "name": "KRAGSTA",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.622.53.jpg"
+  ]
+ },
+ {
+  "id": "802.806.76",
+  "name": "SVALSTA",
+  "type_ikea": "Nest of tables, set of 2",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.806.76.jpg"
+  ]
+ },
+ {
+  "id": "802.972.43",
+  "name": "RISSNA",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/802.972.43.jpg"
+  ]
+ },
+ {
+  "id": "899.309.28",
+  "name": "LINNMON,NIPEN",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 150.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/899.309.28.jpg"
+  ]
+ },
+ {
+  "id": "902.224.07",
+  "name": "INGATORP",
+  "type_ikea": "Extendable table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/902.224.07.jpg"
+  ]
+ },
+ {
+  "id": "902.976.57",
+  "name": "LISABO",
+  "type_ikea": "Coffee table",
+  "category": "table",
+  "default_kind": "coffee table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 70.0,
+   "depth": 70.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/902.976.57.jpg"
+  ]
+ },
+ {
+  "id": "903.020.60",
+  "name": "LACK",
+  "type_ikea": "Side table",
+  "category": "table",
+  "default_kind": "side table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 55.0,
+   "depth": 55.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/903.020.60.jpg"
+  ]
+ },
+ {
+  "id": "990.004.83",
+  "name": "TREND",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 110.0,
+   "depth": 67.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/990.004.83.jpg"
+  ]
+ },
+ {
+  "id": "990.403.42",
+  "name": "SLHULT",
+  "type_ikea": "Table",
+  "category": "table",
+  "default_kind": "dining table",
+  "allowed_kinds": [
+   "dining table",
+   "coffee table",
+   "side table",
+   "nightstand",
+   "console table"
+  ],
+  "dimensions_cm": {
+   "width": 185.0,
+   "depth": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/dining table/990.403.42.jpg"
+  ]
+ }
+]

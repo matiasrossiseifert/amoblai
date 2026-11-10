@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071KX42WG",
+  "text": "Type: gold tile panel wall mirrors, set of three\nUse: decorating a wall, reflecting light; living room, dining room, bedroom, on a wall\nStyle: glam, art deco, contemporary\nMaterials: textured metal frames in gold finish, mirror glass\nColors: warm antique gold, silver mirror\nShape: one tall narrow panel of three stacked square mirrors, slim frames, grouped as a grid, light\nFeel: elegant, bright, refined\nGoes with: white or navy walls, velvet, marble; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071KX42WG",
+      "name": "Amazon Brand \u2013 Rivet 3x3 Tile Mirror Decor, 36 Inch Height, Gold Finish",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 91.4,
+        "depth": 30.5,
+        "height": 2.5
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "glass"
+      ],
+      "style": "Modern",
+      "description": "Small squares fused together to create three mirrored panels. The simple design paired with the striking gold finish makes it perfect for a living room, bedroom, or hallway. 36\" x 36\" Modern design with touch of glam Glass, iron with gold finish Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "ff/ff8ae2e4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "015958c199f7382f"
+    ]
+  }
+}

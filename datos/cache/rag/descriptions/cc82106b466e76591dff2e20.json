@@ -1,0 +1,35 @@
+{
+  "product": "402.753.42",
+  "text": "Type: solid wood dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquer, visible wood grain\nColors: light natural birch, pale blond wood\nShape: wide flat panel backrest between straight posts, thick solid seat with a deep apron, square legs with low side stretchers, sturdy boxy frame, medium visual weight\nFeel: natural, calm, honest, sturdy\nGoes with: light wood tables, white walls, linen and black accents; Scandinavian or Japandi dining rooms and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.753.42",
+      "name": "NORRKER",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White birch"
+      ],
+      "description": "Durable and hard-wearing; meets the requirements on furniture for public use."
+    },
+    "photos": [
+      "2b58c84bc1c36d58"
+    ]
+  }
+}

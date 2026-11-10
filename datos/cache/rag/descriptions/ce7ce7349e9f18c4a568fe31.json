@@ -1,0 +1,36 @@
+{
+  "product": "602.909.83",
+  "text": "Type: white and orange wall clock\nUse: telling time on a wall; kitchen, living room, home office, children's room\nStyle: contemporary, modern, minimalist\nMaterials: molded matte face, orange metal hands\nColors: white fading to soft coral orange, bright orange hands\nShape: round frameless disc with raised embossed hour markers, ombre gradient from white at the top to orange at the bottom, slim hands, light visual weight\nFeel: cheerful, soft, playful\nGoes with: white walls, light wood, orange or peach accents; modern kitchens, playful or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.909.83",
+      "name": "SPRALLIS",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "orange"
+      ],
+      "description": "You can bring the feeling of warm sunlight into your room with this fabric-covered clock with vibrant orange print."
+    },
+    "photos": [
+      "b8005b7c383f5d0b"
+    ]
+  }
+}

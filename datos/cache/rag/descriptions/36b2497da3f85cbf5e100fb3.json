@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075Z9QB8P",
+  "text": "Type: rectangular trestle dining table\nUse: dining, gathering; dining room, kitchen\nStyle: industrial, rustic, modern\nMaterials: solid fir plank top with distressed finish, black powder-coated steel\nColors: warm medium brown wood, matte black\nShape: long thick plank top, two A-shaped metal trestle legs with low stretcher feet, open underneath, large and sturdy\nFeel: rugged, warm, relaxed\nGoes with: black metal chairs, brick or concrete, leather accents; industrial, loft or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075Z9QB8P",
+      "name": "Amazon Brand \u2013 Rivet Rustic Industrial Wood and Metal Dining Room Kitchen Table, 86.6\"L, Fir",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 199.9,
+        "depth": 95.0,
+        "height": 77.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Natural+black Iron"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "86.6\"L x 37.4\"D x 29.8\"H 50% recycled fir wood; iron base with black finish A handsome piece that blends with modern, rustic or industrial decor Assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty. Vintage wood shop and industrial metal-working come together in this head-turning dining table. Simple, beautiful style and sturdy construction -- 50% from recycled materials -- make it a handsome asset to a rustic, modern or industrial setting.",
+      "image_path": "7d/7d5fecbc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ac2198f4d8393774"
+    ]
+  }
+}

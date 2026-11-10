@@ -1,0 +1,37 @@
+{
+  "product": "602.510.38",
+  "text": "Type: white wall shelf board\nUse: shelf for books, frames and decor once mounted on brackets; living room, bedroom, home office\nStyle: minimalist, Scandinavian, modern\nMaterials: white foil-finished board with smooth edges\nColors: white\nShape: long flat rectangular plank with clean square edges, plain surface, slim profile, light and simple, mounts on separate brackets\nFeel: clean, neutral, light, quiet\nGoes with: white walls, any bracket style, light wood, black or chrome accents; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.510.38",
+      "name": "EKBY JRPEN",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 79.0
+      },
+      "type_ikea": "Shelf",
+      "category_tp": "shelf",
+      "size_raw": "79x19 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "9708c3986bacdf39"
+    ]
+  }
+}

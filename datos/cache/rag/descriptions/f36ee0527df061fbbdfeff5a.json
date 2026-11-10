@@ -1,0 +1,38 @@
+{
+  "product": "602.071.54",
+  "text": "Type: square coffee table on casters with storage\nUse: holding drinks, books and remotes, storage; living room, family room\nStyle: modern, contemporary, minimalist\nMaterials: black-brown wood-effect finish, tinted glass top panel, castor wheels\nColors: black-brown, smoky dark glass, grey wheels\nShape: low boxy square block, one drawer beside open compartments on every side, four swivel casters, bulky and solid\nFeel: practical, sturdy, dark, tidy\nGoes with: dark wood, grey or beige sofas, white walls; modern living rooms and compact apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.071.54",
+      "name": "BOKSEL",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 79.0,
+        "depth": 79.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "79x79 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Veneered surface; gives the table a natural look and feel."
+    },
+    "photos": [
+      "f892b7c3b51be4d2"
+    ]
+  }
+}

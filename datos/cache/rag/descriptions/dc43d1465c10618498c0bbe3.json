@@ -1,0 +1,45 @@
+{
+  "product": "abo-B0857NZ925",
+  "text": "Type: cylinder salt table lamp\nUse: soft mood light on a nightstand, shelf or desk; bedroom, living room, home office\nStyle: bohemian, rustic, contemporary\nMaterials: natural Himalayan salt crystal, light wood base\nColors: warm pink-orange, light natural wood\nShape: solid rough-textured cylinder on a round wooden base, glowing from inside, small and compact\nFeel: warm, calm, cozy, natural\nGoes with: light wood, plants, warm neutrals, natural textiles; bohemian, Japandi or cozy rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0857NZ925",
+      "name": "AmazonBasics Natural Himalayan Salt Lamp, Wood Base with Dimmer Switch - Cylinder Shape, Crystal Pink",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 12.0,
+        "depth": 12.0,
+        "height": 18.0
+      },
+      "brand": "AmazonBasics",
+      "product_type": "LAMP",
+      "colors": [
+        "Crystal Pink"
+      ],
+      "materials": [],
+      "style": "Cylinder",
+      "description": "Hand-crafted, cylindrical-shaped salt lamp provides mood-boosting light, calming ambience, decorative appeal, and natural air purification Made of natural crystal-pink Himalayan salt with a sturdy wood base Dimmer switch for easily adjusting the brightness; 59.1-inch power cord allows for versatile placement Comes fully assembled in high-quality shrink wrap (both product and box); great for gift giving; 1 extra 15-watt bulb included 110-120 volts; backed by an AmazonBasics 1-year limited warranty",
+      "image_path": "b5/b5ce3840.jpg",
+      "image_px": [
+        2362,
+        2362
+      ]
+    },
+    "photos": [
+      "80ee9b868fe85c44"
+    ]
+  }
+}

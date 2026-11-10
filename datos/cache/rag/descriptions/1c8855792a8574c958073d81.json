@@ -1,0 +1,38 @@
+{
+  "product": "302.809.47",
+  "text": "Type: glass-door display cabinet on stand\nUse: showing glassware, ceramics or collections; living room, dining room, home office\nStyle: rustic, Scandinavian, industrial\nMaterials: solid pine frame with visible knots, clear glass doors and sides, glass shelves, dark grey-stained wooden stand\nColors: light natural pine, dark grey base, clear glass\nShape: tall glass box with slim wooden corner posts, two glass doors with a small central handle, raised on a four-legged stand with stretchers, light and see-through\nFeel: natural, airy, honest, warm\nGoes with: pine or oak, linen, ceramics, black accents; rustic, Scandinavian or industrial dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.809.47",
+      "name": "NORNS",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 65.0
+      },
+      "type_ikea": "Glass-door cabinet with 2 doors",
+      "category_tp": "cabinet",
+      "size_raw": "65x166 cm",
+      "colors": [
+        "Pine",
+        "grey"
+      ],
+      "description": "Untreated solid pine is a durable natural material that can be painted, oiled or stained according to preference."
+    },
+    "photos": [
+      "f2765fb179e5afc7"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "202.290.11",
+  "text": "Type: pink two-drawer kids chest\nUse: storing children's clothes and toys; children's room, nursery\nStyle: contemporary, Scandinavian\nMaterials: painted fiberboard in a smooth matte finish\nColors: light pastel pink, dark grey grip holes\nShape: two deep drawers with large round cut-out grips, rounded top corners and soft edges, sides that extend into short curved legs, playful and compact\nFeel: sweet, soft, playful, cheerful\nGoes with: white walls, pale wood, pastel textiles; Scandinavian or modern children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.290.11",
+      "name": "BUSUNGE",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 2 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x75 cm",
+      "colors": [
+        "Light pink"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "f3cfac5a5f5dc0b3"
+    ]
+  }
+}

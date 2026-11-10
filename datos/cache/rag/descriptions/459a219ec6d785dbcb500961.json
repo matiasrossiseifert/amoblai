@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P19TQ9",
+  "text": "Type: copper-toned forest canvas print\nUse: wall decoration; living room, bedroom, dining room, above a sofa or bed\nStyle: contemporary, glam, Scandinavian\nMaterials: canvas print with metallic copper finish, unframed\nColors: copper, warm white, light grey\nShape: large landscape rectangle, frameless gallery canvas, row of tall vertical tree trunks, airy composition, light visual weight\nFeel: warm, serene, airy, natural\nGoes with: white walls, copper or brass accents, light wood, blush tones; contemporary or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073P19TQ9",
+      "name": "Amazon Brand \u2013 Rivet Copper-Toned Photo Print of Sunrise Through the Trees 36\" x 24\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 3.8,
+        "height": 91.4
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": null,
+      "description": "A peaceful scene of tall trees in a quiet forest will bring a sense of stillness and strength to your room. This copper-color monotone print will add warmth and a touch of nature to any style of room. Contemporary twist on a timeless nature scene Hand-stretched canvas on wood. 36\" x 24\" Ready to hang with hardware included. Made to order",
+      "image_path": "88/882ab5c7.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ce91ddab49d49428"
+    ]
+  }
+}

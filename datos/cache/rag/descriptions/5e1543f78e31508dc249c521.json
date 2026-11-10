@@ -1,0 +1,35 @@
+{
+  "product": "203.086.97",
+  "text": "Type: stepped pine storage frame\nUse: holding toy bins and storage boxes on its shelves; children's room, playroom\nStyle: Scandinavian, rustic, minimalist\nMaterials: solid pine with a clear natural finish, routed rails for sliding bins\nColors: light natural pine, pale knotty wood\nShape: open stepped shelf unit rising in three heights like a staircase, grooved side rails to slide boxes in, flat tops for display, low and sturdy, medium visual weight\nFeel: warm, practical, natural, friendly\nGoes with: colorful plastic bins, white walls, light wood floors, children's furniture; Scandinavian kids' rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.086.97",
+      "name": "TROFAST",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "94x52 cm",
+      "colors": [
+        "Light white stained pine"
+      ],
+      "description": "A playful and sturdy storage series for storing and organising toys, sitting, playing and relaxing."
+    },
+    "photos": [
+      "0f976c77cd5703e9"
+    ]
+  }
+}

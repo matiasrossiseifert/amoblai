@@ -1,0 +1,38 @@
+{
+  "product": "403.053.77",
+  "text": "Type: abstract printed low-pile rug\nUse: adding a bold art piece to the floor; living room, kids' room, bedroom\nStyle: contemporary, modern, retro\nMaterials: short dense low pile\nColors: cobalt and sky blue, black, white, blush pink, mustard yellow\nShape: rectangular, flat low pile, large hand-drawn clouds with fine black and white striations, raindrops and a yellow sun, graphic and loud\nFeel: playful, artistic, bold, cheerful\nGoes with: white walls, solid neutral sofas, light wood, blue accents; eclectic modern or creative rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "403.053.77",
+      "name": "DOFTRANKA",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 195.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "133x195 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "The thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "025f90842addc0df"
+    ]
+  }
+}

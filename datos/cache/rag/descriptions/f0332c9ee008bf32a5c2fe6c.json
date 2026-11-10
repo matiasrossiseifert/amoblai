@@ -1,0 +1,35 @@
+{
+  "product": "400.636.32",
+  "text": "Type: round pedestal dining table\nUse: dining, breakfast, small meetings; dining room, kitchen, breakfast nook\nStyle: mid-century modern, minimalist, modern\nMaterials: white laminated top, white painted metal pedestal and base\nColors: white\nShape: thin round top, single slim tulip-style flared pedestal on a round disc base, legroom all around, smooth sculptural lines, light visual weight\nFeel: sleek, bright, airy, timeless\nGoes with: molded or tulip chairs, wood or black accents, white walls; mid-century, Scandinavian or modern dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "400.636.32",
+      "name": "DOCKSTA",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "105 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "A round table, with soft edges, gives a relaxed impression in a room."
+    },
+    "photos": [
+      "01aecfcf0bc4892d"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07HSDY9FC",
+  "text": "Type: wingback upholstered dining chair, set of two\nUse: dining, occasional seating; dining room\nStyle: traditional, farmhouse, contemporary\nMaterials: woven linen-look fabric, nailhead trim, washed wood legs\nColors: cool denim blue-grey, light greyish wood, pewter studs\nShape: armless, tall shaped back with flared wing top, padded seat, nailhead edging, slightly tapered legs, substantial\nFeel: elegant, cozy, relaxed\nGoes with: weathered wood tables, white walls, grey and blue tones; farmhouse or traditional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSDY9FC",
+      "name": "Amazon Brand \u2013 Stone & Beam Kinsley Dining Chair, 37.5\"H, Set of 2, Washed Denim",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 67.3,
+        "depth": 63.5,
+        "height": 95.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Washed Denim"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This set of 2 gorgeous wingback dining chairs lend an air of classic elegance to any room or occasion, and the washed denim upholstery brings an element of casual, homespun charm to even the most formal design motifs. Solid wood frame for long-lasting support with upholstered fabric and nailhead details Product Dimensions: 26.5\"D x 25\"W x 37.5\"H",
+      "image_path": "36/36594e03.jpg",
+      "image_px": [
+        2560,
+        1449
+      ]
+    },
+    "photos": [
+      "e0032b276dc045ee"
+    ]
+  }
+}

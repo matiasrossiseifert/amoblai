@@ -1,0 +1,38 @@
+{
+  "product": "802.694.19",
+  "text": "Type: grey double-pedestal desk with doors\nUse: working, paperwork, a computer setup; home office, study, living room\nStyle: traditional, classic, farmhouse\nMaterials: grey painted wood-based board, black metal knobs\nColors: medium warm grey, black\nShape: wide rectangular top with a moulded edge, a center drawer, two cupboards with raised panel doors on shaped plinth bases, kneehole between, solid and substantial\nFeel: elegant, stately, calm, orderly\nGoes with: white walls, crystal or brass lamps, cream and blue textiles; traditional, classic or Gustavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.694.19",
+      "name": "LIATORP",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 145.0,
+        "depth": 65.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "145x65 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "You can fit a computer in the cabinet, since the shelf is adjustable."
+    },
+    "photos": [
+      "75e0881c2b6bbfe6"
+    ]
+  }
+}

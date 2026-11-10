@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07ML7P94G",
+  "text": "Type: square dining table with drawer\nUse: dining, small meals; dining room, kitchen\nStyle: farmhouse, traditional, classic\nMaterials: solid pine top in rustic honey finish, black painted wood base\nColors: warm honey wood, black\nShape: square top, apron with one small center drawer and round knob, four turned spindle legs, compact\nFeel: cozy, homey, classic\nGoes with: black windsor chairs, white walls, warm wood; farmhouse or cottage rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07ML7P94G",
+      "name": "Amazon Brand \u2013 Ravenna Home Traditional Dining Table 29\"H, Black and Rustic Honey Pine",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 74.9,
+        "depth": 74.9,
+        "height": 73.8
+      },
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [
+        "Black/Rustic Honey Pine"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Small Dining Table",
+      "description": "29.49'' W x 29.49'' D x 29'' H Solid pine wood Writing desk with one drawer to store office items Classic wood styling works with modern or transitional decor Avoid moisture. Wipes clean with soft, dry cloth. Simple assembly in 15-30 minutes Free returns for 30 days. 1-year warranty.",
+      "image_path": "a5/a5451f4b.jpg",
+      "image_px": [
+        1000,
+        1000
+      ]
+    },
+    "photos": [
+      "b9fc493f5d2467c7"
+    ]
+  }
+}

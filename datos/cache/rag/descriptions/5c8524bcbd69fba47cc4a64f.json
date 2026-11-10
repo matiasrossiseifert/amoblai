@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JL5QBC2",
+  "text": "Type: woven ikat lumbar pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, rustic, contemporary\nMaterials: handwoven textured yarn, braided side trim\nColors: blush pink, grey, cream, rust\nShape: long rectangle, blurred ikat arrow motif, braided edges on short sides, slim\nFeel: soft, earthy, relaxed\nGoes with: grey or cream sofas, natural wood, blush accents; bohemian or modern rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07JL5QBC2",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Braid Throw Pillow - 12 x 24 Inch, Red / White / Black",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 30.5,
+        "height": 8.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This multicolor modern throw pillow evokes the notion of fire with its faded red, white, and black pattern. Plaited ropes of all three colors adorn the edges in a textured double-stripe. Wool/cotton Imported 12\"L x 24\"W With the zipper placed on the back, this pillow showcases a handwoven, hand-stitched braid for added texture. 1 throw pillow Spot clean with a damp cloth, and then allow to air dry. Rather than pulling at any loose threads, please use scissors to trim them.",
+      "image_path": "50/505c39ea.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "777b63c6d77fa283"
+    ]
+  }
+}

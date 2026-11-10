@@ -1,0 +1,39 @@
+{
+  "product": "191.197.25",
+  "text": "Type: kidney-shaped table on casters\nUse: working, studying, crafts, play; home office, kids room, study\nStyle: retro, modern, contemporary\nMaterials: glossy lacquered top, white metal wire legs, rolling casters\nColors: bright red, white, grey\nShape: curved kidney-shaped top, thin edge, slim double-wire legs, four casters, mobile and light\nFeel: playful, bold, cheerful, energetic\nGoes with: white walls, light wood floors, black or grey accents, colorful chairs; retro, modern or playful kids spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "191.197.25",
+      "name": "HISSMON,KRILLE",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 140.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "140x75 cm",
+      "colors": [
+        "Cashew nut shaped red",
+        "white"
+      ],
+      "description": "Pre-drilled holes for legs, for easy assembly."
+    },
+    "photos": [
+      "0fbad0df71ee5010"
+    ]
+  }
+}

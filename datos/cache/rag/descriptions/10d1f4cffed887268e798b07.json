@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B519XNQ",
+  "text": "Type: geometric area rug\nUse: anchoring a chair or seating area; living room, bedroom, home office\nStyle: contemporary, modern, coastal\nMaterials: tufted pile, watercolor-dyed yarn\nColors: bright cobalt blue, ivory\nShape: rectangular, bold interlocking zigzag maze stripes with a hand-painted watercolor effect, low pile, medium size\nFeel: bold, fresh, energetic\nGoes with: dark wood floors, yellow or white furniture, black accents; modern or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B519XNQ",
+      "name": "Amazon Brand \u2013 Rivet Modern Geometric Rug, 4' x 6', Blue, Ivory",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Blue, Ivory"
+      ],
+      "materials": [],
+      "style": "Modern",
+      "description": "This beautiful hand-tufted blue and ivory rug will liven up your modern-style room. Spirited color and contemporary geometric patterns will make this a striking focal point for any room in need of a style boost. 4' x 6' Medium pile is easy to clean Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "a7/a713222d.jpg",
+      "image_px": [
+        1530,
+        1530
+      ]
+    },
+    "photos": [
+      "6ecfac028c95d944"
+    ]
+  }
+}

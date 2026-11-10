@@ -1,0 +1,38 @@
+{
+  "product": "101.762.87",
+  "text": "Type: square coffee table with shelf\nUse: holding drinks, books and decor; living room, family room\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid pine in a white stain with visible grain\nColors: white, soft warm white\nShape: large square top, thick square legs, open lower shelf, simple apron, sturdy and low\nFeel: homey, bright, calm, sturdy\nGoes with: white or cream sofas, light wood floors, linen and wicker; farmhouse, coastal or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "101.762.87",
+      "name": "HEMNES",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 90.0,
+        "depth": 90.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "90x90 cm",
+      "colors": [
+        "White stain"
+      ],
+      "description": "Solid wood has a natural feel."
+    },
+    "photos": [
+      "2572f7495a808441"
+    ]
+  }
+}

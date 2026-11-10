@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QGFZ2B4",
+  "text": "Type: X-base square side table\nUse: drink or lamp beside a sofa or bed; living room, bedroom\nStyle: industrial, rustic, modern\nMaterials: mango wood top with patchwork grain, black metal base\nColors: light warm natural wood, black\nShape: square top, crossed X-shaped legs on two sides joined by floor runners, open and compact\nFeel: casual, sturdy, warm\nGoes with: leather, black accents, neutral walls, natural wood; industrial or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QGFZ2B4",
+      "name": "Amazon Brand \u2013 Rivet Industrial Mango-Topped Side Table, 19.61\"W",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 49.8,
+        "depth": 49.8,
+        "height": 55.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Walnut/Charcoal"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Organic modern",
+      "description": "The parquetry design of this mango-topped piece turns a side table into a point of visual interest wherever it is placed. Metal legs in an X shape provide stability and add a modern element. No assembly and compact dimensions make this table a convenient and stylish feature to add to any room. 19.61\"W x 19.61\"D x 21.65\"H Made with mango top and metal base This stylish console table features a parquetry top that adds classic appeal to your space. Ships fully assembled. All seams are welded, and there are no exposed screws or bolts. Table features a solid wood parquetry top. No assembly required Clean with a soft, damp cloth. Avoid placing furniture\u00a0near heat vents or open windows. Free returns for 30 days. 1-year warranty.",
+      "image_path": "ba/ba2e7dae.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "516f123da34ccc95"
+    ]
+  }
+}

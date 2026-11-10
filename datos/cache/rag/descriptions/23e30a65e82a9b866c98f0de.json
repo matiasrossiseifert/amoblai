@@ -1,0 +1,36 @@
+{
+  "product": "302.982.97",
+  "text": "Type: abstract print lumbar cushion\nUse: a color and pattern accent on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, modern, bohemian\nMaterials: printed cotton fabric\nColors: sky blue, turquoise, black, white, soft pink\nShape: rectangular cushion with a bold abstract print of brushy textures, flowing curved outlines and dense fine black lines, plump and soft, medium size\nFeel: lively, artistic, fresh, bold\nGoes with: white or grey sofas, solid blue or pink cushions, light wood, modern art; contemporary, eclectic or bohemian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.982.97",
+      "name": "DOFTRANKA",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "40x65 cm",
+      "colors": [
+        "White",
+        "multicolour"
+      ],
+      "description": "You can easily vary the look because the two sides have different designs."
+    },
+    "photos": [
+      "6124df17e3b90b94"
+    ]
+  }
+}

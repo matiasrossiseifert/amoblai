@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075Z9KY3X",
+  "text": "Type: Persian floral runner rug\nUse: covering a hallway or along a bed; entryway, bedroom, living room\nStyle: bohemian, traditional\nMaterials: tufted wool-look pile\nColors: deep teal, rust, mustard, red, purple accents\nShape: long narrow runner, dense all-over Persian floral pattern, low pile\nFeel: rich, vibrant, eclectic\nGoes with: white floors, natural wood, rattan baskets; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075Z9KY3X",
+      "name": "Amazon Brand \u2013 Stone & Beam Vinton Persian Runner Rug, 2' 3\" x 7' 6\", Rust Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Teal"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "persian",
+      "description": "100% Wool Imported An antique-inspired floral design in an ornamental color palette of red, blue, turquoise, and orange on a denim blue field gives this rug an exceptional look. Each rug is hand tufted for easy care, heavy wear and an unbeatable texture. 4' x 6' Hand tufted from pure wool Made in India Medium pile height makes it durable and easy to vacuum Vacuum, professionally clean Pair with a rug pad, which is sold separately Ships tightly rolled in a protective bag",
+      "image_path": "cd/cd29291e.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2f7cbdfeb18745cf"
+    ]
+  }
+}

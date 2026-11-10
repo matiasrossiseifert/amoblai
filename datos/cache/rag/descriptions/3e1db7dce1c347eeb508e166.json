@@ -1,0 +1,36 @@
+{
+  "product": "903.170.85",
+  "text": "Type: fabric storage box\nUse: storing clothes, toys, blankets or papers on shelves; bedroom, living room, children's room\nStyle: Scandinavian, coastal, farmhouse\nMaterials: sturdy padded fabric with lattice stitching, turned-down cuff, piped edges\nColors: light beige, cobalt blue lines\nShape: rectangular soft box with a folded-over rim, a diamond lattice pattern in thin blue lines, rounded piped edges, softly structured, medium size\nFeel: tidy, homey, fresh, gentle\nGoes with: white shelving, light wood, blue and white textiles; Scandinavian, coastal or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "903.170.85",
+      "name": "SKUBBARE",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "36x25x38 cm",
+      "colors": [
+        "Natural",
+        "blue"
+      ],
+      "description": "You can decide the height of the basket yourself by folding the edges. The folded edge also makes a handy lip for pulling out the basket."
+    },
+    "photos": [
+      "569fc6c8187507e9"
+    ]
+  }
+}

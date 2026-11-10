@@ -1,0 +1,38 @@
+{
+  "product": "303.323.43",
+  "text": "Type: square kids play rug with houses\nUse: playing on the floor; children's room, playroom\nStyle: contemporary, Scandinavian\nMaterials: short soft cut pile, bound edge\nColors: bright grass green, red, yellow, blue, black, white\nShape: square with a row of colorful little houses along the top and bottom edges, open green center, flat and soft, medium size\nFeel: playful, cheerful, colorful, lively\nGoes with: white walls, light wood, toy storage, primary color accents; playful kids' rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "303.323.43",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 133.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "133x133 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "The rugs thick piles dampens sound, creating a snug feeling, and are soft to walk on for all sizes of feet."
+    },
+    "photos": [
+      "5dab2b856f99f185"
+    ]
+  }
+}

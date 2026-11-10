@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07WP9CX8V",
+  "text": "Type: metal frame wall shelf\nUse: displaying small decor, books and plants; living room, bedroom, home office\nStyle: modern, industrial, minimalist\nMaterials: thin gold-finished metal frame, wood shelf board\nColors: antique gold, warm natural wood\nShape: open rectangular wire frame with one suspended wooden shelf, top rail with keyhole hangers, slim lines, light and airy\nFeel: airy, warm, understated\nGoes with: brass and wood accents, white or neutral walls; modern, industrial or minimalist rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07WP9CX8V",
+      "name": "Rivet Modern Floating Wall Mounted Shelving Decor - 9 Inch, Natural Wood and Gold (Renewed)",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "This wall unit offers a modern take on shelving with a single shelf held up by a crisscrossing, triangular iron frame. The rubberwood veneer gives this unit a convincing natural look, and the gold-colored iron provides a sense of luxury. 9.06\"H x 24.6\"W x 5.91\"D 60% MDF with rubberwood veneer; 40% iron Shelf unit Avoid moisture. This item wipes clean with a soft, dry cloth. Hanging hardware is included.",
+      "image_path": "8c/8c493943.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7d080b396112ea37"
+    ]
+  }
+}

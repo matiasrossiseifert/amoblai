@@ -1,0 +1,35 @@
+{
+  "product": "202.927.76",
+  "text": "Type: armless plastic desk chair\nUse: working at a desk, homework, studying; study, home office, kids room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: molded matte plastic seat shell, white powder-coated steel column and four-star base, plastic glides\nColors: medium grey, white\nShape: low curved backrest with two round cut-outs on a slim neck, scooped seat, armless, height-adjustable column on a cross-shaped four-star base, light and compact\nFeel: playful, simple, light, practical\nGoes with: white desks, light wood, bright accents; Scandinavian or minimalist study corners and kids rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "202.927.76",
+      "name": "MOLTE",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Desk chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "You sit comfortably, because the chair can be easily adjusted to 5 different heights  38, 41, 45, 48 and 51 cm."
+    },
+    "photos": [
+      "eae516edd0ab74c3"
+    ]
+  }
+}

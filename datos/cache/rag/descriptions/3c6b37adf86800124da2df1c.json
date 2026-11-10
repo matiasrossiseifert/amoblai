@@ -1,0 +1,36 @@
+{
+  "product": "102.460.25",
+  "text": "Type: opal glass globe ceiling lamp\nUse: general light in a hallway, entry or small room; hallway, bathroom, kitchen, bedroom\nStyle: industrial, farmhouse, retro\nMaterials: opal white glass globe, textured powder-coated metal canopy, rod and socket cap\nColors: milky white, anthracite dark grey\nShape: ball-shaped glass globe hanging close to the ceiling on a short rod from a round flared canopy, sturdy socket collar, compact, vintage outline\nFeel: nostalgic, sturdy, cozy\nGoes with: white walls, white tiles, dark metal, warm wood; farmhouse, industrial or classic hallways and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.460.25",
+      "name": "VITEMLLA",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Ceiling lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Metal",
+        "glass"
+      ],
+      "description": "Gives a diffused light; good for spreading light into larger areas of a bathroom."
+    },
+    "photos": [
+      "01d8be97657d1b21"
+    ]
+  }
+}

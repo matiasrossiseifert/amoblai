@@ -1,0 +1,39 @@
+{
+  "product": "990.403.42",
+  "text": "Type: oval dining table with crossed legs\nUse: dining, gathering, working at a table; dining room, kitchen\nStyle: Scandinavian, mid-century modern, contemporary\nMaterials: white laminate top with birch edge, solid birch crossed legs, thin steel tension rods\nColors: white, light natural birch, silver\nShape: long oval top with rounded ends, X-shaped wooden legs at each end joined by a round stretcher, wire braces, light and open\nFeel: airy, crafted, fresh, sociable\nGoes with: light wood or white chairs, white walls, pendant lamps; Scandinavian or modern dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "990.403.42",
+      "name": "SLHULT",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 185.0,
+        "depth": 90.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "185x90 cm",
+      "colors": [
+        "White",
+        "dalshult birch"
+      ],
+      "description": "The melamine table top is moisture resistant, stain resistant and easy to keep clean."
+    },
+    "photos": [
+      "d6ee0c418b896c9f"
+    ]
+  }
+}

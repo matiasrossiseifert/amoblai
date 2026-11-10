@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X342T5",
+  "text": "Type: nailhead upholstered accent armchair\nUse: lounging, reading; living room, bedroom, home office\nStyle: traditional, contemporary, classic\nMaterials: woven upholstery fabric, antique brass nailhead trim, dark stained wood base and legs\nColors: warm greige, dark brown wood, bronze\nShape: track arms with nailhead outline, loose back and seat cushions, plinth-style wood base on tapered square legs, boxy, medium visual weight\nFeel: tailored, refined, cozy\nGoes with: dark wood, leather, cream walls, brass accents; classic or transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075X342T5",
+      "name": "Stone & Beam Westport Modern Nailhead Upholstered Accent Arm Chair, 36\"W, Stone Brown",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 95.9,
+        "depth": 91.4,
+        "height": 83.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Stone Brown"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": null,
+      "description": "Elevate your style with this head-turning modern chair. The deep seat is combined with a down-blend back cushion that is reversible. Nailhead trim on the arms and across the sides, along with the exposed wood base, adds extra sophistication. 36\"W x 37.75''D x  33''H Durable polyester fabric; metal nailhead trim; wood legs. Removable, reversible back cushion enhances durability. No assembly required. Vacuum or wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "e0/e0f6a45f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1060436711b42ac3"
+    ]
+  }
+}

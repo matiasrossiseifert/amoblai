@@ -1,0 +1,35 @@
+{
+  "product": "602.917.89",
+  "text": "Type: silver picture frame with mat\nUse: displaying photos, prints or artwork on a wall or shelf; living room, bedroom, hallway, home office\nStyle: classic, contemporary, glam\nMaterials: frame in a brushed silver finish with a rounded profile, white mat board, clear glazing\nColors: silver, white, light grey insert\nShape: upright rectangle with a medium rounded molding and soft beveled inner edge, wide white mat around the picture, light visual weight\nFeel: elegant, cool, polished\nGoes with: grey or white walls, chrome, glass, black and white photos; classic, contemporary or glam rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.917.89",
+      "name": "SILVERHJDEN",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "30x40 cm",
+      "colors": [
+        "Silver-colour"
+      ],
+      "description": "Can be hung horizontally or vertically to fit in the space available."
+    },
+    "photos": [
+      "25fe264ce98bb946"
+    ]
+  }
+}

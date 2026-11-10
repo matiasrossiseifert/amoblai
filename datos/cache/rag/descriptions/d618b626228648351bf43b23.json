@@ -1,0 +1,35 @@
+{
+  "product": "501.168.09",
+  "text": "Type: extendable square dining table in dark wood\nUse: everyday dining, hosting more guests when extended; dining room, kitchen, family room\nStyle: classic, traditional, contemporary\nMaterials: brown-black stained wood veneer, pull-out leaves stored under the top\nColors: dark brown-black\nShape: square top, deep plain apron, extension leaves sliding out at both ends, four thick square legs, grounded and solid, medium visual weight\nFeel: dependable, warm, sober, sturdy\nGoes with: black or white chairs, light walls, warm wood floors, cream textiles; classic dining rooms or modern family kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "501.168.09",
+      "name": "BJURSTA",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Extendable table",
+      "category_tp": "table",
+      "size_raw": "90,129,168x90 cm",
+      "colors": [
+        "Brown-black"
+      ],
+      "description": "2 pull-out leaves included."
+    },
+    "photos": [
+      "943774057bf449dd"
+    ]
+  }
+}

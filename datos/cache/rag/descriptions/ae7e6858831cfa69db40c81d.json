@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07Q15JRJC",
+  "text": "Type: modern round wall clock\nUse: telling time; on a wall; living room, bedroom, home office\nStyle: minimalist, modern, Scandinavian\nMaterials: brushed brass-finish frame, white face, black hands\nColors: white, warm brass gold, black\nShape: slim round frame, clean face with thin stick markers, no numerals, slender hands, compact\nFeel: clean, calm, refined\nGoes with: white walls, light wood, brass and black accents; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07Q15JRJC",
+      "name": "AmazonBasics 12\" Modern Wall Clock - Brass",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": {
+        "width": 31.8,
+        "depth": 31.8,
+        "height": 4.4
+      },
+      "brand": "AmazonBasics",
+      "product_type": "CLOCK",
+      "colors": [
+        "Brass"
+      ],
+      "materials": [
+        "Brass"
+      ],
+      "style": null,
+      "description": "12 inch wall clock with analog operation, hour, and minute hands Durable, lightweight construction with metal rim Hang in your office, workshop, classroom, kitchen, or anywhere time management is useful Silent time-keeping mechanism provides accuracy and quiet operation Battery operated with one AA battery (not included) Includes mounting hardware and instructions for easy installation",
+      "image_path": "fc/fc787885.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fbfce14b212c8802"
+    ]
+  }
+}

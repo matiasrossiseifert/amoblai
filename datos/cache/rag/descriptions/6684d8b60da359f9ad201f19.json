@@ -1,0 +1,43 @@
+{
+  "product": "abo-B0723CV5P7",
+  "text": "Type: low wide open bookcase\nUse: books, decor, console storage; living room, home office, hallway\nStyle: industrial, modern, minimalist\nMaterials: black steel frame and shelves, whitewashed wood top\nColors: black, light pale wood\nShape: long low rectangular frame, offset shelves with vertical dividers, open base, thin cross wire, light and linear\nFeel: graphic, raw, urban\nGoes with: concrete, grey walls, light wood, leather; industrial or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0723CV5P7",
+      "name": "Urban Living Bookcases",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 160.0,
+        "depth": 30.5,
+        "height": 90.2
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "e5/e53c0b49.jpg",
+      "image_px": [
+        2000,
+        1335
+      ]
+    },
+    "photos": [
+      "4ec7d37a8bfa2f0d"
+    ]
+  }
+}

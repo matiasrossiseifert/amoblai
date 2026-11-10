@@ -1,0 +1,35 @@
+{
+  "product": "600.989.75",
+  "text": "Type: large black wall clock\nUse: telling time at a glance on a wall; kitchen, living room, home office, dining room\nStyle: classic, traditional, retro\nMaterials: glossy black case, chrome-look inner ring, white dial behind glass\nColors: black, white, silver\nShape: round face with a thick rolled bezel, bold black serif numerals and minute ticks, black hands, station-clock look, large and graphic\nFeel: classic, practical, bold\nGoes with: white walls, black accents, steel and wood; classic kitchens, industrial or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "600.989.75",
+      "name": "BRAVUR",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "a74c3714664a5afc"
+    ]
+  }
+}

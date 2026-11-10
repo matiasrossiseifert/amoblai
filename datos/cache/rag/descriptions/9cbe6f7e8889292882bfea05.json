@@ -1,0 +1,36 @@
+{
+  "product": "391.278.09",
+  "text": "Type: molded shell dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: modern, minimalist, Scandinavian\nMaterials: molded plastic shell, chrome-plated steel tube legs and arms, grey plastic armrest pads\nColors: white, silver chrome, dark grey\nShape: one-piece curved scoop shell with a tall rounded back, slim tubular arms with padded tops, four thin straight metal legs, light and open, compact\nFeel: clean, bright, fresh, practical\nGoes with: white or light wood tables, grey or pastel walls, chrome accents; modern kitchens, Scandinavian dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "391.278.09",
+      "name": "LEIFARNE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "dietmar chrome-plated"
+      ],
+      "description": null
+    },
+    "photos": [
+      "530382730937740b"
+    ]
+  }
+}

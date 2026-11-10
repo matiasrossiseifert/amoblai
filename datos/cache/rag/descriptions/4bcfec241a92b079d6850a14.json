@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QD6V13M",
+  "text": "Type: drawer and door storage cabinet\nUse: storing media and household items; living room, bedroom, home office\nStyle: mid-century modern, minimalist, Scandinavian\nMaterials: painted wood, black metal knobs and bar handle\nColors: white, black\nShape: boxy case, three drawers beside one tall door, small round knobs, slim vertical handle, splayed tapered legs with cross stretcher, compact\nFeel: clean, light, simple\nGoes with: light wood, black accents, pale walls; Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QD6V13M",
+      "name": "Amazon Brand \u2013 Rivet Modern Media Storage Cabinet, 31.5\"W, White",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 40.0,
+        "height": 76.2
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "White"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "b6/b675dfca.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e78e7788ef3fdc1f"
+    ]
+  }
+}

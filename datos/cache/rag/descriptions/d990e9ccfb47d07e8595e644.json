@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07K89Y3MD",
+  "text": "Type: standing jewelry armoire\nUse: storing jewelry and accessories; bedroom, dressing area\nStyle: traditional, classic\nMaterials: black lacquered wood, carved columns, metal knobs\nColors: glossy black, silver\nShape: tall narrow cabinet, many shallow drawers with round knobs, bowed front, turned side columns, molded top and plinth base, upright\nFeel: elegant, formal, dramatic\nGoes with: dark wood, white or deep walls, silver accents; traditional or classic bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07K89Y3MD",
+      "name": "Alveare Home Louisa Locking Jewelry Armoire, Black",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 44.5,
+        "depth": 29.5,
+        "height": 101.1
+      },
+      "brand": "Alveare Home",
+      "product_type": "CABINET",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Traditional",
+      "description": "8 spacious drawers feature divided compartments and open storage Locking top lid keeps precious pieces safe 2 side doors open to reveal 10, double tiered jewelry hooks Top compartment equipped with a vanity mirror, ring rolls, additional storage compartments and a cord management hole to keep cables out of sight as devices charge Beautiful vintage black finish with antiqued brass hardware Dimensions: 39.8\" H x 17.5\" W x 11.6\" D",
+      "image_path": "62/6205f20b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "239917896835c2ba"
+    ]
+  }
+}

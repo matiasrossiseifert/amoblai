@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07HSJDMXQ",
+  "text": "Type: reclaimed wood media console\nUse: TV and media storage; living room, bedroom\nStyle: rustic, mid-century modern, coastal\nMaterials: reclaimed fir in natural stain, pieced block-wood doors, gold metal base\nColors: light natural wood, brass gold\nShape: long low case, two sliding doors with patchwork wood blocks, open two-tier shelf side, slim gold frame legs, textured front\nFeel: warm, natural, relaxed\nGoes with: white walls, linen, rattan, brass; rustic, coastal or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSJDMXQ",
+      "name": "Amazon Brand \u2013 Rivet Pieced-Wood Reclaimed-Fir Storage Media Console, 63\"W, Natural Stain",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 165.9,
+        "depth": 47.9,
+        "height": 62.9
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "The pattern created by the pieced, reclaimed wood construction is visually satisfying, turning this very functional console or slim coffee table into an artistic statement. The 2 cabinets with hinged doors and 2 open shelves create welcome additional storage. 16.54\"L x 63\"W x 21.65\"H Reclaimed fir atop a brass-painted metal base The 2 cabinet spaces with doors and 2 open shelves offer ample storage opportunities, both hidden and on display. A sturdy metal base adds stability while not drawing attention from the beautiful wood pattern. Assemble in 15 minutes or less. Avoid moisture; wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty",
+      "image_path": "2a/2a6d3a93.jpg",
+      "image_px": [
+        2560,
+        1340
+      ]
+    },
+    "photos": [
+      "f474804ca6348511"
+    ]
+  }
+}

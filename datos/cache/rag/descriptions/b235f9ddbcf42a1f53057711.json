@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSM36J9",
+  "text": "Type: bracketed floating wall shelf\nUse: displaying books, plants and decor; living room, bedroom, home office\nStyle: modern, glam, contemporary\nMaterials: wood plank shelf, gold-finished metal brackets\nColors: warm medium brown wood, gold\nShape: long narrow plank on two curved scroll brackets with tapered points, slim and linear, light visual weight\nFeel: warm, refined, polished\nGoes with: brass accents, white or deep-toned walls, walnut or oak wood; modern, glam or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSM36J9",
+      "name": "Amazon Brand \u2013 Rivet Modern Curved Frame Floating Wall Shelf, 25\"W, Gold and Natural Wood",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "This modern shelving unit is a great way to add an extra dimension to your wall decorations. The solid-fir shelf sits atop a gold-colored iron frame and 4 golden arches, which strengthen the shelf visually and structurally. 7.48\"H x 25\"W x 6.5\"D 90% fir; 10% iron Shelf unit Avoid moisture. This item wipes clean with a soft, dry cloth. Hanging hardware is included.",
+      "image_path": "19/198cea4d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "26af627ab38740b0"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B073P5LN67",
+  "text": "Type: framed magnolia flower print\nUse: wall decoration; living room, bedroom, dining room, home office, above a sofa or bed\nStyle: traditional, contemporary, glam\nMaterials: painted-look print with gold accents, distressed cream wood frame\nColors: creamy white, charcoal black, warm gold, soft beige\nShape: large square, single oversized bloom centered on a dark textured ground, wide light frame, substantial\nFeel: elegant, calm, soft, refined\nGoes with: cream, charcoal and gold accents, light wood; traditional, glam or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P5LN67",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Magnolia Print, White Frame, 40\" x 40\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 101.6,
+        "height": 4.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multicolor"
+      ],
+      "materials": [],
+      "style": "Contemporary",
+      "description": "A modern refresh of a classic floral, this print features highly detailed petals of a white magnolia against a dark background. The stark contrast and texture is accented by a white frame, for a piece that adds a natural element to any style room. 40\"W x 40\"H Printed on paper in white frame A modern take on a classic nature subject that will fit with any d\u00e9cor Ready to hang, all hardware included",
+      "image_path": "c4/c40e98b9.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "bfdbf28f7fa10275"
+    ]
+  }
+}

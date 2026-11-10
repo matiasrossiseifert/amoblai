@@ -1,0 +1,45 @@
+{
+  "product": "abo-B082DPN7VL",
+  "text": "Type: slim LED table lamp\nUse: ambient and reading light; living room, bedroom, home office, on a side table, nightstand or desk\nStyle: minimalist, contemporary, Scandinavian\nMaterials: powder-coated metal, integrated LED, white diffuser\nColors: pale blush pink, white\nShape: flat ultrathin disc shade on a thin straight stem, small round disc base, tall and light, slender\nFeel: soft, airy, playful, calm\nGoes with: white walls, light wood, pastel accents, brass; Scandinavian or modern bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082DPN7VL",
+      "name": "Amazon Brand \u2013 Rivet Modern Ultrathin LED-Integrated Table Lamp, 20\"H, Pink",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 25.4,
+        "depth": 25.4,
+        "height": 50.8
+      },
+      "brand": "Rivet",
+      "product_type": "LAMP",
+      "colors": [
+        "Pink"
+      ],
+      "materials": [],
+      "style": "Modern",
+      "description": "With a stunning contemporary design, this integrated LED lamp is the perfect task light when you want to add style to any table or room. An ultrathin body combines with a pink finish to create the ultimate modern look, so you do not need to sacrifice your decor to brighten your space. 10\"W x 10\"D x 20\"H Metal shade and base in a pink finish Bring great light and style to any space with this sleek table lamp. LED integrated. Assemble in 15-30 minutes For indoor use only.",
+      "image_path": "eb/eb9d30f6.jpg",
+      "image_px": [
+        1653,
+        2560
+      ]
+    },
+    "photos": [
+      "b30133a62450278a"
+    ]
+  }
+}

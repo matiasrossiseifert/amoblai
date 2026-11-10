@@ -1,0 +1,35 @@
+{
+  "product": "003.158.87",
+  "text": "Type: black metal wall shelf with drawers\nUse: holding keys, mail, plants and small things; hallway, entryway, kitchen, living room\nStyle: industrial, modern, minimalist\nMaterials: black powder-coated steel frame, perforated mesh shelves, black drawer fronts with small knobs, metal hooks\nColors: matte black\nShape: tall open wall-hung frame with two slim upright loops above, two mesh shelves, a row of three drawers at the bottom, hooks underneath, light and graphic\nFeel: graphic, practical, tidy, urban\nGoes with: white walls, light wood, green plants, brass accents; industrial or modern entryways and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "003.158.87",
+      "name": "FALSTERBO",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "60x100 cm",
+      "colors": [],
+      "description": "The shelves have a ledge to prevent whatever you place on it from sliding off."
+    },
+    "photos": [
+      "51f8117e4bb6ae03"
+    ]
+  }
+}

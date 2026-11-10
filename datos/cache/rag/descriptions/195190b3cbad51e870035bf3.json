@@ -1,0 +1,35 @@
+{
+  "product": "602.564.94",
+  "text": "Type: off-white metal dome pendant lamp\nUse: light over a dining table or a kitchen island; dining room, kitchen, living room\nStyle: industrial, farmhouse, retro\nMaterials: off-white lacquered steel shade, brass-coloured cage fitting, braided grey and white textile cord, white ceiling cup\nColors: warm off-white, brass gold, grey\nShape: wide shallow dome with a rounded shoulder and a small brass cage at the top, hangs on a long cord, medium-to-large, clean and solid\nFeel: warm, nostalgic, homely, crafted\nGoes with: wood tables, white tiles, brass or black accents; farmhouse, industrial or Scandinavian kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.564.94",
+      "name": "RANARP",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Off-white"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "ba11d0c3968f272e"
+    ]
+  }
+}

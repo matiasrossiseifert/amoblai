@@ -1,0 +1,37 @@
+{
+  "product": "102.828.29",
+  "text": "Type: lockable wall cabinet with mirror door\nUse: locked storage for medicine, keys or valuables; bathroom, hallway, bedroom\nStyle: industrial, minimalist, contemporary\nMaterials: powder-coated steel, mirror glass door, metal lock with key\nColors: matte black, silver mirror\nShape: small square wall box with generously rounded corners, framed mirror front, side hinges, lock with key on the right, compact and solid\nFeel: secure, graphic, compact, practical\nGoes with: white tiles, black fittings, concrete or wood; industrial or modern bathrooms and entryways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "102.828.29",
+      "name": "GUNNERN",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 32.0
+      },
+      "type_ikea": "Lockable cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "32x32 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Lockable. An extra key is included."
+    },
+    "photos": [
+      "9729e0a9966645ab"
+    ]
+  }
+}

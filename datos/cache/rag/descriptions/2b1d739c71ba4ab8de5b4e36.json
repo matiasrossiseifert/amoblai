@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07HSCNKCT",
+  "text": "Type: wide bookcase with drawers\nUse: storing books, display and small items; living room, home office, bedroom\nStyle: Scandinavian, mid-century modern, rustic\nMaterials: solid wood with rough-sawn drawer fronts, grey wash finish\nColors: light greyish natural wood\nShape: tall rectangular case, asymmetric open cubbies of varied sizes, four offset drawers without handles, angled splayed legs, closed back, substantial\nFeel: natural, relaxed, crafted\nGoes with: white walls, linen, light wood, greenery; Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSCNKCT",
+      "name": "Stone & Beam Rylee Modern Bookcase 39.4\"Wx76.8\u201dH, Mixed Gray",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 121.9,
+        "depth": 61.9,
+        "height": 46.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [],
+      "style": "Large Bookcase",
+      "description": "A wide profile, a mixed-gray finish, and 8 asymmetrical niches make this bookcase as eye-catching as it is functional. Store your collection in the open niches, or use the 4 built-in drawers with soft-closing hinges to maximize your office or library space. 39.4\u201dW x 13.8\u201dD x 76.8\u201dH Wood A beautiful finish and asymmetrical design make this bookcase as visually interesting as it is functional Soft-closing hinges, asymmetrical niches, and four built-in drawers store your collection in style. No assembly required Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "c1/c121cdbd.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1d9fe6ae0ea48680"
+    ]
+  }
+}

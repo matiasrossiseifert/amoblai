@@ -1,0 +1,37 @@
+{
+  "product": "490.289.03",
+  "text": "Type: white and birch three-drawer chest\nUse: storing clothes, toys and small items; children's room, bedroom, playroom\nStyle: Scandinavian, minimalist, modern\nMaterials: white painted fiberboard frame, birch-effect drawer fronts\nColors: white, light birch\nShape: compact boxy cabinet with two shallow drawers over one deep drawer, large rectangular cut-out grips at the top edge of each front, flat top, sits flat on the floor, low and squat\nFeel: light, friendly, tidy, simple\nGoes with: white walls, pale wood, colorful textiles; Scandinavian children's rooms or modern bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "490.289.03",
+      "name": "STUVA",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Chest of 3 drawers",
+      "category_tp": "dresser",
+      "size_raw": "60x64 cm",
+      "colors": [
+        "Birch"
+      ],
+      "description": "Low storage makes it easier for children to reach and organise their things."
+    },
+    "photos": [
+      "43a07dd4dddcc8ef"
+    ]
+  }
+}

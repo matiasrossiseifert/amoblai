@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082DFP8N8",
+  "text": "Type: compact metal-base writing desk\nUse: working at a desk, laptop work; home office, bedroom, small apartment\nStyle: industrial, modern, minimalist\nMaterials: wood-look box top in weathered oak finish, black powder-coated steel frame, black bar pull\nColors: light greige oak, matte black\nShape: rectangular box top with wide single drawer, thin square metal legs with low stretchers, slim and light\nFeel: clean, urban, calm\nGoes with: grey or white walls, black accents, light wood; modern or industrial home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B082DFP8N8",
+      "name": "Amazon Brand \u2013 Rivet Avery Industrial Home Office Writing Desk with Metal Base, 40\"W, Weathered Gray Oak Finish",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 45.7,
+        "height": 76.2
+      },
+      "brand": "Rivet",
+      "product_type": "DESK",
+      "colors": [
+        "Weathered Gray Oak"
+      ],
+      "materials": [
+        "Engineered Wood"
+      ],
+      "style": "Firm",
+      "description": "Industrial style meets contemporary functionality in this sturdy, streamlined desk. This versatile piece makes a home office or workplace style statement while also standing up to daily use. A single slim drawer offers handy storage without spoiling the elegantly sparse lines of the desk. 40\"W x 18\"D x 30\"H Durable MDF wood with gray-washed-oak-finished hardwood veneer and an antique bronze-finished metal base A wide top offers ample workspace for writers, artists, or busy professionals. The single drawer slides easily. The clean lines of this desk speak to its industrial-chic roots. The distressed gray finish of the top pairs perfectly with the antiqued metal base. Assemble in 15-30 minutes Using a soft, damp cloth, wipe in the direction of the wood grain. Free returns for 30 days; 1-year warranty.",
+      "image_path": "c3/c306bcbd.jpg",
+      "image_px": [
+        2173,
+        2126
+      ]
+    },
+    "photos": [
+      "57c24b1460545fe8"
+    ]
+  }
+}

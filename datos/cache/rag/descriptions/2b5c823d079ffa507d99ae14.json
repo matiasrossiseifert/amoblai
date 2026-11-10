@@ -1,0 +1,39 @@
+{
+  "product": "202.852.62",
+  "text": "Type: jute flatwoven runner with colored stripes\nUse: adding texture by a bed or in a passage; hallway, bedroom, kitchen, entryway\nStyle: bohemian, Scandinavian, rustic\nMaterials: woven jute, off-white cotton-look center, knotted colored yarn cords\nColors: natural tan, off-white, red, pink, navy, yellow, green\nShape: small long rectangle, natural ends, horizontal cord stripes with knotted tips poking out at the sides, flat, light visual weight\nFeel: crafted, cheerful, earthy, playful\nGoes with: light wood, white walls, colorful textiles, plants; bohemian, Scandinavian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "202.852.62",
+      "name": "TILST",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 70.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "70x160 cm",
+      "colors": [
+        "Handmade natural",
+        "multicolour"
+      ],
+      "description": "Handwoven by skilled craftspeople, and therefore unique."
+    },
+    "photos": [
+      "da11db234c5768a1"
+    ]
+  }
+}

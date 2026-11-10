@@ -1,0 +1,35 @@
+{
+  "product": "502.629.33",
+  "text": "Type: beige curtains with tie-backs, pair\nUse: framing windows, dimming light, adding privacy; living room, bedroom, dining room\nStyle: classic, traditional, farmhouse\nMaterials: medium-weight woven fabric with a soft sheen, matching fabric tie-backs, hidden tabs\nColors: warm taupe beige, light greige\nShape: two long panels hung on a rod in even pleats, gathered at mid-height by tie-backs into an hourglass drape, floor length, soft medium weight\nFeel: warm, elegant, cozy, calm\nGoes with: cream walls, warm wood, brass, neutral sofas; classic, traditional or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "502.629.33",
+      "name": "BLEKVIVA",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains with tie-backs, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "145x300 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "The densely woven curtains darken the room and provide privacy by preventing people outside from seeing into the room."
+    },
+    "photos": [
+      "0cd4898d720907b1"
+    ]
+  }
+}

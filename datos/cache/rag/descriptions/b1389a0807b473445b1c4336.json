@@ -1,0 +1,45 @@
+{
+  "product": "abo-B077X5R9XP",
+  "text": "Type: concrete succulent planters, set of three\nUse: holding succulents or air plants; on a desk, shelf or windowsill; living room, home office, bedroom\nStyle: mid-century modern, minimalist, industrial\nMaterials: cast concrete, gold-tone marbled inlay\nColors: light warm grey, gold\nShape: small cube block with round opening, gold vein streak on one side, compact and solid\nFeel: modern, earthy, refined\nGoes with: white, grey and wood surfaces, brass accents; minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B077X5R9XP",
+      "name": "Amazon Brand \u2013 Rivet Mid Century Modern Concrete Planter Flower Pot Set - Pack of 3, 5 x 3 x 2 Inch, White and Gold",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 12.7,
+        "depth": 7.6,
+        "height": 5.1
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "The cracks and chips in these concrete planters are filled with gold paint for a shimmery detail. Designed for succulents and air plants, these planters are perfect to decorate a table or window sill. Each planter is handmade by a local artist in northeast Indiana. 5\"L x 3\"W x 2\"H Designed for succulents and air plants Felt pads underneath prevent scratching surfaces Made by hand in the United States No additional drip tray required as the bottom is solid Since each piece is handmade expect variations",
+      "image_path": "d2/d2dacc7f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "96e22117cf865367"
+    ]
+  }
+}

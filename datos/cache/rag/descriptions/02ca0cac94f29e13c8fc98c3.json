@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0853Q71J6",
+  "text": "Type: extendable square dining table\nUse: dining, hosting guests; dining room, kitchen\nStyle: mid-century modern, Scandinavian, retro\nMaterials: pine wood with walnut-tone stained top, honey finish legs\nColors: warm medium brown, honey wood\nShape: square top with draw-leaf extensions, curved apron, four round tapered splayed legs, light and open\nFeel: warm, nostalgic, inviting\nGoes with: teak furniture, mustard or green accents, white walls; mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0853Q71J6",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Pine Extendable Dining Table, 39\"\u201377\"W, Brown",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 195.6,
+        "depth": 99.1,
+        "height": 73.9
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Pine"
+      ],
+      "style": "Large Dining Table",
+      "description": "This sleek, stylish table recalls the simplicity of mid-century dining. The extendable top panel makes it flexible\u2014it can be small enough for a breakfast nook or big enough for a dining room. Its sturdy pine construction will make it a fixture at your family meals for many years to come. 39\"\u201377\"W x 39\"D x 29.1\"H Pine and MDF with pine veneer This mid-century dining table is extendable with solid pine legs. It's an ideal spot to share a meal at home. This classic table can be used in breakfast nooks, kitchens, and dining rooms. The extendable top panel is great for both big and small gatherings. Assemble in 15 minutes or less Using a soft, damp cloth, wipe in the direction of the grain. Free returns for 30 days; 1-year warranty.",
+      "image_path": "d0/d05a7a58.jpg",
+      "image_px": [
+        1500,
+        1500
+      ]
+    },
+    "photos": [
+      "92bf21c32e3040ad"
+    ]
+  }
+}

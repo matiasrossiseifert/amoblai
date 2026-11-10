@@ -1,0 +1,46 @@
+{
+  "product": "abo-B0732KDJ48",
+  "text": "Type: large global print area rug\nUse: anchoring a seating or bed area; living room, bedroom, dining room\nStyle: bohemian, contemporary, modern\nMaterials: flat cotton weave\nColors: ivory, black\nShape: rectangular, bold repeating diamond and zigzag tribal motif, arrow border at the ends, flat low texture, large\nFeel: graphic, lively, casual\nGoes with: dark wood floors, grey upholstery, woven baskets, black accents; bohemian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0732KDJ48",
+      "name": "Amazon Brand \u2013 Rivet Black and Ivory Global Print Cotton Area Rug, 8 x 11 Foot",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 335.3,
+        "depth": 243.8
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Black/Ivory"
+      ],
+      "materials": [
+        "cotton"
+      ],
+      "style": "Eclectic",
+      "description": "100% Cotton Imported Add style to your room with this global-inspired statement piece. Eclectic details, warm tones, and hand-crafted softness adds depth and big personality to small, neutral spaces. Geo print area rug in neutral tones Hand-tufted with 100% cotton Durable, lightweight flat low pile height weave fits any indoor space Pair with a rug pad (sold separately) 8' x 11' Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle",
+      "image_path": "8c/8c663784.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "26ee33614f9ed545"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073NZPNN9",
+  "text": "Type: geometric abstract canvas print\nUse: wall decoration above a sofa or bed; living room, bedroom, home office\nStyle: contemporary, modern\nMaterials: printed canvas, silver metallic frame\nColors: white, aqua, black, grey, blush pink, cobalt blue accents\nShape: large square, thin silver float frame, layered angled triangles and fragments, busy composition\nFeel: fresh, lively, airy\nGoes with: white or grey walls, aqua or blush accents, chrome; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073NZPNN9",
+      "name": "Amazon Brand \u2013 Rivet Geometric Aqua and Black Angled Canvas Print in Silver Frame, 31.75\" x 31.75\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 80.6,
+        "depth": 3.8,
+        "height": 80.6
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Silver"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": "Contemporary",
+      "description": "This striking series of geometric shapes gives a contemporary flair to your room. Aqua and black forms, mixed with a few accent colors, create an eclectic, modern piece that is housed in a silver floater frame for a sophisticated look. Contemporary geometric shapes Hand-stretched canvas around engineered wood stretcher bar with floater frame in a silver finish; arrives ready to hang 31.75\" x 31.75\" Made to order",
+      "image_path": "08/08327388.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "9c74364fd5fbc854"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0728KSP2T",
+  "text": "Type: five-drawer oak chest\nUse: storing clothes; bedroom\nStyle: rustic, farmhouse, traditional\nMaterials: oak with knotty natural finish, brushed metal handles\nColors: warm honey oak, silver\nShape: tall rectangular case, five graduated drawers, framed side panels, overhanging top, short square block feet, sturdy\nFeel: warm, homely, solid\nGoes with: white or cream walls, cotton bedding, pewter accents; farmhouse or country bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0728KSP2T",
+      "name": "Amazon Brand \u2013 Stone & Beam Parson Chest of Drawers, 38\"W, Natural",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 96.5,
+        "depth": 48.3,
+        "height": 132.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "DRESSER",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "hardwood / metal"
+      ],
+      "style": "Chest of Drawers",
+      "description": "This is modern farmhouse at its best. Oak veneer gives a distinctive grain to this this chest of drawers, and metal pulls complete the simple design. The natural beauty of this piece provides a relaxing tone to your bedroom. 38\"W x 19\"D x 52\"H Solid hardwood with hand-selected oak veneer This rustic dresser has the look of natural reclaimed wood with distressed finish. Self-closing drawers are suspended on concealed ball-bearing extension glides. No assembly needed. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "69/69e5b8f0.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "5d4cb67358bc66f8"
+    ]
+  }
+}

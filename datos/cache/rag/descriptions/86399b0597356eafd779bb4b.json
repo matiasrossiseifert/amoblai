@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSGP76S",
+  "text": "Type: round mesh wall shelf unit\nUse: displaying plants, jars and decor; living room, bedroom, home office\nStyle: farmhouse, rustic, industrial\nMaterials: chicken wire mesh, galvanized iron straps, natural wood shelves\nColors: grey galvanized metal, warm brown wood\nShape: large circle with crisscross metal bands, three wooden shelves behind wire mesh, textured, medium visual weight\nFeel: rustic, homey, textured\nGoes with: white shiplap, light wood, greenery, neutral textiles; farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSGP76S",
+      "name": "Amazon Brand \u2013 Stone & Beam Rustic Round Metal Mesh Hanging Wall Shelf Unit with 3 Shelves - 30 Inch, Natural Wood and Galvanized Iron",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "SHELF",
+      "colors": [],
+      "materials": [
+        "Stone"
+      ],
+      "style": null,
+      "description": "Display your books or tchotchkes on this circular 3-tiered shelving unit. Round iron mesh surrounds the three fir shelves for a slight nautical look, and iron bands in the back add boldness to the design. 30.12\"H x 30.12\"W x 6.1\"D 80% iron; 20% fir Shelf unit Avoid moisture. This item wipes clean with a soft, dry cloth. Hanging hardware is included.",
+      "image_path": "b7/b7fea05b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f6ca40286fe6cf66"
+    ]
+  }
+}

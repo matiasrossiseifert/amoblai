@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075HXHKTZ",
+  "text": "Type: stoneware pillar candle holder\nUse: holding a pillar candle; on a mantel, shelf or table; living room, dining room\nStyle: farmhouse, rustic, traditional\nMaterials: glossy glazed stoneware, unglazed speckled clay base\nColors: white with blue speckles, warm clay beige\nShape: short turned baluster column, round drip tray top, round stepped flared base, compact and sturdy\nFeel: warm, cozy, crafted\nGoes with: natural wood, linen, cream and blue tones; farmhouse or cottage rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075HXHKTZ",
+      "name": "Amazon Brand \u2013 Stone & Beam Rustic Farmhouse Stoneware Pillar Candle Decor Holder - 8 Inch, White and Clay",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": {
+        "width": 20.0,
+        "depth": 12.1,
+        "height": 12.1
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CANDLE_HOLDER",
+      "colors": [
+        "White and Clay"
+      ],
+      "materials": [
+        "clay"
+      ],
+      "style": null,
+      "description": "Different glazing techniques are used to create the two-tone effect of this candle holder. With classic and rustic touches, it holds 3\" diameter candles or simply serves as a decorative piece. Allow for variations in color, as each is one of a kind. Off-white with blue speckles on the top, earth-tone clay color on base 100% stoneware. Glazing techniques produce a variegated color effect. 4.25\"W x 4.25\"D x 7.9\"H Sturdy, durable piece for display or holding candles",
+      "image_path": "6e/6ee92e83.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1a3d8013349d33b9"
+    ]
+  }
+}

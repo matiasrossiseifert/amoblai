@@ -1,0 +1,38 @@
+{
+  "product": "003.232.98",
+  "text": "Type: kilim-style flatwoven area rug\nUse: anchoring a living area or bed; living room, bedroom, dining room\nStyle: bohemian, Scandinavian, rustic\nMaterials: handwoven flat weave, wool-look yarn, white tasselled fringe at both ends\nColors: cool grey, dusty purple, off-white, black\nShape: rectangle with horizontal bands of small diamond and arrow motifs, fringed short ends, flat and thin, medium-large\nFeel: earthy, cosy, crafted, relaxed\nGoes with: light or warm wood, white walls, grey or lilac textiles, plants; bohemian, Scandinavian or rustic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "003.232.98",
+      "name": "KATTRUP",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "170x240 cm",
+      "colors": [
+        "Handmade grey"
+      ],
+      "description": "Handwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages."
+    },
+    "photos": [
+      "81dffe8daae0e2ec"
+    ]
+  }
+}

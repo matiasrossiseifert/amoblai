@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07L8DT2XT",
+  "text": "Type: industrial coffee table with shelf\nUse: holding drinks, books and magazines in front of a sofa; living room\nStyle: industrial, rustic\nMaterials: solid wood top and lower shelf, black steel frame\nColors: warm reddish brown wood, black\nShape: rectangular plank top, open lower shelf, angled black steel legs with X-cross bracing on the sides, medium size, sturdy but open\nFeel: warm, rugged, casual\nGoes with: leather sofas, exposed brick, black metal accents, Edison lamps; industrial or rustic living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07L8DT2XT",
+      "name": "Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 121.9,
+        "depth": 61.0,
+        "height": 45.7
+      },
+      "brand": "Phoenix Home",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Pine"
+      ],
+      "style": "Industrial",
+      "description": "Rustic coffee table combines dark hardwood and steel for ultimate strength and a beautiful heirloom-quality aesthetic Planked top and open shelf made of distressed, solid wood with visible natural knots and grain in a warm tone Solid-steel legs with a dark patina and set at a slight angle; X-shaped bracing with exposed metal fasteners and rivets Industrial style mixes materials for edgy, eye-catching results Measures 48 by 24 by 18 inches (LxWxH); 10-inch height between top and open shelf",
+      "image_path": "97/97acb18a.jpg",
+      "image_px": [
+        1620,
+        1080
+      ]
+    },
+    "photos": [
+      "a4bee5e362240926"
+    ]
+  }
+}

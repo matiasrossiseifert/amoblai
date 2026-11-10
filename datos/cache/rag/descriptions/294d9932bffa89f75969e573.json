@@ -1,0 +1,38 @@
+{
+  "product": "902.364.90",
+  "text": "Type: pink floral wreath rug\nUse: soft floor cover beside a bed or play area; kids room, nursery, bedroom\nStyle: retro, traditional\nMaterials: soft low pile with a printed pattern\nColors: soft pink, dusty rose, small dark dots, brown bands\nShape: rectangle with an oval floral wreath in the center, scattered polka dots, thin brown bands at both ends, flat\nFeel: sweet, romantic, soft\nGoes with: white furniture, pastel textiles, light wood; children's rooms, nurseries, romantic or shabby-chic bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.364.90",
+      "name": "RARING",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "133x160 cm",
+      "colors": [
+        "Pink"
+      ],
+      "description": "This rug is both soft and decorative and creates a personal, cosy atmosphere in your childs room."
+    },
+    "photos": [
+      "5648f5b56a7294e3"
+    ]
+  }
+}

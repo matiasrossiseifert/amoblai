@@ -1,0 +1,38 @@
+{
+  "product": "503.201.98",
+  "text": "Type: kids' road map play rug\nUse: playing with toy cars on the floor; kids' room, nursery, playroom\nStyle: contemporary, modern\nMaterials: short printed pile, bound edges\nColors: bright grass green, grey roads, sky blue water, white, red, yellow\nShape: rectangular, flat, printed town roads with a roundabout, helipad, parking spaces, railway tracks and traffic signs, compact\nFeel: playful, cheerful, busy, fun\nGoes with: white or light wood kids' furniture, primary colors, toy storage; children's bedrooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "503.201.98",
+      "name": "STORABO",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 75.0,
+        "depth": 133.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "75x133 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "Honk and drive! On this rug there are roads, parking spaces, traffic signs and railroads  just like in a city. Perfect to combine with toy cars and figures from the LILLABO series."
+    },
+    "photos": [
+      "40d7b0332319cb1a"
+    ]
+  }
+}

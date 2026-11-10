@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4W5R8N",
+  "text": "Type: rectangular wood framed mirror\nUse: dressing, decorating a wall; bedroom, living room, above a dresser or sideboard\nStyle: mid-century modern, minimalist, traditional\nMaterials: walnut-finish wood frame, mirror glass\nColors: warm dark walnut brown, silver mirror\nShape: wide landscape rectangle, slim straight frame with clean beveled edges, large but understated\nFeel: warm, calm, timeless\nGoes with: walnut furniture, cream walls, brass accents; mid-century or classic bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4W5R8N",
+      "name": "Amazon Brand \u2013 Rivet Jonathan Mid-Century Modern Mirror Wood Frame, 52\", Walnut",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 132.1,
+        "depth": 4.1,
+        "height": 101.6
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Walnut"
+      ],
+      "materials": [
+        "walnut"
+      ],
+      "style": "Mirror",
+      "description": "This mirror mounts onto the classic mid-century modern Henley Dresser - and will have you reveling in retro style as you get dressed each morning. 52\"W x 1.63\"D x 40\"H Beveled mirror glass Easy assembly in 15 minutes; just bolt to dresser Free returns for 30 days. 1-year warranty.",
+      "image_path": "d8/d8dc7c37.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "cbfd7653f0068984"
+    ]
+  }
+}

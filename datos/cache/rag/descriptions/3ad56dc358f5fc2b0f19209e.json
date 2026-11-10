@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSN3TVY",
+  "text": "Type: jute border area rug\nUse: accent beside a chair or bed; living room, bedroom, home office\nStyle: rustic, modern, bohemian\nMaterials: woven jute, flat weave, fringed ends\nColors: charcoal black, natural beige, dark brown\nShape: rectangular, concentric frame blocks with brown center, coarse woven texture, fringe on short ends, small\nFeel: earthy, natural, grounded\nGoes with: black leather, dark wood floors, natural fibers; rustic or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSN3TVY",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Jute Area Rug, 3 x 5 Foot, Nuetral Multicolor",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 91.4
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "stone"
+      ],
+      "style": "Modern",
+      "description": "Upgrade your home decor with this striking modern-style rug. Its bold shapes provide a focal point for your room, and its strong but neutral colors are sure to both complement and enhance your existing interior-design theme. 3' x 5' 100% jute Natural jute fibers give this rug a rustic feel. It is handcrafted by Craftmark-certified artisans, helping to preserve the global craft tradition. Flatweave (pile is not applicable) Pair with rug pad (sold separately)",
+      "image_path": "14/147fc42b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "faa956625b6027d5"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073WHB435",
+  "text": "Type: star-shaped gold wall mirror\nUse: reflecting light, wall decoration; living room, bedroom, entryway\nStyle: glam, bohemian, art deco\nMaterials: gold-finish metal wire frame, mirror glass\nColors: gold, silver\nShape: round mirror within a six-pointed open wire star outline, thin lines, light and airy, medium size\nFeel: playful, elegant, bright\nGoes with: white or blush walls, velvet, brass accents; glam, boho or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073WHB435",
+      "name": "Amazon Brand \u2013 Rivet Modern 3-D Star Shaped Metal Mirror Home Decor, 22.5 Inch Height, Gold Finish",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 48.9,
+        "depth": 6.3,
+        "height": 57.1
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "iron"
+      ],
+      "style": "Modern",
+      "description": "Six 3-D iron triangles are arranged around a mirror with a two-layer round frame, forming a star with depth and a substantial presence, while gold finish gives it a touch of glam. This piece will dress up a wall in any area with modern d\u00e9cor. Modern design with touch of glam Glass, iron with gold finish 19.25\"W x 2.5\"D x 22.5\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "a9/a9f40706.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c85966356a12073e"
+    ]
+  }
+}

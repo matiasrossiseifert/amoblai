@@ -1,0 +1,36 @@
+{
+  "product": "002.729.20",
+  "text": "Type: leather sofa with chaise longue\nUse: seating, lounging with legs up; living room, den, TV room\nStyle: classic, contemporary, traditional\nMaterials: grain leather upholstery, padded cushions, small black feet\nColors: dark chocolate brown, black feet\nShape: three plump back cushions, chunky padded rolled arms, chaise on the right, deep seat, short square feet, low and bulky\nFeel: warm, plush, solid, inviting\nGoes with: dark wood, brass or black metal, cream and rust textiles; classic, traditional or industrial living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.729.20",
+      "name": "TIMSFORS",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa with chaise longue",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Mjuk",
+        "kimstad dark brown"
+      ],
+      "description": "Contact areas with soft, dyed-through 1.2 mm thick grain leather that is supple and smooth to the touch."
+    },
+    "photos": [
+      "151bb84892928777"
+    ]
+  }
+}

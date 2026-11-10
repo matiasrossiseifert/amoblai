@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07JKJSRQG",
+  "text": "Type: woven tasseled throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: bohemian, rustic, modern\nMaterials: chunky handwoven cotton blend, cotton tassels\nColors: heathered grey, cream white\nShape: square, central diamond pattern outlined by eight cream tassels, nubby striped weave, knife edges, medium size\nFeel: textured, cozy, crafted\nGoes with: natural wood, rattan, linen, white walls; bohemian, Scandinavian or modern farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07JKJSRQG",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Tassel Diamond Throw Pillow - 18 x 18 Inch, Black / White",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 45.7,
+        "depth": 45.7,
+        "height": 8.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Black/White"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "The variegated black yarn of this modern throw pillow accentuates the stripes of the white-and-black diamond in its center, surrounded by soft white tassels for added flair and style. Cotton/polyester Imported 18\"L x 18\"W Handwoven and hand-stitched tassels are an added detail that make this pillow truly special. The space-dyed yarn means the color variations are soft and muted. 1 throw pillow Spot clean with a damp cloth, and then allow to air dry. Rather than pulling at any loose threads, please use scissors to trim them.",
+      "image_path": "de/ded60aaa.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b7d26585ff51046d"
+    ]
+  }
+}

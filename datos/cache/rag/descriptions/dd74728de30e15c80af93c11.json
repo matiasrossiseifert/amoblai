@@ -1,0 +1,33 @@
+{
+  "product": "101.841.74",
+  "text": "Type: tall rice paper floor lamp\nUse: soft ambient light in a corner or beside a sofa or bed; living room, bedroom\nStyle: Japandi, Scandinavian, minimalist\nMaterials: white rice paper shade with ribbed wire frame, dark metal base and short stem, foot switch on the cord\nColors: off-white, warm glow, dark grey base\nShape: tall slim column shade with horizontal ribs, standing on a short stem and small round base, lantern-like, tall but light\nFeel: calm, soft, warm, serene\nGoes with: light wood, linen, bamboo, green plants, white walls; Japandi, Scandinavian or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "101.841.74",
+      "name": "HOLM",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [],
+      "description": "Gives a soft mood light."
+    },
+    "photos": [
+      "b699c311c9ca5890"
+    ]
+  }
+}

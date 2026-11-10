@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07GNCVKVN",
+  "text": "Type: metal counter stool, set of four\nUse: seating at a counter or kitchen island; kitchen, dining room\nStyle: industrial, retro, minimalist\nMaterials: glossy powder-coated steel, rubber foot caps\nColors: bright white\nShape: backless square seat with a hand slot, four tapered splayed legs, low crossbars, stackable, compact and light\nFeel: clean, casual, utilitarian\nGoes with: white or grey kitchens, wood counters, black or chrome accents; industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07GNCVKVN",
+      "name": "Pioneer Square BT3503-24-GR Counter Stool, 24\", Gray",
+      "category": "stool",
+      "kind": "bar stool",
+      "dimensions_cm": {
+        "width": 40.9,
+        "depth": 40.9,
+        "height": 61.0
+      },
+      "brand": "Pioneer Square",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Steel"
+      ],
+      "style": "Backless Square-Seated Counter-Height Metal Stool",
+      "description": "24-inch counter-height stool (set of 4) for indoor or outdoor use; ideal for a shop, kitchen, game room, or patio Made of durable metal with a grey powder-coat finish; sleek industrial style offers contemporary good looks Stackable design for space-saving storage; plastic caps on cross brace protect finish from scratches when stacked; comfortable foot rest Square-shaped seat with supportive brace and drain hole; non-marring rubber feet prevent sliding and protect floors Measures 16 by 16 by 24 inches (LxWxH); seat measures 12 by 12 inches (LxW); no assembly needed",
+      "image_path": "0d/0d569ffe.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "47e030ccb167af0e"
+    ]
+  }
+}

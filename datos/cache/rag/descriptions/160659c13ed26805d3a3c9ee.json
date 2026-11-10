@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QC876WJ",
+  "text": "Type: open etagere bookcase\nUse: displaying books and decor, storage; living room, home office, bedroom\nStyle: industrial, rustic, contemporary\nMaterials: light elm wood shelves, grey hammered metal frame\nColors: light natural wood, gunmetal grey\nShape: tall open frame, five wide wooden shelves, X-cross braces on both sides, slim square metal posts, no back panel, light and airy despite its height\nFeel: warm, raw, open, casual\nGoes with: warm wood, black or grey metal, brick or white walls; industrial, rustic or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QC876WJ",
+      "name": "Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 117.3,
+        "depth": 38.1,
+        "height": 86.4
+      },
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [
+        "Natural"
+      ],
+      "materials": [],
+      "style": "Shelf",
+      "description": "Elm wood shelving and an airy metal frame give this bookcase a contemporary flair that fits with any decor. The ample space between shelves allows you to keep your home office clutter free. 34\"W x 15\"D x 70\"H Metal frame with elm wood shelves Ample space between shelves can contain books, souvenirs, and art objects. This spacious contemporary bookcase fits with any room and interior design. Assemble in 15-30 minutes Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "0d/0d8eb769.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "94d974c064b9d014"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07CJHLBH8",
+  "text": "Type: grommet blackout curtain panels, set of two\nUse: blocking light and adding privacy at windows; bedroom, living room, home office\nStyle: minimalist, modern, contemporary\nMaterials: smooth woven blackout fabric, metal grommets\nColors: black, dark charcoal\nShape: straight solid panels, grommet top with even deep folds, short below-sill length, plain and heavy\nFeel: dark, bold, restful\nGoes with: white or light walls, cognac leather, black rods, plants; modern or industrial bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07CJHLBH8",
+      "name": "AmazonBasics Room-Darkening Blackout Window Panel Curtain Set with Grommets",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "brand": "AmazonBasics",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "2 panels made of innovative triple-weave fabric; no stiff liner Blocks out sunlight and harmful UV rays Reduces outside noise and ensures privacy Insulates against heat and cold for energy efficiency Machine washable",
+      "image_path": "0b/0bbed62d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "24aa4441aa63e14a"
+    ]
+  }
+}

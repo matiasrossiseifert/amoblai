@@ -1,0 +1,45 @@
+{
+  "product": "abo-B0735V7FH9",
+  "text": "Type: wool medallion runner rug\nUse: covering a hallway or bedside path; bedroom, living room, entryway\nStyle: traditional, farmhouse, rustic\nMaterials: hand-tufted wool, raised textured pile, tasseled ends\nColors: taupe, cream, grey, charcoal\nShape: long narrow runner, diamond medallions with scrolling floral motifs, carved texture, tassels on ends\nFeel: soft, muted, cozy\nGoes with: warm wood floors, navy cabinetry, brass hardware; farmhouse or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0735V7FH9",
+      "name": "Amazon Brand \u2013 Stone & Beam Vero Medallion Wool Runner Rug, 2' 6\" x 8', Neutral Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 76.2,
+        "height": 1.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "wool"
+      ],
+      "style": "Transitional",
+      "description": "80% Wool 20% Cotton Imported Stunning dark green and blue medallions highlighted by a cream background and tassled ends create a sophisticated look. This runner is ideal for freshening up any transitional or contemporary room that needs a punch of elegant color and pattern. 2'6\" x 8' Hand-tufted in India Medium pile height makes it durable and easy to vacuum Vacuum, professionally clean Pair with a rug pad, which is sold separately Ships tightly rolled in a protective bag",
+      "image_path": "1d/1d04ab71.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "41697810e1af4588"
+    ]
+  }
+}

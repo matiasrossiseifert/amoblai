@@ -1,0 +1,36 @@
+{
+  "product": "102.335.32",
+  "text": "Type: armless lounge easy chair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: bent birch veneer frame, grey perforated mesh seat shell\nColors: light grey, light natural birch\nShape: one-piece curved seat and back shell sloping low, armless, open wooden frame with square legs and side stretchers, light and airy, compact\nFeel: relaxed, light, casual, fresh\nGoes with: light wood, white walls, grey textiles; Scandinavian living rooms, small apartments, student rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "102.335.32",
+      "name": "NOLMYRA",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Easy chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Birch veneer",
+        "grey"
+      ],
+      "description": "The armchair is lightweight and easy to move if you want to clean the floor or rearrange the furniture."
+    },
+    "photos": [
+      "9ac4bde7bcdafd8c"
+    ]
+  }
+}

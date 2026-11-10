@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0748MS1RV",
+  "text": "Type: high-back executive office chair\nUse: working at a desk for long hours; home office\nStyle: contemporary, modern\nMaterials: bonded leather, padded cushions, silver plastic arm frames and base, casters\nColors: black, silver grey\nShape: tall padded back with pillowed headrest and lumbar sections, looped padded armrests, thick seat, five-star silver base on casters, bulky and plush\nFeel: comfortable, businesslike, sturdy\nGoes with: black or grey desks, metal and glass furniture, neutral walls; modern corporate-style home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0748MS1RV",
+      "name": "AmazonBasics Bonded Leather High-Back Office Chair, Easy Tool-Free Assembly - Black",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 73.0,
+        "depth": 63.0,
+        "height": 106.7
+      },
+      "brand": "AmazonBasics",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Leather"
+      ],
+      "style": null,
+      "description": "High-backed executive design with full-body support Adjustable tilt and pneumatic height mechanisms 5-point base with hooded caster wheels and 360 degree swivel No tools required for assembly Height and Tilt Function Tools Free Assembly Adjustable ergonomic office chair with bonded leather upholstery",
+      "image_path": "c3/c3bef798.jpg",
+      "image_px": [
+        1669,
+        2560
+      ]
+    },
+    "photos": [
+      "78e22391af4d048c"
+    ]
+  }
+}

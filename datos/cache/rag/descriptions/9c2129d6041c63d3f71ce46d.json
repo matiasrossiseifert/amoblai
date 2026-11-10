@@ -1,0 +1,37 @@
+{
+  "product": "603.022.93",
+  "text": "Type: two-door storage cabinet\nUse: storing dishes, linens, books and media behind doors; living room, dining room, bedroom, hallway\nStyle: farmhouse, traditional, Scandinavian\nMaterials: white painted board with a subtle wood-grain texture, black metal bow handles\nColors: white, black handles\nShape: boxy cabinet with two flat doors under a slim top rail, curved bow handles, overhanging top with a molded edge, grooved corner posts, short square feet, medium visual weight\nFeel: homey, fresh, simple, tidy\nGoes with: light wood floors, black accents, grey or blue walls; farmhouse, cottage or Scandinavian living and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "603.022.93",
+      "name": "BRUSALI",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Cabinet with doors",
+      "category_tp": "cabinet",
+      "size_raw": "80x93 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Adjustable shelves, so you can customise your storage as needed."
+    },
+    "photos": [
+      "ec41105e503e6c8b"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSJJDWG",
+  "text": "Type: velvet upholstered dining armchair\nUse: dining, lounging, desk seating; dining room, living room, home office\nStyle: modern, contemporary, glam\nMaterials: crushed velvet upholstery, black metal legs\nColors: black, matte black\nShape: rounded curved back with rolled headrest, wraparound padded arms, thin straight metal legs, plush and bulky\nFeel: cozy, dramatic, sleek\nGoes with: dark wood or marble tables, grey or white walls, metal accents; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSJJDWG",
+      "name": "Amazon Brand \u2013 Rivet Modern Dining Room Kitchen Chair 32 Inch Height, Black",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 65.7,
+        "depth": 64.8,
+        "height": 80.5
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Velvet"
+      ],
+      "style": null,
+      "description": "There\u2019s just something about black velvet that evokes an air of luxury and sophistication, and this dining contemporary dining chair is no exception. The lush, velvet-like fabric lining and modern design make a bold statement. Solid metal frame, soft black velvet-like fabric The soft velvet-like material and contemporary style create a relaxing dining atmosphere. Gently wipe with clean, cloth dampened with luke warm water. Allow to dry. Brush lightly. 25.5\"D x 25.88\"W x 31.7\"H Free returns for 30 days. 1-year warranty",
+      "image_path": "6d/6dd03f04.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ef96784e0db2955a"
+    ]
+  }
+}

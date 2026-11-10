@@ -1,0 +1,36 @@
+{
+  "product": "702.925.71",
+  "text": "Type: soft fabric wall clock\nUse: telling time on a wall; children's room, playroom, bedroom\nStyle: contemporary, modern, retro\nMaterials: padded black fabric face, yellow fabric piping and hanging loop, yellow center, colored plastic hands\nColors: black, sunny yellow, turquoise, navy blue, orange\nShape: large flat round disc like a vinyl record, stitched black hour marks, bright yellow center, hangs from a fabric loop, soft and light\nFeel: playful, bold, cheerful, fun\nGoes with: bright primary colors, white walls, light wood; colorful children's rooms and playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "702.925.71",
+      "name": "PLADDRA",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "yellow"
+      ],
+      "description": "The clock has a blackboard face, so you can write or draw pictures of activities next to the hours to help your child learn about time."
+    },
+    "photos": [
+      "f6e807dfb24364d4"
+    ]
+  }
+}

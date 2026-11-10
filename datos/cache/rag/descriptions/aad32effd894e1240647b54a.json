@@ -1,0 +1,33 @@
+{
+  "product": "502.523.97",
+  "text": "Type: tall frameless mirror with rounded corners\nUse: full-length dressing mirror on a wall or a door; bedroom, hallway, bathroom\nStyle: minimalist, modern, contemporary\nMaterials: polished mirror glass with a smooth ground edge\nColors: silver reflection, cool grey\nShape: tall narrow rectangle with softly rounded corners, a flat bare edge, sleek and visually light\nFeel: clean, bright, airy, sleek\nGoes with: white or grey walls, light wood, chrome or white accents; minimalist, modern or Scandinavian bedrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "502.523.97",
+      "name": "DRMMARE",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "16x50 cm",
+      "colors": [],
+      "description": "Getting dressed is much more fun for children when they have their own mirror inside or outside the wardrobe door."
+    },
+    "photos": [
+      "595842775603f707"
+    ]
+  }
+}

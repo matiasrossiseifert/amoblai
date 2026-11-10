@@ -1,0 +1,35 @@
+{
+  "product": "500.382.13",
+  "text": "Type: tall aluminum framed floor mirror\nUse: full-length dressing mirror, leaning or hung, adding light; bedroom, hallway, living room\nStyle: minimalist, modern, contemporary\nMaterials: slim anodized aluminum frame, mirror glass\nColors: silver aluminum, reflective glass\nShape: very tall rectangular mirror with a thin metal frame and crisp square corners, flat and sleek, large but visually light\nFeel: sleek, bright, airy, clean\nGoes with: white or grey walls, black or white furniture, chrome accents; minimalist, modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "500.382.13",
+      "name": "HOVET",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "78x196 cm",
+      "colors": [
+        "Aluminium"
+      ],
+      "description": "Can be hung horizontally or vertically."
+    },
+    "photos": [
+      "b228abcf8955607e"
+    ]
+  }
+}

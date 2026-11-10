@@ -1,0 +1,35 @@
+{
+  "product": "802.835.85",
+  "text": "Type: white flush ceiling lamp\nUse: general room lighting close to the ceiling; hallway, bedroom, living room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white plastic diffuser shade, white mounting plate\nColors: pure white, soft diffused glow\nShape: drum-like shade made of overlapping rounded panels that form a scalloped petal outline, mounted flat against the ceiling, compact and light\nFeel: soft, clean, gentle, friendly\nGoes with: white ceilings and walls, light wood, pastel tones; Scandinavian or minimalist bedrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.835.85",
+      "name": "LYSBOJ",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Ceiling lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Diffused light that provides good general light in the room."
+    },
+    "photos": [
+      "4392dfaf46ba5af8"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "902.621.39",
+  "text": "Type: striped rectangular lumbar cushion\nUse: back support on a sofa, an armchair or a bed; living room, bedroom\nStyle: contemporary, coastal, bohemian\nMaterials: woven cotton fabric with yarn-dyed stripes\nColors: grey-green, taupe brown, black, sand beige, white\nShape: long rectangular cushion with vertical stripes of varying widths, fine pinstripe bands, plain edges, soft and plump\nFeel: relaxed, earthy, casual, layered\nGoes with: grey or beige sofas, warm wood, leather, olive green accents; contemporary, coastal or bohemian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "902.621.39",
+      "name": "RAGNBORG",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "40x65 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The zipper makes the cover easy to remove."
+    },
+    "photos": [
+      "6443fdfdfbc406b4"
+    ]
+  }
+}

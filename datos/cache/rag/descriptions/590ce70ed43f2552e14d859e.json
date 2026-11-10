@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07WCQ66DX",
+  "text": "Type: upholstered storage bench ottoman\nUse: seating and hidden storage; bedroom, living room, entryway\nStyle: traditional, contemporary\nMaterials: woven fabric upholstery, dark wood legs\nColors: dark charcoal grey, black\nShape: rolled arms on both ends, padded lift-up seat, boxy upholstered base, short tapered dark legs, medium and solid\nFeel: cozy, refined, soft\nGoes with: grey or white bedding, dark wood, silver accents; traditional or transitional bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07WCQ66DX",
+      "name": "Ravenna Home Chic Upholstered Storage Bench Ottoman - 50 Inch, Charcoal (Renewed)",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 128.0,
+        "depth": 51.6,
+        "height": 55.9
+      },
+      "brand": "Ravenna Home",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Charcoal"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "50\"W x 20.3\"D x 22\"H; seat height: 18\"H Well constructed of hardwood frame and plywood. Leg color: black Luxurious woven fabric upholstery, rolled arms design with cushy seat pad on sturdy wooden frame Rolled arms and cushy seating size for storage or as vanity seating, this classic-style storage bench provides an elegant look that never goes out of style. Assemble in 15 minutes or less Easy to clean\u2014simply dust or vacuum regularly.",
+      "image_path": "7c/7cae9bb6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6405c03353954ee2"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4ZX372",
+  "text": "Type: flatweave plaid runner rug\nUse: covering a long narrow floor; hallway, bedroom, entryway\nStyle: farmhouse, traditional, rustic\nMaterials: flatwoven fabric, heathered texture\nColors: warm grey, ivory, red stripes, olive accents\nShape: long narrow runner, large tartan plaid with thin red and olive lines, thin flat weave, clean bound edges\nFeel: cozy, homey, casual\nGoes with: warm wood, navy cabinetry, herringbone floors; farmhouse or cottage rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4ZX372",
+      "name": "Amazon Brand \u2013 Stone & Beam Casual Plaid Runner Rug, 2' 6\" x 8', Flatweave, Grey, Ivory, Red",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 76.2,
+        "height": 0.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Gray, Ivory, Red"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Modern",
+      "description": "Large plaid squares with red accents bring casual warmth to a modern or farmhouse decor. This handwoven rug will bring dimension to a hallway or entryway. PET fiber, created from recycled plastic, makes it easy to maintain. 2' 6\" x 8' Low pile is easy to maintain. Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "21/21d8174c.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "034029d39da8b308"
+    ]
+  }
+}

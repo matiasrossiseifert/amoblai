@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P1H7FL",
+  "text": "Type: gold mandala canvas print\nUse: wall decoration; living room, dining room, bedroom, above a sofa or console\nStyle: glam, bohemian, art deco\nMaterials: gallery-wrapped canvas with gold-leaf effect print\nColors: black, metallic antique gold\nShape: large square, frameless, radiating Moroccan star tile pattern around a central sunburst, bold and dense\nFeel: dramatic, luxurious, exotic, rich\nGoes with: black, brass, dark wood, jewel tones, velvet; glam, bohemian or Moroccan-inspired rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P1H7FL",
+      "name": "Amazon Brand \u2013 Rivet Modern Black and Gold Mandala Canvas Print Wall Art, 36\" x 36\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 91.4,
+        "depth": 3.8,
+        "height": 91.4
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": "Contemporary",
+      "description": "This black and metallic gold piece features imagery of a mandala, known around the world as a symbol of meditation and introspection. It is also a modern yet classic piece of art that will add a touch of glam to your room. Contemporary, metallic print of timeless imagery Hand-stretched canvas on wood. 36\" x 36\" Ready to hang with hardware included. Made to order",
+      "image_path": "c1/c159ac09.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "534e1b03daf96155"
+    ]
+  }
+}

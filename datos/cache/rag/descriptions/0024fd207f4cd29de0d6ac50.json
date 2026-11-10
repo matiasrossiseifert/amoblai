@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DBB7FVL",
+  "text": "Type: round pedestal side table\nUse: holding a lamp or drinks beside a sofa, chair or bed; living room, bedroom\nStyle: traditional, classic\nMaterials: wood with glossy black painted finish\nColors: black\nShape: round top with apron, turned baluster pedestal, four curved splayed feet, compact and light\nFeel: elegant, classic, refined\nGoes with: white or patterned walls, brass accents, upholstered armchairs; traditional or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DBB7FVL",
+      "name": "Amazon Brand \u2013 Ravenna Home Morley Classic Round Pedestal Side End Table, 20\"W, Black",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 51.1,
+        "depth": 51.1,
+        "height": 64.0
+      },
+      "brand": "Ravenna Home",
+      "product_type": "TABLE",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Pine"
+      ],
+      "style": null,
+      "description": "Solid pine and medium-density fibreboard A classic round table that can hold a clock, lamp or favorite photos beside a chair or bed Traditional round top with pedestal legs Less than 15 minutes assembly required Free returns for 30 days. 1-year warranty. 20.1\"L x 20.1\"W x 25.2\"H",
+      "image_path": "71/71bd91e4.jpg",
+      "image_px": [
+        1255,
+        1781
+      ]
+    },
+    "photos": [
+      "294cf85aced005d4"
+    ]
+  }
+}

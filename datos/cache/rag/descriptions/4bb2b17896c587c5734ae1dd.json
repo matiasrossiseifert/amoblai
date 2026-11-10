@@ -1,0 +1,38 @@
+{
+  "product": "302.837.81",
+  "text": "Type: shaggy high-pile area rug\nUse: softening floors around a sofa or bed; living room, bedroom\nStyle: Scandinavian, contemporary, minimalist\nMaterials: long loose shag pile, soft fluffy yarn\nColors: warm off-white, cream, light beige flecks\nShape: rectangle with deep loose shag texture, fluffy uneven surface, thick and soft, medium-large, cushy visual weight\nFeel: cosy, soft, bright, inviting\nGoes with: white or light grey sofas, light wood, white walls, pastel textiles; Scandinavian or contemporary bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.837.81",
+      "name": "GSER",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "170x240 cm",
+      "colors": [
+        "Off-white"
+      ],
+      "description": "The high pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "3df89b8062709767"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B074KLRCPW",
+  "text": "Type: round glass coffee table\nUse: holding drinks and decor; living room\nStyle: glam, modern, art deco\nMaterials: clear tempered glass top, polished gold metal frame\nColors: gold, clear glass\nShape: round glass top in a thin gold ring, slim straight legs with ball feet, lower ring stretcher, light and see-through\nFeel: airy, elegant, glamorous\nGoes with: velvet sofas, white marble, blush or navy tones; glam or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B074KLRCPW",
+      "name": "Amazon Brand \u2013 Rivet Modern Round Glass and Gold Coffee Table, 36\"W, Gold Finish",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 91.4,
+        "depth": 91.4,
+        "height": 47.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Gold"
+      ],
+      "materials": [
+        "glass"
+      ],
+      "style": "Coffee Table",
+      "description": "This beautiful, modern round table will add a touch of glam to your living room. Tempered glass is accented by a sleek gold-finished frame. This durable table will be a convenient place to set mugs, remote controls and magazines for years to come. 36\"Diameter x 18.5\"H Sleek modern frame with gold finish; tempered glass A modern table with touches of glam Tempered glass and metal frame are durable and easy to clean Assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "3f/3f8bc565.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "6c013f4831b627db"
+    ]
+  }
+}

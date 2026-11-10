@@ -1,0 +1,44 @@
+{
+  "product": "abo-B07HSHRZT7",
+  "text": "Type: southwestern tribal area rug\nUse: anchoring a seating or dining area; living room, bedroom, dining room, home office\nStyle: bohemian, traditional, rustic\nMaterials: low-pile polypropylene\nColors: dark navy blue, rust orange, cream, terracotta\nShape: rectangular, repeating diamond medallions, small tribal motifs, thin patterned border, medium size\nFeel: warm, rich, earthy\nGoes with: dark wood floors and furniture, woven baskets, leather, rust accents; bohemian or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSHRZT7",
+      "name": "Amazon Brand \u2013 Stone & Beam Southwestern Polypropylene Area Rug, 5' 3\" x 7' 7\", Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 234.7,
+        "depth": 161.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "Polypropylene"
+      ],
+      "style": null,
+      "description": "Embolden your home decor with this striking Southwest-inspired rug. With an orange-and-blue color focus, this rug presents an engaging design that will add energy to any room and perfectly complete your home\u2019s Southwest-style ambiance. 5'3\" x 7'7\" Polypropylene Frisee Machine made 0.33 Med",
+      "image_path": "68/68d850db.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1f210792d1f93edb"
+    ]
+  }
+}

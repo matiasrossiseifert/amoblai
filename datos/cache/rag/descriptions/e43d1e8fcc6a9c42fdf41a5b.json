@@ -1,0 +1,35 @@
+{
+  "product": "002.460.78",
+  "text": "Type: plastic dining chair\nUse: dining, working at a desk; kitchen, dining room, cafe\nStyle: minimalist, Scandinavian, modern\nMaterials: matte reinforced molded plastic\nColors: white\nShape: wide horizontal backrest on two curved rear posts, armless, slightly contoured seat, four round straight legs, clean and light, compact\nFeel: clean, airy, practical, calm\nGoes with: light wood or white tables, white walls, pastel or green accents; Scandinavian or minimalist kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.460.78",
+      "name": "JANINGE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can stack the chairs, so they take less space when you're not using them."
+    },
+    "photos": [
+      "2ca0cc82ec28acdc"
+    ]
+  }
+}

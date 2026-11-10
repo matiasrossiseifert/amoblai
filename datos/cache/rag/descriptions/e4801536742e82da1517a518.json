@@ -1,0 +1,33 @@
+{
+  "product": "002.806.99",
+  "text": "Type: floor lamp with built-in side tray\nUse: ambient light beside a sofa, armchair or bed, with a small surface for a phone; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: textured white shade, white metal stem, round white shelf with wireless charging pad, round metal base\nColors: white, warm glow\nShape: soft paneled bell shade with gentle ribs on a tall thin pole, small round tray disc halfway up, flat round base, slender and light\nFeel: calm, practical, soft, airy\nGoes with: light wood, white walls, linen and wool textiles; Scandinavian or minimalist living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.806.99",
+      "name": "VARV",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor lamp with wireless charging",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb E27 600 lumen globe opal white. View more product information You can easily charge your smartphone wirelessly. If your phone supports wireless charging, place it on the built-in charger. If not, complete the phone with VITAHULT wireless charging cover."
+    },
+    "photos": [
+      "c687d2b496ccb005"
+    ]
+  }
+}

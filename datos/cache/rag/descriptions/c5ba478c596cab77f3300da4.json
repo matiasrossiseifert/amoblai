@@ -1,0 +1,37 @@
+{
+  "product": "002.423.58",
+  "text": "Type: slatted wooden wall shelf\nUse: holding towels, toiletries, plants or small decor; bathroom, hallway, kitchen\nStyle: rustic, Scandinavian, farmhouse\nMaterials: solid birch with a dark brown stain, slatted shelves\nColors: dark walnut brown\nShape: open rectangular wall-hung frame with three slatted shelves, square posts, visible slats, airy and light, compact\nFeel: warm, natural, simple, airy\nGoes with: white tiles, white walls, green plants, woven baskets; Scandinavian, rustic or spa-like bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.423.58",
+      "name": "MOLGER",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 68.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "68x54 cm",
+      "colors": [
+        "Dark brown"
+      ],
+      "description": "The open shelves give an easy overview and easy reach."
+    },
+    "photos": [
+      "4fc3d97366ba8469"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0853QJ6VS",
+  "text": "Type: wooden dining armchair\nUse: dining, working at a desk; dining room, home office\nStyle: mid-century modern, traditional, rustic\nMaterials: stained solid wood frame, woven paper cord seat\nColors: warm medium brown wood, natural beige seat\nShape: horizontal slatted ladder back, open arms, woven seat, gently curved shaped legs, medium weight\nFeel: warm, crafted, inviting\nGoes with: walnut or oak tables, cream walls, woven textures; mid-century or traditional dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0853QJ6VS",
+      "name": "Amazon Brand \u2013 Rivet Woven Dining Chair, 22.83\"W, Brown",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 58.0,
+        "depth": 54.6,
+        "height": 85.6
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Ash"
+      ],
+      "style": "Dining Chair",
+      "description": "This chair sports a casual, modern look, but with its woven seat, it has all the comfort of an old favorite. It can blend with both contemporary and classic surroundings and can be a lovely addition to a variety of rooms. 22.83\"W x 21.5\"D x 33.7\"H Brown ash legs and arms with a woven paper-rope seat The solid ash legs and arms are complemented by a comfortable handwoven seat. This chair looks light and modern but has sturdy ash legs. It can blend with both contemporary and classic surroundings. No assembly required Using a soft, damp cloth, wipe in the direction of the grain. Free returns for 30 days; 1-year warranty.",
+      "image_path": "26/26d8e871.jpg",
+      "image_px": [
+        1810,
+        2226
+      ]
+    },
+    "photos": [
+      "4474a953597e2014"
+    ]
+  }
+}

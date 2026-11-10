@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMJBZ8",
+  "text": "Type: framed sea fan coral print\nUse: wall decoration; living room, bedroom, dining room, gallery wall\nStyle: coastal, classic, contemporary\nMaterials: botanical-style print, whitewashed wood frame\nColors: teal green, off-white, pale grey\nShape: square, single delicate branching sea fan centered on white ground, slim white frame, light, medium size\nFeel: fresh, airy, calm, natural\nGoes with: white walls, teal and aqua accents, light wood, rattan; coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YMJBZ8",
+      "name": "Amazon Brand \u2013 Stone & Beam Classic Teal Sea Fan Coral Coastal Print Wall Art Decor - 23\" x 23\" Picture Frame, White",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 58.4,
+        "depth": 58.4,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multicolor"
+      ],
+      "materials": [
+        "paper"
+      ],
+      "style": "Sea Fan I",
+      "description": "Bring an element of the ocean in to your home with this framed print of a sea fan, a type of coral. In keeping with the coastal theme, this piece is housed in a crisp white frame, ready to add a clean, modern splash of color to your room. 23\"W x 23\"H Print on paper in polystyrene frame with white finish Modern print of watercolor sea life Ready to hang, all hardware included",
+      "image_path": "b8/b82adf94.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "5d3cecbcf9256fe4"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B7DKRVM",
+  "text": "Type: wood-frame swivel desk chair\nUse: working at a desk; home office, study\nStyle: traditional, classic, rustic\nMaterials: oak frame, linen-look upholstery, black metal mechanism, casters\nColors: warm honey oak, cream, black\nShape: tall curved wood-trimmed back, armless, padded seat, four-spoke carved wood base on wheels, elegant medium weight\nFeel: warm, refined, timeless\nGoes with: oak or walnut desks, cream walls, brass accents; traditional or rustic studies\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B7DKRVM",
+      "name": "Amazon Brand \u2013 Stone & Beam Alicia Contemporary Office Chair, 38\"H, Oak",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": {
+        "width": 71.0,
+        "depth": 61.5,
+        "height": 105.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Oak"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "A mid-century influenced office chair with sloping minimalist arms gets a modern refresh in style and function. Warm rustic wood trim gives it a modern farmhouse appeal. The height and tilt can be adjusted, and it swivels 360 degrees. 24.2\"W x 28\"D x 38.4\"-41.3\"H Ashwood frame and legs; 100% linen fabric; foam cushion; iron base A style that blends with traditional, transitional and farmhouse d\u00e9cor 360 degree swivel function; height and tilt of chair can be adjusted Free returns for 30 days. 3-year warranty. Assembly in 30 minutes or less; assemble seat, insert base and casters",
+      "image_path": "5f/5f24060f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c883d85d68623a39"
+    ]
+  }
+}

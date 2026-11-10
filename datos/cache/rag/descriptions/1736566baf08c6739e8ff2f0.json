@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0831Y1G6B",
+  "text": "Type: L-shaped sectional sofa\nUse: lounging, family seating; living room, family room\nStyle: farmhouse, contemporary, modern\nMaterials: woven performance-look fabric, loose back cushions, hidden base\nColors: warm putty beige\nShape: corner L layout with armless chaise end, low flat arms, plush back cushions and throw pillows, low to the floor, large and enveloping\nFeel: cozy, calm, relaxed\nGoes with: light oak, white walls, linen, jute rugs; modern farmhouse or casual rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0831Y1G6B",
+      "name": "Amazon Brand \u2013 Stone & Beam Devonshire Modern Farmhouse Sectional Sofa Couch, 114\"W, Putty",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 289.6,
+        "depth": 199.4,
+        "height": 90.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Putty"
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "style": null,
+      "description": "This spacious sectional sofa makes a modern but down-to-earth design statement in your living room or family room. The foam-padded cushions are loose and reversible, providing the ultimate in comfort and durability. Putty-colored performance upholstery is easy to care for and maintain. 114\"W x 78.5\"D x 35.5\"H; seat height: 21.5\"H; seat depth: 27.5\"D; seat back height: 29\"H; arm height: 29\"H; leg height: 1.78\"H Upholstered in 100% polyester fabric; fully padded solid wood frame with mortise and tenon construction Removable and reversible back and seat cushions; sinuous spring support system with durable foam-padded cushions Assemble in 15 minutes or less Spills should be spot cleaned and rinsed with water. Free returns for 30 days. 3-year warranty. This item is made to order just for you.",
+      "image_path": "45/451186a6.jpg",
+      "image_px": [
+        2560,
+        973
+      ]
+    },
+    "photos": [
+      "dc88494ffa9d638a"
+    ]
+  }
+}

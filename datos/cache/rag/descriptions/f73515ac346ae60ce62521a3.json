@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMW6W9",
+  "text": "Type: ladderback dining side chair, set of two\nUse: dining; dining room, kitchen\nStyle: farmhouse, rustic, contemporary\nMaterials: solid oak wood in dark stained finish, fabric tie-on seat cushion\nColors: dark warm brown, light beige cushion\nShape: tall back with four horizontal slats, armless, square tapered legs, seat cushion with ties, upright and sturdy\nFeel: warm, homey, sturdy\nGoes with: dark or reclaimed wood tables, cream walls, linen textiles; farmhouse or rustic dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YMW6W9",
+      "name": "Amazon Brand \u2013 Stone & Beam Dunbar Modern Dining Room Set of 2 Ladderback Side Kitchen Chairs, 38 Inch Height, Oak Wood",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 59.1,
+        "depth": 50.8,
+        "height": 96.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Beige"
+      ],
+      "materials": [
+        "Textile"
+      ],
+      "style": null,
+      "description": "This handsome ladder-back chair is a modern take on a classic design. Solid hardwood and performance fabric upholstery on the seat, allowing it to withstand wear and tear from a busy family. 20\"W x 23.25\"D x 38\"H Solid hardwood frame and performance fabric A simple modern piece with rustic and modern influences Free returns for 30 days. 3-year warranty. Assembly is required. Wipe with soft dry cloth.",
+      "image_path": "08/0850bf68.jpg",
+      "image_px": [
+        2560,
+        1773
+      ]
+    },
+    "photos": [
+      "36412d8b8e7a5276"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "502.480.70",
+  "text": "Type: vertical cluster globe wall lamp\nUse: decorative accent light on a wall; living room, hallway, bedroom, bathroom\nStyle: contemporary, glam, modern\nMaterials: white opal acrylic globes, chrome-plated metal stem and fittings\nColors: milky white, silver chrome\nShape: tall slender column of round globes in varied sizes stacked along a central stem like a string of bubbles, sculptural, narrow and light\nFeel: playful, glowing, elegant, airy\nGoes with: white or dark painted walls, chrome or glass accents; modern, glam or contemporary rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.480.70",
+      "name": "SDERSVIK",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [],
+      "description": "Provides an even light that is good for illuminating around a mirror and sink."
+    },
+    "photos": [
+      "68a35a55e0ad997a"
+    ]
+  }
+}

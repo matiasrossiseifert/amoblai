@@ -1,0 +1,35 @@
+{
+  "product": "203.129.01",
+  "text": "Type: white tie-top curtains, pair\nUse: filtering daylight and adding privacy at a window; living room, bedroom\nStyle: Scandinavian, coastal, farmhouse\nMaterials: lightweight woven cotton-look fabric, fabric ties at the top, sheer upper band\nColors: white\nShape: two full-length straight panels hung by knotted ties over the rod, slightly translucent band near the top, soft relaxed folds, light and airy\nFeel: airy, fresh, gentle, romantic\nGoes with: white walls, light wood, linen bedding, soft pastels; Scandinavian, coastal or cottage rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.129.01",
+      "name": "PRLBLAD",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "145x300 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The curtains lower the general light level and provide privacy by preventing people outside from seeing directly into the room."
+    },
+    "photos": [
+      "d0f5b3f369d74c5a"
+    ]
+  }
+}

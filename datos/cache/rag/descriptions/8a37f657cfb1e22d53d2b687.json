@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DBGXFVF",
+  "text": "Type: rolled-arm upholstered armchair\nUse: lounging, reading; living room, bedroom, family room\nStyle: traditional, farmhouse, classic\nMaterials: textured woven upholstery fabric, dark wood block feet\nColors: warm beige, oatmeal, dark brown feet\nShape: rounded rolled arms, loose back and seat cushions, skirtless upholstered base, short square feet, plump and generous, medium-heavy visual weight\nFeel: cozy, soft, inviting, relaxed\nGoes with: warm wood, linen, white or cream walls, woven textures; farmhouse or casual traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DBGXFVF",
+      "name": "Amazon Brand \u2013 Ravenna Home Dunford Casual Rolled Arm Chair, 37\"W, Beige",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 94.0,
+        "depth": 85.1,
+        "height": 90.8
+      },
+      "brand": "Ravenna Home",
+      "product_type": "CHAIR",
+      "colors": [
+        "Beige"
+      ],
+      "materials": [
+        "Polyester"
+      ],
+      "style": "Chair",
+      "description": "Wood frame; polyester fabric A comfortable piece with generous padding that will cradle you during many movie nights A clean, simple design that will blend in any decor Less than 15-30 minutes assembly required Free returns for 30 days. 1-year warranty. 33.5\"L x 37\"W x 35.75\"H",
+      "image_path": "65/65dcba61.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "0ca63a382f3a0a57"
+    ]
+  }
+}

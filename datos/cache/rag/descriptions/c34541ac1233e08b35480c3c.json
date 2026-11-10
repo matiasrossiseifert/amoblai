@@ -1,0 +1,39 @@
+{
+  "product": "103.220.62",
+  "text": "Type: square high-pile geometric rug\nUse: anchoring a seating or reading area; living room, bedroom\nStyle: contemporary, mid-century modern, Scandinavian\nMaterials: soft thick cut pile, fine carved line pattern\nColors: dark grey, mustard yellow, beige, off-white lines\nShape: square with a central yellow square framed by four striped trapezoids, optical perspective effect, plush and thick, large and bold\nFeel: graphic, warm, striking\nGoes with: grey sofas, mustard or ochre accents, light wood, white walls; mid-century or modern living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "103.220.62",
+      "name": "BIRKET",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 200.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "200x200 cm",
+      "colors": [
+        "Yellow",
+        "grey"
+      ],
+      "description": "The dense, thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "615b43cd8fbcce8a"
+    ]
+  }
+}

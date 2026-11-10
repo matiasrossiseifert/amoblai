@@ -1,0 +1,39 @@
+{
+  "product": "990.469.09",
+  "text": "Type: compact one-door storage cabinet\nUse: storing media, books and everyday items behind a door; living room, home office, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: white laminated board body, high-gloss lacquered door, small plastic feet\nColors: glossy warm grey-beige, white\nShape: simple boxy cube with one full flush handleless door, crisp square edges, tiny feet, sleek reflective front, compact, light visual weight\nFeel: sleek, soft, calm, tidy\nGoes with: white walls, light or dark wood, taupe and grey textiles; modern or minimalist living rooms and home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "990.469.09",
+      "name": "BEST",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Shelf unit with door",
+      "category_tp": "cabinet",
+      "size_raw": "60x40x64 cm",
+      "colors": [
+        "White",
+        "selsviken high-gloss",
+        "beige"
+      ],
+      "description": "May be completed with knobs or handles. Sold separately. Drill template for marking of hole positions for handles or knobs is sold separately. View more product information A simple unit can be enough storage for a limited space or the foundation for a larger storage solution if your needs change."
+    },
+    "photos": [
+      "686f7eeeebfdc3ab"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DMJN8H3",
+  "text": "Type: half-moon accent console table\nUse: entry or wall display; hallway, living room, bedroom\nStyle: traditional, classic, contemporary\nMaterials: wood, dark espresso finish\nColors: dark espresso brown\nShape: demilune semicircular top, four straight square legs, lower half-moon shelf, compact and slim\nFeel: tidy, classic, cozy\nGoes with: grey or white walls, books, vases, woven baskets; small entries and traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DMJN8H3",
+      "name": "2L Lifestyle Shelburne Accent Console Table, Small, Brown",
+      "category": "table",
+      "kind": "console table",
+      "dimensions_cm": {
+        "width": 90.9,
+        "depth": 27.4,
+        "height": 83.1
+      },
+      "brand": "2L Lifestyle",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Italianate",
+      "description": "Included anti-tilt mechanism securely fastens table to wall for protection Dual-tiered design for additional display space Made with high-grade MDF with wood veneer and Solid wood legs Easy to assemble with tools included Designed for small living spaces (35.8''W x 11''D x 32.7''H)",
+      "image_path": "a5/a541cc11.jpg",
+      "image_px": [
+        2475,
+        2560
+      ]
+    },
+    "photos": [
+      "862317c7d16bce88"
+    ]
+  }
+}

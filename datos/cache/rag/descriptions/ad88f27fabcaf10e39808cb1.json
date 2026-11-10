@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B4VSTFN",
+  "text": "Type: five-light cone shade chandelier\nUse: overhead light over a dining table or living area; dining room, living room\nStyle: mid-century modern, retro, modern\nMaterials: matte black metal shades and ring, copper-bronze finish rods and bands\nColors: matte black, warm copper\nShape: circular ring holding five flared cone shades with copper bands, three angled rods to central downrod, round and medium weight\nFeel: bold, warm, graphic\nGoes with: walnut wood, white or dark walls, copper accents; mid-century or retro rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4VSTFN",
+      "name": "Rivet J1052-C5 - Carrie Chandelier, 26\" x 26\" x 26\", BZ+MBK",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 66.0,
+        "depth": 66.0,
+        "height": 66.0
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Bz+mbk"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Placeholder1",
+      "image_path": "25/25e13086.jpg",
+      "image_px": [
+        2092,
+        2560
+      ]
+    },
+    "photos": [
+      "d0239c8e2a235256"
+    ]
+  }
+}

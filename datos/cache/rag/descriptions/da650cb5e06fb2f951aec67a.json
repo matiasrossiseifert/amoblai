@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8P1JCT",
+  "text": "Type: metal picture ledge shelf\nUse: displaying frames, books and small decor on a wall; living room, bedroom, home office\nStyle: minimalist, modern, industrial\nMaterials: powder-coated steel\nColors: matte black\nShape: long narrow L-shaped ledge with a raised front lip, visible screw holes, slim and very light, wall-mounted\nFeel: clean, graphic, understated\nGoes with: white or grey walls, black frames, light wood; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B8P1JCT",
+      "name": "Amazon Brand \u2013 Rivet Modern Metal Shelf, 24\"W, Black",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 9.2,
+        "height": 5.1
+      },
+      "brand": "Rivet",
+      "product_type": "SHELF",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Iron"
+      ],
+      "style": null,
+      "description": "This space-saving shelf with hidden brackets gives you a place to show off photos and other treasured objects -- and the flexibility to change them quickly and easily at any time. The black painted iron brings a modern industrial edge to any room. 24\" W x 2\" H x 3.63\" D Made of black painted iron Ready to hang, all hardware included",
+      "image_path": "b8/b8775076.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "52c047d6a6f9c2cd"
+    ]
+  }
+}

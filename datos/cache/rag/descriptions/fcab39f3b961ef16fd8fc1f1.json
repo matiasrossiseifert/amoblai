@@ -1,0 +1,37 @@
+{
+  "product": "401.665.74",
+  "text": "Type: solid pine shelf for a shelving system\nUse: extra shelf between uprights for books, boxes and pantry goods; living room, home office, garage\nStyle: Scandinavian, rustic, minimalist\nMaterials: untreated solid pine with small knots, beige metal end rails\nColors: pale natural pine, warm light yellow, grey-beige\nShape: long narrow flat plank with square edges and slim metal fittings on each short end, plain and sturdy, low profile\nFeel: natural, practical, warm, simple\nGoes with: raw pine uprights, white walls, woven baskets, linen; Scandinavian, rustic or utility rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "401.665.74",
+      "name": "IVAR",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 42.0
+      },
+      "type_ikea": "Shelf",
+      "category_tp": "shelf",
+      "size_raw": "42x50 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Untreated solid wood is a durable natural material which is even more hardwearing and easy to look after if you oil or wax the surface."
+    },
+    "photos": [
+      "dca19ea5e237cb16"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "190.526.21",
+  "text": "Type: compact two-seat loveseat\nUse: seating, lounging; living room, kids room, studio, small apartment\nStyle: retro, contemporary, bohemian\nMaterials: patterned fabric cover, chrome metal legs\nColors: white, bright green, soft pink\nShape: boxy block shape with square arms and a low straight back, pebble circle print, slim metal legs, compact and light\nFeel: playful, fresh, cheerful\nGoes with: white walls, light wood, green plants, pink or green accents; eclectic, retro or kids spaces\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "190.526.21",
+      "name": "KLIPPAN",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Marrehill pink",
+        "green"
+      ],
+      "description": "Extra covers to alternate with mean it's easy to give both your sofa and room a new look."
+    },
+    "photos": [
+      "0d01c77ddbe3cced"
+    ]
+  }
+}

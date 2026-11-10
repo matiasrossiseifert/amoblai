@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSDW7J6",
+  "text": "Type: upholstered wingback dining chair\nUse: dining, working at a desk; dining room, home office\nStyle: contemporary, modern, mid-century modern\nMaterials: textured woven tweed upholstery, bronze-finish metal sled base\nColors: dark charcoal grey flecked tweed, warm bronze\nShape: winged back that narrows to the seat, armless, padded seat, U-shaped sled legs, sturdy and medium weight\nFeel: cozy, refined, grounded\nGoes with: dark wood or marble tables, brass accents, warm neutrals; modern or contemporary dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSDW7J6",
+      "name": "Amazon Brand \u2013 Rivet Dunford Modern Dining Chair, 33 Inch Height, Tuxedo Grey",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 61.0,
+        "height": 83.8
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Tuxedo Gray"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "This gorgeous tuxedo dining chair is a modern twist on the classic wingback design. The plush curves and bold angles offer stylish comfort with a contemporary flair. Solid wood frame with brass metal leg Curved base for additional support without stretchers Avoid moisture. Wipes clean with soft, dry cloth. 24\"D x 24\"W x 33\"H Free returns for 30 days. 1-year warranty.",
+      "image_path": "43/43928aa8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f5eb2d35aacc2891"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "402.688.79",
+  "text": "Type: tall white glass-door cabinet\nUse: displaying china, glassware or books; dining room, living room\nStyle: traditional, classic, farmhouse\nMaterials: white painted wood, clear glass doors and sides, glass shelves, small metal knobs, beadboard back\nColors: white, clear glass\nShape: tall upright vitrine with a molded crown, two glass doors divided into three panes, glass side panels, curved plinth base, stately and light\nFeel: bright, elegant, timeless, fresh\nGoes with: white or pale grey walls, silver or nickel, blue and white china; classic, traditional or farmhouse dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.688.79",
+      "name": "LIATORP",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 96.0
+      },
+      "type_ikea": "Glass-door cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "96x215 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "3 adjustable glass shelves; adjust spacing according to your own storage needs."
+    },
+    "photos": [
+      "d678ced2e7377ca2"
+    ]
+  }
+}

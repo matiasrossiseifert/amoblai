@@ -1,0 +1,38 @@
+{
+  "product": "891.020.95",
+  "text": "Type: stepped pine storage unit with bins\nUse: sorting toys, crafts and small items in pull-out bins; children's room, playroom, living room\nStyle: Scandinavian, rustic, minimalist\nMaterials: solid pine with a clear light finish showing knots, white plastic storage boxes on side runners\nColors: light natural pine, white\nShape: three columns of rising height forming a staircase silhouette, open frame holding six deep slide-out boxes, flat tops for display, low and friendly, medium visual weight\nFeel: warm, playful, natural, tidy\nGoes with: white walls, light wood floors, colorful accents; Scandinavian kids' rooms and family playrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "891.020.95",
+      "name": "TROFAST",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 94.0
+      },
+      "type_ikea": "Storage combination",
+      "category_tp": "cabinet",
+      "size_raw": "94x44x91 cm",
+      "colors": [
+        "Pine",
+        "white"
+      ],
+      "description": "A playful and sturdy storage series for storing and organising toys, sitting, playing and relaxing."
+    },
+    "photos": [
+      "a0eb2a476e0cb9bc"
+    ]
+  }
+}

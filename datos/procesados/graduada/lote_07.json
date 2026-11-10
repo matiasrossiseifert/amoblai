@@ -1,0 +1,350 @@
+{
+ "guide": "Each item is one search: a photo of a furnished room (look at the piece named), the\npiece, the search the system ran for it, and the top candidates it returned from the catalog.\nGrade each candidate, by looking at its photo against the piece in the room photo:\n2 = the same product, or one you cannot tell apart (same shape, material and color);\n1 = an acceptable alternative: the same kind of piece, close in style and color, that someone\n    who wanted that piece could buy instead;\n0 = not useful: another kind of piece, or clearly different.\nJudge what you see, not the names.",
+ "items": [
+  {
+   "key": "ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg#15",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-smart-dust-free-storage-under-your-tv__1364319317370-s4.jpg",
+   "piece": "long grey upholstered footstool with black turned legs in front of the sofa",
+   "search": "Type: ottoman, long upholstered footstool\nUse: resting feet or extra seat, living rooms\nStyle: traditional, classic\nMaterials: grey fabric upholstery, black turned wood legs\nColors: grey, black\nShape: long rectangular footstool, padded box top, piped edges, short turned wooden legs, medium visual weight\nFeel: comfortable, classic, soft\nGoes with: patterned sofas, dark wood, grey rugs, traditional living rooms",
+   "candidates": [
+    {
+     "id": "390.336.79",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/390.336.79.jpg",
+     "description": "Type: upholstered footstool with turned legs\nUse: resting feet, extra seating, a soft coffee table with a tray; living room, family room\nStyle: traditional, classic\nMaterials: grey-brown woven fabric cover, piped seams, padded cushion top, turned black-stained wood legs\nColors: warm taupe grey, black legs\nShape: wide low rectangular top with a thick piped cushion, shallow apron, four turned spindle legs, generous but low\nFeel: elegant, cozy, relaxed, timeless\nGoes with: matching sofas, dark wood, grey and beige textiles, brass accents; traditional or classic living rooms\n"
+    },
+    {
+     "id": "291.292.29",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/291.292.29.jpg",
+     "description": "Type: upholstered skirted footstool\nUse: resting feet in front of a sofa or armchair, extra seating; living room, family room\nStyle: traditional, classic, farmhouse\nMaterials: dark grey woven cotton-blend slipcover, pleated skirt, padded seat cushion, fabric side handle\nColors: dark charcoal grey\nShape: low rectangular box with a soft piped top cushion, box-pleated skirt to the floor, loop handle, rounded corners, low and bulky\nFeel: cozy, relaxed, homey, soft\nGoes with: grey or white slipcovered sofas, wood floors, linen and wool throws; traditional, farmhouse or classic living rooms\n"
+    },
+    {
+     "id": "090.113.96",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/090.113.96.jpg",
+     "description": "Type: upholstered storage footstool\nUse: resting feet, extra seating, storing blankets inside; living room, family room\nStyle: contemporary, Scandinavian, minimalist\nMaterials: smooth woven cotton-blend cover, piped edges, padded lid cushion, small grey plastic feet\nColors: light warm grey, mid grey feet\nShape: low rectangular box with a thick padded top cushion and piped seams, short hidden feet, soft rounded corners, low and bulky\nFeel: cozy, soft, relaxed, practical\nGoes with: matching grey sofas, light wood, white walls, pale textiles; Scandinavian or contemporary living rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg#8",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "piece": "grey chunky throw over the rocking chair",
+   "search": "Type: throw, grey textured knit throw\nUse: blanket for armchair or sofa, living room, bedroom\nStyle: Scandinavian, rustic, contemporary\nMaterials: wool blend knit, textured\nColors: grey, charcoal\nShape: rectangular throw with chunky mottled texture, draped over the armchair side\nFeel: cozy, warm, soft\nGoes with: white armchairs, birch wood, light living rooms",
+   "candidates": [
+    {
+     "id": "102.864.60",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.864.60.jpg",
+     "description": "Type: textured knitted throw\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft chunky knit yarn, ribbed knit hems\nColors: medium grey, white\nShape: long rectangle with fine horizontal stripes in a raised bubbly stitch, solid grey ribbed borders at the ends, soft and drapey\nFeel: cozy, soft, relaxed, warm\nGoes with: white or charcoal sofas, light wood, wool, black accents; Scandinavian, minimalist or contemporary rooms\n"
+    },
+    {
+     "id": "303.541.08",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.541.08.jpg",
+     "description": "Type: grey wool throw with fringe\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: Scandinavian, traditional, rustic\nMaterials: soft brushed wool-blend weave with a small jacquard pattern, knotted fringe ends\nColors: medium grey, light heather grey\nShape: long rectangular throw with an allover small diamond lattice pattern, fuzzy surface, fringed short edges, drapes softly when folded\nFeel: cozy, warm, soft, wintry\nGoes with: white or cream sofas, light wood, sheepskin, grey tones; Scandinavian, cabin or rustic rooms\n"
+    },
+    {
+     "id": "502.969.90",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.969.90.jpg",
+     "description": "Type: grey fleece throw blanket\nUse: keeping warm on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft brushed fleece with a matte surface\nColors: dark heathered grey\nShape: large flat rectangle that drapes and folds easily, plain surface, scalloped cut edges along the short ends, thin and light\nFeel: cozy, soft, casual\nGoes with: grey or white sofas, wool and knit textiles, light wood; Scandinavian or minimalist living rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-with-space-for-just-a-few__1364308410846-s4.jpg#2",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-with-space-for-just-a-few__1364308410846-s4.jpg",
+   "piece": "hexagon tile wall clock, top left",
+   "search": "Type: wall clock, hexagon tiles\nUse: telling time on the wall, kitchen, dining room, living room\nStyle: contemporary, retro, modern\nMaterials: plastic, painted finish\nColors: black, white, gray, red, yellow, green\nShape: cluster of small hexagon tiles arranged freely on the wall, black clock hands at the center, wide and playful\nFeel: playful, graphic, colorful\nGoes with: white walls, pastel walls, white furniture, modern kitchens",
+   "candidates": [
+    {
+     "id": "700.989.89",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/700.989.89.jpg",
+     "description": "Type: round plastic wall clock\nUse: telling time on a wall; kitchen, home office, living room, study\nStyle: minimalist, contemporary, Scandinavian\nMaterials: molded plastic case in a matte finish, white face, black hands, red second hand\nColors: light grey, white, black, red accent\nShape: simple round case with a wide rounded rim, large clear black numerals, minute dots around the dial, slim black hands, compact and light\nFeel: practical, clear, simple, everyday\nGoes with: white or grey walls, light wood desks, red or black accents; simple modern kitchens and home offices\n"
+    },
+    {
+     "id": "702.925.71",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.925.71.jpg",
+     "description": "Type: soft fabric wall clock\nUse: telling time on a wall; children's room, playroom, bedroom\nStyle: contemporary, modern, retro\nMaterials: padded black fabric face, yellow fabric piping and hanging loop, yellow center, colored plastic hands\nColors: black, sunny yellow, turquoise, navy blue, orange\nShape: large flat round disc like a vinyl record, stitched black hour marks, bright yellow center, hangs from a fabric loop, soft and light\nFeel: playful, bold, cheerful, fun\nGoes with: bright primary colors, white walls, light wood; colorful children's rooms and playrooms\n"
+    },
+    {
+     "id": "602.909.83",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.909.83.jpg",
+     "description": "Type: white and orange wall clock\nUse: telling time on a wall; kitchen, living room, home office, children's room\nStyle: contemporary, modern, minimalist\nMaterials: molded matte face, orange metal hands\nColors: white fading to soft coral orange, bright orange hands\nShape: round frameless disc with raised embossed hour markers, ombre gradient from white at the top to orange at the bottom, slim hands, light visual weight\nFeel: cheerful, soft, playful\nGoes with: white walls, light wood, orange or peach accents; modern kitchens, playful or contemporary rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg#6",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-treasures-and-trinkets-safely-displayed__1364315971016-s4.jpg",
+   "piece": "low off-white open shelf unit, left",
+   "search": "Type: bookcase, low open shelf unit\nUse: open storage for books, boxes and decor, living room\nStyle: Scandinavian, minimalist\nMaterials: wood-based panels, whitewashed wood finish\nColors: off-white, light wood\nShape: low open shelf unit with several compartments, flat top for decor, simple box frame, medium size\nFeel: light, simple\nGoes with: white sofas, glass-door bookcases, neutral living rooms",
+   "candidates": [
+    {
+     "id": "202.796.09",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.796.09.jpg",
+     "description": "Type: low open shelf unit on metal legs\nUse: storing books, media and decor, low shelf under a window or TV; living room, home office, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: board with a whitewashed wood-grain foil, aluminium-colored metal legs\nColors: pale whitewashed wood, light beige, silver\nShape: wide low box with four open compartments of different sizes in a staggered layout, thin edges, raised on four slim straight metal legs, light visual weight\nFeel: light, airy, orderly, calm\nGoes with: light wood floors, white walls, grey textiles, steel accents; Scandinavian or modern living rooms\n"
+    },
+    {
+     "id": "090.178.26",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/090.178.26.jpg",
+     "description": "Type: low white bookcase combination\nUse: books, records and display along a wall or under a window; living room, home office, study\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white laminated wood-based panels, adjustable shelves\nColors: white\nShape: three low open bookcases side by side forming one long unit, two shelves each, plinth base, straight clean edges, long and horizontal\nFeel: clean, bright, orderly, practical\nGoes with: light wood floors, white walls, colorful books, plants; Scandinavian or minimalist living rooms and home offices\n"
+    },
+    {
+     "id": "502.638.38",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.638.38.jpg",
+     "description": "Type: tall narrow white bookcase\nUse: storing books, DVDs and decor in a slim space; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white foil-finished board\nColors: white\nShape: tall slender upright box with straight sides, several adjustable open shelves, flat top, low plinth base, plain clean front, compact footprint\nFeel: simple, tidy, neutral, light\nGoes with: white walls, light wood floors, colorful book spines, plants; Scandinavian, minimalist or modern rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-tucked-away-on-display__1364319313963-s4.jpg#13",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-tucked-away-on-display__1364319313963-s4.jpg",
+   "piece": "plain gray cushion in the middle of the sofa",
+   "search": "Type: cushion, plain gray\nUse: decorative cushion for a sofa or armchair, living room\nStyle: Scandinavian, minimalist\nMaterials: cotton fabric\nColors: gray\nShape: rectangular, plain solid fabric, soft, medium size\nFeel: calm, soft, simple\nGoes with: gray sofas, patterned cushions, neutral rooms",
+   "candidates": [
+    {
+     "id": "602.811.44",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.811.44.jpg",
+     "description": "Type: grey cotton cushion with flanged edge\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: sturdy woven cotton with a fine twill texture, flat flange border, zipper\nColors: medium cool grey\nShape: square plump cushion framed by a narrow flat flange on all sides, plain solid surface, clean tailored outline, medium size\nFeel: calm, casual, simple\nGoes with: white, grey or black sofas, light wood, wool throws; Scandinavian or minimalist living rooms\n"
+    },
+    {
+     "id": "402.812.77",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.812.77.jpg",
+     "description": "Type: grey and white patterned cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: Scandinavian, traditional, farmhouse\nMaterials: smooth cotton fabric with a printed pattern, flat flanged border\nColors: medium grey, white\nShape: square cushion with a dense symmetrical folk ornament of flowers and leaves in vertical bands, narrow flat flange around the edges, soft and full\nFeel: cozy, crisp, homey, classic\nGoes with: white or grey sofas, light wood, black or grey textiles; Scandinavian, farmhouse or cottage rooms\n"
+    },
+    {
+     "id": "303.201.37",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.201.37.jpg",
+     "description": "Type: dark grey linen cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: washed linen-blend fabric with a visible slub weave, simple flat seams\nColors: dark charcoal grey, cool tone\nShape: plain square cushion with clean straight edges, softly crumpled surface, full and plump, classic sofa size\nFeel: calm, grounded, relaxed, understated\nGoes with: light grey or white sofas, natural wood, black accents, mixed neutral cushions; minimalist, Scandinavian or industrial rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg#13",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-study-or-socialise-in-scandinavian-style__1364315947938-s4.jpg",
+   "piece": "woven seagrass basket on the floor by the daybed",
+   "search": "Type: basket, woven seagrass\nUse: storage for blankets, shoes and magazines, living rooms, bedrooms, hallways\nStyle: Scandinavian, rustic\nMaterials: natural woven seagrass\nColors: natural beige\nShape: round basket, straight sides, tight weave, medium size\nFeel: natural, warm, textured\nGoes with: white walls, light wood, Scandinavian rooms",
+   "candidates": [
+    {
+     "id": "603.221.73",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.221.73.jpg",
+     "description": "Type: woven seagrass belly basket\nUse: storing throws or toys, covering a plant pot; living room, bedroom, hallway\nStyle: bohemian, coastal, Scandinavian\nMaterials: hand-woven natural seagrass, braided handles\nColors: warm natural straw, light honey beige\nShape: round bulging belly that narrows to a smaller opening, herringbone weave, two loop handles, soft flexible sides, medium visual weight\nFeel: natural, relaxed, warm\nGoes with: green plants, linen, rattan, light wood, white walls; bohemian, coastal or Scandinavian rooms\n"
+    },
+    {
+     "id": "702.640.02",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.640.02.jpg",
+     "description": "Type: rectangular seagrass storage basket\nUse: storing small items, towels or papers on a shelf or in a cabinet; living room, home office, bedroom\nStyle: Scandinavian, coastal, Japandi\nMaterials: tightly woven natural seagrass, off-white cotton fabric binding along the rim and base\nColors: light natural straw beige, off-white trim\nShape: low rectangular open box with straight sides, a finely striped woven texture, soft fabric-bound edges, compact and tidy\nFeel: natural, calm, tidy, warm\nGoes with: open shelving, light wood, white walls, linen and cotton textiles; Scandinavian, Japandi or coastal rooms\n"
+    },
+    {
+     "id": "003.221.71",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.221.71.jpg",
+     "description": "Type: woven seagrass belly basket with handles\nUse: holding throws, plants or magazines on the floor; living room, bedroom, entryway\nStyle: bohemian, coastal, Scandinavian\nMaterials: hand-woven seagrass, partly dyed black, braided seagrass rim and handles\nColors: black, light natural straw\nShape: rounded belly that narrows toward a wide open top, zigzag chevron weave in contrasting bands, two looped braided handles, sturdy yet light\nFeel: natural, crafted, relaxed, warm\nGoes with: green plants, light wood, linen, white or terracotta walls; bohemian, coastal or Japandi rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg#14",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-a-living-space-to-snuggle-and-enjoy__1364308444726-s4.jpg",
+   "piece": "beige knitted throw on the armchair, right",
+   "search": "Type: throw, knitted throw\nUse: blanket for armchair or sofa, living room, bedroom\nStyle: Scandinavian, traditional\nMaterials: knitted yarn\nColors: beige, camel\nShape: draped blanket, chunky braided knit texture\nFeel: cozy, warm, soft\nGoes with: white armchairs, brown and beige palettes",
+   "candidates": [
+    {
+     "id": "802.006.94",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.006.94.jpg",
+     "description": "Type: cable knit throw blanket\nUse: warmth on a sofa, an armchair or a bed; living room, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: chunky knitted cotton yarn, cable knit pattern, ribbed borders\nColors: warm beige, light sand\nShape: folded rectangular throw with raised cable braids across the surface, ribbed knitted edges, soft and thick, medium visual weight\nFeel: cozy, warm, soft, homey\nGoes with: cream or grey sofas, light wood, wool and linen, warm neutrals; Scandinavian or farmhouse living rooms\n"
+    },
+    {
+     "id": "302.006.96",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.006.96.jpg",
+     "description": "Type: cable-knit throw blanket\nUse: warmth and texture on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: chunky knitted yarn, cable and seed stitch panels\nColors: off-white, cream\nShape: rectangular knitted blanket with raised cable braids and textured bands, softly scalloped edges, soft and heavy drape\nFeel: cozy, warm, soft, homey\nGoes with: grey or beige sofas, light wood, wool and sheepskin; Scandinavian, farmhouse or cabin-style living rooms and bedrooms\n"
+    },
+    {
+     "id": "101.033.14",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.033.14.jpg",
+     "description": "Type: chunky boucle throw blanket\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, Japandi, contemporary\nMaterials: looped boucle yarn with a soft woolly texture\nColors: warm taupe beige, cream flecks\nShape: folded rectangle, nubby curly loops over the whole surface, loose open weave, thick and drapey, medium visual weight\nFeel: cozy, soft, warm, tactile\nGoes with: oatmeal or cream sofas, light oak, linen, sheepskin, white walls; Scandinavian, Japandi or minimalist rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg#16",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "piece": "white plant pots with green plants on the console at left",
+   "search": "Type: plant pot, white ceramic plant pot\nUse: holding indoor plants, windowsill or console, living room, kitchen\nStyle: Scandinavian, minimalist\nMaterials: glazed ceramic\nColors: white\nShape: small round cylinder pot, slightly tapered, smooth, plain\nFeel: clean, fresh, simple\nGoes with: green plants, grey furniture, white and neutral rooms",
+   "candidates": [
+    {
+     "id": "602.425.29",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/602.425.29.jpg",
+     "description": "Type: white ceramic plant pot\nUse: holding a potted plant on a windowsill, shelf or table; living room, kitchen, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed white ceramic with embossed relief patterns\nColors: glossy white\nShape: small tapered pot with a slightly flared rim, comes in assorted reliefs such as vertical ribs, wavy lines, stacked rings and wide bands, simple and compact\nFeel: fresh, clean, cheerful\nGoes with: green plants, white shelves, light wood, colorful textiles; Scandinavian or minimalist rooms\n"
+    },
+    {
+     "id": "001.658.02",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/001.658.02.jpg",
+     "description": "Type: white ceramic plant pot\nUse: holding a potted houseplant on a windowsill, shelf or table; living room, home office, kitchen\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed ceramic with an embossed relief pattern, glossy finish\nColors: bright white\nShape: tapered cylinder that widens toward the rim, raised relief designs such as vertical ribs, horizontal bands or wavy lines, small and simple\nFeel: fresh, clean, bright, tidy\nGoes with: green plants, herbs, light wood shelves, white kitchens; Scandinavian, minimalist or modern rooms\n"
+    },
+    {
+     "id": "201.822.83",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/plant_pot/201.822.83.jpg",
+     "description": "Type: white ceramic plant pot\nUse: holding a potted plant on a windowsill, shelf or table; living room, kitchen, bedroom, home office\nStyle: Scandinavian, minimalist, contemporary\nMaterials: glazed white ceramic with embossed relief patterns\nColors: glossy white\nShape: round tapered cachepot shown in four relief designs, cable-knit ovals, vertical ribs, wide horizontal bands and fine horizontal ridges, compact and tidy\nFeel: fresh, clean, crafted, calm\nGoes with: green plants, light wood, white walls, linen; Scandinavian, minimalist or farmhouse rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg#9",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-create-a-bright-and-calm-reading-corner-in-birch-and-white__1364308423975-s4.jpg",
+   "piece": "light grey cushion on the rocking chair",
+   "search": "Type: cushion, plain light grey cushion\nUse: decorative cushion for armchair or sofa, living room\nStyle: Scandinavian, minimalist\nMaterials: cotton cover\nColors: light grey\nShape: square plain cushion with soft filling\nFeel: calm, soft, simple\nGoes with: white armchairs, birch wood, grey textiles",
+   "candidates": [
+    {
+     "id": "602.811.44",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.811.44.jpg",
+     "description": "Type: grey cotton cushion with flanged edge\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: sturdy woven cotton with a fine twill texture, flat flange border, zipper\nColors: medium cool grey\nShape: square plump cushion framed by a narrow flat flange on all sides, plain solid surface, clean tailored outline, medium size\nFeel: calm, casual, simple\nGoes with: white, grey or black sofas, light wood, wool throws; Scandinavian or minimalist living rooms\n"
+    },
+    {
+     "id": "402.812.77",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.812.77.jpg",
+     "description": "Type: grey and white patterned cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: Scandinavian, traditional, farmhouse\nMaterials: smooth cotton fabric with a printed pattern, flat flanged border\nColors: medium grey, white\nShape: square cushion with a dense symmetrical folk ornament of flowers and leaves in vertical bands, narrow flat flange around the edges, soft and full\nFeel: cozy, crisp, homey, classic\nGoes with: white or grey sofas, light wood, black or grey textiles; Scandinavian, farmhouse or cottage rooms\n"
+    },
+    {
+     "id": "303.201.37",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.201.37.jpg",
+     "description": "Type: dark grey linen cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: washed linen-blend fabric with a visible slub weave, simple flat seams\nColors: dark charcoal grey, cool tone\nShape: plain square cushion with clean straight edges, softly crumpled surface, full and plump, classic sofa size\nFeel: calm, grounded, relaxed, understated\nGoes with: light grey or white sofas, natural wood, black accents, mixed neutral cushions; minimalist, Scandinavian or industrial rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-all-round-beauty__1364308497184-s4.jpg#0",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-all-round-beauty__1364308497184-s4.jpg",
+   "piece": "black metal folding chair, left edge",
+   "search": "Type: dining chair, metal folding, black\nUse: extra and dining seating, kitchen, dining room, balcony\nStyle: industrial, modern, minimalist\nMaterials: powder-coated steel, perforated seat and backrest\nColors: black\nShape: folding frame, slim tubular legs, perforated seat and backrest with small holes, no armrests, light visual weight\nFeel: practical, light, simple\nGoes with: white tiles, wood floors, kitchen islands, small kitchens and dining spaces",
+   "candidates": [
+    {
+     "id": "902.177.93",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/902.177.93.jpg",
+     "description": "Type: metal folding chair\nUse: extra dining seating, quick guest seating; kitchen, dining room, balcony, small apartment\nStyle: modern, industrial, contemporary\nMaterials: powder-coated steel frame, perforated steel seat and back\nColors: dark grey, charcoal black\nShape: folding X-frame with slim tubular legs, rounded back panel with a sunburst pattern of small holes, perforated seat, front footrest bar, folds flat, light and compact\nFeel: practical, sleek, casual, airy\nGoes with: wood or concrete tables, white walls, black accents; industrial lofts, small apartments, balconies\n"
+    },
+    {
+     "id": "402.177.95",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/402.177.95.jpg",
+     "description": "Type: metal folding chair\nUse: extra dining seating, quick guest seating; kitchen, dining room, balcony, small apartment\nStyle: retro, contemporary, modern\nMaterials: powder-coated steel frame, perforated steel seat and back\nColors: turquoise, aqua blue-green\nShape: folding X-frame with slim tubular legs, rounded back panel with a sunburst pattern of small holes, perforated seat, front footrest bar, folds flat, light and compact\nFeel: playful, cheerful, practical, airy\nGoes with: white tables, light wood, colorful accents; retro kitchens, small apartments, casual dining corners\n"
+    },
+    {
+     "id": "902.142.85",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/chair/902.142.85.jpg",
+     "description": "Type: perforated plastic dining chair\nUse: dining, extra seating, working at a desk; kitchen, dining room, home office, dorm room\nStyle: modern, minimalist, industrial\nMaterials: molded plastic seat and back with round perforations, black powder-coated steel tube frame\nColors: black\nShape: rounded rectangular backrest with a grid of holes, perforated seat, slim tubular steel legs and back posts, simple upright frame, light and compact\nFeel: practical, casual, graphic, simple\nGoes with: white or light wood tables, grey walls, black accents; small kitchens, student rooms, industrial or modern spaces\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg#11",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "piece": "grey and white gingham check cushions on the chaise and sofa",
+   "search": "Type: cushion, gingham check cushion\nUse: decorative accent on a sofa or chaise, living room, bedroom\nStyle: farmhouse, Scandinavian, traditional\nMaterials: woven cotton\nColors: dark grey, white\nShape: square, bold large gingham check pattern, plump\nFeel: homely, crisp, classic\nGoes with: grey sofas, beige linens, grey cabinets, country and classic living rooms",
+   "candidates": [
+    {
+     "id": "902.620.78",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.620.78.jpg",
+     "description": "Type: gingham check cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: farmhouse, Scandinavian, traditional\nMaterials: woven cotton fabric with a yarn-dyed check\nColors: medium grey, white, light grey\nShape: square cushion with a bold even grid of gingham checks, plain flat edges, plump and soft\nFeel: homey, fresh, relaxed, cozy\nGoes with: white or grey sofas, light wood, plain linen, navy or red accents; farmhouse, Scandinavian or cottage rooms\n"
+    },
+    {
+     "id": "102.620.77",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.620.77.jpg",
+     "description": "Type: gingham check square cushion\nUse: comfort and a soft color accent on a sofa, armchair or bed; living room, bedroom, kitchen bench\nStyle: farmhouse, Scandinavian, traditional\nMaterials: woven cotton with a yarn-dyed check\nColors: soft coral pink, white\nShape: square and plump, even large-scale gingham pattern, neat flat seamed edges, medium size\nFeel: sweet, fresh, cheerful, homely\nGoes with: white walls, light wood, grey linen, sage or blue accents; farmhouse, cottage or Scandinavian rooms\n"
+    },
+    {
+     "id": "402.812.77",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.812.77.jpg",
+     "description": "Type: grey and white patterned cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: Scandinavian, traditional, farmhouse\nMaterials: smooth cotton fabric with a printed pattern, flat flanged border\nColors: medium grey, white\nShape: square cushion with a dense symmetrical folk ornament of flowers and leaves in vertical bands, narrow flat flange around the edges, soft and full\nFeel: cozy, crisp, homey, classic\nGoes with: white or grey sofas, light wood, black or grey textiles; Scandinavian, farmhouse or cottage rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-a-rustic-way-to-dine__1364308411325-s4.jpg#7",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-a-rustic-way-to-dine__1364308411325-s4.jpg",
+   "piece": "grey wooden cabinet with drawer and open shelves, right",
+   "search": "Type: storage cabinet, cabinet with drawer and shelves\nUse: storage and serving surface, kitchen, dining room\nStyle: rustic, farmhouse\nMaterials: solid wood, grey stain, dark wood top\nColors: grey, dark brown\nShape: waist-high cabinet, door with vertical plank panels, drawer with knob, open shelves at the side, straight legs, sturdy\nFeel: rustic, practical, sturdy\nGoes with: white tiles, pine furniture, country kitchens",
+   "candidates": [
+    {
+     "id": "503.296.22",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.296.22.jpg",
+     "description": "Type: glass-door cabinet with panel doors\nUse: displaying dishes and books, storing linens behind lower panels; dining room, living room\nStyle: traditional, farmhouse, rustic\nMaterials: solid wood with a stained finish, glass upper door panes, wooden lower door panels, metal knobs\nColors: warm red-brown, dark grey knobs\nShape: tall upright cabinet with two doors, glass panes above framed wooden panels below, inner shelves, small round knobs, flat top, short square legs, solid and stately, heavy visual weight\nFeel: warm, rustic, homey, cozy\nGoes with: white or cream walls, natural textiles, wrought iron accents; farmhouse, country or traditional dining rooms\n"
+    },
+    {
+     "id": "302.271.15",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.271.15.jpg",
+     "description": "Type: tall cabinet with glass and panel doors\nUse: displaying tableware, books or collections, closed storage below; dining room, living room, home office\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid wood in a white stain with visible grain, clear glass upper panes, black knobs\nColors: soft white, black knobs\nShape: tall upright cabinet with two doors, glass in the upper part and recessed panels below, glass shelves, simple molded top, straight legs, stately\nFeel: fresh, homely, bright, timeless\nGoes with: light wood, white walls, blue or grey tones, linen; farmhouse, traditional or Scandinavian dining rooms\n"
+    },
+    {
+     "id": "702.135.93",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.135.93.jpg",
+     "description": "Type: glass-door display cabinet with drawers\nUse: displaying dishes, glassware and books, storing linens in drawers; dining room, living room\nStyle: farmhouse, traditional, Scandinavian\nMaterials: solid wood with a white stain that shows the grain, clear glass door panes, dark metal knobs\nColors: soft white, dark grey knobs\nShape: tall upright cabinet with two framed glass doors over three stacked drawers, inner shelves, small round knobs, flat top, short square legs, stately, heavy visual weight\nFeel: fresh, homey, classic, calm\nGoes with: light wood floors, linen textiles, grey or blue walls; farmhouse, country or Scandinavian dining rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg#12",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-find-your-living-room-design-inspiration__1364308433351-s4.jpg",
+   "piece": "folded grey throw on the chaise",
+   "search": "Type: throw, light grey woven throw\nUse: warmth on a sofa or chaise, living room, bedroom\nStyle: Scandinavian, minimalist\nMaterials: woven cotton or wool blend\nColors: light grey\nShape: rectangular, folded flat, soft woven texture\nFeel: cozy, calm, soft\nGoes with: grey sofas, linen cushions, neutral rooms",
+   "candidates": [
+    {
+     "id": "303.541.08",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.541.08.jpg",
+     "description": "Type: grey wool throw with fringe\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: Scandinavian, traditional, rustic\nMaterials: soft brushed wool-blend weave with a small jacquard pattern, knotted fringe ends\nColors: medium grey, light heather grey\nShape: long rectangular throw with an allover small diamond lattice pattern, fuzzy surface, fringed short edges, drapes softly when folded\nFeel: cozy, warm, soft, wintry\nGoes with: white or cream sofas, light wood, sheepskin, grey tones; Scandinavian, cabin or rustic rooms\n"
+    },
+    {
+     "id": "502.969.90",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.969.90.jpg",
+     "description": "Type: grey fleece throw blanket\nUse: keeping warm on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft brushed fleece with a matte surface\nColors: dark heathered grey\nShape: large flat rectangle that drapes and folds easily, plain surface, scalloped cut edges along the short ends, thin and light\nFeel: cozy, soft, casual\nGoes with: grey or white sofas, wool and knit textiles, light wood; Scandinavian or minimalist living rooms\n"
+    },
+    {
+     "id": "202.049.06",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.049.06.jpg",
+     "description": "Type: melange woven throw\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft woven yarn with a slightly fuzzy brushed texture\nColors: dark charcoal grey, white flecks\nShape: folded rectangle, heathered melange surface, plain hemmed edges, soft and drapey, light visual weight\nFeel: cozy, calm, warm, understated\nGoes with: light grey or white sofas, light wood, black accents, wool; Scandinavian, minimalist or industrial rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-enough-space-for-a-table__1364308412317-s4.jpg#2",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-enough-space-for-a-table__1364308412317-s4.jpg",
+   "piece": "light grey two-door wall cabinet above the table",
+   "search": "Type: storage cabinet, wall-mounted cabinet with two doors\nUse: storing tableware and items off the floor, dining nook, kitchen, living room\nStyle: minimalist, modern\nMaterials: particleboard, smooth matt painted finish\nColors: light grey\nShape: wide rectangular box, two flat handleless doors, wall-hung, clean lines, medium visual weight\nFeel: clean, sleek, quiet\nGoes with: white walls, chrome and white furniture, small dining spaces",
+   "candidates": [
+    {
+     "id": "590.474.06",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/590.474.06.jpg",
+     "description": "Type: low two-door storage cabinet\nUse: storing media, games, dishes and books behind doors; living room, dining room, home office\nStyle: minimalist, contemporary, modern\nMaterials: high-gloss lacquered door fronts, white laminated board body, small plastic feet\nColors: glossy off-white, warm white\nShape: long low rectangular box with two flush handleless doors, crisp square edges, tiny feet, clean unbroken front, sleek and compact, medium visual weight\nFeel: sleek, bright, clean, calm\nGoes with: light or dark wood, grey sofas, black or chrome accents; modern, minimalist or Scandinavian living rooms\n"
+    },
+    {
+     "id": "990.469.09",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.469.09.jpg",
+     "description": "Type: compact one-door storage cabinet\nUse: storing media, books and everyday items behind a door; living room, home office, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: white laminated board body, high-gloss lacquered door, small plastic feet\nColors: glossy warm grey-beige, white\nShape: simple boxy cube with one full flush handleless door, crisp square edges, tiny feet, sleek reflective front, compact, light visual weight\nFeel: sleek, soft, calm, tidy\nGoes with: white walls, light or dark wood, taupe and grey textiles; modern or minimalist living rooms and home offices\n"
+    },
+    {
+     "id": "990.473.91",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.473.91.jpg",
+     "description": "Type: low two-door storage cabinet\nUse: storing media, games, dishes and books behind doors; living room, dining room, home office\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board body, doors with a fine wavy embossed texture, small plastic feet\nColors: white\nShape: long low rectangular box with two flush handleless doors, subtle horizontal wave texture, crisp square edges, tiny feet, clean and compact, medium visual weight\nFeel: soft, calm, clean, textured\nGoes with: light wood, white or grey walls, natural textiles; Scandinavian, minimalist or coastal living rooms\n"
+    }
+   ]
+  },
+  {
+   "key": "ikea-sleek-storage-for-your-favourite-things__1364308434915-s4.jpg#7",
+   "room_photo": "/home/fer/tp-llm/datos/dataset/ikea/images/room_scenes/ikea-sleek-storage-for-your-favourite-things__1364308434915-s4.jpg",
+   "piece": "floor lamp with dark grey tapered shade and slim metal stand next to the sofa",
+   "search": "Type: floor lamp, tapered shade\nUse: ambient and reading light, living rooms, bedrooms\nStyle: modern, classic, contemporary\nMaterials: brushed metal stem, fabric shade\nColors: dark grey, silver\nShape: slim straight pole, round base, tapered drum shade, tall, light visual weight\nFeel: elegant, calm, warm\nGoes with: dark walls, grey and red textiles, modern living rooms",
+   "candidates": [
+    {
+     "id": "102.911.31",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.911.31.jpg",
+     "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n"
+    },
+    {
+     "id": "302.865.67",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.865.67.jpg",
+     "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n"
+    },
+    {
+     "id": "901.638.65",
+     "photo": "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.638.65.jpg",
+     "description": "Type: floor lamp with pleated fabric shade\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom, reading corner\nStyle: classic, traditional, contemporary\nMaterials: brushed nickel-plated metal stem and domed base, white pleated fabric shade, pull-chain switch\nColors: white, brushed silver nickel\nShape: tapered empire shade with fine pleats, slim straight stem, round stepped domed base, tall and slender, light visual weight\nFeel: elegant, soft, calm, timeless\nGoes with: white or grey walls, dark or light wood, linen upholstery; classic, traditional or contemporary living rooms and bedrooms\n"
+    }
+   ]
+  }
+ ]
+}

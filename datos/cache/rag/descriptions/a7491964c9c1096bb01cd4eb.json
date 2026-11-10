@@ -1,0 +1,45 @@
+{
+  "product": "abo-B0735T9WT9",
+  "text": "Type: traditional wool area rug with fringe\nUse: anchoring a living or bedroom layout; living room, bedroom, dining room\nStyle: traditional, farmhouse, bohemian\nMaterials: wool, hand-tufted low pile, multicolor fringe\nColors: warm beige, gold, light grey, ivory\nShape: large rectangle, faded Persian floral field and border, soft textured pile, fringed ends, large but visually light\nFeel: warm, soft, inviting\nGoes with: warm wood floors, rattan, grey upholstery; farmhouse or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0735T9WT9",
+      "name": "Amazon Brand \u2013 Stone & Beam Lottie Traditional Wool Area Rug, 8 x 10 Foot, Beige",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 304.8,
+        "depth": 243.8,
+        "height": 1.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "wool"
+      ],
+      "style": "Traditional",
+      "description": "80% Wool 20% Cotton Imported Eye-catching design in a classic pattern and neutral beige color will set a graceful tone to a dining area, entryway or bedroom. Soft wool exudes charm and warmth like no other fiber. Freshen up your home with this beautiful rug. 8' x 10' Hand-tufted in India Medium pile height makes it durable and easy to vacuum Vacuum, professionally clean Pair with a rug pad, which is sold separately Ships tightly rolled in a protective bag",
+      "image_path": "b1/b13c32af.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ace4280d9c6bbc33"
+    ]
+  }
+}

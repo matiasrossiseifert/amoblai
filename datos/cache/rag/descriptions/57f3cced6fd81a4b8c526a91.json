@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P17SZZ",
+  "text": "Type: ocean waves canvas print\nUse: wall decoration; living room, bedroom, home office, above a sofa or bed\nStyle: coastal, contemporary, modern\nMaterials: printed canvas, unframed\nColors: deep navy blue, white, teal blue\nShape: large landscape rectangle, frameless canvas, close-up of foamy surf, all-over abstract texture, bold visual weight\nFeel: fresh, dynamic, calming\nGoes with: white walls, navy and sand tones, light wood, rattan; coastal or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P17SZZ",
+      "name": "Amazon Brand \u2013 Rivet Blue Ocean Waves Print Wall Art on Canvas, 36\" x 24\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 61.0,
+        "depth": 3.8,
+        "height": 91.4
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Multi"
+      ],
+      "materials": [
+        "canvas"
+      ],
+      "style": "Contemporary",
+      "description": "White foam swirls amid blue ocean waves lapping along the shoreline. This artful close-up of one of nature's wonders will bring a soothing touch of nature to your room. Printed on canvas that arrives ready to hang for a contemporary presentation. Contemporary print of classic nature scene Hand-stretched canvas on wood. Ready to hang with hardware included. 36\" x 24\" Made to order",
+      "image_path": "85/85d5420a.jpg",
+      "image_px": [
+        2560,
+        1719
+      ]
+    },
+    "photos": [
+      "0198d7a76de5d3f9"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "003.053.79",
+  "text": "Type: round low-pile rug\nUse: defining a seating, reading or play area; living room, bedroom, children's room\nStyle: Scandinavian, contemporary, modern\nMaterials: short dense cut pile, bound edge in navy fabric\nColors: dark navy blue, off-white, navy edge\nShape: circle covered in irregular hand-drawn dots, navy binding around the edge, flat and soft, medium size, graphic pattern\nFeel: playful, fresh, lively\nGoes with: white walls, light wood, blue or grey textiles; Scandinavian, coastal or modern living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "003.053.79",
+      "name": "FLNG",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "80 cm",
+      "colors": [
+        "White",
+        "dark blue"
+      ],
+      "description": "The thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "88757de06ece8871"
+    ]
+  }
+}

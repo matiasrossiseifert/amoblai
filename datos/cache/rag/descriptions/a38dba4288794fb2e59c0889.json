@@ -1,0 +1,47 @@
+{
+  "product": "abo-B082JHT8Z6",
+  "text": "Type: clear glass semi-flush ceiling light\nUse: overhead light; bedroom, hallway, dining room\nStyle: farmhouse, industrial, traditional\nMaterials: clear glass globe bowl, metal in oil-rubbed bronze, exposed bulbs\nColors: dark bronze, clear glass\nShape: half-sphere clear glass bowl in metal band, two exposed bulbs, short rods to canopy, compact and rounded\nFeel: warm, nostalgic, open\nGoes with: white walls, wood floors, dark metal accents; farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B082JHT8Z6",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Semiflush-Mount Ceiling Light with Clear Glass Shade, 10.5\"H, Oil-Rubbed Bronze",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": {
+        "width": 30.5,
+        "depth": 30.5,
+        "height": 26.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Oil-rubbed Bronze"
+      ],
+      "materials": [
+        "Glass"
+      ],
+      "style": "Mid-Century Modern",
+      "description": "This stunning semiflush-mount ceiling light brings a vintage feeling to any living space. The clear glass shade is perfect for highlighting vintage Edison or designer bulbs - the choice is yours! 12\"W x 12\"D x 10.5\"H Clear glass shade with a metal base in an oil-rubbed bronze finish With classic flair, this flush light is ideal for any room in your home. 2 60-watt E26 bulbs required; bulbs not included Expert installation required For indoor use only",
+      "image_path": "eb/eb8cde51.jpg",
+      "image_px": [
+        2391,
+        2275
+      ]
+    },
+    "photos": [
+      "0bd7ad998c126fab"
+    ]
+  }
+}

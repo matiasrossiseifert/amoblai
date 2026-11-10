@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07FKNCVNN",
+  "text": "Type: two-seat reclining sofa\nUse: lounging, watching TV, napping; living room, family room\nStyle: contemporary, traditional\nMaterials: soft microfiber-like fabric, padded channel cushioning, side recline lever\nColors: warm mocha taupe\nShape: plush biscuit-tufted high back, padded pillow-top rolled arms, two reclining seats, low skirted base, bulky and overstuffed\nFeel: cozy, plush, comfortable\nGoes with: beige walls, light wood floors, jute rugs, warm neutrals; casual family living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07FKNCVNN",
+      "name": "Amazon Brand - Solimo Capri Two Seater Fabric Recliner (Mocha)",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 156.0,
+        "depth": 105.0,
+        "height": 110.0
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "CHAIR",
+      "colors": [
+        "Mocha"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Comfortable two-seater recliner with high-quality fabric and an attractive design in mocha color Made with strong and durable seams to ensure longevity. Fabric does not lose color with rubbing Passed durability testing with 100 kg on each seat and backrest for 25,000 cycles; Passed armrest stability testing with 40 kg dynamic loading for 10,000 cycles Meets the European Standard EN 1728 for performance and stringent European Safety Requirement Standard EN 12520 Warranty on manufacturing defects: 3 years Maximum weight load per seat: 160 kg Free from harmful chemicals like formaldehyde, AZO Dye and lead Lightweight recliner for easy shifting",
+      "image_path": "56/56059ec0.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "d9223bbf90255712"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "product": "abo-B078JGHZT9",
+  "text": "Type: glass geometric terrarium lantern\nUse: holding candles or small plants; on a table, shelf or console; living room, dining room, bedroom\nStyle: modern, glam, contemporary\nMaterials: clear glass panels, gold-finished metal frame\nColors: clear, warm gold\nShape: faceted crystal-like hexagonal form with slanted pointed top, open panel, tall and light\nFeel: airy, elegant, graphic\nGoes with: white walls, marble, brass accents, greenery; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B078JGHZT9",
+      "name": "Amazon Brand \u2013 Rivet Modern Glass Diamond Candle Holder Lantern Terrarium Decor - 6.25 Inch, Gold-Finished Trim",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": {
+        "width": 22.2,
+        "depth": 22.2,
+        "height": 38.1
+      },
+      "brand": "Rivet",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "This gold-trimmed glass candle holder brings elegance along with light to a dining room. Its irregular shape adds an edgy modern twist. Alternatively, fill it with silk flowers or holiday ornaments. Even empty, it's a charming standalone piece. 8.75\"D x 8.75\"W x 15\"H Use as a decorative item by itself or with a candle Wipe with soft damp cloth",
+      "image_path": "96/961cee45.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "580a3870f61acaa7"
+    ]
+  }
+}

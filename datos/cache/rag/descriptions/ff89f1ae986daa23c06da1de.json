@@ -1,0 +1,37 @@
+{
+  "product": "291.614.03",
+  "text": "Type: modular armless sofa bed\nUse: seating, sleeping guests, lounging; living room, guest room, TV room, studio\nStyle: contemporary, modern, minimalist\nMaterials: removable fabric covers, foam seat modules, low black feet\nColors: light grey, white and grey patterned module\nShape: low armless modules, loose rectangular back cushions on thin backrests, one module set forward like a chaise, flat seats, open sides\nFeel: flexible, casual, relaxed\nGoes with: white walls, light wood, black accents, grey rugs; modern, minimalist or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "291.614.03",
+      "name": "VALLENTUNA",
+      "category": "sofa",
+      "kind": "sofa bed",
+      "dimensions_cm": null,
+      "type_ikea": "3-seat sofa with bed",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Ramna light grey",
+        "funnarp black",
+        "beige"
+      ],
+      "description": "Add, remove or change functions to suit your needs, and choose covers to fit your style."
+    },
+    "photos": [
+      "6e38e09a38433d31"
+    ]
+  }
+}

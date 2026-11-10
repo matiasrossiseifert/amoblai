@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0722L1N3X",
+  "text": "Type: round distressed metal wall mirror\nUse: decorating a wall, reflecting light; living room, dining room, entryway, above a mantel\nStyle: rustic, industrial, traditional\nMaterials: distressed tin metal frame, gold edging, mirror glass\nColors: grey tin, warm gold, silver mirror\nShape: large round mirror with wide flat porthole-like frame, gold rims, bold and substantial\nFeel: weathered, warm, grounded\nGoes with: reclaimed wood, neutral walls, brass accents; rustic, farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0722L1N3X",
+      "name": "Amazon Brand \u2013 Stone & Beam Round Distressed Metal Mirror, 36\"H, Tin and Gold Finish",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": {
+        "width": 91.4,
+        "depth": 91.4,
+        "height": 10.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "HOME_MIRROR",
+      "colors": [
+        "Glass"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "rustic",
+      "description": "Distressed tin accented with brushes of dark gold create a vintage feel. This round metal mirror will blend with any style. 36\" Diameter Rustic distressed metal Glass, tin with gold finish Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.",
+      "image_path": "e7/e72af520.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3b5193b3730bf9bf"
+    ]
+  }
+}

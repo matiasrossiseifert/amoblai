@@ -1,0 +1,36 @@
+{
+  "product": "002.387.66",
+  "text": "Type: opal glass globe wall lamp\nUse: wall light beside a mirror, bed or doorway; hallway, bedroom, bathroom, living room\nStyle: industrial, farmhouse, retro\nMaterials: opal white glass globe, textured powder-coated metal arm and round wall plate\nColors: anthracite dark grey, milky white\nShape: round wall plate with a curved swan-neck arm, short socket cap holding a ball-shaped glass globe, compact, sturdy, vintage outline\nFeel: nostalgic, sturdy, cozy\nGoes with: white walls or tiles, dark metal accents, warm wood; farmhouse, industrial or classic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.387.66",
+      "name": "VITEMLLA",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Metal",
+        "glass"
+      ],
+      "description": "Gives a diffused light; good for spreading light into larger areas of a bathroom."
+    },
+    "photos": [
+      "60e339f1efceb44a"
+    ]
+  }
+}

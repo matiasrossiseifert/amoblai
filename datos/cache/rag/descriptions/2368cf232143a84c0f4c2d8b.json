@@ -1,0 +1,38 @@
+{
+  "product": "002.852.58",
+  "text": "Type: striped flatwoven area rug\nUse: covering floors, defining a seating area; living room, bedroom, dining room\nStyle: Scandinavian, contemporary, bohemian\nMaterials: flatwoven cotton-look fibers, nubby stitched weave, three joined panels\nColors: charcoal and beige speckle, soft peach-beige, olive grey, thin green edge line\nShape: rectangular, three wide vertical panels in different tones, slightly offset pieced look, flat and low, nubby texture\nFeel: relaxed, crafted, natural, calm\nGoes with: light wood, white or grey sofas, green plants; Scandinavian or bohemian living rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "002.852.58",
+      "name": "SATTRUP",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 180.0,
+        "depth": 224.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "180x224 cm",
+      "colors": [
+        "Natural"
+      ],
+      "description": "The rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant."
+    },
+    "photos": [
+      "d80cd3c9e6bba68f"
+    ]
+  }
+}

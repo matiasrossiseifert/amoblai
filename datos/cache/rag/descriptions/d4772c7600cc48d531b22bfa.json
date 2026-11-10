@@ -1,0 +1,45 @@
+{
+  "product": "abo-B0857NKT8W",
+  "text": "Type: Himalayan salt bowl lamp\nUse: soft glowing mood light; bedroom, living room, home office; on a nightstand, shelf or desk\nStyle: bohemian, rustic\nMaterials: natural rock salt bowl and salt balls, light wood base\nColors: warm orange, pale pink, light natural wood\nShape: rough-hewn round bowl filled with salt spheres on a round wooden plinth, small and chunky\nFeel: warm, calming, natural\nGoes with: natural wood, plants, warm neutrals; bohemian or relaxed rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0857NKT8W",
+      "name": "AmazonBasics Natural Himalayan Salt Lamp Bowl with Massage Balls, Wood Base with Dimmer Switch - Crystal Pink",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": {
+        "width": 14.0,
+        "depth": 14.0,
+        "height": 18.0
+      },
+      "brand": "AmazonBasics",
+      "product_type": "LAMP",
+      "colors": [
+        "Crystal Pink"
+      ],
+      "materials": [],
+      "style": "Bowl with Massage Balls",
+      "description": "Lamp made of crystal-pink natural Himalayan salt in a bowl shape with removable therapeutic massage balls Provides mood-boosting light, calming ambience, decorative appeal, and natural air purification Wood base with 59.1-inch power cord for versatile placement; dimmer switch allows for easily adjusting the brightness Comes fully assembled in high-quality shrink wrap (both product and box); great for gift giving; 1 extra 15-watt bulb included 110-120 volts; backed by an AmazonBasics 1-year limited warranty",
+      "image_path": "3b/3bb86edd.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "705e9a8a66ba442a"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0719STM26",
+  "text": "Type: round braided jute rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: bohemian, coastal, rustic\nMaterials: natural braided jute, off-white bands\nColors: warm natural tan, off-white\nShape: large circle, spiral braided texture from the center, double off-white border stripes near the edge, flat and earthy\nFeel: natural, warm, relaxed\nGoes with: light wood, rattan, white walls, linen textiles; coastal, boho or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B0719STM26",
+      "name": "nuLOOM Rikki Braided Border Jute Area Rug, 8' Round, Off-white",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 20.3,
+        "height": 20.3
+      },
+      "brand": "nuLOOM",
+      "product_type": "RUG",
+      "colors": [
+        "Off-white"
+      ],
+      "materials": [
+        "jute"
+      ],
+      "style": "Contemporary",
+      "description": "This inherently beautiful jute rug is left in its natural tan color. It will bring a neutral, classic accent to a low-traffic area such as a bedroom. Classic casual style Made of 100% jute Timeless look with durability 8' Diameter Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.",
+      "image_path": "ac/ac89c938.jpg",
+      "image_px": [
+        2511,
+        2560
+      ]
+    },
+    "photos": [
+      "43621f17ec50cd26"
+    ]
+  }
+}

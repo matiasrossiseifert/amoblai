@@ -1,0 +1,36 @@
+{
+  "product": "601.985.93",
+  "text": "Type: three-seat leather sofa\nUse: seating, lounging, watching TV; living room, den, lounge\nStyle: contemporary, modern, minimalist\nMaterials: smooth leather upholstery with stitched seams, small black block feet\nColors: black, glossy black\nShape: deep boxy frame, wide low flat arms, two loose back and seat cushions, nearly floor-level base, low and bulky\nFeel: sleek, solid, comfortable, bold\nGoes with: white or grey walls, chrome or glass tables, light wood floors; modern, contemporary or industrial living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "601.985.93",
+      "name": "KIVIK",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Grann",
+        "bomstad black"
+      ],
+      "description": "KIVIK is a generous seating series with a soft, deep seat and comfortable support for your back."
+    },
+    "photos": [
+      "579e151d847c0787"
+    ]
+  }
+}

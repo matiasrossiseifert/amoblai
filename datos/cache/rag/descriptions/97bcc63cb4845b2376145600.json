@@ -1,0 +1,37 @@
+{
+  "product": "301.286.29",
+  "text": "Type: simple low panel bench\nUse: seating at a low table, a perch for putting on shoes; children's room, playroom, hallway\nStyle: minimalist, Scandinavian, contemporary\nMaterials: smooth white painted board, small plastic glides\nColors: pure white\nShape: flat rectangular seat on two solid side panels, slim rail under the seat, open underneath, plain square edges, low and compact\nFeel: clean, simple, light, practical\nGoes with: white or light wood furniture, pastel or bright accents; Scandinavian children's rooms and minimalist hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "301.286.29",
+      "name": "STUVA",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "Bench",
+      "category_tp": "bench",
+      "size_raw": "90x50x50 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can transform the bench into an extra storage space by simply adding a storage box underneath, sold separately."
+    },
+    "photos": [
+      "59cb2807e49f153b"
+    ]
+  }
+}

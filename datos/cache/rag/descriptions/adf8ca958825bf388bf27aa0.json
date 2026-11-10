@@ -1,0 +1,36 @@
+{
+  "product": "602.607.64",
+  "text": "Type: black and white striped cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: modern, contemporary, coastal\nMaterials: woven cotton canvas with printed wide stripes\nColors: black, white\nShape: square plump cushion with bold vertical stripes of equal width, crisp high-contrast pattern, plain edges, medium size\nFeel: graphic, bold, crisp\nGoes with: white or grey sofas, black metal, light wood, monochrome rugs; modern, minimalist or coastal living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.607.64",
+      "name": "VRGYLLEN",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "The zipper makes the cover easy to remove."
+    },
+    "photos": [
+      "7d257ae49b335ee1"
+    ]
+  }
+}

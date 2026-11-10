@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07L1DFGFL",
+  "text": "Type: compact three-drawer chest\nUse: storing clothes; bedroom, home office\nStyle: minimalist, contemporary, modern\nMaterials: engineered wood with woodgrain laminate, small metal bar handles\nColors: dark warm walnut brown, silver\nShape: simple low box, three equal flat drawers, small centered handles, plinth base, compact and plain\nFeel: practical, tidy, understated\nGoes with: light walls, beige floors, white curtains; simple modern bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07L1DFGFL",
+      "name": "Amazon Brand - Solimo Tucana Engineered Wood Chest of Drawers (Walnut Durance Finish)",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 40.0,
+        "height": 69.5
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "DRESSER",
+      "colors": [
+        "Walnut Durian"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Premium-quality engineered wood chest of drawers which has undergone more than 20 safety and quality tests Material: European Standard Particle Board Smooth and curvilinear edges for protection against scrapes and cuts Earthy Walnut durance finish that gives it a warm look and makes cleaning an easy task Durable drawers that have been tested over 5,000 cycles Tested for resistance against humidity, stains and hot water Free from harmful carcinogens like lead, formaldehyde and pentachlorophenol (PCP) Comes with a 3-year warranty on manufacturing defects",
+      "image_path": "89/89ea9e45.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "e61c24ef96f62187"
+    ]
+  }
+}

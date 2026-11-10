@@ -1,0 +1,36 @@
+{
+  "product": "002.673.58",
+  "text": "Type: geometric patterned cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, Scandinavian, modern\nMaterials: woven jacquard fabric with a fine graphic weave\nColors: off-white, black, charcoal grey\nShape: square cushion with a dense lattice of tiny diamond motifs forming larger soft circles, optical op-art effect, plain edges, medium size\nFeel: graphic, crisp, lively, cozy\nGoes with: grey, black or white sofas, wood, monochrome textiles; contemporary, Scandinavian or modern living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.673.58",
+      "name": "NATTLJUS",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "The zipper makes the cover easy to remove."
+    },
+    "photos": [
+      "3deff29c2f530901"
+    ]
+  }
+}

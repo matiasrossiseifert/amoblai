@@ -1,0 +1,35 @@
+{
+  "product": "668.040.47",
+  "text": "Type: trailing ivy houseplant\nUse: greenery on a shelf, a windowsill or in a hanging planter; living room, home office, bedroom\nStyle: bohemian, Scandinavian, contemporary\nMaterials: live ivy with glossy lobed leaves, terracotta-colored plastic nursery pot\nColors: deep green, variegated light green and cream, terracotta\nShape: bushy mound of small lobed leaves with long trailing vines that spill over the edge, small pot, loose and flowing\nFeel: fresh, natural, lively, relaxed\nGoes with: wood shelves, white walls, woven baskets, ceramic cachepots; bohemian or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "668.040.47",
+      "name": "HEDERA HELIX",
+      "category": "deco",
+      "kind": "plant",
+      "dimensions_cm": null,
+      "type_ikea": "Potted plant",
+      "category_tp": "deco",
+      "size_raw": "13 cm",
+      "colors": [
+        "Ivy"
+      ],
+      "description": null
+    },
+    "photos": [
+      "8a78d4fdae43639e"
+    ]
+  }
+}

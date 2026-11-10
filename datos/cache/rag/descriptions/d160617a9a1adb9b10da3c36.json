@@ -1,0 +1,35 @@
+{
+  "product": "401.866.28",
+  "text": "Type: whitewashed rattan plant pot\nUse: holding a potted plant on the floor, a table or a shelf; living room, bedroom, home office\nStyle: coastal, bohemian, Scandinavian\nMaterials: coiled rattan in a whitewashed finish, inner plastic liner\nColors: pale whitewashed beige, light natural rattan\nShape: tapered round cone wrapped in tight horizontal coiled bands, wide open rim, solid medium sized planter\nFeel: natural, airy, relaxed, light\nGoes with: leafy green plants, white walls, light wood, linen; coastal, bohemian or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "401.866.28",
+      "name": "PEKANNT",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "24 cm",
+      "colors": [
+        "Rattan"
+      ],
+      "description": "A plastic inner pot makes the plant pot waterproof."
+    },
+    "photos": [
+      "16e2698231698192"
+    ]
+  }
+}

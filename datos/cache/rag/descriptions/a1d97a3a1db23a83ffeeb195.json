@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4ZVLCN",
+  "text": "Type: small floral wool area rug\nUse: under a chair or desk, softening floors; bedroom, living room, home office\nStyle: traditional, classic, contemporary\nMaterials: wool, carved textured pile\nColors: warm taupe, beige, dark brown\nShape: rectangular, dense all-over tonal floral scroll pattern, plain beige border band, thin profile, compact\nFeel: subtle, warm, refined, quiet\nGoes with: dark wood floors and furniture, linen upholstery, woven baskets; traditional or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B4ZVLCN",
+      "name": "Amazon Brand \u2013 Stone & Beam Floral Wool Area Rug, 4 x 6 Foot, Taupe",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 0.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Taupe"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Modern",
+      "description": "The old-world style of floral design gets a modern update in this taupe rug, which is ready to create a soothing atmosphere in a living or dining room. The high-low pile combination creates warm and inviting textures and patterns. 4' x 6' High/low pile is easy to clean. Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "33/33b75f8b.jpg",
+      "image_px": [
+        1530,
+        1530
+      ]
+    },
+    "photos": [
+      "f0e769649fa803d4"
+    ]
+  }
+}

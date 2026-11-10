@@ -1,0 +1,43 @@
+{
+  "product": "abo-B00QQNFJYC",
+  "text": "Type: compact laptop desk\nUse: laptop work, vanity; home office, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: high-gloss lacquered panels, hidden pull-out drawer\nColors: glossy white\nShape: waterfall-style panel sides, rounded top edges, slim drawer under top, back modesty panel, small and boxy\nFeel: clean, bright, sleek\nGoes with: white or grey walls, chrome, pastel accents; minimalist or modern small rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B00QQNFJYC",
+      "name": "Jahnke Laptop Table Desk Cu Libre",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 5.5,
+        "height": 76.0
+      },
+      "brand": "KINGSWELL",
+      "product_type": "DESK",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "00/006f1731.jpg",
+      "image_px": [
+        2218,
+        2210
+      ]
+    },
+    "photos": [
+      "a727ca9cf7657980"
+    ]
+  }
+}

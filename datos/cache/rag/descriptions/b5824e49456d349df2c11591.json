@@ -1,0 +1,47 @@
+{
+  "product": "abo-B08B8SV8DB",
+  "text": "Type: small grey globe pendant\nUse: accent light over a table or island; dining room, kitchen, home office\nStyle: industrial, modern, minimalist\nMaterials: poly faux concrete shade, brushed nickel canopy, black cord\nColors: cool grey, silver, black\nShape: small rounded bowl shade, round nickel canopy, long thin black cord, compact and light\nFeel: understated, cool, tidy\nGoes with: grey, white walls, nickel accents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B08B8SV8DB",
+      "name": "Amazon Basics Poly Globe Pendant Light - 6\" x 6\" x 30\", Brushed Nickel",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 15.2,
+        "depth": 15.2,
+        "height": 76.2
+      },
+      "brand": "Amazon Basics",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Brushed Nickel"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Modern",
+      "description": "Poly shade: gracefully diffuses light and offers a round shape for a visually pleasing profile Metal base: sturdy brushed-nickel metal base offers long-lasting strength and a sleek appearance Modern style: coordinates effortlessly with surrounding contemporary or transitional decor Small size: relatively small size makes it a great choice for a bedroom, kitchen, living room, or office Simple set-up and warranty: designed to hang from the ceiling; assembles quickly and easily (screwdriver and light bulb needed, not included); backed by an Amazon Basics 1-year limited warranty",
+      "image_path": "25/256dd388.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "3f6519e183d78f88"
+    ]
+  }
+}

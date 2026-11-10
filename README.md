@@ -138,6 +138,10 @@ cp .env.example .env                             # ANTHROPIC_API_KEY, FAL_KEY, O
 
 ## Uso
 
+El repo trae `datos/` completo: el dataset IKEA y ABO, lo procesado, la caché (descripciones,
+vectores, ChromaDB, respuestas ya pagadas de Claude) y las fotos. Los dos primeros comandos solo
+hacen falta para rehacerlo desde cero.
+
 ```bash
 uv run amoblai data download     # dataset IKEA (Tautkute et al., 2017) en datos/dataset/
 uv run amoblai catalogo          # el catálogo: productos, descripciones, kinds, correcciones
@@ -196,7 +200,7 @@ datos/
   evaluacion_ikea/    consultas de evaluación sobre los ambientes IKEA
   ambientes_vacios/   fotos de ambientes (dos vistas de cada uno)
   resultados/         corridas del flujo, evaluaciones, reporte, gastos; v0_imagen/
-  dataset/ procesados/ cache/    (no se commitean: se regeneran con la CLI)
+  dataset/ procesados/ cache/    (se commitean para no bajar ni pagar de nuevo; la CLI los rehace)
 deprecated/           la v0 (retrieval por imagen), completa
 ```
 
@@ -226,5 +230,5 @@ PYTHONPATH=deprecated uv run python -m amoblai_imagen.cli --help
 - **Fotos de ambientes** (`datos/ambientes_vacios/`): las de `ambiente1` a `ambiente3` son
   departamentos reales, de uso privado. Se usan solo para probar el sistema en este repositorio
   privado; ni ellas ni las imágenes generadas a partir de ellas se publican. Las de `publicas/`
-  no se commitean: `publicas.yaml` dice de dónde es cada una, su autor y su licencia (Unsplash,
+  se bajan con `amoblai data ambientes`: `publicas.yaml` dice de dónde es cada una, su autor y su licencia (Unsplash,
   Pexels o Creative Commons).

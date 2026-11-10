@@ -1,0 +1,37 @@
+{
+  "product": "502.432.99",
+  "text": "Type: low open TV bench\nUse: holding a TV, media devices and books; living room, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board top and legs, lower open shelf\nColors: white, slightly warm white\nShape: thick flat top on four chunky square legs, one open shelf near the floor, simple table-like frame, open and light, compact\nFeel: simple, casual, airy, fresh\nGoes with: light wood floors, grey sofas, white walls, colorful accents; Scandinavian or minimalist living rooms and small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.432.99",
+      "name": "LACK",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "TV bench",
+      "category_tp": "cabinet",
+      "size_raw": "90x26 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The opening at the back allows you to easily gather and organise all wires."
+    },
+    "photos": [
+      "a2213978c999f728"
+    ]
+  }
+}

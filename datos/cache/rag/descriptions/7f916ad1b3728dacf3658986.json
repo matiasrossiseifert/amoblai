@@ -1,0 +1,47 @@
+{
+  "product": "abo-B074KMJ96Q",
+  "text": "Type: storage coffee table with drawers\nUse: holding drinks and storing items in front of a sofa; living room\nStyle: industrial, modern, rustic\nMaterials: oak wood with a dark finish, brushed nickel metal base and pulls\nColors: dark warm brown wood, silver grey metal\nShape: boxy rectangular body with two front drawers and long bar pulls, raised on an open metal sled frame, chunky top, medium-wide and solid\nFeel: sturdy, warm, refined\nGoes with: leather or grey sofas, steel accents, neutral walls; industrial or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B074KMJ96Q",
+      "name": "Amazon Brand \u2013 Stone & Beam Glenwood Storage Coffee Table, 46\"W, Oak",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 116.8,
+        "depth": 76.2,
+        "height": 43.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Oak"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Industrial",
+      "description": "This handsome coffee table has the additional benefit of allowing you to clean up quickly for company. Stash remote controls, magazines and toys in the two drawers and storage compartment, then close the top to make way for snack and beverage trays. 46\"W x 30\"D x 17\"H Hardwood with quarter-sawn oak veneer for a handsome grain; metal drawer pulls Simple, sleek design and classic oak veneer combine for a transitional style Easy gliding, self-closing drawers; back of table has lift top and storage area Wipe with soft dry cloth Free returns for 30 days. 3-year warranty.",
+      "image_path": "f6/f6b5c88a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2fcd07673b03bbba"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DYV7WNN",
+  "text": "Type: traditional wood TV stand\nUse: TV and media storage; living room, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: walnut-finish wood, raised panel doors, metal knobs\nColors: warm dark walnut brown, bronze\nShape: tall compact cabinet, two side raised-panel doors, central open shelves with arched top, drawer below, molded top and arched plinth base\nFeel: cozy, homely, classic\nGoes with: cream walls, dark wood, warm textiles; traditional or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DYV7WNN",
+      "name": "ROCKPOINT TV Stand, 42x16x23.6inch, Walnut Brown",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 105.9,
+        "depth": 39.9,
+        "height": 79.2
+      },
+      "brand": "Rockpoint",
+      "product_type": "TABLE",
+      "colors": [
+        "Walnut Brown"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": "42\" Highboy TV Stand",
+      "description": "TV stand / media storage console in a traditional highboy style; ideal for a bedroom, living room, or game room Accommodates most flat-panel TVs up to 48 inches; supports up to 250 pounds Open storage space with adjustable-height shelf; bottom storage drawer; 2 side storage cabinets with swing-open doors High-grade MDF and durable laminate construction; rich, textured finish; ships ready to assemble (instructions included) Measures 16 by 42 by 32 inches (LxWxH); weighs 105 pounds",
+      "image_path": "e0/e0fdcc88.jpg",
+      "image_px": [
+        2560,
+        2146
+      ]
+    },
+    "photos": [
+      "f348b44280ffb25c"
+    ]
+  }
+}

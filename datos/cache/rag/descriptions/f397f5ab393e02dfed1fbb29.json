@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072ZNPRTC",
+  "text": "Type: media console with glass top\nUse: holding a TV and storage; living room, bedroom\nStyle: industrial, mid-century modern, contemporary\nMaterials: walnut veneer, black metal frame, clear glass top shelf\nColors: warm medium walnut, black, clear\nShape: rectangular wood cabinet with four flush drawers and doors in offset grid, slim black metal frame rising to an open glass top shelf, clean lines\nFeel: refined, warm, sleek\nGoes with: black accents, leather, grey or white walls; industrial or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B072ZNPRTC",
+      "name": "Amazon Brand \u2013 Rivet King Street Industrial Four-Drawer Media Console Table, Walnut, Black Metal, Glass",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 119.9,
+        "depth": 80.0,
+        "height": 40.1
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Storage Console Table",
+      "description": "Wooden drawers appear to float, under a tempered glass top, in a metal frame on this modern coffee table. Place your drinks and snacks on top, while storing your remote controls and chargers in the handy drawers underneath. 47.2\"L x 15.7\"W x 31.5\"H Engineered wood, walnut veneer drawers, metal legs and transparent glass top Modern Industrial Two drawers provide storage space No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "ca/caf56517.jpg",
+      "image_px": [
+        2560,
+        1889
+      ]
+    },
+    "photos": [
+      "6db3b95d1cf951fe"
+    ]
+  }
+}

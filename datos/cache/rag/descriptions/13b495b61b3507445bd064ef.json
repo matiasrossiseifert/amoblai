@@ -1,0 +1,47 @@
+{
+  "product": "abo-B078JK89KM",
+  "text": "Type: ceramic planter with wood stand\nUse: holding an indoor plant; on the floor beside a sofa or in a corner; living room, bedroom, home office\nStyle: mid-century modern, retro, bohemian\nMaterials: glazed speckled ceramic, natural bamboo stand\nColors: warm red, orange, peach, terracotta, light natural wood\nShape: cylindrical pot with wide horizontal stripes, raised on a low cross-shaped stand with arched legs, medium size, sturdy\nFeel: warm, cheerful, playful\nGoes with: light wood, white or cream walls, warm textiles; mid-century or bohemian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B078JK89KM",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Ceramic and Bamboo Planter Flower Pot with Stand,14.5\"H, Red and Orange",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 27.0,
+        "depth": 27.0,
+        "height": 36.8
+      },
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [
+        "Coral/Orange"
+      ],
+      "materials": [
+        "Ceramic"
+      ],
+      "style": null,
+      "description": "Eye-popping colors and a bamboo stand make this planter a true style standout, with or without an added house plant. Each is fired with reactive glaze and hand-painted, so no two are exactly alike. It's ideal for any room needing a bold style boost. 10.6\"D x 10.6\"W x 14.5\"H Designed to hold house plants; does not have drainage holes Ceramic stoneware with separate bamboo stand Reactive glazing and hand-painting means no two are exactly alike in pattern and color",
+      "image_path": "ea/eaa78956.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "81686978e278ac91"
+    ]
+  }
+}

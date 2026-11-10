@@ -1,0 +1,45 @@
+{
+  "product": "abo-B079V9CJB5",
+  "text": "Type: shibori pattern cushion cover\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: coastal, bohemian, contemporary\nMaterials: yarn-dyed woven cotton\nColors: dark indigo navy, light blue, off-white\nShape: square, vertical shibori tie-dye bands with ladder motif in the center, flat weave, knife edges, compact\nFeel: relaxed, cool, artisanal\nGoes with: white sofas, natural wood, rattan, blue accents; coastal or bohemian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B079V9CJB5",
+      "name": "Amazon Brand \u2013 Stone & Beam Yard-Dyed Shibori Decorative Throw Pillow Cover, 17\" x 17\", Blue",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "PILLOW",
+      "colors": [
+        "Blue"
+      ],
+      "materials": [],
+      "style": "Cover Only",
+      "description": "Varying shades of indigo and white stripes bring a shibori-inspired, global touch to any style room. The yarn-dyed woven pattern is the same on the front and back of this throw pillow cover, adding a pleasing texture to living room furniture or a bed. 17\" x 17\" Cover is 100% Polyester Insert not included Pillow cover features a zipper closure Spot clean with damp white cloth and allow to air dry.",
+      "image_path": "b6/b60524f4.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "2f2d82e73a21c5b8"
+    ]
+  }
+}

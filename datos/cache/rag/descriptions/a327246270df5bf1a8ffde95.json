@@ -1,0 +1,36 @@
+{
+  "product": "803.200.31",
+  "text": "Type: graphic print cushion\nUse: comfort and pattern on a sofa, an armchair or a bed; living room, bedroom\nStyle: contemporary, mid-century modern, modern\nMaterials: printed cotton fabric with a fine weave\nColors: dark navy blue, mustard yellow, cream\nShape: square plump cushion with a central yellow hexagon framed by bands of small dashed stripes on a dark ground, crisp geometric layout\nFeel: bold, graphic, warm, modern\nGoes with: grey or navy sofas, mustard accents, walnut or light wood; mid-century modern or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "803.200.31",
+      "name": "KLIPPRT",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "50x50 cm",
+      "colors": [
+        "Yellow",
+        "black"
+      ],
+      "description": "You can easily vary the look because the two sides have different designs."
+    },
+    "photos": [
+      "3da8b950037f7275"
+    ]
+  }
+}

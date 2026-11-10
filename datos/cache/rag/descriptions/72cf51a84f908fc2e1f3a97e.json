@@ -1,0 +1,45 @@
+{
+  "product": "abo-B082JH6PRL",
+  "text": "Type: rattan globe pendant lamp\nUse: ambient ceiling light; living room, dining room, bedroom\nStyle: bohemian, coastal, Japandi\nMaterials: natural rattan twine outer shade, white fabric inner cylinder shade\nColors: warm natural tan, white\nShape: round open crisscross woven sphere around a white cylinder diffuser, hangs on white cord, airy, medium size\nFeel: warm, airy, natural\nGoes with: light wood, linen, plants, white walls; bohemian, coastal or Japandi rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B082JH6PRL",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Globe Pendant Light with White Inner Shade & Rattan Outer Shade, 16\"H, Natural Twine",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 40.6,
+        "depth": 40.6,
+        "height": 40.6
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Natural Twine"
+      ],
+      "materials": [],
+      "style": "Mid-Century Modern",
+      "description": "The white inner shade and rattan outer shade of this pendant light adds a beautiful brightness to any room you can dream of hanging it in. Frame your bed or couch by hanging two on either side, or provide warm light with a rustic feel over a dining room table. 16\"W x 16\"D x 16\"H; hanging length: 77\"H White inner shade with a rattan outer shade and a white cloth cord With hints of rustic design, this pendant lamp is ideal for any room in your home. 1 60-watt E26 bulb required; bulb not included Expert installation required For indoor use only",
+      "image_path": "95/95051db5.jpg",
+      "image_px": [
+        1522,
+        1138
+      ]
+    },
+    "photos": [
+      "25666bce106c1720"
+    ]
+  }
+}

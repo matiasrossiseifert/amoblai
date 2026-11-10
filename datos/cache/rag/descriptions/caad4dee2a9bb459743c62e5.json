@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07HSH4WFB",
+  "text": "Type: three-drawer textured chest\nUse: storing clothes; bedroom, living room\nStyle: mid-century modern, bohemian, contemporary\nMaterials: carved diamond-pattern light wood drawer fronts, dark grey wood case, brass bar pulls, brass hairpin legs\nColors: light natural wood, dark grey-brown, brass\nShape: boxy chest, three drawers with faceted pyramid relief, slim long pulls, splayed thin metal legs, raised and medium in size\nFeel: textured, eclectic, warm\nGoes with: white walls, brass, rattan and plants; boho or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSH4WFB",
+      "name": "Amazon Brand \u2013 Rivet Modern Chest of Drawers with Diamond Pattern, 17.7 Inch Width, Natural",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 92.4,
+        "depth": 45.0,
+        "height": 80.0
+      },
+      "brand": "Rivet",
+      "product_type": "DRESSER",
+      "colors": [],
+      "materials": [
+        "Birch"
+      ],
+      "style": "Modern",
+      "description": "The diamond-pattern woodwork in this solid-hardwood cabinet gives it a bold, modern look. Gold metal legs and drawer pulls complement the natural warmth of the birch, and the smooth ball-bearing drawer glides make storage easy. 36.38\"W x 17.7\"D x 31.5\"H Solid hardwood cabinet with birch ply concave diamond designs in drawer fronts; gold metal legs and drawer pulls The clean styling and diamond pattern woodwork on drawer fronts give this a modern look. The three drawers are great to hide away items like clothes, table linens, and even board games. This piece features ball-bearing drawer glides. Assemble in 15 minutes or less Free returns for 30 days. 1-year warranty",
+      "image_path": "dc/dcfb0172.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f040b10923e28120"
+    ]
+  }
+}

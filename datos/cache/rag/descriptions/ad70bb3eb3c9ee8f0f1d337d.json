@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QD6TXXY",
+  "text": "Type: round tray-top side table\nUse: holding drinks, books or a lamp beside a sofa or bed; living room, bedroom\nStyle: industrial, modern, minimalist\nMaterials: black metal tray rim and legs, natural wood plank top\nColors: matte black, light natural wood\nShape: small round top inside a raised metal band, three slim splayed angular legs, tall and compact, light and open\nFeel: graphic, casual, airy\nGoes with: light wood, leather, white or grey walls, black accents; industrial or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QD6TXXY",
+      "name": "Amazon Brand \u2013 Rivet Jaxon Rustic Round Side Table, 16\" Diameter, Natural and Black",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 40.6,
+        "depth": 40.6,
+        "height": 67.3
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Natural/Black"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Small Side Table",
+      "description": "Natural wood with knots, splits, color variations, repair patches, and other imperfections sits within a black metal base with 3 legs. The base forms a lip around the wood top, which creates a visual appeal and keeps things from rolling off the edge. This piece pairs well with modern decor. 16\" diameter x 27\"H Wood and metal This rustic tabletop touts knots, splits, repair patches, and natural imperfections and rests in a black metal base with 3 legs. The piece can be used as a side table or an accent table. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "56/566fc78a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a5153c713a1b3a2d"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B073P6TCQ9",
+  "text": "Type: rustic horse portrait print\nUse: wall decoration above a sofa, bed or fireplace; living room, bedroom, dining room\nStyle: farmhouse, rustic\nMaterials: print with whitewashed wood plank effect, black wood frame\nColors: off-white, black\nShape: large square, black frame, horse head in profile with ink splatters over horizontal plank lines, oversized\nFeel: earthy, bold, relaxed\nGoes with: white walls, reclaimed wood, black iron, leather; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B073P6TCQ9",
+      "name": "Amazon Brand \u2013 Stone & Beam Printed Rustic Wood Effect Horse Wall Art, Black Frame, 40\" x 40\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 101.6,
+        "height": 3.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Antique",
+      "description": "What appears at first glance to be a print on wood is actually on textured paper. This black and white rendering of a handsome equine arrives in a black frame, ready to hang in a horse-lover's room of any style. 40\"W x 40\"H Print on paper in a frame with a black finish Modern rustic subject and printing effect Ready to hang, all hardware included",
+      "image_path": "49/4994524b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d27e41a4732473f1"
+    ]
+  }
+}

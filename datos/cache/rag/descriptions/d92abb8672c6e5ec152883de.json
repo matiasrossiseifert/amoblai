@@ -1,0 +1,37 @@
+{
+  "product": "502.236.25",
+  "text": "Type: bench with slatted lower shelf\nUse: sitting while dressing, holding towels, baskets or shoes; bathroom, hallway, bedroom\nStyle: traditional, Scandinavian, farmhouse\nMaterials: white painted solid wood, slatted shelf\nColors: white\nShape: flat rectangular seat with softly rounded edges, four square legs, slatted shelf close to the floor, simple apron, open and light, compact\nFeel: clean, fresh, simple, practical\nGoes with: white tiles, grey or blue tones, light wood, woven baskets; Scandinavian or cottage bathrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.236.25",
+      "name": "HEMNES",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 83.0
+      },
+      "type_ikea": "Bench",
+      "category_tp": "bench",
+      "size_raw": "83 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "3b36bb99d9f2f80e"
+    ]
+  }
+}

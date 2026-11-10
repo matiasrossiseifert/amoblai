@@ -1,0 +1,37 @@
+{
+  "product": "902.608.14",
+  "text": "Type: two-door sideboard with gallery top\nUse: storing dishes, linens and serving pieces; dining room, living room, hallway\nStyle: traditional, farmhouse, classic\nMaterials: black-painted wood, vertical beadboard-paneled doors, small dark knobs\nColors: black, dark charcoal\nShape: upright cabinet with two tall doors of vertical grooved boards, raised gallery rim around the top, overhanging top, small knobs at the center, heavy plinth base, solid and tall, heavy visual weight\nFeel: rustic, sturdy, cozy, classic\nGoes with: white walls, warm wood, cream textiles, brass or pewter accents; farmhouse, country or traditional dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.608.14",
+      "name": "ARKELSTORP",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 93.0
+      },
+      "type_ikea": "Sideboard",
+      "category_tp": "cabinet",
+      "size_raw": "93x46x133 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Solid wood is a durable natural material."
+    },
+    "photos": [
+      "1cce18e4884cfff0"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "product": "102.035.73",
+  "text": "Type: flatwoven runner rug\nUse: covering walkways and work spots; hallway, kitchen, entryway\nStyle: minimalist, contemporary, modern\nMaterials: tight synthetic-look flat weave, fine basket-weave texture\nColors: dark charcoal grey, black flecks\nShape: long narrow rectangle, small checked weave texture, thin flat profile, plain straight edges, solid and low-key\nFeel: practical, understated, grounded, sturdy\nGoes with: light or dark floors, white walls, black or steel accents; modern, industrial or minimalist hallways and kitchens\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.035.73",
+      "name": "MORUM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x200 cm",
+      "colors": [
+        "In",
+        "outdoor dark grey"
+      ],
+      "description": "The rug is perfect for outdoor use since it is made to withstand rain, sun, snow and dirt."
+    },
+    "photos": [
+      "1be5b45ba13b0496"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B073P1H7CF",
+  "text": "Type: vintage bicycle patent print\nUse: wall decoration above a desk or sofa; home office, living room, bedroom\nStyle: retro, industrial, minimalist\nMaterials: paper print, white wood frame, glazed\nColors: white, black, warm metallic brown linework\nShape: tall portrait rectangle, thin white frame, technical drawing of bicycle and gear details, airy layout, small\nFeel: nostalgic, clean, curious\nGoes with: white walls, light wood, black metal; industrial, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B073P1H7CF",
+      "name": "Black and White Vintage Bike Print in White Frame, 15\" x 21\"",
+      "category": "deco",
+      "kind": "wall art",
+      "dimensions_cm": {
+        "width": 33.0,
+        "depth": 1.3,
+        "height": 48.3
+      },
+      "brand": "Rivet",
+      "product_type": "WALL_ART",
+      "colors": [
+        "Pink"
+      ],
+      "materials": [],
+      "style": "Gold Metallic/White Frame",
+      "description": "This detailed diagram of an 1893 bicycle structure is a fun, architectural art piece for any room. A modern presentation of a vintage design, this piece will blend with any existing style in your room. Modern print of vintage bicycle blueprint Gold foil printed on paper, encased behind glass in wood frame with white finish 15\" x 21\" Ready to hang with hardware included. Made to order",
+      "image_path": "6d/6dfe2d29.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "e434f16a7dcba029"
+    ]
+  }
+}

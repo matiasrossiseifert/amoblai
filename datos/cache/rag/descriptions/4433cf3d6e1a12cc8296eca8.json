@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSJVP6M",
+  "text": "Type: metal planter with stand\nUse: raising an indoor plant off the floor; living room, bedroom, home office\nStyle: glam, modern, mid-century modern\nMaterials: metal pot with a patinated finish, gold-finish metal loop stand\nColors: weathered blue-grey, gold\nShape: cylindrical pot held high in a frame of three tall hairpin-loop legs, slim, light and open\nFeel: elegant, airy, refined\nGoes with: white walls, brass accents, large leafy plants; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSJVP6M",
+      "name": "Amazon Brand \u2013 Rivet Casual Metal Planter and Stand, 20.87\"H, Cement Gray and Gold",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "PLANTER",
+      "colors": [],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "This casual planter in cement and gold tones can stand on the floor or on a table to house your favorite plant or fairy garden. The cement-toned planter brings a subtle wash of color to your room, while the open gold stand adds visual interest. 9.84\" diameter x 20.87\"H 100% iron This casual cement-hued planter in a gold-toned stand looks great with most decors. Wipe clean with a soft, dry cloth.",
+      "image_path": "76/764e5546.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "f7ef0c4d5f1974d8"
+    ]
+  }
+}

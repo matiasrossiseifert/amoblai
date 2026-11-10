@@ -1,0 +1,38 @@
+{
+  "product": "402.992.44",
+  "text": "Type: handwoven kilim rug with fringe\nUse: adding pattern and color to a floor; living room, bedroom, dining room, study\nStyle: traditional, bohemian, rustic\nMaterials: handwoven wool flatweave, short fringed ends\nColors: cream center, cornflower blue, brick red, olive green, mustard, slate grey\nShape: rectangular, flat, rows of stepped diamond motifs inside layered zigzag borders, fringed short ends, medium visual weight\nFeel: warm, vibrant, handcrafted, lively\nGoes with: dark or warm wood, leather, terracotta, plants; bohemian, traditional or eclectic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "402.992.44",
+      "name": "PERSISK KELIM GASHGAI",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 125.0,
+        "depth": 180.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "125x180 cm",
+      "colors": [
+        "Handmade assorted patterns"
+      ],
+      "description": "Each rug has its own unique, traditional Persian pattern."
+    },
+    "photos": [
+      "8a964ac66b165ff7"
+    ]
+  }
+}

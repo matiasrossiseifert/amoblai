@@ -1,0 +1,37 @@
+{
+  "product": "100.937.63",
+  "text": "Type: black metal three-tier shelving unit\nUse: displaying plants, books and small decor, storing towels; living room, bedroom, bathroom\nStyle: traditional, farmhouse, classic\nMaterials: black powder-coated steel frame, perforated metal shelves, clear glass top shelf\nColors: matte black, clear glass\nShape: tall narrow open frame on four slim legs with ball feet, scrolled wrought-iron crest along the top, dotted pattern on the shelves, light and see-through, compact\nFeel: romantic, vintage, airy, delicate\nGoes with: white walls, pale wood, wicker baskets, green plants; farmhouse, cottage or classic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "100.937.63",
+      "name": "RNNSKR",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 42.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "42x103 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "1f4ac77245dbc459"
+    ]
+  }
+}

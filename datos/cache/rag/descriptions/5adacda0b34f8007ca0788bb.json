@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QFRSC8M",
+  "text": "Type: velvet dining chair with metal sled base\nUse: dining, desk seating; dining room, home office\nStyle: glam, contemporary, mid-century modern\nMaterials: velvet upholstery, brushed brass-finish metal frame\nColors: deep navy blue, warm brass\nShape: curved wraparound back with channel lines, armless, thick padded seat, open rectangular sled legs, compact and sleek\nFeel: luxurious, bold, polished\nGoes with: marble or glass tables, white or dark walls, gold accents; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QFRSC8M",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Brass-Framed Dining Chair, 34\"H, Ink",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 62.0,
+        "depth": 52.0,
+        "height": 86.0
+      },
+      "brand": "Rivet",
+      "product_type": "CHAIR",
+      "colors": [
+        "Ink"
+      ],
+      "materials": [
+        "Brass"
+      ],
+      "style": null,
+      "description": "The curved back of this modern dining chair offers comfortable support. The chair\u2019s simple lines, armless design, and ink-colored upholstery create a versatile piece that can fit into any dining area\u2019s color and decor. A brass base creates a sturdy structure while adding to the chair\u2019s clean style. 20\"W x 24\"D x 34\"H; seat height: 19\"H; seat depth: 18\"W; seat back height: 15\"H 100% polyester fabric on solid wood frame with a brass base Simple, clean contemporary design No assembly required Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "e8/e85c050e.jpg",
+      "image_px": [
+        1952,
+        2560
+      ]
+    },
+    "photos": [
+      "19926098e87b34be"
+    ]
+  }
+}

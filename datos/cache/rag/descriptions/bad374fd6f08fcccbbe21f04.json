@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B4YXXS9",
+  "text": "Type: arc floor lamp\nUse: overhead reading light beside a sofa or chair; living room, bedroom, home office; on the floor\nStyle: modern, mid-century modern, minimalist\nMaterials: black metal arc and base, linen-look fabric shade\nColors: matte black, warm beige\nShape: tall sweeping arched arm over a seat, wide drum shade hanging down, rectangular weighted base, tall but slim\nFeel: dramatic, warm, relaxed\nGoes with: neutral sofas, wood floors, black accents; modern or industrial living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4YXXS9",
+      "name": "Amazon Brand \u2013 Stone & Beam Alexa-Enabled Lamp, 56\" x 10\" x 76\", Black",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": {
+        "width": 142.2,
+        "depth": 25.4,
+        "height": 193.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LAMP",
+      "colors": [
+        "Black"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Placeholder1",
+      "image_path": "68/689b02d2.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "a4848154eb20f9e3"
+    ]
+  }
+}

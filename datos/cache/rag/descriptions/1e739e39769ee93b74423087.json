@@ -1,0 +1,38 @@
+{
+  "product": "903.194.90",
+  "text": "Type: dark grey shag rug\nUse: soft spot beside a bed, sofa or door; bedroom, living room, hallway, entryway\nStyle: contemporary, minimalist, modern\nMaterials: dense high pile synthetic shag\nColors: dark charcoal grey\nShape: small rectangle with thick even shag, soft edges, solid color, plush and cushy\nFeel: cozy, soft, grounding\nGoes with: white bedding, light wood, grey or black furniture, chrome accents; modern or minimalist bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "903.194.90",
+      "name": "DUM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 150.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "80x150 cm",
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "The dense, thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "d811b550e7d0c6b4"
+    ]
+  }
+}

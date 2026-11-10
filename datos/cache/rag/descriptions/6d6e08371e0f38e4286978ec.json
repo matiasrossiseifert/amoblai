@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B7DMNZC",
+  "text": "Type: two-tier round side table\nUse: holding lamps, drinks and books beside a sofa or bed; living room, bedroom\nStyle: glam, modern, art deco\nMaterials: brushed gold metal frame, clear glass shelves\nColors: gold, clear glass\nShape: two round glass tiers framed in gold rings, three slim square legs with ball feet, light and open, compact\nFeel: airy, elegant, refined\nGoes with: velvet, marble, white or jewel tones; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7DMNZC",
+      "name": "Amazon Brand \u2013 Rivet Modern Round Metal Coffee Table, 18.5\"H, Gold and Glass",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 100.3,
+        "depth": 68.6,
+        "height": 68.6
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [
+        "metal"
+      ],
+      "style": "Side Table",
+      "description": "The high gloss, gold-finish frame rims glass shelves, bringing modern glamour to your room. Use the top for a lamp or displaying photos. The lower glass shelf gives you more display space -- or a place to stash magazines or a gaming console. 18\"W x 18\"D x 21\"H Metal, tempered glass Plenty of gloss and shine for a modern glam look A pretty style piece for your room along with providing display space No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "3b/3b1df500.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8178d6474be3d047"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "503.214.28",
+  "text": "Type: articulated pastel green work lamp\nUse: task light for working or reading at a desk; home office, study, bedroom\nStyle: retro, industrial, Scandinavian\nMaterials: glossy lacquered steel shade, arms and round base, exposed metal springs, black cord\nColors: soft pastel green, silver springs, black\nShape: rounded dome shade with a pull knob on a jointed spring-balanced arm, heavy round base, adjustable, compact\nFeel: cheerful, playful, practical, fresh\nGoes with: white or light wood desks, pastel tones, green plants; Scandinavian or retro home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "503.214.28",
+      "name": "FORS",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Green"
+      ],
+      "description": "Provides a directed light that is great for reading."
+    },
+    "photos": [
+      "6a1f085272074d8b"
+    ]
+  }
+}

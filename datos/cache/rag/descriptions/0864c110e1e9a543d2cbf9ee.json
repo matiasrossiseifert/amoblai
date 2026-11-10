@@ -1,0 +1,35 @@
+{
+  "product": "802.806.76",
+  "text": "Type: nesting side tables, set of two\nUse: setting down drinks, lamps and books; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, Japandi\nMaterials: birch veneer tops, bent solid birch legs, clear lacquer\nColors: pale natural birch, light blond wood\nShape: two rounded oval tops, the smaller one sliding under the larger, three curved bent-wood legs each, light and compact\nFeel: airy, calm, natural, versatile\nGoes with: white walls, linen, light wood floors; Scandinavian or Japandi living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "802.806.76",
+      "name": "SVALSTA",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": null,
+      "type_ikea": "Nest of tables, set of 2",
+      "category_tp": "table",
+      "size_raw": null,
+      "colors": [
+        "Birch veneer"
+      ],
+      "description": "Can be used individually or be pushed together to save space."
+    },
+    "photos": [
+      "5a6d479d153759ce"
+    ]
+  }
+}

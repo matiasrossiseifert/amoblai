@@ -1,0 +1,39 @@
+{
+  "product": "290.007.16",
+  "text": "Type: rectangular table on trestle legs\nUse: working at a desk, crafts, casual dining; home office, study, kids room, kitchen\nStyle: industrial, minimalist, contemporary\nMaterials: white laminated top, dark grey powder-coated steel trestles\nColors: white, dark grey\nShape: thin flat rectangular top, two crossed X-shaped trestle legs with a footbar on each, open and light, simple workbench look\nFeel: practical, crisp, airy, functional\nGoes with: white walls, grey or black accents, office chairs or simple wooden chairs; modern home offices, studios or student rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "290.007.16",
+      "name": "LINNMON,LERBERG",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "120x60 cm",
+      "colors": [
+        "White",
+        "grey"
+      ],
+      "description": "Pre-drilled holes for legs, for easy assembly."
+    },
+    "photos": [
+      "91a5401ada4df5aa"
+    ]
+  }
+}

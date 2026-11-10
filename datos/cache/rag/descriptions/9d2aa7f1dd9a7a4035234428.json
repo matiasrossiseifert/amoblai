@@ -1,0 +1,43 @@
+{
+  "product": "abo-B001BQ6TU2",
+  "text": "Type: open bookcase with drawers\nUse: storing books, display and small items; living room, bedroom, home office\nStyle: mid-century modern, contemporary, classic\nMaterials: wood frame and shelves, satin nickel bar pulls\nColors: warm honey wood, silver\nShape: tall open frame with square posts, three open shelves, two stacked drawers, low bottom shelf, slightly tapered legs, gallery top rail, medium visual weight\nFeel: warm, tidy, timeless\nGoes with: warm wood, cream walls, brushed metal accents; mid-century or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B001BQ6TU2",
+      "name": "Pinzon Hayes Shelf",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Tiki"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "Beautifully crafted shelving unit offers 2 drawers to maximize efficiency Solid birch construction with basswood veneer; brushed stainless steel handles Open front and sides for easy accessibility; easy assembly; holds up to 100 pounds Coordinates with the Pinzon Hayes Office Furniture Collection; tiki brown finish Measures 30 inches wide by 14 inches deep by 64-1/2 inches high",
+      "image_path": "ce/ce73f658.jpg",
+      "image_px": [
+        1200,
+        1820
+      ]
+    },
+    "photos": [
+      "8bc6204e0e81d6bc"
+    ]
+  }
+}

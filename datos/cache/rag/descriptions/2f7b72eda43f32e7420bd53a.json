@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07HSN8783",
+  "text": "Type: distressed medallion area rug\nUse: anchoring a seating or bedroom area; living room, bedroom, dining room\nStyle: bohemian, traditional, contemporary\nMaterials: low pile, faded vintage-look weave\nColors: dark navy, slate blue, yellow, pink, green accents\nShape: rectangular, central floral medallion on worn navy field, ornate floral borders, flat profile, large\nFeel: moody, rich, vintage, eclectic\nGoes with: dark wood floors, beige or grey upholstery, brass accents; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSN8783",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Passionate Area Rug, 6' 7\" x 9' 6\", Navy",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Navy",
+      "description": "Add elegance to your home decor with this lovely rug. With a blue-focused color scheme and a distinct flourish pattern, this rug is a perfect match for traditional-style interior design. Its captivating design also pairs well with modern and vintage home-decor styles. 6'7\" x 9'6\" Pile: 100% polypropylene; backing: 100% jute Advanced power-loom construction for excellent value and quality Medium 0.5'' pile ideal for moderate-traffic areas like bedrooms or sitting rooms",
+      "image_path": "5e/5e52888b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "7c84b7ab697acae2"
+    ]
+  }
+}

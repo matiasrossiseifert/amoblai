@@ -1,0 +1,39 @@
+{
+  "product": "503.208.48",
+  "text": "Type: striped low-pile area rug\nUse: anchoring a seating area or bedside; living room, bedroom, home office\nStyle: modern, minimalist, Scandinavian\nMaterials: short dense low pile\nColors: black, off-white stripes, high contrast\nShape: rectangular, flat low pile, thin wavy hand-drawn white stripes running lengthwise, graphic, medium visual weight\nFeel: graphic, bold, crisp\nGoes with: white walls, light wood, grey or white sofas, black metal; monochrome, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "503.208.48",
+      "name": "GRLSE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 195.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "133x195 cm",
+      "colors": [
+        "Black",
+        "white"
+      ],
+      "description": "The thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "e0631e361c9d33b4"
+    ]
+  }
+}

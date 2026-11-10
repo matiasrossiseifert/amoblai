@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07SCNS9Q7",
+  "text": "Type: square tabletop planter with stand\nUse: holding a small plant on a table, shelf or desk; living room, home office, bedroom\nStyle: modern, minimalist, glam\nMaterials: matte ceramic pot, copper-finished metal wire stand\nColors: light grey, rose copper\nShape: tapered square pot lifted in an open cubic wire frame, compact, light and open\nFeel: fresh, neat, modern\nGoes with: white or blush walls, marble, succulents; modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07SCNS9Q7",
+      "name": "AmazonBasics Tabletop Planter, Square - Grey/Copper",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": {
+        "width": 12.5,
+        "depth": 10.8,
+        "height": 12.5
+      },
+      "brand": "AmazonBasics",
+      "product_type": "PLANTER",
+      "colors": [
+        "Grey/Copper"
+      ],
+      "materials": [
+        "Copper"
+      ],
+      "style": "Single Pack",
+      "description": "Indoor desk planter for home or office, ideal for growing and displaying small indoor plants such as air plants or succulents like aloe vera or a pincushion cactus Enhances any home or office with on-trend style and beautiful eye-catching modern design aesthetics Made of stoneware ceramic and durable steel for beauty and strength; add gravel or pebbles to the bottom of the planter for drainage purposes Tabletop-style pot with square-shaped metal support; grey and copper color Backed by an AmazonBasics 1-year limited warranty",
+      "image_path": "7f/7f7b587f.jpg",
+      "image_px": [
+        1765,
+        1765
+      ]
+    },
+    "photos": [
+      "4a34f56d272ba6f0"
+    ]
+  }
+}

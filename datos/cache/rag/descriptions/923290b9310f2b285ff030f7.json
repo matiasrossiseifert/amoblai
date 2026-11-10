@@ -1,0 +1,35 @@
+{
+  "product": "002.824.05",
+  "text": "Type: black woven rattan storage basket\nUse: storing magazines, toys, throws or office supplies on a shelf or in a cube shelving unit; living room, home office, bedroom\nStyle: contemporary, modern, bohemian\nMaterials: hand-woven rattan with a black stained finish over a rattan frame\nColors: black, charcoal black\nShape: cube-shaped box with straight sides, framed edges, open top and a cut-out handle on the front, sturdy and compact\nFeel: textured, tidy, graphic, natural\nGoes with: white or black cube shelves, dark wood, grey tones; contemporary or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "002.824.05",
+      "name": "BRANS",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "32x34x32 cm",
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "Perfect for newspapers, photos or other memorabilia."
+    },
+    "photos": [
+      "151a83c4772d8dd8"
+    ]
+  }
+}

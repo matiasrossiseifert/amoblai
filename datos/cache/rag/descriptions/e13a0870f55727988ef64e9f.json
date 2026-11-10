@@ -1,0 +1,35 @@
+{
+  "product": "902.165.43",
+  "text": "Type: dark grey clamp spotlight\nUse: directed reading or accent light clamped to a desk, shelf or bed; home office, bedroom, living room\nStyle: industrial, retro\nMaterials: textured dark grey powder-coated metal shade and bracket, black steel screw clamp, black cord\nColors: dark charcoal grey, black\nShape: deep flared bell shade on a tilting bracket with a large knob, screw clamp, chunky and compact, heavy-looking for its size\nFeel: rugged, utilitarian, moody, sturdy\nGoes with: wood shelves, concrete, brick, black metal; industrial home offices, lofts and workshops\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.165.43",
+      "name": "HEKTAR",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall,clamp spotlight",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "The lamp has got double function - you can use it as a clamp spotlight or assemble it on the wall as a wall lamp."
+    },
+    "photos": [
+      "ecb3a12168488f41"
+    ]
+  }
+}

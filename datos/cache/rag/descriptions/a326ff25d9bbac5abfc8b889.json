@@ -1,0 +1,37 @@
+{
+  "product": "302.522.80",
+  "text": "Type: wooden wall shelf with pegs\nUse: displaying plates and cups, hanging towels, mugs or aprons; kitchen, dining room, hallway\nStyle: rustic, farmhouse, traditional\nMaterials: solid pine with a light antique stain, wooden peg rail, guard rails\nColors: warm honey pine, light amber\nShape: upright open wall rack with two slim shelves fronted by rails, a deeper bottom ledge with shaped side panels, row of round wooden pegs beneath, medium visual weight\nFeel: cozy, rustic, homely, warm\nGoes with: white walls, stoneware, checked textiles, copper and wicker; farmhouse, country or rustic kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.522.80",
+      "name": "GAMLEBY",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "80x100 cm",
+      "colors": [
+        "Light antique stain"
+      ],
+      "description": "The wall shelf makes it easy for you to see and reach the things you use every day."
+    },
+    "photos": [
+      "61a0996bec1796ea"
+    ]
+  }
+}

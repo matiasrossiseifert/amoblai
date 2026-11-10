@@ -1,0 +1,35 @@
+{
+  "product": "902.177.93",
+  "text": "Type: metal folding chair\nUse: extra dining seating, quick guest seating; kitchen, dining room, balcony, small apartment\nStyle: modern, industrial, contemporary\nMaterials: powder-coated steel frame, perforated steel seat and back\nColors: dark grey, charcoal black\nShape: folding X-frame with slim tubular legs, rounded back panel with a sunburst pattern of small holes, perforated seat, front footrest bar, folds flat, light and compact\nFeel: practical, sleek, casual, airy\nGoes with: wood or concrete tables, white walls, black accents; industrial lofts, small apartments, balconies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "902.177.93",
+      "name": "FRODE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Folding chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Dark grey"
+      ],
+      "description": "You can fold the chair, so it takes less space when you're not using it."
+    },
+    "photos": [
+      "3bacfb096d07bf52"
+    ]
+  }
+}

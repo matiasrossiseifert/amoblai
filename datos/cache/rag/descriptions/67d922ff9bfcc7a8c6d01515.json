@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071777YN3",
+  "text": "Type: medallion area rug\nUse: anchoring an entry or seating area; living room, bedroom, entryway\nStyle: traditional, mid-century modern, farmhouse\nMaterials: woven synthetic fibers, low flat pile\nColors: dark grey, ivory, light grey\nShape: rectangular, distressed central floral medallion field, ivory floral border, thin flat profile, medium small\nFeel: classic, muted, timeless\nGoes with: brick or wood floors, rustic wood, white walls, greenery; farmhouse or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071777YN3",
+      "name": "Stone & Beam Mid-Century Modern Blooming Medallion Rug, 4' x 6', Dark Grey",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 0.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Dark Grey"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Modern",
+      "description": "Pile: 100% Polypropylene, Backing: 100% Jute Imported This dark grey blooming medallion rug adds cool, contemporary style to your transitional spaces. It's a modern remake of a classic oriental pattern made of stain resistant fiber that is a smart option for active households. Highly durable update of a classic design Machine woven. Made in Turkey. 100% polypropylene Durable and long-lasting 4' x 6' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow up to a week for synthetic fibers to settle.",
+      "image_path": "f5/f54cda07.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1a24297ff39478cd"
+    ]
+  }
+}

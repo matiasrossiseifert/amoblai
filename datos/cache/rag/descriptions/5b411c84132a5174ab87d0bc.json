@@ -1,0 +1,35 @@
+{
+  "product": "001.286.21",
+  "text": "Type: open white storage cabinet frame\nUse: storing toys, books or clothes once fitted with shelves, doors or drawers; kids room, bedroom, home office\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated particleboard, pre-drilled shelf holes inside\nColors: white\nShape: tall open box carcass with a top, sides and bottom, rows of small holes for shelf pins, plain flat surfaces, empty front for adding doors, simple and boxy\nFeel: plain, practical, clean, modular\nGoes with: white or colorful fronts, storage boxes, light wood; Scandinavian or minimalist kids rooms and bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.286.21",
+      "name": "STUVA",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "60x50x128 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Deep enough to hold standard-sized adult hangers."
+    },
+    "photos": [
+      "99f21d409081f9b7"
+    ]
+  }
+}

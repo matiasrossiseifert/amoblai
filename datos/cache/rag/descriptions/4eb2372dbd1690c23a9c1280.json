@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8K1DBL",
+  "text": "Type: wall shelf with hooks\nUse: hanging coats, bags and keys, display on top; entryway, bedroom, living room\nStyle: industrial, rustic, farmhouse\nMaterials: solid wood plank, dark riveted metal straps, iron rail\nColors: warm honey wood, dark brown-black metal\nShape: thick wood shelf held by vertical strap brackets, lower rod with five curled hooks, sturdy, medium visual weight\nFeel: rugged, warm, practical\nGoes with: reclaimed wood, black metal, brick or white walls; industrial or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B8K1DBL",
+      "name": "Amazon Brand \u2013 Stone & Beam Industrial Rustic Metal Floating Shelf with 5 Hooks - 13 x 22 x 5 Inch, Black and Wood",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 57.1,
+        "depth": 14.6,
+        "height": 33.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SHELF",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Stone"
+      ],
+      "style": null,
+      "description": "Along with vintage charm, this piece adds a convenient place to hang coats, purses and keys to an entryway or mudroom. The shelf is handy for mail or small objects you want to display. Wood and iron materials provide rustic and industrial touches. 22.5\" W x 13\" H x 5.75\" D Constructed from hardwood and iron Ready to hang, all hardware included",
+      "image_path": "57/5751d5ec.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "5fdf02003dfad54b"
+    ]
+  }
+}

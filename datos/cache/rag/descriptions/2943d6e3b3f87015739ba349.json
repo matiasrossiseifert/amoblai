@@ -1,0 +1,36 @@
+{
+  "product": "702.382.68",
+  "text": "Type: minimalist white LED desk lamp\nUse: focused task light for working or reading at a desk; home office, study, bedroom\nStyle: minimalist, modern, Scandinavian\nMaterials: white coated steel tube frame, brushed aluminium LED head, grey cord\nColors: white, brushed silver\nShape: single bent tube rising from a triangular loop base, slim bar-shaped light head, flexible neck, very slender and light, small footprint\nFeel: clean, sleek, airy, discreet\nGoes with: white or light wood desks, pale walls, metal accents; minimalist or Scandinavian home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "702.382.68",
+      "name": "HRTE",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "LED work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White",
+        "silver-colour"
+      ],
+      "description": "Easy to use in different places as you can power the lamp through the USB port on your computer or an ordinary power socket."
+    },
+    "photos": [
+      "1db9e219940c0a2f"
+    ]
+  }
+}

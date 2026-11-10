@@ -1,0 +1,35 @@
+{
+  "product": "502.689.06",
+  "text": "Type: white molded picture frame with mat\nUse: displaying photos, prints or artwork on a wall or shelf; living room, bedroom, hallway, dining room\nStyle: classic, traditional, Scandinavian\nMaterials: molded frame in a smooth white painted finish, off-white mat board, clear glazing\nColors: white, warm off-white mat\nShape: upright rectangle with a stepped, rounded molding that gives a soft beveled edge, broad cream mat around the picture, medium-width profile, light visual weight\nFeel: fresh, gentle, timeless\nGoes with: pale walls, light wood, linen textiles, brass or silver accents; classic, farmhouse or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "502.689.06",
+      "name": "VIRSERUM",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "50x70 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The mount enhances the picture and makes framing easy."
+    },
+    "photos": [
+      "6ac5c830f6731144"
+    ]
+  }
+}

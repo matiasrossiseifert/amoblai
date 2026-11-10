@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07BWKD3BG",
+  "text": "Type: chaise sectional sofa\nUse: seating, lounging; living room, family room\nStyle: contemporary, modern, minimalist\nMaterials: textured woven upholstery, welted seams, dark wood block feet\nColors: warm greige stone, dark brown\nShape: right-facing chaise, sloped track arms, three back cushions, box seats, low block feet, large but clean-lined\nFeel: calm, comfortable, neutral\nGoes with: wood tones, white or beige walls, soft textiles; transitional or modern family rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07BWKD3BG",
+      "name": "Amazon Brand \u2013 Stone & Beam Dalton Chaise Sectional Sofa Couch, 91.5\", Stone",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 104.1,
+        "height": 76.2
+      },
+      "brand": "Stone & Beam",
+      "product_type": "SOFA",
+      "colors": [
+        "Stone"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Transitional",
+      "description": "Transitional design meets exceptional comfort for everyday living in this sectional sofa. With moisture-repelling and stain-resistant fabric, it can take toddler spills and muddy paw prints, yet still add timeless style to your family room. 91.5\"W x 37.5\"D x 35\"H Solid hardwood and laminate wood frame; polyester/nylon performance fabric Transitional style Crisp, expert tailoring and track arm design built for heavy duty wear No assembly required Free returns for 30 days. 3-year warranty.",
+      "image_path": "c2/c2b9a22a.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8e2103eb0c78eb31"
+    ]
+  }
+}

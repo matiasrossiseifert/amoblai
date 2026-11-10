@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QCQ3D7F",
+  "text": "Type: low-back bar stools, set of two\nUse: seating at a bar or counter; dining room, kitchen, home bar\nStyle: mid-century modern, modern, minimalist\nMaterials: woven upholstery fabric, channel stitching, grey metal sled base\nColors: warm grey, gunmetal grey\nShape: short padded back, cushioned seat, continuous sled legs with footrest bar, light and open\nFeel: casual, clean, understated\nGoes with: white or wood counters, grey or black accents; modern or Scandinavian kitchens\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07QCQ3D7F",
+      "name": "Amazon Brand \u2013 Rivet Julian Mid-Century Barstools, Set of 2, 37.8\"H, Grey",
+      "category": "stool",
+      "kind": "bar stool",
+      "dimensions_cm": {
+        "width": 53.3,
+        "depth": 49.0,
+        "height": 96.0
+      },
+      "brand": "Rivet",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [],
+      "style": "0",
+      "description": "These low-back barstools feature a minimalist mid-century design with padded seats and backs. Sturdy steel construction includes geometric open-style legs. 19.3\"W x 21\"D x 37.8\"H; seat height: 29\"H; seat dimension: 16\" x 14\" Fabric upholstery on wood frame with steel legs The fabric seat and powder-coated finish on the metal legs make for easy care and durability. Grey upholstery is stylishly paired with a slender grey steel frame and geometric legs. Assemble in 15 minutes or less Clean by vacuuming or wiping with a soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "4f/4f95771c.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "43764c377addfd72"
+    ]
+  }
+}

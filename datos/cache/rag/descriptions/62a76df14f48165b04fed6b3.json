@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07HSBRV6W",
+  "text": "Type: upholstered slope-arm dining chair\nUse: dining, occasional seating; dining room, living room\nStyle: contemporary, classic, modern\nMaterials: woven linen-look fabric upholstery, solid wood legs in light natural finish\nColors: ivory cream, light natural wood\nShape: tall back with sweeping sloped arms, wingback-like sides, padded seat, square tapered legs, substantial and tailored\nFeel: soft, inviting, elegant\nGoes with: light wood or white tables, neutral walls, brass accents; transitional or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSBRV6W",
+      "name": "Amazon Brand \u2013 Stone & Beam Levy Dining Room Kitchen Chair, 40 Inch Height, Ivory",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": {
+        "width": 64.8,
+        "depth": 57.1,
+        "height": 101.6
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Navy"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Ivory upholstery and natural wooden legs combine for a timeless classic dining chair, while a gently curved armrest provides a slight contemporary twist. Solid wood frame, fabric Curved armrests for style and comfort 22.5\"D x 22.5\"W x 40\"H",
+      "image_path": "f5/f5647738.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "aba0ea8dac6fd75e"
+    ]
+  }
+}

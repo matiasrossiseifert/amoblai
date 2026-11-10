@@ -1,0 +1,38 @@
+{
+  "product": "602.457.21",
+  "text": "Type: double-pedestal wooden desk\nUse: working, paperwork, a computer setup; home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: solid pine with a black-brown stain, black knobs, cable outlet in the top\nColors: dark black-brown, visible wood grain\nShape: wide rectangular top over a cupboard with a framed panel door on one side and two deep drawers on the other, square straight legs, open kneehole, solid and substantial\nFeel: sturdy, studious, warm, timeless\nGoes with: leather chairs, brass lamps, cream walls, dark wood floors; traditional, classic or farmhouse home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.457.21",
+      "name": "HEMNES",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 155.0,
+        "depth": 65.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "155x65 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "You can collect cables and extension leads on the shelf under the table top, so theyre hidden but still close at hand."
+    },
+    "photos": [
+      "558a18d203dcccf9"
+    ]
+  }
+}

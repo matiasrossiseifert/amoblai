@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07KTJGC7H",
+  "text": "Type: leather chaise sectional sofa\nUse: seating, lounging; living room\nStyle: modern, contemporary, minimalist\nMaterials: leather upholstery, dark metal legs\nColors: dark charcoal black\nShape: long low sofa with left chaise, slim track arms, four back cushions, thin metal legs, large and sleek\nFeel: sleek, bold, sophisticated\nGoes with: concrete, white walls, chrome or black metal; modern or industrial lofts\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07KTJGC7H",
+      "name": "Rivet Edgewest Edgewest Left Facing Sofa Chaise Sectional",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "32/32d6414b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fdaa09359b6ce656"
+    ]
+  }
+}

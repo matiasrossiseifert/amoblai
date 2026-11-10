@@ -1,0 +1,690 @@
+[
+ {
+  "id": "801.462.49",
+  "name": "IKEA PS MASKROS",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/801.462.49.jpg"
+  ]
+ },
+ {
+  "id": "801.487.00",
+  "name": "ARD",
+  "type_ikea": "Work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/801.487.00.jpg"
+  ]
+ },
+ {
+  "id": "802.382.96",
+  "name": "TORSBO",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.382.96.jpg"
+  ]
+ },
+ {
+  "id": "802.600.94",
+  "name": "IKEA PS 2014",
+  "type_ikea": "Floor lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.600.94.jpg"
+  ]
+ },
+ {
+  "id": "802.807.42",
+  "name": "SVIRVEL",
+  "type_ikea": "Table lamp",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.807.42.jpg"
+  ]
+ },
+ {
+  "id": "802.835.85",
+  "name": "LYSBOJ",
+  "type_ikea": "Ceiling lamp",
+  "category": "lamp",
+  "default_kind": "ceiling lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.835.85.jpg"
+  ]
+ },
+ {
+  "id": "803.101.93",
+  "name": "JANSJ",
+  "type_ikea": "LED work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.101.93.jpg"
+  ]
+ },
+ {
+  "id": "803.113.62",
+  "name": "SKOJIG",
+  "type_ikea": "Wall lamp",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.113.62.jpg"
+  ]
+ },
+ {
+  "id": "803.156.52",
+  "name": "JANSJ",
+  "type_ikea": "LED wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.156.52.jpg"
+  ]
+ },
+ {
+  "id": "803.243.07",
+  "name": "HEKTAR",
+  "type_ikea": "Wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.243.07.jpg"
+  ]
+ },
+ {
+  "id": "803.296.30",
+  "name": "RANARP",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/803.296.30.jpg"
+  ]
+ },
+ {
+  "id": "901.524.47",
+  "name": "KVART",
+  "type_ikea": "Wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.524.47.jpg"
+  ]
+ },
+ {
+  "id": "901.638.65",
+  "name": "RSTID",
+  "type_ikea": "Floor lamp",
+  "category": "lamp",
+  "default_kind": "floor lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.638.65.jpg"
+  ]
+ },
+ {
+  "id": "902.078.07",
+  "name": "KVARTR",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.078.07.jpg"
+  ]
+ },
+ {
+  "id": "902.165.43",
+  "name": "HEKTAR",
+  "type_ikea": "Wall,clamp spotlight",
+  "category": "lamp",
+  "default_kind": "wall lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.165.43.jpg"
+  ]
+ },
+ {
+  "id": "902.387.38",
+  "name": "VITEMLLA",
+  "type_ikea": "Ceiling,wall lamp",
+  "category": "lamp",
+  "default_kind": "ceiling lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.387.38.jpg"
+  ]
+ },
+ {
+  "id": "902.807.08",
+  "name": "VARV",
+  "type_ikea": "Table lamp with wireless charging",
+  "category": "lamp",
+  "default_kind": "table lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.807.08.jpg"
+  ]
+ },
+ {
+  "id": "902.807.51",
+  "name": "SVIRVEL",
+  "type_ikea": "Work lamp",
+  "category": "lamp",
+  "default_kind": "desk lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.807.51.jpg"
+  ]
+ },
+ {
+  "id": "903.114.94",
+  "name": "IKEA PS 2014",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/903.114.94.jpg"
+  ]
+ },
+ {
+  "id": "903.259.43",
+  "name": "FOTO",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/903.259.43.jpg"
+  ]
+ },
+ {
+  "id": "090.113.96",
+  "name": "KIVIK",
+  "type_ikea": "Footstool with storage",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/090.113.96.jpg"
+  ]
+ },
+ {
+  "id": "202.017.38",
+  "name": "TROGEN",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": {
+   "width": 40.0,
+   "depth": 38.0,
+   "height": 33.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.017.38.jpg"
+  ]
+ },
+ {
+  "id": "202.634.77",
+  "name": "BOSNS",
+  "type_ikea": "Footstool with storage",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.634.77.jpg"
+  ]
+ },
+ {
+  "id": "291.292.29",
+  "name": "EKTORP",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/291.292.29.jpg"
+  ]
+ },
+ {
+  "id": "390.106.30",
+  "name": "KLIPPAN",
+  "type_ikea": "Pouffe",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/390.106.30.jpg"
+  ]
+ },
+ {
+  "id": "390.336.79",
+  "name": "STOCKSUND",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/390.336.79.jpg"
+  ]
+ },
+ {
+  "id": "403.004.26",
+  "name": "STRANDMON",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.004.26.jpg"
+  ]
+ },
+ {
+  "id": "502.666.91",
+  "name": "BOSNS",
+  "type_ikea": "Footstool with storage",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.666.91.jpg"
+  ]
+ },
+ {
+  "id": "598.847.15",
+  "name": "KIVIK",
+  "type_ikea": "Footstool with storage",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/598.847.15.jpg"
+  ]
+ },
+ {
+  "id": "691.224.38",
+  "name": "NOCKEBY",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/691.224.38.jpg"
+  ]
+ },
+ {
+  "id": "702.729.12",
+  "name": "TIMSFORS",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.729.12.jpg"
+  ]
+ },
+ {
+  "id": "702.991.91",
+  "name": "DAGARN",
+  "type_ikea": "Footstool",
+  "category": "ottoman",
+  "default_kind": "ottoman",
+  "allowed_kinds": [
+   "ottoman"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.991.91.jpg"
+  ]
+ },
+ {
+  "id": "000.114.28",
+  "name": "GRUNDTAL",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.114.28.jpg"
+  ]
+ },
+ {
+  "id": "001.165.95",
+  "name": "LIATORP",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 96.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.165.95.jpg"
+  ]
+ },
+ {
+  "id": "002.236.18",
+  "name": "HEMNES",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.236.18.jpg"
+  ]
+ },
+ {
+  "id": "002.423.58",
+  "name": "MOLGER",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 68.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.423.58.jpg"
+  ]
+ },
+ {
+  "id": "002.456.44",
+  "name": "HEMNES",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.456.44.jpg"
+  ]
+ },
+ {
+  "id": "002.785.78",
+  "name": "HYLLIS",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.785.78.jpg"
+  ]
+ },
+ {
+  "id": "003.158.87",
+  "name": "FALSTERBO",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/003.158.87.jpg"
+  ]
+ },
+ {
+  "id": "090.178.26",
+  "name": "BILLY",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/090.178.26.jpg"
+  ]
+ }
+]

@@ -1,0 +1,582 @@
+[
+ {
+  "id": "002.987.98",
+  "name": "HODDE",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/002.987.98.jpg"
+  ]
+ },
+ {
+  "id": "003.053.79",
+  "name": "FLNG",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/003.053.79.jpg"
+  ]
+ },
+ {
+  "id": "003.146.56",
+  "name": "RASKMLLE",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/003.146.56.jpg"
+  ]
+ },
+ {
+  "id": "003.232.98",
+  "name": "KATTRUP",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/003.232.98.jpg"
+  ]
+ },
+ {
+  "id": "102.035.73",
+  "name": "MORUM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/102.035.73.jpg"
+  ]
+ },
+ {
+  "id": "102.290.21",
+  "name": "BASNS",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 140.0,
+   "depth": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/102.290.21.jpg"
+  ]
+ },
+ {
+  "id": "102.290.35",
+  "name": "STOCKHOLM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/102.290.35.jpg"
+  ]
+ },
+ {
+  "id": "102.836.78",
+  "name": "RANDERUP",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 195.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/102.836.78.jpg"
+  ]
+ },
+ {
+  "id": "103.019.55",
+  "name": "MULLERUP",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/103.019.55.jpg"
+  ]
+ },
+ {
+  "id": "103.220.62",
+  "name": "BIRKET",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/103.220.62.jpg"
+  ]
+ },
+ {
+  "id": "201.901.98",
+  "name": "GSER",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/201.901.98.jpg"
+  ]
+ },
+ {
+  "id": "202.035.63",
+  "name": "MORUM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 160.0,
+   "depth": 230.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.035.63.jpg"
+  ]
+ },
+ {
+  "id": "202.279.03",
+  "name": "LAPPLJUNG",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.279.03.jpg"
+  ]
+ },
+ {
+  "id": "202.645.99",
+  "name": "RNDER",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 70.0,
+   "depth": 140.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.645.99.jpg"
+  ]
+ },
+ {
+  "id": "202.703.12",
+  "name": "OSTED",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 160.0,
+   "depth": 230.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.703.12.jpg"
+  ]
+ },
+ {
+  "id": "202.726.84",
+  "name": "UTFORSKA",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.726.84.jpg"
+  ]
+ },
+ {
+  "id": "202.852.62",
+  "name": "TILST",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 70.0,
+   "depth": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.852.62.jpg"
+  ]
+ },
+ {
+  "id": "202.962.65",
+  "name": "STICKAT",
+  "type_ikea": "Rug, braided",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.962.65.jpg"
+  ]
+ },
+ {
+  "id": "202.987.97",
+  "name": "HODDE",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/202.987.97.jpg"
+  ]
+ },
+ {
+  "id": "203.074.81",
+  "name": "LOHALS",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/203.074.81.jpg"
+  ]
+ },
+ {
+  "id": "203.146.60",
+  "name": "RISTINGE",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/203.146.60.jpg"
+  ]
+ },
+ {
+  "id": "203.323.53",
+  "name": "HEMMAHOS",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 50.0,
+   "depth": 75.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/203.323.53.jpg"
+  ]
+ },
+ {
+  "id": "301.982.93",
+  "name": "MORUM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/301.982.93.jpg"
+  ]
+ },
+ {
+  "id": "302.126.75",
+  "name": "TNUM",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 60.0,
+   "depth": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.126.75.jpg"
+  ]
+ },
+ {
+  "id": "302.225.23",
+  "name": "ALHEDE",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 80.0,
+   "depth": 150.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.225.23.jpg"
+  ]
+ },
+ {
+  "id": "302.290.77",
+  "name": "TEJN",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.290.77.jpg"
+  ]
+ },
+ {
+  "id": "302.703.16",
+  "name": "OSTED",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 195.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.703.16.jpg"
+  ]
+ },
+ {
+  "id": "302.805.13",
+  "name": "OSTED",
+  "type_ikea": "Rug, flatwoven",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 212.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.805.13.jpg"
+  ]
+ },
+ {
+  "id": "302.836.77",
+  "name": "VRBY",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 160.0,
+   "depth": 230.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.836.77.jpg"
+  ]
+ },
+ {
+  "id": "302.837.81",
+  "name": "GSER",
+  "type_ikea": "Rug, high pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 170.0,
+   "depth": 240.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.837.81.jpg"
+  ]
+ },
+ {
+  "id": "302.878.21",
+  "name": "SILLERUP",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 200.0,
+   "depth": 300.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.878.21.jpg"
+  ]
+ },
+ {
+  "id": "302.944.97",
+  "name": "FRDRUP",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.944.97.jpg"
+  ]
+ },
+ {
+  "id": "302.992.30",
+  "name": "PERSISK HAMADAN",
+  "type_ikea": "Rug, low pile",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 140.0,
+   "depth": 200.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/302.992.30.jpg"
+  ]
+ },
+ {
+  "id": "303.197.23",
+  "name": "HIMMELSK",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/303.197.23.jpg"
+  ]
+ },
+ {
+  "id": "303.323.43",
+  "name": "HEMMAHOS",
+  "type_ikea": "Rug",
+  "category": "rug",
+  "default_kind": "rug",
+  "allowed_kinds": [
+   "rug"
+  ],
+  "dimensions_cm": {
+   "width": 133.0,
+   "depth": 133.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/data/raw/ikea/images/objects/303.323.43.jpg"
+  ]
+ }
+]

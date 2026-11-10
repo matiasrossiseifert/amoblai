@@ -1,0 +1,35 @@
+{
+  "product": "002.917.68",
+  "text": "Type: black picture frame with mat\nUse: displaying photos or art prints on a wall, desk or shelf; living room, home office, hallway\nStyle: classic, contemporary, minimalist\nMaterials: frame with a matte black finish, stepped profile, white mat, clear front panel\nColors: black, white mat, grey backing\nShape: portrait rectangle with a deep stepped frame and a wide white mat around a smaller opening, crisp edges, medium visual weight\nFeel: graphic, crisp, classic, tidy\nGoes with: black and white photos, prints, white or grey walls, light wood; classic, modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.917.68",
+      "name": "GUNNABO",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "21x30 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "You can choose to frame your picture in different ways; close to the front or behind the box frame insert to add depth. And with or without the accompanying mount."
+    },
+    "photos": [
+      "2c065da0c474d73f"
+    ]
+  }
+}

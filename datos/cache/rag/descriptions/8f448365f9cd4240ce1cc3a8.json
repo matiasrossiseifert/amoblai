@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07G4ZXLC8",
+  "text": "Type: glass-door accent cabinet\nUse: displaying and storing books and decor; living room, dining room, entryway\nStyle: farmhouse, coastal, traditional\nMaterials: painted wood, glass door panels, satin nickel knobs\nColors: soft cool grey, silver\nShape: two windowpane glass doors with inner shelf, overhanging top, open lower shelf, four tapered legs, compact and fairly light\nFeel: fresh, tidy, cottage-like\nGoes with: white walls, natural wood, woven baskets, linen; farmhouse or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07G4ZXLC8",
+      "name": "Ameriwood Home Franklin 2 Door Storage Cabinet, Gray",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 39.6,
+        "height": 78.0
+      },
+      "brand": "Ameriwood Home",
+      "product_type": "CABINET",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Engineered Wood"
+      ],
+      "style": "Storage Cabinet",
+      "description": "The storage options are endless with the Ameriwood Home Franklin 2 Door Storage Cabinet Made of painted MDF and solid wood legs, the gray finish gives the Cabinet a modern feel. Glass doors feature a mullion frame for a decorative touch The top surface and lower shelf can be used to display photos, decorations, and collectibles. The adjustable shelf and fixed shelf behind the doors will keep your board games, fine china, or extra linens organized Finish your space with the entire Franklin collection (sold separately) The Storage Cabinet ships flat to your door and 2 adults are recommended to assemble. The top surface can hold 75 lbs. The shelves can each hold up to 20 lbs. Assembled dimensions: 30.7\u201dH x 31.5\u201dW x 15.6\u201dD",
+      "image_path": "e3/e3ca6e08.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "74432b631816325c"
+    ]
+  }
+}

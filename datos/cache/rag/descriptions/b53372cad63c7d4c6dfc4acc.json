@@ -1,0 +1,35 @@
+{
+  "product": "903.259.43",
+  "text": "Type: blue metal dome pendant lamp\nUse: light over a dining table, kitchen counter or desk; dining room, kitchen, home office\nStyle: retro, industrial, Scandinavian\nMaterials: glossy blue painted aluminum shade, matching ceiling cup, black cord\nColors: medium petrol blue, white shade interior, black cord\nShape: wide shallow dome shade with a stepped neck, hangs on a straight cord, simple workshop silhouette, medium visual weight\nFeel: cheerful, bold, retro, friendly\nGoes with: white walls, light wood tables, yellow or orange accents; retro, Scandinavian or industrial kitchens and dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "903.259.43",
+      "name": "FOTO",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "440d2b783cbc7d83"
+    ]
+  }
+}

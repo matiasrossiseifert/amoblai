@@ -1,0 +1,35 @@
+{
+  "product": "403.202.12",
+  "text": "Type: color block fleece throw\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: contemporary, retro, bohemian\nMaterials: soft brushed fleece, contrast blanket-stitch edging\nColors: orange, teal blue, sunny yellow, pink, red, grey stitching\nShape: rectangular throw in wide bold color blocks, dark whipstitched edges, light and soft drape\nFeel: cheerful, vibrant, cozy, playful\nGoes with: white or grey sofas, light wood, bright accents; colorful, eclectic or Scandinavian family rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "403.202.12",
+      "name": "VRSTJRNA",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "130x180 cm",
+      "colors": [
+        "Multicolour"
+      ],
+      "description": "The fleece throw feels soft against your skin and can be machine washed."
+    },
+    "photos": [
+      "29fc740fccb31d06"
+    ]
+  }
+}

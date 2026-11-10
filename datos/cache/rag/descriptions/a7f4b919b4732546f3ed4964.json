@@ -1,0 +1,35 @@
+{
+  "product": "702.068.04",
+  "text": "Type: slatted dining armchair\nUse: dining, working at a desk; dining room, kitchen, balcony\nStyle: modern, Scandinavian, contemporary\nMaterials: molded plastic with a matte textured finish\nColors: black, charcoal\nShape: low curved top rail that wraps around to form the arms, vertical back slats, flat seat, four slim splayed legs, graphic open back, light and compact\nFeel: graphic, bold, casual, modern\nGoes with: light wood or white tables, white walls, black accents; Scandinavian, industrial or modern dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "702.068.04",
+      "name": "IKEA PS 2012",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "You sit comfortably thanks to the armrests."
+    },
+    "photos": [
+      "4e3c40c00f77a543"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8W8FBV",
+  "text": "Type: milk jug stoneware vase\nUse: holding flowers or stems; living room, dining room, bedroom, on a table or shelf\nStyle: farmhouse, rustic\nMaterials: crackle-glazed stoneware, unglazed clay base\nColors: cream, warm tan clay\nShape: short wide cylinder, rounded shoulder, short wide neck, chipped glaze edge, compact\nFeel: earthy, worn, cozy\nGoes with: natural wood, linen, greenery, warm neutrals; farmhouse or rustic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B8W8FBV",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Farmhouse Milk Jug Stoneware Home Decor Flower Vase - 6.25 x 5.75 Inches, Cream and Clay",
+      "category": "deco",
+      "kind": "vase",
+      "dimensions_cm": {
+        "width": 14.6,
+        "depth": 14.6,
+        "height": 15.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "VASE",
+      "colors": [
+        "Cream and Clay"
+      ],
+      "materials": [
+        "Stoneware"
+      ],
+      "style": null,
+      "description": "At first glance it looks like an antique milk jug, but it's actually a stoneware piece sized to hold a small houseplant or freshly cut flowers. The earth-tone clay of the base also shows through the milky white glazing on the upper portion. 5.75\" Diameter x 6.25\" H Can serve as a vase for fresh cut flowers or as a small planter 100% stoneware Does not have drainage holes",
+      "image_path": "a4/a4946ea3.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "c782bde28c5975cd"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7L147Y",
+  "text": "Type: two-tier wood and metal side table\nUse: holding drinks, books or plants beside a sofa; living room\nStyle: mid-century modern, contemporary\nMaterials: walnut wood tops with organic edges, black metal legs\nColors: warm medium walnut, black\nShape: two offset organic oval tops at different heights, thin black rod legs with cross stretcher, light and open\nFeel: playful, warm, airy\nGoes with: leather, cream walls, plants, black accents; mid-century or modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7L147Y",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood and Metal 2-Tiered Side End Accent Table, 20\"W, Walnut",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 74.9,
+        "depth": 54.1,
+        "height": 50.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Walnut"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": "Modern",
+      "description": "Bring a bit of nature into your home with this striking end table. The wood is reminiscent of growth rings in trees, while simple metal legs add modern industrial style. The clever compact design gives you two tabletops in the space of one. 20.1\"W x 29\"D x 21.3\"H; Leg Height: 15.7\"H Fiberboard tops with walnut veneer; metal legs with black metal powder coat Modern industrial style with a relaxing, natural touch Compact design for small spaces Assembly in 30 minutes or less; attach base frame Free returns for 30 days. 1-year warranty.",
+      "image_path": "15/15f358a6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8dd8da279c4bf1f3"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "603.277.74",
+  "text": "Type: TV bench with sliding glass doors\nUse: holding a TV, displaying and storing media and games; living room, family room\nStyle: traditional, classic, contemporary\nMaterials: black-stained wood veneer with visible grain, tinted glass sliding doors, brass-tone recessed pulls\nColors: deep black, smoky glass, gold accents\nShape: long low cabinet with two framed glass sliding doors, small brass pulls at the ends, overhanging top with a cable slot, molded plinth base, solid and elongated, heavy visual weight\nFeel: elegant, dark, refined, formal\nGoes with: white or grey walls, brass accents, dark wood, warm rugs; classic or traditional living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "603.277.74",
+      "name": "MALSJ",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 160.0
+      },
+      "type_ikea": "TV bench with sliding doors",
+      "category_tp": "cabinet",
+      "size_raw": "160x48 cm",
+      "colors": [
+        "Black stained"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "2d94e7eef52fcb4f"
+    ]
+  }
+}

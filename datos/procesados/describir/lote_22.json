@@ -1,0 +1,678 @@
+[
+ {
+  "id": "100.937.63",
+  "name": "RNNSKR",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/100.937.63.jpg"
+  ]
+ },
+ {
+  "id": "101.665.75",
+  "name": "IVAR",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 83.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.665.75.jpg"
+  ]
+ },
+ {
+  "id": "191.195.27",
+  "name": "EKBY STEN,EKBY HENSVIK",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/191.195.27.jpg"
+  ]
+ },
+ {
+  "id": "199.296.45",
+  "name": "EKBY JRPEN,EKBY BJRNUM",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/199.296.45.jpg"
+  ]
+ },
+ {
+  "id": "201.286.96",
+  "name": "STUVA GRUNDLIG",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 56.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/201.286.96.jpg"
+  ]
+ },
+ {
+  "id": "202.133.12",
+  "name": "VITTSJ",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 100.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.133.12.jpg"
+  ]
+ },
+ {
+  "id": "202.693.61",
+  "name": "LIATORP",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 96.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.693.61.jpg"
+  ]
+ },
+ {
+  "id": "202.758.14",
+  "name": "KALLAX",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 77.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.758.14.jpg"
+  ]
+ },
+ {
+  "id": "202.796.09",
+  "name": "VALJE",
+  "type_ikea": "Shelf unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 100.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.796.09.jpg"
+  ]
+ },
+ {
+  "id": "202.917.67",
+  "name": "MOSSLANDA",
+  "type_ikea": "Picture ledge",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 55.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.917.67.jpg"
+  ]
+ },
+ {
+  "id": "203.002.86",
+  "name": "KALLAX",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 77.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.002.86.jpg"
+  ]
+ },
+ {
+  "id": "203.022.85",
+  "name": "BRUSALI",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 67.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.022.85.jpg"
+  ]
+ },
+ {
+  "id": "302.176.54",
+  "name": "HEMNES",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.176.54.jpg"
+  ]
+ },
+ {
+  "id": "302.197.09",
+  "name": "GRUNDTAL",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 25.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.197.09.jpg"
+  ]
+ },
+ {
+  "id": "302.522.80",
+  "name": "GAMLEBY",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.522.80.jpg"
+  ]
+ },
+ {
+  "id": "302.530.67",
+  "name": "RGRUND",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 33.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.530.67.jpg"
+  ]
+ },
+ {
+  "id": "390.477.04",
+  "name": "EKBY HEMNES,EKBY HLL",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/390.477.04.jpg"
+  ]
+ },
+ {
+  "id": "398.647.80",
+  "name": "EKBY JRPEN,EKBY VALTER",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/398.647.80.jpg"
+  ]
+ },
+ {
+  "id": "399.266.79",
+  "name": "EKBY HEMNES,EKBY VALTER",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/399.266.79.jpg"
+  ]
+ },
+ {
+  "id": "399.325.38",
+  "name": "FJLKINGE",
+  "type_ikea": "Shelving unit with drawers",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 236.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/399.325.38.jpg"
+  ]
+ },
+ {
+  "id": "401.665.74",
+  "name": "IVAR",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.665.74.jpg"
+  ]
+ },
+ {
+  "id": "401.777.18",
+  "name": "LIMHAMN",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/401.777.18.jpg"
+  ]
+ },
+ {
+  "id": "402.467.74",
+  "name": "HJLMAREN",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 190.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.467.74.jpg"
+  ]
+ },
+ {
+  "id": "402.797.31",
+  "name": "BOTKYRKA",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.797.31.jpg"
+  ]
+ },
+ {
+  "id": "402.917.66",
+  "name": "MOSSLANDA",
+  "type_ikea": "Picture ledge",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 55.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.917.66.jpg"
+  ]
+ },
+ {
+  "id": "403.034.39",
+  "name": "VITTSJ",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 100.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.034.39.jpg"
+  ]
+ },
+ {
+  "id": "490.473.17",
+  "name": "VALJE",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/490.473.17.jpg"
+  ]
+ },
+ {
+  "id": "502.176.53",
+  "name": "HEMNES",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.176.53.jpg"
+  ]
+ },
+ {
+  "id": "502.216.88",
+  "name": "FJLKINGE",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 58.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.216.88.jpg"
+  ]
+ },
+ {
+  "id": "502.638.38",
+  "name": "BILLY",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 40.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.638.38.jpg"
+  ]
+ },
+ {
+  "id": "502.994.08",
+  "name": "BRICKAN",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 33.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.994.08.jpg"
+  ]
+ },
+ {
+  "id": "503.233.85",
+  "name": "KALLAX",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 77.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/503.233.85.jpg"
+  ]
+ },
+ {
+  "id": "591.553.30",
+  "name": "BILLY,OXBERG",
+  "type_ikea": "Bookcase",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/591.553.30.jpg"
+  ]
+ },
+ {
+  "id": "600.937.65",
+  "name": "RNNSKR",
+  "type_ikea": "Corner shelf unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/600.937.65.jpg"
+  ]
+ },
+ {
+  "id": "601.392.35",
+  "name": "STENSTORP",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/601.392.35.jpg"
+  ]
+ },
+ {
+  "id": "601.665.73",
+  "name": "IVAR",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/601.665.73.jpg"
+  ]
+ },
+ {
+  "id": "602.236.20",
+  "name": "HEMNES",
+  "type_ikea": "Shelving unit",
+  "category": "shelf",
+  "default_kind": "bookcase",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 42.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.236.20.jpg"
+  ]
+ },
+ {
+  "id": "602.510.38",
+  "name": "EKBY JRPEN",
+  "type_ikea": "Shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.510.38.jpg"
+  ]
+ },
+ {
+  "id": "690.481.70",
+  "name": "EKBY TONY,EKBY BJRNUM",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 119.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/690.481.70.jpg"
+  ]
+ },
+ {
+  "id": "701.036.22",
+  "name": "LACK",
+  "type_ikea": "Wall shelf",
+  "category": "shelf",
+  "default_kind": "wall shelf",
+  "allowed_kinds": [
+   "bookcase",
+   "wall shelf"
+  ],
+  "dimensions_cm": {
+   "width": 30.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/701.036.22.jpg"
+  ]
+ }
+]

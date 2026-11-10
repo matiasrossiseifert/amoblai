@@ -1,0 +1,47 @@
+{
+  "product": "abo-B084XMW9JL",
+  "text": "Type: three-seat fabric sofa\nUse: sitting, lounging; living room, home office\nStyle: contemporary, modern, classic\nMaterials: woven fabric upholstery, contrast fabric trim, wood legs\nColors: dark brown, beige trim, warm brown legs\nShape: rolled arms with beige contrast band, tight back, single seat, beige base stripe, three beige cushions, turned tapered legs, slim and low\nFeel: warm, tidy, inviting\nGoes with: light grey walls, beige rugs, mid wood; modern living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B084XMW9JL",
+      "name": "Amazon Brand - Solimo Houstan Fabric 3 Seater Sofa (Beige & Brown)",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 185.4,
+        "depth": 76.2,
+        "height": 79.4
+      },
+      "brand": "Amazon Brand - Solimo",
+      "product_type": "SOFA",
+      "colors": [
+        "Beige & Brown"
+      ],
+      "materials": [
+        "Fabric"
+      ],
+      "style": "Modern",
+      "description": "Three-seater sofa made from high-quality leatherette and fabric in brown color Product Dimensions: Length (71 inch), width (30 inch), height (31 inch) Over 30 tests conducted to ensure quality Fabric does not lose color while rubbing Passed durability testing with 100 kg on each seat and backrest for 25,000 cycles Meets Indian Standards IS 12674/ IS 5416 for performance and stringent European Safety Requirement Standard EN 12520 Warranty on manufacturing defects: 3 years Lightweight for easy shifting Good ground clearance for easy cleaning below the sofa Free from toxins and harmful chemicals like formaldehyde and AZO Dye Please note: Sofa is delivered with the legs in a detached condition. The legs are packed in a separate package and will be installed during assembly",
+      "image_path": "2c/2cc97ebe.jpg",
+      "image_px": [
+        2200,
+        2200
+      ]
+    },
+    "photos": [
+      "8c766f1ffa2266d1"
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+[
+ {
+  "id": "902.607.10",
+  "name": "ALEX",
+  "type_ikea": "Desk",
+  "category": "desk",
+  "default_kind": "desk",
+  "allowed_kinds": [
+   "desk"
+  ],
+  "dimensions_cm": {
+   "width": 131.0,
+   "depth": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.607.10.jpg"
+  ]
+ },
+ {
+  "id": "902.782.77",
+  "name": "LILLSEN",
+  "type_ikea": "Desk",
+  "category": "desk",
+  "default_kind": "desk",
+  "allowed_kinds": [
+   "desk"
+  ],
+  "dimensions_cm": {
+   "width": 102.0,
+   "depth": 49.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.782.77.jpg"
+  ]
+ },
+ {
+  "id": "001.033.43",
+  "name": "MALM",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 40.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.033.43.jpg"
+  ]
+ },
+ {
+  "id": "002.691.40",
+  "name": "OPPLAND",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.691.40.jpg"
+  ]
+ },
+ {
+  "id": "002.822.31",
+  "name": "NORNS",
+  "type_ikea": "Chest of 4 drawers,2 compartments",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 108.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.822.31.jpg"
+  ]
+ },
+ {
+  "id": "102.691.54",
+  "name": "OPPLAND",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.691.54.jpg"
+  ]
+ },
+ {
+  "id": "202.290.11",
+  "name": "BUSUNGE",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.290.11.jpg"
+  ]
+ },
+ {
+  "id": "202.471.90",
+  "name": "HEMNES",
+  "type_ikea": "Chest of 5 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 57.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.471.90.jpg"
+  ]
+ },
+ {
+  "id": "202.527.42",
+  "name": "BRUSALI",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 51.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.527.42.jpg"
+  ]
+ },
+ {
+  "id": "202.708.02",
+  "name": "ASKVOLL",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 70.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.708.02.jpg"
+  ]
+ },
+ {
+  "id": "202.805.99",
+  "name": "TARVA",
+  "type_ikea": "Chest of 5 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 39.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.805.99.jpg"
+  ]
+ },
+ {
+  "id": "202.937.14",
+  "name": "TYSSEDAL",
+  "type_ikea": "Chest of 6 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 127.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.937.14.jpg"
+  ]
+ },
+ {
+  "id": "302.527.46",
+  "name": "BRUSALI",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.527.46.jpg"
+  ]
+ },
+ {
+  "id": "302.937.42",
+  "name": "UNDREDAL",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 87.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.937.42.jpg"
+  ]
+ },
+ {
+  "id": "303.113.12",
+  "name": "MALM",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.113.12.jpg"
+  ]
+ },
+ {
+  "id": "390.288.90",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 9 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/390.288.90.jpg"
+  ]
+ },
+ {
+  "id": "402.392.74",
+  "name": "HEMNES",
+  "type_ikea": "Chest of 8 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.392.74.jpg"
+  ]
+ },
+ {
+  "id": "402.426.29",
+  "name": "HEMNES",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 108.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.426.29.jpg"
+  ]
+ },
+ {
+  "id": "402.708.20",
+  "name": "ASKVOLL",
+  "type_ikea": "Chest of 5 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 45.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.708.20.jpg"
+  ]
+ },
+ {
+  "id": "403.152.96",
+  "name": "MALM",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/403.152.96.jpg"
+  ]
+ },
+ {
+  "id": "490.212.04",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 7 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/490.212.04.jpg"
+  ]
+ },
+ {
+  "id": "490.289.03",
+  "name": "STUVA",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/490.289.03.jpg"
+  ]
+ },
+ {
+  "id": "502.214.19",
+  "name": "TARVA",
+  "type_ikea": "Chest of 5 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.214.19.jpg"
+  ]
+ },
+ {
+  "id": "502.261.29",
+  "name": "BRIMNES",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.261.29.jpg"
+  ]
+ },
+ {
+  "id": "590.272.67",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 8 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/590.272.67.jpg"
+  ]
+ },
+ {
+  "id": "602.290.14",
+  "name": "BUSUNGE",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/602.290.14.jpg"
+  ]
+ },
+ {
+  "id": "603.057.05",
+  "name": "BUSUNGE",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/603.057.05.jpg"
+  ]
+ },
+ {
+  "id": "690.211.61",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 6 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 40.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/690.211.61.jpg"
+  ]
+ },
+ {
+  "id": "690.211.75",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/690.211.75.jpg"
+  ]
+ },
+ {
+  "id": "702.937.16",
+  "name": "TYSSEDAL",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 87.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.937.16.jpg"
+  ]
+ },
+ {
+  "id": "702.937.40",
+  "name": "UNDREDAL",
+  "type_ikea": "Chest of 2 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 57.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/702.937.40.jpg"
+  ]
+ },
+ {
+  "id": "801.033.44",
+  "name": "MALM",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/801.033.44.jpg"
+  ]
+ },
+ {
+  "id": "802.180.24",
+  "name": "BRIMNES",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.180.24.jpg"
+  ]
+ },
+ {
+  "id": "901.452.68",
+  "name": "IVAR",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/901.452.68.jpg"
+  ]
+ },
+ {
+  "id": "902.196.12",
+  "name": "TARVA",
+  "type_ikea": "Chest of 3 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 79.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.196.12.jpg"
+  ]
+ },
+ {
+  "id": "902.691.50",
+  "name": "OPPLAND",
+  "type_ikea": "Chest of 3 drawers,1 door",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.691.50.jpg"
+  ]
+ },
+ {
+  "id": "902.727.27",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 4 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 48.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.727.27.jpg"
+  ]
+ },
+ {
+  "id": "990.212.87",
+  "name": "NORDLI",
+  "type_ikea": "Chest of 6 drawers",
+  "category": "dresser",
+  "default_kind": "dresser",
+  "allowed_kinds": [
+   "dresser"
+  ],
+  "dimensions_cm": {
+   "width": 120.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/990.212.87.jpg"
+  ]
+ },
+ {
+  "id": "000.379.80",
+  "name": "MELODI",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/000.379.80.jpg"
+  ]
+ },
+ {
+  "id": "001.258.11",
+  "name": "FOTO",
+  "type_ikea": "Pendant lamp",
+  "category": "lamp",
+  "default_kind": "pendant lamp",
+  "allowed_kinds": [
+   "pendant lamp",
+   "ceiling lamp",
+   "floor lamp",
+   "table lamp",
+   "desk lamp",
+   "wall lamp"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/001.258.11.jpg"
+  ]
+ }
+]

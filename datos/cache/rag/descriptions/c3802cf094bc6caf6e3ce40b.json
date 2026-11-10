@@ -1,0 +1,39 @@
+{
+  "product": "590.474.06",
+  "text": "Type: low two-door storage cabinet\nUse: storing media, games, dishes and books behind doors; living room, dining room, home office\nStyle: minimalist, contemporary, modern\nMaterials: high-gloss lacquered door fronts, white laminated board body, small plastic feet\nColors: glossy off-white, warm white\nShape: long low rectangular box with two flush handleless doors, crisp square edges, tiny feet, clean unbroken front, sleek and compact, medium visual weight\nFeel: sleek, bright, clean, calm\nGoes with: light or dark wood, grey sofas, black or chrome accents; modern, minimalist or Scandinavian living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "590.474.06",
+      "name": "BEST",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 120.0
+      },
+      "type_ikea": "Shelf unit with doors",
+      "category_tp": "cabinet",
+      "size_raw": "120x40x64 cm",
+      "colors": [
+        "White",
+        "selsviken high-gloss",
+        "white"
+      ],
+      "description": "May be completed with knobs or handles. Sold separately. Drill template for marking of hole positions for handles or knobs is sold separately. View more product information A simple unit can be enough storage for a limited space or the foundation for a larger storage solution if your needs change."
+    },
+    "photos": [
+      "344d3da8d57de5b9"
+    ]
+  }
+}

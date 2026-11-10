@@ -1,0 +1,35 @@
+{
+  "product": "701.162.62",
+  "text": "Type: extendable rectangular dining table\nUse: dining, hosting extra guests; dining room, kitchen\nStyle: modern, minimalist, traditional\nMaterials: black-brown stained wood veneer, solid wood legs, pull-out extension leaves\nColors: black-brown, dark espresso\nShape: rectangular top with a deep apron and a visible extension seam, four straight square legs, solid and plain, medium visual weight\nFeel: sturdy, calm, dark, versatile\nGoes with: white or beige chairs, light walls, black or chrome accents; modern or classic family dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "701.162.62",
+      "name": "BJURSTA",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Extendable table",
+      "category_tp": "table",
+      "size_raw": "175,218,260x95 cm",
+      "colors": [
+        "Brown-black"
+      ],
+      "description": "2 extension leaves included."
+    },
+    "photos": [
+      "612af75acc85c3f8"
+    ]
+  }
+}

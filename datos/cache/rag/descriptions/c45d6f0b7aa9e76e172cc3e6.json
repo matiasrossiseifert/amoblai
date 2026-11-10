@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07QGHVVJW",
+  "text": "Type: low flush-mount ceiling light\nUse: general ceiling light; bedroom, hallway, living room, home office\nStyle: contemporary, classic, minimalist\nMaterials: frosted white glass diffuser, brushed nickel metal rim\nColors: soft white, cool silver\nShape: shallow round dome of frosted glass under a wide stepped metal band, very low profile, sits flat to the ceiling, unobtrusive\nFeel: clean, bright, simple\nGoes with: white or grey walls, chrome and nickel accents, light wood; contemporary or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QGHVVJW",
+      "name": "Ravenna Home Casual Flush Mount, 3\"H, Brushed Nickel",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": {
+        "width": 36.8,
+        "depth": 10.2,
+        "height": 36.8
+      },
+      "brand": "Ravenna Home",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Brushed Nickel"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "11\"W x 11\"D x 3\"H This casual design ceiling light fixture is flush mounted and combines modern beauty and function. 23-watt, 1100-lumen flickering bulb; dimmable with triac dimmer switch Assemble in 15-30 minutes Damp rated",
+      "image_path": "4a/4a7d6c99.jpg",
+      "image_px": [
+        2560,
+        971
+      ]
+    },
+    "photos": [
+      "e06e42bdc1d66f42"
+    ]
+  }
+}

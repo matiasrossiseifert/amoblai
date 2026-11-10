@@ -1,0 +1,39 @@
+{
+  "product": "602.611.55",
+  "text": "Type: rectangular coffee table with open shelves\nUse: holding books, magazines and drinks; living room\nStyle: mid-century modern, retro, contemporary\nMaterials: brown wood-veneer finish, tempered glass top, solid wood tapered legs\nColors: dark walnut brown, clear glass\nShape: low long box with two open compartments under a glass top, raised on four splayed tapered legs with a stretcher frame, medium visual weight\nFeel: warm, refined, vintage, orderly\nGoes with: walnut or teak, mustard or olive textiles, brass accents; mid-century or retro living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.611.55",
+      "name": "REGISSR",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 118.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "118x60 cm",
+      "colors": [
+        "Brown",
+        "glass"
+      ],
+      "description": "The embossed grain surface in the poplar veneer enhances the wood feeling and gives each piece of furniture its own unique character."
+    },
+    "photos": [
+      "b86e999847d7247f"
+    ]
+  }
+}

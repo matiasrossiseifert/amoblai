@@ -1,0 +1,35 @@
+{
+  "product": "602.863.87",
+  "text": "Type: colorful geometric lumbar cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: mid-century modern, contemporary, retro\nMaterials: woven cotton with pieced or printed color blocks, zipper\nColors: plum purple, teal, orange, mustard, sand beige, white\nShape: rectangular cushion with overlapping diagonal bands and stripes of color, bold asymmetric abstract layout, plain edges, medium size\nFeel: lively, bold, graphic\nGoes with: grey or navy sofas, walnut wood, mustard or teal accents; mid-century modern or retro living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "602.863.87",
+      "name": "LUKTASTER",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion cover",
+      "category_tp": "deco",
+      "size_raw": "40x65 cm",
+      "colors": [
+        "Multicolour"
+      ],
+      "description": "Cotton velvet gives depth to the colour and softness to the touch."
+    },
+    "photos": [
+      "07904653e3667262"
+    ]
+  }
+}

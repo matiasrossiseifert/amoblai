@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0768STTR7",
+  "text": "Type: nesting side tables, set of two\nUse: holding drinks, lamps or plants beside a sofa or chair; living room, bedroom, home office\nStyle: industrial, rustic, modern\nMaterials: weathered wood top, black metal frame\nColors: grey-brown weathered wood, black\nShape: rectangular tops on slim open black metal frames, smaller table nests under the taller one, tall and narrow, light and open\nFeel: rugged, practical, slim\nGoes with: leather, black metal, reclaimed wood, brick or grey walls; industrial or loft rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0768STTR7",
+      "name": "Amazon Brand \u2013 Stone & Beam Weston Wood & Metal Nesting Tables, Set of 2, Brown",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 45.0,
+        "depth": 30.0,
+        "height": 60.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "TABLE",
+      "colors": [
+        "Black & Rustic Stain"
+      ],
+      "materials": [
+        "Wood & Metal"
+      ],
+      "style": null,
+      "description": "Together or apart, these handsome wood and metal nesting tables will serve you well. Use side by side as coffee tables or as end tables on either side of a sofa or bed. Stored together, they're a great space-saving solution. Large table: 17.7\"W x 11.8\"D x 23.8\"H; Small table: 11.8\"W x 9.8\"D x 21.9\"H Solid fir wood top; metal frame with black finish Modern design with classic wood finish for a transitional look Use side by side as coffee tables, or as end tables No assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "01/01163a26.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "5728dd5076c1074a"
+    ]
+  }
+}

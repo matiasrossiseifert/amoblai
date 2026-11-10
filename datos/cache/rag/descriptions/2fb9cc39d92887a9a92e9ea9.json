@@ -1,0 +1,43 @@
+{
+  "product": "abo-B001BQ8J2S",
+  "text": "Type: square dining table with glass inset\nUse: dining, gathering; dining room\nStyle: contemporary, modern, minimalist\nMaterials: dark wood veneer top, frosted glass center panel, wood frame base\nColors: dark espresso brown, frosted white\nShape: square top with recessed frosted glass center, open cube-shaped pedestal base, low and solid\nFeel: refined, grounded, calm\nGoes with: cream or grey walls, upholstered chairs, dark wood; modern dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B001BQ8J2S",
+      "name": "Pinzon Capitola Center Glass Dining Table",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "TABLE",
+      "colors": [
+        "Cosmo"
+      ],
+      "materials": [
+        "glass"
+      ],
+      "style": null,
+      "description": "Beautiful, eye-catching dining table is durably crafted and versatile Solid birch frame and ash veneer top have a warm brown Cosmo finish Frosted glass inset measures 22-3/4 inches square; table holds up to 200 pounds Coordinates with the Pinzon Capitola Dining Collection Measures 60 inches wide by 60 inches deep by 30 inches high",
+      "image_path": "e1/e1eeaf84.jpg",
+      "image_px": [
+        1822,
+        1638
+      ]
+    },
+    "photos": [
+      "17a236ab70212d43"
+    ]
+  }
+}

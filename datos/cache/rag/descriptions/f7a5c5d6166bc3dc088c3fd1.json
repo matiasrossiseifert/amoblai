@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07ML7JSH1",
+  "text": "Type: paisley jacquard throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: traditional, classic\nMaterials: woven jacquard fabric\nColors: medium grey, light silver grey\nShape: square, large all-over tonal paisley pattern with fine floral detail, subtle sheen, knife edges, compact\nFeel: elegant, soft, refined, calm\nGoes with: grey, white or navy sofas, dark wood, silver accents; traditional or transitional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07ML7JSH1",
+      "name": "Amazon Brand \u2013 Ravenna Home Classic Paisley Throw Pillow - 17 x 17 Inch, Grey",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 14.0
+      },
+      "brand": "Ravenna Home",
+      "product_type": "PILLOW",
+      "colors": [
+        "Gray"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Cover: 100% polyester, Stuffing: 100% polyester Made in the United States of imported materials 17\"L x 17\"W The beautiful paisley pattern featured on the front and back of this pillow can bring a touch of sophistication to your space. Spot clean. Put in dryer on low heat for 20 minutes to release wrinkles, or use garment steamer. Do not iron.",
+      "image_path": "59/595ab495.jpg",
+      "image_px": [
+        2407,
+        2359
+      ]
+    },
+    "photos": [
+      "54721009163fea76"
+    ]
+  }
+}

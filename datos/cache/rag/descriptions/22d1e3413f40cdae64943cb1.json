@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07PXFVNXR",
+  "text": "Type: white five-drawer chest\nUse: storing clothes; bedroom\nStyle: minimalist, contemporary, modern\nMaterials: laminated engineered wood, white plastic pulls\nColors: bright white\nShape: tall rectangular case, five equal flat drawers, curved arched handles, short bracket feet, clean and compact\nFeel: clean, simple, fresh\nGoes with: light wood floors, pastel or grey walls, light textiles; small modern or minimalist bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07PXFVNXR",
+      "name": "Ameriwood Home Classic 5 Drawer Dresser, White",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 70.4,
+        "depth": 39.8,
+        "height": 125.4
+      },
+      "brand": "Ameriwood Home",
+      "product_type": "DRESSER",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Engineered Wood"
+      ],
+      "style": "5 Drawer Dresser",
+      "description": "Material Type: Engineered Wood",
+      "image_path": "19/19196356.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "a756cba299a81b58"
+    ]
+  }
+}

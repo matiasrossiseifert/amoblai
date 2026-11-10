@@ -1,0 +1,36 @@
+{
+  "product": "402.364.78",
+  "text": "Type: round pink tufted cushion\nUse: on a sofa, an armchair, a bed or the floor; bedroom, living room\nStyle: retro, glam, bohemian\nMaterials: soft plush velour fabric, embroidered rose button at the center\nColors: pale pink, black dots, red and green rose\nShape: round pouf-like cushion gathered into deep pleats toward a center tuft, covered in small black polka dots, thick and plump\nFeel: sweet, playful, soft, romantic\nGoes with: white or blush textiles, light wood, brass accents; romantic bedrooms, retro or glam rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.364.78",
+      "name": "ROSIG",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "35 cm",
+      "colors": [
+        "Dotted",
+        "pink"
+      ],
+      "description": "The cushion has decorative embroidery."
+    },
+    "photos": [
+      "5ffafd4bb9c12e4b"
+    ]
+  }
+}

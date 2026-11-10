@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07J29N3R4",
+  "text": "Type: lift-top coffee table\nUse: holding drinks, eating or working from the sofa, storage; living room\nStyle: traditional, contemporary, classic\nMaterials: wood composite with a smooth espresso wood-grain finish\nColors: warm reddish dark brown\nShape: rectangular top that lifts up, deep apron, open lower shelf split in two cubbies, square tapered legs, medium and solid\nFeel: practical, warm, homely\nGoes with: beige or grey sofas, cream walls, warm wood; traditional or family living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07J29N3R4",
+      "name": "AmazonBasics Lift-top Coffee Table, Espresso",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 48.3,
+        "height": 45.7
+      },
+      "brand": "AmazonBasics",
+      "product_type": "TABLE",
+      "colors": [
+        "Espresso"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Transitional",
+      "description": "Coffee table with top that lifts to create a sturdy, raised work surface; ideal for a living room, family room, or office Hidden storage space beneath the lift-up top\u2014plenty of room for a throw blanket, remote controls, board games, and more Made of sturdy wood with an Espresso finish; finished on all sides, which allows for versatile placement Open shelves below offer added storage and display space Measures 40 by 18 by 19 inches (LxWxH); weighs 39 pounds; backed by an AmazonBasics 1-year limited warranty",
+      "image_path": "b7/b73aa14a.jpg",
+      "image_px": [
+        2560,
+        1556
+      ]
+    },
+    "photos": [
+      "0c6fac3c9fa77f10"
+    ]
+  }
+}

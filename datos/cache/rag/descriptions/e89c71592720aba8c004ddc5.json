@@ -1,0 +1,37 @@
+{
+  "product": "402.397.21",
+  "text": "Type: walnut veneer sideboard\nUse: storing tableware, linens or media, a surface for lamps and decor; dining room, living room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer with a fine vertical grain, solid wood legs and base frame\nColors: medium warm walnut brown\nShape: long low cabinet with a row of flush doors, set on a slim wooden base with four square legs and a long stretcher, clean edges, substantial yet lifted\nFeel: warm, refined, calm, timeless\nGoes with: cream or white walls, brass lamps, green plants, wool rugs; mid-century modern or Scandinavian dining and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.397.21",
+      "name": "STOCKHOLM",
+      "category": "cabinet",
+      "kind": "sideboard",
+      "dimensions_cm": {
+        "width": 160.0
+      },
+      "type_ikea": "Sideboard",
+      "category_tp": "cabinet",
+      "size_raw": "160x81 cm",
+      "colors": [
+        "Walnut veneer"
+      ],
+      "description": "The sideboard in walnut veneer and solid ash brings a warm, natural feeling to your room."
+    },
+    "photos": [
+      "dd4e7f675c2b6cce"
+    ]
+  }
+}

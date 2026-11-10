@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMWRX5",
+  "text": "Type: adjustable swivel counter stool\nUse: seating at a counter or bar; kitchen, dining room\nStyle: industrial, rustic, farmhouse\nMaterials: solid wood saddle seat, black distressed metal frame, exposed screw mechanism\nColors: medium warm brown wood, black\nShape: backless contoured tractor-style seat, central screw post, four curved splayed legs, round foot ring, compact and open\nFeel: rugged, warm, vintage\nGoes with: reclaimed wood, concrete, black metal, brick; industrial or farmhouse kitchens\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YMWRX5",
+      "name": "Amazon Brand \u2013 Stone & Beam Industrial Swivel Kitchen Dining Room Counter/Bar Stool, Adjustable 26 Inch-30 Inch Height, Brown Wood",
+      "category": "stool",
+      "kind": "bar stool",
+      "dimensions_cm": {
+        "width": 45.1,
+        "depth": 45.1,
+        "height": 66.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "This barstool is high-style industrial and versatile as well. The seat adjusts from counter height to bar height with a few simple turns. Natural color variations in the wood seat make each one uniquely beautiful. The base is made of durable metal. 17.75\" Diameter. Height adusts from 26\"-30.\" Solid wood and metal Adjustable height allows this stool to work with a counter or bar Assemble in 15-30 minutes. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "d0/d0be0b93.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "65a44ea03332bba5"
+    ]
+  }
+}

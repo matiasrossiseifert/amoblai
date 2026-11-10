@@ -1,0 +1,39 @@
+{
+  "product": "abo-B00DCQCCX2",
+  "text": "Type: reversible jersey plush throw\nUse: warmth on a sofa or bed; living room, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: heathered jersey knit on one side, velvet plush on the other, bound edges\nColors: heather grey, dark charcoal grey\nShape: plain rectangular throw, two-tone reversible faces, smooth surface, neat bound border, light and soft\nFeel: calm, casual, cozy\nGoes with: grey, white, black and light wood; modern, minimalist or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B00DCQCCX2",
+      "name": "Pinzon Reversible Velvet Plush Jersey Throw",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "Cotton/polyester blend Great for the student heading to college 6 fashions colors Easy care, machine wash and dry",
+      "image_path": "6d/6de16e0e.jpg",
+      "image_px": [
+        2560,
+        1417
+      ]
+    },
+    "photos": [
+      "50df4ddec96584fc"
+    ]
+  }
+}

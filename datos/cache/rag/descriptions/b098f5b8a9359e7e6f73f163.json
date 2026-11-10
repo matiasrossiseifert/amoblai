@@ -1,0 +1,37 @@
+{
+  "product": "101.556.71",
+  "text": "Type: galvanized steel plant pot\nUse: holding a potted plant or herbs on a windowsill, shelf or floor; kitchen, living room, balcony\nStyle: industrial, farmhouse, rustic\nMaterials: galvanized steel with a shiny metallic finish\nColors: silver grey metal\nShape: round bucket-like pot tapering toward the base, rolled rim, ribbed horizontal grooves around the body, compact and light\nFeel: practical, fresh, casual, utilitarian\nGoes with: green plants, raw wood, white walls, terracotta; industrial, farmhouse or rustic rooms and balconies\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "101.556.71",
+      "name": "SOCKER",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "12 cm",
+      "colors": [
+        "In",
+        "outdoor",
+        "galvanised"
+      ],
+      "description": "The plant pot is galvanised to protect against corrosion."
+    },
+    "photos": [
+      "afde4a1e72dc4f46"
+    ]
+  }
+}

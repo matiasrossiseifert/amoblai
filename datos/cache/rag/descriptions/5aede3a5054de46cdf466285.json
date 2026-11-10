@@ -1,0 +1,39 @@
+{
+  "product": "602.035.80",
+  "text": "Type: flatwoven runner rug\nUse: covering a narrow floor area, hallways and beside beds or counters; hallway, entryway, kitchen, bedroom\nStyle: minimalist, Scandinavian, coastal\nMaterials: flatwoven fibre with a fine basket-weave texture\nColors: light warm beige, taupe\nShape: long rectangle, flat and thin, solid tone with a subtle woven dot texture, clean straight edges, slim\nFeel: calm, light, understated\nGoes with: white walls, light wood, rattan, linen; Scandinavian, coastal or minimalist rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.035.80",
+      "name": "MORUM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x200 cm",
+      "colors": [
+        "In",
+        "outdoor beige"
+      ],
+      "description": "The rug is perfect for outdoor use since it is made to withstand rain, sun, snow and dirt."
+    },
+    "photos": [
+      "f37f7bd5ed6683ce"
+    ]
+  }
+}

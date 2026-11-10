@@ -1,0 +1,47 @@
+{
+  "product": "abo-B071PB2H8H",
+  "text": "Type: large traditional area rug\nUse: anchoring a living area; living room, dining room, bedroom\nStyle: traditional, bohemian, classic\nMaterials: low pile woven fibers, fringed ends\nColors: burgundy red, warm tan, ivory, blue and green accents\nShape: large rectangle, central diamond medallion on tan field, red corners, wide decorative tribal border, fringe\nFeel: warm, rich, inviting\nGoes with: wood floors, light grey sofas, warm woods; traditional or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B071PB2H8H",
+      "name": "Amazon Brand \u2013 Stone & Beam Traditional Regal Adornment Rug, 8' x 10', Burgundy",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 305.6,
+        "depth": 244.6,
+        "height": 0.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Burgundy"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Traditional",
+      "description": "Pile: 100% Polypropylene, Backing: 100% Cotton Imported This traditional-style rug features beautiful reds, blues and greens against a tan background. Made of materials designed to resist stains, fading and static, this rug looks vintage but is low maintenance and ideal for a busy room in your home. Classic style with modern materials Machine made in Turkey. 100% polypropylene. Classic, time-tested look with durability for high-traffic areas 8' x 10' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow up to a week for synthetic fibers to settle",
+      "image_path": "ce/ce888e82.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "09f98b267a3ae937"
+    ]
+  }
+}

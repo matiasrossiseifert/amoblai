@@ -1,0 +1,35 @@
+{
+  "product": "203.031.19",
+  "text": "Type: nickel table lamp with fabric shade\nUse: reading and mood light on a side table, nightstand or desk; living room, bedroom, home office\nStyle: classic, contemporary, traditional\nMaterials: nickel-plated metal stem and ring base, white fabric shade, pull-cord switch\nColors: white, brushed silver nickel\nShape: tapered empire shade on a slim adjustable stem, open ring-shaped base with a crossbar, small pull cord, medium height, light visual weight\nFeel: elegant, calm, homey, timeless\nGoes with: dark or light wood, white or grey walls, silver accents; classic, traditional or contemporary bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.031.19",
+      "name": "NYFORS",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated white"
+      ],
+      "description": "You can create a soft, cosy atmosphere in your home with a textile shade that spreads a diffused and decorative light."
+    },
+    "photos": [
+      "2d753292a4e26793"
+    ]
+  }
+}

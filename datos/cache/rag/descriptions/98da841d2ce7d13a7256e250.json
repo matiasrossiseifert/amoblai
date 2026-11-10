@@ -1,0 +1,35 @@
+{
+  "product": "203.097.67",
+  "text": "Type: tall smoked glass bottle vase\nUse: holding single stems or dried branches on a table, shelf or sideboard; living room, dining room\nStyle: Scandinavian, minimalist, modern\nMaterials: tinted glass, heavy clear base\nColors: smoky grey, darker charcoal at the base, translucent\nShape: tall cylindrical bottle with rounded shoulders, narrow neck and rolled flared lip, gradient tint that deepens toward the bottom, slim and elegant\nFeel: calm, sleek, moody, refined\nGoes with: dried grasses, eucalyptus, light or dark wood, concrete and linen; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "203.097.67",
+      "name": "TGNG",
+      "category": "deco",
+      "kind": "vase",
+      "dimensions_cm": null,
+      "type_ikea": "Vase",
+      "category_tp": "deco",
+      "size_raw": "26 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The glass vase is mouth blown by a skilled craftsperson."
+    },
+    "photos": [
+      "2f0d40b3e3002a18"
+    ]
+  }
+}

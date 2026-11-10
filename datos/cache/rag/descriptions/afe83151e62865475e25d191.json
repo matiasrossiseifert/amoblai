@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075Z8HXFM",
+  "text": "Type: floral traditional runner rug\nUse: covering a hallway or bedside floor; hallway, bedroom, living room\nStyle: traditional, classic, bohemian\nMaterials: low pile woven fibers, distressed finish\nColors: dark blue, gold, cream, burgundy accents\nShape: long narrow runner, repeating floral kaleidoscope medallions, ornate scrolling motifs, thin blue border, low profile\nFeel: rich, elegant, warm\nGoes with: dark wood, brass, cream walls, jewel tones; traditional or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075Z8HXFM",
+      "name": "Amazon Brand \u2013 Stone & Beam Floral Kaleidoscope Traditional Runner, 2'2\" x 7'6\", Blue Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 66.0,
+        "height": 1.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Denim"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Traditional",
+      "description": "With its gorgeous floral designs in striking color palettes of gold and red on a distressed blue field, this rug will impart a robust element to any setting. The powerloomed fiber blend ensures durability and beauty. 2'2\" x 7'6\" 75% polypropylene, 25% polyester Powerloomed construction in Turkey Medium pile height makes it durable and easy to vacuum Vacuum, professionally clean Pair with a rug pad, which is sold separately Ships tightly rolled in a protective bag",
+      "image_path": "09/094e3523.jpg",
+      "image_px": [
+        1228,
+        2560
+      ]
+    },
+    "photos": [
+      "20825e02d8d9e8c4"
+    ]
+  }
+}

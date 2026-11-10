@@ -1,0 +1,43 @@
+{
+  "product": "abo-B001BQ7546",
+  "text": "Type: round glass-top dining table\nUse: dining for small groups; dining room, kitchen, breakfast nook\nStyle: contemporary, modern, classic\nMaterials: rubberwood frame, dark espresso finish, inset tempered glass top\nColors: dark espresso brown, smoky clear glass\nShape: round glass top in wood ring, four angled square legs meeting in cross stretcher, light and open, medium size\nFeel: sleek, elegant, airy\nGoes with: dark wood or upholstered chairs, cream walls, chrome accents; contemporary dining rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B001BQ7546",
+      "name": "Pinzon Murdoch Rubberwood and Glass Dining Table",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "TABLE",
+      "colors": [
+        "Cosmo"
+      ],
+      "materials": [
+        "wood"
+      ],
+      "style": null,
+      "description": "Durable, versatile, expertly crafted dining table features a round design and plenty of leg room Solid rubberwood with dark brown Cosmo finish; tempered glass top with beveled edge Holds up to 100 pounds; arrives ready to assemble Coordinates with the Pinzon Murdoch Dining Collection Measures 50 inches in diameter by 30-1/4 inches high",
+      "image_path": "f8/f8b8d92b.jpg",
+      "image_px": [
+        1800,
+        1438
+      ]
+    },
+    "photos": [
+      "df42243b07671001"
+    ]
+  }
+}

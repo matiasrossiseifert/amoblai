@@ -1,0 +1,35 @@
+{
+  "product": "203.062.93",
+  "text": "Type: compact two-seat loveseat\nUse: seating, waiting area; living room, studio, office lounge, small apartment\nStyle: minimalist, modern, contemporary\nMaterials: smooth coated leather-look cover, chrome metal legs\nColors: bright white, silver legs\nShape: boxy block shape with square arms and a low straight back, tight seat, slim metal legs, compact and light\nFeel: crisp, clean, sleek\nGoes with: black or grey accents, glass and chrome, colorful art; modern, minimalist or retro living rooms and offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "203.062.93",
+      "name": "KLIPPAN",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Two-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Kimstad white"
+      ],
+      "description": "The cover is easy to keep clean as it can be wiped with a sponge dampened with water or a mild detergent."
+    },
+    "photos": [
+      "89c67f00b8abe475"
+    ]
+  }
+}

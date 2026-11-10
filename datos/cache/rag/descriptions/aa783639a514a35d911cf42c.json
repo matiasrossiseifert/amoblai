@@ -1,0 +1,36 @@
+{
+  "product": "802.133.09",
+  "text": "Type: round glass coffee table with shelf\nUse: holding drinks, books and decor; living room\nStyle: modern, industrial, minimalist\nMaterials: clear tempered glass top, black-brown powder-coated steel frame, dark wood-effect lower shelf\nColors: black-brown, clear glass\nShape: round glass top in a thin metal ring, four slim straight legs, large round lower shelf, light and see-through\nFeel: airy, sleek, light, urban\nGoes with: grey or leather sofas, black metal accents, light floors; modern apartments and industrial living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.133.09",
+      "name": "VITTSJ",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": null,
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "75 cm",
+      "colors": [
+        "Black-brown",
+        "glass"
+      ],
+      "description": "The table top in tempered glass is stain resistant and easy to clean."
+    },
+    "photos": [
+      "1c5592b09ae8b45b"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QC85YBY",
+  "text": "Type: high-back swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: upholstered fabric shell, chrome five-star base, casters, gas lift\nColors: warm cream beige, silver chrome, black\nShape: tall curved shell back with stitched panels, low wrap-around arms, padded seat, swivel pedestal with rolling star base, slim and compact\nFeel: soft, clean, polished\nGoes with: white desks, light wood, brass or chrome accents; modern home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QC85YBY",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Upholstered High-Back Swivel Chair, 25.2\"W, Beige",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": {
+        "width": 64.0,
+        "depth": 62.0,
+        "height": 104.9
+      },
+      "brand": "Stone & Beam",
+      "product_type": "CHAIR",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Textile"
+      ],
+      "style": null,
+      "description": "With a tall back and low-sloping arms, this modern captain's chair in a usefully neutral beige brings a distinctive flair to your desk or to the conference room. The adjustable height and tilt mechanism provide maximum comfort. 25.2\"W x 24.4\"D x 41.3\u201344.3\"H Fabric upholstery over plywood and metal frame; metal legs with rollers This modern chair with adjustable height has a 360-degree swivel mechanism; a tilt lock; and waterproof and stain-resistant fabric upholstery. The beige linen upholstery lends an air of refinement to this high-backed modern swivel chair. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "84/84a4b148.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "54bd4d27cc312ab1"
+    ]
+  }
+}

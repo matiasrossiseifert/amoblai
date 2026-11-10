@@ -1,0 +1,37 @@
+{
+  "product": "302.937.42",
+  "text": "Type: black four-drawer chest\nUse: storing clothes and linens, top for decor; bedroom, living room, dressing area\nStyle: traditional, classic\nMaterials: black lacquered wood and fiberboard, antique brass bar handles\nColors: deep black, warm antique brass\nShape: upright chest with four wide drawers, each with two small brass bar pulls, framed drawer fronts with thin raised edges, overhanging molded top, heavy molded plinth base, solid and stately\nFeel: elegant, formal, rich, dramatic\nGoes with: dark walls or crisp white walls, velvet, brass and marble accents; classic, traditional or glam bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "302.937.42",
+      "name": "UNDREDAL",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 87.0
+      },
+      "type_ikea": "Chest of 4 drawers",
+      "category_tp": "dresser",
+      "size_raw": "87x101 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "9d08d25d2bc00bc2"
+    ]
+  }
+}

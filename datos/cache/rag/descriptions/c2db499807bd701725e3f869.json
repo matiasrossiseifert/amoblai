@@ -1,0 +1,35 @@
+{
+  "product": "001.185.23",
+  "text": "Type: braided money tree houseplant\nUse: indoor greenery by a window, in a bright corner or next to a sofa; living room, home office, dining room\nStyle: bohemian, Scandinavian, contemporary\nMaterials: living plant with a braided trunk, glossy hand-shaped leaves, brown plastic grower pot\nColors: fresh green, tan trunk, terracotta brown pot\nShape: several thin trunks braided into one stem topped by a rounded crown of leaves, tall and upright, slender and light\nFeel: lively, fresh, natural, calming\nGoes with: woven baskets, ceramic or rattan plant pots, light wood, white walls; bohemian, Scandinavian or Japandi rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.185.23",
+      "name": "PACHIRA AQUATICA",
+      "category": "deco",
+      "kind": "plant",
+      "dimensions_cm": null,
+      "type_ikea": "Potted plant",
+      "category_tp": "deco",
+      "size_raw": "27 cm",
+      "colors": [
+        "Guinea chestnut"
+      ],
+      "description": null
+    },
+    "photos": [
+      "558cbbc4860c1683"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07HSF5CFK",
+  "text": "Type: striped wool blend area rug\nUse: defining a seating area; living room, bedroom, home office\nStyle: contemporary, modern, minimalist\nMaterials: wool blend, hand-tufted textured pile\nColors: light grey, charcoal\nShape: rectangular, angled panels of slanted lines meeting in chevron-like blocks, raised looped texture, medium size, plain edges\nFeel: graphic, calm, textured\nGoes with: cognac leather, dark wood floors, black accents; modern or mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSF5CFK",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Wool Blend Area Rug, 4' x 6', Grey Charcoal",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Gray/Charcoal"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Contemporary",
+      "description": "Add energy to your home d\u00e9cor with this striking gray-and-charcoal rug. Its bold reimagining of the classic stripe pattern makes it ideal for a transitional-style room, and its high-height pile works well in any indoor space. 4'W x 6'L Imported. 80% wool, 20% cotton Hand-tufted geometric pattern with variable pile High .6\" pile suits any indoor space Pair with rug pad (sold separately)",
+      "image_path": "60/60f1e7d0.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "997ffef237864943"
+    ]
+  }
+}

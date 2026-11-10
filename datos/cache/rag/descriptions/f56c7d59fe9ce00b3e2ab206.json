@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07DVTRT9V",
+  "text": "Type: upholstered velvet accent armchair\nUse: seating, relaxing; living room, bedroom\nStyle: contemporary, mid-century modern, classic\nMaterials: velvet upholstery with self piping, dark wood block legs\nColors: warm light taupe beige, dark brown legs\nShape: square back, flared track arms, piped edges, loose seat cushion, short square tapered legs, compact and boxy\nFeel: soft, elegant, calm\nGoes with: neutral walls, dark wood, brass accents; modern or transitional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DVTRT9V",
+      "name": "Amazon Brand \u2013 Ravenna Home Christian Mid-Century Modern Accent Chair, 31.89\"W",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "brand": "Right2Home",
+      "product_type": "CHAIR",
+      "colors": [],
+      "materials": [],
+      "style": "Mid-Century Modern",
+      "description": "",
+      "image_path": "2e/2ea96af7.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "af7cf9b0f3a5bd81"
+    ]
+  }
+}

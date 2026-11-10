@@ -1,0 +1,45 @@
+{
+  "product": "abo-B084HTYYHQ",
+  "text": "Type: gold wire basket, set of three\nUse: holding fruit, keys or decor on a table or shelf; living room, dining room, home office\nStyle: glam, art deco, modern\nMaterials: metal wire, gold finish\nColors: warm gold\nShape: low faceted oval bowl with chevron wire pattern, flared sides, small cutout handles, nesting sizes, light and open\nFeel: bright, graphic, airy\nGoes with: white marble, dark wood, black or emerald accents; glam, art deco or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B084HTYYHQ",
+      "name": "Amazon Brand - Rivet Modern Geometric Oval Wire Baskets, Set of 3, 7.25\"H, 5\"H, and 5\"H, Gold",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": {
+        "width": 46.4,
+        "depth": 43.2,
+        "height": 18.4
+      },
+      "brand": "Rivet",
+      "product_type": "HOME",
+      "colors": [
+        "Gold"
+      ],
+      "materials": [],
+      "style": "Low Geometric",
+      "description": "This stunning collection of geometric metal wire baskets provides a delightful mix of art and efficiency. With the option to keep them together as a set of three or spread the joy around, you'll find a plethora of possibility with these functional art pieces. Large: 18.25\"W x 17\"D x 7.25\u201dH, Medium: 16.25\"W x 15\"D x 6\u201dH, Small: 14.25\"W x 13.25\"D x 5\u201dH 3 nesting baskets formed of metal wire with a gold finish Useful for storing small items This elegant work of modern art and craftsmanship is perfect as a collection of three or spread out. Avoid moisture and wipe clean with a soft, dry cloth.",
+      "image_path": "58/583bf211.jpg",
+      "image_px": [
+        2560,
+        855
+      ]
+    },
+    "photos": [
+      "457e3075b6db38da"
+    ]
+  }
+}

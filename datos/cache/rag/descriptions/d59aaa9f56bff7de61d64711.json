@@ -1,0 +1,35 @@
+{
+  "product": "402.301.98",
+  "text": "Type: grey velvet grommet curtains, pair\nUse: dimming light, framing windows, adding privacy; living room, bedroom, dining room\nStyle: contemporary, glam, classic\nMaterials: heavy velvet with a soft sheen, metal grommets along the top\nColors: dark slate grey, silver grommets\nShape: two long straight panels hanging in deep even folds from grommets on a rod, floor length, heavy and rich drape\nFeel: luxurious, cozy, calm, enveloping\nGoes with: grey or white walls, brass or chrome accents, dark wood; contemporary, glam or classic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "402.301.98",
+      "name": "SANELA",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "type_ikea": "Curtains, 1 pair",
+      "category_tp": "deco",
+      "size_raw": "140x300 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The thick curtains darken the room and provide privacy by preventing people outside from seeing into the room."
+    },
+    "photos": [
+      "e85529a736b37266"
+    ]
+  }
+}

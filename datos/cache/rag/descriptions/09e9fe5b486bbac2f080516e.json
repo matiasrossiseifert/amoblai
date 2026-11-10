@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0735W9DMT",
+  "text": "Type: geometric wool area rug\nUse: softening a floor by a bed or sofa; bedroom, living room, home office\nStyle: coastal, modern, contemporary\nMaterials: wool, textured pile with sketched pattern\nColors: ivory white, soft light blue\nShape: rectangular, repeating chevron and diamond lattice in hand-drawn lines, medium size, light visual weight\nFeel: fresh, airy, calm\nGoes with: light wood floors, teal or white walls, blue accents; coastal or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0735W9DMT",
+      "name": "Amazon Brand \u2013 Rivet Modern Geometric Wool Area Rug, 4 x 6 Foot, Blue",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 182.9,
+        "depth": 121.9,
+        "height": 0.8
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Blue"
+      ],
+      "materials": [
+        "wool"
+      ],
+      "style": "Transitional",
+      "description": "80% Wool 20% Cotton Imported The cool tones of this bold, geometric rug pulls any space together effortlessly. Hand-woven, 100% wool fibers add lasting style and comfort. Area rug features a mesmerizing geometric print. Hand-tufted. Low .3'' pile suits high-traffic, transitional indoor areas. Pair with a rug pad (sold separately). 4' x 6' Ships tightly rolled in a protective bag.",
+      "image_path": "05/053ab777.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "652e73f7c6cae80f"
+    ]
+  }
+}

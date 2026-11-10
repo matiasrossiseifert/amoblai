@@ -1,0 +1,41 @@
+{
+  "product": "abo-B07HSL752W",
+  "text": "Type: southwestern runner rug\nUse: covering a floor, softening a walkway; hallway, kitchen, living room, bedroom\nStyle: bohemian, traditional, rustic\nMaterials: low-pile woven synthetic fibers\nColors: dark teal blue, rust orange, cream, navy, terracotta\nShape: long narrow rectangle, repeating diamond medallions in an all-over tribal pattern, patterned border, low flat pile, medium visual weight\nFeel: warm, rich, cozy, worldly\nGoes with: warm wood floors, navy or dark cabinets, brass accents; bohemian, rustic or traditional rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07HSL752W",
+      "name": "Amazon Brand \u2013 Stone & Beam Southwestern Transitional Area Rug, 4 x 6 Foot, Multi",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [],
+      "materials": [
+        "Polypropylene"
+      ],
+      "style": "Contemporary",
+      "description": "Brighten your hallway or other narrow space with this gorgeous Southwest-inspired rug. Rich blues, oranges, and reds interact to create a captivating design that\u2019s distinctly Southwestern and a perfect accent for either contemporary- or vintage-style home decor. 2'6\" x 8' Polypropylene Frisee Machine made 0.33 Med",
+      "image_path": "90/90ca4356.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1f943fd1bf8049ee"
+    ]
+  }
+}

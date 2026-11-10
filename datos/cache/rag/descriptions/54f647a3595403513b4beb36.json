@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DMB75TJ",
+  "text": "Type: tall storage cabinet\nUse: storing linens, books and supplies; living room, dining room, home office\nStyle: farmhouse, coastal, traditional\nMaterials: white painted wood, beadboard panel doors, brushed nickel knobs and cup pulls\nColors: white, silver\nShape: tall two-section cupboard, double doors top and bottom, middle drawer, plinth base, molded top, large but bright\nFeel: fresh, tidy, homely\nGoes with: beige or soft walls, wicker baskets, natural wood floors; farmhouse or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07DMB75TJ",
+      "name": "2L Lifestyle Ashlyn Cabinet White Finish, Large",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 76.2,
+        "depth": 39.9,
+        "height": 182.6
+      },
+      "brand": "2L Lifestyle",
+      "product_type": "CABINET",
+      "colors": [
+        "White"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Antique",
+      "description": "Features include storage drawer, two cabinet doors each containing two adjustable shelves Include anti-tilt safety feature, Fits securely to the Wall and cabinet Perfect storage accessory for any living home(dimension: 30''w x 15. 7''D x 72''h) Assembly video link: YouTube/co_hfadf3l0 Instruction and tools included for easy assembly Made of engineered wood with precision and care",
+      "image_path": "bb/bb09f081.jpg",
+      "image_px": [
+        2519,
+        2560
+      ]
+    },
+    "photos": [
+      "43053e6289055d84"
+    ]
+  }
+}

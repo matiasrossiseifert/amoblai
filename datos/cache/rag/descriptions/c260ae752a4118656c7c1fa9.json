@@ -1,0 +1,33 @@
+{
+  "product": "001.993.12",
+  "text": "Type: red heart wall lamp\nUse: soft night light and decoration on a wall; children's bedroom, nursery, playroom\nStyle: contemporary, modern\nMaterials: glossy molded plastic body that glows when lit\nColors: bright cherry red\nShape: plump puffy heart with a soft rounded outline and a center seam, mounts flat on the wall, compact and solid, playful silhouette\nFeel: sweet, playful, cheerful, cozy\nGoes with: white or pastel walls, light wood, red or pink accents; children's rooms and nurseries\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.993.12",
+      "name": "SMILA HJRTA",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [],
+      "description": "Gives a soft mood light."
+    },
+    "photos": [
+      "f7bf19fdf5e73670"
+    ]
+  }
+}

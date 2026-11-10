@@ -1,0 +1,26 @@
+{
+  "schema": "roomrag.index/3",
+  "catalog": "ikea",
+  "catalog_file": "catalogo/ikea.yaml",
+  "catalog_sha": "df986ebdd6abcf88f1e65712",
+  "describer": {
+    "name": "written",
+    "key": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    }
+  },
+  "embedder": {
+    "name": "hashing",
+    "key": {
+      "kind": "hashing",
+      "dim": 1024,
+      "version": 1
+    }
+  },
+  "products": 275,
+  "left_out": 0,
+  "built": "2026-10-21T13:09:25",
+  "cost_usd": 0.0
+}

@@ -1,0 +1,37 @@
+{
+  "product": "502.994.08",
+  "text": "Type: white wall shelf box with hook\nUse: holding toiletries, books or small decor, hanging a towel or bag; bathroom, hallway, bedroom\nStyle: minimalist, modern, Scandinavian\nMaterials: white powder-coated metal, white plastic hook\nColors: white\nShape: open rounded-corner box with a middle shelf dividing two compartments, soft radiused edges, small Y-shaped hook beneath, compact and clean\nFeel: soft, clean, fresh, tidy\nGoes with: white tiles, light wood, pastel towels, chrome; minimalist, Scandinavian or modern bathrooms and hallways\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "502.994.08",
+      "name": "BRICKAN",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 33.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "33x33 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Two functions in one  a shelf for clean towels and a hook for the one youre currently using."
+    },
+    "photos": [
+      "9a4f7dd3641e63d6"
+    ]
+  }
+}

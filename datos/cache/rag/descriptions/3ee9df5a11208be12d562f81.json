@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B8JXS7N",
+  "text": "Type: wall-mounted hexagon tealight holder\nUse: candle light on a wall above a sofa, console or bed; living room, dining room, bedroom\nStyle: glam, modern, art deco\nMaterials: gold-finish metal frame, clear glass votives\nColors: warm gold, clear\nShape: wide horizontal row of overlapping hexagon outlines with five glass tealight cups, slim and open\nFeel: glowing, elegant, airy\nGoes with: white or dark walls, marble, velvet, brass accents; glam or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B8JXS7N",
+      "name": "Amazon Brand \u2013 Rivet Modern Metal Wall Mounted Hexagon Tealight Candle Holder Decor - 11.5\"H, Gold",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": {
+        "width": 87.0,
+        "depth": 9.5,
+        "height": 29.2
+      },
+      "brand": "Rivet",
+      "product_type": "CANDLE_HOLDER",
+      "colors": [
+        "Gold"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": null,
+      "description": "Add romance and glamour to your space with this wall-mounted tealight candle holder. Gold-finished metal forms a series of five conjoined hexagons, each with a glass holder. Even in the daytime, this piece adds a sleek modern touch to your room. 34.25\" W x 11.5\" H x 3.75\" D This tealight holder is functional while adding modern glamour to your wall Metal with gold finish; glass tealight holders",
+      "image_path": "b3/b386666b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "b0b3707790afb423"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "103.033.94",
+  "text": "Type: flower-shaped candlestick for three candles\nUse: holding taper candles on a dining table, sideboard or mantel; dining room, living room\nStyle: contemporary, glam, Scandinavian\nMaterials: polished stainless steel\nColors: bright silver\nShape: three five-petal flower cups joined in a cluster at staggered heights, each with a candle socket, standing on slender pin legs, sculptural, compact\nFeel: elegant, festive, playful, bright\nGoes with: white tablecloths, glassware, grey or dark wood tables, silver accents; contemporary, glam or Scandinavian dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "103.033.94",
+      "name": "STOCKHOLM",
+      "category": "deco",
+      "kind": "candle holder",
+      "dimensions_cm": null,
+      "type_ikea": "Candlestick for 3 candles",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Stainless steel"
+      ],
+      "description": "Creates atmosphere in the room with a design inspired by nature and the warm glow from the candles."
+    },
+    "photos": [
+      "1ad26cf38e855a69"
+    ]
+  }
+}

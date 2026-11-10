@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07124WQLW",
+  "text": "Type: oversized two-seat sofa\nUse: sitting, lounging; living room\nStyle: modern, Japandi, minimalist\nMaterials: textured woven fabric, black wood frame and legs\nColors: medium grey, black\nShape: low wide body, thick padded arms on an exposed dark wood frame, two seat and back cushions, straight square legs, low and bulky\nFeel: grounded, calm, sophisticated\nGoes with: white or concrete walls, light wood, black accents; Japandi or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07124WQLW",
+      "name": "Amazon Brand \u2013 Rivet Apex Modern Oversized Sofa Couch, 81\"W, Ash Grey",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": {
+        "width": 205.0,
+        "depth": 96.0,
+        "height": 74.9
+      },
+      "brand": "Rivet",
+      "product_type": "SOFA",
+      "colors": [
+        "Ash Grey"
+      ],
+      "materials": [
+        "Hardwood"
+      ],
+      "style": null,
+      "description": "This chunky, oversized, mid-century-inspired modern design stands the test of time. With its squared shape and clean, simple lines, it can bridge the gap between classic and contemporary in your living room. 80.7\"W x 37.8\u201dD x 29.5\u201dH Hardwood frame with reinforced corners At home in any room where a well-designed sofa is needed Simple assembly; just attach legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "3b/3b453ac2.jpg",
+      "image_px": [
+        2560,
+        1116
+      ]
+    },
+    "photos": [
+      "1368bbb91e3161e3"
+    ]
+  }
+}

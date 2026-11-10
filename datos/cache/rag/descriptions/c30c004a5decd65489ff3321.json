@@ -1,0 +1,35 @@
+{
+  "product": "598.847.15",
+  "text": "Type: upholstered storage footstool\nUse: resting feet, extra seating, storing blankets inside; living room, family room\nStyle: contemporary, classic\nMaterials: textured dark brown chenille-look woven fabric, piped edges, padded lid cushion, black plastic feet\nColors: deep chocolate brown\nShape: low rectangular box with a thick padded top and piped seams, short hidden feet, softly rounded corners, low and bulky\nFeel: warm, cozy, rich, relaxed\nGoes with: brown or beige sofas, dark wood, cream and rust textiles; classic or contemporary living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "598.847.15",
+      "name": "KIVIK",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": null,
+      "type_ikea": "Footstool with storage",
+      "category_tp": "ottoman",
+      "size_raw": null,
+      "colors": [
+        "Tullinge dark brown"
+      ],
+      "description": "Big, practical storage space under the seat."
+    },
+    "photos": [
+      "b318da33eb320d8a"
+    ]
+  }
+}

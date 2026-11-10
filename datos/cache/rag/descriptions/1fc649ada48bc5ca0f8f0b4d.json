@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0719STLSH",
+  "text": "Type: traditional floral area rug\nUse: anchoring a sofa area, softening floors; living room, bedroom, dining room\nStyle: traditional, classic, contemporary\nMaterials: low pile, soft woven fibers\nColors: cool light grey, cream, charcoal accents\nShape: rectangular, all-over scattered Persian floral motifs, wide cream ornamental border, thin profile, medium size\nFeel: calm, elegant, soft, understated\nGoes with: dark wood floors, charcoal or grey sofas, white walls; traditional, transitional or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0719STLSH",
+      "name": "Stone & Beam MFL nuLoom Rug B0719STLSH 5'X8' Cream",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 243.8,
+        "depth": 152.4,
+        "height": 0.5
+      },
+      "brand": "Stone & Beam",
+      "product_type": "RUG",
+      "colors": [
+        "Cream"
+      ],
+      "materials": [
+        "stone"
+      ],
+      "style": "Traditional",
+      "description": "Placeholder1 Placeholder2 Placeholder3 Placeholder4 Placeholder5 Placeholder6 Placeholder7 Placeholder8",
+      "image_path": "a4/a44f0cc2.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "fac2cefe241941e7"
+    ]
+  }
+}

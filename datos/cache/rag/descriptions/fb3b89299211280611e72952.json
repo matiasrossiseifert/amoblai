@@ -1,0 +1,35 @@
+{
+  "product": "901.861.12",
+  "text": "Type: white wood slat plant pot\nUse: covering a nursery pot for a floor or table plant; living room, bedroom, hallway\nStyle: farmhouse, Scandinavian, coastal\nMaterials: thin wood strips with a white painted finish, wooden bands, small nails, plastic inner liner\nColors: white, pale natural wood showing through\nShape: round tapered bucket of vertical slats held by two horizontal bands, open gaps between strips, light and rustic\nFeel: fresh, relaxed, natural, homey\nGoes with: leafy green plants, linen, light wood, pastel tones; farmhouse, coastal or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "901.861.12",
+      "name": "KALASA",
+      "category": "deco",
+      "kind": "plant pot",
+      "dimensions_cm": null,
+      "type_ikea": "Plant pot",
+      "category_tp": "deco",
+      "size_raw": "32 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "A plastic inner pot makes the plant pot waterproof."
+    },
+    "photos": [
+      "2f4d3e693f0228b7"
+    ]
+  }
+}

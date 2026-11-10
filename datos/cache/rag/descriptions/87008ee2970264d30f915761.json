@@ -1,0 +1,35 @@
+{
+  "product": "002.688.76",
+  "text": "Type: large white picture frame with mat\nUse: displaying posters, art prints or photos on a wall or picture ledge; living room, dining room, home office\nStyle: minimalist, Scandinavian, contemporary\nMaterials: thin matte white frame, wide off-white mat, clear front panel\nColors: white, warm off-white mat\nShape: tall portrait rectangle with a slim frame and a generous mat around a large opening, flat clean edges, gallery look, light visual weight\nFeel: clean, airy, calm, gallery-like\nGoes with: art prints, posters, white or grey walls, gallery wall groupings; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.688.76",
+      "name": "RIBBA",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "50x70 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The mount enhances the picture and makes framing easy."
+    },
+    "photos": [
+      "d06945a8b897d358"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "product": "abo-B088S8VLMW",
+  "text": "Type: Chesterfield upholstered ottoman\nUse: footrest, extra seating; living room, bedroom\nStyle: traditional, classic\nMaterials: woven fabric upholstery, button tufting, loose cushion, dark turned wood feet\nColors: light cool grey, dark brown\nShape: rectangular, plump cushion top, button-tufted sides, short turned bun feet, low and solid\nFeel: classic, comfortable, refined\nGoes with: dark wood, white and navy tones, Chesterfield sofas; traditional living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B088S8VLMW",
+      "name": "Stone & Beam Bradbury Chesterfield Classic Ottoman, 30\"W, Slate (Renewed)",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": {
+        "width": 77.0,
+        "depth": 57.0,
+        "height": 50.0
+      },
+      "brand": "Stone & Beam",
+      "product_type": "OTTOMAN",
+      "colors": [
+        "Slate"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "This lovely ottoman has the low profile and short legs that are the hallmark of the classic chesterfield style. Whether as a statement piece or part of a living-room suite, this ottoman will be a welcome addition to any decor. 30\"W x 22\"D x 20\"H Solid hardwood frame; upholstery: 98% polyester, 2% nylon This ottoman doubles as a welcome place to rest tired feet or as extra seating. A classic style updated in stain-resistant fabric makes this perfect for the modern home. Assemble in 15 minutes or less Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 3-year warranty.",
+      "image_path": "81/8195c2a5.jpg",
+      "image_px": [
+        2560,
+        1679
+      ]
+    },
+    "photos": [
+      "b2439fa49039f18e"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "product": "abo-B0725YNDBL",
+  "text": "Type: reclaimed wood storage coffee table\nUse: holding drinks and storing items in front of a sofa; living room\nStyle: rustic, farmhouse, industrial\nMaterials: reclaimed pine with mixed weathered tones, dark wood or metal base, metal bar pulls\nColors: mixed natural wood, honey and grey-brown, dark grey base\nShape: boxy rectangular top with two front drawers, chunky square legs with low H-stretchers, solid and heavy\nFeel: rugged, warm, lived-in\nGoes with: linen or leather sofas, white walls, iron accents; rustic or farmhouse living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0725YNDBL",
+      "name": "Urban Living Coffee Tables",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 119.4,
+        "depth": 40.6,
+        "height": 69.8
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "07/0753ed75.jpg",
+      "image_px": [
+        2000,
+        1333
+      ]
+    },
+    "photos": [
+      "0f22b22a89493283"
+    ]
+  }
+}

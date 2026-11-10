@@ -1,0 +1,37 @@
+{
+  "product": "202.758.14",
+  "text": "Type: green cube storage shelving unit\nUse: storing books, records and boxes, dividing a room; living room, home office, children's room\nStyle: contemporary, modern, minimalist\nMaterials: painted board with a smooth even finish\nColors: bright grass green\nShape: upright rectangular case with a grid of eight square open cubes in two columns, thick flat panels, open back, chunky and boxy, stands upright or on its side\nFeel: playful, bold, cheerful, graphic\nGoes with: white walls, light wood, storage baskets, colorful textiles; modern, eclectic or kids' rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "202.758.14",
+      "name": "KALLAX",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 77.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "77x77 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "A simple unit can be enough storage for a limited space or the foundation for a larger storage solution if your needs change."
+    },
+    "photos": [
+      "c48b5221157d9a49"
+    ]
+  }
+}

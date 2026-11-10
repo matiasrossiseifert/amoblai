@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X2PC3L",
+  "text": "Type: two-tone six-drawer dresser\nUse: storing clothes; bedroom\nStyle: mid-century modern, contemporary, glam\nMaterials: walnut veneer drawer fronts, black painted frame, brass knobs and leg caps\nColors: black, warm medium walnut, brass\nShape: long rectangular case, black frame around six drawers with two knobs each, round tapered black legs with brass tips, raised and fairly light\nFeel: sophisticated, bold, warm\nGoes with: white or grey walls, brass accents, walnut wood; mid-century or modern bedrooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075X2PC3L",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Leonard 2-Tone Bedroom Dresser, 62\"W, Walnut, Birch Finish",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 157.5,
+        "depth": 45.7,
+        "height": 88.9
+      },
+      "brand": "Rivet",
+      "product_type": "DRESSER",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Hardwood"
+      ],
+      "style": "Dresser",
+      "description": "This mid-century modern dresser will add handsome style while holding plenty of clothing in six drawers. Walnut veneer on the front and darker birch finish on the top and sides gives it a two-tone effect accented by brass pulls. 62\"W x 18\"D x 35\"H Solid hardwood with walnut and birch veneers, brass drawer pulls Mid-century with touches of glam and industrial to blend with modern-style rooms Drawers have concealed slow-close glides underneath for a sleek design. Simple assembly in 15 minutes. Just add legs. Free returns for 30 days. 1-year warranty.",
+      "image_path": "0e/0e0a67d9.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "dd902cf66e51f466"
+    ]
+  }
+}

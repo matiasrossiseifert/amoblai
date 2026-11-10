@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07DBB7FN6",
+  "text": "Type: upholstered storage bench with shelves\nUse: seating and shoe storage; entryway, bedroom, living room\nStyle: traditional, classic\nMaterials: stained wood, fabric seat cushion\nColors: dark espresso brown, off-white cushion\nShape: rectangular wood frame, open shelves below in two sections, low back lip at top edge, cushioned top, plinth base with cutout, compact and solid\nFeel: warm, orderly, cozy\nGoes with: cream walls, dark wood, brass accents; traditional or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07DBB7FN6",
+      "name": "Amazon Brand \u2013 Ravenna Home Radcliffe Upholstered Wood Storage Bench, 40\"W, Dark Espresso",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 101.6,
+        "depth": 36.0,
+        "height": 55.9
+      },
+      "brand": "Ravenna Home",
+      "product_type": "BENCH",
+      "colors": [
+        "Dark Espresso"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": "Transitional",
+      "description": "Quality construction of solid pine A clean design with traditional touches and modern open storage A functional, transitional style ready to blend anywhere 15-30 minutes assembly required Free returns for 30 days. 1-year warranty. 40\"L x 14.17\"W x 22\"H",
+      "image_path": "5a/5a5afb4e.jpg",
+      "image_px": [
+        2430,
+        1854
+      ]
+    },
+    "photos": [
+      "cc48cd4298497473"
+    ]
+  }
+}

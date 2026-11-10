@@ -1,0 +1,35 @@
+{
+  "product": "803.113.62",
+  "text": "Type: children's wall lamp with flexible arm\nUse: reading and night light by a bed or play area; children's room, nursery\nStyle: contemporary, modern\nMaterials: glossy lime green plastic shade with cloud cut-outs, flexible metal arm, round plastic wall plate, white cord with switch\nColors: bright lime green, white clouds, silver arm\nShape: rounded dome shade marked with white cloud shapes, short adjustable gooseneck, disc-shaped wall mount, plug-in cord, compact\nFeel: playful, cheerful, bright, friendly\nGoes with: white walls, light wood, bright greens and blues; playful children's rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "803.113.62",
+      "name": "SKOJIG",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Green"
+      ],
+      "description": "Safety tested and tamper-proof to protect little fingers."
+    },
+    "photos": [
+      "250ac5e28f03fb9a"
+    ]
+  }
+}

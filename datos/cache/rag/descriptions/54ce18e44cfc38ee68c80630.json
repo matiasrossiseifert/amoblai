@@ -1,0 +1,37 @@
+{
+  "product": "001.033.43",
+  "text": "Type: black-brown three-drawer chest\nUse: storing clothes and linens, surface for lamps and decor; bedroom, living room, hallway\nStyle: minimalist, modern, Scandinavian\nMaterials: ash veneer stained black-brown with visible grain, fiberboard\nColors: dark black-brown, near-black\nShape: plain boxy cabinet with three wide flush drawers, handleless fronts with a top-edge grip recess, recessed plinth base, clean sharp edges, medium visual weight\nFeel: sleek, sober, calm, solid\nGoes with: white or light grey walls, light oak, brass or chrome accents; modern or minimalist bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "001.033.43",
+      "name": "MALM",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 40.0
+      },
+      "type_ikea": "Chest of 2 drawers",
+      "category_tp": "dresser",
+      "size_raw": "40x55 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Can also be used as a bedside table."
+    },
+    "photos": [
+      "072edbffb92b87c5"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "202.279.03",
+  "text": "Type: small fringed flatwoven rug\nUse: adding a soft accent by a bed or door; bedroom, bathroom, entryway, children's room\nStyle: coastal, Scandinavian, bohemian\nMaterials: flat weave in cotton-look yarn, knotted fringe at both ends\nColors: cobalt blue, white, space-dyed mix\nShape: small rectangle with streaky ikat-like texture, fringed short ends, thin and light, compact\nFeel: fresh, breezy, relaxed\nGoes with: white walls, light wood, blue and white textiles; coastal, Scandinavian or bohemian bedrooms and bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "202.279.03",
+      "name": "LAPPLJUNG",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 150.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x150 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Easy to keep clean since it is machine washable."
+    },
+    "photos": [
+      "9d90304396099725"
+    ]
+  }
+}

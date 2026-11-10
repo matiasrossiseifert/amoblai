@@ -1,0 +1,35 @@
+{
+  "product": "601.325.21",
+  "text": "Type: black picture frame with white mat\nUse: displaying photos, art prints or posters; living room, home office, bedroom, hallway\nStyle: minimalist, modern, Scandinavian\nMaterials: wood-look frame in a matte black finish, white mat board, clear glazing\nColors: matte black, white, light grey insert\nShape: upright rectangle in a slim square-edged profile, generous white mat framing the picture, flat front and crisp corners, simple and light\nFeel: crisp, orderly, quiet\nGoes with: white walls, black metal, light oak, monochrome art; minimalist, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "601.325.21",
+      "name": "RIBBA",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "40x50 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "The mount enhances the picture and makes framing easy."
+    },
+    "photos": [
+      "da51be1994636336"
+    ]
+  }
+}

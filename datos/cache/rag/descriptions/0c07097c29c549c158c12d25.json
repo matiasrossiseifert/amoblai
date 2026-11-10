@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YMXWZC",
+  "text": "Type: rectangular wood dining table\nUse: dining, gathering; dining room, kitchen\nStyle: mid-century modern, Scandinavian, minimalist\nMaterials: oak with walnut stain finish\nColors: warm medium brown, darker brown legs\nShape: thin rectangular top, slim apron, four angled tapered square legs, clean edges, light and open, seats six\nFeel: warm, simple, timeless\nGoes with: molded or upholstered chairs, white walls, brass or black accents; mid-century rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075YMXWZC",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Oak Dining Table, 63\"L, Walnut Finish",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 160.0,
+        "depth": 90.0,
+        "height": 75.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Walnut"
+      ],
+      "materials": [
+        "Oak"
+      ],
+      "style": "Mid-Century Modern Style",
+      "description": "This table is beautiful in its design and simplicity. Solid oak legs have the slanted tapering reminiscent of mid-century style. You'll enjoy serving dinner to your friends, but it's also useful for crafting or working on your laptop. 63\"L x 35.5''D x 29.5''H A clean, simple design that works well for any style home Assemble in 15-30 minutes. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty. Solid oak legs; hardwood top with oak finish",
+      "image_path": "da/da599d8f.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d87a2df5e4f2a027"
+    ]
+  }
+}

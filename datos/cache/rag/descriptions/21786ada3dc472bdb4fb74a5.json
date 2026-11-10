@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075HR1XB1",
+  "text": "Type: plug-in wall sconce\nUse: reading and ambient light; bedroom, living room, home office; mounted beside a bed or sofa\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: frosted glass shade, faux wood cap, brushed nickel arm and oval backplate\nColors: white, warm medium wood, silver nickel\nShape: acorn-shaped capsule shade hanging from a curved hook arm, oval wall plate with rocker switch, slim and compact\nFeel: warm, soft, friendly\nGoes with: wood furniture, white or warm walls, nickel accents; mid-century or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075HR1XB1",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Oval Plug-In Light Wall Sconce - 8.5 x 4.25 x 13 Inches, Faux Wood and Nickel",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": {
+        "width": 21.6,
+        "depth": 10.8,
+        "height": 33.0
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Faux Wood/Brushed Nickel"
+      ],
+      "materials": [
+        "Metal+Glass"
+      ],
+      "style": null,
+      "description": "This Mid-century modern wall sconce has an oval-shaped glass diffuser that will provide warm, ambient light for a bedroom. The opal glass, faux wood socket and metal hardware with a brushed nickel finish give it both modern and vintage touches. 8.5\"W x 4.25\"D x 13.5\"H Faux wood socket, metal arm and wall plate, glass shade Convenient plug-in sconce provides soft light. Rotary on/off switch. Easily assembled and mounted on wall Intended for indoor use only",
+      "image_path": "6d/6daac4cc.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ab38e8fe466cf5e4"
+    ]
+  }
+}

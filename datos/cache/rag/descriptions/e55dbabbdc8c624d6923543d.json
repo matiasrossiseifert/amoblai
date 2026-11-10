@@ -1,0 +1,37 @@
+{
+  "product": "690.335.45",
+  "text": "Type: deep upholstered armchair\nUse: relaxing, lounging; living room, den, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: lightly striped woven fabric upholstery with piping, padded frame, black turned wooden legs\nColors: warm taupe grey, black\nShape: low wide back cushion, scrolled rolled arms with gathered fronts, thick seat cushion, short turned legs, low and deep, bulky\nFeel: soft, homey, cozy, relaxed\nGoes with: cream walls, warm wood, linen, black accents; traditional, farmhouse or classic living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "690.335.45",
+      "name": "STOCKSUND",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Nolhaga grey-beige",
+        "black",
+        "wood"
+      ],
+      "description": "Extra wide and deep armchair with plenty of room for you to sit and relax comfortably."
+    },
+    "photos": [
+      "48b9398c7b03e619"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "802.972.43",
+  "text": "Type: round two-tier side table\nUse: holding a lamp, books and drinks; living room, bedroom, reading corner\nStyle: contemporary, modern, mid-century modern\nMaterials: beige lacquered round top and shelf, dark brown stained solid wood frame\nColors: warm beige, dark brown\nShape: thick round top and matching lower shelf, four square posts on a crossed X-shaped base, compact, medium visual weight\nFeel: soft, warm, grounded, cozy\nGoes with: brown leather, cream or taupe textiles, dark wood; contemporary living rooms and warm neutral bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "802.972.43",
+      "name": "RISSNA",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": null,
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "60 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "Separate shelf for magazines, etc. helps you keep your things organised and the table top clear."
+    },
+    "photos": [
+      "294c331be669d673"
+    ]
+  }
+}

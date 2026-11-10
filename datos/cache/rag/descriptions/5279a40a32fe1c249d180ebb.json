@@ -1,0 +1,35 @@
+{
+  "product": "002.387.14",
+  "text": "Type: armless upholstered swivel desk chair\nUse: working at a desk; home office, study, bedroom\nStyle: classic, contemporary, Scandinavian\nMaterials: smooth upholstery with button tufting, padded seat and back, dark grey steel five-star base, plastic casters\nColors: off-white, cream white, dark grey\nShape: tall rounded rectangular back with four tufted buttons and stitched lines, wide padded seat, armless, slim column on a five-star base with casters, medium visual weight\nFeel: soft, clean, elegant, comfortable\nGoes with: white or light wood desks, pale walls, grey accents; Scandinavian, classic or feminine home offices\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "002.387.14",
+      "name": "LILLHJDEN",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Blekinge white"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "66da5a489f709828"
+    ]
+  }
+}

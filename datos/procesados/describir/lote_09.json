@@ -1,0 +1,758 @@
+[
+ {
+  "id": "190.336.37",
+  "name": "STOCKSUND",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/190.336.37.jpg"
+  ]
+ },
+ {
+  "id": "291.805.24",
+  "name": "STUVA,FLJA",
+  "type_ikea": "Storage bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/291.805.24.jpg"
+  ]
+ },
+ {
+  "id": "301.286.29",
+  "name": "STUVA",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/301.286.29.jpg"
+  ]
+ },
+ {
+  "id": "398.766.60",
+  "name": "STUVA",
+  "type_ikea": "Storage bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/398.766.60.jpg"
+  ]
+ },
+ {
+  "id": "402.414.51",
+  "name": "MOLGER",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.414.51.jpg"
+  ]
+ },
+ {
+  "id": "402.590.40",
+  "name": "BJURSTA",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 158.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.590.40.jpg"
+  ]
+ },
+ {
+  "id": "402.745.21",
+  "name": "SILVERN",
+  "type_ikea": "Storage bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.745.21.jpg"
+  ]
+ },
+ {
+  "id": "502.236.25",
+  "name": "HEMNES",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 83.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/502.236.25.jpg"
+  ]
+ },
+ {
+  "id": "590.336.35",
+  "name": "STOCKSUND",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/590.336.35.jpg"
+  ]
+ },
+ {
+  "id": "591.293.60",
+  "name": "STOCKSUND",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/591.293.60.jpg"
+  ]
+ },
+ {
+  "id": "690.017.85",
+  "name": "STUVA",
+  "type_ikea": "Storage bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/690.017.85.jpg"
+  ]
+ },
+ {
+  "id": "802.753.40",
+  "name": "NORRKER",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 103.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/802.753.40.jpg"
+  ]
+ },
+ {
+  "id": "902.679.95",
+  "name": "SILVERN",
+  "type_ikea": "Storage bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.679.95.jpg"
+  ]
+ },
+ {
+  "id": "902.868.47",
+  "name": "NORNS",
+  "type_ikea": "Bench",
+  "category": "bench",
+  "default_kind": "bench",
+  "allowed_kinds": [
+   "bench"
+  ],
+  "dimensions_cm": {
+   "width": 138.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/902.868.47.jpg"
+  ]
+ },
+ {
+  "id": "002.422.78",
+  "name": "FABRIKR",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 57.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.422.78.jpg"
+  ]
+ },
+ {
+  "id": "002.612.95",
+  "name": "ALEX",
+  "type_ikea": "Drawer unit",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 36.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.612.95.jpg"
+  ]
+ },
+ {
+  "id": "002.809.39",
+  "name": "NORNS",
+  "type_ikea": "Sideboard basic unit",
+  "category": "cabinet",
+  "default_kind": "sideboard",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": null,
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/002.809.39.jpg"
+  ]
+ },
+ {
+  "id": "091.025.32",
+  "name": "TROFAST",
+  "type_ikea": "Storage combination with boxes",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 94.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/091.025.32.jpg"
+  ]
+ },
+ {
+  "id": "101.928.24",
+  "name": "ALEX",
+  "type_ikea": "Drawer unit",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 36.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/101.928.24.jpg"
+  ]
+ },
+ {
+  "id": "102.659.24",
+  "name": "RAMSTRA",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 174.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.659.24.jpg"
+  ]
+ },
+ {
+  "id": "102.828.29",
+  "name": "GUNNERN",
+  "type_ikea": "Lockable cabinet",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 32.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.828.29.jpg"
+  ]
+ },
+ {
+  "id": "102.881.95",
+  "name": "GUNNERN",
+  "type_ikea": "Lockable cabinet",
+  "category": "cabinet",
+  "default_kind": "file cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 32.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/102.881.95.jpg"
+  ]
+ },
+ {
+  "id": "103.286.67",
+  "name": "LIXHULT",
+  "type_ikea": "Cabinet",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 35.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/103.286.67.jpg"
+  ]
+ },
+ {
+  "id": "202.397.17",
+  "name": "STOCKHOLM",
+  "type_ikea": "TV bench",
+  "category": "cabinet",
+  "default_kind": "TV stand",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.397.17.jpg"
+  ]
+ },
+ {
+  "id": "202.422.77",
+  "name": "FABRIKR",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 57.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.422.77.jpg"
+  ]
+ },
+ {
+  "id": "202.608.36",
+  "name": "REGISSR",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 118.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/202.608.36.jpg"
+  ]
+ },
+ {
+  "id": "203.238.05",
+  "name": "BILLY",
+  "type_ikea": "Bookcase with glass door",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/203.238.05.jpg"
+  ]
+ },
+ {
+  "id": "290.428.77",
+  "name": "TROFAST",
+  "type_ikea": "Storage combination with boxes",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 99.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/290.428.77.jpg"
+  ]
+ },
+ {
+  "id": "291.026.30",
+  "name": "TROFAST",
+  "type_ikea": "Storage combination with boxes",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 94.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/291.026.30.jpg"
+  ]
+ },
+ {
+  "id": "291.805.43",
+  "name": "STUVA,FLJA",
+  "type_ikea": "Storage combination with drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/291.805.43.jpg"
+  ]
+ },
+ {
+  "id": "298.766.51",
+  "name": "STUVA",
+  "type_ikea": "Storage combination w doors,drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/298.766.51.jpg"
+  ]
+ },
+ {
+  "id": "302.271.15",
+  "name": "HEMNES",
+  "type_ikea": "Cabinet with panel,glass-door",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 90.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.271.15.jpg"
+  ]
+ },
+ {
+  "id": "302.809.47",
+  "name": "NORNS",
+  "type_ikea": "Glass-door cabinet with 2 doors",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 65.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/302.809.47.jpg"
+  ]
+ },
+ {
+  "id": "303.034.87",
+  "name": "MALSJ",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/303.034.87.jpg"
+  ]
+ },
+ {
+  "id": "400.337.63",
+  "name": "IVAR",
+  "type_ikea": "Cabinet",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 80.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/400.337.63.jpg"
+  ]
+ },
+ {
+  "id": "402.397.21",
+  "name": "STOCKHOLM",
+  "type_ikea": "Sideboard",
+  "category": "cabinet",
+  "default_kind": "sideboard",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 160.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.397.21.jpg"
+  ]
+ },
+ {
+  "id": "402.608.35",
+  "name": "REGISSR",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 78.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.608.35.jpg"
+  ]
+ },
+ {
+  "id": "402.688.79",
+  "name": "LIATORP",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 96.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.688.79.jpg"
+  ]
+ },
+ {
+  "id": "402.688.84",
+  "name": "LIATORP",
+  "type_ikea": "Glass-door cabinet",
+  "category": "cabinet",
+  "default_kind": "display cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 96.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/402.688.84.jpg"
+  ]
+ },
+ {
+  "id": "490.017.91",
+  "name": "STUVA",
+  "type_ikea": "Storage combination w doors,drawers",
+  "category": "cabinet",
+  "default_kind": "storage cabinet",
+  "allowed_kinds": [
+   "sideboard",
+   "TV stand",
+   "display cabinet",
+   "storage cabinet",
+   "file cabinet",
+   "wardrobe"
+  ],
+  "dimensions_cm": {
+   "width": 60.0
+  },
+  "photos": [
+   "/home/fer/tp-llm/datos/dataset/ikea/images/objects/490.017.91.jpg"
+  ]
+ }
+]

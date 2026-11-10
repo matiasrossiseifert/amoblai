@@ -1,0 +1,36 @@
+{
+  "product": "301.571.03",
+  "text": "Type: round glass coffee table on wheels\nUse: holding drinks, books and decor in front of a sofa; living room, family room\nStyle: modern, contemporary, minimalist\nMaterials: white tempered glass top and shelf, nickel-plated steel tube frame, wheels\nColors: glossy white, silver\nShape: round glass top and matching lower shelf, thin metal rings around the edges, slim tube legs, two large disc wheels, light and open\nFeel: sleek, bright, clean, airy\nGoes with: grey or white sofas, chrome and glass accents, pale floors; modern living rooms and small apartments\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "301.571.03",
+      "name": "STRIND",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": null,
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "75 cm",
+      "colors": [
+        "White",
+        "nickel-plated"
+      ],
+      "description": "Separate shelf for magazines, etc. helps you keep your things organised and the table top clear."
+    },
+    "photos": [
+      "ed6fd8cc115dfca3"
+    ]
+  }
+}

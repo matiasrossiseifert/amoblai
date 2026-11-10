@@ -1,0 +1,35 @@
+{
+  "product": "303.003.61",
+  "text": "Type: turquoise tabletop picture frame\nUse: displaying a photo or print on a shelf, a desk or a wall; living room, home office, bedroom\nStyle: contemporary, retro, Scandinavian\nMaterials: smooth molded plastic frame in a soft satin finish, clear front panel, black fiberboard back with a fold-out stand\nColors: light turquoise, aqua blue, black back\nShape: slim rectangular portrait frame with a flat, fairly wide border and softly rounded edges, small and lightweight\nFeel: cheerful, fresh, playful\nGoes with: white walls, light wood shelves, pastel or bright accents; Scandinavian, retro or casual rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "303.003.61",
+      "name": "FISKBO",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "13x18 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Can be used hanging or standing, both horizontally and vertically, to fit in the space available."
+    },
+    "photos": [
+      "094ed1048d364b5d"
+    ]
+  }
+}

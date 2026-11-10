@@ -1,0 +1,39 @@
+{
+  "product": "402.605.19",
+  "text": "Type: geometric low-pile area rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: Scandinavian, modern, bohemian\nMaterials: short dense low pile\nColors: black, off-white cream, high contrast\nShape: rectangular, flat low pile, allover stepped diamond pattern in a repeating grid, thin black edge border, bold and graphic, large\nFeel: bold, graphic, lively\nGoes with: white walls, light wood, black metal, solid neutral sofas; Scandinavian, modern or monochrome rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "402.605.19",
+      "name": "LAPPLJUNG RUTA",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 200.0,
+        "depth": 300.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "200x300 cm",
+      "colors": [
+        "White",
+        "black"
+      ],
+      "description": "Ideal in your living room or under your dining table since the flat-woven surface makes it easy to pull out the chairs and vacuum."
+    },
+    "photos": [
+      "d02cce41179e969a"
+    ]
+  }
+}

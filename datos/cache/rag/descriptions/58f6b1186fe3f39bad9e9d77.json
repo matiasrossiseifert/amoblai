@@ -1,0 +1,39 @@
+{
+  "product": "abo-B07CTJJNX4",
+  "text": "Type: sheer curtain panel\nUse: diffusing daylight at windows; living room, bedroom, dining room\nStyle: minimalist, coastal, contemporary\nMaterials: lightweight sheer voile fabric, rod pocket top\nColors: white, soft off-white\nShape: long straight panel, rod pocket gathers, translucent, floor length, light and airy\nFeel: airy, bright, calm\nGoes with: white walls, wainscoting, leather, light floors; coastal, Scandinavian or minimalist rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07CTJJNX4",
+      "name": "Stone & Beam Sheer Transitional Curtain",
+      "category": "deco",
+      "kind": "curtains",
+      "dimensions_cm": null,
+      "brand": "Stone & Beam",
+      "product_type": "HOME_BED_AND_BATH",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "3b/3b410acf.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8e4682ae70b9630d"
+    ]
+  }
+}

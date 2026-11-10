@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0719H3LG2",
+  "text": "Type: chrome dome pendant lamp\nUse: light over a kitchen island or dining table; dining room, kitchen, entryway\nStyle: industrial, farmhouse, traditional\nMaterials: polished chrome shade, dark bronze metal yoke, black cord\nColors: silver chrome, dark bronze black\nShape: rounded bell shade with rolled rim, adjustable yoke bracket and turned finial, hangs on cord, compact\nFeel: vintage, crisp, workmanlike\nGoes with: subway tile, dark wood, black hardware; industrial or farmhouse rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0719H3LG2",
+      "name": "Amazon Brand \u2013 Stone & Beam Modern Industrial Round Ceiling Pendant Chandelier Fixture - 6.5 Inch Shade, 10 - 58 Inch Cord, Chrome and Black",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 16.5,
+        "depth": 16.5,
+        "height": 147.3
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Matte Black/Chrome"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Farmhouse",
+      "description": "This sleek pendant light combines matte black hardware with a chrome-finished hood for a handsome modern industrial look. White finish on the inside of the hood enhances illumination, and the hood and base can be adjusted for sloped ceilings. 6.5\" Diameter. Cord can adjust height from 10\"-58\". Metal hardware with black matte and chrome finish Flexible cord adjusts height for a modern or industrial kitchen or bar area. Bulbs not included Professional installation recommended. Intended for indoor use only",
+      "image_path": "47/4725939d.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "20af2c0f301e9555"
+    ]
+  }
+}

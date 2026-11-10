@@ -1,0 +1,45 @@
+{
+  "product": "abo-B079TXJXVX",
+  "text": "Type: geometric print cotton cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: mid-century modern, retro, contemporary\nMaterials: printed cotton with a slubby weave\nColors: blush pink, dark teal, mustard yellow, cream\nShape: square, overlapping blocky rectangles framed by cream lines with small teal squares, distressed print texture, knife edges, compact\nFeel: cheerful, warm, artistic\nGoes with: teal or grey sofas, walnut wood, brass; mid-century or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B079TXJXVX",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Geo Print Cotton Decorative Throw Pillow, Soft and Stylish, 17\" x 17\", Blush",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 14.0
+      },
+      "brand": "Rivet",
+      "product_type": "PILLOW",
+      "colors": [
+        "Blush"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Bring mid-century flair into your home with retro prints and colors. Patterns of blush, green, gold and ivory add a cheerful, interesting update to couch, chair or bed. For a quick change-up, reverse it to the solid blush linen-look back. 17\" x 17\" Front: Cotton; Back: Polyster Polyester fiber-filled insert included Insert can be easily removed via a bottom zipper on the cover Wipe with damp white cloth and allow to air dry",
+      "image_path": "c8/c85ce664.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "72e8b2bcbeee933f"
+    ]
+  }
+}

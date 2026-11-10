@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7BJK89",
+  "text": "Type: reclaimed wood slab-leg dining table\nUse: dining, gatherings; dining room, kitchen\nStyle: rustic, modern, minimalist\nMaterials: reclaimed fir planks, knots visible, natural finish\nColors: honey brown warm wood\nShape: thick rectangular plank top, two wide solid panel legs, clean blocky silhouette, medium size, solid visual weight\nFeel: warm, natural, simple\nGoes with: black metal chairs, white walls, linen textiles; rustic modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7BJK89",
+      "name": "Amazon Brand \u2013 Rivet Boundary Modern Reclaimed Fir Wood Dining Kitchen Table, 66\"L, Honey Brown",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 152.4,
+        "depth": 95.0,
+        "height": 78.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brown"
+      ],
+      "materials": [
+        "Wood"
+      ],
+      "style": null,
+      "description": "Reclaimed fir wood has been fashioned into a dining table that defines simple rustic beauty. Beautiful natural wood tones make your space warm and inviting, while sturdy construction will make this piece last through many game nights. 66\"L x 38\"D x 29.9\"H Made of hardwood comprised of 100% reclaimed fir A simple, natural style that works with modern farmhouse d\u00e9cor A dining table that can double as a work or craft space Assembly in 15 minutes or less; just screw in legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "84/84bbe4b8.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "dcb267852d71f727"
+    ]
+  }
+}

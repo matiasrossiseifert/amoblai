@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075X25BYC",
+  "text": "Type: L-shaped glass corner desk\nUse: computer work, gaming; home office, bedroom\nStyle: modern, contemporary, minimalist\nMaterials: black tempered glass top, black metal frame, sliding keyboard tray\nColors: black, dark grey\nShape: three-piece L-shaped top, X-shaped crossed metal legs, slim frame, pull-out keyboard tray, large footprint, open base\nFeel: sleek, bold, functional\nGoes with: black and chrome accents, grey or white walls; modern or gaming home offices\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B075X25BYC",
+      "name": "AmazonBasics Three Piece Corner Gaming Computer Desk - Black with Black Glass",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 134.6,
+        "depth": 134.6,
+        "height": 73.7
+      },
+      "brand": "AmazonBasics",
+      "product_type": "DESK",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "Glass"
+      ],
+      "style": "Black",
+      "description": "3-piece modular desk with contemporary, minimalist style; can be separated into 2 desks Smooth work surface made of black tempered safety glass (polished and beveled) Steel frame with black powder-coat finish provides optimal strength and stability; ships ready to build with step-by-step instructions Measures 55 by 20 by 29 inches (WxDxH); overall depth: 55 inches; backed by an AmazonBasics limited 1-year warranty An Amazon Brand",
+      "image_path": "97/972997b4.jpg",
+      "image_px": [
+        2560,
+        1288
+      ]
+    },
+    "photos": [
+      "fd0dbcaaa4fd56cb"
+    ]
+  }
+}

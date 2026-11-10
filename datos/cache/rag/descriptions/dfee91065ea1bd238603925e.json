@@ -1,0 +1,35 @@
+{
+  "product": "701.524.67",
+  "text": "Type: large black round wall clock\nUse: telling time on a wall; living room, kitchen, home office, dining room\nStyle: minimalist, modern, Scandinavian\nMaterials: slim black case with a raised rim, matte black face, white printed numerals and hands\nColors: black, white\nShape: plain round disc with a thin raised rim, large white numerals, dotted minute ring, slim white hands, flat and graphic, medium visual weight\nFeel: graphic, bold, calm, modern\nGoes with: white or light grey walls, black accents, light wood; monochrome, Scandinavian or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "701.524.67",
+      "name": "BONDIS",
+      "category": "deco",
+      "kind": "wall clock",
+      "dimensions_cm": null,
+      "type_ikea": "Wall clock",
+      "category_tp": "deco",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "12bbaaab4b3953ca"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "product": "102.691.54",
+  "text": "Type: oak chest of four drawers\nUse: storing clothes and linens, top for a lamp or decor; bedroom, living room, hallway\nStyle: Scandinavian, Japandi, minimalist\nMaterials: white-stained oak veneer, solid oak drawer lips\nColors: light natural oak, pale honey beige\nShape: upright boxy cabinet with four equal deep drawers, each front capped by a slanted overhanging lip that serves as the pull, set on a recessed wooden plinth with block feet, medium visual weight\nFeel: warm, calm, natural, orderly\nGoes with: white walls, linen bedding, light wood floors, green plants; Scandinavian or Japandi bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "102.691.54",
+      "name": "OPPLAND",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 4 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x102 cm",
+      "colors": [
+        "Oak veneer"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "44fdc09f1328af6f"
+    ]
+  }
+}

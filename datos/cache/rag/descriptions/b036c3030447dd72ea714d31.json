@@ -1,0 +1,47 @@
+{
+  "product": "abo-B075YQ46KX",
+  "text": "Type: industrial console table\nUse: display and drop zone behind a sofa or in an entryway; living room, hallway\nStyle: industrial, rustic, modern\nMaterials: solid wood plank top in a walnut stain, black powder-coated steel frame\nColors: warm medium walnut brown, matte black\nShape: long narrow rectangular top, slim square metal legs, low H-shaped stretcher, open frame without drawers, light and airy\nFeel: warm, sturdy, urban\nGoes with: leather, black metal, exposed brick, warm wood; industrial or loft living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B075YQ46KX",
+      "name": "Amazon Brand \u2013 Rivet Industrial Modern Console Table, 47.25\"W, Walnut Wood, Metal",
+      "category": "table",
+      "kind": "console table",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 40.0,
+        "height": 75.0
+      },
+      "brand": "Rivet",
+      "product_type": "HOME_FURNITURE_AND_DECOR",
+      "colors": [
+        "Walnut"
+      ],
+      "materials": [
+        "Solid acacia wood top; metal base"
+      ],
+      "style": null,
+      "description": "This industrial-style console table is a superior multi-tasker. Pull up some stools and use it as a bar for parties, can be a table for eating a quick breakfast or snack, or a work area for your laptop or crafting. 47.25'' W x 15.75''D x 29.5''H Solid acacia wood top; metal base in black finish A compact narrow table great for mutli-tasking Assemble in 15-30 minutes. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "f6/f6c27e8c.jpg",
+      "image_px": [
+        2000,
+        2000
+      ]
+    },
+    "photos": [
+      "4728a0e7a941ef1b"
+    ]
+  }
+}

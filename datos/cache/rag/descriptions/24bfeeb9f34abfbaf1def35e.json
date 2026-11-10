@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7ND7YH",
+  "text": "Type: round nesting side tables, set of two\nUse: holding drinks or decor beside a sofa or chair; living room, bedroom\nStyle: mid-century modern, glam, contemporary\nMaterials: walnut veneer top with radiating grain, brass-finish metal rim and legs\nColors: warm medium walnut, soft brass gold\nShape: round tray-like top with thin raised metal rim, three slender tapered legs with sculpted joints, nesting pair, light and elegant\nFeel: refined, warm, elegant\nGoes with: velvet, cream or green walls, brass accents; mid-century or glam living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B7ND7YH",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Nesting Metal Side Table, Set of 2, Brass and Walnut",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 52.1,
+        "depth": 45.5,
+        "height": 52.1
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Brass+walnut"
+      ],
+      "materials": [
+        "brass"
+      ],
+      "style": null,
+      "description": "Add mid-century modern flair to your room with these wood and brass nesting tables. Wood-grain patterning and retro tapered legs add visual interest. They're ideal for serving snacks to guests, but compact and stackable when you need to save space. (L): 20.5\"W x 20.5\"D x 21.9\"H; Leg Height: 20.5\"H; (S): 15.7\"W x 15.7\"D x 17.9\"H; Leg Height: 16.4\"H Fiberboard with walnut veneer; metal with brass finish Fun and functional retro style Compact design for small spaces Assembly in 15 minutes Free returns for 30 days. 1-year warranty.",
+      "image_path": "e9/e94e8413.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "82c3bfcb094cc81a"
+    ]
+  }
+}

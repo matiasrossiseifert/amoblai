@@ -1,0 +1,39 @@
+{
+  "product": "690.403.53",
+  "text": "Type: white rectangular dining table\nUse: dining, working at a table; dining room, kitchen, home office\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated top with rounded corners, white powder-coated tubular steel frame\nColors: white, all-white\nShape: thin rectangular top on two looped steel trestle legs with diagonal braces and a center rail, light and open, medium size\nFeel: fresh, bright, airy, simple\nGoes with: light wood chairs, colorful accents, white walls; Scandinavian kitchens and bright dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "690.403.53",
+      "name": "RYDEBCK",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 150.0,
+        "depth": 78.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "150x78 cm",
+      "colors": [
+        "White",
+        "backaryd white"
+      ],
+      "description": "The table top is produced with a lightweight construction that requires less material than solid wood and reduces the impact on the environment."
+    },
+    "photos": [
+      "1a657dc045b4c079"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "001.590.14",
+  "text": "Type: low woven rattan basket\nUse: holding throws, magazines, toys or desk clutter on a shelf or the floor; living room, home office, bedroom\nStyle: rustic, farmhouse, coastal\nMaterials: hand-woven rattan with a grey washed finish, thick twisted rim\nColors: warm grey, greige, light driftwood\nShape: low wide rectangular tray with flared sides, chunky braided rim, cut-out handles on the short ends, open and sturdy, medium visual weight\nFeel: rustic, relaxed, natural, cozy\nGoes with: weathered wood, linen, white or grey walls, whitewashed furniture; farmhouse, coastal or rustic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "001.590.14",
+      "name": "BYHOLMA",
+      "category": "deco",
+      "kind": "basket",
+      "dimensions_cm": null,
+      "type_ikea": "Basket",
+      "category_tp": "deco",
+      "size_raw": "25x29x15 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "The basket is hand woven and therefore has a  unique look."
+    },
+    "photos": [
+      "4dee677f6d06ade8"
+    ]
+  }
+}

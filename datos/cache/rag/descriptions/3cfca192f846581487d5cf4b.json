@@ -1,0 +1,37 @@
+{
+  "product": "302.527.46",
+  "text": "Type: tall white chest with drawers and open shelf\nUse: storing clothes and small items, display niche; bedroom, hallway, small spaces\nStyle: farmhouse, traditional, classic\nMaterials: white painted fiberboard with a subtle wood-grain texture, dark metal bar handles\nColors: white, dark grey handles\nShape: narrow upright chest with an open niche at the top over four drawers, raised band along each drawer front, curved bar handles, grooved vertical side trims, short square legs, slim footprint\nFeel: homey, fresh, tidy, gentle\nGoes with: light wood floors, beige or grey textiles, black accents; farmhouse or cottage-style bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "302.527.46",
+      "name": "BRUSALI",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 4 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x117 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "8a65817f79ef0ca3"
+    ]
+  }
+}

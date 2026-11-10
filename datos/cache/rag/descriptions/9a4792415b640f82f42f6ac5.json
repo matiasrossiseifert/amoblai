@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B5185LJ",
+  "text": "Type: diamond patterned runner rug\nUse: covering a hallway or bedside floor; hallway, bedroom, living room\nStyle: contemporary, modern, bohemian\nMaterials: hand-tufted yarn, raised plush texture\nColors: ivory, charcoal grey\nShape: long narrow runner, concentric diamond pattern, raised pile lines, low profile\nFeel: graphic, cozy, crafted\nGoes with: dark wood floors, woven baskets, white walls; modern or boho rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B5185LJ",
+      "name": "Amazon Brand \u2013 Rivet Contemporary Diamond Patterned Area Rug, 5'9\" x 3'9\", Grey Ivory",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 228.6,
+        "depth": 68.6,
+        "height": 0.6
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Grey,ivory"
+      ],
+      "materials": [],
+      "style": "Grey/Ivory",
+      "description": "This modern rug brings sophistication to any room with its intricate diamond-within-a-diamond pattern. Low- and high-pile loops are combined to create a three-dimensional look and feel. The durable fabric is ready for high-traffic areas. 7'6\" x 2'3\" High-low medium pile is easy to clean Pair with rug pad (sold separately) Ships tightly rolled in a protective bag",
+      "image_path": "03/0330aa32.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "392fc68cafff91cf"
+    ]
+  }
+}

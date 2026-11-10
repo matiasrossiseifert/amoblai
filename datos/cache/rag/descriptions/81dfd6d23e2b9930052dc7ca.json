@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0719K9G5L",
+  "text": "Type: vintage glass dome pendant light\nUse: light over a dining table or island; dining room, kitchen, entryway\nStyle: industrial, farmhouse, traditional\nMaterials: metal in oil-rubbed bronze, clear glass bell shade, exposed filament bulb\nColors: dark bronze, clear glass\nShape: small clear dome shade, yoke-style bracket with knobs, turned stem on downrod, compact\nFeel: nostalgic, warm, crafted\nGoes with: wood tables, white subway tile, dark metal accents; farmhouse or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0719K9G5L",
+      "name": "Amazon Brand \u2013 Stone & Beam Vintage Ceiling Pendant Lighting Fixtureand Clear Glass Shade - 7 x 7 x 17.25 Inches, 11.75 - 59.25 Inch Cord, Oil Rubbed Bronze",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 17.8,
+        "depth": 17.8,
+        "height": 43.8
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Oil-rubbed Bronze"
+      ],
+      "materials": [
+        "Glass+Metal"
+      ],
+      "style": "Vintage",
+      "description": "A modern interpretation of classic vintage design provides style and grace. The rod and hood are metal with oil-rubbed bronze finish and a clear glass shade. Rods are included for height adjustment. 7\"W x 7\"D. Rods adjust height from 11.75\"-59.25\". Clear glass shade, metal with oil-rubbed bronze finish Will blend with traditional and modern styles. Ideal for bar area or kitchen island. Bulbs not included Professional installation recommended. Intended for indoor use only",
+      "image_path": "b5/b5cb4bad.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "52a646a945d557bd"
+    ]
+  }
+}

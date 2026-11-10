@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B4SC6SS",
+  "text": "Type: brass sputnik-style chandelier\nUse: statement light over a dining table; dining room, living room\nStyle: mid-century modern, modern, glam\nMaterials: antique brass metal, exposed clear bulbs\nColors: warm brass gold, clear\nShape: three adjustable crossing arms on central rod, six bare globe bulbs at the ends, hangs on cord, wide, linear and open\nFeel: sculptural, warm, lively\nGoes with: walnut wood, dark walls, white or green tones; mid-century or modern rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B4SC6SS",
+      "name": "Amazon Brand \u2013 Rivet Mid-Century Modern 6-Light Ceiling Pendant Chandelier Fixture, 29.3\"W, Adjustable Hanging Height, Brass",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": {
+        "width": 74.4,
+        "depth": 16.5,
+        "height": 203.2
+      },
+      "brand": "Rivet",
+      "product_type": "LIGHT_FIXTURE",
+      "colors": [
+        "Brass"
+      ],
+      "materials": [
+        "Brass"
+      ],
+      "style": "Modern",
+      "description": "This mobile-style 6-light chandelier is sure to turn heads upward. Three brass arms, each with clear glass orbs on the ends, are presented in tri-level style. This beautiful statement piece adds a touch of glam to a modern or industrial style room. 29.3\"W x 6.5\"D x 80\"H, Hanging Length: 60\" Metal with brass finish; glass orb shades Included rods allow you to adjust the height Bulbs not included Professional hardwiring recommended Intended for indoor use only",
+      "image_path": "7f/7f4be477.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "218650e9db22d520"
+    ]
+  }
+}

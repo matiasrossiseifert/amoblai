@@ -1,0 +1,39 @@
+{
+  "product": "598.929.37",
+  "text": "Type: rectangular glass-top dining table\nUse: dining, working at a table; dining room, kitchen, home office\nStyle: modern, minimalist, contemporary\nMaterials: frosted tempered glass top, chrome-plated steel frame and square legs\nColors: white glass, shiny silver chrome\nShape: thin flat rectangular top on a slim metal apron, four straight square-section legs, light and open, medium size\nFeel: clean, bright, sleek, airy\nGoes with: white or grey walls, black or white chairs, chrome accents; modern kitchens and minimalist dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "f15a1a933ff4"
+    },
+    "product": {
+      "id": "598.929.37",
+      "name": "TORSBY",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": {
+        "width": 135.0,
+        "depth": 85.0
+      },
+      "type_ikea": "Table",
+      "category_tp": "table",
+      "size_raw": "135x85 cm",
+      "colors": [
+        "Chrome-plated",
+        "glass white"
+      ],
+      "description": "The table top made of tempered glass is easy to clean and more durable than ordinary glass."
+    },
+    "photos": [
+      "a87703d31af6e96e"
+    ]
+  }
+}

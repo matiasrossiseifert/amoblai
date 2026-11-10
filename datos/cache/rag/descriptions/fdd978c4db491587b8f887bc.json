@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07B7J5XSQ",
+  "text": "Type: round metal tray side table\nUse: holding drinks or a lamp beside a sofa or bed; living room, bedroom\nStyle: mid-century modern, minimalist, modern\nMaterials: black powder-coated metal\nColors: matte black\nShape: round tray top with raised lip, three slim splayed tapered legs, light and open, compact\nFeel: sleek, graphic, light\nGoes with: white walls, light wood, brass accents; modern or Scandinavian rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07B7J5XSQ",
+      "name": "Amazon Brand \u2013 Rivet Modern Round Metal Side End Accent Table, 15\"W, Black",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 55.1,
+        "depth": 39.1,
+        "height": 39.1
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Black"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "Mid-Century modern",
+      "description": "This simple end table adds a bit of modern style beside a chair or sofa, along with space for a lamp and your favorite beverage. A round tray top resting on slim, tapered legs brings a bit of mid-century influence to your room. 15.4\"W x 15.4\"D x 21.7\"H; Leg Height: 20.7\"H Metal top and legs with black finish Metal finished in black makes this ideal for a modern or industrial room Use for displaying small items, or as a place for your favorite beverage Assembly in 15 minutes; just screw on legs Free returns for 30 days. 1-year warranty.",
+      "image_path": "12/124281e6.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "1eae3ce782df0577"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07HSCJZQQ",
+  "text": "Type: magazine rack end table\nUse: holding magazines, drinks or a lamp beside a sofa; living room, home office\nStyle: modern, industrial, mid-century modern\nMaterials: black metal frame, walnut veneer top and base shelf, cognac leather sling\nColors: black, warm walnut, cognac brown\nShape: open cube frame, half wood top, low wood shelf, hanging leather sling pocket, compact and light\nFeel: crafted, warm, graphic\nGoes with: leather sofas, walnut, white walls, black accents; modern or industrial rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSCJZQQ",
+      "name": "Amazon Brand \u2013 Rivet Heather Modern End Table, 17.7 Inch Weight, Walnut",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 45.0,
+        "height": 57.9
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Multi Color"
+      ],
+      "materials": [
+        "metal"
+      ],
+      "style": "Side Table",
+      "description": "Complement your home\u2019s modern design with this beautifully simple mid-century-style end table. The 2 walnut-colored shelves and leather bag provide both elegance and organization options, and a strong metal frame keeps the table sturdy. 17.7\"W x 15.7\"D x 20.9\"H Walnut-colored MDF on a metal frame, with a leather bag Mid-century design updated to complement a modern simple style This end table's 2 layers of shelves and extra leather bag offer options for eazy organization. No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "d2/d27ab591.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d3aabafb5bdf3591"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "691.224.38",
+  "text": "Type: upholstered footstool on metal legs\nUse: resting feet in front of a sofa, extra seating; living room, family room\nStyle: contemporary, minimalist, modern\nMaterials: beige-grey woven linen-look fabric, padded seat cushion, brushed chrome metal sled legs\nColors: warm greige, silver chrome\nShape: wide low rectangular cushion with rounded edges over a slim base, thin angular metal legs, light and raised, medium visual weight\nFeel: calm, sleek, relaxed, soft\nGoes with: grey or beige sofas, white walls, glass and chrome, light wood; contemporary or minimalist living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "691.224.38",
+      "name": "NOCKEBY",
+      "category": "ottoman",
+      "kind": "ottoman",
+      "dimensions_cm": null,
+      "type_ikea": "Footstool",
+      "category_tp": "ottoman",
+      "size_raw": null,
+      "colors": [
+        "Ten light grey",
+        "chrome-plated"
+      ],
+      "description": "You get extra soft comfort and support because the thick cushion has a core of pocket springs and a top of cut foam and polyester fibres."
+    },
+    "photos": [
+      "09764c94818eee5b"
+    ]
+  }
+}

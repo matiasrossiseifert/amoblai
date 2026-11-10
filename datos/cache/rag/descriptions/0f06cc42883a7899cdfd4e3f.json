@@ -1,0 +1,43 @@
+{
+  "product": "abo-B000QU8RGS",
+  "text": "Type: floral jacquard cushion cover\nUse: decorative accent on a bed or sofa; bedroom, living room\nStyle: traditional, classic, glam\nMaterials: Egyptian cotton sateen jacquard, soft sheen, piped edge\nColors: pale French blue, chocolate brown and taupe pattern\nShape: square, all-over damask-style leaf and flower scrolls, piped edges, plump, medium size\nFeel: elegant, refined, soft\nGoes with: blue or ivory bedding, brown wood, silver accents; traditional or classic bedrooms and living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B000QU8RGS",
+      "name": "Pinzon Fleur Jacquard Egyptian Cotton Sateen 18-By-18-Inch Pillow Cover, French Blue/Chocolate",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "brand": "Pinzon by Amazon",
+      "product_type": "HOME",
+      "colors": [
+        "French Blue/Chocolate"
+      ],
+      "materials": [
+        "Cotton"
+      ],
+      "style": null,
+      "description": "Decorative pillow cover with an elegant Jacquard floral pattern; made in Portugal Made of 100-percent Egyptian cotton in a Sateen weave; 1-ply yarns; side slit opening Positive/negative reverse, with blue piping; coordinates with Pinzon Fleur Jacquard collection Machine washable and dryable; available in a choice of colors Measures 18 by 18 inches",
+      "image_path": "41/412351bd.jpg",
+      "image_px": [
+        2500,
+        1806
+      ]
+    },
+    "photos": [
+      "1318ccd50fc628a1"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "802.867.82",
+  "text": "Type: slim black picture frame with mat\nUse: framing posters, art prints or photos for a wall; living room, home office, bedroom, hallway\nStyle: minimalist, modern, classic\nMaterials: black frame with a slim rounded profile, white mat, clear front panel\nColors: black, white mat\nShape: tall rectangular portrait frame with a narrow molded edge and a wide white mat that centers the artwork, light and elegant\nFeel: refined, crisp, graphic, timeless\nGoes with: gallery walls, black and white prints, white or grey walls, wood or black furniture; minimalist, modern or classic rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "802.867.82",
+      "name": "MARIETORP",
+      "category": "deco",
+      "kind": "picture frame",
+      "dimensions_cm": null,
+      "type_ikea": "Frame",
+      "category_tp": "deco",
+      "size_raw": "50x70 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Can be hung horizontally or vertically to fit in the space available."
+    },
+    "photos": [
+      "98a13b86cfdc3b03"
+    ]
+  }
+}

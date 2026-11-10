@@ -1,0 +1,35 @@
+{
+  "product": "702.450.56",
+  "text": "Type: three-seat velvet sofa\nUse: seating, lounging, entertaining guests; living room, lounge, sitting room\nStyle: mid-century modern, contemporary, glam\nMaterials: soft velvet upholstery, solid wood tapered legs in a natural finish\nColors: deep black, warm honey wood\nShape: slim angled track arms, two long seat cushions, loose back cushions and side bolsters, splayed tapered wooden legs, long and refined\nFeel: luxurious, elegant, moody, soft\nGoes with: brass or gold accents, walnut or oak wood, jewel-tone textiles; mid-century or glam living rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "702.450.56",
+      "name": "STOCKHOLM",
+      "category": "sofa",
+      "kind": "sofa",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Sandbacka black"
+      ],
+      "description": "The cover is easy to keep clean as it is removable and can be dry cleaned."
+    },
+    "photos": [
+      "1ee56111d422a8d0"
+    ]
+  }
+}

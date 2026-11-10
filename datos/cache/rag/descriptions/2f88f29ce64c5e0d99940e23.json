@@ -1,0 +1,47 @@
+{
+  "product": "abo-B0714MJL15",
+  "text": "Type: distressed medallion area rug\nUse: anchoring a seating or bed area; living room, bedroom, dining room\nStyle: bohemian, traditional, contemporary\nMaterials: low-pile woven synthetic, faded vintage-wash finish\nColors: hot pink, coral orange, navy blue, cream\nShape: rectangular, all-over faded floral medallion pattern, layered borders, worn antique look, large\nFeel: vibrant, eclectic, warm\nGoes with: grey or white upholstery, dark wood floors, natural baskets, brass accents; bohemian or eclectic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B0714MJL15",
+      "name": "Rivet Vibrant Medallion Rug, 7'6\" x 9'6\", Pink",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 292.1,
+        "depth": 231.1,
+        "height": 0.5
+      },
+      "brand": "Rivet",
+      "product_type": "RUG",
+      "colors": [
+        "Ivory"
+      ],
+      "materials": [
+        "fibers"
+      ],
+      "style": "Transitional",
+      "description": "The vibrant colors and medallion design of this rug are sure to add an exciting pop of style to any room. Its beautiful hues of deep rouge outlined in blue make it the perfect addition to neutral d\u00e9cor. Distressed floral design Bright pattern with blue border, machine-woven in Turkey with long-lasting, 100% polypropylene fibers Low, 0.2\" pile suits high-traffic, transitional indoor areas Pair with a rug pad (sold separately) 7'6\" x 9'6\" Ships tightly rolled in a protective bag Unroll, allow a few days for fibers to settle",
+      "image_path": "70/70c94eab.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "ec3f26087ae2f44e"
+    ]
+  }
+}

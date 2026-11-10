@@ -1,0 +1,45 @@
+{
+  "product": "abo-B07B7GXKCN",
+  "text": "Type: two-drawer writing desk\nUse: working, writing; home office, bedroom, living room\nStyle: mid-century modern, retro, classic\nMaterials: wood veneer in a cherry finish, brass knobs, metal leg caps\nColors: warm reddish brown, gold accents\nShape: boxy rectangular top with beveled edges, two front drawers with small round knobs, round tapered splayed legs with metal tips, medium size\nFeel: warm, refined, nostalgic\nGoes with: brass, cream walls, green or mustard accents; mid-century or classic rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07B7GXKCN",
+      "name": "Amazon Brand \u2013 Rivet Hillsdale Gold Accent Office Desk",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 157.5,
+        "depth": 71.1,
+        "height": 76.2
+      },
+      "brand": "Rivet",
+      "product_type": "DESK",
+      "colors": [
+        "Gold"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "57/57ea093b.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "75f69fc1bfdb5d57"
+    ]
+  }
+}

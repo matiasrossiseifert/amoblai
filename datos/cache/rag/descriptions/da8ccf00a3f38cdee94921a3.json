@@ -1,0 +1,38 @@
+{
+  "product": "200.114.13",
+  "text": "Type: square side table\nUse: holding drinks, lamps and books, bedside use; living room, bedroom, dorm, small apartment\nStyle: minimalist, modern, Scandinavian\nMaterials: lightweight panel construction, smooth white painted finish\nColors: white\nShape: thick slab square top, four chunky square legs, clean blocky lines, compact, simple and lightweight\nFeel: clean, simple, fresh, practical\nGoes with: any sofa color, white walls, light wood floors, colorful accents; minimalist, modern or student rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v2@7a9a49b84310"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "200.114.13",
+      "name": "LACK",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 55.0,
+        "depth": 55.0
+      },
+      "type_ikea": "Side table",
+      "category_tp": "table",
+      "size_raw": "55x55 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Easy to assemble."
+    },
+    "photos": [
+      "42b30a0301a573cc"
+    ]
+  }
+}

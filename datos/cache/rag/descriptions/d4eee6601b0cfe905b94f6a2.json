@@ -1,0 +1,36 @@
+{
+  "product": "198.503.88",
+  "text": "Type: upholstered stool with fabric cover\nUse: extra seating at a dining or dressing table, footrest; dining room, bedroom, living room\nStyle: contemporary, classic, minimalist\nMaterials: white cotton slipcover over a padded seat, solid wood legs in a black-brown stain\nColors: white, dark black-brown\nShape: boxy square padded seat with a short skirted cover, four straight square legs, compact, medium visual weight\nFeel: soft, tidy, fresh, elegant\nGoes with: dark wood dining tables, white or grey walls, linen; classic, contemporary or Scandinavian dining rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "198.503.88",
+      "name": "NILS",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "blekinge white"
+      ],
+      "description": "The padded seat means you sit comfortably."
+    },
+    "photos": [
+      "1245ab4b09d08330"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "product": "602.886.83",
+  "text": "Type: round mirror with white frame\nUse: wall mirror that adds light and depth; hallway, bedroom, bathroom, living room\nStyle: minimalist, modern, contemporary\nMaterials: high-gloss white frame, glass mirror with a beveled edge\nColors: glossy white, silver mirror\nShape: circle in a slim flat white ring, smooth seamless surface, plain edge, light and airy\nFeel: bright, clean, calm\nGoes with: white walls, pale grey, light wood, chrome; minimalist, modern or Scandinavian rooms and bathrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "602.886.83",
+      "name": "LANGESUND",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "50 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Provided with safety film - reduces damage if glass is broken."
+    },
+    "photos": [
+      "c8b20ebe877966a7"
+    ]
+  }
+}

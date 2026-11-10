@@ -1,0 +1,47 @@
+{
+  "product": "abo-B07QD5SDWK",
+  "text": "Type: turned-column floor lamp\nUse: ambient reading light; living room, bedroom, home office, beside a sofa or armchair\nStyle: farmhouse, rustic, traditional\nMaterials: whitewashed distressed finish column, linen burlap drum shade\nColors: soft grey-green whitewash, warm oatmeal beige shade\nShape: slim turned pole with bulbous knob detail, round disc base, wide drum shade, tall and slender\nFeel: soft, cozy, relaxed, vintage\nGoes with: linen sofas, light or reclaimed wood, cream walls; farmhouse, cottage or coastal rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "84a1a368a6c5"
+    },
+    "product": {
+      "id": "abo-B07QD5SDWK",
+      "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": {
+        "width": 43.2,
+        "depth": 43.2,
+        "height": 153.7
+      },
+      "brand": "Stone & Beam",
+      "product_type": "LAMP",
+      "colors": [
+        "Distressed Grey"
+      ],
+      "materials": [
+        "Linen"
+      ],
+      "style": "Floor Lamp",
+      "description": "The rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only",
+      "image_path": "d1/d1194094.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "8c004c5267aca2d0"
+    ]
+  }
+}

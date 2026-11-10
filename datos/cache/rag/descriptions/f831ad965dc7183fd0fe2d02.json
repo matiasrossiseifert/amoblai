@@ -1,0 +1,35 @@
+{
+  "product": "003.218.69",
+  "text": "Type: perforated metal wall lamp\nUse: reading light beside a bed or sofa, accent light on a wall; bedroom, living room, hallway\nStyle: Scandinavian, retro, contemporary\nMaterials: lacquered metal cone shade with small punched holes, round metal wall plate, plug-in cord with switch\nColors: warm ivory, light beige\nShape: tapered cone shade angled downward on a short arm from a round wall plate, pinhole dots in swirling patterns, cord hanging below, compact and light\nFeel: soft, warm, cozy, gentle\nGoes with: light wood, cream or white walls, soft pastels, linen bedding; Scandinavian or retro bedrooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "003.218.69",
+      "name": "SNIG",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Safety tested and tamper-proof to protect little fingers."
+    },
+    "photos": [
+      "889a56653ed1c854"
+    ]
+  }
+}

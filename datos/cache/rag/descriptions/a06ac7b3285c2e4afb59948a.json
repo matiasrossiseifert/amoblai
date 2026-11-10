@@ -1,0 +1,47 @@
+{
+  "product": "abo-B072ZMSBQT",
+  "text": "Type: round marble side table\nUse: drink or lamp beside a sofa or bed; living room, bedroom\nStyle: modern, glam, contemporary\nMaterials: white marble top and lower shelf, brushed stainless steel frame\nColors: white with grey veining, cool silver grey\nShape: round two-tier, thin metal rims, slim flat vertical supports on one side, open and light, compact\nFeel: elegant, cool, airy\nGoes with: grey, white, velvet, chrome or glass accents; modern or glam rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B072ZMSBQT",
+      "name": "Amazon Brand \u2013 Rivet Molly Round Marble and Stainless Steel Side End Table",
+      "category": "table",
+      "kind": "side table",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 45.0,
+        "height": 45.0
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [
+        "Grey"
+      ],
+      "materials": [
+        "Metal"
+      ],
+      "style": "Traditional",
+      "description": "This retro piece will give a fashionable twist to any room where a side table is needed. Along with being a great conversation piece, it's a handy place for you and your friends to leave keys, phones and coffee cups. 17.7\"L x 17.7\"W x 19.7\"H White marble top and bottom, brushed stainless steel Retro and fashionable Convenient side table for living room, bedroom or even bathroom No assembly required Free returns for 30 days. 1-year warranty.",
+      "image_path": "52/52fc319d.jpg",
+      "image_px": [
+        2022,
+        2560
+      ]
+    },
+    "photos": [
+      "38a10eb14baef82b"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "403.034.39",
+  "text": "Type: narrow white metal and glass shelving unit\nUse: displaying books, plants and decor in a slim space; living room, home office, bedroom\nStyle: minimalist, Scandinavian, modern\nMaterials: white powder-coated steel frame, tempered glass shelves\nColors: white, clear glass\nShape: tall slim open frame of thin square tubes, glass shelves on five levels, open back and sides, airy and see-through, light visual weight\nFeel: light, airy, fresh, delicate\nGoes with: white walls, light wood, green plants, ceramics; Scandinavian, minimalist or modern rooms\n",
+  "model": "claude-opus-5-5 (Claude Code subagent)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_product_v3@2cd0386f0abc"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl",
+      "sha": "c837c5f4d985"
+    },
+    "product": {
+      "id": "403.034.39",
+      "name": "VITTSJ",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 100.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "100x175 cm",
+      "colors": [
+        "White",
+        "glass"
+      ],
+      "description": "Tempered glass and metal are durable materials that provide an open, airy feel."
+    },
+    "photos": [
+      "efa6c1927405055f"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "product": "abo-B07HSJJVD8",
+  "text": "Type: one-drawer end table\nUse: bedside or sofa-side storage and surface; bedroom, living room\nStyle: mid-century modern, retro\nMaterials: walnut-stained wood, inlaid line pattern on drawer, brass knob and leg caps\nColors: warm dark walnut, brass gold\nShape: small rectangular box top with one drawer, four splayed round tapered legs with brass feet, compact and light\nFeel: warm, refined, retro\nGoes with: mustard, teal, cream walls, brass lamps; mid-century bedrooms or living rooms\n",
+  "model": "claude-opus-5-5 (API)",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed",
+    "prompt": "describe_products_api_v1"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "written",
+      "file": "descripciones.jsonl,descripciones.jsonl",
+      "sha": "edd859ec750a"
+    },
+    "product": {
+      "id": "abo-B07HSJJVD8",
+      "name": "Rivet Mid-Century Modern End Table, 15.75\"W, Walnut Stain",
+      "category": "table",
+      "kind": "nightstand",
+      "dimensions_cm": {
+        "width": 46.9,
+        "depth": 29.9,
+        "height": 22.9
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "Add a modern flair to your home with this stunning end table. With a rich walnut stain, gold-capped tapered legs, and a unique chevron inlay on the drawer\u2019s front panel, this table exudes distinct personality and will capture attention in any room. 15.75\"W x 11.81\"D x 23.62\"H Engineered hardwood and fiberboard with brown ash veneer; rubber-wood legs with gold metal caps Modern style, with gold-tipped tapered legs, a gold drawer knob to match leg accents, and a chevron-design inlay on the front drawer panel This side table features 1 gliding drawer for storage next to your couch or bed. Assemble in 15 minutes or less Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty.",
+      "image_path": "53/537b56f1.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "d764267ceaa40044"
+    ]
+  }
+}
