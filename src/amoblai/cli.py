@@ -57,6 +57,27 @@ def cfg_for(config: Path, overrides: list[str] | None = None, paid: bool = False
     return load_config(config, over)
 
 
+# El ground truth del retrieval es de IKEA: las evaluaciones que lo usan corren siempre sobre el
+# catálogo de IKEA, aunque el flujo use otro (rag.catalog). Así los números siguen comparables.
+IKEA_GT = ["rag.catalog=datos/catalogo/ikea.yaml", "rag.describer=written"]
+
+
+def cfg_ikea(config: Path, overrides: list[str] | None = None, paid: bool = False):
+    return cfg_for(config, [*IKEA_GT, *(overrides or [])], paid)
+
+
+def cfg_of_run(config: Path, run: Path):
+    """La configuración con el catálogo de una corrida: el de IKEA si eligió solo productos de
+    IKEA (las corridas viejas), el combinado si eligió alguno de ABO."""
+    choice = json.loads((run / "3_choice.json").read_text())
+    ids = [c.get("id", "") for c in choice.get("answer", {}).get("choices", [])]
+    if any(i.startswith("abo-") for i in ids):
+        return cfg_for(
+            config, ["rag.catalog=datos/catalogo/todos.yaml", "rag.describer=written_todos"]
+        )
+    return cfg_ikea(config)
+
+
 @app.callback()
 def main(verbose: Annotated[bool, typer.Option("--verbose", "-v")] = False) -> None:
     load_env()
@@ -78,6 +99,7 @@ def data_ambientes() -> None:
     dónde es cada una, su autor y su licencia). No se commitean."""
     import httpx
     import yaml
+    from PIL import Image, ImageOps
 
     fotos = yaml.safe_load((paths.EMPTY_ROOMS / "publicas.yaml").read_text())["fotos"]
     headers = {"User-Agent": "amoblai-tp/0.1 (university project)"}
@@ -90,6 +112,11 @@ def data_ambientes() -> None:
         r.raise_for_status()
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(r.content)
+        with Image.open(dst) as im:  # los originales de Commons: a 2400 px, como las copias locales
+            if max(im.size) > 2400:
+                im = ImageOps.exif_transpose(im).convert("RGB")
+                im.thumbnail((2400, 2400), Image.LANCZOS)
+                im.save(dst, quality=92)
         n += 1
     console.print(f"{n} fotos bajadas ({len(fotos)} en publicas.yaml)")
 
@@ -259,6 +286,7 @@ def evaluar(
         ),
     ] = None,
     config: ConfigOpt = paths.CONFIG,
+    overrides: SetOpt = None,
 ) -> None:
     """Retrieval por texto sobre los ambientes IKEA: hit@k, MRR, recall, por método."""
     from amoblai.evaluation.retrieval import estimate_reranks, load_ablation, run_eval
@@ -268,14 +296,14 @@ def evaluar(
     if replica:
         queries, name = paths.REPLICAS / f"consultas_{replica}.json", f"{name}-{replica}"
     if estimar or (any(m.paid for m in methods) and not pagar):
-        cost = estimate_reranks(cfg_for(config), queries, paths.RAW, methods)
+        cost = estimate_reranks(cfg_ikea(config, overrides), queries, paths.RAW, methods)
         for method, (n, usd) in cost.items():
             console.print(f"{method}: {n} llamadas sin caché, unos US${usd}")
         if not estimar:
             raise typer.BadParameter(f"{ablacion} tiene métodos pagos: correr con --pagar")
         return
     run = run_eval(
-        cfg_for(config, paid=pagar),
+        cfg_ikea(config, overrides, paid=pagar),
         queries,
         paths.RAW,
         paths.EVAL_RUNS,
@@ -319,7 +347,7 @@ def evaluar_imagen(
     inventar otros, en el mismo ambiente (SSIM, SIFT) y con lo que se pidió (SigLIP 2)?"""
     from amoblai.evaluation.image import Models, evaluate_run, reference
 
-    cfg = cfg_for(config)
+    cfg = cfg_ikea(config)
     models = Models(Path(cfg.cache_dir) / "imagen")
     if referencia:
         ref = reference(cfg, paths.EVAL_QUERIES, paths.RAW, paths.IMAGE_REFERENCE, models)
@@ -344,7 +372,7 @@ def evaluar_imagen(
         "pedido Δ",
     )
     for run in runs:
-        r = evaluate_run(cfg, run, models)
+        r = evaluate_run(cfg_of_run(config, run), run, models)
         f, a, q = r["fidelidad"], r["ambiente"], r["pedido_imagen"]
         table.add_row(
             run.name,
@@ -424,6 +452,8 @@ def evaluar_punta_a_punta(
     load_env()
     exp = yaml.safe_load(experimento.read_text())
     rooms = e2e.load_rooms(Path(exp["ambientes"]))
+    if exp.get("solo"):  # un subconjunto de los ambientes, por slug
+        rooms = [r for r in rooms if r["slug"] in set(exp["solo"])]
     root = Path(exp["salida"])
     first = exp.get("plan_de")
     order = sorted(exp["variantes"], key=lambda v: v != first)  # la del plan, primero
@@ -440,7 +470,7 @@ def evaluar_punta_a_punta(
     llm = dict(cfg.evaluation.rerankers["opus"])
     for a, b in exp.get("comparaciones") or []:
         res = e2e.compare(cfg, llm, rooms, root, a, b)
-        out = root / f"juez_{a}_vs_{b}.json"
+        out = root / f"juez_{a}_vs_{b}{exp.get('sufijo', '')}.json"
         out.write_text(json.dumps(res, ensure_ascii=False, indent=1))
         t = Table(title=f"{a} vs {b} ({res['ambientes']} ambientes, {res['empates']} empates)")
         for col in ("variante", "gana", "útil", "aceptable", "pedido", "ambiente", "conjunto"):
@@ -469,7 +499,7 @@ def evaluar_espacio(config: ConfigOpt = paths.CONFIG) -> None:
     embedder) y la UMAP con una consulta del dominio y una de afuera. Gratis, local."""
     from amoblai.evaluation.space import OUT, analyze
 
-    r = analyze(cfg_for(config))
+    r = analyze(cfg_ikea(config))
     for e, m in r["separabilidad"].items():
         console.print(f"{e}: {m}")
     for name, q in r["consultas"].items():
@@ -494,7 +524,7 @@ def evaluar_graduada(
 
     if armar:
         run = [r for r in latest_runs(paths.EVAL_RUNS) if r.name.endswith("_ablacion-retrieval")]
-        batches = make_batches(cfg_for(paths.CONFIG), run[-1], metodo, n=armar)
+        batches = make_batches(cfg_ikea(paths.CONFIG), run[-1], metodo, n=armar)
         console.print(f"{len(batches)} lotes en {BATCHES}/ (respuestas en {ANSWERS}/)")
         return
     meta = json.loads((BATCHES / "meta.json").read_text())
