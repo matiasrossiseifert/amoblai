@@ -21,8 +21,15 @@
 # La página de las corridas (amoblai corridas): apunta a fotos que git no tiene
 /datos/resultados/amoblar/index.html
 
-# Documentación, consigna y material de la materia: solo local
-/docs/
+# Documentación, consigna y material de la materia: solo local. Excepción: las fuentes y los
+# guiones de las presentaciones. Los .html generados no, porque llevan embebidas fotos del dataset
+# (se rehacen con el build.py de cada una); tampoco las capturas de trabajo.
+/docs/*
+!/docs/presentacion/
+!/docs/presentaciones_nuevas/
+/docs/presentacion/amoblai.html
+/docs/presentaciones_nuevas/*/presentacion.html
+/docs/presentaciones_nuevas/*/_trabajo/
 /material-clases/
 
 # Python / herramientas
