@@ -1,0 +1,604 @@
+{
+  "pieces": [
+    {
+      "piece": "un sof\u00e1 de cuero marr\u00f3n envejecido, en el centro del espacio libre mirando hacia la pared derecha",
+      "spec": {
+        "piece": "un sof\u00e1 de cuero marr\u00f3n envejecido, en el centro del espacio libre mirando hacia la pared derecha",
+        "why": "es la pieza que pidieron y la que define el living; el cuero co\u00f1ac envejecido calienta la madera clara, y flotarlo en el centro deja libres los radiadores y la circulaci\u00f3n hacia la puerta",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seater leather sofa\nUse: seating and lounging; open loft living room\nStyle: industrial, rustic, mid-century modern\nMaterials: distressed full-grain leather, wood frame, black metal legs\nColors: aged cognac brown, worn tan\nShape: long and low, square arms, tufted or plain cushions, slim metal legs, substantial visual weight\nFeel: worn-in, warm, relaxed\nGoes with: exposed pine beams, light oak parquet, black metal; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "002.729.20",
+          "name": "TIMSFORS",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/002.729.20.jpg"
+          ],
+          "description": "Type: leather sofa with chaise longue\nUse: seating, lounging with legs up; living room, den, TV room\nStyle: classic, contemporary, traditional\nMaterials: grain leather upholstery, padded cushions, small black feet\nColors: dark chocolate brown, black feet\nShape: three plump back cushions, chunky padded rolled arms, chaise on the right, deep seat, short square feet, low and bulky\nFeel: warm, plush, solid, inviting\nGoes with: dark wood, brass or black metal, cream and rust textiles; classic, traditional or industrial living rooms\n",
+          "score": 0.792487621307373,
+          "kind": "sofa"
+        },
+        {
+          "id": "601.985.93",
+          "name": "KIVIK",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/601.985.93.jpg"
+          ],
+          "description": "Type: three-seat leather sofa\nUse: seating, lounging, watching TV; living room, den, lounge\nStyle: contemporary, modern, minimalist\nMaterials: smooth leather upholstery with stitched seams, small black block feet\nColors: black, glossy black\nShape: deep boxy frame, wide low flat arms, two loose back and seat cushions, nearly floor-level base, low and bulky\nFeel: sleek, solid, comfortable, bold\nGoes with: white or grey walls, chrome or glass tables, light wood floors; modern, contemporary or industrial living rooms\n",
+          "score": 0.7571661472320557,
+          "kind": "sofa"
+        },
+        {
+          "id": "702.450.56",
+          "name": "STOCKHOLM",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/702.450.56.jpg"
+          ],
+          "description": "Type: three-seat velvet sofa\nUse: seating, lounging, entertaining guests; living room, lounge, sitting room\nStyle: mid-century modern, contemporary, glam\nMaterials: soft velvet upholstery, solid wood tapered legs in a natural finish\nColors: deep black, warm honey wood\nShape: slim angled track arms, two long seat cushions, loose back cushions and side bolsters, splayed tapered wooden legs, long and refined\nFeel: luxurious, elegant, moody, soft\nGoes with: brass or gold accents, walnut or oak wood, jewel-tone textiles; mid-century or glam living rooms\n",
+          "score": 0.7521538734436035,
+          "kind": "sofa"
+        },
+        {
+          "id": "390.338.01",
+          "name": "STOCKSUND",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/390.338.01.jpg"
+          ],
+          "description": "Type: three-seat sofa with rolled arms\nUse: seating, lounging; living room, family room\nStyle: traditional, classic\nMaterials: woven fabric upholstery, turned black wood legs\nColors: dark charcoal grey, black legs\nShape: low scrolled arms, two loose back cushions and two seat cushions, piped edges, turned tapered legs, medium visual weight\nFeel: elegant, cozy, calm\nGoes with: dark wood, brass accents, cream or patterned textiles; classic, traditional or English-style living rooms\n",
+          "score": 0.7325393557548523,
+          "kind": "sofa"
+        },
+        {
+          "id": "591.110.44",
+          "name": "NOCKEBY",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/591.110.44.jpg"
+          ],
+          "description": "Type: sofa with right-side chaise longue\nUse: seating, lounging, putting feet up; living room, den, TV room\nStyle: contemporary, minimalist, modern\nMaterials: woven fabric upholstery, chrome-plated metal legs and base\nColors: charcoal black, dark warm grey, silver\nShape: L-shaped corner form, wide boxy track arms, loose back cushions, chaise on the right, slim metal legs, low and substantial\nFeel: sleek, grounded, cozy, urban\nGoes with: light grey walls, glass and metal tables, white or wood accents; modern or contemporary living rooms\n",
+          "score": 0.720034122467041,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "una mesa ratona de madera maciza con patas de metal negro, delante del sof\u00e1",
+      "spec": {
+        "piece": "una mesa ratona de madera maciza con patas de metal negro, delante del sof\u00e1",
+        "why": "la pidieron as\u00ed: una tapa de madera maciza m\u00e1s oscura que el parquet y patas de acero negro dan el contraste industrial sin pelearse con las vigas",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 140,
+        "max_depth_cm": 80,
+        "max_height_cm": 50,
+        "query": "Type: coffee table, solid wood top, metal legs\nUse: coffee table in front of sofa; loft living room\nStyle: industrial, rustic\nMaterials: solid reclaimed wood top, black steel legs\nColors: warm dark oak or walnut brown, matte black\nShape: rectangular, thick plank top, hairpin or frame steel legs, sturdy medium visual weight\nFeel: raw, solid, warm\nGoes with: brown leather sofa, exposed pine beams, light oak floor; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: round black coffee table\nUse: holding drinks, books and decor; living room, family room\nStyle: Scandinavian, modern, mid-century modern\nMaterials: black painted solid wood legs, painted wood-based top\nColors: matte black\nShape: large round top with a molded edge, four angled splayed legs joined by a crossed stretcher, open base, medium visual weight\nFeel: graphic, calm, bold, grounded\nGoes with: light wood floors, white or grey sofas, brass or white accents; Scandinavian or modern living rooms\n",
+          "score": 0.7297375202178955,
+          "kind": "coffee table"
+        },
+        {
+          "id": "101.762.87",
+          "name": "HEMNES",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 90.0,
+            "depth": 90.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/101.762.87.jpg"
+          ],
+          "description": "Type: square coffee table with shelf\nUse: holding drinks, books and decor; living room, family room\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid pine in a white stain with visible grain\nColors: white, soft warm white\nShape: large square top, thick square legs, open lower shelf, simple apron, sturdy and low\nFeel: homey, bright, calm, sturdy\nGoes with: white or cream sofas, light wood floors, linen and wicker; farmhouse, coastal or Scandinavian living rooms\n",
+          "score": 0.6894145607948303,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 0.6880313754081726,
+          "kind": "coffee table"
+        },
+        {
+          "id": "602.611.55",
+          "name": "REGISSR",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 118.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/602.611.55.jpg"
+          ],
+          "description": "Type: rectangular coffee table with open shelves\nUse: holding books, magazines and drinks; living room\nStyle: mid-century modern, retro, contemporary\nMaterials: brown wood-veneer finish, tempered glass top, solid wood tapered legs\nColors: dark walnut brown, clear glass\nShape: low long box with two open compartments under a glass top, raised on four splayed tapered legs with a stretcher frame, medium visual weight\nFeel: warm, refined, vintage, orderly\nGoes with: walnut or teak, mustard or olive textiles, brass accents; mid-century or retro living rooms\n",
+          "score": 0.6793955564498901,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.133.09",
+          "name": "VITTSJ",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.133.09.jpg"
+          ],
+          "description": "Type: round glass coffee table with shelf\nUse: holding drinks, books and decor; living room\nStyle: modern, industrial, minimalist\nMaterials: clear tempered glass top, black-brown powder-coated steel frame, dark wood-effect lower shelf\nColors: black-brown, clear glass\nShape: round glass top in a thin metal ring, four slim straight legs, large round lower shelf, light and see-through\nFeel: airy, sleek, light, urban\nGoes with: grey or leather sofas, black metal accents, light floors; modern apartments and industrial living rooms\n",
+          "score": 0.6597611904144287,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "una biblioteca de metal negro y madera, contra la pared derecha junto a la puerta",
+      "spec": {
+        "piece": "una biblioteca de metal negro y madera, contra la pared derecha junto a la puerta",
+        "why": "la pidieron para esa pared; la estructura de acero negro y los estantes de madera repiten la mesa ratona y la baranda negra de la escalera, y estantes abiertos no achican el espacio",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 160,
+        "max_depth_cm": 40,
+        "max_height_cm": 220,
+        "query": "Type: bookcase, open metal frame shelving\nUse: books and display; loft living room\nStyle: industrial\nMaterials: black steel frame, solid wood shelves\nColors: matte black, warm medium brown wood\nShape: tall open shelving, ladder or grid steel frame, four to five wood shelves, airy visual weight\nFeel: raw, structured, warm\nGoes with: black stair railing, solid wood coffee table, brown leather sofa; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "599.026.58",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 151.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/599.026.58.jpg"
+          ],
+          "description": "Type: open metal and glass shelving unit\nUse: displaying books, plants and decor on open shelves; living room, home office, dining room\nStyle: industrial, minimalist, modern\nMaterials: black-brown powder-coated steel frame, clear glass shelves, dark laminated bottom shelf\nColors: dark black-brown, clear glass\nShape: tall wide open grid of three joined bays in thin square tubing, several tiers of see-through glass and dark shelves, open sides and back, airy and light for its size\nFeel: airy, graphic, light, urban\nGoes with: light wood, white walls, green plants, leather; industrial, Scandinavian or modern living rooms and studios\n",
+          "score": 0.7778263092041016,
+          "kind": "bookcase"
+        },
+        {
+          "id": "202.133.12",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 100.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.133.12.jpg"
+          ],
+          "description": "Type: metal and glass shelving unit\nUse: displaying books, plants and decor, dividing a room; living room, home office, dining room\nStyle: industrial, modern, minimalist\nMaterials: black-brown powder-coated steel frame, tempered glass shelves, wood-effect bottom shelf\nColors: dark black-brown, clear glass\nShape: tall wide open grid of thin square tubes with a center divider, glass shelves on several levels, solid bottom shelf, open back and sides, airy and see-through\nFeel: graphic, light, urban, tidy\nGoes with: dark wood, concrete, leather, brass or black accents, green plants; industrial or modern lofts\n",
+          "score": 0.7657824158668518,
+          "kind": "bookcase"
+        },
+        {
+          "id": "100.937.63",
+          "name": "RNNSKR",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/100.937.63.jpg"
+          ],
+          "description": "Type: black metal three-tier shelving unit\nUse: displaying plants, books and small decor, storing towels; living room, bedroom, bathroom\nStyle: traditional, farmhouse, classic\nMaterials: black powder-coated steel frame, perforated metal shelves, clear glass top shelf\nColors: matte black, clear glass\nShape: tall narrow open frame on four slim legs with ball feet, scrolled wrought-iron crest along the top, dotted pattern on the shelves, light and see-through, compact\nFeel: romantic, vintage, airy, delicate\nGoes with: white walls, pale wood, wicker baskets, green plants; farmhouse, cottage or classic rooms\n",
+          "score": 0.7565581202507019,
+          "kind": "bookcase"
+        },
+        {
+          "id": "502.216.88",
+          "name": "FJLKINGE",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 58.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.216.88.jpg"
+          ],
+          "description": "Type: narrow white metal shelving unit\nUse: storing books, files, boxes and decor; living room, home office, bedroom, hallway\nStyle: industrial, minimalist, Scandinavian\nMaterials: white powder-coated steel frame and shelves\nColors: white\nShape: tall slim open frame with perforated uprights, flat adjustable shelves on several levels, open back and sides, crisp straight lines, light and airy\nFeel: clean, airy, practical, calm\nGoes with: light wood, concrete, plants, black accents; industrial, minimalist or Scandinavian studios\n",
+          "score": 0.7360390424728394,
+          "kind": "bookcase"
+        },
+        {
+          "id": "802.456.40",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 90.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.456.40.jpg"
+          ],
+          "description": "Type: tall solid wood bookcase\nUse: storing books, displaying decor and collections; living room, home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: solid pine with a black-brown stain, visible wood grain\nColors: dark black-brown, espresso\nShape: tall upright frame on four short square legs, framed side panels, overhanging flat top, several open adjustable shelves, straight edges, substantial and dark\nFeel: solid, cozy, studious, timeless\nGoes with: cream or white walls, warm textiles, brass accents, dark wood; traditional studies, farmhouse or classic living rooms\n",
+          "score": 0.7110452651977539,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara de pie de metal, al costado del sof\u00e1",
+      "spec": {
+        "piece": "una l\u00e1mpara de pie de metal, al costado del sof\u00e1",
+        "why": "la pidieron, y de noche el techo alto e inclinado necesita una luz baja que arme el rinc\u00f3n de lectura; metal negro o bronce oscuro con aire de taller",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, metal arc or adjustable arm\nUse: reading light beside sofa; loft living room\nStyle: industrial\nMaterials: black metal, aged brass details\nColors: matte black, dark bronze\nShape: tall slim stand, articulated arm, metal dome or cage shade, light visual weight\nFeel: utilitarian, warm, vintage\nGoes with: brown leather sofa, black steel shelving, exposed wood beams; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "003.313.78",
+          "name": "RANARP",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/003.313.78.jpg"
+          ],
+          "description": "Type: black swing-arm floor reading lamp\nUse: reading light beside a sofa, armchair or desk; living room, home office, bedroom\nStyle: industrial, farmhouse, retro\nMaterials: matte black powder-coated steel, brass-tone details, braided textile cord\nColors: matte black, brass\nShape: tall pole with a long counterbalanced horizontal arm, dome shade on one end, brass pivot joint and socket, round heavy base, linear and graphic, medium visual weight\nFeel: sturdy, nostalgic, crafted, focused\nGoes with: dark or warm wood, leather, brick, black metal; industrial, farmhouse or vintage-style living rooms and studies\n",
+          "score": 0.8164986371994019,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "800.895.74",
+          "name": "BAROMETER",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/800.895.74.jpg"
+          ],
+          "description": "Type: balance-arm floor reading lamp\nUse: reading light beside an armchair or a sofa; living room, bedroom, study\nStyle: industrial, classic, retro\nMaterials: nickel-plated steel shade, arm, pole and stepped round base, black cord with foot switch\nColors: brushed silver nickel, black\nShape: small dome shade at the end of a long horizontal swing arm with a knob counterweight, tall straight pole, heavy stepped base, light and linear\nFeel: refined, studious, vintage, elegant\nGoes with: leather armchairs, dark wood, bookshelves; classic studies, industrial or traditional living rooms\n",
+          "score": 0.7980653047561646,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "303.047.26",
+          "name": "ANTIFONI",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/303.047.26.jpg"
+          ],
+          "description": "Type: chrome architect floor lamp\nUse: reading and task light beside an armchair, sofa or desk; living room, home office, study\nStyle: industrial, modern, retro\nMaterials: polished chrome-plated steel shade, jointed arms and pole, round metal base\nColors: polished silver chrome, black joints\nShape: small bell shade on a long two-part jointed arm with tension cables, tall slim pole, round flat base, mechanical drafting lamp look, light and open\nFeel: sleek, focused, studious, crisp\nGoes with: dark wood, leather, white or grey walls, black accents; industrial, modern or retro studies and living rooms\n",
+          "score": 0.7794466018676758,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "302.865.67",
+          "name": "SAMTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.865.67.jpg"
+          ],
+          "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.7430614233016968,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "602.165.49",
+          "name": "HEKTAR",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.165.49.jpg"
+          ],
+          "description": "Type: dark grey industrial floor lamp\nUse: reading or directed light beside a sofa or an armchair; living room, bedroom, home office\nStyle: industrial, modern, minimalist\nMaterials: matte powder-coated steel shade, pole and round base, white inner shade, black cord with foot switch\nColors: dark charcoal grey, white inside\nShape: large tilting bell shade on a straight thin pole, heavy round base, tall with a bold head, medium visual weight\nFeel: strong, urban, practical, moody\nGoes with: leather or grey sofas, concrete, dark wood, brick; industrial lofts and modern living rooms\n",
+          "score": 0.7418621778488159,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "una alfombra grande en tonos tierra, debajo del sof\u00e1 y la mesa ratona",
+      "spec": {
+        "piece": "una alfombra grande en tonos tierra, debajo del sof\u00e1 y la mesa ratona",
+        "why": "la pidieron grande: ancla el living en medio del loft y sus terracotas, \u00f3xidos y marrones unen el cuero con el parquet claro",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 250,
+        "max_height_cm": null,
+        "query": "Type: rug, large area rug\nUse: anchoring seating area; loft living room\nStyle: industrial, bohemian, rustic\nMaterials: wool, jute\nColors: terracotta, rust, warm brown, sand, charcoal\nShape: large rectangle, faded vintage or distressed pattern, low pile\nFeel: earthy, warm, worn\nGoes with: brown leather sofa, light oak floor, black metal; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "402.852.56",
+          "name": "TERNSLEV",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 250.0,
+            "depth": 250.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.852.56.jpg"
+          ],
+          "description": "Type: irregular patchwork jute rug\nUse: anchoring a seating area, statement floor piece; living room, dining room, study\nStyle: contemporary, bohemian, Scandinavian\nMaterials: natural jute-like plant fibre flatweave, red edge binding\nColors: warm natural tan, black grid lines, bright red edges\nShape: four offset rectangular panels forming a stepped irregular outline, black windowpane and stripe grids in varying scales, flat, large\nFeel: artful, earthy, quirky, relaxed\nGoes with: light wood, white walls, black metal, red accents; eclectic, Scandinavian or modern rooms\n",
+          "score": 0.7810088992118835,
+          "kind": "rug"
+        },
+        {
+          "id": "502.773.93",
+          "name": "LOHALS",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 230.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.773.93.jpg"
+          ],
+          "description": "Type: natural jute area rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: coastal, bohemian, Scandinavian\nMaterials: chunky handwoven jute flatweave\nColors: warm natural tan, golden brown, light flecks\nShape: rectangular, flat, coarse chunky basket-weave texture with visible fibre loops, plain edges, large and relaxed\nFeel: earthy, natural, relaxed, warm\nGoes with: white walls, light wood, rattan, linen and plants; coastal, bohemian or Japandi rooms\n",
+          "score": 0.7657433748245239,
+          "kind": "rug"
+        },
+        {
+          "id": "203.074.81",
+          "name": "LOHALS",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 80.0,
+            "depth": 150.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/203.074.81.jpg"
+          ],
+          "description": "Type: jute flatwoven rug\nUse: adding natural texture by a door or bed; entryway, hallway, bedroom, living room\nStyle: coastal, rustic, bohemian\nMaterials: thick woven jute, chunky ribbed weave\nColors: warm natural tan, light straw, hints of rust\nShape: small rectangle with coarse vertical ribbed texture, plain edges, flat but chunky, compact\nFeel: earthy, warm, organic, relaxed\nGoes with: light wood, rattan, white walls, linen and cotton; coastal, bohemian or farmhouse rooms\n",
+          "score": 0.7443334460258484,
+          "kind": "rug"
+        },
+        {
+          "id": "302.992.30",
+          "name": "PERSISK HAMADAN",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 200.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.992.30.jpg"
+          ],
+          "description": "Type: hand-knotted Persian area rug\nUse: anchoring a seating or dining area; living room, dining room, study, bedroom\nStyle: traditional, classic, bohemian\nMaterials: hand-knotted wool-look short pile, fine dense knotting\nColors: deep brick red, dark navy, rust orange, ivory accents\nShape: rectangle with a central diamond medallion, small tribal motifs, wide geometric border, flat low pile, medium size, richly patterned\nFeel: warm, rich, timeless, crafted\nGoes with: dark or warm wood, leather, brass, cream walls; traditional, classic or bohemian living rooms and studies\n",
+          "score": 0.7317292094230652,
+          "kind": "rug"
+        },
+        {
+          "id": "702.647.28",
+          "name": "IKEA PS 2014",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 128.0,
+            "depth": 180.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.647.28.jpg"
+          ],
+          "description": "Type: geometric flatwoven area rug\nUse: anchoring a seating area, statement floor piece; living room, bedroom, study\nStyle: contemporary, Scandinavian, bohemian\nMaterials: flatwoven wool-like yarn with a ribbed texture\nColors: light warm beige, aqua blue, taupe brown, blush pink, lemon yellow, navy\nShape: rectangular, flat, nested elongated diamonds and crossing lines drawn as thin colored strokes, airy linear pattern, light visual weight\nFeel: airy, artful, cheerful, light\nGoes with: light wood, white walls, pastel textiles, brass or black accents; Scandinavian, modern or eclectic rooms\n",
+          "score": 0.7306175827980042,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "almohadones y una manta para el sof\u00e1",
+      "spec": {
+        "piece": "almohadones y una manta para el sof\u00e1",
+        "why": "terminan el sof\u00e1 con textura en lino y lana en \u00f3xido, oliva y carb\u00f3n, sin blanco brillante",
+        "kinds": [
+          "cushion",
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, textured linen and wool\nUse: decorating leather sofa; loft living room\nStyle: industrial, rustic\nMaterials: washed linen, wool, canvas\nColors: rust, olive, charcoal, camel\nShape: square, simple, chunky texture\nFeel: cozy, earthy, relaxed\nGoes with: cognac leather sofa, earth-tone rug; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "503.265.29",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.265.29.jpg"
+          ],
+          "description": "Type: rust red linen-look cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, bohemian, contemporary\nMaterials: woven linen-look fabric with a visible slub texture, flat seamed edge\nColors: warm rust red, brick orange\nShape: square plump cushion with a plain surface, slightly rounded corners, simple sewn edge, medium size\nFeel: warm, earthy, relaxed\nGoes with: natural wood, terracotta, cream or grey sofas, green plants; Scandinavian or bohemian living rooms\n",
+          "score": 0.7904736995697021,
+          "kind": "cushion"
+        },
+        {
+          "id": "202.617.32",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.617.32.jpg"
+          ],
+          "description": "Type: linen cushion\nUse: back support and decoration on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, Japandi\nMaterials: washed linen with a fine slub texture\nColors: light warm beige, greige\nShape: square plain cushion, soft rounded corners, clean seamed edges, slightly crumpled natural texture, medium size\nFeel: calm, natural, soft, relaxed\nGoes with: white or grey sofas, light oak, wool throws, stone tones; Scandinavian, Japandi or minimalist living rooms\n",
+          "score": 0.7883857488632202,
+          "kind": "cushion"
+        },
+        {
+          "id": "302.006.96",
+          "name": "URSULA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.006.96.jpg"
+          ],
+          "description": "Type: cable-knit throw blanket\nUse: warmth and texture on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: chunky knitted yarn, cable and seed stitch panels\nColors: off-white, cream\nShape: rectangular knitted blanket with raised cable braids and textured bands, softly scalloped edges, soft and heavy drape\nFeel: cozy, warm, soft, homey\nGoes with: grey or beige sofas, light wood, wool and sheepskin; Scandinavian, farmhouse or cabin-style living rooms and bedrooms\n",
+          "score": 0.665520429611206,
+          "kind": "throw"
+        },
+        {
+          "id": "202.049.06",
+          "name": "GURLI",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.049.06.jpg"
+          ],
+          "description": "Type: melange woven throw\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft woven yarn with a slightly fuzzy brushed texture\nColors: dark charcoal grey, white flecks\nShape: folded rectangle, heathered melange surface, plain hemmed edges, soft and drapey, light visual weight\nFeel: cozy, calm, warm, understated\nGoes with: light grey or white sofas, light wood, black accents, wool; Scandinavian, minimalist or industrial rooms\n",
+          "score": 0.6495305299758911,
+          "kind": "throw"
+        },
+        {
+          "id": "401.903.81",
+          "name": "HENRIKA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/401.903.81.jpg"
+          ],
+          "description": "Type: woven beige cotton throw\nUse: covering a sofa, an armchair or a bed, keeping warm; living room, bedroom\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: chunky basket-weave cotton blend with a subtle sheen, hemmed edges\nColors: light beige, warm cream, greige\nShape: rectangular throw in two tones, a nubby textured weave, folds into soft thick layers\nFeel: warm, natural, cozy, calm\nGoes with: neutral linen, light wood, white walls, earthy tones; Scandinavian, farmhouse or Japandi rooms\n",
+          "score": 0.6478469371795654,
+          "kind": "throw"
+        }
+      ]
+    },
+    {
+      "piece": "una planta grande en maceta oscura, junto a la ventana del fondo",
+      "spec": {
+        "piece": "una planta grande en maceta oscura, junto a la ventana del fondo",
+        "why": "aporta vida y verde al espacio amplio y luminoso, con una maceta de metal o cemento oscuro que sigue la paleta",
+        "kinds": [
+          "plant pot"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant pot, large floor planter\nUse: holding a large plant; loft living room\nStyle: industrial\nMaterials: concrete or black metal\nColors: charcoal grey, matte black\nShape: tall cylinder, simple, medium visual weight\nFeel: raw, grounded\nGoes with: black steel shelving, exposed wood beams; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "101.556.71",
+          "name": "SOCKER",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/101.556.71.jpg"
+          ],
+          "description": "Type: galvanized steel plant pot\nUse: holding a potted plant or herbs on a windowsill, shelf or floor; kitchen, living room, balcony\nStyle: industrial, farmhouse, rustic\nMaterials: galvanized steel with a shiny metallic finish\nColors: silver grey metal\nShape: round bucket-like pot tapering toward the base, rolled rim, ribbed horizontal grooves around the body, compact and light\nFeel: practical, fresh, casual, utilitarian\nGoes with: green plants, raw wood, white walls, terracotta; industrial, farmhouse or rustic rooms and balconies\n",
+          "score": 0.6682837605476379,
+          "kind": "plant pot"
+        },
+        {
+          "id": "901.556.72",
+          "name": "SOCKER",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/901.556.72.jpg"
+          ],
+          "description": "Type: galvanized steel plant pot\nUse: holding a potted plant indoors or on a balcony; living room, kitchen, balcony\nStyle: industrial, farmhouse, rustic\nMaterials: galvanized steel with a shiny zinc finish\nColors: bright silver grey metal\nShape: tapered bucket shape with a rolled rim and three bands of ribbed rings, round base, simple and sturdy, medium size\nFeel: crisp, casual, utilitarian, fresh\nGoes with: green plants, raw wood, white brick, black metal; industrial, farmhouse or rustic rooms\n",
+          "score": 0.6612220406532288,
+          "kind": "plant pot"
+        },
+        {
+          "id": "301.556.65",
+          "name": "SOCKER",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/301.556.65.jpg"
+          ],
+          "description": "Type: galvanized steel plant pot\nUse: holding a potted plant or herbs on a windowsill, shelf or table; kitchen, living room, balcony\nStyle: industrial, farmhouse, rustic\nMaterials: galvanized steel with a shiny zinc finish\nColors: silver grey metal\nShape: round bucket-like pot tapering toward the base, rolled rim, raised horizontal ribs around the body, compact and simple\nFeel: fresh, practical, crisp, casual\nGoes with: green herbs and leafy plants, white walls, reclaimed wood, black metal; industrial, farmhouse or rustic kitchens and living rooms\n",
+          "score": 0.6535750031471252,
+          "kind": "plant pot"
+        },
+        {
+          "id": "702.858.58",
+          "name": "HJORTRON",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.858.58.jpg"
+          ],
+          "description": "Type: plant pot with saucer\nUse: holding a potted plant on a floor, a windowsill or a shelf; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte molded plastic with a smooth finish, matching saucer\nColors: light warm beige, greige\nShape: classic tapered round pot with a thick rolled rim band, wide shallow saucer underneath, simple and sturdy, medium visual weight\nFeel: calm, soft, natural, practical\nGoes with: green plants, light wood, white or beige walls, linen textiles; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 0.6445960998535156,
+          "kind": "plant pot"
+        },
+        {
+          "id": "002.857.91",
+          "name": "JUJUBR",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/002.857.91.jpg"
+          ],
+          "description": "Type: dark grey plant pot with saucer\nUse: growing a houseplant or herbs on a windowsill, shelf or floor; living room, kitchen, home office\nStyle: minimalist, contemporary, modern\nMaterials: matte molded plastic, matching saucer\nColors: dark grey, charcoal\nShape: tapered cylindrical pot with a rolled flared rim, sits in a wide shallow saucer, simple and sturdy, compact\nFeel: understated, practical, calm, grounded\nGoes with: green plants, concrete, light wood, white walls; minimalist, industrial or modern rooms\n",
+          "score": 0.6435058116912842,
+          "kind": "plant pot"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}
