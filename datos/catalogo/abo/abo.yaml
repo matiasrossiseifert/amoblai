@@ -1,0 +1,9 @@
+# El catálogo alternativo: Amazon Berkeley Objects (Collins et al., CVPR 2022; CC BY-NC 4.0),
+# productos reales de Amazon de 2019-2020 con su foto, sus medidas y el texto del vendedor.
+# Lo arma `amoblai catalogo-abo` (catalog/abo.py); las descripciones y los kinds los escribió
+# Claude Opus 5.5 por la API mirando la foto (catalog/describe_api.py). Solo se indexan los
+# productos con descripción (excluidos.yaml dice por qué quedó afuera cada uno).
+name: abo
+items:
+- datos/procesados/abo_items.jsonl
+kinds_file: datos/catalogo/abo/kinds.yaml

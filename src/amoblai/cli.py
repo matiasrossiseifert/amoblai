@@ -107,6 +107,42 @@ def catalogo(
         console.print(f"{paths.CATALOG_YAML}: {stats}")
 
 
+@app.command("catalogo-abo")
+def catalogo_abo(
+    describir: Annotated[
+        bool, typer.Option("--describir", help="Escribir las descripciones que falten (pago).")
+    ] = False,
+    pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar las llamadas pagas.")] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """El catálogo alternativo, Amazon Berkeley Objects: baja la metadata y las fotos, elige los
+    productos (uno por modelo, con tope por kind) y, con --describir --pagar, escribe sus
+    descripciones con Claude (catalog/describe_api.py; lo que está en la caché no se paga)."""
+    import yaml
+
+    from amoblai.catalog import abo
+    from amoblai.catalog.kinds import KINDS
+
+    load_env()
+    abo.download_metadata(paths.ABO / "metadata")
+    items = abo.select(paths.ABO / "metadata")
+    console.print(f"{len(items)} productos elegidos; bajando las fotos que falten...")
+    abo.download_images(items, Path("."))
+    items = abo.drop_shared_photos(items, Path("."))
+    if describir:
+        from amoblai.catalog.describe_api import describe
+
+        cfg = cfg_for(config, paid=pagar)
+        llm = {**cfg.evaluation.rerankers["opus"], "effort": "low"}
+        console.print(describe(cfg, items, paths.ABO_CATALOG, llm))
+    kinds = yaml.safe_load((paths.ABO_CATALOG / "kinds.yaml").read_text()) or {}
+    for it in items:  # the describer's kind, and the type that goes with it
+        if it["id"] in kinds:
+            it["kind"], it["category"] = kinds[it["id"]], KINDS[kinds[it["id"]]]
+    abo.write_items(items, paths.ABO_ITEMS)
+    console.print(f"{paths.ABO_ITEMS}: {len(items)} productos, {len(kinds)} con descripción")
+
+
 @app.command()
 def indice(config: ConfigOpt = paths.CONFIG, overrides: SetOpt = None) -> None:
     """Indexing pipeline: descripciones → embeddings → ChromaDB (lo que ya está, de la caché)."""

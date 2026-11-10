@@ -13,6 +13,9 @@ rag:
   describer: written              # las ocho líneas escritas por subagentes mirando las fotos
   describers:
     written: {kind: written, file: datos/catalogo/descripciones.jsonl}
+    # el catálogo ABO (rag.catalog: datos/catalogo/abo/abo.yaml) y los dos juntos (todos.yaml)
+    written_abo: {kind: written, file: datos/catalogo/abo/descripciones.jsonl}
+    written_todos: {kind: written, file: [datos/catalogo/descripciones.jsonl, datos/catalogo/abo/descripciones.jsonl]}
     fields: {kind: fields}        # línea de base: el texto del vendedor (nombre, colores, desc)
   embedder: qwen3                 # el mejor de la ablación
   # La base vectorial: ChromaDB (índice HNSW, espacio coseno; los filtros van como `where`).
