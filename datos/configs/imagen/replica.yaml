@@ -1,0 +1,32 @@
+# Experimento de réplica (evaluation/replica.py, `amoblai evaluar-replica`): un ambiente IKEA del
+# ground truth, vaciado con el modelo de imagen y vuelto a amoblar con sus propios productos (la
+# lista ya decidida: se prueba el generador, no el retrieval), sin y con cajas que marcan dónde va
+# cada uno en la foto real. Se compara con la foto real.
+foto: datos/dataset/ikea/images/room_scenes/ikea-a-leather-look-made-for-lounging__1364309444239-s4.jpg
+# Los muebles anotados que el detector ubica bien en la foto real (sofá, puf, mesa ratona,
+# alfombra, estantería, lámpara de pie). Los adornos chicos (floreros, portavelas, cuadros) quedan
+# afuera: el detector no los separa bien y no hay caja confiable para ellos.
+productos: ["802.991.95", "702.991.91", "802.133.09", "302.837.81", "599.026.58", "302.865.67"]
+pedido: "Un living moderno con estos productos."
+generador: nano_banana_2
+prompt_vaciar: vaciar_ambiente_v1.md
+intentos_vaciar: 2
+ssim_vaciado: 0.4            # SSIM fuera de los muebles, foto real contra vaciada (el SIFT no sirve: los puntos están en los muebles)
+repeticiones: 3
+variantes:
+  sin_cajas: {prompt: scene_prompt_libre_v4.md, cajas: false}
+  con_cajas: {prompt: scene_prompt_cajas_v1.md, cajas: true}
+# Cajas fijadas a mano, en fracciones del ancho y del alto (id: [x0, y0, x1, y1]); las demás salen
+# del detector.
+cajas: {}
+salida: datos/resultados/replica/living-dagarna
+# Lo que se ve en las imágenes y las métricas no miden (revisado a ojo, 2026-11-10).
+observaciones:
+  vacio_intento_1.png: "abrió el encuadre (se ve el techo) y dejó una lámpara"
+  vacio_intento_2.png: "mismo encuadre: puerta, cortinas, ventana y línea del piso en su lugar; la ventana es otra"
+  sin_cajas/1.png: "arma su propio living: sofá a la izquierda, estantería a la derecha"
+  sin_cajas/2.png: "sofá al centro, estantería a la derecha"
+  sin_cajas/3.png: "sofá a la izquierda, estantería a la derecha"
+  con_cajas/1.png: "deja las cajas y los números dibujados (algunas movidas o achicadas)"
+  con_cajas/2.png: "deja las cajas dibujadas, movidas, y agrega una '6b'"
+  con_cajas/3.png: "sin rastro de las cajas; los muebles donde iban"

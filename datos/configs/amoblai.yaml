@@ -104,6 +104,6 @@ budget:
   # Lo que no tiene cuenta propia (OpenAI) queda en 0: cualquier llamada se rechaza.
   max_usd_total: 0.0
   # Topes propios. anthropic: lo que podemos gastar sin volver a preguntar; fal: una imagen.
-  accounts: {anthropic: 30.0, fal: 0.80}  # anthropic: US$30 el 2026-11-09 (experimentos finales, a discreción; un gasto grande se aprueba aparte); fal: US$0,80 el 2026-10-25 (se carga más para los experimentos de imagen)
+  accounts: {anthropic: 30.0, fal: 1.60}  # anthropic: US$30 el 2026-11-09 (experimentos finales, a discreción; un gasto grande se aprueba aparte); fal: US$1,60 el 2026-11-10 (experimento de réplica, hasta 8 imágenes; antes 0,80)
   allow_paid: false               # se habilita a propósito con --pagar (o --set budget.allow_paid=true)
   ledger: datos/resultados/gastos.jsonl

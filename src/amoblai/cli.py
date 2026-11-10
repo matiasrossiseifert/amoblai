@@ -493,6 +493,45 @@ def evaluar_punta_a_punta(
         )
 
 
+@app.command("evaluar-replica")
+def evaluar_replica(
+    experimento: Annotated[
+        Path, typer.Argument(help="El experimento (datos/configs/imagen/replica.yaml).")
+    ],
+    pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar las imágenes pagas.")] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """Un ambiente IKEA vaciado y vuelto a amoblar con sus propios productos, sin y con cajas
+    que marcan dónde va cada uno; se compara con la foto real (evaluation/replica.py). Sin
+    --pagar: solo lo gratis (las cajas y las métricas de lo que ya está) y lo que costaría."""
+    import yaml
+
+    from amoblai.evaluation import replica
+
+    load_env()
+    exp = yaml.safe_load(experimento.read_text())
+    cfg = cfg_ikea(config, [f"furnish.generator={exp.get('generador', 'nano_banana_2')}"], pagar)
+    from amoblai.furnish.generate import get_generator
+
+    n = replica.pending(exp, Path(exp["salida"]))
+    price = get_generator(cfg.furnish.generator, cfg).estimate_cost([])
+    console.print(f"imágenes pagas que faltan: hasta {n} (~US${n * price:.2f})")
+    res = replica.run(cfg, exp, log=console.print, paid=pagar)
+    if not res:
+        return
+    t = Table(title=f"réplica ({len(res['productos'])} productos, US${res['costo_usd']:.2f})")
+    for col in ("variante", "IoU medio", "en su lugar", "detectados", "centro", "coseno",
+                "SSIM real", "DINO real"):  # fmt: skip
+        t.add_column(col)
+    for name, v in res["variantes"].items():
+        s = v["resumen"]
+        t.add_row(name, *(str(s[k]["media"]) for k in (
+            "iou_medio", "en_su_lugar", "detectados", "centro_medio", "coseno_producto",
+            "ssim_con_la_real", "dino_con_la_real")))  # fmt: skip
+    console.print(t)
+    console.print(f"→ {exp['salida']}/resultados.json")
+
+
 @app.command("evaluar-espacio")
 def evaluar_espacio(config: ConfigOpt = paths.CONFIG) -> None:
     """El espacio de embeddings del catálogo: ¿el vecino más cercano es del mismo kind? (por

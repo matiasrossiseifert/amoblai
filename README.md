@@ -107,6 +107,16 @@ bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md
     pasa de 0,535 a 0,525.
   - El flujo usa los dos catálogos. Las evaluaciones con ground truth, solo IKEA. Resultados en
     `datos/resultados/punta_a_punta/`.
+- **Réplica de un ambiente real (el generador, con la lista ya decidida):** se toma un living del
+  ground truth de IKEA, se vacía con Nano Banana 2 y se vuelve a amoblar con sus 6 muebles
+  anotados, 3 veces sin y 3 con cajas dibujadas donde está cada mueble en la foto real. Es una
+  sola habitación: son resultados de una prueba, no una medición.
+  - Sin cajas: los 6 productos aparecen y se reconocen (coseno DINOv3 0,63), pero cada vez arma su
+    propio living: IoU medio con las cajas reales 0,20, 1 de 6 en su lugar (IoU ≥ 0,5).
+  - Con cajas: IoU 0,40 y 2,7 de 6 en su lugar. Las cajas acomodan los muebles grandes (sofá,
+    estantería, alfombra), no los chicos que se superponen (puf, mesa ratona, lámpara). En 2 de 3
+    imágenes quedaron las cajas dibujadas.
+  - Resultados en `datos/resultados/replica/living-dagarna/` (US$0,64).
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 ![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)
@@ -155,6 +165,8 @@ uv run amoblai evaluar-respuesta # faithfulness y answer relevance (RAGAS) del p
 uv run amoblai evaluar-espacio   # el espacio de embeddings: vecinos del mismo kind, UMAP
 uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar
                                  # variantes del flujo en ambientes reales, comparadas por un juez
+uv run amoblai evaluar-replica datos/configs/imagen/replica.yaml --pagar
+                                 # un ambiente IKEA vaciado y vuelto a amoblar, sin y con cajas
 uv run amoblai reporte           # tablas y gráficos en datos/resultados/reporte/
 uv run amoblai gastos            # lo gastado por cuenta contra sus topes
 ```
