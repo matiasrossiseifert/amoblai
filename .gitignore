@@ -3,33 +3,19 @@
 .env.*
 !.env.example
 
-# Dataset descargado, lo procesado desde él y cachés (descripciones, vectores, ChromaDB):
-# se regeneran con la CLI
-/datos/dataset/
-/datos/procesados/
-/datos/cache/
+# datos/ va completo (dataset, procesados, caché de las respuestas pagadas, fotos, corridas)
+# para que el equipo trabaje sin volver a bajar ni pagar nada. El repo es privado.
 
-# Fotos del dataset IKEA dentro de las corridas: las copias que arma el generador manual y las
-# hojas de candidatos (mosaicos de fotos del catálogo). No se commitean; el flujo las rehace.
-/datos/resultados/amoblar/*/manual/[0-9]_product_*
-/datos/resultados/amoblar/**/2_candidates*.jpg
-/datos/resultados/punta_a_punta/**/2_candidates*.jpg
-# La copia de la foto del ambiente en cada variante (la original está en datos/ambientes_vacios/)
-/datos/resultados/punta_a_punta/**/room.jpg
-# Los recortes de la evaluación de la imagen (llevan la foto del catálogo al lado)
-/datos/resultados/amoblar/**/6_recortes*.jpg
-# La página de las corridas (amoblai corridas): apunta a fotos que git no tiene
-/datos/resultados/amoblar/index.html
-
-# Documentación, consigna y material de la materia: solo local. Excepción: las fuentes y los
-# guiones de las presentaciones. Los .html generados no, porque llevan embebidas fotos del dataset
-# (se rehacen con el build.py de cada una); tampoco las capturas de trabajo.
+# Documentación, consigna y material de la materia: solo local. Excepción: las presentaciones
+# (fuentes, guiones, .html y las fuentes tipográficas recortadas); no las capturas de trabajo.
 /docs/*
 !/docs/presentacion/
 !/docs/presentaciones_nuevas/
-/docs/presentacion/amoblai.html
-/docs/presentaciones_nuevas/*/presentacion.html
-/docs/presentaciones_nuevas/*/_trabajo/
+/docs/presentaciones_nuevas/*/_trabajo/*
+!/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/
+/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*
+!/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*.woff2
+!/docs/presentaciones_nuevas/b_mismo_contenido/_trabajo/fuentes/
 /material-clases/
 
 # Python / herramientas
@@ -57,7 +43,3 @@ flagged/
 
 # Temporales de escritura atómica
 *.tmp
-
-# Fotos públicas de ambientes vacíos: se bajan con `amoblai data ambientes` (publicas.yaml)
-/datos/ambientes_vacios/publicas/
-/datos/resultados/replica/**/real_con_cajas.jpg
