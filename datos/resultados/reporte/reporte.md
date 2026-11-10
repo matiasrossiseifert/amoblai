@@ -1,115 +1,116 @@
-# Retrieval por texto (855 productos, ambientes IKEA)
+# Retrieval por texto (819 productos, ambientes IKEA)
 
-Corridas: `20261023-173217_ablacion-retrieval`.
+Corridas: `20261109-235522_ablacion-reranking`, `20261110-003643_ablacion-retrieval`.
 
 | método                                               | corrida                            | embedder   | texto            | filtro   | base   | consulta   | rerank          |   consultas |   hit@1 | hit@1_ic95     |   hit@3 |   hit@10 |   mrr@10 | mrr@10_ic95    |   recall_item@10 |   context_precision@10 |   ndcg@10 |   context_recall@3 |   context_recall@10 |   azar_hit@1 |
 |:-----------------------------------------------------|:-----------------------------------|:-----------|:-----------------|:---------|:-------|:-----------|:----------------|------------:|--------:|:---------------|--------:|---------:|---------:|:---------------|-----------------:|-----------------------:|----------:|-------------------:|--------------------:|-------------:|
-| hashing|description|filtro-kind                      | 20261023-173217_ablacion-retrieval | hashing    | description      | kind     | chroma | full       |                 |         552 |  0.5127 | [0.464, 0.563] |  0.7101 |   0.8841 |   0.6286 | [0.588, 0.672] |           0.8916 |                 0.6152 |    0.6281 |             0.7421 |              0.9076 |       0.0523 |
-| hashing|description|filtro-type                      | 20261023-173217_ablacion-retrieval | hashing    | description      | type     | chroma | full       |                 |         552 |  0.5091 | [0.462, 0.559] |  0.7228 |   0.8913 |   0.6332 | [0.595, 0.673] |           0.8878 |                 0.6168 |    0.6365 |             0.7515 |              0.9068 |       0.016  |
-| hashing|description|filtro-none                      | 20261023-173217_ablacion-retrieval | hashing    | description      | none     | chroma | full       |                 |         552 |  0.4928 | [0.442, 0.544] |  0.7065 |   0.8696 |   0.6161 | [0.577, 0.657] |           0.8764 |                 0.6022 |    0.6149 |             0.7452 |              0.9085 |       0.0017 |
-| hashing|seller|filtro-kind                           | 20261023-173217_ablacion-retrieval | hashing    | seller           | kind     | chroma | full       |                 |         552 |  0.1775 | [0.145, 0.211] |  0.3804 |   0.712  |   0.3229 | [0.295, 0.353] |           0.7072 |                 0.316  |    0.3728 |             0.3781 |              0.7063 |       0.0523 |
-| hashing|seller|filtro-type                           | 20261023-173217_ablacion-retrieval | hashing    | seller           | type     | chroma | full       |                 |         552 |  0.1322 | [0.106, 0.158] |  0.2826 |   0.558  |   0.2424 | [0.216, 0.270] |           0.5513 |                 0.2374 |    0.2827 |             0.2902 |              0.5667 |       0.016  |
-| hashing|seller|filtro-none                           | 20261023-173217_ablacion-retrieval | hashing    | seller           | none     | chroma | full       |                 |         552 |  0.0761 | [0.057, 0.096] |  0.1703 |   0.317  |   0.1425 | [0.120, 0.167] |           0.3175 |                 0.1419 |    0.1608 |             0.2041 |              0.3859 |       0.0017 |
-| bge|description|filtro-kind                          | 20261023-173217_ablacion-retrieval | bge        | description      | kind     | chroma | full       |                 |         552 |  0.4728 | [0.425, 0.520] |  0.6703 |   0.846  |   0.5889 | [0.548, 0.629] |           0.8612 |                 0.5742 |    0.5882 |             0.7092 |              0.8858 |       0.0523 |
-| bge|description|filtro-type                          | 20261023-173217_ablacion-retrieval | bge        | description      | type     | chroma | full       |                 |         552 |  0.4764 | [0.431, 0.522] |  0.6848 |   0.8714 |   0.5994 | [0.562, 0.636] |           0.884  |                 0.5824 |    0.6056 |             0.7278 |              0.9068 |       0.016  |
-| bge|description|filtro-none                          | 20261023-173217_ablacion-retrieval | bge        | description      | none     | chroma | full       |                 |         552 |  0.4764 | [0.431, 0.522] |  0.6775 |   0.8659 |   0.5972 | [0.560, 0.634] |           0.8802 |                 0.5819 |    0.6017 |             0.727  |              0.9127 |       0.0017 |
-| bge|seller|filtro-kind                               | 20261023-173217_ablacion-retrieval | bge        | seller           | kind     | chroma | full       |                 |         552 |  0.1866 | [0.151, 0.225] |  0.3967 |   0.6793 |   0.3241 | [0.286, 0.367] |           0.6616 |                 0.3198 |    0.3675 |             0.4179 |              0.6963 |       0.0523 |
-| bge|seller|filtro-type                               | 20261023-173217_ablacion-retrieval | bge        | seller           | type     | chroma | full       |                 |         552 |  0.1558 | [0.126, 0.189] |  0.3442 |   0.5598 |   0.2736 | [0.239, 0.312] |           0.5399 |                 0.269  |    0.3118 |             0.3608 |              0.5767 |       0.016  |
-| bge|seller|filtro-none                               | 20261023-173217_ablacion-retrieval | bge        | seller           | none     | chroma | full       |                 |         552 |  0.1322 | [0.107, 0.162] |  0.3025 |   0.5145 |   0.241  | [0.209, 0.275] |           0.5133 |                 0.2366 |    0.2818 |             0.3412 |              0.5687 |       0.0017 |
-| qwen3|description|filtro-kind                        | 20261023-173217_ablacion-retrieval | qwen3      | description      | kind     | chroma | full       |                 |         552 |  0.5254 | [0.480, 0.568] |  0.7083 |   0.8641 |   0.637  | [0.599, 0.676] |           0.8859 |                 0.6207 |    0.627  |             0.7573 |              0.8997 |       0.0523 |
-| qwen3|description|filtro-type                        | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.5326 | [0.490, 0.574] |  0.7283 |   0.8949 |   0.6515 | [0.617, 0.688] |           0.9144 |                 0.6297 |    0.6515 |             0.7821 |              0.9277 |       0.016  |
-| qwen3|description|filtro-none                        | 20261023-173217_ablacion-retrieval | qwen3      | description      | none     | chroma | full       |                 |         552 |  0.5326 | [0.490, 0.574] |  0.7264 |   0.8877 |   0.65   | [0.615, 0.686] |           0.9087 |                 0.6302 |    0.6469 |             0.7865 |              0.9294 |       0.0017 |
-| qwen3|seller|filtro-kind                             | 20261023-173217_ablacion-retrieval | qwen3      | seller           | kind     | chroma | full       |                 |         552 |  0.1504 | [0.126, 0.179] |  0.3188 |   0.6504 |   0.277  | [0.248, 0.311] |           0.6388 |                 0.2711 |    0.3306 |             0.3405 |              0.6694 |       0.0523 |
-| qwen3|seller|filtro-type                             | 20261023-173217_ablacion-retrieval | qwen3      | seller           | type     | chroma | full       |                 |         552 |  0.1232 | [0.100, 0.150] |  0.2554 |   0.538  |   0.2274 | [0.199, 0.258] |           0.5152 |                 0.2254 |    0.2711 |             0.2767 |              0.5573 |       0.016  |
-| qwen3|seller|filtro-none                             | 20261023-173217_ablacion-retrieval | qwen3      | seller           | none     | chroma | full       |                 |         552 |  0.1178 | [0.094, 0.142] |  0.2319 |   0.4565 |   0.2028 | [0.175, 0.231] |           0.4544 |                 0.2011 |    0.2377 |             0.257  |              0.504  |       0.0017 |
-| bge|name+description|filtro-kind                     | 20261023-173217_ablacion-retrieval | bge        | name+description | kind     | chroma | full       |                 |         552 |  0.3931 | [0.355, 0.437] |  0.5978 |   0.8188 |   0.5188 | [0.484, 0.556] |           0.8289 |                 0.5121 |    0.5356 |             0.6631 |              0.8541 |       0.0523 |
-| qwen3|name+description|filtro-kind                   | 20261023-173217_ablacion-retrieval | qwen3      | name+description | kind     | chroma | full       |                 |         552 |  0.4185 | [0.373, 0.467] |  0.6757 |   0.8424 |   0.5593 | [0.522, 0.597] |           0.8574 |                 0.5433 |    0.5656 |             0.7277 |              0.8787 |       0.0523 |
-| qwen3|description|filtro-type|exact                  | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | exact  | full       |                 |         552 |  0.5326 | [0.490, 0.574] |  0.7283 |   0.8949 |   0.6515 | [0.617, 0.688] |           0.9144 |                 0.6297 |    0.6515 |             0.7821 |              0.9277 |       0.016  |
-| qwen3|description|filtro-kind|exact                  | 20261023-173217_ablacion-retrieval | qwen3      | description      | kind     | exact  | full       |                 |         552 |  0.5254 | [0.480, 0.568] |  0.7083 |   0.8641 |   0.637  | [0.599, 0.676] |           0.8859 |                 0.6207 |    0.627  |             0.7573 |              0.8997 |       0.0523 |
-| qwen3|description|filtro-type|consulta-type          | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | type       |                 |         552 |  0.2917 | [0.249, 0.335] |  0.5344 |   0.8098 |   0.4435 | [0.404, 0.483] |           0.8251 |                 0.428  |    0.4738 |             0.5756 |              0.8401 |       0.016  |
-| qwen3|description|filtro-type|consulta-kind          | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | kind       |                 |         552 |  0.0634 | [0.039, 0.091] |  0.1739 |   0.404  |   0.1403 | [0.115, 0.172] |           0.3308 |                 0.1364 |    0.1682 |             0.1418 |              0.3409 |       0.016  |
-| qwen3|description|filtro-type|dim-32                 | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.4275 | [0.386, 0.473] |  0.6431 |   0.8243 |   0.5551 | [0.521, 0.593] |           0.8498 |                 0.5416 |    0.5619 |             0.6995 |              0.8781 |       0.016  |
-| qwen3|description|filtro-type|dim-64                 | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.4638 | [0.422, 0.508] |  0.6866 |   0.8678 |   0.5934 | [0.559, 0.630] |           0.8802 |                 0.5767 |    0.6012 |             0.7307 |              0.9036 |       0.016  |
-| qwen3|description|filtro-type|dim-128                | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.5072 | [0.464, 0.549] |  0.712  |   0.8822 |   0.6249 | [0.590, 0.660] |           0.8973 |                 0.6056 |    0.6283 |             0.7645 |              0.9172 |       0.016  |
-| qwen3|description|filtro-type|dim-256                | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.5163 | [0.474, 0.558] |  0.7029 |   0.8949 |   0.6336 | [0.599, 0.668] |           0.9144 |                 0.6169 |    0.6382 |             0.7512 |              0.9237 |       0.016  |
-| qwen3|description|filtro-type|dim-512                | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.5326 | [0.487, 0.577] |  0.7264 |   0.8931 |   0.6481 | [0.612, 0.684] |           0.9125 |                 0.6274 |    0.6477 |             0.7631 |              0.9244 |       0.016  |
-| qwen3|description|filtro-type|chunks-lines-max       | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.2681 | [0.234, 0.303] |  0.5199 |   0.7971 |   0.4286 | [0.402, 0.458] |           0.789  |                 0.4237 |    0.468  |             0.5522 |              0.8068 |       0.016  |
-| qwen3|description|filtro-type|chunks-lines-aligned   | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         552 |  0.5109 | [0.465, 0.562] |  0.7264 |   0.8895 |   0.6335 | [0.595, 0.673] |           0.9087 |                 0.6158 |    0.6386 |             0.7675 |              0.9237 |       0.016  |
-| qwen3|description|filtro-type|rerank-minilm-reranker | 20261023-173217_ablacion-retrieval | qwen3      | description      | type     | chroma | full       | minilm-reranker |         552 |  0.4167 | [0.367, 0.463] |  0.6467 |   0.8949 |   0.5633 | [0.521, 0.604] |           0.9144 |                 0.5435 |    0.5886 |             0.6862 |              0.9277 |       0.016  |
+| qwen3|description|filtro-type|rerank-opus            | 20261109-235522_ablacion-reranking | qwen3      | description      | type     | chroma | full       | opus            |         549 |  0.6867 | [0.648, 0.730] |  0.8142 |   0.8925 |   0.7601 | [0.726, 0.795] |           0.9136 |                 0.7323 |    0.7261 |             0.8718 |              0.9267 |       0.0166 |
+| hashing|description|filtro-kind                      | 20261110-003643_ablacion-retrieval | hashing    | description      | kind     | chroma | full       |                 |         549 |  0.5155 | [0.465, 0.568] |  0.7104 |   0.8852 |   0.631  | [0.590, 0.676] |           0.8925 |                 0.6184 |    0.6316 |             0.7424 |              0.9081 |       0.0534 |
+| hashing|description|filtro-type                      | 20261110-003643_ablacion-retrieval | hashing    | description      | type     | chroma | full       |                 |         549 |  0.51   | [0.462, 0.561] |  0.7213 |   0.8925 |   0.6341 | [0.595, 0.675] |           0.8906 |                 0.6185 |    0.639  |             0.751  |              0.9092 |       0.0166 |
+| hashing|description|filtro-none                      | 20261110-003643_ablacion-retrieval | hashing    | description      | none     | chroma | full       |                 |         549 |  0.4954 | [0.445, 0.548] |  0.7067 |   0.8707 |   0.6184 | [0.579, 0.661] |           0.8791 |                 0.6042 |    0.6181 |             0.7446 |              0.9113 |       0.0018 |
+| hashing|seller|filtro-kind                           | 20261110-003643_ablacion-retrieval | hashing    | seller           | kind     | chroma | full       |                 |         549 |  0.173  | [0.140, 0.207] |  0.3807 |   0.7158 |   0.3217 | [0.292, 0.351] |           0.7102 |                 0.3153 |    0.3753 |             0.3787 |              0.7092 |       0.0534 |
+| hashing|seller|filtro-type                           | 20261110-003643_ablacion-retrieval | hashing    | seller           | type     | chroma | full       |                 |         549 |  0.1275 | [0.100, 0.156] |  0.286  |   0.5574 |   0.2412 | [0.215, 0.271] |           0.5528 |                 0.2375 |    0.2838 |             0.2983 |              0.5656 |       0.0166 |
+| hashing|seller|filtro-none                           | 20261110-003643_ablacion-retrieval | hashing    | seller           | none     | chroma | full       |                 |         549 |  0.0765 | [0.057, 0.096] |  0.1694 |   0.3115 |   0.1423 | [0.119, 0.167] |           0.3148 |                 0.1414 |    0.1595 |             0.2045 |              0.3841 |       0.0018 |
+| bge|description|filtro-kind                          | 20261110-003643_ablacion-retrieval | bge        | description      | kind     | chroma | full       |                 |         549 |  0.4754 | [0.427, 0.524] |  0.674  |   0.8488 |   0.5921 | [0.550, 0.633] |           0.8637 |                 0.5771 |    0.5921 |             0.7116 |              0.8884 |       0.0534 |
+| bge|description|filtro-type                          | 20261110-003643_ablacion-retrieval | bge        | description      | type     | chroma | full       |                 |         549 |  0.4791 | [0.433, 0.525] |  0.6867 |   0.8707 |   0.6018 | [0.564, 0.639] |           0.8848 |                 0.5845 |    0.6083 |             0.73   |              0.9081 |       0.0166 |
+| bge|description|filtro-none                          | 20261110-003643_ablacion-retrieval | bge        | description      | none     | chroma | full       |                 |         549 |  0.4791 | [0.433, 0.525] |  0.6794 |   0.8652 |   0.5996 | [0.561, 0.637] |           0.881  |                 0.5842 |    0.6044 |             0.7292 |              0.914  |       0.0018 |
+| bge|seller|filtro-kind                               | 20261110-003643_ablacion-retrieval | bge        | seller           | kind     | chroma | full       |                 |         549 |  0.1894 | [0.153, 0.228] |  0.3953 |   0.6812 |   0.3267 | [0.287, 0.368] |           0.6622 |                 0.3223 |    0.3721 |             0.4169 |              0.6958 |       0.0534 |
+| bge|seller|filtro-type                               | 20261110-003643_ablacion-retrieval | bge        | seller           | type     | chroma | full       |                 |         549 |  0.1585 | [0.128, 0.192] |  0.3424 |   0.5556 |   0.2751 | [0.241, 0.313] |           0.5374 |                 0.2713 |    0.3123 |             0.3616 |              0.5757 |       0.0166 |
+| bge|seller|filtro-none                               | 20261110-003643_ablacion-retrieval | bge        | seller           | none     | chroma | full       |                 |         549 |  0.133  | [0.108, 0.162] |  0.3024 |   0.5118 |   0.2413 | [0.211, 0.275] |           0.5125 |                 0.2378 |    0.282  |             0.3433 |              0.5676 |       0.0018 |
+| qwen3|description|filtro-kind                        | 20261110-003643_ablacion-retrieval | qwen3      | description      | kind     | chroma | full       |                 |         549 |  0.5301 | [0.486, 0.573] |  0.714  |   0.8634 |   0.6407 | [0.602, 0.679] |           0.8848 |                 0.6244 |    0.6308 |             0.7605 |              0.8988 |       0.0534 |
+| qwen3|description|filtro-type                        | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.5355 | [0.491, 0.577] |  0.7322 |   0.8925 |   0.6536 | [0.617, 0.690] |           0.9136 |                 0.6315 |    0.6539 |             0.7851 |              0.9267 |       0.0166 |
+| qwen3|description|filtro-none                        | 20261110-003643_ablacion-retrieval | qwen3      | description      | none     | chroma | full       |                 |         549 |  0.5355 | [0.491, 0.577] |  0.7304 |   0.8852 |   0.652  | [0.616, 0.688] |           0.9079 |                 0.6319 |    0.6493 |             0.7895 |              0.9306 |       0.0018 |
+| qwen3|seller|filtro-kind                             | 20261110-003643_ablacion-retrieval | qwen3      | seller           | kind     | chroma | full       |                 |         549 |  0.153  | [0.128, 0.182] |  0.3224 |   0.6594 |   0.2808 | [0.251, 0.316] |           0.6507 |                 0.2749 |    0.3371 |             0.3474 |              0.6797 |       0.0534 |
+| qwen3|seller|filtro-type                             | 20261110-003643_ablacion-retrieval | qwen3      | seller           | type     | chroma | full       |                 |         549 |  0.1257 | [0.102, 0.154] |  0.255  |   0.5537 |   0.2308 | [0.203, 0.262] |           0.5298 |                 0.229  |    0.2777 |             0.2773 |              0.5728 |       0.0166 |
+| qwen3|seller|filtro-none                             | 20261110-003643_ablacion-retrieval | qwen3      | seller           | none     | chroma | full       |                 |         549 |  0.1202 | [0.097, 0.145] |  0.2332 |   0.4645 |   0.2053 | [0.178, 0.234] |           0.4607 |                 0.204  |    0.2422 |             0.2586 |              0.5118 |       0.0018 |
+| bge|name+description|filtro-kind                     | 20261110-003643_ablacion-retrieval | bge        | name+description | kind     | chroma | full       |                 |         549 |  0.3934 | [0.355, 0.440] |  0.6011 |   0.827  |   0.5214 | [0.486, 0.561] |           0.833  |                 0.5145 |    0.5395 |             0.672  |              0.8578 |       0.0534 |
+| qwen3|name+description|filtro-kind                   | 20261110-003643_ablacion-retrieval | qwen3      | name+description | kind     | chroma | full       |                 |         549 |  0.4208 | [0.376, 0.470] |  0.6776 |   0.8434 |   0.5611 | [0.524, 0.600] |           0.858  |                 0.5448 |    0.568  |             0.7283 |              0.8789 |       0.0534 |
+| qwen3|description|filtro-type|exact                  | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | exact  | full       |                 |         549 |  0.5355 | [0.491, 0.577] |  0.7322 |   0.8925 |   0.6536 | [0.617, 0.690] |           0.9136 |                 0.6315 |    0.6539 |             0.7851 |              0.9267 |       0.0166 |
+| qwen3|description|filtro-kind|exact                  | 20261110-003643_ablacion-retrieval | qwen3      | description      | kind     | exact  | full       |                 |         549 |  0.5301 | [0.486, 0.573] |  0.714  |   0.8634 |   0.6407 | [0.602, 0.679] |           0.8848 |                 0.6244 |    0.6308 |             0.7605 |              0.8988 |       0.0534 |
+| qwen3|description|filtro-type|consulta-type          | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | type       |                 |         549 |  0.2933 | [0.250, 0.336] |  0.5392 |   0.8106 |   0.4457 | [0.406, 0.485] |           0.8273 |                 0.4297 |    0.4768 |             0.5799 |              0.8424 |       0.0166 |
+| qwen3|description|filtro-type|consulta-kind          | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | kind       |                 |         549 |  0.0638 | [0.039, 0.092] |  0.1767 |   0.4044 |   0.1418 | [0.116, 0.172] |           0.334  |                 0.1379 |    0.1707 |             0.1443 |              0.3457 |       0.0166 |
+| qwen3|description|filtro-type|dim-32                 | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.4281 | [0.387, 0.472] |  0.6448 |   0.8233 |   0.5553 | [0.520, 0.592] |           0.8503 |                 0.5424 |    0.5626 |             0.6993 |              0.8785 |       0.0166 |
+| qwen3|description|filtro-type|dim-64                 | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.4608 | [0.418, 0.504] |  0.6867 |   0.867  |   0.5919 | [0.557, 0.628] |           0.881  |                 0.5749 |    0.6009 |             0.7316 |              0.904  |       0.0166 |
+| qwen3|description|filtro-type|dim-128                | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.5064 | [0.463, 0.547] |  0.714  |   0.8852 |   0.6253 | [0.590, 0.661] |           0.9002 |                 0.6056 |    0.6305 |             0.7657 |              0.9195 |       0.0166 |
+| qwen3|description|filtro-type|dim-256                | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.5155 | [0.473, 0.556] |  0.7013 |   0.8944 |   0.6334 | [0.598, 0.667] |           0.9136 |                 0.6168 |    0.639  |             0.7508 |              0.9232 |       0.0166 |
+| qwen3|description|filtro-type|dim-512                | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.5319 | [0.487, 0.575] |  0.7304 |   0.8925 |   0.649  | [0.613, 0.684] |           0.9136 |                 0.6283 |    0.6493 |             0.7664 |              0.9257 |       0.0166 |
+| qwen3|description|filtro-type|chunks-lines-max       | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.2732 | [0.239, 0.309] |  0.5264 |   0.8051 |   0.4335 | [0.407, 0.464] |           0.7927 |                 0.4288 |    0.4733 |             0.5553 |              0.813  |       0.0166 |
+| qwen3|description|filtro-type|chunks-lines-aligned   | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       |                 |         549 |  0.5137 | [0.468, 0.564] |  0.7268 |   0.8907 |   0.6355 | [0.597, 0.675] |           0.9098 |                 0.6181 |    0.6415 |             0.7687 |              0.9252 |       0.0166 |
+| qwen3|description|filtro-type|rerank-minilm-reranker | 20261110-003643_ablacion-retrieval | qwen3      | description      | type     | chroma | full       | minilm-reranker |         549 |  0.4189 | [0.369, 0.466] |  0.6521 |   0.8925 |   0.5651 | [0.525, 0.606] |           0.9136 |                 0.5453 |    0.591  |             0.6933 |              0.9267 |       0.0166 |
 
 ## hit@1 por categoría
 
-| método | armchair (18) | bench (4) | cabinet (41) | chair (45) | deco (208) | dresser (1) | lamp (64) | ottoman (6) | rug (45) | shelf (21) | sofa (24) | stool (8) | table (67) |
+| método | armchair (18) | bench (4) | cabinet (39) | chair (45) | deco (207) | dresser (1) | lamp (64) | ottoman (6) | rug (45) | shelf (21) | sofa (24) | stool (8) | table (67) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| hashing|description|filtro-kind | 0.67 | 1.00 | 0.71 | 0.67 | 0.34 | 1.00 | 0.67 | 0.83 | 0.36 | 0.48 | 0.38 | 1.00 | 0.69 |
-| hashing|description|filtro-type | 0.67 | 1.00 | 0.78 | 0.67 | 0.33 | 1.00 | 0.58 | 0.83 | 0.36 | 0.48 | 0.38 | 1.00 | 0.73 |
-| hashing|description|filtro-none | 0.67 | 0.75 | 0.76 | 0.67 | 0.32 | 0.00 | 0.56 | 0.67 | 0.36 | 0.43 | 0.33 | 0.88 | 0.73 |
-| hashing|seller|filtro-kind | 0.17 | 0.25 | 0.24 | 0.22 | 0.15 | 0.00 | 0.11 | 0.33 | 0.07 | 0.19 | 0.25 | 0.38 | 0.27 |
-| hashing|seller|filtro-type | 0.11 | 0.25 | 0.20 | 0.22 | 0.11 | 0.00 | 0.06 | 0.33 | 0.07 | 0.14 | 0.21 | 0.12 | 0.16 |
-| hashing|seller|filtro-none | 0.06 | 0.00 | 0.07 | 0.20 | 0.06 | 0.00 | 0.05 | 0.00 | 0.07 | 0.05 | 0.08 | 0.12 | 0.10 |
-| bge|description|filtro-kind | 0.56 | 1.00 | 0.56 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.64 |
-| bge|description|filtro-type | 0.50 | 1.00 | 0.59 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.67 |
-| bge|description|filtro-none | 0.50 | 1.00 | 0.59 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.67 |
-| bge|seller|filtro-kind | 0.17 | 0.75 | 0.17 | 0.33 | 0.14 | 0.00 | 0.12 | 0.00 | 0.07 | 0.10 | 0.25 | 0.62 | 0.31 |
-| bge|seller|filtro-type | 0.11 | 0.75 | 0.17 | 0.29 | 0.13 | 0.00 | 0.08 | 0.00 | 0.07 | 0.10 | 0.21 | 0.38 | 0.22 |
+| hashing|description|filtro-kind | 0.67 | 1.00 | 0.74 | 0.67 | 0.34 | 1.00 | 0.67 | 0.83 | 0.36 | 0.48 | 0.38 | 1.00 | 0.69 |
+| hashing|description|filtro-type | 0.67 | 1.00 | 0.79 | 0.67 | 0.33 | 1.00 | 0.58 | 0.83 | 0.36 | 0.48 | 0.38 | 1.00 | 0.73 |
+| hashing|description|filtro-none | 0.67 | 0.75 | 0.79 | 0.67 | 0.32 | 0.00 | 0.56 | 0.67 | 0.36 | 0.43 | 0.33 | 0.88 | 0.73 |
+| hashing|seller|filtro-kind | 0.17 | 0.25 | 0.18 | 0.22 | 0.15 | 0.00 | 0.11 | 0.33 | 0.07 | 0.19 | 0.25 | 0.38 | 0.27 |
+| hashing|seller|filtro-type | 0.11 | 0.25 | 0.13 | 0.22 | 0.11 | 0.00 | 0.06 | 0.33 | 0.07 | 0.14 | 0.21 | 0.12 | 0.16 |
+| hashing|seller|filtro-none | 0.06 | 0.00 | 0.08 | 0.20 | 0.06 | 0.00 | 0.05 | 0.00 | 0.07 | 0.05 | 0.08 | 0.12 | 0.10 |
+| bge|description|filtro-kind | 0.56 | 1.00 | 0.59 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.64 |
+| bge|description|filtro-type | 0.50 | 1.00 | 0.62 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.67 |
+| bge|description|filtro-none | 0.50 | 1.00 | 0.62 | 0.62 | 0.34 | 1.00 | 0.61 | 0.67 | 0.18 | 0.43 | 0.54 | 1.00 | 0.67 |
+| bge|seller|filtro-kind | 0.17 | 0.75 | 0.21 | 0.33 | 0.14 | 0.00 | 0.12 | 0.00 | 0.07 | 0.10 | 0.25 | 0.62 | 0.31 |
+| bge|seller|filtro-type | 0.11 | 0.75 | 0.18 | 0.29 | 0.14 | 0.00 | 0.08 | 0.00 | 0.07 | 0.10 | 0.21 | 0.38 | 0.22 |
 | bge|seller|filtro-none | 0.11 | 0.25 | 0.15 | 0.29 | 0.10 | 0.00 | 0.08 | 0.00 | 0.07 | 0.10 | 0.21 | 0.38 | 0.19 |
-| qwen3|description|filtro-kind | 0.72 | 1.00 | 0.68 | 0.84 | 0.36 | 1.00 | 0.61 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.64 |
-| qwen3|description|filtro-type | 0.72 | 1.00 | 0.73 | 0.84 | 0.35 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
-| qwen3|description|filtro-none | 0.72 | 1.00 | 0.73 | 0.84 | 0.35 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
-| qwen3|seller|filtro-kind | 0.11 | 0.75 | 0.10 | 0.44 | 0.08 | 1.00 | 0.14 | 0.00 | 0.04 | 0.24 | 0.17 | 0.25 | 0.21 |
-| qwen3|seller|filtro-type | 0.11 | 0.75 | 0.12 | 0.38 | 0.08 | 1.00 | 0.06 | 0.00 | 0.04 | 0.19 | 0.12 | 0.12 | 0.13 |
-| qwen3|seller|filtro-none | 0.11 | 0.75 | 0.12 | 0.38 | 0.08 | 1.00 | 0.06 | 0.00 | 0.04 | 0.14 | 0.12 | 0.00 | 0.13 |
-| bge|name+description|filtro-kind | 0.39 | 1.00 | 0.41 | 0.58 | 0.26 | 1.00 | 0.42 | 0.83 | 0.22 | 0.24 | 0.46 | 0.88 | 0.63 |
-| qwen3|name+description|filtro-kind | 0.72 | 0.50 | 0.39 | 0.64 | 0.32 | 1.00 | 0.44 | 0.67 | 0.22 | 0.33 | 0.46 | 0.88 | 0.55 |
-| qwen3|description|filtro-type|exact | 0.72 | 1.00 | 0.73 | 0.84 | 0.35 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
-| qwen3|description|filtro-kind|exact | 0.72 | 1.00 | 0.68 | 0.84 | 0.36 | 1.00 | 0.61 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.64 |
-| qwen3|description|filtro-type|consulta-type | 0.22 | 0.50 | 0.24 | 0.69 | 0.23 | 0.00 | 0.27 | 0.50 | 0.13 | 0.29 | 0.17 | 0.75 | 0.36 |
+| qwen3|description|filtro-kind | 0.72 | 1.00 | 0.69 | 0.84 | 0.37 | 1.00 | 0.61 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.64 |
+| qwen3|description|filtro-type | 0.72 | 1.00 | 0.72 | 0.84 | 0.36 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
+| qwen3|description|filtro-none | 0.72 | 1.00 | 0.72 | 0.84 | 0.36 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
+| qwen3|seller|filtro-kind | 0.11 | 0.75 | 0.13 | 0.44 | 0.08 | 1.00 | 0.14 | 0.00 | 0.04 | 0.24 | 0.17 | 0.25 | 0.21 |
+| qwen3|seller|filtro-type | 0.11 | 0.75 | 0.13 | 0.38 | 0.08 | 1.00 | 0.06 | 0.00 | 0.04 | 0.24 | 0.12 | 0.12 | 0.13 |
+| qwen3|seller|filtro-none | 0.11 | 0.75 | 0.13 | 0.38 | 0.08 | 1.00 | 0.06 | 0.00 | 0.04 | 0.19 | 0.12 | 0.00 | 0.13 |
+| bge|name+description|filtro-kind | 0.39 | 1.00 | 0.38 | 0.58 | 0.27 | 1.00 | 0.42 | 0.83 | 0.22 | 0.24 | 0.46 | 0.88 | 0.63 |
+| qwen3|name+description|filtro-kind | 0.72 | 0.50 | 0.41 | 0.64 | 0.32 | 1.00 | 0.44 | 0.67 | 0.22 | 0.33 | 0.46 | 0.88 | 0.55 |
+| qwen3|description|filtro-type|exact | 0.72 | 1.00 | 0.72 | 0.84 | 0.36 | 1.00 | 0.59 | 1.00 | 0.31 | 0.43 | 0.62 | 0.88 | 0.69 |
+| qwen3|description|filtro-kind|exact | 0.72 | 1.00 | 0.69 | 0.84 | 0.37 | 1.00 | 0.61 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.64 |
+| qwen3|description|filtro-type|consulta-type | 0.22 | 0.50 | 0.26 | 0.69 | 0.23 | 0.00 | 0.27 | 0.50 | 0.13 | 0.29 | 0.17 | 0.75 | 0.36 |
 | qwen3|description|filtro-type|consulta-kind | 0.06 | 0.00 | 0.05 | 0.07 | 0.11 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.25 | 0.06 |
-| qwen3|description|filtro-type|dim-32 | 0.44 | 1.00 | 0.56 | 0.78 | 0.29 | 1.00 | 0.41 | 0.50 | 0.20 | 0.29 | 0.50 | 1.00 | 0.60 |
-| qwen3|description|filtro-type|dim-64 | 0.67 | 0.75 | 0.73 | 0.76 | 0.29 | 1.00 | 0.45 | 0.83 | 0.29 | 0.38 | 0.46 | 1.00 | 0.61 |
-| qwen3|description|filtro-type|dim-128 | 0.72 | 1.00 | 0.73 | 0.76 | 0.33 | 1.00 | 0.55 | 0.83 | 0.29 | 0.43 | 0.58 | 1.00 | 0.69 |
-| qwen3|description|filtro-type|dim-256 | 0.72 | 1.00 | 0.73 | 0.80 | 0.35 | 1.00 | 0.59 | 0.83 | 0.27 | 0.43 | 0.58 | 0.88 | 0.66 |
-| qwen3|description|filtro-type|dim-512 | 0.72 | 1.00 | 0.76 | 0.84 | 0.35 | 1.00 | 0.58 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.70 |
-| qwen3|description|filtro-type|chunks-lines-max | 0.33 | 0.75 | 0.20 | 0.36 | 0.18 | 1.00 | 0.41 | 0.83 | 0.11 | 0.29 | 0.17 | 0.75 | 0.36 |
-| qwen3|description|filtro-type|chunks-lines-aligned | 0.78 | 1.00 | 0.71 | 0.82 | 0.35 | 1.00 | 0.38 | 0.67 | 0.33 | 0.48 | 0.62 | 1.00 | 0.73 |
-| qwen3|description|filtro-type|rerank-minilm-reranker | 0.50 | 0.75 | 0.56 | 0.62 | 0.33 | 1.00 | 0.48 | 0.50 | 0.16 | 0.33 | 0.29 | 0.62 | 0.57 |
+| qwen3|description|filtro-type|dim-32 | 0.44 | 1.00 | 0.56 | 0.78 | 0.30 | 1.00 | 0.41 | 0.50 | 0.20 | 0.24 | 0.50 | 1.00 | 0.60 |
+| qwen3|description|filtro-type|dim-64 | 0.67 | 0.75 | 0.69 | 0.76 | 0.29 | 1.00 | 0.45 | 0.83 | 0.29 | 0.38 | 0.46 | 1.00 | 0.61 |
+| qwen3|description|filtro-type|dim-128 | 0.72 | 1.00 | 0.72 | 0.76 | 0.33 | 1.00 | 0.55 | 0.83 | 0.29 | 0.43 | 0.58 | 1.00 | 0.69 |
+| qwen3|description|filtro-type|dim-256 | 0.72 | 1.00 | 0.72 | 0.80 | 0.35 | 1.00 | 0.59 | 0.83 | 0.27 | 0.43 | 0.58 | 0.88 | 0.66 |
+| qwen3|description|filtro-type|dim-512 | 0.72 | 1.00 | 0.74 | 0.84 | 0.35 | 1.00 | 0.58 | 1.00 | 0.31 | 0.43 | 0.58 | 0.88 | 0.70 |
+| qwen3|description|filtro-type|chunks-lines-max | 0.33 | 0.75 | 0.21 | 0.36 | 0.19 | 1.00 | 0.41 | 0.83 | 0.11 | 0.33 | 0.17 | 0.75 | 0.36 |
+| qwen3|description|filtro-type|chunks-lines-aligned | 0.78 | 1.00 | 0.74 | 0.82 | 0.35 | 1.00 | 0.38 | 0.67 | 0.33 | 0.48 | 0.62 | 1.00 | 0.73 |
+| qwen3|description|filtro-type|rerank-minilm-reranker | 0.50 | 0.75 | 0.59 | 0.62 | 0.33 | 1.00 | 0.48 | 0.50 | 0.16 | 0.33 | 0.29 | 0.62 | 0.57 |
 
 ## Por pasada de consultas (v1: muebles del primer alcance; v2: la ampliación)
 
 | método | consultas_ambiente_v1 hit@1 / MRR | consultas_ambiente_v2 hit@1 / MRR |
 |---|---|---|
-| hashing|description|filtro-kind | 0.568 / 0.687 (199) | 0.482 / 0.596 (353) |
-| hashing|description|filtro-type | 0.583 / 0.715 (199) | 0.467 / 0.587 (353) |
-| hashing|description|filtro-none | 0.578 / 0.703 (199) | 0.445 / 0.567 (353) |
-| hashing|seller|filtro-kind | 0.201 / 0.323 (199) | 0.164 / 0.323 (353) |
-| hashing|seller|filtro-type | 0.156 / 0.250 (199) | 0.119 / 0.238 (353) |
-| hashing|seller|filtro-none | 0.111 / 0.162 (199) | 0.057 / 0.131 (353) |
-| bge|description|filtro-kind | 0.513 / 0.632 (199) | 0.450 / 0.564 (353) |
-| bge|description|filtro-type | 0.518 / 0.647 (199) | 0.453 / 0.573 (353) |
-| bge|description|filtro-none | 0.518 / 0.643 (199) | 0.453 / 0.571 (353) |
-| bge|seller|filtro-kind | 0.241 / 0.358 (199) | 0.156 / 0.305 (353) |
-| bge|seller|filtro-type | 0.191 / 0.295 (199) | 0.136 / 0.262 (353) |
-| bge|seller|filtro-none | 0.181 / 0.282 (199) | 0.105 / 0.218 (353) |
-| qwen3|description|filtro-kind | 0.613 / 0.708 (199) | 0.476 / 0.597 (353) |
-| qwen3|description|filtro-type | 0.633 / 0.736 (199) | 0.476 / 0.604 (353) |
-| qwen3|description|filtro-none | 0.633 / 0.733 (199) | 0.476 / 0.603 (353) |
-| qwen3|seller|filtro-kind | 0.211 / 0.339 (199) | 0.116 / 0.242 (353) |
-| qwen3|seller|filtro-type | 0.166 / 0.278 (199) | 0.099 / 0.199 (353) |
-| qwen3|seller|filtro-none | 0.166 / 0.269 (199) | 0.091 / 0.166 (353) |
-| bge|name+description|filtro-kind | 0.482 / 0.598 (199) | 0.343 / 0.474 (353) |
-| qwen3|name+description|filtro-kind | 0.502 / 0.623 (199) | 0.371 / 0.523 (353) |
-| qwen3|description|filtro-type|exact | 0.633 / 0.736 (199) | 0.476 / 0.604 (353) |
-| qwen3|description|filtro-kind|exact | 0.613 / 0.708 (199) | 0.476 / 0.597 (353) |
-| qwen3|description|filtro-type|consulta-type | 0.347 / 0.503 (199) | 0.261 / 0.410 (353) |
-| qwen3|description|filtro-type|consulta-kind | 0.040 / 0.081 (199) | 0.076 / 0.174 (353) |
-| qwen3|description|filtro-type|dim-32 | 0.523 / 0.642 (199) | 0.374 / 0.506 (353) |
-| qwen3|description|filtro-type|dim-64 | 0.558 / 0.675 (199) | 0.411 / 0.547 (353) |
-| qwen3|description|filtro-type|dim-128 | 0.603 / 0.710 (199) | 0.453 / 0.577 (353) |
-| qwen3|description|filtro-type|dim-256 | 0.598 / 0.712 (199) | 0.470 / 0.589 (353) |
-| qwen3|description|filtro-type|dim-512 | 0.633 / 0.733 (199) | 0.476 / 0.601 (353) |
-| qwen3|description|filtro-type|chunks-lines-max | 0.276 / 0.454 (199) | 0.264 / 0.414 (353) |
-| qwen3|description|filtro-type|chunks-lines-aligned | 0.653 / 0.747 (199) | 0.431 / 0.570 (353) |
-| qwen3|description|filtro-type|rerank-minilm-reranker | 0.447 / 0.591 (199) | 0.399 / 0.548 (353) |
+| hashing|description|filtro-kind | 0.568 / 0.687 (199) | 0.486 / 0.599 (350) |
+| hashing|description|filtro-type | 0.583 / 0.715 (199) | 0.469 / 0.588 (350) |
+| hashing|description|filtro-none | 0.578 / 0.703 (199) | 0.449 / 0.570 (350) |
+| hashing|seller|filtro-kind | 0.201 / 0.323 (199) | 0.157 / 0.321 (350) |
+| hashing|seller|filtro-type | 0.156 / 0.250 (199) | 0.111 / 0.236 (350) |
+| hashing|seller|filtro-none | 0.111 / 0.162 (199) | 0.057 / 0.131 (350) |
+| bge|description|filtro-kind | 0.513 / 0.632 (199) | 0.454 / 0.569 (350) |
+| bge|description|filtro-type | 0.518 / 0.647 (199) | 0.457 / 0.576 (350) |
+| bge|description|filtro-none | 0.518 / 0.643 (199) | 0.457 / 0.575 (350) |
+| bge|seller|filtro-kind | 0.241 / 0.358 (199) | 0.160 / 0.309 (350) |
+| bge|seller|filtro-type | 0.191 / 0.295 (199) | 0.140 / 0.264 (350) |
+| bge|seller|filtro-none | 0.181 / 0.281 (199) | 0.106 / 0.219 (350) |
+| qwen3|description|filtro-kind | 0.613 / 0.708 (199) | 0.483 / 0.602 (350) |
+| qwen3|description|filtro-type | 0.633 / 0.736 (199) | 0.480 / 0.607 (350) |
+| qwen3|description|filtro-none | 0.633 / 0.733 (199) | 0.480 / 0.606 (350) |
+| qwen3|seller|filtro-kind | 0.211 / 0.339 (199) | 0.120 / 0.248 (350) |
+| qwen3|seller|filtro-type | 0.166 / 0.278 (199) | 0.103 / 0.204 (350) |
+| qwen3|seller|filtro-none | 0.166 / 0.269 (199) | 0.094 / 0.169 (350) |
+| bge|name+description|filtro-kind | 0.482 / 0.598 (199) | 0.343 / 0.478 (350) |
+| qwen3|name+description|filtro-kind | 0.502 / 0.623 (199) | 0.374 / 0.526 (350) |
+| qwen3|description|filtro-type|exact | 0.633 / 0.736 (199) | 0.480 / 0.607 (350) |
+| qwen3|description|filtro-kind|exact | 0.613 / 0.708 (199) | 0.483 / 0.602 (350) |
+| qwen3|description|filtro-type|consulta-type | 0.347 / 0.503 (199) | 0.263 / 0.413 (350) |
+| qwen3|description|filtro-type|consulta-kind | 0.040 / 0.081 (199) | 0.077 / 0.176 (350) |
+| qwen3|description|filtro-type|dim-32 | 0.523 / 0.642 (199) | 0.374 / 0.506 (350) |
+| qwen3|description|filtro-type|dim-64 | 0.558 / 0.675 (199) | 0.406 / 0.544 (350) |
+| qwen3|description|filtro-type|dim-128 | 0.603 / 0.710 (199) | 0.451 / 0.577 (350) |
+| qwen3|description|filtro-type|dim-256 | 0.598 / 0.712 (199) | 0.469 / 0.589 (350) |
+| qwen3|description|filtro-type|dim-512 | 0.633 / 0.733 (199) | 0.474 / 0.602 (350) |
+| qwen3|description|filtro-type|chunks-lines-max | 0.276 / 0.454 (199) | 0.271 / 0.422 (350) |
+| qwen3|description|filtro-type|chunks-lines-aligned | 0.653 / 0.747 (199) | 0.434 / 0.572 (350) |
+| qwen3|description|filtro-type|rerank-minilm-reranker | 0.447 / 0.591 (199) | 0.403 / 0.550 (350) |
 
 ## Base vectorial, query rewriting y reranking
 
@@ -121,9 +122,9 @@ Corridas: `20261023-173217_ablacion-retrieval`.
 
 | método | k=1 | k=2 | k=3 | k=5 | k=10 | k=15 | k=20 | k=30 | k=50 |
 |---|---|---|---|---|---|---|---|---|---|
-| Qwen3, filtro por tipo | 0.533 | 0.672 | 0.728 | 0.813 | 0.895 | 0.933 | 0.958 | 0.982 | 0.995 |
-| BGE, filtro por tipo | 0.476 | 0.605 | 0.685 | 0.759 | 0.871 | 0.909 | 0.951 | 0.980 | 0.995 |
-| hashing, filtro por tipo | 0.509 | 0.645 | 0.723 | 0.808 | 0.891 | 0.920 | 0.933 | 0.966 | 0.989 |
+| Qwen3, filtro por tipo | 0.535 | 0.674 | 0.732 | 0.812 | 0.892 | 0.933 | 0.958 | 0.980 | 0.995 |
+| BGE, filtro por tipo | 0.479 | 0.612 | 0.687 | 0.760 | 0.871 | 0.913 | 0.953 | 0.980 | 0.995 |
+| hashing, filtro por tipo | 0.510 | 0.647 | 0.721 | 0.809 | 0.892 | 0.920 | 0.936 | 0.969 | 0.989 |
 
 ![curva k](curva_k.png)
 
@@ -131,12 +132,12 @@ Corridas: `20261023-173217_ablacion-retrieval`.
 
 | dimensión | bytes por vector | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|---|
-| 32 | 128 | 0.427 | 0.824 | 0.555 |
-| 64 | 256 | 0.464 | 0.868 | 0.593 |
-| 128 | 512 | 0.507 | 0.882 | 0.625 |
-| 256 | 1024 | 0.516 | 0.895 | 0.634 |
-| 512 | 2048 | 0.533 | 0.893 | 0.648 |
-| 1024 | 4096 | 0.533 | 0.895 | 0.651 |
+| 32 | 128 | 0.428 | 0.823 | 0.555 |
+| 64 | 256 | 0.461 | 0.867 | 0.592 |
+| 128 | 512 | 0.506 | 0.885 | 0.625 |
+| 256 | 1024 | 0.515 | 0.894 | 0.633 |
+| 512 | 2048 | 0.532 | 0.892 | 0.649 |
+| 1024 | 4096 | 0.535 | 0.892 | 0.654 |
 
 ![dimensión](dimension.png)
 
@@ -144,9 +145,9 @@ Corridas: `20261023-173217_ablacion-retrieval`.
 
 | splitting | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|
-| un documento por producto (ChromaDB) | 0.533 [0.49–0.57] | 0.895 | 0.651 |
-| cada línea un chunk, el producto vale su mejor línea | 0.268 [0.23–0.30] | 0.797 | 0.429 |
-| línea contra línea del mismo rótulo, promedio | 0.511 [0.46–0.56] | 0.889 | 0.633 |
+| un documento por producto (ChromaDB) | 0.535 [0.49–0.58] | 0.892 | 0.654 |
+| cada línea un chunk, el producto vale su mejor línea | 0.273 [0.24–0.31] | 0.805 | 0.433 |
+| línea contra línea del mismo rótulo, promedio | 0.514 [0.47–0.56] | 0.891 | 0.635 |
 
 ## Reproducibilidad: tres escrituras independientes de las consultas
 
@@ -154,12 +155,12 @@ La búsqueda es determinística: lo que varía es quién escribe la consulta (en
 
 | método | consultas (r1/r2/r3) | hit@1 | MRR@10 | hit@10 |
 |---|---|---|---|---|
-| bge|description|filtro-type | 552/550/550 | 0.488 ± 0.015 (0.476–0.505) | 0.609 ± 0.009 (0.599–0.618) | 0.873 ± 0.002 (0.871–0.875) |
-| hashing|description|filtro-none | 552/550/550 | 0.496 ± 0.025 (0.473–0.522) | 0.618 ± 0.019 (0.600–0.637) | 0.866 ± 0.016 (0.849–0.880) |
-| hashing|description|filtro-type | 552/550/550 | 0.513 ± 0.027 (0.487–0.542) | 0.635 ± 0.021 (0.615–0.656) | 0.886 ± 0.010 (0.875–0.891) |
-| hashing|seller|filtro-none | 552/550/550 | 0.074 ± 0.002 (0.073–0.076) | 0.139 ± 0.003 (0.136–0.142) | 0.319 ± 0.008 (0.313–0.327) |
-| qwen3|description|filtro-kind | 552/550/550 | 0.536 ± 0.024 (0.518–0.564) | 0.640 ± 0.015 (0.627–0.657) | 0.867 ± 0.003 (0.864–0.871) |
-| qwen3|description|filtro-type | 552/550/550 | 0.544 ± 0.026 (0.525–0.575) | 0.655 ± 0.017 (0.640–0.674) | 0.899 ± 0.004 (0.895–0.904) |
+| bge|description|filtro-type | 549/550/550 | 0.489 ± 0.015 (0.479–0.505) | 0.610 ± 0.008 (0.602–0.618) | 0.873 ± 0.002 (0.871–0.875) |
+| hashing|description|filtro-none | 549/550/550 | 0.497 ± 0.025 (0.473–0.522) | 0.619 ± 0.019 (0.600–0.637) | 0.867 ± 0.016 (0.849–0.880) |
+| hashing|description|filtro-type | 549/550/550 | 0.513 ± 0.027 (0.487–0.542) | 0.635 ± 0.021 (0.615–0.656) | 0.886 ± 0.010 (0.875–0.892) |
+| hashing|seller|filtro-none | 549/550/550 | 0.075 ± 0.002 (0.073–0.076) | 0.139 ± 0.003 (0.136–0.142) | 0.317 ± 0.009 (0.311–0.327) |
+| qwen3|description|filtro-kind | 549/550/550 | 0.537 ± 0.024 (0.518–0.564) | 0.642 ± 0.015 (0.627–0.657) | 0.867 ± 0.004 (0.863–0.871) |
+| qwen3|description|filtro-type | 549/550/550 | 0.545 ± 0.026 (0.525–0.575) | 0.656 ± 0.017 (0.640–0.674) | 0.898 ± 0.006 (0.892–0.904) |
 
 ## La imagen generada
 
@@ -168,6 +169,10 @@ Fidelidad: cada producto de la lista buscado en la imagen final (Grounding DINO)
 | corrida | generador | detectados | identificados@1 | coseno | inventadas | SSIM fuera | SIFT | pedido Δ (puesto) |
 |---|---|---|---|---|---|---|---|---|
 | experimento | nano_banana_2 | 6/6 | 0.6667 | 0.5342 | 1 | 0.8291 | 0.1329 | +0.061 (1/7) |
+| experimento-buen-pedido | nano_banana_2 | 9/9 | 0.4444 | 0.3649 | 0 | 0.2899 | 0.0065 | +0.085 (1/7) |
+| experimento-buen-pedido-estricto | nano_banana_2 | 9/9 | 0.4444 | 0.4291 | 1 | 0.7817 | 0.0759 | +0.063 (1/7) |
+| experimento-libre | nano_banana_2 | 6/6 | 0.5 | 0.4561 | 0 | 0.8087 | 0.1008 | +0.075 (1/7) |
+| experimento-libre-modular | nano_banana_2 | 6/6 | 0.5 | 0.4655 | 0 | 0.7666 | 0.1126 | +0.090 (1/7) |
 | prueba-alvear2 | nano_banana_2 | 4/4 | 0.75 | 0.6824 | 0 | 0.9747 | 0.5521 | +0.077 (1/7) |
 
 ### `experimento` por producto
@@ -180,6 +185,56 @@ Fidelidad: cada producto de la lista buscado en la imagen final (Grounding DINO)
 | 302.865.67 | floor lamp | 1/102 | 0.2782 |
 | 102.397.13 | side table | 1/71 | 0.6031 |
 | 802.841.94 | curtains | 10/255 | 0.4941 |
+
+### `experimento-buen-pedido` por producto
+
+| producto | kind | puesto | coseno |
+|---|---|---|---|
+| 802.456.40 | bookcase | 2/54 | 0.2216 |
+| 391.505.88 | armchair | 3/78 | 0.6233 |
+| 302.865.67 | floor lamp | 1/101 | 0.3698 |
+| 802.972.43 | side table | 1/71 | 0.4326 |
+| 832.351.10 | rug | 1/89 | 0.3925 |
+| 302.006.96 | throw | 60/244 | 0.0908 |
+| 503.265.29 | cushion | 25/244 | 0.1644 |
+| 802.841.94 | curtains | 9/244 | 0.3017 |
+| 001.185.23 | plant | 1/244 | 0.6875 |
+
+### `experimento-buen-pedido-estricto` por producto
+
+| producto | kind | puesto | coseno |
+|---|---|---|---|
+| 802.456.40 | bookcase | 1/54 | 0.42 |
+| 391.505.88 | armchair | 1/78 | 0.6653 |
+| 302.865.67 | floor lamp | 2/101 | 0.3725 |
+| 802.972.43 | side table | 2/71 | 0.3639 |
+| 832.351.10 | rug | 1/89 | 0.5121 |
+| 302.006.96 | throw | 142/244 | 0.0458 |
+| 503.265.29 | cushion | 23/244 | 0.2299 |
+| 802.841.94 | curtains | 5/244 | 0.5744 |
+| 001.185.23 | plant | 1/244 | 0.6783 |
+
+### `experimento-libre` por producto
+
+| producto | kind | puesto | coseno |
+|---|---|---|---|
+| 703.233.51 | bookcase | 3/54 | 0.4892 |
+| 391.505.88 | armchair | 1/78 | 0.7 |
+| 402.712.59 | rug | 51/89 | 0.0488 |
+| 302.865.67 | floor lamp | 1/101 | 0.5495 |
+| 102.397.13 | side table | 1/71 | 0.5383 |
+| 802.841.94 | curtains | 4/244 | 0.4106 |
+
+### `experimento-libre-modular` por producto
+
+| producto | kind | puesto | coseno |
+|---|---|---|---|
+| 703.233.51 | bookcase | 1/54 | 0.4612 |
+| 391.505.88 | armchair | 1/78 | 0.827 |
+| 402.712.59 | rug | 18/89 | 0.0917 |
+| 302.865.67 | floor lamp | 1/101 | 0.3085 |
+| 102.397.13 | side table | 2/71 | 0.5379 |
+| 802.841.94 | curtains | 7/244 | 0.5666 |
 
 ### `prueba-alvear2` por producto
 
@@ -318,11 +373,4 @@ No se mezclan con las de arriba: cambian el universo de búsqueda o las consulta
 | qwen3|seller|filtro-none           |         198 |  0.1667 |   0.6061 |   0.2772 |
 | bge|name+description|filtro-kind   |         198 |  0.4848 |   0.8485 |   0.6001 |
 | qwen3|name+description|filtro-kind |         198 |  0.5051 |   0.8384 |   0.6233 |
-
-### `20261022-175001_ablacion-reranking` (268 productos)
-
-| método                                    |   consultas |   hit@1 |   hit@10 |   mrr@10 |
-|:------------------------------------------|------------:|--------:|---------:|---------:|
-| qwen3|description|filtro-type             |         198 |  0.6364 |   0.9141 |   0.7374 |
-| qwen3|description|filtro-type|rerank-opus |         198 |  0.803  |   0.9141 |   0.8474 |
 

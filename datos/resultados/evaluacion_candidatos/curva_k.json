@@ -1,0 +1,87 @@
+{
+ "corrida": "datos/resultados/evaluacion/20261109-235522_ablacion-reranking",
+ "consultas": 549,
+ "por_k": {
+  "1": {
+   "acierto_eleccion": 0.5355,
+   "ic95": [
+    0.4934,
+    0.5789
+   ],
+   "techo_hit@k": 0.5355
+  },
+  "2": {
+   "acierto_eleccion": 0.6175,
+   "ic95": [
+    0.5757,
+    0.6603
+   ],
+   "techo_hit@k": 0.674
+  },
+  "3": {
+   "acierto_eleccion": 0.6375,
+   "ic95": [
+    0.5983,
+    0.6801
+   ],
+   "techo_hit@k": 0.7322
+  },
+  "4": {
+   "acierto_eleccion": 0.6557,
+   "ic95": [
+    0.6149,
+    0.698
+   ],
+   "techo_hit@k": 0.7741
+  },
+  "5": {
+   "acierto_eleccion": 0.6667,
+   "ic95": [
+    0.6274,
+    0.7106
+   ],
+   "techo_hit@k": 0.8124
+  },
+  "6": {
+   "acierto_eleccion": 0.6794,
+   "ic95": [
+    0.6372,
+    0.7237
+   ],
+   "techo_hit@k": 0.8415
+  },
+  "7": {
+   "acierto_eleccion": 0.6849,
+   "ic95": [
+    0.6442,
+    0.7295
+   ],
+   "techo_hit@k": 0.8616
+  },
+  "8": {
+   "acierto_eleccion": 0.6885,
+   "ic95": [
+    0.6461,
+    0.7324
+   ],
+   "techo_hit@k": 0.8761
+  },
+  "9": {
+   "acierto_eleccion": 0.6867,
+   "ic95": [
+    0.6448,
+    0.7305
+   ],
+   "techo_hit@k": 0.8834
+  },
+  "10": {
+   "acierto_eleccion": 0.6867,
+   "ic95": [
+    0.6448,
+    0.7305
+   ],
+   "techo_hit@k": 0.8925
+  }
+ },
+ "nota": "Acierto de la elecci\u00f3n del VLM entre los primeros k del retrieval (Qwen3, filtro por tipo), derivado del reranking de Opus del top-10: el elegido entre los k es el mejor rankeado por el VLM. techo_hit@k: el producto anotado est\u00e1 entre los k (lo mejor que puede elegir)."
+}
