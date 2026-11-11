@@ -17,6 +17,17 @@ variantes:
   sin_cajas: {prompt: scene_prompt_libre_v4.md, cajas: false}
   con_cajas: {prompt: scene_prompt_cajas_v1.md, cajas: true}
   con_cajas_3d: {prompt: scene_prompt_cajas3d_v1.md, cajas: 3d}
+  # Ronda 2 (2026-11-10): prompts cortos que dicen qué hacer, iguales salvo en cómo dicen dónde
+  # va cada mueble. Dos formas nuevas de decirlo: en palabras (texto, sin cajas) y con las cajas en
+  # una imagen aparte (guia: la imagen 1 va limpia y la última es la misma foto con las cajas).
+  simple_sin_cajas: {prompt: scene_prompt_simple_v1.md}
+  simple_texto: {prompt: scene_prompt_texto_v1.md, lugares: true}
+  simple_cajas: {prompt: scene_prompt_cajas_v2.md, cajas: 2d}
+  simple_cajas_guia: {prompt: scene_prompt_cajas_guia_v1.md, cajas: 2d, guia: true}
+  simple_cajas_3d: {prompt: scene_prompt_cajas3d_v2.md, cajas: 3d}
+  simple_cajas_3d_guia: {prompt: scene_prompt_cajas3d_guia_v1.md, cajas: 3d, guia: true}
+# Variante texto: Opus escribe dónde está cada mueble en la foto real (una llamada, lugares.json).
+prompt_lugares: describir_lugares_v1.md
 # Cajas fijadas a mano, en fracciones del ancho y del alto (id: [x0, y0, x1, y1]); las demás salen
 # del detector.
 cajas: {}
@@ -41,3 +52,22 @@ observaciones:
   con_cajas_3d/1.png: "sin rastro de las cajas; repite el puf (pone dos)"
   con_cajas_3d/2.png: "deja las cajas y los números dibujados, algo corridos; los muebles adentro"
   con_cajas_3d/3.png: "sin rastro de las cajas; la chaise del sofá queda a la izquierda (en la foto real, a la derecha)"
+  # ronda 2 (revisado a ojo, 2026-11-11)
+  simple_sin_cajas/1.png: "arma su propio living: sofá al centro, estantería y lámpara a la derecha"
+  simple_sin_cajas/2.png: "sofá contra la ventana, estantería a la derecha"
+  simple_sin_cajas/3.png: "sofá al centro, estantería a la derecha, lámpara a la izquierda"
+  simple_texto/1.png: "limpia; estantería a la izquierda de la ventana y lámpara junto a la ventana, como dice el texto; el sofá mira a la cámara en vez de a la izquierda"
+  simple_texto/2.png: "limpia; mismo arreglo que la 1"
+  simple_texto/3.png: "limpia; mismo arreglo que la 1"
+  simple_cajas/1.png: "deja todos los rectángulos y números dibujados"
+  simple_cajas/2.png: "limpia; los muebles donde iban"
+  simple_cajas/3.png: "deja parte de los rectángulos dibujados"
+  simple_cajas_guia/1.png: "limpia, pero no sigue la guía: sofá a la izquierda y estantería chica al centro"
+  simple_cajas_guia/2.png: "copia los rectángulos y números de la guía"
+  simple_cajas_guia/3.png: "limpia; los muebles cerca de sus cajas"
+  simple_cajas_3d/1.png: "limpia; la lámpara queda a la derecha, lejos de la ventana"
+  simple_cajas_3d/2.png: "limpia; los muebles en sus cajas"
+  simple_cajas_3d/3.png: "limpia; el puf queda al costado del sofá, no delante de la chaise"
+  simple_cajas_3d_guia/1.png: "limpia; un halo de luz detrás de la lámpara"
+  simple_cajas_3d_guia/2.png: "limpia"
+  simple_cajas_3d_guia/3.png: "deja dibujado el borde naranja de la caja de la alfombra"

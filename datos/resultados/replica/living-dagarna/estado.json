@@ -153,6 +153,258 @@
     "latency_s": 32.28,
     "cost_note": "precio configurado: fal no devuelve el costo"
    }
+  },
+  "simple_sin_cajas/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b1-5572-7bc3-85ae-122f4462c67d",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 20.19,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_sin_cajas/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b1-a471-7af2-adbe-9e431c19aa33",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 17.33,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_sin_cajas/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b1-f178-7613-bfdf-ac4122da6532",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 18.01,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_texto/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b2-38b0-7ab1-a77b-e4dffcbaf243",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 19.98,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_texto/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b2-8a46-7470-b290-a04457928463",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 19.19,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_texto/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b2-d0b1-7422-838b-e40fed1bd1e4",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 21.23,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b3-2386-79c2-bcaa-3c72accbf7a2",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 23.1,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b3-7f73-7142-ab0c-27909d661703",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 18.0,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b3-c5b3-7a50-b71b-a3913e206345",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 31.58,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_guia/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b4-36c1-72c0-a340-da5461891c53",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 18.91,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_guia/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b4-8c94-7f21-83e5-ea5b87e906d3",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 26.97,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_guia/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b4-eb15-7f92-95b4-0a4b427bdeb1",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 24.39,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b5-4c68-7a92-ab29-b3ea576a7035",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 16.4,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b5-9417-7a33-84ce-446f7bfa3398",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 18.67,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b5-d4ee-78f0-9ed6-8c15d05f7f22",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 7,
+    "description": "",
+    "latency_s": 17.9,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d_guia/1.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b6-18c6-7072-9891-0e035f22d72a",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 17.5,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d_guia/2.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b6-6851-7cc0-bbb9-89bbf5318650",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 30.54,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
+  },
+  "simple_cajas_3d_guia/3.png": {
+   "model": "fal-ai/nano-banana-2/edit",
+   "cost_usd": 0.08,
+   "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1c8b6-db9d-7b21-ab41-30299a27689f",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 8,
+    "description": "",
+    "latency_s": 29.25,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+   }
   }
  },
  "vaciado": {
