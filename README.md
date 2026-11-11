@@ -109,14 +109,19 @@ bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md
     `datos/resultados/punta_a_punta/`.
 - **Réplica de un ambiente real (el generador, con la lista ya decidida):** se toma un living del
   ground truth de IKEA, se vacía con Nano Banana 2 y se vuelve a amoblar con sus 6 muebles
-  anotados, 3 veces sin y 3 con cajas dibujadas donde está cada mueble en la foto real. Es una
-  sola habitación: son resultados de una prueba, no una medición.
+  anotados, 3 veces sin cajas, 3 con rectángulos y 3 con cajas 3D dibujadas donde está cada mueble
+  en la foto real. Es una sola habitación: son resultados de una prueba, no una medición.
   - Sin cajas: los 6 productos aparecen y se reconocen (coseno DINOv3 0,63), pero cada vez arma su
     propio living: IoU medio con las cajas reales 0,20, 1 de 6 en su lugar (IoU ≥ 0,5).
   - Con cajas: IoU 0,40 y 2,7 de 6 en su lugar. Las cajas acomodan los muebles grandes (sofá,
     estantería, alfombra), no los chicos que se superponen (puf, mesa ratona, lámpara). En 2 de 3
     imágenes quedaron las cajas dibujadas.
-  - Resultados en `datos/resultados/replica/living-dagarna/` (US$0,64).
+  - Con cajas 3D (un prisma en perspectiva apoyado en el piso, con el volumen de cada mueble;
+    `evaluation/cajas3d.py`: profundidad métrica de Depth Pro, máscaras de SAM, piso y pared por
+    RANSAC, gratis): IoU 0,48 y 3,3 de 6 en su lugar. La que más gana es la lámpara (0,16 → 0,57:
+    el rectángulo marcaba solo lo que se veía; el prisma llega al piso). En 1 de 3 imágenes quedaron
+    las cajas dibujadas, y en otra repitió el puf.
+  - Resultados en `datos/resultados/replica/living-dagarna/` (US$0,88).
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 ![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)

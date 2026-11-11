@@ -16,9 +16,17 @@ repeticiones: 3
 variantes:
   sin_cajas: {prompt: scene_prompt_libre_v4.md, cajas: false}
   con_cajas: {prompt: scene_prompt_cajas_v1.md, cajas: true}
+  con_cajas_3d: {prompt: scene_prompt_cajas3d_v1.md, cajas: 3d}
 # Cajas fijadas a mano, en fracciones del ancho y del alto (id: [x0, y0, x1, y1]); las demás salen
 # del detector.
 cajas: {}
+# Cajas 3D (evaluation/cajas3d.py): puntos de ayuda para SAM, relativos. Con la caja sola, SAM se
+# queda con el respaldo del sofá y pierde los asientos, la chaise y el brazo derecho.
+cajas3d:
+  puntos_sam:
+    "802.991.95":
+      adentro: [[0.879, 0.529], [0.547, 0.638], [0.762, 0.778], [0.771, 0.886], [0.928, 0.746], [0.459, 0.575]]
+      afuera: [[0.518, 0.824], [0.635, 0.560], [0.713, 0.614]]
 salida: datos/resultados/replica/living-dagarna
 # Lo que se ve en las imágenes y las métricas no miden (revisado a ojo, 2026-11-10).
 observaciones:
@@ -30,3 +38,6 @@ observaciones:
   con_cajas/1.png: "deja las cajas y los números dibujados (algunas movidas o achicadas)"
   con_cajas/2.png: "deja las cajas dibujadas, movidas, y agrega una '6b'"
   con_cajas/3.png: "sin rastro de las cajas; los muebles donde iban"
+  con_cajas_3d/1.png: "sin rastro de las cajas; repite el puf (pone dos)"
+  con_cajas_3d/2.png: "deja las cajas y los números dibujados, algo corridos; los muebles adentro"
+  con_cajas_3d/3.png: "sin rastro de las cajas; la chaise del sofá queda a la izquierda (en la foto real, a la derecha)"

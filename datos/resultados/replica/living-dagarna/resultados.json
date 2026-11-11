@@ -62,7 +62,10 @@
   "sin_cajas/3.png": "sofá a la izquierda, estantería a la derecha",
   "con_cajas/1.png": "deja las cajas y los números dibujados (algunas movidas o achicadas)",
   "con_cajas/2.png": "deja las cajas dibujadas, movidas, y agrega una '6b'",
-  "con_cajas/3.png": "sin rastro de las cajas; los muebles donde iban"
+  "con_cajas/3.png": "sin rastro de las cajas; los muebles donde iban",
+  "con_cajas_3d/1.png": "sin rastro de las cajas; repite el puf (pone dos)",
+  "con_cajas_3d/2.png": "deja las cajas y los números dibujados, algo corridos; los muebles adentro",
+  "con_cajas_3d/3.png": "sin rastro de las cajas; la chaise del sofá queda a la izquierda (en la foto real, a la derecha)"
  },
  "vacio": {
   "quedan": []
@@ -782,7 +785,360 @@
      }
     }
    ]
+  },
+  "con_cajas_3d": {
+   "resumen": {
+    "iou_medio": {
+     "media": 0.4826,
+     "valores": [
+      0.4357,
+      0.5524,
+      0.4598
+     ]
+    },
+    "en_su_lugar": {
+     "media": 3.3333,
+     "valores": [
+      3,
+      4,
+      3
+     ]
+    },
+    "detectados": {
+     "media": 5.6667,
+     "valores": [
+      6,
+      5,
+      6
+     ]
+    },
+    "centro_medio": {
+     "media": 0.0577,
+     "valores": [
+      0.0623,
+      0.0313,
+      0.0794
+     ]
+    },
+    "coseno_producto": {
+     "media": 0.5975,
+     "valores": [
+      0.6145,
+      0.5575,
+      0.6205
+     ]
+    },
+    "ssim_con_la_real": {
+     "media": 0.3197,
+     "valores": [
+      0.3144,
+      0.3236,
+      0.3211
+     ]
+    },
+    "dino_con_la_real": {
+     "media": 0.6665,
+     "valores": [
+      0.6925,
+      0.6114,
+      0.6957
+     ]
+    }
+   },
+   "imagenes": [
+    {
+     "imagen": "con_cajas_3d/1.png",
+     "productos": [
+      {
+       "id": "802.991.95",
+       "kind": "sofa",
+       "detectado": true,
+       "caja": [
+        0.471,
+        0.493,
+        0.9691,
+        0.807
+       ],
+       "iou": 0.5382,
+       "coseno": 0.801,
+       "centro": 0.0419
+      },
+      {
+       "id": "702.991.91",
+       "kind": "ottoman",
+       "detectado": true,
+       "caja": [
+        0.5717,
+        0.7127,
+        0.787,
+        0.9612
+       ],
+       "iou": 0.2134,
+       "coseno": 0.7765,
+       "centro": 0.1143
+      },
+      {
+       "id": "802.133.09",
+       "kind": "coffee table",
+       "detectado": true,
+       "caja": [
+        0.3881,
+        0.6357,
+        0.5745,
+        0.8637
+       ],
+       "iou": 0.2087,
+       "coseno": 0.6944,
+       "centro": 0.0901
+      },
+      {
+       "id": "302.837.81",
+       "kind": "rug",
+       "detectado": true,
+       "caja": [
+        0.133,
+        0.7098,
+        0.9395,
+        0.9987
+       ],
+       "iou": 0.6867,
+       "coseno": 0.1653,
+       "centro": 0.0629
+      },
+      {
+       "id": "599.026.58",
+       "kind": "bookcase",
+       "detectado": true,
+       "caja": [
+        0.161,
+        0.1482,
+        0.3582,
+        0.7131
+       ],
+       "iou": 0.6134,
+       "coseno": 0.744,
+       "centro": 0.0096
+      },
+      {
+       "id": "302.865.67",
+       "kind": "floor lamp",
+       "detectado": true,
+       "caja": [
+        0.4428,
+        0.2457,
+        0.5658,
+        0.6538
+       ],
+       "iou": 0.3538,
+       "coseno": 0.5058,
+       "centro": 0.0547
+      }
+     ],
+     "detectados": 6,
+     "iou_medio": 0.4357,
+     "en_su_lugar": 3,
+     "centro_medio": 0.0623,
+     "coseno_producto": 0.6145,
+     "ssim_con_la_real": 0.3144,
+     "dino_con_la_real": 0.6925,
+     "ambiente": {
+      "sift_inliers": 109,
+      "sift_desplazamiento_mediano": 0.0
+     }
+    },
+    {
+     "imagen": "con_cajas_3d/2.png",
+     "productos": [
+      {
+       "id": "802.991.95",
+       "kind": "sofa",
+       "detectado": true,
+       "caja": [
+        0.3237,
+        0.4982,
+        0.8059,
+        0.8349
+       ],
+       "iou": 0.4315,
+       "coseno": 0.5559,
+       "centro": 0.0991
+      },
+      {
+       "id": "702.991.91",
+       "kind": "ottoman",
+       "detectado": true,
+       "caja": [
+        0.4472,
+        0.7186,
+        0.6624,
+        0.9899
+       ],
+       "iou": 0.6111,
+       "coseno": 0.6974,
+       "centro": 0.0279
+      },
+      {
+       "id": "802.133.09",
+       "kind": "coffee table",
+       "detectado": false
+      },
+      {
+       "id": "302.837.81",
+       "kind": "rug",
+       "detectado": true,
+       "caja": [
+        0.055,
+        0.7375,
+        0.8413,
+        0.9985
+       ],
+       "iou": 0.7987,
+       "coseno": 0.1322,
+       "centro": 0.0086
+      },
+      {
+       "id": "599.026.58",
+       "kind": "bookcase",
+       "detectado": true,
+       "caja": [
+        0.115,
+        0.1306,
+        0.4032,
+        0.7334
+       ],
+       "iou": 0.9034,
+       "coseno": 0.7437,
+       "centro": 0.0105
+      },
+      {
+       "id": "302.865.67",
+       "kind": "floor lamp",
+       "detectado": true,
+       "caja": [
+        0.4304,
+        0.2597,
+        0.5403,
+        0.5109
+       ],
+       "iou": 0.5697,
+       "coseno": 0.6582,
+       "centro": 0.0103
+      }
+     ],
+     "detectados": 5,
+     "iou_medio": 0.5524,
+     "en_su_lugar": 4,
+     "centro_medio": 0.0313,
+     "coseno_producto": 0.5575,
+     "ssim_con_la_real": 0.3236,
+     "dino_con_la_real": 0.6114,
+     "ambiente": {
+      "sift_inliers": 112,
+      "sift_desplazamiento_mediano": 0.0
+     }
+    },
+    {
+     "imagen": "con_cajas_3d/3.png",
+     "productos": [
+      {
+       "id": "802.991.95",
+       "kind": "sofa",
+       "detectado": true,
+       "caja": [
+        0.2508,
+        0.495,
+        0.8282,
+        0.7762
+       ],
+       "iou": 0.3616,
+       "coseno": 0.7582,
+       "centro": 0.1234
+      },
+      {
+       "id": "702.991.91",
+       "kind": "ottoman",
+       "detectado": true,
+       "caja": [
+        0.6273,
+        0.7054,
+        0.8411,
+        0.9477
+       ],
+       "iou": 0.0894,
+       "coseno": 0.7974,
+       "centro": 0.1533
+      },
+      {
+       "id": "802.133.09",
+       "kind": "coffee table",
+       "detectado": true,
+       "caja": [
+        0.4,
+        0.6504,
+        0.6022,
+        0.8864
+       ],
+       "iou": 0.1484,
+       "coseno": 0.7674,
+       "centro": 0.1067
+      },
+      {
+       "id": "302.837.81",
+       "kind": "rug",
+       "detectado": true,
+       "caja": [
+        0.0646,
+        0.7289,
+        0.983,
+        0.9984
+       ],
+       "iou": 0.7525,
+       "coseno": 0.1783,
+       "centro": 0.0527
+      },
+      {
+       "id": "599.026.58",
+       "kind": "bookcase",
+       "detectado": true,
+       "caja": [
+        0.159,
+        0.2105,
+        0.3866,
+        0.7114
+       ],
+       "iou": 0.6277,
+       "coseno": 0.6665,
+       "centro": 0.0326
+      },
+      {
+       "id": "302.865.67",
+       "kind": "floor lamp",
+       "detectado": true,
+       "caja": [
+        0.4313,
+        0.2363,
+        0.5201,
+        0.5423
+       ],
+       "iou": 0.7791,
+       "coseno": 0.5549,
+       "centro": 0.0074
+      }
+     ],
+     "detectados": 6,
+     "iou_medio": 0.4598,
+     "en_su_lugar": 3,
+     "centro_medio": 0.0794,
+     "coseno_producto": 0.6205,
+     "ssim_con_la_real": 0.3211,
+     "dino_con_la_real": 0.6957,
+     "ambiente": {
+      "sift_inliers": 106,
+      "sift_desplazamiento_mediano": 0.0
+     }
+    }
+   ]
   }
  },
- "costo_usd": 0.64
+ "costo_usd": 0.88
 }
