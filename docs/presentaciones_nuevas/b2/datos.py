@@ -359,7 +359,16 @@ REPLICA = jload(REPL / "resultados.json")
 REPL_N = len(REPLICA["productos"])
 REPL_CORTO = {"802.991.95": "sofá", "702.991.91": "puf", "802.133.09": "mesa ratona",
               "302.837.81": "alfombra", "599.026.58": "estantería", "302.865.67": "lámpara"}
-VARIANTES_CAJAS = [("sin_cajas", "Sin cajas"), ("con_cajas", "Cajas 2D"), ("con_cajas_3d", "Cajas 3D")]
+# Ronda 1 (prompt largo) y ronda 2 (un prompt corto común; cambia la línea de dónde va cada mueble):
+# (clave en resultados.json, letra, nombre, cómo se le dice dónde)
+REPL_R1 = [("sin_cajas", "", "Sin decir dónde", ""), ("con_cajas", "", "Cajas 2D en la foto", ""),
+           ("con_cajas_3d", "", "Cajas 3D en la foto", "")]
+REPL_R2 = [("simple_sin_cajas", "A", "Sin decir dónde", "el modelo los ubica"),
+           ("simple_texto", "B", "En palabras", "una o dos frases por mueble"),
+           ("simple_cajas", "C", "Cajas 2D en la foto", "dibujadas, y que las borre"),
+           ("simple_cajas_guia", "D", "Cajas 2D aparte", "la foto limpia y, al final, una copia con las cajas"),
+           ("simple_cajas_3d", "E", "Cajas 3D en la foto", "dibujadas, y que las borre"),
+           ("simple_cajas_3d_guia", "F", "Cajas 3D aparte", "la foto limpia y, al final, una copia con las cajas")]
 
 
 def replica_por_producto(variant: str) -> dict[str, float]:
@@ -378,19 +387,12 @@ def cajas_dibujadas(img: str):
     if not obs:
         return None
     o = obs.lower()
-    if "sin rastro" in o:
+    if "sin rastro" in o or o.startswith("limpia"):
         return False
-    if "dibujad" in o or "deja" in o:
+    if "dibujad" in o or "deja" in o or "copia los" in o:
         return True
     return None
 
 
-def variante_lista(v: str) -> bool:
-    """La variante está en resultados.json y tiene sus imágenes en disco."""
-    var = REPLICA["variantes"].get(v)
-    if not var or not var.get("imagenes"):
-        return False
-    return all((REPL / r["imagen"]).exists() for r in var["imagenes"])
-
-
-HAY_3D = variante_lista("con_cajas_3d") and (REPL / "vacio_con_cajas_3d.png").exists()
+for _v, *_ in REPL_R1 + REPL_R2:
+    assert all((REPL / r["imagen"]).exists() for r in REPLICA["variantes"][_v]["imagenes"]), _v

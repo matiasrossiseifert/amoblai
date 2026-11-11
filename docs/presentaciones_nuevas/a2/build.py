@@ -29,6 +29,8 @@ import img  # noqa: E402
 import sala  # noqa: E402
 from estilo import CSS, JS  # noqa: E402
 from estilo_l import CSS_L  # noqa: E402
+import planta  # noqa: E402
+from laminas_rec import CSS_R  # noqa: E402
 
 OUT = HERE / "presentacion.html"
 GUION = HERE / "guion.md"
@@ -106,6 +108,25 @@ def guion(slides: list[dict]) -> str:
     return "\n".join(out).rstrip() + "\n"
 
 
+# Las referencias a experimentos ({{LAM:E6}}: el número de su lámina; {{IR:E6}}: su índice, para el
+# clic) se resuelven al final, cuando ya se sabe en qué lámina quedó cada uno.
+LAM_TITULO = {"E13p": "E13 · ¿Cómo pedimos", "T4": "T4 · "}
+
+
+def referencias(secs: str, slides: list[dict]) -> str:
+    import re
+
+    def idx(k: str) -> int:
+        pre = LAM_TITULO.get(k, f"{k} · ")
+        for i, s in enumerate(slides):
+            if s["titulo"].startswith(pre) and not s["anexo"]:
+                return i
+        raise KeyError(f"no hay lámina para {k}")
+
+    secs = re.sub(r"\{\{LAM:(\w+)\}\}", lambda m: str(idx(m.group(1)) + 1), secs)
+    return re.sub(r"\{\{IR:(\w+)\}\}", lambda m: str(idx(m.group(1))), secs)
+
+
 def main() -> None:
     t0 = time.time()
     D = datos_deck.load()
@@ -124,12 +145,15 @@ def main() -> None:
                     for c in base.CAPS)
     notas = json.dumps([notas_html(s["notas"]) for s in slides], ensure_ascii=False)
     pie = ('<div id="pie"><div class="p-marca">amoblai</div><div class="p-sec" id="p-sec"></div>'
+           '<div class="p-planta vacia" id="p-planta"></div>'
            '<div class="p-sala" id="p-sala"></div><div class="p-num" id="p-num"></div></div><div id="barra"></div>')
+    minis += f'<template class="llave">{planta.llave()}</template>'
+    secs = referencias(secs, slides)
     html = (
         '<!doctype html><html lang="es"><head><meta charset="utf-8">'
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         '<title>amoblai · TP 3 · 73.69 LLM · ITBA 2026</title>'
-        f"<style>{fuentes_css()}{CSS}{CSS_L}{MINI_CSS}</style></head><body>{DEFS}"
+        f"<style>{fuentes_css()}{CSS}{CSS_L}{planta.CSS_P}{CSS_R}{MINI_CSS}</style></head><body>{DEFS}"
         f'<div id="escenario">{secs}{pie}</div>{minis}'
         '<div id="indice"><div id="indice-grilla"></div></div><div id="negro"></div><div id="notas"></div>'
         f"<script>window.__NOTAS={notas};</script><script>{JS}</script></body></html>"

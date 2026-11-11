@@ -30,7 +30,7 @@ CAT_ES = {"rug": "alfombras", "deco": "deco", "lamp": "lámparas", "table": "mes
 # capítulos: número, nombre (para el pie) y la pieza que suma a la habitación
 CAPS = {
     0: ("00 · El producto", []),
-    1: ("01 · Arquitectura", ["alfombra"]),
+    1: ("01 · El recorrido", ["alfombra"]),
     2: ("02 · Cómo medimos", ["sofa"]),
     3: ("03 · Qué guardamos", ["tv"]),
     4: ("04 · Cómo buscamos", ["mesa"]),
@@ -70,9 +70,11 @@ def usd(x, d: int = 2) -> str:
 
 def add(body: str, *, titulo: str, cap: int, t: int, notas: list[str], cls: str = "",
         fases: str | None = None, capas: dict | None = None, anexo: str | None = None,
-        seccion: str | None = None) -> None:
+        seccion: str | None = None, planta: list[int] | None = None) -> None:
+    """planta: los ambientes del flujo que esta lámina toca (se encienden en la planta de llave del
+    cajetín)."""
     SL.append(dict(body=body, titulo=titulo, cap=cap, t=t, notas=notas, cls=cls, fases=fases,
-                   capas=capas, anexo=anexo, seccion=seccion or CAPS[cap][0]))
+                   capas=capas, anexo=anexo, seccion=seccion or CAPS[cap][0], planta=planta))
 
 
 def section_html(i: int, s: dict, n_total: int) -> str:
@@ -84,6 +86,8 @@ def section_html(i: int, s: dict, n_total: int) -> str:
         a.append(f"data-capas='{json.dumps(s['capas'])}'")
     if s["anexo"]:
         a.append(f'data-anexo="{s["anexo"]}"')
+    if s.get("planta"):
+        a.append(f'data-planta="{" ".join(map(str, s["planta"]))}"')
     return f'<section {" ".join(a)}>{s["body"]}</section>'
 
 
@@ -116,7 +120,7 @@ def bloque(titulo: str, html: str, desde: int | None = None, cls: str = "") -> s
 
 
 def exp(num, cap, titulo, por_que, que_hicimos, resultados, decision, *, t, notas, ancho=False,
-        rot=None, extra=""):
+        rot=None, extra="", planta=None):
     """Lámina de experimento: por qué → qué hicimos → resultados → decisión, en ese orden.
     'resultados' es el HTML del lado derecho; lo que deba aparecer recién en el paso 2 lo marca
     quien lo arma (data-desde="2"), y el esqueleto (ejes, nombres) puede aparecer en el paso 1."""
@@ -128,7 +132,7 @@ def exp(num, cap, titulo, por_que, que_hicimos, resultados, decision, *, t, nota
             + f'</div><div class="xr">{resultados}</div></div>'
             + (f'<div class="decision" data-desde="3"><div class="k">decisión</div><p>{decision}</p></div>' if decision else "")
             + extra)
-    add(body, titulo=f"{num} · " + re.sub("<[^>]+>", "", titulo), cap=cap, t=t, notas=notas)
+    add(body, titulo=f"{num} · " + re.sub("<[^>]+>", "", titulo), cap=cap, t=t, notas=notas, planta=planta)
 
 
 # ---------------------------------------------------------------- productos

@@ -110,7 +110,7 @@ bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md
 - **Réplica de un ambiente real (el generador, con la lista ya decidida):** se toma un living del
   ground truth de IKEA, se vacía con Nano Banana 2 y se vuelve a amoblar con sus 6 muebles
   anotados, 3 veces sin cajas, 3 con rectángulos y 3 con cajas 3D dibujadas donde está cada mueble
-  en la foto real. Es una sola habitación: son resultados de una prueba, no una medición.
+  en la foto real (y una ronda 2 con prompts cortos, abajo). Es una sola habitación: son resultados de una prueba, no una medición.
   - Sin cajas: los 6 productos aparecen y se reconocen (coseno DINOv3 0,63), pero cada vez arma su
     propio living: IoU medio con las cajas reales 0,20, 1 de 6 en su lugar (IoU ≥ 0,5).
   - Con cajas: IoU 0,40 y 2,7 de 6 en su lugar. Las cajas acomodan los muebles grandes (sofá,
@@ -121,7 +121,14 @@ bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md
     RANSAC, gratis): IoU 0,48 y 3,3 de 6 en su lugar. La que más gana es la lámpara (0,16 → 0,57:
     el rectángulo marcaba solo lo que se veía; el prisma llega al piso). En 1 de 3 imágenes quedaron
     las cajas dibujadas, y en otra repitió el puf.
-  - Resultados en `datos/resultados/replica/living-dagarna/` (US$0,88).
+  - Ronda 2: prompts cortos que dicen qué hacer, iguales salvo en cómo dicen dónde va cada mueble,
+    y dos formas nuevas de decirlo: en palabras (una o dos frases por mueble, que escribe Opus
+    mirando la foto real) y con las cajas en una imagen guía aparte (la foto 1 va limpia). IoU / en
+    su lugar: sin cajas 0,20 / 0,7; en palabras 0,37 / 1,7, sin nada que borrar; cajas 2D 0,43 /
+    3,3; guía 2D 0,36 / 2,3; **cajas 3D 0,52 / 4,0, y ninguna quedó dibujada**; guía 3D 0,38 / 2,3.
+    La guía aparte ubica peor y tampoco evita que las dibuje (1 de 3).
+  - Resultados en `datos/resultados/replica/living-dagarna/` (US$2,40 de fal en total, una imagen
+    se perdió con el disco lleno; US$0,03 de Opus para los lugares en palabras).
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 ![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)

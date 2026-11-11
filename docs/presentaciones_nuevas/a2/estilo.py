@@ -307,6 +307,7 @@ JS = r"""
     $('#p-sec').textContent=s.dataset.seccion||'';
     $('#p-num').textContent=s.dataset.anexo?('anexo '+s.dataset.anexo):('lámina '+(cur+1)+' / '+N);
     var mini=$('#p-sala');var m=$('template.mini-'+(s.dataset.cap||'0'));mini.innerHTML=m?m.innerHTML:'';
+    var pl=$('#p-planta');if(pl){var ks=(s.dataset.planta||'').split(' ').filter(Boolean);pl.classList.toggle('vacia',!ks.length);if(ks.length){if(!pl.firstChild){var tl=$('template.llave');pl.innerHTML=tl?tl.innerHTML:'';}$$('[data-f]',pl).forEach(function(e){e.classList.toggle('act',ks.indexOf(e.dataset.f)!==-1);});}}
     var tot=pasosDe(cur)+1;
     $('#barra').style.width=((s.dataset.anexo?1:(cur+(paso+1)/tot)/N)*1868)+'px';
     var nt=$('#notas');nt.innerHTML='<h5>'+(cur+1)+' · '+(s.dataset.titulo||'')+' · paso '+(paso+1)+'/'+tot+'</h5>'+(NOTAS[cur]||'');

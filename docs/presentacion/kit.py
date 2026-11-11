@@ -1,5 +1,6 @@
-"""Piezas de la presentación: gráficos SVG desde los resultados, imágenes embebidas y el
-diagrama de la arquitectura (que se resalta según qué toca cada experimento)."""
+"""Piezas de la presentación: gráficos SVG desde los resultados, imágenes embebidas, el mapa de
+las once fases (el recorrido, que se va encendiendo) con los pines de los experimentos, y los
+extractos de los prompts (copiados del archivo real: si un extracto no está, falla)."""
 
 from __future__ import annotations
 
@@ -149,96 +150,252 @@ def lines(
     return "".join(out)
 
 
-# La arquitectura ------------------------------------------------------------------------------
-# Cajas del flujo (x, y, w, h, título, detalle) en un lienzo de 1180 x 300. `hl`: las que toca
-# el experimento; `off`: las que esa versión no tiene.
 
-ARCH = {
-    # indexing pipeline (offline)
-    "catalogo": (10, 18, 150, 64, "Catálogo", "productos + fotos"),
-    "describe": (190, 18, 170, 64, "VLM describe", "8 líneas por producto"),
-    "embed": (390, 18, 160, 64, "Embeddings", "Qwen3 0.6B"),
-    "vdb": (580, 18, 160, 64, "ChromaDB", "HNSW · coseno"),
-    # query pipeline
-    "input": (10, 180, 150, 76, "Foto + pedido", "ambiente vacío"),
-    "plan": (190, 180, 150, 76, "plan", "Claude: piezas, kinds, consulta ideal"),
-    "retrieve": (370, 180, 150, 76, "retrieve", "filtros + top-k"),
-    "rerank": (550, 180, 130, 76, "rerank", "VLM sobre top-10"),
-    "choose": (710, 180, 150, 76, "choose", "Claude ve fotos: combinación y cantidades"),
-    "scene": (890, 180, 120, 76, "scene", "prompt de la imagen"),
-    "generate": (1040, 180, 130, 76, "generate", "Nano Banana 2 + control SIFT"),
-}
-EDGES = [
-    ("catalogo", "describe"), ("describe", "embed"), ("embed", "vdb"),
-    ("input", "plan"), ("plan", "retrieve"), ("retrieve", "rerank"), ("rerank", "choose"),
-    ("choose", "scene"), ("scene", "generate"),
+
+# El recorrido: las once fases -----------------------------------------------------------------
+FASES = [
+    ("catalogo", "Catálogo", "IKEA 819 + ABO 683"),
+    ("descripcion", "Descripción", "un VLM escribe 8 líneas"),
+    ("indice", "Índice", "Qwen3-Embedding + ChromaDB"),
+    ("entrada", "Foto + pedido", "el ambiente vacío y el texto"),
+    ("plan", "Plan", "Opus: piezas y una consulta por pieza"),
+    ("busqueda", "Búsqueda", "filtro por kind + coseno: 5"),
+    ("eleccion", "Elección", "Opus mira las fotos y elige"),
+    ("escena", "Escena", "plantilla estricta, sin LLM"),
+    ("imagen", "Imagen", "Nano Banana 2 edita la foto"),
+    ("control", "Control", "SIFT: ¿el mismo cuarto?"),
+    ("salida", "Lista + imagen", "la lista de compra y la foto"),
 ]
+FKEYS = [k for k, *_ in FASES]
+FNAME = {k: n for k, n, _ in FASES}
+OFFLINE = 3  # las tres primeras fases se hacen una vez, offline
+
+# Qué experimento decidió cada fase: los pines del mapa y del minimapa de cada experimento.
+PINES: dict[str, list[int]] = {
+    "catalogo": [9, 10],
+    "descripcion": [1],
+    "indice": [2, 4, 5, 6],
+    "plan": [6],
+    "busqueda": [3, 8, 11],
+    "eleccion": [7],
+    "escena": [12],
+    "control": [12],
+}
 
 
-def arch(hl: set[str] | tuple = (), off: set[str] | tuple = (), notes: dict | None = None, width: int = 1180) -> str:
-    hl, off, notes = set(hl), set(off), notes or {}
-    out = [f'<svg class="arch" viewBox="0 0 1180 300" width="{width}" role="img">']
-    out.append('<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>')
-    out.append(f'<text x="10" y="11" font-size="12" letter-spacing=".04em" fill="{MUTED}">INDEXING (OFFLINE)</text>')
-    out.append(f'<text x="10" y="172" font-size="12" letter-spacing=".04em" fill="{MUTED}">CONSULTA (POR PEDIDO)</text>')
+def pin(cx: float, tip: float, r: float = 10, n: int | None = None, stroke: str = "var(--paper)") -> str:
+    """Un pin de mapa (una gota) con la punta en (cx, tip) y el número del experimento."""
+    d = 1.75 * r
+    cy = tip - d
+    tx, ty = 0.8207 * r, 0.5714 * r  # donde las rectas desde la punta tocan el círculo
+    out = (
+        f'<path d="M{cx:.1f},{tip:.1f} L{cx - tx:.1f},{cy + ty:.1f} A{r},{r} 0 1 1 {cx + tx:.1f},{cy + ty:.1f} Z" '
+        f'fill="{ACCENT}" stroke="{stroke}" stroke-width="1.5"/>'
+    )
+    if n is not None:
+        out += (
+            f'<text x="{cx:.1f}" y="{cy + 0.6:.1f}" text-anchor="middle" dominant-baseline="central" '
+            f'font-size="{r * 1.12:.1f}" font-weight="700" fill="#fff">{n}</text>'
+        )
+    return out
 
-    def mid(k: str, side: str) -> tuple[float, float]:
-        x, y, w, h, *_ = ARCH[k]
-        return (x + w, y + h / 2) if side == "r" else (x, y + h / 2)
 
-    edges = list(EDGES)
-    if "rerank" in off:
-        edges = [e for e in edges if "rerank" not in e] + [("retrieve", "choose")]
-    for a, b in edges:
-        (x1, y1), (x2, y2) = mid(a, "r"), mid(b, "l")
-        out.append(f'<line x1="{x1 + 2}" y1="{y1}" x2="{x2 - 4}" y2="{y2}" stroke="var(--muted)" stroke-width="1.6" marker-end="url(#ah)"/>')
-    # la base vectorial alimenta al retrieve
-    vx, vy, vw, vh, *_ = ARCH["vdb"]
-    rx, ry, rw, rh, *_ = ARCH["retrieve"]
-    out.append(f'<path d="M{vx + vw / 2},{vy + vh} C{vx + vw / 2},{vy + vh + 50} {rx + rw / 2},{ry - 50} {rx + rw / 2},{ry - 4}" fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ah)"/>')
-    for k, (x, y, w, h, title, sub) in ARCH.items():
-        if k in off:
-            out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="none" stroke="var(--grid)" stroke-dasharray="5 4"/>')
-            out.append(f'<text x="{x + w / 2}" y="{y + h / 2 + 4}" text-anchor="middle" font-size="13" fill="var(--grid)">{esc(title)}</text>')
+def pin_inline(n: int, size: int = 24) -> str:
+    """El mismo pin, suelto en el texto (qué experimento decidió esto)."""
+    r = size * 0.36
+    w = 2 * r + 4
+    return (
+        f'<svg class="pini" width="{w:.0f}" height="{size}" viewBox="0 0 {w:.1f} {size}" role="img" '
+        f'aria-label="experimento {n}">{pin(w / 2, size - 1, r, n, stroke="none")}</svg>'
+    )
+
+
+def arrowhead(x: float, y: float, fx: float, fy: float, size: float = 7, color: str = MUTED) -> str:
+    """Una punta de flecha en (x, y) que llega desde (fx, fy)."""
+    import math
+
+    a = math.atan2(y - fy, x - fx)
+    c, s = math.cos(a), math.sin(a)
+    p1 = (x - size * c + size * 0.5 * s, y - size * s - size * 0.5 * c)
+    p2 = (x - size * c - size * 0.5 * s, y - size * s + size * 0.5 * c)
+    return f'<path d="M{x:.1f},{y:.1f} L{p1[0]:.1f},{p1[1]:.1f} L{p2[0]:.1f},{p2[1]:.1f} Z" fill="{color}"/>'
+
+
+def _route_x(width: float) -> list[float]:
+    m = 52
+    s = (width - 2 * m) / 10.5
+    return [m + i * s if i < OFFLINE else m + (i + 0.5) * s for i in range(len(FASES))]
+
+
+def route(cur: str | None = None, lit=(), pins: dict | None = None, width: int = 1160) -> str:
+    """El mapa del recorrido en una tira. Con `cur` (las láminas del recorrido): la fase actual
+    encendida y las anteriores marcadas como vistas. Sin `cur` (el minimapa de un experimento):
+    las fases `lit` encendidas, cada una con el pin de `pins`."""
+    mini = cur is None
+    lit, pins = set(lit), pins or {}
+    xs = _route_x(width)
+    ci = FKEYS.index(cur) if cur else -1
+    cy = 32 if mini else 44
+    h = cy + (22 if mini else 33)
+    out = [
+        f'<svg class="route{" mini" if mini else ""}" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img">'
+    ]
+
+    def state(i: int) -> str:
+        if mini:
+            return "on" if FKEYS[i] in lit else "off"
+        return "cur" if i == ci else ("seen" if i < ci else "next")
+
+    if not mini:
+        out.append(f'<text x="{xs[0] - 14}" y="11" font-size="11" font-weight="600" letter-spacing=".08em" fill="{MUTED}">UNA VEZ · OFFLINE</text>')
+        out.append(f'<text x="{xs[-1] + 44}" y="11" text-anchor="end" font-size="11" font-weight="600" letter-spacing=".08em" fill="{MUTED}">POR CADA PEDIDO</text>')
+    for a in range(len(FASES) - 1):
+        if a == OFFLINE - 1:
+            continue  # entre el índice y la foto no hay vía: son dos pipelines
+        on = not mini and state(a) in ("seen", "cur") and state(a + 1) in ("seen", "cur")
+        out.append(
+            f'<line x1="{xs[a]:.1f}" y1="{cy}" x2="{xs[a + 1]:.1f}" y2="{cy}" '
+            f'stroke="{ACCENT if on else "var(--line)"}" stroke-width="{2.6 if on else 1.6}"/>'
+        )
+    if not mini:
+        # el índice alimenta a la búsqueda; el control vuelve a la imagen
+        x3, x6 = xs[2], xs[5]
+        p = (x3 + 10, cy - 9, x3 + 70, cy - 42, x6 - 70, cy - 42, x6 - 9, cy - 11)
+        out.append(f'<path d="M{p[0]:.1f},{p[1]} C{p[2]:.1f},{p[3]} {p[4]:.1f},{p[5]} {p[6]:.1f},{p[7]}" fill="none" stroke="{MUTED}" stroke-width="1.3" stroke-dasharray="4 4"/>')
+        out.append(arrowhead(p[6], p[7], p[4], p[5], 6.5))
+        out.append(f'<text x="{(x3 + x6) / 2:.1f}" y="{cy - 36}" text-anchor="middle" font-size="10.5" fill="{MUTED}">consulta el índice</text>')
+        x9, x10 = xs[8], xs[9]
+        q = (x10 - 9, cy - 10, x10 - 28, cy - 34, x9 + 28, cy - 34, x9 + 9, cy - 11)
+        out.append(f'<path d="M{q[0]:.1f},{q[1]} C{q[2]:.1f},{q[3]} {q[4]:.1f},{q[5]} {q[6]:.1f},{q[7]}" fill="none" stroke="{MUTED}" stroke-width="1.3"/>')
+        out.append(arrowhead(q[6], q[7], q[4], q[5], 6.5))
+        out.append(f'<text x="{(x9 + x10) / 2:.1f}" y="{cy - 32}" text-anchor="middle" font-size="10.5" fill="{MUTED}">reintenta</text>')
+    for i, (k, name, _) in enumerate(FASES):
+        x, st = xs[i], state(i)
+        if mini:
+            on = st == "on"
+            out.append(f'<circle cx="{x:.1f}" cy="{cy}" r="{6 if on else 4.5}" fill="{ACCENT if on else "var(--paper)"}" stroke="{ACCENT if on else "var(--line)"}" stroke-width="1.5"/>')
+            out.append(f'<text x="{x:.1f}" y="{cy + 19}" text-anchor="middle" font-size="11.5" font-weight="{650 if on else 450}" fill="{ACCENT if on else MUTED}">{esc(name)}</text>')
+            if on:
+                ns = pins.get(k, [])
+                for j, n in enumerate(ns):
+                    out.append(pin(x + (j - (len(ns) - 1) / 2) * 19, cy - 8, 8, n))
             continue
-        on = k in hl
-        fill = "var(--accent)" if on else "var(--card)"
-        tc = "#fff" if on else INK
-        sc = "rgba(255,255,255,.85)" if on else MUTED
-        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{fill}" stroke="{"var(--accent)" if on else "var(--line)"}" stroke-width="1.4"/>')
-        out.append(f'<text x="{x + w / 2}" y="{y + 26}" text-anchor="middle" font-size="15.5" font-weight="650" fill="{tc}">{esc(title)}</text>')
-        sub = notes.get(k, sub)
-        # el detalle en una o dos líneas
-        words, line1, line2 = sub.split(), "", ""
-        for wd in words:
-            if len(line1) + len(wd) < (w / 7.4):
-                line1 = f"{line1} {wd}".strip()
-            else:
-                line2 = f"{line2} {wd}".strip()
-        out.append(f'<text x="{x + w / 2}" y="{y + 45}" text-anchor="middle" font-size="12" fill="{sc}">{esc(line1)}</text>')
-        if line2:
-            out.append(f'<text x="{x + w / 2}" y="{y + 60}" text-anchor="middle" font-size="12" fill="{sc}">{esc(line2)}</text>')
+        if st == "cur":
+            out.append(f'<circle cx="{x:.1f}" cy="{cy}" r="19" fill="var(--accent-soft)"/>')
+            out.append(f'<circle cx="{x:.1f}" cy="{cy}" r="13.5" fill="{ACCENT}"/>')
+            out.append(f'<text x="{x:.1f}" y="{cy + 0.5}" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#fff">{i + 1}</text>')
+            out.append(f'<text x="{x:.1f}" y="{cy + 31}" text-anchor="middle" font-size="13.5" font-weight="700" fill="{ACCENT}">{esc(name)}</text>')
+        else:
+            seen = st == "seen"
+            out.append(f'<circle cx="{x:.1f}" cy="{cy}" r="10.5" fill="{"var(--accent-soft)" if seen else "var(--paper)"}" stroke="{ACCENT if seen else "var(--line)"}" stroke-width="1.4"/>')
+            out.append(f'<text x="{x:.1f}" y="{cy + 0.5}" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="{650 if seen else 500}" fill="{ACCENT if seen else MUTED}">{i + 1}</text>')
+            out.append(f'<text x="{x:.1f}" y="{cy + 30}" text-anchor="middle" font-size="12.5" font-weight="{550 if seen else 450}" fill="{INK if seen else MUTED}">{esc(name)}</text>')
     out.append("</svg>")
     return "".join(out)
 
 
-CHAIN = [
-    ("catalogo", "catálogo"), ("describe", "VLM describe"), ("embed", "embeddings"), ("vdb", "ChromaDB"),
-    None,
-    ("plan", "plan"), ("retrieve", "retrieve"), ("rerank", "rerank"), ("choose", "choose"),
-    ("scene", "scene"), ("generate", "generate"),
-]
+def _wrap(text: str, n: int) -> list[str]:
+    lines, cur = [], ""
+    for w in text.split():
+        if cur and len(cur) + 1 + len(w) > n:
+            lines.append(cur)
+            cur = w
+        else:
+            cur = f"{cur} {w}".strip()
+    return lines + ([cur] if cur else [])
 
 
-def chain(hl: set[str] | tuple = (), off: set[str] | tuple = ()) -> str:
-    """La arquitectura en una tira: qué pasos toca el experimento."""
-    hl, off = set(hl), set(off)
-    parts = []
-    for c in CHAIN:
-        if c is None:
-            parts.append('<span class="sep">│</span>')
+def pipeline(pins: bool = False, width: int = 1160) -> str:
+    """Las once fases como cajas: arriba lo que se hace una vez (offline), abajo lo de cada
+    pedido; el índice baja a la búsqueda. Con `pins`, sobre cada caja los experimentos que la
+    decidieron (PINES)."""
+    bw, step, bh = 131, 147, 80
+    y1, y2 = 34, 170
+    H = 300
+    pos = {}
+    for i, (k, *_r) in enumerate(FASES):
+        pos[k] = (i * step, y1) if i < OFFLINE else ((i - OFFLINE) * step, y2)
+    out = [f'<svg class="pipe" viewBox="0 0 1160 {H}" width="{width}" role="img">']
+    out.append(f'<text x="{3 * step + 4}" y="{y1 + 30}" font-size="11.5" font-weight="600" letter-spacing=".08em" fill="{MUTED}">UNA VEZ · OFFLINE</text>')
+    out.append(f'<text x="{3 * step + 4}" y="{y1 + 50}" font-size="13" fill="{MUTED}">se arma una vez y queda en caché</text>')
+    out.append(f'<text x="0" y="{y2 - 14}" font-size="11.5" font-weight="600" letter-spacing=".08em" fill="{MUTED}">POR CADA PEDIDO</text>')
+
+    def arrow(x1, y1_, x2, y2_, dash=False):
+        d = ' stroke-dasharray="5 4"' if dash else ""
+        return (f'<line x1="{x1}" y1="{y1_}" x2="{x2}" y2="{y2_}" stroke="{MUTED}" stroke-width="1.5"{d}/>'
+                + arrowhead(x2, y2_, x1, y1_))
+
+    for i in range(len(FASES) - 1):
+        if i == OFFLINE - 1:
             continue
-        k, label = c
-        cls = "on" if k in hl else ("off" if k in off else "")
-        parts.append(f'<span class="st {cls}">{esc(label)}</span>')
-    return '<div class="chain">' + '<span class="ar">›</span>'.join(parts).replace('<span class="ar">›</span><span class="sep">│</span><span class="ar">›</span>', '<span class="sep">│</span>') + "</div>"
+        (xa, ya), (xb, yb) = pos[FKEYS[i]], pos[FKEYS[i + 1]]
+        out.append(arrow(xa + bw + 3, ya + bh / 2, xb - 3, yb + bh / 2))
+    xi, yi = pos["indice"]
+    out.append(arrow(xi + 36, yi + bh + 3, xi + 36, y2 - 4, dash=True))
+    out.append(f'<text x="{xi + 44}" y="{(yi + bh + y2) / 2 + 4}" font-size="11.5" fill="{MUTED}">el índice</text>')
+    # el control vuelve a la imagen (hasta 3 intentos); la lista sale de la elección
+    (xg, _), (xc, _) = pos["imagen"], pos["control"]
+    yb = y2 + bh
+    a0, a1 = xc + bw / 2, xg + bw / 2
+    out.append(f'<path d="M{a0},{yb + 3} C{a0},{yb + 30} {a1},{yb + 30} {a1},{yb + 6}" fill="none" stroke="{MUTED}" stroke-width="1.4"/>')
+    out.append(arrowhead(a1, yb + 4, a1, yb + 20))
+    out.append(f'<text x="{(a0 + a1) / 2}" y="{yb + 40}" text-anchor="middle" font-size="11.5" fill="{MUTED}">reintenta, hasta 3</text>')
+    (xe, _), (xs_, _) = pos["eleccion"], pos["salida"]
+    l0, l1, ly = xe + bw / 2, xs_ + bw / 2, H - 6
+    out.append(f'<path d="M{l0},{yb + 3} L{l0},{ly} L{l1},{ly} L{l1},{yb + 6}" fill="none" stroke="{MUTED}" stroke-width="1.4" stroke-dasharray="5 4"/>')
+    out.append(arrowhead(l1, yb + 4, l1, yb + 20))
+    out.append(f'<text x="{l0 + 8}" y="{ly - 6}" font-size="11.5" fill="{MUTED}">la lista</text>')
+    for i, (k, name, sub) in enumerate(FASES):
+        x, y = pos[k]
+        ns = PINES.get(k, []) if pins else []
+        out.append(f'<rect x="{x}" y="{y}" width="{bw}" height="{bh}" rx="11" fill="var(--card)" stroke="{ACCENT if ns else "var(--line)"}" stroke-width="{1.6 if ns else 1.2}"/>')
+        out.append(f'<text x="{x + 10}" y="{y + 17}" font-size="10.5" font-weight="650" letter-spacing=".06em" fill="{ACCENT if ns else MUTED}">FASE {i + 1}</text>')
+        out.append(f'<text x="{x + 10}" y="{y + 36}" font-size="14" font-weight="650" fill="{INK}">{esc(name)}</text>')
+        for j, ln in enumerate(_wrap(sub, 19)[:2]):
+            out.append(f'<text x="{x + 10}" y="{y + 54 + j * 14}" font-size="11" fill="{MUTED}">{esc(ln)}</text>')
+        for j, n in enumerate(reversed(ns)):
+            out.append(pin(x + bw - 14 - j * 23, y + 7, 10, n))
+    out.append("</svg>")
+    return "".join(out)
+
+
+# Los prompts: extractos copiados del archivo ----------------------------------------------------
+PROMPTS = ROOT / "src" / "amoblai" / "prompts"
+
+
+def prompt_body(name: str) -> str:
+    """El texto que se manda (sin el front matter)."""
+    t = (PROMPTS / name).read_text()
+    return t.split("---", 2)[2] if t.startswith("---") else t
+
+
+def excerpt_html(source: str, parts: list[str]) -> str:
+    """Los pedazos de `source` tal cual (si alguno no está, falla), unidos con […]. [[…]]
+    resalta y {variable} va en color."""
+    import re
+
+    out = []
+    for part in parts:
+        plain = part.replace("[[", "").replace("]]", "")
+        assert plain in source, f"el extracto no está en el prompt: {plain[:70]!r}"
+        h = esc(part).replace("[[", "<mark>").replace("]]", "</mark>")
+        out.append(re.sub(r"\{(\w+)\}", r'<span class="v">{\1}</span>', h))
+    return '\n<span class="cut">[…]</span>\n'.join(out)
+
+
+def prompt_card(name: str, parts: list[str], note: str = "extracto · se manda en inglés", source: str | None = None, cls: str = "") -> str:
+    src = source if source is not None else prompt_body(name)
+    return (
+        f'<div class="prompt {cls}"><div class="ph"><b>{esc(name)}</b><span>{esc(note)}</span></div>'
+        f"<pre>{excerpt_html(src, parts)}</pre></div>"
+    )
+
+
+def versions(rows: list[tuple[str, str, bool]], title: str = "Cómo lo fuimos reescribiendo") -> str:
+    """Las versiones de un prompt: (versión, qué cambió y por qué, si es la que se usa)."""
+    items = "".join(
+        f'<div class="vr{" now" if now else ""}"><span class="vt">{esc(tag)}</span><span>{txt}</span></div>'
+        for tag, txt, now in rows
+    )
+    head = f'<div class="lab">{title}</div>' if title else ""
+    return f'<div class="vers">{head}{items}</div>'

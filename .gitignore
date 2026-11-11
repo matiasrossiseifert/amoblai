@@ -12,6 +12,8 @@
 !/docs/presentacion/
 !/docs/presentaciones_nuevas/
 /docs/presentaciones_nuevas/*/_trabajo/*
+!/docs/presentaciones_nuevas/b2/_trabajo/sift_*.json
+!/docs/presentaciones_nuevas/b2/_trabajo/vector_*.json
 !/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/
 /docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*
 !/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*.woff2

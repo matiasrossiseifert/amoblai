@@ -14,6 +14,16 @@ El experimento la vacía con el modelo de imagen, la vuelve a amoblar con esos m
   volumen de cada mueble en la foto real (evaluation/cajas3d.py: profundidad monocular, piso y
   pared; scene_prompt_cajas3d_v1).
 
+La ronda 2 (variantes `simple_*`) usa prompts cortos que dicen qué hacer, iguales salvo en cómo
+dicen dónde va cada mueble, y suma dos formas de decirlo:
+
+- **texto** (`lugares: true`): sin cajas; cada producto con una o dos frases de dónde está en la
+  foto real, que escribe Opus mirando la foto real y la vaciada (describir_lugares_v1, una sola
+  llamada, queda en lugares.json).
+- **guía** (`guia: true`): la foto vacía va limpia como imagen 1 y las cajas (2D o 3D) van
+  dibujadas en una copia, como última imagen: el modelo amobla la limpia con los tamaños y lugares
+  de la otra, y no tiene cajas que borrar.
+
 Las cajas de la foto real las encuentran Grounding DINO y DINOv3 (evaluation/image.py, gratis): la
 detección de cada categoría que más se parece a la foto del producto. Por imagen generada, con
 los mismos modelos: dónde quedó cada producto (IoU de su caja con la de la foto real y distancia
@@ -27,6 +37,7 @@ y lo que ya está no se vuelve a pagar.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import shutil
@@ -117,17 +128,38 @@ def descriptions(cfg: Config) -> dict[str, str]:
     return out
 
 
-def product_lines(products: Sequence[Product], texts: dict[str, str]) -> str:
-    """Como el paso scene del flujo sin LLM: 'image N: <línea Type>, <medidas>'."""
+def product_line(p: Product, texts: dict[str, str]) -> str:
+    """'<línea Type>, <medidas>', como el paso scene del flujo sin LLM."""
     words = (("width", "wide"), ("depth", "deep"), ("height", "high"))
+    first = (texts.get(p.id) or "").splitlines()[:1]
+    kind = first[0].removeprefix("Type:").strip() if first else (p.kind or p.category)
+    d = p.info.get("dimensions_cm") or {}
+    size = ", ".join(f"{d[a]:.0f} cm {w}" for a, w in words if d.get(a)) or "size unknown"
+    return f"{kind}, {size}"
+
+
+def product_lines(
+    products: Sequence[Product], texts: dict[str, str], places: dict[str, str] | None = None
+) -> str:
+    """'image N: <línea Type>, <medidas>', y con `places`, '. Where: <dónde va>'."""
     lines = []
     for i, p in enumerate(products):
-        first = (texts.get(p.id) or "").splitlines()[:1]
-        kind = first[0].removeprefix("Type:").strip() if first else (p.kind or p.category)
-        d = p.info.get("dimensions_cm") or {}
-        size = ", ".join(f"{d[a]:.0f} cm {w}" for a, w in words if d.get(a)) or "size unknown"
-        lines.append(f"image {i + 2}: {kind}, {size}")
+        line = f"image {i + 2}: {product_line(p, texts)}"
+        if places is not None:
+            line += f". Where: {places[p.id]}"
+        lines.append(line)
     return "\n".join(lines)
+
+
+def variant_images(v: dict, rooms: dict, empty: Path, photos: list[Path]) -> list[Path]:
+    """Lo que recibe el modelo: el cuarto (con las cajas dibujadas, si las lleva) y los productos;
+    con `guia`, el cuarto limpio, los productos y al final la copia con las cajas."""
+    boxes = v.get("cajas", False)
+    if v.get("guia"):
+        if not boxes:
+            raise ValueError("replica: una variante con `guia` necesita `cajas` (2d o 3d)")
+        return [empty, *photos, rooms[boxes]]
+    return [rooms[boxes], *photos]
 
 
 def locate(
@@ -308,6 +340,49 @@ def _boxes3d(
     return [(i + 2, data["cajas"][p.id]) for i, p in enumerate(products)]
 
 
+def _places(
+    cfg: Config,
+    exp: dict,
+    out: Path,
+    original: Path,
+    empty: Path,
+    products: list[Product],
+    texts: dict[str, str],
+    log: Callable[[str], None],
+    paid: bool,
+) -> dict[str, str] | None:
+    """Dónde está cada producto en la foto real, en palabras (para la variante texto). Una
+    llamada a Opus con la foto real y la vaciada; queda en lugares.json mientras no cambien el
+    prompt, los productos ni la foto vaciada. Sin `paid` y sin archivo: None."""
+    from amoblai.furnish.llm import image_block, text_block
+    from amoblai.furnish.steps import ask
+
+    f = out / "lugares.json"
+    tmpl = load_prompt(exp.get("prompt_lugares", "describir_lugares_v1.md"), cfg.root)
+    entry = {"prompt": tmpl.version, "productos": [p.id for p in products],
+             "vacio_sha": hashlib.sha1(empty.read_bytes()).hexdigest()[:16]}  # fmt: skip
+    data = json.loads(f.read_text()) if f.exists() else {}
+    if data.get("entrada") == entry:
+        return data["lugares"]
+    if not paid:
+        log("faltan los lugares en palabras (una llamada a Opus): la variante texto espera")
+        return None
+    log("escribiendo dónde va cada producto (Opus)")
+    lines = "\n".join(f"{p.id}: {product_line(p, texts)}" for p in products)
+    side = cfg.furnish.photo_max_side
+    content = [image_block(original, side), image_block(empty, side),
+               text_block(tmpl.fill(products=lines))]  # fmt: skip
+    a, ans = ask(cfg, "eval.replica.lugares", content)
+    missing = [p.id for p in products if not str(ans.get(p.id) or "").strip()]
+    if missing:
+        raise ValueError(f"replica: Opus no dijo dónde va {missing}")
+    places = {p.id: str(ans[p.id]).strip() for p in products}
+    f.write_text(json.dumps({"entrada": entry, "lugares": places, "modelo": a.model,
+                             "costo_usd": a.cost_usd, "prompt": tmpl.fill(products=lines)},
+                            ensure_ascii=False, indent=1))  # fmt: skip
+    return places
+
+
 def run(
     cfg: Config, exp: dict, log: Callable[[str], None] = print, paid: bool = True
 ) -> dict[str, Any] | None:
@@ -399,20 +474,27 @@ def run(
         c3.draw_boxes3d(empty_img, boxes3d, COLORS).save(rooms["3d"])
 
     # 3. las variantes, `repeticiones` imágenes cada una
-    lines = product_lines(products, descriptions(cfg))
+    texts = descriptions(cfg)
+    places = None
+    if any(v.get("lugares") for v in exp["variantes"].values()):
+        places = _places(cfg, exp, out, original, empty, products, texts, log, paid)
     photos = [p.photos()[0] for p in products]
+    n_prod = len(products)
     for name, v in exp["variantes"].items():
+        if v.get("lugares") and places is None:
+            continue
+        lines = product_lines(products, texts, places if v.get("lugares") else None)
         tmpl = load_prompt(v["prompt"], cfg.root)
-        prompt = tmpl.fill(request=exp["pedido"], products=lines, last=len(products) + 1)
+        prompt = tmpl.fill(request=exp["pedido"], products=lines, last=n_prod + 1, guide=n_prod + 2)
+        images = variant_images(v, rooms, empty, photos)
         (out / name).mkdir(exist_ok=True)
         (out / name / "prompt.txt").write_text(prompt + "\n")
-        room = rooms[v.get("cajas", False)]
         for k in range(1, exp["repeticiones"] + 1):
             dst = out / name / f"{k}.png"
             if not dst.exists() and paid:
                 log(f"{name}: imagen {k}")
                 state["imagenes"][f"{name}/{k}.png"] = paid_image(
-                    cfg, prompt, [room, *photos], dst, f"eval.replica.{name}"
+                    cfg, prompt, images, dst, f"eval.replica.{name}"
                 )
                 save_state()
 
@@ -425,6 +507,7 @@ def run(
         "pedido": exp["pedido"],
         "vaciado": state.get("vaciado"),
         "observaciones": exp.get("observaciones") or {},
+        "lugares": places,
         "vacio": {"quedan": furniture_left(models, empty)},
         "variantes": {},
         "costo_usd": round(sum(x["cost_usd"] for x in state["imagenes"].values()), 4),

@@ -1,5 +1,5 @@
-"""El cierre: lo que decidimos, el camino de los números, los costos, lo aprendido, los pasos a
-futuro, el gracias y el anexo."""
+"""El cierre: el camino de los números, los costos, lo aprendido, los pasos a futuro, el gracias y
+el anexo (con la cronología y la planilla de alternativas, que en la charla reemplaza el recorrido)."""
 
 from __future__ import annotations
 
@@ -8,8 +8,8 @@ import sala
 from base import KIND_ES, add, cab, esc, f, pct, piezas_hasta, remate, usd
 from datos_deck import RES
 from graf import hbars
-from laminas_1 import separador, variantes_html
-from laminas_r import futuro_slides
+from laminas_1 import linea_de_tiempo, separador, variantes_html
+from laminas_r import futuro_slides, replica_anexo
 
 A = RES / "amoblar"
 
@@ -21,17 +21,6 @@ def ci(m, k="hit@1"):
 def build(D: dict, ctx: dict) -> None:
     b, o = D["best"], D["opus"]
     separador(7, ["Cerramos. El cuarto ya está completo: le faltaban los almohadones."])
-
-    # ---------------------------------------------------------------- lo que decidimos
-    body = ('<div class="cuerpo">' + cab("07", "Cierre", "Lo que decidimos, <em>y qué experimento lo decidió</em>") + '</div>'
-            + variantes_html(elegidas=True))
-    add(body, titulo="Lo que decidimos", cap=7, t=25, cls="lam-decidimos", notas=[
-        "Volvemos a la planilla del principio, ahora con lo que elegimos en cada fila y el experimento que lo "
-        "decidió.",
-        "Descripciones de ocho líneas, Qwen3 entero, Chroma, un documento por producto; la consulta reescrita "
-        "en ocho líneas; un modelo que ve para elegir entre cinco; los dos catálogos; y edición estricta con "
-        "control SIFT. El modelo de imagen es el único que quedó sin medir.",
-    ])
 
     # ---------------------------------------------------------------- el camino
     rows = [dict(label="naive: texto del vendedor", value=D["naive"]["hit@1"], ci=ci(D["naive"]), kind="muted",
@@ -57,8 +46,12 @@ def build(D: dict, ctx: dict) -> None:
     nombres = {"eval.rerank": "evaluación: reranking", "catalog.describe": "catálogo: descripciones ABO",
                "furnish.choose": "flujo: choose", "eval.juez_listas": "evaluación: juez de listas",
                "furnish.plan": "flujo: plan", "furnish.generate": "flujo: imágenes", "furnish.scene": "flujo: scene (antes con LLM)",
-               "eval.replica.sin_cajas": "réplica: sin cajas", "eval.replica.con_cajas": "réplica: cajas 2D",
-               "eval.replica.con_cajas_3d": "réplica: cajas 3D", "eval.replica.vaciar": "réplica: vaciar la foto"}
+               "eval.replica": "evaluación: réplica (E14 y futuro)"}
+    # la réplica tiene un paso por variante: en el gráfico va junta
+    gp = dict(gp)
+    rep_ = {k: gp.pop(k) for k in list(gp) if k.startswith("eval.replica.")}
+    if rep_:
+        gp["eval.replica"] = sum(rep_.values())
     mx = max(gp.values())
     xm = (int(mx / 4) + 1) * 4
     rows = [dict(label=nombres.get(k, k), value=v, kind="main" if k.startswith("furnish") else "alt")
@@ -79,12 +72,11 @@ def build(D: dict, ctx: dict) -> None:
             + '<div class="co2" data-desde="1"><div class="ley"><span><i style="background:#2453D6"></i>el flujo</span>'
               '<span><i style="background:#9AA4AF"></i>evaluación y catálogo</span><span>registro de gastos, por paso</span></div>'
             + led + '</div></div>')
-    add(body, titulo="Costos", cap=7, t=25, notas=[
-        f"Lo que cuesta. Una corrida del flujo, unos {usd(tot)}: plan, choose, que es lo más caro porque mira "
-        f"fotos, y la imagen, más {usd(D['img_precio'])} por cada reintento.",
+    add(body, titulo="Costos", cap=7, t=20, notas=[
+        f"Lo que cuesta: una corrida, unos {usd(tot)}, más {usd(D['img_precio'])} por cada reintento de imagen.",
         f"[paso] En todo el trabajo gastamos {usd(D['gasto_total'])} registrados, y lo que más se llevó fue "
-        f"evaluar: el reranking con Opus sobre todas las búsquedas. Todo lo demás, el retrieval, los embeddings y "
-        f"las métricas de imagen, corre local y gratis.",
+        f"evaluar: el reranking con Opus sobre todas las búsquedas. El retrieval, los embeddings y las métricas "
+        f"de imagen corren local y gratis.",
     ])
 
     # ---------------------------------------------------------------- aprendizajes y límites
@@ -111,15 +103,14 @@ def build(D: dict, ctx: dict) -> None:
             + '</div><div class="ac lim" data-desde="1"><div class="act">límites</div>'
             + "".join(f'<div class="apri"><span>–</span><p>{x}</p></div>' for x in Lim)
             + "</div></div>")
-    add(body, titulo="Aprendizajes y límites", cap=7, t=55, notas=[
-        "Cuatro cosas que aprendimos. Uno: lo que más pesó fue qué texto guardamos y cómo escribimos la "
-        "consulta, más que el modelo de embeddings. Dos: un modelo que ve, al final, vale más que cualquier "
-        "ajuste fino del retrieval. Tres: medir con intervalos y repetir nos salvó de declarar ganadoras a "
-        "varias cosas que eran ruido. Cuatro: las métricas sin ground truth encontraron problemas que hit@k no "
-        "veía, como las medidas que faltan.",
-        "[paso] Y los límites, con honestidad: la imagen se midió con muy pocas imágenes; ABO solo tiene "
-        "evaluación con juez; los jueces son Claude evaluando a Claude, validados contra las anotaciones pero "
-        "no contra personas; y los asientos de IKEA siguen sin medidas.",
+    add(body, titulo="Aprendizajes y límites", cap=7, t=45, notas=[
+        "Cuatro cosas que aprendimos. Lo que más pesó fue qué texto guardamos y cómo escribimos la consulta, "
+        "más que el embedder. Un modelo que ve, al final, vale más que cualquier ajuste fino del retrieval. "
+        "Medir con intervalos y repetir nos salvó de declarar ganadoras cosas que eran ruido. Y las métricas "
+        "sin ground truth encontraron lo que hit@k no ve, como las medidas que faltan.",
+        "[paso] Los límites: la imagen se midió con muy pocas imágenes; ABO solo tiene juez; los jueces son "
+        "Claude evaluando a Claude, validados contra las anotaciones y no contra personas; y los asientos de "
+        "IKEA siguen sin medidas.",
     ])
 
     # ---------------------------------------------------------------- pasos a futuro
@@ -193,3 +184,14 @@ def build(D: dict, ctx: dict) -> None:
         "Lámina de respaldo: todas las configuraciones de la ablación final, por si preguntan por alguna "
         "combinación.",
     ])
+
+    linea_de_tiempo(D, "C")
+
+    body = ('<div class="cuerpo">' + cab("D", "Anexo · la planilla", "Cada caja tuvo alternativas: <em>lo que elegimos</em>") + '</div>'
+            + variantes_html(elegidas=True))
+    add(body, titulo="La planilla de alternativas", cap=9, t=0, anexo="D", cls="lam-decidimos", notas=[
+        "Lámina de respaldo: las alternativas de cada decisión, la que quedó y el experimento que la decidió. "
+        "En la charla, esto lo cuenta el mapa de experimentos.",
+    ])
+
+    replica_anexo(D, "E", "F")

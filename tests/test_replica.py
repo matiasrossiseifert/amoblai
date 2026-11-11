@@ -1,6 +1,8 @@
 """El experimento de réplica sin red ni modelos: las cajas relativas, dibujarlas, lo que falta
 pagar y el resumen por variante."""
 
+from pathlib import Path
+
 from PIL import Image
 
 from amoblai.evaluation import replica
@@ -40,3 +42,27 @@ def test_summary_keeps_each_repetition_and_its_mean():
     assert s["iou_medio"] == {"media": 0.3, "valores": [0.2, 0.4]}
     assert s["centro_medio"] == {"media": 0.1, "valores": [0.1]}
     assert s["ssim_con_la_real"]["media"] is None
+
+
+class _P:
+    def __init__(self, pid: str, kind: str, dims: dict):
+        self.id, self.kind, self.category, self.info = pid, kind, kind, {"dimensions_cm": dims}
+
+
+def test_product_lines_add_where_each_goes_only_with_places():
+    ps = [_P("a", "sofa", {"width": 200, "depth": 90}), _P("b", "rug", {})]
+    texts = {"a": "Type: three-seat sofa\nStyle: modern"}
+    plain = replica.product_lines(ps, texts)
+    assert plain == "image 2: three-seat sofa, 200 cm wide, 90 cm deep\nimage 3: rug, size unknown"
+    placed = replica.product_lines(ps, texts, {"a": "against the back wall.", "b": "under it."})
+    assert placed.splitlines()[0].endswith(". Where: against the back wall.")
+
+
+def test_guide_variant_sends_the_clean_room_first_and_the_boxes_last():
+    rooms = {False: Path("vacio.png"), "2d": Path("cajas.png"), "3d": Path("cajas3d.png")}
+    photos = [Path("p2.jpg"), Path("p3.jpg")]
+    empty = rooms[False]
+    assert replica.variant_images({"cajas": "3d"}, rooms, empty, photos)[0] == Path("cajas3d.png")
+    guided = replica.variant_images({"cajas": "3d", "guia": True}, rooms, empty, photos)
+    assert guided == [Path("vacio.png"), *photos, Path("cajas3d.png")]
+    assert replica.variant_images({}, rooms, empty, photos)[0] == empty
