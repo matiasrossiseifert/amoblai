@@ -157,42 +157,60 @@ def _pines_por_nodo(pines):
     return por
 
 
-def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=()) -> str:
+# Las once fases del recorrido, en orden (las claves de los nodos)
+FASES = ["catalogo", "descripcion", "indice", "foto", "plan", "busqueda", "eleccion", "escena", "imagen", "control", "salida"]
+FASE_N = {k: i for i, k in enumerate(FASES, 1)}
+
+
+def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=(), ruta=False, vistos=(), pines_en=None) -> str:
     """El esquema completo. pines: números de experimento que se marcan sobre su etapa.
     pin_paso: dict n -> paso en que aparece el pin. etiquetas_fin: dict clave -> texto (configuración final).
-    on: etapas encendidas de entrada (sin depender de los pasos)."""
+    on: etapas encendidas de entrada (sin depender de los pasos).
+    ruta: el mapa del recorrido: cada nodo con su número de fase, sin subtítulos; `vistos` son las fases
+    ya recorridas (y las flechas entre ellas quedan marcadas); pines_en: dict nodo -> experimentos."""
     on = set(on)
+    vistos = set(vistos)
     if on:
         cls += " foco"
+    if ruta:
+        cls += " ruta"
     o = ['<svg class="flujo ' + cls + '" viewBox="-44 0 1068 868" role="img" aria-label="El flujo de amoblai: el indexing '
          'corre una vez (catálogo, descripción, índice) y la consulta corre por pedido (foto y pedido, plan, búsqueda, '
          'elección, escena, imagen y control).">']
     # regiones
     o.append('<g data-k="indexing"><rect class="reg reg-i" x="0" y="14" width="1008" height="196" rx="10"/>'
-             '<text class="reg-t" x="20" y="44">indexing · corre una vez</text></g>')
+             f'<text class="reg-t" x="20" y="{48 if ruta else 44}">{"1–3 · una vez, offline" if ruta else "indexing · corre una vez"}</text></g>')
     o.append('<g data-k="consulta"><rect class="reg" x="0" y="248" width="1008" height="612" rx="10"/>'
-             '<text class="reg-t" x="20" y="278">consulta · corre por pedido</text></g>')
-    # flechas
+             f'<text class="reg-t" x="20" y="{282 if ruta else 278}">{"4–11 · por pedido" if ruta else "consulta · corre por pedido"}</text></g>')
+    # flechas: (desde, hasta, trazo)
     cy = lambda f: FILA[f] + NH / 2  # noqa: E731
     x_mid = lambda c: COL[c] + NW / 2  # noqa: E731
     fl = [
-        f'M{COL[0] + NW} {cy("i")}H{COL[1] - 6}', f'M{COL[1] + NW} {cy("i")}H{COL[2] - 6}',
-        f'M{x_mid(2)} {FILA["i"] + NH}V{FILA["1"] - 6}',
-        f'M{COL[0] + NW} {cy("1")}H{COL[1] - 6}', f'M{COL[1] + NW} {cy("1")}H{COL[2] - 6}',
-        f'M{x_mid(2)} {FILA["1"] + NH}V{FILA["2"] - 6}',
-        f'M{COL[2]} {cy("2")}H{COL[1] + NW + 6}', f'M{COL[1]} {cy("2")}H{COL[0] + NW + 6}',
-        f'M{x_mid(0) + 34} {FILA["2"] + NH}V{FILA["3"] - 6}',
-        f'M{COL[0] + NW} {cy("3")}H{COL[1] - 6}',
+        ("catalogo", "descripcion", f'M{COL[0] + NW} {cy("i")}H{COL[1] - 6}'),
+        ("descripcion", "indice", f'M{COL[1] + NW} {cy("i")}H{COL[2] - 6}'),
+        ("indice", "busqueda", f'M{x_mid(2)} {FILA["i"] + NH}V{FILA["1"] - 6}'),
+        ("foto", "plan", f'M{COL[0] + NW} {cy("1")}H{COL[1] - 6}'),
+        ("plan", "busqueda", f'M{COL[1] + NW} {cy("1")}H{COL[2] - 6}'),
+        ("busqueda", "eleccion", f'M{x_mid(2)} {FILA["1"] + NH}V{FILA["2"] - 6}'),
+        ("eleccion", "escena", f'M{COL[2]} {cy("2")}H{COL[1] + NW + 6}'),
+        ("escena", "imagen", f'M{COL[1]} {cy("2")}H{COL[0] + NW + 6}'),
+        ("imagen", "control", f'M{x_mid(0) + 34} {FILA["2"] + NH}V{FILA["3"] - 6}'),
+        ("control", "salida", f'M{COL[0] + NW} {cy("3")}H{COL[1] - 6}'),
     ]
-    o.append('<g class="lineas">' + "".join(f'<path class="fl" d="{d}" marker-end="url(#pf)"/>' for d in fl))
+
+    def hecha(a, b):
+        return ruta and a in vistos and (b in vistos or b in on)
+
+    o.append('<g class="lineas">' + "".join(
+        f'<path class="fl{" hecha" if hecha(a, b) else ""}" d="{d}" marker-end="url(#pf)"/>' for a, b, d in fl))
     # la foto también va a la imagen; la lista sale de la elección; el control puede pedir otro intento
-    o.append(f'<path class="fl fl-d" d="M{x_mid(0) - 60} {FILA["1"] + NH}V{FILA["2"] - 6}" marker-end="url(#pf)"/>')
+    o.append(f'<path class="fl fl-d{" hecha" if hecha("foto", "imagen") else ""}" d="M{x_mid(0) - 60} {FILA["1"] + NH}V{FILA["2"] - 6}" marker-end="url(#pf)"/>')
     o.append(f'<text class="fl-t" x="{x_mid(0) - 48}" y="{FILA["1"] + NH + 50}">la foto</text>')
-    o.append(f'<path class="fl fl-d" d="M{x_mid(2)} {FILA["2"] + NH}V{FILA["3"] - 6}" marker-end="url(#pf)"/>')
+    o.append(f'<path class="fl fl-d{" hecha" if hecha("eleccion", "salida") else ""}" d="M{x_mid(2)} {FILA["2"] + NH}V{FILA["3"] - 6}" marker-end="url(#pf)"/>')
     o.append(f'<text class="fl-t" x="{x_mid(2) + 12}" y="{FILA["2"] + NH + 50}">la lista</text>')
     o.append(f'<text class="fl-t" x="{x_mid(2) + 12}" y="{FILA["1"] + NH + 50}">k candidatos</text>')
     lx = COL[0] - 18
-    o.append(f'<path class="fl" d="M{COL[0]} {cy("3") + 18}H{lx + 6}Q{lx - 14} {cy("3") + 18} {lx - 14} {cy("3") - 2}'
+    o.append(f'<path class="fl{" hecha" if hecha("control", "imagen") else ""}" d="M{COL[0]} {cy("3") + 18}H{lx + 6}Q{lx - 14} {cy("3") + 18} {lx - 14} {cy("3") - 2}'
              f'V{cy("2") + 20}Q{lx - 14} {cy("2")} {lx + 6} {cy("2")}H{COL[0] - 6}" marker-end="url(#pf)"/>')
     o.append(f'<text class="fl-t" x="{lx - 26}" y="{(cy("2") + cy("3")) / 2}" text-anchor="middle" '
              f'transform="rotate(-90 {lx - 26} {(cy("2") + cy("3")) / 2})">otro intento</text>')
@@ -201,6 +219,14 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=())
     fin = etiquetas_fin or {}
     for k, ic_, nom, a, b, c, f, w in NODOS:
         x, y = COL[c], FILA[f]
+        estado = (" on" if k in on else "") + (" visto" if k in vistos else "")
+        if ruta:
+            visto = f'<text class="ok" x="{x + 64}" y="{y + 45}">✓</text>' if k in vistos else ""
+            o.append(f'<g class="nodo{estado}" data-k="{k}"><rect class="caja" x="{x}" y="{y}" width="{w}" height="{NH}" rx="9"/>'
+                     f'<use href="#i-{ic_}" class="ico" x="{x + w - 56}" y="{y + 26}" width="36" height="36"/>'
+                     f'<text class="num" x="{x + 22}" y="{y + 45}">{FASE_N[k]:02d}</text>{visto}'
+                     f'<text class="nom" x="{x + 22}" y="{y + 98}">{nom}</text></g>')
+            continue
         subs = (f'<text class="sub" x="{x + 20}" y="{y + 84}">{a}</text>'
                 + ("" if k in fin else f'<text class="sub" x="{x + 20}" y="{y + 105}">{b}</text>'))
         if fut and k in FUT_SUB:
@@ -208,7 +234,7 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=())
             subs = (f'<g data-hasta="{pa}">{subs}</g><g class="fut-sub" data-paso="{pa}">'
                     f'<rect x="{x - 7}" y="{y - 7}" width="{w + 14}" height="{NH + 14}" rx="13"/>'
                     f'<text x="{x + 20}" y="{y + 84}">{fa}</text><text x="{x + 20}" y="{y + 105}">{fb}</text></g>')
-        o.append(f'<g class="nodo{" on" if k in on else ""}" data-k="{k}"><rect class="caja" x="{x}" y="{y}" width="{w}" height="{NH}" rx="9"/>'
+        o.append(f'<g class="nodo{estado}" data-k="{k}"><rect class="caja" x="{x}" y="{y}" width="{w}" height="{NH}" rx="9"/>'
                  f'<use href="#i-{ic_}" class="ico" x="{x + 18}" y="{y + 18}" width="34" height="34"/>'
                  f'<text class="nom" x="{x + 64}" y="{y + 45}">{nom}</text>{subs}</g>')
     # etiquetas de la configuración final
@@ -218,12 +244,14 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=())
             o.append(f'<g class="cfg" data-k="{k}"><rect x="{x + 8}" y="{y + NH - 16}" width="{w - 16}" height="34" rx="5"/>'
                      f'<text x="{x + w / 2}" y="{y + NH + 7}" text-anchor="middle">{txt}</text></g>')
     # pines de experimentos
-    for k, ns in _pines_por_nodo(pines).items():
+    por_nodo = pines_en if pines_en is not None else _pines_por_nodo(pines)
+    for k, ns in por_nodo.items():
         x, y, w = POS[k]
         for i, n in enumerate(ns):
-            px, py = x + w - 24 - i * 42, y
+            px, py = x + w - 24 - i * (48 if ruta else 42), y - (4 if ruta else 0)
             pa = f' data-paso="{pin_paso[n]}"' if pin_paso and n in pin_paso else ""
-            o.append(f'<g class="pin"{pa}><circle cx="{px}" cy="{py}" r="18"/><text x="{px}" y="{py + 7}" text-anchor="middle">{n}</text></g>')
+            o.append(f'<g class="pin"{pa}><circle cx="{px}" cy="{py}" r="{22 if ruta else 18}"/>'
+                     f'<text x="{px}" y="{py + (9 if ruta else 7)}" text-anchor="middle">{n}</text></g>')
     o.append("</svg>")
     return "".join(o)
 

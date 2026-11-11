@@ -5,8 +5,10 @@
 
 Concepto: «el flujo y la lista». La columna vertebral es el esquema del sistema (foto y pedido →
 plan → búsqueda → elección → escena → imagen → control, con el indexing arriba), dibujado en SVG:
-aparece en la portada, se arma en la arquitectura, lleva un pin por experimento y se ilumina en la
-etapa que prueba cada uno. Encima, los objetos de la compra: etiquetas de producto, la lista de
+aparece en la portada, se recorre fase por fase en la arquitectura (el mapa que avanza: la fase
+actual encendida y las vistas marcadas, con el prompt real de cada fase y sus versiones; ver
+laminas_recorrido.py y recorrido.py), lleva un pin por experimento y se ilumina en la etapa que
+prueba cada uno. Encima, los objetos de la compra: etiquetas de producto, la lista de
 compra como ticket y, al final de cada experimento, un talón con la línea de configuración que
 deja. Todos los números salen de los archivos de resultados (datos.py). Las fotos van embebidas
 como JPEG y las fuentes (Ubuntu Sans y Ubuntu Sans Mono, variables) recortadas en woff2: la
@@ -28,6 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from datos import OUT, TRAB, esc, mmss  # noqa: E402
 from estilo import CSS  # noqa: E402
+from estilo_recorrido import CSS as CSS_REC  # noqa: E402
 from piezas import IM, defs_svg  # noqa: E402
 from registro import LAMINAS  # noqa: E402
 
@@ -201,6 +204,7 @@ def armar() -> int:
 <title>amoblai · 73.69 LLM · ITBA</title>
 <style>{css_fuentes()}</style>
 <style>{CSS}</style>
+<style>{CSS_REC}</style>
 <style>{IM.style()}</style>
 </head><body>
 {defs_svg()}
@@ -221,6 +225,7 @@ def armar() -> int:
 
 def guion(total: int):
     n = len(LAMINAS)
+    _rec = [i for i, s in enumerate(LAMINAS, 1) if s["id"].startswith("rec-")]
     L = ["# Guion de la presentación (amoblai, versión b2)", "",
          f"Generado por `build.py` junto con `presentacion.html`: los números salen de los mismos archivos de resultados que las láminas. "
          f"{n} láminas, unos {round(total / 60)} minutos ({mmss(total)}).", "",
@@ -232,7 +237,11 @@ def guion(total: int):
          "que se prueba encendida; con la flecha aparece el experimento (las variantes). **Se cuentan esas dos cosas antes de pasar.** "
          "La clara es el resultado: arranca con las variantes y las barras vacías; una flecha muestra los resultados y otra la "
          "decisión, que se imprime como un talón abajo (la línea de configuración que deja el experimento). Los experimentos 4 y 5 "
-         "van en una sola lámina.", "",
+         "van en una sola lámina, y el 13 tiene una lámina más en el medio, con sus prompts.", "",
+         f"**El recorrido** (láminas {_rec[0]} a {_rec[-1]}) sigue un pedido real, el rincón de lectura, por las once fases del flujo, con el "
+         "mapa arriba a la derecha: la fase actual encendida, las vistas con ✓ y los números de los experimentos que la decidieron. "
+         "En cada fase: qué entra y qué sale, el prompt tal cual se manda (extracto, en inglés, con lo importante resaltado) y "
+         "sus versiones. Ahí no se dan resultados: los números van en cada experimento.", "",
          "En el texto, **→** marca dónde se avanza un paso.", ""]
     # reparto en tres partes de tiempo parecido
     cortes = []

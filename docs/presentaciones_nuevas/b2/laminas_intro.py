@@ -1,12 +1,13 @@
-"""Láminas 1 a 14: el producto, los datos, la arquitectura y las métricas."""
+"""El producto, la decisión v0 → v1, el mapa de los experimentos, los datos para medir y las métricas.
+(El catálogo y el flujo los cuenta el recorrido por las fases: laminas_recorrido.py.)"""
 
 from __future__ import annotations
 
 from PIL import Image, ImageDraw
 
-from datos import (AM, CAND_INFO, D, DESCR, GT_ANY, GT_ROOM_PATH, HERO, HERO_CAND, HERO_CHOICE, HERO_IMG, HERO_REQ,
-                   ITEMS, KIND_ES, N_HERO, N_HERO_UNID, PEDIDOS, PUB_POR_ARCHIVO, Q_LAMPARA, Q_MESA, ROOM_CHECK, ROOT,
-                   TXT, V0, V0_REC, V0_SOFA_OK, BASE, ESTILO, esc, f2, ic, medida)
+from datos import (AM, CAND_INFO, D, GT_ANY, GT_ROOM_PATH, HERO, HERO_CAND, HERO_CHOICE, HERO_IMG, HERO_REQ,
+                   KIND_ES, N_HERO, N_HERO_UNID, PEDIDOS, PUB_POR_ARCHIVO, Q_LAMPARA, Q_MESA, ROOT,
+                   TXT, V0_REC, V0_SOFA_OK, BASE, ESTILO, esc, f2, ic, medida)
 from piezas import barras, consulta, etq, flujo, foto, kick, producto, ranking
 from registro import lam
 
@@ -121,52 +122,18 @@ lam("rag", "Por qué RAG", "El producto", f'''
 <p class="remate" data-paso="1">No es un Q&amp;A: la consulta es una foto y un pedido abierto, y la respuesta es una <mark>combinación de productos</mark> que tiene que funcionar junta.</p>''',
     ["¿Por qué un RAG y no un LLM o un modelo de imagen solos? Un LLM sabe de decoración, pero no sabe qué hay en un "
      "catálogo: te recomienda un sillón de cuero coñac que nadie vende. Un modelo de imagen amobla lindo, pero inventa los "
-     "muebles: no hay nada que comprar.",
-     "Con RAG, el catálogo es la base de conocimiento: el LLM decide qué hace falta, el retrieval trae candidatos reales y el "
-     "VLM elige mirando sus fotos. Y la imagen se genera desde las fotos de los productos elegidos. No es un Q&A: la consulta "
-     "es una foto y un pedido abierto, y la respuesta es una combinación de productos que tiene que funcionar junta."],
+     "muebles.",
+     "Con RAG, el catálogo es la base de conocimiento: el LLM decide qué hace falta, el retrieval trae candidatos reales, el "
+     "VLM elige mirando sus fotos, y la imagen sale de esas fotos. No es un Q&A: la respuesta es una combinación de productos "
+     "que tiene que funcionar junta."],
     45, clase="clara")
-
-# =============================================================================================
-# 5 · El catálogo
-# =============================================================================================
-FICHA_ID = "802.456.40"
-lam("catalogo", "El catálogo", "Datos", f'''
-{kick("02", "datos · el catálogo")}
-<h2 class="t">El catálogo: productos IKEA <em>descritos por un VLM</em></h2>
-<div class="cat-izq">
-  <div class="cifra"><span>{D["prod_855"]}</span><i>→</i><span class="co">{D["prod_819"]}</span></div>
-  <p class="cifra-pie">productos de living y comedor (muebles, iluminación, textiles y deco), {D["prod_819"]} después de la revisión</p>
-  <div class="cifras-ch"><div><b>{D["n_tipos"]}</b>tipos</div><div><b>{D["n_kinds"]}</b>kinds</div></div>
-  <p class="fuente">Dataset IKEA de Tautkute y otros, de uso no comercial.</p>
-  <div class="problemas" data-paso="1">
-    <span class="et">los problemas del catálogo</span>
-    <ul><li><b>Fotos de {D["foto_lado"]} píxeles</b> de lado</li>
-    <li><b>{D["asientos_sin_medida"]} de {D["asientos"]} asientos</b> sin medidas</li>
-    <li><b>Productos que comparten la foto</b> de otra medida del mismo modelo</li></ul>
-  </div>
-</div>
-<div class="cat-ficha">
-  {etq(FICHA_ID, 300, "cat-etq")}
-  <div class="ticket cat-tk">
-    <div class="tk-cab"><b>Lo que se indexa</b><span>un VLM mira la foto<br>8 líneas fijas</span></div>
-    {consulta(DESCR[FICHA_ID])}
-  </div>
-</div>''',
-    [f"El catálogo base es el dataset IKEA de Tautkute y otros, de uso no comercial. Nos quedamos con lo de living y comedor: "
-     f"muebles, iluminación, textiles y deco, {D['prod_855']} productos, {D['prod_819']} después de la revisión. El texto de "
-     "IKEA es pobre, así que un VLM describe cada producto mirando su foto en 8 líneas fijas (esta es una). Eso es lo que se "
-     "indexa, y el experimento 1 muestra por qué.",
-     f"Los problemas del catálogo: fotos de {D['foto_lado']} píxeles, asientos sin medidas ({D['asientos_sin_medida']} de "
-     f"{D['asientos']}) y productos que comparten la foto de otra medida."],
-    50)
 
 # =============================================================================================
 # 6 · Ground truth
 # =============================================================================================
 _gt_tags = "".join(producto(i, 78, "gt-p") for i in GT_ANY[:9])
 lam("gt", "Ground truth", "Datos", f'''
-{kick("02", "datos · ground truth")}
+{kick("03", "datos para medir · ground truth")}
 <h2 class="t">El ground truth: <em>ambientes reales con sus muebles</em></h2>
 <div class="gt-izq">
   {foto("gt-room", GT_ROOM_PATH, 760, 477)}
@@ -206,7 +173,7 @@ for p in PEDIDOS:
     _tiles.append(f'<figure class="amb{" pub" if pub else ""}">{foto("vac-" + p["slug"], p["foto"], 262, 176, q=76)}'
                   f'<figcaption><b>{nombre}</b><span>{estilo}</span>{cred}</figcaption></figure>')
 lam("vacios", "Ambientes vacíos", "Datos", f'''
-{kick("02", "datos · ambientes vacíos")}
+{kick("03", "datos para medir · ambientes vacíos")}
 <h2 class="t chico">Ambientes vacíos reales, <em>para probar de punta a punta</em></h2>
 <div class="vac-izq">
   <div class="cifra"><span>{D["n_ambientes_vacios"]}</span></div>
@@ -237,7 +204,7 @@ _box_css = (f"left:{_bx[0] * _sx:.0f}px;top:{_bx[1] * _sx:.0f}px;width:{(_bx[2] 
             f"height:{(_bx[3] - _bx[1]) * _sx:.0f}px")
 _hero_q = HERO_CAND[0]["spec"]["query"]
 lam("v0v1", "v0 → v1", "Arquitectura", f'''
-{kick("03", "arquitectura · v0 → v1")}
+{kick("02", "arquitectura · v0 → v1")}
 <h2 class="t">Por qué dejamos <em>la búsqueda por imagen</em></h2>
 <div class="v-col v-a">
   <div class="v-et"><b>v0</b> buscar por imagen</div>
@@ -270,35 +237,6 @@ lam("v0v1", "v0 → v1", "Arquitectura", f'''
     55, clase="clara")
 
 # =============================================================================================
-# 9 · El flujo
-# =============================================================================================
-_et = [("Indexing", "corre una vez: catálogo, descripción y vectores"),
-       ("Plan", "Claude Opus decide las piezas, el tipo, la medida máxima y escribe la consulta ideal"),
-       ("Búsqueda", f"Qwen3 + ChromaDB, con filtros duros: {D['k_flujo']} candidatos por pieza"),
-       ("Elección", "Claude mira las fotos y elige uno por pieza, y cuántas unidades"),
-       ("Escena, imagen y control", f"Nano Banana 2 edita la foto; si SIFT no reencuentra el cuarto, otro intento (hasta {ROOM_CHECK['attempts']})")]
-_lst = "".join(f'<li data-en="{i + 1}"><b>{n}</b><span>{d}</span></li>' for i, (n, d) in enumerate(_et))
-lam("flujo", "El flujo", "Arquitectura", f'''
-<div class="izq">
-  {kick("03", "arquitectura · v1")}
-  <h2 class="t chico">Dos pipelines: indexing una vez, consulta por pedido</h2>
-  <ol class="etapas">{_lst}</ol>
-</div>
-<div class="esq">{flujo()}</div>
-<p class="remate rem-flujo" data-paso="6">La elección solo puede tomar productos recuperados: la respuesta queda <mark>atada al catálogo</mark>.</p>''',
-    ["La arquitectura tiene dos pipelines.",
-     "El de indexing corre una vez: el catálogo, las descripciones que escribe un VLM, los embeddings con Qwen3 y ChromaDB.",
-     "El de consulta corre por pedido. Plan: Claude Opus lee la foto y el pedido, decide las piezas, su tipo, la medida máxima "
-     "y escribe la consulta ideal.",
-     f"Búsqueda: Qwen3 y ChromaDB con filtros duros, {D['k_flujo']} candidatos por pieza.",
-     "Elección: Claude mira las fotos de los candidatos, elige uno por pieza pensando la combinación, y cuántas unidades.",
-     "Escena e imagen: Nano Banana 2 recibe la foto del ambiente y las de los productos, y un control automático descarta la "
-     "imagen si cambió el cuarto.",
-     "Y lo importante: la elección solo puede tomar productos recuperados, así que la respuesta queda atada al catálogo."],
-    70, focos=["", "indexing catalogo descripcion indice", "foto plan", "busqueda indice", "eleccion",
-               "escena imagen control", ""])
-
-# =============================================================================================
 # 10 · Los hiperparámetros: un pin por experimento
 # =============================================================================================
 HIPER = [
@@ -314,18 +252,20 @@ HIPER = [
     ("Qué catálogo", "IKEA · Amazon (ABO) · los dos", "juez de a pares"),
     ("Cómo medir", "hit@1 · graduada · 3 redactores", "acuerdo con el GT"),
     ("La imagen", "guiada · libre · sin tope · estricta", "SIFT, SSIM"),
-    ("Réplica de un living real", "vaciar y volver a amoblar, 3 veces", "IoU, coseno"),
+    ("Réplica: decirle dónde", "nada · palabras · cajas 2D o 3D", "IoU con la foto real"),
 ]
 _h = "".join(f'<li><em>{i}</em><b>{q}</b><span>{o}</span><i>{mt}</i></li>' for i, (q, o, mt) in enumerate(HIPER, 1))
 lam("hiper", "Los hiperparámetros", "Arquitectura", f'''
-{kick("03", "arquitectura · variantes")}
+{kick("02", "arquitectura · los experimentos")}
 <h2 class="t chico">Trece decisiones, <em>un experimento cada una</em></h2>
 <ol class="hiper">{_h}</ol>
 <p class="hiper-pie">qué probamos, con todo lo demás fijo · cómo lo medimos</p>
+<p class="hiper-rm">el mapa del <b>recorrido</b> · el número dice en qué fase pega cada experimento</p>
 <div class="esq esq-hiper">{flujo(pines=range(1, 14))}</div>''',
-    "Cada una de estas filas es una decisión de la arquitectura que tomamos con un experimento, con todo lo demás fijo, y el "
-    "número marca en qué etapa del flujo está. Todavía no decimos qué ganó: eso lo vemos en cada experimento. Van en este "
-    "orden, que es más o menos el orden en que los hicimos: cada uno deja su decisión en la configuración del siguiente.",
+    "Estas son las decisiones que fuimos nombrando en el recorrido, sobre el mismo mapa: cada número marca en qué fase pega su "
+    "experimento. Todavía no decimos qué ganó. Primero, con qué datos y qué métricas medimos; después, cada experimento en dos "
+    "láminas, la pregunta y el resultado con su decisión, en el orden en que los hicimos: cada uno deja su decisión en la "
+    "configuración del siguiente.",
     30)
 
 # =============================================================================================
@@ -352,12 +292,11 @@ lam("met-ret", "Métricas de retrieval", "Métricas", f'''
 </div>
 <div class="met-defs" data-paso="1">{_md}</div>''',
     ["Las métricas de retrieval, donde sí hay ground truth. Arriba, una búsqueda real: el anotado sale segundo. hit@k: si el "
-     "anotado está entre los k primeros; acá hit@1 da 0 y hit@3 da 1. MRR: el promedio de uno sobre la posición del correcto, "
-     "premia que esté arriba; esta búsqueda suma un medio.",
-     "hit@1 es encontrarlo primero, y hit@k con k igual a los candidatos que ve el VLM es el techo de lo que puede elegir. "
-     "Context recall y context precision son las de RAGAS: cuántos de los productos de un ambiente aparecen entre los "
-     "candidatos, y cuán arriba quedan. NDCG admite relevancia graduada. Y los intervalos de confianza: si dos métodos tienen "
-     "intervalos que se pisan, con estos datos no los podemos distinguir."],
+     "anotado está entre los k primeros; acá hit@1 da 0 y hit@3 da 1. MRR: el promedio de uno sobre la posición del correcto; "
+     "esta búsqueda suma un medio.",
+     "hit@k con k igual a los candidatos que ve el VLM es el techo de lo que puede elegir. Context recall y precision son las "
+     "de RAGAS. NDCG admite relevancia graduada. Y si los intervalos de confianza de dos métodos se pisan, no los podemos "
+     "distinguir."],
     50, clase="clara")
 
 # =============================================================================================
@@ -381,9 +320,8 @@ lam("met-juez", "Jueces y pares", "Métricas", f'''
     <div class="recibo-mini"><span>plan</span><span>elección</span><span>juez</span><span>imagen</span></div></div>
 </div>''',
     "Cuando no hay un único correcto usamos jueces, pero validados. Relevancia graduada: un LLM califica el top-3 con 2, 1 o 0, "
-    "y antes chequeamos que le dé 2 al producto anotado. RAGAS sobre la explicación de cada elección: faithfulness, si lo que "
-    "dice se sostiene con lo que vio, y answer relevance, si responde al pedido. Para comparar variantes sin ground truth, un "
-    "juez de a pares en los dos órdenes, y reportamos cuánto coinciden los dos órdenes. Y el costo de cada llamada.",
+    "y antes chequeamos que le dé 2 al anotado. RAGAS sobre la explicación de cada elección: faithfulness y answer relevance. "
+    "Para comparar variantes sin ground truth, un juez de a pares en los dos órdenes. Y el costo de cada llamada.",
     40)
 
 # =============================================================================================
@@ -427,30 +365,3 @@ lam("met-img", "Métricas de imagen", "Métricas", f'''
     "y contamos lo que falta, lo repetido y lo inventado. Además, reproducibilidad, con tres redactores, y el espacio de "
     "embeddings.",
     45, clase="clara")
-
-# =============================================================================================
-# 14 · Cómo leemos cada experimento
-# =============================================================================================
-lam("como-leer", "Cómo leemos cada experimento", "Experimentos", f'''
-{kick("E", "los experimentos")}
-<h2 class="t">Trece experimentos, <em>todos en el mismo orden</em></h2>
-<ol class="orden4">
-  <li><b>1</b><h3>Por qué</h3><p>Qué vimos usando el sistema y qué queríamos saber. El flujo marca la etapa que se toca.</p></li>
-  <li><b>2</b><h3>El experimento</h3><p>Las variantes, con todo lo demás fijo, y cómo se mide.</p></li>
-  <li><b>3</b><h3>Resultados</h3><p>Recién ahí, los números.</p></li>
-  <li class="dec"><b>4</b><h3>Decisión</h3><p>La línea de configuración que queda para el siguiente.</p></li>
-</ol>
-<div class="leer-demo">
-  <figure class="ld-f"><div class="ld-s osc"><i class="ld-k"></i><i class="ld-t"></i><i class="ld-t c"></i><i class="ld-p"></i><i class="ld-p"></i><i class="ld-p c"></i>
-    <div class="ld-esq sin-texto">{flujo(pines=[7], on=["eleccion"], cls="mini")}</div></div>
-    <figcaption><b>La pregunta</b>, en oscuro: el porqué y el experimento, con la etapa encendida en el flujo.</figcaption></figure>
-  <figure class="ld-f"><div class="ld-s clr"><i class="ld-k"></i><i class="ld-t"></i>
-    <span class="ld-b" style="--w:58%"></span><span class="ld-b g" style="--w:74%"></span><span class="ld-b" style="--w:50%"></span>
-    <span class="ld-tal"><i></i></span></div>
-    <figcaption><b>El resultado</b>, en claro: los números y, al final, el talón con la línea de configuración.</figcaption></figure>
-  <p>Los resultados y la decisión aparecen con la flecha, <mark>cuando ya se contó lo anterior</mark>.</p>
-</div>''',
-    "Ahora los experimentos. Todos siguen el mismo orden: primero por qué lo hicimos y qué queríamos ver, con el flujo "
-    "marcando la etapa que se toca; después cómo es el experimento; y recién ahí mostramos los resultados y, al final, la "
-    "decisión, que queda en la configuración del siguiente.",
-    20)
