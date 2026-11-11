@@ -10,6 +10,9 @@ El experimento la vacía con el modelo de imagen, la vuelve a amoblar con esos m
   fotos de los productos y el pedido.
 - **con_cajas**: lo mismo, con un rectángulo numerado por producto dibujado en la foto vacía, donde
   está ese mueble en la foto real (scene_prompt_cajas_v1): el producto tiene que llenar su caja.
+- **con_cajas_3d**: en vez del rectángulo, un prisma en perspectiva apoyado en el piso con el
+  volumen de cada mueble en la foto real (evaluation/cajas3d.py: profundidad monocular, piso y
+  pared; scene_prompt_cajas3d_v1).
 
 Las cajas de la foto real las encuentran Grounding DINO y DINOv3 (evaluation/image.py, gratis): la
 detección de cada categoría que más se parece a la foto del producto. Por imagen generada, con
@@ -37,6 +40,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from amoblai.catalog.loader import Product
 from amoblai.config import Config
+from amoblai.evaluation import cajas3d as c3
 from amoblai.evaluation import image as ev
 from amoblai.furnish.generate import get_generator
 from amoblai.furnish.room import preservation
@@ -279,6 +283,31 @@ def overlay(img: Image.Image, real: dict[str, list[float]], found: dict[str, lis
 # el experimento --------------------------------------------------------------------------------
 
 
+def _boxes3d(
+    cfg: Config,
+    exp: dict,
+    out: Path,
+    original: Path,
+    products: list[Product],
+    boxes: dict[str, list[float]],
+    log: Callable[[str], None],
+) -> list[tuple[int, dict]]:
+    """Las cajas 3D de la foto real (gratis; se calculan una vez y quedan en cajas3d.json mientras
+    no cambien las cajas 2D ni los puntos de ayuda)."""
+    f = out / "cajas3d.json"
+    points = (exp.get("cajas3d") or {}).get("puntos_sam") or {}
+    entry = {"cajas_2d": boxes, "puntos_sam": points}
+    data = json.loads(f.read_text()) if f.exists() else {}
+    if data.get("entrada") != entry:
+        log("calculando las cajas 3D (Depth Pro y SAM, gratis)")
+        rug = next((p.id for p in products if p.kind == "rug"), None)
+        data = c3.estimate(original, boxes, rug, Path(cfg.cache_dir) / "imagen" / "profundidad",
+                           points)  # fmt: skip
+        data["entrada"] = entry
+        c3.save(f, data)
+    return [(i + 2, data["cajas"][p.id]) for i, p in enumerate(products)]
+
+
 def run(
     cfg: Config, exp: dict, log: Callable[[str], None] = print, paid: bool = True
 ) -> dict[str, Any] | None:
@@ -317,6 +346,10 @@ def run(
     draw_boxes(orig_img, [(i + 2, boxes[p.id]) for i, p in enumerate(products)]).save(
         out / "real_con_cajas.jpg", quality=90
     )
+    boxes3d = None
+    if any(v.get("cajas") == "3d" for v in exp["variantes"].values()):
+        boxes3d = _boxes3d(cfg, exp, out, original, products, boxes, log)
+        c3.draw_boxes3d(orig_img, boxes3d, COLORS).save(out / "real_con_cajas_3d.jpg", quality=90)
 
     # 2. la foto vaciada. El control SIFT del flujo no sirve acá: casi todos los puntos de la
     # foto real están en los muebles y cuadros que se sacan (quedan unos pocos en las paredes).
@@ -360,6 +393,10 @@ def run(
     empty_img = Image.open(empty).convert("RGB")
     with_boxes = out / "vacio_con_cajas.png"
     draw_boxes(empty_img, [(i + 2, boxes[p.id]) for i, p in enumerate(products)]).save(with_boxes)
+    rooms = {False: empty, True: with_boxes, "2d": with_boxes}
+    if boxes3d:
+        rooms["3d"] = out / "vacio_con_cajas_3d.png"
+        c3.draw_boxes3d(empty_img, boxes3d, COLORS).save(rooms["3d"])
 
     # 3. las variantes, `repeticiones` imágenes cada una
     lines = product_lines(products, descriptions(cfg))
@@ -369,7 +406,7 @@ def run(
         prompt = tmpl.fill(request=exp["pedido"], products=lines, last=len(products) + 1)
         (out / name).mkdir(exist_ok=True)
         (out / name / "prompt.txt").write_text(prompt + "\n")
-        room = with_boxes if v.get("cajas") else empty
+        room = rooms[v.get("cajas", False)]
         for k in range(1, exp["repeticiones"] + 1):
             dst = out / name / f"{k}.png"
             if not dst.exists() and paid:
