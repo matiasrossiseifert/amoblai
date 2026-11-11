@@ -66,15 +66,13 @@ def build(D: dict, ctx: dict) -> None:
         res,
         f"<strong>Texto.</strong> Le gana al mejor retrieval por imagen ({f(D['v1_275']['hit@1'])} contra "
         f"{f(v0b['hit1'])}), funciona con el cuarto vacío y deja que un LLM escriba la consulta.",
-        t=60, notas=[
+        t=50, planta=[2, 3], notas=[
             "Primer experimento, y el que cambió todo: ¿buscamos por imagen o por texto?",
             "La v0 buscaba por imagen: detectaba cada mueble en la foto, lo recortaba y lo comparaba con "
-            "las fotos del catálogo. Es lo natural si la pregunta es «encontrá este mueble». Pero en "
-            "amoblai el ambiente está vacío: no hay nada que recortar, hay un pedido.",
-            f"[paso] Para comparar en serio usamos el mismo ground truth y el mismo catálogo que vio la "
-            f"v0, {D['n_275']} productos. Por imagen, seis pasos acumulados, de CLIP a DINOv3, sobre "
-            f"{v0b['n']} recortes. Por texto, las descripciones con Qwen3, sobre "
-            f"{D['v1_275']['answerable']} búsquedas.",
+            "las fotos del catálogo. Pero en amoblai el ambiente está vacío: no hay nada que recortar, hay "
+            "un pedido.",
+            f"[paso] Mismo ground truth y mismo catálogo que vio la v0, {D['n_275']} productos. Por imagen, "
+            f"seis pasos acumulados, de CLIP a DINOv3. Por texto, las descripciones con Qwen3.",
             f"[paso] La imagen mejoró mucho con cada paso: de {f(v0[0]['hit1'])} a {f(v0b['hit1'])}. Pero "
             f"el texto llega a {f(D['v1_275']['hit@1'])}, con intervalos que apenas se tocan.",
             "[paso] Decidimos texto. Gana, y además es lo único que funciona con el caso real: un cuarto "
@@ -107,22 +105,18 @@ def build(D: dict, ctx: dict) -> None:
         f"<strong>Descripciones de ocho líneas con Qwen3.</strong> El texto pesa más que el embedder: con "
         f"descripciones, hasta el hashing llega a {f(D['desc_hash']['hit@1'])} sin filtro. Los tres filtros "
         f"quedan dentro del intervalo; el flujo usa el kind, que decide plan.",
-        t=65, notas=[
-            "Ya en texto: ¿qué texto ponemos de cada producto, con qué embedder y con qué filtro?",
-            "El catálogo trae el texto del vendedor: el nombre y una frase de marketing. Nuestra hipótesis "
-            "era que describir cada producto en las mismas ocho líneas que la consulta iba a hacer que se "
-            "encuentren. Y queríamos saber cuánto aporta un embedder neuronal frente a contar palabras, y "
-            "si filtrar por metadata ayuda.",
-            "[paso] Corrimos la grilla completa: dos textos, tres embedders (desde contar palabras hasta "
-            "Qwen3) y tres filtros: ninguno, el tipo grueso (sofá, mesa) o el kind fino (mesa ratona, mesa "
-            "auxiliar).",
+        t=55, planta=[2, 3, 6], notas=[
+            "Ya en texto: ¿qué texto ponemos de cada producto, con qué embedder y con qué filtro? La "
+            "hipótesis: describir cada producto en las mismas ocho líneas que la consulta hace que se "
+            "encuentren.",
+            "[paso] Corrimos la grilla completa: dos textos, tres embedders, desde contar palabras hasta "
+            "Qwen3, y tres filtros: ninguno, el tipo grueso o el kind fino.",
             f"[paso] La lectura es por filas. Con el texto del vendedor, nada pasa de "
             f"{f(max(max(v) for v in vals[:3]))}. Con nuestras descripciones, todo salta a más de 0,47. El "
             f"embedder suma menos: Qwen3 es el mejor, pero el hashing queda cerca. Y poner el nombre "
             f"comercial adelante empeora: agrega palabras que la consulta no tiene.",
-            "[paso] Decidimos descripciones con Qwen3. Los filtros, con descripciones, casi no cambian "
-            "nada, porque la línea Type ya dice qué es cada cosa. El flujo filtra por el kind que decide "
-            "el plan; type, kind o ninguno quedan dentro del intervalo.",
+            "[paso] Decidimos descripciones con Qwen3. Los filtros casi no cambian nada, porque la línea "
+            "Type ya dice qué es cada cosa; el flujo filtra por el kind que decide plan.",
         ])
 
     # ---------------------------------------------------------------- E3
@@ -143,9 +137,9 @@ def build(D: dict, ctx: dict) -> None:
         f"<strong>Un producto, un documento.</strong> Partir por líneas pierde el contexto "
         f"({f(D['chunks_max']['hit@1'])}); alinear por rótulo casi empata ({f(D['chunks_al']['hit@1'])}) con "
         f"ocho vectores por producto en lugar de uno.",
-        t=35, notas=[
-            "Splitting. La receta de RAG dice partir los documentos en chunks, pero nuestra descripción ya "
-            "es corta. ¿Conviene igual comparar por partes?",
+        t=30, planta=[3], notas=[
+            "Splitting. La receta dice partir los documentos en chunks, pero la descripción ya es corta. "
+            "¿Conviene igual comparar por partes?",
             "[paso] Probamos tres formas: el documento entero, cada línea como chunk, y línea contra línea "
             "del mismo rótulo, colores con colores.",
             f"[paso] Partir en líneas sueltas se cae a {f(D['chunks_max']['hit@1'])}: una línea sola no dice "
@@ -173,9 +167,9 @@ def build(D: dict, ctx: dict) -> None:
         f"<strong>{dims[-1]} dimensiones.</strong> Desde 512 la curva está plana y dentro del intervalo, "
         f"pero el catálogo entero ocupa {f(D['indice_mb'], 1)} MB: a esta escala no hay nada que ahorrar. Con "
         f"millones de productos, 256 o 512.",
-        t=40, notas=[
+        t=35, planta=[3], notas=[
             "Dimensión del embedding. Qwen3 se entrenó con Matryoshka: las primeras componentes del vector "
-            "ya son un embedding válido, y uno más chico es más barato de guardar y de buscar.",
+            "ya son un embedding válido, más barato de guardar y de buscar.",
             "[paso] Truncamos a 32, 64, hasta 1024, y renormalizamos. Sin reentrenar.",
             f"[paso] Con 32 componentes ya da {f(h1[0])}; desde 512 la curva se aplana "
             f"({f(D['dims'][512]['hit@1'])} contra {f(h1[-1])}).",
@@ -202,14 +196,12 @@ def build(D: dict, ctx: dict) -> None:
         res,
         "<strong>ChromaDB.</strong> A esta escala la búsqueda aproximada es exacta, y suma filtros de "
         "metadata, persistencia y la descripción guardada al lado del vector.",
-        t=30, notas=[
-            "La base vectorial. ChromaDB usa HNSW, una búsqueda aproximada sobre un grafo de vecinos. ¿Se le "
-            "escapa el correcto?",
+        t=25, planta=[3], notas=[
+            "ChromaDB usa HNSW, una búsqueda aproximada sobre un grafo de vecinos. ¿Se le escapa el correcto?",
             "[paso] Corrimos todas las búsquedas con HNSW y con búsqueda exacta, y comparamos el ranking "
             "entero.",
             f"[paso] Idénticos en las {tot}. Con este tamaño de catálogo, aproximado es exacto.",
-            "[paso] Nos quedamos con Chroma por todo lo demás que trae: filtros, persistencia, el texto al "
-            "lado del vector.",
+            "[paso] Nos quedamos con Chroma: filtros, persistencia y el texto al lado del vector.",
         ])
 
     # ================================================================ 04 · cómo buscamos
@@ -233,16 +225,14 @@ def build(D: dict, ctx: dict) -> None:
         res,
         f"<strong>Reescribir, y en las ocho líneas.</strong> Es la decisión que más pesa en todo el "
         f"retrieval: de {f(D['q_kind']['hit@1'])} a {f(b['hit@1'])}.",
-        t=45, notas=[
-            "Query rewriting. Plan podría buscar la palabra «alfombra» y listo. En cambio escribe el producto "
-            "ideal en las ocho líneas, como un documento hipotético del catálogo, que es la idea de HyDE. "
-            "Cuesta una llamada a Opus por pedido: ¿vale la pena?",
-            "[paso] Misma búsqueda con tres consultas: las ocho líneas, solo la línea Type, o solo el nombre "
-            "del kind.",
+        t=35, planta=[5], notas=[
+            "Query rewriting. Vimos que plan escribe el producto ideal en las ocho líneas, como HyDE. Cuesta "
+            "una llamada a Opus por pedido: ¿vale la pena, o alcanza con buscar «alfombra»?",
+            "[paso] Misma búsqueda con tres consultas: las ocho líneas, solo la línea Type, o solo el kind.",
             f"[paso] Con el nombre solo, {f(D['q_kind']['hit@1'])}, apenas arriba del azar. Con la línea "
             f"Type, {f(D['q_type']['hit@1'])}. Con las ocho líneas, {f(b['hit@1'])}.",
-            "[paso] Es la decisión que más pesa de todo el retrieval. Los colores, la forma y el estilo son "
-            "lo que distingue una alfombra de otras ochenta.",
+            "[paso] Es la decisión que más pesa del retrieval: los colores, la forma y el estilo distinguen "
+            "una alfombra de otras ochenta.",
         ])
 
     # ---------------------------------------------------------------- E7
@@ -257,16 +247,16 @@ def build(D: dict, ctx: dict) -> None:
         "<p>El embedding compara textos. Pero dos alfombras crema de pelo largo se describen casi igual y "
         "se distinguen a la vista.</p><p>La idea: que un modelo que ve reordene los primeros diez.</p>",
         "<p>Dos rerankers sobre el top-10:</p><ul><li>un <strong>cross-encoder de texto</strong> (MiniLM de "
-        "MS MARCO, gratis);</li><li><strong>Claude Opus 5.5</strong> mirando la foto del ambiente y las de "
-        "los candidatos.</li></ul>",
-        res, None, t=55, notas=[
+        "MS MARCO, gratis);</li><li><strong>Claude Opus 5.5</strong> con la consulta y las fotos de los "
+        "candidatos (no la del ambiente).</li></ul>",
+        res, None, t=45, planta=[7], notas=[
             "Reranking. El embedding compara textos, pero dos alfombras crema de pelo largo se describen casi "
-            "igual y se distinguen mirando. La idea es que un modelo que ve reordene los primeros diez.",
-            f"[paso] Probamos dos: un cross-encoder de texto, gratis, que lee consulta y descripción juntas; y "
-            f"Opus mirando las fotos, a unos {usd(D['rerank_costo_llamada'])} por búsqueda.",
-            f"[paso] El cross-encoder empeora: {f(D['minilm']['hit@1'])}. Está entrenado en búsqueda web y no "
-            f"aporta nada que el embedding no tenga. Opus sube de {f(b['hit@1'])} a {f(o['hit@1'])}, con "
-            f"intervalos que no se tocan: es la mejora más grande después del query rewriting.",
+            "igual y se distinguen mirando. ¿Y si un modelo que ve reordena los primeros diez?",
+            f"[paso] Probamos dos: un cross-encoder de texto, gratis; y Opus con la consulta y las fotos de "
+            f"los candidatos, a unos {usd(D['rerank_costo_llamada'])} por búsqueda.",
+            f"[paso] El cross-encoder empeora: {f(D['minilm']['hit@1'])}; está entrenado en búsqueda web. Opus "
+            f"sube de {f(b['hit@1'])} a {f(o['hit@1'])}, con intervalos que no se tocan: la mejora más grande "
+            f"después del query rewriting.",
         ])
 
     # ---------------------------------------------------------------- E7 · dónde ayuda
@@ -294,14 +284,13 @@ def build(D: dict, ctx: dict) -> None:
             + f'<div class="decision" data-desde="1"><div class="k">decisión</div><p><strong>Reordenar con un modelo que ve.</strong> '
               f'Opus sube hit@1 de {f(b["hit@1"])} a {f(o["hit@1"])}, sobre todo donde los productos se parecen; el '
               f'cross-encoder empeora. En el flujo, ese reranker es el paso choose.</p></div>')
-    add(body, titulo="E7 · Dónde ayuda", cap=4, t=45, fases="2,3", notas=[
-        f"Dónde ayuda. Por categoría, el salto es mayor donde los productos se parecen entre sí: alfombras, "
-        f"de {f(rug['a'], 2)} a {f(rug['b'], 2)}, estantes, deco, lámparas. Donde el texto ya alcanzaba, como "
-        f"sillas, sube menos.",
-        f"A la derecha, la búsqueda de la alfombra que usamos para explicar las métricas: Qwen3 la dejó "
-        f"{ej['rank']}.ª; Opus, mirando, la sube a la {er['rank']}.ª.",
-        "[paso] Decisión: reordenar con un modelo que ve. En el flujo, ese reranker es el paso choose: el "
-        "mismo Opus, que además elige la combinación entera.",
+    add(body, titulo="E7 · Dónde ayuda", cap=4, t=35, fases="2,3", planta=[7], notas=[
+        f"Dónde ayuda: donde los productos se parecen entre sí. Alfombras, de {f(rug['a'], 2)} a "
+        f"{f(rug['b'], 2)}; estantes, deco, lámparas. Sillas, donde el texto ya alcanzaba, sube menos.",
+        f"A la derecha, la alfombra de las métricas: Qwen3 la dejó {ej['rank']}.ª; Opus la sube a la "
+        f"{er['rank']}.ª.",
+        "[paso] Decisión: reordenar con un modelo que ve. En el flujo, eso lo hace la elección, que además "
+        "arma la combinación entera.",
     ])
 
     # ---------------------------------------------------------------- E8
@@ -326,11 +315,11 @@ def build(D: dict, ctx: dict) -> None:
         res,
         f"<strong>k = {kf}</strong> (antes, {ka}). De {ka} a {kf} suma {f(d35)} de acierto; de {kf} a 8, "
         f"{f(d58)}, con un {pct(8 / kf - 1)} más de fotos en cada llamada.",
-        t=45, notas=[
+        t=35, planta=[7], notas=[
             "¿Cuántos candidatos le mostramos a choose? Más candidatos, más chance de que esté el correcto, "
-            "pero más fotos por llamada: más costo, más latencia y más con qué confundirse.",
-            "[paso] No hizo falta gastar de nuevo: del reranking de Opus sobre el top-10 sale qué elegiría "
-            "entre los primeros k. Lo comparamos con el techo, que el correcto esté entre los k.",
+            "pero más fotos por llamada: más costo y más con qué confundirse.",
+            "[paso] Sin gastar de nuevo: del reranking de Opus sobre el top-10 sale qué elegiría entre los "
+            "primeros k. Contra el techo: que el correcto esté entre los k.",
             f"[paso] El techo sube rápido, pero el acierto real se aplana: de {ka} a {kf} candidatos suma "
             f"{f(d35)}; de {kf} a 8, {f(d58)}.",
             f"[paso] Pasamos de {ka} a {kf}. Más allá, el costo crece más que el acierto.",
@@ -358,15 +347,15 @@ def build(D: dict, ctx: dict) -> None:
         f"<strong>Las conclusiones se sostienen.</strong> El mejor método da {f(q['mean'])} ± {f(q['sd'])} y "
         f"le gana a BGE, a hashing y al filtro por kind en las tres. Diferencias de menos de ~{f(q['sd'], 2)} "
         f"entre métodos las tratamos como empate.",
-        t=45, notas=[
+        t=40, planta=[5], notas=[
             "Reproducibilidad. Las consultas las escribieron subagentes de Claude; otro redactor escribiría "
             "otras. Si el ranking de métodos depende de una redacción, no vale.",
             "[paso] Hicimos escribir todas las consultas tres veces, de forma independiente, y corrimos cinco "
             "métodos en cada escritura.",
             f"[paso] El mejor método da {f(q['mean'])} más menos {f(q['sd'])}. El orden se mantiene en las "
             f"tres: Qwen3 con filtro por tipo arriba, el texto del vendedor abajo de todo.",
-            "[paso] Conclusión: el orden es firme, pero diferencias de dos o tres centésimas entre métodos son "
-            "ruido de redacción. Por eso varias «mejoras» las tratamos como empate.",
+            "[paso] El orden es firme, pero dos o tres centésimas entre métodos son ruido de redacción: "
+            "empate.",
         ])
 
     # ---------------------------------------------------------------- E10
@@ -397,20 +386,15 @@ def build(D: dict, ctx: dict) -> None:
         f"<strong>hit@1 subestima lo útil.</strong> El primero sirve en el {pct(g['todas']['util1'])} de los "
         f"casos, y en el {pct(g['sin anotado']['util1'])} cuando el exacto no existe. El juez complementa a "
         f"hit@k; no lo reemplaza.",
-        t=45, notas=[
-            "Relevancia graduada. hit@k solo cuenta el producto exacto; si el sofá anotado no está, uno muy "
-            "parecido le sirve igual al usuario. Y más de un tercio de las búsquedas no tiene su producto en "
-            "el catálogo.",
-            f"[paso] Un juez LLM mira la foto del ambiente y los tres primeros, sin saber cuál es el anotado, "
-            f"y les pone 2, 1 o 0. Son {g['todas']['n']} búsquedas al azar: {g['con anotado']['n']} con el "
-            f"producto en el catálogo y {g['sin anotado']['n']} sin. Esto es el context precision de RAGAS en "
-            f"su versión sin ground truth, y el NDCG graduado de la clase.",
-            f"[paso] El primero sirve en el {pct(g['todas']['util1'])} de los casos, contra un hit@1 exacto de "
-            f"{f(D['h1_855'], 2)}. Y sin el producto en el catálogo, igual en el "
-            f"{pct(g['sin anotado']['util1'])}. Validamos al juez: le pone 2 al anotado en el "
-            f"{pct(ag['anotado_con_2'])} y a los demás en el {pct(ag['otros_con_2'])}.",
-            "[paso] hit@1 es una cota inferior de lo útil. Usamos el juez como complemento, validado contra "
-            "las anotaciones.",
+        t=40, planta=[6], notas=[
+            "Relevancia graduada. hit@k solo cuenta el producto exacto, pero uno muy parecido sirve igual. Y "
+            "más de un tercio de las búsquedas no tiene su producto en el catálogo.",
+            f"[paso] Un juez LLM mira la foto y los tres primeros, sin saber cuál es el anotado, y les pone 2, "
+            f"1 o 0: el context precision de RAGAS sin ground truth.",
+            f"[paso] El primero sirve en el {pct(g['todas']['util1'])}, contra un hit@1 exacto de "
+            f"{f(D['h1_855'], 2)}; sin el producto en el catálogo, en el {pct(g['sin anotado']['util1'])}. El "
+            f"juez le pone 2 al anotado en el {pct(ag['anotado_con_2'])}.",
+            "[paso] hit@1 es una cota inferior de lo útil; el juez lo complementa.",
         ])
 
     # ---------------------------------------------------------------- E11
@@ -439,20 +423,17 @@ def build(D: dict, ctx: dict) -> None:
         res,
         "<strong>El porqué es fiel; lo que falla son medidas.</strong> Lo no sostenido son tamaños que el "
         "catálogo no tiene: los asientos de IKEA no traen medidas. Eso nos llevó a buscar otro catálogo.",
-        t=50, notas=[
+        t=45, planta=[7, 11], notas=[
             "RAGAS sobre la respuesta. Choose explica cada elección; si afirma una medida o un material "
-            "falso, es una alucinación que el usuario se va a creer. Y la lista entera tiene que contestar el "
-            "pedido, no solo cada pieza.",
-            "[paso] Medimos dos cosas con un juez. Faithfulness: se parte la explicación en afirmaciones y se "
-            "cuenta qué fracción se sostiene con lo que vio el sistema. Answer relevance: el juez, sin ver el "
-            "pedido, escribe tres pedidos que esa respuesta contestaría, y medimos el coseno con el original. "
-            "La vara es el mismo coseno contra pedidos que no tienen nada que ver.",
+            "falso, es una alucinación que el usuario se va a creer.",
+            "[paso] Faithfulness: qué fracción de las afirmaciones se sostiene con lo que vio el sistema. "
+            "Answer relevance: el juez, sin ver el pedido, escribe tres que la respuesta contestaría, y medimos "
+            "el coseno con el original, contra una vara de pedidos sin relación.",
             f"[paso] Faithfulness entre {f(min(r['fidelidad']['faithfulness'] for r in D['ragas']), 2)} y "
-            f"{f(max(r['fidelidad']['faithfulness'] for r in D['ragas']), 2)}; answer relevance muy por encima "
-            f"de la vara. Lo interesante es qué no se sostiene: que el piso es de roble, que la alfombra llega "
-            f"abajo del sofá. Son medidas y cosas que el catálogo no dice.",
-            "[paso] El modelo no inventa productos; lo que le falta es información. Los asientos de IKEA no "
-            "tienen medidas en el dataset, y eso nos llevó al último capítulo: otro catálogo.",
+            f"{f(max(r['fidelidad']['faithfulness'] for r in D['ragas']), 2)}; relevance muy por encima de la "
+            f"vara. Lo que no se sostiene son medidas y cosas que el catálogo no dice.",
+            "[paso] No inventa productos; le falta información: los asientos de IKEA no tienen medidas. Eso nos "
+            "llevó a otro catálogo.",
         ])
 
     # ================================================================ 06 · de punta a punta
@@ -508,16 +489,13 @@ def e12(D):
               '<dt>acuerdo entre órdenes</dt><dd>fracción de ambientes donde los dos votos coinciden</dd>'
               '<dt>cumple</dt><dd>fracción de productos con nota 2 del juez: lo pedido, y va con el cuarto</dd></dl>'
             + '</div></div>')
-    add(body, titulo="E12 · Qué catálogo (diseño)", cap=6, t=50, fases="0,1", notas=[
-        f"¿Alcanza con IKEA? El catálogo del dataset es de un solo estilo, y sus asientos no tienen medidas: "
-        f"ninguno. E11 nos mostró que lo que falla son justamente medidas. Amazon Berkeley Objects son "
-        f"publicaciones reales de Amazon, de muchos estilos y casi todas con medidas. Describimos {D['n_abo']} "
-        f"productos con las mismas ocho líneas.",
-        f"[paso] Acá no hay ground truth, así que lo medimos de punta a punta: {j11['ambientes']} ambientes "
-        f"vacíos reales, cinco nuestros con pedidos nórdicos y seis fotos públicas con pedidos de otros "
-        f"estilos. Corremos el flujo con cada catálogo y un juez compara las dos listas. Como los LLM tienden "
-        f"a preferir la primera opción, se pregunta en los dos órdenes, y una lista gana solo si gana en los "
-        f"dos. Medimos también el sesgo de posición y el acuerdo entre órdenes.",
+    add(body, titulo="E12 · Qué catálogo (diseño)", cap=6, t=40, fases="0,1", planta=[1], notas=[
+        "¿Alcanza con IKEA? Es de un solo estilo y sus asientos no tienen medidas, justo lo que E11 vio "
+        "fallar. ABO, el catálogo del primer ambiente del recorrido, trae muchos estilos y casi siempre medidas.",
+        f"[paso] Sin ground truth, lo medimos de punta a punta: {j11['ambientes']} ambientes vacíos reales, "
+        f"cinco nuestros con pedidos nórdicos y seis fotos públicas de otros estilos. El flujo con cada "
+        f"catálogo, y un juez compara las dos listas en los dos órdenes, porque los LLM prefieren la primera: "
+        f"una lista gana solo si gana en los dos.",
     ])
 
     # ---- resultados
@@ -554,16 +532,15 @@ def e12(D):
             + f'<div class="decision" data-desde="2"><div class="k">decisión</div><p><strong>IKEA + ABO en el flujo.</strong> '
               f'Empata en los pedidos nórdicos, gana {U["gana_todos"]} a {U["gana_ikea"]} en los demás estilos y, como '
               f'distractor, casi no mueve el retrieval. Las evaluaciones con ground truth siguen siendo solo IKEA.</p></div>')
-    add(body, titulo="E12 · Resultados", cap=6, t=55, fases="2,2,3", notas=[
+    add(body, titulo="E12 · Resultados", cap=6, t=50, fases="2,2,3", planta=[1], notas=[
         "Los resultados. Cada columna es un ambiente: los cinco primeros son departamentos propios, los seis "
         "siguientes fotos públicas.",
         f"[paso] Con los dos votos del juez: en los propios, con pedidos nórdicos, IKEA solo e IKEA más ABO "
         f"empatan: {P['gana_ikea']} a {P['gana_todos']} con un empate. En las seis fotos públicas, con pedidos "
         f"industrial, clásico, bohemio, gana IKEA más ABO {U['gana_todos']} a {U['gana_ikea']}, y la fracción "
-        f"de productos que cumplen sube de {f(U['util_ikea'], 2)} a {f(U['util_todos'], 2)}. Además, ABO solo "
-        f"pierde contra IKEA en los cuartos nórdicos, y sumar ABO como distractor casi no cambia el retrieval "
-        f"sobre el ground truth de IKEA. El juez coincide consigo mismo en los dos órdenes en el "
-        f"{pct(j11['acuerdo_entre_ordenes'])} de los casos.",
+        f"de productos que cumplen sube de {f(U['util_ikea'], 2)} a {f(U['util_todos'], 2)}. Y sumar ABO como "
+        f"distractor casi no cambia el retrieval sobre el ground truth de IKEA. El juez coincide consigo mismo "
+        f"en los dos órdenes en el {pct(j11['acuerdo_entre_ordenes'])} de los casos.",
         "[paso] Decisión: el flujo usa los dos catálogos. Lo que no cambia: las métricas con ground truth se "
         "siguen calculando solo sobre IKEA.",
     ])
@@ -594,12 +571,11 @@ def e12(D):
               '<span>una barra por orden</span></div>'
             + f'<p class="cita porque">«{esc(lx["por_que"][1])}»</p><p class="nota">el porqué del juez, en el orden 2 (A = IKEA + ABO)</p>'
             + '</div></div>')
-    add(body, titulo="E12 · Un caso", cap=6, t=20, fases="2", notas=[
-        "Un caso para ver qué está mirando el juez: un loft con vigas y un pedido industrial, sofá de cuero "
-        "envejecido, mesa de madera con patas de metal negro, biblioteca de metal y madera.",
-        "IKEA solo no tiene esos productos y propone lo más cercano: un sofá de cuero liso, una mesa toda de "
-        "madera, un estante de vidrio. Con ABO aparecen el sofá de cuero coñac, la mesa industrial y la "
-        "biblioteca. Las barritas son la nota del juez a cada producto, en cada orden.",
+    add(body, titulo="E12 · Un caso", cap=6, t=20, fases="2", planta=[1], notas=[
+        "Un caso: un loft con vigas y un pedido industrial, sofá de cuero envejecido, mesa con patas de metal "
+        "negro, biblioteca de metal y madera.",
+        "IKEA propone lo más cercano: cuero liso, una mesa toda de madera. Con ABO aparecen el cuero coñac y la "
+        "mesa industrial. Las barritas son la nota del juez.",
     ])
 
 
@@ -636,19 +612,14 @@ def e13(D):
               '</div>'
             + '</div>'
             + remate("Las cuatro corren <mark>local y gratis</mark>: se pueden calcular en cada corrida del flujo.", desde=3))
-    add(body, titulo="E13 · Métricas de imagen", cap=6, t=40, notas=[
-        "Para la imagen no hay ground truth, así que armamos métricas que comparan contra lo que sí tenemos: "
-        "la foto original y las fotos del catálogo.",
-        "**SSIM** fuera de los muebles: la similitud estructural, luz, contraste y textura por ventanas, entre "
-        "la foto original y la generada, solo donde no hay muebles. Si da cerca de uno, el cuarto se preservó.",
-        f"[paso] **SIFT con RANSAC**: buscamos puntos característicos de la foto original en la generada. Si "
-        f"la cámara se movió o el cuarto cambió, se reencuentran pocos y se desplazan. Con esto armamos el "
-        f"control automático: al menos {D['sift_min_inliers']} inliers y un desplazamiento de a lo sumo el "
-        f"{pct(D['sift_max_shift'])} del ancho.",
-        f"[paso] **Fidelidad de producto**: detectamos cada mueble, recortamos y vemos si el más parecido del "
-        f"catálogo es el de la lista. Como vara, con fotos reales de IKEA esto da {f(ri['hit@1'])}: es difícil "
-        f"incluso con fotos de verdad.",
-        "[paso] Y SigLIP 2 para ver si la imagen se alinea con el pedido. Todas corren local y gratis.",
+    add(body, titulo="E13 · Métricas de imagen", cap=6, t=35, planta=[9, 10], notas=[
+        "La imagen no tiene ground truth: la comparamos con la foto original y con el catálogo.",
+        "**SSIM** fuera de los muebles: similitud estructural solo donde no hay muebles; cerca de uno, el "
+        "cuarto se preservó.",
+        "[paso] **SIFT con RANSAC**, la del control: si la cámara se movió, se reencuentran pocos puntos.",
+        f"[paso] **Fidelidad de producto**: recortamos cada mueble y vemos si el más parecido del catálogo es "
+        f"el de la lista. Con fotos reales de IKEA da {f(ri['hit@1'])}: es difícil.",
+        "[paso] Y SigLIP 2, imagen contra pedido. Todas locales y gratis.",
     ])
 
     # ---- el prompt de la escena
@@ -684,44 +655,17 @@ def e13(D):
         f"edición libre cambió el cuarto (SSIM {f(mb['ssim_fuera_de_los_muebles'], 2)}); la estricta lo "
         f"preservó ({f(ms['ssim_fuera_de_los_muebles'], 2)}). Una imagen por variante es una anécdota: por eso "
         f"el control en cada corrida.",
-        t=60, ancho=True, rot="De punta a punta", notas=[
-            "La imagen. El modelo tiende a «mejorar» la foto: mueve la cámara, agranda ventanas, repinta. Para "
-            "el usuario es grave, porque compraría para un cuarto que no es el suyo.",
-            "[paso] Probamos distintas formas de pedir la edición, siempre con la misma foto y la misma lista: "
-            "que Claude escriba la escena, un template de edición libre, y uno de edición estricta. Ojo: una "
-            "imagen por variante.",
+        t=45, ancho=True, rot="De punta a punta", planta=[8], notas=[
+            "El modelo de imagen tiende a «mejorar» la foto: mueve la cámara, agranda ventanas. El usuario "
+            "compraría para un cuarto que no es el suyo.",
+            "[paso] Misma foto y misma lista; cambia el pedido de edición: Claude escribe la escena, edición "
+            "libre o estricta. Una imagen por variante.",
             f"[paso] Con el pedido corto, las dos primeras preservan el cuarto parecido. Con el pedido detallado "
             f"y {len(ex_b)} productos, la edición libre lo cambió: el SSIM fuera de los muebles cae a "
             f"{f(mb['ssim_fuera_de_los_muebles'], 2)} y SIFT ve la cámara movida. La estricta lo preserva.",
-            "[paso] Elegimos edición estricta, sin LLM: más barata y más fiel. Pero una imagen por variante es "
-            "una anécdota, así que además pusimos un control automático en cada corrida.",
+            "[paso] Edición estricta, sin LLM: más barata y más fiel. Y como una imagen por variante es una "
+            "anécdota, el control automático en cada corrida.",
         ])
-
-    # ---- el control en acción
-    cg = cl["gen"]
-    tiles = (f'<figure class="at"><div class="ai"><img src="{img.uri(A / "caballito-living" / "room.jpg", 800, 600, q=72)}" alt=""></div>'
-             '<figcaption><b>la foto original</b><span>living de un departamento propio</span></figcaption></figure>')
-    for i, a in enumerate(cg["attempts"]):
-        ok = a["ok"]
-        tiles += (f'<figure class="at"><div class="ai"><img src="{img.uri(A / "caballito-living" / a["image"], 800, 600, q=72)}" alt="">'
-                  f'<span class="sello{" ok" if ok else ""}">{"aceptada" if ok else "rechazada"}</span></div>'
-                  f'<figcaption><b>intento {i + 1}</b><span>inliers {a["sift_inliers"]} · reencontrados {pct(a["sift_reencontrados"], 1)}</span>'
-                  f'<span>desplazamiento {pct(a["sift_desplazamiento_mediano"], 1)}</span></figcaption></figure>')
-    body = (xcab("E13", "De punta a punta", "El control, <em>en una corrida real</em>")
-            + f'<div class="atts">{tiles}</div>'
-            + f'<p class="nota atn">{len(cg["attempts"])} intentos · {usd(cg["cost_usd"])} de imagen · SSIM fuera de los muebles de la aceptada: '
-              f'{f(cm["ambiente"]["ssim_fuera_de_los_muebles"], 3)}</p>'
-            + f'<div class="decision" data-desde="1"><div class="k">decisión</div><p><strong>El control queda en el flujo:</strong> '
-              f'inliers ≥ {D["sift_min_inliers"]} y desplazamiento ≤ {pct(D["sift_max_shift"])}, hasta {D["sift_attempts"]} intentos. '
-              'Los dos rechazos se ven a ojo: el cuarto se dio vuelta. Dónde poner el umbral exacto es un experimento pendiente.</p></div>')
-    add(body, titulo="E13 · El control en acción", cap=6, t=30, fases="2,3", notas=[
-        "Y acá el control en una corrida real: el living de la portada. Los dos primeros intentos cambiaron el "
-        "cuarto, la cámara se movió, y SIFT reencontró menos del 5% de los puntos con desplazamientos de más "
-        "del 15%. Se rechazaron solos. El tercero preservó el cuarto y se aceptó. Por eso esa corrida tuvo "
-        "tres intentos.",
-        f"[paso] El control queda en el flujo, con hasta {D['sift_attempts']} intentos. Dónde poner el umbral "
-        f"exacto es lo que sigue.",
-    ])
 
 
 # ---------------------------------------------------------------- T4
@@ -741,10 +685,7 @@ def t4(D):
             + '<div class="t4"><div class="t4h">exp.</div><div class="t4h">pregunta</div><div class="t4h">variantes</div>'
               f'<div class="t4h">imágenes</div><div class="t4h">costo estimado</div>{trs}</div>'
             + f'<p class="t4tot"><b>Total estimado:</b> {esc(D["t4_total"])} Métricas: las de E13 más un juez de a pares en los dos órdenes, como en E12.</p>')
-    add(body, titulo="T4 · Lo que sigue", cap=6, t=20, notas=[
-        "Lo que sigue, y lo decimos claro: esto está diseñado y no corrido, no hay resultados.",
-        "La imagen la medimos con una imagen por variante. El plan es repetirlo bien, en todos los ambientes: "
-        "escena escrita por el LLM contra edición estricta, qué modelo de imagen, qué resolución, si las fotos "
-        "del catálogo cambian la fidelidad, y calibrar el umbral del control SIFT con todos esos intentos. Con "
-        f"las métricas de E13 y un juez de a pares en los dos órdenes, como en E12. Cuesta {D['t4_total'].rstrip('.')}.",
+    add(body, titulo="T4 · Lo que sigue", cap=6, t=15, planta=[9], notas=[
+        "Lo que sigue, diseñado y sin correr: repetir la imagen en todos los ambientes, con LLM o estricta, "
+        f"qué modelo, qué resolución, y calibrar el control SIFT. Cuesta {D['t4_total'].rstrip('.')}.",
     ])

@@ -19,7 +19,7 @@ def flecha(x1, y1, x2, y2, cls="fl") -> str:
 
 
 SEPARADORES = {
-    1: ("Cómo está <em>armado</em>", "Un RAG sobre un catálogo de muebles: qué se indexa, cómo se busca, quién elige y cómo se dibuja.", []),
+    1: ("El recorrido, <em>ambiente por ambiente</em>", "Del catálogo a la lista: qué hace cada fase, qué decidimos ahí y qué experimento lo decidió.", []),
     2: ("Antes de comparar, <em>una vara</em>", "Un ground truth, cinco métricas de ranking y un intervalo de confianza para cada número.", []),
     3: ("Qué guardamos <em>en el índice</em>", "Indexing: qué representa a cada producto y dónde vive.",
         [("E1", "imagen o texto"), ("E2", "texto, embedder y filtro"), ("E3", "splitting"),
@@ -38,6 +38,9 @@ ROT_NUEVO = {  # dónde va el rótulo de la pieza nueva en el separador (dx, dy 
 }
 
 
+SEP_PLANTA = {3: [2, 3], 4: [5, 6, 7], 5: [5, 6, 7, 11], 6: [1, 8, 9, 10]}
+
+
 def separador(cap: int, notas, t=10):
     from base import CAPS
     titulo, baj, exps = SEPARADORES[cap]
@@ -52,7 +55,8 @@ def separador(cap: int, notas, t=10):
         lista = '<ul class="s-lista">' + "".join(f"<li><b>{e}</b>{esc(n)}</li>" for e, n in exps) + "</ul>"
     body = (f'<div class="s-txt"><div class="s-num">{cap:02d}</div><h2>{titulo}</h2><p class="s-baj">{baj}</p>{lista}</div>'
             f'<div class="s-sala">{sala.sala(pz, nuevas=nuevas if cap < 7 else (), P=P, extra=rot)}</div>')
-    add(body, titulo=f"Capítulo {CAPS[cap][0]}", cap=cap, t=t, notas=notas, cls="oscura separador")
+    add(body, titulo=f"Capítulo {CAPS[cap][0]}", cap=cap, t=t, notas=notas, cls="oscura separador",
+        planta=SEP_PLANTA.get(cap))
 
 
 def build(D: dict) -> dict:
@@ -109,9 +113,9 @@ def build(D: dict) -> dict:
         '<p class="cam-t"><b>Tiene muebles reales…</b> pero no mira tu cuarto. La combinación la armás vos, pieza por pieza.</p></div>'
         '</div>'
         + remate("Queremos las dos cosas. Es un problema de <mark>RAG</mark>: la respuesta sale de lo que se recupera de un catálogo, no de lo que el modelo imagina.", desde=2))
-    add(body, titulo="El problema", cap=0, t=45, cls="lam-problema", notas=[
-        "Arranquemos por el problema. Te mudás, tenés el ambiente vacío y una idea de lo que querés. Hoy "
-        "hay dos caminos y ninguno alcanza.",
+    add(body, titulo="El problema", cap=0, t=40, cls="lam-problema", notas=[
+        "El problema. Te mudás, tenés el ambiente vacío y una idea de lo que querés. Hay dos caminos y "
+        "ninguno alcanza.",
         "Un generador de imágenes te amobla la foto, pero con muebles inventados: son estas cajas "
         "punteadas con signos de pregunta. No los podés medir ni comprar.",
         "[paso] Un catálogo tiene productos reales, pero no mira tu cuarto: filtrás por tipo, color, "
@@ -138,16 +142,15 @@ def build(D: dict) -> dict:
         f'<p class="pie-foto">living de un departamento propio · {n_int} intentos de imagen · {usd(costo_cl)} la corrida</p></div>'
         '</div>'
         + flecha(608, 470, 664, 470) + f'<div data-desde="2">{flecha(1216, 470, 1272, 470)}</div>')
-    add(body, titulo="Qué hace amoblai", cap=0, t=60, cls="lam-que", notas=[
+    add(body, titulo="Qué hace amoblai", cap=0, t=50, cls="lam-que", notas=[
         "Así se usa. El usuario sube la foto del ambiente y escribe el pedido como le sale: «un living "
         "moderno y luminoso para recibir amigos, un sofá de tres cuerpos gris claro contra la pared de la "
         "izquierda, una mesa ratona de madera clara, una alfombra grande…».",
         f"[paso] amoblai devuelve la lista: {len(choices)} productos reales del catálogo, con cantidades "
         f"(los almohadones van por dos) y medidas cuando el catálogo las tiene. Cada uno viene con su "
-        f"porqué. Un detalle que vamos a retomar: en {no_first} de las {len(choices)} piezas eligió un "
-        f"producto que no era el más parecido por coseno.",
+        f"porqué.",
         f"[paso] Y la imagen: el mismo cuarto, con esos productos. Esta corrida costó {usd(costo_cl)}, con "
-        f"{n_int} intentos de imagen. Por qué hubo {n_int} lo vemos al final.",
+        f"{n_int} intentos de imagen. Por qué hubo {n_int}, lo vemos en el recorrido.",
     ])
 
     # ================================================================ 4 · lo que tiene que cumplir
@@ -167,149 +170,22 @@ def build(D: dict) -> dict:
     body = ('<div class="cuerpo">' + cab("00", "El programa", "Lo que tiene que cumplir, <em>y cómo lo vamos a medir</em>") + '</div>'
             '<div class="programa"><div class="ph"></div><div class="ph">lo que promete</div><div class="ph">cómo lo medimos</div>'
             f'<div class="ph">dónde</div>{tr}</div>')
-    add(body, titulo="Lo que tiene que cumplir", cap=0, t=30, notas=[
-        "Antes de entrar en la arquitectura, lo que amoblai promete, porque de acá salen las métricas. Es "
-        "el programa, como en un proyecto de arquitectura.",
-        "Que los productos sean los que van: eso es retrieval y se mide contra un ground truth, con las "
-        "métricas de ranking de la materia. Que si el exacto no está, traiga algo que sirva. Que cada "
-        "número se pueda creer. Que el porqué no invente y que la respuesta conteste lo que se pidió: ahí "
-        "entran RAGAS y un juez. Y que la imagen sea tu cuarto y no otro. La columna de la derecha dice qué "
+    add(body, titulo="Lo que tiene que cumplir", cap=0, t=25, notas=[
+        "Lo que amoblai promete, porque de acá salen las métricas: es el programa, como en un proyecto de "
+        "arquitectura.",
+        "Que los productos sean los que van, contra un ground truth; si el exacto no está, algo que sirva; "
+        "números creíbles; un porqué que no invente; y que la imagen sea tu cuarto. A la derecha, qué "
         "experimento mide cada cosa.",
     ])
 
     # ================================================================ 5 · separador
-    separador(1, ["Entonces: ¿cómo está armado? Primera pieza del cuarto: la alfombra, la base sobre la que se apoya todo."])
+    separador(1, ["¿Cómo está armado? Lo vamos a recorrer como una casa, ambiente por ambiente. Primera pieza del "
+                  "cuarto: la alfombra, la base sobre la que se apoya todo."])
 
-    # ================================================================ 6 · indexing
-    sofa = choices[0]["id"]
-    doc = D["desc"][sofa].splitlines()
-    doc_html = "".join(f'<div class="l8"><span>{esc(l.split(":", 1)[0])}</span>{esc(l.split(":", 1)[1].strip())}</div>' for l in doc)
-    vec = "".join(f'<i style="opacity:{0.15 + 0.85 * ((i * 37) % 23) / 22:.2f}"></i>' for i in range(64))
-    body = (
-        '<div class="cuerpo">' + cab("01", "Arquitectura · indexing", "Una vez, offline: <em>el catálogo se vuelve un índice</em>") + '</div>'
-        '<div class="indexado">'
-        f'<div class="ix ix1"><div class="ixn">1</div><div class="ixh">Catálogo</div>'
-        f'<div class="hoja ixfig"><img src="{img.uri(foto_producto(D, sofa), 360, 360, fit="contain")}" alt=""><span class="etq">{sofa} · {esc(D["items"][sofa]["name"])}</span></div>'
-        f'<p>IKEA <b>{D["n_ikea"]}</b> + ABO <b>{D["n_abo"]}</b> productos: foto, tipo, kind y medidas.</p><div class="etq ixr">data loading y preprocesamiento</div></div>'
-        f'<div class="ix ix2" data-desde="1"><div class="ixn">2</div><div class="ixh">Descripción de 8 líneas</div>'
-        f'<div class="hoja ixfig doc8">{doc_html}</div>'
-        f'<p>Un VLM mira la foto de cada producto y la describe siempre en las mismas ocho líneas.</p><div class="etq ixr">splitting: un producto, un documento</div></div>'
-        f'<div class="ix ix3" data-desde="2"><div class="ixn">3</div><div class="ixh">Embedding</div>'
-        f'<div class="ixfig vec"><div class="vgrid">{vec}</div><span class="etq">[ {D["best_dim"]} números ]</span></div>'
-        f'<p>{esc(D["embed_model"])}, corre local: cada documento, un vector de {D["best_dim"]} dimensiones.</p><div class="etq ixr">embedding</div></div>'
-        f'<div class="ix ix4" data-desde="3"><div class="ixn">4</div><div class="ixh">ChromaDB</div>'
-        '<div class="ixfig db"><svg viewBox="0 0 220 230"><g fill="#fff" stroke="#13202C" stroke-width="2">'
-        '<path d="M20,60 v120 a90,26 0 0 0 180,0 v-120"/><ellipse cx="110" cy="60" rx="90" ry="26"/>'
-        '<path d="M20,100 a90,26 0 0 0 180,0" fill="none"/><path d="M20,140 a90,26 0 0 0 180,0" fill="none"/></g>'
-        f'<text x="110" y="66" text-anchor="middle" style="font:700 17px var(--mono);fill:#2453D6">{D["n_todos"]}</text></svg></div>'
-        '<p>HNSW con coseno: el vector, el texto y la metadata (kind, medidas) juntos.</p><div class="etq ixr">base de datos vectorial</div></div>'
-        '</div>'
-        + f'<div data-desde="1">{flecha(468, 480, 512, 480)}</div>' + f'<div data-desde="2">{flecha(916, 480, 960, 480)}</div>' + f'<div data-desde="3">{flecha(1364, 480, 1408, 480)}</div>'
-        + remate("Lo que se busca después no son fotos: son <mark>descripciones</mark>.", desde=3))
-    add(body, titulo="Indexing", cap=1, t=40, notas=[
-        f"La arquitectura tiene dos tiempos. El primero pasa una sola vez, offline: el indexing. El "
-        f"catálogo son {D['n_ikea']} productos de IKEA más {D['n_abo']} de Amazon Berkeley Objects, cada "
-        f"uno con su foto, su tipo, su kind y sus medidas cuando las tiene.",
-        "[paso] Un modelo de visión mira la foto de cada producto y escribe una descripción en ocho líneas "
-        "fijas: tipo, uso, estilo, materiales, colores, forma, sensación y con qué combina. Un producto, "
-        "un documento.",
-        f"[paso] Esa descripción se embebe con {D['embed_model']}, que corre local: {D['best_dim']} números "
-        f"por producto.",
-        "[paso] Y va a ChromaDB junto con la metadata. Lo importante: lo que después buscamos no son "
-        "fotos, son descripciones.",
-    ])
+    # ================================================================ 6 a 19 · el recorrido y el mapa
+    import laminas_rec
 
-    # ================================================================ 7 · por pedido, por capas
-    capas_slide(D, ctx)
-
-    # ================================================================ 8 · documento y consulta
-    q_lines = cands[0]["spec"]["query"].splitlines()
-
-    def l8(ls, n=48):
-        out = ""
-        for ln in ls:
-            k, _, v = ln.partition(":")
-            v = v.strip()
-            out += f'<div class="l8"><span>{esc(k)}</span>{esc(v[:n])}{"…" if len(v) > n else ""}</div>'
-        return out
-
-    strip = ""
-    for i, c in enumerate(cands[0]["candidates"]):
-        ch = c["id"] == sofa
-        strip += ficha(D, c["id"], 112, pos=i + 1, hi=ch, tag="elegido" if ch else None, cap=True,
-                       titulo=f(c["score"]), sub=None)
-    sc = next(c["score"] for c in cands[0]["candidates"] if c["id"] == sofa)
-    rk = next(i for i, c in enumerate(cands[0]["candidates"]) if c["id"] == sofa) + 1
-    body = (
-        '<div class="cuerpo">' + cab("01", "Arquitectura · el corazón del retrieval", "Documento y consulta, <em>en las mismas ocho líneas</em>") + '</div>'
-        '<div class="dq">'
-        f'<div class="hoja dqc"><div class="dqh"><img src="{img.uri(foto_producto(D, sofa), 200, 200, fit="contain")}" alt="">'
-        f'<div><div class="etq">el documento · lo que se indexa</div><b>{sofa} · sofá</b><span>lo escribió un VLM mirando la foto del producto</span></div></div>{l8(doc)}</div>'
-        '<div class="dqmid" data-desde="1"><span>coseno</span></div>'
-        f'<div class="hoja dqc" data-desde="1"><div class="dqh"><img class="rm" src="{img.uri(CL / "room.jpg", 280, 210)}" alt="">'
-        f'<div><div class="etq">la consulta · lo que escribe plan</div><b>pieza 1 del living</b><span>plan no ve el catálogo: describe el producto ideal</span></div></div>{l8(q_lines)}</div>'
-        '</div>'
-        f'<div class="dqs" data-desde="2"><div class="dqsl"><div class="etq">los {len(cands[0]["candidates"])} más cercanos por coseno</div>'
-        f'<p>Este sofá salió <b>{rk}.º</b>, con {f(sc)}. Choose lo eligió igual, mirando las fotos.</p></div><div class="tira">{strip}</div></div>')
-    add(body, titulo="Documento y consulta", cap=1, t=45, notas=[
-        "Esto es el corazón del retrieval. A la izquierda, el documento de un sofá del catálogo: lo "
-        "escribió un modelo mirando su foto, en las ocho líneas.",
-        "[paso] A la derecha, la consulta que escribió plan para el living de recién, sin ver el catálogo. "
-        "Mismo formato, mismo vocabulario: «light grey», «Scandinavian», «white walls». La idea es que "
-        "documento y consulta se parezcan como dos fichas del mismo catálogo, y se comparan por coseno.",
-        f"[paso] Abajo, los cinco más cercanos. El sofá que terminó en la lista salió {rk}.º, con {f(sc)}, "
-        f"muy cerca del primero. Choose lo eligió igual, porque mirando las fotos es el gris claro de "
-        f"brazos anchos que pidió el usuario.",
-    ])
-
-    # ================================================================ 9 · variantes
-    body = ('<div class="cuerpo">' + cab("01", "Arquitectura · el mapa de la charla", "Cada caja tuvo alternativas. <em>Las elegimos midiendo.</em>") + '</div>'
-            + variantes_html(elegidas=False))
-    add(body, titulo="Variantes", cap=1, t=30, notas=[
-        "Cada caja del diagrama tuvo alternativas. Esta planilla es el mapa de la charla: cada fila es una "
-        "decisión, y a la derecha está el experimento que la resolvió.",
-        "La mayoría son hiperparámetros del retrieval, que es lo que se puede medir contra un ground truth. "
-        "Lo de borde gris es de la v0, que buscaba por imagen. Y la última fila, el modelo de imagen, quedó "
-        "diseñada pero sin correr. Al final volvemos a esta planilla con lo que elegimos.",
-    ])
-
-    # ================================================================ 10 · línea de tiempo
-    fe = D["fechas"]
-    dd = lambda d: d.strftime("%d/%m")
-    evs = [
-        ("v0", fe["v0"], "v0: buscar por imagen", "Detectar cada mueble en la foto, recortarlo y compararlo con las fotos del catálogo.", 0),
-        ("", fe["v1"], "v1: buscar por texto", f"Descripciones de ocho líneas, Qwen3 y ChromaDB, sobre {D['n_275']} productos.", 0),
-        ("", fe["rerank"], "Reranking y más catálogo", f"Opus reordena mirando las fotos. El catálogo pasa a {D['n_855']}: lámparas, deco, guardado.", 1),
-        ("", fe["metricas"], "Métricas de la clase", "RAGAS, NDCG, reproducibilidad y relevancia graduada.", 1),
-        ("", fe["sift"], "Control de la imagen", "SIFT + RANSAC contra la foto original, con reintento.", 1),
-        ("", fe["revisado"], "Catálogo revisado", f"Se sacan {D['n_855'] - D['n_ikea']} productos con la foto de otro o fuera del alcance: quedan {D['n_ikea']}.", 2),
-        ("", fe["abo"], "Un segundo catálogo", f"Amazon Berkeley Objects: {D['n_abo']} productos más, con medidas.", 2),
-        ("sig", None, "Lo que sigue", "Los experimentos de la imagen, diseñados y sin correr.", 2),
-    ]
-    x0, x1, yax = 100, 1550, 610
-    gap = (x1 - x0) / (len(evs) - 1)
-    tl = (f'<svg class="tl-eje" viewBox="0 0 1920 1080"><line x1="72" y1="{yax}" x2="1848" y2="{yax}"/>'
-          + "".join(f'<line class="tk" x1="{x0 + i * gap - 9:.0f}" y1="{yax + 9}" x2="{x0 + i * gap + 9:.0f}" y2="{yax - 9}"/>' for i in range(len(evs)))
-          + "</svg>")
-    for i, (cls, d, h, p, st) in enumerate(evs):
-        up = i % 2 == 0
-        x = x0 + i * gap
-        der = False
-        sty = (f"right:{1920 - x - 2:.0f}px;" if der else f"left:{x - 1:.0f}px;") + ("bottom:" + str(1080 - yax + 30) + "px" if up else "top:" + str(yax + 30) + "px")
-        tl += (f'<div class="ev {cls} {"up" if up else "dn"}{" der" if der else ""}" style="{sty}"{" data-desde=" + chr(34) + str(st) + chr(34) if st else ""}>'
-               f'<div class="evd">{dd(d) if d else "después"}</div><h4>{esc(h)}</h4><p>{esc(p)}</p></div>')
-    body = ('<div class="cuerpo">' + cab("01", "Arquitectura · cronología", "Cómo se fue <em>transformando</em>") + '</div>'
-            f'<div class="tl">{tl}</div>'
-            + remate("Cada cambio de arquitectura salió de <mark>un experimento</mark>.", desde=2))
-    add(body, titulo="Línea de tiempo", cap=1, t=30, notas=[
-        f"Y así se fue transformando. El {dd(fe['v0'])} arrancamos con una v0 que buscaba por imagen. El "
-        f"{dd(fe['v1'])} pasamos a texto, que es la arquitectura que acaban de ver; el primer experimento "
-        f"explica por qué.",
-        "[paso] Después vinieron el reranking con Opus y un catálogo más grande, las métricas de RAGAS y la "
-        "reproducibilidad, y el control de la imagen.",
-        f"[paso] En noviembre revisamos el catálogo a mano y sumamos un segundo catálogo, el {dd(fe['abo'])}. "
-        f"Lo que sigue son los experimentos de imagen, que están diseñados.",
-    ])
+    laminas_rec.build(D, ctx)
 
     # ================================================================ 11 · separador
     separador(2, ["Antes de los experimentos, cómo medimos. Esto vale para todo lo que sigue. Segunda pieza: el sofá."])
@@ -406,6 +282,46 @@ def build(D: dict) -> dict:
 
 
 # ---------------------------------------------------------------- 7 · el flujo por capas
+
+def linea_de_tiempo(D: dict, anexo: str) -> None:
+    """La cronología del proyecto (anexo: la charla la reemplaza por el recorrido)."""
+    fe = D["fechas"]
+    dd = lambda d: d.strftime("%d/%m")
+    evs = [
+        ("v0", fe["v0"], "v0: buscar por imagen", "Detectar cada mueble en la foto, recortarlo y compararlo con las fotos del catálogo.", 0),
+        ("", fe["v1"], "v1: buscar por texto", f"Descripciones de ocho líneas, Qwen3 y ChromaDB, sobre {D['n_275']} productos.", 0),
+        ("", fe["rerank"], "Reranking y más catálogo", f"Opus reordena mirando las fotos. El catálogo pasa a {D['n_855']}: lámparas, deco, guardado.", 1),
+        ("", fe["metricas"], "Métricas de la clase", "RAGAS, NDCG, reproducibilidad y relevancia graduada.", 1),
+        ("", fe["sift"], "Control de la imagen", "SIFT + RANSAC contra la foto original, con reintento.", 1),
+        ("", fe["revisado"], "Catálogo revisado", f"Se sacan {D['n_855'] - D['n_ikea']} productos con la foto de otro o fuera del alcance: quedan {D['n_ikea']}.", 2),
+        ("", fe["abo"], "Un segundo catálogo", f"Amazon Berkeley Objects: {D['n_abo']} productos más, con medidas.", 2),
+        ("sig", None, "Lo que sigue", "Los experimentos de la imagen, diseñados y sin correr.", 2),
+    ]
+    x0, x1, yax = 100, 1550, 610
+    gap = (x1 - x0) / (len(evs) - 1)
+    tl = (f'<svg class="tl-eje" viewBox="0 0 1920 1080"><line x1="72" y1="{yax}" x2="1848" y2="{yax}"/>'
+          + "".join(f'<line class="tk" x1="{x0 + i * gap - 9:.0f}" y1="{yax + 9}" x2="{x0 + i * gap + 9:.0f}" y2="{yax - 9}"/>' for i in range(len(evs)))
+          + "</svg>")
+    for i, (cls, d, h, p, st) in enumerate(evs):
+        up = i % 2 == 0
+        x = x0 + i * gap
+        der = False
+        sty = (f"right:{1920 - x - 2:.0f}px;" if der else f"left:{x - 1:.0f}px;") + ("bottom:" + str(1080 - yax + 30) + "px" if up else "top:" + str(yax + 30) + "px")
+        tl += (f'<div class="ev {cls} {"up" if up else "dn"}{" der" if der else ""}" style="{sty}"{" data-desde=" + chr(34) + str(st) + chr(34) if st else ""}>'
+               f'<div class="evd">{dd(d) if d else "después"}</div><h4>{esc(h)}</h4><p>{esc(p)}</p></div>')
+    body = ('<div class="cuerpo">' + cab(anexo, "Anexo · cronología", "Cómo se fue <em>transformando</em>") + '</div>'
+            f'<div class="tl">{tl}</div>'
+            + remate("Cada cambio de arquitectura salió de <mark>un experimento</mark>.", desde=2))
+    add(body, titulo="Línea de tiempo", cap=9, t=0, anexo=anexo, notas=[
+        f"Y así se fue transformando. El {dd(fe['v0'])} arrancamos con una v0 que buscaba por imagen. El "
+        f"{dd(fe['v1'])} pasamos a texto, que es la arquitectura que acaban de ver; el primer experimento "
+        f"explica por qué.",
+        "[paso] Después vinieron el reranking con Opus y un catálogo más grande, las métricas de RAGAS y la "
+        "reproducibilidad, y el control de la imagen.",
+        f"[paso] En noviembre revisamos el catálogo a mano y sumamos un segundo catálogo, el {dd(fe['abo'])}. "
+        f"Lo que sigue son los experimentos de imagen, que están diseñados.",
+    ])
+
 
 def capas_slide(D, ctx):
     choices, cands, plan = ctx["choices"], ctx["cands"], ctx["plan"]
