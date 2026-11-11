@@ -1,0 +1,146 @@
+"""Arma presentacion.html y guion.md a partir de los archivos de resultados del repo.
+
+    cd /home/fer/tp-llm && uv run python docs/presentaciones_nuevas/a2/build.py
+
+Ningún número está escrito a mano: todos salen de datos_deck.load() y de los resultados de la
+réplica. El HTML es autocontenido (fuentes recortadas y fotos embebidas) y anda sin conexión.
+
+Navegación: → ← espacio PgUp/PgDn (y clic: a la izquierda vuelve), Home/End, F pantalla completa,
+O índice, N notas del orador, B pantalla negra, Esc. `?all` muestra cada lámina con todos sus pasos;
+`#/12` o `#/12.2` van a una lámina (y a un paso).
+"""
+
+from __future__ import annotations
+
+import base64
+import json
+import re
+import sys
+import time
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+import base  # noqa: E402
+import datos_deck  # noqa: E402
+import fuentes  # noqa: E402
+import img  # noqa: E402
+import sala  # noqa: E402
+from estilo import CSS, JS  # noqa: E402
+from estilo_l import CSS_L  # noqa: E402
+
+OUT = HERE / "presentacion.html"
+GUION = HERE / "guion.md"
+
+DEFS = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>'
+        '<pattern id="rayado" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+        '<rect width="7" height="7" fill="#F4F4F0"/><line x1="0" y1="0" x2="0" y2="7" stroke="#13202C" stroke-width="1.1"/></pattern>'
+        '<pattern id="rayado-o" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">'
+        '<rect width="7" height="7" fill="#173A78"/><line x1="0" y1="0" x2="0" y2="7" stroke="#CFDCF7" stroke-width="1.1"/></pattern>'
+        '</defs></svg>')
+
+MINI_CSS = r"""
+.sala.mini *{vector-effect:non-scaling-stroke}
+.sala.mini polygon,.sala.mini path,.sala.mini line{stroke-width:.7px}
+.sala.mini .grilla,.sala.mini .det,.sala.mini .baranda,.sala.mini .zoc,.sala.mini .hoja.f{display:none}
+.sala.mini .corte{fill:var(--hilo-2)}
+#pie.sobre-plano .sala.mini{--ink:#E8EFFF;--top:#204A97;--sx:#1C428A;--sy:#183B7D;--wall:#1B4087;--floor:#173A7A;--acc:var(--naranja);--accs:rgba(255,154,61,.4);--accx:rgba(255,154,61,.3);--accy:rgba(255,154,61,.2);--vano:#21498F}
+#pie.sobre-plano .sala.mini .corte{fill:#2F5BA8}
+#pie.sobre-plano .sala.mini .marco{fill:#CFDCF7}
+"""
+
+
+def fuentes_css() -> str:
+    paths = fuentes.build()
+    b = lambda k: base64.b64encode(paths[k].read_bytes()).decode()
+    return (
+        f"@font-face{{font-family:'Ubuntu Sans V';src:url(data:font/woff2;base64,{b('sans')}) format('woff2');"
+        "font-weight:100 800;font-stretch:75% 100%;font-style:normal;font-display:block}"
+        f"@font-face{{font-family:'Ubuntu Sans V';src:url(data:font/woff2;base64,{b('sans-i')}) format('woff2');"
+        "font-weight:100 800;font-stretch:75% 100%;font-style:italic;font-display:block}"
+        f"@font-face{{font-family:'Go Mono';src:url(data:font/woff2;base64,{b('mono')}) format('woff2');font-weight:400;font-style:normal;font-display:block}}"
+        f"@font-face{{font-family:'Go Mono';src:url(data:font/woff2;base64,{b('mono-b')}) format('woff2');font-weight:700;font-style:normal;font-display:block}}"
+    )
+
+
+def notas_html(notas: list[str]) -> str:
+    return "".join(f"<p>{base.md(n)}</p>" for n in notas)
+
+
+def mmss(s: int) -> str:
+    return f"{s // 60}:{s % 60:02d}"
+
+
+def guion(slides: list[dict]) -> str:
+    main = [s for s in slides if not s["anexo"]]
+    tot = sum(s["t"] for s in main)
+    out = ["# Guion · amoblai", "",
+           "TP 3 · 73.69 Large Language Models · ITBA 2026 · Juan Bautista Albertoni Salini, Matias Juan "
+           "Rossi Seifert, Junior Rambau", "",
+           f"Presentación: `presentacion.html` ({len(main)} láminas + {len(slides) - len(main)} de anexo). "
+           f"Duración estimada: **{mmss(tot)}**. «▸ paso» marca dónde se aprieta → para mostrar lo siguiente "
+           "de la lámina. Las notas también se ven en la presentación con la tecla N.", "",
+           "| # | Lámina | Tiempo | Acumulado |", "|---|---|---|---|"]
+    acc = 0
+    for i, s in enumerate(main):
+        acc += s["t"]
+        out.append(f"| {i + 1} | {s['titulo']} | {mmss(s['t'])} | {mmss(acc)} |")
+    out.append("")
+    cap = None
+    acc = 0
+    for i, s in enumerate(slides):
+        if s["seccion"] != cap:
+            cap = s["seccion"]
+            out += ["", f"## {cap}", ""]
+        if s["anexo"]:
+            out.append(f"### Anexo {s['anexo']} · {s['titulo']}")
+        else:
+            acc += s["t"]
+            out.append(f"### {i + 1}. {s['titulo']} · {mmss(s['t'])} (acumulado {mmss(acc)})")
+        out.append("")
+        for n in s["notas"]:
+            n = n.replace("[paso]", "▸ paso:")
+            out.append(n)
+            out.append("")
+    return "\n".join(out).rstrip() + "\n"
+
+
+def main() -> None:
+    t0 = time.time()
+    D = datos_deck.load()
+    print(f"datos: {time.time() - t0:.1f} s")
+    import laminas_1
+    import laminas_2
+    import laminas_3
+    ctx = laminas_1.build(D)
+    laminas_2.build(D, ctx)
+    laminas_3.build(D, ctx)
+
+    slides = base.SL
+    main_n = sum(1 for s in slides if not s["anexo"])
+    secs = "".join(base.section_html(i, s, main_n) for i, s in enumerate(slides))
+    minis = "".join(f'<template class="mini-{c}">{sala.mini(base.piezas_hasta(c if c < 8 else 7), base.CAPS[c][1] if c < 8 else ())}</template>'
+                    for c in base.CAPS)
+    notas = json.dumps([notas_html(s["notas"]) for s in slides], ensure_ascii=False)
+    pie = ('<div id="pie"><div class="p-marca">amoblai</div><div class="p-sec" id="p-sec"></div>'
+           '<div class="p-sala" id="p-sala"></div><div class="p-num" id="p-num"></div></div><div id="barra"></div>')
+    html = (
+        '<!doctype html><html lang="es"><head><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<title>amoblai · TP 3 · 73.69 LLM · ITBA 2026</title>'
+        f"<style>{fuentes_css()}{CSS}{CSS_L}{MINI_CSS}</style></head><body>{DEFS}"
+        f'<div id="escenario">{secs}{pie}</div>{minis}'
+        '<div id="indice"><div id="indice-grilla"></div></div><div id="negro"></div><div id="notas"></div>'
+        f"<script>window.__NOTAS={notas};</script><script>{JS}</script></body></html>"
+    )
+    OUT.write_text(html)
+    GUION.write_text(guion(slides))
+    tot = sum(s["t"] for s in slides if not s["anexo"])
+    print(f"{main_n} láminas + {len(slides) - main_n} de anexo · {mmss(tot)} · "
+          f"{OUT.stat().st_size / 1e6:.2f} MB · imágenes {img.STATS['n']} ({img.STATS['bytes'] / 1e6:.2f} MB) · "
+          f"{time.time() - t0:.1f} s")
+
+
+if __name__ == "__main__":
+    main()
