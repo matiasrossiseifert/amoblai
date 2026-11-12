@@ -327,11 +327,13 @@ las del banco de prueba).
 
 ## 7. Las preguntas difíciles del oral
 
-1. **¿Hacía falta RAG si el catálogo entra en el contexto?** En texto entra (1.502 fichas son
-   unos 150 mil tokens). Mandarlo entero cuesta unos US$0,60 de entrada por pedido contra
-   US$0,05 de los candidatos; con las fotos (que es lo que mira el que elige) no entra. RAG se
-   justifica por escala (ABO completo son 147 mil productos), actualización (un alta es un
-   insert) y porque el modelo de imagen necesita igual las fotos de los elegidos.
+1. **¿Hacía falta RAG si el catálogo entra en el contexto?** En texto entra: las 1.502 fichas
+   son unos 200 mil tokens (814 mil caracteres). Mandarlas enteras costaría unos US$0,80 de
+   entrada por pedido con Opus, contra US$0,14 de la elección de hoy, que además mira las fotos
+   de los candidatos; con las fotos de todo el catálogo ya no entra. RAG se justifica por costo,
+   por escala (ABO completo son 147 mil productos), por actualización (un alta es un insert) y
+   porque el modelo de imagen necesita igual las fotos de los elegidos. No lo medimos de punta
+   a punta.
 2. **¿Dónde está la G?** `choose` es el generador: elige y explica, con el contexto recuperado.
    La imagen es una segunda generación aumentada con las fotos recuperadas.
 3. **El 0,69, ¿es del sistema que corre?** No: es el techo de una técnica aislada. El flujo
