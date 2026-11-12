@@ -1,0 +1,53 @@
+{
+  "answer": {
+    "prompt": "Image 1 is the room to edit; keep its framing, camera, walls, floor, window and light exactly as they are. Images 2\u20136 are each one product to add, and nothing else may be added. Place everything at the back of the room. The floor in the near half of the room stays empty.\n\nImage 2 (desk): against the far window wall, in front of the left glass panel. It runs parallel to the glass, and its long side spans about a fifth of the image width.\n\nImage 3 (chair): pulled up to that desk, facing the window, with its back toward the camera.\n\nImage 4 (bookcase): flat against the white right wall. It starts at the back corner and ends just before the light switches, stands nearly to the ceiling, and its doors face left into the room.\n\nImage 5 (rocking armchair): in the back-right corner, between the window's right edge and the bookcase. It is angled toward the camera and appears about a seventh of the image width.\n\nImage 6 (floor lamp): just beside the armchair, toward the window, with its shade arching over the seat.\n\nCopy each product's design exactly as in its photo: the same shape, proportions, colors, materials and details, not a similar model.\n\nThe product photos are studio catalog shots, often renders, and give the design only. Each product must look photographed in this room by this camera. Daylight comes from the window at the back-left, so the sides facing the window are lit and the camera-facing and right sides are softly shaded. Match the room's white balance, contrast, grain and sharpness. Add contact shadows on the oak floor and the subtle creases and wear of real fabric and wood.\n\nOutput a realistic photograph, not a render.",
+    "placements": [
+      {
+        "id": "302.990.70",
+        "where": "back wall, before left window panel"
+      },
+      {
+        "id": "abo-B07B7DKRVM",
+        "where": "at desk, facing window"
+      },
+      {
+        "id": "990.234.08",
+        "where": "right wall, corner to switches"
+      },
+      {
+        "id": "490.904.81",
+        "where": "back-right corner by window"
+      },
+      {
+        "id": "302.865.67",
+        "where": "beside armchair, window side"
+      }
+    ]
+  },
+  "model": "claude-opus-5-5",
+  "cost_usd": 0.040336,
+  "prompt": "scene_prompt_v2",
+  "meta": {
+    "status": "completed",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 4669,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1083,
+      "output_tokens_details": {
+        "thinking_tokens": 383
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "images": 6,
+    "latency_s": 11.92
+  },
+  "text": "{\"prompt\": \"Image 1 is the room to edit; keep its framing, camera, walls, floor, window and light exactly as they are. Images 2\u20136 are each one product to add, and nothing else may be added. Place everything at the back of the room. The floor in the near half of the room stays empty.\\n\\nImage 2 (desk): against the far window wall, in front of the left glass panel. It runs parallel to the glass, and its long side spans about a fifth of the image width.\\n\\nImage 3 (chair): pulled up to that desk, facing the window, with its back toward the camera.\\n\\nImage 4 (bookcase): flat against the white right wall. It starts at the back corner and ends just before the light switches, stands nearly to the ceiling, and its doors face left into the room.\\n\\nImage 5 (rocking armchair): in the back-right corner, between the window's right edge and the bookcase. It is angled toward the camera and appears about a seventh of the image width.\\n\\nImage 6 (floor lamp): just beside the armchair, toward the window, with its shade arching over the seat.\\n\\nCopy each product's design exactly as in its photo: the same shape, proportions, colors, materials and details, not a similar model.\\n\\nThe product photos are studio catalog shots, often renders, and give the design only. Each product must look photographed in this room by this camera. Daylight comes from the window at the back-left, so the sides facing the window are lit and the camera-facing and right sides are softly shaded. Match the room's white balance, contrast, grain and sharpness. Add contact shadows on the oak floor and the subtle creases and wear of real fabric and wood.\\n\\nOutput a realistic photograph, not a render.\", \"placements\": [{\"id\": \"302.990.70\", \"where\": \"back wall, before left window panel\"}, {\"id\": \"abo-B07B7DKRVM\", \"where\": \"at desk, facing window\"}, {\"id\": \"990.234.08\", \"where\": \"right wall, corner to switches\"}, {\"id\": \"490.904.81\", \"where\": \"back-right corner by window\"}, {\"id\": \"302.865.67\", \"where\": \"beside armchair, window side\"}]}"
+}

@@ -1,0 +1,136 @@
+{
+ "corridas": 11,
+ "productos": 75,
+ "detectados": 73,
+ "identificados": 32,
+ "presencia": 0.9733,
+ "identificados@1": 0.4267,
+ "coseno_medio": 0.4791,
+ "ambiente_al_primer_intento": 6,
+ "ambiente_conservado": 8,
+ "intentos": 20,
+ "costo_usd": 1.6,
+ "por_corrida": [
+  {
+   "corrida": "escena-alvear-escritorio",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 2,
+   "coseno_medio": 0.5108,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-alvear-living-comedor",
+   "productos": 15,
+   "detectados": 14,
+   "identificados": 4,
+   "coseno_medio": 0.3661,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "escena-caballito-comedor",
+   "productos": 4,
+   "detectados": 4,
+   "identificados": 1,
+   "coseno_medio": 0.4559,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": true,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "escena-caballito-living",
+   "productos": 8,
+   "detectados": 7,
+   "identificados": 5,
+   "coseno_medio": 0.5475,
+   "intentos": 2,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": true,
+   "costo_usd": 0.16
+  },
+  {
+   "corrida": "escena-experimento-lectura",
+   "productos": 7,
+   "detectados": 7,
+   "identificados": 3,
+   "coseno_medio": 0.4802,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-publica-comedor-clasico-moderno",
+   "productos": 4,
+   "detectados": 4,
+   "identificados": 1,
+   "coseno_medio": 0.5205,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-publica-estudio-sobrio",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 4,
+   "coseno_medio": 0.716,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-publica-living-bohemio",
+   "productos": 9,
+   "detectados": 9,
+   "identificados": 5,
+   "coseno_medio": 0.5031,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-publica-living-clasico",
+   "productos": 6,
+   "detectados": 6,
+   "identificados": 4,
+   "coseno_medio": 0.5153,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "escena-publica-living-japandi",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 2,
+   "coseno_medio": 0.5053,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "escena-publica-loft-industrial",
+   "productos": 7,
+   "detectados": 7,
+   "identificados": 1,
+   "coseno_medio": 0.3527,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  }
+ ]
+}

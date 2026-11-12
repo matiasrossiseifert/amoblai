@@ -1,0 +1,148 @@
+{
+ "corrida": "escena-publica-comedor-clasico-moderno",
+ "imagen": "final.png",
+ "generador": "nano_banana_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B076NNYB3P",
+   "kind": "dining table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.597,
+   "box": [
+    428,
+    487,
+    754,
+    781
+   ],
+   "puesto": 2,
+   "entre": 176,
+   "coseno": 0.4106,
+   "mas_parecido": "abo-B002CM3J2A"
+  },
+  {
+   "id": "abo-B07QJ24FSL",
+   "kind": "dining chair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.505,
+   "box": [
+    431,
+    474,
+    621,
+    766
+   ],
+   "puesto": 3,
+   "entre": 175,
+   "coseno": 0.6221,
+   "mas_parecido": "abo-B07WZDDQFB"
+  },
+  {
+   "id": "abo-B07GNSXX6B",
+   "kind": "pendant lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "lamp",
+   "score_detector": 0.599,
+   "box": [
+    535,
+    7,
+    689,
+    331
+   ],
+   "puesto": 2,
+   "entre": 172,
+   "coseno": 0.6655,
+   "mas_parecido": "abo-B08B8TV5PR"
+  },
+  {
+   "id": "abo-B07HSBD8DM",
+   "kind": "sideboard",
+   "categoria": "cabinet",
+   "detectado": true,
+   "detector": "chest of drawers",
+   "score_detector": 0.369,
+   "box": [
+    722,
+    464,
+    980,
+    652
+   ],
+   "puesto": 1,
+   "entre": 95,
+   "coseno": 0.3839,
+   "mas_parecido": "abo-B07HSBD8DM"
+  }
+ ],
+ "fidelidad": {
+  "productos": 4,
+  "detectados": 4,
+  "presencia": 1.0,
+  "coseno_medio": 0.5205,
+  "identificados@1": 0.25,
+  "mrr": 0.5833
+ },
+ "inventadas": [
+  {
+   "detector": "curtains",
+   "categoria": "deco",
+   "score": 0.322,
+   "box": [
+    341,
+    346,
+    448,
+    467
+   ]
+  }
+ ],
+ "repetidas": [
+  {
+   "detector": "chair",
+   "categoria": "chair",
+   "score": 0.517,
+   "box": [
+    649,
+    485,
+    848,
+    794
+   ]
+  },
+  {
+   "detector": "chair",
+   "categoria": "chair",
+   "score": 0.365,
+   "box": [
+    680,
+    460,
+    820,
+    713
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.8614,
+  "ssim_fuera_de_los_muebles": 0.9751,
+  "fraccion_fuera_de_los_muebles": 0.6756,
+  "sift_puntos_original": 747,
+  "sift_matches": 428,
+  "sift_inliers": 413,
+  "sift_reencontrados": 0.5529,
+  "sift_desplazamiento_mediano": 0.0
+ },
+ "pedido_imagen": {
+  "pedido": "En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual, cálido.",
+  "siglip_final": 0.1207,
+  "siglip_vacia": 0.1003,
+  "delta": 0.0204,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0202
+ }
+}

@@ -1,0 +1,45 @@
+{
+  "generator": "nano_banana_2",
+  "image": "final.png",
+  "pending": false,
+  "model": "fal-ai/nano-banana-2/edit",
+  "cost_usd": 0.16,
+  "meta": {
+    "endpoint": "fal-ai/nano-banana-2/edit",
+    "request_id": "01a1d139-bb95-7bf1-a045-654407ee4e3e",
+    "resolution": "1K",
+    "aspect_ratio": "auto",
+    "images_in": 9,
+    "description": "",
+    "latency_s": 14.9,
+    "cost_note": "precio configurado: fal no devuelve el costo"
+  },
+  "attempts": [
+    {
+      "image": "final_intento_1.png",
+      "cost_usd": 0.08,
+      "ok": false,
+      "ssim": 0.5575,
+      "sift_inliers": 36,
+      "sift_reencontrados": 0.0955,
+      "sift_desplazamiento_mediano": 0.0399
+    },
+    {
+      "image": "final_intento_2.png",
+      "cost_usd": 0.08,
+      "ok": true,
+      "ssim": 0.6666,
+      "sift_inliers": 67,
+      "sift_reencontrados": 0.1777,
+      "sift_desplazamiento_mediano": 0.0025
+    }
+  ],
+  "room_check": {
+    "image": "final_intento_2.png",
+    "ok": true,
+    "ssim": 0.6666,
+    "sift_inliers": 67,
+    "sift_reencontrados": 0.1777,
+    "sift_desplazamiento_mediano": 0.0025
+  }
+}
