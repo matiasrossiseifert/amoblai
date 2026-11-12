@@ -1,41 +1,61 @@
 """Arma docs/presentacion/amoblai.html: un solo archivo, con las imágenes y los gráficos adentro,
 desde los resultados guardados en datos/resultados/ (ningún número está escrito a mano, salvo los
-que vienen de docs/EXPERIMENTOS.md y lo dicen) y los prompts reales de src/amoblai/prompts/.
+de DOC, que solo están en los documentos y dicen de dónde salen) y los prompts reales de
+src/amoblai/prompts/.
 
     uv run python docs/presentacion/build.py
 
-El orden: el producto; el recorrido por las once fases del pipeline, con un mapa arriba que se va
-encendiendo, y el mapa de los experimentos; cómo medimos; un experimento por lámina (con su
-minimapa); el cierre. También escribe el guion (guion.md), con las notas de cada lámina.
+El orden (el de la revisión del 2026-11-12, docs/REVISION.md): el producto y por qué es un RAG; el
+recorrido por las once fases del pipeline, con un mapa arriba que se va encendiendo, siguiendo una
+corrida de la configuración final; los desafíos; cómo evaluamos; los experimentos por su ranking
+(los que tienen lámina propia, el camino incremental y los de trámite, con su minimapa); el
+Ejercicio 4 (versión 1 y versión 2); el cierre. También escribe el guion (guion.md), con las notas
+de cada lámina.
 """
 
 from __future__ import annotations
 
 import glob
+import gzip
+import io
 import json
 import re
+import statistics
 import sys
+from math import comb
 from pathlib import Path
+
+import yaml
+from PIL import Image, ImageOps
 
 sys.path.insert(0, str(Path(__file__).parent))
 from kit import (  # noqa: E402
+    BANCO,
     FASES,
     FKEYS,
     FNAME,
     PINES,
     ROOT,
+    TRAMITE,
+    arrowhead,
     esc,
     hbars,
     img,
     lines,
     num,
+    pin,
     pin_inline,
     pipeline,
-    prompt_body,
     prompt_card,
     route,
     versions,
 )
+
+from amoblai.config import load_config  # noqa: E402
+from amoblai.evaluation.retrieval import paired_difference  # noqa: E402
+from amoblai.infra.budget import purpose  # noqa: E402
+from amoblai.rag.filters import Filters  # noqa: E402
+from amoblai.rag.hybrid import visual_query  # noqa: E402
 
 R = ROOT / "datos" / "resultados"
 OUT = Path(__file__).with_name("amoblai.html")
@@ -50,9 +70,12 @@ def load(p: str | Path) -> dict | None:
         return None
 
 
+def runs(suffix: str) -> list[Path]:
+    return sorted(d for d in (R / "evaluacion").iterdir() if d.name.endswith(suffix) and (d / "metricas.json").exists())
+
+
 def latest(suffix: str) -> Path:
-    runs = sorted(d for d in (R / "evaluacion").iterdir() if d.name.endswith(suffix))
-    return runs[-1]
+    return runs(suffix)[-1]
 
 
 def jsonl(p: str | Path) -> list[dict]:
@@ -60,48 +83,165 @@ def jsonl(p: str | Path) -> list[dict]:
 
 
 # -- datos ---------------------------------------------------------------------------------------
-ABL_DIR = latest("_ablacion-retrieval")
+# El buscador, sobre el ground truth de IKEA (549 consultas con respuesta, catálogo de 819).
+ABL_DIR = latest("_ablacion-retrieval")  # la grilla: embedder, dimensión, splitting, base vectorial
 ABL = load(ABL_DIR / "metricas.json")
-RER_DIR = latest("_ablacion-reranking")
+RER_DIR = latest("_ablacion-reranking")  # un VLM ordena el top-10 mirando las fotos
 RER = load(RER_DIR / "metricas.json")
+CAM = load(latest("_ablacion-camino") / "metricas.json")  # el camino incremental, un cambio por paso
+CON = load(latest("_ablacion-consulta") / "metricas.json")  # la ficha contra la frase natural
+HIB_DIR = latest("_ablacion-hibrido")  # léxica, por foto y fusiones
+HIB = load(HIB_DIR / "metricas.json")
+HIB_R = [load(latest(f"_ablacion-hibrido-{r}") / "metricas.json") for r in ("r2", "r3")]  # otros dos redactores
+EMB = load(latest("_ablacion-embedders") / "metricas.json")  # embedders con el filtro del flujo, exacto y por familia
+RLOC = load(latest("_ablacion-reranking-local") / "metricas.json")  # Qwen3-Reranker
+LIN = load(latest("_ablacion-lineas") / "metricas.json")  # qué líneas de la descripción hacen el trabajo
+TODOS_DIR = latest("_ablacion-catalogo-todos")  # las mismas consultas con ABO de distractores
 CURVA = load(R / "evaluacion_candidatos" / "curva_k.json")
 GRAD = load(R / "evaluacion_graduada" / "graduada.json")
-ESP = load(R / "evaluacion_espacio" / "espacio.json")
 CAT_OLD = load(R / "evaluacion" / "20261023-173217_ablacion-retrieval" / "metricas.json")
 CAT_NEW = load(latest("_ablacion-catalogo-revisado") / "metricas.json")
-E2E = {
-    Path(f).stem: load(f) for f in sorted(glob.glob(str(R / "punta_a_punta" / "*" / "juez_*.json")))
-}
-REPL = {
-    d.name.split("_")[-1]: load(d / "metricas.json")
-    for d in sorted((R / "evaluacion").iterdir())
-    if "reproducibilidad" in d.name
-}
+# El flujo entero, sobre ambientes vacíos reales: el juez de listas y el diagnóstico sin juez.
+E2E = {Path(f).stem: load(f) for f in sorted(glob.glob(str(R / "punta_a_punta" / "*" / "juez_*.json")))}
+DIAG = load(R / "punta_a_punta" / "hibrida" / "diagnostico.json")
+DIAG_CAT = load(R / "punta_a_punta" / "catalogos" / "diagnostico.json")
+RESP = load(R / "evaluacion_respuesta" / "resumen.json")  # faithfulness y answer relevance (jueces v2)
+REPLICA = load(R / "replica" / "living-dagarna" / "resultados.json")
 ITEMS = {x["id"]: x for x in jsonl("datos/procesados/items.jsonl")}
 DESC = {x["id"]: x for x in jsonl("datos/catalogo/descripciones.jsonl")}
-ABO_N = len(jsonl("datos/catalogo/abo/descripciones.jsonl"))
+ABO_DESC = jsonl("datos/catalogo/abo/descripciones.jsonl")
+ABO_N = len(ABO_DESC)
+LEDGER = jsonl("datos/resultados/gastos.jsonl")
+CFG = load_config(ROOT / "datos" / "configs" / "amoblai.yaml")
 
-# La corrida que sigue el recorrido: el living de Caballito, con la configuración final del flujo
-# (search_query_v4, 5 candidatos, choose_combination_v2, scene_prompt_libre_v4, control SIFT).
-CAB = R / "amoblar" / "caballito-living"
-CAB_REQ = load(CAB / "request.json")["request"]
-CAB_PLAN = load(CAB / "1_searches.json")
-CAB_FOUND = load(CAB / "2_candidates.json")
-CAB_CHOICE = load(CAB / "3_choice.json")
-CAB_SCENE = load(CAB / "4_scene.json")
-CAB_IMG = load(CAB / "5_image.json")
-EST = R / "amoblar" / "experimento-buen-pedido-estricto"
+V1 = "qwen3|description|filtro-kind"  # la búsqueda de la versión 1: el coseno, con filtro por kind
+V2 = V1 + "|+bm25+siglip2"  # la de la versión 2 (la del flujo): densa + léxica + foto
+BASE = "qwen3|description|filtro-type"  # la base de la grilla de 2026-10 (filtro por tipo)
+
+# Lo que solo está en los documentos (no hay un archivo de resultados del que leerlo).
+DOC = {
+    "otro_kind": 0.11,  # EXPERIMENTOS.md, T1 (corrección): con filtro por tipo, candidatos de otro kind en los 11 ambientes
+    "con_variantes": 0.69,  # EXPERIMENTOS.md, T6g: consultas cuyo producto tiene variantes del mismo modelo
+    "abo_listados": "147.702",  # EXPERIMENTOS.md, T1f
+    "catalogo_268": 0.6364,  # EXPERIMENTOS.md, T1: hit@1 con el primer catálogo de 268 productos
+    "generador_v1": ("0,89–0,96", "0,69–0,73"),  # EXPERIMENTOS.md, T1d: faithfulness y answer relevance con los jueces viejos
+}
+
+# Las corridas del flujo con la configuración final (catálogo IKEA + ABO, búsqueda híbrida).
+AMO = R / "amoblar"
+LEC = AMO / "final-experimento-lectura"  # el producto: el cuarto de un compañero
+RUN = AMO / "final-publica-loft-industrial"  # la que sigue el recorrido: pasa el control al primer intento
+RUN_REQ = load(RUN / "request.json")["request"]
+RUN_PLAN = load(RUN / "1_searches.json")
+RUN_FOUND = load(RUN / "2_candidates.json")
+RUN_CHOICE = load(RUN / "3_choice.json")
+RUN_SCENE = load(RUN / "4_scene.json")
+RUN_IMG = load(RUN / "5_image.json")
+RUN_MET = load(RUN / "6_metricas_imagen.json")
+CLA = AMO / "final-publica-living-clasico"  # una que el control rechazó en los tres intentos
+CLA_IMG = load(CLA / "5_image.json")
+FINALES = [
+    {"slug": d.name.removeprefix("final-"), "dir": d, "img": load(d / "5_image.json"), "met": load(d / "6_metricas_imagen.json")}
+    for d in sorted(AMO.glob("final-*"))
+]
+
+# Los ambientes vacíos y el crédito de las fotos públicas (las propias no llevan fuente).
+AMBIENTES = yaml.safe_load((ROOT / "datos/ambientes_vacios/pedidos.yaml").read_text())["ambientes"]
+PUB = {f["archivo"]: f for f in yaml.safe_load((ROOT / "datos/ambientes_vacios/publicas.yaml").read_text())["fotos"]}
+FOTO = {r["slug"]: r["foto"] for r in AMBIENTES}
 
 
-def m(key: str, src: dict | None = None) -> dict:
-    return (src or ABL)[key]
+def credito(*slugs: str) -> str:
+    """Autor y licencia de las fotos públicas de esos ambientes (publicas.yaml), sin repetir."""
+    out = []
+    for s in slugs:
+        f = PUB[FOTO[s]]
+        c = f'{f["autor"]} ({f["licencia"]})'
+        if c not in out:
+            out.append(c)
+    return "; ".join(esc(c) for c in out)
 
 
-BASE = "qwen3|description|filtro-type"
+PIE = "amoblai · TP 73.69 LLM · ITBA 2026"
+
+
+def pie(*slugs: str) -> str:
+    """El pie de una lámina que muestra fotos públicas: con su crédito."""
+    return f'{PIE} · Foto{"s" if len(slugs) > 1 else ""} de{" los ambientes" if len(slugs) > 1 else "l ambiente"}: {credito(*slugs)}'
 
 
 def ci(x: dict, k: str = "hit@1") -> tuple[float, float]:
     return tuple(x[f"{k}_ic95"])
+
+
+def sg(x: float, d: int = 3) -> str:
+    """+0,075 o −0,005: con signo."""
+    return ("−" if x < 0 else "+") + num(abs(x), d)
+
+
+def ic(lo: float, hi: float, d: int = 3) -> str:
+    """[0,041; 0,111]; con signos cuando no es todo positivo: [−0,015; +0,006]."""
+    return f"[{num(lo, d)}; {num(hi, d)}]" if lo >= 0 else f"[{sg(lo, d)}; {sg(hi, d)}]"
+
+
+def dif(v: dict, k: str = "hit@1", d: int = 3, flip: bool = False) -> str:
+    """Una diferencia pareada con su IC 95%: +0,075 [0,041; 0,111]. `flip`: al revés (b − a)."""
+    x, (lo, hi) = v[k], v[f"{k}_ic95"]
+    if flip:
+        x, lo, hi = -x, -hi, -lo
+    return f"{sg(x, d)} {ic(lo, hi, d)}"
+
+
+def nb(s: str) -> str:
+    """Sin cortes de línea adentro (una diferencia con su intervalo)."""
+    return f'<span style="white-space:nowrap">{s}</span>'
+
+
+_RANK: dict[Path, dict[str, list[dict]]] = {}
+
+
+def rankings(run: Path) -> dict[str, list[dict]]:
+    """Los rankings guardados de una corrida de evaluación, por método."""
+    if run not in _RANK:
+        f = run / "rankings.jsonl.gz"
+        by: dict[str, list[dict]] = {}
+        with gzip.open(f, "rt") if f.exists() else open(run / "rankings.jsonl") as fh:
+            for line in fh:
+                r = json.loads(line)
+                by.setdefault(r["method"], []).append(r)
+        _RANK[run] = by
+    return _RANK[run]
+
+
+def paired(run: Path, a: str, b: str, run_b: Path | None = None) -> dict:
+    """a − b sobre las mismas consultas, con su IC 95% por bootstrap de ambientes. Es la cuenta de
+    `vs_base` (evaluation/retrieval.py, misma semilla), hecha acá para las corridas anteriores a
+    esa columna, desde sus rankings guardados."""
+    return paired_difference(rankings(run)[a], rankings(run_b or run)[b])
+
+
+def p_signos(a: int, b: int) -> float:
+    """Test de signos a dos colas sobre los ambientes decididos (a ganados, b perdidos)."""
+    n, k = a + b, max(a, b)
+    return min(1.0, 2 * sum(comb(n, i) for i in range(k, n + 1)) / 2**n)
+
+
+def media_desvio(xs: list[float]) -> str:
+    return f"{num(statistics.mean(xs), 3)} ± {num(statistics.stdev(xs), 3)}"
+
+
+def recorte(path: Path, box: list[float], max_side: int = 300, pad: float = 0.04) -> str:
+    """Un pedazo de una imagen (la caja de una detección), embebido."""
+    import base64
+
+    im = ImageOps.exif_transpose(Image.open(path)).convert("RGB")
+    x0, y0, x1, y1 = box
+    px, py = (x1 - x0) * pad, (y1 - y0) * pad
+    im = im.crop((max(0, x0 - px), max(0, y0 - py), min(im.width, x1 + px), min(im.height, y1 + py)))
+    im.thumbnail((max_side, max_side), Image.Resampling.LANCZOS)
+    buf = io.BytesIO()
+    im.save(buf, format="JPEG", quality=80, optimize=True)
+    return f'<img alt="" src="data:image/jpeg;base64,{base64.b64encode(buf.getvalue()).decode()}">'
 
 
 # -- slides --------------------------------------------------------------------------------------
@@ -127,17 +267,17 @@ def slide(
         head += f"<h2>{title}</h2>"
     SLIDES.append(
         f'<section class="slide {cls}">{head}{body}'
-        f'<div class="foot"><span>{foot or "amoblai · TP 73.69 LLM · ITBA 2026"}</span><span class="n"></span></div></section>'
+        f'<div class="foot"><span>{foot or PIE}</span><span class="n"></span></div></section>'
     )
 
 
-def section(kicker: str, title: str, text: str = "", notes: str = "", mins: float = 0.2) -> None:
+def section(kicker: str, title: str, text: str = "", notes: str = "", mins: float = 0.1) -> None:
     body = f'<div class="kicker">{kicker}</div><h1>{title}</h1><p style="margin-top:18px">{text}</p>'
     slide(body, "section", notes=notes, mins=mins)
     NOTES[-1].update(kicker=kicker, title=title)  # el encabezado va en el cuerpo, no en slide()
 
 
-def fase(key: str, title: str, body: str, take: str, notes: str, mins: float) -> None:
+def fase(key: str, title: str, body: str, take: str, notes: str, mins: float, foot: str = "") -> None:
     """Una lámina del recorrido: arriba el mapa con esta fase encendida y las anteriores vistas;
     abajo, la frase de cierre."""
     i = FKEYS.index(key)
@@ -146,13 +286,14 @@ def fase(key: str, title: str, body: str, take: str, notes: str, mins: float) ->
         cls="fase",
         kicker=f"El recorrido · fase {i + 1} de {len(FASES)} · {FNAME[key]}",
         title=title,
+        foot=foot,
         notes=notes,
         mins=mins,
     )
 
 
 def dec(n: int | None, html: str) -> str:
-    """Una decisión con el pin del experimento que la tomó (o sin pin)."""
+    """Una decisión con el pin del experimento que la midió (o sin pin)."""
     p = pin_inline(n) if n else '<span class="none"></span>'
     return f'<div class="dec">{p}<div>{html}</div></div>'
 
@@ -168,28 +309,21 @@ def experiment(
     why: str = "",
     notes: dict | None = None,
     mins: float = 1.2,
+    foot: str = "",
 ) -> None:
-    """Una slide por experimento, en el orden en que se cuenta: arriba el minimapa (qué fase
-    decidió, con su pin), por qué lo hicimos y qué queríamos ver; a la izquierda, el experimento.
-    Con la flecha aparecen los resultados (paso 1) y después la decisión (paso 2)."""
+    """Una slide por experimento, en el orden en que se cuenta: arriba el minimapa (a qué fase le
+    hizo la pregunta, con su pin), por qué lo hicimos y qué queríamos ver; a la izquierda, qué se
+    comparó. Con la flecha aparecen los resultados (paso 1) y después la decisión (paso 2)."""
     left = left.replace('<div class="find"', '<div data-step="1" class="find"')
     body = (
         (route(lit=fases, pins={f: [int(n)] for f in fases}) if fases else "")
         + (f'<p class="why"><b>Por qué:</b> {why}</p>' if why else "")
         + f'<p class="q">{question}</p>'
-        + f'<div class="row grow"><div class="grow"><div class="coltag">El experimento</div>{left}</div>'
+        + f'<div class="row grow"><div class="grow"><div class="coltag">Qué se comparó</div>{left}</div>'
         + f'<div data-step="1"><div class="coltag">Resultados</div>{right}</div></div>'
         + f'<div class="decision" data-step="2">{decision}</div>'
     )
-    slide(body, kicker=f"Experimento {n}", title=title, notes=notes or {}, mins=mins)
-
-
-def bars_methods(keys: list[tuple[str, str]], hl: str, metric: str = "hit@1", src: dict | None = None, **kw) -> str:
-    rows = []
-    for key, label in keys:
-        x = m(key, src)
-        rows.append({"label": label, "value": x[metric], "ci": ci(x, metric) if f"{metric}_ic95" in x else None, "hl": key == hl})
-    return hbars(rows, **kw)
+    slide(body, kicker=f"Experimento {n}", title=title, notes=notes or {}, mins=mins, foot=foot)
 
 
 def miles(n: int) -> str:
@@ -210,6 +344,49 @@ def lines8(text: str) -> str:
     return f'<div class="lines8">{"".join(rows)}</div>'
 
 
+def elegidos(found: dict, choice: dict) -> list[tuple[dict, int, int]]:
+    """Lo que eligió una corrida: (el producto, cuántas unidades, su puesto en la búsqueda)."""
+    out = []
+    for p, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
+        q = int(c.get("quantity", 1) or 0)
+        if q:
+            ids = [h["id"] for h in p["candidates"]]
+            out.append((p["candidates"][ids.index(c["id"])], q, ids.index(c["id"]) + 1))
+    return out
+
+
+# Los números que se repiten en varias láminas.
+B1, B2 = CAM[V1], CAM[V2]  # versión 1 y versión 2 de la búsqueda, sobre el ground truth
+D21 = HIB[V2]["vs_base"]  # versión 2 − versión 1, pareado
+N_ANS, N_BUS = B2["answerable"], B2["searches"]
+N_AMB = len({r["room_id"] for r in rankings(HIB_DIR)[V1]})  # ambientes de IKEA con consultas
+N_AMB_ANS = len({r["room_id"] for r in rankings(HIB_DIR)[V1] if r["relevant"]})  # con alguna con respuesta
+JV = E2E["juez_densa_vs_hibrida"]  # versión 1 contra versión 2, de punta a punta
+JA = E2E["juez_densa_vs_azar_7ambientes"]  # con búsqueda contra sin búsqueda
+JC = E2E["juez_ikea_vs_todos"]  # IKEA contra IKEA + ABO
+votos_v = [v for d in JV["detalle"] for v in d["votos"]]
+IMG_TOT = {
+    "productos": sum(len(f["met"]["productos"]) for f in FINALES),
+    "detectados": sum(bool(p["detectado"]) for f in FINALES for p in f["met"]["productos"]),
+    "reconocidos": sum(p.get("puesto") == 1 for f in FINALES for p in f["met"]["productos"]),
+    "coseno": statistics.mean(p["coseno"] for f in FINALES for p in f["met"]["productos"] if p.get("coseno") is not None),
+    "pasan": sum(bool(f["img"]["room_check"]["ok"]) for f in FINALES),
+    "pasan_al_primero": sum(bool(f["img"]["attempts"][0]["ok"]) for f in FINALES),
+    "intentos": sum(len(f["img"]["attempts"]) for f in FINALES),
+}
+
+
+def _avg(step: str) -> float:
+    """El costo medio de un paso del flujo desde el 10/11 (catálogo IKEA + ABO), del registro."""
+    v = [r["cost_usd"] for r in LEDGER if r.get("time", "") >= "2026-11-10" and not r.get("cached") and r["step"] == step]
+    return sum(v) / max(1, len(v))
+
+
+c_plan, c_choose = _avg("furnish.plan"), _avg("furnish.choose")
+c_img = CFG.furnish.generators["nano_banana_2"]["usd_per_image"]["1K"]
+c_pedido = c_plan + c_choose + c_img
+
+
 # ================================================================================================
 # El producto
 # ================================================================================================
@@ -222,16 +399,16 @@ slide(
     '<p style="font-size:25px;margin-top:16px" class="muted">Amoblar un ambiente vacío con productos reales: '
     "RAG sobre un catálogo de muebles, un VLM que elige y un modelo de imagen que lo muestra.</p>"
     '<p style="margin-top:40px;font-size:17px">Juan Bautista Albertoni Salini · Matias Juan Rossi Seifert · Junior Rambau</p></div>'
-    f'<div class="hero" style="width:470px;display:grid;gap:10px">{img(EST / "room.jpg", 1000, cls="photo")}{img(EST / "final.png", 1000, cls="photo")}</div>'
+    f'<div class="hero" style="width:470px;display:grid;gap:10px">{img(LEC / "room.jpg", 1000, cls="photo")}{img(LEC / "final.png", 1000, cls="photo")}</div>'
     "</div>",
     notes="Somos Juan Bautista, Matías y Junior. amoblai responde una pregunta concreta: tengo este ambiente vacío, ¿qué compro y cómo queda? Sacás una foto, escribís qué querés, y te devuelve una lista de productos reales de un catálogo y la imagen del mismo ambiente con esos productos.",
-    mins=0.5,
+    mins=0.35,
 )
 
 # 2. El problema
 slide(
     '<div class="row center" style="gap:40px">'
-    f'<div style="width:560px">{img(EST / "room.jpg", 1100, cls="photo")}<div class="cap">Un ambiente vacío real (foto de un compañero).</div></div>'
+    f'<div style="width:560px">{img(LEC / "room.jpg", 1100, cls="photo")}<div class="cap">Un ambiente vacío real (foto de un compañero).</div></div>'
     '<div class="grow">'
     "<p>Mudarse a un lugar vacío obliga a decidir qué comprar sin poder verlo puesto. "
     "Los catálogos muestran cada mueble suelto, sobre fondo blanco; las fotos de ambientes, la casa de otro.</p>"
@@ -242,52 +419,53 @@ slide(
     "</div></div>",
     kicker="El problema",
     title="¿Qué compro para este ambiente, y cómo queda?",
-    mins=0.7,
-    notes="Cuando te mudás a un lugar vacío tenés que decidir qué comprar sin poder verlo puesto. Los catálogos muestran cada mueble suelto, sobre fondo blanco, y las fotos de ambientes muestran la casa de otro. Nosotros queremos responder, para este ambiente y este pedido: qué productos reales, que se puedan comprar, van; cuántos y de qué medida; y cómo queda el ambiente con ellos.",
+    mins=0.4,
+    notes="Cuando te mudás a un lugar vacío tenés que decidir qué comprar sin poder verlo puesto. Los catálogos muestran cada mueble suelto, sobre fondo blanco, y las fotos de ambientes muestran la casa de otro. Queremos responder, para este ambiente y este pedido: qué productos reales van, cuántos, y cómo queda el ambiente con ellos.",
 )
 
-# 3. Qué hace
-found = load(EST / "2_candidates.json")
-choice = load(EST / "3_choice.json")
-picks = []
-for p, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
-    q = int(c.get("quantity", 1) or 0)
-    if q:
-        h = next(h for h in p["candidates"] if h["id"] == c["id"])
-        picks.append((h, q))
+# 3. Qué hace: una corrida de la configuración final sobre ese mismo cuarto
+lec_picks = elegidos(load(LEC / "2_candidates.json"), load(LEC / "3_choice.json"))
+lec_req = load(LEC / "request.json")["request"]
 items = "".join(
     f'<div style="text-align:center">{img(h["photos"][0], 220, cls="photo")}<div class="tiny">{esc(type_line(h["description"]))}{" ×" + str(q) if q > 1 else ""}</div></div>'
-    for h, q in picks[:8]
+    for h, q, _ in lec_picks[:8]
 )
-req = load(EST / "request.json")["request"]
 slide(
     '<div class="row" style="gap:28px">'
-    f'<div style="width:330px"><div class="tag">entrada</div><div style="margin:8px 0">{img(EST / "room.jpg", 700, cls="photo")}</div>'
-    f'<div class="card small" style="padding:12px 14px;font-size:14.5px;line-height:1.35">“{esc(req)}”</div></div>'
+    f'<div style="width:330px"><div class="tag">entrada</div><div style="margin:8px 0">{img(LEC / "room.jpg", 700, cls="photo")}</div>'
+    f'<div class="card small" style="padding:12px 14px;font-size:14.5px;line-height:1.35">“{esc(lec_req)}”</div></div>'
     '<div class="grow"><div class="tag g">salida 1 · la lista de compra</div>'
     f'<div class="grid4" style="margin-top:10px;gap:10px">{items}</div></div>'
-    f'<div style="width:330px"><div class="tag g">salida 2 · el ambiente amoblado</div><div style="margin-top:8px">{img(EST / "final.png", 800, cls="photo")}</div>'
+    f'<div style="width:330px"><div class="tag g">salida 2 · el ambiente amoblado</div><div style="margin-top:8px">{img(LEC / "final.png", 800, cls="photo")}</div>'
     '<div class="cap">Generada con esos productos, en ese mismo ambiente.</div></div>'
     "</div>",
     kicker="El producto",
     title="Foto + pedido → lista de compra + imagen",
-    mins=0.8,
-    notes="Así se usa. La entrada es una foto del ambiente y un pedido en texto libre, como este: un rincón de lectura con una biblioteca alta de madera oscura. La salida son dos cosas: la lista de compra, con productos reales del catálogo y cuántas unidades de cada uno (acá, dos bibliotecas iguales), y la foto del mismo ambiente con esos productos puestos.",
+    mins=0.5,
+    notes=f"Así se usa. La entrada es una foto del ambiente y un pedido en texto libre, como este: un rincón de lectura con una biblioteca alta de madera oscura. La salida son dos cosas: la lista de compra, con productos reales del catálogo, acá {len(lec_picks)}, entre IKEA y Amazon, y la foto del mismo ambiente con esos productos puestos.",
 )
 
-# 4. Por qué RAG
+# 4. Por qué RAG: los tres desafíos de la clase
 slide(
     '<div class="grid3">'
-    '<div class="card"><h3>Un LLM solo</h3><p class="small">Sabe de decoración, pero no qué hay en un catálogo: recomienda "un sillón de cuero coñac" que nadie vende, con medidas inventadas.</p></div>'
-    '<div class="card"><h3>Un modelo de imagen solo</h3><p class="small">Amobla lindo, pero inventa los muebles. No hay nada que comprar: lo que se ve no existe.</p></div>'
-    '<div class="card" style="border-color:var(--accent)"><h3 style="color:var(--accent)">RAG</h3><p class="small">El catálogo es la base de conocimiento. El LLM decide qué hace falta, el retrieval trae candidatos reales y el VLM elige mirando sus fotos. La imagen se genera <b>desde las fotos de los productos elegidos</b>.</p></div>'
+    '<div class="card"><div class="lab">Información actualizada</div><h3>El catálogo cambia; el modelo no se reentrena</h3>'
+    '<p class="small">Un producto nuevo es una fila más en el índice: se describe, se embebe y ya se puede recomendar.</p></div>'
+    '<div class="card"><div class="lab">Información personalizada</div><h3>Este catálogo, este ambiente, este pedido</h3>'
+    f'<p class="small">El LLM no conoce estos {miles(len(ITEMS) + ABO_N)} productos. La búsqueda le trae {CFG.furnish.candidates} candidatos reales por pieza, y elige mirando sus fotos y la del cuarto.</p></div>'
+    '<div class="card" style="border-color:var(--accent)"><div class="lab" style="color:var(--accent)">Sin alucinaciones</div><h3>Solo productos que existen</h3>'
+    '<p class="small">Un LLM solo recomienda "un sillón de cuero coñac" que nadie vende; un modelo de imagen solo inventa los muebles. Acá la lista solo puede tener ids que trajo la búsqueda, y la imagen se genera <b>desde las fotos de los elegidos</b>.</p></div>'
     "</div>"
-    '<p style="margin-top:26px">No es un Q&amp;A: la consulta es una foto y un pedido abierto; la respuesta es una combinación de productos que tiene que funcionar junta, en ese espacio, y una imagen fiel a esa combinación.</p>',
+    '<div class="grid2" style="margin-top:24px;gap:34px">'
+    "<p><b>No es un Q&amp;A.</b> La consulta es una foto y un pedido abierto; la respuesta, una combinación de productos que tiene que funcionar junta, en ese espacio.</p>"
+    "<p><b>Dos generaciones aumentadas</b> con lo recuperado: la lista (qué producto, cuántos y por qué) y la imagen del ambiente amoblado.</p>"
+    "</div>"
+    '<div class="take">Los tres desafíos de la clase: información <b>actualizada</b>, <b>personalizada</b> y <b>sin alucinaciones</b>.</div>',
     kicker="Por qué RAG",
     title="Recomendaciones atadas a productos que existen",
-    mins=0.7,
-    notes="¿Por qué un RAG? Un LLM solo sabe de decoración, pero no qué hay en un catálogo: te recomienda un sillón de cuero coñac que nadie vende. Un modelo de imagen solo amobla lindo, pero inventa los muebles. Con RAG, el catálogo es la base de conocimiento: el LLM decide qué hace falta, el retrieval trae candidatos reales y el VLM elige mirando sus fotos; y la imagen se genera desde las fotos de los productos elegidos. Y no es un Q&A: la consulta es una foto y un pedido abierto, y la respuesta, una combinación que tiene que funcionar junta.",
+    mins=0.8,
+    notes=f"¿Por qué un RAG? Por los tres desafíos de la clase. Información actualizada: el catálogo cambia y el modelo no se reentrena; un producto nuevo es una fila más en el índice. Información personalizada: el LLM no conoce estos {miles(len(ITEMS) + ABO_N)} productos; la búsqueda le trae cinco candidatos reales por pieza. Y sin alucinaciones: un LLM solo recomienda un sillón que nadie vende, y un modelo de imagen solo inventa los muebles; acá la lista solo puede tener productos que trajo la búsqueda, y la imagen se genera desde sus fotos. No es un Q&A: la consulta es una foto y un pedido abierto, y hay dos generaciones aumentadas, la lista y la imagen.",
 )
+
 
 # ================================================================================================
 # Parte 1: el recorrido, fase por fase
@@ -296,27 +474,28 @@ section(
     "Parte 1",
     "El recorrido",
     "Las once fases del pipeline, en orden: qué entra y qué sale de cada una, qué decidimos, con qué modelo, y los prompts que mandamos y cómo los fuimos reescribiendo.",
-    notes="Primero, el recorrido: vamos a pasar por todo el pipeline, fase por fase, con un mapa arriba que se va encendiendo.",
+    notes="Primero, el recorrido: todo el pipeline, fase por fase, con un mapa que se va encendiendo.",
 )
 
 slide(
     pipeline()
     + '<div class="grid2 small" style="margin-top:8px;gap:24px">'
-    "<div><b>Una vez, offline.</b> Entran los productos de dos catálogos, con su foto; sale un índice con un vector y la metadata de cada uno.</div>"
+    "<div><b>Una vez, offline.</b> Entran los productos de dos catálogos, con su foto; sale un índice con la descripción, los vectores y la metadata de cada uno.</div>"
     "<div><b>Por cada pedido.</b> Entran una foto del ambiente vacío y un pedido en texto libre; salen la lista de compra y la foto amoblada.</div>"
     "</div>"
-    '<div class="lab" style="margin-top:22px">Quién hace cada fase</div><div class="who">'
+    '<div class="lab" style="margin-top:22px">Quién hace cada fase</div><div class="who" style="grid-template-columns:repeat(6,1fr)">'
     "<div><b>Opus 5.5</b><span>fases 2, 5 y 7: describe cada producto, planea y elige</span></div>"
-    "<div><b>Qwen3-Embedding-0.6B</b><span>fases 3 y 6: embebe documentos y consultas, local</span></div>"
-    "<div><b>ChromaDB</b><span>fases 3 y 6: el índice HNSW y los filtros</span></div>"
+    "<div><b>Qwen3-Embedding</b><span>fases 3 y 6: embebe descripciones y consultas, local</span></div>"
+    "<div><b>BM25 y SigLIP 2</b><span>fases 3 y 6: las palabras y la foto de cada producto, locales</span></div>"
+    "<div><b>ChromaDB</b><span>fases 3 y 6: guarda los vectores y la metadata de los filtros</span></div>"
     "<div><b>Nano Banana 2</b><span>fase 9: edita la foto, por fal</span></div>"
     "<div><b>SIFT + RANSAC</b><span>fase 10: compara con la foto original</span></div>"
     "</div>"
-    '<div class="take">Por pedido trabajan tres modelos: <b>Opus 5.5</b> en el plan y la elección, y <b>Nano Banana 2</b> en la imagen. Lo demás es local.</div>',
+    '<div class="take">Por pedido se pagan tres llamadas: <b>Opus 5.5</b> en el plan y en la elección, y <b>Nano Banana 2</b> en la imagen. Lo demás corre local.</div>',
     kicker="El recorrido · el mapa",
     title="Once fases: una vez offline, y por cada pedido",
-    notes="Este es el mapa completo, y lo vamos a recorrer fase por fase. Hay dos pipelines. Arriba, lo que se hace una vez, offline: el catálogo, la descripción de cada producto y el índice. Abajo, lo que pasa en cada pedido: entran la foto y el pedido, el plan decide las piezas, la búsqueda trae candidatos del índice, la elección arma el conjunto, y después la escena, la imagen y el control, hasta la lista y la foto amoblada. Por pedido trabajan solo tres modelos: Opus en el plan y la elección, y Nano Banana 2 en la imagen.",
-    mins=0.7,
+    notes="Este es el mapa completo, con dos pipelines. Arriba, lo que se hace una vez, offline: el catálogo, la descripción de cada producto y el índice. Abajo, lo que pasa en cada pedido: entran la foto y el pedido, el plan decide las piezas, la búsqueda trae candidatos, la elección arma la lista, y después la escena, la imagen y el control. Por pedido se pagan solo tres llamadas: Opus en el plan y en la elección, y Nano Banana 2 en la imagen. Lo demás corre local.",
+    mins=0.65,
 )
 
 
@@ -324,14 +503,12 @@ slide(
 def catalog_flow() -> str:
     """Los dos catálogos, de los datos crudos a lo que usa el flujo (números de EXPERIMENTOS.md
     T1c, T1e y T1f, salvo los que se cuentan acá)."""
-    from kit import arrowhead, pin
-
     cw, gap, chh, x0 = 150, 34, 70, 212
     lanes = [
         ("IKEA", ["Tautkute et al., 2017", "uso no comercial"], 24,
          [("2.191", "productos del dataset"), ("268", "primer alcance: cuatro tipos"), ("855", "+ guardado, luz, textiles y deco"), (f"{len(ITEMS)}", "revisado: 36 productos afuera")]),
         ("ABO", ["Amazon Berkeley Objects", "Collins et al., CVPR 2022"], 112,
-         [("147.702", "listados de Amazon"), ("781", "uno por modelo, con tope por kind"), ("759", "sin fotos de relleno"), (f"{ABO_N}", "descriptos, en el alcance")]),
+         [(DOC["abo_listados"], "listados de Amazon"), ("781", "uno por modelo, con tope por kind"), ("759", "sin fotos de relleno"), (f"{ABO_N}", "descriptos, en el alcance")]),
     ]
     out = ['<svg class="pipe" viewBox="0 0 1160 190" width="1160" role="img">']
     for name, sub, y, chips in lanes:
@@ -354,14 +531,12 @@ def catalog_flow() -> str:
                 out.append(f'<text x="{x + 12}" y="{y + 62}" font-size="11.5" fill="var(--muted)">{esc(l2)}</text>')
             if i:
                 out.append(f'<line x1="{x - gap + 3}" y1="{y + chh / 2}" x2="{x - 4}" y2="{y + chh / 2}" stroke="var(--muted)" stroke-width="1.4"/>' + arrowhead(x - 3, y + chh / 2, x - 20, y + chh / 2))
-        if name == "IKEA":
-            out.append(pin(x0 + 2 * (cw + gap) + cw - 14, y + 7, 10, 9))
     fx, fw, fy, fh = 962, 198, 50, 96
     out.append(f'<rect x="{fx}" y="{fy}" width="{fw}" height="{fh}" rx="12" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.6"/>')
     out.append(f'<text x="{fx + 16}" y="{fy + 40}" font-family="Fraunces, Georgia, serif" font-size="32" font-weight="650" fill="var(--accent)">{miles(len(ITEMS) + ABO_N)}</text>')
     out.append(f'<text x="{fx + 16}" y="{fy + 62}" font-size="12.5" fill="var(--ink)">el catálogo del flujo</text>')
     out.append(f'<text x="{fx + 16}" y="{fy + 79}" font-size="11.5" font-family="JetBrains Mono, monospace" fill="var(--muted)">todos.yaml</text>')
-    out.append(pin(fx + fw - 14, fy + 7, 10, 10))
+    out.append(pin(fx + fw - 14, fy + 7, 10, 6))
     lx = x0 + 3 * (cw + gap) + cw
     for y in (24, 112):
         yc = y + chh / 2
@@ -379,20 +554,21 @@ rec = (
     f' <span class="k">"colors":</span> {esc(json.dumps(kivik["colors"]))},\n'
     f' <span class="k">"description":</span> <mark>{esc(json.dumps(kivik["description"]))}</mark>}}'
 )
+ikea_con_medida = sum(any(v is not None for v in (x.get("dimensions_cm") or {}).values()) for x in ITEMS.values()) / len(ITEMS)
 fase(
     "catalogo",
     "Dos catálogos de productos reales, con foto",
     catalog_flow()
     + '<div class="row" style="gap:30px;margin-top:10px">'
-    f'<div style="width:560px"><div class="lab">Un producto de IKEA, como viene</div><div class="code"><div class="ph"><b>items.jsonl</b><span>el sofá que va a elegir el flujo</span></div><pre>{rec}</pre></div></div>'
+    f'<div style="width:560px"><div class="lab">Un producto de IKEA, como viene</div><div class="code"><div class="ph"><b>items.jsonl</b><span>un sofá del catálogo</span></div><pre>{rec}</pre></div></div>'
     '<div class="grow"><div class="lab">Lo que guardamos de cada uno</div>'
     + dec(None, "<b>Fotos</b>: la imagen sale de ellas, y el VLM las mira para describir.")
     + dec(None, "<b>Tipo</b> (14) y <b>kind</b> (44: mesa ratona, lámpara de pie…): el kind es el filtro duro de la búsqueda.")
-    + dec(None, "<b>Medidas</b>, cuando hay: los asientos de IKEA no tienen; ABO, el 90 %.")
+    + dec(None, f"<b>Medidas</b>, cuando hay: en IKEA, el {num(100 * ikea_con_medida, 0)} % (ningún sofá ni sillón); en ABO, el 90 %.")
     + "</div></div>",
     "El texto del vendedor es marketing y faltan medidas: por eso cada producto <b>se describe mirando su foto</b>.",
-    notes="Fase uno, el catálogo. Son dos. El dataset de IKEA de Tautkute y otros: de sus 2.191 productos empezamos con 268 muebles, lo ampliamos a 855 de living y comedor y, revisado, quedaron 819; eso lo decide el experimento 9. Y Amazon Berkeley Objects, un dataset académico con listados reales de Amazon: de casi 150 mil listados quedaron 683. El flujo usa los dos, 1.502 productos, por el experimento 10. De cada uno guardamos las fotos, el tipo, el kind y las medidas cuando hay. Así viene el sofá que va a elegir el flujo: el texto es marketing y no tiene medidas.",
-    mins=0.7,
+    notes=f"Fase uno, el catálogo. Son dos. El dataset de IKEA: de sus 2.191 productos empezamos con 268 muebles, lo ampliamos a 855 de living y comedor y, revisado mirando cada foto, quedaron {len(ITEMS)}. Y Amazon Berkeley Objects, listados reales de Amazon: de casi 150 mil quedaron {ABO_N}. El flujo usa los dos, {miles(len(ITEMS) + ABO_N)} productos. De cada uno guardamos las fotos, el tipo, el kind y las medidas cuando hay. Así viene un sofá de IKEA: el texto es marketing y no tiene medidas.",
+    mins=0.6,
 )
 
 # -- Fase 2: la descripción
@@ -424,20 +600,18 @@ fase(
     )
     + "</div></div>",
     f"{pin_inline(1)} Esto es lo que se indexa: el producto escrito <b>en el mismo formato</b> en que el plan va a escribir la consulta.",
-    notes="Fase dos: la descripción. Un VLM mira la foto de cada producto y lo escribe en ocho líneas fijas: tipo, uso, estilo, materiales, colores, forma, sensación y con qué combina. Es el mismo sofá: a la izquierda, lo que dice IKEA; en el medio, lo que escribió el modelo. El prompt pide exactamente esas ocho líneas, el estilo de una lista cerrada, sin marca, precio ni medidas, y nada de lo que el producto no es, porque el embedding no entiende la negación. La v2 fue para los muebles; la v3, cuando sumamos lámparas, textiles y deco; y una versión por la API para Amazon, que además da el kind y descarta lo que no es de un living. El experimento 1 decidió indexar esto y no el texto del vendedor.",
-    mins=1.0,
+    notes="Fase dos: la descripción. Un VLM mira la foto de cada producto y lo escribe en ocho líneas fijas: tipo, uso, estilo, materiales, colores, forma, sensación y con qué combina. Es el mismo sofá: a la izquierda, lo que dice IKEA; en el medio, lo que escribió el modelo. El prompt pide exactamente esas ocho líneas, sin marca, precio ni medidas, y nada de lo que el producto no es, porque el embedding no entiende la negación. Para Amazon usamos la misma receta, por la API. Es el preprocesamiento que más pesa: lo mide el experimento 1.",
+    mins=0.7,
 )
 
 
 # -- Fase 3: el índice
 def index_flow() -> str:
-    from kit import arrowhead, pin
-
     boxes = [
-        ("La descripción", ["un documento por producto", "8 líneas, unas 80 palabras"], 4),
-        ("Qwen3-Embedding-0.6B", ["local, en CPU (Apache 2.0)", "último token, sin instrucción"], 2),
-        ("Un vector", ["1.024 dimensiones", "norma 1: el producto es el coseno"], 5),
-        ("ChromaDB", ["HNSW, coseno · ef_search 100 · M 16", "+ metadata: tipo, kind y medidas"], 6),
+        ("La descripción", ["un documento por producto", "8 líneas, unas 80 palabras"], 11),
+        ("Qwen3-Embedding-0.6B", ["local, en CPU (Apache 2.0)", "último token, sin instrucción"], 9),
+        ("Un vector", ["1.024 dimensiones", "norma 1: el producto es el coseno"], 10),
+        ("ChromaDB", ["HNSW, coseno · ef_search 100 · M 16", "+ metadata: tipo, kind y medidas"], 12),
     ]
     bw, gap, y, bh = 254, 48, 24, 86
     out = ['<svg class="pipe" viewBox="0 0 1160 114" width="1160" role="img">']
@@ -454,26 +628,26 @@ def index_flow() -> str:
     return "".join(out)
 
 
-v0v1 = load(R / "reporte" / "_v0v1.json") or {"v0": 0.508, "v1": 0.618, "n0": 325, "n1": 207}
+siglip = CFG.rag.embedders["siglip2"]["model"]
 fase(
     "indice",
     "Un vector por producto: Qwen3, local, en ChromaDB",
     index_flow()
     + '<div class="row" style="gap:36px;margin-top:14px">'
-    '<div style="width:640px"><div class="lab">Lo que probamos (lo elegido, en negrita)</div>'
-    + dec(2, "<b>Embedder</b>: hashing de palabras (sin modelo) · BGE-base · <b>Qwen3-Embedding-0.6B</b>")
-    + dec(4, "<b>Splitting</b>: <b>un documento por producto</b> · un chunk por línea · línea contra línea")
-    + dec(5, "<b>Dimensión</b> (Matryoshka): de 32 a 512 · <b>1.024</b> (con 512 alcanza)")
-    + dec(6, "<b>Base</b>: <b>ChromaDB con HNSW</b> · búsqueda exacta con numpy")
+    '<div style="width:610px"><div class="lab">Las preguntas de trámite (lo elegido, en negrita)</div>'
+    + dec(9, "<b>Embedder</b>: hashing (sin modelo) · BM25 · BGE-base · <b>Qwen3-Embedding-0.6B</b>")
+    + dec(11, "<b>Splitting</b>: <b>un documento por producto</b> · un chunk por línea · línea contra línea")
+    + dec(10, "<b>Dimensión</b> (Matryoshka): de 32 a 512 · <b>1.024</b> (con 512 alcanza)")
+    + dec(12, "<b>Base</b>: <b>ChromaDB con HNSW</b> · búsqueda exacta con numpy")
     + "</div>"
-    '<div class="grow"><div class="lab">Antes: la v0 buscaba por imagen</div>'
-    '<p class="small" style="font-size:14.5px;margin-bottom:6px">Grounding DINO y SAM recortaban cada mueble de una foto amoblada; CLIP, SigLIP 2 o DINOv2/v3 buscaban la foto más parecida. En un ambiente vacío no hay nada que recortar.</p>'
-    + hbars([{"label": "v0 imagen", "value": v0v1["v0"]}, {"label": "v1 texto", "value": v0v1["v1"], "hl": True}], width=440, label_w=110, row_h=30)
-    + '<div class="cap" style="margin-top:0">hit@1, mismo ground truth (catálogo de 275).</div></div>'
+    '<div class="grow"><div class="lab">Para la búsqueda híbrida, dos índices más</div>'
+    + dec(3, "<b>Léxico (BM25)</b>: las palabras de esas mismas descripciones, sin modelo.")
+    + dec(3, f'<b>Por foto (SigLIP 2)</b>: un vector por la foto de cada producto, en el mismo espacio que el texto de la consulta <span class="tiny" style="font-family:var(--mono);font-size:11.5px">({esc(siglip)})</span>.')
+    + '<p class="tiny" style="margin:4px 0 0 33px">Las dos rutas de la clase para un catálogo con fotos: pasar la imagen a texto, y embeberla directamente.</p></div>'
     "</div>",
-    "Se arma una vez, local y gratis: un vector por producto, y la metadata al lado para filtrar.",
-    notes=f"Fase tres: el índice. Se embebe la descripción entera, un documento por producto: es corta, y partirla en líneas pierde contexto, como muestra el experimento 4. El modelo es Qwen3-Embedding de 600 millones de parámetros, local, en CPU, con el último token como vector y sin instrucción de consulta, porque la consulta se escribe igual que el documento. Da 1.024 dimensiones; por Matryoshka se pueden truncar, y con 512 alcanza. Van a ChromaDB, con un índice HNSW en espacio coseno y la metadata que usan los filtros. Antes hubo una v0 que buscaba por imagen, recortando muebles de una foto amoblada: no sirve con un ambiente vacío, y con el mismo ground truth daba {num(v0v1['v0'])} contra {num(v0v1['v1'])}.",
-    mins=1.0,
+    "Se arma una vez, local y gratis: la descripción embebida, sus palabras y la foto de cada producto, con la metadata al lado para filtrar.",
+    notes="Fase tres: el índice. Se embebe la descripción entera, un documento por producto, con Qwen3-Embedding, local, en CPU: 1.024 dimensiones, a ChromaDB, con la metadata de los filtros. Embedder, splitting, dimensión y base vectorial son las preguntas de trámite, por eso su pin va hueco: las contestamos juntas más adelante. Para la búsqueda híbrida se suman dos índices sobre los mismos productos: uno léxico, BM25 sobre las palabras de las descripciones, y uno por foto, con SigLIP 2, que pone la foto y el texto de la consulta en un mismo espacio.",
+    mins=0.65,
 )
 
 # -- Fase 4: lo que entra
@@ -481,33 +655,34 @@ fase(
     "entrada",
     "Entra una foto del ambiente vacío y un pedido libre",
     '<div class="row" style="gap:30px">'
-    f'<div style="width:520px" class="fix h360">{img(CAB / "room.jpg", 1100, cls="photo")}<div class="cap">La foto que se amobla: la imagen 1 de todo el recorrido.</div></div>'
+    f'<div style="width:520px" class="fix h360">{img(RUN / "room.jpg", 1100, cls="photo")}<div class="cap">La foto que se amobla: la imagen 1 de todo el recorrido.</div></div>'
     '<div class="grow">'
-    f'<div class="lab">El pedido, como lo escribe el usuario</div><div class="quote" style="font-size:16.5px;line-height:1.45">“{esc(CAB_REQ)}”</div>'
+    f'<div class="lab">El pedido, como lo escribe el usuario</div><div class="quote" style="font-size:16.5px;line-height:1.45">“{esc(RUN_REQ)}”</div>'
     '<div class="lab" style="margin-top:16px">Qué va a dónde</div>'
     + dec(None, "<b>La foto</b> va al plan y a la elección (reducida a 1.024 px) y al modelo de imagen.")
-    + dec(None, "<b>Otras fotos del mismo ambiente</b> (opcionales) van solo al LLM, para entenderlo; el modelo de imagen recibe solo la primera.")
+    + dec(None, "<b>Otras fotos del mismo ambiente</b> (opcionales) van solo al LLM, para entenderlo. Nunca medimos si cambian la lista.")
     + "</div></div>",
     "No hay formulario: qué piezas, de qué tipo y de qué tamaño lo decide <b>el plan</b>.",
-    notes="Fase cuatro, lo que entra: una foto del ambiente vacío, que es la que se amobla, y un pedido en texto libre, en castellano, como lo escribiría el usuario. Se pueden sumar otras fotos del mismo ambiente: van solo al LLM, para entender el lugar; el modelo de imagen recibe solo la primera. Vamos a seguir este living hasta el final.",
-    mins=0.4,
+    notes="Fase cuatro, lo que entra: una foto del ambiente vacío y un pedido en texto libre. Vamos a seguir este loft hasta el final: un pedido de estilo industrial, sobre una foto pública, con la configuración con la que entregamos.",
+    mins=0.3,
+    foot=pie("publica-loft-industrial"),
 )
 
 # -- Fase 5: el plan
-p1 = CAB_PLAN["answer"]["pieces"][0]
-hl_req = "un sofá de tres cuerpos gris claro contra la pared de la izquierda"
-assert hl_req in CAB_REQ
-req_cut = CAB_REQ[CAB_REQ.index("Quiero"): CAB_REQ.index(", una mesa ratona")]
-plan_meta = CAB_PLAN["meta"]
+p1 = RUN_PLAN["answer"]["pieces"][0]
+hl_req = "un sofá de cuero marrón envejecido"
+assert hl_req in RUN_REQ, "el pedido de la corrida del recorrido cambió: revisar la fase 5"
+req_cut = RUN_REQ[RUN_REQ.index("Quiero"): RUN_REQ.index(hl_req) + len(hl_req)]
+plan_meta = RUN_PLAN["meta"]
 fase(
     "plan",
-    "El plan reescribe el pedido: una consulta por pieza",
+    "El plan descompone el pedido y escribe una ficha por pieza",
     '<div class="row" style="gap:24px">'
     '<div style="width:510px">'
     f'<div class="lab">Entra (con la foto)</div><div class="quote" style="font-size:14.5px">“…{esc(req_cut).replace(esc(hl_req), "<b>" + esc(hl_req) + "</b>")}…”</div>'
-    f'<div class="lab" style="margin-top:12px">Sale: la pieza 1 de {len(CAB_PLAN["answer"]["pieces"])}</div>'
+    f'<div class="lab" style="margin-top:12px">Sale: la pieza 1 de {len(RUN_PLAN["answer"]["pieces"])}</div>'
     '<div class="code"><div class="ph"><b>1_searches.json</b>'
-    f'<span>Opus 5.5 · effort medium · {round(plan_meta["latency_s"])} s · US${num(CAB_PLAN["cost_usd"], 2)}</span></div>'
+    f'<span>Opus 5.5 · effort medium · {round(plan_meta["latency_s"])} s · US${num(RUN_PLAN["cost_usd"], 2)}</span></div>'
     f'<pre style="white-space:pre;overflow:hidden;text-overflow:ellipsis"><span class="k">"piece":</span> "{esc(p1["piece"])}"\n'
     f'<span class="k">"kinds":</span> <mark>{esc(json.dumps(p1["kinds"]))}</mark>  <span class="k">"max_width_cm":</span> {p1["max_width_cm"]}  <span class="k">"max_depth_cm":</span> {p1["max_depth_cm"]}\n'
     '<span class="k">"query":</span>\n' + "\n".join("  " + esc(x) for x in p1["query"].splitlines()) + "</pre></div>"
@@ -523,7 +698,7 @@ fase(
             "\"query\": [[the ideal product in the catalog's eight lines]] below",
         ],
     )
-    + '<div style="height:10px"></div>'
+    + '<div style="height:6px"></div>'
     + versions(
         [
             ("v1", "Con “una silla” para un escritorio, pidió un <b>sillón</b>.", False),
@@ -533,91 +708,90 @@ fase(
         ]
     )
     + "</div></div>",
-    f"{pin_inline(6)} La consulta habla como los documentos: el pedido se reescribe <b>en las mismas 8 líneas del catálogo</b>.",
-    notes="Fase cinco, el plan, que es nuestro query rewriting. Opus 5.5 recibe la foto y el pedido y hace de diseñador: primero lee el ambiente, después decide qué piezas hacen falta y, para cada una, da el kind, que va a ser el filtro, la medida máxima que entra, y la consulta: el producto ideal escrito en las mismas ocho líneas que el catálogo. Del pedido “un sofá de tres cuerpos gris claro” sale esta pieza: kind sofá, hasta 240 centímetros de ancho, y su consulta. Para este living propuso ocho piezas. El prompt tuvo cuatro versiones: la primera confundía silla con sillón; la v2 agregó leer el ambiente y la lista de kinds; la v3 pidió terminar el ambiente con lámparas y deco; y la v4 sacó el tope de piezas. El experimento 6 mostró que escribir la consulta completa es lo que más pesa antes de buscar. Cuesta unos siete centavos.",
-    mins=1.1,
+    f"{pin_inline(2)} En palabras de la clase: <b>query expansion con respuesta hipotética (HyDE)</b> y <b>descomposición del pedido</b>.",
+    notes=f"Fase cinco, el plan. Opus recibe la foto y el pedido y hace de diseñador: lee el ambiente, descompone el pedido en piezas y, para cada una, da el kind, que va a ser el filtro, la medida máxima, y la consulta: el producto ideal escrito en las mismas ocho líneas que el catálogo. En los términos de la clase es query expansion con respuesta hipotética, HyDE: en la base no hay preguntas, hay respuestas, así que la consulta se escribe como una respuesta. Más la descomposición del pedido: una consulta por pieza. Del “sofá de cuero marrón envejecido” sale esta pieza: kind sofá, hasta {p1['max_width_cm']} centímetros, y su ficha. Propuso {len(RUN_PLAN['answer']['pieces'])} piezas. Cuánto suma escribir la ficha lo mide el experimento 2.",
+    mins=0.9,
+    foot=pie("publica-loft-industrial"),
 )
 
-# -- Fase 6: la búsqueda
-from amoblai.config import load_config  # noqa: E402
-from amoblai.rag.filters import Filters  # noqa: E402
-
-CFG = load_config(ROOT / "datos" / "configs" / "amoblai.yaml")
+# -- Fase 6: la búsqueda (híbrida: la versión 2)
 slack = CFG.furnish.size_slack
 most = {f"max_{a}_cm": round(p1[f"max_{a}_cm"] * (1 + slack), 1) for a in ("width", "depth", "height") if p1.get(f"max_{a}_cm") is not None}
-where = Filters(kinds=p1["kinds"], **most).where()
-
-
-def where_html(w: dict) -> str:
-    """El where tal cual lo arma rag/filters.py, con sangría a mano."""
-    def j(x):
-        return esc(json.dumps(x))
-
-    c = w["$and"]
-    o = c[0]["$or"]
-    a0, a1 = o[1]["$and"]
-    return (
-        '{"$and": [\n  {"$or": [\n'
-        f"    <mark>{j(o[0])}</mark>,\n"
-        f'    {{"$and": [{j(a0)},\n      {j(a1)}]}}]}},\n'
-        + ",\n".join(f"  <mark>{j(x)}</mark>" for x in c[1:])
-        + "]}"
-    )
-
-
-chosen_ids = {c["id"] for c in CAB_CHOICE["answer"]["choices"] if c.get("quantity")}
-sofas = CAB_FOUND["pieces"][0]["candidates"]
+filtro = Filters(kinds=p1["kinds"], **most)
+EJE = {"max_width_cm": "ancho", "max_depth_cm": "fondo", "max_height_cm": "alto"}
+filtro_txt = " · ".join([f'kind = {", ".join(p1["kinds"])}'] + [f"{EJE[k]} ≤ {num(v, 0)} cm" for k, v in most.items()])
+# cuántos productos del índice del flujo deja pasar ese filtro (el índice está en la caché)
+idx_items = ROOT / CFG.cache_dir / "rag" / "index" / f"{Path(CFG.rag.catalog).stem}-{CFG.rag.describer}-{CFG.rag.embedder}" / "items.jsonl"
+pasan = sum(filtro.allows(json.loads(x)) for x in idx_items.read_text().splitlines() if x.strip()) if idx_items.exists() else None
+pasan_txt = f" → <b>{pasan} de {miles(len(ITEMS) + ABO_N)}</b>" if pasan else ""
+chosen_ids = {c["id"] for c in RUN_CHOICE["answer"]["choices"] if c.get("quantity")}
+sofas = RUN_FOUND["pieces"][0]["candidates"]
+sofas_abo = sum(h["id"].startswith("abo-") for h in sofas)
 cards = "".join(
     f'<div class="c{" pick" if h["id"] in chosen_ids else ""}">'
     + ('<span class="flag">lo elige la fase 7</span>' if h["id"] in chosen_ids else "")
-    + f'{img(h["photos"][0], 300)}<div class="s">{num(h["score"], 3)}</div><div class="t">{esc(type_line(h["description"]))}</div></div>'
+    + f'{img(h["photos"][0], 300)}<div class="s">{num(h["score"], 2)} · {"ABO" if h["id"].startswith("abo-") else "IKEA"}</div><div class="t">{esc(type_line(h["description"]))}</div></div>'
     for h in sofas
 )
+vq = visual_query(p1["query"])
 fase(
     "busqueda",
-    "Filtro duro por kind, después coseno: 5 candidatos",
-    '<div class="row" style="gap:26px">'
-    '<div style="width:400px"><div class="lab">El filtro, como where de ChromaDB</div>'
-    f'<div class="code"><div class="ph"><b>rag/filters.py</b><span>la medida del plan + {round(100 * slack)} %</span></div><pre>{where_html(where)}</pre></div>'
-    '<p class="tiny" style="margin-top:8px">Un producto sin kind pasa si su tipo coincide; uno sin medidas pasa siempre (los sofás de IKEA no tienen). Después, el coseno de Qwen3 entre la consulta y cada descripción.</p></div>'
-    f'<div class="grow"><div class="lab">Los {len(sofas)} sofás más cercanos a la consulta (coseno)</div>'
-    f'<div class="cand" style="grid-template-columns:repeat({len(sofas)},1fr);margin-top:14px">{cards}</div></div>'
+    "Filtro por kind, después búsqueda híbrida: 5 candidatos",
+    '<div class="row" style="gap:28px">'
+    '<div style="width:486px"><div class="lab">Para cada pieza del plan</div>'
+    + dec(13, f'<b>Filtro duro</b> de metadata: el kind del plan y sus medidas máximas, con un {round(100 * slack)} % de margen; un producto sin medidas pasa.<br><span class="mono">{esc(filtro_txt)}</span>{pasan_txt}')
+    + dec(3, "<b>Tres puntajes</b> para cada producto que pasa, con la misma ficha:")
+    + '<div class="tri">'
+    "<div><b>Qwen3</b><span>el coseno entre la ficha y la descripción del producto</span></div>"
+    "<div><b>BM25</b><span>las palabras de la ficha que están en la descripción</span></div>"
+    f'<div><b>SigLIP 2</b><span>la ficha en una frase, contra la <b>foto</b> del producto: <i>“{esc(vq[:64])}…”</i></span></div>'
     "</div>"
-    '<div class="grid3" style="gap:22px;margin-top:16px">'
-    + dec(3, "<b>Filtro duro</b> por el kind que elige el plan; con dos kinds, los candidatos se reparten.")
-    + dec(8, f"<b>{CFG.furnish.candidates} candidatos</b> por pieza (antes 3): los que va a ver la elección.")
-    + dec(7, "<b>Sin reranker aparte</b>: un cross-encoder empeoró; Opus mirando las fotos mejoró, y eso ya lo hace la elección.")
-    + "</div>",
-    "La búsqueda trae candidatos plausibles; el orden fino lo decide <b>quien mira las fotos</b>.",
-    notes=f"Fase seis, la búsqueda. Para cada pieza, primero un filtro duro en ChromaDB: el kind que eligió el plan y las medidas máximas, con un {round(100 * slack)} por ciento de margen porque salen de una foto; un producto sin medidas pasa. Después, el coseno de Qwen3 entre la consulta y las descripciones, y quedan los 5 más cercanos. Estos son los cinco sofás para este pedido. El filtro lo decidió el experimento 3, y los 5 candidatos, el 8. También probamos un reranker después de la búsqueda: un cross-encoder de texto empeoró, y Opus mirando las fotos mejoró. No lo agregamos como paso: la fase siguiente ya mira las fotos.",
-    mins=0.8,
+    + dec(None, "<b>Fusión</b>: cada puntaje se estandariza (z-score) entre los que pasaron, y se promedian.")
+    + dec(5, f"<b>Los {CFG.furnish.candidates} mejores</b> le llegan a la elección (antes 3).")
+    + "</div>"
+    f'<div class="grow"><div class="lab">Los {len(sofas)} sofás que le llegan a la elección (puntaje fusionado · catálogo)</div>'
+    f'<div class="cand" style="grid-template-columns:repeat({len(sofas)},1fr);margin-top:14px">{cards}</div>'
+    '<p class="tiny" style="margin-top:12px">El puntaje es el promedio de los tres z-scores: 2,3 quiere decir 2,3 desvíos por encima de la media de los sofás que pasaron el filtro.</p></div>'
+    "</div>",
+    "Tres miradas del mismo producto (su descripción, sus palabras, su foto) traen candidatos plausibles; el orden fino lo decide <b>quien mira las fotos</b>.",
+    notes="Fase seis, la búsqueda. Para cada pieza, primero un filtro duro de metadata: el kind del plan y las medidas máximas, con margen porque salen de una foto."
+    + (f" Acá quedan {pasan} de los {miles(len(ITEMS) + ABO_N)} productos." if pasan else "")
+    + f" Sobre esos, tres puntajes: el coseno de Qwen3 entre la ficha y la descripción; BM25, las palabras de la ficha que están en la descripción; y SigLIP 2, la ficha en una frase contra la foto del producto. Cada puntaje se estandariza y se promedian: es la búsqueda híbrida, la versión 2 del sistema. Quedan los cinco mejores: estos sofás, {sofas_abo} de Amazon y {len(sofas) - sofas_abo} de IKEA.",
+    mins=0.85,
+    foot=pie("publica-loft-industrial"),
 )
 
-# -- Fase 7: la elección
-ES_KIND = {"sofa": "sofá", "rug": "alfombra", "coffee table": "mesa ratona", "TV stand": "mueble de TV", "floor lamp": "lámpara de pie", "cushion": "almohadones", "plant": "planta", "curtains": "cortinas"}
+# -- Fase 7: la elección: la generación de la lista
+ES_KIND = {"sofa": "sofá", "rug": "alfombra", "coffee table": "mesa ratona", "TV stand": "mueble de TV", "floor lamp": "lámpara de pie", "cushion": "almohadones", "plant": "planta", "curtains": "cortinas", "bookcase": "biblioteca", "plant pot": "maceta", "armchair": "sillón", "side table": "mesa auxiliar", "throw": "manta"}
 grid_rows = []
-for p, c in zip(CAB_FOUND["pieces"], CAB_CHOICE["answer"]["choices"], strict=True):
+for p, c in zip(RUN_FOUND["pieces"], RUN_CHOICE["answer"]["choices"], strict=True):
     k = p["spec"]["kinds"][0]
     th = "".join(
-        f'<div class="th{" pick" if h["id"] == c.get("id") else ""}" style="width:31px;height:31px">{img(h["photos"][0], 90, alt="")}</div>'
+        f'<div class="th{" pick" if h["id"] == c.get("id") else ""}" style="width:34px;height:34px">{img(h["photos"][0], 90, alt="")}</div>'
         for h in p["candidates"]
     )
     qty = f'<span style="font-size:12.5px;font-weight:650;color:var(--accent);margin-left:4px">×{c["quantity"]}</span>' if c.get("quantity", 1) > 1 else ""
     grid_rows.append(f'<div style="display:flex;align-items:center;gap:4px"><div style="width:100px;font-size:12.5px">{esc(ES_KIND.get(k, k))}</div>{th}{qty}</div>')
-ch_meta = CAB_CHOICE["meta"]
-c1 = CAB_CHOICE["answer"]["choices"][0]
-sofa_rank = [h["id"] for h in sofas].index(c1["id"]) + 1
+ch_meta = RUN_CHOICE["meta"]
+run_picks = elegidos(RUN_FOUND, RUN_CHOICE)
+n_first = sum(rk == 1 for *_, rk in run_picks)
+i_far = max(range(len(run_picks)), key=lambda i: run_picks[i][2])  # la pieza cuyo elegido estaba más abajo en la búsqueda
+far_rank = run_picks[i_far][2]
+far_piece = next(i for i, c in enumerate(RUN_CHOICE["answer"]["choices"]) if c.get("id") == run_picks[i_far][0]["id"])
+far_kind = ES_KIND.get(RUN_FOUND["pieces"][far_piece]["spec"]["kinds"][0], RUN_FOUND["pieces"][far_piece]["spec"]["kinds"][0])
+far_why = RUN_CHOICE["answer"]["choices"][far_piece]["why"]
+assert (far_kind, far_rank) == ("biblioteca", 5), "la nota de la fase 7 cuenta ese caso: revisarla si la corrida cambió"
 fase(
     "eleccion",
-    "Opus ve el cuarto y los 5 de cada pieza, y elige el conjunto",
+    "Opus ve el cuarto y los 5 de cada pieza, y arma la lista",
     '<div class="row" style="gap:26px">'
     '<div style="width:540px">'
     f'<div class="lab">Lo que ve: {ch_meta["images"]} imágenes (el cuarto y 5 por pieza)</div>'
     '<div style="display:flex;gap:14px;align-items:flex-start">'
-    f'<div style="width:150px">{img(CAB / "room.jpg", 400, cls="photo")}<div class="tiny" style="margin-top:4px">imagen 1</div></div>'
+    f'<div style="width:170px">{img(RUN / "room.jpg", 400, cls="photo")}<div class="tiny" style="margin-top:4px">imagen 1</div></div>'
     f'<div style="display:grid;gap:3px">{"".join(grid_rows)}</div></div>'
-    f'<div class="tiny" style="margin-top:6px">Con borde naranja, lo elegido. {miles(ch_meta["usage"]["input_tokens"])} tokens de entrada · {round(ch_meta["latency_s"])} s · US${num(CAB_CHOICE["cost_usd"], 2)}.</div>'
-    f'<div class="quote" style="margin-top:10px;font-size:14px"><b>Sofá (el {sofa_rank}.º de la búsqueda):</b> <i>“{esc(c1["why"])}”</i></div>'
+    f'<div class="tiny" style="margin-top:6px">Con borde naranja, lo elegido. {miles(ch_meta["usage"]["input_tokens"])} tokens de entrada · {round(ch_meta["latency_s"])} s · US${num(RUN_CHOICE["cost_usd"], 2)}.</div>'
+    f'<div class="quote" style="margin-top:10px;font-size:14px"><b>{esc(far_kind.capitalize())} (el {far_rank}.º de la búsqueda):</b> <i>“{esc(far_why)}”</i></div>'
     "</div>"
     '<div class="grow">'
     + prompt_card(
@@ -638,16 +812,21 @@ fase(
         ]
     )
     + "</div></div>",
-    f"{pin_inline(7)} Eligió el {sofa_rank}.º sofá de la búsqueda: el 1.º era blanco, y el pedido decía <b>gris claro</b>.",
-    notes="Fase siete, la elección. Opus recibe la foto del ambiente y los cinco candidatos de cada pieza: acá son 41 imágenes, cada candidato con su id, su línea Type y su medida, sin el nombre comercial. El prompt le pide elegir las piezas juntas, como un solo look, mirando las fotos, y decir cuántas unidades: cero deja una pieza afuera. Solo puede elegir productos que trajo la búsqueda; si no, el código rechaza la respuesta. Acá eligió el segundo sofá de la búsqueda, porque el primero era blanco y el pedido decía gris claro, y puso dos almohadones. La v2 agregó las cantidades. Es el reranker con VLM del experimento 7.",
-    mins=0.9,
+    f"{pin_inline(5)} Es <b>la generación</b> del RAG, no un reranker: tomó el 1.º de la búsqueda en {n_first} de las {len(run_picks)} piezas.",
+    notes=f"Fase siete, la elección: es la generación de la lista, la G del RAG. Opus ve la foto del ambiente y los cinco candidatos de cada pieza, acá {ch_meta['images']} imágenes, cada uno con su id, su tipo y su medida. El prompt le pide elegir las piezas juntas, como un solo look, y decir cuántas unidades; cero deja una pieza afuera. Solo puede elegir productos que trajo la búsqueda: si no, el código rechaza la respuesta. No es un reranker: arma un conjunto para este cuarto. Acá tomó el primero de la búsqueda en {n_first} de las {len(run_picks)} piezas; la {far_kind} era el quinto candidato.",
+    mins=0.8,
+    foot=pie("publica-loft-industrial"),
 )
 
 # -- Fase 8: la escena
-scene_text = CAB_SCENE["answer"]["prompt"]
+scene_text = RUN_SCENE["answer"]["prompt"]
+scene_lines = scene_text.splitlines()
+ln_first = next(x for x in scene_lines if x.startswith("image 2:"))
+ln_units = next((x for x in scene_lines if x.startswith("image ") and x.endswith("units")), None)
+c_scene = statistics.mean(r["cost_usd"] for r in LEDGER if r["step"] == "furnish.scene")
 fase(
     "escena",
-    "El prompt de la imagen: una plantilla estricta, sin LLM",
+    "El prompt de la imagen: una plantilla, sin LLM",
     '<div class="row" style="gap:26px">'
     '<div style="width:500px">'
     '<div class="lab">A · Opus escribe la escena <span class="vmono">scene_prompt_v1 → v2</span></div>'
@@ -675,8 +854,8 @@ fase(
         [
             "Edit image 1. It is a photo of the client's own room, and [[the result must still be that same room, exactly]]: the same camera position, angle, lens and framing;",
             "[[Do not add, remove, move or enlarge any wall, window, door or opening]]",
-            "image 2: three-seat sofa with wide arms, size unknown",
-            "image 7: green linen-look cushion, size unknown, 2 units",
+            ln_first,
+            *([ln_units] if ln_units else []),
             "[[Add exactly these products and nothing else]]",
             "Each one must be the product of its photo, not a similar one",
         ],
@@ -684,498 +863,717 @@ fase(
         source=scene_text,
     )
     + '<div style="margin-top:14px">'
-    + dec(12, "Con 6 piezas, A y B conservaban el cuarto, y B <b>no cuesta una llamada</b>. Con 9, la libre inventó una ventana: de ahí la v4 y el control de la fase 10.")
+    + dec(None, f"Elegimos la plantilla por <b>costo y simplicidad</b>: ahorra una llamada (unos US${num(c_scene, 3)} por pedido). <b>No es el resultado de un experimento</b>: A y B se compararon con una imagen por variante, y eso no decide.")
     + "</div></div></div>",
-    f"{pin_inline(12)} La escena no la escribe nadie: una plantilla fija le pide al modelo <b>editar la foto del cliente</b>.",
-    notes="Fase ocho, la escena: el prompt para el modelo de imagen. Probamos dos caminos. En uno, Opus escribe la escena: dónde va cada producto, anclado a lo que se ve. En el otro, una plantilla sin LLM: se completa con la lista y el modelo de imagen acomoda. La plantilla tuvo cuatro versiones: la libre, una que repetía los muebles modulares, otra con las cantidades, y la v4, estricta, que salió de un error: con nueve productos, el modelo inventó una ventana y movió la biblioteca. La v4 dice que es una edición de la foto del cliente: la misma cámara, las mismas paredes y ventanas, nada agregado, y exactamente estos productos. El experimento 12 eligió esta, que además no cuesta nada.",
-    mins=0.9,
+    "La escena no la escribe nadie: una plantilla fija le pide al modelo <b>editar la foto del cliente</b>. Es una decisión de costo.",
+    notes="Fase ocho, la escena: el prompt para el modelo de imagen. Probamos dos caminos: que Opus escriba dónde va cada producto, o una plantilla sin LLM, que se completa con la lista. La última versión de la plantilla es estricta: es una edición de la foto del cliente, con la misma cámara, las mismas paredes y ventanas, y exactamente estos productos. Nos quedamos con la plantilla por costo y simplicidad: ahorra una llamada. No es el resultado de un experimento: las comparamos con una imagen por variante, y eso no decide.",
+    mins=0.65,
 )
 
 # -- Fase 9: la imagen
 gen = CFG.furnish.generators["nano_banana_2"]
-att = CAB_IMG["attempts"]
-prod_th = "".join(
-    f'<div class="th" style="height:62px">{img(ITEMS[c["id"]]["photos"][0], 140, alt="")}</div>'
-    for c in CAB_CHOICE["answer"]["choices"]
-    if c.get("quantity") and c["id"] in ITEMS
-)
+att = RUN_IMG["attempts"]
+prod_th = "".join(f'<div class="th" style="height:62px">{img(h["photos"][0], 140, alt="")}</div>' for h, *_ in run_picks)
 fase(
     "imagen",
     "Nano Banana 2 edita la foto con las fotos de los productos",
     '<div style="display:grid;grid-template-columns:430px 34px 250px 34px 1fr;align-items:center;gap:0">'
     f'<div><div class="lab">Entra</div><div style="display:grid;grid-template-columns:190px 1fr;gap:10px;align-items:center">'
-    f'<div>{img(CAB / "room.jpg", 500, cls="photo")}<div class="tiny" style="margin-top:3px">imagen 1: el cuarto</div></div>'
-    f'<div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px">{prod_th}</div><div class="tiny" style="margin-top:3px">imágenes 2 a {CAB_IMG["meta"]["images_in"]}: los productos</div></div></div>'
+    f'<div>{img(RUN / "room.jpg", 500, cls="photo")}<div class="tiny" style="margin-top:3px">imagen 1: el cuarto</div></div>'
+    f'<div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px">{prod_th}</div><div class="tiny" style="margin-top:3px">imágenes 2 a {RUN_IMG["meta"]["images_in"]}: los productos</div></div></div>'
     '<div class="tiny" style="margin-top:8px">+ el prompt de la fase 8</div></div>'
     '<div style="text-align:center;color:var(--muted);font-size:24px">→</div>'
     '<div class="card" style="border-color:var(--accent)"><h3 style="font-size:19px;margin-bottom:2px">Nano Banana 2</h3>'
     '<div class="small" style="font-size:14px;line-height:1.45">Gemini 3.1 Flash Image, por fal<br>'
     f'<span style="font-family:var(--mono);font-size:12px;color:var(--muted)">{esc(gen["endpoint"])}</span><br>'
-    f'{gen["resolution"]}, con la proporción de la foto<br><b>US${num(gen["usd_per_image"]["1K"])} por imagen</b> · ~{round(CAB_IMG["meta"]["latency_s"])} s por imagen</div></div>'
+    f'{gen["resolution"]}, con la proporción de la foto<br><b>US${num(gen["usd_per_image"]["1K"])} por imagen</b> · ~{round(RUN_IMG["meta"]["latency_s"])} s por imagen</div></div>'
     '<div style="text-align:center;color:var(--muted);font-size:24px">→</div>'
-    f'<div><div class="lab">Sale (intento 1)</div><div class="shot">{img(CAB / att[0]["image"], 900)}</div></div>'
+    f'<div><div class="lab">Sale (intento 1)</div><div class="shot">{img(RUN / att[0]["image"], 900)}</div></div>'
     "</div>"
     '<div class="grid2" style="gap:26px;margin-top:18px">'
-    + dec(None, "<b>Alternativas en el código</b>: gpt-image (OpenAI) y un generador manual, gratis, que deja la carpeta lista para pegar en ChatGPT o Gemini.")
+    + dec(None, f"<b>Hasta {CFG.furnish.max_image_products} productos en la imagen</b>: el modelo acepta 14 imágenes, la foto del cuarto y 13 más. Las piezas que sobran quedan solo en la lista de compra.")
     + dec(None, "<b>El modelo no salió de un experimento</b>: la comparación entre modelos de imagen quedó diseñada, sin correr.")
     + "</div>",
-    "La imagen se genera desde las fotos de lo que se compra. Pero este primer intento <b>movió la cámara</b>.",
-    notes=f"Fase nueve, la imagen. Nano Banana 2, por fal, en modo edición: recibe la foto del ambiente, las fotos de los productos en el orden de la lista y el prompt. Cuesta {round(100 * gen['usd_per_image']['1K'])} centavos por imagen a 1K. El modelo no lo elegimos con un experimento: la comparación quedó diseñada, sin correr. Y el primer intento salió así: lindo, pero con la cámara corrida.",
-    mins=0.5,
+    "La segunda generación aumentada: la imagen sale de <b>las fotos de lo que se compra</b>, no de una descripción.",
+    notes=f"Fase nueve, la imagen. Nano Banana 2, en modo edición: recibe la foto del ambiente, las fotos de los productos y el prompt. Cuesta {round(100 * gen['usd_per_image']['1K'])} centavos por intento. Acepta 14 imágenes, así que muestra hasta {CFG.furnish.max_image_products} productos; el resto queda en la lista. El modelo no lo elegimos con un experimento: esa comparación quedó sin correr.",
+    mins=0.4,
+    foot=pie("publica-loft-industrial"),
 )
 
-# -- Fase 10: el control
+# -- Fase 10: el control: una corrida que pasa y una que no
 rc = CFG.furnish.room_check
-shots = [f'<div><div class="shot">{img(CAB / "room.jpg", 700)}<span class="badge">original</span></div><div class="cap">La foto del cliente.</div></div>']
-for k, a in enumerate(att, 1):
-    ok = a["ok"]
-    shots.append(
-        f'<div><div class="shot">{img(CAB / a["image"], 700)}<span class="badge {"ok" if ok else "no"}">intento {k} · {"aceptado" if ok else "descartado"}</span></div>'
-        f'<div class="cap"><b>{a["sift_inliers"]} puntos</b> reencontrados · cámara corrida {num(100 * a["sift_desplazamiento_mediano"], 0)} %</div></div>'
-    )
+cla_best = next(a for a in CLA_IMG["attempts"] if a["image"] == CLA_IMG["room_check"]["image"])
+cla_k = [a["image"] for a in CLA_IMG["attempts"]].index(cla_best["image"]) + 1
+no_pasan = len(FINALES) - IMG_TOT["pasan"]
+# lo que cuentan la lámina y su nota: una corrida que pasa al primer intento, otra que no pasa en ninguno
+assert att[0]["ok"] and not any(a["ok"] for a in CLA_IMG["attempts"]), "las corridas de la fase 10 cambiaron: revisar la lámina"
+assert IMG_TOT["pasan"] == IMG_TOT["pasan_al_primero"], "alguna corrida final pasó el control al reintentar: revisar la fase 10 y la lámina de la imagen"
+
+
+def shot(path: Path, badge: str, kind: str, cap: str) -> str:
+    return f'<div><div class="shot">{img(path, 700)}<span class="badge {kind}">{badge}</span></div><div class="cap">{cap}</div></div>'
+
+
+shots = [
+    shot(RUN / "room.jpg", "original", "", "El loft, como lo mandó el usuario."),
+    shot(RUN / att[0]["image"], "intento 1 · aceptado", "ok", f'<b>{att[0]["sift_inliers"]} puntos</b> reencontrados · cámara corrida {num(100 * att[0]["sift_desplazamiento_mediano"], 0)} %'),
+    shot(CLA / "room.jpg", "original", "", "Otro pedido: un living clásico alrededor de la chimenea."),
+    shot(CLA / cla_best["image"], f"intento {cla_k} · descartado", "no", f'<b>{cla_best["sift_inliers"]} puntos</b> · cámara corrida {num(100 * cla_best["sift_desplazamiento_mediano"], 0)} %: reencuadró hacia la chimenea'),
+]
 fase(
     "control",
-    "¿Es el mismo cuarto? SIFT lo decide, y si no, reintenta",
+    "¿Es el mismo cuarto? SIFT lo controla, y si no, reintenta",
     f'<div class="grid4" style="gap:12px">{"".join(shots)}</div>'
-    '<div style="margin-top:16px;max-width:1000px">'
-    + dec(12, f"<b>SIFT + RANSAC</b> entre la foto original y la generada: se acepta si reencuentra al menos <b>{int(rc['min_inliers'])} puntos</b> del cuarto y la cámara se movió como mucho <b>{num(100 * rc['max_shift'], 0)} % del ancho</b>. Si no, el intento queda aparte y se genera otro, <b>hasta {int(rc['attempts'])}</b>; si ninguno pasa, queda el que mejor conserva el cuarto.")
+    '<div class="grid2" style="margin-top:14px;gap:30px">'
+    + dec(None, f"<b>SIFT + RANSAC</b> entre la foto original y la generada: se acepta si reencuentra al menos <b>{int(rc['min_inliers'])} puntos</b> del cuarto y la cámara se movió como mucho <b>{num(100 * rc['max_shift'], 0)} % del ancho</b> (umbrales puestos a mano). Si no, se genera otra, <b>hasta {int(rc['attempts'])}</b>; si ninguna pasa, se entrega la que mejor conserva el cuarto, marcada.")
+    + dec(None, f"<b>En las {len(FINALES)} corridas de la configuración final</b>: {IMG_TOT['pasan']} pasan, todas al primer intento. En las otras {no_pasan} fallaron los {int(rc['attempts'])} intentos: el modelo vuelve a mover la cámara o a rehacer el cuarto.")
     + "</div>",
-    "El prompt pide el mismo cuarto; <b>el control es lo que lo garantiza</b>.",
-    notes=f"Fase diez, el control. Comparamos la foto original con la generada con SIFT y RANSAC: si reencuentra al menos {int(rc['min_inliers'])} puntos del cuarto y la cámara se movió menos del {num(100 * rc['max_shift'], 0)} por ciento del ancho, se acepta. Si no, se guarda aparte y se genera otra, hasta {int(rc['attempts'])} veces. En este living, los dos primeros intentos eran lindos pero con la cámara corrida: {att[0]['sift_inliers']} y {att[1]['sift_inliers']} puntos. El tercero reencontró {att[2]['sift_inliers']} y quedó. Este control salió del experimento 12.",
-    mins=0.6,
+    "El control detecta cuando el modelo rehace el cuarto. <b>Reintentar con el mismo prompt casi nunca lo arregla.</b>",
+    notes=f"Fase diez, el control. Comparamos la foto original con la generada con SIFT y RANSAC: si reencuentra al menos {int(rc['min_inliers'])} puntos del cuarto y la cámara casi no se movió, se acepta; si no, se genera otra, hasta {int(rc['attempts'])} veces. Los umbrales están puestos a mano. El loft pasó al primer intento. Este otro pedido, un living clásico, no: el modelo reencuadró hacia la chimenea en los tres intentos, y se entrega el mejor, marcado. En las {len(FINALES)} corridas finales pasan {IMG_TOT['pasan']}, todas al primer intento; en las otras {no_pasan} fallaron los tres. El control detecta; reintentar casi nunca arregla.",
+    mins=0.75,
+    foot=pie("publica-loft-industrial", "publica-living-clasico"),
 )
 
 # -- Fase 11: lo que sale
-rows_list = []
-for p, c in zip(CAB_FOUND["pieces"], CAB_CHOICE["answer"]["choices"], strict=True):
-    if not c.get("quantity"):
-        continue
-    h = next(h for h in p["candidates"] if h["id"] == c["id"])
-    rows_list.append(
-        f'<div style="display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:4px 0;border-top:1px solid var(--grid)">'
-        f'<div class="th" style="width:46px;height:40px">{img(h["photos"][0], 110, alt="")}</div>'
-        f'<div style="font-size:14.5px">{esc(type_line(h["description"]))}<span style="color:var(--muted);font-family:var(--mono);font-size:11.5px;margin-left:8px">{h["id"]}</span></div>'
-        f'<div style="font-size:14.5px;font-weight:650">×{c["quantity"]}</div></div>'
-    )
-com = R / "amoblar" / "caballito-comedor"
-com_att = len((load(com / "5_image.json") or {}).get("attempts") or [1])
-cost_claude = CAB_PLAN["cost_usd"] + CAB_CHOICE["cost_usd"]
-cost_img = CAB_IMG["cost_usd"]
+rows_list = [
+    f'<div style="display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;padding:4px 0;border-top:1px solid var(--grid)">'
+    f'<div class="th" style="width:46px;height:40px">{img(h["photos"][0], 110, alt="")}</div>'
+    f'<div style="font-size:14.5px">{esc(type_line(h["description"]))}<span style="color:var(--muted);font-family:var(--mono);font-size:11.5px;margin-left:8px">{h["id"]}</span></div>'
+    f'<div style="font-size:14.5px;font-weight:650">×{q}</div></div>'
+    for h, q, _ in run_picks
+]
+run_abo = sum(h["id"].startswith("abo-") for h, *_ in run_picks)
+cost_claude = RUN_PLAN["cost_usd"] + RUN_CHOICE["cost_usd"]
+cost_img = RUN_IMG["cost_usd"]
 fase(
     "salida",
     "Sale la lista de compra y el ambiente amoblado",
     '<div class="row" style="gap:30px">'
-    f'<div style="width:520px"><div class="lab">La lista: {len(rows_list)} productos del catálogo</div>{"".join(rows_list)}</div>'
+    f'<div style="width:520px"><div class="lab">La lista: {len(rows_list)} productos del catálogo ({run_abo} de Amazon, {len(rows_list) - run_abo} de IKEA)</div>{"".join(rows_list)}</div>'
     '<div class="grow"><div class="lab">El mismo ambiente, con esos productos</div>'
-    f'<div class="grid2" style="gap:8px">{img(CAB / "room.jpg", 700, cls="photo")}{img(CAB / "final.png", 700, cls="photo")}</div>'
-    f'<p class="small" style="margin-top:10px;font-size:14.5px">Este pedido: US${num(cost_claude)} de Claude (plan y elección) y US${num(cost_img)} de imágenes (tres intentos). '
-    f"Cada fase deja su archivo en la carpeta de la corrida (<code>1_searches.json</code> a <code>5_image.json</code>) y la webapp muestra cada paso mientras se hace. "
-    f"El comedor del mismo departamento pasó el control en el intento {com_att}.</p></div>"
+    f'<div class="grid2" style="gap:8px">{img(RUN / "room.jpg", 700, cls="photo")}{img(RUN / "final.png", 700, cls="photo")}</div>'
+    f'<p class="small" style="margin-top:10px;font-size:14.5px">Este pedido: US${num(cost_claude)} de Claude (plan y elección) y US${num(cost_img)} de la imagen ({len(att)} intento{"s" if len(att) > 1 else ""}). '
+    "Cada fase deja su archivo en la carpeta de la corrida (<code>1_searches.json</code> a <code>5_image.json</code>) y la webapp muestra cada paso mientras se hace.</p></div>"
     "</div>",
     "Cada producto de la lista es un id real del catálogo: el código <b>rechaza cualquiera que la búsqueda no haya traído</b>.",
-    notes=f"Y fase once, lo que sale: la lista de compra, con productos reales del catálogo y cuántos de cada uno, y la foto del mismo ambiente con esos productos. Este pedido costó unos {round(100 * cost_claude)} centavos de Claude y {round(100 * cost_img)} de imágenes, por los tres intentos. Cada fase deja su archivo en la carpeta de la corrida, y la webapp muestra cada paso mientras se hace. El comedor del mismo departamento pasó el control al primer intento.",
-    mins=0.6,
+    notes=f"Y fase once, lo que sale: la lista de compra, con productos reales y cuántos de cada uno, acá {run_abo} de Amazon y {len(rows_list) - run_abo} de IKEA, y la foto del mismo ambiente con ellos. Este pedido costó unos {round(100 * cost_claude)} centavos de Claude y {round(100 * cost_img)} de la imagen. Cada fase deja su archivo en la carpeta de la corrida.",
+    mins=0.4,
+    foot=pie("publica-loft-industrial"),
 )
 
-# -- El mapa de los experimentos
-EXPS = [
-    (1, "Qué texto se indexa", "vendedor · nombre + VLM · VLM"),
-    (2, "Embedder", "hashing · BGE-base · Qwen3"),
-    (3, "Filtros duros", "ninguno · por tipo · por kind"),
-    (4, "Splitting", "documento · chunk por línea · línea a línea"),
-    (5, "Dimensión del vector", "de 32 a 1.024 (Matryoshka)"),
-    (6, "Base vectorial y consulta", "HNSW · exacta; 8 líneas · Type · kind"),
-    (7, "Reranking", "ninguno · cross-encoder · VLM"),
-    (8, "Candidatos por pieza", "k de 1 a 10"),
-    (9, "Ampliar y revisar el catálogo", "268 · 855 · 819"),
-    (10, "Qué catálogo", "IKEA · ABO · los dos (juez)"),
-    (11, "Cuánto mide el ground truth", "juez graduado · 3 redactores"),
-    (12, "La imagen", "escena del LLM · libre · estricta + SIFT"),
-]
-assert {n for ns in PINES.values() for n in ns} == {n for n, *_ in EXPS}
-legend = "".join(f'<div class="li">{pin_inline(n)}<b>{esc(t)}</b><span>{esc(v)}</span></div>' for n, t, v in EXPS[:6])
-legend2 = "".join(f'<div class="li">{pin_inline(n)}<b>{esc(t)}</b><span>{esc(v)}</span></div>' for n, t, v in EXPS[6:])
-slide(
-    pipeline(pins=True)
-    + f'<div class="legend" style="margin-top:10px"><div>{legend}</div><div>{legend2}</div></div>'
-    + '<div class="take">Ocho de las once fases las decidió un experimento. El modelo de imagen, no: esa comparación quedó sin correr.</div>',
-    kicker="El recorrido · los experimentos",
-    title="Doce experimentos, cada uno con su pin donde decidió",
-    notes="Y este es el mismo mapa con los experimentos encima: cada pin es un experimento, puesto sobre la parte que decidió, con todo lo demás fijo. El catálogo lo decidieron el 9 y el 10; qué se describe, el 1; el índice, cuatro: el embedder, el splitting, la dimensión y la base vectorial; la consulta del plan, el 6; el filtro y los candidatos de la búsqueda, el 3 y el 8; que la elección mire las fotos, el 7; y la escena y el control, el 12. El 11 mide cuánto vale el ground truth de la búsqueda. Ocho de las once fases las decidió un experimento. Antes de verlos, cómo medimos.",
-    mins=0.8,
-)
 
 # ================================================================================================
-# Parte 2: cómo medimos
+# Los desafíos
 # ================================================================================================
-section(
-    "Parte 2",
-    "Cómo medimos",
-    "Dos bancos de prueba: ambientes de IKEA con sus productos anotados (hay ground truth) y ambientes vacíos reales (no lo hay: jueces y métricas de imagen).",
-    notes="Antes de los experimentos, cómo medimos, para que cada número se entienda.",
-)
+def imagen_contra_texto() -> dict:
+    """La búsqueda de la propuesta original (por imagen: el recorte de cada mueble contra las fotos
+    del catálogo, DINOv3) contra la búsqueda por texto, con el mismo ground truth y la misma
+    unidad: el producto anotado de cada ambiente, sobre el catálogo de 275 de ese momento.
+    recall@1 de cada una y la diferencia pareada con su IC 95% (bootstrap de ambientes)."""
+    from amoblai.evaluation.metrics import bootstrap_ci
 
-# datos de evaluación: el ground truth y los ambientes vacíos
-gt_room = "datos/dataset/ikea/images/room_scenes"
-scene = next(iter(sorted((ROOT / gt_room).glob("*living*"))), None) or next(iter(sorted((ROOT / gt_room).glob("*"))))
-rooms_yaml = ROOT / "datos/ambientes_vacios/pedidos.yaml"
-import yaml  # noqa: E402
+    v0_dir = R / "v0_imagen" / "corridas" / "20261006-231131_retriever_abl-retriever-name-dinov3__method-none__category_filter-true"
+    v0 = {(r["room_id"], r["sku"]): r["best_rank"] for r in jsonl(v0_dir / "items.jsonl")}
+    v1: dict[tuple, int | None] = {}
+    for r in rankings(R / "evaluacion" / "20261021-133226_ablacion-texto")["qwen3|description|filtro-type"]:
+        for sku in r["relevant"]:
+            pos = r["ranked"].index(sku) + 1 if sku in r["ranked"] else None
+            k = (r["room_id"], sku)
+            v1[k] = pos if v1.get(k) is None else (v1[k] if pos is None else min(v1[k], pos))
+    keys = sorted(v0)
+    a = [float(v0[k] is not None and v0[k] <= 1) for k in keys]
+    b = [float(v1.get(k) is not None and v1[k] <= 1) for k in keys]
+    d = [y - x for x, y in zip(a, b, strict=True)]
+    ic95 = bootstrap_ci(d, [k[0] for k in keys], n_samples=4000)  # 4.000 remuestreos, como el recálculo de la revisión
+    return {"n": len(keys), "imagen": statistics.mean(a), "texto": statistics.mean(b), "dif": statistics.mean(d), "ic": ic95}
 
-rooms = yaml.safe_load(rooms_yaml.read_text())["ambientes"]
-pub_yaml = ROOT / "datos/ambientes_vacios/publicas.yaml"
-pub = {f["archivo"]: f for f in yaml.safe_load(pub_yaml.read_text())["fotos"]} if pub_yaml.exists() else {}
-shown = [r for r in rooms if (ROOT / r["foto"]).exists()][:12]
-thumbs = "".join(f'<div>{img(r["foto"], 260, cls="photo")}</div>' for r in shown)
-credits = "; ".join(f'{esc(pub[r["foto"]]["autor"])} ({esc(pub[r["foto"]]["licencia"])})' for r in shown if r["foto"] in pub)
-nr, npub = len(rooms), sum(r["foto"] in pub for r in rooms)
+
+def dos_flujos() -> str:
+    """La propuesta aprobada (generar, recortar y buscar por imagen) y lo que quedó."""
+    rows = [
+        ("La propuesta aprobada", "buscar por imagen", False, [
+            ("Foto + pedido", ""),
+            ("Generar una imagen", "con muebles inventados"),
+            ("Recortar cada mueble", "Grounding DINO + SAM"),
+            ("Buscar el más parecido", "por imagen (DINOv3)"),
+            ("Lista de compra", "lo que más se parezca"),
+        ]),
+        ("Lo que quedó", "RAG por texto", True, [
+            ("Foto + pedido", ""),
+            ("Plan", "una ficha por pieza"),
+            ("Búsqueda", "en el catálogo descripto"),
+            ("Elección: la lista", "productos reales"),
+            ("Imagen", "al final, con ellos"),
+        ]),
+    ]
+    x0, cw, gap, ch = 196, 176, 17, 54
+    out = ['<svg class="pipe" viewBox="0 0 1160 152" width="1160" role="img">']
+    for j, (name, sub, now, chips) in enumerate(rows):
+        y = 8 + j * 80
+        color = "var(--accent)" if now else "var(--line)"
+        dash = "" if now else ' stroke-dasharray="5 4"'
+        out.append(f'<text x="0" y="{y + 24}" font-size="16" font-weight="700" fill="var(--ink)">{esc(name)}</text>')
+        out.append(f'<text x="0" y="{y + 42}" font-size="12.5" fill="{"var(--accent)" if now else "var(--muted)"}">{esc(sub)}</text>')
+        for i, (t, s) in enumerate(chips):
+            x = x0 + i * (cw + gap)
+            out.append(f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" rx="10" fill="var(--card)" stroke="{color}" stroke-width="{1.5 if now else 1.2}"{dash}/>')
+            out.append(f'<text x="{x + 12}" y="{y + (23 if s else 32)}" font-size="13.5" font-weight="650" fill="var(--ink)">{esc(t)}</text>')
+            if s:
+                out.append(f'<text x="{x + 12}" y="{y + 41}" font-size="11.5" fill="var(--muted)">{esc(s)}</text>')
+            if i:
+                out.append(f'<line x1="{x - gap + 2}" y1="{y + ch / 2}" x2="{x - 4}" y2="{y + ch / 2}" stroke="var(--muted)" stroke-width="1.4"/>' + arrowhead(x - 3, y + ch / 2, x - 16, y + ch / 2, 6))
+    out.append("</svg>")
+    return "".join(out)
+
+
+VT = imagen_contra_texto()
 slide(
-    '<div class="row" style="gap:34px">'
-    '<div style="width:540px"><h3>Con ground truth: el retrieval</h3>'
-    f'<div class="fix h180">{img(scene, 900, cls="photo")}</div>'
-    '<ul class="small" style="margin-top:10px;font-size:15px">'
-    "<li><b>65 ambientes</b> de living y comedor de IKEA con sus productos anotados (de invertir <code>item_to_room</code>).</li>"
-    f"<li>Por cada mueble visible, un subagente escribe la búsqueda como el plan, sin ver el catálogo: <b>{ABL[BASE]['searches']} búsquedas</b>, {ABL[BASE]['answerable']} con su producto en el catálogo.</li>"
-    "<li>Acierta si el anotado sale primero (hit@1) o entre los k primeros. IC 95 % por <b>bootstrap por ambiente</b>.</li></ul></div>"
-    f'<div class="grow"><h3>Sin ground truth: el sistema completo</h3><div class="fix h70" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px">{thumbs}</div>'
-    '<ul class="small" style="margin-top:10px;font-size:15px">'
-    f"<li><b>{nr} ambientes vacíos reales</b>: {nr - npub} nuestros y {npub} públicos (Wikimedia Commons y Flickr), elegidos de {len(pub)} revisados uno por uno; cada uno con un pedido como el de un usuario.</li>"
-    "<li>Se mide con un juez que compara listas de a pares y con métricas de la imagen.</li></ul>"
-    f'<div class="tiny" style="margin-top:4px">Fotos públicas: {credits}.</div></div>'
-    "</div>",
-    kicker="Cómo medimos · los datos",
-    title="Ambientes IKEA anotados y ambientes vacíos reales",
-    notes=f"Usamos dos bancos de prueba. Para el retrieval, 65 fotos de livings y comedores de IKEA con sus productos anotados: ahí sabemos cuál es el correcto. Por cada mueble visible, un subagente escribió la búsqueda como la escribiría el plan, sin ver el catálogo: {ABL[BASE]['searches']} búsquedas, {ABL[BASE]['answerable']} con su producto en el catálogo. Acierta si el anotado sale primero, o entre los k primeros, y los intervalos son por bootstrap por ambiente. Para el sistema completo, {nr} ambientes vacíos reales: {nr - npub} nuestros y {npub} públicos, elegidos entre {len(pub)}, cada uno con un pedido escrito como lo escribiría un usuario. Ahí no hay ground truth: un juez compara listas, y la imagen se mide aparte.",
+    dos_flujos()
+    + '<div class="row" style="gap:40px;margin-top:16px">'
+    '<div style="width:520px"><div class="lab">Lo que medimos antes de cambiar: su buscador</div>'
+    + hbars(
+        [
+            {"label": "por imagen (recorte)", "value": VT["imagen"]},
+            {"label": "por texto (descripción)", "value": VT["texto"], "hl": True, "note": f'{sg(VT["dif"], 2)} {ic(*VT["ic"], d=2)}'},
+        ],
+        width=520,
+        label_w=176,
+        row_h=36,
+        pad_r=176,
+    )
+    + f'<p class="small" style="font-size:14.5px;margin-top:6px">Encontrar primero el producto anotado, con el mismo ground truth y la misma unidad ({VT["n"]} productos anotados, catálogo de 275). Y por texto hace falta <b>una generación de imagen menos</b> por pedido.</p></div>'
+    '<div class="grow"><div class="lab">Otros tres</div>'
+    + dec(None, f"<b>El catálogo traía fotos equivocadas</b>: 36 productos de IKEA con la foto de otro producto o de otra medida, o que no eran de living. La lista diría una cosa y la imagen mostraría otra: se revisó mirando cada foto (de 855 quedaron {len(ITEMS)}).")
+    + dec(None, "<b>No hay ground truth de la tarea real</b>: nadie anotó la lista ideal para un ambiente vacío. Hay uno para la búsqueda y, para el flujo entero, un juez que compara listas.")
+    + dec(None, f"<b>El modelo de imagen rehace el cuarto</b>: mueve la cámara, inventa una ventana. Edición estricta y un control automático; aun así, {no_pasan} de {len(FINALES)} no se conservan.")
+    + "</div></div>"
+    '<div class="take">Cambiamos la arquitectura con una medición de su buscador. La versión por imagen <b>nunca corrió de punta a punta</b>: comparamos buscadores, no sistemas.</div>',
+    kicker="Desafíos",
+    title="De buscar por imagen a RAG por texto, y otros tres desafíos",
+    notes=f"Los desafíos. El más grande fue cambiar la arquitectura que nos aprobaron. La propuesta era generar primero una imagen amoblada, recortar cada mueble y buscar en el catálogo el más parecido, por imagen. Construimos y medimos su buscador sobre el mismo ground truth: encontraba primero el {num(100 * VT['imagen'], 0)} por ciento de los productos anotados, contra {num(100 * VT['texto'], 0)} buscando por texto. Con eso, y con una generación de imagen menos por pedido, cambiamos a RAG por texto. Ojo: esa versión nunca corrió de punta a punta; comparamos buscadores, no sistemas. Los otros tres: el catálogo traía fotos de otro producto y hubo que revisarlo a mano; no hay ground truth de la tarea real; y el modelo de imagen rehace el cuarto.",
     mins=0.9,
 )
 
-slide(
-    '<div class="grid3 metric">'
-    '<div class="card"><h3>hit@k</h3><p class="small">¿El producto anotado está entre los k primeros? hit@1 es "lo encontró primero"; hit@k para k = cantidad de candidatos es el techo de lo que el VLM puede elegir.</p></div>'
-    '<div class="card"><h3>MRR@10</h3><div class="formula">media de 1 / posición</div><p class="small">Premia que el correcto esté arriba: 1 si es el 1.º, ½ si es el 2.º, 0 si no está en el top-10.</p></div>'
-    '<div class="card"><h3>Context recall@k</h3><p class="small">De los productos anotados de un ambiente, cuántos aparecen entre los k candidatos de su pieza (RAGAS, por ambiente).</p></div>'
-    '<div class="card"><h3>Context precision@K</h3><div class="formula">Σ precision@k · rel(k) / relevantes</div><p class="small">La de RAGAS: cuán arriba quedan los relevantes en el top-K.</p></div>'
-    '<div class="card"><h3>NDCG@10</h3><p class="small">Ganancia acumulada con descuento logarítmico por posición, normalizada por la ideal. Admite relevancia graduada (2/1/0).</p></div>'
-    '<div class="card"><h3>IC 95% por bootstrap</h3><p class="small">Se re-muestrean <b>ambientes</b>, no búsquedas. Dos métodos cuyos intervalos se pisan no se distinguen con estos datos.</p></div>'
-    "</div>",
-    kicker="Métricas · retrieval",
-    title="Con ground truth: ¿trae el producto correcto, y arriba?",
-    mins=0.8,
-    notes="Las métricas de retrieval, donde sí hay ground truth. hit@k: si el anotado está entre los k primeros; hit@1 es encontrarlo primero, y hit@k con k igual a los candidatos que ve el VLM es el techo de lo que puede elegir. MRR: el promedio de uno sobre la posición del correcto, premia que esté arriba. Context recall y context precision son las de RAGAS: cuántos de los productos de un ambiente aparecen entre los candidatos, y cuán arriba quedan. NDCG admite relevancia graduada. Y los intervalos: si dos métodos tienen intervalos que se pisan, con estos datos no los podemos distinguir.",
+# ================================================================================================
+# Parte 2: cómo evaluamos
+# ================================================================================================
+section(
+    "Parte 2",
+    "Cómo evaluamos",
+    "Dos bancos de prueba: ambientes de IKEA con sus productos anotados (hay ground truth: mide la búsqueda) y ambientes vacíos reales (no lo hay: un juez y métricas de la imagen). Qué mide cada número, y cuánto creerle.",
+    notes="Antes de los experimentos, cómo evaluamos: qué mide cada número y cuánto creerle.",
 )
 
+# los datos de evaluación: el ground truth y los ambientes vacíos
+gt_room = "datos/dataset/ikea/images/room_scenes"
+scene = next(iter(sorted((ROOT / gt_room).glob("*living*"))), None) or next(iter(sorted((ROOT / gt_room).glob("*"))))
+shown = [r for r in AMBIENTES if (ROOT / r["foto"]).exists()][:12]
+thumbs = "".join(f'<div>{img(r["foto"], 260, cls="photo")}</div>' for r in shown)
+credits = credito(*[r["slug"] for r in shown if r["foto"] in PUB])
+nr, npub = len(AMBIENTES), sum(r["foto"] in PUB for r in AMBIENTES)
 slide(
-    '<div class="grid2 metric">'
-    '<div class="card"><h3>Relevancia graduada con un juez</h3><p class="small">El ground truth tiene un solo producto correcto, pero otro parecido también sirve. Un juez (LLM) califica el top-3: <b>2</b> el mismo o indistinguible, <b>1</b> alternativa aceptable, <b>0</b> no sirve. útil@k = hay un 1 o un 2 en el top-k. Validamos al juez contra el ground truth: ¿le da 2 al anotado?</p></div>'
-    '<div class="card"><h3>RAGAS sobre la explicación</h3><p class="small"><b>Faithfulness</b>: la explicación de cada elección se parte en afirmaciones; un juez que ve lo mismo que el sistema dice cuáles se sostienen. <b>Answer relevance</b>: el juez infiere el pedido desde la respuesta y se compara con el original (coseno).</p></div>'
-    '<div class="card"><h3>Juez de a pares, en los dos órdenes</h3><p class="small">Sin ground truth (ambiente vacío): un juez ve la foto, el pedido y dos listas sin saber de qué variante son, puntúa cada producto (2/1/0) y elige una. Se pregunta en los dos órdenes: gana un ambiente si gana en los dos; si no, empate. Reportamos el <b>acuerdo entre órdenes</b> (sesgo de posición).</p></div>'
-    '<div class="card"><h3>Costo y latencia</h3><p class="small">Cada llamada paga queda registrada con su costo, tokens y latencia. Un método que mejora 2 puntos y cuesta el triple no siempre conviene.</p></div>'
-    "</div>",
-    kicker="Métricas · la respuesta",
-    title="Sin un único correcto: jueces validados y comparaciones de a pares",
-    mins=0.8,
-    notes="Cuando no hay un único correcto usamos jueces, pero validados. Relevancia graduada: un LLM califica el top-3 con 2, 1 o 0, y antes chequeamos que le dé 2 al producto anotado. RAGAS sobre la explicación de cada elección: faithfulness, si lo que dice se sostiene con lo que vio, y answer relevance, si responde al pedido. Para comparar variantes sin ground truth, un juez de a pares en los dos órdenes, y reportamos cuánto coinciden los dos órdenes. Y el costo de cada llamada.",
-)
-
-slide(
-    '<div class="grid3 metric">'
-    '<div class="card"><h3>Preservación del ambiente</h3><p class="small"><b>SIFT + RANSAC</b>: puntos de la foto original que se reencuentran en la imagen y cuánto se movió la cámara. <b>SSIM</b> fuera de las cajas de los muebles: lo que no es mueble tiene que quedar igual.</p></div>'
-    '<div class="card"><h3>Fidelidad de los productos</h3><p class="small">Grounding DINO detecta cada mueble de la imagen; el recorte se compara con DINOv3 contra todas las fotos del catálogo de su tipo: ¿el más parecido es el producto de la lista? Vara: lo mismo con fotos reales de ambientes IKEA.</p></div>'
-    '<div class="card"><h3>Pedido ↔ imagen</h3><p class="small"><b>SigLIP 2</b>: similitud entre el pedido y la imagen, contra la foto vacía. Y conteo: productos que faltan, repetidos o inventados.</p></div>'
+    '<div class="row" style="gap:34px">'
+    '<div style="width:540px"><h3>Con ground truth: la búsqueda</h3>'
+    f'<div class="fix h180">{img(scene, 900, cls="photo")}</div>'
+    '<ul class="small" style="margin-top:10px;font-size:15px">'
+    f"<li><b>{N_AMB} ambientes</b> de living y comedor de IKEA con sus productos anotados (de invertir <code>item_to_room</code>).</li>"
+    f"<li>Por cada mueble visible, un subagente escribe la consulta como la escribiría el plan, sin ver el catálogo: <b>{N_BUS} consultas</b>, {N_ANS} con su producto en el catálogo de {len(ITEMS)}.</li>"
+    "<li>Es un banco de <b>producto conocido</b>: quien escribe la consulta está viendo el mueble. Mide el índice, no la recomendación.</li></ul></div>"
+    f'<div class="grow"><h3>Sin ground truth: el flujo entero</h3><div class="fix h70" style="display:grid;grid-template-columns:repeat(6,1fr);gap:6px">{thumbs}</div>'
+    '<ul class="small" style="margin-top:10px;font-size:15px">'
+    f"<li><b>{nr} ambientes vacíos reales</b>: {nr - npub} nuestros y {npub} públicos (Wikimedia Commons y Flickr), elegidos de {len(PUB)} revisados uno por uno; cada uno con un pedido como el de un usuario.</li>"
+    "<li>Un juez (Opus) compara a ciegas las listas de dos configuraciones, <b>en los dos órdenes</b>: una gana un ambiente solo si gana en los dos.</li>"
+    "<li>La imagen se mide aparte: si muestra esos productos, y si sigue siendo ese cuarto.</li></ul>"
+    f'<div class="tiny" style="margin-top:4px">Fotos públicas: {credits}.</div></div>'
     "</div>"
-    '<div class="grid2" style="margin-top:16px">'
-    '<div class="card metric"><h3>Reproducibilidad</h3><p class="small">Las mismas búsquedas escritas por tres redactores distintos: si el resultado cambia mucho con quién escribe, la métrica mide al redactor y no al sistema.</p></div>'
-    '<div class="card metric"><h3>El espacio de embeddings</h3><p class="small">¿El vecino más cercano de cada producto es de su mismo kind? Separabilidad (silhouette) y una UMAP con una consulta del dominio y una de afuera.</p></div>'
-    "</div>",
-    kicker="Métricas · la imagen y el resto",
-    title="La imagen: mismo cuarto, mismos productos, lo que se pidió",
-    mins=0.8,
-    notes="Para la imagen medimos tres cosas. Que sea el mismo cuarto: SIFT reencuentra puntos de la foto original y mide cuánto se movió la cámara, y SSIM compara lo que no es mueble. Que sean los mismos productos: detectamos cada mueble, lo recortamos y vemos si el más parecido del catálogo es el de la lista. Y que sea lo que se pidió: SigLIP 2 entre el pedido y la imagen, y contamos lo que falta, lo repetido y lo inventado. Además, reproducibilidad con tres redactores, y el espacio de embeddings.",
+    '<div class="take">Dos bancos, dos preguntas: con ground truth se mide <b>el índice</b>; con el juez, <b>la lista</b>.</div>',
+    kicker="Cómo evaluamos · los datos",
+    title="Ambientes IKEA anotados y ambientes vacíos reales",
+    notes=f"Usamos dos bancos de prueba, que miden cosas distintas. Para la búsqueda, {N_AMB} ambientes de IKEA con sus productos anotados. Por cada mueble visible, un subagente escribió la consulta como la escribiría el plan, sin ver el catálogo: {N_BUS} consultas, {N_ANS} con su producto en el catálogo. Es un banco de producto conocido: quien escribe está viendo el mueble, así que mide el índice, no la recomendación. Para el flujo entero, {nr} ambientes vacíos reales, cada uno con su pedido: ahí no hay ground truth, y un juez compara a ciegas las listas de dos configuraciones, en los dos órdenes.",
+    mins=0.75,
 )
+
+# las métricas del buscador, con el valor de hoy
+corr_cp = statistics.correlation([v["mrr@10"] for v in ABL.values()], [v["context_precision@10"] for v in ABL.values()])
+slide(
+    '<div class="grid3 metric">'
+    '<div class="card"><h3>hit@k</h3><p class="small">¿El producto anotado está entre los k primeros? <b>hit@5 es el titular</b>: son los 5 candidatos que ve el que elige.</p>'
+    f'<div class="val">hit@1 <b>{num(B2["hit@1"], 3)}</b> · hit@5 <b>{num(B2["hit@5"], 3)}</b></div><p class="tiny">Versión 1: {num(B1["hit@1"], 3)} y {num(B1["hit@5"], 3)}. Al azar dentro del kind, hit@1 {num(B2["azar_hit@1"])}.</p></div>'
+    '<div class="card"><h3>Diferencia pareada</h3><p class="small">Dos métodos sobre <b>las mismas consultas</b>: la diferencia media y su IC 95 %. Si el intervalo no toca el cero, no es ruido.</p>'
+    f'<div class="val">{nb(dif(D21))}</div><p class="tiny">hit@1 de la versión 2 menos la versión 1. Mirar el intervalo de cada método por separado engaña.</p></div>'
+    '<div class="card"><h3>IC 95 % por bootstrap</h3><p class="small">Se remuestrean <b>ambientes</b>, no consultas: las consultas de un mismo ambiente no son independientes.</p>'
+    f'<div class="val">hit@1 <b>{num(B2["hit@1"], 3)}</b> {ic(*ci(B2), d=2)}</div><p class="tiny">{N_ANS} consultas con respuesta, de {N_AMB_ANS} ambientes.</p></div>'
+    '<div class="card"><h3>MRR@10</h3><p class="small">La media de 1 / posición del anotado: 1 si es el 1.º, ½ si es el 2.º, 0 si no está en el top-10.</p>'
+    f'<div class="val"><b>{num(B2["mrr@10"], 3)}</b></div><p class="tiny">Versión 1: {num(B1["mrr@10"], 3)}.</p></div>'
+    '<div class="card"><h3>Context precision@10 y NDCG@10</h3><p class="small">Las de la clase: cuán arriba quedan los relevantes. Con uno o dos relevantes por consulta, repiten al MRR.</p>'
+    f'<div class="val"><b>{num(B2["context_precision@10"])}</b> y <b>{num(B2["ndcg@10"])}</b></div><p class="tiny">Correlación con el MRR sobre {len(ABL)} configuraciones: más de {num(int(corr_cp * 100) / 100)}.</p></div>'
+    '<div class="card"><h3>Context recall</h3><p class="small">De los productos anotados de un ambiente, cuántos aparecen entre los k candidatos de sus consultas. Es <b>por ambiente</b>.</p>'
+    f'<div class="val"><b>{num(B2["context_recall@3"])}</b> con k = 3 · <b>{num(B2["context_recall@10"])}</b> con k = 10</div></div>'
+    "</div>"
+    '<div class="take">Los valores son los de la búsqueda del flujo de hoy (versión 2), sobre el ground truth de IKEA.</div>',
+    kicker="Cómo evaluamos · el retriever",
+    title="El buscador: ¿trae el producto anotado, y arriba?",
+    mins=0.75,
+    notes=f"Las métricas del buscador, con el valor de hoy. hit@k: si el producto anotado está entre los k primeros. El titular es hit@5, porque son los cinco candidatos que ve el que elige: {num(B2['hit@5'], 3)}. Para comparar dos métodos usamos la diferencia pareada: las mismas consultas, la diferencia media y su intervalo de 95 por ciento, por bootstrap de ambientes. Si no toca el cero, no es ruido. Mirar el intervalo de cada método por separado nos había hecho leer mejoras que eran ruido. Las de la clase, context precision y NDCG, acá repiten al MRR; context recall es por ambiente.",
+)
+
+# las métricas del generador y los jueces
+fid = [x["fidelidad"]["faithfulness"] for x in RESP["por_corrida"]]
+no_sost = RESP["por_corrida"][0]["fidelidad"]["no_sostenidas"][:2]
+F, AR = RESP["faithfulness"], RESP["answer_relevance"]
+gt_agree = GRAD["acuerdo_con_gt"]
+
+
+def acuerdo(j: dict) -> str:
+    """En cuántos ambientes los dos órdenes del juez votaron lo mismo."""
+    return f'{sum(d["votos"][0] == d["votos"][1] for d in j["detalle"])} de {len(j["detalle"])}'
+
+
+slide(
+    '<div class="row" style="gap:28px">'
+    '<div style="width:548px;display:grid;gap:14px" class="metric">'
+    f'<div class="card"><h3>Faithfulness del porqué</h3><div class="row center" style="gap:16px"><div class="big">{num(F["global"])}</div>'
+    f'<p class="small" style="margin:0"><b>{F["sostenidas"]} de {F["afirmaciones"]}</b> afirmaciones se infieren de lo que vio el generador: el pedido, la foto del cuarto y, de cada producto, su foto y una línea con su tipo y su medida.</p></div>'
+    f'<p class="tiny" style="margin-top:8px">Por lista, de {num(min(fid))} a {num(max(fid))}. Lo que no se sostiene es casi siempre <b>la especie de la madera</b>, que afirma sin verla escrita: <i>“{esc(no_sost[0])}”</i>, <i>“{esc(no_sost[1])}”</i>.</p></div>'
+    f'<div class="card"><h3>Answer relevance</h3><div class="row center" style="gap:16px"><div class="big">{num(AR["media"])}</div>'
+    '<p class="small" style="margin:0">Un juez que no ve el pedido escribe tres pedidos que la lista contesta; se mide su coseno con el pedido original.</p></div>'
+    f'<p class="tiny" style="margin-top:8px">La vara: los pedidos que el juez escribió para <b>otras</b> listas dan <b>{num(AR["vara_cruzada"])}</b> (la propia les gana en {AR["supera_a_la_cruzada"]} de {RESP["corridas"]}); pedidos sin relación, {num(AR["vara_contrastes"])}.</p></div>'
+    f'<p class="tiny" style="margin:-4px 0 0">Las dos, sobre las {RESP["corridas"]} listas del catálogo IKEA + ABO armadas con la búsqueda de la versión 1; sobre las de la versión 2 no se corrieron.</p>'
+    "</div>"
+    '<div class="grow">'
+    + prompt_card(
+        "juez_pedidos_v1.md",
+        ['A furnishing app takes a photo of a room and a request in Spanish ([["un living nórdico y cálido"]], "un comedor para seis") and answers with a shopping list of products'],
+        note="el juez de antes · extracto",
+    )
+    + '<div style="margin-top:12px">'
+    + dec(None, f'<b>Data leakage.</b> Ese ejemplo era, palabra por palabra, el comienzo del pedido que se evaluaba: el juez lo copiaba. Y el juez de fidelidad leía la ficha completa, que el generador no ve. Daban {DOC["generador_v1"][0]} y {DOC["generador_v1"][1]}; los rehicimos sin el ejemplo y con el contexto real.')
+    + dec(None, f"<b>Validado contra el ground truth, un juez</b>: el de relevancia graduada le da la nota máxima al producto anotado el {num(100 * gt_agree['anotado_con_2'], 0)} % de las veces, y a los demás el {num(100 * gt_agree['otros_con_2'], 0)} %.")
+    + dec(None, f"<b>El juez de listas</b> no está validado contra personas: se le pregunta en los dos órdenes, y coinciden en {acuerdo(JA)} ambientes contra el azar, en {acuerdo(JC)} entre catálogos y en {acuerdo(JV)} entre versiones.")
+    + "</div></div></div>"
+    '<div class="take">El porqué se sostiene en <b>8 de cada 10 afirmaciones</b>; lo que agrega de más es la madera. Y la lista responde a su pedido más que a los ajenos.</div>',
+    kicker="Cómo evaluamos · el generador y los jueces",
+    title=f"El generador: faithfulness {num(F['global'])} y answer relevance {num(AR['media'])}",
+    mins=0.95,
+    notes=f"El generador es el paso que elige y explica. Faithfulness: partimos el porqué en afirmaciones, y un juez dice cuáles se infieren de lo que el generador vio. Da {num(F['global'])}: {F['sostenidas']} de {F['afirmaciones']}. Lo que no se sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer relevance: un juez que no ve el pedido escribe los pedidos que esa lista contesta. Da {num(AR['media'])}, contra {num(AR['vara_cruzada'])} con pedidos escritos para otras listas. Estas métricas las rehicimos, y es una historia de data leakage: el prompt del juez traía de ejemplo “un living nórdico y cálido”, que era justo como empezaba el pedido evaluado, y lo copiaba. Y sobre los jueces: validado contra el ground truth hay uno solo; el de listas se controla con los dos órdenes.",
+)
+
+
+# la imagen: las 11 corridas de la configuración final
+def pares_producto() -> str:
+    """Cada producto de la lista del recorrido: su foto del catálogo, su recorte en la imagen
+    generada y el puesto del producto entre los de su tipo (6_metricas_imagen.json)."""
+    cells = []
+    for (h, *_), p in zip(run_picks, RUN_MET["productos"], strict=True):
+        assert h["id"] == p["id"]
+        cat = f'<div class="th">{img(h["photos"][0], 150, alt="")}</div>'
+        if p["detectado"]:
+            ok = p["puesto"] == 1
+            cells.append(
+                f'<div class="par">{cat}<div class="th">{recorte(RUN / "final.png", p["box"], 150)}</div>'
+                f'<div class="r{" ok" if ok else ""}">{p["puesto"]}.º de {p["entre"]}</div></div>'
+            )
+        else:
+            cells.append(f'<div class="par">{cat}<div class="th vacio"></div><div class="r">no detectado</div></div>')
+    return f'<div class="pares" style="grid-template-columns:repeat({len(cells)},1fr)">{"".join(cells)}</div>'
+
+
+fin_th = "".join(
+    f'<div class="shot">{img(f["dir"] / "final.png", 320)}<span class="badge {"ok" if f["img"]["room_check"]["ok"] else "no"}">'
+    f'{"pasa" if f["img"]["room_check"]["ok"] else "no pasa"} · {sum(p.get("puesto") == 1 for p in f["met"]["productos"])} de {len(f["met"]["productos"])}</span></div>'
+    for f in FINALES
+)
+run_rec = sum(p.get("puesto") == 1 for p in RUN_MET["productos"])
+slide(
+    '<div class="row" style="gap:30px">'
+    '<div style="width:520px"><div class="lab">¿Son esos productos? En el loft: catálogo, recorte y puesto</div>'
+    + pares_producto()
+    + f'<p class="small" style="font-size:14.5px;margin-top:10px">Se detecta cada mueble en la imagen, se recorta y se compara con las fotos del catálogo de su tipo (DINOv3): <b>reconocido</b> si el más parecido es el de la lista. Acá, {run_rec} de {len(RUN_MET["productos"])}.</p>'
+    '<div class="row center" style="gap:14px;margin-top:6px">'
+    f'<div class="big" style="font-size:46px;white-space:nowrap">{IMG_TOT["reconocidos"]} de {IMG_TOT["productos"]}</div>'
+    f'<div class="bignote" style="margin:0">productos reconocidos como el exacto ({num(100 * IMG_TOT["reconocidos"] / IMG_TOT["productos"], 0)} %) en las {len(FINALES)} imágenes; aparecen {IMG_TOT["detectados"]}. Coseno medio {num(IMG_TOT["coseno"])}.</div></div></div>'
+    f'<div class="grow"><div class="lab">¿Es ese cuarto? Las {len(FINALES)} imágenes: control · productos reconocidos</div>'
+    f'<div class="fines">{fin_th}'
+    f'<div class="resumen"><div class="big" style="font-size:40px;white-space:nowrap">{IMG_TOT["pasan"]} de {len(FINALES)}</div><div class="bignote">conservan el cuarto, todas al primer intento</div></div></div>'
+    f'<div class="tiny" style="margin-top:6px">Fotos públicas: {credito(*[f["slug"] for f in FINALES if FOTO[f["slug"]] in PUB])}.</div></div>'
+    "</div>"
+    '<div class="take">La lista es confiable; la imagen es una visualización: acierta el producto exacto <b>4 de cada 10 veces</b> y conserva el cuarto <b>2 de cada 3</b>.</div>',
+    kicker="Cómo evaluamos · la imagen",
+    title=f"La imagen: {IMG_TOT['reconocidos']} de {IMG_TOT['productos']} productos reconocidos, {IMG_TOT['pasan']} de {len(FINALES)} cuartos",
+    mins=0.8,
+    notes=f"La imagen la medimos sobre las {len(FINALES)} corridas finales, no sobre la mejor. Primero: ¿son esos productos? Detectamos cada mueble, lo recortamos y lo comparamos con las fotos del catálogo de su tipo: reconocido, si el más parecido es el de la lista. En el loft, el sofá, la biblioteca y la lámpara salen primeros; la alfombra, no. En total se reconocen {IMG_TOT['reconocidos']} de {IMG_TOT['productos']}, el {num(100 * IMG_TOT['reconocidos'] / IMG_TOT['productos'], 0)} por ciento, aunque aparecen {IMG_TOT['detectados']}. Segundo: ¿es ese cuarto? El control pasa en {IMG_TOT['pasan']} de {len(FINALES)}. O sea: la lista es confiable; la imagen es una visualización, que acierta el producto exacto cuatro de cada diez veces.",
+)
+
+# las trampas, dichas en voz alta
+cos_banco = statistics.median(r["scores"][0] for r in rankings(HIB_DIR)[V1] if r["relevant"] and r["scores"])
+cos_flujo = sorted(DIAG_CAT[v]["puntaje_del_primero"]["mediana"] for v in ("ikea", "todos"))
+bm = EMB["bm25|description|filtro-kind"]
+slide(
+    '<div class="grid2 metric" style="gap:16px 20px">'
+    '<div class="card"><h3>El banco de la búsqueda es de producto conocido</h3>'
+    f'<p class="small">Quien escribió la consulta veía el mueble: mide identificar un producto, no recomendar. En el flujo real el plan lo imagina, y sus consultas quedan más lejos del catálogo: el coseno del primer candidato es {num(cos_flujo[0])}–{num(cos_flujo[1])}, contra {num(cos_banco, 3)} en el banco.</p></div>'
+    '<div class="card"><h3>El mismo modelo escribe los dos lados</h3>'
+    f'<p class="small">Consultas y descripciones salen del mismo modelo, con el mismo molde de 8 líneas. Por eso contar palabras rinde casi como el embedder (BM25: {num(bm["hit@1"], 3)} contra {num(B1["hit@1"], 3)}). Representa al sistema, porque el plan también es Claude; no a alguien que escribe con otras palabras.</p></div>'
+    '<div class="card"><h3>No hay conjunto apartado</h3>'
+    f'<p class="small">Todo se eligió y se reporta sobre los mismos {N_AMB_ANS} ambientes. Las diferencias grandes se sostienen igual; las de 2 puntos no las leemos como señal.</p></div>'
+    f'<div class="card"><h3>De punta a punta son {len(AMBIENTES)} ambientes</h3>'
+    '<p class="small">El juez es el mismo modelo que elige, y ninguna configuración se corrió dos veces: no sabemos cuántos ambientes da vuelta el ruido solo. Los pedidos enumeran las piezas: el pedido abierto (“un living nórdico y cálido”) no está evaluado.</p></div>'
+    "</div>"
+    '<div class="take">El ground truth sirve para comparar cambios grandes del índice. Lo que le sirve al usuario lo dice el juez, con n = 11.</div>',
+    kicker="Cómo evaluamos · cuánto creerle",
+    title="Las trampas, dichas en voz alta",
+    mins=0.65,
+    notes=f"Y las trampas, dichas en voz alta. Uno: el banco de la búsqueda es de producto conocido; en el flujo real el plan imagina el producto, no lo ve. Dos: el mismo modelo escribe las consultas y las descripciones, con el mismo molde; por eso contar palabras rinde casi como el embedder. Tres: no hay conjunto apartado. Y cuatro: de punta a punta son {len(AMBIENTES)} ambientes, el juez es el mismo modelo que elige, y no repetimos ninguna corrida. Por eso leemos las diferencias grandes, y las de dos puntos, no.",
+)
+
 
 # ================================================================================================
-# Parte 3: los experimentos
+# Parte 3: los experimentos, por su ranking (docs/REVISION.md, sección 4)
 # ================================================================================================
 section(
     "Parte 3",
     "Experimentos",
-    "Cada uno: por qué lo hicimos y qué queríamos ver, cómo lo medimos, qué dio y qué decidimos. Arriba, el minimapa con su pin: la fase que decidió.",
-    notes="Ahora los experimentos. Todos siguen el mismo orden: arriba, el minimapa con la fase que decide; después, por qué lo hicimos y cómo es el experimento; y recién ahí, con la flecha, los resultados y la decisión.",
+    "Por cuánto importan: ocho con lámina propia (por qué, qué se comparó, el resultado con su diferencia pareada y la decisión), el camino incremental que los resume y, juntos, los de trámite.",
+    notes="Ahora los experimentos, por cuánto importan. Los que sostienen una decisión tienen su lámina; los de trámite van juntos al final.",
+    mins=0.15,
 )
 
-# E1: qué texto
+# -- El mapa de los experimentos
+EXPS = [
+    (1, "Qué se indexa", "texto del vendedor · descripción desde la foto"),
+    (2, "Cómo se escribe la consulta", "la ficha · la frase natural · Type · kind"),
+    (3, "Léxica, por foto e híbrida", "Qwen3 · BM25 · SigLIP 2 · fusionadas"),
+    (4, "¿Error, o una variante?", "exacto · el mismo modelo · sirve (juez)"),
+    (5, "Elegir con un VLM, y cuántos", "top-10 mirando las fotos · k de 1 a 10"),
+    (6, "Qué catálogo", "IKEA · ABO · los dos (juez)"),
+    (7, "Con búsqueda o sin búsqueda", "los 5 mejores · 5 al azar del kind (juez)"),
+    (8, "Tres redactores", "las mismas consultas, escritas tres veces"),
+    (9, "Embedder", "hashing · BM25 · BGE · Qwen3"),
+    (10, "Dimensión del vector", "de 32 a 1.024 (Matryoshka)"),
+    (11, "Splitting y líneas", "documento · por línea · qué líneas pesan"),
+    (12, "Base vectorial", "ChromaDB (HNSW) · búsqueda exacta"),
+    (13, "Filtros de metadata", "ninguno · por tipo · por kind"),
+    (14, "Rerankers de texto", "MiniLM · Qwen3-Reranker"),
+]
+assert {n for ns in PINES.values() for n in ns} | set(BANCO) == {n for n, *_ in EXPS}
+assert {n for n, *_ in EXPS if n > 8} == TRAMITE
+legend = "".join(f'<div class="li">{pin_inline(n)}<b>{esc(t)}</b><span>{esc(v)}</span></div>' for n, t, v in EXPS[:7])
+legend2 = "".join(f'<div class="li">{pin_inline(n)}<b>{esc(t)}</b><span>{esc(v)}</span></div>' for n, t, v in EXPS[7:])
+slide(
+    pipeline(pins=True, banco=f"{N_AMB} ambientes de IKEA anotados, {N_ANS} consultas con respuesta: el 4 y el 8 miden cuánto creerle a su número")
+    + f'<div class="legend" style="margin-top:10px"><div>{legend}</div><div>{legend2}</div></div>'
+    + '<div class="take">Pin hueco: de trámite. <b>Sin experimento: la escena, el modelo de imagen y los umbrales del control.</b></div>',
+    kicker="Experimentos · el mapa",
+    title="Catorce experimentos: ocho con lámina propia, seis de trámite",
+    notes="El mismo mapa, con los experimentos encima: cada pin es una pregunta que le hicimos a una parte del sistema. Los llenos, del 1 al 8, tienen lámina propia. Dos de ellos, el 4 y el 8, no miden una fase: miden al banco de prueba. Los huecos, del 9 al 14, son los de trámite: embedder, dimensión, splitting, base vectorial, filtros y rerankers de texto. Y tres cosas no las decidió ningún experimento: la escena, el modelo de imagen y los umbrales del control.",
+    mins=0.65,
+)
+
+# -- 1: qué se indexa
+K_NAIVE, K_DESC = "qwen3|seller-full|filtro-none|consulta-piece", "qwen3|description|filtro-none|consulta-piece"
+n1, n2 = CAM[K_NAIVE], CAM[K_DESC]
+d_idx = n2["vs_anterior"]
+d_ficha = paired(ABL_DIR, "qwen3|description|filtro-none", "qwen3|seller|filtro-none")  # lo mismo, con la consulta escrita como ficha
+d_name = paired(ABL_DIR, "qwen3|name+description|filtro-kind", V1)
 experiment(
     "1",
-    "Qué texto se indexa",
+    "Qué se indexa",
     "Alcanza con el texto del vendedor, o hay que describir cada producto?",
-    '<ul class="small"><li><b>Vendedor</b>: nombre, tipo, colores y la frase de IKEA.</li>'
-    "<li><b>Descripción del VLM</b>: las 8 líneas escritas mirando la foto, en el mismo formato que la consulta.</li>"
-    "<li><b>Nombre + descripción</b>: el nombre comercial adelante (\"NOLMYRA\").</li></ul>"
-    '<div class="find" style="margin-top:14px">Es el cambio más grande de todo el trabajo: <b>×4</b> en hit@1. El nombre comercial empeora: es ruido para el embedding.</div>',
-    bars_methods(
-        [("qwen3|seller|filtro-type", "vendedor"), ("qwen3|name+description|filtro-kind", "nombre + descripción"), (BASE, "descripción del VLM")],
-        BASE,
-        width=520,
-        label_w=190,
-    ),
-    "<b>Decisión:</b> se indexa solo la descripción del VLM. Describir el catálogo es un costo único, offline.",
+    '<ul class="small"><li><b>El texto del vendedor</b>: nombre, su tipo (“Easy chair”), colores y la frase de IKEA.</li>'
+    "<li><b>La descripción desde la foto</b>: las 8 líneas que escribe el VLM.</li>"
+    f"<li>Lo demás, fijo: Qwen3, sin filtro, la consulta en una frase corta sin reescribir, las mismas {N_ANS} consultas.</li></ul>"
+    f'<div class="find" style="margin-top:14px">Describir cada producto casi triplica el acierto: <b>{nb(dif(d_idx))}</b> de hit@1, y hit@5 pasa de {num(n1["hit@5"])} a {num(n2["hit@5"])}. Con la consulta escrita como ficha la diferencia es mayor ({sg(d_ficha["hit@1"], 2)}): los dos cambios se potencian.</div>',
+    hbars(
+        [
+            {"label": "vendedor · hit@1", "value": n1["hit@1"], "ci": ci(n1)},
+            {"label": "descripción · hit@1", "value": n2["hit@1"], "ci": ci(n2), "hl": True, "note": dif(d_idx)},
+            {"label": "vendedor · hit@5", "value": n1["hit@5"], "ci": ci(n1, "hit@5")},
+            {"label": "descripción · hit@5", "value": n2["hit@5"], "ci": ci(n2, "hit@5"), "hl": True, "note": dif(d_idx, "hit@5")},
+        ],
+        width=590,
+        label_w=160,
+        pad_r=200,
+    )
+    + f'<div class="cap" style="max-width:590px">A la derecha, la diferencia pareada con su IC 95 %. Con el nombre comercial adelante (“NOLMYRA”), peor: {dif(d_name)} de hit@1.</div>',
+    "<b>Decisión:</b> se indexa la descripción hecha desde la foto, no el texto del vendedor. Es un costo único, offline: US$0,007 por producto por la API.",
     fases=("descripcion",),
     why="El texto de IKEA casi no describe el producto (“The armchair is lightweight...”), y un usuario pide estilo, color y materiales: cosas que están en la foto, no en el texto.",
     notes={
-        "motivo": "El texto que trae IKEA es una frase de marketing, y la gente pide estilo, color y materiales, que están en la foto. Queríamos saber si valía la pena describir cada producto, un costo que se paga una sola vez.",
-        "experimento": f"Indexamos tres textos y corrimos las mismas {ABL[BASE]['answerable']} búsquedas, con todo lo demás fijo: el texto del vendedor, la descripción de ocho líneas, y la descripción con el nombre comercial adelante.",
-        "resultados": f"Con el texto del vendedor, hit@1 da {num(m('qwen3|seller|filtro-type')['hit@1'])}; con la descripción, {num(m(BASE)['hit@1'])}: más de cuatro veces, el cambio más grande del trabajo. El nombre adelante empeora (de {num(m('qwen3|description|filtro-kind')['hit@1'])} a {num(m('qwen3|name+description|filtro-kind')['hit@1'])}): NOLMYRA no le dice nada al embedding.",
-        "decision": "Se indexa solo la descripción. Y queda una idea que vuelve en todo el trabajo: consulta y documento en el mismo formato.",
+        "motivo": "El texto de IKEA es una frase de marketing, y la gente pide estilo, color y materiales, que están en la foto. ¿Vale la pena describir cada producto?",
+        "experimento": "Indexamos dos textos, con todo lo demás fijo: el texto del vendedor y la descripción de ocho líneas. La consulta, una frase corta sin reescribir, para medir un solo cambio.",
+        "resultados": f"Con el texto del vendedor, hit@1 da {num(n1['hit@1'])}; con la descripción, {num(n2['hit@1'])}: casi el triple, y hit@5 pasa de {num(n1['hit@5'])} a {num(n2['hit@5'])}. La diferencia es pareada y su intervalo no toca el cero. Con la consulta escrita como ficha, la diferencia supera 0,4.",
+        "decision": "Se indexa la descripción hecha desde la foto. Es el preprocesamiento que más pesa de todo el trabajo.",
     },
-    mins=1.0,
+    mins=0.9,
 )
 
-# E2: embedder
+# -- 2: cómo se escribe la consulta, contra no reescribirla
+q_full, q_piece = CON[V1], CON[V1 + "|consulta-piece"]
+q_type, q_kind = CON[V1 + "|consulta-type"], CON[V1 + "|consulta-kind"]
+s_full, s_piece = CON["siglip2|description|filtro-kind"], CON["siglip2|description|filtro-kind|consulta-piece"]
+d_q = q_piece["vs_base"]  # la frase natural menos la ficha
+frases = [r["phrase"] for r in rankings(HIB_DIR)[V1] if r.get("phrase")]
 experiment(
     "2",
-    "Embedder",
-    "Cuánto aporta un modelo de embeddings sobre un vector de palabras?",
-    '<ul class="small"><li><b>hashing</b>: bolsa de palabras hasheada, sin modelo (línea de base).</li>'
-    "<li><b>BGE-base</b> (110M) y <b>Qwen3-Embedding-0.6B</b>, locales.</li></ul>"
-    '<div class="find" style="margin-top:14px">El hashing queda a 2 puntos de Qwen3: las descripciones comparten vocabulario controlado (estilos de una lista, kinds), así que hasta contar palabras funciona. Qwen3 gana en MRR y en consultas difíciles; BGE queda último.</div>',
-    bars_methods(
-        [("hashing|description|filtro-type", "hashing"), ("bge|description|filtro-type", "BGE-base"), (BASE, "Qwen3-0.6B")],
-        BASE,
-        width=520,
-        label_w=150,
-    ),
-    "<b>Decisión:</b> Qwen3-Embedding-0.6B (Apache-2.0, corre en CPU). El vocabulario controlado de las descripciones vale más que el modelo.",
-    fases=("indice",),
-    why="Con un texto bueno, el siguiente candidato es el modelo de embeddings. Uno más grande cuesta memoria y tiempo, y queríamos que el retrieval corra local, en CPU.",
-    notes={
-        "motivo": "Con el texto resuelto, ¿cuánto aporta el modelo? Uno más grande cuesta memoria y tiempo, y queríamos que el retrieval corra local, en CPU.",
-        "experimento": "Tres embedders sobre el mismo texto y las mismas búsquedas: hashing, una bolsa de palabras sin modelo; BGE-base, de 110 millones de parámetros; y Qwen3-Embedding, de 600 millones.",
-        "resultados": f"Gana Qwen3, con {num(m(BASE)['hit@1'])}, pero el hashing queda cerca ({num(m('hashing|description|filtro-type')['hit@1'])}) y BGE último ({num(m('bge|description|filtro-type')['hit@1'])}). Las descripciones usan vocabulario controlado, así que hasta contar palabras funciona. Qwen3 gana más claro en MRR y en las búsquedas difíciles.",
-        "decision": "Qwen3-Embedding-0.6B, Apache 2.0, en CPU. El formato del texto vale más que el modelo.",
-    },
-    mins=0.9,
-)
-
-# E3: filtros
-experiment(
-    "3",
-    "Filtros duros",
-    "Conviene filtrar por tipo de mueble antes de buscar, o dejar todo a la similitud?",
-    '<ul class="small"><li><b>ninguno</b>: todo el catálogo.</li><li><b>tipo</b> (sofá, mesa, lámpara...): 14 tipos.</li><li><b>kind</b> (mesa ratona, mesa de comedor...): 41 kinds.</li></ul>'
-    '<div class="find" style="margin-top:14px">Con descripciones buenas el filtro casi no cambia hit@1, pero el de kind <b>resta</b>: cuando la consulta y el producto discrepan en el kind fino (mesa auxiliar o ratona) lo deja afuera. El de tipo protege de errores gruesos sin ese costo.</div>',
-    bars_methods(
-        [("qwen3|description|filtro-none", "sin filtro"), ("qwen3|description|filtro-kind", "por kind"), (BASE, "por tipo")],
-        BASE,
-        metric="hit@10",
-        width=520,
-        label_w=150,
-    ),
-    "<b>Decisión:</b> filtrar siempre, más las medidas máximas del plan. El flujo filtra por los kinds que elige el plan (puede dar más de uno: ratona o auxiliar); pasarlo a tipo es lo próximo a probar.",
-    fases=("busqueda",),
-    why="El plan ya sabe qué pieza busca (“un sofá”), y por similitud sola una mesa del mismo estilo puede quedar arriba. Un filtro duro lo evita, pero puede dejar afuera al correcto.",
-    notes={
-        "motivo": "Por similitud sola, una mesa nórdica de madera clara se puede parecer más a la consulta que un sofá. Un filtro por metadata lo evita, pero puede dejar afuera al correcto.",
-        "experimento": "Tres opciones: sin filtro; por tipo, 14 categorías gruesas como sofá o mesa; y por kind, 41 finas como mesa ratona o de comedor. Miramos sobre todo hit@10.",
-        "resultados": f"Con descripciones buenas, hit@1 casi no cambia, pero el de kind resta: en hit@10, {num(m('qwen3|description|filtro-kind')['hit@10'])} contra {num(m(BASE)['hit@10'])} del de tipo. Si el plan pide una mesa auxiliar y el catálogo la tiene como ratona, el filtro fino la deja afuera.",
-        "decision": "Filtrar siempre, más las medidas. El flujo filtra por los kinds del plan, que puede dar dos; la diferencia con el tipo está dentro del intervalo, y pasarlo a tipo es lo próximo que probaríamos.",
-    },
-    mins=1.0,
-)
-
-# E4: chunking
-experiment(
-    "4",
-    "Splitting",
-    "Un documento por producto, o un chunk por cada línea de la descripción?",
-    '<ul class="small"><li><b>documento</b>: las 8 líneas juntas, un vector.</li>'
-    "<li><b>chunk por línea, el mejor</b>: el producto vale su línea más parecida a la consulta.</li>"
-    "<li><b>línea contra línea</b>: cada línea contra la del mismo rótulo de la consulta, promediado.</li></ul>"
-    '<div class="find" style="margin-top:14px">Partir en líneas pierde el contexto: "Colors: light wood" se parece a cualquier cosa de madera clara. La descripción ya es corta (60–90 palabras): no hay nada que partir.</div>',
-    bars_methods(
-        [("qwen3|description|filtro-type|chunks-lines-max", "chunk por línea"), ("qwen3|description|filtro-type|chunks-lines-aligned", "línea contra línea"), (BASE, "un documento")],
-        BASE,
-        width=520,
-        label_w=170,
-    ),
-    "<b>Decisión:</b> un documento por producto.",
-    fases=("indice",),
-    why="El chunking es una de las decisiones clásicas de un RAG. Nuestros documentos son cortos, pero sus 8 líneas tienen roles distintos: quizás convenía comparar cada línea por separado.",
-    notes={
-        "motivo": "El splitting es una decisión clásica de un RAG. Nuestras ocho líneas tienen roles distintos: quizás convenía compararlas por separado.",
-        "experimento": "Un documento por producto; un chunk por línea, donde el producto vale su mejor línea; y línea contra línea, con el mismo rótulo de la consulta.",
-        "resultados": f"Gana un documento ({num(m(BASE)['hit@1'])}); el chunk por línea se desploma ({num(m(BASE + '|chunks-lines-max')['hit@1'])}): “Colors: light wood” se parece a cualquier cosa de madera clara.",
-        "decision": "Un documento por producto: con unas 80 palabras no hay nada que partir.",
-    },
-    mins=0.5,
-)
-
-# E5: dimensión
-dims = [32, 64, 128, 256, 512, 1024]
-dvals = [m(f"{BASE}|dim-{d}")["hit@1"] if d != 1024 else m(BASE)["hit@1"] for d in dims]
-experiment(
-    "5",
-    "Dimensión del embedding",
-    "Cuántas dimensiones hacen falta? (Qwen3 se entrenó con Matryoshka: se trunca sin reentrenar)",
-    '<p class="small">Se truncan los vectores a sus primeras d componentes y se renormalizan. Memoria por vector: 4 bytes × d.</p>'
-    '<div class="find">Con 512 dimensiones da lo mismo que con 1024, con la mitad de memoria. Por debajo de 128 cae rápido.</div>',
-    lines(
-        [{"ys": dvals, "hl": True, "labels": {32: num(dvals[0]), 512: num(dvals[4]), 1024: num(dvals[5])}}],
-        dims,
-        ymin=0.3,
-        ymax=0.6,
-        width=560,
-        height=270,
-        xlabel="dimensiones (escala log)",
-        ylabel="hit@1",
-        xlog=True,
-    ),
-    "<b>Decisión:</b> se puede indexar con 512 sin perder nada. Con 819 productos no hace falta (el índice entra igual en memoria); en un catálogo de millones, sí.",
-    fases=("indice",),
-    why="Qwen3 se entrenó con Matryoshka: sus vectores se pueden truncar sin reentrenar. En un catálogo grande, la memoria y la latencia crecen con la dimensión.",
-    notes={
-        "motivo": "Qwen3 se entrenó con Matryoshka: el vector se puede truncar sin reentrenar. En un catálogo de millones, la memoria y la latencia crecen con la dimensión.",
-        "experimento": "Truncamos a 32, 64, 128, 256, 512 y 1024 componentes y renormalizamos.",
-        "resultados": f"Con 512 da lo mismo que con 1024 ({num(dvals[4])} contra {num(dvals[5])}); por debajo de 128 cae rápido: con 32, {num(dvals[0])}.",
-        "decision": "Con este catálogo dejamos 1024 porque no cuesta nada; si creciera, 512.",
-    },
-    mins=0.5,
-)
-
-# E6: base vectorial y consulta
-experiment(
-    "6",
-    "Base vectorial y query rewriting",
-    "HNSW aproxima: pierde algo contra la búsqueda exacta? Y cuánto de la consulta hace falta?",
-    '<ul class="small"><li><b>ChromaDB</b> (HNSW, coseno, filtros como <code>where</code>) contra recorrer todos los vectores con numpy.</li>'
-    "<li>Query rewriting: la consulta completa (8 líneas) contra solo la línea Type o solo el kind.</li></ul>"
-    f'<div class="find" style="margin-top:14px">HNSW da exactamente lo mismo que la búsqueda exacta ({num(m(BASE + "|exact")["hit@1"], 3)} y {num(m(BASE)["hit@1"], 3)}). Reescribir la consulta a algo más corto es mucho peor: el estilo, los colores y la forma son lo que distingue un sofá de otro.</div>',
-    bars_methods(
-        [(BASE + "|consulta-kind", "solo el kind"), (BASE + "|consulta-type", "solo la línea Type"), (BASE + "|exact", "8 líneas, exacta"), (BASE, "8 líneas, ChromaDB")],
-        BASE,
-        width=520,
-        label_w=180,
-    ),
-    "<b>Decisión:</b> ChromaDB con la consulta completa que escribe el plan.",
-    fases=("indice", "plan"),
-    why="Pasamos de recorrer los vectores con numpy a ChromaDB, que aproxima (HNSW). Y escribir la consulta completa de 8 líneas cuesta tokens y latencia en cada pedido.",
-    notes={
-        "motivo": "Dos dudas. ChromaDB aproxima con HNSW: ¿pierde algo contra la búsqueda exacta? Y escribir la consulta completa cuesta tokens en cada pedido: ¿alcanza con algo más corto?",
-        "experimento": "ChromaDB contra recorrer todos los vectores con numpy, con la misma consulta. Y la consulta completa contra solo la línea Type, y contra solo el kind, que sería no reescribir.",
-        "resultados": f"HNSW da exactamente lo mismo que la exacta ({num(m(BASE + '|exact')['hit@1'], 3)} y {num(m(BASE)['hit@1'], 3)}). Con solo la línea Type, hit@1 cae a {num(m(BASE + '|consulta-type')['hit@1'])}; con solo el kind, a {num(m(BASE + '|consulta-kind')['hit@1'])}. El estilo, los colores y la forma son lo que distingue un sofá de otro.",
-        "decision": "ChromaDB con la consulta completa que escribe el plan: el query rewriting cuesta, pero vale.",
-    },
-    mins=0.9,
-)
-
-# E7: reranking
-r0, r1 = RER[BASE], RER[BASE + "|rerank-opus"]
-mini = m(BASE + "|rerank-minilm-reranker")
-experiment(
-    "7",
-    "Reranking (Advanced RAG)",
-    "Un segundo modelo que mire la consulta y cada candidato juntos ordena mejor el top-10?",
-    '<ul class="small"><li><b>cross-encoder MiniLM</b> (MS MARCO, local, gratis): lee consulta y descripción juntas.</li>'
-    "<li><b>VLM</b> (Claude Opus 5.5): ve la consulta y las <b>fotos</b> de los 10 candidatos y los ordena (<code>rerank_candidates_v1</code>).</li></ul>"
-    f'<div class="find" style="margin-top:14px">MiniLM <b>empeora</b>: está entrenado en preguntas y pasajes web, no en descripciones de muebles. El VLM sube hit@1 de {num(r0["hit@1"])} a <b>{num(r1["hit@1"])}</b> (MRR {num(r0["mrr@10"])} → {num(r1["mrr@10"])}): mira la foto, que tiene lo que la descripción no dijo.</div>',
+    "Cómo se escribe la consulta",
+    "Cuánto suma escribir la consulta como una ficha del catálogo, contra no reescribirla?",
+    '<ul class="small"><li><b>La ficha</b>: las 8 líneas, como las escribe el plan.</li>'
+    f"<li><b>La frase natural</b>, sin reescribir: como el redactor nombró la pieza (“{esc(frases[0])}”; {num(statistics.median(len(f.split()) for f in frases), 0)} palabras de mediana).</li>"
+    "<li><b>Solo la línea Type</b> y <b>solo el kind</b>: el piso.</li>"
+    "<li>Con el coseno del flujo (densa) y contra la foto del producto (SigLIP 2).</li></ul>"
+    f'<div class="find" style="margin-top:12px">La ficha suma <b>{nb(dif(d_q, flip=True))}</b> de hit@1 sobre la frase sin reescribir. Y lo que no esperábamos: <b>contra la foto, la frase natural da {num(s_piece["hit@1"], 3)}</b>. El texto necesita que la consulta hable como el catálogo; la foto, casi no.</div>',
     hbars(
         [
-            {"label": "sin rerank", "value": r0["hit@1"], "ci": ci(r0)},
-            {"label": "MiniLM", "value": mini["hit@1"], "ci": ci(mini)},
-            {"label": "VLM (Opus)", "value": r1["hit@1"], "ci": ci(r1), "hl": True},
+            {"label": "densa · la ficha", "value": q_full["hit@1"], "ci": ci(q_full), "hl": True, "note": dif(d_q, flip=True)},
+            {"label": "densa · la frase natural", "value": q_piece["hit@1"], "ci": ci(q_piece)},
+            {"label": "densa · solo la línea Type", "value": q_type["hit@1"], "ci": ci(q_type)},
+            {"label": "densa · solo el kind", "value": q_kind["hit@1"], "ci": ci(q_kind)},
+            {"label": "por foto · la ficha", "value": s_full["hit@1"], "ci": ci(s_full)},
+            {"label": "por foto · la frase natural", "value": s_piece["hit@1"], "ci": ci(s_piece), "hl": True, "note": dif(s_piece["vs_anterior"])},
         ],
-        width=520,
-        label_w=140,
-    ),
-    "<b>Decisión:</b> el reranking con VLM funciona, y el paso de elección ya es eso: Claude elige mirando las fotos de los candidatos. La pregunta pasa a ser cuántos candidatos verle (exp. 8). Costo: ~US$0,02 por búsqueda.",
-    fases=("eleccion",),
-    why=f"hit@10 daba {num(m(BASE)['hit@10'])} pero hit@1 {num(m(BASE)['hit@1'])}: el correcto casi siempre está entre los 10 primeros, pero no arriba. El cuello de botella era el orden.",
+        width=610,
+        label_w=188,
+        row_h=30,
+        pad_r=200,
+    )
+    + '<div class="cap">hit@1. A la derecha, la diferencia pareada contra la otra forma de escribir la consulta.</div>',
+    "<b>Decisión:</b> el plan escribe la ficha: es la técnica de Advanced RAG del flujo. Antes la comparábamos con “solo el kind”, que es azar por construcción (buscar “rug” entre 89 alfombras): eso no medía reescribir.",
+    fases=("plan",),
+    why="El plan no busca con el pedido: escribe el producto ideal en las 8 líneas del catálogo (respuesta hipotética, HyDE). Cuesta tokens en cada pedido, y no lo habíamos medido contra no hacerlo.",
     notes={
-        "motivo": f"hit@10 daba {num(m(BASE)['hit@10'])} pero hit@1 {num(m(BASE)['hit@1'])}: el correcto casi siempre está entre los 10 primeros, pero no primero. Advanced RAG propone un reranker, un segundo modelo que mira la consulta y cada candidato juntos.",
-        "experimento": "Dos rerankers sobre el top-10: un cross-encoder MiniLM de MS MARCO, local y gratis, que lee consulta y descripción; y Opus, que ve la consulta y las fotos de los 10 candidatos y los ordena.",
-        "resultados": f"MiniLM empeora ({num(mini['hit@1'])}): está entrenado con preguntas web, no con muebles. Opus sube hit@1 de {num(r0['hit@1'])} a {num(r1['hit@1'])} y MRR de {num(r0['mrr@10'])} a {num(r1['mrr@10'])}: la foto tiene lo que la descripción no dijo. Cuesta unos dos centavos por búsqueda.",
-        "decision": "El reranking con VLM funciona, y la elección ya es eso. No agregamos un paso: la pregunta pasó a ser cuántos candidatos mostrarle.",
+        "motivo": "El plan no busca con el pedido: escribe el producto ideal en las ocho líneas del catálogo. Es la técnica de Advanced RAG del flujo, y no la habíamos medido contra no hacerla: la comparábamos con buscar solo con el nombre del kind, que es azar por construcción.",
+        "experimento": "La ficha contra la frase natural, sin reescribir: las pocas palabras con que el redactor nombró la pieza. Con la búsqueda del flujo, y también contra la foto del producto.",
+        "resultados": f"La ficha da {num(q_full['hit@1'], 3)} y la frase natural {num(q_piece['hit@1'], 3)}: suma {sg(-d_q['hit@1'], 2)}, con un intervalo lejos del cero. Y lo que no esperábamos: contra la foto, la frase sin reescribir da {num(s_piece['hit@1'], 3)}, casi lo mismo que la ficha. El texto necesita que la consulta hable como el catálogo; la foto, casi no.",
+        "decision": "El plan sigue escribiendo la ficha. Y queda un argumento para la búsqueda híbrida: las dos rutas fallan distinto.",
     },
     mins=1.1,
 )
 
-# E8: candidatos
+# -- 3: búsqueda léxica, por foto e híbrida
+HK = {
+    "densa": V1,
+    "lexica": "bm25|description|filtro-kind",
+    "foto": "siglip2|description|filtro-kind",
+    "clip": "clip|description|filtro-kind",
+    "densa+lexica": V1 + "|+bm25",
+    "densa+foto": V1 + "|+siglip2",
+    "lexica+foto": "bm25|description|filtro-kind|+siglip2",
+    "rrf": V2 + "|fusion-rrf",
+}
+
+
+def hrow(key: str, label: str, hl: bool = False) -> dict:
+    """Una barra de la ablación de la búsqueda híbrida, con su diferencia pareada contra la densa."""
+    x = HIB[key]
+    return {"label": label, "value": x["hit@1"], "ci": ci(x), "hl": hl, "note": dif(x["vs_base"]) if "vs_base" in x else "la base: versión 1"}
+
+
+experiment(
+    "3",
+    "Búsqueda léxica, por foto e híbrida",
+    "Suman la búsqueda por palabras y la foto del producto?",
+    '<ul class="small"><li><b>Densa</b> (Qwen3, la versión 1) y <b>léxica</b> (BM25), sobre las mismas descripciones.</li>'
+    "<li><b>Por foto</b>: SigLIP 2 o CLIP: la consulta en una frase contra la foto del producto, sin descripción.</li>"
+    "<li><b>Fusión</b>: cada puntaje estandarizado (z-score), y el promedio.</li></ul>"
+    f'<div class="find" style="margin-top:12px">Solos, los tres rinden parecido: ni el embedder le gana a contar palabras, ni describir le gana a embeber la foto. <b>Pero se equivocan en cosas distintas</b>: juntos, {nb(dif(D21))} de hit@1 y {nb(dif(D21, "hit@5"))} de hit@5.</div>',
+    hbars(
+        [
+            hrow(HK["densa"], "densa: Qwen3"),
+            hrow(HK["lexica"], "léxica: BM25"),
+            hrow(HK["foto"], "por foto: SigLIP 2"),
+            hrow(HK["clip"], "por foto: CLIP ViT-B/32"),
+            hrow(HK["densa+lexica"], "densa + léxica"),
+            hrow(HK["densa+foto"], "densa + foto"),
+            hrow(HK["lexica+foto"], "léxica + foto"),
+            hrow(V2, "densa + léxica + foto", True),
+        ],
+        width=610,
+        label_w=170,
+        row_h=27,
+        pad_r=206,
+    )
+    + '<div class="cap">hit@1. A la derecha, la diferencia pareada contra la densa, con su IC 95 %.</div>',
+    f"<b>Decisión:</b> la búsqueda del flujo pasa a ser híbrida: densa + léxica + foto. Es la <b>versión 2</b> (Ejercicio 4). La fusión por z-score rinde igual o mejor que por puestos (RRF: {num(HIB[HK['rrf']]['hit@1'], 3)}).",
+    fases=("busqueda",),
+    why="Dos dudas de fondo: ¿hace falta el embedder neuronal, o alcanza con contar palabras? Y el catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a texto (lo que hacíamos) o embeberla directamente.",
+    notes={
+        "motivo": "Dos dudas de fondo sobre el índice. ¿El embedder neuronal hace falta, o alcanza con contar palabras? Y el catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a texto, que es lo que hacíamos, o embeberla directamente. Esa nunca la habíamos medido.",
+        "experimento": "Tres buscadores sobre las mismas consultas: el denso, Qwen3 sobre las descripciones; el léxico, BM25; y por foto, SigLIP 2, con la consulta en una frase contra la foto del producto. Y sus fusiones.",
+        "resultados": f"Solos, los tres rinden parecido: {num(HIB[V1]['hit@1'], 3)}, {num(HIB[HK['lexica']]['hit@1'], 3)} y {num(HIB[HK['foto']]['hit@1'], 3)}. Ni el embedder le gana a contar palabras, ni describir le gana a embeber la foto. Pero se equivocan en cosas distintas: fusionados dan {num(HIB[V2]['hit@1'], 3)}, {sg(D21['hit@1'], 3)} de hit@1, con un intervalo que no toca el cero.",
+        "decision": "La búsqueda híbrida pasa a ser la del flujo: es la versión 2, el Ejercicio 4. Usa las dos rutas de la clase a la vez.",
+    },
+    mins=1.1,
+)
+
+
+# -- El camino incremental: un cambio por paso
+def camino_svg() -> str:
+    """El camino incremental (ablaciones/camino.yaml): hit@1 de cada paso con su IC, el cambio
+    contra el paso anterior (pareado) y hit@5. Aparte, punteado, lo que da un VLM eligiendo: una
+    técnica aislada, no un paso del flujo."""
+    pasos = [
+        (K_NAIVE, "RAG naive: texto del vendedor, sin reescribir"),
+        (K_DESC, "+ cada producto descripto desde su foto"),
+        ("qwen3|description|filtro-none", "+ la consulta escrita como una ficha (HyDE)"),
+        (V1, "+ filtro por kind: versión 1"),
+        (V1 + "|+bm25", "+ búsqueda léxica (BM25) fusionada"),
+        (V2, "+ la foto del producto (SigLIP 2): versión 2"),
+    ]
+    aparte = [
+        ("un VLM elige entre los 5 primeros", CURVA["por_k"]["5"]["acierto_eleccion"]),
+        (f"un VLM reordena el top-10: el {num(RER[BASE + '|rerank-opus']['hit@1'])} de antes", RER[BASE + "|rerank-opus"]["hit@1"]),
+    ]
+    lw, pw, xmax, rh, top = 322, 196, 0.8, 34, 24
+    xd, W = 578, 830
+    H = top + rh * len(pasos) + 38 + 30 * len(aparte) + 4
+    o = [f'<svg class="chart" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img">']
+    for t, x, anchor in (("hit@1", lw, "start"), ("cambio (pareado)", xd, "start"), ("hit@5", W, "end")):
+        o.append(f'<text x="{x}" y="12" text-anchor="{anchor}" font-size="11.5" font-weight="650" letter-spacing=".06em" fill="var(--muted)">{t.upper()}</text>')
+    for t in (0.2, 0.4, 0.6, 0.8):
+        o.append(f'<line x1="{lw + pw * t / xmax}" y1="{top - 4}" x2="{lw + pw * t / xmax}" y2="{H - 4}" stroke="var(--grid)"/>')
+    for i, (key, label) in enumerate(pasos):
+        x, y = CAM[key], top + i * rh
+        hl = key in (V1, V2)
+        w = pw * x["hit@1"] / xmax
+        o.append(f'<text x="{lw - 10}" y="{y + rh / 2 + 1}" text-anchor="end" dominant-baseline="middle" font-size="13.5" font-weight="{650 if hl else 450}" fill="var(--ink)">{esc(label)}</text>')
+        o.append(f'<rect x="{lw}" y="{y + 6}" width="{w}" height="{rh - 13}" rx="3" fill="{"var(--accent)" if key == V2 else "var(--bar)"}"/>')
+        lo, hi = ci(x)
+        ym = y + rh / 2 - 0.5
+        o.append(f'<line x1="{lw + pw * lo / xmax}" y1="{ym}" x2="{lw + pw * hi / xmax}" y2="{ym}" stroke="var(--ink)" stroke-width="1.4" opacity=".55"/>')
+        for xx in (lo, hi):
+            o.append(f'<line x1="{lw + pw * xx / xmax}" y1="{ym - 5}" x2="{lw + pw * xx / xmax}" y2="{ym + 5}" stroke="var(--ink)" stroke-width="1.4" opacity=".55"/>')
+        o.append(f'<text x="{lw + pw * hi / xmax + 8}" y="{y + rh / 2 + 1}" dominant-baseline="middle" font-size="14" font-weight="{650 if hl else 500}" fill="var(--ink)">{num(x["hit@1"], 3)}</text>')
+        if "vs_anterior" in x:
+            d = x["vs_anterior"]
+            sube = d["hit@1_ic95"][0] > 0
+            o.append(f'<text x="{xd}" y="{y + rh / 2 + 1}" dominant-baseline="middle" font-size="13" font-weight="{600 if sube else 450}" fill="{"var(--good)" if sube else "var(--muted)"}">{dif(d)}</text>')
+        o.append(f'<text x="{W}" y="{y + rh / 2 + 1}" text-anchor="end" dominant-baseline="middle" font-size="13.5" font-weight="{650 if hl else 450}" fill="var(--ink)">{num(x["hit@5"], 3)}</text>')
+    y0 = top + rh * len(pasos) + 14
+    o.append(f'<line x1="0" y1="{y0}" x2="{W}" y2="{y0}" stroke="var(--line)" stroke-dasharray="4 4"/>')
+    o.append(f'<text x="0" y="{y0 + 17}" font-size="11.5" font-weight="650" letter-spacing=".06em" fill="var(--muted)">APARTE · UNA TÉCNICA AISLADA, NO UN PASO DEL FLUJO</text>')
+    for j, (label, v) in enumerate(aparte):
+        y = y0 + 24 + j * 30
+        w = pw * v / xmax
+        o.append(f'<text x="{lw - 10}" y="{y + 15}" text-anchor="end" dominant-baseline="middle" font-size="13.5" fill="var(--muted)">{esc(label)}</text>')
+        o.append(f'<rect x="{lw + 0.75}" y="{y + 5.75}" width="{w - 1.5}" height="18.5" rx="3" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/>')
+        o.append(f'<text x="{lw + w + 8}" y="{y + 15}" dominant-baseline="middle" font-size="14" fill="var(--muted)">{num(v, 3)}</text>')
+    o.append("</svg>")
+    return "".join(o)
+
+
+d_desc, d_hyde = CAM[K_DESC]["vs_anterior"], CAM["qwen3|description|filtro-none"]["vs_anterior"]
+d_kind = CAM[V1]["vs_anterior"]
+r_opus = RER[BASE + "|rerank-opus"]
+slide(
+    route(lit=("descripcion", "plan", "busqueda"))
+    + '<div class="row" style="gap:28px"><div>'
+    + camino_svg()
+    + '</div><div class="grow">'
+    f'<p class="small" style="font-size:15px">Sobre las {N_ANS} consultas con respuesta del ground truth de IKEA (catálogo de {len(ITEMS)}). Cada barra suma <b>un solo cambio</b> a la anterior; el cambio es pareado, con su IC 95 %.</p>'
+    f'<p class="small" style="font-size:15px">Lo que más pesa: <b>la base de conocimiento</b> ({sg(d_desc["hit@1"], 2)}) y <b>cómo se escribe la consulta</b> ({sg(d_hyde["hit@1"], 2)}).</p>'
+    f'<p class="small" style="font-size:15px">El filtro por kind no suma acá, y cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}).</p>'
+    f'<p class="small" style="font-size:15px">La híbrida: <b>{nb(dif(D21))}</b> sobre la versión 1.</p>'
+    "</div></div>"
+    f'<div class="take">El {num(r_opus["hit@1"])} que mostrábamos no era un escalón: es lo que da un VLM reordenando el top-10, <b>una técnica aislada, no el flujo</b>.</div>',
+    kicker="Experimentos · la ablación incremental",
+    title=f"El camino: de {num(n1['hit@1'])} a {num(B2['hit@1'])} de hit@1, un cambio por paso",
+    notes=f"La ablación incremental: un cambio por paso, con su diferencia pareada. Arrancamos del RAG naive, el texto del vendedor y la consulta sin reescribir: {num(n1['hit@1'])}. Describir cada producto desde su foto lo lleva a {num(n2['hit@1'])}; escribir la consulta como una ficha, a {num(CAM['qwen3|description|filtro-none']['hit@1'])}. Esos dos pasos son los que más pesan. El filtro por kind no suma en este banco: lo usamos por otra razón, que vemos en los de trámite. Con el filtro, esa es la versión 1 del flujo. Con la búsqueda léxica, {num(CAM[V1 + '|+bm25']['hit@1'])}; con la foto, {num(B2['hit@1'])}: la versión 2. Aparte queda el {num(r_opus['hit@1'])} que mostrábamos antes: es un VLM reordenando el top-10, una técnica aislada, no un escalón del flujo.",
+    mins=0.85,
+)
+
+# -- 4: ¿error, o el mismo mueble en otro color? Tres niveles de correcto
+e_q = EMB[V1]
+g_run = load(R / "evaluacion" / GRAD["run"] / "metricas.json")[GRAD["method"]]
+w_ans = g_run["answerable"] / g_run["searches"]  # el juez vio 75 consultas con anotado y 75 sin: se repondera
+G = GRAD["consultas"]
+util1 = w_ans * G["con anotado"]["util1"] + (1 - w_ans) * G["sin anotado"]["util1"]
+util3 = w_ans * G["con anotado"]["util3"] + (1 - w_ans) * G["sin anotado"]["util3"]
+frac_variante = (e_q["familia_hit@1"] - e_q["hit@1"]) / (1 - e_q["hit@1"])
+fam = {k: EMB[f"{k}|description|filtro-kind"]["vs_base"] for k in ("bm25", "siglip2", "bge")}
+assert fam["bm25"]["familia_hit@1_ic95"][0] < 0 < fam["bm25"]["familia_hit@1_ic95"][1] and fam["bge"]["familia_hit@1_ic95"][1] < 0, "por familia cambió el orden entre buscadores: revisar el texto del experimento 4"
+experiment(
+    "4",
+    "¿Error, o el mismo mueble en otro color?",
+    "Cuando el primero no es el producto anotado, se equivocó?",
+    '<ul class="small"><li><b>Exacto</b>: el producto anotado sale primero (hit@1).</li>'
+    "<li><b>El mismo modelo</b>: también vale otra variante, con el mismo nombre comercial y del mismo grupo (el mismo sillón en abedul o en negro, una alfombra en dos medidas).</li>"
+    "<li><b>Sirve</b>: un juez califica el primer candidato contra la pieza del ambiente, con 2, 1 o 0.</li></ul>"
+    f'<div class="find" style="margin-top:14px">Una de cada {round(1 / frac_variante)} veces que el primero “falla”, es el mismo mueble en otra medida u otro color. El banco <b>subestima el nivel, no el orden</b>: por familia tampoco se distinguen Qwen3, BM25 y SigLIP 2, y BGE sigue peor.</div>',
+    hbars(
+        [
+            {"label": "el producto exacto", "value": e_q["hit@1"], "ci": ci(e_q)},
+            {"label": "el mismo modelo", "value": e_q["familia_hit@1"], "ci": ci(e_q, "familia_hit@1")},
+            {"label": "uno que sirve, según un juez", "value": util1, "hl": True},
+        ],
+        width=560,
+        label_w=220,
+        row_h=38,
+    )
+    + f'<div class="cap" style="max-width:560px">El primer candidato de la búsqueda de la versión 1. El juez: {G["todas"]["n"]} consultas, nota 1 o 2, reponderado a todas las consultas (alguno del top-3 sirve: {num(util3)}).</div>',
+    f"<b>Conclusión:</b> el acierto exacto para comparar métodos, porque es objetivo y barato; y los tres niveles juntos para decir cuánto sirve lo que se trae: {num(e_q['hit@1'])}, {num(e_q['familia_hit@1'])} y {num(util1)}.",
+    fases=("busqueda",),
+    why=f"hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del mismo modelo: el {num(100 * DOC['con_variantes'], 0)} % de las consultas busca un producto que tiene variantes.",
+    notes={
+        "motivo": "hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del mismo modelo. ¿Cuánto de lo que cuenta como error es el mismo mueble en otro color?",
+        "experimento": "Tres niveles de correcto para el primer candidato: el producto exacto, el mismo modelo, y uno que sirve según un juez.",
+        "resultados": f"El exacto, {num(e_q['hit@1'])}; el mismo modelo, {num(e_q['familia_hit@1'])}; uno que sirve, {num(util1)}. Una de cada {round(1 / frac_variante)} veces que el primero falla es otra variante del mismo mueble.",
+        "decision": "El banco subestima el nivel, no el orden: la comparación entre buscadores no cambia. Usamos el exacto para comparar, y los tres juntos para decir cuánto sirve.",
+    },
+    mins=0.7,
+)
+
+# -- 5: elegir con un VLM, y cuántos candidatos
+r0, r1 = RER[BASE], RER[BASE + "|rerank-opus"]
+d_opus = paired(RER_DIR, BASE + "|rerank-opus", BASE)
 ks = list(range(1, 11))
 acc = [CURVA["por_k"][str(k)]["acierto_eleccion"] for k in ks]
 cei = [CURVA["por_k"][str(k)]["techo_hit@k"] for k in ks]
+d35 = CURVA["diferencias_pareadas"]["3->5"]
+d35_txt = f'{sg(d35["acierto_eleccion"])} {ic(*d35["ic95"])}'
+c_rerank = statistics.mean(r["cost_usd"] for r in LEDGER if r["step"].startswith("eval.rerank") and "opus" in (r.get("model") or ""))
 experiment(
-    "8",
-    "Candidatos por pieza",
-    "A cuántos candidatos por pieza conviene mirar? Más candidatos: más chances de que esté el correcto, pero más fotos para elegir.",
-    '<p class="small">Del reranking del top-10 sale gratis la elección entre los k primeros: el elegido es el mejor rankeado por el VLM entre esos k. '
-    "<b>Techo</b>: el correcto está entre los k (hit@k).</p>"
-    f'<div class="find">De 3 a 5 candidatos la elección sube de {num(acc[2], 3)} a <b>{num(acc[4], 3)}</b>; a partir de 8 se aplana ({num(acc[7], 3)}). La distancia al techo crece: el VLM no siempre reconoce al correcto entre muchos parecidos.</div>',
+    "5",
+    "Elegir con un VLM, y cuántos candidatos",
+    "Un VLM que mira las fotos ordena mejor que la búsqueda? Y por qué 5 candidatos, y no 3 o 10?",
+    '<p class="small">Opus recibe la consulta y las <b>fotos</b> de los 10 primeros, y los ordena (<code>rerank_candidates_v1</code>). De ahí sale gratis la curva: si eligiera entre los k primeros, ¿acertaría? '
+    "<b>Techo</b>: el correcto está entre esos k (hit@k).</p>"
+    f'<div class="find">Sobre el top-10, hit@1 pasa de {num(r0["hit@1"], 3)} a <b>{num(r1["hit@1"], 3)}</b> ({nb(dif(d_opus))}), a US${num(c_rerank)} por búsqueda. De 3 a 5 candidatos, {nb(d35_txt)}; a partir de 8 se aplana.</div>',
     lines(
         [
-            {"name": "techo (hit@k)", "ys": cei, "dash": True},
+            {"ys": cei, "dash": True, "labels": {8: "techo (hit@k)"}},
             {"name": "elección del VLM", "ys": acc, "hl": True, "below": True, "labels": {3: num(acc[2]), 5: num(acc[4]), 8: num(acc[7])}},
         ],
         ks,
         ymin=0.5,
         ymax=0.9,
         width=560,
-        height=280,
+        height=250,
         xlabel="candidatos por pieza (k)",
         ylabel="acierto",
         marks=[{"x": 5, "text": "elegido"}],
     ),
-    "<b>Decisión:</b> 5 candidatos por pieza (antes 3). Casi toda la mejora, sin llenar la llamada de elección de fotos (9 piezas × 5 = 45 imágenes).",
-    fases=("busqueda",),
-    why=f"La elección ya es un reranker con fotos, pero con 3 candidatos el correcto faltaba en una de cada cuatro piezas (hit@3 = {num(cei[2])}). Más candidatos suben ese techo, pero hacen más difícil y más cara la elección.",
+    f"<b>Decisión:</b> {CFG.furnish.candidates} candidatos por pieza (antes 3). Ojo: es una <b>técnica aislada</b>, no un paso del flujo. Ese reranker ordena contra la consulta, sin ver el ambiente; el que elige en el flujo arma un conjunto para el cuarto, y no tiene ground truth. En los {DIAG['hibrida']['ambientes']} ambientes, el {num(100 * DIAG['hibrida']['elegido_en_puestos_4_y_5'], 0)} % de lo que eligió salió de los puestos 4 y 5.",
+    fases=("busqueda", "eleccion"),
+    why=f"hit@10 es {num(r0['hit@10'])} pero hit@1 {num(r0['hit@1'])}: el correcto casi siempre está entre los 10 primeros, pero no primero. En el flujo, quien elige mira las fotos de los candidatos.",
     notes={
-        "motivo": "La elección es un reranker con fotos, pero con 3 candidatos el correcto faltaba en una de cada cuatro piezas. Más candidatos suben ese techo, pero son más fotos en la llamada: más caro y más difícil elegir.",
-        "experimento": "Sale gratis del experimento anterior: si Opus ordenó el top-10, lo que elegiría entre los primeros k es el mejor ordenado de esos k. Es un proxy: la elección real además ve el ambiente y el pedido.",
-        "resultados": f"La punteada es el techo; la sólida, lo que elegiría el VLM. De 3 a 5 candidatos sube de {num(acc[2], 3)} a {num(acc[4], 3)}; a partir de 8 se aplana, y la distancia al techo crece.",
-        "decision": "5 candidatos por pieza: casi toda la mejora, y la llamada queda en 45 fotos para 9 piezas.",
+        "motivo": f"hit@10 es {num(r0['hit@10'])} pero hit@1 {num(r0['hit@1'])}: el correcto casi siempre está entre los diez primeros, pero no primero. ¿Mirar las fotos ordena mejor que el coseno? ¿Y cuántos candidatos conviene pasar?",
+        "experimento": "Opus recibe la consulta y las fotos de los diez primeros, y los ordena. De ahí sale gratis la curva: si eligiera entre los primeros k, ¿acertaría? La punteada es el techo.",
+        "resultados": f"Reordenando el top-10, hit@1 pasa de {num(r0['hit@1'], 3)} a {num(r1['hit@1'], 3)}. De 3 a 5 candidatos la elección sube {num(100 * d35['acierto_eleccion'], 0)} puntos, también significativo; a partir de 8 se aplana.",
+        "decision": "Cinco candidatos por pieza. Pero ojo: es una técnica aislada, no un paso del flujo. Ese reranker ordena contra la consulta, sin ver el ambiente; el que elige en el flujo arma un conjunto para el cuarto, y no tiene ground truth. Por eso este número no es el del sistema.",
     },
-    mins=1.0,
-)
-
-# E9: catálogo ampliado y revisado
-old, new = CAT_OLD[BASE], CAT_NEW[BASE]
-experiment(
-    "9",
-    "Catálogo: ampliación y revisión",
-    "Qué pasa al pasar de 4 tipos de muebles a todo un living, y al sacar los productos mal cargados?",
-    '<ul class="small"><li><b>Ampliación</b>: de sofás, sillones, mesas y alfombras (268 productos) a guardado, iluminación, textiles y deco (855).</li>'
-    "<li><b>Revisión</b>: 36 productos fuera: la foto es de otro producto u otra medida, o no son de living (botiquines, estantes sueltos); 7 kinds corregidos mirando la foto.</li></ul>"
-    f'<div class="find" style="margin-top:14px">Ampliar baja hit@1 (de 0,636 a {num(old["hit@1"], 3)}): hay más productos parecidos entre sí y las consultas nuevas son de deco, más difícil. Pero sin ampliar no hay biblioteca, lámpara ni cortinas que recomendar. La revisión no cambia el retrieval ({num(old["hit@1"], 3)} → {num(new["hit@1"], 3)}): cambia que la lista y la imagen muestren el producto correcto.</div>',
-    hbars(
-        [
-            {"label": "268 productos", "value": 0.6364},
-            {"label": "855 (ampliado)", "value": old["hit@1"], "ci": ci(old)},
-            {"label": "819 (revisado)", "value": new["hit@1"], "ci": ci(new), "hl": True},
-        ],
-        width=520,
-        label_w=160,
-    ),
-    "<b>Decisión:</b> catálogo ampliado y revisado (819). Medir hit@1 sobre catálogos distintos no es comparar lo mismo: el universo cambia.",
-    fases=("catalogo",),
-    why="El primer catálogo tenía solo sofás, sillones, mesas y alfombras: no había biblioteca, lámpara ni cortinas que recomendar. Y al describirlo aparecieron productos con la foto de otro.",
-    notes={
-        "motivo": "El primer catálogo eran 268 sofás, sillones, mesas y alfombras: no había biblioteca, lámpara ni cortinas. Y al describirlo aparecieron productos con la foto de otro: la lista diría una cosa y la imagen mostraría otra.",
-        "experimento": "Las mismas métricas sobre el de 268, el ampliado a 855 y el revisado: 36 productos afuera y 7 kinds corregidos.",
-        "resultados": f"Ampliar baja hit@1 de 0,636 a {num(old['hit@1'], 3)}: hay más productos parecidos y lo nuevo es deco, más difícil. La revisión casi no lo cambia ({num(new['hit@1'], 3)}), pero hace que la lista y la imagen muestren el mismo producto. Ojo: cambia el universo, no son números comparables.",
-        "decision": "Ampliado y revisado: unos puntos de hit@1 son el precio de poder amoblar un living completo.",
-    },
-    mins=0.9,
+    mins=1.05,
 )
 
 
-# E10: qué catálogo (punta a punta)
+# -- 6: qué catálogo (punta a punta)
 def split_e2e(res: dict, a: str, b: str) -> list[tuple]:
     out = []
     for lab, cond in (
         ("propios (nórdicos)", lambda x: not x.startswith("publica")),
-        ("públicos (otros)", lambda x: x.startswith("publica")),
+        ("públicos (otros estilos)", lambda x: x.startswith("publica")),
         ("total", lambda x: True),
     ):
         ds = [d for d in res["detalle"] if cond(d["slug"])]
-        if not ds:
-            continue
 
         def util(v, ds=ds):
             g = [x for d in ds for sd in d["puntajes"][v] for x in sd["grades"]]
@@ -1188,239 +1586,490 @@ def split_e2e(res: dict, a: str, b: str) -> list[tuple]:
     return out
 
 
-abo5 = E2E.get("juez_ikea_vs_abo_5ambientes")
-tod11 = E2E.get("juez_ikea_vs_todos")
-tbl10 = ""
-if abo5:
-    s5 = abo5["resumen"]
-    tbl10 += (
-        '<h3 style="margin-bottom:4px">1. IKEA contra ABO (5 ambientes propios)</h3>'
-        f'<table class="t sm"><tr><th></th><th>gana</th><th>útil</th><th>pedido</th><th>ambiente</th><th>conjunto</th></tr>'
-        + "".join(
-            f'<tr class="{"hl" if v == "ikea" else ""}"><td>{"IKEA" if v == "ikea" else "ABO"}</td><td class=n>{s5[v]["gana"]}</td><td class=n>{num(s5[v]["util"])}</td>'
-            f'<td class=n>{num(s5[v]["request"], 1)}</td><td class=n>{num(s5[v]["room"], 1)}</td><td class=n>{num(s5[v]["together"], 1)}</td></tr>'
-            for v in ("ikea", "abo")
-        )
-        + f'</table><div class="cap">{abo5["empates"]} empate. ABO pierde por estilo: maderas oscuras, patas doradas.</div>'
+abo5 = E2E["juez_ikea_vs_abo_5ambientes"]
+s5 = abo5["resumen"]
+rows_c = split_e2e(JC, "ikea", "todos")
+(_, n_pro, pro_i, pro_t, *_), (_, n_pub, pub_i, pub_t, _, pub_ui, pub_ut), (_, _, tot_i, tot_t, *_) = rows_c
+p_cat = p_signos(tot_t, tot_i)
+d_abo = paired(TODOS_DIR, BASE, BASE, run_b=ABL_DIR)  # el mismo buscador, con ABO de distractores
+tbl_cat = (
+    '<h3 style="margin-bottom:4px">1. IKEA contra ABO (5 ambientes propios)</h3>'
+    '<table class="t sm"><tr><th></th><th>gana</th><th>útil</th><th>pedido</th><th>ambiente</th><th>conjunto</th></tr>'
+    + "".join(
+        f'<tr class="{"hl" if v == "ikea" else ""}"><td>{"IKEA" if v == "ikea" else "ABO"}</td><td class=n>{s5[v]["gana"]}</td><td class=n>{num(s5[v]["util"])}</td>'
+        f'<td class=n>{num(s5[v]["request"], 1)}</td><td class=n>{num(s5[v]["room"], 1)}</td><td class=n>{num(s5[v]["together"], 1)}</td></tr>'
+        for v in ("ikea", "abo")
     )
-if tod11:
-    rows = split_e2e(tod11, "ikea", "todos")
-    tbl10 += (
-        '<h3 style="margin:14px 0 4px">2. IKEA contra IKEA + ABO (11 ambientes)</h3>'
-        '<table class="t sm"><tr><th></th><th>n</th><th>IKEA</th><th>IKEA+ABO</th><th>emp.</th><th>útil I</th><th>útil I+A</th></tr>'
-        + "".join(
-            f'<tr class="{"hl" if lab == "total" else ""}"><td>{lab}</td><td class=n>{n}</td><td class=n>{wa}</td><td class=n>{wb}</td><td class=n>{t}</td><td class=n>{num(ua)}</td><td class=n>{num(ub)}</td></tr>'
-            for lab, n, wa, wb, t, ua, ub in rows
-        )
-        + f'</table><div class="cap">Acuerdo entre órdenes {num(tod11["acuerdo_entre_ordenes"])}. Útil = productos con nota 2.</div>'
+    + f'</table><div class="cap">{abo5["empates"]} empate. ABO pierde por estilo: maderas oscuras, patas doradas.</div>'
+    '<h3 style="margin:8px 0 3px">2. IKEA contra IKEA + ABO (11 ambientes)</h3>'
+    '<table class="t sm"><tr><th></th><th>n</th><th>IKEA</th><th>IKEA+ABO</th><th>emp.</th><th>útil I</th><th>útil I+A</th></tr>'
+    + "".join(
+        f'<tr class="{"hl" if lab == "total" else ""}"><td>{lab}</td><td class=n>{n}</td><td class=n>{wa}</td><td class=n>{wb}</td><td class=n>{t}</td><td class=n>{num(ua)}</td><td class=n>{num(ub)}</td></tr>'
+        for lab, n, wa, wb, t, ua, ub in rows_c
     )
+    + f'</table><div class="cap">Test de signos sobre los {tot_i + tot_t} decididos: <b>p = {num(p_cat)}</b>. Acuerdo entre órdenes: {num(JC["acuerdo_entre_ordenes"])}. Útil: nota 2.</div>'
+)
 experiment(
-    "10",
+    "6",
     "Qué catálogo",
     "Con qué catálogo salen mejores listas para ambientes reales: IKEA, Amazon (ABO) o los dos?",
     '<ul class="small">'
-    "<li><b>IKEA</b>: 819 productos, fotos de 500 px, asientos sin medidas, único con ground truth.</li>"
-    f"<li><b>Amazon Berkeley Objects</b> (Collins et al., 2022): listados reales de Amazon; {ABO_N} descriptos con el mismo formato (Opus por la API, US$5,4), medidas en el 90%.</li>"
-    "<li>Sin ground truth: mismo plan, cambia solo el catálogo, y un juez compara las listas de a pares, en los dos órdenes.</li></ul>",
-    f'<div style="width:600px">{tbl10 or "<p class=small>(pendiente)</p>"}</div>',
-    "<b>Decisión:</b> IKEA + ABO: empata con pedidos nórdicos y gana 6 a 0 con otros estilos, porque trae lo pedido que IKEA 2013 no tiene. "
-    "Sumar ABO casi no cambia el retrieval sobre el GT de IKEA (hit@1 0,535 → 0,525).",
+    f"<li><b>IKEA</b>: {len(ITEMS)} productos, fotos de 500 px, asientos sin medidas; el único con ground truth.</li>"
+    f"<li><b>Amazon Berkeley Objects</b> (Collins et al., 2022): listados reales; {ABO_N} descriptos con el mismo formato, medidas en el 90 %.</li>"
+    "<li>Mismo plan; cambia solo el catálogo. Un juez compara las listas de a pares, a ciegas, en los dos órdenes.</li></ul>"
+    f'<div class="find" style="margin-top:8px">En los {n_pro} pedidos nórdicos empatan ({pro_i} a {pro_t}). En los {n_pub} de otros estilos, IKEA + ABO gana {pub_t} a {pub_i}, y los productos útiles pasan de {num(pub_ui)} a {num(pub_ut)}.</div>',
+    f'<div style="width:600px">{tbl_cat}</div>',
+    f"<b>Decisión:</b> el flujo usa IKEA + ABO. Pero {tot_t} a {tot_i} es p = {num(p_cat)}, y los pedidos de otros estilos <b>los escribimos sabiendo qué le falta a IKEA</b>: la decisión es razonable; el titular “{pub_t} a {pub_i}”, no.",
     fases=("catalogo",),
-    why="IKEA 2013 tiene fotos chicas, asientos sin medidas y una sola estética. Amazon Berkeley Objects tiene listados reales con medidas.",
+    why="IKEA 2013 tiene fotos chicas, asientos sin medidas y una sola estética. ABO tiene listados reales, con medidas, pero no tiene ambientes anotados: hay que medirlo de punta a punta.",
     notes={
-        "motivo": "IKEA es de 2013, con fotos chicas, asientos sin medidas y una sola estética, la nórdica. Amazon Berkeley Objects tiene listados reales, con medidas y fotos grandes.",
-        "experimento": "Sin ground truth: de punta a punta, con los mismos ambientes, pedidos y plan; cambia solo el catálogo. El juez de a pares compara las dos listas, en los dos órdenes.",
-        "resultados": (
-            "Primero, en nuestros 5 departamentos: IKEA le gana a Amazon 4 a 0, por estilo, e IKEA más Amazon empataba con IKEA. Pero los 5 pedidos eran nórdicos, así que sumamos 6 ambientes públicos con otros estilos. "
-            + (
-                f"En los nórdicos siguen empatados; en los otros, IKEA más Amazon gana {rows[1][3]} a {rows[1][2]}, y los productos útiles pasan de {num(rows[1][5])} a {num(rows[1][6])}. "
-                f"Los dos órdenes del juez coinciden en el {num(100 * tod11['acuerdo_entre_ordenes'], 0)}% de los ambientes. "
-                if tod11
-                else ""
-            )
-        ),
-        "decision": "Usamos los dos catálogos. Con ambientes y pedidos poco variados habríamos decidido lo contrario.",
+        "motivo": "IKEA es de 2013, con una sola estética, la nórdica. Amazon Berkeley Objects tiene listados reales, con medidas, pero no tiene ambientes anotados: hay que medirlo de punta a punta.",
+        "experimento": "Los mismos ambientes, pedidos y plan; cambia solo el catálogo. El juez compara las dos listas a ciegas, en los dos órdenes.",
+        "resultados": f"En nuestros cinco departamentos, con pedidos nórdicos, IKEA le gana a Amazon solo, y los dos juntos empatan con IKEA. Sumamos seis ambientes públicos con otros estilos: ahí, IKEA más Amazon gana {pub_t} a {pub_i}. En total, {tot_t} a {tot_i}.",
+        "decision": f"Usamos los dos catálogos. Con dos salvedades: {tot_t} a {tot_i} en once ambientes da p igual a {num(p_cat)}, no es concluyente; y los pedidos de otros estilos los escribimos nosotros, sabiendo qué le falta a IKEA. Muestra que Amazon cubre ese hueco, no cuán frecuente es.",
     },
-    mins=1.5,
+    mins=1.1,
 )
 
-# E11: el GT subestima + reproducibilidad
-g = GRAD["consultas"]["todas"] if GRAD else None
-# el hit@1 de la misma corrida que vio el juez (graduada.json dice cuál)
-gh1 = (load(R / "evaluacion" / GRAD["run"] / "metricas.json") or {}).get(GRAD["method"], {}).get("hit@1") if GRAD else None
-gh1 = gh1 if gh1 is not None else m(BASE)["hit@1"]
-gt_agree = GRAD.get("acuerdo_con_gt", {}) if GRAD else {}
-rep = [REPL[k][BASE]["hit@1"] for k in sorted(REPL)] if REPL else []
+# -- 7: con búsqueda contra sin búsqueda; y si hacía falta RAG
+sa = JA["resumen"]
+votos_a = [v for d in JA["detalle"] for v in d["votos"]]
+p_azar = p_signos(sa["densa"]["gana"], sa["azar"]["gana"])
+cat_chars = sum(len(DESC[i]["text"]) for i in ITEMS) + sum(len(d["text"]) for d in ABO_DESC)
+cat_tokens = cat_chars / 4  # unos 4 caracteres por token
+opus_in = CFG.furnish.llm["models"]["claude-opus-5-5"]["usd_per_m"]["input"]
+cat_usd = round(cat_tokens * opus_in / 1e6, 1)
+tbl_azar = (
+    '<table class="t"><tr><th></th><th>gana</th><th>votos</th><th>útil</th><th>pedido</th><th>ambiente</th><th>conjunto</th></tr>'
+    + "".join(
+        f'<tr class="{"hl" if v == "densa" else ""}"><td style="white-space:nowrap">{lab}</td><td class=n>{sa[v]["gana"]}</td><td class=n>{votos_a.count(v)}</td><td class=n>{num(sa[v]["util"])}</td>'
+        f'<td class=n>{num(sa[v]["request"], 1)}</td><td class=n>{num(sa[v]["room"], 1)}</td><td class=n>{num(sa[v]["together"], 1)}</td></tr>'
+        for v, lab in (("densa", "Con búsqueda"), ("azar", "Sin búsqueda"))
+    )
+    + f'</table><div class="cap">{JA["ambientes"]} ambientes y {len(votos_a)} votos: los dos órdenes coinciden siempre. Test de signos: <b>p = {num(p_azar, 3)}</b>. Útil: productos con nota 2; el resto, de 1 a 5.</div>'
+)
 experiment(
-    "11",
-    "¿Cuánto mide el ground truth?",
-    "Si el sistema no trae el producto anotado, se equivoca? Y cuánto depende el número de quién escribió las consultas?",
-    '<ul class="small"><li>Un juez califica el top-3 (2/1/0) en 150 búsquedas. Para confiar en él: le da 2 al producto anotado el '
-    f'<b>{num(100 * gt_agree.get("anotado_con_2", 0.81), 0)}%</b> de las veces y a los demás el {num(100 * gt_agree.get("otros_con_2", 0.05), 0)}%.</li>'
-    f"<li>Tres redactores escribieron las mismas búsquedas: hit@1 {' · '.join(num(x, 3) for x in [m(BASE)['hit@1'], *rep])}.</li></ul>"
-    '<div class="find" style="margin-top:14px">El ground truth <b>subestima</b>: en 3 de cada 4 búsquedas el primero sirve, aunque sea el anotado solo en la mitad. Y el resultado varía ±2,6 puntos con el redactor: diferencias menores entre métodos no son señal.</div>',
+    "7",
+    "Con búsqueda contra sin búsqueda",
+    "La búsqueda aporta en la tarea real, o el que elige se arregla con cualquier candidato del kind?",
+    '<ul class="small"><li><b>Con búsqueda</b>: para cada pieza, los 5 mejores de la búsqueda (la densa, de la versión 1).</li>'
+    "<li><b>Sin búsqueda</b>: 5 productos <b>al azar</b> entre los que pasan los mismos filtros (kind y medidas).</li>"
+    f'<li>Mismo plan, mismo paso que elige y mismo juez, en los dos órdenes. {JA["ambientes"]} ambientes vacíos reales.</li></ul>'
+    f'<div class="find" style="margin-top:12px"><b>{sa["densa"]["gana"]} a {sa["azar"]["gana"]}</b>, con los {len(votos_a)} votos. Productos útiles: {num(sa["densa"]["util"])} contra {num(sa["azar"]["util"])}. El filtro solo no alcanza: sin ranking, la lista tiene el tipo de pieza correcto y poco más.</div>',
+    f'<div style="width:600px">{tbl_azar}'
+    '<div class="card" style="margin-top:10px;padding:11px 16px"><h3 style="font-size:15.5px;margin-bottom:4px">¿Hacía falta RAG, si el catálogo entra en el contexto?</h3>'
+    f'<p class="small" style="font-size:14px;line-height:1.4;margin:0">En texto, entra: las {miles(len(ITEMS) + ABO_N)} fichas son unos {round(cat_tokens / 1e5) * 100} mil tokens, unos US${num(cat_usd, 2)} de entrada por pedido con Opus, contra US${num(c_choose)} de la elección de hoy, que además mira las fotos. Con las fotos de todo el catálogo ya no entra, y ABO completo son {DOC["abo_listados"]} listados. Esa variante no la medimos.</p></div></div>',
+    "<b>Conclusión:</b> la búsqueda aporta en la tarea real, no solo en el banco de prueba. Y es el control del instrumento: cuando la diferencia es grande, el juez la ve siempre. Eso le da sentido a sus empates entre la versión 1 y la 2.",
+    fases=("busqueda",),
+    why="Es el “con y sin retrieval” del flujo. Si el que elige armara una buena lista con cualquier cosa del kind pedido, la búsqueda no aportaría; y si el juez no distinguiera estas dos listas, ninguna comparación de punta a punta diría nada.",
+    notes={
+        "motivo": "Es el con y sin retrieval del flujo: si el que elige armara una buena lista con cualquier cosa del kind pedido, la búsqueda no aportaría. Y es el control del juez: si no distinguiera estas dos listas, ninguna comparación de punta a punta diría nada.",
+        "experimento": f"Mismo plan, mismo paso que elige, mismo juez. Cambia solo qué cinco candidatos recibe cada pieza: los mejores de la búsqueda, o cinco al azar que pasan los mismos filtros. En {JA['ambientes']} ambientes.",
+        "resultados": f"{sa['densa']['gana']} a {sa['azar']['gana']}, con los {len(votos_a)} votos. Los productos útiles pasan de {num(sa['azar']['util'])} a {num(sa['densa']['util'])}.",
+        "decision": f"La búsqueda aporta en la tarea real. Y la pregunta incómoda: ¿hacía falta RAG si el catálogo entra en el contexto? En texto entra, unos {round(cat_tokens / 1e5) * 100} mil tokens: unos {round(100 * cat_usd)} centavos de entrada por pedido, contra {round(100 * c_choose)} de la elección de hoy, que además mira las fotos. Con las fotos ya no entra, y no escala. Esa variante no la medimos.",
+    },
+    mins=1.15,
+)
+
+# -- 8: tres redactores
+v1s = [CAM[V1]["hit@1"]] + [h[V1]["hit@1"] for h in HIB_R]
+v2s = [CAM[V2]["hit@1"]] + [h[V2]["hit@1"] for h in HIB_R]
+tres = [("original", HIB), ("redactor 2", HIB_R[0]), ("redactor 3", HIB_R[1])]
+experiment(
+    "8",
+    "Tres redactores",
+    "Cuánto cambia el número según quién escribe las consultas?",
+    '<ul class="small"><li>Las mismas consultas, escritas otras dos veces por subagentes independientes, mirando las mismas fotos.</li>'
+    "<li>Los mismos buscadores sobre cada escritura: la versión 1 (densa) y la versión 2 (híbrida).</li></ul>"
+    f'<div class="find" style="margin-top:14px">hit@1 según quién escribe: versión 1, <b>{media_desvio(v1s)}</b>; versión 2, <b>{media_desvio(v2s)}</b>. La mejora de la híbrida se repite en las tres escrituras.</div>',
     hbars(
         [
-            {"label": "hit@1 (ground truth)", "value": gh1},
-            {"label": "útil@1 (juez)", "value": g["util1"], "ci": tuple(g.get("util1_ic95") or (0.68, 0.82)), "hl": True},
-            {"label": "útil@3 (juez)", "value": g["util3"], "ci": tuple(g.get("util3_ic95") or (0.78, 0.89))},
-        ]
-        if g
-        else [],
-        width=520,
-        label_w=170,
-    ),
-    "<b>Conclusión:</b> reportamos hit@1 para comparar métodos (es objetivo y barato) y la relevancia graduada para saber cuán útil es de verdad.",
+            row
+            for lab, src in tres
+            for row in (
+                {"label": f"{lab} · versión 1", "value": src[V1]["hit@1"], "ci": ci(src[V1])},
+                {"label": f"{lab} · versión 2", "value": src[V2]["hit@1"], "ci": ci(src[V2]), "hl": True, "note": dif(src[V2]["vs_base"])},
+            )
+        ],
+        width=610,
+        label_w=176,
+        row_h=30,
+        pad_r=204,
+    )
+    + '<div class="cap">hit@1. A la derecha, la versión 2 menos la versión 1, pareado, con su IC 95 %.</div>',
+    f"<b>Conclusión:</b> el número se mueve unos {num(100 * statistics.stdev(v1s), 1)} puntos sin cambiar el sistema. Una diferencia de 2 puntos entre dos métodos no es señal: por eso los embedders “no se distinguen”, y la híbrida sí.",
     fases=("busqueda",),
-    why="El ground truth tiene un solo producto correcto por pieza, pero otro parecido puede servir igual. Y las consultas las escribieron modelos: el número podía depender de quién las escribió.",
+    why="Las consultas de evaluación las escribió un modelo. La clase pidió promedio de ejecuciones y desvío: si el número cambia mucho con quién escribe, mide al redactor y no al sistema.",
     notes={
-        "motivo": "El ground truth tiene un solo producto correcto por pieza, pero uno casi igual también sirve. Y las búsquedas las escribieron subagentes: con otros, ¿cambiaría el número?",
-        "experimento": "Un juez califica el top-3 de 150 búsquedas con 2, 1 o 0, y antes lo validamos contra el ground truth. Y tres redactores independientes escribieron las mismas búsquedas.",
-        "resultados": (
-            f"El juez le da 2 al anotado el {num(100 * gt_agree.get('anotado_con_2', 0.81), 0)}% de las veces y a los demás el {num(100 * gt_agree.get('otros_con_2', 0.05), 0)}%: es confiable. "
-            + (f"Con él, el primero sirve en el {num(100 * g['util1'], 0)}% de los casos, aunque hit@1 sea {num(gh1)}: el ground truth subestima. " if g else "")
-            + "Con tres redactores, hit@1 varía unos 2,6 puntos: diferencias más chicas entre métodos no son señal."
-        ),
-        "decision": "hit@1 para comparar métodos, porque es objetivo y barato; la relevancia graduada para saber cuán útil es de verdad.",
+        "motivo": "Las consultas de evaluación las escribió un modelo. La clase pidió promedio y desvío: ¿cuánto cambia el número sin cambiar el sistema?",
+        "experimento": "Las mismas consultas, escritas otras dos veces por subagentes independientes.",
+        "resultados": f"La versión 1 da {media_desvio(v1s)}; la versión 2, {media_desvio(v2s)}. La mejora de la híbrida se repite con los tres.",
+        "decision": "El número se mueve unos dos puntos y medio según quién escribe: por eso no leemos diferencias de dos puntos.",
     },
-    mins=1.0,
+    mins=0.55,
 )
 
-# E12: la imagen
-runs_img = [
-    ("experimento", "escena escrita por el LLM"),
-    ("experimento-libre", "escena libre"),
-    ("experimento-buen-pedido", "libre, sin tope de piezas"),
-    ("experimento-buen-pedido-estricto", "edición estricta"),
-]
-cells, sift = "", {}
-for r, lab in runs_img:
-    d = R / "amoblar" / r
-    if (d / "final.png").exists():
-        mi = load(d / "6_metricas_imagen.json") or {}
-        amb = mi.get("ambiente") or {}
-        sift[r] = amb.get("sift_inliers")
-        stats = f' · SIFT {amb.get("sift_inliers")} pts · SSIM fuera {num(amb["ssim_fuera_de_los_muebles"])}' if amb else ""
-        cells += f'<div>{img(d / "final.png", 520, cls="photo")}<div class="cap" style="margin-top:3px"><b>{esc(lab)}</b>{stats}</div></div>'
-experiment(
-    "12",
-    "La imagen: del cuarto reimaginado al cuarto del cliente",
-    "Cómo pedirle al modelo de imagen que respete el ambiente, y cómo darnos cuenta solos cuando no lo hace?",
-    f'<div style="width:250px">{img(EST / "room.jpg", 500, cls="photo")}<div class="cap"><b>original</b></div>'
-    '<p class="small" style="margin-top:8px;font-size:14.5px">Arriba, el pedido corto (6 piezas); abajo, el completo (9). Se mide SIFT y SSIM fuera de los muebles.</p></div>',
-    f'<div style="width:800px"><div class="grid2 fix h125" style="gap:4px 12px">{cells}</div></div>',
-    "<b>Decisión:</b> edición estricta (mismo encuadre, paredes y aberturas; exactamente esos productos) y un control: si SIFT no reencuentra el cuarto, se descarta y se reintenta (hasta 3).",
-    fases=("escena", "control"),
-    why="En las primeras imágenes el modelo redecoraba: inventó una ventana y movió la biblioteca. El usuario quiere ver su cuarto.",
-    notes={
-        "motivo": "En las primeras imágenes el modelo redecoraba: acá inventó una ventana y movió la biblioteca. El usuario quiere ver su cuarto con esos productos.",
-        "experimento": "El mismo ambiente, cuatro versiones de la escena. Arriba, con el pedido corto de 6 piezas: la escena escrita por Opus y la plantilla libre. Abajo, con el pedido completo de 9 piezas: libre, y la edición estricta. Medimos con SIFT los puntos de la foto original que se reencuentran, y SSIM fuera de los muebles.",
-        "resultados": f"Arriba, las dos conservan el cuarto pero la biblioteca queda chica. Abajo a la izquierda, linda pero con una ventana inventada: SIFT reencuentra solo {sift.get('experimento-buen-pedido')} puntos. La estricta conserva el cuarto, con {sift.get('experimento-buen-pedido-estricto')}, y la biblioteca es la que se pidió.",
-        "decision": "Edición estricta y el control automático con reintento, que ya vimos funcionando en la fase 10.",
-    },
-    mins=1.2,
+# -- De trámite: lo que pregunta la cátedra, con la respuesta en una línea
+
+
+def emb(k: str) -> dict:
+    return EMB[f"{k}|description|filtro-kind"]
+
+
+def sin(x: str) -> dict:
+    """La búsqueda de la versión 1 sin esas líneas en documentos y consultas."""
+    return LIN[f"{V1}|sin-{x}"]
+
+
+def h15(x: dict) -> str:
+    return f'{num(x["hit@1"], 3)} / {num(x["hit@5"], 3)}'
+
+
+dims = {d: (ABL[f"{BASE}|dim-{d}"] if d != 1024 else ABL[BASE])["hit@1"] for d in (32, 128, 512, 1024)}
+d512 = paired(ABL_DIR, BASE + "|dim-512", BASE)
+doc_, chunk, alin = ABL[BASE], ABL[BASE + "|chunks-lines-max"], ABL[BASE + "|chunks-lines-aligned"]
+visto = sin("Use+Style+Feel+Goes with")
+ex_a, ex_b = rankings(ABL_DIR)[BASE + "|exact"], rankings(ABL_DIR)[BASE]
+iguales = sum(x["ranked"] == y["ranked"] for x, y in zip(ex_a, ex_b, strict=True))
+
+
+def tram(n: int | None, name: str, what: str, answer: str) -> str:
+    p = pin_inline(n) if n else '<span style="display:inline-block;width:21px"></span>'
+    return f'<tr><td class="nm">{p}<b>{name}</b></td><td>{what}</td><td>{answer}</td></tr>'
+
+
+TH = '<table class="t tram"><tr><th style="width:190px">La pregunta</th><th style="width:330px">Qué se comparó (hit@1)</th><th>La respuesta</th></tr>'
+slide(
+    route(lit=("indice",), pins={"indice": PINES["indice"]})
+    + TH
+    + tram(9, "Embedder", f'hashing {num(emb("hashing")["hit@1"], 3)} · BM25 {num(emb("bm25")["hit@1"], 3)} · BGE {num(emb("bge")["hit@1"], 3)} · <b>Qwen3 {num(EMB[V1]["hit@1"], 3)}</b>',
+           f'Solo se sostiene Qwen3 sobre BGE ({nb(dif(emb("bge")["vs_base"], flip=True))}). Contra contar palabras no se distingue ({nb(dif(emb("hashing")["vs_base"], flip=True))}). Queda Qwen3 por robustez a la paráfrasis, sin evidencia medida.')
+    + tram(10, "Dimensión", " · ".join(f"{'<b>' if d == 1024 else ''}{miles(d)}: {num(v, 3)}{'</b>' if d == 1024 else ''}" for d, v in dims.items()),
+           f"Con 512 da lo mismo que con 1.024 ({nb(dif(d512))}). Con 1.500 productos la memoria no pesa: queda 1.024.")
+    + tram(11, "Splitting y líneas", f'<b>un documento {num(doc_["hit@1"], 3)}</b> · un chunk por línea {num(chunk["hit@1"], 3)} · línea contra línea {num(alin["hit@1"], 3)}',
+           f'No se parte: un producto es un documento de unas 80 palabras. Lo que importa es qué líneas lo componen: sin Colors, {nb(dif(sin("Colors")["vs_base"]))}; sin Shape, {nb(dif(sin("Shape")["vs_base"]))}; con solo las cuatro de lo que se ve se encuentra igual que con las ocho ({num(visto["hit@1"], 3)}).')
+    + tram(12, "Base vectorial", "ChromaDB (HNSW, coseno) contra recorrer todos los vectores con numpy",
+           f"El mismo top-10 en {iguales} de {len(ex_a)} consultas. ChromaDB da la persistencia y los filtros de metadata en la misma consulta, y es la pieza que escala.")
+    + "</table>"
+    '<div class="take">Con el texto bien escrito, el índice casi no decide nada: son respuestas que hay que tener, no un gran experimento.</div>',
+    kicker="Experimentos · de trámite (1 de 2)",
+    title="De trámite: las cuatro preguntas sobre el índice",
+    notes=f"Los de trámite: lo que la cátedra dijo que iba a preguntar, con la respuesta corta. Embedder: Qwen3 solo se sostiene sobre BGE; contra contar palabras no se distingue, porque consultas y descripciones comparten el molde. Dimensión: con 512 da lo mismo que con 1.024, y con 1.500 productos la memoria no pesa. Splitting: no partimos, un producto es un documento; lo que importa es qué líneas lo componen, y son las de lo que se ve: colores y forma. Base vectorial: ChromaDB da el mismo top-10 que la búsqueda exacta en las {len(ex_a)} consultas; la usamos por la persistencia y los filtros.",
+    mins=0.8,
+)
+
+f_none, f_type = HIB["qwen3|description|filtro-none"], HIB[BASE]
+mini, qrr = ABL[BASE + "|rerank-minilm-reranker"], RLOC[BASE + "|rerank-qwen3-reranker"]
+old, new = CAT_OLD[BASE], CAT_NEW[BASE]
+t_abo = load(TODOS_DIR / "metricas.json")[BASE]
+slide(
+    route(lit=("catalogo", "busqueda"), pins={"busqueda": [13, 14]})
+    + TH.replace("(hit@1)", "(hit@1 / hit@5)").replace("La pregunta", "Qué")
+    + tram(13, "Filtros", f"sin filtro {h15(f_none)} · por tipo {h15(f_type)}<br><b>por kind {h15(B1)}</b>",
+           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa por algo que el banco no mide: en los pedidos reales evita un {num(100 * DOC["otro_kind"], 0)} % de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). El de medidas no tiene evidencia: solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida.')
+    + tram(14, "Rerankers de texto", f'sin rerank {h15(RLOC[BASE])} · MiniLM {h15(mini)} · Qwen3-Reranker {h15(qrr)}',
+           f'Empeoran ({nb(dif(qrr["vs_base"]))} el mejor): releen el mismo texto que ya usó la búsqueda. El que suma es el que mira las fotos (experimento 5).')
+    + tram(None, "El catálogo, ampliado y revisado", f'268 productos {num(DOC["catalogo_268"], 3)} → 855: {num(old["hit@1"], 3)} → {len(ITEMS)}: {num(new["hit@1"], 3)} (hit@1)',
+           "Decisiones de datos, no experimentos: ampliar cambia el universo (más productos parecidos); revisar hace que la lista y la imagen muestren el mismo producto.")
+    + tram(None, "ABO como distractores", f'{len(ITEMS)} productos {h15(ABL[BASE])} → con los {ABO_N} de ABO {h15(t_abo)}',
+           f'Sumar productos solo puede bajar el número ({nb(dif(d_abo, "hit@5"))} de hit@5): es el costo, chico, de cubrir más estilos.')
+    + "</table>"
+    '<div class="take">Y sin experimento que las sostenga: la escena como plantilla (decisión de costo) y el modelo de imagen (comparación diseñada, sin correr).</div>',
+    kicker="Experimentos · de trámite (2 de 2)",
+    title="De trámite: filtros, rerankers de texto y el catálogo",
+    notes=f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el {num(100 * DOC['otro_kind'], 0)} por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas no tiene evidencia. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {num(-100 * d_abo['hit@5'], 1)} puntos de hit@5.",
+    mins=0.8,
+)
+
+
+# ================================================================================================
+# Ejercicio 4: versión 1 y versión 2 (docs/REVISION.md, sección 6)
+# ================================================================================================
+# Un caso del banco de prueba donde la versión 1 deja al anotado fuera de los 5 candidatos
+CASO = "white cushion with black leaf print on the right armchair"
+caso = {k: next(r for r in rankings(HIB_DIR)[k] if r.get("phrase") == CASO) for k in (V1, V2)}
+assert caso[V1]["rank"] > CFG.furnish.candidates and caso[V2]["rank"] == 1, "el caso del Ejercicio 4 ya no muestra la limitación: elegir otro"
+
+
+def fila_caso(key: str) -> str:
+    """Los 5 primeros de una búsqueda para el caso, con los anotados marcados."""
+    r = caso[key]
+    return '<div class="fila5">' + "".join(
+        f'<div class="th{" pick" if pid in r["relevant"] else ""}">{img(ITEMS[pid]["photos"][0], 150, alt="")}</div>' for pid in r["ranked"][:5]
+    ) + "</div>"
+
+
+cat1 = B1["hit@1_por_categoria"]
+kinds_idx = [x.get("kind") for x in ITEMS.values()]
+bm_solo, foto_solo = HIB["bm25|description|filtro-kind"], HIB["siglip2|description|filtro-kind"]
+slide(
+    '<div class="row" style="gap:34px">'
+    '<div style="width:540px">'
+    '<div class="lab">La versión 1: el sistema hasta el 11/11</div>'
+    '<p class="small" style="font-size:15px">La búsqueda era el coseno de Qwen3 entre la ficha y las descripciones, con el filtro por kind: <code>rag.hybrid: []</code>. Lo demás, igual que hoy.</p>'
+    '<div class="lab" style="margin-top:14px">Su limitación, medida sobre el ground truth</div>'
+    '<div class="trio">'
+    f'<div><b>{num(B1["hit@1"])}</b><span>hit@1: entre productos casi iguales, el primero es el anotado la mitad de las veces</span></div>'
+    f'<div><b>1 de cada {round(1 / (1 - B1["hit@5"]))}</b><span>piezas donde el correcto no llega a los 5 candidatos (hit@5 {num(B1["hit@5"])}): el que elige ya no puede acertar</span></div>'
+    f'<div><b>{num(cat1["rug"])} · {num(cat1["deco"])}</b><span>en alfombras y deco, donde hay muchos parecidos ({kinds_idx.count("rug")} alfombras, {kinds_idx.count("cushion")} almohadones); en sillas, {num(cat1["chair"])}</span></div>'
+    "</div>"
+    '<p class="small" style="font-size:15px;margin-top:12px">El índice <b>lee una descripción, pero no ve el producto</b>, y no aprovecha las palabras exactas de la consulta.</p>'
+    "</div>"
+    '<div class="grow"><div class="lab">Un caso del banco de prueba</div>'
+    f'<div class="quote" style="font-size:14.5px">Se busca: <i>“{esc(CASO)}”</i> (un almohadón blanco con un estampado de hojas negras).</div>'
+    '<div class="lab" style="margin-top:14px">Los 5 candidatos de la versión 1</div>'
+    + fila_caso(V1)
+    + f'<div class="cap">Blancos y negros, ninguno con hojas: el anotado quedó {caso[V1]["rank"]}.º, fuera de lo que ve el que elige.</div>'
+    '<div class="lab" style="margin-top:12px">Lo anotado en ese ambiente</div>'
+    '<div class="fila5">' + "".join(f'<div class="th pick">{img(ITEMS[pid]["photos"][0], 150, alt="")}</div>' for pid in caso[V1]["relevant"]) + "</div>"
+    "</div></div>"
+    f'<div class="take">Dos señales de que había información sin usar: contar palabras ({num(bm_solo["hit@1"], 3)}) y la foto sola ({num(foto_solo["hit@1"], 3)}) rendían como el embedder, <b>y fallaban en cosas distintas</b>.</div>',
+    kicker="Ejercicio 4 · 1 de 3 · la versión anterior y su limitación",
+    title="Versión 1: el índice lee la descripción, no ve el producto",
+    notes=f"El Ejercicio 4. La versión 1 es el sistema hasta el 11 de noviembre: la búsqueda era el coseno del embedder sobre las descripciones, con el filtro por kind. Su limitación, medida: entre productos casi iguales, el primero es el anotado el {num(100 * B1['hit@1'], 0)} por ciento de las veces, y en una de cada cinco piezas el correcto no llega a los cinco candidatos. Falla donde hay muchos parecidos: alfombras y deco. Un caso: se busca un almohadón blanco con hojas negras, y la versión 1 trae almohadones blancos y negros; el anotado quedó sexto. El índice lee una descripción, pero no ve el producto ni aprovecha las palabras exactas. Y BM25 y la foto sola rendían como el embedder, fallando en cosas distintas.",
+    mins=0.9,
+)
+
+
+def hibrida_svg() -> str:
+    """La búsqueda antes y después: en gris, lo que ya hacía la versión 1; en naranja, lo que
+    agrega la versión 2."""
+    W, H = 600, 292
+    A, MU, LI = "var(--accent)", "var(--muted)", "var(--line)"
+    o = [f'<svg class="pipe" viewBox="0 0 {W} {H}" width="{W}" role="img">']
+
+    def box(x, y, w, h, title, sub="", new=False, tag="", center=False):
+        o.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="10" fill="{"var(--accent-soft)" if new else "var(--card)"}" stroke="{A if new else LI}" stroke-width="{1.6 if new else 1.2}"/>')
+        tx, anchor = (x + w / 2, "middle") if center else (x + 12, "start")
+        o.append(f'<text x="{tx}" y="{y + (20 if sub else h / 2 + 5)}" text-anchor="{anchor}" font-size="13.5" font-weight="650" fill="var(--ink)">{esc(title)}</text>')
+        if sub:
+            o.append(f'<text x="{x + 12}" y="{y + 37}" font-size="11.5" fill="{MU}">{esc(sub)}</text>')
+        if tag:
+            o.append(f'<text x="{x + w - 10}" y="{y + 16}" text-anchor="end" font-size="10" font-weight="700" letter-spacing=".06em" fill="{A if new else MU}">{tag.upper()}</text>')
+
+    def flecha(x, y1, y2, new=False):
+        c = A if new else MU
+        o.append(f'<line x1="{x}" y1="{y1}" x2="{x}" y2="{y2}" stroke="{c}" stroke-width="1.4"/>' + arrowhead(x, y2, x, y1, 6, c))
+
+    box(150, 0, 300, 34, "La ficha de la pieza (8 líneas)", center=True)
+    flecha(300, 37, 50)
+    box(0, 54, W, 34, "Filtro duro: kind y medidas. Sobre los productos que pasan:", center=True)
+    sw, gap, y2 = 188, 18, 108
+    trio = [
+        ("Qwen3", "coseno con la descripción", False, "versión 1"),
+        ("BM25", "palabras de la descripción", True, "nuevo"),
+        ("SigLIP 2", "la frase contra la foto", True, "nuevo"),
+    ]
+    for i, (t, sub, new, tag) in enumerate(trio):
+        x = i * (sw + gap)
+        flecha(x + sw / 2, 91, y2 - 4, new)
+        box(x, y2, sw, 48, t, sub, new, tag)
+        flecha(x + sw / 2, y2 + 51, 174, new)
+    box(0, 178, W, 36, "Fusión: z-score de cada puntaje, y el promedio", new=True, tag="nuevo", center=True)
+    flecha(300, 217, 230)
+    box(150, 234, 300, 34, f"Los {CFG.furnish.candidates} mejores, a la elección", center=True)
+    o.append(f'<text x="0" y="{H - 5}" font-size="11.5" fill="{MU}">En naranja, lo que agrega la versión 2. La versión 1: el filtro, el coseno y los 5 mejores.</text>')
+    o.append("</svg>")
+    return "".join(o)
+
+
+cfg_txt = (ROOT / "datos/configs/amoblai.yaml").read_text()
+otros = [caso[V2]["ranked"].index(pid) + 1 for pid in caso[V2]["relevant"] if pid in caso[V2]["ranked"][1:5]]
+otro_txt = f"; el otro anotado, {otros[0]}.º" if otros else ""
+assert CFG.rag.hybrid == ["bm25", "siglip2"] and CFG.rag.fusion == "sum" and "  hybrid: [bm25, siglip2]" in cfg_txt, "amoblai.yaml ya no es la versión 2: revisar la lámina del cambio"
+slide(
+    '<div class="row" style="gap:34px">'
+    '<div style="width:500px">'
+    '<div class="lab">El cambio: una línea de configuración</div>'
+    '<div class="code"><div class="ph"><b>datos/configs/amoblai.yaml</b><span>antes y después</span></div>'
+    '<pre>rag:\n  embedder: qwen3\n'
+    '<span class="del">- hybrid: []                  # versión 1</span>\n'
+    '<span class="add">+ hybrid: [bm25, siglip2]     # versión 2</span>\n'
+    '  fusion: sum                 <span class="k"># z-score, y el promedio</span></pre></div>'
+    '<div class="lab" style="margin-top:16px">Por qué este cambio</div>'
+    + dec(None, "Sale de una <b>limitación medida</b> de la versión 1: el índice no ve el producto ni usa las palabras exactas.")
+    + dec(None, "Es una técnica de <b>Advanced RAG</b>: búsqueda híbrida (densa + léxica) y multimodal (la foto embebida).")
+    + dec(None, "<b>No cuesta nada por pedido</b>: BM25 y SigLIP 2 corren locales, y los vectores de las fotos se calculan una vez.")
+    + "</div>"
+    '<div class="grow"><div class="lab">La búsqueda, antes y después</div>'
+    + hibrida_svg()
+    + '<div class="lab" style="margin-top:12px">El caso del almohadón, con la versión 2</div>'
+    '<div style="display:flex;gap:14px;align-items:center">' + fila_caso(V2)
+    + f'<div class="cap" style="margin:0">El anotado sale <b>1.º</b> (antes, {caso[V1]["rank"]}.º){otro_txt}.</div></div>'
+    "</div></div>"
+    '<div class="take">Tres miradas del mismo producto: lo que dice su descripción, sus palabras exactas y su foto.</div>',
+    kicker="Ejercicio 4 · 2 de 3 · el cambio y la configuración",
+    title="Versión 2: búsqueda híbrida, una línea de configuración",
+    notes="El cambio es una línea de configuración: rag.hybrid pasa de una lista vacía a BM25 y SigLIP 2. La búsqueda ahora calcula tres puntajes para cada producto que pasa el filtro: el coseno con la descripción, que ya estaba; BM25, las palabras; y SigLIP 2, la ficha en una frase contra la foto. Se estandarizan y se promedian. ¿Por qué este cambio? Sale de una limitación medida; es una técnica de Advanced RAG, búsqueda híbrida y multimodal; y no cuesta nada por pedido, porque corre local. En el caso del almohadón, ahora el anotado sale primero.",
+    mins=0.8,
+)
+
+# resultados en las dos versiones
+votos_h, votos_d = votos_v.count("hibrida"), votos_v.count("densa")
+jv = JV["resumen"]
+p_ver = p_signos(jv["hibrida"]["gana"], jv["densa"]["gana"])
+difs_r = " · ".join(sg(x["hit@1"]) for x in [D21] + [h[V2]["vs_base"] for h in HIB_R])
+
+
+def fila(label: str, a: str, b: str, d: str = "", cls: str = "") -> str:
+    return f'<tr class="{cls}"><td>{label}</td><td class="c">{a}</td><td class="c v2">{b}</td><td>{d}</td></tr>'
+
+
+slide(
+    '<table class="t dosv"><tr><th></th><th class="c">Versión 1</th><th class="c">Versión 2</th><th>Diferencia</th></tr>'
+    + fila("Configuración", "<code>rag.hybrid: []</code>", "<code>rag.hybrid: [bm25, siglip2]</code>", "densa → densa + léxica + foto")
+    + f'<tr class="sec"><td colspan="4">Sobre el ground truth · {N_ANS} consultas con respuesta</td></tr>'
+    + fila("hit@1", num(B1["hit@1"], 3), num(B2["hit@1"], 3), dif(D21))
+    + fila("hit@5 (lo que ve el que elige)", num(B1["hit@5"], 3), num(B2["hit@5"], 3), dif(D21, "hit@5"))
+    + fila("MRR@10", num(B1["mrr@10"], 3), num(B2["mrr@10"], 3), dif(D21, "mrr@10"))
+    + fila("hit@1 con tres redactores (media ± desvío)", media_desvio(v1s), media_desvio(v2s), f"{difs_r}: se repite con los tres")
+    + f'<tr class="sec"><td colspan="4">De punta a punta · {JV["ambientes"]} ambientes vacíos reales, el mismo plan, el juez en los dos órdenes</td></tr>'
+    + fila("Ambientes que gana", str(jv["densa"]["gana"]), str(jv["hibrida"]["gana"]), f'{JV["empates"]} empates · {votos_h} votos a {votos_d} · p = {num(p_ver)}')
+    + fila("Productos útiles según el juez", num(jv["densa"]["util"]), num(jv["hibrida"]["util"]))
+    + fila("Costo por pedido", f"US${num(c_pedido)}", "igual", "BM25 y SigLIP 2 corren locales")
+    + "</table>"
+    '<div class="grid2" style="margin-top:14px;gap:20px">'
+    '<div class="find" style="font-size:15.5px"><b>Lo que es claro.</b> En el ground truth, los intervalos de la diferencia no tocan el cero, y la mejora se repite con los tres redactores.</div>'
+    f'<div class="decision" style="margin:0;font-size:15.5px"><b>Lo que no.</b> De punta a punta son {JV["ambientes"]} ambientes: {jv["hibrida"]["gana"]} a {jv["densa"]["gana"]} da p = {num(p_ver)}, y en {JV["empates"]} el juez no se decide. Ninguna configuración se corrió dos veces.</div>'
+    "</div>"
+    '<div class="take">La versión 2 es hoy la búsqueda del flujo: clara en el ground truth, y <b>“no peor, probablemente mejor”</b> en la tarea real. La versión 1 queda a una línea.</div>',
+    kicker="Ejercicio 4 · 3 de 3 · resultados en las dos versiones",
+    title="Resultados: gana en el ground truth y no pierde con el juez",
+    notes=f"Los resultados en las dos versiones. Sobre el ground truth: hit@1 pasa de {num(B1['hit@1'], 3)} a {num(B2['hit@1'], 3)}, y hit@5, lo que ve el que elige, de {num(B1['hit@5'], 3)} a {num(B2['hit@5'], 3)}. Las diferencias son pareadas y sus intervalos no tocan el cero; con los otros dos redactores, la mejora se repite. De punta a punta, en los {JV['ambientes']} ambientes, con el mismo plan y el juez en los dos órdenes: la versión 2 gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde ninguno. Los productos útiles pasan de {num(jv['densa']['util'])} a {num(jv['hibrida']['util'])}, y el costo es el mismo. Con honestidad: lo del ground truth es claro; de punta a punta son once ambientes, cinco a cero da p igual a {num(p_ver)}, y en seis el juez no se decide. Clara en el banco; no peor, probablemente mejor, en la tarea real.",
+    mins=1.05,
 )
 
 # ================================================================================================
 # Cierre
 # ================================================================================================
-# Ej. 4 en una slide
-slide(
-    '<table class="t"><tr><th>Problema encontrado</th><th>Cambio</th><th>Antes → después</th></tr>'
-    f"<tr><td>El texto de IKEA no describe el producto</td><td>VLM describe cada producto en 8 líneas</td><td>hit@1 {num(m('qwen3|seller|filtro-type')['hit@1'])} → {num(m(BASE)['hit@1'])}</td></tr>"
-    f"<tr><td>La v0 no sirve con el ambiente vacío</td><td>RAG por texto con un plan que escribe la consulta</td><td>hit@1 {num(v0v1['v0'])} → {num(v0v1['v1'])} (mismo GT)</td></tr>"
-    f"<tr><td>El primero del ranking no siempre es el mejor</td><td>El VLM elige mirando las fotos (rerank)</td><td>hit@1 {num(r0['hit@1'])} → {num(r1['hit@1'])}</td></tr>"
-    f"<tr><td>Con 3 candidatos el correcto a veces no está</td><td>5 candidatos por pieza</td><td>elección {num(acc[2], 3)} → {num(acc[4], 3)}</td></tr>"
-    "<tr><td>Una biblioteca chiquita (tope de 6 piezas, 1 unidad)</td><td>Sin tope de piezas; cantidades 0, 1 o más</td><td>2 bibliotecas HEMNES de piso a techo</td></tr>"
-    "<tr><td>La imagen inventó una ventana</td><td>Edición estricta + control SIFT con reintento</td><td>10 → 116 puntos SIFT; pasa al 1.er intento</td></tr>"
-    "<tr><td>Fotos de otro producto en el catálogo</td><td>Revisión del catálogo (36 fuera, 7 kinds)</td><td>la lista y la imagen coinciden</td></tr>"
-    "<tr><td>Con estilos no nórdicos, IKEA no tiene lo pedido</td><td>Sumar Amazon Berkeley Objects al catálogo</td><td>útil 0,46 → 0,71; gana 6 a 0</td></tr>"
-    "</table>",
-    kicker="Ejercicio 4",
-    title="La iteración: qué falló, qué cambiamos y cuánto mejoró",
-    mins=0.5,
-    notes="Esto es el ejercicio 4 en una tabla: cada fila es un problema que encontramos usando el sistema, el cambio que hicimos y cuánto mejoró. Todos salen de lo que acabamos de ver.",
-)
-
-# el camino
-path_rows = [
-    {"label": "texto del vendedor, hashing, sin filtro", "value": m("hashing|seller|filtro-none")["hit@1"]},
-    {"label": "+ descripciones del VLM", "value": m("hashing|description|filtro-none")["hit@1"]},
-    {"label": "+ Qwen3 + filtro por tipo", "value": m(BASE)["hit@1"], "ci": ci(m(BASE))},
-    {"label": "+ el VLM elige entre 5", "value": acc[4], "ci": tuple(CURVA["por_k"]["5"]["ic95"])},
-    {"label": "+ el VLM reordena el top-10", "value": r1["hit@1"], "ci": ci(r1), "hl": True},
-]
-slide(
-    '<div class="row" style="gap:40px"><div class="grow">'
-    + hbars(path_rows, width=760, label_w=320, row_h=46)
-    + '</div><div style="width:360px"><p class="small">hit@1 sobre los 65 ambientes IKEA (549 búsquedas con respuesta), catálogo revisado de 819 productos. Cada barra suma un cambio a la anterior.</p>'
-    '<p class="small">Lo que más movió el número fue <b>qué texto se indexa</b>; lo segundo, que un VLM <b>mire las fotos</b>. El modelo de embeddings y la base vectorial aportan poco una vez que el texto es bueno.</p></div></div>',
-    kicker="Resumen de los experimentos",
-    title=f"El camino: de {num(path_rows[0]['value'])} a {num(r1['hit@1'])} de hit@1",
-    notes=f"El resumen en un gráfico: cada barra suma un cambio a la anterior. Del texto del vendedor con una bolsa de palabras ({num(path_rows[0]['value'])}) al VLM reordenando el top-10 ({num(r1['hit@1'])}). Lo que más movió el número fue qué texto se indexa; lo segundo, que un VLM mire las fotos.",
-    mins=0.5,
-)
-
-# costos: el promedio de plan y choose en las corridas de punta a punta (registro de gastos)
-_led = [json.loads(x) for x in (ROOT / "datos/resultados/gastos.jsonl").read_text().splitlines()]
+# costos: del registro de gastos (datos/resultados/gastos.jsonl), como datos/resultados/gastos.md
 
 
-def _avg(step: str) -> float:
-    v = [r["cost_usd"] for r in _led if r.get("time", "") >= "2026-11-10" and not r.get("cached") and r["step"] == step]
-    return sum(v) / max(1, len(v))
+def cuenta(r: dict) -> str:
+    return r.get("pool") or r.get("provider") or "?"
 
 
-c_plan, c_choose = _avg("furnish.plan"), _avg("furnish.choose")
+gasto = {a: sum(r["cost_usd"] for r in LEDGER if cuenta(r) == a) for a in ("anthropic", "fal")}
+por_uso: dict[str, float] = {}
+for r in LEDGER:
+    por_uso[purpose(r["step"])] = por_uso.get(purpose(r["step"]), 0.0) + r["cost_usd"]
+CORTO = {
+    "Evaluación: un VLM ordena el top-10 (ground truth de IKEA)": "evaluar el reranking con un VLM",
+    "El flujo: elección de la lista": "el flujo: la elección",
+    "Catálogo: descripciones de los productos de ABO": "describir el catálogo de ABO",
+    "Evaluación de punta a punta: juez que compara dos listas": "el juez de punta a punta",
+    "Réplica de un ambiente real (ubicación de los muebles)": "la réplica de un ambiente",
+    "El flujo: imagen del ambiente amoblado": "el flujo: las imágenes",
+}
+top_uso = sorted(por_uso.items(), key=lambda kv: -kv[1])[:6]
+assert all(k in CORTO for k, _ in top_uso), [k for k, _ in top_uso]
+ch = [r["cost_usd"] for r in LEDGER if r.get("time", "") >= "2026-11-10" and not r.get("cached") and r["step"] == "furnish.choose"]
+c_desc = sum(r["cost_usd"] for r in LEDGER if r["step"].startswith("catalog.describe")) / 759  # los 759 listados de ABO que se mandaron a describir
 slide(
     '<div class="grid4">'
-    f'<div class="card"><div class="big">~US${num(c_plan + c_choose)}</div><div class="bignote">Claude por pedido: plan (US${num(c_plan)}) y elección con 5 fotos por pieza (US${num(c_choose)}), promedio medido en 11 ambientes. La escena ya no usa LLM.</div></div>'
-    '<div class="card"><div class="big">US$0,08</div><div class="bignote">por imagen (Nano Banana 2, 1K), más los reintentos si cambia el cuarto.</div></div>'
-    '<div class="card"><div class="big">~US$0,007</div><div class="bignote">por producto, una vez, para describir el catálogo con Opus por la API.</div></div>'
-    '<div class="card"><div class="big">0</div><div class="bignote">embeddings y base vectorial: Qwen3 y ChromaDB locales, en CPU.</div></div>'
+    f'<div class="card"><div class="big">~US${num(c_pedido)}</div><div class="bignote">por pedido: plan US${num(c_plan)}, elección US${num(c_choose)} (de {num(min(ch))} a {num(max(ch))}, según las piezas y el catálogo) e imagen US${num(c_img)} por intento.</div></div>'
+    f'<div class="card"><div class="big">US${num(sum(gasto.values()), 0)}</div><div class="bignote">todo el trabajo: Anthropic US${num(gasto["anthropic"])} (tope de {num(CFG.budget.accounts["anthropic"], 0)}) y fal US${num(gasto["fal"])}.</div></div>'
+    f'<div class="card"><div class="big">~US${num(c_desc, 3)}</div><div class="bignote">por producto, una vez: describir el catálogo de Amazon con Opus por la API.</div></div>'
+    '<div class="card"><div class="big">0</div><div class="bignote">por pedido para buscar: Qwen3, BM25, SigLIP 2 y ChromaDB corren locales, en CPU.</div></div>'
     "</div>"
-    '<p style="margin-top:24px" class="small">Cada llamada paga queda en un registro con su costo, sus tokens y su latencia, con topes por cuenta que cortan antes de pasarse. '
-    "Las respuestas de los jueces y del reranking quedan en caché: repetir un experimento no se vuelve a pagar.</p>",
+    '<div class="row" style="gap:40px;margin-top:22px">'
+    '<div><div class="lab">En qué se fue (US$)</div>'
+    + hbars([{"label": CORTO[k], "value": v, "hl": i == 0} for i, (k, v) in enumerate(top_uso)], xmax=max(v for _, v in top_uso), width=600, label_w=250, row_h=27)
+    + "</div>"
+    '<div class="grow"><p class="small" style="font-size:15px">Cada llamada paga queda en un registro con su costo, sus tokens y su latencia, con <b>topes por cuenta</b> que cortan antes de pasarse.</p>'
+    '<p class="small" style="font-size:15px">Las respuestas de los jueces y del reranking quedan en caché: repetir un experimento no se vuelve a pagar.</p>'
+    '<p class="small" style="font-size:15px">Sin LangSmith: el registro propio y la carpeta de cada corrida ya dan el costo, los tokens y la traza de cada paso.</p></div>'
+    "</div>"
+    '<div class="take">Un pedido cuesta menos de 30 centavos de dólar, y buscar no cuesta nada: lo que se paga es <b>elegir</b> y <b>dibujar</b>.</div>',
     kicker="Costo",
-    title="Cuánto cuesta un pedido",
-    notes=f"Un pedido cuesta unos {round(100 * (c_plan + c_choose))} centavos de dólar de Claude y 8 por intento de imagen. Describir el catálogo es un costo único, de menos de un centavo por producto, y embeddings y base vectorial corren locales. Todo gasto queda registrado, con topes por cuenta, y lo que ya se pagó queda en caché.",
-    mins=0.4,
+    title="Cuánto cuesta un pedido, y cuánto costó el trabajo",
+    notes=f"Costos, del registro de gastos. Un pedido cuesta unos {round(100 * c_pedido)} centavos de dólar: {round(100 * c_plan)} el plan, {round(100 * c_choose)} la elección y {round(100 * c_img)} la imagen. Buscar no cuesta nada: todo corre local. El trabajo entero costó {round(sum(gasto.values()))} dólares; lo más caro fue evaluar el reranking con el VLM. Cada llamada paga queda registrada, con topes por cuenta, y lo ya pagado queda en caché.",
+    mins=0.5,
 )
 
 # limitaciones
+no_sostenido = 1 - F["global"]
+dh = DIAG["hibrida"]
 slide(
     '<div class="grid2">'
-    '<div class="card"><h3>Limitaciones</h3><ul class="small">'
-    "<li>Catálogos viejos (IKEA 2013, Amazon 2019–20) y de uso no comercial.</li>"
-    "<li>Las medidas del ambiente se estiman a ojo: el filtro de tamaño es aproximado, y los asientos de IKEA no tienen medidas.</li>"
-    "<li>Un solo ground truth para el retrieval, con consultas escritas por modelos.</li>"
-    "<li>La imagen es una visualización: escala y luz aproximadas.</li>"
-    "<li>Pocos ambientes vacíos para evaluar de punta a punta.</li></ul></div>"
-    '<div class="card"><h3>Trabajo futuro</h3><ul class="small">'
-    "<li>Medidas reales: un metro en la foto o profundidad métrica (Depth Pro).</li>"
-    "<li>Feed de un vendedor actual, con precio y stock como filtros.</li>"
-    "<li>Más ambientes y evaluación humana de las imágenes.</li>"
-    "<li>Que el usuario cambie piezas y regenere solo lo cambiado.</li></ul></div>"
-    "</div>",
+    '<div class="card"><h3>Del sistema</h3><ul class="small">'
+    f"<li><b>No dice “no hay”</b>: cuando el catálogo no tiene lo pedido, pone lo más parecido sin avisar (dejó afuera {dh['piezas_dejadas_afuera']} de {dh['piezas']} piezas).</li>"
+    f"<li><b>El tamaño no se puede verificar</b>: el límite lo estima el plan a ojo, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida. El filtro de medidas no tiene evidencia.</li>"
+    f"<li><b>La imagen es una visualización</b>: acierta el producto exacto 4 de cada 10 veces y conserva el cuarto en {IMG_TOT['pasan']} de {len(FINALES)}.</li>"
+    f"<li><b>El generador afirma maderas que no ve</b>: el {num(100 * no_sostenido, 0)} % de las afirmaciones del porqué no se sostiene.</li>"
+    "<li>Catálogos viejos y de uso no comercial (IKEA 2013, Amazon 2019–20).</li></ul></div>"
+    '<div class="card"><h3>De la evaluación</h3><ul class="small">'
+    "<li><b>El banco de la búsqueda es de producto conocido</b>, lo escribió el mismo modelo que las descripciones y no hay conjunto apartado.</li>"
+    f"<li><b>De punta a punta son {len(AMBIENTES)} ambientes</b>, con un juez que es el mismo modelo que elige, sin validar contra personas.</li>"
+    "<li><b>El pedido abierto no está evaluado</b>: los pedidos enumeran las piezas.</li>"
+    "<li><b>Ninguna corrida se repitió</b>: no sabemos cuánto cambia la lista con el mismo pedido.</li></ul></div>"
+    "</div>"
+    '<div class="take">Ninguna invalida la lista: los productos son reales y salen de la búsqueda. Sí acotan <b>cuánto podemos afirmar</b>.</div>',
     kicker="Cierre",
-    title="Limitaciones y trabajo futuro",
-    notes="Limitaciones: los catálogos son viejos y de uso no comercial; las medidas del ambiente se estiman a ojo; el ground truth es uno solo, con consultas escritas por modelos; la imagen es una visualización; y tenemos pocos ambientes vacíos. Como trabajo futuro: medidas reales, con un metro en la foto o un modelo de profundidad; el catálogo de un vendedor actual, con precio y stock; más ambientes y evaluación humana; y que el usuario pueda cambiar una pieza y regenerar solo eso.",
-    mins=0.7,
+    title="Limitaciones",
+    notes=f"Limitaciones. Del sistema: no dice “no hay”, pone lo más parecido sin avisar; el tamaño no se puede verificar; la imagen es una visualización; y el generador afirma maderas que no ve. De la evaluación: el banco de la búsqueda es de producto conocido y no hay conjunto apartado; de punta a punta son {len(AMBIENTES)} ambientes, con un juez sin validar contra personas; y ninguna corrida se repitió.",
+    mins=0.55,
+)
+
+# trabajo futuro, con la réplica: indicar el lugar ayuda
+RV = {k: v["resumen"]["iou_medio"]["media"] for k, v in REPLICA["variantes"].items()}
+REP = R / "replica" / "living-dagarna"
+slide(
+    '<div class="row" style="gap:36px">'
+    '<div style="width:540px"><div class="lab">Lo próximo, del RAG y de la evaluación</div>'
+    + dec(None, "<b>Que diga “no hay”</b>: que el que elige avise cuando ningún candidato cumple, y mostrarlo.")
+    + dec(None, "<b>Un banco escrito por personas</b>, con un conjunto apartado, y el voto a ciegas del equipo para validar al juez.")
+    + dec(None, "<b>Repetir corridas</b> (la misma configuración dos veces): cuántos ambientes da vuelta el ruido solo.")
+    + dec(None, "<b>Pasarle los materiales al que elige</b>: hoy ve el tipo y la medida, y adivina la madera por la foto.")
+    + dec(None, "<b>Medidas reales del ambiente</b> (un metro en la foto, profundidad métrica): el filtro de tamaño sería un filtro de verdad.")
+    + dec(None, f"<b>Un modelo más barato para elegir</b>: hoy es Opus (US${num(c_choose)} por pedido), y no medimos cuánto se pierde con uno menor.")
+    + dec(None, "<b>Un catálogo actual</b>, con precio y stock como filtros de metadata.")
+    + "</div>"
+    '<div class="grow"><div class="lab">Fuera del RAG: ubicar los muebles (una prueba)</div>'
+    + hbars(
+        [
+            {"label": "sin indicar el lugar", "value": RV["simple_sin_cajas"]},
+            {"label": "dicho en palabras", "value": RV["simple_texto"]},
+            {"label": "rectángulos dibujados", "value": RV["simple_cajas"]},
+            {"label": "cajas 3D dibujadas", "value": RV["simple_cajas_3d"], "hl": True},
+        ],
+        xmax=1.0,
+        width=560,
+        label_w=180,
+        row_h=28,
+    )
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px" class="fix h125">'
+    f'<div>{img(REP / "real_con_cajas_3d.jpg", 500, cls="photo")}<div class="cap" style="margin-top:3px">La foto real, con las cajas 3D de sus muebles.</div></div>'
+    f'<div>{img(REP / "simple_cajas_3d" / "2.png", 500, cls="photo")}<div class="cap" style="margin-top:3px">Generada con esas cajas sobre la foto vacía.</div></div></div>'
+    f'<p class="tiny" style="margin-top:8px">IoU medio con la posición real. Un living del ground truth de IKEA, vaciado y vuelto a amoblar con sus {len(REPLICA["productos"])} muebles: un solo cuarto, 3 imágenes por variante (en la primera ronda, {num(RV["sin_cajas"])}, {num(RV["con_cajas"])} y {num(RV["con_cajas_3d"])}). Lo único que se sostiene: <b>indicar el lugar ayuda</b>.</p>'
+    "</div></div>"
+    '<div class="take">Lo próximo es del RAG y de cómo lo medimos. Ubicar cada mueble a escala pide medir el ambiente: queda como trabajo futuro.</div>',
+    kicker="Cierre",
+    title="Trabajo futuro",
+    notes="Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; validar al juez con nuestro voto a ciegas, y repetir corridas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.",
+    mins=0.65,
 )
 
 # conclusiones
+CIERRE = ["publica-loft-industrial", "publica-living-japandi", "publica-living-bohemio", "publica-comedor-clasico-moderno"]
+assert all(f["img"]["attempts"][0]["ok"] for f in FINALES if f["slug"] in CIERRE), "las del cierre tienen que haber pasado el control al primer intento"
 slide(
-    '<div class="steps" style="max-width:1050px">'
-    "<div><p><b>Lo que más importó fue el texto que se indexa</b>, no el modelo de embeddings: describir cada producto con un VLM, en el mismo formato que la consulta, multiplicó hit@1 por cuatro.</p></div>"
-    "<div><p><b>El VLM mirando las fotos es el mejor reranker</b>, y el paso de elegir ya lo hace: la pregunta útil fue cuántos candidatos mostrarle.</p></div>"
-    "<div><p><b>Las métricas con ground truth subestiman</b>: hace falta un juez, validado contra el ground truth y preguntado en los dos órdenes.</p></div>"
-    "<div><p><b>El catálogo decide qué se puede recomendar</b>: con 5 ambientes nórdicos, IKEA alcanzaba; con estilos variados, sumar un segundo catálogo ganó 6 a 0. Evaluar con ambientes y pedidos variados cambió la decisión.</p></div>"
-    "<div><p><b>La imagen necesita un control automático</b>: un prompt estricto ayuda, pero el control SIFT es lo que garantiza que el cuarto sea el del cliente.</p></div>"
-    "</div>",
+    '<div class="steps" style="max-width:1080px">'
+    f'<div><p><b>Lo que más pesa es la base de conocimiento y cómo se escribe la consulta</b>: describir cada producto desde su foto ({sg(d_desc["hit@1"], 2)} de hit@1) y escribir la consulta como una ficha del catálogo ({sg(d_hyde["hit@1"], 2)}). El embedder, en este banco, casi no importa.</p></div>'
+    f'<div><p><b>La versión 2 es la búsqueda híbrida</b>: la descripción, sus palabras y la foto suman {sg(D21["hit@1"], 3)} de hit@1 sobre la versión 1, sin costo por pedido; de punta a punta gana {jv["hibrida"]["gana"]}, empata {JV["empates"]} y no pierde.</p></div>'
+    f'<div><p><b>La búsqueda aporta en la tarea real</b>: {sa["densa"]["gana"]} a {sa["azar"]["gana"]} contra candidatos al azar del mismo kind.</p></div>'
+    "<div><p><b>Medir bien fue la mitad del trabajo</b>: diferencias pareadas, tres redactores, un juez en los dos órdenes, y las trampas dichas en voz alta. Nos hizo cambiar el número de cabecera y rehacer las métricas del generador.</p></div>"
+    f'<div><p><b>La lista es confiable; la imagen es una visualización</b>: los productos son reales y validados, pero la imagen reconoce el {num(100 * IMG_TOT["reconocidos"] / IMG_TOT["productos"], 0)} % y conserva el cuarto en {IMG_TOT["pasan"]} de {len(FINALES)}.</p></div>'
+    "</div>"
+    '<div class="lab" style="margin-top:auto">Cuatro de las once corridas de la configuración final (pasaron el control al primer intento)</div>'
+    f'<div class="grid4 fix h140" style="gap:12px">{"".join(img(AMO / f"final-{s_}" / "final.png", 500, cls="photo") for s_ in CIERRE)}</div>'
+    f'<div class="tiny" style="margin-top:5px">Fotos de los ambientes: {credito(*CIERRE)}.</div>',
     kicker="Cierre",
     title="Conclusiones",
-    notes="Para cerrar, cinco cosas. Lo que más importó fue el texto que se indexa, no el modelo. El mejor reranker es un VLM mirando las fotos, y nuestro paso de elegir ya lo es. Las métricas con ground truth subestiman, así que hace falta un juez, validado y preguntado en los dos órdenes. El catálogo decide qué se puede recomendar, y evaluar con ambientes variados cambió la decisión. Y la imagen necesita un control automático para que el cuarto sea el del cliente. Gracias.",
-    mins=0.8,
+    notes=f"Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde. Tres: la búsqueda aporta en la tarea real, {sa['densa']['gana']} a {sa['azar']['gana']} contra candidatos al azar. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.",
+    mins=0.7,
 )
+
 
 page = (Path(__file__).with_name("plantilla.html")).read_text().replace("__SLIDES__", "\n".join(SLIDES))
 OUT.write_text(page)
@@ -1437,8 +2086,15 @@ def strip_tags(x: str) -> str:
     return re.sub(r"<[^>]+>", "", x)
 
 
+def palabras(n: dict) -> int:
+    """Las palabras que se dicen en una lámina (sus notas)."""
+    nt = n["notes"]
+    return len(" ".join(nt.values()).split()) if isinstance(nt, dict) else len(str(nt).split())
+
+
 assert len(NOTES) == len(SLIDES)
 total = sum(n["mins"] for n in NOTES)
+dichas = sum(palabras(n) for n in NOTES)
 
 
 def at(pred) -> int:
@@ -1446,20 +2102,23 @@ def at(pred) -> int:
 
 
 rec_a = at(lambda n: n["title"] == "El recorrido")
-rec_b = at(lambda n: n["kicker"] == "El recorrido · los experimentos")
-cut1 = at(lambda n: n["kicker"].startswith("El recorrido · fase 7"))
-cut2 = at(lambda n: n["kicker"] == "Experimento 5")
+rec_b = at(lambda n: n["kicker"].startswith(f"El recorrido · fase {len(FASES)} "))
+mapa = at(lambda n: n["kicker"] == "Experimentos · el mapa")
+cut1 = at(lambda n: n["kicker"] == "Desafíos")
+cut2 = at(lambda n: n["kicker"] == "Experimento 4")
 parts = [(0, cut1), (cut1, cut2), (cut2, len(NOTES))]
+RAPIDAS = ("Experimentos · de trámite (1 de 2)", "Experimentos · de trámite (2 de 2)", "Costo")
 lines_md = [
     "# Guion de la presentación (amoblai)",
     "",
-    f"Generado por `docs/presentacion/build.py` junto con `amoblai.html`: los números salen de los mismos resultados que las slides y los extractos de los prompts, de los archivos de `src/amoblai/prompts/`. {len(SLIDES)} slides, unos {round(total)} minutos ({mmss(total)}).",
+    f"Generado por `docs/presentacion/build.py` junto con `amoblai.html`: los números salen de los mismos resultados que las slides y los extractos de los prompts, de los archivos de `src/amoblai/prompts/`. {len(SLIDES)} slides, unos {round(total)} minutos ({mmss(total)}); son unas {miles(round(dichas, -2))} palabras, a {round(dichas / total)} por minuto.",
     "",
     f"**El recorrido** (slides {rec_a + 1} a {rec_b + 1}). Arriba de cada lámina va el mapa de las once fases: la fase de la que se habla, encendida; las ya vistas, marcadas. "
-    "Se sigue un mismo pedido real (el living de Caballito) de la foto a la lista. La última lámina del recorrido es el mismo mapa con un pin por experimento, sobre la fase que decidió; "
-    "cada lámina de experimento repite ese pin en un minimapa.",
+    "Se sigue un mismo pedido real, con la configuración final (un loft de estilo industrial, sobre una foto pública), de la foto a la lista. "
+    f"El mismo mapa vuelve en la slide {mapa + 1} con un pin por experimento sobre la fase a la que le hizo la pregunta (lleno: con lámina propia; hueco: de trámite), "
+    "y cada lámina de experimento repite ese pin en un minimapa.",
     "",
-    "**Cómo se pasa.** En cada experimento, primero se ve solo el porqué, la pregunta y el experimento. **Se cuentan esas dos cosas antes de avanzar.** "
+    "**Cómo se pasa.** En cada experimento, primero se ve solo el porqué, la pregunta y qué se comparó. **Se cuentan esas dos cosas antes de avanzar.** "
     "La flecha (o espacio) muestra los resultados; otra flecha, la decisión. Flecha atrás vuelve un paso. Con `amoblai.html?todo` se ve todo de entrada (para revisar o imprimir).",
     "",
     "**Reparto sugerido** (a definir entre los tres):",
@@ -1468,13 +2127,13 @@ for k, (a, b) in enumerate(parts, 1):
     lines_md.append(f"- Parte {k}: slides {a + 1} a {b} ({strip_tags(NOTES[a]['title'] or 'Portada')} → {strip_tags(NOTES[b - 1]['title'])}), unos {round(sum(n['mins'] for n in NOTES[a:b]))} min.")
 lines_md += [
     "",
-    "Si falta tiempo, se pueden pasar rápido los experimentos 4 y 5 y la slide de costos (los marcados con *).",
+    "Si falta tiempo, se pueden pasar rápido las dos láminas de trámite y la de costos (las marcadas con *).",
     "",
 ]
 t = 0.0
 for i, n in enumerate(NOTES, 1):
     head = n["title"] or n["kicker"] or "Portada"
-    star = " *" if n["kicker"] in ("Experimento 4", "Experimento 5") or head == "Cuánto cuesta un pedido" else ""
+    star = " *" if n["kicker"] in RAPIDAS else ""
     lines_md.append(f"## {i}. {strip_tags(head)}{star}")
     lines_md.append(f"*{n['kicker'] + ' · ' if n['kicker'] and n['title'] else ''}~{mmss(n['mins'])} min · desde el minuto {mmss(t)}*")
     lines_md.append("")
@@ -1482,7 +2141,7 @@ for i, n in enumerate(NOTES, 1):
     if isinstance(nt, dict) and nt:
         lines_md += [
             f"1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): {nt['motivo']}",
-            f"2. **El experimento:** {nt['experimento']}",
+            f"2. **Qué se comparó:** {nt['experimento']}",
             f"3. **→ Resultados** (flecha): {nt['resultados']}",
             f"4. **→ Decisión** (flecha): {nt['decision']}",
         ]
@@ -1492,4 +2151,10 @@ for i, n in enumerate(NOTES, 1):
     t += n["mins"]
 GUION = OUT.with_name("guion.md")
 GUION.write_text("\n".join(lines_md))
-print(f"{GUION}: {mmss(total)} min")
+print(f"{GUION}: {mmss(total)} min, {dichas} palabras ({round(dichas / total)} por minuto)")
+# El ritmo de cada lámina: avisa si alguna pide hablar más rápido de lo que se puede.
+for i, n in enumerate(NOTES, 1):
+    if n["mins"] >= 0.3 and palabras(n) / n["mins"] > 165:
+        print(f"  ojo: la slide {i} ({strip_tags(n['title'])[:40]}) tiene {palabras(n)} palabras para {mmss(n['mins'])}: {round(palabras(n) / n['mins'])} por minuto")
+if not 30 <= total <= 31:
+    print(f"  ojo: el guion dura {mmss(total)}; tiene que quedar entre 30:00 y 31:00")
