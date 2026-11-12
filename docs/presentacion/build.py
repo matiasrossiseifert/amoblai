@@ -1796,7 +1796,7 @@ slide(
     + tram(11, "Splitting y líneas", f'<b>un documento {num(doc_["hit@1"], 3)}</b> · un chunk por línea {num(chunk["hit@1"], 3)} · línea contra línea {num(alin["hit@1"], 3)}',
            f'No se parte: un producto es un documento de unas 80 palabras. Lo que importa es qué líneas lo componen: sin Colors, {nb(dif(sin("Colors")["vs_base"]))}; sin Shape, {nb(dif(sin("Shape")["vs_base"]))}; con solo las cuatro de lo que se ve se encuentra igual que con las ocho ({num(visto["hit@1"], 3)}).')
     + tram(12, "Base vectorial", "ChromaDB (HNSW, coseno) contra recorrer todos los vectores con numpy",
-           f"El mismo top-10 en {iguales} de {len(ex_a)} consultas. ChromaDB da la persistencia y los filtros de metadata en la misma consulta, y es la pieza que escala.")
+           f"El mismo top-10 en {iguales} de {len(ex_a)} consultas. ChromaDB da la persistencia y los filtros de metadata, y es la pieza que escala. La híbrida, con {miles(len(ITEMS) + ABO_N)} productos, puntúa a todos los que pasan el filtro: exacto, sin HNSW.")
     + "</table>"
     '<div class="take">Con el texto bien escrito, el índice casi no decide nada: son respuestas que hay que tener, no un gran experimento.</div>',
     kicker="Experimentos · de trámite (1 de 2)",

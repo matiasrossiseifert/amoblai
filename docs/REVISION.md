@@ -51,7 +51,7 @@ antes de darlo por cierto. Todo lo que dice "verificado" se recalculó.
 | Data loading y base de conocimiento curada | `dataset/`, `catalog/`, `correcciones.yaml` | bien | — |
 | Splitting, justificado | un documento por producto; ablación | bien | contarlo como lo que es: no partir, y qué compone el documento (líneas, sección 4) |
 | Embedding: algoritmo, si se varió, dimensión | T1, dimensión Matryoshka | bien el experimento, mal la conclusión | "gana Qwen3" no se sostiene contra una bolsa de palabras: decirlo |
-| Base vectorial, justificada | ChromaDB = búsqueda exacta en 864 de 864 | bien | — |
+| Base vectorial, justificada | ChromaDB = búsqueda exacta en 864 de 864 | bien | Decirlo exacto: la búsqueda híbrida (versión 2) no consulta el HNSW; puntúa a todos los productos que pasan el filtro y fusiona, y ChromaDB guarda vectores y metadata. La versión 1 sí consulta ChromaDB con `where`. A escala: los mejores N de cada buscador y fusión por puesto. |
 | Retrieval: k y filtros | curva de candidatos; filtros | k bien; filtros flojo | el filtro del flujo (kind) no es el del número publicado; el de medidas nunca se midió |
 | Pre y posprocesamiento | descripciones, validación de ids, control del ambiente | bien | — |
 | Dataset | catálogo descripto, 864 consultas × 3 redactores, 11 ambientes vacíos | bien | los 11 pedidos enumeran las piezas: el pedido abierto no se evalúa |
