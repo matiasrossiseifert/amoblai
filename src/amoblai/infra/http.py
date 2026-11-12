@@ -142,6 +142,6 @@ def lookup_model(models: dict, model: str, provider: str) -> dict:
     if not keys:
         raise ValueError(
             f"{provider}: model {model!r} has no entry in the provider's `models` table "
-            f"(configs/base/providers.yaml); known: {sorted(models)}"
+            f"(datos/configs/amoblai.yaml); known: {sorted(models)}"
         )
     return dict(models[keys[0]])

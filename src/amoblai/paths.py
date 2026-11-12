@@ -6,9 +6,9 @@ las rutas son relativas a la raíz del repo (desde donde se corre `uv run amobla
     datos/evaluacion_ikea/  las consultas de evaluación sobre los ambientes IKEA
     datos/ambientes_vacios/ fotos de ambientes para amoblar (dos vistas de cada uno)
     datos/resultados/       corridas, evaluaciones, reporte y el ledger de gastos (se commitea)
-    datos/dataset/          el dataset IKEA descargado (no se commitea)
-    datos/procesados/       lo que se genera desde el dataset: items, lotes (no se commitea)
-    datos/cache/            descripciones, vectores, índices de ChromaDB (no se commitea)
+    datos/dataset/          el dataset IKEA y la selección de ABO (se commitean desde el 10/11)
+    datos/procesados/       lo que se genera desde el dataset: items, lotes
+    datos/cache/            descripciones, vectores, índices de ChromaDB, respuestas ya pagadas
 """
 
 from __future__ import annotations

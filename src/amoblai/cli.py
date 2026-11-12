@@ -28,9 +28,12 @@ from rich.table import Table
 from amoblai import paths
 
 app = typer.Typer(
-    help="amoblai: amoblado virtual con RAG sobre el catálogo IKEA.", no_args_is_help=True
+    help="amoblai: amoblado virtual con RAG sobre un catálogo real de muebles (IKEA + ABO).",
+    no_args_is_help=True,
 )
-data_app = typer.Typer(help="Dataset IKEA.", no_args_is_help=True)
+data_app = typer.Typer(
+    help="Los datos: el dataset IKEA y las fotos de ambientes.", no_args_is_help=True
+)
 app.add_typer(data_app, name="data")
 console = Console()
 
@@ -96,7 +99,7 @@ def data_download(force: Annotated[bool, typer.Option(help="Volver a descargar."
 @data_app.command("ambientes")
 def data_ambientes() -> None:
     """Baja las fotos públicas de ambientes vacíos (datos/ambientes_vacios/publicas.yaml: de
-    dónde es cada una, su autor y su licencia). No se commitean."""
+    dónde es cada una, su autor y su licencia)."""
     import httpx
     import yaml
     from PIL import Image, ImageOps
