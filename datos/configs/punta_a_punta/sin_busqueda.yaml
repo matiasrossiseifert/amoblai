@@ -11,7 +11,7 @@ solo: [alvear-escritorio, caballito-comedor, experimento-lectura, publica-comedo
        publica-estudio-sobrio, publica-living-clasico, publica-living-japandi]
 sufijo: _7ambientes
 variantes:
-  densa: {}
+  densa: {rag.hybrid: []}
   azar: {rag.mode: random}
 comparaciones:
   - [densa, azar]

@@ -26,10 +26,13 @@ rag:
   # `exact` recorre todos los vectores con numpy: es la línea de base de la ablación.
   vector_store: chroma
   hnsw: {ef_search: 100, max_neighbors: 16}
-  # Búsqueda híbrida: otros buscadores que se fusionan con el coseno del embedder (z-score, el
-  # promedio). [] es la búsqueda densa sola (la versión 1). Medido en la ablación hibrido.yaml
-  # (docs/EXPERIMENTOS.md, T6): [bm25, siglip2] suma la búsqueda léxica y la foto del producto.
-  hybrid: []
+  # Búsqueda híbrida (versión 2 del flujo, 2026-11-12): al coseno del embedder se le fusionan la
+  # búsqueda léxica (BM25 sobre las descripciones) y la foto del producto contra la consulta
+  # (SigLIP 2), cada puntaje estandarizado y el promedio. Sobre el ground truth de IKEA sube
+  # hit@1 de 0,530 a 0,605 y hit@5 de 0,790 a 0,825 (se repite con los tres redactores); de punta
+  # a punta, en 11 ambientes gana 5, empata 6 y no pierde ninguno (docs/EXPERIMENTOS.md, T6c y T8).
+  # La versión 1 es la búsqueda densa sola: `--set rag.hybrid=[]`.
+  hybrid: [bm25, siglip2]
   fusion: sum
   embedders:
     hashing: {kind: hashing, dim: 1024}                                   # gratis, sin modelo

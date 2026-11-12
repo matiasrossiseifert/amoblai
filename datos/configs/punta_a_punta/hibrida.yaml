@@ -11,7 +11,7 @@ ambientes: datos/ambientes_vacios/pedidos.yaml
 salida: datos/resultados/punta_a_punta/hibrida
 plan_de: densa
 variantes:
-  densa: {}
+  densa: {rag.hybrid: []}
   hibrida: {rag.hybrid: [bm25, siglip2]}
 comparaciones:
   - [densa, hibrida]
