@@ -1,5 +1,6 @@
 """Las métricas de la imagen generada y de la respuesta en texto, sin modelos (las piezas puras)."""
 
+import json
 from pathlib import Path
 
 import numpy as np
@@ -220,3 +221,30 @@ def test_an_image_that_is_not_the_room_is_set_aside_and_tried_again(tmp_path, cf
     assert [a["ok"] for a in rec["attempts"]] == [False, True]
     assert rec["room_check"]["image"] == "final_intento_2.png" and rec["cost_usd"] == 0.02
     assert Image.open(tmp_path / "final.png").getpixel((200, 300)) == (200, 30, 30)
+
+
+def test_the_image_summary_adds_products_rooms_and_attempts_over_runs(tmp_path):
+    from amoblai.evaluation.image import summary
+
+    def run(name, products, attempts):
+        d = tmp_path / name
+        d.mkdir()
+        rows = [
+            {"detectado": rank is not None, "puesto": rank, "coseno": 0.5 if rank else None}
+            for rank in products
+        ]
+        (d / "6_metricas_imagen.json").write_text(
+            json.dumps({"productos": rows, "fidelidad": {"coseno_medio": 0.5}})
+        )
+        tries = [{"ok": ok, "cost_usd": 0.08} for ok in attempts]
+        (d / "5_image.json").write_text(json.dumps({"attempts": tries, "room_check": tries[-1]}))
+        return d
+
+    # a: three products (two found, one of them the exact one), the room kept at the first try
+    # b: one product, not found; the room lost in the three tries
+    s = summary([run("b", [None], [False, False, False]), run("a", [1, 4, None], [True])])
+    assert [r["corrida"] for r in s["por_corrida"]] == ["a", "b"]
+    assert (s["productos"], s["detectados"], s["identificados"]) == (4, 2, 1)
+    assert s["identificados@1"] == 0.25 and s["coseno_medio"] == 0.5
+    assert (s["ambiente_conservado"], s["ambiente_al_primer_intento"], s["intentos"]) == (1, 1, 4)
+    assert s["costo_usd"] == 0.32
