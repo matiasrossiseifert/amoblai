@@ -1,0 +1,229 @@
+{
+ "claims": [
+  {
+   "claim": "The bookcase is the only bookcase among the products",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "It is the only product listed as a bookcase."
+  },
+  {
+   "claim": "The bookcase is solid wood",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "The line says 'tall solid wood bookcase'."
+  },
+  {
+   "claim": "The bookcase is tall",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "The line says 'tall', and the photo shows a tall unit."
+  },
+  {
+   "claim": "The bookcase is 90 cm wide",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "The line says '90 cm wide'."
+  },
+  {
+   "claim": "The bookcase has many closed shelves at the sides",
+   "about": "802.456.40",
+   "supported": false,
+   "evidence": "The photo shows only open shelves with plain side panels. There are no closed side shelves."
+  },
+  {
+   "claim": "The bookcase is black-brown",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "The photo shows a very dark brown-black finish."
+  },
+  {
+   "claim": "The room floor is dark wood",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a dark brown wood-look floor."
+  },
+  {
+   "claim": "The bookcase has many shelves for books",
+   "about": "802.456.40",
+   "supported": true,
+   "evidence": "The photo shows six shelf levels."
+  },
+  {
+   "claim": "The person wants the bookcase against the left wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'contra la pared de la izquierda'."
+  },
+  {
+   "claim": "The armchair is leather",
+   "about": "abo-B07P5LM53Z",
+   "supported": true,
+   "evidence": "The line says 'leather lounge armchair'."
+  },
+  {
+   "claim": "The armchair is cognac colored",
+   "about": "abo-B07P5LM53Z",
+   "supported": true,
+   "evidence": "The photo shows a tan/cognac leather."
+  },
+  {
+   "claim": "The armchair is padded",
+   "about": "abo-B07P5LM53Z",
+   "supported": true,
+   "evidence": "The photo shows a thick seat cushion and a tufted back."
+  },
+  {
+   "claim": "The armchair is 91 cm wide, 83 cm deep, 84 cm high",
+   "about": "abo-B07P5LM53Z",
+   "supported": true,
+   "evidence": "The line gives these dimensions."
+  },
+  {
+   "claim": "The room has a corner next to the window",
+   "about": "room",
+   "supported": true,
+   "evidence": "The window runs along the right/back wall and meets the left wall at a corner."
+  },
+  {
+   "claim": "The person wants the armchair next to the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Junto a la ventana, un sillón cómodo'."
+  },
+  {
+   "claim": "The floor lamp has an adjustable swing arm",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "The line says 'swing-arm floor lamp', and the photo shows the arm."
+  },
+  {
+   "claim": "The lamp shade is fabric",
+   "about": "302.865.67",
+   "supported": false,
+   "evidence": "The line only says 'drum shade'. The photo shows a white shade whose material cannot be confirmed."
+  },
+  {
+   "claim": "The person wants a floor lamp beside the armchair",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'con una lámpara de pie al lado'."
+  },
+  {
+   "claim": "The side table is round",
+   "about": "401.366.81",
+   "supported": true,
+   "evidence": "The line says 'round side table'."
+  },
+  {
+   "claim": "The side table is compact",
+   "about": "401.366.81",
+   "supported": false,
+   "evidence": "The line says 'size unknown'."
+  },
+  {
+   "claim": "The side table is black-brown",
+   "about": "401.366.81",
+   "supported": true,
+   "evidence": "The photo shows a dark black-brown finish."
+  },
+  {
+   "claim": "The side table has a lower shelf",
+   "about": "401.366.81",
+   "supported": true,
+   "evidence": "The line says 'with lower shelf', and the photo shows it."
+  },
+  {
+   "claim": "The side table's color matches the bookcase",
+   "about": "401.366.81",
+   "supported": true,
+   "evidence": "Both photos show the same dark black-brown finish."
+  },
+  {
+   "claim": "The rug is round",
+   "about": "abo-B0719STM26",
+   "supported": true,
+   "evidence": "The line says 'round braided jute rug'."
+  },
+  {
+   "claim": "The rug is natural jute",
+   "about": "abo-B0719STM26",
+   "supported": true,
+   "evidence": "The line says 'jute'."
+  },
+  {
+   "claim": "The rug is a light tone",
+   "about": "abo-B0719STM26",
+   "supported": true,
+   "evidence": "The photo shows a light natural tan."
+  },
+  {
+   "claim": "The rug has a white border",
+   "about": "abo-B0719STM26",
+   "supported": true,
+   "evidence": "The photo shows white stripes near the edge."
+  },
+  {
+   "claim": "The rug is 152 cm across",
+   "about": "abo-B0719STM26",
+   "supported": true,
+   "evidence": "The line says '152 cm wide'."
+  },
+  {
+   "claim": "The throw is cable-knit",
+   "about": "302.006.96",
+   "supported": true,
+   "evidence": "The line says 'cable-knit throw blanket'."
+  },
+  {
+   "claim": "The throw is cream colored",
+   "about": "302.006.96",
+   "supported": true,
+   "evidence": "The photo shows an off-white/cream color."
+  },
+  {
+   "claim": "The curtains are linen",
+   "about": "802.841.94",
+   "supported": true,
+   "evidence": "The line says 'pair of linen curtains'."
+  },
+  {
+   "claim": "The curtains are beige",
+   "about": "802.841.94",
+   "supported": true,
+   "evidence": "The photo shows beige fabric."
+  },
+  {
+   "claim": "The window frame is black",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows black window frames."
+  },
+  {
+   "claim": "The walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows white walls."
+  },
+  {
+   "claim": "The ceiling is concrete",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows an exposed concrete ceiling."
+  },
+  {
+   "claim": "The person wants a light round rug",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una alfombra redonda clara'."
+  },
+  {
+   "claim": "The person wants warm woods and natural textiles",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'cálido, con maderas y textiles naturales'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.082584,
+ "_prompt": "juez_fidelidad_v2"
+}

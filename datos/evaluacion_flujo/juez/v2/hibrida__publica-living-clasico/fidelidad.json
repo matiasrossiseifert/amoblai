@@ -1,0 +1,217 @@
+{
+ "claims": [
+  {
+   "claim": "The person asked for a dark green velvet upholstered sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá tapizado en terciopelo verde oscuro'."
+  },
+  {
+   "claim": "No green velvet sofa is offered",
+   "about": "390.338.01",
+   "supported": false,
+   "evidence": "Only one sofa is shown, so nothing shows what else was available. This sofa is dark grey, not green velvet."
+  },
+  {
+   "claim": "Sofa is dark in color",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The photo shows a dark charcoal/grey upholstered sofa."
+  },
+  {
+   "claim": "Sofa has rolled arms",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The product line says 'three-seat sofa with rolled arms', and the photo shows rolled arms."
+  },
+  {
+   "claim": "Sofa is a three-seater",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The product line says 'three-seat sofa'."
+  },
+  {
+   "claim": "Sofa has turned black legs",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The photo shows turned dark/black wooden legs."
+  },
+  {
+   "claim": "The fireplace is black",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a dark black/charcoal fireplace surround."
+  },
+  {
+   "claim": "The fireplace is marble",
+   "about": "room",
+   "supported": false,
+   "evidence": "The photo shows a dark surround, but its material cannot be determined, and nothing states marble."
+  },
+  {
+   "claim": "The person asked for two facing armchairs",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'dos sillones enfrentados'."
+  },
+  {
+   "claim": "Armchair is a wingback",
+   "about": "abo-B075X467QG",
+   "supported": true,
+   "evidence": "The product line says 'wingback accent chair', and the photo shows wings."
+  },
+  {
+   "claim": "Armchair has nailhead trim",
+   "about": "abo-B075X467QG",
+   "supported": true,
+   "evidence": "The photo shows brass/bronze nailheads along the wings and arms."
+  },
+  {
+   "claim": "Armchair is cream colored",
+   "about": "abo-B075X467QG",
+   "supported": true,
+   "evidence": "The photo shows cream/oatmeal upholstery."
+  },
+  {
+   "claim": "Armchair upholstery is linen",
+   "about": "abo-B075X467QG",
+   "supported": false,
+   "evidence": "The fabric looks woven, but the product line gives no material."
+  },
+  {
+   "claim": "The person asked for a large rug with a traditional design",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una alfombra grande de diseño tradicional'."
+  },
+  {
+   "claim": "Rug measures 292 x 231 cm",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The product line gives 292 cm wide and 231 cm deep."
+  },
+  {
+   "claim": "Rug has a medallion design",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The product line says 'medallion', and the photo shows a central medallion."
+  },
+  {
+   "claim": "Rug design is traditional",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The photo shows a Persian-style floral medallion pattern with borders."
+  },
+  {
+   "claim": "Rug is charcoal and cream",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The photo shows a charcoal field with cream/beige medallion and borders."
+  },
+  {
+   "claim": "Walls are pale green-blue",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows pale aqua/green-blue walls."
+  },
+  {
+   "claim": "The room has moldings",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a coffered ceiling and paneled wainscoting."
+  },
+  {
+   "claim": "The person asked for a dark wood coffee table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una mesa ratona de madera oscura'."
+  },
+  {
+   "claim": "Coffee table is dark espresso wood",
+   "about": "abo-B07DBFFG9Z",
+   "supported": true,
+   "evidence": "The product line says 'wood coffee table', and the photo shows a dark espresso-brown finish."
+  },
+  {
+   "claim": "Coffee table has an X-base",
+   "about": "abo-B07DBFFG9Z",
+   "supported": true,
+   "evidence": "The product line says 'X-base', and the photo shows X legs."
+  },
+  {
+   "claim": "Coffee table is 120 cm long",
+   "about": "abo-B07DBFFG9Z",
+   "supported": true,
+   "evidence": "The product line gives 120 cm wide."
+  },
+  {
+   "claim": "The person asked for a large framed mirror over the fireplace",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un espejo grande con marco sobre la chimenea'."
+  },
+  {
+   "claim": "Mirror is 102 cm wide",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The product line gives 102 cm wide."
+  },
+  {
+   "claim": "Mirror has a frame",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The photo shows a framed mirror with an overlay."
+  },
+  {
+   "claim": "Mirror frame is soft gold",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The photo shows a pale champagne-gold frame."
+  },
+  {
+   "claim": "Mirror frame is geometric",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The photo shows an oval, diagonal and stepped-rectangle overlay."
+  },
+  {
+   "claim": "There is a chimney breast above the mantel",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a projecting chimney breast rising above the fireplace."
+  },
+  {
+   "claim": "The person asked for a floor lamp with a fabric shade",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara de pie con pantalla de tela'."
+  },
+  {
+   "claim": "Floor lamp has a turned column",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The product line says 'turned-column floor lamp', and the photo shows a turned stem."
+  },
+  {
+   "claim": "Lamp shade is a drum shape",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The photo shows a cylindrical drum shade."
+  },
+  {
+   "claim": "Lamp shade is linen",
+   "about": "abo-B07QD5SDWK",
+   "supported": false,
+   "evidence": "The shade looks like textured fabric, but no material is given."
+  },
+  {
+   "claim": "Other lamp options were modern metal",
+   "about": "abo-B07QD5SDWK",
+   "supported": false,
+   "evidence": "No other lamp options are shown or described."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.095744,
+ "_prompt": "juez_fidelidad_v2"
+}

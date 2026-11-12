@@ -417,6 +417,32 @@ def evaluar_imagen(
     console.print(table)
 
 
+@app.command("resumen-imagen")
+def resumen_imagen(
+    nombre: Annotated[
+        str, typer.Argument(help="Nombre del resumen (datos/resultados/evaluacion_imagen/).")
+    ],
+    corridas: Annotated[
+        list[Path], typer.Argument(help="Corridas ya evaluadas con `evaluar-imagen`.")
+    ],
+) -> None:
+    """Las métricas de imagen de un conjunto de corridas, juntas (gratis, sin modelos): productos
+    que aparecen y que se reconocen, imágenes que conservaron el ambiente, intentos y costo."""
+    from amoblai.evaluation.image import summary
+
+    s = summary(corridas)
+    out = paths.IMAGE_REFERENCE.with_name(f"{nombre}.json")
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(s, ensure_ascii=False, indent=1))
+    console.print(
+        f"{s['corridas']} imágenes: {s['detectados']} de {s['productos']} productos aparecen, "
+        f"{s['identificados']} reconocidos ({s['identificados@1']}), coseno {s['coseno_medio']}; "
+        f"ambiente conservado en {s['ambiente_conservado']} "
+        f"({s['ambiente_al_primer_intento']} al primer intento), {s['intentos']} intentos, "
+        f"US${s['costo_usd']:.2f} → {out}"
+    )
+
+
 @app.command("evaluar-respuesta")
 def evaluar_respuesta(
     corridas: Annotated[
@@ -431,6 +457,12 @@ def evaluar_respuesta(
         ),
     ] = "archivo",
     pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar el juez pago.")] = False,
+    resumen: Annotated[
+        str,
+        typer.Option(
+            help="Nombre del resumen (datos/resultados/evaluacion_respuesta/<nombre>.json)."
+        ),
+    ] = "resumen",
     config: ConfigOpt = paths.CONFIG,
 ) -> None:
     """RAGAS del lado del generador sobre la respuesta en texto (el porqué de cada producto):
@@ -439,6 +471,7 @@ def evaluar_respuesta(
     from amoblai.evaluation.answer import (
         JUDGE_DIR,
         JUDGES,
+        SUMMARY,
         judge_with_claude,
         run_key,
         score,
@@ -473,7 +506,7 @@ def evaluar_respuesta(
                 f"{rel.get('answer_relevance')} (vara {rel.get('vara_contrastes')})"
             )
     if len(results) > 1:
-        s = summary(cfg, results)
+        s = summary(cfg, results, SUMMARY.with_name(f"{resumen}.json"))
         console.print(f"Resumen ({s['corridas']} corridas): {s.get('faithfulness')}")
         console.print(f"answer relevance: {s.get('answer_relevance')}")
 

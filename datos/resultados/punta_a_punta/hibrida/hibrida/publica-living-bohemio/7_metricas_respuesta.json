@@ -1,0 +1,26 @@
+{
+ "corrida": "hibrida__publica-living-bohemio",
+ "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+ "fidelidad": {
+  "afirmaciones": 36,
+  "faithfulness": 0.9167,
+  "sobre_productos": 0.9259,
+  "sobre_el_ambiente": 0.6667,
+  "no_sostenidas": [
+   "The room has a long right wall",
+   "The bookcase is low, 43 cm high",
+   "The bookcase fits under the window"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón con un estilo bohemio y cálido, tipo boho con toques mid-century. Necesito sofá, un sillón extra, alfombra grande, mesa de centro, estantería, lámpara de pie y algunos textiles y detalles decorativos.",
+   "Tengo el salón vacío y me gustaría algo acogedor y terroso, con cuero, madera y tonos azul marino y óxido. ¿Me ayudas a elegir sofá, butaca, alfombra, mesa de centro, librería y lámpara? También cojines, una manta y alguna maceta.",
+   "Busco darle un aire étnico y rústico a mi sala de estar, con un sofá de piel color coñac y una butaca de ratán. Quiero que sea cálido y con personalidad, así que añade alfombra con estampado, mesita redonda, estantería, lámpara de lectura y textiles a juego."
+  ],
+  "answer_relevance": 0.6549,
+  "vara_contrastes": 0.4407,
+  "juez": "claude-opus-5-5"
+ }
+}

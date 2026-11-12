@@ -19,9 +19,9 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
   consultas y descripciones las escribe el mismo modelo. Falta un banco escrito por personas:
   mirar solo la foto de 150 productos y escribir en 15 palabras cómo se lo pedirían a un
   vendedor. (S, sin costo)
-- **No se sabe cuánto cambia la lista si se corre dos veces el mismo pedido.** (S, US$0,60 por
-  ambiente)
-- **El generador afirma maderas que no ve.** El 18% de las afirmaciones del porqué no se sostiene
+- **El que elige no es determinístico**: entre dos corridas iguales cambia 12% de los productos
+  (T8c). No se midió cuánto cambia el plan ni la imagen al repetir. (S, US$0,60 por ambiente)
+- **El generador afirma maderas que no ve.** Entre el 12% y el 18% de las afirmaciones del porqué no se sostiene
   en lo que el generador recibió, casi siempre la especie de la madera. Pasarle la línea de
   materiales de cada candidato, o pedirle que no afirme lo que no ve. (S)
 - **Variantes del mismo modelo entre los candidatos.** Con IKEA, en 40 de 75 piezas dos o más

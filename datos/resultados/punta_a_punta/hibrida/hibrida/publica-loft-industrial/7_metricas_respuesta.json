@@ -1,0 +1,26 @@
+{
+ "corrida": "hibrida__publica-loft-industrial",
+ "pedido": "Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.",
+ "fidelidad": {
+  "afirmaciones": 29,
+  "faithfulness": 0.8966,
+  "sobre_productos": 0.9091,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Coffee table top is solid wood",
+   "Person asked for a dark pot",
+   "Textiles introduce no bright white"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón con un estilo industrial y cálido: sofá de cuero, mesa de centro, una estantería para libros, lámpara de pie para leer, alfombra grande, algún cojín y una maceta.",
+   "Tengo un loft con paredes de ladrillo y busco un ambiente rústico industrial, acogedor y con aire vintage. Necesito sofá, mesa baja, estantería abierta, lámpara de lectura y alfombra.",
+   "Ayúdame a decorar la sala de estar para que se vea moderna pero con madera, metal negro y tonos tierra. Me faltan un sofá grande de piel, mesa de centro, librería, lámpara de pie, alfombra, cojines y una maceta para una planta."
+  ],
+  "answer_relevance": 0.6581,
+  "vara_contrastes": 0.4376,
+  "juez": "claude-opus-5-5"
+ }
+}

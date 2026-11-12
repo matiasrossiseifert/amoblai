@@ -1,0 +1,247 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is light grey",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The photo shows a light grey upholstered sofa."
+  },
+  {
+   "claim": "Sofa is a three-seater",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line says three-seat sofa."
+  },
+  {
+   "claim": "Sofa is 234 cm wide",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line gives 234 cm wide."
+  },
+  {
+   "claim": "Sofa has tailored lines with straight track arms",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The photo shows slim, straight-edged arms and boxy cushions."
+  },
+  {
+   "claim": "The left wall of the room is long",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a long, uninterrupted left wall."
+  },
+  {
+   "claim": "User wants the sofa against the left wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'contra la pared de la izquierda'."
+  },
+  {
+   "claim": "Rug is 200x300 cm",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The product line gives 200 cm wide and 300 cm deep."
+  },
+  {
+   "claim": "Rug is plain",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The product line says plain, and the photo shows no pattern."
+  },
+  {
+   "claim": "Rug is beige",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The photo shows a beige rug."
+  },
+  {
+   "claim": "Rug is flatwoven",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The product line says flatwoven area rug."
+  },
+  {
+   "claim": "Rug is easy to clean",
+   "about": "801.982.95",
+   "supported": false,
+   "evidence": "Neither the product line nor the photo gives any care or cleaning information."
+  },
+  {
+   "claim": "User wants a large rug to define the seating zone",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una alfombra grande que arme la zona'."
+  },
+  {
+   "claim": "Coffee table is made of ash",
+   "about": "902.976.57",
+   "supported": false,
+   "evidence": "The product line only says light wood; no wood species is given."
+  },
+  {
+   "claim": "Coffee table is light wood",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The product line says light wood coffee table, and the photo shows pale wood."
+  },
+  {
+   "claim": "Coffee table has slim tapered legs",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The photo shows thin legs that taper toward the floor."
+  },
+  {
+   "claim": "User asked for a light wood coffee table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'mesa ratona de madera clara'."
+  },
+  {
+   "claim": "TV console is low",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "The photo shows a long, low console on legs."
+  },
+  {
+   "claim": "TV console is white",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "The photo shows a white or off-white finish."
+  },
+  {
+   "claim": "TV console has open shelves",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "The product line says open shelves, and the photo shows three open compartments."
+  },
+  {
+   "claim": "Room walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows white walls."
+  },
+  {
+   "claim": "Floor lamp is black",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "The photo shows a black stem and black base."
+  },
+  {
+   "claim": "Floor lamp is an arc lamp",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "The product line says arc floor lamp, and the photo shows an arched stem."
+  },
+  {
+   "claim": "Balcony door has a black frame",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a black-framed sliding door."
+  },
+  {
+   "claim": "Lamp gives warm light",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "The photo shows a warm glow through the shade."
+  },
+  {
+   "claim": "Lamp arm reaches over the sofa",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "The product line gives a 142 cm wide reach, enough to arc over a 94 cm deep sofa."
+  },
+  {
+   "claim": "There is a pair of cushions",
+   "about": "abo-B07JLSSWLL",
+   "supported": false,
+   "evidence": "The product line describes a single throw cushion; no quantity of two is given."
+  },
+  {
+   "claim": "Cushion is terracotta",
+   "about": "abo-B07JLSSWLL",
+   "supported": true,
+   "evidence": "The photo shows a rust-orange fabric."
+  },
+  {
+   "claim": "Cushion has neutral-colored tassels",
+   "about": "abo-B07JLSSWLL",
+   "supported": true,
+   "evidence": "The photo shows white, beige and grey tassels."
+  },
+  {
+   "claim": "User wants cushions and a plant for color",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Almohadones y una planta para darle color'."
+  },
+  {
+   "claim": "Plant is an areca palm",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "The product line says areca palm."
+  },
+  {
+   "claim": "Plant is tall",
+   "about": "468.040.05",
+   "supported": false,
+   "evidence": "The product line says size unknown."
+  },
+  {
+   "claim": "Plant is leafy and green",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "The photo shows many green fronds."
+  },
+  {
+   "claim": "Room gets a lot of natural light",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a large glass sliding door to the balcony."
+  },
+  {
+   "claim": "Areca palm thrives in bright light",
+   "about": "468.040.05",
+   "supported": false,
+   "evidence": "No care or light requirements are given in the product line."
+  },
+  {
+   "claim": "Curtains come as a pair",
+   "about": "202.975.71",
+   "supported": true,
+   "evidence": "The product line says pair."
+  },
+  {
+   "claim": "Curtains are white",
+   "about": "202.975.71",
+   "supported": true,
+   "evidence": "The product line and photo both show white."
+  },
+  {
+   "claim": "Curtains are light-filtering",
+   "about": "202.975.71",
+   "supported": true,
+   "evidence": "The product line says light-filtering."
+  },
+  {
+   "claim": "Balcony door is a sliding door",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows two sliding glass panels."
+  },
+  {
+   "claim": "User wants a TV unit opposite the sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un mueble bajo para la tele enfrente del sofá'."
+  },
+  {
+   "claim": "User wants a bright, modern living room",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'moderno y luminoso'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.089244,
+ "_prompt": "juez_fidelidad_v2"
+}

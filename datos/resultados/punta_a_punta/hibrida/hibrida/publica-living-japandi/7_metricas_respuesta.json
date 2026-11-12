@@ -1,0 +1,30 @@
+{
+ "corrida": "hibrida__publica-living-japandi",
+ "pedido": "Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón. Pocas cosas, todas en tonos neutros.",
+ "fidelidad": {
+  "afirmaciones": 28,
+  "faithfulness": 0.75,
+  "sobre_productos": 0.6667,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Sofa is the only beige option among the alternatives",
+   "Sofa has a low profile",
+   "Rug is big enough to fit under both the sofa and the coffee table",
+   "The alternative tables had gold metal or a black finish",
+   "Floor lamp is the only paper lantern option",
+   "Lamp goes in the corner beside the sofa",
+   "Plant is the largest plant option"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón con un estilo escandinavo, cálido y relajado. Necesito un sofá de dos plazas, una alfombra natural, una mesa de centro, una lámpara de pie y alguna planta.",
+   "Tengo un salón pequeño con paredes blancas y quiero que se sienta tranquilo y natural, tipo japandi. ¿Me recomiendas sofá, alfombra, mesita de centro, lámpara de pie y una planta?",
+   "Busco darle un aire minimalista y acogedor a mi sala de estar, con madera y tonos neutros. Me hace falta un sofá, una alfombra, una mesa de café redonda, una lámpara de pie con luz suave y una planta grande."
+  ],
+  "answer_relevance": 0.6779,
+  "vara_contrastes": 0.437,
+  "juez": "claude-opus-5-5"
+ }
+}

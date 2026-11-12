@@ -913,10 +913,11 @@ Además eran 3 respuestas distintas, de una configuración anterior.
 
 **Cómo.** `juez_pedidos_v2` (sin ejemplos de pedido) y `juez_fidelidad_v2` (el juez recibe lo
 que vio el generador: el pedido, la foto del ambiente y, de cada producto elegido, su foto y la
-línea con su kind, su tipo y su medida). Opus por la API sobre las **11 listas de la
-configuración final** (`punta_a_punta/catalogos/todos/`): `amoblai evaluar-respuesta <corridas>
---juez opus --pagar`. Costó US$1,10 (22 llamadas). Resultados:
-`datos/resultados/evaluacion_respuesta/resumen.json`.
+línea con su kind, su tipo y su medida). Opus por la API sobre las **11 listas del catálogo
+combinado, armadas con la búsqueda de la versión 1** (`punta_a_punta/catalogos/todos/`):
+`amoblai evaluar-respuesta <corridas> --juez opus --pagar`. Costó US$1,10 (22 llamadas).
+Resultados: `datos/resultados/evaluacion_respuesta/resumen.json`. Abajo, lo mismo sobre las
+listas de la versión 2.
 
 | Métrica | Valor | Referencia |
 |---|---|---|
@@ -930,6 +931,24 @@ configuración final** (`punta_a_punta/catalogos/todos/`): `amoblai evaluar-resp
   afirme lo que no ve.
 - Con la fuga afuera, la answer relevance sigue distinguiendo la lista propia de las ajenas
   (0,69 contra 0,55), que es lo que la versión 1 no mostraba.
+
+**Sobre las listas de la versión 2** (2026-11-12, a la tarde). Los mismos jueces sobre las 11
+listas que arma el flujo de hoy (`punta_a_punta/hibrida/hibrida/`), con `--resumen
+resumen_version2`. Costó US$1,08. Resultados:
+`datos/resultados/evaluacion_respuesta/resumen_version2.json`.
+
+| Métrica | Listas con la búsqueda de la versión 1 | Listas de la versión 2 (el flujo de hoy) |
+|---|---|---|
+| Faithfulness | 0,82 (289 de 351) | **0,88** (313 de 356 afirmaciones; por lista, de 0,75 a 0,96) |
+| Answer relevance | 0,69 (vara cruzada 0,55) | **0,70** (vara cruzada 0,56; la propia supera a las ajenas en 11 de 11) |
+
+- **No es una mejora de la versión 2.** La búsqueda no cambia cómo explica su elección el que
+  elige. Por ambiente, la faithfulness sube en 6 y baja en 5 (+0,045 [−0,012; +0,106], pareado
+  por ambiente): es lo que varía la métrica entre dos tandas de listas, no un efecto. Sirve como
+  réplica: los dos números de las métricas del generador se repiten con otras listas.
+- Lo que no se sostiene (43 afirmaciones) es lo mismo: la especie de la madera ("el escritorio
+  es de fresno", "la biblioteca es de abedul"), cuánta gente entra en la mesa y propiedades que
+  no se ven ("la alfombra es fácil de limpiar").
 
 ## T8: de punta a punta: versión 1 contra versión 2, y con búsqueda contra sin búsqueda (2026-11-12)
 
@@ -997,6 +1016,42 @@ pieza contra el mismo flujo con 5 productos **al azar** entre los que pasan los 
   en el 33% de las piezas sin búsqueda, contra el 63% con búsqueda.
 - **El juez distingue**: cuando la diferencia es grande, los dos órdenes coinciden siempre. Eso
   le da sentido a los empates de T8a (ahí las listas son parecidas de verdad).
+
+### T8c: el piso de ruido: la misma configuración, dos veces
+
+**Pregunta.** ¿Cuánto "gana" una configuración contra sí misma? Sin esto no se sabe qué
+diferencia significa algo en T3, T8a y T8b.
+
+**Cómo.** `punta_a_punta/ruido.yaml`: la versión 2 corrida dos veces sobre los 11 ambientes,
+con el mismo plan y los mismos candidatos. Lo único que se repite es el paso que elige (una
+llamada a Opus, que no es determinística); el juez compara las dos listas como si fueran de dos
+variantes. Costó US$2,38 (US$1,60 de elección y US$0,77 de juez).
+
+| | gana | empates | útil | pedido | ambiente | conjunto |
+|---|---|---|---|---|---|---|
+| Versión 2, corrida de la mañana | 3 | 5 | 0,70 | 3,86 | 4,00 | 3,73 |
+| Versión 2, corrida de la tarde | 3 | | 0,72 | 3,73 | 4,09 | 4,04 |
+
+- **El paso que elige cambia 9 de 75 productos (12%) entre dos corridas iguales**; 5 de las 11
+  listas salen idénticas y las otras 6 difieren en 1 a 3 productos.
+- **El juez es consistente, y siempre encuentra un ganador.** En los 5 ambientes con listas
+  idénticas dice empate. En los 6 donde difieren elige una, la misma en los dos órdenes, y se
+  reparten 3 y 3. O sea: que una variante "gane un ambiente" no es evidencia por sí solo; lo que
+  cuenta es la asimetría. Entre dos corridas iguales da 3 a 3; entre versiones dio 5 a 0
+  (p = 0,06) y contra el azar 7 a 0 (p = 0,016). El test de signos que usamos supone justamente
+  esto (sin diferencia real, cada lado gana la mitad de los ambientes decididos), y acá se ve
+  que se cumple.
+- **El tamaño del ruido en los puntajes.** Productos útiles: 0,70 contra 0,72 (0,02). Los
+  puntajes de 1 a 5 se mueven hasta 0,3 ("conjunto": 3,73 contra 4,04). Entre versiones la
+  diferencia de útiles fue 0,06 y la de los puntajes, entre 0,1 y 0,4: del orden del ruido. Contra
+  el azar fue 0,56 y más de 1,3 puntos: muy por encima.
+- Las listas de la versión 1 y la 2 difieren en 25 de 75 productos; entre dos corridas iguales
+  cambian 9. Parte de esa diferencia entre versiones es ruido del que elige, no de la búsqueda.
+
+**Lectura.** No cambia la decisión de T8a, pero la deja en su tamaño: 5 a 0 no es lo que da el
+ruido (que reparte), y con 11 ambientes sigue siendo p = 0,06. Lo que distingue a las versiones
+con claridad es el ground truth (T6c); de punta a punta, la híbrida no es peor y probablemente
+es mejor.
 
 ## T9: las imágenes de la configuración final (2026-11-12)
 

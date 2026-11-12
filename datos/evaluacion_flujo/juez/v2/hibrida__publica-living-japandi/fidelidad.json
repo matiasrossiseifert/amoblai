@@ -1,0 +1,175 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is beige",
+   "about": "abo-B07K29TD1G",
+   "supported": true,
+   "evidence": "Image 2 shows a beige/oatmeal upholstered sofa."
+  },
+  {
+   "claim": "Sofa is the only beige option among the alternatives",
+   "about": "abo-B07K29TD1G",
+   "supported": false,
+   "evidence": "No alternative sofas are shown or listed, so this cannot be checked."
+  },
+  {
+   "claim": "Sofa is upholstered in fabric",
+   "about": "abo-B07K29TD1G",
+   "supported": true,
+   "evidence": "Image 2 shows woven textile upholstery."
+  },
+  {
+   "claim": "Sofa has track arms and clean lines",
+   "about": "abo-B07K29TD1G",
+   "supported": true,
+   "evidence": "The product line says 'two-seat track arm sofa', and the photo shows straight square arms."
+  },
+  {
+   "claim": "Sofa is a two-seater",
+   "about": "abo-B07K29TD1G",
+   "supported": true,
+   "evidence": "The product line says two-seat, and the photo shows two seat cushions."
+  },
+  {
+   "claim": "Sofa has a low profile",
+   "about": "abo-B07K29TD1G",
+   "supported": false,
+   "evidence": "Size is unknown, and the photo shows a standard-height sofa on raised tapered legs, not a notably low one."
+  },
+  {
+   "claim": "Sofa has dark wood legs",
+   "about": "abo-B07K29TD1G",
+   "supported": true,
+   "evidence": "Image 2 shows dark brown tapered wooden legs."
+  },
+  {
+   "claim": "Rug measures 160 x 230 cm",
+   "about": "502.773.93",
+   "supported": true,
+   "evidence": "The product line gives 160 cm wide and 230 cm deep."
+  },
+  {
+   "claim": "Rug is natural jute",
+   "about": "502.773.93",
+   "supported": true,
+   "evidence": "The product line says natural jute, and the photo shows a woven natural fiber."
+  },
+  {
+   "claim": "Rug is big enough to fit under both the sofa and the coffee table",
+   "about": "502.773.93",
+   "supported": false,
+   "evidence": "The sofa and table sizes are unknown, so the fit cannot be verified."
+  },
+  {
+   "claim": "Room floor is dark",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows dark gray-brown wood-look plank flooring."
+  },
+  {
+   "claim": "Coffee table is round",
+   "about": "302.397.12",
+   "supported": true,
+   "evidence": "The product line and Image 4 show a round top."
+  },
+  {
+   "claim": "Coffee table is low",
+   "about": "302.397.12",
+   "supported": true,
+   "evidence": "The product line says 'large round low coffee table'."
+  },
+  {
+   "claim": "Coffee table is warm-toned wood",
+   "about": "302.397.12",
+   "supported": true,
+   "evidence": "Image 4 shows a medium-brown wood grain top and legs."
+  },
+  {
+   "claim": "Coffee table has no metal or black finish",
+   "about": "302.397.12",
+   "supported": true,
+   "evidence": "Image 4 shows an all-wood table."
+  },
+  {
+   "claim": "The alternative tables had gold metal or a black finish",
+   "about": "302.397.12",
+   "supported": false,
+   "evidence": "No alternatives are shown or described."
+  },
+  {
+   "claim": "Floor lamp is a paper lantern",
+   "about": "101.841.74",
+   "supported": true,
+   "evidence": "The product line says rice paper floor lamp, and Image 5 shows a cylindrical paper shade."
+  },
+  {
+   "claim": "Floor lamp is the only paper lantern option",
+   "about": "101.841.74",
+   "supported": false,
+   "evidence": "No alternatives are shown, so this cannot be checked."
+  },
+  {
+   "claim": "User asked for a paper lantern-style lamp",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara de papel tipo farol'."
+  },
+  {
+   "claim": "Lamp goes in the corner beside the sofa",
+   "about": "101.841.74",
+   "supported": false,
+   "evidence": "Neither the request nor the photos specify the lamp's placement."
+  },
+  {
+   "claim": "Plant is a braided money tree",
+   "about": "001.185.23",
+   "supported": true,
+   "evidence": "The product line says so, and Image 6 shows a braided trunk."
+  },
+  {
+   "claim": "Plant is the largest plant option",
+   "about": "001.185.23",
+   "supported": false,
+   "evidence": "Size is unknown and no alternatives are shown."
+  },
+  {
+   "claim": "Plant comes in a nursery pot, not ceramic",
+   "about": "001.185.23",
+   "supported": true,
+   "evidence": "Image 6 shows a brown plastic grower pot."
+  },
+  {
+   "claim": "User asked for a large plant in a ceramic pot by the balcony window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una planta grande en maceta de cerámica junto a la ventana del balcón'."
+  },
+  {
+   "claim": "Room has a glass balcony door",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a sliding glass door to a balcony on the left."
+  },
+  {
+   "claim": "Room walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows white/off-white walls."
+  },
+  {
+   "claim": "User asked for a low beige fabric sofa against the right wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá bajo de tela beige contra la pared de la derecha'."
+  },
+  {
+   "claim": "User asked for few pieces in neutral tones",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Pocas cosas, todas en tonos neutros'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.064948,
+ "_prompt": "juez_fidelidad_v2"
+}

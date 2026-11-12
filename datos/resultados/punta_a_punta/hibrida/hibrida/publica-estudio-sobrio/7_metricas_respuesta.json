@@ -1,0 +1,28 @@
+{
+ "corrida": "hibrida__publica-estudio-sobrio",
+ "pedido": "Quiero convertir este cuarto en un estudio para trabajar desde casa, moderno y sobrio: un escritorio de madera oscura frente a la ventana, una silla de oficina negra ergonómica, una biblioteca baja contra la pared, una lámpara de escritorio y un sillón chico de cuero para leer en el rincón. Negro, madera oscura y gris.",
+ "fidelidad": {
+  "afirmaciones": 29,
+  "faithfulness": 0.8276,
+  "sobre_productos": 0.8095,
+  "sobre_el_ambiente": 0.75,
+  "no_sostenidas": [
+   "Desk fits centered under the small window",
+   "Left wall is long enough for the 160 cm bookcase",
+   "Armchair is compact",
+   "Armchair fits the corner by the tall window",
+   "All products together form a black and dark-wood palette"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero convertir este rincón del salón en una zona de trabajo moderna y sobria, en tonos negros y madera oscura. Necesito un escritorio compacto, una silla de oficina cómoda, un flexo, una estantería baja y un sillón para leer.",
+   "Montar un despacho en casa con aire industrial pero cálido: escritorio con cajones, silla ergonómica, lámpara de escritorio negra, una estantería baja para libros y un sillón de cuero para descansar.",
+   "Tengo esta habitación vacía y quiero hacer un estudio para teletrabajar y leer. Busco algo práctico y moderno, con negro y algún toque de cuero marrón. ¿Qué escritorio, silla, lámpara, estantería y butaca me recomiendas?"
+  ],
+  "answer_relevance": 0.7673,
+  "vara_contrastes": 0.4024,
+  "juez": "claude-opus-5-5"
+ }
+}

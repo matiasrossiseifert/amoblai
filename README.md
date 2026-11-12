@@ -171,23 +171,29 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   los mismos filtros; 7 ambientes): 7 a 0, los 14 votos (p = 0,016); productos útiles, 0,82
   contra 0,26. La búsqueda aporta en la tarea real, y el juez lo ve cuando la diferencia es
   grande.
+- **El piso de ruido** (la versión 2 corrida dos veces, mismo plan y mismos candidatos): el que
+  elige cambia 9 de 75 productos entre dos corridas iguales y 5 de las 11 listas salen idénticas.
+  El juez dice empate en esas 5 y en las otras 6 elige una, la misma en los dos órdenes: 3 a 3.
+  Que una variante "gane un ambiente" no es evidencia por sí solo; lo que cuenta es la asimetría
+  (3 a 3 entre corridas iguales; 5 a 0 entre versiones; 7 a 0 contra el azar). Productos útiles:
+  0,70 contra 0,72.
 - **Qué catálogo.** IKEA + ABO le gana a IKEA solo en 8 ambientes de 11, pierde en 2 y empata
   en 1 (test de signos, p = 0,11); productos útiles, 0,73 contra 0,63. En los 5 pedidos nórdicos
   empatan (2 a 2); en los 6 de otros estilos (industrial, clásico, bohemio...) gana 6 a 0, pero
   esos pedidos los escribimos sabiendo qué le falta a IKEA. ABO solo pierde 4 a 0 con IKEA en
   los nórdicos. Con ABO como distractores, el buscador pierde 3,5 puntos de hit@5 (0,812 →
-  0,778). El flujo usa los dos catálogos. No hay corrida repetida: no sabemos cuántos ambientes
-  da vuelta el ruido solo.
+  0,778). El flujo usa los dos catálogos.
 - **Qué hace el que elige** (`amoblai diagnostico-flujo`, sin juez): toma el primero del coseno
   solo el 45% de las veces y el 24% de lo que elige sale de los puestos 4 y 5; nunca dejó una
   pieza afuera (0 de 75), aunque puede: cuando el catálogo no tiene lo pedido, pone lo más
   parecido sin avisar. El 37% de lo elegido no tiene ninguna medida en el catálogo.
-- **El generador** (las 11 listas del catálogo combinado, armadas con la búsqueda de la versión 1;
-  jueces por la API). Faithfulness del
-  porqué: 0,82 (289 de 351 afirmaciones se infieren de lo que vio el generador); lo que no se
-  sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer
-  relevance: 0,69, contra 0,55 de la vara cruzada (los pedidos reconstruidos para otras listas) y
-  0,40 de pedidos sin relación.
+- **El generador** (las 11 listas de la versión 2; jueces por la API). Faithfulness del porqué:
+  0,88 (313 de 356 afirmaciones se infieren de lo que vio el generador); lo que no se sostiene
+  es casi siempre la especie de la madera, que afirma sin verla escrita. Answer relevance: 0,70,
+  contra 0,56 de la vara cruzada (los pedidos reconstruidos para otras listas) y 0,40 de pedidos
+  sin relación. Sobre otras 11 listas (las del catálogo combinado con la búsqueda de la versión
+  1) dan 0,82 y 0,69 contra 0,55: los dos números se repiten, y la diferencia de faithfulness no
+  es un efecto de la versión (por ambiente sube en 6 y baja en 5).
 - **La imagen** (las 11 listas de la versión 2, con el flujo completo;
   `datos/resultados/amoblar/final-<ambiente>/`): 71 de los 75 productos aparecen, y 31 (41%) se
   reconocen como el producto exacto al comparar su recorte con las fotos del catálogo (DINOv3;

@@ -1,0 +1,136 @@
+{
+ "corridas": 11,
+ "productos": 75,
+ "detectados": 71,
+ "identificados": 31,
+ "presencia": 0.9467,
+ "identificados@1": 0.4133,
+ "coseno_medio": 0.5027,
+ "ambiente_al_primer_intento": 7,
+ "ambiente_conservado": 7,
+ "intentos": 19,
+ "costo_usd": 1.52,
+ "por_corrida": [
+  {
+   "corrida": "final-alvear-escritorio",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 3,
+   "coseno_medio": 0.5364,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-alvear-living-comedor",
+   "productos": 15,
+   "detectados": 14,
+   "identificados": 2,
+   "coseno_medio": 0.3476,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "final-caballito-comedor",
+   "productos": 4,
+   "detectados": 4,
+   "identificados": 1,
+   "coseno_medio": 0.4929,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "final-caballito-living",
+   "productos": 8,
+   "detectados": 8,
+   "identificados": 4,
+   "coseno_medio": 0.4966,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "final-experimento-lectura",
+   "productos": 7,
+   "detectados": 7,
+   "identificados": 3,
+   "coseno_medio": 0.4419,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-publica-comedor-clasico-moderno",
+   "productos": 4,
+   "detectados": 4,
+   "identificados": 1,
+   "coseno_medio": 0.5939,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-publica-estudio-sobrio",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 4,
+   "coseno_medio": 0.7005,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-publica-living-bohemio",
+   "productos": 9,
+   "detectados": 9,
+   "identificados": 4,
+   "coseno_medio": 0.5364,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-publica-living-clasico",
+   "productos": 6,
+   "detectados": 5,
+   "identificados": 3,
+   "coseno_medio": 0.5834,
+   "intentos": 3,
+   "ambiente_al_primer_intento": false,
+   "ambiente_conservado": false,
+   "costo_usd": 0.24
+  },
+  {
+   "corrida": "final-publica-living-japandi",
+   "productos": 5,
+   "detectados": 5,
+   "identificados": 3,
+   "coseno_medio": 0.5068,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  },
+  {
+   "corrida": "final-publica-loft-industrial",
+   "productos": 7,
+   "detectados": 5,
+   "identificados": 3,
+   "coseno_medio": 0.5898,
+   "intentos": 1,
+   "ambiente_al_primer_intento": true,
+   "ambiente_conservado": true,
+   "costo_usd": 0.08
+  }
+ ]
+}

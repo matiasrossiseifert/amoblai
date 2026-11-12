@@ -552,6 +552,53 @@ def evaluate_run(cfg: Config, run_dir: Path, models: Models | None = None) -> di
     return result
 
 
+def summary(run_dirs: Sequence[Path]) -> dict[str, Any]:
+    """Las métricas de varias corridas ya evaluadas (`evaluate_run`), juntas: cuántos productos
+    aparecen y cuántos se reconocen como el exacto, y cuántas imágenes conservaron el ambiente,
+    en qué intento y a qué costo. No carga modelos: lee `5_image.json` y
+    `6_metricas_imagen.json` de cada carpeta."""
+    rows = []
+    cosines: list[float] = []
+    for d in sorted(Path(x) for x in run_dirs):
+        metrics = json.loads((d / "6_metricas_imagen.json").read_text())
+        image = json.loads((d / "5_image.json").read_text())
+        attempts = image.get("attempts") or []
+        found = [p for p in metrics["productos"] if p["detectado"]]
+        cosines += [p["coseno"] for p in found]
+        rows.append(
+            {
+                "corrida": d.name,
+                "productos": len(metrics["productos"]),
+                "detectados": len(found),
+                "identificados": sum(p["puesto"] == 1 for p in found),
+                "coseno_medio": metrics["fidelidad"]["coseno_medio"],
+                "intentos": len(attempts),
+                "ambiente_al_primer_intento": bool(attempts and attempts[0].get("ok")),
+                "ambiente_conservado": bool((image.get("room_check") or {}).get("ok")),
+                "costo_usd": round(sum(a.get("cost_usd") or 0.0 for a in attempts), 4),
+            }
+        )
+    products = sum(r["productos"] for r in rows)
+
+    def total(key: str) -> int:
+        return sum(int(r[key]) for r in rows)
+
+    return {
+        "corridas": len(rows),
+        "productos": products,
+        "detectados": total("detectados"),
+        "identificados": total("identificados"),
+        "presencia": round(total("detectados") / products, 4) if products else None,
+        "identificados@1": round(total("identificados") / products, 4) if products else None,
+        "coseno_medio": round(float(np.mean(cosines)), 4) if cosines else None,
+        "ambiente_al_primer_intento": total("ambiente_al_primer_intento"),
+        "ambiente_conservado": total("ambiente_conservado"),
+        "intentos": total("intentos"),
+        "costo_usd": round(sum(r["costo_usd"] for r in rows), 4),
+        "por_corrida": rows,
+    }
+
+
 def _scaled(box: Sequence[float], src: Image.Image, dst: Image.Image) -> tuple:
     sx, sy = dst.width / src.width, dst.height / src.height
     return (box[0] * sx, box[1] * sy, box[2] * sx, box[3] * sy)
