@@ -1,0 +1,185 @@
+{
+ "corrida": "final-caballito-living",
+ "imagen": "final.png",
+ "generador": "nano_banana_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B072M1WJF2",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.671,
+   "box": [
+    104,
+    418,
+    526,
+    715
+   ],
+   "puesto": 7,
+   "entre": 95,
+   "coseno": 0.7051,
+   "mas_parecido": "abo-B072C8Q9S8"
+  },
+  {
+   "id": "801.982.95",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.844,
+   "box": [
+    256,
+    545,
+    909,
+    873
+   ],
+   "puesto": 109,
+   "entre": 178,
+   "coseno": 0.1426,
+   "mas_parecido": "abo-B0735THVQK"
+  },
+  {
+   "id": "902.976.57",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.328,
+   "box": [
+    548,
+    511,
+    749,
+    696
+   ],
+   "puesto": 1,
+   "entre": 176,
+   "coseno": 0.8282,
+   "mas_parecido": "902.976.57"
+  },
+  {
+   "id": "102.659.24",
+   "kind": "TV stand",
+   "categoria": "cabinet",
+   "detectado": true,
+   "detector": "chest of drawers",
+   "score_detector": 0.494,
+   "box": [
+    943,
+    478,
+    1176,
+    796
+   ],
+   "puesto": 1,
+   "entre": 95,
+   "coseno": 0.4993,
+   "mas_parecido": "102.659.24"
+  },
+  {
+   "id": "abo-B07B4YXXS9",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "floor lamp",
+   "score_detector": 0.495,
+   "box": [
+    54,
+    184,
+    475,
+    772
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.4249,
+   "mas_parecido": "abo-B07B4YXXS9"
+  },
+  {
+   "id": "abo-B07JLSSWLL",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.445,
+   "box": [
+    380,
+    421,
+    481,
+    508
+   ],
+   "puesto": 3,
+   "entre": 434,
+   "coseno": 0.4145,
+   "mas_parecido": "abo-B07TFDD1MR"
+  },
+  {
+   "id": "468.040.05",
+   "kind": "plant",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.851,
+   "box": [
+    862,
+    317,
+    1006,
+    556
+   ],
+   "puesto": 1,
+   "entre": 434,
+   "coseno": 0.4716,
+   "mas_parecido": "468.040.05"
+  },
+  {
+   "id": "202.975.71",
+   "kind": "curtains",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "curtains",
+   "score_detector": 0.542,
+   "box": [
+    519,
+    196,
+    609,
+    507
+   ],
+   "puesto": 9,
+   "entre": 434,
+   "coseno": 0.4864,
+   "mas_parecido": "abo-B07CTPJMR2"
+  }
+ ],
+ "fidelidad": {
+  "productos": 8,
+  "detectados": 8,
+  "presencia": 1.0,
+  "coseno_medio": 0.4966,
+  "identificados@1": 0.5,
+  "mrr": 0.5746
+ },
+ "inventadas": [],
+ "repetidas": [],
+ "ambiente": {
+  "ssim": 0.5389,
+  "ssim_fuera_de_los_muebles": 0.6336,
+  "fraccion_fuera_de_los_muebles": 0.336,
+  "sift_puntos_original": 377,
+  "sift_matches": 49,
+  "sift_inliers": 20,
+  "sift_reencontrados": 0.0531,
+  "sift_desplazamiento_mediano": 0.0648
+ },
+ "pedido_imagen": {
+  "pedido": "Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.",
+  "siglip_final": 0.0976,
+  "siglip_vacia": 0.0713,
+  "delta": 0.0263,
+  "puesto_entre_contrastes": 2,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0078
+ }
+}
