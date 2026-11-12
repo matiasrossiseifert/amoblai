@@ -1,0 +1,26 @@
+{
+ "corrida": "todos__experimento-lectura",
+ "pedido": "Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.",
+ "fidelidad": {
+  "afirmaciones": 33,
+  "faithfulness": 0.9091,
+  "sobre_productos": 0.8636,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Floor lamp shade is fabric",
+   "Side tables are walnut",
+   "Side tables are the right height for coffee next to the armchair"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero convertir este rincón del salón en un espacio de lectura acogedor y cálido. Necesito una estantería alta para mis libros, un sillón cómodo, una lámpara de pie para leer, una mesita auxiliar, una alfombra, una manta y cortinas.",
+   "Ayúdame a amueblar mi despacho en casa con un aire clásico pero cálido, con madera y tonos naturales. Busco librería, butaca de cuero, lámpara de lectura, mesa auxiliar, alfombra redonda, una manta de punto y unas cortinas de lino.",
+   "Tengo un dormitorio con paredes blancas y me gustaría crear una zona de relax para leer, con estilo natural y acogedor. ¿Qué me recomiendas? Me faltan estantería, sillón, lámpara, mesita, alfombra, manta y cortinas."
+  ],
+  "answer_relevance": 0.7188,
+  "vara_contrastes": 0.3343,
+  "juez": "claude-opus-5-5"
+ }
+}

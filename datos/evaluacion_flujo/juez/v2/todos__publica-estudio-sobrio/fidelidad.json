@@ -1,0 +1,199 @@
+{
+ "claims": [
+  {
+   "claim": "The desk is dark wood",
+   "about": "abo-B07QC84LRJ",
+   "supported": true,
+   "evidence": "Image 2 shows a dark brown-grey wooden desk, and the line calls it a wooden writing desk."
+  },
+  {
+   "claim": "The desk is a writing desk",
+   "about": "abo-B07QC84LRJ",
+   "supported": true,
+   "evidence": "The line says 'wooden writing desk with drawers'."
+  },
+  {
+   "claim": "The desk is 130 cm wide",
+   "about": "abo-B07QC84LRJ",
+   "supported": true,
+   "evidence": "The line gives 130 cm wide."
+  },
+  {
+   "claim": "The room has a small window",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a small recessed window on the right wall."
+  },
+  {
+   "claim": "The desk fits centered under the small window",
+   "about": "abo-B07QC84LRJ",
+   "supported": false,
+   "evidence": "No wall length or window dimensions are given, so the fit cannot be checked."
+  },
+  {
+   "claim": "The chair is black",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "Image 3 shows an all-black chair."
+  },
+  {
+   "claim": "The chair has a mesh back",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "Image 3 shows a mesh backrest, and the line says mesh office chair."
+  },
+  {
+   "claim": "The chair has adjustable arms and mechanisms",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "Image 3 shows height-adjustable armrests and several levers under the seat."
+  },
+  {
+   "claim": "The chair is ergonomic",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "The line says 'ergonomic mesh office chair'."
+  },
+  {
+   "claim": "The bookcase is low and wide",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "The line says 'low wide open bookcase', 160 cm wide and 90 cm high."
+  },
+  {
+   "claim": "The bookcase has a black metal frame",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Image 4 shows a black metal frame and shelves."
+  },
+  {
+   "claim": "The bookcase has a wood top",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Image 4 shows a wooden top, though it is light-toned."
+  },
+  {
+   "claim": "The room's left wall has no windows",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a plain left wall without windows."
+  },
+  {
+   "claim": "The bookcase fills the long left wall",
+   "about": "abo-B0723CV5P7",
+   "supported": false,
+   "evidence": "The wall length is not given, so whether 160 cm fills it cannot be checked."
+  },
+  {
+   "claim": "The lamp is matte black",
+   "about": "abo-B082XLC9B4",
+   "supported": true,
+   "evidence": "Image 5 shows a dark matte black or gunmetal finish."
+  },
+  {
+   "claim": "The lamp has a small wood detail",
+   "about": "abo-B082XLC9B4",
+   "supported": true,
+   "evidence": "Image 5 shows a wooden cap on the back of the shade."
+  },
+  {
+   "claim": "The lamp is a task lamp",
+   "about": "abo-B082XLC9B4",
+   "supported": true,
+   "evidence": "The line says 'adjustable metal task lamp'."
+  },
+  {
+   "claim": "The armchair is compact",
+   "about": "abo-B072Y6Y96S",
+   "supported": true,
+   "evidence": "The line gives 69 x 66 cm, a small footprint."
+  },
+  {
+   "claim": "The armchair is black",
+   "about": "abo-B072Y6Y96S",
+   "supported": true,
+   "evidence": "Image 6 shows black upholstery."
+  },
+  {
+   "claim": "The armchair is leather",
+   "about": "abo-B072Y6Y96S",
+   "supported": false,
+   "evidence": "The line only says 'upholstered'. The photo shows a smooth leather-look surface that could be faux leather."
+  },
+  {
+   "claim": "The armchair legs are dark wood",
+   "about": "abo-B072Y6Y96S",
+   "supported": false,
+   "evidence": "Image 6 shows reddish mahogany-toned wooden legs, not the dark grey-brown wood of the desk."
+  },
+  {
+   "claim": "The room has a tall window near a corner",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a tall double-hung window in a recess near the corner."
+  },
+  {
+   "claim": "Every piece combines black with dark wood",
+   "about": "room",
+   "supported": false,
+   "evidence": "The chair is all black with no wood, the bookcase top is light wood, and the armchair legs are reddish."
+  },
+  {
+   "claim": "The room has white walls",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows white walls."
+  },
+  {
+   "claim": "The room has a dark floor",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a dark hardwood floor."
+  },
+  {
+   "claim": "The person wants a modern, sober home-work study",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request asks for 'un estudio para trabajar desde casa, moderno y sobrio'."
+  },
+  {
+   "claim": "The person wants the desk in front of the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'escritorio de madera oscura frente a la ventana'."
+  },
+  {
+   "claim": "The person asked for a black ergonomic office chair",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'silla de oficina negra ergonómica'."
+  },
+  {
+   "claim": "The person asked for a low bookcase against the wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'biblioteca baja contra la pared'."
+  },
+  {
+   "claim": "The person asked for a desk lamp",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara de escritorio'."
+  },
+  {
+   "claim": "The person asked for a small leather reading armchair in the corner",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'sillón chico de cuero para leer en el rincón'."
+  },
+  {
+   "claim": "The person asked for a palette of black, dark wood and grey",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Negro, madera oscura y gris'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.09366,
+ "_prompt": "juez_fidelidad_v2"
+}

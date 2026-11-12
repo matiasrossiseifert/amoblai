@@ -1,0 +1,27 @@
+{
+ "corrida": "todos__publica-comedor-clasico-moderno",
+ "pedido": "En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual, cálido.",
+ "fidelidad": {
+  "afirmaciones": 28,
+  "faithfulness": 0.8571,
+  "sobre_productos": 0.8333,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Table is made of oak",
+   "Person requested six chairs",
+   "Pendant frame is dark bronze",
+   "Sideboard fits the stair wall"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi comedor con un estilo clásico y cálido: necesito una mesa grande de madera para la familia, sillas cómodas tapizadas, una lámpara para colgar encima de la mesa y un aparador para guardar la vajilla.",
+   "Busco muebles para un comedor amplio, tipo casa de campo pero sin que quede recargado. Mesa larga para unas 6-8 personas, sillas, lámpara de techo y un buffet.",
+   "Ayúdame a decorar el comedor con un ambiente acogedor y tradicional con tonos madera y neutros. Me faltan la mesa, las sillas, la iluminación sobre la mesa y un mueble de almacenaje."
+  ],
+  "answer_relevance": 0.7135,
+  "vara_contrastes": 0.4039,
+  "juez": "claude-opus-5-5"
+ }
+}

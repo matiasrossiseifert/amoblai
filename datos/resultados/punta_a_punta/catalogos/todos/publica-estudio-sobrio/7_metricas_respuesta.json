@@ -1,0 +1,28 @@
+{
+ "corrida": "todos__publica-estudio-sobrio",
+ "pedido": "Quiero convertir este cuarto en un estudio para trabajar desde casa, moderno y sobrio: un escritorio de madera oscura frente a la ventana, una silla de oficina negra ergonómica, una biblioteca baja contra la pared, una lámpara de escritorio y un sillón chico de cuero para leer en el rincón. Negro, madera oscura y gris.",
+ "fidelidad": {
+  "afirmaciones": 32,
+  "faithfulness": 0.8438,
+  "sobre_productos": 0.7895,
+  "sobre_el_ambiente": 0.8333,
+  "no_sostenidas": [
+   "The desk fits centered under the small window",
+   "The bookcase fills the long left wall",
+   "The armchair is leather",
+   "The armchair legs are dark wood",
+   "Every piece combines black with dark wood"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero montar un despacho en casa con un aire mid-century, cálido pero sobrio. Necesito escritorio de madera oscura, una silla ergonómica, una estantería baja, un flexo y un sillón para leer o para visitas.",
+   "Tengo un cuarto libre que quiero convertir en oficina para teletrabajar. Busco escritorio, silla cómoda para muchas horas, lámpara de mesa, algo para guardar libros y un sillón extra. Estilo sencillo, tonos oscuros con negro.",
+   "Amueblar mi rincón de trabajo en el salón: escritorio con cajones, silla de oficina, estantería baja y ancha, lámpara para el escritorio y un sillón. Me gusta la mezcla de madera y metal negro, algo sereno y práctico."
+  ],
+  "answer_relevance": 0.7405,
+  "vara_contrastes": 0.4024,
+  "juez": "claude-opus-5-5"
+ }
+}

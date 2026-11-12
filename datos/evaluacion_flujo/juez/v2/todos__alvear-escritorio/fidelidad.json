@@ -1,0 +1,175 @@
+{
+ "claims": [
+  {
+   "claim": "Desk is made of light wood",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "Line says wooden desk; photo shows pale wood"
+  },
+  {
+   "claim": "Desk wood is ash (fresno)",
+   "about": "302.990.70",
+   "supported": false,
+   "evidence": "Line only says wooden; the species is not given"
+  },
+  {
+   "claim": "Desk has tapered legs",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "Photo shows legs narrowing toward the floor"
+  },
+  {
+   "claim": "Desk measures 118 cm wide by 45 cm deep",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "Line gives 118 cm wide, 45 cm deep"
+  },
+  {
+   "claim": "Desk has one drawer",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "Line and photo show one drawer"
+  },
+  {
+   "claim": "Chair swivels",
+   "about": "302.882.36",
+   "supported": true,
+   "evidence": "Line says swivel desk armchair; photo shows a swivel base"
+  },
+  {
+   "claim": "Chair is white wood",
+   "about": "302.882.36",
+   "supported": true,
+   "evidence": "Line says white wooden"
+  },
+  {
+   "claim": "Chair has armrests",
+   "about": "302.882.36",
+   "supported": true,
+   "evidence": "Line says armchair; photo shows arms"
+  },
+  {
+   "claim": "Chair has a wraparound backrest",
+   "about": "302.882.36",
+   "supported": true,
+   "evidence": "Photo shows a curved back rail continuing into the arms"
+  },
+  {
+   "claim": "Bookcase is tall",
+   "about": "002.456.44",
+   "supported": true,
+   "evidence": "Line says tall bookcase"
+  },
+  {
+   "claim": "Bookcase is white-stained wood",
+   "about": "002.456.44",
+   "supported": true,
+   "evidence": "Line says white stained wood"
+  },
+  {
+   "claim": "Bookcase shows visible wood grain",
+   "about": "002.456.44",
+   "supported": true,
+   "evidence": "Photo shows faint grain through the white stain"
+  },
+  {
+   "claim": "Bookcase is 90 cm wide",
+   "about": "002.456.44",
+   "supported": true,
+   "evidence": "Line gives 90 cm wide"
+  },
+  {
+   "claim": "Right wall of the room is white",
+   "about": "room",
+   "supported": true,
+   "evidence": "Room photo shows a white right wall"
+  },
+  {
+   "claim": "Rocking chair frame is bentwood",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "Line says bentwood rocking armchair"
+  },
+  {
+   "claim": "Rocking chair wood is birch",
+   "about": "490.904.81",
+   "supported": false,
+   "evidence": "Line does not give the wood species"
+  },
+  {
+   "claim": "Rocking chair has an off-white cushion",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "Photo shows an off-white cushion"
+  },
+  {
+   "claim": "Armchair is a rocking chair",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "Line says rocking armchair; photo shows rockers"
+  },
+  {
+   "claim": "Lamp has an articulated swing arm",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "Line says swing-arm floor lamp"
+  },
+  {
+   "claim": "Lamp shade is white",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "Photo shows a white drum shade"
+  },
+  {
+   "claim": "Lamp is satin metal",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "Photo shows a brushed steel stand and base"
+  },
+  {
+   "claim": "Room has a wooden floor",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows wood-look plank flooring"
+  },
+  {
+   "claim": "Room walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows white walls"
+  },
+  {
+   "claim": "Room has a large window",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows large sliding glass doors to a balcony"
+  },
+  {
+   "claim": "Person wants a work and reading corner by the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request asks for a rincón de trabajo y lectura junto al ventanal"
+  },
+  {
+   "claim": "Person wants a tall bookcase against the right white wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request says so explicitly"
+  },
+  {
+   "claim": "Person wants an armchair with a floor lamp for reading",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request says so explicitly"
+  },
+  {
+   "claim": "Person wants Nordic style with light woods",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request says Estilo nórdico, maderas claras"
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.05346,
+ "_prompt": "juez_fidelidad_v2"
+}

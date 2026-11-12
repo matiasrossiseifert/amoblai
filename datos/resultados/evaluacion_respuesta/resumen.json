@@ -1,0 +1,332 @@
+{
+ "corridas": 11,
+ "por_corrida": [
+  {
+   "corrida": "todos__alvear-escritorio",
+   "pedido": "Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón con una lámpara de pie para leer. Estilo nórdico, maderas claras.",
+   "fidelidad": {
+    "afirmaciones": 28,
+    "faithfulness": 0.9286,
+    "sobre_productos": 0.9,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "Desk wood is ash (fresno)",
+     "Rocking chair wood is birch"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero convertir este cuarto en un despacho y rincón de lectura de estilo escandinavo, luminoso y acogedor. Necesito un escritorio, una silla para trabajar, una estantería para mis libros, un sillón cómodo para leer y una lámpara de pie.",
+     "Busco muebles para mi estudio en casa con un aire nórdico y tranquilo, en madera clara y blanco. Me hace falta un escritorio con cajón, silla giratoria, librería alta, una mecedora para descansar y una lámpara para leer.",
+     "Tengo esta habitación vacía y quiero montar un espacio para teletrabajar y relajarme, estilo escandinavo con un toque rústico, cálido y sereno. ¿Me recomiendas mesa de trabajo, silla, estantería, butaca de lectura y lámpara de pie?"
+    ],
+    "answer_relevance": 0.7178,
+    "vara_contrastes": 0.37,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__alvear-living-comedor",
+   "pedido": "Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.",
+   "fidelidad": {
+    "afirmaciones": 49,
+    "faithfulness": 0.7347,
+    "sobre_productos": 0.7317,
+    "sobre_el_ambiente": 0.6,
+    "no_sostenidas": [
+     "Sofa legs are birch",
+     "Sofa fits along the left wall",
+     "Rocking chair frame is birch",
+     "Coffee table is light ash",
+     "Coffee table is from the same line as the dining table",
+     "Dining table is light ash",
+     "Dining chairs are beech",
+     "Palm is tall",
+     "Room has a corner between the two zones",
+     "Wall art is a pair of prints",
+     "Other vase is sage green",
+     "Room floor is oak",
+     "Chair seats are paper cord"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón comedor de estilo nórdico, luminoso y tranquilo, con sofá, mesa de comedor con sillas, alfombra, lámparas, cortinas y algunas plantas y detalles decorativos",
+     "Acabo de mudarme a un piso pequeño con salón y comedor juntos. Busco algo escandinavo en tonos claros y madera natural: zona de estar con sofá, butaca y mesa de centro, una mesa para comer, un aparador y que quede acogedor con cojines, manta y algún cuadro",
+     "Ayúdame a decorar este salón con comedor en un estilo minimalista y cálido, madera clara y blanco, que se sienta relajado. Necesito sofá, mecedora para leer con lámpara de pie, comedor para cuatro con lámpara colgante encima, aparador, alfombra, cortinas de lino y una palmera"
+    ],
+    "answer_relevance": 0.6928,
+    "vara_contrastes": 0.4102,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__caballito-comedor",
+   "pedido": "Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas negras, una lámpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la derecha. Estilo nórdico, simple.",
+   "fidelidad": {
+    "afirmaciones": 20,
+    "faithfulness": 0.85,
+    "sobre_productos": 0.7,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "The table is birch",
+     "The table seats four",
+     "The chairs are from the same product family as the table"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar el comedor de mi piso pequeño con estilo nórdico y luminoso: necesito una mesa de madera clara, sillas negras, una lámpara colgante para encima de la mesa y un aparador para guardar la vajilla.",
+     "Busco muebles para la zona de comer de la cocina, algo sencillo y cálido tipo escandinavo o japandi. Mesa, sillas, una lámpara de techo y un mueble aparador.",
+     "Ayúdame a montar un comedor minimalista con madera clara y toques en negro y dorado. Me faltan la mesa, las sillas, la luz sobre la mesa y un aparador bajo."
+    ],
+    "answer_relevance": 0.7661,
+    "vara_contrastes": 0.4012,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__caballito-living",
+   "pedido": "Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.",
+   "fidelidad": {
+    "afirmaciones": 35,
+    "faithfulness": 0.9143,
+    "sobre_productos": 0.8636,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "Coffee table is ash",
+     "TV console is low",
+     "Palm is tall"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón vacío en estilo escandinavo, luminoso y acogedor: sofá grande, alfombra, mesa de centro, mueble para la tele, una lámpara de pie para leer, alguna planta y cortinas.",
+     "Ayúdame a decorar la sala de estar con tonos claros y madera natural, algo minimalista pero cálido. Necesito todo: sofá de tres plazas, mueble de TV, mesita, alfombra suave, iluminación, cojines y un toque verde.",
+     "Me acabo de mudar y el salón está sin nada. Busco un ambiente relajado y aireado, blanco y crema con algún detalle negro, con sitio para ver la tele y leer en el sofá. ¿Qué pongo?"
+    ],
+    "answer_relevance": 0.6238,
+    "vara_contrastes": 0.4203,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__experimento-lectura",
+   "pedido": "Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.",
+   "fidelidad": {
+    "afirmaciones": 33,
+    "faithfulness": 0.9091,
+    "sobre_productos": 0.8636,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "Floor lamp shade is fabric",
+     "Side tables are walnut",
+     "Side tables are the right height for coffee next to the armchair"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero convertir este rincón del salón en un espacio de lectura acogedor y cálido. Necesito una estantería alta para mis libros, un sillón cómodo, una lámpara de pie para leer, una mesita auxiliar, una alfombra, una manta y cortinas.",
+     "Ayúdame a amueblar mi despacho en casa con un aire clásico pero cálido, con madera y tonos naturales. Busco librería, butaca de cuero, lámpara de lectura, mesa auxiliar, alfombra redonda, una manta de punto y unas cortinas de lino.",
+     "Tengo un dormitorio con paredes blancas y me gustaría crear una zona de relax para leer, con estilo natural y acogedor. ¿Qué me recomiendas? Me faltan estantería, sillón, lámpara, mesita, alfombra, manta y cortinas."
+    ],
+    "answer_relevance": 0.7188,
+    "vara_contrastes": 0.3343,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-comedor-clasico-moderno",
+   "pedido": "En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual, cálido.",
+   "fidelidad": {
+    "afirmaciones": 28,
+    "faithfulness": 0.8571,
+    "sobre_productos": 0.8333,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "Table is made of oak",
+     "Person requested six chairs",
+     "Pendant frame is dark bronze",
+     "Sideboard fits the stair wall"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi comedor con un estilo clásico y cálido: necesito una mesa grande de madera para la familia, sillas cómodas tapizadas, una lámpara para colgar encima de la mesa y un aparador para guardar la vajilla.",
+     "Busco muebles para un comedor amplio, tipo casa de campo pero sin que quede recargado. Mesa larga para unas 6-8 personas, sillas, lámpara de techo y un buffet.",
+     "Ayúdame a decorar el comedor con un ambiente acogedor y tradicional con tonos madera y neutros. Me faltan la mesa, las sillas, la iluminación sobre la mesa y un mueble de almacenaje."
+    ],
+    "answer_relevance": 0.7135,
+    "vara_contrastes": 0.4039,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-estudio-sobrio",
+   "pedido": "Quiero convertir este cuarto en un estudio para trabajar desde casa, moderno y sobrio: un escritorio de madera oscura frente a la ventana, una silla de oficina negra ergonómica, una biblioteca baja contra la pared, una lámpara de escritorio y un sillón chico de cuero para leer en el rincón. Negro, madera oscura y gris.",
+   "fidelidad": {
+    "afirmaciones": 32,
+    "faithfulness": 0.8438,
+    "sobre_productos": 0.7895,
+    "sobre_el_ambiente": 0.8333,
+    "no_sostenidas": [
+     "The desk fits centered under the small window",
+     "The bookcase fills the long left wall",
+     "The armchair is leather",
+     "The armchair legs are dark wood",
+     "Every piece combines black with dark wood"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero montar un despacho en casa con un aire mid-century, cálido pero sobrio. Necesito escritorio de madera oscura, una silla ergonómica, una estantería baja, un flexo y un sillón para leer o para visitas.",
+     "Tengo un cuarto libre que quiero convertir en oficina para teletrabajar. Busco escritorio, silla cómoda para muchas horas, lámpara de mesa, algo para guardar libros y un sillón extra. Estilo sencillo, tonos oscuros con negro.",
+     "Amueblar mi rincón de trabajo en el salón: escritorio con cajones, silla de oficina, estantería baja y ancha, lámpara para el escritorio y un sillón. Me gusta la mezcla de madera y metal negro, algo sereno y práctico."
+    ],
+    "answer_relevance": 0.7405,
+    "vara_contrastes": 0.4024,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-living-bohemio",
+   "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+   "fidelidad": {
+    "afirmaciones": 37,
+    "faithfulness": 0.7027,
+    "sobre_productos": 0.6296,
+    "sobre_el_ambiente": 0.8,
+    "no_sostenidas": [
+     "No mustard velvet sofa is offered",
+     "Black, grey and beige sofa options were available",
+     "The rug is the largest rug offered",
+     "There are enough cushions for both the sofa and the armchair",
+     "There are plants for the balcony door, the bookcase and the corners",
+     "The bookcase is low (43 cm high)",
+     "The bookcase fits under the back-wall window",
+     "The lamp column is wood",
+     "Chrome lamps were among the options",
+     "The room is bright",
+     "The design has plenty of green plants"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón con un estilo bohemio y cálido: un sofá de cuero, un sillón de ratán, una alfombra grande, mesa de centro, lámpara de pie, estantería y algunos detalles como cojines, manta y una planta.",
+     "Tengo el salón vacío y me gustaría que se sintiera acogedor, con toques rústicos y de mediados de siglo. Necesito sofá de tres plazas, un sillón extra, alfombra, mesa de centro redonda, una estantería abierta para libros, lámpara para leer y algo de decoración textil y verde.",
+     "Busco muebles para una sala de estar ecléctica con tonos tierra, madera y azules, ambiente relajado y natural. Incluye dónde sentarse, una alfombra con estampado, iluminación, almacenaje para libros, una mesita y complementos como planta, cojín y manta."
+    ],
+    "answer_relevance": 0.6723,
+    "vara_contrastes": 0.4407,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-living-clasico",
+   "pedido": "Una sala antigua con molduras y chimenea. Quiero un living clásico y elegante alrededor de la chimenea: un sofá tapizado en terciopelo verde oscuro, dos sillones enfrentados, una mesa ratona de madera oscura, una alfombra grande de diseño tradicional, una lámpara de pie con pantalla de tela y un espejo grande con marco sobre la chimenea.",
+   "fidelidad": {
+    "afirmaciones": 28,
+    "faithfulness": 0.8929,
+    "sobre_productos": 0.8636,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "The rug is big enough for the whole seating group",
+     "The table fits between sofa and fireplace",
+     "The mirror suits the size of the chimney breast"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón con un estilo clásico y acogedor: necesito un sofá de tres plazas, un sillón para leer, una alfombra grande, una mesa de centro, un espejo para la pared y una lámpara de pie.",
+     "Decora esta sala de estar con un aire tradicional, elegante pero cálido. Busco sofá, butaca, alfombra, mesita de centro, espejo y lámpara de pie.",
+     "Tengo el salón vacío y me gustaría un ambiente clásico, tipo inglés, con tonos oscuros y neutros. ¿Qué sofá, sillón, alfombra, mesa de centro, espejo y lámpara me recomiendas?"
+    ],
+    "answer_relevance": 0.6194,
+    "vara_contrastes": 0.3776,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-living-japandi",
+   "pedido": "Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón. Pocas cosas, todas en tonos neutros.",
+   "fidelidad": {
+    "afirmaciones": 26,
+    "faithfulness": 0.7692,
+    "sobre_productos": 0.7222,
+    "sobre_el_ambiente": 0.75,
+    "no_sostenidas": [
+     "Sofa upholstery is linen",
+     "Right wall is long enough to fit a 234 cm sofa",
+     "Coffee table wood matches the sofa legs",
+     "Plant is large",
+     "ZZ plant is the only large plant option",
+     "ZZ plant is easy to care for"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón con un estilo escandinavo cálido y natural: un sofá grande de tres plazas, una alfombra, una mesa de centro, una lámpara de pie y alguna planta.",
+     "Mi sala de estar está vacía y busco algo tipo japandi, relajado y luminoso. ¿Me recomiendas sofá, alfombra, mesita de centro, una lámpara de pie suave y una planta?",
+     "Necesito ideas para un salón minimalista con toques de madera y fibras naturales, que se sienta acogedor y tranquilo. Me faltan el sofá, la alfombra, la mesa de centro, iluminación de pie y un poco de verde."
+    ],
+    "answer_relevance": 0.6197,
+    "vara_contrastes": 0.437,
+    "juez": "claude-opus-5-5"
+   }
+  },
+  {
+   "corrida": "todos__publica-loft-industrial",
+   "pedido": "Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.",
+   "fidelidad": {
+    "afirmaciones": 35,
+    "faithfulness": 0.7429,
+    "sobre_productos": 0.6667,
+    "sobre_el_ambiente": 1.0,
+    "no_sostenidas": [
+     "The room has space for the sofa with its chaise",
+     "Coffee table top is solid wood",
+     "Bookcase top is reclaimed wood",
+     "Bookcase fits beside the door without crowding it",
+     "Rug has a brick-red border",
+     "Rug is large enough to anchor the sofa and table",
+     "Two cushions are included",
+     "Planter is dark burnished metal",
+     "Planter is the darkest pot available"
+    ],
+    "juez": "claude-opus-5-5"
+   },
+   "relevancia": {
+    "pedidos_generados": [
+     "Quiero amueblar mi salón con estilo industrial: un sofá grande de cuero con chaise longue, una mesa de centro de madera y metal, una lámpara de pie para leer, una alfombra grande y algún cojín y una maceta para decorar.",
+     "Tengo un loft con paredes de ladrillo y busco un ambiente cálido y acogedor, tipo industrial vintage. Necesito sofá, mesa de centro, una estantería baja, lámpara de pie, alfombra y algunos detalles decorativos.",
+     "Ayúdame a decorar la sala de estar para que se vea rústica e industrial pero cálida, con tonos marrones y negros. Me hace falta un sofá en L, una mesita, una librería baja, buena luz de lectura junto al sofá, una alfombra que dé calidez y una planta."
+    ],
+    "answer_relevance": 0.6775,
+    "vara_contrastes": 0.4376,
+    "juez": "claude-opus-5-5"
+   }
+  }
+ ],
+ "faithfulness": {
+  "media_por_corrida": 0.8314,
+  "afirmaciones": 351,
+  "sostenidas": 289,
+  "global": 0.8234
+ },
+ "answer_relevance": {
+  "media": 0.6875,
+  "vara_cruzada": 0.5505,
+  "vara_contrastes": 0.4032,
+  "supera_a_la_cruzada": 11
+ }
+}

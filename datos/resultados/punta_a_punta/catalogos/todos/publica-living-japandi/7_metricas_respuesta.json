@@ -1,0 +1,29 @@
+{
+ "corrida": "todos__publica-living-japandi",
+ "pedido": "Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón. Pocas cosas, todas en tonos neutros.",
+ "fidelidad": {
+  "afirmaciones": 26,
+  "faithfulness": 0.7692,
+  "sobre_productos": 0.7222,
+  "sobre_el_ambiente": 0.75,
+  "no_sostenidas": [
+   "Sofa upholstery is linen",
+   "Right wall is long enough to fit a 234 cm sofa",
+   "Coffee table wood matches the sofa legs",
+   "Plant is large",
+   "ZZ plant is the only large plant option",
+   "ZZ plant is easy to care for"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón con un estilo escandinavo cálido y natural: un sofá grande de tres plazas, una alfombra, una mesa de centro, una lámpara de pie y alguna planta.",
+   "Mi sala de estar está vacía y busco algo tipo japandi, relajado y luminoso. ¿Me recomiendas sofá, alfombra, mesita de centro, una lámpara de pie suave y una planta?",
+   "Necesito ideas para un salón minimalista con toques de madera y fibras naturales, que se sienta acogedor y tranquilo. Me faltan el sofá, la alfombra, la mesa de centro, iluminación de pie y un poco de verde."
+  ],
+  "answer_relevance": 0.6197,
+  "vara_contrastes": 0.437,
+  "juez": "claude-opus-5-5"
+ }
+}
