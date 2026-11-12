@@ -657,7 +657,7 @@ def build_report(
                 "hit@1": [by.loc[k, "hit@1_ic95"] for k in keys],
                 "MRR@10": [by.loc[k, "mrr@10_ic95"] for k in keys],
             },
-            "Retrieval por texto: camino incremental (IC 95% bootstrap por ambiente)",
+            "El buscador: camino incremental, un cambio por paso (IC 95% bootstrap por ambiente)",
             out_dir / "camino_texto.png",
         )
         md += ["![camino](camino_texto.png)", ""]
