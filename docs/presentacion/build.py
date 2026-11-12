@@ -2098,7 +2098,7 @@ slide(
     '<div class="take">Lo próximo es del RAG y de cómo lo medimos. Ubicar cada mueble a escala pide medir el ambiente: queda como trabajo futuro.</div>',
     kicker="Cierre",
     title="Trabajo futuro",
-    notes="Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; validar al juez con nuestro voto a ciegas, y repetir corridas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.",
+    notes="Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; y validar al juez con nuestro voto a ciegas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.",
     mins=0.65,
 )
 
@@ -2107,9 +2107,9 @@ CIERRE = ["publica-loft-industrial", "publica-living-japandi", "publica-living-b
 assert all(f["img"]["attempts"][0]["ok"] for f in FINALES if f["slug"] in CIERRE), "las del cierre tienen que haber pasado el control al primer intento"
 slide(
     '<div class="steps" style="max-width:1080px">'
-    f'<div><p><b>Lo que más pesa es la base de conocimiento y cómo se escribe la consulta</b>: describir cada producto desde su foto ({sg(d_desc["hit@1"], 2)} de hit@1) y escribir la consulta como una ficha del catálogo ({sg(d_hyde["hit@1"], 2)}). El embedder, en este banco, casi no importa.</p></div>'
+    f'<div><p><b>Lo que más pesa es la base de conocimiento y cómo se escribe la consulta</b>: describir cada producto desde su foto ({sg(d_desc["hit@1"], 2)} de hit@1) y escribir la consulta como una ficha ({sg(d_hyde["hit@1"], 2)}). El embedder casi no importa.</p></div>'
     f'<div><p><b>La versión 2 es la búsqueda híbrida</b>: la descripción, sus palabras y la foto suman {sg(D21["hit@1"], 3)} de hit@1 sobre la versión 1, sin costo por pedido; de punta a punta gana {jv["hibrida"]["gana"]}, empata {JV["empates"]} y no pierde.</p></div>'
-    f'<div><p><b>La búsqueda aporta en la tarea real</b>: {sa["densa"]["gana"]} a {sa["azar"]["gana"]} contra candidatos al azar del mismo kind.</p></div>'
+    f'<div><p><b>La búsqueda aporta en la tarea real</b>: {sa["densa"]["gana"]} a {sa["azar"]["gana"]} contra candidatos al azar del mismo kind. Contra el catálogo entero en el prompt empata ({sx["hibrida"]["gana"]} a {sx["contexto"]["gana"]}): RAG es lo que escala, no lo que mejora la lista.</p></div>'
     "<div><p><b>Medir bien fue la mitad del trabajo</b>: diferencias pareadas, tres redactores, un juez en los dos órdenes, y las trampas dichas en voz alta. Nos hizo cambiar el número de cabecera y rehacer las métricas del generador.</p></div>"
     f'<div><p><b>La lista es confiable; la imagen es una visualización</b>: los productos son reales y validados, pero la imagen reconoce el {num(100 * IMG_TOT["reconocidos"] / IMG_TOT["productos"], 0)} % y conserva el cuarto en {IMG_TOT["pasan"]} de {len(FINALES)}.</p></div>'
     "</div>"
@@ -2118,7 +2118,7 @@ slide(
     f'<div class="tiny" style="margin-top:5px">Fotos de los ambientes: {credito(*CIERRE)}.</div>',
     kicker="Cierre",
     title="Conclusiones",
-    notes=f"Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde. Tres: la búsqueda aporta en la tarea real, {sa['densa']['gana']} a {sa['azar']['gana']} contra candidatos al azar. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.",
+    notes=f"Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde. Tres: la búsqueda aporta en la tarea real, {sa['densa']['gana']} a {sa['azar']['gana']} contra candidatos al azar; contra el catálogo entero en el prompt empata: RAG es lo que escala. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.",
     mins=0.7,
 )
 

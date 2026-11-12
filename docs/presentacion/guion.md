@@ -250,9 +250,9 @@ Limitaciones. Del sistema: no dice “no hay”, pone lo más parecido sin avisa
 ## 43. Trabajo futuro
 *Cierre · ~0:39 min · desde el minuto 29:30*
 
-Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; validar al juez con nuestro voto a ciegas, y repetir corridas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.
+Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; y validar al juez con nuestro voto a ciegas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.
 
 ## 44. Conclusiones
 *Cierre · ~0:42 min · desde el minuto 30:09*
 
-Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana 5, empata 6 y no pierde. Tres: la búsqueda aporta en la tarea real, 7 a 0 contra candidatos al azar. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.
+Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana 5, empata 6 y no pierde. Tres: la búsqueda aporta en la tarea real, 7 a 0 contra candidatos al azar; contra el catálogo entero en el prompt empata: RAG es lo que escala. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.
