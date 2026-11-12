@@ -35,11 +35,11 @@ aproximaciones, y cada métrica se apoya en una:
 
 | # | Métrica | Qué contesta | Valor hoy |
 |---|---|---|---|
-| 1 | **hit@k** (k = 1, 5, 10) con IC 95% por ambiente, el azar al lado y la **diferencia pareada** entre métodos | ¿El producto anotado está entre los k primeros? hit@5 es el titular: son los 5 candidatos que ve el que elige | búsqueda del flujo: hit@1 0,530 [0,49–0,57], **hit@5 0,790**, hit@10 0,863; azar 0,017 y 0,161 |
-| 2 | **Juez de listas de a pares** sobre ambientes vacíos (gana / empata, útil por producto) | ¿Qué configuración da mejores listas en la tarea real? | IKEA + ABO le gana a IKEA 8 a 2 con 1 empate (p = 0,11); productos útiles 0,73 contra 0,63 |
+| 1 | **hit@k** (k = 1, 5, 10) con IC 95% por ambiente, el azar al lado y la **diferencia pareada** entre métodos | ¿El producto anotado está entre los k primeros? hit@5 es el titular: son los 5 candidatos que ve el que elige | búsqueda del flujo (versión 2, híbrida): hit@1 0,605 [0,56–0,65], **hit@5 0,825**, hit@10 0,883; versión 1 (densa): 0,530, 0,790 y 0,863; azar 0,017 y 0,161 |
+| 2 | **Juez de listas de a pares** sobre ambientes vacíos (gana / empata, útil por producto) | ¿Qué configuración da mejores listas en la tarea real? | versión 2 contra versión 1: gana 5, empata 6, no pierde (p = 0,06); con búsqueda contra sin búsqueda: 7 a 0 (p = 0,016); IKEA + ABO contra IKEA: 8 a 2 con 1 empate (p = 0,11) |
 | 3 | **Acierto de la elección con un VLM**, según cuántos candidatos ve | ¿Suma que un VLM mire las fotos? ¿Cuántos candidatos pasarle? | sobre el top-10: 0,535 → 0,687 (+0,151 [0,115; 0,190]); entre 3: 0,637; entre 5: 0,667; entre 8: 0,689 |
 | 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | 26 de 52 productos identificados en 8 imágenes (coseno medio 0,48); el control del ambiente rechazó 2 de 3 intentos en un caso |
-| 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,539 ± 0,025 según quién escribe las consultas (búsqueda del flujo, catálogo final) |
+| 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,604 ± 0,009 según quién escribe las consultas (versión 2); 0,539 ± 0,025 (versión 1) |
 | 6 | **Costo por pedido** | ¿Cuánto cuesta cada parte? | plan US$0,06; elección US$0,14 (de 0,05 a 0,43); imagen US$0,08 por intento |
 | 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | context precision@10 0,63; context recall 0,79 (@3) y 0,93 (@10) por ambiente; faithfulness 0,82; answer relevance 0,69 |
 
@@ -47,11 +47,12 @@ aproximaciones, y cada métrica se apoya en una:
 
 | Métrica | Qué contesta | Valor hoy |
 |---|---|---|
-| Diagnóstico del flujo sin juez (`amoblai diagnostico-flujo`) | ¿Qué hace de verdad el que elige con los candidatos? | toma el primero del coseno el 45% de las veces; el 24% de lo elegido sale de los puestos 4 y 5; dejó afuera 0 de 75 piezas; el 37% de lo elegido no tiene ninguna medida |
+| Diagnóstico del flujo sin juez (`amoblai diagnostico-flujo`) | ¿Qué hace de verdad el que elige con los candidatos? | toma el primero de la búsqueda el 41% de las veces; el 20% de lo elegido sale de los puestos 4 y 5; dejó afuera 0 de 75 piezas; el 36% de lo elegido no tiene ninguna medida |
 | Relevancia graduada del top-3 (un juez da 2, 1 o 0) | ¿Sirve lo que se trae aunque no sea el producto anotado? | el primero sirve 0,78 y alguno del top-3 0,87 (reponderado a la población) |
 | hit@1 por categoría, con su n | ¿Dónde falla el buscador? | sillas 0,84; guardado 0,72; mesas 0,69; lámparas 0,59; deco 0,36; alfombras 0,31 |
 | Recall por producto anotado | Comparar con la búsqueda por imagen con la misma unidad | texto 0,55 contra imagen 0,43 (+0,12 [0,04; 0,20]) |
-| MRR@10 | Un solo número para el orden | 0,641 |
+| hit@k por familia | ¿El error es otro mueble, o el mismo modelo en otra medida u otro color? | hit@1 0,689 por familia contra 0,605 exacto (versión 2); 0,623 contra 0,530 (versión 1) |
+| MRR@10 | Un solo número para el orden | 0,701 (versión 2); 0,641 (versión 1) |
 | IoU de la réplica | ¿El generador pone cada mueble donde se le indica? | 0,20 sin indicar; 0,37 en palabras; 0,40–0,52 con cajas (un cuarto, 3 imágenes por variante) |
 
 ### Prescindibles o engañosas (se dejan, rotuladas)
@@ -82,6 +83,12 @@ aproximaciones, y cada métrica se apoya en una:
   de palabras "gana" 0,535 a 0,510 pero la diferencia es +0,026 [−0,025; +0,077]; y el filtro
   por kind "está dentro del intervalo" pero pierde 2 puntos de hit@5 con intervalo que no toca
   el cero.
+- **Por familia.** `familia_hit@k` cuenta también como acierto cualquier variante del modelo
+  anotado (mismo nombre comercial y mismo grupo). El 69% de las consultas busca un producto con
+  variantes en el catálogo; una de cada cinco veces que el primero "falla" es una variante.
+  Hay tres niveles de correcto, y conviene decirlos juntos: el producto exacto primero (0,53 con
+  la versión 1), el mismo modelo primero (0,62) y uno que un juez considera que sirve (0,78).
+  El orden entre métodos no cambia por familia.
 - **Qué se sostiene y qué no** (hit@1, pareado): descripciones propias contra el texto del
   vendedor, sí (+0,19 con la consulta natural, +0,42 con la ficha); la consulta como ficha contra
   la frase natural, sí (+0,24); Qwen3 contra BGE, sí (+0,057); Qwen3 contra hashing o BM25, no;
@@ -113,7 +120,11 @@ aproximaciones, y cada métrica se apoya en una:
   faltan a IKEA. El juez es el mismo modelo que eligió, y no está validado contra personas. No
   hay corrida repetida (A/A): no sabemos cuántos ambientes da vuelta el ruido solo. Los pedidos
   enumeran las piezas: el pedido abierto no se evalúa.
-- **A favor.** Los dos órdenes coinciden en 10 de 11; hay algo de sesgo a la posición A (12 de
+- **Lo que midió** (`docs/EXPERIMENTOS.md`, T3b y T8): IKEA + ABO contra IKEA, 8 a 2 con 1
+  empate; la búsqueda híbrida contra la densa, 5 a 0 con 6 empates (15 votos a 5; p = 0,06); con
+  búsqueda contra 5 candidatos al azar del mismo kind, 7 a 0 con los 14 votos (p = 0,016). El
+  último es el control del instrumento: cuando la diferencia es grande, el juez la ve siempre.
+- **A favor.** En la comparación de catálogos los dos órdenes coinciden en 10 de 11; hay algo de sesgo a la posición A (12 de
   22 votos) y preguntar en los dos órdenes lo cancela. Una métrica sin juez va en el mismo
   sentido: el producto elegido tiene el primer estilo que pidió el plan en 0,42 (IKEA) contra
   0,56 (IKEA + ABO) en los públicos.
@@ -134,7 +145,8 @@ aproximaciones, y cada métrica se apoya en una:
 - **Faithfulness**: afirmaciones de hecho del porqué que se infieren del contexto / afirmaciones.
   El juez recibe lo que vio el generador: el pedido, la foto del ambiente y, de cada producto
   elegido, su foto y la línea con su kind, su tipo y su medida (`juez_fidelidad_v2`).
-  Sobre las 11 listas finales: **0,82** (289 de 351; por lista de 0,70 a 0,93). Lo que no se
+  Sobre las 11 listas de la versión 1 con el catálogo combinado: **0,82** (289 de 351; por lista
+  de 0,70 a 0,93). Sobre las listas de la versión 2 no se corrió (US$1,1). Lo que no se
   sostiene: la especie de la madera que el generador afirma sin verla escrita, y medidas.
 - **Answer relevance**: un juez que no ve el pedido escribe tres pedidos que la lista contesta
   (`juez_pedidos_v2`); la métrica es el coseno medio con el pedido original (Qwen3): **0,69**.
@@ -199,6 +211,9 @@ tokens y traza por paso).
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/camino.yaml    # el camino incremental
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/hibrido.yaml   # léxica, foto y fusión
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/consulta.yaml  # la consulta, contra no reescribir
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/embedders.yaml # embedders, exacto y por familia
+uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/hibrida.yaml --pagar       # versión 1 contra versión 2
+uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/sin_busqueda.yaml --pagar  # con búsqueda contra sin
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reproducibilidad.yaml --replica r2
 uv run amoblai evaluar-candidatos             # la curva de candidatos, desde el rerank ya pago
 uv run amoblai diagnostico-flujo              # el flujo real sin juez

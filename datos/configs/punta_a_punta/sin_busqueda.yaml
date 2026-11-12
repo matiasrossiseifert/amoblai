@@ -1,0 +1,17 @@
+# ¿La búsqueda aporta en la tarea real? El flujo (los 5 candidatos más cercanos de cada pieza)
+# contra el mismo flujo sin búsqueda: 5 productos al azar entre los que pasan los mismos filtros
+# (kind y medidas). Mismo plan, mismo choose, mismo juez de listas. Si el juez no distingue las
+# dos listas, ninguna comparación de punta a punta sobre la búsqueda dice nada: es también el
+# control del instrumento. 7 ambientes (los de menos piezas, por costo): unos US$1,5.
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/sin_busqueda.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: densa
+solo: [alvear-escritorio, caballito-comedor, experimento-lectura, publica-comedor-clasico-moderno,
+       publica-estudio-sobrio, publica-living-clasico, publica-living-japandi]
+sufijo: _7ambientes
+variantes:
+  densa: {rag.hybrid: []}
+  azar: {rag.mode: random}
+comparaciones:
+  - [densa, azar]

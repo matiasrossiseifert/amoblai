@@ -1,0 +1,1050 @@
+{
+ "a": "densa",
+ "b": "azar",
+ "ambientes": 7,
+ "empates": 0,
+ "resumen": {
+  "densa": {
+   "gana": 7,
+   "productos_por_lista": 5.14,
+   "util": 0.819,
+   "aceptable": 1.0,
+   "request": 4.143,
+   "room": 4.286,
+   "together": 4.214
+  },
+  "azar": {
+   "gana": 0,
+   "productos_por_lista": 5.14,
+   "util": 0.264,
+   "aceptable": 0.917,
+   "request": 2.714,
+   "room": 2.929,
+   "together": 2.286
+  }
+ },
+ "acuerdo_entre_ordenes": 1.0,
+ "votos_por_posicion_A": 0.5,
+ "costo_usd": 0.585,
+ "detalle": [
+  {
+   "slug": "caballito-comedor",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "002.908.15",
+      "type": "rectangular solid wood dining table",
+      "size": "125 cm wide, 74 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/002.908.15.jpg"
+     },
+     {
+      "id": "003.015.26",
+      "type": "wooden dining chair",
+      "size": "size unknown",
+      "units": 4,
+      "photo": "datos/dataset/ikea/images/chair/003.015.26.jpg"
+     },
+     {
+      "id": "000.379.80",
+      "type": "white bell pendant lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/000.379.80.jpg"
+     },
+     {
+      "id": "abo-B07B7DMPX7",
+      "type": "herringbone-front sideboard",
+      "size": "150 cm wide, 50 cm deep, 77 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DMPX7.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "402.937.70",
+      "type": "square drop-leaf dining table",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/402.937.70.jpg"
+     },
+     {
+      "id": "802.251.66",
+      "type": "bistro-style wooden dining chair",
+      "size": "size unknown",
+      "units": 4,
+      "photo": "datos/dataset/ikea/images/chair/802.251.66.jpg"
+     },
+     {
+      "id": "abo-B082DP5R1W",
+      "type": "white cylinder pendant lamp",
+      "size": "19 cm wide, 19 cm deep, 79 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082DP5R1W.jpg"
+     },
+     {
+      "id": "abo-B07B7DMPX7",
+      "type": "herringbone-front sideboard",
+      "size": "150 cm wide, 50 cm deep, 77 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DMPX7.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 4.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "A delivers exactly what the client described: a pale rectangular table that seats four, simple black Nordic chairs, and a generously sized white bell pendant, all matching the room's light woods and white walls. B's drop-leaf table, bistro chairs and small 19 cm pendant are near misses, and both proposals share the same gold-legged sideboard, which is a bit glam for a strictly Nordic look.",
+    "B's pale birch table and black chairs come from one matching line, its bell pendant is classic Nordic, and the pale wood suits the room's greige floor and light kitchen wood better than A's warmer oak drop-leaf with curvier bistro chairs. In both proposals the gold-legged herringbone sideboard is a little too glam for the simple Nordic look the client asked for."
+   ],
+   "costo_usd": 0.0674
+  },
+  {
+   "slug": "alvear-escritorio",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "302.990.70",
+      "type": "wooden desk with one drawer",
+      "size": "118 cm wide, 45 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.990.70.jpg"
+     },
+     {
+      "id": "302.882.36",
+      "type": "white wooden swivel desk armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/302.882.36.jpg"
+     },
+     {
+      "id": "002.456.44",
+      "type": "tall white stained wood bookcase",
+      "size": "90 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/002.456.44.jpg"
+     },
+     {
+      "id": "490.904.81",
+      "type": "bentwood rocking armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/490.904.81.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "691.625.99",
+      "type": "industrial pine desk on pipe legs",
+      "size": "110 cm wide, 70 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/691.625.99.jpg"
+     },
+     {
+      "id": "abo-B07B7DKRVM",
+      "type": "wood-frame swivel desk chair",
+      "size": "71 cm wide, 62 cm deep, 105 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DKRVM.jpg"
+     },
+     {
+      "id": "502.638.38",
+      "type": "tall narrow white bookcase",
+      "size": "40 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.638.38.jpg"
+     },
+     {
+      "id": "690.335.45",
+      "type": "deep upholstered armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/690.335.45.jpg"
+     },
+     {
+      "id": "abo-B082JHW29P",
+      "type": "adjustable black floor reading lamp",
+      "size": "30 cm wide, 20 cm deep, 160 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082JHW29P.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 5.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       1,
+       2
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       1,
+       2
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 2.0
+     }
+    ]
+   },
+   "por_que": [
+    "A is a coherent Nordic set in pale ash, birch and white: a light wood desk, a full-width tall bookcase for the white wall, and a classic bentwood reading chair that suit the bright room. Its only weak spot is a hard wooden desk chair that may not be very comfortable. B mixes an industrial pipe desk, a honey-toned traditional office chair and an English-style grey armchair, and its narrow 40 cm bookcase holds few books, so it misses the light-wood Nordic brief and lacks a unified look.",
+    "B delivers a cohesive Nordic look in light ash, birch and white that matches the pale floor and white walls, and its 90 cm bookcase properly anchors the right wall; its only weak point is a hard wooden chair that is less comfortable than requested. A mixes an industrial pipe desk, a traditional honey-wood chair and an English-style armchair into an incoherent set, and its 40 cm bookcase is too narrow for the wall."
+   ],
+   "costo_usd": 0.07
+  },
+  {
+   "slug": "experimento-lectura",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "802.456.40",
+      "type": "tall solid wood bookcase",
+      "size": "90 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.456.40.jpg"
+     },
+     {
+      "id": "abo-B07P5LM53Z",
+      "type": "leather lounge armchair",
+      "size": "91 cm wide, 83 cm deep, 84 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07P5LM53Z.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     },
+     {
+      "id": "102.397.13",
+      "type": "organic-shaped nesting tables",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/102.397.13.jpg"
+     },
+     {
+      "id": "abo-B0719STM26",
+      "type": "round braided jute rug",
+      "size": "152 cm wide, 20 cm deep, 20 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM26.jpg"
+     },
+     {
+      "id": "302.006.96",
+      "type": "cable-knit throw blanket",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.006.96.jpg"
+     },
+     {
+      "id": "802.841.94",
+      "type": "pair of linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.841.94.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "703.233.51",
+      "type": "medium-height open bookcase",
+      "size": "80 cm wide",
+      "units": 2,
+      "photo": "datos/dataset/ikea/images/objects/703.233.51.jpg"
+     },
+     {
+      "id": "abo-B07JY2W3KS",
+      "type": "leather wingback recliner",
+      "size": "108 cm wide, 80 cm deep, 96 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07JY2W3KS.jpg"
+     },
+     {
+      "id": "abo-B07374SBFL",
+      "type": "dome arc floor lamp",
+      "size": "43 cm wide, 25 cm deep, 150 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07374SBFL.jpg"
+     },
+     {
+      "id": "abo-B07DBG25XB",
+      "type": "square two-tier end table",
+      "size": "51 cm wide, 51 cm deep, 60 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07DBG25XB.jpg"
+     },
+     {
+      "id": "abo-B0732GQW2Q",
+      "type": "striped flatweave wool rug",
+      "size": "183 cm wide, 122 cm deep, 0 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0732GQW2Q.jpg"
+     },
+     {
+      "id": "abo-B075X5B8CQ",
+      "type": "geometric cotton tassel throw",
+      "size": "152 cm wide, 127 cm deep, 1 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B075X5B8CQ.jpg"
+     },
+     {
+      "id": "902.975.63",
+      "type": "light beige curtains, one pair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/902.975.63.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 5.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 5.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       1,
+       2,
+       1,
+       0,
+       1,
+       2
+      ],
+      "request": 2.0,
+      "room": 3.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       2,
+       2,
+       1,
+       2,
+       2
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "A delivers every piece the client named: a tall dark bookcase, a warm cognac armchair, a reading lamp, a walnut side table and a light round jute rug, all in a cohesive warm, natural palette. Its only weakness is that a single 90 cm bookcase covers less of the wall than requested. B misses key requirements: its bookcases are low and medium-toned, its rug is rectangular and striped, and its bulky dark recliner and mixed industrial and graphic pieces don't form a unified look.",
+    "B delivers the key piece the client asked for, a tall dark-wood bookcase close to the floor tone (though at 90 cm it fills only part of the wall), plus the round light jute rug, a proper reading lamp and a cohesive warm palette of cognac leather, walnut, jute and cream knit. A's bookcases are medium-height and medium-brown, its rug is a striped rectangle rather than round and light, and its bulky traditional wingback recliner feels heavy and out of style in this small modern room."
+   ],
+   "costo_usd": 0.107
+  },
+  {
+   "slug": "publica-living-clasico",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "390.338.01",
+      "type": "three-seat sofa with rolled arms",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/couch/390.338.01.jpg"
+     },
+     {
+      "id": "abo-B07DBB77DV",
+      "type": "wingback accent armchair",
+      "size": "88 cm wide, 70 cm deep, 104 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B07DBB77DV.jpg"
+     },
+     {
+      "id": "abo-B0719STM6D",
+      "type": "large medallion wool rug",
+      "size": "292 cm wide, 231 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM6D.jpg"
+     },
+     {
+      "id": "abo-B07DBFFG9Z",
+      "type": "X-base wood coffee table",
+      "size": "120 cm wide, 60 cm deep, 46 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+     },
+     {
+      "id": "abo-B0718ZKMW1",
+      "type": "rectangular overlay wall mirror",
+      "size": "102 cm wide, 76 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0718ZKMW1.jpg"
+     },
+     {
+      "id": "abo-B07QD5SDWK",
+      "type": "turned-column floor lamp",
+      "size": "43 cm wide, 43 cm deep, 154 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QD5SDWK.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "abo-B07P28673J",
+      "type": "three-seat tufted sofa",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07P28673J.jpg"
+     },
+     {
+      "id": "590.335.55",
+      "type": "deep upholstered armchair",
+      "size": "size unknown",
+      "units": 2,
+      "photo": "datos/dataset/ikea/images/chair/590.335.55.jpg"
+     },
+     {
+      "id": "abo-B072PX4GR1",
+      "type": "large ornate area rug",
+      "size": "305 cm wide, 244 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072PX4GR1.jpg"
+     },
+     {
+      "id": "abo-B084MN72YQ",
+      "type": "tray-top coffee table",
+      "size": "107 cm wide, 55 cm deep, 39 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B084MN72YQ.jpg"
+     },
+     {
+      "id": "602.418.17",
+      "type": "rectangular mirror with dark wood frame",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/602.418.17.jpg"
+     },
+     {
+      "id": "abo-B001CD1GGG",
+      "type": "stacked orb floor lamp",
+      "size": "36 cm wide, 25 cm deep, 155 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B001CD1GGG.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       1,
+       1,
+       0
+      ],
+      "request": 3.0,
+      "room": 2.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       1,
+       1,
+       1,
+       0
+      ],
+      "request": 3.0,
+      "room": 2.0,
+      "together": 2.0
+     }
+    ]
+   },
+   "por_que": [
+    "A delivers a cohesive classic look: rolled-arm sofa, wingback pair, medallion rug, dark wood table, ornate gold mirror and a fabric-shaded turned lamp, all suited to the moulded room. Its only miss is a charcoal sofa instead of dark green velvet. B's sofa is closer in color but mid-century modern, and the industrial tray table and chrome orb lamp break the classic brief and clash with the room.",
+    "Neither sofa is the dark green velvet the client asked for. Every other piece in B fits the classic brief: wingback chairs, a Persian medallion rug, a dark wood coffee table, a linen-shade lamp and a gold-framed mirror sized for the mantel, all in a cohesive palette suited to the molded room. A mixes a mid-century sofa, an industrial tray table and a chrome glam lamp with a dark shade that clashes with the traditional setting."
+   ],
+   "costo_usd": 0.0939
+  },
+  {
+   "slug": "publica-comedor-clasico-moderno",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "abo-B076NNYB3P",
+      "type": "rectangular wood dining table",
+      "size": "198 cm wide, 102 cm deep, 76 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B076NNYB3P.jpg"
+     },
+     {
+      "id": "abo-B07BTRTC76",
+      "type": "upholstered dining chair, set of two",
+      "size": "61 cm wide, 55 cm deep, 91 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B07BTRTC76.jpg"
+     },
+     {
+      "id": "abo-B07GNSXX6B",
+      "type": "drum shade pendant chandelier",
+      "size": "51 cm wide, 51 cm deep, 107 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07GNSXX6B.jpg"
+     },
+     {
+      "id": "abo-B07HSBD8DM",
+      "type": "four-door buffet sideboard",
+      "size": "173 cm wide, 51 cm deep, 82 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSBD8DM.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "abo-B001BQ8J2S",
+      "type": "square dining table with glass inset",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B001BQ8J2S.jpg"
+     },
+     {
+      "id": "abo-B075YMN1BC",
+      "type": "high-back upholstered dining chair, set of two",
+      "size": "58 cm wide, 48 cm deep, 96 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B075YMN1BC.jpg"
+     },
+     {
+      "id": "abo-B07HKGHTGT",
+      "type": "five-arm chandelier",
+      "size": "66 cm wide, 66 cm deep, 102 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HKGHTGT.jpg"
+     },
+     {
+      "id": "abo-B07HSBD8DM",
+      "type": "four-door buffet sideboard",
+      "size": "173 cm wide, 51 cm deep, 82 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSBD8DM.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       1,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       2
+      ],
+      "request": 2.0,
+      "room": 3.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       2
+      ],
+      "request": 2.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "A delivers exactly what was asked: a dark wood rectangular table for six to eight, six gray upholstered chairs, a drum pendant that is classic yet current, and a warm wood sideboard, all sitting well with the dark floor and cabinets. B swaps in a square glass-inset table of unknown size, navy chairs instead of gray, and a dated frosted-bell chandelier, so it misses the request and the look.",
+    "B delivers the dark rectangular table for 6–8, gray upholstered chairs, a classic-yet-current drum pendant and a warm wood sideboard, though the 51 cm pendant is a bit small for a 198 cm table. A misses on blue chairs, a modern glass-inset square table of unknown size, and a dated builder-grade chandelier."
+   ],
+   "costo_usd": 0.0735
+  },
+  {
+   "slug": "publica-living-japandi",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "abo-B072M1WJF2",
+      "type": "three-seat sofa",
+      "size": "234 cm wide, 94 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072M1WJF2.jpg"
+     },
+     {
+      "id": "502.773.93",
+      "type": "natural jute area rug",
+      "size": "160 cm wide, 230 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.773.93.jpg"
+     },
+     {
+      "id": "302.397.12",
+      "type": "large round low coffee table",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+     },
+     {
+      "id": "101.841.74",
+      "type": "tall rice paper floor lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/101.841.74.jpg"
+     },
+     {
+      "id": "900.379.90",
+      "type": "ZZ plant in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "abo-B07L87VDGF",
+      "type": "deep-seat three-seat sofa",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07L87VDGF.jpg"
+     },
+     {
+      "id": "abo-B07HSF5CK9",
+      "type": "textured bohemian area rug",
+      "size": "183 cm wide, 122 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSF5CK9.jpg"
+     },
+     {
+      "id": "abo-B07HSLKFD5",
+      "type": "round carved drum coffee table",
+      "size": "61 cm wide, 61 cm deep, 47 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLKFD5.jpg"
+     },
+     {
+      "id": "002.806.99",
+      "type": "floor lamp with built-in side tray",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/002.806.99.jpg"
+     },
+     {
+      "id": "468.040.05",
+      "type": "areca palm in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       0,
+       1,
+       1,
+       1
+      ],
+      "request": 2.0,
+      "room": 3.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       2,
+       0,
+       1,
+       1,
+       1
+      ],
+      "request": 2.0,
+      "room": 3.0,
+      "together": 2.0
+     }
+    ]
+   },
+   "por_que": [
+    "Proposal A delivers almost every piece the client named in a calm Japandi palette: a clean-lined beige sofa, a jute rug, a low round wood table and a rice-paper lantern lamp. Its only miss is the plastic nursery pot instead of ceramic. Proposal B leans boho, with a patterned rug too small for the room, an ornate carved drum table and a puffy, pillow-heavy sofa, and has no paper lantern, which goes against the serene, pared-back look requested.",
+    "B delivers almost every piece the client named: a clean-lined beige sofa, a round wooden coffee table, a jute rug and a rice-paper lantern, all calm and Japandi on the dark floor. Its only miss is the modest ZZ plant in a plastic nursery pot. A drifts boho, with a busy patterned rug too small for the sofa, a carved drum table, a non-paper lamp and an uncovered palm, so it loses the serene, pared-back look."
+   ],
+   "costo_usd": 0.0889
+  },
+  {
+   "slug": "publica-estudio-sobrio",
+   "ganador": "densa",
+   "votos": [
+    "densa",
+    "densa"
+   ],
+   "listas": {
+    "densa": [
+     {
+      "id": "abo-B07QC84LRJ",
+      "type": "wooden writing desk with drawers",
+      "size": "130 cm wide, 60 cm deep, 78 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QC84LRJ.jpg"
+     },
+     {
+      "id": "abo-B072Z6K34L",
+      "type": "ergonomic mesh office chair",
+      "size": "69 cm wide, 66 cm deep, 112 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072Z6K34L.jpg"
+     },
+     {
+      "id": "abo-B0723CV5P7",
+      "type": "low wide open bookcase",
+      "size": "160 cm wide, 30 cm deep, 90 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0723CV5P7.jpg"
+     },
+     {
+      "id": "abo-B082XLC9B4",
+      "type": "adjustable metal task lamp",
+      "size": "15 cm wide, 15 cm deep, 48 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082XLC9B4.jpg"
+     },
+     {
+      "id": "abo-B072Y6Y96S",
+      "type": "upholstered reception armchair",
+      "size": "69 cm wide, 66 cm deep, 88 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072Y6Y96S.jpg"
+     }
+    ],
+    "azar": [
+     {
+      "id": "abo-B07B7GXKCN",
+      "type": "two-drawer writing desk",
+      "size": "158 cm wide, 71 cm deep, 76 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7GXKCN.jpg"
+     },
+     {
+      "id": "abo-B075Z8623J",
+      "type": "wingback leather swivel office chair",
+      "size": "72 cm wide, 62 cm deep, 104 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B075Z8623J.jpg"
+     },
+     {
+      "id": "abo-B082Z3TSZ1",
+      "type": "three-tier open shelf",
+      "size": "40 cm wide, 31 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082Z3TSZ1.jpg"
+     },
+     {
+      "id": "801.060.12",
+      "type": "glossy black articulated work lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.060.12.jpg"
+     },
+     {
+      "id": "abo-B07B4MMPPH",
+      "type": "leather push-back recliner",
+      "size": "84 cm wide, 80 cm deep, 69 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B4MMPPH.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "densa": [
+     {
+      "grades": [
+       2,
+       2,
+       1,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       1,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "azar": [
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       2,
+       0
+      ],
+      "request": 2.0,
+      "room": 2.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       1,
+       2,
+       1
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 2.0
+     }
+    ]
+   },
+   "por_que": [
+    "A delivers the modern, sober black, dark wood and gray look: a dark wood desk, a black ergonomic mesh chair, a truly low wide bookcase and a black lamp, with only minor misses in the bookcase's light wood top and the reception-style armchair. B drifts warm and traditional with a reddish desk, an executive wingback chair instead of an ergonomic one, a small narrow shelf and a brown nailhead recliner that clashes with the modern brief.",
+    "B delivers the modern, sober black-and-dark-wood study the client described: a dark wood desk sized for the window, a true black ergonomic chair, a low wide bookcase and a compact black leather-look armchair. Its only slips are the light wood bookcase top and the reception-style chair's reddish legs. A mixes a reddish traditional desk, a gray wingback swivel that isn't ergonomic, a tall narrow shelf and a bulky brown nailhead recliner, so it reads as an incoherent, traditional look for this small white room."
+   ],
+   "costo_usd": 0.0843
+  }
+ ]
+}

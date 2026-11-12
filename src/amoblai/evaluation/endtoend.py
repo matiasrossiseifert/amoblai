@@ -238,7 +238,8 @@ def diagnostics(variant_dir: Path) -> dict[str, Any]:
         for piece, choice in zip(found, choices, strict=True):
             pieces += 1
             cands = piece["candidates"]
-            first_cos.append(cands[0]["score"])
+            if cands[0].get("score") is not None:  # sin búsqueda (al azar) no hay puntaje
+                first_cos.append(cands[0]["score"])
             names = [c["name"] for c in cands if not c["id"].startswith("abo-")]
             repeated += len(names) != len(set(names))
             if not st.quantity(choice):
@@ -266,11 +267,13 @@ def diagnostics(variant_dir: Path) -> dict[str, Any]:
         )
         if chosen_n
         else None,
-        "coseno_del_primero": {
+        "puntaje_del_primero": {
             "mediana": round(float(np.median(first_cos)), 4),
             "p10": round(float(np.quantile(first_cos, 0.1)), 4),
             "p90": round(float(np.quantile(first_cos, 0.9)), 4),
-        },
+        }
+        if first_cos
+        else None,
         "elegidos_sin_ninguna_medida": round(float(np.mean(no_size)), 4),
         "piezas_con_candidatos_del_mismo_modelo": repeated,
         "elegido_tiene_el_primer_estilo_pedido": round(float(np.mean(style_first)), 4),

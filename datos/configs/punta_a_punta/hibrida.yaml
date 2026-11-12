@@ -1,14 +1,17 @@
-# La búsqueda del flujo (versión 1: densa sobre las descripciones) contra la búsqueda híbrida
-# (candidata a versión 2: densa + léxica + la foto del producto), de punta a punta en los 11
-# ambientes de pedidos.yaml, con el mismo plan y el mismo juez de listas que catalogos_estilos.yaml.
-# Las listas de la versión 1 ya están (la variante `todos`): solo se paga el choose de la híbrida
-# (11 llamadas, unos US$1,5) y el juez (22 llamadas, unos US$0,6).
+# Versión 1 contra versión 2, de punta a punta en los 11 ambientes de pedidos.yaml, con el mismo
+# plan y el mismo juez de listas (Opus, de a pares, en los dos órdenes):
+# - densa: el flujo como está (búsqueda densa sobre las descripciones, filtro por kind);
+# - hibrida: lo mismo con rag.hybrid (densa + léxica BM25 + la foto del producto con SigLIP 2).
+# Es el único cambio. Las listas de `densa` salen de las corridas del 10/11 (catalogos/todos),
+# salvo los dos ambientes donde el arreglo del filtro de medidas (2026-11-12) cambia los
+# candidatos de la alfombra: esos se eligieron de nuevo, para que las dos variantes usen el mismo
+# filtro. Costo: unos US$3 (choose de los 11 con la híbrida y de 2 con la densa; 22 llamadas al juez).
 # `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/hibrida.yaml --pagar`
 ambientes: datos/ambientes_vacios/pedidos.yaml
-salida: datos/resultados/punta_a_punta/catalogos
-plan_de: todos
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: densa
 variantes:
-  todos: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos}
-  hibrida: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos, rag.hybrid: [bm25, siglip2]}
+  densa: {rag.hybrid: []}
+  hibrida: {rag.hybrid: [bm25, siglip2]}
 comparaciones:
-  - [todos, hibrida]
+  - [densa, hibrida]

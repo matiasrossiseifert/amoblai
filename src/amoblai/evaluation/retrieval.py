@@ -15,7 +15,9 @@ vecinos más cercanos por coseno) y se mira el ranking:
   porque la categoría junta cosas que no se reemplazan (un almohadón no responde a una búsqueda
   de florero). Las anotaciones no dicen dónde está cada producto: la métrica es permisiva.
 - hit rate@k, MRR@10, context precision@10 (la de RAGAS de la clase 11) y NDCG@10 sobre las
-  consultas con al menos un relevante; context recall@10 por ambiente (de sus productos anotados,
+  consultas con al menos un relevante; hit@k por familia (acierta también con otra variante del
+  mismo modelo: mismo nombre y grupo), para separar "otro mueble" de "el mismo en otro color";
+  context recall@10 por ambiente (de sus productos anotados,
   cuántos trae el contexto de sus consultas) y recall@k por ítem anotado; la curva de hit@k hasta
   k=50 (cuántos candidatos pasarle al reranker); la calibración del score (AUROC de "el primero es
   correcto"); baseline aleatorio sobre lo que deja pasar el filtro; IC 95% por bootstrap de
@@ -154,6 +156,12 @@ SAME_GROUP = {
     "plant pot": "plant",  # la planta se ve con su maceta
     "picture frame": "wall art",  # el cuadro se ve con su marco
 }
+
+
+def family(product: Product) -> tuple[str, str]:
+    """El modelo de un producto: su nombre comercial y su grupo de relevancia. Las variantes de
+    un mismo modelo (PONG en abedul y en negro, una alfombra en dos medidas) comparten familia."""
+    return (str(product.info["name"]).strip().lower(), product_group(product))
 
 
 def group_of(kind: str) -> str:
@@ -606,6 +614,12 @@ def rank(
     for row in rows:
         row["rank"] = first_relevant_rank(row["ranked"], row["relevant"])
         row["rank_any"] = first_relevant_rank(row["ranked"], row["relevant_any"])
+        # El mismo modelo en otra medida u otro color (la familia: mismo nombre y mismo grupo)
+        # también cuenta: ¿el error es otro mueble, o una variante del correcto?
+        families = {family(catalog[i]) for i in row["relevant"]}
+        row["rank_family"] = next(
+            (n for n, i in enumerate(row["ranked"], 1) if family(catalog[i]) in families), None
+        )
     return rows
 
 
@@ -654,6 +668,13 @@ def metrics(rows: list[dict], n_boot: int = 1000, seed: int = 0) -> dict[str, An
         out["confianza_umbral_f1"] = {
             k: round(v, 4) for k, v in best_f1_threshold(scores, ok).items()
         }
+    # Por familia: acierta si trae el producto anotado o una variante del mismo modelo.
+    for k in (1, 5):
+        vals = [hit_at_k(r.get("rank_family"), k) for r in answerable]
+        out[f"familia_hit@{k}"] = round(float(np.mean(vals)), 4)
+        out[f"familia_hit@{k}_ic95"] = [
+            round(v, 4) for v in bootstrap_ci(vals, groups, n_boot, seed)
+        ]
     out["literal_hit@10"] = round(
         float(np.mean([hit_at_k(r["rank_any"], 10) for r in rows if r["relevant_any"]])), 4
     )
@@ -726,6 +747,7 @@ def paired_difference(rows: list[dict], base: list[dict], n_boot: int = 1000) ->
         ("hit@5", lambda r: hit_at_k(r["rank"], 5)),
         ("hit@10", lambda r: hit_at_k(r["rank"], 10)),
         ("mrr@10", lambda r: reciprocal_rank(r["rank"], max(KS))),
+        ("familia_hit@1", lambda r: hit_at_k(r.get("rank_family"), 1)),
     ):
         diffs = [fn(r) - fn(b) for r, b in pairs]
         out[name] = round(float(np.mean(diffs)), 4)

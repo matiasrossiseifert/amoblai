@@ -644,11 +644,22 @@ def reporte() -> None:
 
 
 @app.command()
-def gastos(config: ConfigOpt = paths.CONFIG) -> None:
-    """Lo gastado por cuenta (datos/resultados/gastos.jsonl) contra sus topes."""
-    from amoblai.infra.budget import Ledger
+def gastos(
+    md: Annotated[
+        bool,
+        typer.Option("--md", help="Escribir además el informe datos/resultados/gastos.md."),
+    ] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """Lo gastado por cuenta (datos/resultados/gastos.jsonl) contra sus topes; con --md, el
+    informe por uso y por día (para reportarlo o ponerlo en la presentación)."""
+    from amoblai.infra.budget import Ledger, spend_report
 
     cfg = cfg_for(config)
+    if md:
+        out = Path(cfg.budget.ledger).with_suffix(".md")
+        out.write_text(spend_report(cfg.budget.ledger, cfg.budget.accounts))
+        console.print(f"Escrito: {out}")
     table = Table("cuenta", "gastado (US$)", "tope (US$)")
     for account, cap in {**cfg.budget.accounts, "(resto)": cfg.budget.max_usd_total}.items():
         pool = None if account == "(resto)" else account

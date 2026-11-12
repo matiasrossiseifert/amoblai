@@ -6,6 +6,8 @@
   of one style).
 - mode ``whole_catalog``: every product that passes the filters, unranked. It is the
   alternative to compare against: the whole catalog goes to the model that chooses.
+- mode ``random``: ``top_k`` products that pass the filters, at random (the same ones for the
+  same query). The baseline without retrieval: what the ranking adds, end to end.
 
 With ``rag.hybrid`` (hybrid.py) the cosine is one score of several: the lexical one (``bm25``) and
 the product's photo against the query (an image-and-text model of ``rag.embedders``) are fused
@@ -14,6 +16,7 @@ with it over the products that pass the filters, and the best ``top_k`` of that 
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -70,6 +73,12 @@ def search(index: Index, query: str, filters: Filters, cfg: Config) -> list[Hit]
     allowed = np.array([filters.allows(it) for it in index.items], bool)
     if cfg.rag.mode == "whole_catalog":
         return [as_hit(it, None) for it, ok in zip(index.items, allowed, strict=True) if ok]
+    if cfg.rag.mode == "random":
+        seed = int(hashlib.sha256(query.encode()).hexdigest()[:8], 16)
+        passed = np.flatnonzero(allowed)
+        size = min(cfg.rag.top_k, len(passed))
+        picked = np.random.default_rng(seed).choice(passed, size=size, replace=False)
+        return [as_hit(index.items[i], None) for i in picked]
     embedder = get_embedder(index.meta["embedder"]["name"], cfg)
     if embedder.key() != index.meta["embedder"]["key"]:
         raise ValueError(

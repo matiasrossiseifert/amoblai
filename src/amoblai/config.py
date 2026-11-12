@@ -25,7 +25,7 @@ class RagConfig(_Cfg):
     workers: int = 1  # products described at once when the index is built (paid describers)
     # "rag": the hard filters, then the top_k descriptions nearest to the query. "whole_catalog":
     # every product that passes the filters, unranked (the alternative to compare against).
-    mode: Literal["rag", "whole_catalog"] = "rag"
+    mode: Literal["rag", "whole_catalog", "random"] = "rag"
     top_k: int = 3
     # Keys of `describers` and `embedders` (describe.py, embed.py).
     describer: str = "written"

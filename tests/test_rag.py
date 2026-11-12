@@ -149,6 +149,13 @@ def test_search_applies_the_filters_then_ranks(tmp_path):
     assert {h.id for h in hits} == {"chair-oak", "chair-black"}  # the sofa and desk are too wide
     cfg.rag.top_k = 1
     assert len(search(open_index(cfg), "oak", Filters(), cfg)) == 1
+    # without retrieval: products that pass the filter, at random, the same ones for a query
+    cfg.rag.mode, cfg.rag.top_k = "random", 2
+    picked = [h.id for h in search(open_index(cfg), "oak", Filters(categories=["chair"]), cfg)]
+    assert sorted(picked) == ["chair-black", "chair-oak"] and picked == [
+        h.id for h in search(open_index(cfg), "oak", Filters(categories=["chair"]), cfg)
+    ]
+    assert all(h.score is None for h in search(open_index(cfg), "oak", Filters(), cfg))
 
 
 ITEMS = [  # the filters' corner cases: no kind, no size, two of three measures

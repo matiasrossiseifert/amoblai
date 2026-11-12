@@ -15,8 +15,8 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 
 | Grupo | Experimentos | Por qué |
 |---|---|---|
-| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
-| **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
+| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
+| **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
 | **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM (una imagen por variante; no está en este registro) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
 
 # v1: RAG por texto
@@ -790,12 +790,10 @@ el mismo en el 55% de las piezas, y el producto que eligió la versión 1 sigue 
 87%. Qué lista resulta mejor solo lo puede decir el cara a cara con el juez
 (`datos/configs/punta_a_punta/hibrida.yaml`: unos US$2, sin correr).
 
-**Decisión.** El flujo no cambia (es la versión 1). La búsqueda híbrida quedó implementada y
-apagada (`rag.hybrid: []` en `amoblai.yaml`; con `[bm25, siglip2]` se enciende) y es la
-candidata a versión 2 del Ejercicio 4: sale de una limitación medida de la versión 1, es una
-técnica de Advanced RAG y se enciende con una línea de configuración. **Límite:** está medida en
-el banco de producto conocido, donde la consulta describe un mueble que existe. En el flujo real
-el plan imagina el producto: hay que confirmarla de punta a punta (unos US$2).
+**Decisión.** La búsqueda híbrida es la **versión 2** del flujo (`rag.hybrid: [bm25, siglip2]`
+en `amoblai.yaml`; la versión 1 es `rag.hybrid: []`): sale de una limitación medida de la
+versión 1, es una técnica de Advanced RAG, es una línea de configuración, y se confirmó de punta
+a punta (T8).
 
 ### T6d: qué líneas de la descripción hacen el trabajo
 
@@ -840,7 +838,7 @@ Y a 50 s por consulta en CPU, tampoco serviría por latencia.
 `amoblai diagnostico-flujo` lee las corridas guardadas de punta a punta (11 ambientes vacíos, 75
 piezas por variante) y escribe `datos/resultados/punta_a_punta/catalogos/diagnostico.json`.
 
-| | IKEA | IKEA + ABO (el flujo) |
+| | IKEA | IKEA + ABO (las listas de la versión 1) |
 |---|---|---|
 | El producto elegido es el primero del coseno | 47% | 45% |
 | El elegido sale de los puestos 4 y 5 | 16% | 24% |
@@ -862,6 +860,39 @@ piezas por variante) y escribe `datos/resultados/punta_a_punta/catalogos/diagnos
 - **El tamaño casi nunca se puede verificar** con IKEA (72% de lo elegido sin medidas).
 - **Variantes repetidas**: con IKEA, en más de la mitad de las piezas hay candidatos que son el
   mismo modelo en otro color o medida. No se deduplica ni se usa MMR.
+
+### T6g: ¿error, o el mismo mueble en otro color? El acierto por familia
+
+**Pregunta.** hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del
+mismo modelo (482 de los 819 productos comparten nombre y grupo con otro; el 69% de las consultas
+busca un producto que tiene variantes). ¿Cuánto de lo que cuenta como error es "el mismo mueble
+en otra medida u otro color"? ¿Y eso cambia qué embedder conviene?
+
+**Cómo.** Una métrica más en todas las ablaciones: `familia_hit@k` cuenta como acierto el
+producto anotado **o** cualquier variante de su modelo (mismo nombre comercial y mismo grupo de
+relevancia). `ablaciones/embedders.yaml`, corrida `20261112-102437_ablacion-embedders`.
+
+| Buscador (filtro por kind) | hit@1 exacto | hit@1 por familia [IC 95%] | hit@5 exacto / por familia | hit@1 por familia contra Qwen3 (pareado) |
+|---|---|---|---|---|
+| Qwen3-Embedding (densa) | 0,530 | 0,623 [0,58–0,67] | 0,790 / 0,827 | |
+| Bolsa de palabras (hashing) | 0,515 | 0,596 [0,55–0,65] | 0,796 / 0,843 | −0,027 [−0,070; +0,017] |
+| BM25 | 0,517 | 0,637 [0,60–0,68] | 0,801 / 0,854 | +0,015 [−0,024; +0,055] |
+| BGE-base | 0,475 | 0,557 [0,51–0,60] | 0,740 / 0,805 | −0,066 [−0,106; −0,027] |
+| SigLIP 2 (por foto) | 0,508 | 0,585 [0,53–0,64] | 0,807 / 0,843 | −0,038 [−0,089; +0,017] |
+| Densa + léxica + foto (versión 2) | 0,605 | 0,689 [0,64–0,74] | 0,825 / 0,862 | |
+
+- **Sí: una parte de los "errores" no lo son.** De las veces que el primero no es el producto
+  anotado, una de cada cinco es otra variante del mismo modelo (20% con Qwen3, 25% con BM25).
+  Contando la familia, el acierto sube unos 9 puntos (0,530 → 0,623).
+- **Hay tres niveles de "correcto"**, y conviene decirlos juntos: el producto exacto primero,
+  0,53; el mismo modelo primero, 0,62; un producto que un juez considera que sirve primero, 0,78
+  (relevancia graduada, T1d).
+- **No cambia la comparación entre embedders**: por familia tampoco se distinguen Qwen3, BM25,
+  hashing y SigLIP 2, y BGE sigue siendo peor. El experimento subestima el nivel absoluto, no
+  el orden.
+- **El mejor embedding de OpenAI** (text-embedding-3-large) quedó listo para comparar
+  (`ablaciones/embedder-openai.yaml`, unos centavos) y sin correr: la clave de OpenAI del `.env`
+  está vencida.
 
 ## T7: las métricas del generador, rehechas (2026-11-12)
 
@@ -890,6 +921,73 @@ configuración final** (`punta_a_punta/catalogos/todos/`): `amoblai evaluar-resp
   afirme lo que no ve.
 - Con la fuga afuera, la answer relevance sigue distinguiendo la lista propia de las ajenas
   (0,69 contra 0,55), que es lo que la versión 1 no mostraba.
+
+## T8: de punta a punta: versión 1 contra versión 2, y con búsqueda contra sin búsqueda (2026-11-12)
+
+Los 11 ambientes vacíos reales de `pedidos.yaml`, el mismo plan para todas las variantes, y el
+juez de listas de T3 (Opus, de a pares, a ciegas, en los dos órdenes; una variante gana un
+ambiente solo si gana en los dos órdenes). Resultados en
+`datos/resultados/punta_a_punta/hibrida/`.
+
+### T8a: la búsqueda densa (versión 1) contra la híbrida (versión 2)
+
+`punta_a_punta/hibrida.yaml`. El único cambio es `rag.hybrid`. Las listas de la versión 1 son
+las del 10/11, salvo dos ambientes donde el arreglo del filtro de medidas cambia los candidatos
+de la alfombra: esos se eligieron de nuevo, para que las dos variantes usen el mismo filtro.
+Costó unos US$3,0 (US$2,0 de elección y US$1,0 de juez).
+
+| | gana | empates | votos (de 22) | útil | pedido | ambiente | conjunto |
+|---|---|---|---|---|---|---|---|
+| Versión 1: densa | 0 | 6 | 5 | 0,68 | 3,68 | 3,96 | 3,59 |
+| **Versión 2: híbrida** | **5** | | **15** | **0,74** | **3,96** | **4,04** | **3,96** |
+
+- **La híbrida gana 5 ambientes, no pierde ninguno y empata 6** (test de signos sobre los 5
+  decididos: p = 0,06 a dos colas). En 5 de los 6 empates cada orden eligió una lista distinta (el
+  juez no se decide); en el otro las dos listas son idénticas y el juez dijo empate las dos veces.
+- Los dos órdenes coinciden en 6 de 11 (0,55), menos que en T3b (0,91): acá las listas se
+  parecen mucho (comparten 50 de 75 productos) y la diferencia es más fina. El sesgo a la
+  posición A es 0,59; preguntar en los dos órdenes lo cancela.
+- Sin juez (`diagnostico-flujo`): el que elige se queda con el primero de la búsqueda el 41% de
+  las veces con la híbrida y el 44% con la densa; el primer estilo pedido, 60% y 63%. No hay
+  diferencia ahí: lo que cambia es qué productos llegan.
+
+**Decisión: el flujo usa la búsqueda híbrida** (versión 2). Para el Ejercicio 4:
+
+| | Versión 1 | Versión 2 |
+|---|---|---|
+| Configuración | `rag.hybrid: []` | `rag.hybrid: [bm25, siglip2]` |
+| Qué busca | coseno del embedder sobre las descripciones | lo mismo, fusionado con BM25 y con la foto del producto (SigLIP 2) |
+| Limitación de la versión 1 | el índice lee una descripción pero no ve el producto ni aprovecha las palabras exactas: entre productos casi iguales el primero acierta el 53% y en 1 de cada 5 piezas el correcto no llega a los 5 candidatos | |
+| hit@1 / hit@5 / MRR@10 (ground truth, 549 consultas) | 0,530 / 0,790 / 0,641 | 0,605 / 0,825 / 0,701 (+0,075 [0,041; 0,111] de hit@1) |
+| hit@1 con tres redactores | 0,539 ± 0,025 | 0,604 ± 0,009 |
+| De punta a punta (11 ambientes) | gana 0 | gana 5, empata 6 |
+| Productos útiles según el juez | 0,68 | 0,74 |
+| Costo por pedido | igual | igual (BM25 y SigLIP 2 corren locales) |
+
+### T8b: con búsqueda contra sin búsqueda
+
+**Pregunta.** ¿La búsqueda aporta en la tarea real, o el LLM que elige arma una buena lista con
+cualquier cosa del kind pedido? Es el "con y sin retrieval" del flujo, y a la vez el control del
+instrumento: si el juez no distinguiera estas dos listas, ninguna comparación de punta a punta
+sobre la búsqueda diría nada.
+
+**Cómo.** `punta_a_punta/sin_busqueda.yaml`: el flujo con los 5 candidatos más cercanos de cada
+pieza contra el mismo flujo con 5 productos **al azar** entre los que pasan los mismos filtros
+(kind y medidas; `rag.mode: random`). Mismo plan, mismo paso de elección, mismo juez. 7 ambientes
+(los de menos piezas, por costo). Costó US$1,41.
+
+| | gana | votos (de 14) | útil | pedido | ambiente | conjunto |
+|---|---|---|---|---|---|---|
+| **Con búsqueda** | **7** | **14** | **0,82** | 4,14 | 4,29 | 4,21 |
+| Sin búsqueda (al azar dentro del kind) | 0 | 0 | 0,26 | 2,71 | 2,93 | 2,29 |
+
+- **7 a 0, con los dos órdenes de acuerdo en los 7** (test de signos, p = 0,016). Productos
+  útiles: 0,82 contra 0,26. El filtro por kind solo no alcanza: sin el ranking, la lista tiene
+  el tipo de pieza correcto y poco más.
+- Sin juez va en el mismo sentido: el producto elegido tiene el primer estilo que pidió el plan
+  en el 33% de las piezas sin búsqueda, contra el 63% con búsqueda.
+- **El juez distingue**: cuando la diferencia es grande, los dos órdenes coinciden siempre. Eso
+  le da sentido a los empates de T8a (ahí las listas son parecidas de verdad).
 
 ## Pendientes de la v1
 
