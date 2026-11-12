@@ -1,0 +1,14 @@
+# El piso de ruido del instrumento (A/A): la misma configuración (la versión 2) corrida dos veces
+# sobre los 11 ambientes, con el mismo plan y los mismos candidatos. Lo único que cambia es que el
+# paso que elige se llama de nuevo (no es determinístico) y el juez compara las dos listas. Si acá
+# el juez "encuentra" un ganador, ese es el tamaño de una diferencia que no significa nada.
+# Costo: unos US$2,6 (11 llamadas de elección y 22 del juez).
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/ruido.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: hibrida
+variantes:
+  hibrida: {rag.hybrid: [bm25, siglip2]}
+  hibrida_bis: {rag.hybrid: [bm25, siglip2]}
+comparaciones:
+  - [hibrida, hibrida_bis]

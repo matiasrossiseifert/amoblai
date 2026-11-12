@@ -431,6 +431,12 @@ def evaluar_respuesta(
         ),
     ] = "archivo",
     pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar el juez pago.")] = False,
+    resumen: Annotated[
+        str,
+        typer.Option(
+            help="Nombre del resumen (datos/resultados/evaluacion_respuesta/<nombre>.json)."
+        ),
+    ] = "resumen",
     config: ConfigOpt = paths.CONFIG,
 ) -> None:
     """RAGAS del lado del generador sobre la respuesta en texto (el porqué de cada producto):
@@ -439,6 +445,7 @@ def evaluar_respuesta(
     from amoblai.evaluation.answer import (
         JUDGE_DIR,
         JUDGES,
+        SUMMARY,
         judge_with_claude,
         run_key,
         score,
@@ -473,7 +480,7 @@ def evaluar_respuesta(
                 f"{rel.get('answer_relevance')} (vara {rel.get('vara_contrastes')})"
             )
     if len(results) > 1:
-        s = summary(cfg, results)
+        s = summary(cfg, results, SUMMARY.with_name(f"{resumen}.json"))
         console.print(f"Resumen ({s['corridas']} corridas): {s.get('faithfulness')}")
         console.print(f"answer relevance: {s.get('answer_relevance')}")
 
