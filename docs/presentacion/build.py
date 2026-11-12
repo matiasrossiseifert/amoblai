@@ -105,6 +105,7 @@ CAT_NEW = load(latest("_ablacion-catalogo-revisado") / "metricas.json")
 E2E = {Path(f).stem: load(f) for f in sorted(glob.glob(str(R / "punta_a_punta" / "*" / "juez_*.json")))}
 DIAG = load(R / "punta_a_punta" / "hibrida" / "diagnostico.json")
 DIAG_CAT = load(R / "punta_a_punta" / "catalogos" / "diagnostico.json")
+FM = load(R / "punta_a_punta" / "hibrida" / "filtro_medidas.json")  # qué cambia el filtro de medidas (T6h)
 RESP = load(R / "evaluacion_respuesta" / "resumen_version2.json")  # faithfulness y answer relevance (jueces v2), listas de la versión 2
 RESP1 = load(R / "evaluacion_respuesta" / "resumen.json")  # lo mismo sobre otras 11 listas (búsqueda de la versión 1): la réplica
 IMG_FIN = load(R / "evaluacion_imagen" / "final.json")  # las 11 imágenes de la configuración final (la plantilla)
@@ -1812,7 +1813,7 @@ slide(
     route(lit=("catalogo", "busqueda", "escena"), pins={"busqueda": [13, 14], "escena": [15]})
     + TH.replace("(hit@1)", "(hit@1 / hit@5)").replace("La pregunta", "Qué")
     + tram(13, "Filtros", f"sin filtro {h15(f_none)} · por tipo {h15(f_type)}<br><b>por kind {h15(B1)}</b>",
-           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa por algo que el banco no mide: en los pedidos reales evita un {num(100 * DOC["otro_kind"], 0)} % de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). El de medidas no tiene evidencia: solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida.')
+           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa por algo que el banco no mide: en los pedidos reales evita un {num(100 * DOC["otro_kind"], 0)} % de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). El de medidas actúa poco: cambia {FM["candidatos_reemplazados"]} de {FM["candidatos"]} candidatos en los ambientes reales, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida.')
     + tram(14, "Rerankers de texto", f'sin rerank {h15(RLOC[BASE])} · MiniLM {h15(mini)} · Qwen3-Reranker {h15(qrr)}',
            f'Empeoran ({nb(dif(qrr["vs_base"]))} el mejor): releen el mismo texto que ya usó la búsqueda. El que suma es el que mira las fotos (experimento 5).')
     + tram(None, "El catálogo, ampliado y revisado", f'268 productos {num(DOC["catalogo_268"], 3)} → 855: {num(old["hit@1"], 3)} → {len(ITEMS)}: {num(new["hit@1"], 3)} (hit@1)',
@@ -1822,10 +1823,10 @@ slide(
     + tram(15, "La escena", f'plantilla: {IMG_FIN["identificados"]} de {IMG_FIN["productos"]} productos reconocidos, {IMG_FIN["ambiente_conservado"]} de {IMG_FIN["corridas"]} cuartos conservados · escrita por el LLM: {IMG_ESC["identificados"]} y {IMG_ESC["ambiente_conservado"]}',
            f'Empate en los {IMG_FIN["corridas"]} ambientes, con las mismas listas ({nb(DOC["escena_pareado"])} de reconocidos, pareado). Queda la plantilla: una llamada y US${num(DOC["escena_usd"], 3)} menos por pedido.')
     + "</table>"
-    '<div class="take">Sin experimento que los sostenga quedan el modelo de imagen (comparación diseñada, sin correr) y los umbrales del control.</div>',
+    '<div class="take">Sin experimento: el modelo de imagen (comparación diseñada, sin correr) y los umbrales del control.</div>',
     kicker="Experimentos · de trámite (2 de 2)",
     title="De trámite: filtros, rerankers de texto, el catálogo y la escena",
-    notes=f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el {num(100 * DOC['otro_kind'], 0)} por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas no tiene evidencia. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {num(-100 * d_abo['hit@5'], 1)} puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.",
+    notes=f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el {num(100 * DOC['otro_kind'], 0)} por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas cambia uno de cada once candidatos, sin evidencia de que mejore la lista. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {num(-100 * d_abo['hit@5'], 1)} puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.",
     mins=0.8,
 )
 
@@ -2045,7 +2046,7 @@ slide(
     '<div class="grid2">'
     '<div class="card"><h3>Del sistema</h3><ul class="small">'
     f"<li><b>No dice “no hay”</b>: cuando el catálogo no tiene lo pedido, pone lo más parecido sin avisar (dejó afuera {dh['piezas_dejadas_afuera']} de {dh['piezas']} piezas).</li>"
-    f"<li><b>El tamaño no se puede verificar</b>: el límite lo estima el plan a ojo, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida. El filtro de medidas no tiene evidencia.</li>"
+    f"<li><b>El tamaño no se puede verificar</b>: el límite lo estima el plan a ojo, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida. El filtro de medidas cambia {FM['candidatos_reemplazados']} de {FM['candidatos']} candidatos, sin evidencia de que mejore la lista.</li>"
     f"<li><b>La imagen es una visualización</b>: acierta el producto exacto 4 de cada 10 veces y conserva el cuarto en {IMG_TOT['pasan']} de {len(FINALES)}.</li>"
     f"<li><b>El generador afirma maderas que no ve</b>: el {num(100 * no_sostenido, 0)} % de las afirmaciones del porqué no se sostiene.</li>"
     "<li>Catálogos viejos y de uso no comercial (IKEA 2013, Amazon 2019–20).</li></ul></div>"

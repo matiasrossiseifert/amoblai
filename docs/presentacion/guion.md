@@ -1,6 +1,6 @@
 # Guion de la presentación (amoblai)
 
-Generado por `docs/presentacion/build.py` junto con `amoblai.html`: los números salen de los mismos resultados que las slides y los extractos de los prompts, de los archivos de `src/amoblai/prompts/`. 44 slides, unos 31 minutos (30:51); son unas 4.100 palabras, a 134 por minuto.
+Generado por `docs/presentacion/build.py` junto con `amoblai.html`: los números salen de los mismos resultados que las slides y los extractos de los prompts, de los archivos de `src/amoblai/prompts/`. 44 slides, unos 31 minutos (30:51); son unas 4.200 palabras, a 135 por minuto.
 
 **El recorrido** (slides 5 a 17). Arriba de cada lámina va el mapa de las once fases: la fase de la que se habla, encendida; las ya vistas, marcadas. Se sigue un mismo pedido real, con la configuración final (un loft de estilo industrial, sobre una foto pública), de la foto a la lista. El mismo mapa vuelve en la slide 26 con un pin por experimento sobre la fase a la que le hizo la pregunta (lleno: con lámina propia; hueco: de trámite), y cada lámina de experimento repite ese pin en un minimapa.
 
@@ -220,7 +220,7 @@ Los de trámite: lo que la cátedra dijo que iba a preguntar, con la respuesta c
 ## 37. De trámite: filtros, rerankers de texto, el catálogo y la escena *
 *Experimentos · de trámite (2 de 2) · ~0:48 min · desde el minuto 24:54*
 
-Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el 11 por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas no tiene evidencia. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador 3,5 puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.
+Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el 11 por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas cambia uno de cada once candidatos, sin evidencia de que mejore la lista. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador 3,5 puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.
 
 ## 38. Versión 1: el índice lee la descripción, no ve el producto
 *Ejercicio 4 · 1 de 3 · la versión anterior y su limitación · ~0:54 min · desde el minuto 25:42*
