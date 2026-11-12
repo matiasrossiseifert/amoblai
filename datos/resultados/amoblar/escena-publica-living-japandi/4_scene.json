@@ -1,0 +1,53 @@
+{
+  "answer": {
+    "prompt": "Edit image 1, an empty living room; keep its framing, camera, walls, windows, balcony door, floor, ceiling lights and daylight exactly. Images 2\u20136 are products to add, one each, nothing else. Place everything mid-to-back of the room; the floor near the camera stays empty. Image 2, sofa: back against the right wall, seat facing left toward the balcony door, starting level with the two outlets on the right wall and running toward the camera, about a quarter of the image width. Image 3, jute rug: flat on the floor in the middle of the room, from in front of the sofa toward the balcony door, its far edge about level with the back wall's baseboard line, about half the image width, not reaching the camera. Image 4, round coffee table: centered on the rug in front of the sofa, about a fifth of the image width. Image 5, paper floor lamp: in the back-right corner, beside the sofa's far arm, right of the second window, its top just above the window sills. Image 6, money tree: on the floor against the back wall, just right of the balcony door, below the first window's left edge, reaching mid-window height. Keep each product's design exactly as photographed: shape, proportions, colors, materials, details. The product photos are studio catalog shots, often renders, giving design only. Each product must look photographed in this room by this camera: daylight from the back windows and left balcony door, camera-facing sides softly shaded, matching white balance, contrast, grain and sharpness, contact shadows on the floor, real fabric creases and wood wear. Return a realistic photograph, not a render.",
+    "placements": [
+      {
+        "id": "abo-B07K29TD1G",
+        "where": "right wall, mid-depth, facing balcony door"
+      },
+      {
+        "id": "502.773.93",
+        "where": "center floor, in front of sofa"
+      },
+      {
+        "id": "302.397.12",
+        "where": "on rug in front of sofa"
+      },
+      {
+        "id": "101.841.74",
+        "where": "back-right corner beside sofa"
+      },
+      {
+        "id": "001.185.23",
+        "where": "back wall, right of balcony door"
+      }
+    ]
+  },
+  "model": "claude-opus-5-5",
+  "cost_usd": 0.041404,
+  "prompt": "scene_prompt_v2",
+  "meta": {
+    "status": "completed",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 4821,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 1106,
+      "output_tokens_details": {
+        "thinking_tokens": 432
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "images": 6,
+    "latency_s": 13.72
+  },
+  "text": "{\"prompt\": \"Edit image 1, an empty living room; keep its framing, camera, walls, windows, balcony door, floor, ceiling lights and daylight exactly. Images 2\u20136 are products to add, one each, nothing else. Place everything mid-to-back of the room; the floor near the camera stays empty. Image 2, sofa: back against the right wall, seat facing left toward the balcony door, starting level with the two outlets on the right wall and running toward the camera, about a quarter of the image width. Image 3, jute rug: flat on the floor in the middle of the room, from in front of the sofa toward the balcony door, its far edge about level with the back wall's baseboard line, about half the image width, not reaching the camera. Image 4, round coffee table: centered on the rug in front of the sofa, about a fifth of the image width. Image 5, paper floor lamp: in the back-right corner, beside the sofa's far arm, right of the second window, its top just above the window sills. Image 6, money tree: on the floor against the back wall, just right of the balcony door, below the first window's left edge, reaching mid-window height. Keep each product's design exactly as photographed: shape, proportions, colors, materials, details. The product photos are studio catalog shots, often renders, giving design only. Each product must look photographed in this room by this camera: daylight from the back windows and left balcony door, camera-facing sides softly shaded, matching white balance, contrast, grain and sharpness, contact shadows on the floor, real fabric creases and wood wear. Return a realistic photograph, not a render.\", \"placements\": [{\"id\": \"abo-B07K29TD1G\", \"where\": \"right wall, mid-depth, facing balcony door\"}, {\"id\": \"502.773.93\", \"where\": \"center floor, in front of sofa\"}, {\"id\": \"302.397.12\", \"where\": \"on rug in front of sofa\"}, {\"id\": \"101.841.74\", \"where\": \"back-right corner beside sofa\"}, {\"id\": \"001.185.23\", \"where\": \"back wall, right of balcony door\"}]}"
+}

@@ -199,9 +199,14 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   reconocen como el producto exacto al comparar su recorte con las fotos del catálogo (DINOv3;
   coseno medio 0,50). El control del ambiente (SIFT + RANSAC contra la foto original) pasa al
   primer intento en 7 de los 11 ambientes; en los otros 4 fallaron los 3 intentos (el modelo
-  vuelve a mover la cámara): el control detecta, reintentar con el mismo prompt casi nunca
+  vuelve a mover la cámara): el control detecta, reintentar con el mismo prompt pocas veces
   arregla. La imagen muestra hasta 13 productos (el modelo acepta 14 imágenes): en el ambiente
   de 15 piezas, dos quedan solo en la lista.
+- **La escena: plantilla o LLM** (las mismas 11 listas; `escena-<ambiente>/`). Con el prompt de
+  la imagen escrito por Opus mirando el cuarto y los productos, se reconocen 32 de 75 productos
+  (31 con la plantilla; pareado por ambiente, −0,014 [−0,103; +0,068]) y el ambiente se conserva
+  en 8 de 11 (7 con la plantilla; 6 contra 7 al primer intento). Empate: el flujo usa la
+  plantilla, que cuesta US$0,056 menos por pedido y es una llamada menos.
 - **Costo.** Una corrida completa cuesta unos US$0,28: plan y choose con Claude Opus 5.5
   (US$0,06 y US$0,14 de media; el choose va de US$0,05 a US$0,43 según cuántas piezas y de qué
   catálogo) y la imagen con Nano Banana 2 (US$0,08 por intento; si el control del ambiente la

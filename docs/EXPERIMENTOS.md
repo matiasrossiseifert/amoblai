@@ -15,9 +15,9 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 
 | Grupo | Experimentos | Por qué |
 |---|---|---|
-| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
+| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · el piso de ruido (T8c) · la escena: plantilla contra LLM (T10) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
 | **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
-| **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM (una imagen por variante; no está en este registro) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
+| **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM como estaba (una imagen por variante; reemplazada por T10) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4, salvo I1) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
 
 # v1: RAG por texto
 
@@ -521,7 +521,7 @@ real. Se reportan también los reintentos del control SIFT.
 
 | Exp. | Pregunta | Variantes | Imágenes (se pensó para 15 ambientes; hay 11) | Costo estimado |
 |---|---|---|---|---|
-| I1 | ¿Escena escrita por el LLM o edición estricta libre? | `scene_prompt_v2` (Claude escribe dónde va cada cosa) vs. `scene_prompt_libre_v4` | 30 + ~20% de reintentos | US$2,9 fal + US$0,5 Claude |
+| I1 | ¿Escena escrita por el LLM o edición estricta libre? **Corrido el 2026-11-12 sobre los 11 ambientes: T10** (empate; se queda la plantilla) | `scene_prompt_v2` (Claude escribe dónde va cada cosa) vs. `scene_prompt_libre_v4` | 30 + ~20% de reintentos | US$2,9 fal + US$0,5 Claude |
 | I2 | ¿Qué modelo de imagen? | Nano Banana 2 vs. Nano Banana Pro (fal, ~US$0,15) vs. gpt-image (OpenAI, US$0,12, queda poco saldo) | 45 | US$4 |
 | I3 | ¿Resolución 1K o 2K? | 1K (US$0,08) vs. 2K (US$0,12) | 15 extra | US$1,8 |
 | I4 | ¿Las fotos del catálogo cambian la fidelidad? | IKEA (500 px) vs. ABO (1024 px), con la lista de cada catálogo | 15 extra | US$1,2 |
@@ -1087,9 +1087,9 @@ corridas completas están en `datos/resultados/amoblar/final-<ambiente>/`. Despu
   son listas más largas y con productos de ABO.
 - **El control del ambiente hace su trabajo, el reintento no**: 7 de 11 ambientes pasan al primer
   intento. En los otros 4 fallaron los 3 intentos: el modelo vuelve a mover la cámara o a rehacer
-  el cuarto con el mismo prompt. Reintentar igual gasta dos imágenes más y casi nunca lo arregla
-  (contando la corrida anterior de caballito-living, rescató 1 de 5). Lo que se entrega en esos
-  casos es el mejor intento, marcado como no preservado.
+  el cuarto con el mismo prompt. Reintentar igual gasta dos imágenes más y pocas veces lo arregla
+  (contando la corrida anterior de caballito-living, rescató 1 de 5; en T10, con la escena del
+  LLM, 2 de 5). Lo que se entrega en esos casos es el mejor intento, marcado como no preservado.
 - **El modelo de imagen acepta 14 imágenes**: la foto y 13 productos. El ambiente de 15 piezas
   no se podía dibujar (fal rechazó el pedido, sin cobrarlo). Desde hoy la imagen muestra las 13
   primeras piezas (el plan las ordena por importancia) y las otras quedan en la lista de compra
@@ -1098,13 +1098,73 @@ corridas completas están en `datos/resultados/amoblar/final-<ambiente>/`. Despu
   lista es confiable (productos reales, elegidos entre candidatos recuperados); la imagen es una
   visualización que acierta el producto exacto 4 de cada 10 veces y conserva el cuarto 2 de cada 3.
 
+## T10: la escena: plantilla contra escrita por el LLM, en los 11 ambientes (2026-11-12)
+
+**Pregunta.** El prompt que recibe el modelo de imagen, ¿lo escribe un LLM que mira el cuarto y
+los productos y dice dónde va cada cosa, o alcanza una plantilla fija? Hasta acá la plantilla
+era una decisión de costo: la única comparación era una imagen por variante. Es el I1 de T4.
+
+**Cómo.** Las mismas 11 listas de T9, cambiando solo el paso de la escena:
+`furnish.scene_llm=true` con `scene_prompt_v2` (Opus mira la foto del ambiente y las de los
+productos y escribe el prompt: cada mueble anclado a algo visible, su tamaño en el encuadre, la
+luz del cuarto) contra la plantilla `scene_prompt_libre_v4`. Mismo modelo de imagen, mismo
+control del ambiente, hasta 3 intentos. Corridas en `datos/resultados/amoblar/escena-<ambiente>/`
+(las de la plantilla son las `final-<ambiente>/` de T9). Los totales salen de
+`amoblai resumen-imagen` (`datos/resultados/evaluacion_imagen/final.json` y `escena_llm.json`).
+Costó US$1,60 de fal (20 intentos) y US$0,61 de Anthropic (11 escenas).
+
+| | Plantilla (T9) | Escena escrita por el LLM |
+|---|---|---|
+| Productos que aparecen | 71 de 75 | 73 de 75 |
+| Reconocidos como el producto exacto | 31 (41%) | 32 (43%) |
+| Coseno medio con la foto del catálogo | 0,50 | 0,48 |
+| Ambiente conservado | 7 de 11 | 8 de 11 |
+| Ambiente conservado al primer intento | 7 de 11 | 6 de 11 |
+| Intentos de imagen | 19 | 20 |
+| Costo y tiempo del paso de la escena, por pedido | 0 | US$0,056 y una llamada más (12 a 21 s) |
+
+| Ambiente | Productos | Plantilla: reconocidos · control | LLM: reconocidos · control |
+|---|---|---|---|
+| alvear-escritorio | 5 | 3 · pasa al 1.º | 2 · pasa al 1.º |
+| alvear-living-comedor | 15 | 2 · no pasa | 4 · no pasa |
+| caballito-comedor | 4 | 1 · no pasa | 1 · pasa al 3.º |
+| caballito-living | 8 | 4 · no pasa | 5 · pasa al 2.º |
+| experimento-lectura | 7 | 3 · pasa al 1.º | 3 · pasa al 1.º |
+| publica-comedor-clasico-moderno | 4 | 1 · pasa al 1.º | 1 · pasa al 1.º |
+| publica-estudio-sobrio | 5 | 4 · pasa al 1.º | 4 · pasa al 1.º |
+| publica-living-bohemio | 9 | 4 · pasa al 1.º | 5 · pasa al 1.º |
+| publica-living-clasico | 6 | 3 · no pasa | 4 · no pasa |
+| publica-living-japandi | 5 | 3 · pasa al 1.º | 2 · pasa al 1.º |
+| publica-loft-industrial | 7 | 3 · pasa al 1.º | 1 · no pasa |
+
+- **Empate en lo que medimos.** Pareado por ambiente, la fracción de reconocidos cambia −0,014
+  [−0,103; +0,068] y el coseno −0,032 [−0,083; +0,007]. Por producto: 24 se reconocen con las
+  dos, 7 solo con la plantilla, 8 solo con el LLM, 36 con ninguna.
+- **El control del ambiente da lo mismo en 8 de 11.** La escena del LLM rescata los dos de
+  Caballito (al segundo y al tercer intento) y pierde el loft, que con la plantilla pasaba al
+  primer intento. Es del tamaño de lo que cambia entre dos intentos con el mismo prompt.
+- **A ojo** (las 22 imágenes lado a lado): la escena del LLM reparte los muebles hacia el fondo
+  del cuarto, que es lo que pide su prompt; la plantilla tiende a agruparlos cerca de la cámara.
+  No arregla la falla principal: en el living clásico las dos reencuadran hacia la chimenea. Y
+  el mismo producto sale distinto según la imagen: el sofá de cuero marrón del living bohemio
+  sale mostaza con la plantilla y marrón con el LLM (y la identificación por DINOv3 lo da por
+  reconocido en las dos: mira más la forma que el color).
+- **Reintentar rescata poco.** Entre las dos tandas, 9 imágenes fallaron el control al primer
+  intento y los reintentos rescataron 2 (las dos con la escena del LLM).
+
+**Decisión.** La plantilla se queda: en lo que podemos medir da lo mismo, cuesta US$0,056 menos
+por pedido y es una llamada menos. Ya no es solo una decisión de costo: es un empate medido en
+11 ambientes. Lo que no medimos es si la distribución de los muebles tiene más sentido con la
+escena del LLM (haría falta un juez de imágenes o personas); si importara, es la variante a
+retomar junto con indicar el lugar (T5).
+
 ## Pendientes de la v1
 
-Actualizado el 2026-11-12. Lo que falta y lo que cuesta está en `docs/REVISION.md` (secciones 4
-y 8): la misma configuración dos veces (el piso de ruido del juez), las métricas del generador
-sobre las listas de la versión 2, el mejor embedding de OpenAI contra Qwen3, el experimento de
-la escena con más de un ambiente, el pedido abierto, y el voto a ciegas del equipo para validar
-al juez.
+Actualizado el 2026-11-12 a la tarde. Ya se corrieron el piso de ruido (T8c), las métricas del
+generador sobre las listas de la versión 2 (T7) y la escena en los 11 ambientes (T10). Lo que
+falta y lo que cuesta está en `docs/REVISION.md` (secciones 4 y 8): el mejor embedding de OpenAI
+contra Qwen3 (la clave está vencida), el pedido abierto, un juez o personas para la
+distribución de los muebles en la imagen, y el voto a ciegas del equipo para validar al juez.
 
 # v0: retrieval por imagen (deprecada)
 
