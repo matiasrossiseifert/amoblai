@@ -140,8 +140,10 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
 - **Splitting.** No se parte: un producto es un documento. Un chunk por línea da 0,273; comparar
   línea contra línea no se distingue del documento entero (0,514 contra 0,535; +0,022 [−0,018;
   +0,062]). La pregunta de splitting que este problema sí tiene es qué líneas de la
-  descripción hacen el trabajo: las de lo que se ve (colores y forma, sobre todo); Feel y Goes with
-  casi no aportan (`ablaciones/lineas.yaml`).
+  descripción hacen el trabajo (`ablaciones/lineas.yaml`): sacar Colors cuesta 6 puntos de hit@1
+  (−0,057 [−0,082; −0,030]) y sacar Shape, 3; con solo las cuatro líneas de lo que se ve (Type,
+  Materials, Colors, Shape) se encuentra igual que con las ocho (0,537 contra 0,530). Las otras
+  cuatro están para el pedido abierto, que este banco no mide.
 - **Base vectorial.** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
   consultas. Con 1.500 vectores es lo esperable; ChromaDB da los filtros de metadata en la misma
   consulta y la persistencia.

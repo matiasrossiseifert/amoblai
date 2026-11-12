@@ -110,7 +110,7 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
     prompt = scene["answer"]["prompt"] if scene else ""
     final = next((str(p) for p in out.glob("final.*")), None)
     manual = out / "manual"
-    # roomrag no guarda 5_image.json mientras la imagen manual espera: se ve por la carpeta.
+    # el flujo no guarda 5_image.json mientras la imagen manual espera: se ve por la carpeta.
     waiting = final is None and (
         (manual / "prompt.txt").exists() or bool(image and image.get("pending"))
     )
