@@ -41,7 +41,7 @@ aproximaciones, y cada métrica se apoya en una:
 | 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | en las 11 imágenes de la configuración final: 31 de 75 productos reconocidos como el exacto (41%; coseno medio 0,50); el ambiente se conserva en 7 de 11 |
 | 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,604 ± 0,009 según quién escribe las consultas (versión 2); 0,539 ± 0,025 (versión 1) |
 | 6 | **Costo por pedido** | ¿Cuánto cuesta cada parte? | plan US$0,06; elección US$0,14 (de 0,05 a 0,43); imagen US$0,08 por intento |
-| 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | búsqueda del flujo (versión 2): context precision@10 0,68; context recall por ambiente 0,83 (@3) y 0,92 (@10); faithfulness 0,82; answer relevance 0,69 |
+| 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | búsqueda del flujo (versión 2): context precision@10 0,68; context recall por ambiente 0,83 (@3) y 0,92 (@10); faithfulness 0,88; answer relevance 0,70 |
 
 ### Útiles
 
@@ -119,9 +119,13 @@ aproximaciones, y cada métrica se apoya en una:
   en los dos órdenes.
 - **Reparos.** n = 11: 8 a 2 con 1 empate da p = 0,11 en un test de signos. Los 6 ambientes
   públicos (donde gana 6 a 0, p = 0,03) tienen pedidos que escribimos sabiendo qué estilos le
-  faltan a IKEA. El juez es el mismo modelo que eligió, y no está validado contra personas. No
-  hay corrida repetida (A/A): no sabemos cuántos ambientes da vuelta el ruido solo. Los pedidos
-  enumeran las piezas: el pedido abierto no se evalúa.
+  faltan a IKEA. El juez es el mismo modelo que eligió, y no está validado contra personas. Los
+  pedidos enumeran las piezas: el pedido abierto no se evalúa.
+- **El piso de ruido** (T8c: la misma configuración dos veces). El que elige cambia 9 de 75
+  productos entre dos corridas iguales; el juez dice empate cuando las listas son idénticas (5
+  ambientes) y elige una cuando difieren (6), la misma en los dos órdenes, repartido 3 a 3. Por
+  eso un ambiente ganado no dice nada solo: se lee la asimetría con un test de signos. En los
+  puntajes, el ruido es 0,02 de productos útiles y hasta 0,3 en las notas de 1 a 5.
 - **Lo que midió** (`docs/EXPERIMENTOS.md`, T3b y T8): IKEA + ABO contra IKEA, 8 a 2 con 1
   empate; la búsqueda híbrida contra la densa, 5 a 0 con 6 empates (15 votos a 5; p = 0,06); con
   búsqueda contra 5 candidatos al azar del mismo kind, 7 a 0 con los 14 votos (p = 0,016). El
@@ -147,13 +151,16 @@ aproximaciones, y cada métrica se apoya en una:
 - **Faithfulness**: afirmaciones de hecho del porqué que se infieren del contexto / afirmaciones.
   El juez recibe lo que vio el generador: el pedido, la foto del ambiente y, de cada producto
   elegido, su foto y la línea con su kind, su tipo y su medida (`juez_fidelidad_v2`).
-  Sobre las 11 listas de la versión 1 con el catálogo combinado: **0,82** (289 de 351; por lista
-  de 0,70 a 0,93). Sobre las listas de la versión 2 no se corrió (US$1,1). Lo que no se
-  sostiene: la especie de la madera que el generador afirma sin verla escrita, y medidas.
+  Sobre las 11 listas de la versión 2: **0,88** (313 de 356; por lista de 0,75 a 0,96). Sobre
+  las 11 del catálogo combinado con la búsqueda de la versión 1: 0,82 (289 de 351). No es una
+  mejora de la versión (por ambiente sube en 6 y baja en 5): es cuánto se mueve la métrica
+  entre dos tandas de listas. Lo que no se sostiene: la especie de la madera que el generador
+  afirma sin verla escrita, cuánta gente entra en una mesa, medidas.
 - **Answer relevance**: un juez que no ve el pedido escribe tres pedidos que la lista contesta
-  (`juez_pedidos_v2`); la métrica es el coseno medio con el pedido original (Qwen3): **0,69**.
-  Dos varas: los pedidos que el juez escribió para otras listas (0,55; la propia supera a las
-  ajenas en 11 de 11) y pedidos sin relación (0,40).
+  (`juez_pedidos_v2`); la métrica es el coseno medio con el pedido original (Qwen3): **0,70**
+  sobre las listas de la versión 2. Dos varas: los pedidos que el juez escribió para otras
+  listas (0,56; la propia supera a las ajenas en 11 de 11) y pedidos sin relación (0,40). Sobre
+  las listas con la búsqueda de la versión 1: 0,69 contra 0,55.
 - **Qué pasó con la versión 1.** El prompt del juez de pedidos traía de ejemplo "un living
   nórdico y cálido", que era el pedido evaluado en 3 de 4 corridas: el juez lo copiaba (fuga de
   datos). Su única vara era la de pedidos sin relación; con la cruzada, 0,69–0,73 se comparaba
@@ -197,8 +204,9 @@ intento. Un pedido típico: unos US$0,28 con un intento de imagen.
 - **Jueces LLM.** Dos órdenes para el sesgo de posición; el de relevancia está validado contra
   las anotaciones solo para la nota 2 (se la da al anotado el 81% de las veces y a los demás el
   5%); el de listas no está validado contra personas.
-- **Lo que no se midió**: cuánto cambia la lista si se corre dos veces el mismo pedido (plan,
-  elección, juez e imagen se corrieron una vez).
+- **Cuánto cambia al repetir**: el paso que elige se midió (T8c: 9 de 75 productos cambian
+  entre dos corridas iguales). El plan, el juez sobre una misma lista y la imagen se corrieron
+  una vez.
 
 ## Lo que no usamos, y por qué
 

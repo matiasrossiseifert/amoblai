@@ -68,7 +68,7 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 | Cada consulta se escribe **como la ficha del producto ideal**, en el formato del catálogo ("en mi base no tengo preguntas, tengo respuestas": la respuesta hipotética de la clase de Advanced RAG). | Igual. Lo llamábamos "query rewriting"; el nombre de la clase es query expansion con respuesta hipotética (HyDE). |
 | La decisión con más sustancia es **qué representa a un producto en el índice**: el texto del vendedor, una descripción de lo que se ve, o la foto misma (embedding multimodal). | Teníamos las dos primeras. La tercera faltaba y es la otra ruta que nombró la profesora ("si no lo paso a texto, hay formas de pasarlo a embedding directamente"). Medida esta noche. |
 | Splitting, dimensión, distancia y marca de la base vectorial son **trámite**: hay que tener la respuesta, no un gran experimento. | Los tenemos, y está bien que ocupen poco. |
-| Tres controles sin los que ningún número significa nada: **azar dentro de la categoría**, **mismo presupuesto de candidatos** y **piso de ruido**. | Azar: sí. Piso de ruido: sí para quien escribe la consulta (tres redactores); no para el plan, la elección ni el juez. |
+| Tres controles sin los que ningún número significa nada: **azar dentro de la categoría**, **mismo presupuesto de candidatos** y **piso de ruido**. | Azar: sí. Piso de ruido: sí para quien escribe la consulta (tres redactores) y, desde el 12/11 a la tarde, para la elección y el juez (T8c); no para el plan. |
 | El ground truth de IKEA es un **proxy** chico: sirve para comparar cambios grandes, no para elegir entre embedders. | Lo usábamos también para lo segundo. Corregido en cómo se cuenta. |
 | Elegir entre los candidatos es **selección conjunta** (un conjunto que combina), con derecho a decir "no hay". | Igual (`choose`, cantidad 0). En 187 piezas nunca dijo "no hay": sustituye. |
 | El prompt de la imagen lo arma **una plantilla** desde la lista validada, no un LLM. | Igual. |
@@ -252,8 +252,8 @@ siempre, y eso le da sentido a los empates del primero.
 
 | Qué | Para qué | Costo |
 |---|---|---|
-| La misma configuración dos veces (A/A) | Cuántos ambientes da vuelta el ruido solo | US$2,5 de Anthropic (el tope de US$30 está agotado: 29,41) |
-| Las métricas del generador sobre las listas de la versión 2 | Hoy están medidas sobre las de la versión 1 | US$1,1 de Anthropic |
+| La misma configuración dos veces (A/A) | Cuántos ambientes da vuelta el ruido solo | **Hecho el 12/11 a la tarde** (US$2,38; T8c): 3 a 3 con 5 empates; el que elige cambia 9 de 75 productos |
+| Las métricas del generador sobre las listas de la versión 2 | Estaban medidas sobre las de la versión 1 | **Hecho el 12/11 a la tarde** (US$1,08; T7): 0,88 y 0,70 contra 0,56 |
 | El mejor embedding de OpenAI contra Qwen3 | Si un embedder por API cambia algo | centavos; listo (`ablaciones/embedder-openai.yaml`), pero la clave de OpenAI del `.env` está vencida |
 | Escena escrita por el LLM contra plantilla, 8–10 ambientes | El experimento de imagen que sí vale | ~US$1,5 de fal y US$0,4 de Anthropic |
 | Voto a ciegas del equipo sobre los pares de listas | Validar al juez contra personas | gratis, 15 minutos |
@@ -301,7 +301,11 @@ Jueces nuevos (`juez_fidelidad_v2`, `juez_pedidos_v2`): sin el ejemplo que filtr
 y el juez de faithfulness recibe exactamente lo que vio el generador (la foto del ambiente y, de
 cada producto elegido, su foto y la línea con su kind, su tipo y su medida). Corridos sobre las
 **11 listas del catálogo combinado** (IKEA + ABO) armadas con la búsqueda de la versión 1, con
-Opus por la API: US$1,10. Sobre las listas de la versión 2 no se corrieron.
+Opus por la API: US$1,10. A la tarde, con el tope subido a US$50, se corrieron también sobre
+las 11 listas de la versión 2 (US$1,08): **faithfulness 0,88** (313 de 356) y **answer
+relevance 0,70** contra 0,56 de la vara cruzada. Los dos números se repiten con otras listas; la
+diferencia de faithfulness (0,82 → 0,88) no es un efecto de la versión: por ambiente sube en 6
+y baja en 5 (+0,045 [−0,012; +0,106]).
 
 | Métrica | Valor | Cómo leerlo |
 |---|---|---|
@@ -321,7 +325,11 @@ la medida, y adivina la madera por la foto), o pedirle que no afirme lo que no v
 - **No hay conjunto apartado**: todo se eligió y se reporta sobre los mismos 64 ambientes.
 - **El ground truth es permisivo e incompleto**: con asignación uno a uno hit@1 baja de 0,536 a
   0,519; y el juez encuentra productos que sirven y no están anotados.
-- **Lo que no se midió**: cuánto cambia la lista si se corre dos veces el mismo pedido.
+- **El piso de ruido, medido a la tarde** (T8c): la versión 2 corrida dos veces, con el mismo
+  plan y los mismos candidatos. El que elige cambia 9 de 75 productos; 5 listas salen idénticas
+  (el juez dice empate) y en las otras 6 el juez elige una, la misma en los dos órdenes: 3 a 3.
+  Un ambiente ganado no dice nada solo; se lee la asimetría (5 a 0 entre versiones, 7 a 0
+  contra el azar). Ruido en los puntajes: 0,02 de productos útiles, hasta 0,3 en las notas.
 
 ## 6. Ejercicio 4: versión 1 y versión 2
 
