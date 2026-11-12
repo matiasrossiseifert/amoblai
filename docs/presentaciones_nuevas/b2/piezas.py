@@ -11,7 +11,7 @@ import re
 
 from PIL import Image
 
-from datos import ITEMS, ROOT, esc, f2
+from datos import CATALOGO, K, ROOT, esc, f2
 
 # =============================================================================================
 # Fotos: cada una se embebe una sola vez, como clase CSS con background-image
@@ -68,11 +68,12 @@ def foto(clave, src, w, h, extra="", estilo="", q=80, recorte=None, enc=1.25, mo
 
 
 def prod_cls(pid: str, lado: int = 300) -> str:
-    return IM.reg("p-" + pid, ITEMS[pid]["photos"][0], lado, None, modo="fit", q=80)
+    return IM.reg("p-" + pid, CATALOGO[pid]["photos"][0], lado, None, modo="fit", q=80)
 
 
 def producto(pid: str, w: int, extra="", estilo="") -> str:
-    if pid not in ITEMS:
+    """La foto de un producto del catálogo (IKEA o ABO), entera, sobre blanco."""
+    if pid not in CATALOGO:
         return ""
     return (f'<div class="prod {prod_cls(pid)} {extra}" style="width:{w}px;height:{w}px;padding:{max(2, round(w * .06))}px;'
             f'{estilo}"></div>')
@@ -123,36 +124,38 @@ NODOS = [
     # clave, ícono, nombre, sub1, sub2, col, fila, ancho
     ("catalogo", "catalogo", "Catálogo", "productos con foto", "IKEA y Amazon (ABO)", 0, "i", NW),
     ("descripcion", "descripcion", "Descripción", "un VLM mira cada foto", "y escribe 8 líneas", 1, "i", NW),
-    ("indice", "indice", "Índice", "Qwen3-Embedding", "ChromaDB (HNSW)", 2, "i", NW),
+    ("indice", "indice", "Índice", "Qwen3 en ChromaDB", "+ léxico y por foto", 2, "i", NW),
     ("foto", "foto", "Foto + pedido", "el ambiente vacío", "y el pedido en texto", 0, "1", NW),
-    ("plan", "plan", "Plan", "Claude Opus: piezas,", "medidas y consulta", 1, "1", NW),
-    ("busqueda", "busqueda", "Búsqueda", "filtros duros", "k candidatos por pieza", 2, "1", NW),
+    ("plan", "plan", "Plan", "Opus: las piezas y", "una ficha por pieza", 1, "1", NW),
+    ("busqueda", "busqueda", "Búsqueda", "filtro por kind +", "búsqueda híbrida", 2, "1", NW),
     ("imagen", "imagen", "Imagen", "Nano Banana 2", "edita la foto", 0, "2", NW),
-    ("escena", "escena", "Escena", "foto, productos y", "medidas, para la imagen", 1, "2", NW),
-    ("eleccion", "eleccion", "Elección", "Claude mira las fotos", "y elige uno por pieza", 2, "2", NW),
+    ("escena", "escena", "Escena", "una plantilla arma", "el prompt de la imagen", 1, "2", NW),
+    ("eleccion", "eleccion", "Elección", "Opus mira las fotos", "y arma la lista", 2, "2", NW),
     ("control", "control", "Control", "SIFT: ¿es el mismo", "cuarto?", 0, "3", NW),
     ("salida", "salida", "Lista + imagen", "la lista de compra", "y el ambiente amoblado", 1, "3", COL[2] + NW - COL[1]),
 ]
 POS = {k: (COL[c], FILA[f], w) for k, _i, _n, _a, _b, c, f, w in NODOS}
 
-# Lo que cambia en cada etapa con medidas reales (pasos a futuro): paso en que aparece y las dos líneas
-FUT_SUB = {"foto": (1, "+ escaneo con LiDAR:", "medidas reales del cuarto"),
-           "catalogo": (2, "+ medidas de cada", "producto: su caja a escala"),
-           "escena": (3, "+ cajas 3D a escala,", "ubicadas (a o b)"),
-           "imagen": (4, "llena cada caja:", "tamaño y lugar reales")}
+# Los quince experimentos, por el ranking de la revisión (docs/REVISION.md, sección 4): del 1 al 8,
+# con lámina propia; del 9 al 15, de trámite (su pin va hueco). ETAPA_EXP: la etapa que se enciende
+# en la lámina de cada uno. PIN_NODO: sobre qué etapa va su pin en el mapa; el 4 y el 8 no miden
+# una etapa sino al banco de prueba de la búsqueda (en el mapa van en su caja; en un minimapa,
+# sobre la búsqueda).
+ETAPA_EXP = {1: ["descripcion"], 2: ["plan"], 3: ["busqueda"], 4: ["busqueda"], 5: ["busqueda", "eleccion"],
+             6: ["catalogo"], 7: ["busqueda"], 8: ["busqueda"], 9: ["indice"], 10: ["indice"], 11: ["indice"],
+             12: ["indice"], 13: ["busqueda"], 14: ["busqueda"], 15: ["escena"]}
+TRAMITE = {9, 10, 11, 12, 13, 14, 15}
+BANCO = {4, 8}
+PIN_NODO = {1: "descripcion", 2: "plan", 3: "busqueda", 4: "banco", 5: "eleccion", 6: "catalogo", 7: "busqueda",
+            8: "banco", 9: "indice", 10: "indice", 11: "indice", 12: "indice", 13: "busqueda", 14: "busqueda", 15: "escena"}
 
-# A qué etapa toca cada experimento (para los pines y los focos)
-ETAPA_EXP = {1: ["descripcion"], 2: ["indice"], 3: ["busqueda"], 4: ["indice"], 5: ["indice"], 6: ["indice", "plan"],
-             7: ["eleccion"], 8: ["busqueda", "eleccion"], 9: ["catalogo"], 10: ["catalogo"], 11: ["busqueda"],
-             12: ["escena", "imagen", "control"], 13: ["imagen"]}
 
-
-def _pines_por_nodo(pines):
+def _pines_por_nodo(pines, banco=False):
     por = {}
     for n in pines:
-        k = ETAPA_EXP[n][0] if n not in (8, 12) else {8: "eleccion", 12: "imagen"}[n]
-        if n == 6:
-            k = "indice"
+        k = PIN_NODO[n]
+        if k == "banco" and not banco:
+            k = "busqueda"
         por.setdefault(k, []).append(n)
     return por
 
@@ -162,19 +165,21 @@ FASES = ["catalogo", "descripcion", "indice", "foto", "plan", "busqueda", "elecc
 FASE_N = {k: i for i, k in enumerate(FASES, 1)}
 
 
-def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=(), ruta=False, vistos=(), pines_en=None) -> str:
-    """El esquema completo. pines: números de experimento que se marcan sobre su etapa.
-    pin_paso: dict n -> paso en que aparece el pin. etiquetas_fin: dict clave -> texto (configuración final).
-    on: etapas encendidas de entrada (sin depender de los pasos).
-    ruta: el mapa del recorrido: cada nodo con su número de fase, sin subtítulos; `vistos` son las fases
-    ya recorridas (y las flechas entre ellas quedan marcadas); pines_en: dict nodo -> experimentos."""
+def flujo(pines=(), cls="", pin_paso=None, etiquetas_fin=None, on=(), ruta=False, vistos=(), pines_en=None, banco=None) -> str:
+    """El esquema completo. pines: números de experimento que se marcan sobre su etapa (lleno: con
+    lámina propia; hueco: de trámite). pin_paso: dict n -> paso en que aparece el pin.
+    etiquetas_fin: dict clave -> texto (configuración final). on: etapas encendidas de entrada (sin
+    depender de los pasos). ruta: el mapa del recorrido: cada nodo con su número de fase, sin
+    subtítulos; `vistos` son las fases ya recorridas (y las flechas entre ellas quedan marcadas);
+    pines_en: dict nodo -> experimentos. banco: texto de la caja del banco de prueba de la búsqueda
+    (abajo del esquema, con los pines de los experimentos que lo miden a él)."""
     on = set(on)
     vistos = set(vistos)
     if on:
         cls += " foco"
     if ruta:
         cls += " ruta"
-    o = ['<svg class="flujo ' + cls + '" viewBox="-44 0 1068 868" role="img" aria-label="El flujo de amoblai: el indexing '
+    o = ['<svg class="flujo ' + cls + f'" viewBox="-44 0 1068 {1002 if banco else 868}" role="img" aria-label="El flujo de amoblai: el indexing '
          'corre una vez (catálogo, descripción, índice) y la consulta corre por pedido (foto y pedido, plan, búsqueda, '
          'elección, escena, imagen y control).">']
     # regiones
@@ -208,7 +213,7 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=(),
     o.append(f'<text class="fl-t" x="{x_mid(0) - 48}" y="{FILA["1"] + NH + 50}">la foto</text>')
     o.append(f'<path class="fl fl-d{" hecha" if hecha("eleccion", "salida") else ""}" d="M{x_mid(2)} {FILA["2"] + NH}V{FILA["3"] - 6}" marker-end="url(#pf)"/>')
     o.append(f'<text class="fl-t" x="{x_mid(2) + 12}" y="{FILA["2"] + NH + 50}">la lista</text>')
-    o.append(f'<text class="fl-t" x="{x_mid(2) + 12}" y="{FILA["1"] + NH + 50}">k candidatos</text>')
+    o.append(f'<text class="fl-t" x="{x_mid(2) + 12}" y="{FILA["1"] + NH + 50}">{K} candidatos</text>')
     lx = COL[0] - 18
     o.append(f'<path class="fl{" hecha" if hecha("control", "imagen") else ""}" d="M{COL[0]} {cy("3") + 18}H{lx + 6}Q{lx - 14} {cy("3") + 18} {lx - 14} {cy("3") - 2}'
              f'V{cy("2") + 20}Q{lx - 14} {cy("2")} {lx + 6} {cy("2")}H{COL[0] - 6}" marker-end="url(#pf)"/>')
@@ -229,11 +234,6 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=(),
             continue
         subs = (f'<text class="sub" x="{x + 20}" y="{y + 84}">{a}</text>'
                 + ("" if k in fin else f'<text class="sub" x="{x + 20}" y="{y + 105}">{b}</text>'))
-        if fut and k in FUT_SUB:
-            pa, fa, fb = FUT_SUB[k]
-            subs = (f'<g data-hasta="{pa}">{subs}</g><g class="fut-sub" data-paso="{pa}">'
-                    f'<rect x="{x - 7}" y="{y - 7}" width="{w + 14}" height="{NH + 14}" rx="13"/>'
-                    f'<text x="{x + 20}" y="{y + 84}">{fa}</text><text x="{x + 20}" y="{y + 105}">{fb}</text></g>')
         o.append(f'<g class="nodo{estado}" data-k="{k}"><rect class="caja" x="{x}" y="{y}" width="{w}" height="{NH}" rx="9"/>'
                  f'<use href="#i-{ic_}" class="ico" x="{x + 18}" y="{y + 18}" width="34" height="34"/>'
                  f'<text class="nom" x="{x + 64}" y="{y + 45}">{nom}</text>{subs}</g>')
@@ -244,13 +244,19 @@ def flujo(pines=(), cls="", fut=False, pin_paso=None, etiquetas_fin=None, on=(),
             o.append(f'<g class="cfg" data-k="{k}"><rect x="{x + 8}" y="{y + NH - 16}" width="{w - 16}" height="34" rx="5"/>'
                      f'<text x="{x + w / 2}" y="{y + NH + 7}" text-anchor="middle">{txt}</text></g>')
     # pines de experimentos
-    por_nodo = pines_en if pines_en is not None else _pines_por_nodo(pines)
+    por_nodo = pines_en if pines_en is not None else _pines_por_nodo(pines, banco=bool(banco))
+    if banco:
+        by, bh = 890, 98
+        o.append(f'<g class="banco" data-k="banco"><rect class="reg reg-i" x="0" y="{by}" width="1008" height="{bh}" rx="10"/>'
+                 f'<text class="reg-t" x="20" y="{by + 34}">el instrumento · el banco de prueba de la búsqueda</text>'
+                 f'<text class="sub" x="20" y="{by + 68}">{banco}</text></g>')
+    pos = {**POS, "banco": (0, 890, 1008)}
     for k, ns in por_nodo.items():
-        x, y, w = POS[k]
-        for i, n in enumerate(ns):
+        x, y, w = pos[k]
+        for i, n in enumerate(sorted(ns, reverse=True)):
             px, py = x + w - 24 - i * (48 if ruta else 42), y - (4 if ruta else 0)
             pa = f' data-paso="{pin_paso[n]}"' if pin_paso and n in pin_paso else ""
-            o.append(f'<g class="pin"{pa}><circle cx="{px}" cy="{py}" r="{22 if ruta else 18}"/>'
+            o.append(f'<g class="pin{" hueco" if n in TRAMITE else ""}"{pa}><circle cx="{px}" cy="{py}" r="{22 if ruta else 18}"/>'
                      f'<text x="{px}" y="{py + (9 if ruta else 7)}" text-anchor="middle">{n}</text></g>')
     o.append("</svg>")
     return "".join(o)
@@ -300,9 +306,9 @@ def talon(clave: str, valor: str, texto: str, paso: int | None = None, cls: str 
 
 def etq(pid: str, w: int, extra: str = "", nombre: str | None = None, estilo: str = "") -> str:
     """Etiqueta colgante de producto: foto, número de artículo y nombre."""
-    if pid not in ITEMS:
+    if pid not in CATALOGO:
         return ""
-    nom = nombre if nombre is not None else ITEMS[pid].get("name", "")
+    nom = nombre if nombre is not None else CATALOGO[pid].get("name", "")
     return (f'<div class="etq {extra}" style="width:{w}px;{estilo}">{producto(pid, w - 28)}'
             f'<span class="art">art. {pid}</span><span class="nom">{esc(nom)}</span></div>')
 
@@ -326,9 +332,11 @@ def ranking(r: dict, n: int, w: int, marca: str = "el anotado") -> str:
     return f'<div class="rk-fila">{"".join(out)}</div>'
 
 
-def minimapa(n: int) -> str:
-    """El esquema en chico, sin texto, con la etapa del experimento encendida (arriba a la derecha)."""
-    return f'<div class="minimapa sin-texto" title="la etapa del flujo">{flujo(pines=[n], on=ETAPA_EXP[n], cls="mini")}</div>'
+def minimapa(*ns: int) -> str:
+    """El esquema en chico, sin texto, con la etapa de esos experimentos encendida y sus pines
+    (arriba a la derecha)."""
+    on = [k for n in ns for k in ETAPA_EXP[n]]
+    return f'<div class="minimapa sin-texto" title="la etapa del flujo">{flujo(pines=ns, on=on, cls="mini")}</div>'
 
 
 # =============================================================================================
@@ -337,15 +345,17 @@ def minimapa(n: int) -> str:
 
 def barras(filas, xmax=1.0, ticks=(0, 0.25, 0.5, 0.75, 1.0), paso=1, gana_paso=2, fmt=f2, titulo="", cls="",
            tick_fmt=None) -> str:
-    """Barras horizontales. filas: dicts con letra, et, sub, v, ic, gana (bool), vtxt.
-    Las barras se llenan en `paso` y la elegida se marca en `gana_paso`."""
+    """Barras horizontales. filas: dicts con letra, et, sub, v, ic, gana (bool), vtxt y nota (a la
+    derecha del valor: la diferencia pareada). Las barras se llenan en `paso` y la elegida se marca
+    en `gana_paso`."""
     tf = tick_fmt or (lambda t: "0" if t == 0 else ("1" if t == 1 else fmt(t)))
     ejes = "".join(f'<span style="left:{t / xmax * 100:.2f}%">{tf(t)}</span>' for t in ticks)
     grilla = "".join(f'<i style="left:{t / xmax * 100:.2f}%"></i>' for t in ticks)
-    out = [f'<div class="graf-b {cls}">']
+    con_nota = any(f.get("nota") for f in filas)
+    out = [f'<div class="graf-b {cls}{" con-nota" if con_nota else ""}">']
     if titulo:
         out.append(f'<div class="gb-tit">{titulo}</div>')
-    out.append(f'<div class="gb-fila gb-eje"><span></span><span class="gb-pista">{ejes}</span><span></span></div>')
+    out.append(f'<div class="gb-fila gb-eje"><span></span><span class="gb-pista">{ejes}</span><span></span>{"<span></span>" if con_nota else ""}</div>')
     for f in filas:
         v = f["v"] / xmax * 100
         icx = ""
@@ -358,7 +368,8 @@ def barras(filas, xmax=1.0, ticks=(0, 0.25, 0.5, 0.75, 1.0), paso=1, gana_paso=2
         out.append(f'<div class="gb-fila"{g}><span class="gb-et">{letra}<span>{f["et"]}{sub}</span></span>'
                    f'<span class="gb-pista">{grilla}<b class="gb-lleno" data-paso="{paso}" style="--v:{v:.2f}%"></b>'
                    f'<span class="gb-ics" data-paso="{paso}">{icx}</span></span>'
-                   f'<span class="gb-val" data-paso="{paso}">{f.get("vtxt", fmt(f["v"]))}</span></div>')
+                   f'<span class="gb-val" data-paso="{paso}">{f.get("vtxt", fmt(f["v"]))}</span>'
+                   + (f'<span class="gb-nota" data-paso="{paso}">{f.get("nota") or ""}</span>' if con_nota else "") + '</div>')
     out.append("</div>")
     return "".join(out)
 

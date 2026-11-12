@@ -7,8 +7,8 @@ Concepto: «el flujo y la lista». La columna vertebral es el esquema del sistem
 plan → búsqueda → elección → escena → imagen → control, con el indexing arriba), dibujado en SVG:
 aparece en la portada, se recorre fase por fase en la arquitectura (el mapa que avanza: la fase
 actual encendida y las vistas marcadas, con el prompt real de cada fase y sus versiones; ver
-laminas_recorrido.py y recorrido.py), lleva un pin por experimento y se ilumina en la etapa que
-prueba cada uno. Encima, los objetos de la compra: etiquetas de producto, la lista de
+laminas_recorrido.py y recorrido.py), lleva un pin por experimento (lleno: con lámina propia;
+hueco: de trámite) y se ilumina en la etapa que prueba cada uno. Encima, los objetos de la compra: etiquetas de producto, la lista de
 compra como ticket y, al final de cada experimento, un talón con la línea de configuración que
 deja. Todos los números salen de los archivos de resultados (datos.py). Las fotos van embebidas
 como JPEG y las fuentes (Ubuntu Sans y Ubuntu Sans Mono, variables) recortadas en woff2: la
@@ -29,7 +29,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from datos import OUT, TRAB, esc, mmss  # noqa: E402
-from estilo import CSS  # noqa: E402
+from estilo import CSS, CSS_REV  # noqa: E402
 from estilo_recorrido import CSS as CSS_REC  # noqa: E402
 from piezas import IM, defs_svg  # noqa: E402
 from registro import LAMINAS  # noqa: E402
@@ -187,12 +187,13 @@ def notas_html(s) -> str:
 
 
 def armar() -> int:
-    t = 0
+    t = 0.0
     notas = []
     for s in LAMINAS:
-        s["desde"] = t
-        notas.append({"plan": f"~{mmss(s['seg'])} · desde el minuto {mmss(t)}", "html": notas_html(s)})
-        t += s["seg"]
+        s["desde"] = round(t / 5) * 5
+        notas.append({"plan": f"~{mmss(s['seg'])} · desde el minuto {mmss(s['desde'])}", "html": notas_html(s)})
+        t += s["seg_real"]
+    t = round(t)
     secs = []
     for i, s in enumerate(LAMINAS):
         attrs = f'data-titulo="{html.escape(s["titulo"])}" data-seccion="{html.escape(s["seccion"])}"'
@@ -205,6 +206,7 @@ def armar() -> int:
 <style>{css_fuentes()}</style>
 <style>{CSS}</style>
 <style>{CSS_REC}</style>
+<style>{CSS_REV}</style>
 <style>{IM.style()}</style>
 </head><body>
 {defs_svg()}
@@ -224,25 +226,35 @@ def armar() -> int:
 
 
 def guion(total: int):
+    from laminas import PPM
     n = len(LAMINAS)
     _rec = [i for i, s in enumerate(LAMINAS, 1) if s["id"].startswith("rec-")]
+    _id = {s["id"]: i for i, s in enumerate(LAMINAS, 1)}
+    dichas = sum(s["palabras"] for s in LAMINAS)
+    _palabras = f"{round(dichas, -2):,}".replace(",", ".")
     L = ["# Guion de la presentación (amoblai, versión b2)", "",
-         f"Generado por `build.py` junto con `presentacion.html`: los números salen de los mismos archivos de resultados que las láminas. "
-         f"{n} láminas, unos {round(total / 60)} minutos ({mmss(total)}).", "",
+         f"Generado por `build.py` junto con `presentacion.html`: los números salen de los mismos archivos de resultados que las láminas, "
+         f"y los extractos de los prompts, de `src/amoblai/prompts/`. {n} láminas, unos {round(total / 60)} minutos ({mmss(total)}); "
+         f"son unas {_palabras} palabras, contadas a {PPM} por minuto.", "",
          "**Cómo se pasa.** Flecha derecha, espacio o clic: avanza un paso; flecha izquierda: vuelve. F: pantalla completa; "
          "O: índice con miniaturas; N: estas notas abajo de la lámina; P: ventana del presentador (lámina actual, la siguiente, "
          "notas y reloj, sincronizadas); B: pantalla negra. `presentacion.html?all#/12` muestra la lámina 12 con todos sus pasos; "
          "`#/12.2` va al paso 2.", "",
-         "**Los experimentos** tienen dos láminas. La oscura es la pregunta: se ve el porqué y el esquema del flujo con la etapa "
-         "que se prueba encendida; con la flecha aparece el experimento (las variantes). **Se cuentan esas dos cosas antes de pasar.** "
-         "La clara es el resultado: arranca con las variantes y las barras vacías; una flecha muestra los resultados y otra la "
-         "decisión, que se imprime como un talón abajo (la línea de configuración que deja el experimento). Los experimentos 4 y 5 "
-         "van en una sola lámina, y el 13 tiene una lámina más en el medio, con sus prompts.", "",
-         f"**El recorrido** (láminas {_rec[0]} a {_rec[-1]}) sigue un pedido real, el rincón de lectura, por las once fases del flujo, con el "
-         "mapa arriba a la derecha: la fase actual encendida, las vistas con ✓ y los números de los experimentos que la decidieron. "
-         "En cada fase: qué entra y qué sale, el prompt tal cual se manda (extracto, en inglés, con lo importante resaltado) y "
-         "sus versiones. Ahí no se dan resultados: los números van en cada experimento.", "",
-         "En el texto, **→** marca dónde se avanza un paso.", ""]
+         f"**El recorrido** (láminas {_rec[0]} a {_rec[-1]}) sigue un pedido real con la configuración final, un loft de estilo "
+         "industrial sobre una foto pública, por las once fases del flujo, con el mapa arriba a la derecha: la fase actual "
+         "encendida, las vistas con ✓ y el pin de los experimentos que le hicieron una pregunta a esa fase (lleno: con lámina "
+         "propia; hueco: de trámite). En cada fase: qué entra y qué sale, y el prompt tal cual se manda (extracto, en inglés, con "
+         "lo importante resaltado) con sus versiones. Ahí no se dan resultados: los números van en cada experimento.", "",
+         f"**Los experimentos** van por su ranking (el mapa, en la lámina {_id['hiper']}). Los seis principales tienen dos "
+         "láminas: la oscura es la pregunta, con el porqué y el esquema del flujo con la etapa encendida; con la flecha aparece "
+         "qué se comparó. **Se cuentan esas dos cosas antes de pasar.** La clara es el resultado: una flecha muestra los "
+         "resultados, con la diferencia pareada, y otra la decisión, que se imprime como un talón abajo. Los experimentos 4 y 8, "
+         f"que miden al banco de prueba, van en una sola lámina; el camino incremental (lámina {_id['camino']}) resume los tres "
+         f"primeros; y los siete de trámite van juntos en las láminas {_id['tram1']} y {_id['tram2']}.", "",
+         f"**El Ejercicio 4** son las láminas {_id['ej4-v1']} a {_id['ej4-res']}: la versión 1 y su limitación, el cambio con la "
+         "configuración antes y después, y los resultados en las dos versiones.", "",
+         "En el texto, **→** marca dónde se avanza un paso. Si falta tiempo, se pueden pasar rápido las dos láminas de trámite y "
+         "la de costos (las marcadas con *).", ""]
     # reparto en tres partes de tiempo parecido
     cortes = []
     for o in (total / 3, 2 * total / 3):
@@ -250,11 +262,12 @@ def guion(total: int):
     partes = [(0, cortes[0]), (cortes[0], cortes[1]), (cortes[1], n)]
     L.append("**Reparto sugerido** (a definir entre los tres):")
     for k, (a, b) in enumerate(partes, 1):
-        dur = sum(s["seg"] for s in LAMINAS[a:b])
+        dur = round(sum(s["seg_real"] for s in LAMINAS[a:b]) / 5) * 5
         L.append(f"- Parte {k}: láminas {a + 1} a {b} ({LAMINAS[a]['titulo']} → {LAMINAS[b - 1]['titulo']}), unos {mmss(dur)}.")
     L.append("")
+    rapidas = ("tram1", "tram2", "costo")
     for i, s in enumerate(LAMINAS, 1):
-        L.append(f"## {i}. {re.sub('<[^>]+>', '', s['titulo'])}")
+        L.append(f"## {i}. {re.sub('<[^>]+>', '', s['titulo'])}{' *' if s['id'] in rapidas else ''}")
         L.append(f"*{s['seccion'] or 'Portada'} · ~{mmss(s['seg'])} · desde el minuto {mmss(s['desde'])}*")
         L.append("")
         if isinstance(s["notas"], list):
@@ -270,4 +283,8 @@ if __name__ == "__main__":
     total = armar()
     guion(total)
     size = (OUT / "presentacion.html").stat().st_size
-    print(f"{len(LAMINAS)} láminas · {mmss(total)} · {size / 1e6:.2f} MB (fotos {IM.bytes / 1e6:.2f} MB)")
+    from laminas import PPM
+    dichas = sum(s["palabras"] for s in LAMINAS)
+    print(f"{len(LAMINAS)} láminas · {mmss(total)} · {dichas} palabras a {PPM} por minuto · {size / 1e6:.2f} MB (fotos {IM.bytes / 1e6:.2f} MB)")
+    if not 30 * 60 <= total <= 31 * 60:
+        print(f"  ojo: el guion dura {mmss(total)}; tiene que quedar entre 30:00 y 31:00")

@@ -1,8 +1,10 @@
 """Las piezas del recorrido por las fases: el mapa que avanza, los extractos de los prompts (se leen
 de src/amoblai/prompts tal cual se mandan: si un trozo no está en el archivo, el build falla), la
-historia de versiones, y dos cálculos locales que se guardan en _trabajo/: los puntos SIFT entre la
-foto vacía y la imagen generada (el mismo código que el control del flujo) y el vector de Qwen3 de
-un producto, leído de ChromaDB."""
+historia de versiones, y dos cálculos locales que se guardan en _trabajo/ (sift_*.json y
+vector_*.json, para no abrir ChromaDB ni correr SIFT en cada build): los puntos SIFT entre la foto
+vacía y la imagen generada (el mismo código que el control del flujo) y el vector de Qwen3 de un
+producto, leído de una copia de ChromaDB (abrirlo toca su sqlite, que está en git). Si cambia la
+corrida de ejemplo se regeneran solos, sin modificar datos/cache/."""
 
 from __future__ import annotations
 
@@ -12,7 +14,7 @@ import re
 import yaml
 
 from datos import ROOT, TRAB, esc
-from piezas import FASES, flujo
+from piezas import FASES, TRAMITE, flujo
 
 PROMPTS = ROOT / "src" / "amoblai" / "prompts"
 
@@ -81,9 +83,12 @@ def versiones(items, cls: str = "") -> str:
 
 
 def exps(items, cls: str = "") -> str:
-    """Los experimentos que decidieron algo de la fase: (número, decisión, detalle)."""
-    filas = "".join(f'<li><em{" class=no" if n == "—" else ""}>{n}</em><div><b>{t}</b>{f"<span>{d}</span>" if d else ""}</div></li>'
-                    for n, t, d in items)
+    """Los experimentos que le hicieron una pregunta a la fase: (número, qué, detalle). Los de
+    trámite van con el pin hueco; «—»: sin experimento."""
+    def em(n):
+        c = "no" if n == "—" else ("hueco" if n in TRAMITE else "")
+        return f'<em{f" class={c}" if c else ""}>{n}</em>'
+    filas = "".join(f'<li>{em(n)}<div><b>{t}</b>{f"<span>{d}</span>" if d else ""}</div></li>' for n, t, d in items)
     return f'<ul class="rx {cls}">{filas}</ul>'
 
 
@@ -133,18 +138,27 @@ def sift_pares(antes, despues, clave: str) -> dict:
 
 def vector_chroma(pid: str, n: int = 64) -> dict:
     """El vector (las primeras n componentes) y la metadata de un producto, tal como están en el
-    ChromaDB del flujo (catálogo todos, Qwen3)."""
+    ChromaDB del flujo (catálogo todos, Qwen3). Se lee de una copia del índice: abrir ChromaDB toca
+    su sqlite, y datos/cache/ está en git (y otra corrida puede estar usándolo)."""
     cache = TRAB / f"vector_{pid}.json"
     if cache.exists():
         return json.loads(cache.read_text())
+    import shutil
+
     import chromadb
 
-    path = ROOT / "datos" / "cache" / "rag" / "index" / "todos-written_todos-qwen3" / "chroma"
-    c = chromadb.PersistentClient(path=str(path), settings=chromadb.Settings(anonymized_telemetry=False))
-    col = c.get_collection("products")
-    r = col.get(ids=[pid], include=["embeddings", "metadatas"])
-    v = [float(x) for x in r["embeddings"][0]]
-    res = {"dim": len(v), "norma": round(sum(x * x for x in v) ** .5, 4), "v": [round(x, 5) for x in v[:n]],
-           "metadata": r["metadatas"][0], "hnsw": col.configuration_json.get("hnsw", {}) if hasattr(col, "configuration_json") else {}}
+    src = ROOT / "datos" / "cache" / "rag" / "index" / "todos-written_todos-qwen3" / "chroma"
+    tmp = TRAB / "chroma_tmp"
+    shutil.rmtree(tmp, ignore_errors=True)
+    shutil.copytree(src, tmp)
+    try:
+        c = chromadb.PersistentClient(path=str(tmp), settings=chromadb.Settings(anonymized_telemetry=False))
+        col = c.get_collection("products")
+        r = col.get(ids=[pid], include=["embeddings", "metadatas"])
+        v = [float(x) for x in r["embeddings"][0]]
+        res = {"dim": len(v), "norma": round(sum(x * x for x in v) ** .5, 4), "v": [round(x, 5) for x in v[:n]],
+               "metadata": r["metadatas"][0]}
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
     cache.write_text(json.dumps(res))
     return res
