@@ -83,3 +83,104 @@ def check_spend(ledger: Ledger, estimate_usd: float, *, paid: bool, allow_paid: 
             "Paid calls need approval, then --set budget.allow_paid=true."
         )
     ledger.check(estimate_usd)
+
+
+# What each paid step is for, in the spend report (longest prefix wins).
+PURPOSES = {
+    "furnish.plan": "El flujo: plan (lee la foto y el pedido, escribe las consultas)",
+    "furnish.choose": "El flujo: elección de la lista",
+    "furnish.scene": "El flujo: prompt de la imagen escrito por el LLM (configuración anterior)",
+    "furnish.generate": "El flujo: imagen del ambiente amoblado",
+    "catalog.describe": "Catálogo: descripciones de los productos de ABO",
+    "rag.embed": "Índice: embeddings por API",
+    "eval.rerank": "Evaluación: un VLM ordena el top-10 (ground truth de IKEA)",
+    "eval.juez_listas": "Evaluación de punta a punta: juez que compara dos listas",
+    "eval.juez_fidelidad": "Evaluación del generador: faithfulness",
+    "eval.juez_pedidos": "Evaluación del generador: answer relevance",
+    "eval.replica": "Réplica de un ambiente real (ubicación de los muebles)",
+}
+
+
+def purpose(step: str) -> str:
+    for prefix in sorted(PURPOSES, key=len, reverse=True):
+        if step.startswith(prefix):
+            return PURPOSES[prefix]
+    return step
+
+
+def spend_report(path: str | Path, caps: dict[str, float]) -> str:
+    """The ledger as a Markdown report: the total per account against its cap, per purpose, and
+    per day and purpose (what to quote in a presentation or an expense report)."""
+    rows = [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+
+    def usd(x: float) -> str:
+        return f"{x:.2f}".replace(".", ",")
+
+    def account(r: dict) -> str:
+        return r.get("pool") or r.get("provider") or "?"
+
+    md = [
+        "# Gastos del proyecto",
+        "",
+        f"Generado desde `{path}` (una línea por llamada paga, con su fecha, paso, modelo y "
+        "costo) con `uv run amoblai gastos --md`. No lo edites a mano: volvé a generarlo.",
+        "",
+        "## Por cuenta",
+        "",
+        "| Cuenta | Llamadas | Gastado (US$) | Tope en la config (US$) |",
+        "|---|---|---|---|",
+    ]
+    accounts = sorted({account(r) for r in rows} | set(caps))
+    for a in accounts:
+        mine = [r for r in rows if account(r) == a]
+        cap = usd(caps[a]) if a in caps else "—"
+        md.append(f"| {a} | {len(mine)} | {usd(sum(r['cost_usd'] for r in mine))} | {cap} |")
+    md += [f"| **total** | {len(rows)} | **{usd(sum(r['cost_usd'] for r in rows))}** | |", ""]
+
+    md += [
+        "## Por uso",
+        "",
+        "| Para qué | Cuenta | Modelo | Llamadas | US$ | US$ por llamada |",
+        "|---|---|---|---|---|---|",
+    ]
+    by: dict[tuple, list[float]] = {}
+    for r in rows:
+        by.setdefault((purpose(r["step"]), account(r), r.get("model") or ""), []).append(
+            r["cost_usd"]
+        )
+    for (what, a, model), costs in sorted(by.items(), key=lambda kv: -sum(kv[1])):
+        mean = sum(costs) / len(costs)
+        md.append(
+            f"| {what} | {a} | {model} | {len(costs)} | {usd(sum(costs))} | "
+            f"{f'{mean:.3f}'.replace('.', ',')} |"
+        )
+    md += [
+        "",
+        "## Por día",
+        "",
+        "| Día | Para qué | Cuenta | Llamadas | US$ |",
+        "|---|---|---|---|---|",
+    ]
+    daily: dict[tuple, list[float]] = {}
+    for r in rows:
+        daily.setdefault((r["time"][:10], purpose(r["step"]), account(r)), []).append(r["cost_usd"])
+    day_total: dict[str, float] = {}
+    for (day, what, a), costs in sorted(daily.items()):
+        md.append(f"| {day} | {what} | {a} | {len(costs)} | {usd(sum(costs))} |")
+        day_total[day] = day_total.get(day, 0.0) + sum(costs)
+    md += ["", "| Día | Total (US$) |", "|---|---|"]
+    md += [f"| {day} | {usd(v)} |" for day, v in sorted(day_total.items())]
+    md += [
+        "",
+        "## Lo que no está en el registro",
+        "",
+        "- El trabajo hecho con subagentes de Claude Code (las descripciones de los productos de "
+        "IKEA, las consultas de evaluación, los jueces de relevancia graduada): va por la "
+        "suscripción, no por la API.",
+        "- Una imagen de fal del 2026-11-11 (US$0,08) que se pagó y no se guardó porque se llenó "
+        "el disco.",
+        "- Los modelos locales (embeddings, SigLIP 2, detectores, rerankers): corren en CPU, "
+        "gratis.",
+        "",
+    ]
+    return "\n".join(md)
