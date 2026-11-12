@@ -109,6 +109,35 @@ def test_the_core_does_not_import_the_evaluation_or_the_cli():
                     ), f"{pkg}/{f.name}: {node.module}"
 
 
+def test_hybrid_search_fuses_other_scorers_and_keeps_the_filters(tmp_path, monkeypatch):
+    from amoblai.rag import search as search_module
+
+    cfg = cfg_for(tmp_path)
+    build_index(cfg, log=lambda _: None)
+    index = open_index(cfg)
+    dense = [h.id for h in search(index, "an oak chair", Filters(categories=["chair"]), cfg)]
+    cfg.rag.hybrid = ["bm25"]  # lexical + dense: the same two chairs, and nothing the filter stops
+    hits = search(index, "an oak chair", Filters(categories=["chair"]), cfg)
+    assert [h.id for h in hits] == dense == ["chair-oak", "chair-black"]
+    assert hits[0].score > hits[1].score
+
+    # each scorer is standardized, so it counts as one vote however large its numbers are:
+    # three scorers for the black chair outweigh the two (dense, lexical) for the oak one
+    def photo_says_black(index, name, query, cfg):
+        if name == "bm25":
+            return search_module.BM25([it["description"] for it in index.items]).scores([query])[0]
+        return np.array([100.0 if it["id"] == "chair-black" else 0.0 for it in index.items])
+
+    monkeypatch.setattr(search_module, "other_scores", photo_says_black)
+    cfg.rag.hybrid = ["bm25", "siglip2", "siglip2", "siglip2"]
+    hits = search(index, "an oak chair", Filters(categories=["chair"]), cfg)
+    assert [h.id for h in hits] == ["chair-black", "chair-oak"]
+    cfg.rag.hybrid = ["nothing"]
+    monkeypatch.undo()
+    with pytest.raises(ValueError, match=r"rag\.hybrid"):
+        search(index, "an oak chair", Filters(), cfg)
+
+
 def test_search_applies_the_filters_then_ranks(tmp_path):
     cfg = cfg_for(tmp_path)
     build_index(cfg, log=lambda _: None)
