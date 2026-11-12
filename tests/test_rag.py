@@ -466,6 +466,9 @@ def test_openai_embedder_keeps_the_order_normalizes_and_can_go_through_fal():
 def test_parse_json_with_or_without_a_fence():
     assert parse_json('```json\n{"a": 1}\n```') == {"a": 1}
     assert parse_json('Here: {"a": {"b": 2}} done') == {"a": {"b": 2}}
+    # the first object, whatever comes after it (a note with braces, a second block)
+    assert parse_json('```json\n{"a": 1}\n```\nNote: {same}\n```json\n{"a": 2}\n```') == {"a": 1}
+    assert parse_json('{"why": "a } inside a string"} {"b": 2}') == {"why": "a } inside a string"}
     with pytest.raises(ProviderError):
         parse_json("no json here")
 

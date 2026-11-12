@@ -18,7 +18,6 @@ from __future__ import annotations
 import base64
 import io
 import json
-import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -88,13 +87,18 @@ def text_block(text: str) -> dict:
 
 
 def parse_json(text: str) -> dict:
-    """The JSON object in an answer, with or without a ```json fence around it."""
-    m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", text, re.S)
-    raw = m.group(1) if m else text[text.find("{") : text.rfind("}") + 1]
+    """The JSON object in an answer: the first one, with or without a ```json fence around it
+    and whatever the model wrote before or after (a note, a second block)."""
+    start = text.find("{")
     try:
-        return json.loads(raw)
+        if start < 0:
+            raise json.JSONDecodeError("no JSON object", text, 0)
+        data, _ = json.JSONDecoder().raw_decode(text[start:])
     except json.JSONDecodeError as e:
         raise ProviderError(f"the answer is not the JSON asked for: {e}: {text[:300]!r}") from e
+    if not isinstance(data, dict):
+        raise ProviderError(f"the answer is not a JSON object: {text[:300]!r}")
+    return data
 
 
 def _token_cost(rules: dict, tokens_in: int, tokens_out: int) -> float:
