@@ -25,10 +25,19 @@ rag:
   # `exact` recorre todos los vectores con numpy: es la línea de base de la ablación.
   vector_store: chroma
   hnsw: {ef_search: 100, max_neighbors: 16}
+  # Búsqueda híbrida: otros buscadores que se fusionan con el coseno del embedder (z-score, el
+  # promedio). [] es la búsqueda densa sola (la versión 1). Medido en la ablación hibrido.yaml
+  # (docs/EXPERIMENTOS.md, T6): [bm25, siglip2] suma la búsqueda léxica y la foto del producto.
+  hybrid: []
+  fusion: sum
   embedders:
     hashing: {kind: hashing, dim: 1024}                                   # gratis, sin modelo
     bge: {kind: local, model: BAAI/bge-base-en-v1.5, pooling: cls}        # MIT, local
     qwen3: {kind: local, model: Qwen/Qwen3-Embedding-0.6B, pooling: last} # Apache-2.0, local
+    # Modelos de imagen y texto (rag/hybrid.py): la consulta en una frase contra la foto del
+    # producto, sin descripción. Locales y gratis. Se usan en la ablación hibrido.yaml y en rag.hybrid.
+    siglip2: {kind: image_text, model: google/siglip2-base-patch16-224, max_length: 64}
+    clip: {kind: image_text, model: openai/clip-vit-base-patch32, max_length: 77}
     openai:                                                               # pago: no usar sin permiso
       kind: openai_embeddings
       model: text-embedding-3-large
