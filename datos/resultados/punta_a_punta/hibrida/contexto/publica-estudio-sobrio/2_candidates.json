@@ -1,0 +1,2589 @@
+{
+  "pieces": [
+    {
+      "piece": "a dark wood desk centered under the small window on the right wall",
+      "spec": {
+        "piece": "a dark wood desk centered under the small window on the right wall",
+        "why": "the client asked for a dark wood desk facing the window, and the right wall's small window frames the work area with daylight, matching the dark floor in a sober modern line",
+        "kinds": [
+          "desk"
+        ],
+        "max_width_cm": 140,
+        "max_depth_cm": 70,
+        "max_height_cm": null,
+        "query": "Type: desk, dark wood writing desk\nUse: working from home; home office\nStyle: modern, minimalist, contemporary\nMaterials: dark walnut or dark stained wood, black metal\nColors: dark walnut brown, black\nShape: rectangular top, slim black metal legs or wood legs, clean lines, optional slim drawer, medium visual weight\nFeel: sober, focused, refined\nGoes with: dark oak floor, white walls, black and gray accents; modern home office"
+      },
+      "candidates": [
+        {
+          "id": "102.447.43",
+          "name": "MICKE",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 105.0,
+            "depth": 50.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.447.43.jpg"
+          ],
+          "description": "Type: compact desk with drawers and cabinet\nUse: working, studying, a laptop setup; home office, bedroom, study corner\nStyle: modern, minimalist, contemporary\nMaterials: wood-effect foil-finished board, steel side leg, cable outlet in the top\nColors: dark black-brown wood grain, black metal\nShape: rectangular top over a wide drawer, a side storage column with a small drawer and a door, a slim U-shaped metal leg on the other end, compact, medium weight\nFeel: tidy, practical, sober, functional\nGoes with: black office chairs, white walls, dark wood, grey accents; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "191.289.61",
+          "name": "PHL",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 96.0,
+            "depth": 58.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/191.289.61.jpg"
+          ],
+          "description": "Type: white desk with shelf hutch\nUse: homework, drawing, studying; children's room, bedroom, study\nStyle: Scandinavian, minimalist, modern\nMaterials: white painted steel legs, white laminated top and hutch\nColors: white\nShape: rectangular top on four square legs with side stretchers and height-adjustment slots, a low open hutch with a shelf and a top compartment set on the back half, simple and light\nFeel: bright, tidy, simple, cheerful\nGoes with: colorful chairs, light wood, pastel accents, white walls; Scandinavian children's rooms or study corners\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "302.990.70",
+          "name": "LISABO",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 118.0,
+            "depth": 45.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.990.70.jpg"
+          ],
+          "description": "Type: wooden desk with one drawer\nUse: working at a laptop, writing; home office, living room, bedroom\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: ash veneer top, solid birch legs, clear lacquer\nColors: light natural ash, pale blond wood\nShape: thin rectangular top with softly angled bevelled edges, a small drawer with a round finger hole, four round tapered splayed legs, open, slim and light\nFeel: airy, warm, calm, crafted\nGoes with: white walls, black or white chairs, linen, green plants; Scandinavian, Japandi or mid-century rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "302.994.85",
+          "name": "KNOTTEN",
+          "category": "desk",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.994.85.jpg"
+          ],
+          "description": "Type: compact standing desk with drawers\nUse: working or writing while standing, a laptop station; home office, hallway, bedroom\nStyle: Scandinavian, minimalist, Japandi\nMaterials: white-stained birch veneer, solid birch legs, slatted shelf\nColors: pale whitewashed birch, light natural wood\nShape: tall narrow stand with a box-like top holding an open cubby and two small drawers with finger holes, four round splayed legs, a middle shelf and a slatted bottom shelf, slim and light\nFeel: airy, light, practical, calm\nGoes with: white walls, light wood floors, linen, black lamps; Scandinavian or Japandi small spaces\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "602.457.21",
+          "name": "HEMNES",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 155.0,
+            "depth": 65.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.457.21.jpg"
+          ],
+          "description": "Type: double-pedestal wooden desk\nUse: working, paperwork, a computer setup; home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: solid pine with a black-brown stain, black knobs, cable outlet in the top\nColors: dark black-brown, visible wood grain\nShape: wide rectangular top over a cupboard with a framed panel door on one side and two deep drawers on the other, square straight legs, open kneehole, solid and substantial\nFeel: sturdy, studious, warm, timeless\nGoes with: leather chairs, brass lamps, cream walls, dark wood floors; traditional, classic or farmhouse home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "602.610.37",
+          "name": "ARKELSTORP",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.610.37.jpg"
+          ],
+          "description": "Type: two-tone wooden desk with drawers\nUse: working, writing; home office, study, bedroom, living room\nStyle: farmhouse, rustic, traditional\nMaterials: solid pine top in a clear natural finish, black stained solid pine base, round black knobs\nColors: light warm pine, black\nShape: wide rectangular top with a rounded edge, two stacked drawers on one side, black apron, four tall slim tapered legs, open, medium weight\nFeel: warm, rustic, honest, inviting\nGoes with: black windsor chairs, white walls, warm wood, wrought iron; farmhouse, rustic or classic home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "691.625.99",
+          "name": "KULLABERG",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 110.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/691.625.99.jpg"
+          ],
+          "description": "Type: industrial pine desk on pipe legs\nUse: working, crafts, a computer setup; home office, studio, living room\nStyle: industrial, rustic, farmhouse\nMaterials: solid pine top with knots, black powder-coated steel tube frame\nColors: light natural pine, black\nShape: thick rectangular plank top on four pipe legs with round feet, a large X cross brace and low stretchers, plumbing-joint details, open and sturdy\nFeel: rugged, warm, workmanlike, casual\nGoes with: black metal, brick walls, leather, raw wood; industrial lofts, rustic or farmhouse workspaces\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "702.453.39",
+          "name": "BEST BURS",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 40.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.453.39.jpg"
+          ],
+          "description": "Type: high-gloss desk with two drawers\nUse: working at a laptop, studying, a dressing table; home office, bedroom, living room\nStyle: modern, minimalist, contemporary\nMaterials: high-gloss white lacquered board, white steel legs\nColors: glossy bright white\nShape: long narrow shallow top, two wide flush drawers under the top, slim rectangular U-shaped metal legs at each end, sleek, light and open\nFeel: sleek, bright, clean, crisp\nGoes with: grey or black chairs, chrome, white walls, colorful accents; modern, minimalist or contemporary rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "703.023.01",
+          "name": "BRUSALI",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 90.0,
+            "depth": 52.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.023.01.jpg"
+          ],
+          "description": "Type: white desk with open shelves\nUse: studying, working, a laptop corner; home office, bedroom, study\nStyle: farmhouse, traditional, Scandinavian\nMaterials: white stained wood-grain foil board, grooved legs\nColors: white, faint wood grain\nShape: rectangular top with a slight overhang, a solid side panel on one end and a three-cubby open shelf unit on the other, fluted corner legs, rear stretcher, compact\nFeel: homey, bright, tidy, gentle\nGoes with: white or light wood chairs, pastel tones, linen; farmhouse, cottage or Scandinavian bedrooms and studies\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "802.130.74",
+          "name": "MICKE",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 105.0,
+            "depth": 50.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.130.74.jpg"
+          ],
+          "description": "Type: compact white desk with cabinet\nUse: working, studying, a laptop setup; home office, bedroom, study corner\nStyle: minimalist, Scandinavian, modern\nMaterials: white foil-finished board, white steel side leg, cable outlet in the top\nColors: bright white\nShape: rectangular top over a wide drawer, a side storage column with a small drawer and a door, a slim U-shaped metal leg on the other end, compact, light visual weight\nFeel: clean, bright, practical, simple\nGoes with: white or light wood chairs, pale walls, colorful accessories; Scandinavian, minimalist or modern home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "802.694.19",
+          "name": "LIATORP",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 145.0,
+            "depth": 65.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.694.19.jpg"
+          ],
+          "description": "Type: grey double-pedestal desk with doors\nUse: working, paperwork, a computer setup; home office, study, living room\nStyle: traditional, classic, farmhouse\nMaterials: grey painted wood-based board, black metal knobs\nColors: medium warm grey, black\nShape: wide rectangular top with a moulded edge, a center drawer, two cupboards with raised panel doors on shaped plinth bases, kneehole between, solid and substantial\nFeel: elegant, stately, calm, orderly\nGoes with: white walls, crystal or brass lamps, cream and blue textiles; traditional, classic or Gustavian rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "902.607.10",
+          "name": "ALEX",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 131.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.607.10.jpg"
+          ],
+          "description": "Type: grey desk with two drawers\nUse: working, studying, writing; home office, study, bedroom\nStyle: minimalist, modern, Scandinavian\nMaterials: painted fiberboard top and drawer box in a matte finish, grey powder-coated steel legs and frame\nColors: dark grey, charcoal grey steel\nShape: rectangular thick top over a shallow apron with two wide drawers and cut-out finger pulls, cable slot at the back, slim straight metal legs joined by low side and back rails, light and open\nFeel: tidy, calm, practical, understated\nGoes with: grey or black task chairs, white walls, light wood floors; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "902.782.77",
+          "name": "LILLSEN",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 102.0,
+            "depth": 49.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.782.77.jpg"
+          ],
+          "description": "Type: bamboo desk with three drawers\nUse: working, writing, studying; home office, study, bedroom, living room corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: solid bamboo top and drawer fronts, white powder-coated steel legs\nColors: warm golden bamboo, white\nShape: slim box-like rectangular top with a row of three shallow drawers and small wooden knobs, thin splayed legs joined by a low rail, light and airy, compact\nFeel: warm, light, natural, fresh\nGoes with: white walls, light wood floors, green plants, white or wood chairs; Scandinavian or Japandi home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "091.195.18",
+          "name": "KLIMPEN,NIPEN",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/091.195.18.jpg"
+          ],
+          "description": "Type: desk with drawer pedestal\nUse: working, studying, writing; home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: painted wood and fiberboard in white, metal label-holder handles\nColors: white, silver\nShape: rectangular top, four-drawer pedestal on one side, two slender turned legs on the other, label-frame pulls, asymmetric and light\nFeel: neat, charming, bright, practical\nGoes with: white walls, light wood floors, pastel or grey accents; classic, farmhouse or cottage home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "191.197.25",
+          "name": "HISSMON,KRILLE",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/191.197.25.jpg"
+          ],
+          "description": "Type: kidney-shaped table on casters\nUse: working, studying, crafts, play; home office, kids room, study\nStyle: retro, modern, contemporary\nMaterials: glossy lacquered top, white metal wire legs, rolling casters\nColors: bright red, white, grey\nShape: curved kidney-shaped top, thin edge, slim double-wire legs, four casters, mobile and light\nFeel: playful, bold, cheerful, energetic\nGoes with: white walls, light wood floors, black or grey accents, colorful chairs; retro, modern or playful kids spaces\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "290.007.16",
+          "name": "LINNMON,LERBERG",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/290.007.16.jpg"
+          ],
+          "description": "Type: rectangular table on trestle legs\nUse: working at a desk, crafts, casual dining; home office, study, kids room, kitchen\nStyle: industrial, minimalist, contemporary\nMaterials: white laminated top, dark grey powder-coated steel trestles\nColors: white, dark grey\nShape: thin flat rectangular top, two crossed X-shaped trestle legs with a footbar on each, open and light, simple workbench look\nFeel: practical, crisp, airy, functional\nGoes with: white walls, grey or black accents, office chairs or simple wooden chairs; modern home offices, studios or student rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "290.047.76",
+          "name": "TORNLIDEN,ADILS",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 150.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/290.047.76.jpg"
+          ],
+          "description": "Type: rectangular table on slim round legs\nUse: working at a desk, casual dining; home office, study, kitchen, kids room\nStyle: Scandinavian, contemporary, minimalist\nMaterials: glued solid pine strips in varied tones, white powder-coated steel legs\nColors: light warm pine with orange stripes, white\nShape: thin flat rectangular top, four slender round legs set inside the corners, open underneath, light and airy\nFeel: cheerful, fresh, simple, practical\nGoes with: white chairs, light wood floors, bright accents; Scandinavian home offices, kitchens or casual dining corners\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "299.321.81",
+          "name": "LINNMON,ADILS",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 100.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/299.321.81.jpg"
+          ],
+          "description": "Type: compact rectangular table on round legs\nUse: working at a desk, homework, crafts; home office, kids room, study, small kitchen\nStyle: contemporary, minimalist, retro\nMaterials: white laminated top, blue powder-coated steel legs\nColors: white, bright blue\nShape: thin flat rectangular top, four slender round tubular legs set at the corners, open underneath, compact, light visual weight\nFeel: playful, fresh, simple, bright\nGoes with: white walls, colorful accents, plastic or metal chairs; kids rooms, student rooms or modern home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "691.335.97",
+          "name": "LINNMON,ADILS",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 100.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/691.335.97.jpg"
+          ],
+          "description": "Type: simple white table on round legs\nUse: working at a desk, casual dining, crafts; home office, kids' room, small kitchen\nStyle: minimalist, Scandinavian, contemporary\nMaterials: white laminated board top, white painted steel tube legs\nColors: white, all-white\nShape: flat rectangular slab top, four thin cylindrical legs set at the corners, light and open, compact\nFeel: basic, bright, practical, airy\nGoes with: white or pastel walls, light wood, colorful office chairs; student rooms, minimalist home offices and small apartments\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "899.309.28",
+          "name": "LINNMON,NIPEN",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 150.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/899.309.28.jpg"
+          ],
+          "description": "Type: white table with turned legs\nUse: working at a desk, casual dining; home office, bedroom, small kitchen\nStyle: classic, traditional, contemporary\nMaterials: white laminated board top, white turned legs\nColors: white, all-white\nShape: flat thin rectangular slab top, four slender spindle-turned legs with bulb details and tapered feet, light and open\nFeel: bright, playful, light, elegant\nGoes with: pastel walls, white or painted chairs, gold accents; feminine home offices, classic bedrooms and small apartments\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B07QC84LRJ",
+          "name": "Amazon Brand \u2013 Rivet Industrial Desk Table, 51.18\"W, Espresso",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 130.0,
+            "depth": 60.0,
+            "height": 78.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC84LRJ.jpg"
+          ],
+          "description": "Type: wooden writing desk with drawers\nUse: working at a desk, writing; home office, bedroom, living room\nStyle: mid-century modern, rustic, Scandinavian\nMaterials: solid wood in a dark espresso stain, visible grain\nColors: dark brown espresso, cool greyish brown\nShape: rectangular top with softly bevelled edge, two slim apron drawers, four round tapered splayed legs, light and open\nFeel: calm, grounded, understated\nGoes with: cream or white walls, brass lamps, woven textiles; mid-century or Japandi home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B0836YQ7QX",
+          "name": "Amazon Brand \u2013 Ravenna Home Solid Pine Writing Desk, 53.25\"W, Antique Espresso",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 135.3,
+            "depth": 57.4,
+            "height": 75.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0836YQ7QX.jpg"
+          ],
+          "description": "Type: pedestal writing desk\nUse: working at a desk, storing files; home office, study\nStyle: farmhouse, industrial, rustic\nMaterials: solid pine in an antique stain, black metal corner brackets and X-brace, metal pulls\nColors: warm reddish brown, black\nShape: rectangular top, left pedestal with drawer and file drawer, center drawer, open right side with metal X-brace, block legs, solid and substantial\nFeel: warm, practical, traditional\nGoes with: dark metals, leather chairs, beige walls; farmhouse or rustic studies\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B082DFP8N8",
+          "name": "Amazon Brand \u2013 Rivet Avery Industrial Home Office Writing Desk with Metal Base, 40\"W, Weathered Gray Oak Finish",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 101.6,
+            "depth": 45.7,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082DFP8N8.jpg"
+          ],
+          "description": "Type: compact metal-base writing desk\nUse: working at a desk, laptop work; home office, bedroom, small apartment\nStyle: industrial, modern, minimalist\nMaterials: wood-look box top in weathered oak finish, black powder-coated steel frame, black bar pull\nColors: light greige oak, matte black\nShape: rectangular box top with wide single drawer, thin square metal legs with low stretchers, slim and light\nFeel: clean, urban, calm\nGoes with: grey or white walls, black accents, light wood; modern or industrial home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B075ZBVZST",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Curved Wood Table Home Office Computer Desk, 48.4\"L, Walnut",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 122.9,
+            "depth": 56.4,
+            "height": 79.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075ZBVZST.jpg"
+          ],
+          "description": "Type: mid-century computer desk\nUse: working at a desk, writing; home office, bedroom\nStyle: mid-century modern, Scandinavian, retro\nMaterials: walnut veneer, solid wood legs\nColors: warm medium walnut brown\nShape: rectangular top with curved raised back and side rails, single slim drawer, four round tapered splayed legs, light and open\nFeel: warm, sleek, inviting\nGoes with: white walls, brass, mustard or teal accents; mid-century modern home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B075Z7HQK5",
+          "name": "Amazon Brand \u2013 Rivet Modern Cross Legged Home Office Computer Desk Console, 42\"W, White Gloss and Walnut",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 106.7,
+            "depth": 39.9,
+            "height": 79.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z7HQK5.jpg"
+          ],
+          "description": "Type: cross-leg console desk\nUse: working at a laptop, display; home office, bedroom, entryway\nStyle: mid-century modern, contemporary, Scandinavian\nMaterials: white gloss lacquer, walnut veneer drawer, painted wood legs, metal pull\nColors: glossy white, warm walnut brown\nShape: box top with open cubby and single drawer, crossed X-shaped legs at each end, slim and light\nFeel: fresh, playful, airy\nGoes with: white walls, light wood, pastel accents; Scandinavian or modern small spaces\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B00QQNFJYC",
+          "name": "Jahnke Laptop Table Desk Cu Libre",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 80.0,
+            "depth": 5.5,
+            "height": 76.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B00QQNFJYC.jpg"
+          ],
+          "description": "Type: compact laptop desk\nUse: laptop work, vanity; home office, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: high-gloss lacquered panels, hidden pull-out drawer\nColors: glossy white\nShape: waterfall-style panel sides, rounded top edges, slim drawer under top, back modesty panel, small and boxy\nFeel: clean, bright, sleek\nGoes with: white or grey walls, chrome, pastel accents; minimalist or modern small rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B087GY33CP",
+          "name": "AmazonBasics 5-Level Adjustable/Portable Electronic Computer Workstation, Standing Desk Converter, Wood Surface - Black",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 81.3,
+            "depth": 30.5,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B087GY33CP.jpg"
+          ],
+          "description": "Type: standing desk converter\nUse: raising a laptop or monitor to standing height on an existing desk; home office\nStyle: minimalist, modern, contemporary\nMaterials: black wood-look laminate top, black powder-coated steel scissor frame\nColors: matte black\nShape: rectangular top with rounded corners, X-shaped scissor lift, open rectangular steel base frame with side release levers, compact and portable, light visual weight\nFeel: practical, sleek, functional\nGoes with: black accents, grey or white walls, existing desks; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B075Z6YS29",
+          "name": "Amazon Brand \u2013 Rivet Modern Wood and Metal Hairpin Small Table Desk, 47.2\"W, Walnut",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 119.9,
+            "depth": 56.4,
+            "height": 78.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z6YS29.jpg"
+          ],
+          "description": "Type: hairpin leg writing desk\nUse: working, writing; home office, bedroom, living room\nStyle: mid-century modern, industrial, retro\nMaterials: walnut wood veneer, black metal hairpin legs\nColors: warm medium walnut brown, black\nShape: rectangular top with slim center drawer, raised back gallery with three open cubbies and curved side ends, four thin hairpin legs, light and open, medium size\nFeel: warm, airy, relaxed\nGoes with: black metal, white walls, leather, warm wood; mid-century or industrial rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B07B7DKRW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Anne Farmhouse French Wood Desk, 62\"W, Blue",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 114.3,
+            "depth": 54.6,
+            "height": 79.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DKRW4.jpg"
+          ],
+          "description": "Type: three-drawer writing desk\nUse: working, writing; home office, bedroom, living room\nStyle: farmhouse, traditional, classic\nMaterials: wood with a brushed dark painted finish, brass knobs\nColors: dark slate blue-black, antique brass\nShape: rectangular top, three paneled front drawers with round knobs, square tapered legs with small block feet, medium size, refined visual weight\nFeel: elegant, calm, timeless\nGoes with: brass, white or cream walls, linen, warm wood floors; farmhouse, French or classic rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B07B7GXKCN",
+          "name": "Amazon Brand \u2013 Rivet Hillsdale Gold Accent Office Desk",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 157.5,
+            "depth": 71.1,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7GXKCN.jpg"
+          ],
+          "description": "Type: two-drawer writing desk\nUse: working, writing; home office, bedroom, living room\nStyle: mid-century modern, retro, classic\nMaterials: wood veneer in a cherry finish, brass knobs, metal leg caps\nColors: warm reddish brown, gold accents\nShape: boxy rectangular top with beveled edges, two front drawers with small round knobs, round tapered splayed legs with metal tips, medium size\nFeel: warm, refined, nostalgic\nGoes with: brass, cream walls, green or mustard accents; mid-century or classic rooms\n",
+          "score": null,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B07QC85X9J",
+          "name": "Amazon Brand \u2013 Stone & Beam Classic Home Office Desk with Drawer, 54\"W, Dark Espresso",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 137.2,
+            "depth": 59.7,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC85X9J.jpg"
+          ],
+          "description": "Type: trestle writing desk\nUse: working, writing; home office, bedroom\nStyle: traditional, farmhouse, classic\nMaterials: solid wood with a dark espresso stain, round knobs\nColors: dark warm espresso brown\nShape: rectangular top, apron with one center drawer, X-shaped trestle legs on block feet joined by a long stretcher, sturdy, medium to large\nFeel: warm, solid, grounded\nGoes with: cream walls, brass, leather, warm textiles; traditional or farmhouse rooms\n",
+          "score": null,
+          "kind": "desk"
+        }
+      ]
+    },
+    {
+      "piece": "a black ergonomic office chair at the desk",
+      "spec": {
+        "piece": "a black ergonomic office chair at the desk",
+        "why": "the client asked for a black ergonomic chair to work at the desk, and black adds contrast against the white walls while keeping the sober palette",
+        "kinds": [
+          "desk chair"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: desk chair, ergonomic office chair\nUse: long hours of work at the desk; home office\nStyle: modern, contemporary, minimalist\nMaterials: black mesh, black frame, adjustable armrests, casters\nColors: black\nShape: high back with lumbar support, adjustable height, swivel base, streamlined silhouette, medium visual weight\nFeel: comfortable, professional, sleek\nGoes with: dark wood desk, dark oak floor, white walls; modern home office"
+      },
+      "candidates": [
+        {
+          "id": "002.387.14",
+          "name": "LILLHJDEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/002.387.14.jpg"
+          ],
+          "description": "Type: armless upholstered swivel desk chair\nUse: working at a desk; home office, study, bedroom\nStyle: classic, contemporary, Scandinavian\nMaterials: smooth upholstery with button tufting, padded seat and back, dark grey steel five-star base, plastic casters\nColors: off-white, cream white, dark grey\nShape: tall rounded rectangular back with four tufted buttons and stitched lines, wide padded seat, armless, slim column on a five-star base with casters, medium visual weight\nFeel: soft, clean, elegant, comfortable\nGoes with: white or light wood desks, pale walls, grey accents; Scandinavian, classic or feminine home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "090.066.63",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/090.066.63.jpg"
+          ],
+          "description": "Type: bentwood swivel desk chair on casters\nUse: working at a desk, studying; home office, study, bedroom\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: molded birch veneer shell, white powder-coated steel five-star base, gas lift column, casters\nColors: light natural birch, white\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, light and open, compact\nFeel: fresh, light, simple, practical\nGoes with: white desks, light wood, pastel or grey accents; Scandinavian or minimalist home offices and study corners\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "102.604.60",
+          "name": "GREGOR",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/102.604.60.jpg"
+          ],
+          "description": "Type: woven-back swivel desk armchair\nUse: working at a desk; home office, study, living room corner\nStyle: contemporary, bohemian, modern\nMaterials: woven synthetic rattan back and seat frame, padded fabric seat cushion, black steel tube armrests and five-star base, casters\nColors: black brown, charcoal grey cushion, black\nShape: low rounded open-weave back wrapping into slim tubular armrests, thick padded seat, column on a five-star base with casters, medium visual weight\nFeel: textured, relaxed, cozy, understated\nGoes with: dark wood or black desks, natural fibers, warm grey tones; contemporary or bohemian home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "103.203.41",
+          "name": "KULLABERG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/103.203.41.jpg"
+          ],
+          "description": "Type: industrial swivel work chair\nUse: working at a desk, crafts, drawing; home office, study, studio\nStyle: industrial, rustic, Scandinavian\nMaterials: solid pine seat and backrest with a clear lacquer, black powder-coated steel frame, height-adjustable center column\nColors: light honey pine, matte black\nShape: small rectangular wooden backrest on a looped steel rod, flat seat, armless, four splayed steel legs joined by a round footring, open and light, compact\nFeel: utilitarian, crafted, warm, vintage\nGoes with: raw wood desks, black metal, concrete or brick walls; industrial or rustic home offices and studios\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "202.800.33",
+          "name": "SKRUVSTA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.800.33.jpg"
+          ],
+          "description": "Type: upholstered tub swivel chair on casters\nUse: working at a desk, sitting and relaxing; home office, bedroom, living room\nStyle: retro, mid-century modern, contemporary\nMaterials: smooth white upholstered shell, loose padded seat cushion, chrome-look steel five-star base, gas lift, casters\nColors: bright white, silver grey, black casters\nShape: deep rounded egg-like shell that wraps the back and arms in one curve, cushioned seat, slim column on a five-star base with casters, enveloping, medium visual weight\nFeel: cozy, playful, bright, sheltered\nGoes with: white or glossy desks, pastel or bold accents, chrome; retro, modern or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "202.927.76",
+          "name": "MOLTE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.927.76.jpg"
+          ],
+          "description": "Type: armless plastic desk chair\nUse: working at a desk, homework, studying; study, home office, kids room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: molded matte plastic seat shell, white powder-coated steel column and four-star base, plastic glides\nColors: medium grey, white\nShape: low curved backrest with two round cut-outs on a slim neck, scooped seat, armless, height-adjustable column on a cross-shaped four-star base, light and compact\nFeel: playful, simple, light, practical\nGoes with: white desks, light wood, bright accents; Scandinavian or minimalist study corners and kids rooms\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "290.066.95",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/290.066.95.jpg"
+          ],
+          "description": "Type: black bentwood swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: molded wood veneer shell in a black stain, pale plywood edge, black powder-coated steel five-star base, casters\nColors: black, light wood edge\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, sleek and compact\nFeel: graphic, sleek, focused, simple\nGoes with: black or white desks, light wood, metal accents; minimalist, Scandinavian or modern home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "302.332.44",
+          "name": "LILLHJDEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/302.332.44.jpg"
+          ],
+          "description": "Type: gingham upholstered swivel desk chair\nUse: working at a desk; home office, study, bedroom\nStyle: farmhouse, classic, Scandinavian\nMaterials: woven fabric upholstery in a small gingham check, button tufting, piped edges, dark grey steel five-star base, casters\nColors: grey and white check, dark grey\nShape: tall rounded rectangular back with four tufted buttons, wide padded seat with a piped edge, armless, slim column on a five-star base with casters, medium visual weight\nFeel: homey, charming, soft, relaxed\nGoes with: white or painted wood desks, grey and linen tones, country accents; farmhouse, cottage or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "302.625.28",
+          "name": "FEODOR",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/302.625.28.jpg"
+          ],
+          "description": "Type: black wooden swivel desk armchair\nUse: working at a desk, dining; home office, study, dining room\nStyle: farmhouse, traditional, rustic\nMaterials: solid wood frame in a black stain, black metal swivel and height-adjustable column\nColors: matte black, black brown\nShape: curved top rail flowing into armrests, slatted spindle back, saddle-shaped seat, swivel column on four splayed wooden legs with cross stretchers, sturdy, medium visual weight\nFeel: sturdy, crafted, classic, grounded\nGoes with: dark or warm wood desks, white walls, brass or black accents; farmhouse, traditional or industrial home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "302.882.36",
+          "name": "FEODOR",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/302.882.36.jpg"
+          ],
+          "description": "Type: white wooden swivel desk armchair\nUse: working at a desk, sewing, crafts; home office, study, bedroom\nStyle: farmhouse, Scandinavian, traditional\nMaterials: solid wood frame with a white painted finish, black metal swivel and height-adjustable column\nColors: white, black accent\nShape: curved top rail flowing into armrests, slatted spindle back, saddle-shaped seat, swivel column on four splayed wooden legs with cross stretchers, open and airy, medium visual weight\nFeel: fresh, homey, crafted, light\nGoes with: white or light wood desks, soft pastels, linen; farmhouse, cottage or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "702.790.70",
+          "name": "ROBERGET",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/702.790.70.jpg"
+          ],
+          "description": "Type: perforated plastic swivel desk armchair\nUse: working at a desk, studying; home office, study, teen bedroom\nStyle: retro, contemporary, modern\nMaterials: glossy molded plastic shell with a pierced dot pattern, painted steel five-star base, black casters\nColors: turquoise, aqua blue, black\nShape: rounded shell back curving into low armrests, perforated sunburst dot pattern on the back and seat, slim column on a five-star base with casters, light and compact\nFeel: cheerful, playful, fresh, bright\nGoes with: white desks, light wood, coral or yellow accents; retro, playful or colorful home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "790.066.93",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/790.066.93.jpg"
+          ],
+          "description": "Type: two-tone bentwood swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: molded wood veneer shell in a black stain with a pale plywood edge, white powder-coated steel five-star base, casters\nColors: black, white, light wood edge\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, crisp contrast, compact\nFeel: graphic, crisp, fresh, practical\nGoes with: white desks, black accents, light wood floors; Scandinavian, monochrome or modern home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "790.462.60",
+          "name": "SNILLE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/790.462.60.jpg"
+          ],
+          "description": "Type: plastic shell swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: glossy molded white plastic shell, silver grey steel five-star base and column, black casters\nColors: glossy white, silver grey, black\nShape: one-piece scooped shell with a wide rounded back and gently flared sides, armless, slim column on a five-star base with casters, simple and light, compact\nFeel: clean, simple, fresh, practical\nGoes with: white or light wood desks, grey or bright accents; minimalist, modern or student home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "890.066.83",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/890.066.83.jpg"
+          ],
+          "description": "Type: white bentwood swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: molded wood veneer shell with a white stain showing the grain, pale plywood edge, white powder-coated steel five-star base, casters\nColors: white, whitewashed wood, light birch edge\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, airy, compact\nFeel: bright, airy, calm, clean\nGoes with: white desks, pale wood, soft pastel accents; Scandinavian or minimalist home offices and bright studies\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07B7DL3H8",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Office Desk Chair, 33\"-36\", Grey/Chrome",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 55.9,
+            "height": 61.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DL3H8.jpg"
+          ],
+          "description": "Type: upholstered swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, mid-century modern\nMaterials: woven linen-look fabric, polished chrome base, casters\nColors: medium warm grey, silver chrome, black\nShape: rounded bucket shell with low wraparound arms, height-adjustable gas lift, five-star chrome base on wheels, compact\nFeel: soft, polished, cozy\nGoes with: white or wood desks, light walls, chrome accents; contemporary home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07B7DKRVM",
+          "name": "Amazon Brand \u2013 Stone & Beam Alicia Contemporary Office Chair, 38\"H, Oak",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 71.0,
+            "depth": 61.5,
+            "height": 105.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DKRVM.jpg"
+          ],
+          "description": "Type: wood-frame swivel desk chair\nUse: working at a desk; home office, study\nStyle: traditional, classic, rustic\nMaterials: oak frame, linen-look upholstery, black metal mechanism, casters\nColors: warm honey oak, cream, black\nShape: tall curved wood-trimmed back, armless, padded seat, four-spoke carved wood base on wheels, elegant medium weight\nFeel: warm, refined, timeless\nGoes with: oak or walnut desks, cream walls, brass accents; traditional or rustic studies\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B075ZBW1PX",
+          "name": "Amazon Brand \u2013 Rivet Vibe Swivel Leather Office Chair, 25.2\"W, Medium Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 64.0,
+            "depth": 63.0,
+            "height": 74.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075ZBW1PX.jpg"
+          ],
+          "description": "Type: leather swivel armchair\nUse: working at a desk, dining, lounging; home office, dining room, living room\nStyle: mid-century modern, industrial, contemporary\nMaterials: distressed leather upholstery, black metal base\nColors: warm cognac brown, black\nShape: boxy shell with angled sloping arms, low back, deep seat, four-prong splayed metal swivel base, solid compact\nFeel: warm, sleek, inviting\nGoes with: walnut, black metal, white walls; industrial or mid-century rooms\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B072Z6K34L",
+          "name": "AmazonBasics Mesh Fabric Executive Mid-Back Office Desk Chair, Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 69.0,
+            "depth": 66.5,
+            "height": 112.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072Z6K34L.jpg"
+          ],
+          "description": "Type: ergonomic mesh office chair\nUse: working at a desk; home office\nStyle: contemporary, modern\nMaterials: black mesh back, fabric seat, black plastic base, casters\nColors: black\nShape: mid-height curved mesh back, adjustable arms, padded seat, tilt levers, five-star base on wheels, functional medium bulk\nFeel: practical, supportive, professional\nGoes with: black or white desks, grey walls; modern home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07QF9Y248",
+          "name": "Amazon Brand \u2013 Rivet Modern Upholstered Swivel Office Chair, 25\"W, Gray",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 63.5,
+            "depth": 58.4,
+            "height": 76.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QF9Y248.jpg"
+          ],
+          "description": "Type: channel-tufted swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, mid-century modern, glam\nMaterials: velvety faux suede upholstery, chrome base, casters\nColors: light warm grey, silver chrome, black\nShape: rounded tub back with vertical channel tufting, curved arms, padded seat, gas lift, five-star chrome base on wheels, compact\nFeel: cozy, soft, stylish\nGoes with: white or light wood desks, pastel walls, chrome accents; contemporary home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B075Z6S8FF",
+          "name": "Stone & Beam Leather Swivel Office Chair on Wheels, 26.4\"W, Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 67.1,
+            "depth": 58.9,
+            "height": 104.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z6S8FF.jpg"
+          ],
+          "description": "Type: tufted leather swivel office chair\nUse: working at a desk, reading; home office, study\nStyle: traditional, classic, rustic\nMaterials: distressed top-grain leather, dark stained wood star base, black metal column, casters\nColors: dark warm brown, espresso wood, black\nShape: tall wingback-style shell with diamond-tufted back, flared track arms, deep cushioned seat, five-star wooden base on casters, substantial and enveloping\nFeel: warm, stately, cozy, lived-in\nGoes with: dark wood desks, brass accents, bookshelves, deep green or navy walls; traditional library or rustic study rooms\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B075Z8623J",
+          "name": "Amazon Brand \u2013 Stone & Beam Benton Leather Swivel Office Chair with Wheels, 28.4\"W, Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 72.1,
+            "depth": 62.0,
+            "height": 104.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z8623J.jpg"
+          ],
+          "description": "Type: wingback leather swivel office chair\nUse: working at a desk; home office, study\nStyle: traditional, classic, contemporary\nMaterials: smooth leather upholstery, nailhead trim, dark stained wood star base, black metal column, casters\nColors: charcoal black, dark mahogany wood, antique brass\nShape: high wingback with rolled flared arms, nailhead-trimmed sides, plump seat, five-star wooden base on casters, solid and generous\nFeel: refined, grounded, sophisticated\nGoes with: dark wood desks, brass lamps, grey or white walls, leather-bound books; traditional or transitional offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B0748MS1RV",
+          "name": "AmazonBasics Bonded Leather High-Back Office Chair, Easy Tool-Free Assembly - Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 73.0,
+            "depth": 63.0,
+            "height": 106.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0748MS1RV.jpg"
+          ],
+          "description": "Type: high-back executive office chair\nUse: working at a desk for long hours; home office\nStyle: contemporary, modern\nMaterials: bonded leather, padded cushions, silver plastic arm frames and base, casters\nColors: black, silver grey\nShape: tall padded back with pillowed headrest and lumbar sections, looped padded armrests, thick seat, five-star silver base on casters, bulky and plush\nFeel: comfortable, businesslike, sturdy\nGoes with: black or grey desks, metal and glass furniture, neutral walls; modern corporate-style home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B082KVVQH1",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Bonded Leather Swivel Office Chair with Chrome Metal Base, 22.8\"W, Saddle Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 87.9,
+            "depth": 67.1,
+            "height": 70.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082KVVQH1.jpg"
+          ],
+          "description": "Type: mid-century leather swivel desk chair\nUse: working at a desk; home office, bedroom, living room\nStyle: mid-century modern, contemporary, retro\nMaterials: bonded leather with welt seams, polished chrome five-star base, casters\nColors: warm saddle brown, chrome silver\nShape: rounded tub-style shell with low curved back flowing into arms, deep cushioned seat, slim chrome star base on casters, compact and softly enclosing\nFeel: warm, inviting, polished\nGoes with: walnut desks, white walls, brass or chrome accents, green plants; mid-century or modern rooms\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07QL9RTFQ",
+          "name": "AmazonBasics Low-Back Task Chair with Swivel Casters - Black (Renewed)",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 61.0,
+            "depth": 48.9,
+            "height": 97.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QL9RTFQ.jpg"
+          ],
+          "description": "Type: armless low-back task chair\nUse: working at a desk; home office, bedroom, study\nStyle: minimalist, contemporary\nMaterials: black mesh fabric upholstery, padded foam, black plastic five-star base, casters\nColors: black\nShape: contoured padded back with lumbar stitching, armless, cushioned seat, height lever, five-star base on casters, compact and light\nFeel: simple, practical, unobtrusive\nGoes with: black or white desks, small rooms, neutral walls; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07HSG7KWF",
+          "name": "Amazon Brand \u2013 Rivet Modern Leather Swivel Desk Armless Office Chair 30.6 Inch Height, Adjustable Height, Grey",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 61.9,
+            "depth": 54.1,
+            "height": 73.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSG7KWF.jpg"
+          ],
+          "description": "Type: armless leather swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: modern, mid-century modern, minimalist\nMaterials: leather upholstery with channel stitching, polished chrome four-star base, casters\nColors: cool dark grey, chrome silver\nShape: slim armless shell with horizontal channel-tufted back, thin padded seat, height lever, four-prong chrome base on casters, compact and sleek\nFeel: sleek, understated, cool\nGoes with: white or glass desks, light wood, black accents, white walls; modern or Scandinavian offices\n",
+          "score": null,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07CT6K8FB",
+          "name": "Rivet Edgemont Contemporary Home Office Desk Chair, 24\"H, Swivel, Zebra Print",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07CT6K8FB.jpg"
+          ],
+          "description": "Type: upholstered swivel desk chair\nUse: sitting at a desk or dining table; home office, dining room\nStyle: mid-century modern, contemporary\nMaterials: woven striped upholstery, solid wood swivel base\nColors: grey and white, warm medium brown wood\nShape: curved scoop back, padded seat, chevron stripe pattern, four splayed tapered wooden legs with cross base, armless, compact\nFeel: playful, cozy, graphic\nGoes with: walnut desks, white walls, grey textiles; mid-century or modern home offices\n",
+          "score": null,
+          "kind": "desk chair"
+        }
+      ]
+    },
+    {
+      "piece": "a low bookcase along the long left wall",
+      "spec": {
+        "piece": "a low bookcase along the long left wall",
+        "why": "the long empty left wall holds books and files within reach without blocking light, and a low dark wood piece keeps the room open and calm",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 40,
+        "max_height_cm": 100,
+        "query": "Type: bookcase, low horizontal bookcase\nUse: storing books, files and a few objects; home office\nStyle: modern, minimalist\nMaterials: dark walnut wood, black metal details\nColors: dark walnut brown, black\nShape: long and low, open shelves, clean rectangular lines, slim base or legs, medium visual weight\nFeel: orderly, sober, warm\nGoes with: dark wood desk, dark oak floor, white walls, black and gray; modern home office"
+      },
+      "candidates": [
+        {
+          "id": "500.772.47",
+          "name": "HENSVIK",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.772.47.jpg"
+          ],
+          "description": "Type: open bookcase with hutch top\nUse: displaying and storing books, toys and boxes on open shelves; children's room, nursery, bedroom\nStyle: farmhouse, traditional, Scandinavian\nMaterials: white painted board, striped beadboard-look back panel, adjustable shelves\nColors: white, soft cream back panel\nShape: tall two-part unit with a shallow shelf hutch on a deeper open base, scalloped wavy crown, gently curved cut-out feet, several open shelves, medium visual weight\nFeel: sweet, gentle, airy, homey\nGoes with: pastel textiles, light wood, white walls, soft patterns; cottage or Scandinavian nurseries and children's rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "599.026.58",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 151.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/599.026.58.jpg"
+          ],
+          "description": "Type: open metal and glass shelving unit\nUse: displaying books, plants and decor on open shelves; living room, home office, dining room\nStyle: industrial, minimalist, modern\nMaterials: black-brown powder-coated steel frame, clear glass shelves, dark laminated bottom shelf\nColors: dark black-brown, clear glass\nShape: tall wide open grid of three joined bays in thin square tubing, several tiers of see-through glass and dark shelves, open sides and back, airy and light for its size\nFeel: airy, graphic, light, urban\nGoes with: light wood, white walls, green plants, leather; industrial, Scandinavian or modern living rooms and studios\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "001.165.95",
+          "name": "LIATORP",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 96.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/001.165.95.jpg"
+          ],
+          "description": "Type: tall white bookcase with crown molding\nUse: displaying books and decor; living room, home office, library\nStyle: traditional, classic, farmhouse\nMaterials: white painted wood-based panels, beadboard-look grooved back, decorative molded top and plinth\nColors: soft white\nShape: tall open bookcase with adjustable shelves, carved shelf brackets, crown cornice and shaped base, vertical grooved back, substantial visual weight\nFeel: elegant, bright, timeless, stately\nGoes with: white or cream walls, dark wood floors, blue or grey accents; traditional, classic or farmhouse living rooms and studies\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "002.236.18",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.236.18.jpg"
+          ],
+          "description": "Type: narrow open shelving unit\nUse: holding towels, baskets, plants or books; bathroom, hallway, bedroom\nStyle: traditional, farmhouse, rustic\nMaterials: solid pine with a black-brown stain, slatted bottom shelf\nColors: dark black-brown wood\nShape: tall square frame on four straight legs, solid top, two open shelves, slatted lower shelf, compact and open\nFeel: warm, sturdy, simple, homey\nGoes with: white walls, white tiles, brass or black hardware, woven baskets; farmhouse, traditional or rustic bathrooms and hallways\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "002.456.44",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 90.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.456.44.jpg"
+          ],
+          "description": "Type: tall white stained wood bookcase\nUse: displaying books, baskets and decor; living room, home office, bedroom\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid pine with a white stain that shows the grain, framed side panels\nColors: white stain with soft visible wood grain\nShape: tall open bookcase with adjustable shelves, recessed panel sides, short straight legs, simple top edge, substantial visual weight\nFeel: warm, honest, bright, homey\nGoes with: light wood floors, cream walls, linen, woven baskets; farmhouse, traditional or Scandinavian living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "100.937.63",
+          "name": "RNNSKR",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/100.937.63.jpg"
+          ],
+          "description": "Type: black metal three-tier shelving unit\nUse: displaying plants, books and small decor, storing towels; living room, bedroom, bathroom\nStyle: traditional, farmhouse, classic\nMaterials: black powder-coated steel frame, perforated metal shelves, clear glass top shelf\nColors: matte black, clear glass\nShape: tall narrow open frame on four slim legs with ball feet, scrolled wrought-iron crest along the top, dotted pattern on the shelves, light and see-through, compact\nFeel: romantic, vintage, airy, delicate\nGoes with: white walls, pale wood, wicker baskets, green plants; farmhouse, cottage or classic rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "202.133.12",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 100.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.133.12.jpg"
+          ],
+          "description": "Type: metal and glass shelving unit\nUse: displaying books, plants and decor, dividing a room; living room, home office, dining room\nStyle: industrial, modern, minimalist\nMaterials: black-brown powder-coated steel frame, tempered glass shelves, wood-effect bottom shelf\nColors: dark black-brown, clear glass\nShape: tall wide open grid of thin square tubes with a center divider, glass shelves on several levels, solid bottom shelf, open back and sides, airy and see-through\nFeel: graphic, light, urban, tidy\nGoes with: dark wood, concrete, leather, brass or black accents, green plants; industrial or modern lofts\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "202.693.61",
+          "name": "LIATORP",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 96.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.693.61.jpg"
+          ],
+          "description": "Type: tall bookcase with crown molding\nUse: storing and displaying books and decor; living room, home office, library, dining room\nStyle: traditional, classic, farmhouse\nMaterials: painted wood board, beadboard back panel, molded trim\nColors: light grey, soft cool grey\nShape: tall rectangular open case with a stepped cornice on top, tongue-and-groove back, small curved brackets under each shelf, plinth base with a shaped cutout, substantial visual weight\nFeel: elegant, stately, calm, homely\nGoes with: white or cream walls, dark wood floors, linen sofas, brass details; classic, traditional or farmhouse living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "202.796.09",
+          "name": "VALJE",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 100.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.796.09.jpg"
+          ],
+          "description": "Type: low open shelf unit on metal legs\nUse: storing books, media and decor, low shelf under a window or TV; living room, home office, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: board with a whitewashed wood-grain foil, aluminium-colored metal legs\nColors: pale whitewashed wood, light beige, silver\nShape: wide low box with four open compartments of different sizes in a staggered layout, thin edges, raised on four slim straight metal legs, light visual weight\nFeel: light, airy, orderly, calm\nGoes with: light wood floors, white walls, grey textiles, steel accents; Scandinavian or modern living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "203.002.86",
+          "name": "KALLAX",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 77.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/203.002.86.jpg"
+          ],
+          "description": "Type: green open cube bookcase\nUse: holding books, toys and storage boxes, room divider; living room, playroom, home office\nStyle: contemporary, modern, Scandinavian\nMaterials: painted board with a smooth uniform finish\nColors: vivid green, deep emerald shadows inside\nShape: tall boxy frame divided into a two-by-four grid of square cubbies, thick flat edges, open back usable from both sides, sturdy and chunky visual weight\nFeel: bold, fun, energetic, fresh\nGoes with: white or grey walls, natural wood, fabric bins, pops of color; modern, eclectic or children's rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "203.022.85",
+          "name": "BRUSALI",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 67.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/203.022.85.jpg"
+          ],
+          "description": "Type: tall white bookcase\nUse: storing books, files and decor; living room, home office, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: white painted board with a subtle brushed wood-grain texture\nColors: white, soft warm white\nShape: tall narrow open case with five adjustable shelves, small overhanging top, sides extending into short legs, slightly framed front edges, medium visual weight\nFeel: fresh, simple, homely, calm\nGoes with: light wood floors, pastel walls, linen, rattan baskets; Scandinavian, cottage or farmhouse rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "302.530.67",
+          "name": "RGRUND",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 33.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.530.67.jpg"
+          ],
+          "description": "Type: tall bamboo shelving tower\nUse: storing towels, toiletries, plants and books in a narrow space; bathroom, living room, bedroom\nStyle: Japandi, coastal, bohemian\nMaterials: lacquered bamboo frame and shelves\nColors: warm golden bamboo, light honey\nShape: very tall narrow open tower in two stacked sections, slim square posts, small shelves on several levels, open on all sides, slender and airy, low visual weight\nFeel: natural, light, calm, fresh\nGoes with: white walls, green plants, linen, woven baskets, light stone; Japandi, spa-like or coastal rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "402.467.74",
+          "name": "HJLMAREN",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 190.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.467.74.jpg"
+          ],
+          "description": "Type: white leaning ladder shelf\nUse: displaying towels, plants, books and baskets in a slim space; bathroom, living room, bedroom\nStyle: Scandinavian, minimalist, coastal\nMaterials: white painted wood rails and shelves, black wall fixings\nColors: white, black accents\nShape: tall slim ladder frame leaning against the wall, two long angled side rails, several shallow shelves, top bar for hanging towels, airy and light\nFeel: airy, fresh, relaxed, light\nGoes with: white walls, light wood floors, linen towels, green plants; Scandinavian, coastal or spa-like rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "403.034.39",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 100.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/403.034.39.jpg"
+          ],
+          "description": "Type: narrow white metal and glass shelving unit\nUse: displaying books, plants and decor in a slim space; living room, home office, bedroom\nStyle: minimalist, Scandinavian, modern\nMaterials: white powder-coated steel frame, tempered glass shelves\nColors: white, clear glass\nShape: tall slim open frame of thin square tubes, glass shelves on five levels, open back and sides, airy and see-through, light visual weight\nFeel: light, airy, fresh, delicate\nGoes with: white walls, light wood, green plants, ceramics; Scandinavian, minimalist or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "490.473.17",
+          "name": "VALJE",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/490.473.17.jpg"
+          ],
+          "description": "Type: wall cube and low shelf storage combination\nUse: storing books, media and decor across a wall; living room, home office, bedroom\nStyle: Scandinavian, modern, minimalist\nMaterials: white and dark grey finished board, white doors, white metal legs\nColors: white, dark charcoal grey\nShape: staggered cluster of open and doored square wall cubes above two long low open shelf units on slim legs, asymmetric compartments, playful checkerboard layout, wide and spread out\nFeel: graphic, playful, orderly, light\nGoes with: light wood floors, white walls, black and grey accents, plants; Scandinavian or modern living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "502.176.53",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.176.53.jpg"
+          ],
+          "description": "Type: tall dark wooden shelving tower\nUse: storing towels, books, plants and baskets in a narrow space; bathroom, living room, bedroom\nStyle: traditional, farmhouse, classic\nMaterials: black-brown stained solid wood frame, slatted wooden shelves\nColors: dark black-brown, espresso\nShape: tall narrow open tower with a solid top, four square posts, four shelves with slatted ones at the middle and bottom, open on all sides, slender but strong vertical presence\nFeel: warm, grounded, classic, calm\nGoes with: white walls, light grey tiles, linen, brass or chrome; farmhouse, classic or traditional rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "502.216.88",
+          "name": "FJLKINGE",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 58.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.216.88.jpg"
+          ],
+          "description": "Type: narrow white metal shelving unit\nUse: storing books, files, boxes and decor; living room, home office, bedroom, hallway\nStyle: industrial, minimalist, Scandinavian\nMaterials: white powder-coated steel frame and shelves\nColors: white\nShape: tall slim open frame with perforated uprights, flat adjustable shelves on several levels, open back and sides, crisp straight lines, light and airy\nFeel: clean, airy, practical, calm\nGoes with: light wood, concrete, plants, black accents; industrial, minimalist or Scandinavian studios\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "502.638.38",
+          "name": "BILLY",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 40.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.638.38.jpg"
+          ],
+          "description": "Type: tall narrow white bookcase\nUse: storing books, DVDs and decor in a slim space; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white foil-finished board\nColors: white\nShape: tall slender upright box with straight sides, several adjustable open shelves, flat top, low plinth base, plain clean front, compact footprint\nFeel: simple, tidy, neutral, light\nGoes with: white walls, light wood floors, colorful book spines, plants; Scandinavian, minimalist or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "503.233.85",
+          "name": "KALLAX",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 77.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.233.85.jpg"
+          ],
+          "description": "Type: yellow cube shelving unit\nUse: storing books, toys and storage boxes, room divider; living room, children's room, home office\nStyle: contemporary, modern, retro\nMaterials: painted board with a smooth bright finish\nColors: sunny yellow\nShape: upright rectangular frame with eight square open cubes in two columns, thick flat panels, open back, chunky and boxy, works upright or on its side\nFeel: cheerful, bold, playful, energetic\nGoes with: white or grey walls, light wood, grey textiles, black accents; modern, retro or kids' rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "591.553.30",
+          "name": "BILLY,OXBERG",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 80.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/591.553.30.jpg"
+          ],
+          "description": "Type: tall bookcase with glass doors\nUse: storing and displaying books, china and collections behind glass; living room, home office, dining room\nStyle: classic, traditional, contemporary\nMaterials: brown stained ash veneer, framed clear glass doors, small knobs\nColors: medium warm brown, clear glass\nShape: tall rectangular cabinet with two full-height framed glass doors, horizontal crossbar at mid-height, adjustable shelves visible inside, plinth base, substantial visual weight\nFeel: warm, orderly, scholarly, refined\nGoes with: warm wood, leather armchairs, green or navy walls, brass lamps; classic studies, libraries and traditional living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "600.937.65",
+          "name": "RNNSKR",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/600.937.65.jpg"
+          ],
+          "description": "Type: black metal corner shelving unit\nUse: displaying plants, books and small decor in a corner; living room, bedroom, bathroom\nStyle: traditional, farmhouse, classic\nMaterials: black powder-coated steel frame, quarter-round glass and perforated metal shelves\nColors: matte black, clear glass\nShape: tall slim triangular tower that fits a corner, vertical rods along the back, scrolled wrought-iron crest and finials on top, curved front edges, ball feet, light and see-through\nFeel: romantic, vintage, airy, delicate\nGoes with: white walls, pale wood, wicker, green plants; farmhouse, cottage or classic rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "602.236.20",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.236.20.jpg"
+          ],
+          "description": "Type: low white wooden shelf tower\nUse: storing towels, baskets and toiletries, side shelf beside a bed or sofa; bathroom, bedroom, living room\nStyle: farmhouse, traditional, classic\nMaterials: white stained solid wood frame, painted panel shelves, slatted base shelf\nColors: white, warm soft white\nShape: square open stand with a thick overhanging top, four straight legs, two open shelves above a slatted bottom shelf, open on every side, compact and light\nFeel: tidy, homely, fresh, calm\nGoes with: pale wood, white tiles, cotton towels, rattan; farmhouse, cottage or classic rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "703.233.51",
+          "name": "BILLY",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 80.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.233.51.jpg"
+          ],
+          "description": "Type: medium-height open bookcase\nUse: storing books, displaying decor; living room, home office, bedroom\nStyle: Scandinavian, traditional, minimalist\nMaterials: ash-patterned wood veneer in a brown stain, fibreboard back\nColors: medium warm brown, walnut-toned wood grain\nShape: simple boxy upright frame, two adjustable shelves above a base shelf, recessed plinth, flat top, straight edges, open front, medium visual weight\nFeel: warm, practical, orderly, familiar\nGoes with: cream or white walls, warm wood, leather or green accents; traditional studies, Scandinavian living rooms, home offices\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "802.456.40",
+          "name": "HEMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 90.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.456.40.jpg"
+          ],
+          "description": "Type: tall solid wood bookcase\nUse: storing books, displaying decor and collections; living room, home office, study, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: solid pine with a black-brown stain, visible wood grain\nColors: dark black-brown, espresso\nShape: tall upright frame on four short square legs, framed side panels, overhanging flat top, several open adjustable shelves, straight edges, substantial and dark\nFeel: solid, cozy, studious, timeless\nGoes with: cream or white walls, warm textiles, brass accents, dark wood; traditional studies, farmhouse or classic living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "802.758.87",
+          "name": "KALLAX",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 77.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.758.87.jpg"
+          ],
+          "description": "Type: square cube shelving unit\nUse: storing books, baskets and records, dividing a room; living room, home office, bedroom, hallway\nStyle: Scandinavian, minimalist, modern\nMaterials: white painted particleboard, thick smooth panels\nColors: bright white\nShape: compact square box divided into four equal open cubes, thick flat frame, open back, sits directly on the floor, crisp edges, bold grid look, medium visual weight\nFeel: tidy, graphic, versatile, fresh\nGoes with: woven or fabric storage boxes, light wood, colorful accents; Scandinavian, minimalist or modern rooms, small apartments\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "803.034.37",
+          "name": "VITTSJ",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 51.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/803.034.37.jpg"
+          ],
+          "description": "Type: metal and glass shelving unit\nUse: displaying books, plants and decor; living room, home office, bedroom\nStyle: minimalist, modern, Scandinavian\nMaterials: white powder-coated steel frame, clear tempered glass shelves, solid white bottom shelf\nColors: white, clear glass\nShape: tall open frame of thin square tubes split into two bays, glass shelves over a solid bottom shelf, open sides and back, see-through and very light\nFeel: airy, light, clean, delicate\nGoes with: white walls, light wood, green plants, pale textiles; minimalist, Scandinavian or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "890.067.96",
+          "name": "IVAR",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 89.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/890.067.96.jpg"
+          ],
+          "description": "Type: open pine shelving unit\nUse: storing books, baskets and everyday things; living room, home office, hallway, storage room\nStyle: Scandinavian, rustic, minimalist\nMaterials: untreated solid pine, slim metal cross-brace wires\nColors: pale natural pine, warm blond wood, silver\nShape: two perforated ladder-style side frames with crossbars, four open shelves, X-shaped wire bracing at the back, utilitarian and open, medium visual weight\nFeel: natural, honest, practical, warm\nGoes with: white walls, woven baskets, linen, green plants; Scandinavian, rustic or cabin rooms, workrooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "903.012.25",
+          "name": "BRIMNES",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/903.012.25.jpg"
+          ],
+          "description": "Type: tall bookcase with drawers\nUse: storing books, displaying decor, hidden storage in drawers; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: white painted particleboard, framed drawer fronts, slim white bar handles\nColors: white, soft cream white\nShape: tall narrow upright frame, four open shelves above two deep drawers with recessed panel fronts, plinth base, straight edges, slender, medium visual weight\nFeel: clean, tidy, bright, practical\nGoes with: white or pale walls, light wood, soft textiles; Scandinavian, minimalist or contemporary rooms, small spaces\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "990.234.08",
+          "name": "BILLY,OXBERG",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 200.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/990.234.08.jpg"
+          ],
+          "description": "Type: glass-door bookcase wall\nUse: storing and displaying books, collections and china; living room, home office, home library, dining room\nStyle: Scandinavian, classic, traditional\nMaterials: birch wood veneer, framed glass-panel doors, small metal knobs\nColors: light natural birch, clear glass\nShape: wide floor-to-ceiling run of five sections, four behind tall glass doors with glass top cabinets, an open center column of shelves, flat top, plinth base, large and substantial\nFeel: orderly, bright, scholarly, calm\nGoes with: white walls, light wood floors, reading chairs, warm lighting; Scandinavian or classic living rooms, home libraries\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07MNQB6F3",
+          "name": "Solimo 2-Tier X Book Shelf (Walnut)",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 47.0,
+            "depth": 37.8,
+            "height": 60.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07MNQB6F3.jpg"
+          ],
+          "description": "Type: small open bookshelf\nUse: storing books and decor, side table use; living room, bedroom, home office\nStyle: farmhouse, rustic, industrial\nMaterials: engineered wood in a walnut finish\nColors: dark warm walnut brown\nShape: compact square frame with three open tiers, X-shaped cross braces on the sides, sturdy corner posts, low and squat, open\nFeel: warm, homey, practical\nGoes with: light floors, white walls, grey upholstery, green plants; farmhouse or rustic living rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07B8P1JCT",
+          "name": "Amazon Brand \u2013 Rivet Modern Metal Shelf, 24\"W, Black",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 61.0,
+            "depth": 9.2,
+            "height": 5.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B8P1JCT.jpg"
+          ],
+          "description": "Type: metal picture ledge shelf\nUse: displaying frames, books and small decor on a wall; living room, bedroom, home office\nStyle: minimalist, modern, industrial\nMaterials: powder-coated steel\nColors: matte black\nShape: long narrow L-shaped ledge with a raised front lip, visible screw holes, slim and very light, wall-mounted\nFeel: clean, graphic, understated\nGoes with: white or grey walls, black frames, light wood; minimalist, Scandinavian or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSKY884",
+          "name": "Amazon Brand \u2013 Stone & Beam Half-Moon Industrial Rustic Bookcase, 54\"W, Dark Fir Finish with Bronze Accents",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 138.9,
+            "depth": 8.4,
+            "height": 111.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSKY884.jpg"
+          ],
+          "description": "Type: half-moon metal bookcase\nUse: displaying books and decor; living room, home office, entryway\nStyle: industrial, rustic, contemporary\nMaterials: black metal frame with bronze accents, fir wood shelves in a dark finish\nColors: black, dark grey-brown wood, bronze\nShape: wide semicircular frame, four wood shelves, X-shaped side braces, short round legs, open and airy, sculptural\nFeel: bold, rugged, artistic\nGoes with: brick, leather, dark wood, warm metals; industrial or rustic loft rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSLTLGP",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 140.5,
+            "depth": 20.8,
+            "height": 42.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLTLGP.jpg"
+          ],
+          "description": "Type: wide open etagere bookcase\nUse: displaying books and decor; living room, home office\nStyle: industrial, mid-century modern, contemporary\nMaterials: natural wood tray shelves, black metal tube frame\nColors: warm honey wood, black\nShape: tall wide frame with slim round posts, five shelves with raised tray edges, open back and sides, airy despite its size\nFeel: warm, light, organized\nGoes with: white walls, black accents, leather, plants; industrial or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B0723CV5P7",
+          "name": "Urban Living Bookcases",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 30.5,
+            "height": 90.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0723CV5P7.jpg"
+          ],
+          "description": "Type: low wide open bookcase\nUse: books, decor, console storage; living room, home office, hallway\nStyle: industrial, modern, minimalist\nMaterials: black steel frame and shelves, whitewashed wood top\nColors: black, light pale wood\nShape: long low rectangular frame, offset shelves with vertical dividers, open base, thin cross wire, light and linear\nFeel: graphic, raw, urban\nGoes with: concrete, grey walls, light wood, leather; industrial or loft rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSGPG2D",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Round Floating Iron 4 Shelf Wall Unit - 29.72\" W, Natural Wood and Silver",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSGPG2D.jpg"
+          ],
+          "description": "Type: round floating wall shelf\nUse: displaying small decor and plants on a wall; living room, bedroom, home office\nStyle: industrial, contemporary, modern\nMaterials: iron frame, natural wood shelves\nColors: dark gunmetal, light natural wood\nShape: thin circular metal frame, four staggered shelves with vertical dividers, wall-mounted, light and open, geometric\nFeel: artistic, airy, playful\nGoes with: white walls, plants, black and wood accents; modern or industrial rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B082Z3TSZ1",
+          "name": "AmazonBasics Decorative Storage Shelf - 3-Tier",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 40.0,
+            "depth": 31.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082Z3TSZ1.jpg"
+          ],
+          "description": "Type: three-tier open shelf\nUse: storing books and display items; living room, bedroom, home office\nStyle: industrial, minimalist, modern\nMaterials: black metal tube frame, wood-look laminate shelves\nColors: dark walnut brown, matte black\nShape: slim rectangular metal frame, three open shelves, side rails, no back, small footprint, light and open, compact\nFeel: practical, urban, unfussy\nGoes with: dark wood, black accents, concrete or grey walls; industrial or modern rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B001BQ6TU2",
+          "name": "Pinzon Hayes Shelf",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B001BQ6TU2.jpg"
+          ],
+          "description": "Type: open bookcase with drawers\nUse: storing books, display and small items; living room, bedroom, home office\nStyle: mid-century modern, contemporary, classic\nMaterials: wood frame and shelves, satin nickel bar pulls\nColors: warm honey wood, silver\nShape: tall open frame with square posts, three open shelves, two stacked drawers, low bottom shelf, slightly tapered legs, gallery top rail, medium visual weight\nFeel: warm, tidy, timeless\nGoes with: warm wood, cream walls, brushed metal accents; mid-century or classic rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSGBB2D",
+          "name": "Stone & Beam Rylee Modern Bookcase 27.6\"W x 76.8\u201dH, Mixed Gray",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 31.9,
+            "height": 80.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSGBB2D.jpg"
+          ],
+          "description": "Type: tall narrow bookcase\nUse: storing books and display items; living room, home office, bedroom\nStyle: Scandinavian, mid-century modern, rustic\nMaterials: solid wood, rough-sawn drawer front, grey wash finish\nColors: light greyish natural wood\nShape: slim tall case, four open shelves, one middle drawer without handle, closed back, angled splayed legs, compact footprint\nFeel: calm, natural, crafted\nGoes with: white walls, light wood, linen, plants; Scandinavian or Japandi rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B001BQ3P18",
+          "name": "Pinzon Jonesport Solid Oak and Glass Shelf",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B001BQ3P18.jpg"
+          ],
+          "description": "Type: glass shelf etagere\nUse: displaying books and decor; living room, dining room, home office\nStyle: contemporary, modern, minimalist\nMaterials: solid oak frame in dark stain, glass shelves, metal cross braces\nColors: dark espresso brown, clear glass, silver\nShape: tall open frame with square posts, five glass shelves, X-braced sides, no back, light and airy\nFeel: refined, airy, elegant\nGoes with: white walls, chrome, neutral fabrics; contemporary rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07QC876WJ",
+          "name": "Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 117.3,
+            "depth": 38.1,
+            "height": 86.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC876WJ.jpg"
+          ],
+          "description": "Type: open etagere bookcase\nUse: displaying books and decor, storage; living room, home office, bedroom\nStyle: industrial, rustic, contemporary\nMaterials: light elm wood shelves, grey hammered metal frame\nColors: light natural wood, gunmetal grey\nShape: tall open frame, five wide wooden shelves, X-cross braces on both sides, slim square metal posts, no back panel, light and airy despite its height\nFeel: warm, raw, open, casual\nGoes with: warm wood, black or grey metal, brick or white walls; industrial, rustic or loft rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07L9BVBCJ",
+          "name": "AmazonBasics 2-Tier Stackable Storage Shelf",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 58.9,
+            "depth": 33.8,
+            "height": 56.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07L9BVBCJ.jpg"
+          ],
+          "description": "Type: two-tier wire storage shelf\nUse: storage, side surface, printer stand; home office, living room, bedroom\nStyle: industrial, minimalist, modern\nMaterials: black powder-coated steel wire, solid black top panel\nColors: matte black\nShape: low rectangular open unit, four round tubular posts with leveling feet, solid top shelf, zigzag-edged wire bottom shelf, compact and utilitarian\nFeel: practical, sturdy, no-nonsense\nGoes with: black metal, grey or white walls, simple desks; industrial, minimalist or utility-focused rooms\n",
+          "score": null,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "a black desk lamp on the desk",
+      "spec": {
+        "piece": "a black desk lamp on the desk",
+        "why": "the client asked for a desk lamp, and a slim black adjustable lamp provides focused task light for evenings while echoing the black chair",
+        "kinds": [
+          "desk lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: desk lamp, adjustable task lamp\nUse: task lighting for working at the desk; home office\nStyle: modern, minimalist, industrial\nMaterials: matte black metal\nColors: matte black\nShape: slim articulated arm, small shade, weighted base, light visual weight\nFeel: precise, sleek, functional\nGoes with: dark wood desk, black office chair, white walls; modern home office"
+      },
+      "candidates": [
+        {
+          "id": "001.696.59",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/001.696.59.jpg"
+          ],
+          "description": "Type: black gooseneck LED desk lamp\nUse: focused task light for reading and working at a desk; home office, study, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: flexible metal gooseneck arm, matte black plastic, small LED spotlight head, weighted round base\nColors: matte black, white cord\nShape: tall slender S-curved gooseneck rising from a flat round base, tiny bell-shaped head that bends in any direction, light and graphic, compact footprint\nFeel: sleek, practical, understated\nGoes with: white or light wood desks, black accents, grey walls; minimalist, Scandinavian or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "100.895.82",
+          "name": "BAROMETER",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/100.895.82.jpg"
+          ],
+          "description": "Type: adjustable nickel work lamp\nUse: task light for reading and working at a desk; home office, study, bedroom\nStyle: industrial, retro, classic\nMaterials: nickel-plated steel shade, arm and base, knurled metal joints\nColors: silver nickel, black cord\nShape: bell shade on a jointed arm with ball-end pivots and a counterbalance rod, straight stem on a stepped round base, mechanical look, medium visual weight\nFeel: crafted, vintage, sturdy, studious\nGoes with: dark wood desks, leather, black or grey walls, metal accents; industrial or classic home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "101.467.66",
+          "name": "FORS",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.467.66.jpg"
+          ],
+          "description": "Type: adjustable nickel-plated desk lamp\nUse: focused task light for reading and working at a desk; home office, study, bedroom\nStyle: industrial, retro, modern\nMaterials: nickel-plated steel dome shade, spring-balanced metal arm, round metal base, black cord\nColors: polished silver nickel, black\nShape: rounded dome shade with a small pull knob on a jointed scissor arm with springs, round heavy base, mechanical architect look, compact\nFeel: practical, crafted, focused, vintage\nGoes with: white or dark wood desks, black accents, grey walls; industrial, modern or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "101.696.92",
+          "name": "TIVED",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.696.92.jpg"
+          ],
+          "description": "Type: clamp-on gooseneck LED spotlight\nUse: task light clamped to a desk or shelf edge, or mounted on a wall; home office, study, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: nickel-plated metal gooseneck arm, small cone spotlight head, metal table clamp\nColors: silver nickel\nShape: tall arching gooseneck that curves over and ends in a tiny cone head, slim vertical stem with a screw clamp at the base, very light and linear\nFeel: sleek, practical, discreet\nGoes with: white or wood desks, shelving units, grey or white walls; minimalist or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "102.142.32",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.142.32.jpg"
+          ],
+          "description": "Type: white gooseneck LED desk lamp\nUse: focused task light for reading and working at a desk; home office, study, bedroom\nStyle: minimalist, Scandinavian, modern\nMaterials: flexible metal gooseneck arm, glossy white plastic, small LED spotlight head, weighted round base\nColors: white\nShape: tall slender S-curved gooseneck rising from a flat round base, tiny bell-shaped head that bends in any direction, light and graphic, compact footprint\nFeel: clean, practical, bright, understated\nGoes with: white or light wood desks, pastel accents, white walls; minimalist, Scandinavian or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "103.101.63",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/103.101.63.jpg"
+          ],
+          "description": "Type: copper clip-on LED spotlight\nUse: reading light clipped to a shelf, headboard or desk edge; bedroom, home office, living room\nStyle: modern, contemporary, glam\nMaterials: copper-colored metal gooseneck arm and spotlight head, spring clip clamp, black cord\nColors: shiny copper\nShape: small bell-shaped head on a flexible curved gooseneck, sprung clip base with toothed jaws, compact, light and flexible\nFeel: warm, practical, playful\nGoes with: dark or white walls, warm wood, copper or rose gold accents; modern or contemporary bedrooms and home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "202.806.84",
+          "name": "RIGGAD",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.806.84.jpg"
+          ],
+          "description": "Type: LED desk lamp with charging base\nUse: task light for working and reading at a desk, phone charging on the base; home office, study, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: white powder-coated metal arm and cylindrical head, birch veneer round base with a wireless charging pad\nColors: white, light birch wood\nShape: small cylinder head on a two-part jointed arm, round wooden disc base with a charging spot, clean and angular, compact\nFeel: practical, clean, fresh, calm\nGoes with: white or light wood desks, pastel accents, white walls; Scandinavian or minimalist home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "303.101.62",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/303.101.62.jpg"
+          ],
+          "description": "Type: brass-tone clip-on LED spotlight\nUse: reading light clipped to a shelf, headboard or desk edge; bedroom, home office, living room\nStyle: glam, modern, contemporary\nMaterials: brass-colored metal gooseneck arm and spotlight head, spring clip clamp, black cord\nColors: shiny gold brass\nShape: small bell-shaped head on a flexible curved gooseneck, sprung clip base with toothed jaws, compact, light and flexible\nFeel: warm, practical, polished\nGoes with: dark green or navy walls, warm wood, brass accents; glam, modern or contemporary bedrooms and home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "403.702.83",
+          "name": "TERTIAL",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/403.702.83.jpg"
+          ],
+          "description": "Type: articulated clamp-on work lamp\nUse: task light for working, reading or crafts at a desk; home office, study, workshop\nStyle: industrial, retro, modern\nMaterials: silver-painted steel shade with vent slots, spring-balanced steel arms, black clamp base, black cord\nColors: silver grey, black\nShape: deep dome shade on a long jointed arm with exposed springs, clamps to a desk edge, adjustable and angular, medium visual weight\nFeel: practical, studious, mechanical, classic\nGoes with: wooden or white desks, grey and black accents, pegboards; industrial or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "503.214.28",
+          "name": "FORS",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.214.28.jpg"
+          ],
+          "description": "Type: articulated pastel green work lamp\nUse: task light for working or reading at a desk; home office, study, bedroom\nStyle: retro, industrial, Scandinavian\nMaterials: glossy lacquered steel shade, arms and round base, exposed metal springs, black cord\nColors: soft pastel green, silver springs, black\nShape: rounded dome shade with a pull knob on a jointed spring-balanced arm, heavy round base, adjustable, compact\nFeel: cheerful, playful, practical, fresh\nGoes with: white or light wood desks, pastel tones, green plants; Scandinavian or retro home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "601.809.51",
+          "name": "TIVED",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/601.809.51.jpg"
+          ],
+          "description": "Type: gooseneck LED desk lamp\nUse: focused task light for reading or working at a desk, or mounted on a wall; home office, study, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: nickel-plated steel base, flexible metal gooseneck arm, small metal cone head\nColors: brushed silver, grey cord\nShape: long arched flexible arm rising from a heavy round disc base, tiny cone spotlight head, light and slender, compact footprint\nFeel: sleek, precise, discreet, airy\nGoes with: white or glass desks, grey tones, chrome accents; minimalist or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "603.047.44",
+          "name": "ANTIFONI",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/603.047.44.jpg"
+          ],
+          "description": "Type: chrome articulated desk lamp\nUse: task light for working or reading at a desk; home office, study, bedroom\nStyle: modern, minimalist, industrial\nMaterials: chrome-plated steel shade, arms and round base, black joints, black cord\nColors: polished silver chrome, black\nShape: small dome shade on a long two-part jointed arm with fine parallel rods, heavy round disc base, angular and adjustable, light and open\nFeel: sleek, precise, bright, efficient\nGoes with: white, glass or dark wood desks, black or grey accents; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "702.313.18",
+          "name": "RANARP",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.313.18.jpg"
+          ],
+          "description": "Type: off-white balance-arm desk lamp\nUse: task light for working or reading at a desk; home office, study, bedroom\nStyle: industrial, retro, farmhouse\nMaterials: off-white lacquered steel shade, arm and round base, brass-coloured joints and fittings, braided black and white textile cord\nColors: warm off-white, brass gold, black and white\nShape: bell shade on a long horizontal balance arm pivoting on a brass ball joint over a straight upright, round weighted base, adjustable, medium size\nFeel: charming, vintage, studious, warm\nGoes with: wood desks, white walls, brass accents; farmhouse, industrial or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "702.382.68",
+          "name": "HRTE",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.382.68.jpg"
+          ],
+          "description": "Type: minimalist white LED desk lamp\nUse: focused task light for working or reading at a desk; home office, study, bedroom\nStyle: minimalist, modern, Scandinavian\nMaterials: white coated steel tube frame, brushed aluminium LED head, grey cord\nColors: white, brushed silver\nShape: single bent tube rising from a triangular loop base, slim bar-shaped light head, flexible neck, very slender and light, small footprint\nFeel: clean, sleek, airy, discreet\nGoes with: white or light wood desks, pale walls, metal accents; minimalist or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "702.669.87",
+          "name": "HRTE",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.669.87.jpg"
+          ],
+          "description": "Type: slim black LED desk lamp\nUse: focused task light for working or reading at a desk; home office, study, bedroom\nStyle: minimalist, modern, industrial\nMaterials: black coated steel tube frame, brushed aluminium LED head and base end, black cord\nColors: black, brushed silver\nShape: single continuous bent tube rising from a triangular loop base, narrow bar light head on a flexible neck, very thin and graphic, small footprint\nFeel: sleek, graphic, discreet, modern\nGoes with: dark wood or white desks, grey walls, metal accents; minimalist, modern or industrial home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "801.060.12",
+          "name": "FORS",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/801.060.12.jpg"
+          ],
+          "description": "Type: glossy black articulated work lamp\nUse: task light for working or reading at a desk; home office, study, bedroom\nStyle: industrial, retro, modern\nMaterials: glossy black lacquered steel shade, arms and round base, exposed metal springs, black cord\nColors: glossy black, silver springs\nShape: rounded dome shade with a pull knob on a jointed spring-balanced arm, heavy round base, angular and adjustable, compact\nFeel: graphic, practical, classic, focused\nGoes with: white or wood desks, black and white palettes, metal accents; industrial or modern home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "801.487.00",
+          "name": "ARD",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/801.487.00.jpg"
+          ],
+          "description": "Type: adjustable metal desk lamp\nUse: focused task light for reading and working at a desk; home office, study, bedroom\nStyle: industrial, retro, Scandinavian\nMaterials: powder-coated steel shade and arms, chrome-look joints and knobs, black fabric cord\nColors: light silver grey, chrome accents, black cord\nShape: bell-shaped shade with a vented top, two-part jointed arm with adjustment knobs, round weighted base, slim and angular, medium visual weight\nFeel: practical, focused, crisp, utilitarian\nGoes with: white or wood desks, grey and black accents, concrete or metal finishes; industrial or Scandinavian home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "802.807.42",
+          "name": "SVIRVEL",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.807.42.jpg"
+          ],
+          "description": "Type: adjustable white desk lamp\nUse: directed light for reading and working at a desk; home office, study, bedroom\nStyle: Scandinavian, contemporary, retro\nMaterials: white plastic shade, silver-grey painted metal stem and base, white cord with switch\nColors: white, light silver grey\nShape: rounded bucket-shaped shade on a swivel joint, sliding side arm, gently S-curved stem, round flat base, compact and light\nFeel: friendly, practical, soft, tidy\nGoes with: white or light wood desks, grey accents, pale walls; Scandinavian or contemporary home offices and bedrooms\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "803.101.93",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/803.101.93.jpg"
+          ],
+          "description": "Type: gooseneck LED desk lamp\nUse: focused reading and task light at a desk or bedside; home office, study, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: copper-colored metal flexible gooseneck arm, small metal LED head, round metal base, black cord\nColors: shiny rose copper, black cord\nShape: slim flexible arm that rises and arcs over into a tiny teardrop head, small round weighted base, very thin and light, compact\nFeel: sleek, warm, delicate, modern\nGoes with: white desks, light or dark wood, blush and grey tones, brass or copper accents; contemporary or glam home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "803.156.52",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/803.156.52.jpg"
+          ],
+          "description": "Type: black gooseneck clip-on LED lamp\nUse: focused light clamped to a desk, shelf or headboard; home office, study, bedroom\nStyle: minimalist, contemporary, modern\nMaterials: glossy black metal LED head, flexible black gooseneck, black plastic spring clamp, black cord\nColors: glossy black\nShape: tiny teardrop head on a thin curved gooseneck, sprung clip with gripping jaws, small and very light, easy to aim\nFeel: practical, discreet, sleek, compact\nGoes with: white or wood desks, bookshelves, black accents; minimalist or contemporary home offices and bedrooms\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "803.243.07",
+          "name": "HEKTAR",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/803.243.07.jpg"
+          ],
+          "description": "Type: clamp spotlight with bell shade\nUse: directed reading or accent light clamped to a desk, shelf or bed; home office, bedroom, living room\nStyle: industrial, retro, Scandinavian\nMaterials: cream powder-coated metal shade and bracket, steel screw clamp, grey cord\nColors: warm off-white cream, silver steel, grey\nShape: deep flared bell shade on a tilting bracket with a large knob, screw clamp with a flat jaw, chunky and compact, medium visual weight\nFeel: sturdy, utilitarian, warm, vintage\nGoes with: wood shelves, black or brass accents, brick or concrete; industrial or farmhouse rooms and home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "902.165.43",
+          "name": "HEKTAR",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.165.43.jpg"
+          ],
+          "description": "Type: dark grey clamp spotlight\nUse: directed reading or accent light clamped to a desk, shelf or bed; home office, bedroom, living room\nStyle: industrial, retro\nMaterials: textured dark grey powder-coated metal shade and bracket, black steel screw clamp, black cord\nColors: dark charcoal grey, black\nShape: deep flared bell shade on a tilting bracket with a large knob, screw clamp, chunky and compact, heavy-looking for its size\nFeel: rugged, utilitarian, moody, sturdy\nGoes with: wood shelves, concrete, brick, black metal; industrial home offices, lofts and workshops\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "902.807.51",
+          "name": "SVIRVEL",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.807.51.jpg"
+          ],
+          "description": "Type: adjustable white and grey desk lamp\nUse: directed task light for reading and working at a desk; home office, study, bedroom\nStyle: Scandinavian, contemporary, retro\nMaterials: white plastic shade, silver-grey painted metal jointed arms and base, white cord\nColors: white, light silver grey\nShape: rounded bucket shade on a curved yoke, two-part jointed arm with hinges, round flat base, angular and light, compact\nFeel: friendly, practical, crisp, tidy\nGoes with: white or light wood desks, grey accents, pale walls; Scandinavian or contemporary home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "abo-B084Z8KNKT",
+          "name": "AmazonBasics Eye-Caring LED Desk Lamp, 3 Lighting Modes with 40-Minute Timer and Touch Control - 32 LEDs",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 39.6,
+            "depth": 17.0,
+            "height": 36.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084Z8KNKT.jpg"
+          ],
+          "description": "Type: flexible LED desk lamp\nUse: task light for reading and working; home office, bedroom, on a desk or nightstand\nStyle: minimalist, contemporary, modern\nMaterials: glossy white plastic, flexible gooseneck, LED panel, touch controls\nColors: white, silver accent\nShape: slim bar-shaped head on a curved flexible gooseneck, round flared base with touch buttons, compact and light\nFeel: clean, practical, fresh\nGoes with: white desks, light wood, grey or white walls; modern or minimalist home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        },
+        {
+          "id": "abo-B082XLC9B4",
+          "name": "Amazon Brand \u2013 Rivet Scandinavian Task Lamp, 19\"H, Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 15.2,
+            "depth": 15.2,
+            "height": 48.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XLC9B4.jpg"
+          ],
+          "description": "Type: adjustable metal task lamp\nUse: reading and task light; home office, bedroom, living room, on a desk or side table\nStyle: Scandinavian, industrial, mid-century modern\nMaterials: matte black metal, light wood accent, white inner shade, built-in USB port\nColors: matte black, light natural wood, white\nShape: angled cone shade with wooden cap on a pivot arm, thin straight pole, round weighted base, slim and compact\nFeel: graphic, warm, functional\nGoes with: light wood desks, white walls, black accents; Scandinavian or industrial home offices\n",
+          "score": null,
+          "kind": "desk lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a small leather reading armchair in the corner by the tall window",
+      "spec": {
+        "piece": "a small leather reading armchair in the corner by the tall window",
+        "why": "the corner beside the tall window gets the best daylight for reading, and a compact black leather armchair adds comfort while staying within the black, dark wood and gray palette",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 80,
+        "max_depth_cm": 85,
+        "max_height_cm": null,
+        "query": "Type: armchair, small leather lounge chair\nUse: reading in a corner; home office\nStyle: modern, mid-century modern, minimalist\nMaterials: black leather, dark wood or black metal legs\nColors: black, dark walnut brown\nShape: compact, low back with arms, slim legs, tailored cushions, medium visual weight\nFeel: cozy, sober, elegant\nGoes with: dark oak floor, white walls, dark wood desk, black and gray accents; modern home office"
+      },
+      "candidates": [
+        {
+          "id": "102.335.32",
+          "name": "NOLMYRA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/102.335.32.jpg"
+          ],
+          "description": "Type: armless lounge easy chair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: bent birch veneer frame, grey perforated mesh seat shell\nColors: light grey, light natural birch\nShape: one-piece curved seat and back shell sloping low, armless, open wooden frame with square legs and side stretchers, light and airy, compact\nFeel: relaxed, light, casual, fresh\nGoes with: light wood, white walls, grey textiles; Scandinavian living rooms, small apartments, student rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "202.016.82",
+          "name": "STORSELE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.016.82.jpg"
+          ],
+          "description": "Type: high-back rattan armchair\nUse: relaxing, reading; living room, sunroom, bedroom\nStyle: bohemian, coastal, retro\nMaterials: rattan frame in a black stained finish, woven rattan seat and spindles\nColors: black, dark charcoal\nShape: tall fan-shaped back of bent rattan spindles, curved open arms, slatted seat, four slim splayed legs, light and open frame, medium visual weight\nFeel: airy, graphic, relaxed, exotic\nGoes with: white walls, natural textiles, green plants, light wood; bohemian, coastal or eclectic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "202.396.80",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.396.80.jpg"
+          ],
+          "description": "Type: round swivel tub accent chair\nUse: lounging, reading; living room, bedroom, lounge\nStyle: contemporary, retro, mid-century modern\nMaterials: velvet-look fabric upholstery, padded cylindrical body, loose lumbar cushion, dark round swivel base\nColors: bright sunflower yellow, black base\nShape: curved enclosed tub back that wraps into a cylindrical body, armless, deep round seat, small back cushion, low disc swivel base, compact and rounded\nFeel: cheerful, bold, playful, cozy\nGoes with: grey or white walls, black or brass accents, light wood; contemporary or retro living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "202.396.99",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.396.99.jpg"
+          ],
+          "description": "Type: high-back wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: mid-century modern, classic, contemporary\nMaterials: velvet upholstery, padded frame, attached neck cushion, solid wood legs in a warm brown stain\nColors: deep black, warm medium brown wood\nShape: tall upright back with subtle wings and a half-moon headrest pillow, rounded flared arms, thick seat cushion, four tapered wooden legs, tailored and slim, medium visual weight\nFeel: elegant, dramatic, refined, cozy\nGoes with: walnut or oak, brass accents, warm rugs, grey or green walls; mid-century or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "302.249.04",
+          "name": "POPPTORP",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/302.249.04.jpg"
+          ],
+          "description": "Type: molded plastic tub armchair on pedestal\nUse: casual sitting, lounging; living room, playroom, balcony\nStyle: retro, modern, contemporary\nMaterials: glossy molded plastic shell and base\nColors: bright white\nShape: rounded tub seat with low curved arms rising into the back, ribbed cylindrical body, wide round disc foot, compact and chunky\nFeel: playful, clean, fun, sculptural\nGoes with: bright colors, white walls, colorful cushions and rugs; retro, modern or playful rooms, kids' rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "390.108.90",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/390.108.90.jpg"
+          ],
+          "description": "Type: cantilever bentwood lounge armchair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: layer-glued bent wood frame in a dark brown stain, padded woven fabric cushion\nColors: medium grey heathered fabric, dark brown wood\nShape: long one-piece cushion with a padded headrest, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: relaxed, cozy, calm, timeless\nGoes with: dark wood, grey or white walls, wool rugs; Scandinavian or modern living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "391.505.88",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/391.505.88.jpg"
+          ],
+          "description": "Type: cantilever bentwood leather lounge armchair\nUse: relaxing, reading; living room, study, reading corner\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: layer-glued bent wood frame in a dark brown stain, cognac leather cushion with diamond stitching\nColors: warm cognac brown, dark brown wood\nShape: tall one-piece cushion quilted in a diamond pattern, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: warm, inviting, relaxed, classic\nGoes with: walnut or dark wood, cream walls, wool rugs, brass lamps; mid-century or classic living rooms and studies\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "399.030.41",
+          "name": "POPPTORP",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/399.030.41.jpg"
+          ],
+          "description": "Type: molded plastic tub armchair with seat cushion\nUse: casual sitting, lounging; living room, playroom, balcony\nStyle: retro, modern, contemporary\nMaterials: glossy molded plastic shell and base, round tufted fabric seat pad\nColors: bright white, charcoal black cushion\nShape: rounded tub seat with low curved arms rising into the back, ribbed cylindrical body, wide round disc foot, thick round cushion, compact and chunky\nFeel: playful, graphic, fun, sculptural\nGoes with: black and white schemes, bold colors, white walls; retro, modern or playful rooms, kids' rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "490.473.41",
+          "name": "JENNYLUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/490.473.41.jpg"
+          ],
+          "description": "Type: skirted upholstered club armchair\nUse: relaxing, reading; living room, bedroom, guest room\nStyle: traditional, farmhouse, classic\nMaterials: cotton slipcover upholstery, padded frame, loose seat cushion\nColors: off-white, soft cream\nShape: square upright back, rolled arms, boxy seat cushion with piping, pleated skirt reaching the floor, small wooden feet, deep and roomy, medium visual weight\nFeel: soft, homey, bright, comfortable\nGoes with: light wood, linen, soft pastels, rattan; farmhouse, coastal or cottage living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "490.904.81",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/490.904.81.jpg"
+          ],
+          "description": "Type: bentwood rocking armchair\nUse: rocking, relaxing, reading; living room, nursery, bedroom\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: layer-glued bent birch veneer frame, padded fabric cushion\nColors: off-white cushion, light natural birch\nShape: long one-piece cushion with a headrest pad, curved bentwood arms, sweeping rocker runners, reclined seat, open and light frame, medium visual weight\nFeel: soothing, airy, calm, cozy\nGoes with: light wood, white walls, soft textiles, pastel tones; Scandinavian nurseries and living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "491.295.82",
+          "name": "JENNYLUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/491.295.82.jpg"
+          ],
+          "description": "Type: skirted upholstered club armchair\nUse: relaxing, reading; living room, bedroom, den\nStyle: traditional, classic, farmhouse\nMaterials: woven fabric slipcover upholstery, padded frame, loose seat cushion\nColors: dark slate grey\nShape: square upright back, rolled arms, boxy seat cushion with piping, pleated skirt reaching the floor, small wooden feet, deep and roomy, medium visual weight\nFeel: cozy, solid, comfortable, homey\nGoes with: white or cream walls, warm wood, patterned rugs; traditional, farmhouse or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "500.395.52",
+          "name": "IKEA PS GULLHOLMEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.395.52.jpg"
+          ],
+          "description": "Type: woven rocking lounge chair\nUse: lounging, rocking; living room, sunroom, kids' corner\nStyle: bohemian, coastal, rustic\nMaterials: hand-woven natural plant fiber over a frame\nColors: natural greige, warm sand, light brown\nShape: low sloping seat on a curved rocking base, tall narrow back ending in a looped handle, solid woven sides, sculptural, low and compact\nFeel: organic, quirky, relaxed, natural\nGoes with: natural fibers, plants, light wood, white walls; bohemian, coastal or rustic rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "502.954.72",
+          "name": "RDVIKEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/502.954.72.jpg"
+          ],
+          "description": "Type: woven lounge chair on wire base\nUse: relaxing, reading; living room, bedroom, sunroom\nStyle: mid-century modern, contemporary, bohemian\nMaterials: hand-woven rattan seat shell, black powder-coated steel frame\nColors: dark chocolate brown, black\nShape: deep scooped one-piece seat and back shell, low and reclined, armless, splayed steel wire base with crossed rods, light and open, medium visual weight\nFeel: relaxed, earthy, sculptural, airy\nGoes with: warm wood, cream or white walls, black accents, plants; mid-century, bohemian or modern living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "503.056.16",
+          "name": "STRANDMON",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/503.056.16.jpg"
+          ],
+          "description": "Type: wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: traditional, classic, retro\nMaterials: woven fabric upholstery with button tufting, padded frame, solid wood tapered legs\nColors: olive green, light brown wood\nShape: tall back with flared wings, button-tufted backrest, scrolled rolled arms, thick seat cushion with piping, four tapered wooden legs, upright and generous, medium visual weight\nFeel: cozy, classic, inviting, cheerful\nGoes with: warm wood, cream or white walls, brass lamps, patterned rugs; traditional or classic living rooms, reading corners\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "590.335.55",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/590.335.55.jpg"
+          ],
+          "description": "Type: deep upholstered armchair\nUse: relaxing, lounging; living room, den, bedroom\nStyle: traditional, classic, contemporary\nMaterials: woven fabric upholstery with piping, padded frame, black turned wooden legs\nColors: dark charcoal grey, black\nShape: low wide back cushion, scrolled rolled arms with gathered fronts, thick seat cushion, short turned legs, low and deep, bulky\nFeel: cozy, inviting, solid, comfortable\nGoes with: white or light grey walls, warm wood, brass accents, patterned rugs; traditional or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "690.335.45",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/690.335.45.jpg"
+          ],
+          "description": "Type: deep upholstered armchair\nUse: relaxing, lounging; living room, den, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: lightly striped woven fabric upholstery with piping, padded frame, black turned wooden legs\nColors: warm taupe grey, black\nShape: low wide back cushion, scrolled rolled arms with gathered fronts, thick seat cushion, short turned legs, low and deep, bulky\nFeel: soft, homey, cozy, relaxed\nGoes with: cream walls, warm wood, linen, black accents; traditional, farmhouse or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "690.473.40",
+          "name": "JENNYLUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/690.473.40.jpg"
+          ],
+          "description": "Type: striped skirted club armchair\nUse: relaxing, reading; living room, bedroom, guest room\nStyle: traditional, coastal, farmhouse\nMaterials: cotton slipcover upholstery, padded frame, loose seat cushion\nColors: soft red and white stripes, light pink overall\nShape: square upright back, rolled arms, boxy seat cushion with piping, pleated skirt reaching the floor, deep and roomy, medium visual weight\nFeel: cheerful, homey, playful, cozy\nGoes with: white walls, light wood, navy or red accents; coastal, cottage or farmhouse living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "802.017.40",
+          "name": "SUNDVIK",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/802.017.40.jpg"
+          ],
+          "description": "Type: child-size wooden rocking chair\nUse: sitting, rocking, playing; kids' room, nursery, playroom\nStyle: farmhouse, Scandinavian, traditional\nMaterials: solid wood frame in a white painted finish\nColors: white\nShape: small rocker with a curved top rail, vertical slat back, flat armrests on spindles, solid seat, curved rocker runners, compact and light\nFeel: sweet, simple, bright, homey\nGoes with: white or pastel kids' furniture, light wood floors, soft textiles; Scandinavian or farmhouse nurseries\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "802.396.82",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/802.396.82.jpg"
+          ],
+          "description": "Type: round swivel tub accent chair\nUse: lounging, reading; living room, bedroom, lounge\nStyle: mid-century modern, retro, contemporary\nMaterials: velvet upholstery, padded cylindrical body, loose lumbar cushion, dark round swivel base\nColors: golden ochre brown, black base\nShape: curved enclosed tub back that wraps into a cylindrical body, armless, deep round seat, small back cushion, low disc swivel base, compact and rounded\nFeel: warm, plush, cozy, rich\nGoes with: walnut, brass, cream or dark green walls; mid-century or retro living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "902.396.67",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/902.396.67.jpg"
+          ],
+          "description": "Type: round swivel tub accent chair\nUse: lounging, reading; living room, bedroom, lounge\nStyle: contemporary, retro, art deco\nMaterials: velvet upholstery, padded cylindrical body, loose lumbar cushion, dark round swivel base\nColors: vivid emerald green, black base\nShape: curved enclosed tub back that wraps into a cylindrical body, armless, deep round seat, small back cushion, low disc swivel base, compact and rounded\nFeel: bold, lively, plush, playful\nGoes with: white or blush pink walls, brass accents, light wood; contemporary, retro or art deco living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "902.642.18",
+          "name": "IKEA PS LMSK",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/902.642.18.jpg"
+          ],
+          "description": "Type: egg-shaped swivel pod chair with canopy\nUse: hiding, reading, playing; kids' room, playroom\nStyle: retro, modern, contemporary\nMaterials: molded plastic shell and pedestal base, fabric pull-down canopy, padded seat pad\nColors: bright orange, light orange fabric\nShape: enclosed egg-shaped shell with a gathered fabric hood, rounded cocoon interior, round seat pad, swivel pedestal on a disc foot, compact and sculptural\nFeel: playful, cozy, fun, sheltered\nGoes with: bright colors, white walls, playful rugs; kids' rooms and retro or modern playrooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "903.200.97",
+          "name": "GRNADAL",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/903.200.97.jpg"
+          ],
+          "description": "Type: rattan rocking chair\nUse: rocking, relaxing, reading; living room, bedroom, nursery\nStyle: Scandinavian, Japandi, bohemian\nMaterials: hand-woven rattan back and seat, pale solid wood frame and runners, dark grey steel rods\nColors: light natural rattan, pale wood, dark grey\nShape: large rounded oval woven back, open lattice weave, thin wooden armrests on steel rods, slim spindle frame, curved wooden rockers, light and airy\nFeel: airy, crafted, calm, natural\nGoes with: light wood, white walls, linen, plants; Scandinavian, Japandi or bohemian living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "991.506.46",
+          "name": "MELLBY",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/991.506.46.jpg"
+          ],
+          "description": "Type: boxy upholstered armchair\nUse: relaxing, sitting; living room, lounge, bedroom\nStyle: modern, minimalist, contemporary\nMaterials: woven fabric upholstery with piping, padded frame, chrome-plated steel sled legs\nColors: light beige, silver chrome\nShape: straight track arms, square back cushion, thick seat cushion, raised body on two chrome sled runners, clean right angles, compact, medium visual weight\nFeel: clean, calm, neutral, relaxed\nGoes with: grey or white walls, glass and chrome, light wood; modern or minimalist living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "500.583.76",
+          "name": "AGEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/500.583.76.jpg"
+          ],
+          "description": "Type: rattan tub armchair\nUse: relaxing, extra seating, casual dining; living room, sunroom, bedroom, dining room\nStyle: bohemian, coastal, rustic\nMaterials: hand-woven natural rattan, bamboo legs\nColors: warm honey rattan, light natural tan\nShape: rounded tub back curving into the arms, arched openings between back and arms, woven diamond pattern detail, woven seat, four slim splayed bamboo legs, compact and light\nFeel: warm, relaxed, natural, airy\nGoes with: plants, linen cushions, light wood, white walls; bohemian, coastal or tropical living rooms and sunrooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DBB77DV",
+          "name": "Amazon Brand \u2013 Ravenna Home Modern Wingback Accent Chair, 27.5\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 87.6,
+            "depth": 69.8,
+            "height": 104.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBB77DV.jpg"
+          ],
+          "description": "Type: wingback accent armchair\nUse: reading, extra seating; living room, bedroom\nStyle: modern, mid-century modern, contemporary\nMaterials: woven textured upholstery fabric, dark wood legs\nColors: warm beige, dark brown\nShape: tall curved wingback, flared sloping arms, loose seat cushion with welt edge, four tapered wood legs, medium size\nFeel: soft, warm, inviting\nGoes with: cream, warm wood, brass accents, neutral rugs; modern or transitional living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07KXYGHGZ",
+          "name": "Rivet Willard Mid-Century Modern Willard Accent Chair Fabric Leather and Metal",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07KXYGHGZ.jpg"
+          ],
+          "description": "Type: velvet accent armchair\nUse: lounging, reading, extra seating; living room, bedroom\nStyle: mid-century modern, contemporary, glam\nMaterials: velvet upholstery, black metal frame, brass leg caps\nColors: cool blue-grey, black, brass\nShape: high soft back, padded wraparound arms with zigzag stitching, cushioned seat, slim black metal sled-like legs with gold tips, light and open\nFeel: elegant, plush, refined\nGoes with: charcoal, walnut, brass, marble; modern or mid-century living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07QJLYCCL",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Bonded Leather Swivel Chair, 23.6\"W, Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 64.5,
+            "depth": 59.9,
+            "height": 81.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QJLYCCL.jpg"
+          ],
+          "description": "Type: swivel tub armchair\nUse: dining, desk seating, extra seating; dining room, home office, living room\nStyle: mid-century modern, retro, contemporary\nMaterials: bonded leather with distressed finish, dark wood legs\nColors: warm cognac brown, dark brown\nShape: rounded shell back with cutout, curved arms, padded seat with welt, four splayed tapered wood legs on swivel base, compact\nFeel: warm, inviting, vintage\nGoes with: walnut tables, cream walls, black metal, green plants; mid-century or industrial rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B0723H8D37",
+          "name": "Amazon Brand \u2013 Stone & Beam Highland Modern Living Room Wingback Accent Chair, 32\"W, Denim",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 96.0,
+            "depth": 81.0,
+            "height": 106.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0723H8D37.jpg"
+          ],
+          "description": "Type: wingback accent armchair\nUse: reading, lounging; living room, bedroom, home office\nStyle: modern, traditional, contemporary\nMaterials: textured woven fabric, piped edges, wood legs\nColors: dark denim blue, medium brown\nShape: tall straight wingback, track arms, thick box seat cushion, piped seams, four tapered wood legs, substantial and upright\nFeel: tailored, cozy, classic\nGoes with: grey, cream, warm wood, brass; transitional or modern living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07KXZBV93",
+          "name": "Stone & Beam Grover Industrial Accent Chair",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07KXZBV93.jpg"
+          ],
+          "description": "Type: upholstered accent armchair\nUse: extra seating, reading; living room, bedroom, home office\nStyle: mid-century modern, contemporary, minimalist\nMaterials: textured woven fabric, piped seams, dark wood legs\nColors: light warm grey, dark brown\nShape: low curved back, track arms with piped fronts, tight upholstered seat, four tapered wood legs, compact and tidy\nFeel: calm, simple, understated\nGoes with: white walls, walnut, black accents, soft rugs; modern or Scandinavian rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07KXP7MT7",
+          "name": "Rivet Abel Mid-Century Accent Chair Fabric and Metal",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07KXP7MT7.jpg"
+          ],
+          "description": "Type: upholstered accent armchair\nUse: lounging, reading; living room, bedroom, home office\nStyle: mid-century modern, contemporary, modern\nMaterials: textured woven fabric, chrome metal legs\nColors: dark charcoal grey, silver\nShape: sloped flared track arms, two-button tufted loose back cushion, deep seat, slim tapered metal legs, compact and clean-lined\nFeel: sleek, understated, cozy\nGoes with: white walls, chrome or glass, light wood, cool greys; modern or mid-century living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07QC85YBY",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Upholstered High-Back Swivel Chair, 25.2\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 64.0,
+            "depth": 62.0,
+            "height": 104.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC85YBY.jpg"
+          ],
+          "description": "Type: high-back swivel desk chair\nUse: working at a desk; home office, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: upholstered fabric shell, chrome five-star base, casters, gas lift\nColors: warm cream beige, silver chrome, black\nShape: tall curved shell back with stitched panels, low wrap-around arms, padded seat, swivel pedestal with rolling star base, slim and compact\nFeel: soft, clean, polished\nGoes with: white desks, light wood, brass or chrome accents; modern home offices\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B0019FLS0G",
+          "name": "Pinzon Crescent Bay Armchair, Stripe",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0019FLS0G.jpg"
+          ],
+          "description": "Type: striped rolled-arm armchair\nUse: lounging, reading; living room, bedroom\nStyle: traditional, coastal, classic\nMaterials: striped cotton-like upholstery fabric, dark wood tapered legs\nColors: cream white, light grey stripes, dark espresso\nShape: rounded tight back, scrolled rolled arms, deep seat, wide vertical stripes, short tapered dark legs, medium and generous\nFeel: fresh, relaxed, inviting\nGoes with: white walls, navy or grey accents, natural wood; coastal or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07B4MMPPH",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Nailhead Leather Recliner, 33\"W, Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 83.8,
+            "depth": 80.0,
+            "height": 68.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4MMPPH.jpg"
+          ],
+          "description": "Type: leather push-back recliner\nUse: reclining, reading, watching TV; living room, den, home office\nStyle: traditional, classic\nMaterials: top-grain leather, brass nailhead trim, wood legs\nColors: dark reddish brown, antique brass\nShape: tight high back, rolled arms with nailhead outlines, cushioned seat, short tapered wood legs, compact and solid\nFeel: rich, cozy, distinguished\nGoes with: dark wood, plaid textiles, warm walls, library shelving; traditional dens or studies\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075X467QG",
+          "name": "Amazon Brand \u2013 Stone & Beam Hillsboro Modern Wingback Living Room Accent Chair With Nailhead Trim, 29\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 94.0,
+            "depth": 73.7,
+            "height": 102.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X467QG.jpg"
+          ],
+          "description": "Type: wingback accent chair\nUse: reading, sitting; living room, bedroom\nStyle: traditional, classic, contemporary\nMaterials: woven upholstery fabric, dark nailhead trim, dark wood legs\nColors: warm oatmeal beige, dark brown\nShape: tall wingback with flared wings, nailhead-lined edges, loose seat cushion, slim tapered dark legs, upright and elegant\nFeel: refined, warm, stately\nGoes with: dark wood, leather, warm neutrals, brass lamps; classic or transitional living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075X342T5",
+          "name": "Stone & Beam Westport Modern Nailhead Upholstered Accent Arm Chair, 36\"W, Stone Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 95.9,
+            "depth": 91.4,
+            "height": 83.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X342T5.jpg"
+          ],
+          "description": "Type: nailhead upholstered accent armchair\nUse: lounging, reading; living room, bedroom, home office\nStyle: traditional, contemporary, classic\nMaterials: woven upholstery fabric, antique brass nailhead trim, dark stained wood base and legs\nColors: warm greige, dark brown wood, bronze\nShape: track arms with nailhead outline, loose back and seat cushions, plinth-style wood base on tapered square legs, boxy, medium visual weight\nFeel: tailored, refined, cozy\nGoes with: dark wood, leather, cream walls, brass accents; classic or transitional living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DBGXFVF",
+          "name": "Amazon Brand \u2013 Ravenna Home Dunford Casual Rolled Arm Chair, 37\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 94.0,
+            "depth": 85.1,
+            "height": 90.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBGXFVF.jpg"
+          ],
+          "description": "Type: rolled-arm upholstered armchair\nUse: lounging, reading; living room, bedroom, family room\nStyle: traditional, farmhouse, classic\nMaterials: textured woven upholstery fabric, dark wood block feet\nColors: warm beige, oatmeal, dark brown feet\nShape: rounded rolled arms, loose back and seat cushions, skirtless upholstered base, short square feet, plump and generous, medium-heavy visual weight\nFeel: cozy, soft, inviting, relaxed\nGoes with: warm wood, linen, white or cream walls, woven textures; farmhouse or casual traditional rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DYJ43BZ",
+          "name": "JC Home Pompei Adjustable-Height Round-Back Button-Tufted Swivel Accent Chair, Pure White",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 94.0,
+            "depth": 88.9,
+            "height": 101.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DYJ43BZ.jpg"
+          ],
+          "description": "Type: swivel tufted bowl accent chair\nUse: vanity seating, accent seating, desk seating; bedroom, living room, home office\nStyle: glam, retro, modern\nMaterials: faux leather upholstery, button tufting, chrome gas-lift column and base\nColors: pure white, polished silver chrome\nShape: round scooped bowl seat with diamond tufting, adjustable height pedestal, round disc base, swivel, compact and sculptural\nFeel: playful, bright, chic\nGoes with: white or pastel walls, chrome, mirrors, pink accents; glam bedrooms or vanity corners\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B0853VNSCC",
+          "name": "Amazon Brand \u2013 Stone & Beam Gabrieli Wood-Framed Upholstered Swivel Chair, 29.9\"W, Charcoal",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 84.0,
+            "depth": 76.0,
+            "height": 81.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0853VNSCC.jpg"
+          ],
+          "description": "Type: upholstered swivel armchair\nUse: lounging, reading, conversation; living room, bedroom, home office\nStyle: contemporary, modern, minimalist\nMaterials: textured woven upholstery fabric, wood plinth base\nColors: dark charcoal, warm brown wood trim\nShape: boxy track arms, loose back and seat cushions, upholstered to the floor on a recessed wood plinth, swivel, compact and solid\nFeel: cozy, grounded, understated\nGoes with: warm wood, cream or white walls, leather, brass; modern or transitional living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075X33SSW",
+          "name": "Amazon Brand \u2013 Stone & Beam Elmore Pillow-Top Armless Accent Chair, 24\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 83.8,
+            "depth": 61.0,
+            "height": 88.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X33SSW.jpg"
+          ],
+          "description": "Type: armless upholstered accent chair\nUse: extra seating, reading; living room, bedroom\nStyle: traditional, classic\nMaterials: woven fabric upholstery, piped cushions, dark stained turned wood legs, brass casters\nColors: warm ivory beige, dark brown\nShape: armless slipper silhouette, plump pillow-top seat and back cushions, turned front legs on casters, tapered back legs, compact\nFeel: soft, elegant, inviting\nGoes with: dark wood, cream or pale walls, brass accents; traditional or classic rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075YMY2J7",
+          "name": "Amazon Brand \u2013 Rivet Roger 2-Pack Mid-Century 2-Tone Accent Chairs, 34.8\"H, Navy and Grey",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 59.4,
+            "depth": 49.0,
+            "height": 88.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YMY2J7.jpg"
+          ],
+          "description": "Type: upholstered dining chair, set of two\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: mid-century modern, modern, minimalist\nMaterials: woven fabric upholstery, black metal legs\nColors: navy blue, light grey seat, black\nShape: curved high scoop back, padded seat, four slim tapered legs, armless, slender and light\nFeel: sleek, calm, tailored\nGoes with: wood or marble tables, grey walls, black accents; modern or mid-century dining rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DW477M8",
+          "name": "Amazon Brand \u2013 Ravenna Home Ryleigh Rounded Mid-Century Barrel Accent Chair, 27.5\"W",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DW477M8.jpg"
+          ],
+          "description": "Type: barrel accent armchair\nUse: extra seating, reading; living room, bedroom\nStyle: mid-century modern, traditional\nMaterials: textured woven fabric, brass nailhead trim, dark stained wood legs\nColors: medium cool blue, dark brown, antique brass\nShape: rounded barrel back flowing into arms, nailhead trim on seat rail, slightly splayed tapered legs, compact\nFeel: cozy, charming, inviting\nGoes with: warm wood, white or cream walls, brass accents; transitional or mid-century rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B086VZ8FC2",
+          "name": "Amazon Brand \u2013 Stone & Beam Cherrie Upholstered Gliding Swivel Chair, 34\"W, Chimney",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 91.4,
+            "depth": 86.4,
+            "height": 83.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B086VZ8FC2.jpg"
+          ],
+          "description": "Type: upholstered swivel glider chair\nUse: lounging, reading, gliding; living room, bedroom\nStyle: contemporary, modern\nMaterials: soft chenille velvet upholstery, black metal swivel base\nColors: dark charcoal grey, black\nShape: rounded tub silhouette, channeled fan back, curved arms, thick seat cushion, hidden swivel glider base, plump and enveloping\nFeel: cozy, soft, enveloping\nGoes with: light grey or white walls, metal and glass accents; modern living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B082VLZ7SC",
+          "name": "Amazon Brand \u2013 Stone & Beam Wingard Leather Wingback Accent Chair, 32.3\"W, Cognac",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 91.0,
+            "depth": 82.0,
+            "height": 109.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082VLZ7SC.jpg"
+          ],
+          "description": "Type: leather wingback accent chair\nUse: reading, relaxing; living room, bedroom, home office\nStyle: traditional, classic, contemporary\nMaterials: top-grain leather upholstery, dark wood tapered legs, lumbar pillow\nColors: warm cognac brown, dark espresso legs\nShape: tall wingback with flared wings, sloped slim arms, loose seat cushion, lumbar pillow, four tapered legs, tall and stately\nFeel: warm, refined, inviting\nGoes with: dark wood, brass, cream or green walls; library-style, traditional or transitional rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DVTRT9V",
+          "name": "Amazon Brand \u2013 Ravenna Home Christian Mid-Century Modern Accent Chair, 31.89\"W",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DVTRT9V.jpg"
+          ],
+          "description": "Type: upholstered velvet accent armchair\nUse: seating, relaxing; living room, bedroom\nStyle: contemporary, mid-century modern, classic\nMaterials: velvet upholstery with self piping, dark wood block legs\nColors: warm light taupe beige, dark brown legs\nShape: square back, flared track arms, piped edges, loose seat cushion, short square tapered legs, compact and boxy\nFeel: soft, elegant, calm\nGoes with: neutral walls, dark wood, brass accents; modern or transitional living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B072Y6Y96S",
+          "name": "AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 69.0,
+            "depth": 66.5,
+            "height": 88.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072Y6Y96S.jpg"
+          ],
+          "description": "Type: upholstered reception armchair\nUse: guest seating, reading; home office, living room, bedroom\nStyle: classic, traditional, contemporary\nMaterials: faux leather upholstery, mahogany finished wood legs\nColors: black, dark reddish mahogany\nShape: boxy track-arm silhouette, straight upright back, cushioned seat, four square tapered wooden legs, compact and tidy\nFeel: formal, neat, dependable\nGoes with: dark wood desks, cream or grey walls, brass accents; traditional offices or classic living rooms\n",
+          "score": null,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07P5LM53Z",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 90.9,
+            "depth": 83.1,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LM53Z.jpg"
+          ],
+          "description": "Type: leather lounge armchair\nUse: reading, relaxing; living room, bedroom, home office\nStyle: mid-century modern, retro, modern\nMaterials: top-grain leather, button tufting, dark wood legs\nColors: warm caramel brown, dark walnut\nShape: track arms with flared fronts, button-tufted back, deep seat cushion, angled tapered legs, medium weight\nFeel: warm, inviting, relaxed\nGoes with: walnut wood, cream walls, green or rust accents; mid-century or modern rooms\n",
+          "score": null,
+          "kind": "armchair"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}
