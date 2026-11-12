@@ -8,11 +8,12 @@ runs_dir: datos/resultados/amoblar  # una carpeta por corrida (se commitea)
 
 rag:
   # El catálogo del flujo: IKEA + Amazon Berkeley Objects (2026-11-10, punta a punta en 11 ambientes:
-  # le gana a IKEA solo 8 a 2; en los pedidos nórdicos empatan, en los de otros estilos gana 6 a 0).
+  # le gana a IKEA solo 8 a 2, p = 0,11; en los pedidos nórdicos empatan, en los de otros estilos
+  # gana 6 a 0, con pedidos escritos sabiendo qué le falta a IKEA: docs/EXPERIMENTOS.md, T3b).
   # Las evaluaciones con el ground truth de IKEA usan siempre datos/catalogo/ikea.yaml (cli.IKEA_GT).
   catalog: datos/catalogo/todos.yaml
   mode: rag                       # o whole_catalog: todo lo que pasa los filtros, sin ranking
-  top_k: 3
+  top_k: 3                        # solo para `amoblai buscar`; el flujo trae furnish.candidates por pieza
   describer: written_todos        # las ocho líneas: IKEA por subagentes, ABO por la API (mismo formato)
   describers:
     written: {kind: written, file: datos/catalogo/descripciones.jsonl}
@@ -45,12 +46,14 @@ rag:
 
 furnish:
   steps: [plan, retrieve, choose, scene, generate]
-  # La imagen: edición estricta del ambiente del usuario, sin LLM (el modelo de imagen acomoda los
-  # productos) y con el control SIFT y reintento de furnish.room_check (experimento 12, 2026-10-25)
+  # La imagen: edición estricta del ambiente del usuario, con una plantilla sin LLM (el modelo de
+  # imagen acomoda los productos) y con el control SIFT y reintento de furnish.room_check. Es una
+  # decisión de costo y simplicidad (una llamada menos): la comparación con la escena escrita por
+  # el LLM es de una imagen por variante y no la sostiene (docs/REVISION.md, sección 4).
   scene_prompt: scene_prompt_libre_v4.md
   scene_llm: false
   max_pieces: null                # sin tope: las piezas que pidan el pedido y el ambiente (search_query_v4)
-  candidates: 5                   # por pieza: el LLM ve 5 fotos de cada una y elige la combinación (curva de k, 2026-11-10: 3 → 0,638, 5 → 0,667, 8 → 0,689)
+  candidates: 5                   # por pieza: el LLM ve 5 fotos de cada una y elige la combinación (curva de candidatos, `amoblai evaluar-candidatos`: 3 → 0,637, 5 → 0,667, 8 → 0,689; de 3 a 5, +0,029 [0,015; 0,043])
   photo_max_side: 1024
   # Claude (API de Anthropic) para plan, choose y scene. Precios por 1M de tokens, consultados
   # el 2026-10-21. Opus 5.5 siempre piensa; effort (low..max) regula cuánto (default medium).
