@@ -1,0 +1,11 @@
+# Qwen3 (local, gratis) contra el mejor embedding de OpenAI, text-embedding-3-large (3072
+# dimensiones, por API). Pago, centavos: unos 220 mil tokens entre descripciones y consultas,
+# US$0,03 a US$0,13 por millón. `uv run amoblai evaluar --ablacion
+# datos/configs/ablaciones/embedder-openai.yaml --pagar` (necesita OPENAI_API_KEY vigente en .env).
+name: ablacion-embedder-openai
+methods:
+  - {embedder: qwen3, filter: kind}
+  - {embedder: openai, filter: kind}                 # text-embedding-3-large, 3072 dimensiones
+  - {embedder: openai, filter: kind, dim: 1024}      # truncado a las 1024 de Qwen3 (Matryoshka)
+  - {embedder: openai, filter: kind, fusion: bm25+siglip2}
+  - {embedder: qwen3, filter: kind, fusion: bm25+siglip2}

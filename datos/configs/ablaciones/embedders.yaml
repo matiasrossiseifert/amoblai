@@ -1,0 +1,11 @@
+# El algoritmo de embedding, con la búsqueda del flujo (descripciones, filtro por kind):
+# `uv run amoblai evaluar --ablacion datos/configs/ablaciones/embedders.yaml` (gratis, local).
+# Cada uno se compara con Qwen3 (el del flujo) sobre las mismas consultas (`vs_base`), en el
+# producto exacto (hit@k) y por familia (el mismo modelo en otra medida u otro color).
+name: ablacion-embedders
+methods:
+  - {embedder: qwen3, filter: kind}      # el del flujo: Qwen3-Embedding-0.6B, 1024 dimensiones
+  - {embedder: hashing, filter: kind}    # bolsa de palabras, sin modelo
+  - {embedder: bm25, filter: kind}       # léxica clásica
+  - {embedder: bge, filter: kind}        # BGE-base-en-v1.5, 768 dimensiones
+  - {embedder: siglip2, filter: kind}    # por foto, sin descripciones

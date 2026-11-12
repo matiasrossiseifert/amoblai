@@ -151,6 +151,7 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
     assert "hashing|description|filtro-kind|consulta-kind" in m
     assert ours["answerable"] == 3  # el sillón no está anotado en el ambiente: sin relevantes
     assert ours["hit@1"] == 1.0 and ours["recall_item@10"] == 1.0
+    assert ours["familia_hit@1"] == 1.0  # el anotado es de su propia familia
     assert ours["azar_hit@1"] < 1.0
     assert ours["context_precision@10"] == ours["ndcg@10"] == 1.0
     assert ours["context_recall@3"] == ours["context_recall@10"] == 1.0
