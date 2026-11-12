@@ -30,9 +30,10 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
 - **Sin tope de piezas ni esquema en las respuestas.** Un plan llegó a 15 piezas (76 fotos en la
   elección, US$0,29); las respuestas del LLM se validan campo por campo, sin esquema ni
   reintento. (S)
-- **La imagen:** se reconoce la mitad de los productos (26 de 52 en 8 imágenes); el lugar que
-  decide el plan no llega al modelo de imagen; ninguna imagen se generó con el catálogo
-  combinado; los umbrales del control del ambiente están puestos a mano.
+- **La imagen:** se reconoce como el producto exacto el 41% (31 de 75 en las 11 imágenes de la
+  configuración final) y el ambiente se conserva en 7 de 11; cuando no, reintentar con el mismo
+  prompt casi nunca lo arregla; el lugar que decide el plan no llega al modelo de imagen; el
+  modelo acepta 13 productos; los umbrales del control del ambiente están puestos a mano.
 
 ## Mejoras del RAG
 

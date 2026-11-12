@@ -493,7 +493,7 @@ mismas 549 búsquedas del ground truth de IKEA, sobre el catálogo combinado:
 hit@1 baja un punto, dentro del intervalo de 95% (0,49 a 0,58). Es una cota pesimista: un producto
 de ABO arriba del anotado puede servir igual, y el ground truth lo cuenta como error.
 *Corrección (2026-11-12):* agregar productos solo puede bajar el número (0 consultas mejoran). Pareado: hit@1
-−0,011 [−0,021; −0,002] y, lo que importa con 5 candidatos, hit@5 −0,035 [−0,052; −0,019] (0,812 →
+−0,011 [−0,021; −0,002] y, lo que importa con 5 candidatos, hit@5 −0,035 [−0,052; −0,018] (0,812 →
 0,778). El efecto es chico y es una cota pesimista, pero no está "dentro del intervalo".
 
 **Decisión: el flujo usa IKEA + ABO** (`rag.catalog: datos/catalogo/todos.yaml`). En los pedidos
@@ -879,7 +879,7 @@ en otra medida u otro color"? ¿Y eso cambia qué embedder conviene?
 
 **Cómo.** Una métrica más en todas las ablaciones: `familia_hit@k` cuenta como acierto el
 producto anotado **o** cualquier variante de su modelo (mismo nombre comercial y mismo grupo de
-relevancia). `ablaciones/embedders.yaml`, corrida `20261112-102437_ablacion-embedders`.
+relevancia). `ablaciones/embedders.yaml`, corrida `20261112-124945_ablacion-embedders`.
 
 | Buscador (filtro por kind) | hit@1 exacto | hit@1 por familia [IC 95%] | hit@5 exacto / por familia | hit@1 por familia contra Qwen3 (pareado) |
 |---|---|---|---|---|
@@ -888,7 +888,7 @@ relevancia). `ablaciones/embedders.yaml`, corrida `20261112-102437_ablacion-embe
 | BM25 | 0,517 | 0,637 [0,60–0,68] | 0,801 / 0,854 | +0,015 [−0,024; +0,055] |
 | BGE-base | 0,475 | 0,557 [0,51–0,60] | 0,740 / 0,805 | −0,066 [−0,106; −0,027] |
 | SigLIP 2 (por foto) | 0,508 | 0,585 [0,53–0,64] | 0,807 / 0,843 | −0,038 [−0,089; +0,017] |
-| Densa + léxica + foto (versión 2) | 0,605 | 0,689 [0,64–0,74] | 0,825 / 0,862 | |
+| Densa + léxica + foto (versión 2) | 0,605 | 0,689 [0,64–0,74] | 0,825 / 0,862 | +0,066 [0,030; 0,102] |
 
 - **Sí: una parte de los "errores" no lo son.** De las veces que el primero no es el producto
   anotado, una de cada cinco es otra variante del mismo modelo (20% con Qwen3, 25% con BM25).
@@ -1045,11 +1045,11 @@ corridas completas están en `datos/resultados/amoblar/final-<ambiente>/`. Despu
 
 ## Pendientes de la v1
 
-Actualizado el 2026-11-12. Lo que falta decidir y lo que cuesta está en `docs/REVISION.md`
-(secciones 4, 6 y 8): el cara a cara de punta a punta entre la versión 1 y la versión 2, RAG
-contra no RAG, la misma configuración dos veces (el piso de ruido del juez), una imagen con la
-configuración final, el experimento de la escena con más de un ambiente, y el voto a ciegas del
-equipo para validar al juez.
+Actualizado el 2026-11-12. Lo que falta y lo que cuesta está en `docs/REVISION.md` (secciones 4
+y 8): la misma configuración dos veces (el piso de ruido del juez), las métricas del generador
+sobre las listas de la versión 2, el mejor embedding de OpenAI contra Qwen3, el experimento de
+la escena con más de un ambiente, el pedido abierto, y el voto a ciegas del equipo para validar
+al juez.
 
 # v0: retrieval por imagen (deprecada)
 
