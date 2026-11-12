@@ -800,10 +800,6 @@ def run_eval(
             }
             results[m.name]["vs_anterior"] = paired_difference(rows, previous, n_boot)
         previous = rows
-    run_dir = Path(out_root) / f"{started}_{name}"
-    run_dir.mkdir(parents=True)
-    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
-        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
     meta = {
         "name": name,
         "queries": str(queries_path),
@@ -812,7 +808,10 @@ def run_eval(
         "replica": replica,
         "catalog": cfg.rag.catalog,
         "index": index.meta,
-        "embedders": {e: cfg.rag.embedders[e] for e in sorted({m.embedder for m in methods})},
+        "embedders": {
+            e: cfg.rag.embedders.get(e, {"kind": e})  # bm25 no es de rag.embedders
+            for e in sorted({name for m in methods for name in m.scorers})
+        },
         "hnsw": cfg.rag.hnsw,
         "rerankers": {
             r: cfg.evaluation.rerankers[r] for r in sorted({m.rerank for m in methods if m.rerank})
@@ -820,6 +819,10 @@ def run_eval(
         "git_commit": git_commit(),
         "python": platform.python_version(),
     }
+    run_dir = Path(out_root) / f"{started}_{name}"
+    run_dir.mkdir(parents=True)
+    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
+        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
     (run_dir / "corrida.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2, default=str)
     )
