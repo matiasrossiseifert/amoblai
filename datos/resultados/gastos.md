@@ -6,26 +6,26 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 
 | Cuenta | Llamadas | Gastado (US$) | Tope en la config (US$) |
 |---|---|---|---|
-| anthropic | 1050 | 29,41 | 30,00 |
-| fal | 59 | 4,72 | 8,50 |
+| anthropic | 1111 | 33,48 | 50,00 |
+| fal | 79 | 6,32 | 8,50 |
 | openai | 0 | 0,00 | 0,50 |
-| **total** | 1109 | **34,13** | |
+| **total** | 1190 | **39,80** | |
 
 ## Por uso
 
 | Para qué | Cuenta | Modelo | Llamadas | US$ | US$ por llamada |
 |---|---|---|---|---|---|
 | Evaluación: un VLM ordena el top-10 (ground truth de IKEA) | anthropic | claude-opus-5-5 | 562 | 11,31 | 0,020 |
-| El flujo: elección de la lista | anthropic | claude-opus-5-5 | 54 | 6,89 | 0,128 |
+| El flujo: elección de la lista | anthropic | claude-opus-5-5 | 65 | 8,49 | 0,131 |
 | Catálogo: descripciones de los productos de ABO | anthropic | claude-opus-5-5 | 80 | 5,63 | 0,070 |
-| Evaluación de punta a punta: juez que compara dos listas | anthropic | claude-opus-5-5 | 67 | 3,06 | 0,046 |
+| El flujo: imagen del ambiente amoblado | fal | fal-ai/nano-banana-2/edit | 49 | 3,92 | 0,080 |
+| Evaluación de punta a punta: juez que compara dos listas | anthropic | claude-opus-5-5 | 84 | 3,83 | 0,046 |
 | Réplica de un ambiente real (ubicación de los muebles) | fal | fal-ai/nano-banana-2/edit | 30 | 2,40 | 0,080 |
-| El flujo: imagen del ambiente amoblado | fal | fal-ai/nano-banana-2/edit | 29 | 2,32 | 0,080 |
-| Evaluación del generador: faithfulness | anthropic | claude-opus-5-5 | 11 | 0,96 | 0,088 |
+| Evaluación del generador: faithfulness | anthropic | claude-opus-5-5 | 22 | 1,90 | 0,086 |
 | El flujo: plan (lee la foto y el pedido, escribe las consultas) | anthropic | claude-opus-5-5 | 16 | 0,95 | 0,060 |
-| El flujo: prompt de la imagen escrito por el LLM (configuración anterior) | anthropic | claude-opus-5-5 | 7 | 0,24 | 0,035 |
+| El flujo: prompt de la imagen escrito por el LLM (configuración anterior) | anthropic | claude-opus-5-5 | 18 | 0,86 | 0,048 |
+| Evaluación del generador: answer relevance | anthropic | claude-opus-5-5 | 22 | 0,28 | 0,013 |
 | Evaluación: un VLM ordena el top-10 (ground truth de IKEA) | anthropic | claude-haiku-5-5 | 240 | 0,19 | 0,001 |
-| Evaluación del generador: answer relevance | anthropic | claude-opus-5-5 | 11 | 0,14 | 0,013 |
 | Réplica de un ambiente real (ubicación de los muebles) | anthropic | claude-opus-5-5 | 1 | 0,03 | 0,027 |
 | Evaluación: un VLM ordena el top-10 (ground truth de IKEA) | anthropic | claude-sonnet-5-5 | 1 | 0,01 | 0,009 |
 
@@ -52,11 +52,12 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | 2026-11-10 | Réplica de un ambiente real (ubicación de los muebles) | anthropic | 1 | 0,03 |
 | 2026-11-10 | Réplica de un ambiente real (ubicación de los muebles) | fal | 11 | 0,88 |
 | 2026-11-11 | Réplica de un ambiente real (ubicación de los muebles) | fal | 19 | 1,52 |
-| 2026-11-12 | El flujo: elección de la lista | anthropic | 20 | 2,82 |
-| 2026-11-12 | El flujo: imagen del ambiente amoblado | fal | 19 | 1,52 |
-| 2026-11-12 | Evaluación de punta a punta: juez que compara dos listas | anthropic | 35 | 1,54 |
-| 2026-11-12 | Evaluación del generador: answer relevance | anthropic | 11 | 0,14 |
-| 2026-11-12 | Evaluación del generador: faithfulness | anthropic | 11 | 0,96 |
+| 2026-11-12 | El flujo: elección de la lista | anthropic | 31 | 4,42 |
+| 2026-11-12 | El flujo: imagen del ambiente amoblado | fal | 39 | 3,12 |
+| 2026-11-12 | El flujo: prompt de la imagen escrito por el LLM (configuración anterior) | anthropic | 11 | 0,61 |
+| 2026-11-12 | Evaluación de punta a punta: juez que compara dos listas | anthropic | 52 | 2,32 |
+| 2026-11-12 | Evaluación del generador: answer relevance | anthropic | 22 | 0,28 |
+| 2026-11-12 | Evaluación del generador: faithfulness | anthropic | 22 | 1,90 |
 
 | Día | Total (US$) |
 |---|---|
@@ -66,7 +67,7 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | 2026-11-09 | 7,29 |
 | 2026-11-10 | 12,78 |
 | 2026-11-11 | 1,52 |
-| 2026-11-12 | 6,98 |
+| 2026-11-12 | 12,65 |
 
 ## Lo que no está en el registro
 
