@@ -122,7 +122,9 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   −0,004]), porque a veces la consulta y el catálogo no coinciden en el kind fino (ratona /
   auxiliar). El flujo lo usa igual, por algo que este banco no mide: en los 11 ambientes vacíos,
   con filtro por tipo el 11% de los candidatos sería de otro kind que el pedido (se pide un
-  sillón y aparece una silla de comedor). El filtro por medidas no tiene evidencia: el límite lo
+  sillón y aparece una silla de comedor). El filtro por medidas actúa poco (cambia 23 de 260 candidatos en los 11 ambientes
+  reales, y el 37% de los candidatos no tiene ninguna medida) y no hay evidencia de que mejore
+  la lista: el límite lo
   estima el plan a ojo y solo el 34% de los productos de IKEA tiene alguna medida.
 - **Elegir con un VLM** (técnica aislada, no un paso del flujo). Opus ordena el top-10 mirando
   las fotos: hit@1 pasa de 0,535 a 0,687 (+0,151 [0,116; 0,188]; US$0,02 por búsqueda). Ordena
@@ -281,12 +283,17 @@ uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking.yaml --paga
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reproducibilidad.yaml --replica r2
 uv run amoblai evaluar-graduada  # relevancia graduada del top-3 (--armar N: los lotes del juez)
 uv run amoblai evaluar-imagen --referencia   # la imagen generada, y la vara con fotos reales
+uv run amoblai resumen-imagen <nombre> <corridas>   # los totales de un conjunto de imágenes
 uv run amoblai evaluar-candidatos # cuántos candidatos por pieza (sale del reranking ya pago)
 uv run amoblai evaluar-respuesta <corridas> --juez opus --pagar   # faithfulness y answer relevance
 uv run amoblai diagnostico-flujo # el flujo real sin juez: qué puesto elige, medidas que faltan...
+                                 # (--filtro-medidas <variante>: qué cambia el filtro de medidas)
 uv run amoblai evaluar-espacio   # el espacio de embeddings: vecinos del mismo kind, UMAP
 uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar
                                  # variantes del flujo en ambientes reales, comparadas por un juez
+                                 # (hibrida.yaml: versión 1 contra 2; sin_busqueda.yaml: 5 al azar;
+                                 # contexto.yaml: el catálogo entero en el prompt; ruido.yaml: la
+                                 # misma configuración dos veces)
 uv run amoblai evaluar-replica datos/configs/imagen/replica.yaml --pagar
                                  # un ambiente IKEA vaciado y vuelto a amoblar, sin y con cajas
 uv run amoblai reporte           # tablas y gráficos en datos/resultados/reporte/

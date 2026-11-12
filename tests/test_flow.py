@@ -514,3 +514,26 @@ def test_cached_input_has_its_own_price():
     )
     assert text_block("x", "1h")["cache_control"] == {"type": "ephemeral", "ttl": "1h"}
     assert "cache_control" not in text_block("x")
+
+
+def test_what_the_size_filter_changes_on_saved_plans(tmp_path, cfg):
+    from amoblai.evaluation.endtoend import size_filter_effect
+
+    run = tmp_path / "variante" / "ambiente"
+    run.mkdir(parents=True)
+    pieces = [
+        # the three-seat sofa is 200 cm wide: out with a 150 cm limit (plus the 15% slack);
+        # the two-seat one has no size in the catalog, so the filter can't take it out
+        {"piece": "a sofa", "kinds": ["sofa"], "query": "Type: sofa", "max_width_cm": 150},
+        {"piece": "a chair", "kinds": ["dining chair"], "query": "Type: chair"},  # no limit
+    ]
+    (run / "1_searches.json").write_text(json.dumps({"answer": {"pieces": pieces}}))
+    assert size_filter_effect(cfg, tmp_path / "variante") == {
+        "piezas": 2,
+        "piezas_con_limite": 1,
+        "productos_del_kind_que_pasan": 0.5,
+        "piezas_donde_cambia_algun_candidato": 1,
+        "candidatos": 2,
+        "candidatos_reemplazados": 1,
+        "candidatos_sin_ninguna_medida": 1,
+    }

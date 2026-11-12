@@ -903,6 +903,37 @@ relevancia). `ablaciones/embedders.yaml`, corrida `20261112-124945_ablacion-embe
   (`ablaciones/embedder-openai.yaml`, unos centavos) y sin correr: la clave de OpenAI del `.env`
   está vencida.
 
+### T6h: qué hace el filtro de medidas
+
+**Pregunta.** El plan estima a ojo, desde la foto, cuánto puede medir cada pieza, y la búsqueda
+saca los productos que no entran (con 15% de margen). ¿Cuánto cambia eso lo que llega al que
+elige? Hasta acá no tenía ninguna medición.
+
+**Cómo.** `amoblai diagnostico-flujo datos/resultados/punta_a_punta/hibrida --filtro-medidas
+hibrida` (gratis): sobre los planes guardados de los 11 ambientes, repite la búsqueda del flujo
+con y sin el filtro (`furnish.size_filter`). Resultado en
+`datos/resultados/punta_a_punta/hibrida/filtro_medidas.json`.
+
+| | |
+|---|---|
+| Piezas con algún límite de medida | 52 de 75 |
+| Productos del kind que pasan el filtro | 90% |
+| Piezas donde cambia algún candidato | 17 de 52 |
+| Candidatos reemplazados | 23 de 260 (9%) |
+| Candidatos sin ninguna medida en el catálogo (el filtro no los puede sacar) | 95 de 260 (37%) |
+
+**Lectura.** El filtro actúa poco: cambia 1 de cada 11 candidatos, en un tercio de las piezas
+que traen límite, y solo sobre los productos que el catálogo mide. No sabemos si lo que saca de
+verdad no entra (el límite es una estimación desde una foto, y no hay ambientes con medidas
+reales), así que no se puede decir que mejore la lista. Compararlo de punta a punta no lo
+resolvería: con tan pocos candidatos distintos, la diferencia queda por debajo del ruido del
+que elige (T8c: cambia 9 de 75 productos entre dos corridas iguales).
+
+**Decisión.** Se deja prendido como resguardo (evita proponer un sofá de 3 metros para un hueco
+de 2 cuando el catálogo lo sabe), contado como lo que es: una regla razonable, sin evidencia de
+que mejore la lista. Con medidas reales del ambiente pasaría a ser un filtro de verdad
+(`docs/FUTURO.md`).
+
 ## T7: las métricas del generador, rehechas (2026-11-12)
 
 **Por qué.** La revisión encontró dos problemas en las métricas RAGAS del generador (T1d): el

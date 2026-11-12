@@ -38,7 +38,8 @@ antes de darlo por cierto. Todo lo que dice "verificado" se recalculó.
    por calidad (sección 7). A la tarde también se midieron el piso de ruido (3 a 3), las métricas
    del generador sobre las listas de la versión 2 (0,88 y 0,70) y la escena en los 11 ambientes
    (empate: queda la plantilla).
-7. **Queda por decidir** (sección 8): el filtro de medidas, las presentaciones, y cosas chicas.
+7. **Queda por decidir** (sección 8): cosas chicas (validar al juez contra personas, la clave
+   de OpenAI, el historial de git).
 
 ---
 
@@ -86,7 +87,7 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 |---|---|
 | Describir cada producto con un VLM (8 líneas) | Sí: +0,42 de hit@1 sobre el texto del vendedor. Es el mayor efecto del trabajo. |
 | Filtro duro por kind | Sí en el flujo, con costo: con filtro por tipo, el 11% de los candidatos de los 11 ambientes sería de otro kind (un sillón pedido y una silla de comedor ofrecida). Cuesta 2 a 3 puntos de hit@5 y hit@10 en el ground truth, porque a veces la consulta y el catálogo no coinciden en el kind fino (ratona / auxiliar). Hay que contarlo así. |
-| Filtro duro por medidas | **No tiene evidencia.** El límite lo estima el plan a ojo desde una foto; solo el 34% de IKEA tiene alguna medida (ningún sofá ni sillón), así que lo que más recorta es el catálogo con mejores datos (ABO); en el catálogo combinado cambia el top-5 de 23 de las 52 piezas que traen límite, y nunca se evaluó. Además tenía un error de orientación (sección 3). Ahora se puede apagar (`furnish.size_filter`). Propuesta: apagarlo y dejar las medidas como dato para el que elige, o validarlo de punta a punta (US$2). |
+| Filtro duro por medidas | **No tiene evidencia.** El límite lo estima el plan a ojo desde una foto; solo el 34% de IKEA tiene alguna medida (ningún sofá ni sillón), así que lo que más recorta es el catálogo con mejores datos (ABO); en el catálogo combinado cambia el top-5 de 23 de las 52 piezas que traen límite, y nunca se evaluó. Además tenía un error de orientación (sección 3). Ahora se puede apagar (`furnish.size_filter`). **Medido el 12/11 a la tarde, gratis (T6h), con el filtro ya corregido y la búsqueda de la versión 2:** cambia algún candidato en 17 de las 52 piezas con límite, 23 de 260 candidatos (9%); el 37% de los candidatos no tiene ninguna medida. Actúa poco y no se puede saber si lo que saca de verdad no entra. Decisión: queda prendido como resguardo, contado como una regla razonable sin evidencia de que mejore la lista; compararlo de punta a punta no lo resolvería (la diferencia queda debajo del ruido del que elige). |
 | Dos catálogos (IKEA + ABO) | Sí por cobertura de estilos (T3b), con la salvedad de cómo se escribieron esos pedidos (sección 4). |
 | Control del ambiente (SIFT) con reintento | El control, sí: en las 11 imágenes finales marcó los 4 ambientes donde el modelo movió la cámara o rehízo el cuarto. El reintento, dudoso: en esos 4 fallaron los 3 intentos (rescató 1 de 5 contando una corrida anterior) y cuesta dos imágenes más. Los umbrales (50 puntos, 1%) están puestos a mano. |
 | Segunda foto del ambiente (`--vista`) | Sin evidencia: nunca se midió si cambia algo. Es opcional; decirlo o sacarlo. |
@@ -399,7 +400,9 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
    (BM25 rinde casi igual que el embedder). Es la limitación principal del banco de prueba.
 5. **Su experimento dice que el filtro por kind resta. ¿Por qué lo usan?** Porque garantiza el
    tipo de pieza (evita 11% de candidatos de otro kind) y cuesta 2 a 3 puntos de recall.
-6. **¿El filtro de medidas hace algo?** Sin evidencia. Solo el 34% de IKEA tiene medidas.
+6. **¿El filtro de medidas hace algo?** Poco: en los 11 ambientes cambia 23 de 260 candidatos
+   (9%), en 17 de las 52 piezas con límite; el 37% de los candidatos no tiene ninguna medida
+   (solo el 34% de IKEA tiene alguna). Es un resguardo, sin evidencia de que mejore la lista.
 7. **¿Qué es lo que hace el plan: query rewriting?** Query expansion con respuesta hipotética
    (HyDE) más descomposición del pedido en sub-consultas más filtros de metadata.
 8. **¿Qué pasa si el catálogo no tiene lo pedido?** Hoy sustituye por lo más parecido sin
@@ -421,13 +424,13 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
 
 | Decisión | Opciones | Costo |
 |---|---|---|
-| El filtro de medidas | Apagarlo (`furnish.size_filter: false`), o dejarlo y validarlo | Validarlo: US$2 |
+| El filtro de medidas | Medido gratis (T6h): cambia 9% de los candidatos. Queda prendido como resguardo; validarlo de punta a punta no lo resolvería (queda debajo del ruido) | — |
 | Rehacer el experimento de la escena (LLM contra plantilla) | 8–10 ambientes, o contarlo como decisión de costo | Hecho (T10): empate en 11 ambientes |
-| El tope de Anthropic | Está agotado (US$29,41 de 30). Cualquier corrida paga nueva pide subirlo | — |
+| El tope de Anthropic | Subido a US$50 el 12/11 a la tarde; gastado US$38,44 (y fal US$6,32 de 8,50) | — |
 | La clave de OpenAI | La del `.env` está vencida: con una nueva, la comparación de embeddings son centavos | — |
 | Validar al juez contra personas | Los tres votan a ciegas los 11 pares de listas | Gratis, 15 minutos |
 | El dato del reranker con un modelo chico | Citarlo como histórico, rehacerlo con Sonnet, o dejarlo afuera | Sonnet: ~US$5 |
-| Las presentaciones | No se tocaron esta noche: tienen las frases que esta revisión corrige. La lista de cambios está en la sección 9; se aplican a la que quede elegida | — |
+| Las presentaciones | La principal (`docs/presentacion/`) está al día con todo, incluidos los resultados de la tarde. A2 y B2 se están actualizando con el mismo encargo | — |
 | El historial de git | 150 de los 152 commits ya pusheados llevan una línea de co-autoría de Claude. Los de esta revisión no. Sacarla de los viejos pide reescribir el historial y un push forzado | — |
 | Las menciones a "YouSeeYouBuy" | `docs/EXPERIMENTOS.md` (ya en el repo desde ayer) nombra dos veces ese otro proyecto sin explicarlo. Explicarlo en una línea (de dónde viene el núcleo de búsqueda) o sacarlas | — |
 | El índice de ChromaDB en git | `chroma.sqlite3` cambia con solo abrir el índice, así que cada corrida ensucia el repo. Se regenera en segundos desde los vectores en caché: se puede sacar de git | — |

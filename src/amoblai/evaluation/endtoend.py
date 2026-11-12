@@ -209,6 +209,50 @@ def compare(
     }
 
 
+def size_filter_effect(cfg: Config, variant_dir: Path) -> dict[str, Any]:
+    """Qué hace el filtro de medidas sobre los planes guardados de una variante (los ambientes
+    vacíos reales). Para cada pieza con algún límite: cuántos productos de su kind deja pasar,
+    y cuántos de los candidatos que recibe el que elige cambian al prenderlo. Gratis: repite la
+    búsqueda del flujo con y sin el filtro. Lo que no dice: si los que saca de verdad no entran
+    (el límite lo estima el plan mirando una foto)."""
+    from amoblai.rag.index import ensure_index
+
+    def variant(size_filter: bool, mode: str) -> Config:
+        c = cfg.model_copy(deep=True)
+        c.furnish.size_filter, c.rag.mode = size_filter, mode
+        return c
+
+    axes = ("width", "depth", "height")
+    index = ensure_index(cfg)
+    pieces = limited = changed = replaced = shown = unsized = passing = of_kind = 0
+    for run in sorted(Path(variant_dir).glob("*/")):
+        if not (run / "1_searches.json").exists():
+            continue
+        for piece in json.loads((run / "1_searches.json").read_text())["answer"]["pieces"]:
+            pieces += 1
+            if all(piece.get(f"max_{a}_cm") is None for a in axes):
+                continue
+            limited += 1
+            kept = {h.id for h in st.find_candidates(variant(True, cfg.rag.mode), piece, index)}
+            free = st.find_candidates(variant(False, cfg.rag.mode), piece, index)
+            out = [h for h in free if h.id not in kept]
+            changed += bool(out)
+            replaced += len(out)
+            shown += len(free)
+            unsized += sum(not any((h.dimensions_cm or {}).get(a) for a in axes) for h in free)
+            passing += len(st.find_candidates(variant(True, "whole_catalog"), piece, index))
+            of_kind += len(st.find_candidates(variant(False, "whole_catalog"), piece, index))
+    return {
+        "piezas": pieces,
+        "piezas_con_limite": limited,
+        "productos_del_kind_que_pasan": round(passing / of_kind, 4) if of_kind else None,
+        "piezas_donde_cambia_algun_candidato": changed,
+        "candidatos": shown,
+        "candidatos_reemplazados": replaced,
+        "candidatos_sin_ninguna_medida": unsized,
+    }
+
+
 def _style(text: str | None) -> list[str]:
     for line in (text or "").splitlines():
         if line.startswith("Style:"):

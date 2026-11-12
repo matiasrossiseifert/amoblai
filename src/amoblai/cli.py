@@ -516,10 +516,20 @@ def diagnostico_flujo(
     raiz: Annotated[
         Path, typer.Argument(help="Carpeta con una subcarpeta por variante (ikea, todos...).")
     ] = paths.DATOS / "resultados" / "punta_a_punta" / "catalogos",
+    filtro_medidas: Annotated[
+        str | None,
+        typer.Option(
+            "--filtro-medidas",
+            help="Además, qué hace el filtro de medidas sobre los planes de esta variante.",
+        ),
+    ] = None,
+    config: ConfigOpt = paths.CONFIG,
 ) -> None:
     """Lo que dicen, sin juez y gratis, las corridas guardadas sobre ambientes vacíos reales: el
-    puesto del producto elegido, piezas dejadas afuera, medidas que faltan, candidatos repetidos."""
-    from amoblai.evaluation.endtoend import diagnostics
+    puesto del producto elegido, piezas dejadas afuera, medidas que faltan, candidatos repetidos.
+    Con --filtro-medidas <variante>: cuántos candidatos cambia el filtro de medidas (repite la
+    búsqueda del flujo de hoy con y sin él; `filtro_medidas.json`)."""
+    from amoblai.evaluation.endtoend import diagnostics, size_filter_effect
 
     out = {}
     for variant in sorted(d for d in raiz.glob("*/") if any(d.glob("*/3_choice.json"))):
@@ -528,6 +538,10 @@ def diagnostico_flujo(
         console.print(d)
     (raiz / "diagnostico.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
     console.print(f"Escrito: {raiz / 'diagnostico.json'}")
+    if filtro_medidas:
+        effect = size_filter_effect(cfg_for(config), raiz / filtro_medidas)
+        (raiz / "filtro_medidas.json").write_text(json.dumps(effect, ensure_ascii=False, indent=1))
+        console.print(effect)
 
 
 @app.command("evaluar-punta-a-punta")
