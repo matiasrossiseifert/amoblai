@@ -1,0 +1,24 @@
+# Búsqueda híbrida y multimodal: `uv run amoblai evaluar --ablacion datos/configs/ablaciones/hibrido.yaml`
+# (gratis, todo local). El primer método es la base (la búsqueda densa del flujo, con su filtro por
+# kind): los demás se comparan contra él con la diferencia pareada y su IC 95% (`vs_base`).
+# - bm25: búsqueda léxica sobre las mismas descripciones (rag/hybrid.py);
+# - siglip2, clip: un modelo de imagen y texto; la consulta en una frase corta contra la FOTO del
+#   producto, sin descripción (la otra ruta de la clase 10: imagen → embedding directo);
+# - fusion: los puntajes de varios buscadores en uno (sum: z-score, el promedio; rrf: por puestos).
+name: ablacion-hibrido
+methods:
+  - {embedder: qwen3, filter: kind}                               # base: densa sobre descripciones
+  - {embedder: bm25, filter: kind}                                # solo léxica
+  - {embedder: siglip2, filter: kind}                             # solo la foto (SigLIP 2)
+  - {embedder: clip, filter: kind}                                # solo la foto (CLIP ViT-B/32)
+  - {embedder: qwen3, filter: kind, fusion: bm25}                 # densa + léxica
+  - {embedder: qwen3, filter: kind, fusion: bm25, fusion_rule: rrf}
+  - {embedder: qwen3, filter: kind, fusion: siglip2}              # densa + foto
+  - {embedder: qwen3, filter: kind, fusion: bm25+siglip2}         # las tres
+  - {embedder: qwen3, filter: kind, fusion: bm25+siglip2, fusion_rule: rrf}
+  - {embedder: bm25, filter: kind, fusion: siglip2}               # léxica + foto, sin embedder de texto
+  # con el filtro por tipo (el de las ablaciones anteriores) y sin filtro
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: type, fusion: bm25+siglip2}
+  - {embedder: qwen3, filter: none}
+  - {embedder: qwen3, filter: none, fusion: bm25+siglip2}

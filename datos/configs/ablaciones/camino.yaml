@@ -1,0 +1,17 @@
+# El camino incremental, un cambio por paso: `uv run amoblai evaluar --ablacion
+# datos/configs/ablaciones/camino.yaml` (gratis). Cada método se compara con el anterior
+# (`vs_anterior`: diferencia pareada e IC 95%) y con el primero (`vs_base`).
+# 1. RAG naive: el texto del vendedor tal cual, embebido; la consulta, la frase corta sin reescribir.
+# 2. + la base de conocimiento que armamos: cada producto descripto desde su foto, en ocho líneas.
+# 3. + query expansion con respuesta hipotética (HyDE): la consulta escrita como una ficha del catálogo.
+# 4. + filtro de metadata por kind: la búsqueda del flujo (versión 1).
+# 5. + búsqueda léxica (BM25) fusionada con la densa.
+# 6. + la foto del producto (SigLIP 2) fusionada: búsqueda híbrida multimodal.
+name: ablacion-camino
+methods:
+  - {embedder: qwen3, text: seller-full, filter: none, query: piece}
+  - {embedder: qwen3, text: description, filter: none, query: piece}
+  - {embedder: qwen3, text: description, filter: none}
+  - {embedder: qwen3, text: description, filter: kind}
+  - {embedder: qwen3, filter: kind, fusion: bm25}
+  - {embedder: qwen3, filter: kind, fusion: bm25+siglip2}

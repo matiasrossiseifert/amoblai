@@ -1,0 +1,21 @@
+# Cómo se escribe la consulta (la técnica de Advanced RAG del paso plan), contra no reescribir:
+# `uv run amoblai evaluar --ablacion datos/configs/ablaciones/consulta.yaml` (gratis).
+# - full: la ficha de ocho líneas (un documento hipotético, como en la clase de Advanced RAG);
+# - piece: la frase corta con que el redactor nombró la pieza ("square pine coffee table, front
+#   center"): la consulta sin reescribir;
+# - type: solo la línea Type; kind: solo el nombre del kind (el piso: no dice nada del producto).
+name: ablacion-consulta
+methods:
+  - {embedder: qwen3, filter: kind}                        # base: la ficha, como en el flujo
+  - {embedder: qwen3, filter: kind, query: piece}
+  - {embedder: qwen3, filter: kind, query: type}
+  - {embedder: qwen3, filter: kind, query: kind}
+  # la frase natural con y sin filtro: cuando la consulta es pobre, el filtro pesa
+  - {embedder: qwen3, filter: none}
+  - {embedder: qwen3, filter: none, query: piece}
+  # con otros buscadores
+  - {embedder: bm25, filter: kind}
+  - {embedder: bm25, filter: kind, query: piece}
+  - {embedder: siglip2, filter: kind}
+  - {embedder: siglip2, filter: kind, query: piece}        # la frase natural contra la foto
+  - {embedder: qwen3, filter: kind, query: piece, fusion: bm25+siglip2}
