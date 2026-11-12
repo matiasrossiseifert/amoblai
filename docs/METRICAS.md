@@ -3,8 +3,9 @@
 Actualizado el 2026-11-12, después de la revisión crítica (`docs/REVISION.md`): se rehízo el
 ranking, se corrigieron las métricas del generador y se sumaron las diferencias pareadas. Los
 números son de la configuración final: catálogo IKEA revisado (819 productos) para lo que tiene
-ground truth, 549 consultas con producto anotado en 64 ambientes; y el catálogo IKEA + ABO
-(1.502) para lo que se mide sobre ambientes vacíos reales.
+ground truth, 549 consultas con producto anotado en 64 ambientes (son 864 consultas en 65
+ambientes; las otras 315 no tienen su producto en el catálogo); y el catálogo IKEA + ABO (1.502)
+para lo que se mide sobre ambientes vacíos reales.
 
 ## Qué tiene que salir bien
 
