@@ -117,7 +117,7 @@ Sin borrar ninguno. "Va" quiere decir que merece lugar en el oral.
 |---|---|---|
 | **Qué se indexa** (texto del vendedor contra nuestras descripciones) | ¿Hace falta describir cada producto? | Es el mayor efecto (+0,42 [0,37–0,47], pareado). La línea de base estaba debilitada: no incluía el tipo que le pone el vendedor. Rehecha. |
 | **Cómo se escribe la consulta** (nuevo) | ¿Sirve escribir la consulta como una ficha, contra no reescribirla? | Es la técnica de Advanced RAG del flujo y no estaba medida contra no hacerla. Ver abajo. |
-| **Elección con el VLM** (rerank del top-10) | ¿Un VLM que mira las fotos ordena mejor que el coseno? | +0,151 [0,115–0,190]. Es el techo de una técnica aislada, **no un paso del flujo**: el reranker ordena contra la consulta sin ver el ambiente; `choose` elige con la foto del ambiente y el pedido, y nunca se midió contra ground truth. |
+| **Elección con el VLM** (rerank del top-10) | ¿Un VLM que mira las fotos ordena mejor que el coseno? | +0,151 [0,116; 0,188]. Es el techo de una técnica aislada, **no un paso del flujo**: el reranker ordena contra la consulta sin ver el ambiente; `choose` elige con la foto del ambiente y el pedido, y nunca se midió contra ground truth. |
 | **Cuántos candidatos** | ¿Por qué 5 y no 3 o 10? | De 3 a 5: +0,029 [0,015–0,043], significativo. Sumar que en los 11 ambientes el 24% de lo elegido salió de los puestos 4 y 5. |
 | **Texto contra imagen** (la propuesta original contra la actual) | ¿Buscar por descripción o por recorte? | Reportarlo con la misma unidad: por producto anotado, 0,43 contra 0,55 (+0,12 [0,04–0,20]). Y decir qué fue la v0: solo se construyó y evaluó su buscador; nunca corrió de punta a punta. |
 | **Qué catálogo, de punta a punta** | ¿IKEA, ABO o los dos? | Lo único que evalúa el flujo entero. 8 a 2 da p = 0,11; el 6 a 0 es sobre pedidos escritos sabiendo qué le falta a IKEA. La decisión es razonable; el titular, no. |
@@ -300,7 +300,8 @@ categoría con su n; recall por producto anotado (texto contra imagen); MRR@10 c
 Jueces nuevos (`juez_fidelidad_v2`, `juez_pedidos_v2`): sin el ejemplo que filtraba el pedido,
 y el juez de faithfulness recibe exactamente lo que vio el generador (la foto del ambiente y, de
 cada producto elegido, su foto y la línea con su kind, su tipo y su medida). Corridos sobre las
-**11 listas de la configuración final** (IKEA + ABO), con Opus por la API: US$1,10.
+**11 listas del catálogo combinado** (IKEA + ABO) armadas con la búsqueda de la versión 1, con
+Opus por la API: US$1,10. Sobre las listas de la versión 2 no se corrieron.
 
 | Métrica | Valor | Cómo leerlo |
 |---|---|---|
@@ -360,7 +361,7 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
 ## 7. Las preguntas difíciles del oral
 
 1. **¿Hacía falta RAG si el catálogo entra en el contexto?** En texto entra: las 1.502 fichas
-   son unos 200 mil tokens (814 mil caracteres). Mandarlas enteras costaría unos US$0,80 de
+   son unos 200 mil tokens (unos 790 mil caracteres). Mandarlas enteras costaría unos US$0,80 de
    entrada por pedido con Opus, contra US$0,14 de la elección de hoy, que además mira las fotos
    de los candidatos; con las fotos de todo el catálogo ya no entra. RAG se justifica por costo,
    por escala (ABO completo son 147 mil productos), por actualización (un alta es un insert) y
@@ -412,8 +413,11 @@ amoblai gastos --md`).
 
 ## 9. Cambios para las presentaciones
 
-Las cinco presentaciones no se tocaron (falta elegir cuál queda). Lo que hay que cambiar en la
-que quede, con los números de lámina de `docs/presentacion/` como referencia:
+**La principal (`docs/presentacion/`) ya está al día** (2026-11-12: 44 láminas, guion de 30:45):
+sigue el recorrido con la corrida `final-publica-loft-industrial`, ordena los experimentos por
+el ranking (ocho con lámina propia, seis de trámite), tiene el Ejercicio 4 en tres láminas y la
+lámina de desafíos. Las otras (`presentaciones_nuevas/a2` y `b2`) todavía dicen lo de abajo.
+Los números de lámina son los de la principal **antes** de actualizarla:
 
 | Dónde | Qué dice | Qué tiene que decir |
 |---|---|---|

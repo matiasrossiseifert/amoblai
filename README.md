@@ -82,8 +82,9 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
 ### Lo que dicen las ablaciones
 
 - **Qué se indexa.** Describir cada producto desde su foto es lo que más pesa: +0,19 con la
-  consulta sin reescribir y +0,42 [0,37; 0,47] con la consulta escrita como ficha. El texto del
-  vendedor es una frase de marketing que no dice cómo es el mueble.
+  consulta sin reescribir; con la consulta escrita como ficha, el texto del vendedor da 0,120 y
+  las descripciones 0,536 (+0,415 [0,368; 0,466]). El texto del vendedor es una frase de
+  marketing que no dice cómo es el mueble.
 - **Cómo se escribe la consulta** (la técnica de Advanced RAG del paso plan: query expansion con
   respuesta hipotética, más la descomposición del pedido en piezas; `ablaciones/consulta.yaml`).
   Con la búsqueda del flujo, la consulta escrita como una ficha de ocho líneas da hit@1 0,530; la
@@ -124,7 +125,7 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   sillón y aparece una silla de comedor). El filtro por medidas no tiene evidencia: el límite lo
   estima el plan a ojo y solo el 34% de los productos de IKEA tiene alguna medida.
 - **Elegir con un VLM** (técnica aislada, no un paso del flujo). Opus ordena el top-10 mirando
-  las fotos: hit@1 pasa de 0,535 a 0,687 (+0,151 [0,115; 0,190]; US$0,02 por búsqueda). Ordena
+  las fotos: hit@1 pasa de 0,535 a 0,687 (+0,151 [0,116; 0,188]; US$0,02 por búsqueda). Ordena
   contra la consulta, sin ver el ambiente; el paso `choose` del flujo elige una combinación para
   el cuarto y no tiene ground truth.
 - **Cuántos candidatos.** Si el VLM elige entre los primeros k, acierta 0,637 con 3, 0,667 con 5
@@ -181,7 +182,8 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   solo el 45% de las veces y el 24% de lo que elige sale de los puestos 4 y 5; nunca dejó una
   pieza afuera (0 de 75), aunque puede: cuando el catálogo no tiene lo pedido, pone lo más
   parecido sin avisar. El 37% de lo elegido no tiene ninguna medida en el catálogo.
-- **El generador** (11 listas de la configuración final; jueces por la API). Faithfulness del
+- **El generador** (las 11 listas del catálogo combinado, armadas con la búsqueda de la versión 1;
+  jueces por la API). Faithfulness del
   porqué: 0,82 (289 de 351 afirmaciones se infieren de lo que vio el generador); lo que no se
   sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer
   relevance: 0,69, contra 0,55 de la vara cruzada (los pedidos reconstruidos para otras listas) y

@@ -1,6 +1,7 @@
 """Piezas de la presentación: gráficos SVG desde los resultados, imágenes embebidas, el mapa de
-las once fases (el recorrido, que se va encendiendo) con los pines de los experimentos, y los
-extractos de los prompts (copiados del archivo real: si un extracto no está, falla)."""
+las once fases (el recorrido, que se va encendiendo) con los pines de los experimentos (llenos
+los que tienen lámina propia, huecos los de trámite; aparte, los que miden el banco de prueba), y
+los extractos de los prompts (copiados del archivo real: si un extracto no está, falla)."""
 
 from __future__ import annotations
 
@@ -49,9 +50,11 @@ def hbars(
     label_w: int = 210,
     digits: int = 2,
     unit: str = "",
+    pad_r: int = 64,
 ) -> str:
-    """Barras horizontales: [{label, value, ci: (lo, hi)?, hl: bool, note?}]."""
-    pad_r = 64
+    """Barras horizontales: [{label, value, ci: (lo, hi)?, hl: bool, note?, soft?}]. `note` va
+    después del valor, en gris (la diferencia pareada); `soft` dibuja la barra solo con borde
+    (una referencia que no es un paso); `pad_r`, el lugar a la derecha para el valor y la nota."""
     plot_w = width - label_w - pad_r
     h = row_h * len(rows) + 10
     out = [f'<svg class="chart" viewBox="0 0 {width} {h}" width="{width}" height="{h}" role="img">']
@@ -69,7 +72,10 @@ def hbars(
             f'<text x="{label_w - 10}" y="{y + row_h / 2 + 1}" text-anchor="end" '
             f'dominant-baseline="middle" font-size="14" font-weight="{weight}" fill="{INK}">{esc(r["label"])}</text>'
         )
-        out.append(f'<rect x="{label_w}" y="{y + 5}" width="{w}" height="{row_h - 12}" rx="3" fill="{color}"/>')
+        if r.get("soft"):
+            out.append(f'<rect x="{label_w + 0.75}" y="{y + 5.75}" width="{w - 1.5}" height="{row_h - 13.5}" rx="3" fill="none" stroke="{MUTED}" stroke-width="1.5" stroke-dasharray="5 4"/>')
+        else:
+            out.append(f'<rect x="{label_w}" y="{y + 5}" width="{w}" height="{row_h - 12}" rx="3" fill="{color}"/>')
         if r.get("ci"):
             lo, hi = r["ci"]
             x1, x2 = label_w + plot_w * lo / xmax, label_w + plot_w * hi / xmax
@@ -82,6 +88,12 @@ def hbars(
             f'<text x="{tx}" y="{y + row_h / 2 + 1}" dominant-baseline="middle" font-size="14" '
             f'font-weight="{weight}" fill="{INK}">{num(v, digits)}{unit}</text>'
         )
+        if r.get("note"):
+            nx = tx + 8.4 * len(num(v, digits) + unit) + 8
+            out.append(
+                f'<text x="{nx}" y="{y + row_h / 2 + 1}" dominant-baseline="middle" font-size="12.5" '
+                f'fill="{MUTED}">{esc(r["note"])}</text>'
+            )
     out.append("</svg>")
     return "".join(out)
 
@@ -159,9 +171,9 @@ FASES = [
     ("indice", "Índice", "Qwen3-Embedding + ChromaDB"),
     ("entrada", "Foto + pedido", "el ambiente vacío y el texto"),
     ("plan", "Plan", "Opus: piezas y una consulta por pieza"),
-    ("busqueda", "Búsqueda", "filtro por kind + coseno: 5"),
+    ("busqueda", "Búsqueda", "filtro por kind + híbrida: 5"),
     ("eleccion", "Elección", "Opus mira las fotos y elige"),
-    ("escena", "Escena", "plantilla estricta, sin LLM"),
+    ("escena", "Escena", "una plantilla, sin LLM"),
     ("imagen", "Imagen", "Nano Banana 2 edita la foto"),
     ("control", "Control", "SIFT: ¿el mismo cuarto?"),
     ("salida", "Lista + imagen", "la lista de compra y la foto"),
@@ -170,42 +182,50 @@ FKEYS = [k for k, *_ in FASES]
 FNAME = {k: n for k, n, _ in FASES}
 OFFLINE = 3  # las tres primeras fases se hacen una vez, offline
 
-# Qué experimento decidió cada fase: los pines del mapa y del minimapa de cada experimento.
+# Qué experimento le hizo una pregunta a cada fase: los pines del mapa y del minimapa de cada
+# experimento. Del 1 al 8, los que tienen lámina propia (el ranking de docs/REVISION.md); del 9 al
+# 14, los de trámite (TRAMITE: el pin va hueco). BANCO: los que miden el banco de prueba de la
+# búsqueda, no una fase.
 PINES: dict[str, list[int]] = {
-    "catalogo": [9, 10],
+    "catalogo": [6],
     "descripcion": [1],
-    "indice": [2, 4, 5, 6],
-    "plan": [6],
-    "busqueda": [3, 8, 11],
-    "eleccion": [7],
-    "escena": [12],
-    "control": [12],
+    "indice": [9, 10, 11, 12],
+    "plan": [2],
+    "busqueda": [3, 5, 7, 13, 14],
+    "eleccion": [5],
 }
+TRAMITE = {9, 10, 11, 12, 13, 14}
+BANCO = [4, 8]
 
 
-def pin(cx: float, tip: float, r: float = 10, n: int | None = None, stroke: str = "var(--paper)") -> str:
-    """Un pin de mapa (una gota) con la punta en (cx, tip) y el número del experimento."""
+def pin(
+    cx: float, tip: float, r: float = 10, n: int | None = None, stroke: str = "var(--paper)", soft: bool | None = None
+) -> str:
+    """Un pin de mapa (una gota) con la punta en (cx, tip) y el número del experimento. Los de
+    trámite (`soft`: por defecto, los de TRAMITE) van huecos."""
+    soft = (n in TRAMITE) if soft is None else soft
     d = 1.75 * r
     cy = tip - d
     tx, ty = 0.8207 * r, 0.5714 * r  # donde las rectas desde la punta tocan el círculo
+    fill, line, ink = ("var(--paper)", ACCENT, ACCENT) if soft else (ACCENT, stroke, "#fff")
     out = (
         f'<path d="M{cx:.1f},{tip:.1f} L{cx - tx:.1f},{cy + ty:.1f} A{r},{r} 0 1 1 {cx + tx:.1f},{cy + ty:.1f} Z" '
-        f'fill="{ACCENT}" stroke="{stroke}" stroke-width="1.5"/>'
+        f'fill="{fill}" stroke="{line}" stroke-width="1.5"/>'
     )
     if n is not None:
         out += (
             f'<text x="{cx:.1f}" y="{cy + 0.6:.1f}" text-anchor="middle" dominant-baseline="central" '
-            f'font-size="{r * 1.12:.1f}" font-weight="700" fill="#fff">{n}</text>'
+            f'font-size="{r * 1.12:.1f}" font-weight="700" fill="{ink}">{n}</text>'
         )
     return out
 
 
 def pin_inline(n: int, size: int = 24) -> str:
-    """El mismo pin, suelto en el texto (qué experimento decidió esto)."""
+    """El mismo pin, suelto en el texto (qué experimento midió esto)."""
     r = size * 0.36
     w = 2 * r + 4
     return (
-        f'<svg class="pini" width="{w:.0f}" height="{size}" viewBox="0 0 {w:.1f} {size}" role="img" '
+        f'<svg class="pini" width="{w:.0f}" height="{size}" viewBox="0 0 {w:.1f} {size}" overflow="visible" role="img" '
         f'aria-label="experimento {n}">{pin(w / 2, size - 1, r, n, stroke="none")}</svg>'
     )
 
@@ -305,10 +325,11 @@ def _wrap(text: str, n: int) -> list[str]:
     return lines + ([cur] if cur else [])
 
 
-def pipeline(pins: bool = False, width: int = 1160) -> str:
+def pipeline(pins: bool = False, width: int = 1160, banco: str = "") -> str:
     """Las once fases como cajas: arriba lo que se hace una vez (offline), abajo lo de cada
-    pedido; el índice baja a la búsqueda. Con `pins`, sobre cada caja los experimentos que la
-    decidieron (PINES)."""
+    pedido; el índice baja a la búsqueda. Con `pins`, sobre cada caja los experimentos que le
+    hicieron una pregunta (PINES) y, arriba a la derecha, el banco de prueba de la búsqueda con
+    los que lo miden a él (BANCO; `banco` es su segunda línea)."""
     bw, step, bh = 131, 147, 80
     y1, y2 = 34, 170
     H = 300
@@ -355,6 +376,16 @@ def pipeline(pins: bool = False, width: int = 1160) -> str:
             out.append(f'<text x="{x + 10}" y="{y + 54 + j * 14}" font-size="11" fill="{MUTED}">{esc(ln)}</text>')
         for j, n in enumerate(reversed(ns)):
             out.append(pin(x + bw - 14 - j * 23, y + 7, 10, n))
+    if pins:
+        # el banco de prueba: una caja punteada, fuera del flujo, con los que lo miden
+        x, w = pos["imagen"][0], 1160 - pos["imagen"][0]
+        out.append(f'<rect x="{x + 0.8}" y="{y1}" width="{w - 1.6}" height="{bh}" rx="11" fill="none" stroke="{ACCENT}" stroke-width="1.4" stroke-dasharray="5 4"/>')
+        out.append(f'<text x="{x + 12}" y="{y1 + 17}" font-size="10.5" font-weight="650" letter-spacing=".06em" fill="{ACCENT}">EL INSTRUMENTO</text>')
+        out.append(f'<text x="{x + 12}" y="{y1 + 36}" font-size="14" font-weight="650" fill="{INK}">El banco de prueba de la búsqueda</text>')
+        for j, ln in enumerate(_wrap(banco, 62)[:2]):
+            out.append(f'<text x="{x + 12}" y="{y1 + 54 + j * 14}" font-size="11" fill="{MUTED}">{esc(ln)}</text>')
+        for j, n in enumerate(reversed(BANCO)):
+            out.append(pin(x + w - 16 - j * 23, y1 + 7, 10, n))
     out.append("</svg>")
     return "".join(out)
 

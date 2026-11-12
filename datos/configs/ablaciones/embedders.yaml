@@ -9,3 +9,4 @@ methods:
   - {embedder: bm25, filter: kind}       # léxica clásica
   - {embedder: bge, filter: kind}        # BGE-base-en-v1.5, 768 dimensiones
   - {embedder: siglip2, filter: kind}    # por foto, sin descripciones
+  - {embedder: qwen3, filter: kind, fusion: bm25+siglip2}   # la búsqueda del flujo (versión 2)

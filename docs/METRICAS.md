@@ -27,7 +27,7 @@ aproximaciones, y cada métrica se apoya en una:
 |---|---|---|---|
 | Productos anotados en fotos de ambientes de IKEA | Qué productos del catálogo hay en cada ambiente (sin posiciones) | Medir el buscador: describir un mueble que se ve y encontrarlo | Es "encontrar un producto conocido", no recomendar. Quien escribe la consulta ve el producto, y consultas y descripciones las escribe el mismo modelo con el mismo molde |
 | Un juez LLM que compara dos listas a ciegas, en los dos órdenes | Preferencia entre configuraciones, sobre 11 ambientes vacíos reales | Lo único que mide el flujo entero | n = 11; el juez es el mismo modelo que elige; sin validar contra personas |
-| La foto del catálogo de cada producto y la foto original del ambiente | Cómo es cada producto y cómo era el cuarto | Medir la imagen | 8 imágenes |
+| La foto del catálogo de cada producto y la foto original del ambiente | Cómo es cada producto y cómo era el cuarto | Medir la imagen | 11 imágenes de la configuración final (y 8 anteriores) |
 
 ## El ranking
 
@@ -37,11 +37,11 @@ aproximaciones, y cada métrica se apoya en una:
 |---|---|---|---|
 | 1 | **hit@k** (k = 1, 5, 10) con IC 95% por ambiente, el azar al lado y la **diferencia pareada** entre métodos | ¿El producto anotado está entre los k primeros? hit@5 es el titular: son los 5 candidatos que ve el que elige | búsqueda del flujo (versión 2, híbrida): hit@1 0,605 [0,56–0,65], **hit@5 0,825**, hit@10 0,883; versión 1 (densa): 0,530, 0,790 y 0,863; azar 0,017 y 0,161 |
 | 2 | **Juez de listas de a pares** sobre ambientes vacíos (gana / empata, útil por producto) | ¿Qué configuración da mejores listas en la tarea real? | versión 2 contra versión 1: gana 5, empata 6, no pierde (p = 0,06); con búsqueda contra sin búsqueda: 7 a 0 (p = 0,016); IKEA + ABO contra IKEA: 8 a 2 con 1 empate (p = 0,11) |
-| 3 | **Acierto de la elección con un VLM**, según cuántos candidatos ve | ¿Suma que un VLM mire las fotos? ¿Cuántos candidatos pasarle? | sobre el top-10: 0,535 → 0,687 (+0,151 [0,115; 0,190]); entre 3: 0,637; entre 5: 0,667; entre 8: 0,689 |
+| 3 | **Acierto de la elección con un VLM**, según cuántos candidatos ve | ¿Suma que un VLM mire las fotos? ¿Cuántos candidatos pasarle? | sobre el top-10: 0,535 → 0,687 (+0,151 [0,116; 0,188]); entre 3: 0,637; entre 5: 0,667; entre 8: 0,689 |
 | 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | en las 11 imágenes de la configuración final: 31 de 75 productos reconocidos como el exacto (41%; coseno medio 0,50); el ambiente se conserva en 7 de 11 |
 | 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,604 ± 0,009 según quién escribe las consultas (versión 2); 0,539 ± 0,025 (versión 1) |
 | 6 | **Costo por pedido** | ¿Cuánto cuesta cada parte? | plan US$0,06; elección US$0,14 (de 0,05 a 0,43); imagen US$0,08 por intento |
-| 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | context precision@10 0,63; context recall 0,79 (@3) y 0,93 (@10) por ambiente; faithfulness 0,82; answer relevance 0,69 |
+| 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | búsqueda del flujo (versión 2): context precision@10 0,68; context recall por ambiente 0,83 (@3) y 0,92 (@10); faithfulness 0,82; answer relevance 0,69 |
 
 ### Útiles
 
@@ -103,11 +103,13 @@ aproximaciones, y cada métrica se apoya en una:
 ### Context precision y context recall (clase 11)
 
 - **Context precision@10**: Σ (Precision@k · v_k) / relevantes en el top-10, la fórmula de la
-  clase (`metrics.py`, con el ejemplo de la filmina como test): 0,63.
+  clase (`metrics.py`, con el ejemplo de la filmina como test): 0,68 con la búsqueda del flujo
+  (versión 2); 0,62 con la de la versión 1.
 - **Context recall**: la clase lo define por frases del ground truth atribuibles al contexto.
   Acá el ground truth son productos, así que es por producto y **por ambiente**: de los productos
   anotados que buscan las consultas de un ambiente, cuántos aparecen en la unión de sus top-k.
-  0,79 con k = 3 y 0,93 con k = 10. Ojo al compararlo: las demás son por consulta.
+  0,83 con k = 3 y 0,92 con k = 10 (versión 2; 0,76 y 0,90 con la versión 1). Ojo al
+  compararlo: las demás son por consulta.
 
 ### El juez de listas (punta a punta)
 
