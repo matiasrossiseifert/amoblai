@@ -15,7 +15,7 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 
 | Grupo | Experimentos | Por qué |
 |---|---|---|
-| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · el piso de ruido (T8c) · la escena: plantilla contra LLM (T10) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
+| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · el piso de ruido (T8c) · RAG contra el catálogo entero en el contexto (T8d) · la escena: plantilla contra LLM (T10) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
 | **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
 | **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM como estaba (una imagen por variante; reemplazada por T10) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4, salvo I1) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
 
@@ -950,7 +950,7 @@ resumen_version2`. Costó US$1,08. Resultados:
   es de fresno", "la biblioteca es de abedul"), cuánta gente entra en la mesa y propiedades que
   no se ven ("la alfombra es fácil de limpiar").
 
-## T8: de punta a punta: versión 1 contra versión 2, y con búsqueda contra sin búsqueda (2026-11-12)
+## T8: de punta a punta: versión 1 contra versión 2, con búsqueda contra sin búsqueda, el ruido y el catálogo en el contexto (2026-11-12)
 
 Los 11 ambientes vacíos reales de `pedidos.yaml`, el mismo plan para todas las variantes, y el
 juez de listas de T3 (Opus, de a pares, a ciegas, en los dos órdenes; una variante gana un
@@ -1052,6 +1052,68 @@ variantes. Costó US$2,38 (US$1,60 de elección y US$0,77 de juez).
 ruido (que reparte), y con 11 ambientes sigue siendo p = 0,06. Lo que distingue a las versiones
 con claridad es el ground truth (T6c); de punta a punta, la híbrida no es peor y probablemente
 es mejor.
+
+### T8d: RAG contra el catálogo entero en el contexto
+
+**Pregunta.** La más incómoda: ¿hacía falta RAG, si el catálogo entra en el contexto? Con 1.502
+productos, las fichas entran en un prompt de Opus 5.5 (contexto de 1 millón de tokens). Hasta
+acá lo contestábamos con una cuenta de costo; ahora está medido.
+
+**Cómo.** `punta_a_punta/contexto.yaml`: la versión 2 (para cada pieza, los 5 mejores de la
+búsqueda híbrida, con sus fotos) contra el mismo flujo **sin búsqueda** (`rag.mode:
+whole_catalog`): el catálogo entero va en el prompt como texto (cada producto con su id, su
+medida y sus ocho líneas, agrupados por kind) y el que elige toma uno por pieza. El filtro duro
+es el mismo (cada pieza lista los ids que pasan el filtro por kind y medidas). Sin fotos de
+candidatos: las de todo el catálogo no entran. Mismo plan, mismo modelo, mismo juez en los dos
+órdenes, los 11 ambientes. El catálogo va primero y marcado para la caché de prompt
+(`choose_catalog_v1`; `furnish.catalog_cache`): la primera llamada lo escribe y las demás lo
+leen al 5% del precio. Costó US$4,96 (US$3,99 de elección y US$0,97 de juez).
+
+| | gana | empates | votos (de 22) | útil | pedido | ambiente | conjunto |
+|---|---|---|---|---|---|---|---|
+| Versión 2: búsqueda híbrida, 5 candidatos con foto | 5 | 1 | 11 | 0,74 | 3,82 | 4,09 | 3,77 |
+| Sin búsqueda: el catálogo entero en el contexto | 5 | | 11 | 0,74 | 3,86 | 3,96 | 3,77 |
+
+| Por pedido (el paso que elige) | Versión 2 | Catálogo en el contexto |
+|---|---|---|
+| Tokens de entrada | 16 a 60 mil (las fotos de los candidatos) | 346 mil (340.783 del catálogo) |
+| Costo, con la caché caliente | US$0,145 (de 0,09 a 0,27) | US$0,121 (de 0,09 a 0,16) |
+| Costo, sin caché (cada pedido paga el catálogo entero) | igual | US$1,42 |
+| Escribir la caché | no usa | US$1,70 (dura 5 minutos) o US$2,73 (1 hora) |
+| Tiempo de respuesta (mediana) | 16 s | 17 s |
+
+- **Empate en calidad**: 5 a 5 y un empate; productos útiles, 0,74 y 0,74. Los dos órdenes
+  coinciden en 10 de 11. Leyendo todo el catálogo, el modelo arma listas tan buenas como
+  eligiendo entre los 5 de la búsqueda.
+- **Las listas no son las mismas**: coinciden en 35 de 75 productos (entre dos corridas iguales
+  de la versión 2 coinciden en 66). Y **el producto que el modelo elige viendo todo el catálogo
+  estaba entre los 5 candidatos de la búsqueda en 52 de 75 piezas (69%)**: es otra medida de la
+  búsqueda, sin ground truth. Con todo el catálogo a la vista elige menos de ABO (24 de 75
+  contra 37).
+- **El costo depende del tráfico.** Con la caché caliente (un pedido cada menos de 5 minutos),
+  el catálogo en el contexto cuesta lo mismo o menos que elegir entre candidatos con foto
+  (US$0,12 contra US$0,145), y tarda lo mismo. Sin caché, cuesta 10 veces más (US$1,42).
+
+**Lectura: para qué sirve RAG acá.** Con este catálogo, no para que la lista sea mejor: a esta
+escala, un modelo con contexto largo hace el trabajo de la búsqueda leyendo todo. La búsqueda
+se justifica por lo que este experimento no puede tener:
+- **Escala.** El catálogo ya ocupa 341 mil tokens de un contexto de 1 millón: con el triple de
+  productos no entra. ABO completo son 147.702 listados. La búsqueda sobre 1.502 o sobre 150
+  mil productos cuesta lo mismo por pedido.
+- **Tráfico y actualización.** La caché dura 5 minutos (1 hora pagando el doble la escritura);
+  un pedido aislado paga US$1,42. Y cambiar un producto (un precio, el stock, un alta) invalida
+  el prefijo entero: US$1,70 por reescritura. En el índice, un alta es un insert.
+- **Las fotos.** El que elige con búsqueda mira las fotos de los candidatos; el catálogo entero
+  solo entra en texto. En el ground truth, mirar las fotos sumaba 15 puntos de hit@1 (T1e); acá
+  el juez no ve diferencia en la lista final.
+- **No depende de un modelo con contexto de 1 millón**: con la búsqueda, el que elige puede ser
+  un modelo chico o local.
+
+**Decisión.** El flujo sigue con la búsqueda (versión 2). El resultado se cuenta tal cual: en
+calidad empatan; RAG es la arquitectura que escala y que no depende del tráfico, no la única
+que funciona con 1.500 productos. Junto con T8b (contra 5 al azar, 7 a 0) dice dónde está el
+valor de la búsqueda: es necesaria cuando el que elige ve 5 productos, y deja de serlo cuando
+puede leerlos todos.
 
 ## T9: las imágenes de la configuración final (2026-11-12)
 
@@ -1161,7 +1223,8 @@ retomar junto con indicar el lugar (T5).
 ## Pendientes de la v1
 
 Actualizado el 2026-11-12 a la tarde. Ya se corrieron el piso de ruido (T8c), las métricas del
-generador sobre las listas de la versión 2 (T7) y la escena en los 11 ambientes (T10). Lo que
+generador sobre las listas de la versión 2 (T7), la escena en los 11 ambientes (T10) y RAG
+contra el catálogo entero en el contexto (T8d). Lo que
 falta y lo que cuesta está en `docs/REVISION.md` (secciones 4 y 8): el mejor embedding de OpenAI
 contra Qwen3 (la clave está vencida), el pedido abierto, un juez o personas para la
 distribución de los muebles en la imagen, y el voto a ciegas del equipo para validar al juez.

@@ -34,7 +34,7 @@ from amoblai.infra.http import ProviderError
 from amoblai.prompts import PromptTemplate, load_prompt
 from amoblai.rag.filters import Filters
 from amoblai.rag.index import Index, ensure_index
-from amoblai.rag.search import Hit, search
+from amoblai.rag.search import Hit, as_hit, search
 
 
 def ask(
@@ -198,7 +198,7 @@ def retrieve(cfg: Config, pieces: list[dict], out: Path | None = None) -> dict:
         if not hits:
             empty.append(piece["piece"])
             continue
-        if out is not None:
+        if out is not None and cfg.rag.mode != "whole_catalog":  # hundreds: no sheet
             n = len(found) + 1
             contact_sheet(cfg, hits, out / f"2_candidates{'' if n == 1 else f'_{n}'}.jpg")
         found.append(
@@ -219,6 +219,24 @@ def size_text(h: Hit) -> str:
     return ", ".join(f"{d[a]:.0f} cm {w}" for a, w in words if d.get(a)) or "size unknown"
 
 
+def catalog_text(items: Sequence[dict]) -> str:
+    """Every product of the index as text, grouped by kind: what goes whole in the prompt when
+    there is no search (rag.mode whole_catalog). The same bytes for the same index, so the
+    block can be cached as a prompt prefix."""
+    by_kind: dict[str, list[Hit]] = {}
+    for it in items:
+        h = as_hit(it, None)
+        by_kind.setdefault(h.kind or h.category or "other", []).append(h)
+    out = [
+        f"CATALOG: {len(items)} products, grouped by kind. "
+        "Each product: [id] and size, then its description."
+    ]
+    for kind in sorted(by_kind):
+        out.append(f"\n## {kind} ({len(by_kind[kind])} products)")
+        out += [f"\n[{h.id}] {size_text(h)}\n{h.description}" for h in by_kind[kind]]
+    return "\n".join(out)
+
+
 def choose(
     cfg: Config,
     room_photo: Path,
@@ -227,21 +245,39 @@ def choose(
     views: Sequence[Path] = (),
 ) -> dict:
     """The room photo, then every candidate's photo, piece by piece; one product per piece, and
-    how many units of it (`quantity`, 1 if the prompt doesn't ask: 0 leaves the piece out)."""
-    tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)
-    lines, content, n = [], [image_block(room_photo, cfg.furnish.photo_max_side)], 1
-    for k, (piece, hits) in enumerate(found, 1):
-        lines.append(f"Piece {k}: {piece['piece']}")
-        for h in hits:
-            n += 1
-            lines.append(
-                f"  image {n}. {h.id}: {h.kind or h.category}, {type_line(h)}, {size_text(h)}"
-            )
-            content.append(image_block(photo(cfg, h), cfg.furnish.photo_max_side))
-    text = tmpl.fill(request=request, pieces=len(found), images=n, candidates="\n".join(lines))
+    how many units of it (`quantity`, 1 if the prompt doesn't ask: 0 leaves the piece out).
+
+    With rag.mode whole_catalog there is no search to choose from: the whole catalog goes first,
+    as text (cached: it is the same for every request), then the room photo, and each piece
+    lists the ids that pass its hard filters. No candidate photos: the catalog's don't fit."""
+    if cfg.rag.mode == "whole_catalog":
+        tmpl = load_prompt(cfg.furnish.choose_catalog_prompt, cfg.root)
+        lines = [
+            f"Piece {k}: {piece['piece']}\n  ids: {', '.join(h.id for h in hits)}"
+            for k, (piece, hits) in enumerate(found, 1)
+        ]
+        text = tmpl.fill(request=request, pieces=len(found), candidates="\n".join(lines))
+        content = [
+            text_block(catalog_text(ensure_index(cfg).items), cfg.furnish.catalog_cache),
+            image_block(room_photo, cfg.furnish.photo_max_side),
+        ]
+        n, step = 1, "furnish.choose_catalog"  # its own line in the ledger: not the flow's cost
+    else:
+        step = "furnish.choose"
+        tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)
+        lines, content, n = [], [image_block(room_photo, cfg.furnish.photo_max_side)], 1
+        for k, (piece, hits) in enumerate(found, 1):
+            lines.append(f"Piece {k}: {piece['piece']}")
+            for h in hits:
+                n += 1
+                lines.append(
+                    f"  image {n}. {h.id}: {h.kind or h.category}, {type_line(h)}, {size_text(h)}"
+                )
+                content.append(image_block(photo(cfg, h), cfg.furnish.photo_max_side))
+        text = tmpl.fill(request=request, pieces=len(found), images=n, candidates="\n".join(lines))
     content += view_blocks(cfg, views, n + 1)
     content.append(text_block(text))
-    a, data = ask(cfg, "furnish.choose", content)
+    a, data = ask(cfg, step, content)
     choices = data.get("choices") or []
     if len(choices) != len(found):
         raise ProviderError(f"furnish.choose: {len(choices)} choices for {len(found)} pieces")

@@ -128,8 +128,11 @@ aproximaciones, y cada métrica se apoya en una:
   puntajes, el ruido es 0,02 de productos útiles y hasta 0,3 en las notas de 1 a 5.
 - **Lo que midió** (`docs/EXPERIMENTOS.md`, T3b y T8): IKEA + ABO contra IKEA, 8 a 2 con 1
   empate; la búsqueda híbrida contra la densa, 5 a 0 con 6 empates (15 votos a 5; p = 0,06); con
-  búsqueda contra 5 candidatos al azar del mismo kind, 7 a 0 con los 14 votos (p = 0,016). El
-  último es el control del instrumento: cuando la diferencia es grande, el juez la ve siempre.
+  búsqueda contra 5 candidatos al azar del mismo kind, 7 a 0 con los 14 votos (p = 0,016); la
+  versión 2 contra el catálogo entero en el contexto, 5 a 5 con 1 empate (T8d); la versión 2
+  contra sí misma, 3 a 3 con 5 empates (T8c). El del azar y el de sí misma son los controles
+  del instrumento: cuando la diferencia es grande el juez la ve siempre, y cuando no la hay,
+  reparte.
 - **A favor.** En la comparación de catálogos los dos órdenes coinciden en 10 de 11; hay algo de sesgo a la posición A (12 de
   22 votos) y preguntar en los dos órdenes lo cancela. Una métrica sin juez va en el mismo
   sentido: el producto elegido tiene el primer estilo que pidió el plan en 0,42 (IKEA) contra

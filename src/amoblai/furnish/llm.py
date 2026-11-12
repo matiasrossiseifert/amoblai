@@ -11,6 +11,11 @@ Content is a list of blocks, `text_block(...)` and `image_block(path)`, the same
 
 Models and prices live in the config (`models`: {model: {usd_per_m: {input, output},
 estimate_usd}}); the cost of a call comes from the reply's token counts.
+
+A text block can be marked as a cache breakpoint (`text_block(text, cache="5m" | "1h")`, Claude
+only): everything up to it is stored for that long and read back at a fraction of the price by
+the next calls that start with the same bytes. Its prices go in `usd_per_m` too (`cache_read`,
+`cache_write_5m`, `cache_write_1h`).
 """
 
 from __future__ import annotations
@@ -82,8 +87,13 @@ def image_block(path: Path, max_side: int = 1024) -> dict:
     return {"type": "image", "source": {"type": "base64", "media_type": "image/jpeg", "data": data}}
 
 
-def text_block(text: str) -> dict:
-    return {"type": "text", "text": text}
+def text_block(text: str, cache: str | None = None) -> dict:
+    """`cache` ("5m" or "1h"): the prompt up to the end of this block is cached for that long
+    (Claude's prompt caching; other kinds ignore it)."""
+    block: dict = {"type": "text", "text": text}
+    if cache:
+        block["cache_control"] = {"type": "ephemeral", **({"ttl": "1h"} if cache == "1h" else {})}
+    return block
 
 
 def parse_json(text: str) -> dict:
@@ -104,6 +114,23 @@ def parse_json(text: str) -> dict:
 def _token_cost(rules: dict, tokens_in: int, tokens_out: int) -> float:
     prices = rules["usd_per_m"]
     return (tokens_in * float(prices["input"]) + tokens_out * float(prices["output"])) / 1e6
+
+
+def claude_cost(rules: dict, usage: dict) -> float:
+    """The cost of one Claude answer from its `usage`. Input read from the cache or written to
+    it has its own price (`cache_read`, `cache_write_5m`, `cache_write_1h` in `usd_per_m`);
+    a model without those prices counts it as plain input, which overstates a cached call."""
+    prices = rules["usd_per_m"]
+    plain = float(prices["input"])
+    written = usage.get("cache_creation_input_tokens") or 0
+    for_1h = (usage.get("cache_creation") or {}).get("ephemeral_1h_input_tokens") or 0
+    return (
+        (usage.get("input_tokens") or 0) * plain
+        + (written - for_1h) * float(prices.get("cache_write_5m", plain))
+        + for_1h * float(prices.get("cache_write_1h", plain))
+        + (usage.get("cache_read_input_tokens") or 0) * float(prices.get("cache_read", plain))
+        + (usage.get("output_tokens") or 0) * float(prices["output"])
+    ) / 1e6
 
 
 class _Http:
@@ -179,11 +206,7 @@ class Claude(_Http):
         )
         usage = out.get("usage") or {}
         if usage:
-            tokens_in = sum(
-                usage.get(k) or 0
-                for k in ("input_tokens", "cache_creation_input_tokens", "cache_read_input_tokens")
-            )
-            cost, source = _token_cost(self.rules, tokens_in, usage.get("output_tokens", 0)), "api"
+            cost, source = claude_cost(self.rules, usage), "api"
         else:
             cost, source = self.estimate_cost(), "estimate"
         stop = out.get("stop_reason")

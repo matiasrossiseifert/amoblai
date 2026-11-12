@@ -72,6 +72,11 @@ class FurnishConfig(_Cfg):
     photo_max_side: int = 1024  # photos sent to the LLM
     query_prompt: str = "search_query_v4.md"
     choose_prompt: str = "choose_combination_v2.md"
+    # rag.mode whole_catalog (no search): the whole catalog goes in the prompt as text, and this
+    # prompt asks for the same choice. `catalog_cache`: how long that block is cached as a prompt
+    # prefix ("5m", "1h"; None: not cached, every call pays it whole).
+    choose_catalog_prompt: str = "choose_catalog_v1.md"
+    catalog_cache: Literal["5m", "1h"] | None = "5m"
     scene_prompt: str = "scene_prompt_v1.md"
     # False: the scene prompt is the template filled in (scene_prompt_libre_*: the image model
     # arranges the products itself), with no LLM call.

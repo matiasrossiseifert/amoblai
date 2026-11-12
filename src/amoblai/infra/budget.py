@@ -89,7 +89,8 @@ def check_spend(ledger: Ledger, estimate_usd: float, *, paid: bool, allow_paid: 
 PURPOSES = {
     "furnish.plan": "El flujo: plan (lee la foto y el pedido, escribe las consultas)",
     "furnish.choose": "El flujo: elección de la lista",
-    "furnish.scene": "El flujo: prompt de la imagen escrito por el LLM (configuración anterior)",
+    "furnish.choose_catalog": "Experimento: elegir con el catálogo entero en el prompt",
+    "furnish.scene": "El flujo: prompt de la imagen escrito por el LLM (una variante)",
     "furnish.generate": "El flujo: imagen del ambiente amoblado",
     "catalog.describe": "Catálogo: descripciones de los productos de ABO",
     "rag.embed": "Índice: embeddings por API",

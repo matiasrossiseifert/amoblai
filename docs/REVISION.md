@@ -32,7 +32,12 @@ antes de darlo por cierto. Todo lo que dice "verificado" se recalculó.
    11 ambientes reales (gana 5, empata 6, no pierde ninguno). Ya es la búsqueda del flujo; la
    versión 1 queda a una línea de configuración (sección 6).
 6. **La búsqueda aporta en la tarea real**: contra 5 candidatos al azar del mismo kind, el flujo
-   con búsqueda gana 7 a 0 (sección 4).
+   con búsqueda gana 7 a 0 (sección 4). **Y contra el catálogo entero en el contexto, empata**
+   (5 a 5, medido el 12/11 a la tarde): con 1.500 productos un modelo de contexto largo hace el
+   trabajo de la búsqueda leyendo todo; RAG se justifica por escala, tráfico y actualización, no
+   por calidad (sección 7). A la tarde también se midieron el piso de ruido (3 a 3), las métricas
+   del generador sobre las listas de la versión 2 (0,88 y 0,70) y la escena en los 11 ambientes
+   (empate: queda la plantilla).
 7. **Queda por decidir** (sección 8): el filtro de medidas, las presentaciones, y cosas chicas.
 
 ---
@@ -73,7 +78,7 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 | Elegir entre los candidatos es **selección conjunta** (un conjunto que combina), con derecho a decir "no hay". | Igual (`choose`, cantidad 0). En 187 piezas nunca dijo "no hay": sustituye. |
 | El prompt de la imagen lo arma **una plantilla** desde la lista validada, no un LLM. | Igual. |
 | No haría: generar primero y buscar después por imagen; un agente con herramientas; fine-tuning; layout 3D; comparar modelos de imagen. | La primera era nuestra propuesta original (la "v0"): se abandonó. El resto no lo hicimos. |
-| La pregunta más incómoda: **"¿hacía falta RAG si el catálogo entra en el contexto?"** | Sin respuesta escrita hasta hoy. Sección 7. |
+| La pregunta más incómoda: **"¿hacía falta RAG si el catálogo entra en el contexto?"** | Sin respuesta escrita hasta hoy. Desde el 12/11 a la tarde, medida (T8d): en calidad empatan; RAG se justifica por escala, tráfico y actualización. Sección 7. |
 
 **Complicaciones que tenemos y su justificación:**
 
@@ -124,6 +129,8 @@ Sin borrar ninguno. "Va" quiere decir que merece lugar en el oral.
 | **Tres redactores** | ¿Cuánto cambia el número según quién escribe la consulta? | ±2,5 puntos. Usarlo: no leer diferencias de 2 puntos. |
 | **Híbrida y multimodal** (nuevo) | ¿Suman la búsqueda por palabras y la foto del producto? | Ver abajo. Es la versión 2. |
 | **Versión 1 contra versión 2, y con búsqueda contra sin búsqueda, de punta a punta** (nuevo) | ¿La mejora del buscador llega a la lista? ¿La búsqueda aporta en la tarea real? | Ver abajo. Decir n y p. |
+| **RAG contra el catálogo entero en el contexto** (nuevo, 12/11 a la tarde) | ¿Hacía falta RAG, si el catálogo entra en el contexto? | Empate en calidad (5 a 5); el costo depende de la caché de prompt. Contarlo tal cual: RAG escala y no depende del tráfico; con 1.500 productos no es lo que hace buena la lista. Sección 7. |
+| **El piso de ruido** (nuevo, 12/11 a la tarde) | ¿Cuánto "gana" una configuración contra sí misma? | 3 a 3 con 5 empates: un ambiente ganado no dice nada solo. Va como una línea junto a los resultados de punta a punta. |
 
 ### Normalitos (correctos, de trámite o de respuesta previsible)
 
@@ -244,6 +251,8 @@ distinguen Qwen3, BM25 y SigLIP 2; BGE sigue peor): el banco subestima el nivel,
 |---|---|---|
 | Versión 1 (densa) contra versión 2 (híbrida), 11 ambientes | La híbrida gana 5, empata 6, no pierde ninguno (15 votos a 5; p = 0,06); productos útiles 0,74 contra 0,68 | US$3,0 |
 | Con búsqueda contra sin búsqueda (5 candidatos al azar del mismo kind), 7 ambientes | 7 a 0, los 14 votos (p = 0,016); productos útiles 0,82 contra 0,26 | US$1,4 |
+| La versión 2 contra sí misma (el piso de ruido), 11 ambientes | 3 a 3 con 5 empates; el que elige cambia 9 de 75 productos | US$2,4 |
+| La versión 2 contra el catálogo entero en el contexto (sin búsqueda), 11 ambientes | **5 a 5 con 1 empate; productos útiles 0,74 y 0,74.** Costo por pedido: US$0,145 contra US$0,12 con la caché caliente y US$1,42 sin caché | US$5,0 |
 
 El segundo es además el control del instrumento: cuando la diferencia es grande, el juez la ve
 siempre, y eso le da sentido a los empates del primero.
@@ -368,13 +377,20 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
 
 ## 7. Las preguntas difíciles del oral
 
-1. **¿Hacía falta RAG si el catálogo entra en el contexto?** En texto entra: las 1.502 fichas
-   son unos 200 mil tokens (unos 790 mil caracteres). Mandarlas enteras costaría unos US$0,80 de
-   entrada por pedido con Opus, contra US$0,14 de la elección de hoy, que además mira las fotos
-   de los candidatos; con las fotos de todo el catálogo ya no entra. RAG se justifica por costo,
-   por escala (ABO completo son 147 mil productos), por actualización (un alta es un insert) y
-   porque el modelo de imagen necesita igual las fotos de los elegidos. No lo medimos de punta
-   a punta.
+1. **¿Hacía falta RAG si el catálogo entra en el contexto?** Lo medimos el 12/11 a la tarde
+   (T8d): la versión 2 contra el mismo flujo sin búsqueda, con las 1.502 fichas en el prompt
+   (341 mil tokens con Opus 5.5, no los 200 mil que habíamos estimado), el mismo filtro duro y
+   el mismo juez. **En calidad empatan: 5 a 5 y un empate; productos útiles 0,74 y 0,74.** El
+   costo depende del tráfico: con el catálogo en la caché de prompt, US$0,12 por pedido contra
+   US$0,145 de la elección de hoy (que manda las fotos de los candidatos); sin caché, US$1,42. El
+   tiempo es el mismo (17 s y 16 s). La respuesta honesta: con 1.500 productos la búsqueda no
+   hace mejor la lista; un modelo de contexto largo hace ese trabajo leyendo todo. RAG se
+   justifica por escala (el catálogo ya ocupa un tercio del contexto; ABO completo son 147.702
+   productos), por tráfico y actualización (la caché dura 5 minutos y cualquier cambio del
+   catálogo la invalida; en el índice un alta es un insert), porque el que elige puede mirar
+   las fotos de los candidatos, y porque no ata el sistema a un modelo de contexto de 1 millón.
+   Y la búsqueda le acerca al que elige lo que habría elegido viendo todo: en 52 de 75 piezas
+   el producto elegido con todo el catálogo estaba entre sus 5 candidatos.
 2. **¿Dónde está la G?** `choose` es el generador: elige y explica, con el contexto recuperado.
    La imagen es una segunda generación aumentada con las fotos recuperadas.
 3. **El 0,69, ¿es del sistema que corre?** No: es el techo de una técnica aislada. El flujo

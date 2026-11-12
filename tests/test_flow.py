@@ -12,9 +12,11 @@ from amoblai.evaluation.report import build_report
 from amoblai.evaluation.retrieval import Method, load_ablation, run_eval
 from amoblai.furnish.flow import run_flow
 from amoblai.furnish.image_models import FalNanoBanana
+from amoblai.furnish.llm import claude_cost, text_block
 from amoblai.furnish.steps import size_text
 from amoblai.infra import http
 from amoblai.infra.budget import BudgetExceeded, Ledger, PaidCallsDisabled
+from amoblai.infra.http import ProviderError
 from amoblai.prompts import load_prompt
 from amoblai.rag.search import Hit
 from tests.conftest import CLAUDE, PRODUCTS, ROOM_ID, ROOT
@@ -444,3 +446,71 @@ def test_the_image_shows_at_most_the_products_the_image_model_takes(tmp_path, cf
     assert "image 4" not in scene["answer"]["prompt"]  # the third product is not in the image
     assert [h.id for h in flow._in_image(run, run.chosen())] == ["s1", "s2"]
     assert len(run.chosen()) == 3  # the shopping list keeps the three
+
+
+def test_without_a_search_the_whole_catalog_goes_in_the_prompt_as_a_cached_block(
+    tmp_path, cfg, monkeypatch
+):
+    seen: list = []
+    plan = {
+        "room": "an empty living room with white walls",
+        "pieces": [
+            {"piece": "a sofa against the wall", "kinds": ["sofa"], "query": "Type: sofa"},
+        ],
+    }
+    choice = {"choices": [{"piece": 1, "id": "100.000.02", "why": "calm"}], "why": "one piece"}
+    monkeypatch.setattr(
+        http, "TRANSPORT", httpx.MockTransport(claude_handler(seen, [plan, choice]))
+    )
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "sk-ant-test")
+    photo = tmp_path / "vacio.jpg"
+    Image.new("RGB", (300, 200), (220, 215, 210)).save(photo)
+    cfg.rag.mode = "whole_catalog"
+    cfg.furnish.steps = ["plan", "retrieve", "choose"]
+    cfg.budget.allow_paid = True
+    out = tmp_path / "run"
+    run = run_flow(photo, "un living con un sofá", cfg, out, log=lambda _: None)
+
+    blocks = seen[1]["messages"][0]["content"]
+    # the catalog first, whole and marked for the cache; then the room, the only photo
+    assert [b["type"] for b in blocks] == ["text", "image", "text"]
+    assert blocks[0]["cache_control"] == {"type": "ephemeral"}
+    assert blocks[0]["text"].startswith("CATALOG:")
+    assert blocks[0]["text"].count("\n[100.") == 7  # every product of the index, once
+    assert "## sofa (2 products)" in blocks[0]["text"]
+    assert "cache_control" not in blocks[-1]
+    # each piece lists the ids its hard filters let through: here, the two sofas
+    ids = blocks[-1]["text"].split("ids: ")[1].splitlines()[0].split(", ")
+    assert sorted(ids) == ["100.000.01", "100.000.02"]
+    assert [h.id for h in run.chosen()] == ["100.000.02"]
+    assert not list(out.glob("2_candidates*.jpg"))  # no contact sheet of a whole kind
+
+    # an id from outside the piece's list is refused, as with the search
+    seen.clear()
+    choice["choices"][0]["id"] = "100.000.03"
+    with pytest.raises(ProviderError, match="not a candidate"):
+        run_flow(photo, "un living con un sofá", cfg, tmp_path / "run2", log=lambda _: None)
+
+
+def test_cached_input_has_its_own_price():
+    usage = {
+        "input_tokens": 1000,
+        "cache_creation_input_tokens": 300_000,
+        "cache_creation": {
+            "ephemeral_5m_input_tokens": 100_000,
+            "ephemeral_1h_input_tokens": 200_000,
+        },
+        "cache_read_input_tokens": 400_000,
+        "output_tokens": 2000,
+    }
+    prices = {"input": 4.0, "output": 20.0}
+    cache = {"cache_read": 0.2, "cache_write_5m": 5.0, "cache_write_1h": 8.0}
+    assert claude_cost({"usd_per_m": {**prices, **cache}}, usage) == pytest.approx(
+        (1000 * 4 + 100_000 * 5 + 200_000 * 8 + 400_000 * 0.2 + 2000 * 20) / 1e6
+    )
+    # a model with no cache prices: every input token at the plain price
+    assert claude_cost({"usd_per_m": prices}, usage) == pytest.approx(
+        (701_000 * 4 + 2000 * 20) / 1e6
+    )
+    assert text_block("x", "1h")["cache_control"] == {"type": "ephemeral", "ttl": "1h"}
+    assert "cache_control" not in text_block("x")

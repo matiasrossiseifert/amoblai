@@ -72,8 +72,14 @@ furnish:
     max_tokens: 16000
     timeout_s: 300
     models:
-      claude-opus-5-5: {usd_per_m: {input: 4.0, output: 20.0}, estimate_usd: 0.15}
-      claude-sonnet-5-5: {usd_per_m: {input: 2.0, output: 10.0}, estimate_usd: 0.08}
+      # cache_*: lo que cuesta la entrada escrita en la caché de prompt (1,25x a 5 minutos, 2x
+      # a 1 hora) y leída de ella (0,05x); solo se usa con rag.mode whole_catalog (2026-11-12).
+      claude-opus-5-5:
+        usd_per_m: {input: 4.0, output: 20.0, cache_read: 0.20, cache_write_5m: 5.0, cache_write_1h: 8.0}
+        estimate_usd: 0.15
+      claude-sonnet-5-5:
+        usd_per_m: {input: 2.0, output: 10.0, cache_read: 0.10, cache_write_5m: 2.5, cache_write_1h: 4.0}
+        estimate_usd: 0.08
   generator: manual               # gratis: deja una carpeta para pegar en ChatGPT o Gemini
   generators:
     manual: {kind: manual}

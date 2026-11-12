@@ -171,6 +171,16 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   los mismos filtros; 7 ambientes): 7 a 0, los 14 votos (p = 0,016); productos útiles, 0,82
   contra 0,26. La búsqueda aporta en la tarea real, y el juez lo ve cuando la diferencia es
   grande.
+- **RAG contra el catálogo entero en el contexto** (la versión 2 contra el mismo flujo sin
+  búsqueda: las 1.502 fichas en el prompt, en texto, con el mismo filtro duro; 11 ambientes):
+  5 a 5 y un empate; productos útiles, 0,74 y 0,74. En calidad empatan. El costo depende del
+  tráfico: con el catálogo en la caché de prompt, US$0,12 por pedido contra US$0,145 de elegir
+  entre candidatos con foto; sin caché, US$1,42. Con 1.500 productos la búsqueda no hace mejor
+  la lista: se justifica por escala (el catálogo ya ocupa 341 mil tokens de un contexto de 1
+  millón; ABO completo son 147.702 productos), por tráfico y actualización (la caché dura 5
+  minutos y cualquier cambio del catálogo la invalida) y porque no ata el sistema a un modelo de
+  contexto largo. El producto elegido con todo el catálogo a la vista estaba entre los 5
+  candidatos de la búsqueda en 52 de 75 piezas.
 - **El piso de ruido** (la versión 2 corrida dos veces, mismo plan y mismos candidatos): el que
   elige cambia 9 de 75 productos entre dos corridas iguales y 5 de las 11 listas salen idénticas.
   El juez dice empate en esas 5 y en las otras 6 elige una, la misma en los dos órdenes: 3 a 3.
