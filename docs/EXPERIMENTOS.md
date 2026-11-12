@@ -15,7 +15,7 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 
 | Grupo | Experimentos | Por qué |
 |---|---|---|
-| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
+| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
 | **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
 | **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM (una imagen por variante; no está en este registro) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
 
@@ -988,6 +988,51 @@ pieza contra el mismo flujo con 5 productos **al azar** entre los que pasan los 
   en el 33% de las piezas sin búsqueda, contra el 63% con búsqueda.
 - **El juez distingue**: cuando la diferencia es grande, los dos órdenes coinciden siempre. Eso
   le da sentido a los empates de T8a (ahí las listas son parecidas de verdad).
+
+## T9: las imágenes de la configuración final (2026-11-12)
+
+**Por qué.** Hasta acá ninguna imagen se había generado con el catálogo combinado ni con la
+búsqueda de la versión 2: las 8 imágenes con métricas eran de 4 ambientes, con listas solo de
+IKEA y con varias configuraciones mezcladas.
+
+**Cómo.** Las 11 listas de la versión 2 (`punta_a_punta/hibrida/hibrida/`; 37 de sus 75
+productos son de ABO) pasaron por el resto del flujo: la plantilla del prompt
+(`scene_prompt_libre_v4`), Nano Banana 2 y el control del ambiente con hasta 3 intentos. Las
+corridas completas están en `datos/resultados/amoblar/final-<ambiente>/`. Después,
+`amoblai evaluar-imagen` (gratis). Costó US$1,52 de fal (19 intentos).
+
+| Ambiente | Productos | Detectados | Reconocidos como el producto exacto | Coseno | Control del ambiente (puntos SIFT de cada intento) |
+|---|---|---|---|---|---|
+| alvear-escritorio | 5 | 5 | 3 | 0,54 | pasa al 1.º (416) |
+| alvear-living-comedor | 15 (13 en la imagen) | 14 | 2 | 0,35 | no pasa (3 intentos; el mejor, 39) |
+| caballito-comedor | 4 | 4 | 1 | 0,49 | no pasa (50, 68, 56: la cámara se movió) |
+| caballito-living | 8 | 8 | 4 | 0,50 | no pasa (20, 12, 17) |
+| experimento-lectura | 7 | 7 | 3 | 0,44 | pasa al 1.º (158) |
+| publica-comedor-clasico-moderno | 4 | 4 | 1 | 0,59 | pasa al 1.º (398) |
+| publica-estudio-sobrio | 5 | 5 | 4 | 0,70 | pasa al 1.º (145) |
+| publica-living-bohemio | 9 | 9 | 4 | 0,54 | pasa al 1.º (222) |
+| publica-living-clasico | 6 | 5 | 3 | 0,58 | no pasa (8, 9, 7: reencuadró hacia la chimenea) |
+| publica-living-japandi | 5 | 5 | 3 | 0,51 | pasa al 1.º (168) |
+| publica-loft-industrial | 7 | 5 | 3 | 0,59 | pasa al 1.º (360) |
+| **Total** | **75** | **71** | **31 (41%)** | **0,50** | **7 de 11 pasan, todas al primer intento** |
+
+- **Los productos aparecen (71 de 75 detectados), pero el reconocimiento exacto es del 41%**:
+  al comparar el recorte de cada mueble con las fotos del catálogo, el más parecido de su tipo es
+  el de la lista en 31 de 75. Es del orden de lo que da el mismo reconocimiento sobre fotos
+  reales de IKEA (0,44, con otro procedimiento), y menos que el 50% de las 8 imágenes anteriores:
+  son listas más largas y con productos de ABO.
+- **El control del ambiente hace su trabajo, el reintento no**: 7 de 11 ambientes pasan al primer
+  intento. En los otros 4 fallaron los 3 intentos: el modelo vuelve a mover la cámara o a rehacer
+  el cuarto con el mismo prompt. Reintentar igual gasta dos imágenes más y casi nunca lo arregla
+  (contando la corrida anterior de caballito-living, rescató 1 de 5). Lo que se entrega en esos
+  casos es el mejor intento, marcado como no preservado.
+- **El modelo de imagen acepta 14 imágenes**: la foto y 13 productos. El ambiente de 15 piezas
+  no se podía dibujar (fal rechazó el pedido, sin cobrarlo). Desde hoy la imagen muestra las 13
+  primeras piezas (el plan las ordena por importancia) y las otras quedan en la lista de compra
+  (`furnish.max_image_products`).
+- **Decisión.** El flujo no cambia. Queda como limitación de la mitad "imagen" del producto: la
+  lista es confiable (productos reales, elegidos entre candidatos recuperados); la imagen es una
+  visualización que acierta el producto exacto 4 de cada 10 veces y conserva el cuarto 2 de cada 3.
 
 ## Pendientes de la v1
 

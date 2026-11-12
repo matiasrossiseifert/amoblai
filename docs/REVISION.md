@@ -83,7 +83,7 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 | Filtro duro por kind | Sí en el flujo, con costo: con filtro por tipo, el 11% de los candidatos de los 11 ambientes sería de otro kind (un sillón pedido y una silla de comedor ofrecida). Cuesta 2 a 3 puntos de hit@5 y hit@10 en el ground truth, porque a veces la consulta y el catálogo no coinciden en el kind fino (ratona / auxiliar). Hay que contarlo así. |
 | Filtro duro por medidas | **No tiene evidencia.** El límite lo estima el plan a ojo desde una foto; solo el 34% de IKEA tiene alguna medida (ningún sofá ni sillón), así que lo que más recorta es el catálogo con mejores datos (ABO); en el catálogo combinado cambia el top-5 de 23 de las 52 piezas que traen límite, y nunca se evaluó. Además tenía un error de orientación (sección 3). Ahora se puede apagar (`furnish.size_filter`). Propuesta: apagarlo y dejar las medidas como dato para el que elige, o validarlo de punta a punta (US$2). |
 | Dos catálogos (IKEA + ABO) | Sí por cobertura de estilos (T3b), con la salvedad de cómo se escribieron esos pedidos (sección 4). |
-| Control del ambiente (SIFT) con reintento | Sí como red de seguridad: rechazó 2 de 3 intentos en un ambiente. Los umbrales (50 puntos, 1%) están puestos a mano. |
+| Control del ambiente (SIFT) con reintento | El control, sí: en las 11 imágenes finales marcó los 4 ambientes donde el modelo movió la cámara o rehízo el cuarto. El reintento, dudoso: en esos 4 fallaron los 3 intentos (rescató 1 de 5 contando una corrida anterior) y cuesta dos imágenes más. Los umbrales (50 puntos, 1%) están puestos a mano. |
 | Segunda foto del ambiente (`--vista`) | Sin evidencia: nunca se midió si cambia algo. Es opcional; decirlo o sacarlo. |
 | Embedder neuronal (Qwen3) | Solo, no se distingue de contar palabras en este banco de prueba. Fusionado con la búsqueda léxica y con la foto, sí suma: es la versión 2. |
 | Búsqueda híbrida (BM25 + foto con SigLIP 2) | Sí: +0,075 de hit@1 en el ground truth, con los tres redactores, y de punta a punta gana 5, empata 6 y no pierde. Corre local, sin costo por pedido. |
@@ -268,8 +268,9 @@ siempre, y eso le da sentido a los empates del primero.
    separado llevaban a leer como mejora lo que era ruido, y al revés).
 2. **El juez de a pares sobre ambientes vacíos**: lo único medido sobre la tarea real.
 3. **La elección con el VLM y la curva de candidatos**, dichas como técnica aislada.
-4. **Fidelidad de producto y ambiente preservado, sobre todas las imágenes** (hoy: 26 de 52
-   productos identificados, coseno 0,48, en 8 imágenes).
+4. **Fidelidad de producto y ambiente preservado, sobre todas las imágenes** (en las 11
+   imágenes de la configuración final: 31 de 75 productos reconocidos, coseno 0,50; el ambiente
+   se conserva en 7 de 11).
 5. **Los tres redactores y el IC**: lo que pidió la clase ("promedio de ejecuciones, desvío").
 6. **Costo por pedido, con rango**: US$0,06 el plan y US$0,14 la elección (de 0,05 a 0,43), más
    US$0,08 por intento de imagen.
@@ -379,7 +380,8 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
    (HyDE) más descomposición del pedido en sub-consultas más filtros de metadata.
 8. **¿Qué pasa si el catálogo no tiene lo pedido?** Hoy sustituye por lo más parecido sin
    avisar (0 piezas rechazadas en 187). Es una limitación.
-9. **¿Cuántas imágenes evaluaron y cuántos productos se reconocen?** 8 imágenes, 26 de 52.
+9. **¿Cuántas imágenes evaluaron y cuántos productos se reconocen?** Las 11 de la configuración
+   final: 31 de 75 productos reconocidos como el exacto (41%) y el ambiente conservado en 7 de 11.
 10. **¿Por qué cambiaron la arquitectura aprobada?** La propuesta era generar una imagen,
     recortar los muebles y buscarlos por parecido visual. Construimos y medimos su buscador
     (0,43 de recall por producto) y el de texto dio 0,55 con una generación menos por pedido.
@@ -426,7 +428,7 @@ que quede, con los números de lámina de `docs/presentacion/` como referencia:
 | La v0 (fase 3 y desafíos) | "no sirve con un ambiente vacío: no hay nada que recortar" | Fue la propuesta aprobada; su diseño generaba primero una imagen. Construimos y medimos su buscador (0,43 de recall por producto contra 0,55 por texto) y cambiamos. Nunca corrió entera. |
 | Ejercicio 4 (37) | Una tabla de 8 filas en 30 segundos | Versión 1, versión 2, configuración antes y después y los resultados de las dos: 3 láminas. |
 | Métricas del generador (22) | Faithfulness 0,89–0,96; answer relevance 0,69–0,73 contra 0,37 | 0,82 (289 de 351) y 0,69 contra 0,55 de la vara cruzada, sobre las 11 listas finales. |
-| La imagen (23) | 3 de 4 productos reconocidos | 26 de 52 en 8 imágenes. |
+| La imagen (23) | 3 de 4 productos reconocidos | 31 de 75 (41%) en las 11 imágenes de la configuración final; el ambiente se conserva en 7 de 11. |
 | "Ocho de las once fases las decidió un experimento" | — | Sacarla: suena a volumen, y tres de esos experimentos no sostienen su decisión. |
 | Falta | — | Una lámina de desafíos (el cambio de arquitectura) y la respuesta a "¿hacía falta RAG?". |
 
