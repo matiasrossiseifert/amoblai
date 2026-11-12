@@ -39,6 +39,10 @@ Registro continuo: cada experimento con su configuración, los resultados y lo q
 Corrida `datos/resultados/evaluacion/20261021-161057_ablacion-retrieval` (ChromaDB, CPU), 198
 consultas (`ablaciones/retrieval.yaml`). Con búsqueda exacta (`20261021-141030_ablacion-texto-268`)
 dio los mismos números.
+*Corrección (2026-11-12):* eso vale para las filas con nuestras descripciones. Las tres filas de texto del
+vendedor con filtro por kind de la tabla (0,434; 0,667; 0,677 de hit@10) son de la corrida exacta,
+y con ChromaDB cambian hasta 63 de 228 top-10: son textos repetidos entre variantes del mismo
+modelo, que empatan.
 
 | Embedder | Texto | Filtro | hit@1 [IC 95%] | hit@3 | hit@10 | MRR@10 | recall ítem@10 |
 |---|---|---|---|---|---|---|---|
@@ -74,7 +78,18 @@ T2 + filtro por tipo 0,586 → T3 Qwen3-Embedding **0,636** (hit@1).
   filtro por **tipo** (0,616 vs. 0,636 con Qwen3; los IC se solapan): cuando la consulta y el
   producto discrepan en el kind fino ("side table" vs. "coffee table"), el filtro deja afuera al
   producto correcto. El flujo usa el kind (lo decide el plan); es un candidato para iterar.
+  *Corrección (2026-11-12):* con la diferencia pareada (mismas consultas, catálogo final), kind contra tipo da
+  −0,005 de hit@1 (no se distingue), pero −0,020 [−0,037; −0,004] de hit@5 y −0,022 [−0,041;
+  −0,002] de hit@10: resta donde importa, que es entre los 5 candidatos. Y tipo contra ningún
+  filtro da 0,000. El filtro por kind se queda en el flujo por otra razón, que este banco de
+  prueba no mide: en los 11 ambientes vacíos, con filtro por tipo el 11% de los candidatos sería
+  de otro kind que el pedido (un sillón pedido, una silla de comedor ofrecida).
 - **Qwen3-Embedding es el mejor embedder**; BGE queda por debajo del hashing de palabras en hit@1.
+  *Corrección (2026-11-12):* "el mejor" solo se sostiene contra BGE (+0,057 [0,017; 0,095], pareado, catálogo
+  final). Contra el hashing de palabras la diferencia es +0,026 [−0,025; +0,077] en hit@1, 0,812
+  contra 0,809 en hit@5 e idéntico hit@10: no se distinguen. Contra BM25, igual (T6). El embedder
+  casi no importa en este banco de prueba; Qwen3 queda por robustez a la paráfrasis, sin
+  evidencia medida.
   Ojo con el hashing: consultas y descripciones las escribió la misma familia de modelos con el
   mismo formato y vocabulario, lo que favorece el solapamiento de palabras. En el flujo real
   pasa lo mismo (el plan también es Claude), así que no es un sesgo de la evaluación sola.
@@ -114,6 +129,10 @@ por fila. Corridas `20261021-161057_ablacion-retrieval` (gratis) y
   del catálogo (lo que escribe el plan) hit@1 es 0,64; con solo la línea Type (una frase corta:
   "Type: armchair, lounge reading chair") cae a 0,35; con solo el nombre del mueble (sin
   reescribir) a 0,04, casi el azar (0,02). La consulta tiene que hablar como los documentos.
+  *Corrección (2026-11-12):* esta comparación no mide reescribir contra no reescribir: buscar "rug" entre 89
+  alfombras es azar por construcción. La comparación justa (la ficha contra la frase natural con
+  que el redactor nombró la pieza) está en T6: +0,24 de hit@1. Y el nombre de la técnica, en los
+  términos de la clase, es query expansion con respuesta hipotética (HyDE), no query rewriting.
 - **El reranking con un VLM suma +0,17 de hit@1** (0,64 → 0,80; los IC no se solapan) y +0,11 de
   MRR: mirando las fotos, Opus ordena el top-10 mejor que el coseno. hit@10 no cambia (reordena
   dentro del top-10). Por categoría (hit@1): alfombra 0,31 → 0,60, mesa 0,69 → 0,87, silla
@@ -216,6 +235,10 @@ gratis, unas 2 h en CPU por los embeddings de las líneas sueltas).
   producto exacto, el sofá 7.º de 37 y la alfombra 10.ª de 89; coseno medio 0,65. La vara de
   fotos reales IKEA da hit@1 0,444 y coseno 0,41 (545 recortes). SSIM fuera de los muebles 0,975;
   55% de los puntos SIFT reencontrados, sin desplazamiento.
+  *Corrección (2026-11-12):* con la asignación actual de recortes esa imagen da 3 de 4 y coseno 0,68, y es la
+  mejor de las 8 imágenes con métricas. Sobre las 8: 26 de 52 productos identificados y coseno
+  medio 0,48. La vara de fotos reales usa otro procedimiento (valen todos los recortes), así que
+  no es una comparación pareja.
 - **RAGAS sobre el porqué:** faithfulness 0,89 a 0,96 (lo que no se sostiene son medidas que el
   catálogo no tiene); answer relevance 0,69 a 0,73, contra 0,37 de la vara.
 - **Espacio:** el vecino más cercano es del mismo kind en el 89% de los productos con Qwen3 y en
@@ -452,6 +475,9 @@ mismas 549 búsquedas del ground truth de IKEA, sobre el catálogo combinado:
 
 hit@1 baja un punto, dentro del intervalo de 95% (0,49 a 0,58). Es una cota pesimista: un producto
 de ABO arriba del anotado puede servir igual, y el ground truth lo cuenta como error.
+*Corrección (2026-11-12):* agregar productos solo puede bajar el número (0 consultas mejoran). Pareado: hit@1
+−0,011 [−0,021; −0,002] y, lo que importa con 5 candidatos, hit@5 −0,035 [−0,052; −0,019] (0,812 →
+0,778). El efecto es chico y es una cota pesimista, pero no está "dentro del intervalo".
 
 **Decisión: el flujo usa IKEA + ABO** (`rag.catalog: datos/catalogo/todos.yaml`). En los pedidos
 nórdicos no pierde nada, y en los de otros estilos es lo que hace que la lista tenga lo pedido. Las
@@ -476,7 +502,7 @@ Además, un juez (Opus, de a pares y en los dos órdenes, como T3) ve la foto or
 de los productos y las dos imágenes. Juzga si es el mismo cuarto, si son esos productos y si se ve
 real. Se reportan también los reintentos del control SIFT.
 
-| Exp. | Pregunta | Variantes | Imágenes (n = 15 ambientes) | Costo estimado |
+| Exp. | Pregunta | Variantes | Imágenes (se pensó para 15 ambientes; hay 11) | Costo estimado |
 |---|---|---|---|---|
 | I1 | ¿Escena escrita por el LLM o edición estricta libre? | `scene_prompt_v2` (Claude escribe dónde va cada cosa) vs. `scene_prompt_libre_v4` | 30 + ~20% de reintentos | US$2,9 fal + US$0,5 Claude |
 | I2 | ¿Qué modelo de imagen? | Nano Banana 2 vs. Nano Banana Pro (fal, ~US$0,15) vs. gpt-image (OpenAI, US$0,12, queda poco saldo) | 45 | US$4 |
@@ -545,6 +571,8 @@ IoU medio por mueble, sin → cajas 2D → cajas 3D: estantería 0,00 → 0,76 �
 - Con cajas 3D mejora un poco más (IoU 0,48, 3,3 de 6). La que más gana es la lámpara (0,16 →
   0,57): su rectángulo marcaba solo lo que se veía, detrás del sofá; el prisma llega al piso y dice
   dónde está parada. Puf y alfombra también suben; sofá y estantería quedan parecidos.
+  *Corrección (2026-11-12):* esa explicación no se repitió: en la ronda 2 la lámpara empeora con cajas 3D
+  (0,43 → 0,24). Con 3 imágenes por variante, las diferencias por mueble son ruido.
 - Con cajas 3D, 1 de 3 imágenes dejó las cajas dibujadas (con rectángulos, 2 de 3). Otra repitió el
   puf (puso dos) y la tercera dio vuelta el sofá (la chaise a la izquierda).
 - SSIM y DINO contra la foto real casi no cambian: los dominan lo que no está en la lista (el
@@ -613,14 +641,240 @@ Opus. La réplica entera, US$2,40 de fal.
 cajas 3D dibujadas sobre la foto y prompt corto; la guía aparte se descarta. Sin medir nada, se
 podría probar que el plan escriba en palabras dónde va cada mueble.
 
+## T6: lo que se midió en la revisión del 2026-11-12 (gratis, local)
+
+**Por qué.** Una revisión crítica del trabajo (`docs/REVISION.md`) encontró que los números del
+registro son correctos pero varias comparaciones no medían lo que decían: la tabla incremental
+fundía tres cambios en un paso y partía de una línea de base debilitada; el "query rewriting" se
+comparaba con un rival que no es "no reescribir"; faltaba la otra ruta de la clase para un
+catálogo con fotos (embeber la imagen en vez de describirla); y los métodos se comparaban mirando
+el intervalo de cada uno por separado. Todo lo de esta sección corre sobre las 549 consultas con
+respuesta del catálogo IKEA final (819 productos), y cada método trae su **diferencia pareada**
+contra la base y contra el paso anterior (las mismas consultas, IC 95% por bootstrap de
+ambientes: `vs_base` y `vs_anterior` en `metricas.json`).
+
+### T6a: el camino incremental, un cambio por paso
+
+`ablaciones/camino.yaml`, corrida `20261112-090439_ablacion-camino`.
+
+| Paso | hit@1 [IC 95%] | hit@5 | hit@10 | MRR@10 | Cambio en hit@1 contra el paso anterior |
+|---|---|---|---|---|---|
+| 1. RAG naive: el texto del vendedor (con su tipo) embebido con Qwen3, sin filtro; la consulta, la frase corta sin reescribir | 0,109 [0,08–0,14] | 0,299 | 0,439 | 0,194 | |
+| 2. + nuestras descripciones de ocho líneas | 0,297 [0,25–0,35] | 0,601 | 0,736 | 0,430 | +0,188 [0,137; 0,237] |
+| 3. + la consulta escrita como una ficha del catálogo (respuesta hipotética, HyDE) | 0,535 [0,49–0,58] | 0,811 | 0,885 | 0,652 | +0,239 [0,189; 0,287] |
+| 4. + filtro por kind: la búsqueda del flujo | 0,530 [0,49–0,57] | 0,790 | 0,863 | 0,641 | −0,005 [−0,015; +0,006]; hit@5 −0,020 [−0,037; −0,004] |
+| 5. + búsqueda léxica (BM25) fusionada | 0,581 [0,54–0,63] | 0,807 | 0,876 | 0,674 | +0,051 [0,013; 0,088] |
+| 6. + la foto del producto (SigLIP 2) fusionada | 0,605 [0,56–0,65] | 0,825 | 0,883 | 0,701 | +0,024 [0,002; 0,045] |
+
+- La línea de base es ahora honesta: el texto del vendedor **con el tipo que él le pone** ("Easy
+  chair"; antes iba nuestra categoría gruesa), un embedder de verdad y la consulta como la
+  escribiría alguien sin el paso plan. Antes el punto de partida era 0,077 (bolsa de palabras).
+- Las dos decisiones que más pesan se miden por separado: la base de conocimiento (+0,19) y cómo
+  se escribe la consulta (+0,24).
+- El paso 4 no suma en este banco de prueba; se usa por otra razón (ver la corrección en T1).
+- Los pasos 5 y 6 no están en el flujo: son la búsqueda híbrida de T6c.
+
+### T6b: cómo se escribe la consulta, contra no reescribirla
+
+**Pregunta.** El paso plan no busca con el pedido del usuario: escribe, para cada pieza, el
+producto ideal en las mismas ocho líneas que el catálogo, y esa ficha es la consulta (query
+expansion con respuesta hipotética, HyDE: "en mi base no tengo preguntas, tengo respuestas").
+¿Cuánto suma, contra buscar con una frase corta sin reescribir? T1b lo comparaba con "solo la
+línea Type" y "solo el kind", que no son no reescribir: buscar "rug" entre 89 alfombras es azar.
+
+**Cómo.** `ablaciones/consulta.yaml`, corrida `20261112-093413_ablacion-consulta`. Las consultas
+guardadas ya traen la versión sin reescribir: el campo `piece`, la frase con que el redactor
+nombró la pieza antes de escribir la ficha ("square pine coffee table, front center"; 8 palabras
+de mediana).
+
+| Consulta | Densa, filtro kind (el flujo): hit@1 / hit@5 / hit@10 | Densa, sin filtro: hit@1 | BM25, filtro kind: hit@1 | SigLIP 2 (foto), filtro kind: hit@1 / hit@5 / hit@10 |
+|---|---|---|---|---|
+| La ficha de ocho líneas | 0,530 / 0,790 / 0,863 | 0,535 | 0,517 | 0,508 / 0,807 / 0,889 |
+| La frase natural, sin reescribir | 0,324 / 0,648 / 0,778 | 0,297 | 0,332 | 0,479 / 0,781 / 0,880 |
+| Solo la línea Type | 0,299 / 0,641 / 0,800 | | | |
+| Solo el nombre del kind | 0,066 / 0,264 / 0,465 | | | |
+
+- **La ficha suma +0,206 [0,157; 0,254] de hit@1** sobre la frase natural con la búsqueda del
+  flujo (+0,142 de hit@5), y +0,239 [0,189; 0,287] sin filtro. Con BM25, +0,186.
+- **El filtro por kind ayuda cuando la consulta es pobre** (0,297 → 0,324 con la frase natural) y
+  no cuando es rica (0,535 → 0,530): la ficha ya dice qué es la pieza.
+- **La búsqueda por foto casi no necesita la reescritura**: SigLIP 2 con la frase natural da
+  0,479, contra 0,508 con la ficha (−0,029 [−0,065; +0,006]) y contra 0,324 de la densa con esa
+  misma frase. Un modelo de imagen y texto está entrenado con frases cortas; el embedder de
+  texto sobre descripciones necesita que la consulta hable como el catálogo. Con la frase
+  natural, la híbrida (0,468) no mejora a la foto sola.
+- **Límite.** La frase natural la escribió el mismo redactor que después escribió la ficha,
+  mirando el mueble: es más informativa que un pedido de usuario. Lo que no está medido es el
+  plan contra el pedido crudo, de punta a punta (US$2–3).
+
+### T6c: búsqueda léxica, por foto e híbrida
+
+**Pregunta.** Dos dudas de fondo sobre el índice. (1) ¿El embedder neuronal hace falta, o con
+contar palabras alcanza? (2) El catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a
+texto (lo que hacemos: un VLM describe cada producto) o embeber la imagen directamente. La
+segunda nunca se había medido para la consulta en texto (la primera aproximación buscaba imagen
+contra imagen).
+
+**Cómo.** `ablaciones/hibrido.yaml`, corrida `20261112-092807_ablacion-hibrido`. La base es la
+búsqueda del flujo. `bm25`: Okapi BM25 sobre las mismas descripciones (`rag/hybrid.py`).
+`siglip2` y `clip`: la torre de texto del modelo embebe la consulta en una frase corta (lo que
+dicen las líneas Type, Materials, Colors y Shape; el modelo lee 64 tokens) y la de imagen, la
+foto de cada producto; coseno entre las dos. Fusión: cada puntaje estandarizado (z-score) sobre
+los productos que pasan el filtro, y el promedio; o por puestos (RRF).
+
+| Buscador | hit@1 [IC 95%] | hit@5 | hit@10 | MRR@10 | hit@1 contra la base (pareado) |
+|---|---|---|---|---|---|
+| Densa: Qwen3 sobre las descripciones (el flujo) | 0,530 [0,49–0,57] | 0,790 | 0,863 | 0,641 | |
+| Léxica: BM25 | 0,517 [0,48–0,56] | 0,801 | 0,869 | 0,631 | −0,013 [−0,063; +0,032] |
+| Por foto: SigLIP 2 | 0,508 [0,45–0,56] | 0,807 | 0,889 | 0,632 | −0,022 [−0,077; +0,032] |
+| Por foto: CLIP ViT-B/32 | 0,357 [0,31–0,40] | 0,710 | 0,849 | 0,512 | −0,173 [−0,221; −0,130] |
+| Densa + léxica | 0,581 [0,54–0,63] | 0,807 | 0,876 | 0,674 | +0,051 [0,013; 0,088] |
+| Densa + léxica, RRF | 0,545 [0,50–0,58] | 0,800 | 0,876 | 0,655 | +0,015 [−0,023; +0,050] |
+| Densa + foto | 0,585 [0,54–0,64] | 0,829 | 0,889 | 0,689 | +0,055 [0,022; 0,090] |
+| Léxica + foto (sin embedder de texto) | 0,597 [0,55–0,65] | 0,832 | 0,882 | 0,693 | +0,067 [0,024; 0,114] |
+| **Densa + léxica + foto** | **0,605 [0,56–0,65]** | 0,825 | 0,883 | **0,701** | **+0,075 [0,041; 0,111]** |
+| Densa + léxica + foto, RRF | 0,590 [0,54–0,64] | 0,829 | 0,887 | 0,693 | +0,060 [0,027; 0,098] |
+| Densa, filtro por tipo | 0,535 [0,49–0,58] | 0,812 | 0,892 | 0,654 | +0,005 [−0,006; +0,015] |
+| Densa + léxica + foto, filtro por tipo | 0,616 [0,57–0,66] | **0,847** | **0,920** | 0,715 | +0,086 [0,050; 0,123] |
+| Densa, sin filtro | 0,535 [0,49–0,58] | 0,811 | 0,885 | 0,652 | +0,005 [−0,006; +0,015] |
+| Densa + léxica + foto, sin filtro | 0,603 [0,56–0,65] | 0,842 | 0,913 | 0,707 | +0,073 [0,037; 0,109] |
+
+**Lecturas.**
+- **Los tres buscadores solos no se distinguen** (los intervalos de la diferencia cruzan el
+  cero): el embedder neuronal no le gana a BM25, y describir cada producto con un VLM no le gana
+  a embeber su foto con SigLIP 2, que además trae mejor hit@10 (+0,025 [0,005; 0,046]). Con CLIP
+  ViT-B/32 la ruta de la imagen no alcanza.
+- **Juntos sí suman**: se equivocan en cosas distintas. Las tres fusionadas dan +0,075 de hit@1,
+  +0,035 [0,013; 0,056] de hit@5 y +0,060 [0,038; 0,083] de MRR sobre la búsqueda del flujo.
+  Cada agregado solo ya es significativo (léxica +0,051, foto +0,055).
+- La fusión por z-score rinde igual o mejor que RRF (los pesos son iguales: no se ajustó nada
+  sobre estas consultas).
+- La mejora es independiente del filtro.
+
+**Con los otros dos redactores de consultas** (`--replica r2` y `r3`, corridas
+`20261112-093737_ablacion-hibrido-r2` y `20261112-094441_ablacion-hibrido-r3`):
+
+| Consultas | Densa (el flujo): hit@1 / hit@5 | Léxica: hit@1 | Por foto: hit@1 | Densa + léxica + foto: hit@1 / hit@5 | Diferencia de hit@1 (pareada) |
+|---|---|---|---|---|---|
+| originales | 0,530 / 0,790 | 0,517 | 0,508 | 0,605 / 0,825 | +0,075 [0,041; 0,111] |
+| r2 | 0,519 / 0,788 | 0,486 | 0,495 | 0,594 / 0,823 | +0,075 [0,043; 0,111] |
+| r3 | 0,567 / 0,797 | 0,501 | 0,477 | 0,612 / 0,845 | +0,046 [0,016; 0,076] |
+| media ± desvío | 0,539 ± 0,025 / 0,792 | 0,501 | 0,493 | 0,604 ± 0,009 / 0,831 | |
+
+La mejora de la fusión se repite en las tres escrituras, en hit@1 y en hit@5 (+0,035, +0,035 y
++0,048, todos con intervalo que no toca el cero). Lo que no se repite del todo es el empate entre
+los buscadores solos: con el tercer redactor la densa queda arriba de la léxica (−0,066 [−0,114;
+−0,021]) y de la foto (−0,090 [−0,131; −0,050]). La híbrida además varía menos entre redactores
+(±0,009 contra ±0,025).
+
+**Decisión.** El flujo no cambia (es la versión 1). La búsqueda híbrida quedó implementada y
+apagada (`rag.hybrid: []` en `amoblai.yaml`; con `[bm25, siglip2]` se enciende) y es la
+candidata a versión 2 del Ejercicio 4: sale de una limitación medida de la versión 1, es una
+técnica de Advanced RAG y se enciende con una línea de configuración. **Límite:** está medida en
+el banco de producto conocido, donde la consulta describe un mueble que existe. En el flujo real
+el plan imagina el producto: hay que confirmarla de punta a punta (unos US$2).
+
+### T6d: qué líneas de la descripción hacen el trabajo
+
+**Pregunta.** La pregunta de splitting que este problema sí tiene no es cómo partir el documento
+(T1d: no conviene) sino qué lo compone: ¿qué líneas de las ocho hacen el trabajo?
+
+**Cómo.** `ablaciones/lineas.yaml`: se saca de a una línea, de los documentos y de las consultas,
+y se vuelve a embeber y a buscar. La medición con el documento entero está corriendo (`ablaciones/lineas.yaml`). En el modo línea
+contra línea, que sale de la caché: sacar Colors cuesta −0,055 [−0,086; −0,023] de hit@1 y sacar
+Shape −0,038 [−0,061; −0,016]; sacar Type, −0,022 (no significativo); Materials, Use, Style, Feel
+y Goes with, entre −0,015 y −0,002 (ruido). Solo las cuatro líneas de lo que se ve (Type,
+Materials, Colors, Shape) dan 0,466 y solo las cuatro subjetivas, 0,321.
+
+**Lectura.** Lo que encuentra el producto es lo que se ve (color y forma, después el tipo). Las
+líneas subjetivas (Feel, Goes with) casi no aportan a esta tarea. Salvedad: Goes with está pensada
+para casar el producto con el ambiente, que es lo que el flujo necesita y este banco no mide; no
+es evidencia para sacarla.
+
+### T6e: un reranker de texto local (Qwen3-Reranker)
+
+Quedaba configurado desde octubre y sin correr (unos 50 s por consulta en esta CPU: 7,6 horas
+para las 549). `ablaciones/reranking-local.yaml`, corrida `20261112-093720_ablacion-reranking-local`
+(los puntajes quedan en caché: volver a correrla tarda segundos). Qwen3-Reranker-0.6B, un
+cross-encoder de la familia del embedder, reordena el top-10 leyendo la consulta y cada
+descripción juntas.
+
+| | hit@1 | hit@5 | hit@10 | MRR@10 |
+|---|---|---|---|---|
+| Qwen3, filtro por tipo | 0,535 | 0,812 | 0,892 | 0,654 |
+| + rerank con MiniLM de MS MARCO (T1d) | 0,419 | 0,774 | 0,892 | 0,565 |
+| + rerank con Qwen3-Reranker-0.6B | 0,474 | 0,796 | 0,892 | 0,611 |
+| + rerank con Opus mirando las fotos (T1e) | 0,687 | 0,858 | 0,892 | 0,760 |
+
+Qwen3-Reranker empeora: −0,062 [−0,111; −0,013] de hit@1 y −0,042 [−0,073; −0,012] de MRR. Antes
+solo estaba el MiniLM, un modelo chico entrenado para otra tarea, y contra un VLM que además ve
+fotos: no separaba modelo de modalidad. Con un reranker de texto bueno y hecho para esto el
+resultado es el mismo: **releer el texto que ya usó la búsqueda no suma; mirar las fotos sí.**
+Y a 50 s por consulta en CPU, tampoco serviría por latencia.
+
+### T6f: el flujo real, sin juez
+
+`amoblai diagnostico-flujo` lee las corridas guardadas de punta a punta (11 ambientes vacíos, 75
+piezas por variante) y escribe `datos/resultados/punta_a_punta/catalogos/diagnostico.json`.
+
+| | IKEA | IKEA + ABO (el flujo) |
+|---|---|---|
+| El producto elegido es el primero del coseno | 47% | 45% |
+| El elegido sale de los puestos 4 y 5 | 16% | 24% |
+| Piezas que el que elige dejó afuera | 0 de 75 | 0 de 75 |
+| Coseno del primer candidato (mediana) | 0,80 | 0,82 |
+| Elegidos sin ninguna medida en el catálogo | 72% | 37% |
+| Piezas con dos o más candidatos del mismo modelo | 40 de 75 | 18 de 75 |
+| El elegido tiene el primer estilo que pidió el plan | 60% | 61% |
+| Elegidos que son de ABO | — | 52% |
+
+- **El que elige hace trabajo de verdad**: en más de la mitad de las piezas no se queda con el
+  primero de la búsqueda. Y los candidatos 4 y 5 se usan (24% de lo elegido): apoya haber pasado
+  de 3 a 5.
+- **Nunca dice "no hay"**: 0 piezas dejadas afuera (y 0 de 187 contando todas las corridas),
+  aunque ningún catálogo tenía, por ejemplo, el sofá de terciopelo mostaza pedido. Sustituye por
+  lo más parecido sin avisar. Es una limitación.
+- **Las consultas del plan quedan más lejos del catálogo** que las del banco de prueba (coseno
+  del primero 0,80–0,82 contra 0,875): en el flujo real el plan imagina el producto, no lo ve.
+- **El tamaño casi nunca se puede verificar** con IKEA (72% de lo elegido sin medidas).
+- **Variantes repetidas**: con IKEA, en más de la mitad de las piezas hay candidatos que son el
+  mismo modelo en otro color o medida. No se deduplica ni se usa MMR.
+
+## T7: las métricas del generador, rehechas (2026-11-12)
+
+**Por qué.** La revisión encontró dos problemas en las métricas RAGAS del generador (T1d): el
+prompt del juez de answer relevance traía de ejemplo "un living nórdico y cálido", que era el
+pedido evaluado en 3 de las 4 corridas (el juez lo copiaba: fuga de datos); y el juez de
+faithfulness leía la descripción completa de cada producto, que el paso choose nunca recibe.
+Además eran 3 respuestas distintas, de una configuración anterior.
+
+**Cómo.** `juez_pedidos_v2` (sin ejemplos de pedido) y `juez_fidelidad_v2` (el juez recibe lo
+que vio el generador: el pedido, la foto del ambiente y, de cada producto elegido, su foto y la
+línea con su kind, su tipo y su medida). Opus por la API sobre las **11 listas de la
+configuración final** (`punta_a_punta/catalogos/todos/`): `amoblai evaluar-respuesta <corridas>
+--juez opus --pagar`. Costó US$1,10 (22 llamadas). Resultados:
+`datos/resultados/evaluacion_respuesta/resumen.json`.
+
+| Métrica | Valor | Referencia |
+|---|---|---|
+| Faithfulness | 0,82 (289 de 351 afirmaciones; por lista, de 0,70 a 0,93) | la versión 1 daba 0,89–0,96, con otro contexto |
+| Answer relevance | 0,69 | vara cruzada (los pedidos escritos para *otras* listas): 0,55; la propia supera a las ajenas en 11 de 11; piso (pedidos sin relación): 0,40 |
+
+- **Lo que no se sostiene** (62 afirmaciones) es casi siempre lo mismo: la especie de la madera
+  ("la mesa es de fresno", "las patas son de abedul", "las sillas son de haya"), que el
+  generador afirma sin que nada de su contexto lo diga, y medidas que el catálogo no tiene.
+  Accionable: pasarle al que elige la línea de materiales de cada candidato, o pedirle que no
+  afirme lo que no ve.
+- Con la fuga afuera, la answer relevance sigue distinguiendo la lista propia de las ajenas
+  (0,69 contra 0,55), que es lo que la versión 1 no mostraba.
+
 ## Pendientes de la v1
 
-- Evaluación de punta a punta sobre ambientes vacíos: re-identificación del producto en la imagen
-  final, preservación del ambiente, cobertura (piezas con producto), costo y latencia.
-- Evaluación con calificaciones (2/1/0) del top-3 para pedidos reales, como en YouSeeYouBuy
-  (`la evaluación con calificaciones de YouSeeYouBuy`): mide la relevancia para el pedido, no solo encontrar el SKU anotado.
-- Ejercicio 4 (iteración): candidatos en `FUTURO.md` (una vista contra dos, filtro por tipo en
-  vez de kind, consultas de estilo sin kind, medidas del ambiente).
+Actualizado el 2026-11-12. Lo que falta decidir y lo que cuesta está en `docs/REVISION.md`
+(secciones 4, 6 y 8): el cara a cara de punta a punta entre la versión 1 y la versión 2, RAG
+contra no RAG, la misma configuración dos veces (el piso de ruido del juez), una imagen con la
+configuración final, el experimento de la escena con más de un ambiente, y el voto a ciegas del
+equipo para validar al juez.
 
 # v0: retrieval por imagen (deprecada)
 
