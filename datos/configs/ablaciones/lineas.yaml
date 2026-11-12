@@ -1,18 +1,13 @@
-# Qué líneas de la descripción hacen el trabajo: se saca de a una (de los documentos y de las
+# Qué líneas de la descripción hacen el trabajo: se sacan líneas (de los documentos y de las
 # consultas) y se mide cuánto cae. Es la pregunta de splitting que este problema sí tiene: no cómo
 # partir el documento, sino qué lo compone. `uv run amoblai evaluar --ablacion
-# datos/configs/ablaciones/lineas.yaml` (gratis; embebe de nuevo cada variante, ~1 h en CPU).
+# datos/configs/ablaciones/lineas.yaml` (gratis; cada variante embebe de nuevo los 1.683 textos:
+# unos 15 minutos por variante en CPU). Para sacar otra línea suelta, sumar una fila con su rótulo
+# (Type, Use, Style, Materials, Colors, Shape, Feel, Goes with).
 name: ablacion-lineas
 methods:
   - {embedder: qwen3, filter: kind}
-  - {embedder: qwen3, filter: kind, drop: Type}
-  - {embedder: qwen3, filter: kind, drop: Use}
-  - {embedder: qwen3, filter: kind, drop: Style}
-  - {embedder: qwen3, filter: kind, drop: Materials}
   - {embedder: qwen3, filter: kind, drop: Colors}
   - {embedder: qwen3, filter: kind, drop: Shape}
-  - {embedder: qwen3, filter: kind, drop: Feel}
-  - {embedder: qwen3, filter: kind, drop: Goes with}
   - {embedder: qwen3, filter: kind, drop: Feel+Goes with}
   - {embedder: qwen3, filter: kind, drop: Use+Style+Feel+Goes with}      # solo lo que se ve
-  - {embedder: qwen3, filter: kind, drop: Type+Materials+Colors+Shape}   # solo lo subjetivo
