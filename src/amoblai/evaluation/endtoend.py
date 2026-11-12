@@ -207,3 +207,72 @@ def compare(
         "costo_usd": round(sum(d["costo_usd"] for d in detail), 4),
         "detalle": detail,
     }
+
+
+def _style(text: str | None) -> list[str]:
+    for line in (text or "").splitlines():
+        if line.startswith("Style:"):
+            return [x.strip().lower() for x in line.split(":", 1)[1].split(",") if x.strip()]
+    return []
+
+
+def diagnostics(variant_dir: Path) -> dict[str, Any]:
+    """Lo que se puede medir gratis, sin juez, sobre las corridas guardadas de una variante (los
+    ambientes vacíos reales): en qué puesto del retrieval estaba el producto que eligió choose
+    (¿hace trabajo el que elige?, ¿se usan los candidatos 4 y 5?), cuántas piezas dejó afuera
+    (negative rejection), qué tan cerca del catálogo quedan las consultas que escribe el plan,
+    cuántos elegidos no tienen ninguna medida (el tamaño no se puede verificar), en cuántas piezas
+    hay candidatos repetidos del mismo modelo y si el elegido tiene el primer estilo que pidió
+    el plan."""
+    import numpy as np
+
+    position: dict[str, int] = {}
+    first_cos, no_size, style_first, from_abo = [], [], [], []
+    pieces = left_out = repeated = rooms = 0
+    for run in sorted(Path(variant_dir).glob("*/")):
+        if not (run / "3_choice.json").exists():
+            continue
+        rooms += 1
+        found = json.loads((run / "2_candidates.json").read_text())["pieces"]
+        choices = json.loads((run / "3_choice.json").read_text())["answer"]["choices"]
+        for piece, choice in zip(found, choices, strict=True):
+            pieces += 1
+            cands = piece["candidates"]
+            first_cos.append(cands[0]["score"])
+            names = [c["name"] for c in cands if not c["id"].startswith("abo-")]
+            repeated += len(names) != len(set(names))
+            if not st.quantity(choice):
+                left_out += 1
+                continue
+            rank = next(i for i, c in enumerate(cands, 1) if c["id"] == choice["id"])
+            position[str(rank)] = position.get(str(rank), 0) + 1
+            chosen = cands[rank - 1]
+            dims = chosen.get("dimensions_cm") or {}
+            no_size.append(not any(dims.get(a) for a in ("width", "depth", "height")))
+            from_abo.append(chosen["id"].startswith("abo-"))
+            asked = _style(piece["spec"].get("query"))
+            if asked:
+                style_first.append(asked[0] in _style(chosen.get("description")))
+    chosen_n = sum(position.values())
+    return {
+        "variante": Path(variant_dir).name,
+        "ambientes": rooms,
+        "piezas": pieces,
+        "piezas_dejadas_afuera": left_out,
+        "puesto_del_elegido": {k: position[k] for k in sorted(position)},
+        "elegido_es_el_primero": round(position.get("1", 0) / chosen_n, 4) if chosen_n else None,
+        "elegido_en_puestos_4_y_5": round(
+            (position.get("4", 0) + position.get("5", 0)) / chosen_n, 4
+        )
+        if chosen_n
+        else None,
+        "coseno_del_primero": {
+            "mediana": round(float(np.median(first_cos)), 4),
+            "p10": round(float(np.quantile(first_cos, 0.1)), 4),
+            "p90": round(float(np.quantile(first_cos, 0.9)), 4),
+        },
+        "elegidos_sin_ninguna_medida": round(float(np.mean(no_size)), 4),
+        "piezas_con_candidatos_del_mismo_modelo": repeated,
+        "elegido_tiene_el_primer_estilo_pedido": round(float(np.mean(style_first)), 4),
+        "elegidos_de_abo": round(float(np.mean(from_abo)), 4),
+    }
