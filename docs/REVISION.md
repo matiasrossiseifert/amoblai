@@ -214,14 +214,13 @@ dos de los tres redactores de consultas; con el tercero la densa sola queda arri
 no alcanza, con SigLIP 2 sí, y lo mejor es usar las dos rutas de la clase a la vez (la imagen
 pasada a texto y la imagen embebida).
 
-**Qué líneas de la descripción hacen el trabajo** (la pregunta de splitting que este problema sí
-tiene). La medición con el documento entero está corriendo (`ablaciones/lineas.yaml`). En el modo línea
-contra línea, que sale de la caché: sacar Colors cuesta −0,055 [−0,086; −0,023] de hit@1 y sacar
-Shape −0,038 [−0,061; −0,016]; sacar Type, −0,022 (no significativo); Materials, Use, Style, Feel
-y Goes with, entre −0,015 y −0,002 (ruido). Solo las cuatro líneas de lo que se ve (Type,
-Materials, Colors, Shape) dan 0,466 y solo las cuatro subjetivas, 0,321. Las líneas subjetivas casi no aportan a
-encontrar el producto; Goes with está pensada para casar con el ambiente, cosa que este banco de
-prueba no mide.
+**Qué líneas de la descripción hacen el trabajo** (`ablaciones/lineas.yaml`; la pregunta de
+splitting que este problema sí tiene). Sacando líneas de documentos y consultas: sin Colors, hit@1
+baja de 0,530 a 0,474 (−0,057 [−0,082; −0,030]); sin Shape, a 0,499 (−0,031 [−0,057; −0,006]); sin
+Feel ni Goes with no cambia (0,534); y con solo las cuatro líneas de lo que se ve (Type,
+Materials, Colors, Shape), tampoco (0,537). Lo que encuentra el producto es lo que se ve. Las
+otras cuatro (Use, Style, Feel, Goes with) están para el pedido abierto, que este banco no mide:
+no es evidencia para sacarlas, es una hipótesis para probar de punta a punta.
 
 **Un reranker de texto local** (`ablaciones/reranking-local.yaml`; quedaba configurado y sin
 correr). Qwen3-Reranker-0.6B, un cross-encoder de la familia del embedder, reordena el top-10

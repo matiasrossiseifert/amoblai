@@ -800,17 +800,26 @@ a punta (T8).
 **Pregunta.** La pregunta de splitting que este problema sí tiene no es cómo partir el documento
 (T1d: no conviene) sino qué lo compone: ¿qué líneas de las ocho hacen el trabajo?
 
-**Cómo.** `ablaciones/lineas.yaml`: se saca de a una línea, de los documentos y de las consultas,
-y se vuelve a embeber y a buscar. La medición con el documento entero está corriendo (`ablaciones/lineas.yaml`). En el modo línea
-contra línea, que sale de la caché: sacar Colors cuesta −0,055 [−0,086; −0,023] de hit@1 y sacar
-Shape −0,038 [−0,061; −0,016]; sacar Type, −0,022 (no significativo); Materials, Use, Style, Feel
-y Goes with, entre −0,015 y −0,002 (ruido). Solo las cuatro líneas de lo que se ve (Type,
-Materials, Colors, Shape) dan 0,466 y solo las cuatro subjetivas, 0,321.
+**Cómo.** `ablaciones/lineas.yaml`, corrida `20261112-095742_ablacion-lineas`: se sacan líneas de
+los documentos y de las consultas, y se vuelve a embeber y a buscar (el documento entero, con la
+búsqueda densa y el filtro por kind).
 
-**Lectura.** Lo que encuentra el producto es lo que se ve (color y forma, después el tipo). Las
-líneas subjetivas (Feel, Goes with) casi no aportan a esta tarea. Salvedad: Goes with está pensada
-para casar el producto con el ambiente, que es lo que el flujo necesita y este banco no mide; no
-es evidencia para sacarla.
+| Descripción y consulta | hit@1 | hit@5 | hit@10 | MRR@10 | hit@1 contra las ocho líneas (pareado) |
+|---|---|---|---|---|---|
+| Las ocho líneas | 0,530 | 0,790 | 0,863 | 0,641 | |
+| Sin Colors | 0,474 | 0,760 | 0,854 | 0,595 | −0,057 [−0,082; −0,030] |
+| Sin Shape | 0,499 | 0,772 | 0,869 | 0,620 | −0,031 [−0,057; −0,006] |
+| Sin Feel ni Goes with | 0,534 | 0,778 | 0,863 | 0,639 | +0,004 [−0,017; +0,025] |
+| Solo lo que se ve: Type, Materials, Colors, Shape | 0,537 | 0,776 | 0,849 | 0,634 | +0,007 [−0,033; +0,045] |
+
+**Lectura.** Lo que encuentra el producto es lo que se ve: sacar los colores cuesta 6 puntos y
+sacar la forma, 3. Las cuatro líneas subjetivas o de contexto (Use, Style, Feel, Goes with) no
+aportan nada medible en este banco: con cuatro líneas se encuentra igual que con ocho (en el
+modo línea contra línea, que sale de la caché, da lo mismo: Colors −0,055, Shape −0,038, el
+resto dentro del ruido). **Salvedad, y por qué no se sacan:** el banco es de producto conocido.
+Use, Style y Goes with existen para el pedido abierto ("un living nórdico y cálido"), donde el
+plan pide un estilo y un uso y no un objeto que está viendo: eso este banco no lo mide. Es una
+hipótesis a probar de punta a punta, no una decisión.
 
 ### T6e: un reranker de texto local (Qwen3-Reranker)
 
