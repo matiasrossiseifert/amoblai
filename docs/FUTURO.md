@@ -58,6 +58,11 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
 
 ## Escala y geometría
 
+- **La búsqueda híbrida a escala**: hoy puntúa a todos los productos que pasan el filtro (1.502:
+  inmediato) y estandariza los tres puntajes. Con un catálogo de cientos de miles, cada buscador
+  trae sus mejores N (HNSW de ChromaDB para el denso, un índice invertido para BM25, otro índice
+  vectorial para las fotos) y se fusionan por puesto (RRF, que en el banco rinde 0,590 contra
+  0,605 del promedio de z-scores). (M)
 - **Medidas del ambiente**: cargadas por el usuario, con un objeto de referencia en la foto (un
   metro extendido en el piso), con profundidad métrica desde la foto (Depth Pro, ya lo usamos en
   la réplica) o con el LiDAR del celular. Con medidas reales, el filtro de tamaño sería un

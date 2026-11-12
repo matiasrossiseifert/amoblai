@@ -40,7 +40,7 @@ ids recuperados) y la imagen (el modelo de imagen recibe las fotos de los produc
 | Splitting | — | No se parte: un producto es un documento (unas 80 palabras). Partirlo por línea empeora; lo que se midió es qué líneas hacen el trabajo. |
 | Embedding y base vectorial | `rag/embed.py`, `rag/store.py`, `rag/index.py` | Qwen3-Embedding-0.6B (local, 1024 dimensiones) → ChromaDB: vector, descripción y metadata por producto, índice HNSW en espacio coseno. |
 | Pre-retrieval | `furnish/steps.py` (`plan`) | Claude lee la foto y el pedido, lo descompone en piezas y, para cada una, da su kind, su tamaño máximo y **el producto ideal escrito en las mismas ocho líneas que el catálogo**: esa ficha es la consulta (query expansion con respuesta hipotética, HyDE; el pedido nunca se embebe). |
-| Retrieval | `rag/search.py`, `rag/filters.py`, `rag/hybrid.py` | Filtros duros de metadata (kind, medidas) y, sobre lo que pasa, **búsqueda híbrida**: el coseno del embedder sobre las descripciones, fusionado con la búsqueda léxica (BM25) y con la foto del producto contra la consulta (SigLIP 2). Los 5 mejores por pieza. Es la versión 2; la versión 1 (`rag.hybrid: []`) es el coseno solo, con los filtros como `where` de ChromaDB. |
+| Retrieval | `rag/search.py`, `rag/filters.py`, `rag/hybrid.py` | Filtros duros de metadata (kind, medidas) y, sobre lo que pasa, **búsqueda híbrida**: el coseno del embedder sobre las descripciones, fusionado con la búsqueda léxica (BM25) y con la foto del producto contra la consulta (SigLIP 2). Los 5 mejores por pieza. Es la versión 2: los tres puntajes se calculan sobre todos los productos que pasan el filtro (exacto, sin HNSW: hace falta el puntaje de todos para estandarizarlos, y con 1.502 productos es inmediato); ChromaDB guarda los vectores y la metadata. La versión 1 (`rag.hybrid: []`) es el coseno solo, consultando ChromaDB (HNSW) con los filtros como `where`. |
 | Generación de la lista | `furnish/steps.py` (`choose`) | Claude ve el ambiente y las fotos de los candidatos de todas las piezas y elige una combinación, con cantidades y un porqué. Solo puede elegir ids recuperados: se valida. |
 | Generación de la imagen | `furnish/steps.py` (`scene`, `generate`), `furnish/room.py` | Una plantilla (sin LLM) arma el prompt desde la lista; Nano Banana 2 (por fal) recibe la foto y las fotos de los elegidos. Un control (SIFT + RANSAC contra la foto original) descarta la imagen si dejó de ser el mismo cuarto y reintenta, hasta 3 veces. |
 | Evaluación | `evaluation/` | El buscador sobre los ambientes IKEA anotados (hit@k, MRR, context precision y recall, diferencias pareadas) y sus ablaciones (`datos/configs/ablaciones/`); el flujo entero sobre ambientes vacíos reales (un juez que compara listas de a pares; diagnóstico sin juez); el generador (faithfulness, answer relevance); la imagen (fidelidad de producto, ambiente preservado). Qué mide cada una y cuánto creerle: `docs/METRICAS.md`. |
@@ -149,7 +149,10 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   cuatro están para el pedido abierto, que este banco no mide.
 - **Base vectorial.** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
   consultas. Con 1.500 vectores es lo esperable; ChromaDB da los filtros de metadata en la misma
-  consulta y la persistencia.
+  consulta y la persistencia. La búsqueda híbrida de la versión 2 no consulta el HNSW: fusiona
+  puntajes calculados sobre todos los productos que pasan el filtro, y lee los vectores de
+  ChromaDB. Con un catálogo grande, cada buscador traería sus mejores N (HNSW para el denso, un
+  índice invertido para BM25) y se fusionarían esos por puesto.
 - **Tres redactores.** Con las consultas escritas tres veces por separado, la búsqueda del flujo
   da hit@1 0,539 ± 0,025 y MRR 0,643 ± 0,015 (la híbrida, 0,604 ± 0,009). Una diferencia de 2
   puntos entre dos métodos no es señal.
