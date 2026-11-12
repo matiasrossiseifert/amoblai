@@ -27,12 +27,13 @@ antes de darlo por cierto. Todo lo que dice "verificado" se recalculó.
 4. **Faltaban tres experimentos gratis que valen más que varios de los que hay**, ya corridos
    (sección 4): la consulta contra no reescribirla, la búsqueda léxica y la búsqueda con la foto
    del producto (multimodal), y qué líneas de la descripción hacen el trabajo.
-5. **De ahí sale una candidata concreta a versión 2, centrada en el RAG**: búsqueda híbrida
-   (densa + léxica + foto). Está implementada detrás de una opción (apagada: la versión 1 no
-   cambió) y medida gratis (sección 6).
-6. **Queda por decidir** (sección 8): qué se presenta como versión 1 y versión 2; si se gasta en
-   los cara a cara de punta a punta (US$2 a 3 cada uno); una imagen con la configuración final
-   (hay que cargar fal); qué se hace con el filtro de medidas.
+5. **De ahí salió la versión 2, centrada en el RAG**: búsqueda híbrida (densa + léxica + foto).
+   Medida gratis sobre el ground truth (hit@1 0,530 → 0,605) y confirmada de punta a punta en los
+   11 ambientes reales (gana 5, empata 6, no pierde ninguno). Ya es la búsqueda del flujo; la
+   versión 1 queda a una línea de configuración (sección 6).
+6. **La búsqueda aporta en la tarea real**: contra 5 candidatos al azar del mismo kind, el flujo
+   con búsqueda gana 7 a 0 (sección 4).
+7. **Queda por decidir** (sección 8): el filtro de medidas, las presentaciones, y cosas chicas.
 
 ---
 
@@ -84,7 +85,8 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 | Dos catálogos (IKEA + ABO) | Sí por cobertura de estilos (T3b), con la salvedad de cómo se escribieron esos pedidos (sección 4). |
 | Control del ambiente (SIFT) con reintento | Sí como red de seguridad: rechazó 2 de 3 intentos en un ambiente. Los umbrales (50 puntos, 1%) están puestos a mano. |
 | Segunda foto del ambiente (`--vista`) | Sin evidencia: nunca se midió si cambia algo. Es opcional; decirlo o sacarlo. |
-| Embedder neuronal (Qwen3) | No se distingue de contar palabras en este banco de prueba. Se queda por robustez a la paráfrasis, sin evidencia medida. |
+| Embedder neuronal (Qwen3) | Solo, no se distingue de contar palabras en este banco de prueba. Fusionado con la búsqueda léxica y con la foto, sí suma: es la versión 2. |
+| Búsqueda híbrida (BM25 + foto con SigLIP 2) | Sí: +0,075 de hit@1 en el ground truth, con los tres redactores, y de punta a punta gana 5, empata 6 y no pierde. Corre local, sin costo por pedido. |
 
 ## 3. Errores encontrados y arreglados
 
@@ -120,7 +122,8 @@ Sin borrar ninguno. "Va" quiere decir que merece lugar en el oral.
 | **Texto contra imagen** (la propuesta original contra la actual) | ¿Buscar por descripción o por recorte? | Reportarlo con la misma unidad: por producto anotado, 0,43 contra 0,55 (+0,12 [0,04–0,20]). Y decir qué fue la v0: solo se construyó y evaluó su buscador; nunca corrió de punta a punta. |
 | **Qué catálogo, de punta a punta** | ¿IKEA, ABO o los dos? | Lo único que evalúa el flujo entero. 8 a 2 da p = 0,11; el 6 a 0 es sobre pedidos escritos sabiendo qué le falta a IKEA. La decisión es razonable; el titular, no. |
 | **Tres redactores** | ¿Cuánto cambia el número según quién escribe la consulta? | ±2,5 puntos. Usarlo: no leer diferencias de 2 puntos. |
-| **Híbrida y multimodal** (nuevo) | ¿Suman la búsqueda por palabras y la foto del producto? | Ver abajo. Candidata a versión 2. |
+| **Híbrida y multimodal** (nuevo) | ¿Suman la búsqueda por palabras y la foto del producto? | Ver abajo. Es la versión 2. |
+| **Versión 1 contra versión 2, y con búsqueda contra sin búsqueda, de punta a punta** (nuevo) | ¿La mejora del buscador llega a la lista? ¿La búsqueda aporta en la tarea real? | Ver abajo. Decir n y p. |
 
 ### Normalitos (correctos, de trámite o de respuesta previsible)
 
@@ -227,16 +230,34 @@ leyendo la consulta y cada descripción juntas: hit@1 baja de 0,535 a 0,474 (−
 que ya usó la búsqueda y empeora; el que suma (+0,151) es el VLM que mira las fotos. Tardó 7,6
 horas en esta CPU (50 s por consulta): tampoco sirve por latencia.
 
-### Experimentos que faltan y cuestan plata (para decidir)
+**¿Error, o el mismo mueble en otro color?** (`ablaciones/embedders.yaml`). El 69% de las
+consultas busca un producto que tiene variantes del mismo modelo en el catálogo. Contando como
+acierto el producto anotado o cualquier variante de su modelo, hit@1 sube de 0,530 a 0,623: una
+de cada cinco veces que el primero "falla" es el mismo mueble en otra medida u otro color. Hay
+tres niveles de correcto: el producto exacto primero, 0,53; el mismo modelo, 0,62; uno que un
+juez considera que sirve, 0,78. La comparación entre embedders no cambia (por familia tampoco se
+distinguen Qwen3, BM25 y SigLIP 2; BGE sigue peor): el banco subestima el nivel, no el orden.
+
+**De punta a punta, pago** (los 11 ambientes vacíos, el juez de listas en los dos órdenes;
+`docs/EXPERIMENTOS.md`, T8):
+
+| Comparación | Resultado | Costo |
+|---|---|---|
+| Versión 1 (densa) contra versión 2 (híbrida), 11 ambientes | La híbrida gana 5, empata 6, no pierde ninguno (15 votos a 5; p = 0,06); productos útiles 0,74 contra 0,68 | US$3,0 |
+| Con búsqueda contra sin búsqueda (5 candidatos al azar del mismo kind), 7 ambientes | 7 a 0, los 14 votos (p = 0,016); productos útiles 0,82 contra 0,26 | US$1,4 |
+
+El segundo es además el control del instrumento: cuando la diferencia es grande, el juez la ve
+siempre, y eso le da sentido a los empates del primero.
+
+### Experimentos que faltan (para decidir)
 
 | Qué | Para qué | Costo |
 |---|---|---|
-| Versión 1 contra versión 2, de punta a punta en los 11 ambientes | "Resultados en ambas versiones" | ~US$2 de Anthropic |
-| RAG contra no RAG: top-5 por coseno contra 5 al azar del mismo kind | Que la búsqueda aporta en la tarea real | US$2–3 |
-| La misma configuración dos veces (A/A) | Cuántos ambientes da vuelta el ruido solo | US$1–1,5 |
-| Una imagen con la configuración final (IKEA + ABO) | Hoy ninguna imagen tiene un producto de ABO | US$0,30–0,65 de fal: hay que cargar y subir el tope |
-| Escena escrita por el LLM contra plantilla, 8–10 ambientes | El experimento de imagen que sí vale | ~US$3 de fal |
-| Voto a ciegas del equipo sobre los 11 pares de listas | Validar al juez contra personas | gratis, 15 minutos |
+| La misma configuración dos veces (A/A) | Cuántos ambientes da vuelta el ruido solo | US$2,5 de Anthropic (el tope de US$30 está agotado: 29,41) |
+| Las métricas del generador sobre las listas de la versión 2 | Hoy están medidas sobre las de la versión 1 | US$1,1 de Anthropic |
+| El mejor embedding de OpenAI contra Qwen3 | Si un embedder por API cambia algo | centavos; listo (`ablaciones/embedder-openai.yaml`), pero la clave de OpenAI del `.env` está vencida |
+| Escena escrita por el LLM contra plantilla, 8–10 ambientes | El experimento de imagen que sí vale | ~US$1,5 de fal y US$0,4 de Anthropic |
+| Voto a ciegas del equipo sobre los pares de listas | Validar al juez contra personas | gratis, 15 minutos |
 
 ## 5. Métricas: ranking y qué cambia
 
@@ -301,29 +322,40 @@ la medida, y adivina la madera por la foto), o pedirle que no afirme lo que no v
   0,519; y el juez encuentra productos que sirven y no están anotados.
 - **Lo que no se midió**: cuánto cambia la lista si se corre dos veces el mismo pedido.
 
-## 6. Ejercicio 4: qué presentar como versión 1 y versión 2
+## 6. Ejercicio 4: versión 1 y versión 2
 
 El enunciado pide el problema de la versión anterior, el cambio, su justificación, la
 configuración antes y después y la comparación; la profesora lo llamó "una versión 2 de su
 arquitectura", y puso de ejemplo "agregar más técnicas de Advanced RAG y ver cómo soluciona
-algún problema que tienen". Hoy no hay versión 1 ni versión 2 nombradas. La versión 1 es el
-sistema como está. Opciones para la 2, todas centradas en el RAG:
+algún problema que tienen". La versión 1 es el sistema como estaba hasta el 11/11.
 
-| Opción | Problema de la versión 1 | Cambio (configuración) | Evidencia que ya hay | Qué falta |
-|---|---|---|---|---|
-| **A. Búsqueda híbrida multimodal** (recomendada) | El índice lee una descripción pero no ve el producto, y no aprovecha las palabras exactas: entre productos casi iguales el primero del coseno acierta poco (hit@1 0,53) y en el 21% de las piezas el correcto no llega entre los 5 candidatos. | `rag.hybrid: []` → `[bm25, siglip2]`: al coseno se le fusionan la búsqueda léxica y la foto del producto. Una línea de YAML. | Gratis, sobre las 549 consultas: hit@1 0,530 → 0,605 (+0,075 [0,041; 0,111]); hit@5 0,790 → 0,825 (+0,035 [0,013; 0,056]); MRR 0,641 → 0,701 (+0,060 [0,038; 0,083]). Se repite con las consultas de los otros dos redactores: +0,075 [0,043; 0,111] y +0,046 [0,016; 0,076] de hit@1; +0,035 y +0,048 de hit@5. Sobre los 11 pedidos reales (75 piezas, sin pagar nada): cambia en promedio 1,6 de los 5 candidatos por pieza y el primero en el 45% de las piezas; lo que eligió la versión 1 sigue entre los 5 en el 87%. | El cara a cara de punta a punta en los 11 ambientes (US$2): ya está armado, `datos/configs/punta_a_punta/hibrida.yaml`. |
-| B. Por calendario | Con 3 candidatos el correcto faltaba en una de cada cuatro piezas; el catálogo no cubría estilos no nórdicos. | `furnish.candidates: 3 → 5` y `rag.catalog: ikea → todos` (lo que cambió entre el 4/11 y hoy). | Elección 0,637 → 0,667 (+0,029 [0,015; 0,043]); el 24% de lo elegido sale de los puestos 4 y 5; IKEA + ABO le gana a IKEA 8 a 2. | El cara a cara versión 1 contra versión 2 (US$2). Son dos cambios juntos y el del catálogo tiene la salvedad de los pedidos. |
-| C. Con y sin el que elige | El primero del coseno no siempre es el mejor. | El VLM elige mirando las fotos. | La más fuerte: 0,535 → 0,687. | `choose` existió desde el primer día: es una ablación, no una iteración. |
-| D. El cambio de arquitectura | Buscar por recorte de imagen rendía menos y pedía generar dos veces. | De retrieval por imagen a RAG por texto. | 0,43 → 0,55 de recall por producto. | La primera nunca corrió de punta a punta: sirve para la lámina de desafíos, no para el Ejercicio 4. |
+**Decidido (2026-11-12): la versión 2 es la búsqueda híbrida.** Sale de una limitación medida
+de la versión 1, es una técnica de Advanced RAG, es una línea de configuración y está medida con
+las mismas consultas y los mismos ambientes.
 
-**Recomendación.** A como Ejercicio 4: sale de un análisis de errores de la versión 1, es una
-técnica de Advanced RAG (búsqueda híbrida), se enciende con una línea de configuración y está
-medida con las mismas consultas. D como lámina de desafíos. B y C quedan donde están: en los
-experimentos del Ejercicio 2 (cuántos candidatos, qué catálogo, la elección con el VLM).
+| | Versión 1 | Versión 2 |
+|---|---|---|
+| Configuración | `rag.hybrid: []` | `rag.hybrid: [bm25, siglip2]` |
+| Qué busca | el coseno del embedder (Qwen3) sobre las descripciones | lo mismo, fusionado con la búsqueda léxica (BM25) y con la foto del producto (SigLIP 2) |
+| La limitación de la versión 1 | El índice lee una descripción pero no ve el producto, y no aprovecha las palabras exactas. Entre productos casi iguales el primero acierta el 53% y en 1 de cada 5 piezas el correcto no llega a los 5 candidatos | |
+| hit@1 / hit@5 / MRR@10 (ground truth, 549 consultas) | 0,530 / 0,790 / 0,641 | 0,605 / 0,825 / 0,701 |
+| Diferencia pareada de hit@1 | | +0,075 [0,041; 0,111]; con los otros dos redactores, +0,075 y +0,046 |
+| hit@1 con tres redactores (media ± desvío) | 0,539 ± 0,025 | 0,604 ± 0,009 |
+| De punta a punta, 11 ambientes (juez en los dos órdenes) | gana 0 | gana 5, empata 6 (15 votos a 5) |
+| Productos útiles según el juez | 0,68 | 0,74 |
+| Costo por pedido | US$0,28 | igual (BM25 y SigLIP 2 corren locales) |
 
-La opción A está implementada y **apagada**: el flujo sigue siendo la versión 1. Si se elige,
-conviene confirmarla de punta a punta antes de encenderla (las consultas reales del plan no son
-las del banco de prueba).
+Lo que hay que decir con honestidad: de punta a punta son 11 ambientes y 5 a 0 da p = 0,06; en
+6 el juez no se decide. La mejora es clara en el ground truth y "no peor, probablemente mejor"
+en la tarea real.
+
+Las otras maneras de contarlo, descartadas como Ejercicio 4:
+
+| Opción | Por qué no |
+|---|---|
+| Por calendario: de 3 a 5 candidatos y de IKEA a IKEA + ABO | Son dos cambios juntos, y quedan mejor donde están: como experimentos del Ejercicio 2 |
+| Con y sin el que elige (0,535 → 0,687) | `choose` existió desde el primer día: es una ablación, no una iteración |
+| El cambio de arquitectura (de buscar por imagen a RAG por texto) | La primera nunca corrió de punta a punta. Va en la lámina de desafíos |
 
 ## 7. Las preguntas difíciles del oral
 
@@ -363,10 +395,10 @@ las del banco de prueba).
 
 | Decisión | Opciones | Costo |
 |---|---|---|
-| Qué es la versión 2 (Ejercicio 4) | A, B, C o D de la sección 6 | El cara a cara de punta a punta, US$2 de Anthropic |
 | El filtro de medidas | Apagarlo (`furnish.size_filter: false`), o dejarlo y validarlo | Validarlo: US$2 |
-| Una imagen con la configuración final | Generar una o dos, o decir que la imagen se probó solo con IKEA | US$0,30–0,65 de fal: está en US$3,20 de 3,23, hay que cargar |
-| Rehacer el experimento de la escena (LLM contra plantilla) | 8–10 ambientes, o contarlo como decisión de costo | ~US$3 de fal |
+| Rehacer el experimento de la escena (LLM contra plantilla) | 8–10 ambientes, o contarlo como decisión de costo | ~US$1,5 de fal y US$0,4 de Anthropic |
+| El tope de Anthropic | Está agotado (US$29,41 de 30). Cualquier corrida paga nueva pide subirlo | — |
+| La clave de OpenAI | La del `.env` está vencida: con una nueva, la comparación de embeddings son centavos | — |
 | Validar al juez contra personas | Los tres votan a ciegas los 11 pares de listas | Gratis, 15 minutos |
 | El dato del reranker con un modelo chico | Citarlo como histórico, rehacerlo con Sonnet, o dejarlo afuera | Sonnet: ~US$5 |
 | Las presentaciones | No se tocaron esta noche: tienen las frases que esta revisión corrige. La lista de cambios está en la sección 9; se aplican a la que quede elegida | — |
@@ -374,8 +406,8 @@ las del banco de prueba).
 | Las menciones a "YouSeeYouBuy" | `docs/EXPERIMENTOS.md` (ya en el repo desde ayer) nombra dos veces ese otro proyecto sin explicarlo. Explicarlo en una línea (de dónde viene el núcleo de búsqueda) o sacarlas | — |
 | El índice de ChromaDB en git | `chroma.sqlite3` cambia con solo abrir el índice, así que cada corrida ensucia el repo. Se regenera en segundos desde los vectores en caché: se puede sacar de git | — |
 
-Gastado esta noche: US$1,10 de Anthropic (los jueces nuevos sobre las 11 listas). Total del
-proyecto: Anthropic US$25,05 de 30; fal US$3,20 de 3,23.
+Los gastos, por uso y por día, están en `datos/resultados/gastos.md` (se genera con `uv run
+amoblai gastos --md`).
 
 ## 9. Cambios para las presentaciones
 

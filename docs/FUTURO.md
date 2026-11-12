@@ -36,8 +36,8 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
 
 ## Mejoras del RAG
 
-- **Búsqueda híbrida** (léxica + foto): medida y disponible (`rag.hybrid`), apagada. Es la
-  candidata a versión 2 (`docs/REVISION.md`).
+- **Fusión con pesos**: la búsqueda híbrida (la versión 2) promedia los tres puntajes con pesos
+  iguales, sin ajustar. Ajustarlos pide un conjunto apartado que hoy no hay. (S)
 - **Recuperación anclada**: elegir primero la pieza principal (el sofá, la mesa) y reescribir
   las consultas de las demás con sus atributos, para que el conjunto combine. Una llamada más. (M)
 - **Filtro por tipo con el kind como preferencia**, en lugar del filtro duro por kind, que hoy

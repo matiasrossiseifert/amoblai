@@ -19,7 +19,7 @@ flowchart LR
     E --> V[("ChromaDB<br/>HNSW + metadata")]
   end
   U["Foto + pedido"] --> P["plan<br/>piezas y una ficha por pieza"]
-  P --> R["retrieve<br/>filtro por kind + coseno"]
+  P --> R["retrieve<br/>filtro por kind + búsqueda híbrida"]
   V --> R
   R --> C["choose<br/>elige la combinación"]
   C --> S["scene<br/>plantilla del prompt"]
@@ -40,7 +40,7 @@ ids recuperados) y la imagen (el modelo de imagen recibe las fotos de los produc
 | Splitting | — | No se parte: un producto es un documento (unas 80 palabras). Partirlo por línea empeora; lo que se midió es qué líneas hacen el trabajo. |
 | Embedding y base vectorial | `rag/embed.py`, `rag/store.py`, `rag/index.py` | Qwen3-Embedding-0.6B (local, 1024 dimensiones) → ChromaDB: vector, descripción y metadata por producto, índice HNSW en espacio coseno. |
 | Pre-retrieval | `furnish/steps.py` (`plan`) | Claude lee la foto y el pedido, lo descompone en piezas y, para cada una, da su kind, su tamaño máximo y **el producto ideal escrito en las mismas ocho líneas que el catálogo**: esa ficha es la consulta (query expansion con respuesta hipotética, HyDE; el pedido nunca se embebe). |
-| Retrieval | `rag/search.py`, `rag/filters.py` | Filtros duros de metadata (kind, medidas) como `where` de ChromaDB, después los 5 más cercanos por coseno. Opcional (`rag.hybrid`): fusión con la búsqueda léxica (BM25) y con la foto del producto (SigLIP 2). |
+| Retrieval | `rag/search.py`, `rag/filters.py`, `rag/hybrid.py` | Filtros duros de metadata (kind, medidas) y, sobre lo que pasa, **búsqueda híbrida**: el coseno del embedder sobre las descripciones, fusionado con la búsqueda léxica (BM25) y con la foto del producto contra la consulta (SigLIP 2). Los 5 mejores por pieza. Es la versión 2; la versión 1 (`rag.hybrid: []`) es el coseno solo, con los filtros como `where` de ChromaDB. |
 | Generación de la lista | `furnish/steps.py` (`choose`) | Claude ve el ambiente y las fotos de los candidatos de todas las piezas y elige una combinación, con cantidades y un porqué. Solo puede elegir ids recuperados: se valida. |
 | Generación de la imagen | `furnish/steps.py` (`scene`, `generate`), `furnish/room.py` | Una plantilla (sin LLM) arma el prompt desde la lista; Nano Banana 2 (por fal) recibe la foto y las fotos de los elegidos. Un control (SIFT + RANSAC contra la foto original) descarta la imagen si dejó de ser el mismo cuarto y reintenta, hasta 3 veces. |
 | Evaluación | `evaluation/` | El buscador sobre los ambientes IKEA anotados (hit@k, MRR, context precision y recall, diferencias pareadas) y sus ablaciones (`datos/configs/ablaciones/`); el flujo entero sobre ambientes vacíos reales (un juez que compara listas de a pares; diagnóstico sin juez); el generador (faithfulness, answer relevance); la imagen (fidelidad de producto, ambiente preservado). Qué mide cada una y cuánto creerle: `docs/METRICAS.md`. |
@@ -68,14 +68,14 @@ del trabajo (qué estaba mal, el ranking de experimentos y lo que falta decidir)
 | 1. RAG naive: el texto del vendedor embebido, la consulta sin reescribir | 0,109 [0,08–0,14] | 0,299 | 0,439 | 0,194 | |
 | 2. + la base que armamos: cada producto descripto desde su foto, en 8 líneas | 0,297 [0,25–0,35] | 0,601 | 0,736 | 0,430 | +0,188 [0,137; 0,237] |
 | 3. + la consulta escrita como una ficha del catálogo (respuesta hipotética, HyDE) | 0,535 [0,49–0,58] | 0,811 | 0,885 | 0,652 | +0,239 [0,189; 0,287] |
-| **4. + filtro de metadata por kind: la búsqueda del flujo** | **0,530 [0,49–0,57]** | **0,790** | **0,863** | **0,641** | −0,005 [−0,015; +0,006] |
+| 4. + filtro de metadata por kind: **versión 1 del flujo** | 0,530 [0,49–0,57] | 0,790 | 0,863 | 0,641 | −0,005 [−0,015; +0,006] |
 | 5. + búsqueda léxica (BM25) fusionada | 0,581 [0,54–0,63] | 0,807 | 0,876 | 0,674 | +0,051 [0,013; 0,088] |
-| 6. + la foto del producto (SigLIP 2) fusionada: híbrida multimodal | 0,605 [0,56–0,65] | 0,825 | 0,883 | 0,701 | +0,024 [0,002; 0,045] |
+| **6. + la foto del producto (SigLIP 2) fusionada: versión 2, la búsqueda del flujo** | **0,605 [0,56–0,65]** | **0,825** | **0,883** | **0,701** | +0,024 [0,002; 0,045] |
 | Azar (con filtro por tipo) | 0,017 | | 0,161 | | |
 
-El flujo usa la búsqueda del paso 4, y le pasa 5 candidatos por pieza al que elige: hit@5 es el
-número que importa. Los pasos 5 y 6 están implementados y apagados (`rag.hybrid`): son la
-candidata a versión 2 (`docs/REVISION.md`).
+El flujo le pasa 5 candidatos por pieza al que elige: hit@5 es el número que importa. La versión 1
+del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el paso 6: +0,075
+[0,041; 0,111] de hit@1 y +0,035 [0,013; 0,056] de hit@5 sobre la versión 1.
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
 
@@ -104,10 +104,18 @@ candidata a versión 2 (`docs/REVISION.md`).
   0,581; densa + foto: 0,585; léxica + foto, sin embedder de texto: 0,597. La fusión por puestos
   (RRF) rinde algo menos (0,590). Con las consultas escritas por otros dos redactores la mejora
   se repite: +0,075 y +0,046 de hit@1, +0,035 y +0,048 de hit@5.
+- **¿Error, o el mismo mueble en otro color?** hit@1 exige el producto anotado exacto, y el 69% de
+  las consultas busca un producto que tiene variantes del mismo modelo en el catálogo. Contando
+  como acierto cualquier variante (mismo nombre y grupo), hit@1 sube de 0,530 a 0,623 con la
+  versión 1 y de 0,605 a 0,689 con la versión 2: una de cada cinco veces que el primero "falla"
+  es el mismo mueble en otra medida u otro color. Y un juez considera que el primero sirve en el
+  78% de los casos. El banco subestima el nivel, no cambia el orden entre métodos.
 - **El embedder casi no importa en este banco de prueba.** Qwen3 contra una bolsa de palabras:
   +0,026 [−0,025; +0,077] de hit@1, y el mismo hit@10. Solo se sostiene Qwen3 sobre BGE (+0,057
   [0,017; 0,095]). Consultas y descripciones las escribe el mismo modelo con el mismo molde, así
-  que contar palabras alcanza; Qwen3 queda por robustez a la paráfrasis, sin evidencia medida.
+  que contar palabras alcanza. Por familia tampoco se distinguen (`ablaciones/embedders.yaml`).
+  Lo que sí suma es fusionarlo con la búsqueda léxica y con la foto. El mejor embedding de OpenAI
+  quedó listo para comparar y sin correr (`ablaciones/embedder-openai.yaml`).
 - **Los filtros de metadata no suman acá.** Sin filtro y con filtro por tipo dan lo mismo (ninguna
   consulta cambia de primero); el filtro por kind cuesta 2 puntos de hit@5 (−0,020 [−0,037;
   −0,004]), porque a veces la consulta y el catálogo no coinciden en el kind fino (ratona /
@@ -153,6 +161,13 @@ candidata a versión 2 (`docs/REVISION.md`).
 
 ### El flujo entero, sobre ambientes vacíos reales
 
+- **Versión 1 contra versión 2** (la búsqueda densa contra la híbrida; mismo plan, mismo juez, 11
+  ambientes): la híbrida gana 5, empata 6 y no pierde ninguno (15 votos a 5 de 22; test de
+  signos sobre los 5 decididos, p = 0,06). Productos útiles según el juez: 0,74 contra 0,68.
+- **Con búsqueda contra sin búsqueda** (los 5 más cercanos contra 5 al azar entre los que pasan
+  los mismos filtros; 7 ambientes): 7 a 0, los 14 votos (p = 0,016); productos útiles, 0,82
+  contra 0,26. La búsqueda aporta en la tarea real, y el juez lo ve cuando la diferencia es
+  grande.
 - **Qué catálogo.** IKEA + ABO le gana a IKEA solo en 8 ambientes de 11, pierde en 2 y empata
   en 1 (test de signos, p = 0,11); productos útiles, 0,73 contra 0,63. En los 5 pedidos nórdicos
   empatan (2 a 2); en los 6 de otros estilos (industrial, clásico, bohemio...) gana 6 a 0, pero
