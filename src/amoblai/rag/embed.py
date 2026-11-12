@@ -279,11 +279,14 @@ class LocalEmbedder:
         return Embedding(unit_rows(np.concatenate(rows)), self.model_id, 0.0, "none", meta)
 
 
+_LOCAL: dict[str, LocalEmbedder] = {}  # one model in memory per setup, not one per search
+
+
 def get_embedder(name: str, cfg: Config) -> Embedder:
     params = dict(cfg.rag.embedders.get(name, {}))
     if not params:
         raise ValueError(
-            f"rag: no embedder {name!r} in rag.embedders (configs/base/providers.yaml); "
+            f"rag: no embedder {name!r} in rag.embedders (datos/configs/amoblai.yaml); "
             f"known: {sorted(cfg.rag.embedders)}"
         )
     kind = params.pop("kind", name)
@@ -292,5 +295,8 @@ def get_embedder(name: str, cfg: Config) -> Embedder:
     if kind == "openai_embeddings":
         return OpenAIEmbedder(params, name)
     if kind == "local":
-        return LocalEmbedder(params, name)
+        key = repr((name, sorted(params.items())))
+        if key not in _LOCAL:
+            _LOCAL[key] = LocalEmbedder(params, name)
+        return _LOCAL[key]
     raise ValueError(f"rag: embedder {name!r} has an unknown kind {kind!r}")

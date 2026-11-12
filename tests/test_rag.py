@@ -216,10 +216,27 @@ def test_a_catalog_takes_folders_json_lines_and_other_catalogs(tmp_path):
     ]
     # no size: the size filters let it through
     assert Filters(max_width_cm=10).allows({"category": "table", "kind": "side table"})
+
     (tmp_path / "bad.jsonl").write_text(json.dumps({"id": "x", "name": "X"}) + "\n")
     main.write_text(yaml.safe_dump({"name": "bad", "items": ["bad.jsonl"]}))
     with pytest.raises(ValueError, match="category"):
         load_catalog(main, tmp_path)
+
+
+def test_a_piece_that_fits_turned_passes_the_size_filter():
+    rug = {"category": "rug", "kind": "rug", "dimensions_cm": {"width": 200, "depth": 300}}
+    spot = Filters(max_width_cm=300, max_depth_cm=220)  # the plan: 300 wide, 220 deep
+    assert spot.allows(rug)  # 200 x 300 turned is 300 x 200
+    assert not Filters(max_width_cm=250, max_depth_cm=220).allows(rug)  # too long either way
+    assert not Filters(max_width_cm=150).allows(rug)  # one limit alone: no turning
+    assert Filters(max_depth_cm=300, max_height_cm=5).allows(rug)  # a missing height passes
+    where = spot.where()
+    assert where == {
+        "$or": [
+            {"$and": [{"width": {"$lte": 300.0}}, {"depth": {"$lte": 220.0}}]},
+            {"$and": [{"width": {"$lte": 220.0}}, {"depth": {"$lte": 300.0}}]},
+        ]
+    }
 
 
 def test_kinds_come_from_the_catalog_and_filter_the_search(tmp_path):
@@ -502,8 +519,7 @@ def test_two_kinds_share_the_candidates_and_the_sizes_get_slack(tmp_path, monkey
             for i in range(cfg.rag.top_k)
         ]
 
-    monkeypatch.setattr(st, "index_is_current", lambda cfg: True)
-    monkeypatch.setattr(st, "open_index", lambda cfg: None)
+    monkeypatch.setattr(st, "ensure_index", lambda cfg: "the index")
     monkeypatch.setattr(st, "search", fake_search)
     cfg = cfg_for(tmp_path)
     cfg.furnish.candidates = 10
