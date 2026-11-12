@@ -1,0 +1,181 @@
+{
+ "claims": [
+  {
+   "claim": "Desk has a black-brown wood-look finish",
+   "about": "102.447.43",
+   "supported": true,
+   "evidence": "Photo shows a dark black-brown wood-grain finish."
+  },
+  {
+   "claim": "Desk is compact",
+   "about": "102.447.43",
+   "supported": true,
+   "evidence": "The product line says 'compact desk'."
+  },
+  {
+   "claim": "Desk has clean, straight lines",
+   "about": "102.447.43",
+   "supported": true,
+   "evidence": "Photo shows a simple rectangular desk with flat panels."
+  },
+  {
+   "claim": "Desk is 105 cm wide",
+   "about": "102.447.43",
+   "supported": true,
+   "evidence": "The product line gives 105 cm wide."
+  },
+  {
+   "claim": "Desk fits centered under the small window",
+   "about": "102.447.43",
+   "supported": false,
+   "evidence": "No window width or wall measurement is given, so the fit cannot be checked."
+  },
+  {
+   "claim": "Person asked for a dark-wood desk facing the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un escritorio de madera oscura frente a la ventana'."
+  },
+  {
+   "claim": "Chair is black",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "Photo shows an all-black chair."
+  },
+  {
+   "claim": "Chair is an ergonomic mesh office chair",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "The product line says 'ergonomic mesh office chair'."
+  },
+  {
+   "claim": "Chair has adjustable arms",
+   "about": "abo-B072Z6K34L",
+   "supported": true,
+   "evidence": "Photo shows height-adjustable T-shaped armrests."
+  },
+  {
+   "claim": "Bookcase is 90 cm high",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "The product line gives 90 cm high."
+  },
+  {
+   "claim": "Bookcase is 160 cm wide",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "The product line gives 160 cm wide."
+  },
+  {
+   "claim": "Bookcase is low and open",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "The product line says 'low wide open bookcase'."
+  },
+  {
+   "claim": "Bookcase has a black metal frame",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Photo shows a black metal frame and shelves."
+  },
+  {
+   "claim": "Left wall is long enough for the 160 cm bookcase",
+   "about": "room",
+   "supported": false,
+   "evidence": "No room dimensions are given, and the photo does not show the full left wall length."
+  },
+  {
+   "claim": "Person asked for a low bookcase against the wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una biblioteca baja contra la pared'."
+  },
+  {
+   "claim": "Lamp is black",
+   "about": "801.060.12",
+   "supported": true,
+   "evidence": "The product line says 'glossy black' and the photo matches."
+  },
+  {
+   "claim": "Lamp is articulated and can direct light",
+   "about": "801.060.12",
+   "supported": true,
+   "evidence": "The product line says 'articulated work lamp' and the photo shows jointed arms."
+  },
+  {
+   "claim": "Armchair is leather",
+   "about": "391.505.88",
+   "supported": true,
+   "evidence": "The product line says 'leather lounge armchair'."
+  },
+  {
+   "claim": "Armchair is compact",
+   "about": "391.505.88",
+   "supported": false,
+   "evidence": "Size is unknown."
+  },
+  {
+   "claim": "Armchair frame is bentwood",
+   "about": "391.505.88",
+   "supported": true,
+   "evidence": "The product line says 'cantilever bentwood'."
+  },
+  {
+   "claim": "Armchair frame is black-brown",
+   "about": "391.505.88",
+   "supported": true,
+   "evidence": "Photo shows a dark brown frame."
+  },
+  {
+   "claim": "Armchair fits the corner by the tall window",
+   "about": "391.505.88",
+   "supported": false,
+   "evidence": "Armchair size is unknown and no room dimensions are given."
+  },
+  {
+   "claim": "Armchair leather is a warm tan color",
+   "about": "391.505.88",
+   "supported": true,
+   "evidence": "Photo shows cognac/tan leather."
+  },
+  {
+   "claim": "Person asked for a small leather reading armchair in the corner",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sillón chico de cuero para leer en el rincón'."
+  },
+  {
+   "claim": "Room has a small window and a tall window",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows a tall double-hung window and a smaller high window on the right wall."
+  },
+  {
+   "claim": "Walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows white walls."
+  },
+  {
+   "claim": "Floor is dark",
+   "about": "room",
+   "supported": true,
+   "evidence": "Photo shows a dark-stained wood floor."
+  },
+  {
+   "claim": "All products together form a black and dark-wood palette",
+   "about": "abo-B0723CV5P7",
+   "supported": false,
+   "evidence": "The bookcase top is light, whitewashed natural wood, not dark wood."
+  },
+  {
+   "claim": "Person asked for black, dark wood and grey",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Negro, madera oscura y gris'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.075424,
+ "_prompt": "juez_fidelidad_v2"
+}

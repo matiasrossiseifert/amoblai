@@ -1,0 +1,259 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is a three-seat sofa",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line says 'three-seat sofa'."
+  },
+  {
+   "claim": "Sofa is 234 cm wide",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line gives 234 cm wide."
+  },
+  {
+   "claim": "Sofa is in a cream tone",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The photo shows light warm greige/cream upholstery."
+  },
+  {
+   "claim": "Sofa has dark wood legs",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The photo shows dark brown tapered wooden legs."
+  },
+  {
+   "claim": "Room has a long left wall",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a long, continuous left wall running toward the window."
+  },
+  {
+   "claim": "Person asked for a large sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá grande'."
+  },
+  {
+   "claim": "Armchair is a wingback",
+   "about": "503.056.16",
+   "supported": true,
+   "evidence": "The product line and photo show a wingback armchair."
+  },
+  {
+   "claim": "Armchair is green",
+   "about": "503.056.16",
+   "supported": true,
+   "evidence": "The photo shows green upholstery."
+  },
+  {
+   "claim": "Armchair has light wood legs",
+   "about": "503.056.16",
+   "supported": true,
+   "evidence": "The photo shows light wooden tapered legs."
+  },
+  {
+   "claim": "Person asked for a reading armchair",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sillón para leer'."
+  },
+  {
+   "claim": "Person asked for some green",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'algo de verde'."
+  },
+  {
+   "claim": "Coffee table is square",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The product line gives 70x70 cm, square."
+  },
+  {
+   "claim": "Coffee table is light wood",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The product line and photo show light wood."
+  },
+  {
+   "claim": "Coffee table matches the dining table design",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "Both photos show the same light wood top with angled tapered legs."
+  },
+  {
+   "claim": "Rug is 200x300 cm",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The product line gives 200 cm wide, 300 cm deep."
+  },
+  {
+   "claim": "Rug is flatwoven",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The product line says 'flatwoven'."
+  },
+  {
+   "claim": "Rug is warm beige",
+   "about": "801.982.95",
+   "supported": true,
+   "evidence": "The photo shows a beige rug."
+  },
+  {
+   "claim": "Dining table is 140 cm wide",
+   "about": "702.943.39",
+   "supported": true,
+   "evidence": "The product line gives 140 cm wide."
+  },
+  {
+   "claim": "Dining table is rectangular light wood",
+   "about": "702.943.39",
+   "supported": true,
+   "evidence": "The product line and photo show a rectangular light wood table."
+  },
+  {
+   "claim": "Dining table is the largest dining table option",
+   "about": "702.943.39",
+   "supported": true,
+   "evidence": "It is the only dining table listed."
+  },
+  {
+   "claim": "Dining table seats six",
+   "about": "702.943.39",
+   "supported": false,
+   "evidence": "Nothing states seating capacity; 140x78 cm is typically sized for four, at most six tightly."
+  },
+  {
+   "claim": "Person asked for a dining table for six near the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'cerca del ventanal, una mesa de comedor para seis'."
+  },
+  {
+   "claim": "Dining chairs are light wood",
+   "about": "abo-B0857JM2NC",
+   "supported": true,
+   "evidence": "The photo shows a light wood frame."
+  },
+  {
+   "claim": "Dining chairs have a natural woven seat",
+   "about": "abo-B0857JM2NC",
+   "supported": true,
+   "evidence": "The photo shows a woven cord seat."
+  },
+  {
+   "claim": "Pendant lamp is woven bamboo",
+   "about": "703.116.97",
+   "supported": true,
+   "evidence": "The product line says 'woven bamboo pendant lamp'."
+  },
+  {
+   "claim": "Floor lamp has a white drum shade",
+   "about": "102.911.31",
+   "supported": true,
+   "evidence": "The product line and photo show a white drum shade."
+  },
+  {
+   "claim": "Sideboard is low",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The product line gives 77 cm high."
+  },
+  {
+   "claim": "Sideboard has a white body",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The photo shows a white carcass."
+  },
+  {
+   "claim": "Sideboard has light wood fronts",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The photo shows light herringbone wood fronts."
+  },
+  {
+   "claim": "Curtains are white linen",
+   "about": "502.841.95",
+   "supported": true,
+   "evidence": "The product line says 'pair of white linen curtains'."
+  },
+  {
+   "claim": "Room has a big window",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a large glazed sliding door/window at the end."
+  },
+  {
+   "claim": "Cushions are green",
+   "about": "602.740.06",
+   "supported": true,
+   "evidence": "The photo and product line show a green cushion."
+  },
+  {
+   "claim": "Cushions are linen",
+   "about": "602.740.06",
+   "supported": false,
+   "evidence": "The product line says 'linen-look', not linen."
+  },
+  {
+   "claim": "Throw is cream cable-knit",
+   "about": "302.006.96",
+   "supported": true,
+   "evidence": "The product line says cable-knit and the photo shows cream."
+  },
+  {
+   "claim": "Person asked for cream textiles",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'textiles en tonos crema'."
+  },
+  {
+   "claim": "Plant is an areca palm",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "The product line says 'areca palm'."
+  },
+  {
+   "claim": "Areca palm is tall",
+   "about": "468.040.05",
+   "supported": false,
+   "evidence": "The product line says size unknown."
+  },
+  {
+   "claim": "Print is black and white",
+   "about": "abo-B073P13P7Q",
+   "supported": true,
+   "evidence": "The photo shows a black and white image."
+  },
+  {
+   "claim": "Print is an abstract tree line",
+   "about": "abo-B073P13P7Q",
+   "supported": true,
+   "evidence": "The product line says 'abstract tree line print'."
+  },
+  {
+   "claim": "Vases are a pair",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "The product line says 'set of two'."
+  },
+  {
+   "claim": "Vases are matte stoneware",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "The product line says 'matte stoneware vases'."
+  },
+  {
+   "claim": "Vases are cream and sage",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "The photo shows one cream vase and one grey-green vase."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.113068,
+ "_prompt": "juez_fidelidad_v2"
+}

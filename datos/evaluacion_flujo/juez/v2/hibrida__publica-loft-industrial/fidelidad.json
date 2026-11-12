@@ -1,0 +1,181 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is leather",
+   "about": "abo-B07QBMQ4LN",
+   "supported": true,
+   "evidence": "The product line says leather three-seat sofa, and the photo shows leather upholstery."
+  },
+  {
+   "claim": "Sofa is dark aged brown",
+   "about": "abo-B07QBMQ4LN",
+   "supported": true,
+   "evidence": "The photo shows dark brown leather with a distressed, worn look."
+  },
+  {
+   "claim": "Sofa is a three-seater",
+   "about": "abo-B07QBMQ4LN",
+   "supported": true,
+   "evidence": "The product line says three-seat sofa."
+  },
+  {
+   "claim": "Sofa is 218 cm wide",
+   "about": "abo-B07QBMQ4LN",
+   "supported": true,
+   "evidence": "The product line gives 218 cm wide."
+  },
+  {
+   "claim": "The room is a large loft",
+   "about": "room",
+   "supported": true,
+   "evidence": "The request calls it a loft, and the photo shows a spacious attic room."
+  },
+  {
+   "claim": "Coffee table has a wood top",
+   "about": "abo-B07QF9Y71V",
+   "supported": true,
+   "evidence": "The photo shows a wooden plank top."
+  },
+  {
+   "claim": "Coffee table top is solid wood",
+   "about": "abo-B07QF9Y71V",
+   "supported": false,
+   "evidence": "The product line only says industrial rectangular coffee table; solid wood is not stated."
+  },
+  {
+   "claim": "Coffee table has a black metal sled frame",
+   "about": "abo-B07QF9Y71V",
+   "supported": true,
+   "evidence": "The photo shows black metal sled-style legs."
+  },
+  {
+   "claim": "Coffee table is 135 cm wide",
+   "about": "abo-B07QF9Y71V",
+   "supported": true,
+   "evidence": "The product line gives 135 cm wide."
+  },
+  {
+   "claim": "Bookcase has thin black metal posts",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The photo shows thin black metal uprights."
+  },
+  {
+   "claim": "Bookcase has warm wood shelves",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The photo shows warm-toned wooden shelves."
+  },
+  {
+   "claim": "Bookcase is 21 cm deep",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The product line gives 21 cm deep."
+  },
+  {
+   "claim": "Person asked for a black metal and wood bookcase",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request asks for 'una biblioteca de metal negro y madera'."
+  },
+  {
+   "claim": "There is a door on the right wall where the bookcase goes",
+   "about": "room",
+   "supported": true,
+   "evidence": "The request places the bookcase on the right wall, and the photo shows a door on that wall."
+  },
+  {
+   "claim": "Lamp is black metal",
+   "about": "003.313.78",
+   "supported": true,
+   "evidence": "The product line says black swing-arm floor reading lamp, and the photo shows a black metal lamp."
+  },
+  {
+   "claim": "Lamp has a swing arm",
+   "about": "003.313.78",
+   "supported": true,
+   "evidence": "The product line and photo both show a swing arm."
+  },
+  {
+   "claim": "Lamp has brass details",
+   "about": "003.313.78",
+   "supported": true,
+   "evidence": "The photo shows brass-coloured fittings at the shade and pivot."
+  },
+  {
+   "claim": "Rug is 290x229 cm",
+   "about": "abo-B07HSL753S",
+   "supported": true,
+   "evidence": "The product line gives 290 cm wide and 229 cm deep."
+  },
+  {
+   "claim": "Rug is in grey-taupe tones",
+   "about": "abo-B07HSL753S",
+   "supported": true,
+   "evidence": "The photo shows a grey and black pattern."
+  },
+  {
+   "claim": "Rug has no bright colours",
+   "about": "abo-B07HSL753S",
+   "supported": true,
+   "evidence": "The photo shows muted grey, black and beige."
+  },
+  {
+   "claim": "Cushion is textured",
+   "about": "abo-B07BMTXJ12",
+   "supported": true,
+   "evidence": "The product line says woven textured throw cushion."
+  },
+  {
+   "claim": "Cushion is black and beige",
+   "about": "abo-B07BMTXJ12",
+   "supported": true,
+   "evidence": "The photo shows a dark weave with beige dots."
+  },
+  {
+   "claim": "Plant pot is dark",
+   "about": "002.857.91",
+   "supported": true,
+   "evidence": "The product line says dark grey plant pot."
+  },
+  {
+   "claim": "Plant pot is matte",
+   "about": "002.857.91",
+   "supported": true,
+   "evidence": "The photo shows a matte finish."
+  },
+  {
+   "claim": "Person asked for a dark pot",
+   "about": "request",
+   "supported": false,
+   "evidence": "The request does not mention a plant pot."
+  },
+  {
+   "claim": "Room has windows",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows several windows."
+  },
+  {
+   "claim": "Room has exposed wooden beams",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows them, and the request mentions 'vigas de madera a la vista'."
+  },
+  {
+   "claim": "Textiles introduce no bright white",
+   "about": "abo-B07HSL753S",
+   "supported": false,
+   "evidence": "The rug photo shows bright white fringes."
+  },
+  {
+   "claim": "Person asked for no bright white",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Nada de blanco brillante'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.089996,
+ "_prompt": "juez_fidelidad_v2"
+}

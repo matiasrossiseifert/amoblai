@@ -1,0 +1,28 @@
+{
+ "corrida": "hibrida__caballito-living",
+ "pedido": "Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.",
+ "fidelidad": {
+  "afirmaciones": 40,
+  "faithfulness": 0.875,
+  "sobre_productos": 0.8276,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Rug is easy to clean",
+   "Coffee table is made of ash",
+   "There is a pair of cushions",
+   "Plant is tall",
+   "Areca palm thrives in bright light"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón vacío con un estilo escandinavo luminoso y relajado: necesito un sofá grande, alfombra, mesa de centro, mueble para la tele, una lámpara de pie para leer, cortinas y alguna planta.",
+   "Amuebla mi sala de estar con algo minimalista y cálido, en tonos neutros y madera clara, con algún toque de color terracota. Busco sofá de tres plazas, mueble de TV y una lámpara de arco.",
+   "Tengo un salón con paredes blancas y suelo de madera, me gustaría que se viera aireado y natural, estilo nórdico con un aire mid-century. ¿Qué muebles y decoración me recomiendas? Incluye cojines, plantas y cortinas que dejen pasar la luz."
+  ],
+  "answer_relevance": 0.6134,
+  "vara_contrastes": 0.4203,
+  "juez": "claude-opus-5-5"
+ }
+}

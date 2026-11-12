@@ -1,0 +1,145 @@
+{
+ "claims": [
+  {
+   "claim": "The table is solid wood",
+   "about": "002.908.15",
+   "supported": true,
+   "evidence": "The product line says 'rectangular solid wood dining table'."
+  },
+  {
+   "claim": "The table is light-colored wood",
+   "about": "002.908.15",
+   "supported": true,
+   "evidence": "The product photo shows a pale, light wood finish."
+  },
+  {
+   "claim": "The table is 125 cm wide",
+   "about": "002.908.15",
+   "supported": true,
+   "evidence": "The product line gives 125 cm wide."
+  },
+  {
+   "claim": "The table seats four",
+   "about": "002.908.15",
+   "supported": false,
+   "evidence": "The product line gives no seating capacity, only 125 x 74 cm."
+  },
+  {
+   "claim": "The dining area is beside the kitchenette",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Al lado de la cocina quiero armar el comedor', and the room photo shows open floor next to the kitchenette."
+  },
+  {
+   "claim": "The kitchen has light wood and white fronts",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows light wood lower cabinets and an open shelf unit with white upper cabinets and white tall units."
+  },
+  {
+   "claim": "The chairs are black",
+   "about": "003.015.26",
+   "supported": true,
+   "evidence": "The product photo shows a black chair."
+  },
+  {
+   "claim": "The chairs are wooden",
+   "about": "003.015.26",
+   "supported": true,
+   "evidence": "The product line says 'wooden dining chair'."
+  },
+  {
+   "claim": "The chairs have straight lines like the table",
+   "about": "003.015.26",
+   "supported": true,
+   "evidence": "Both product photos show straight legs and rails."
+  },
+  {
+   "claim": "The user asked for black chairs with a light wood table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una mesa de madera clara para cuatro con sillas negras'."
+  },
+  {
+   "claim": "The pendant is white",
+   "about": "000.379.80",
+   "supported": true,
+   "evidence": "The product line and photo show a white pendant."
+  },
+  {
+   "claim": "The pendant is bell-shaped",
+   "about": "000.379.80",
+   "supported": true,
+   "evidence": "The product line says 'bell pendant lamp'."
+  },
+  {
+   "claim": "The room's walls and ceiling are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows white walls and a white ceiling."
+  },
+  {
+   "claim": "The pendant is meant to hang over the table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request asks for 'una lámpara colgante sobre la mesa'."
+  },
+  {
+   "claim": "The sideboard has a white body",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The product photo shows a white carcass."
+  },
+  {
+   "claim": "The sideboard has light wood fronts",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The product photo shows light herringbone wood doors and drawers."
+  },
+  {
+   "claim": "The sideboard is 150 cm wide",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The product line gives 150 cm wide."
+  },
+  {
+   "claim": "The sideboard is 50 cm deep",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "The product line gives 50 cm deep."
+  },
+  {
+   "claim": "The right wall is white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a plain white right wall."
+  },
+  {
+   "claim": "The sideboard goes against the right wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un aparador bajo contra la pared blanca de la derecha'."
+  },
+  {
+   "claim": "The sideboard fits along the right wall",
+   "about": "room",
+   "supported": true,
+   "evidence": "The right wall in the photo is a long, unobstructed run, clearly longer than 150 cm, though no wall measurement is given."
+  },
+  {
+   "claim": "The user wants a Nordic, simple style",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Estilo nórdico, simple'."
+  },
+  {
+   "claim": "The room is a small studio",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a single open room with a compact kitchenette, typical of a studio."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.058116,
+ "_prompt": "juez_fidelidad_v2"
+}

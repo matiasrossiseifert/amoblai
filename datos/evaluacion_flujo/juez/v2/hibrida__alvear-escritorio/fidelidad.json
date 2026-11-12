@@ -1,0 +1,175 @@
+{
+ "claims": [
+  {
+   "claim": "The desk is made of wood",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "The product line says 'wooden desk' and the photo shows a wooden desk."
+  },
+  {
+   "claim": "The desk wood is pale",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "The photo shows a very light, pale wood."
+  },
+  {
+   "claim": "The desk wood is ash",
+   "about": "302.990.70",
+   "supported": false,
+   "evidence": "The line only says 'wooden'. No wood species is given, and it cannot be confirmed from the photo."
+  },
+  {
+   "claim": "The desk has tapered legs",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "The photo shows four splayed legs that narrow toward the floor."
+  },
+  {
+   "claim": "The desk is 118 cm wide and 45 cm deep",
+   "about": "302.990.70",
+   "supported": true,
+   "evidence": "The product line gives 118 cm wide and 45 cm deep."
+  },
+  {
+   "claim": "The floor is light-coloured wood",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a light-to-mid-toned wood-look plank floor."
+  },
+  {
+   "claim": "There is space for the desk beside the window",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room is empty, with open floor beside the wide glass doors."
+  },
+  {
+   "claim": "The desk chair swivels",
+   "about": "abo-B07B7DKRVM",
+   "supported": true,
+   "evidence": "The line says 'swivel desk chair', and the photo shows a swivel base on casters."
+  },
+  {
+   "claim": "The desk chair has a light wood frame",
+   "about": "abo-B07B7DKRVM",
+   "supported": false,
+   "evidence": "The photo shows a warm honey/medium-toned wood that is noticeably darker than the pale birch and ash pieces, so 'light' is not supported."
+  },
+  {
+   "claim": "The desk chair has a linen-coloured upholstered back and seat",
+   "about": "abo-B07B7DKRVM",
+   "supported": true,
+   "evidence": "The photo shows beige, linen-like upholstery on both the back and the seat."
+  },
+  {
+   "claim": "The bookcase is tall",
+   "about": "990.234.08",
+   "supported": true,
+   "evidence": "The photo shows a floor-to-high bookcase wall with top add-on units."
+  },
+  {
+   "claim": "The bookcase is made of birch",
+   "about": "990.234.08",
+   "supported": false,
+   "evidence": "The line gives no material. The light veneer look does not confirm birch."
+  },
+  {
+   "claim": "The bookcase is light wood",
+   "about": "990.234.08",
+   "supported": true,
+   "evidence": "The photo shows a pale wood finish."
+  },
+  {
+   "claim": "The bookcase is 200 cm wide",
+   "about": "990.234.08",
+   "supported": true,
+   "evidence": "The product line gives 200 cm wide."
+  },
+  {
+   "claim": "The bookcase has glass doors",
+   "about": "990.234.08",
+   "supported": true,
+   "evidence": "The line says 'glass-door bookcase wall', and the photo shows glass doors."
+  },
+  {
+   "claim": "The room has a long white wall on the right",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a long, plain white wall on the right side."
+  },
+  {
+   "claim": "The person wants a tall bookcase on the right white wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una biblioteca alta ... contra la pared blanca de la derecha'."
+  },
+  {
+   "claim": "The armchair is a rocking chair",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "The line says 'rocking armchair', and the photo shows rockers."
+  },
+  {
+   "claim": "The armchair frame is light birch",
+   "about": "490.904.81",
+   "supported": false,
+   "evidence": "The photo shows a light bentwood frame, but the line gives no wood species, so birch is not stated."
+  },
+  {
+   "claim": "The armchair has an off-white cushion",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "The photo shows an off-white cushion."
+  },
+  {
+   "claim": "The floor lamp has a swing arm",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "The line says 'swing-arm floor lamp', and the photo shows an adjustable arm."
+  },
+  {
+   "claim": "The floor lamp has a white shade",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "The photo shows a white drum shade."
+  },
+  {
+   "claim": "The lamp arm can direct light over the armchair",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "The photo shows a long, extendable swing arm that can reach over a seat."
+  },
+  {
+   "claim": "The selection includes oak wood",
+   "about": "abo-B07B7DKRVM",
+   "supported": false,
+   "evidence": "No product line names oak. The chair's species is not stated."
+  },
+  {
+   "claim": "The room has white walls",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows white walls."
+  },
+  {
+   "claim": "The room has a large window",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows wide glass sliding doors opening to a balcony."
+  },
+  {
+   "claim": "The person wants the work and reading corner by the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'junto al ventanal'."
+  },
+  {
+   "claim": "The person wants Nordic style with light woods",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Estilo nórdico, maderas claras'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.067568,
+ "_prompt": "juez_fidelidad_v2"
+}

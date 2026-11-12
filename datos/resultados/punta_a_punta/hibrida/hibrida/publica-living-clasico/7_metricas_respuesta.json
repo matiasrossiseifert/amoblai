@@ -1,0 +1,28 @@
+{
+ "corrida": "hibrida__publica-living-clasico",
+ "pedido": "Una sala antigua con molduras y chimenea. Quiero un living clásico y elegante alrededor de la chimenea: un sofá tapizado en terciopelo verde oscuro, dos sillones enfrentados, una mesa ratona de madera oscura, una alfombra grande de diseño tradicional, una lámpara de pie con pantalla de tela y un espejo grande con marco sobre la chimenea.",
+ "fidelidad": {
+  "afirmaciones": 35,
+  "faithfulness": 0.8571,
+  "sobre_productos": 0.8333,
+  "sobre_el_ambiente": 0.8,
+  "no_sostenidas": [
+   "No green velvet sofa is offered",
+   "The fireplace is marble",
+   "Armchair upholstery is linen",
+   "Lamp shade is linen",
+   "Other lamp options were modern metal"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón con un estilo clásico y elegante: necesito un sofá, un sillón para leer, una alfombra grande, una mesa de centro, un espejo para la pared y una lámpara de pie.",
+   "Busco darle a mi sala de estar un aire tradicional y acogedor, tipo inglés. ¿Me recomiendas sofá, butaca, alfombra, mesa baja, espejo y lámpara?",
+   "Tengo un salón vacío y me gustaría que fuera cálido y señorial, con tonos neutros y madera oscura. Necesito todo lo básico: sofá, sillón, alfombra, mesita de centro, un espejo decorativo y una lámpara de pie para leer."
+  ],
+  "answer_relevance": 0.6127,
+  "vara_contrastes": 0.3776,
+  "juez": "claude-opus-5-5"
+ }
+}

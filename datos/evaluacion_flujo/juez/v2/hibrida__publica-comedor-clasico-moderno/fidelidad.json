@@ -1,0 +1,181 @@
+{
+ "claims": [
+  {
+   "claim": "Table is rectangular",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "The product line says 'rectangular wood dining table' and the photo shows a rectangular top."
+  },
+  {
+   "claim": "Table is made of wood",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "The product line says 'wood dining table' and the photo shows wood."
+  },
+  {
+   "claim": "Table is dark wood",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "The photo shows a dark brown finish."
+  },
+  {
+   "claim": "Table has visible wood grain",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "The photo shows clear oak-like grain on the top and legs."
+  },
+  {
+   "claim": "It is the only rectangular dark wood table among the options",
+   "about": "abo-B076NNYB3P",
+   "supported": false,
+   "evidence": "No other candidate tables are shown, so this comparison cannot be checked."
+  },
+  {
+   "claim": "Table is 198 cm wide",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "The product line gives 198 cm wide."
+  },
+  {
+   "claim": "Table seats six to eight people",
+   "about": "abo-B076NNYB3P",
+   "supported": true,
+   "evidence": "A 198 x 102 cm table is a standard size for six to eight diners."
+  },
+  {
+   "claim": "Room has a wood floor",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows hardwood flooring."
+  },
+  {
+   "claim": "Chairs are sold as a set of two",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "The product line says 'set of two'."
+  },
+  {
+   "claim": "Three sets give six chairs",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "3 x 2 = 6."
+  },
+  {
+   "claim": "The person asked for six chairs",
+   "about": "request",
+   "supported": false,
+   "evidence": "The request asks for a table for six or eight people and does not state a number of chairs."
+  },
+  {
+   "claim": "Chairs are upholstered in fabric",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "The product line says 'upholstered' and the photo shows woven fabric."
+  },
+  {
+   "claim": "Chair upholstery is warm gray",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "The photo shows a gray-taupe heathered fabric."
+  },
+  {
+   "claim": "Chairs have nailhead trim",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "The photo shows nailheads outlining the back."
+  },
+  {
+   "claim": "Chairs have dark legs",
+   "about": "abo-B07QJ24FSL",
+   "supported": true,
+   "evidence": "The photo shows dark espresso legs."
+  },
+  {
+   "claim": "Lamp has a drum shade",
+   "about": "abo-B07GNSXX6B",
+   "supported": true,
+   "evidence": "The product line says 'drum shade pendant chandelier' and the photo shows a drum shade."
+  },
+  {
+   "claim": "Lamp is 51 cm wide",
+   "about": "abo-B07GNSXX6B",
+   "supported": true,
+   "evidence": "The product line gives 51 cm wide."
+  },
+  {
+   "claim": "Lamp shade is light-colored",
+   "about": "abo-B07GNSXX6B",
+   "supported": true,
+   "evidence": "The photo shows an off-white shade."
+  },
+  {
+   "claim": "Lamp has a dark metal frame",
+   "about": "abo-B07GNSXX6B",
+   "supported": true,
+   "evidence": "The photo shows a dark rod and arms."
+  },
+  {
+   "claim": "Sideboard is made of wood",
+   "about": "abo-B07HSBD8DM",
+   "supported": true,
+   "evidence": "The photo shows a wood frame and case."
+  },
+  {
+   "claim": "Sideboard is a walnut-like tone",
+   "about": "abo-B07HSBD8DM",
+   "supported": true,
+   "evidence": "The photo shows a medium-brown walnut-like finish."
+  },
+  {
+   "claim": "Sideboard doors have cane or mesh panels",
+   "about": "abo-B07HSBD8DM",
+   "supported": true,
+   "evidence": "The photo shows woven cane panels on the doors."
+  },
+  {
+   "claim": "Sideboard fits against the staircase wall",
+   "about": "abo-B07HSBD8DM",
+   "supported": false,
+   "evidence": "No wall length is given, so fit of the 173 cm sideboard cannot be verified."
+  },
+  {
+   "claim": "Person wants a sideboard against the staircase wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request asks for 'un aparador de madera contra la pared de la escalera'."
+  },
+  {
+   "claim": "Kitchen cabinets are dark wood",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows dark-stained kitchen cabinets."
+  },
+  {
+   "claim": "Person wants a dark wood table for six or eight",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'mesa de madera oscura para seis u ocho personas'."
+  },
+  {
+   "claim": "Person wants gray fabric upholstered chairs",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'sillas tapizadas en tela gris'."
+  },
+  {
+   "claim": "Person wants a large pendant lamp over the table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara colgante grande sobre la mesa'."
+  },
+  {
+   "claim": "The dining area is the open space between the kitchen and the stairs",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows open space between the kitchen and the staircase, and the request places the dining room there."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.084356,
+ "_prompt": "juez_fidelidad_v2"
+}

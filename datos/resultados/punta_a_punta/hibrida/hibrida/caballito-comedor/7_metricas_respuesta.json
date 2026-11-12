@@ -1,0 +1,24 @@
+{
+ "corrida": "hibrida__caballito-comedor",
+ "pedido": "Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas negras, una lámpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la derecha. Estilo nórdico, simple.",
+ "fidelidad": {
+  "afirmaciones": 23,
+  "faithfulness": 0.9565,
+  "sobre_productos": 0.9231,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "The table seats four"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar el comedor de mi piso pequeño con estilo nórdico y luminoso: una mesa de madera clara, sillas negras, una lámpara colgante para encima de la mesa y un aparador para guardar cosas.",
+   "Busco ideas para el rincón de comer de la cocina, algo cálido y sencillo tipo escandinavo. Necesito mesa, sillas, una lámpara de techo y un mueble bajo de almacenaje.",
+   "Me acabo de mudar y el comedor está vacío. Me gustaría un estilo minimalista con madera natural y toques de negro y dorado, que se vea elegante pero acogedor. ¿Qué mesa, sillas, lámpara y aparador me recomiendas?"
+  ],
+  "answer_relevance": 0.7674,
+  "vara_contrastes": 0.4012,
+  "juez": "claude-opus-5-5"
+ }
+}

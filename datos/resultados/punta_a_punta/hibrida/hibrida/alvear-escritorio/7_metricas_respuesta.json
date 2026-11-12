@@ -1,0 +1,28 @@
+{
+ "corrida": "hibrida__alvear-escritorio",
+ "pedido": "Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón con una lámpara de pie para leer. Estilo nórdico, maderas claras.",
+ "fidelidad": {
+  "afirmaciones": 28,
+  "faithfulness": 0.8214,
+  "sobre_productos": 0.75,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "The desk wood is ash",
+   "The desk chair has a light wood frame",
+   "The bookcase is made of birch",
+   "The armchair frame is light birch",
+   "The selection includes oak wood"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero convertir esta habitación en un despacho con rincón de lectura. Necesito un escritorio, una silla de oficina, una librería grande para mis libros, un sillón cómodo para leer y una lámpara de pie. Estilo nórdico, con madera clara y ambiente tranquilo.",
+   "Amueblar mi estudio como una pequeña biblioteca en casa: mueble de estantería con puertas de cristal, mesa de trabajo con silla, una mecedora para leer y buena luz de lectura. Me gusta lo cálido y clásico pero luminoso.",
+   "Tengo este cuarto vacío y quiero hacer una oficina en casa acogedora, estilo escandinavo, tonos claros. Busco escritorio, silla giratoria, librería, un sillón para descansar y lámpara de pie."
+  ],
+  "answer_relevance": 0.7197,
+  "vara_contrastes": 0.37,
+  "juez": "claude-opus-5-5"
+ }
+}

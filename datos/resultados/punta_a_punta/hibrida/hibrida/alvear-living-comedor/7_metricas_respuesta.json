@@ -1,0 +1,26 @@
+{
+ "corrida": "hibrida__alvear-living-comedor",
+ "pedido": "Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.",
+ "fidelidad": {
+  "afirmaciones": 42,
+  "faithfulness": 0.9286,
+  "sobre_productos": 0.9143,
+  "sobre_el_ambiente": 1.0,
+  "no_sostenidas": [
+   "Dining table seats six",
+   "Cushions are linen",
+   "Areca palm is tall"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón-comedor en estilo nórdico, luminoso y natural: sofá, un sillón para leer, mesa de centro, alfombra, mesa de comedor con sillas, lámparas, aparador, cortinas y algunos detalles decorativos y plantas.",
+   "Acabo de mudarme y el salón con zona de comedor está vacío. Busco un ambiente tranquilo y acogedor, con maderas claras y tonos neutros con algo de verde. Necesito de todo: dónde sentarnos, dónde comer, iluminación, textiles y decoración.",
+   "Me gustaría un salón comedor estilo escandinavo con toques japandi, cálido pero despejado. Sofá claro, mesa de comedor de madera clara con sillas, una lámpara de techo de bambú, un rincón de lectura con sillón y lámpara de pie, y cojines, manta, cuadro y una planta grande."
+  ],
+  "answer_relevance": 0.7062,
+  "vara_contrastes": 0.4102,
+  "juez": "claude-opus-5-5"
+ }
+}
