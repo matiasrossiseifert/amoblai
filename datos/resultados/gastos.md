@@ -7,9 +7,9 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | Cuenta | Llamadas | Gastado (US$) | Tope en la config (US$) |
 |---|---|---|---|
 | anthropic | 1050 | 29,41 | 30,00 |
-| fal | 50 | 4,00 | 8,50 |
+| fal | 59 | 4,72 | 8,50 |
 | openai | 0 | 0,00 | 0,50 |
-| **total** | 1100 | **33,41** | |
+| **total** | 1109 | **34,13** | |
 
 ## Por uso
 
@@ -20,7 +20,7 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | Catálogo: descripciones de los productos de ABO | anthropic | claude-opus-5-5 | 80 | 5,63 | 0,070 |
 | Evaluación de punta a punta: juez que compara dos listas | anthropic | claude-opus-5-5 | 67 | 3,06 | 0,046 |
 | Réplica de un ambiente real (ubicación de los muebles) | fal | fal-ai/nano-banana-2/edit | 30 | 2,40 | 0,080 |
-| El flujo: imagen del ambiente amoblado | fal | fal-ai/nano-banana-2/edit | 20 | 1,60 | 0,080 |
+| El flujo: imagen del ambiente amoblado | fal | fal-ai/nano-banana-2/edit | 29 | 2,32 | 0,080 |
 | Evaluación del generador: faithfulness | anthropic | claude-opus-5-5 | 11 | 0,96 | 0,088 |
 | El flujo: plan (lee la foto y el pedido, escribe las consultas) | anthropic | claude-opus-5-5 | 16 | 0,95 | 0,060 |
 | El flujo: prompt de la imagen escrito por el LLM (configuración anterior) | anthropic | claude-opus-5-5 | 7 | 0,24 | 0,035 |
@@ -53,7 +53,7 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | 2026-11-10 | Réplica de un ambiente real (ubicación de los muebles) | fal | 11 | 0,88 |
 | 2026-11-11 | Réplica de un ambiente real (ubicación de los muebles) | fal | 19 | 1,52 |
 | 2026-11-12 | El flujo: elección de la lista | anthropic | 20 | 2,82 |
-| 2026-11-12 | El flujo: imagen del ambiente amoblado | fal | 10 | 0,80 |
+| 2026-11-12 | El flujo: imagen del ambiente amoblado | fal | 19 | 1,52 |
 | 2026-11-12 | Evaluación de punta a punta: juez que compara dos listas | anthropic | 35 | 1,54 |
 | 2026-11-12 | Evaluación del generador: answer relevance | anthropic | 11 | 0,14 |
 | 2026-11-12 | Evaluación del generador: faithfulness | anthropic | 11 | 0,96 |
@@ -66,7 +66,7 @@ Generado desde `datos/resultados/gastos.jsonl` (una línea por llamada paga, con
 | 2026-11-09 | 7,29 |
 | 2026-11-10 | 12,78 |
 | 2026-11-11 | 1,52 |
-| 2026-11-12 | 6,26 |
+| 2026-11-12 | 6,98 |
 
 ## Lo que no está en el registro
 

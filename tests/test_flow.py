@@ -323,6 +323,10 @@ def test_the_whole_flow_with_claude_and_fal_stays_within_the_caps(tmp_path, cfg,
     assert spent == pytest.approx(3 * (10000 * 4 + 1000 * 20) / 1e6)
     assert Ledger(cfg.budget.ledger, 0.1, "fal").spent() == pytest.approx(0.08)
 
+    # Con tope de productos en la imagen, el prompt y el modelo de imagen reciben solo los
+    # primeros; el resto queda en la lista (acá hay uno solo: nada cambia)
+    assert "left_out_of_image" not in run.data["scene"]
+
     # La misma carpeta con el mismo pedido se retoma sin llamar a nadie; con otro pedido se
     # rechaza: devolvería la lista y la imagen del pedido anterior como si fueran del nuevo.
     run_flow(photo, "un living con un sofá rojo", cfg, out, log=lambda _: None)
@@ -402,3 +406,41 @@ def test_scene_prompt_v2_takes_the_same_inputs_as_v1():
         filled[tmpl.version] = tmpl.fill(request="un sofá", room="a room", products="image 2. x")
     assert set(filled) == {"scene_prompt_v1", "scene_prompt_v2"}
     assert all('"prompt"' in t and "image 2. x" in t for t in filled.values())
+
+
+def test_the_image_shows_at_most_the_products_the_image_model_takes(tmp_path, cfg):
+    """El plan ordena las piezas por importancia: las que pasan el tope quedan fuera de la imagen
+    (el prompt y las fotos que van al modelo), no de la lista de compra."""
+    from amoblai.furnish import flow
+
+    def hit(pid: str) -> dict:
+        return {
+            "id": pid,
+            "name": pid,
+            "category": "sofa",
+            "dimensions_cm": None,
+            "source": "x",
+            "photos": [f"{pid}.jpg"],
+            "description": f"Type: sofa, {pid}",
+            "score": 0.9,
+            "kind": "sofa",
+        }
+
+    cfg.furnish.scene_llm, cfg.furnish.scene_prompt = False, "scene_prompt_libre_v4.md"
+    cfg.furnish.max_image_products = 2
+    run = flow.Run(cfg, tmp_path, "tres sofás", log=lambda _: None)
+    pieces = [{"piece": f"sofá {n}", "kinds": ["sofa"], "query": "q"} for n in (1, 2, 3)]
+    run.data["plan"] = {"answer": {"room": "a room", "pieces": pieces}}
+    run.data["retrieve"] = {
+        "pieces": [
+            {"piece": p["piece"], "spec": p, "candidates": [hit(f"s{n}")]}
+            for n, p in enumerate(pieces, 1)
+        ]
+    }
+    run.data["choose"] = {"answer": {"choices": [{"piece": n, "id": f"s{n}"} for n in (1, 2, 3)]}}
+    scene = flow._scene(run)
+    assert scene["left_out_of_image"] == ["sofá 3"]
+    assert "s1" in scene["answer"]["prompt"] and "image 3" in scene["answer"]["prompt"]
+    assert "image 4" not in scene["answer"]["prompt"]  # the third product is not in the image
+    assert [h.id for h in flow._in_image(run, run.chosen())] == ["s1", "s2"]
+    assert len(run.chosen()) == 3  # the shopping list keeps the three

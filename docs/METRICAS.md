@@ -38,7 +38,7 @@ aproximaciones, y cada métrica se apoya en una:
 | 1 | **hit@k** (k = 1, 5, 10) con IC 95% por ambiente, el azar al lado y la **diferencia pareada** entre métodos | ¿El producto anotado está entre los k primeros? hit@5 es el titular: son los 5 candidatos que ve el que elige | búsqueda del flujo (versión 2, híbrida): hit@1 0,605 [0,56–0,65], **hit@5 0,825**, hit@10 0,883; versión 1 (densa): 0,530, 0,790 y 0,863; azar 0,017 y 0,161 |
 | 2 | **Juez de listas de a pares** sobre ambientes vacíos (gana / empata, útil por producto) | ¿Qué configuración da mejores listas en la tarea real? | versión 2 contra versión 1: gana 5, empata 6, no pierde (p = 0,06); con búsqueda contra sin búsqueda: 7 a 0 (p = 0,016); IKEA + ABO contra IKEA: 8 a 2 con 1 empate (p = 0,11) |
 | 3 | **Acierto de la elección con un VLM**, según cuántos candidatos ve | ¿Suma que un VLM mire las fotos? ¿Cuántos candidatos pasarle? | sobre el top-10: 0,535 → 0,687 (+0,151 [0,115; 0,190]); entre 3: 0,637; entre 5: 0,667; entre 8: 0,689 |
-| 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | 26 de 52 productos identificados en 8 imágenes (coseno medio 0,48); el control del ambiente rechazó 2 de 3 intentos en un caso |
+| 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | en las 11 imágenes de la configuración final: 31 de 75 productos reconocidos como el exacto (41%; coseno medio 0,50); el ambiente se conserva en 7 de 11 |
 | 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,604 ± 0,009 según quién escribe las consultas (versión 2); 0,539 ± 0,025 (versión 1) |
 | 6 | **Costo por pedido** | ¿Cuánto cuesta cada parte? | plan US$0,06; elección US$0,14 (de 0,05 a 0,43); imagen US$0,08 por intento |
 | 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | context precision@10 0,63; context recall 0,79 (@3) y 0,93 (@10) por ambiente; faithfulness 0,82; answer relevance 0,69 |
@@ -163,17 +163,18 @@ aproximaciones, y cada métrica se apoya en una:
 
 - **Fidelidad de producto.** Se detectan los muebles en la imagen generada, se recorta cada uno
   y se compara con las fotos del catálogo (DINOv3): "identificado" si el más parecido de su tipo
-  es el de la lista. Sobre las 8 imágenes con métricas: **26 de 52** (por imagen, de 3/8 a 3/4),
-  coseno medio 0,48. Con fotos reales de IKEA el mismo reconocimiento da 0,444, pero con otro
-  procedimiento (ahí valen todos los recortes; acá cada producto se queda con la detección que
-  más se le parece), así que no es una vara pareja.
+  es el de la lista. Sobre las 11 imágenes de la configuración final (T9): 71 de 75 productos
+  detectados y **31 de 75 identificados (41%)**, coseno medio 0,50 (en las 8 imágenes anteriores,
+  de listas más cortas y solo de IKEA: 26 de 52). Con fotos reales de IKEA el mismo
+  reconocimiento da 0,444, pero con otro procedimiento (ahí valen todos los recortes; acá cada
+  producto se queda con la detección que más se le parece), así que no es una vara pareja.
 - **Ambiente preservado.** SSIM fuera de los muebles y puntos SIFT de la foto original
   reencontrados con RANSAC. Discrimina: marcó el caso en que el modelo rehízo el cuarto (SSIM
-  0,29, 10 puntos, cámara corrida 7,7%) y rechazó 2 de 3 intentos en otro. El flujo lo usa como
-  control (al menos 50 puntos y desplazamiento de hasta 1%, hasta 3 intentos); esos umbrales
-  están puestos a mano.
-- **n.** 8 imágenes, 4 fotos de ambientes, varias configuraciones mezcladas. Ninguna imagen se
-  generó con la configuración final (IKEA + ABO).
+  0,29, 10 puntos, cámara corrida 7,7%). El flujo lo usa como control (al menos 50 puntos y
+  desplazamiento de hasta 1%, hasta 3 intentos); esos umbrales están puestos a mano. En las 11
+  imágenes finales pasan 7, todas al primer intento; en las otras 4 fallaron los 3 intentos:
+  el control detecta, pero reintentar con el mismo prompt casi nunca arregla.
+- **n.** 11 imágenes de la configuración final (una por ambiente) y 8 anteriores.
 
 ### Costo y latencia
 

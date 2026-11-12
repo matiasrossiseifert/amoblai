@@ -184,19 +184,22 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
   sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer
   relevance: 0,69, contra 0,55 de la vara cruzada (los pedidos reconstruidos para otras listas) y
   0,40 de pedidos sin relación.
-- **La imagen** (8 imágenes con métricas, de 4 ambientes y varias configuraciones): 26 de 52
-  productos se reconocen como el producto exacto al comparar su recorte con la foto del catálogo
-  (DINOv3; coseno medio 0,48), entre 3 de 8 y 3 de 4 por imagen. El control del ambiente
-  (SIFT + RANSAC contra la foto original) rechazó 2 de 3 intentos en un caso y marcó el único en
-  que el modelo rehízo el cuarto. Ninguna imagen se generó todavía con el catálogo combinado.
+- **La imagen** (las 11 listas de la versión 2, con el flujo completo;
+  `datos/resultados/amoblar/final-<ambiente>/`): 71 de los 75 productos aparecen, y 31 (41%) se
+  reconocen como el producto exacto al comparar su recorte con las fotos del catálogo (DINOv3;
+  coseno medio 0,50). El control del ambiente (SIFT + RANSAC contra la foto original) pasa al
+  primer intento en 7 de los 11 ambientes; en los otros 4 fallaron los 3 intentos (el modelo
+  vuelve a mover la cámara): el control detecta, reintentar con el mismo prompt casi nunca
+  arregla. La imagen muestra hasta 13 productos (el modelo acepta 14 imágenes): en el ambiente
+  de 15 piezas, dos quedan solo en la lista.
 - **Costo.** Una corrida completa cuesta unos US$0,28: plan y choose con Claude Opus 5.5
   (US$0,06 y US$0,14 de media; el choose va de US$0,05 a US$0,43 según cuántas piezas y de qué
   catálogo) y la imagen con Nano Banana 2 (US$0,08 por intento; si el control del ambiente la
   rechaza, se reintenta hasta 3 veces). Sale del registro de cada llamada paga
-  (`datos/resultados/gastos.jsonl`, `amoblai gastos`). Ejemplos con imagen:
-  `datos/resultados/amoblar/caballito-living/` y `caballito-comedor/` (anteriores al catálogo
-  combinado: sus productos son todos de IKEA). Las listas con IKEA + ABO están en
-  `datos/resultados/punta_a_punta/catalogos/todos/`.
+  (`datos/resultados/gastos.jsonl`; el informe por uso y por día, `datos/resultados/gastos.md`,
+  se genera con `amoblai gastos --md`). Ejemplos completos de la configuración final:
+  `datos/resultados/amoblar/final-publica-loft-industrial/`, `final-publica-living-japandi/` y
+  los otros nueve `final-*`.
 
 ### Fuera del RAG: ubicar los muebles (la réplica)
 

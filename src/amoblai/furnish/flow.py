@@ -84,15 +84,30 @@ def _choose(run: Run) -> dict:
     return rec
 
 
+def _in_image(run: Run, items: list) -> list:
+    """The products the image shows: all, or the first `furnish.max_image_products`."""
+    limit = run.cfg.furnish.max_image_products
+    return items if limit is None else items[:limit]
+
+
 def _scene(run: Run) -> dict:
     room = run.data["plan"]["answer"].get("room", "")
     picks = st.picks(run.data["retrieve"], run.data["choose"])
-    return st.scene(run.cfg, run.room, run.request, room, picks, run.views)
+    shown = _in_image(run, picks)
+    rec = st.scene(run.cfg, run.room, run.request, room, shown, run.views)
+    if len(shown) < len(picks):  # in the shopping list, not in the image
+        rec["left_out_of_image"] = [piece["piece"] for piece, _ in picks[len(shown) :]]
+        run.log(f"the image shows {len(shown)} of {len(picks)} products")
+    return rec
 
 
 def _generate(run: Run) -> dict:
     rec = st.generate(
-        run.cfg, run.data["scene"]["answer"]["prompt"], run.room, run.chosen(), run.out
+        run.cfg,
+        run.data["scene"]["answer"]["prompt"],
+        run.room,
+        _in_image(run, run.chosen()),
+        run.out,
     )
     run.log(f"image: {rec['image'] or 'pending: ' + str(rec['meta'].get('job'))}")
     return rec

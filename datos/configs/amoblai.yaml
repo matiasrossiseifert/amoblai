@@ -56,6 +56,10 @@ furnish:
   scene_prompt: scene_prompt_libre_v4.md
   scene_llm: false
   max_pieces: null                # sin tope: las piezas que pidan el pedido y el ambiente (search_query_v4)
+  # La imagen muestra hasta 13 productos: Nano Banana 2 (fal) acepta 14 imágenes, la foto del
+  # ambiente y 13 más ("At most 14 image URLs are allowed", 2026-11-12, con un plan de 15 piezas).
+  # Las piezas que sobran (las menos importantes: el plan las ordena) quedan en la lista de compra.
+  max_image_products: 13
   candidates: 5                   # por pieza: el LLM ve 5 fotos de cada una y elige la combinación (curva de candidatos, `amoblai evaluar-candidatos`: 3 → 0,637, 5 → 0,667, 8 → 0,689; de 3 a 5, +0,029 [0,015; 0,043])
   photo_max_side: 1024
   # Claude (API de Anthropic) para plan, choose y scene. Precios por 1M de tokens, consultados

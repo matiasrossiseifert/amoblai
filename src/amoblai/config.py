@@ -59,6 +59,10 @@ class FurnishConfig(_Cfg):
     # its prices (`models`), effort...
     llm: dict[str, Any] = Field(default_factory=dict)
     max_pieces: int | None = None  # pieces of the plan carried on (most important first); None: all
+    # The most products the image shows: the image model takes a limited number of photos (Nano
+    # Banana 2 through fal: 14, the room and 13 products). The plan lists the most important
+    # pieces first: the ones beyond the limit stay in the shopping list, out of the image.
+    max_image_products: int | None = None
     candidates: int = 3  # products the search brings for each piece
     # The plan's most-it-can-measure comes from a photo: the search allows this much more.
     # size_filter false: the limits are not used as a hard filter (they are an estimate by eye,
