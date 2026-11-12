@@ -1,0 +1,18 @@
+# ¿Hacía falta RAG, si el catálogo entra en el contexto? La versión 2 (los 5 mejores de la
+# búsqueda, con sus fotos) contra el mismo flujo sin búsqueda: el catálogo entero en el prompt,
+# en texto (rag.mode: whole_catalog), con el mismo filtro duro por kind y medidas (cada pieza
+# lista los ids que lo pasan). Mismo plan, mismo paso que elige, mismo juez. Sin fotos de
+# candidatos: las del catálogo entero no entran.
+# El catálogo (unos 341 mil tokens con Opus 5.5) va como prefijo en caché: la primera llamada lo
+# escribe y las demás lo leen al 5% del precio. Acá con caché de 1 hora (la escritura cuesta
+# US$2,73; con la de 5 minutos, US$1,70) para poder repetir un ambiente sin pagarlo de nuevo.
+# Costo: unos US$5,5 (11 elecciones y 22 llamadas del juez).
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/contexto.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: hibrida
+variantes:
+  hibrida: {rag.hybrid: [bm25, siglip2]}
+  contexto: {rag.mode: whole_catalog, furnish.catalog_cache: 1h, furnish.llm.timeout_s: 900}
+comparaciones:
+  - [hibrida, contexto]
