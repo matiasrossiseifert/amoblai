@@ -261,8 +261,9 @@ def choose(
             text_block(catalog_text(ensure_index(cfg).items), cfg.furnish.catalog_cache),
             image_block(room_photo, cfg.furnish.photo_max_side),
         ]
-        n = 1
+        n, step = 1, "furnish.choose_catalog"  # its own line in the ledger: not the flow's cost
     else:
+        step = "furnish.choose"
         tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)
         lines, content, n = [], [image_block(room_photo, cfg.furnish.photo_max_side)], 1
         for k, (piece, hits) in enumerate(found, 1):
@@ -276,7 +277,7 @@ def choose(
         text = tmpl.fill(request=request, pieces=len(found), images=n, candidates="\n".join(lines))
     content += view_blocks(cfg, views, n + 1)
     content.append(text_block(text))
-    a, data = ask(cfg, "furnish.choose", content)
+    a, data = ask(cfg, step, content)
     choices = data.get("choices") or []
     if len(choices) != len(found):
         raise ProviderError(f"furnish.choose: {len(choices)} choices for {len(found)} pieces")
