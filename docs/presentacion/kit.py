@@ -184,7 +184,7 @@ OFFLINE = 3  # las tres primeras fases se hacen una vez, offline
 
 # Qué experimento le hizo una pregunta a cada fase: los pines del mapa y del minimapa de cada
 # experimento. Del 1 al 8, los que tienen lámina propia (el ranking de docs/REVISION.md); del 9 al
-# 14, los de trámite (TRAMITE: el pin va hueco). BANCO: los que miden el banco de prueba de la
+# 15, los de trámite (TRAMITE: el pin va hueco). BANCO: los que miden el banco de prueba de la
 # búsqueda, no una fase.
 PINES: dict[str, list[int]] = {
     "catalogo": [6],
@@ -193,8 +193,9 @@ PINES: dict[str, list[int]] = {
     "plan": [2],
     "busqueda": [3, 5, 7, 13, 14],
     "eleccion": [5],
+    "escena": [15],
 }
-TRAMITE = {9, 10, 11, 12, 13, 14}
+TRAMITE = {9, 10, 11, 12, 13, 14, 15}
 BANCO = [4, 8]
 
 
