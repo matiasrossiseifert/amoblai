@@ -182,8 +182,15 @@ aproximaciones, y cada métrica se apoya en una:
   0,29, 10 puntos, cámara corrida 7,7%). El flujo lo usa como control (al menos 50 puntos y
   desplazamiento de hasta 1%, hasta 3 intentos); esos umbrales están puestos a mano. En las 11
   imágenes finales pasan 7, todas al primer intento; en las otras 4 fallaron los 3 intentos:
-  el control detecta, pero reintentar con el mismo prompt casi nunca arregla.
-- **n.** 11 imágenes de la configuración final (una por ambiente) y 8 anteriores.
+  el control detecta, pero reintentar con el mismo prompt pocas veces arregla (2 de 9 entre las
+  dos tandas de T9 y T10).
+- **Lo que decidieron** (T10): con las mismas 11 listas, la escena escrita por el LLM empata
+  con la plantilla (32 contra 31 reconocidos; 8 contra 7 ambientes conservados), así que se
+  queda la plantilla. Lo que estas métricas no ven: si la distribución de los muebles tiene
+  sentido, y el color (el DINOv3 da por reconocido un sofá marrón que salió mostaza).
+- **n.** 11 imágenes de la configuración final (una por ambiente), las 11 de la escena del LLM
+  y 8 anteriores. Totales por tanda: `amoblai resumen-imagen`
+  (`datos/resultados/evaluacion_imagen/`).
 
 ### Costo y latencia
 

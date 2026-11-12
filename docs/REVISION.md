@@ -140,7 +140,7 @@ contar desafíos). Una lámina para todos los de trámite juntos.
 | Experimento | Por qué | Qué hacer |
 |---|---|---|
 | "Query rewriting" contra solo Type o solo el kind | Buscar "rug" entre 89 alfombras es azar por construcción: mide sacarle información a la consulta, no reescribirla. | Reemplazado por el de arriba. |
-| La escena sin LLM ("experimento 12") | Una imagen contra una, con otro pedido y otras piezas; y la escena escrita por el LLM tiene mejor número en las cuatro métricas. No estaba en el registro. | Contarla como decisión de costo y simplicidad (ahorra una llamada), no como resultado. |
+| La escena sin LLM ("experimento 12") | Una imagen contra una, con otro pedido y otras piezas; y la escena escrita por el LLM tiene mejor número en las cuatro métricas. No estaba en el registro. | **Rehecho el 12/11 a la tarde sobre los 11 ambientes (T10): empate** (32 contra 31 productos reconocidos de 75; ambiente conservado en 8 contra 7). Se queda la plantilla: una llamada y US$0,056 menos por pedido. Ahora sí es un resultado. |
 | La réplica con cajas (T5) | Un cuarto, 3 imágenes por variante, no decide nada del flujo ni tiene que ver con el RAG. Solo se sostiene "indicar el lugar ayuda" (0,20 → 0,40–0,52); "ninguna quedó dibujada" es ruido (p = 0,40) y la explicación de la lámpara se da vuelta en la ronda 2. | Una lámina de trabajo futuro, sin esas dos frases. |
 | Los experimentos de imagen diseñados (T4) | No se corrieron. | No son experimentos: son pendientes. |
 | La imagen de un caso y RAGAS como "resultados" | El README mostraba la mejor de 8 imágenes (3 de 4 productos); sobre las 8 son 26 de 52. RAGAS: 3 respuestas, con fuga. | Tabla completa; jueces nuevos (sección 5). |
@@ -255,7 +255,7 @@ siempre, y eso le da sentido a los empates del primero.
 | La misma configuración dos veces (A/A) | Cuántos ambientes da vuelta el ruido solo | **Hecho el 12/11 a la tarde** (US$2,38; T8c): 3 a 3 con 5 empates; el que elige cambia 9 de 75 productos |
 | Las métricas del generador sobre las listas de la versión 2 | Estaban medidas sobre las de la versión 1 | **Hecho el 12/11 a la tarde** (US$1,08; T7): 0,88 y 0,70 contra 0,56 |
 | El mejor embedding de OpenAI contra Qwen3 | Si un embedder por API cambia algo | centavos; listo (`ablaciones/embedder-openai.yaml`), pero la clave de OpenAI del `.env` está vencida |
-| Escena escrita por el LLM contra plantilla, 8–10 ambientes | El experimento de imagen que sí vale | ~US$1,5 de fal y US$0,4 de Anthropic |
+| Escena escrita por el LLM contra plantilla, 8–10 ambientes | El experimento de imagen que sí vale | **Hecho el 12/11 a la tarde** en los 11 ambientes (US$1,60 de fal y US$0,61 de Anthropic; T10): empate, se queda la plantilla |
 | Voto a ciegas del equipo sobre los pares de listas | Validar al juez contra personas | gratis, 15 minutos |
 
 ## 5. Métricas: ranking y qué cambia
@@ -406,7 +406,7 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
 | Decisión | Opciones | Costo |
 |---|---|---|
 | El filtro de medidas | Apagarlo (`furnish.size_filter: false`), o dejarlo y validarlo | Validarlo: US$2 |
-| Rehacer el experimento de la escena (LLM contra plantilla) | 8–10 ambientes, o contarlo como decisión de costo | ~US$1,5 de fal y US$0,4 de Anthropic |
+| Rehacer el experimento de la escena (LLM contra plantilla) | 8–10 ambientes, o contarlo como decisión de costo | Hecho (T10): empate en 11 ambientes |
 | El tope de Anthropic | Está agotado (US$29,41 de 30). Cualquier corrida paga nueva pide subirlo | — |
 | La clave de OpenAI | La del `.env` está vencida: con una nueva, la comparación de embeddings son centavos | — |
 | Validar al juez contra personas | Los tres votan a ciegas los 11 pares de listas | Gratis, 15 minutos |
@@ -433,7 +433,7 @@ Los números de lámina son los de la principal **antes** de actualizarla:
 | Embedder (26) | "Gana Qwen3... gana más claro en las búsquedas difíciles" | Qwen3 y contar palabras no se distinguen (+0,026 [−0,025; +0,077]); solo le gana a BGE. Se queda por robustez a la paráfrasis. |
 | Filtros duros (27) | "Filtrar siempre... la diferencia con el tipo está dentro del intervalo" | El filtro no suma en el banco de prueba y el de kind cuesta 2 puntos de hit@5. Se usa porque evita 11% de candidatos de otro kind en los pedidos reales. El de medidas no tiene evidencia. |
 | "Jueces validados" (22) | Los tres jueces, validados | Validado contra el ground truth, uno (el de relevancia, para la nota 2). El de listas, solo por acuerdo entre órdenes. |
-| La imagen: del cuarto reimaginado al cuarto del cliente (36) | La edición estricta ganó | Es una decisión de costo y simplicidad; una imagen por variante no decide. |
+| La imagen: del cuarto reimaginado al cuarto del cliente (36) | La edición estricta ganó | Una imagen por variante no decide. Con el experimento rehecho (T10): la plantilla y la escena del LLM empatan en 11 ambientes, y se usa la plantilla por costo y simplicidad. |
 | Qué catálogo (34) y conclusiones (41) | "8 a 2", "6 a 0" | Sumar p = 0,11 y que los pedidos de otros estilos se escribieron sabiendo qué le falta a IKEA. |
 | "El camino: de 0,08 a 0,69" (38) | Seis barras que terminan en el rerank | El camino de la sección 4: de 0,11 a 0,53 (el flujo), y 0,60 con la híbrida. El 0,69 va aparte, como techo de una técnica aislada. |
 | La v0 (fase 3 y desafíos) | "no sirve con un ambiente vacío: no hay nada que recortar" | Fue la propuesta aprobada; su diseño generaba primero una imagen. Construimos y medimos su buscador (0,43 de recall por producto contra 0,55 por texto) y cambiamos. Nunca corrió entera. |

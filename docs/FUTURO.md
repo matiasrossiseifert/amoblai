@@ -32,7 +32,7 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
   reintento. (S)
 - **La imagen:** se reconoce como el producto exacto el 41% (31 de 75 en las 11 imágenes de la
   configuración final) y el ambiente se conserva en 7 de 11; cuando no, reintentar con el mismo
-  prompt casi nunca lo arregla; el lugar que decide el plan no llega al modelo de imagen; el
+  prompt pocas veces lo arregla; que el prompt lo escriba un LLM no cambia nada de eso (T10); el lugar que decide el plan no llega al modelo de imagen; el
   modelo acepta 13 productos; los umbrales del control del ambiente están puestos a mano.
 
 ## Mejoras del RAG

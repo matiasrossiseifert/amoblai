@@ -50,9 +50,10 @@ rag:
 furnish:
   steps: [plan, retrieve, choose, scene, generate]
   # La imagen: edición estricta del ambiente del usuario, con una plantilla sin LLM (el modelo de
-  # imagen acomoda los productos) y con el control SIFT y reintento de furnish.room_check. Es una
-  # decisión de costo y simplicidad (una llamada menos): la comparación con la escena escrita por
-  # el LLM es de una imagen por variante y no la sostiene (docs/REVISION.md, sección 4).
+  # imagen acomoda los productos) y con el control SIFT y reintento de furnish.room_check. Contra
+  # la escena escrita por el LLM (scene_llm: true, scene_prompt_v2.md) empata en los 11 ambientes
+  # (EXPERIMENTOS.md, T10: 31 contra 32 productos reconocidos de 75; ambiente conservado en 7
+  # contra 8), y es una llamada y US$0,056 menos por pedido.
   scene_prompt: scene_prompt_libre_v4.md
   scene_llm: false
   max_pieces: null                # sin tope: las piezas que pidan el pedido y el ambiente (search_query_v4)
