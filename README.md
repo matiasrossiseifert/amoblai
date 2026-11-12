@@ -137,8 +137,9 @@ candidata a versión 2 (`docs/REVISION.md`).
 - **Base vectorial.** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
   consultas. Con 1.500 vectores es lo esperable; ChromaDB da los filtros de metadata en la misma
   consulta y la persistencia.
-- **Tres redactores.** Con las consultas escritas tres veces por separado: hit@1 0,544 ± 0,026 y
-  MRR 0,655 ± 0,017. Una diferencia de 2 puntos entre dos métodos no es señal.
+- **Tres redactores.** Con las consultas escritas tres veces por separado, la búsqueda del flujo
+  da hit@1 0,539 ± 0,025 y MRR 0,643 ± 0,015 (la híbrida, 0,604 ± 0,009). Una diferencia de 2
+  puntos entre dos métodos no es señal.
 - **Por imagen o por texto.** La primera aproximación buscaba por parecido visual entre un
   recorte del mueble y la foto del catálogo (DINOv3). Con la misma unidad (los 232 productos
   anotados): recall@1 0,43 por imagen contra 0,55 por texto (+0,12 [0,04; 0,20]).

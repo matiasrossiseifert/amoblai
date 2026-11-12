@@ -39,7 +39,7 @@ aproximaciones, y cada métrica se apoya en una:
 | 2 | **Juez de listas de a pares** sobre ambientes vacíos (gana / empata, útil por producto) | ¿Qué configuración da mejores listas en la tarea real? | IKEA + ABO le gana a IKEA 8 a 2 con 1 empate (p = 0,11); productos útiles 0,73 contra 0,63 |
 | 3 | **Acierto de la elección con un VLM**, según cuántos candidatos ve | ¿Suma que un VLM mire las fotos? ¿Cuántos candidatos pasarle? | sobre el top-10: 0,535 → 0,687 (+0,151 [0,115; 0,190]); entre 3: 0,637; entre 5: 0,667; entre 8: 0,689 |
 | 4 | **Fidelidad de producto y ambiente preservado**, sobre todas las imágenes | ¿La imagen muestra esos productos, en ese cuarto? | 26 de 52 productos identificados en 8 imágenes (coseno medio 0,48); el control del ambiente rechazó 2 de 3 intentos en un caso |
-| 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,544 ± 0,026 según quién escribe las consultas |
+| 5 | **Tres redactores e IC** | ¿Cuánto cambia el número sin cambiar el sistema? | hit@1 0,539 ± 0,025 según quién escribe las consultas (búsqueda del flujo, catálogo final) |
 | 6 | **Costo por pedido** | ¿Cuánto cuesta cada parte? | plan US$0,06; elección US$0,14 (de 0,05 a 0,43); imagen US$0,08 por intento |
 | 7 | **Las cuatro de la clase 11**, rotuladas como lo que son | Lo que pide la cátedra: al menos una del retriever y una del generador | context precision@10 0,63; context recall 0,79 (@3) y 0,93 (@10) por ambiente; faithfulness 0,82; answer relevance 0,69 |
 

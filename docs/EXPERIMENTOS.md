@@ -225,6 +225,12 @@ gratis, unas 2 h en CPU por los embeddings de las líneas sueltas).
   hit@1 0,533, 0,526 y 0,575 (0,544 ± 0,026) y MRR 0,655 ± 0,017. En las tres escrituras, Qwen3
   le gana a BGE (+0,02 a +0,09), a hashing (+0,02 a +0,04) y al filtro por kind (+0,01): el
   orden de la ablación se mantiene y los valores absolutos se mueven unos ±2,5 puntos.
+  *Corrección (2026-11-12):* esos números son del catálogo de 855. Rehechas sobre el catálogo
+  final (819; corridas `20261112-095138_reproducibilidad-r2` y `-r3`): Qwen3 con filtro por tipo
+  0,547 ± 0,027 (MRR 0,657 ± 0,017); con filtro por kind, la búsqueda del flujo, 0,539 ± 0,025;
+  hashing 0,516 ± 0,030; BGE 0,492 ± 0,016. Y la lectura "Qwen3 le gana a hashing en las tres"
+  vale para el signo, no para la significancia: juntando las tres escrituras la diferencia es
+  +0,03 con un intervalo que toca el cero.
 
 **Métricas de otras etapas, sumadas el mismo día:**
 - **Relevancia graduada del top-3** (juez): sobre 150 consultas el primer candidato sirve en el
@@ -766,6 +772,12 @@ La mejora de la fusión se repite en las tres escrituras, en hit@1 y en hit@5 (+
 los buscadores solos: con el tercer redactor la densa queda arriba de la léxica (−0,066 [−0,114;
 −0,021]) y de la foto (−0,090 [−0,131; −0,050]). La híbrida además varía menos entre redactores
 (±0,009 contra ±0,025).
+
+**En los pedidos reales** (los 11 ambientes vacíos, 75 piezas; gratis: solo el retrieve). Con la
+híbrida cambian en promedio 1,6 de los 5 candidatos de cada pieza (3,4 en común), el primero es
+el mismo en el 55% de las piezas, y el producto que eligió la versión 1 sigue entre los 5 en el
+87%. Qué lista resulta mejor solo lo puede decir el cara a cara con el juez
+(`datos/configs/punta_a_punta/hibrida.yaml`: unos US$2, sin correr).
 
 **Decisión.** El flujo no cambia (es la versión 1). La búsqueda híbrida quedó implementada y
 apagada (`rag.hybrid: []` en `amoblai.yaml`; con `[bm25, siglip2]` se enciende) y es la
