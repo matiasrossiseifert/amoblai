@@ -1,0 +1,837 @@
+{
+  "pieces": [
+    {
+      "piece": "a mustard velvet sofa against the long right-hand wall, facing the balcony",
+      "spec": {
+        "piece": "a mustard velvet sofa against the long right-hand wall, facing the balcony",
+        "why": "it is the heart of the living room and the color anchor the client asked for: mustard velvet glows against the white walls and harmonizes with the warm parquet",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seater velvet sofa\nUse: lounging and conversation; living room\nStyle: bohemian, retro, mid-century modern\nMaterials: velvet upholstery, wooden legs\nColors: mustard yellow, warm wood\nShape: generous rounded silhouette, channel or soft cushions, tapered wooden legs, substantial visual weight\nFeel: cozy, joyful, inviting\nGoes with: honey parquet, white walls, rattan, patterned rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "702.450.56",
+          "name": "STOCKHOLM",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/702.450.56.jpg"
+          ],
+          "description": "Type: three-seat velvet sofa\nUse: seating, lounging, entertaining guests; living room, lounge, sitting room\nStyle: mid-century modern, contemporary, glam\nMaterials: soft velvet upholstery, solid wood tapered legs in a natural finish\nColors: deep black, warm honey wood\nShape: slim angled track arms, two long seat cushions, loose back cushions and side bolsters, splayed tapered wooden legs, long and refined\nFeel: luxurious, elegant, moody, soft\nGoes with: brass or gold accents, walnut or oak wood, jewel-tone textiles; mid-century or glam living rooms\n",
+          "score": 0.8304593563079834,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07HZ7PFW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Blaine Modern Sleeper Sofa Bed, 78\"W, Beige",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 96.0,
+            "height": 88.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HZ7PFW4.jpg"
+          ],
+          "description": "Type: three-seat sleeper sofa\nUse: seating, guest sleeping; living room, guest room\nStyle: mid-century modern, contemporary\nMaterials: woven fabric upholstery, piped edges, wood legs\nColors: warm beige, mid brown legs\nShape: sloped flared arms, three seat and three back cushions, tapered wooden legs, tailored and medium-sized\nFeel: warm, inviting, tidy\nGoes with: walnut or mid wood, cream walls, green or rust accents; mid-century or transitional rooms\n",
+          "score": 0.8105100393295288,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082Q9C9YJ",
+          "name": "Amazon Brand \u2013 Stone & Beam Troy Upholstered Sofa Couch, 80\"W, Ash Gray",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 203.2,
+            "depth": 91.4,
+            "height": 86.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082Q9C9YJ.jpg"
+          ],
+          "description": "Type: three-seat upholstered sofa\nUse: seating, lounging; living room, apartment\nStyle: contemporary, mid-century modern, modern\nMaterials: tweed-textured woven fabric, welted cushions, dark wood legs\nColors: light ash grey, dark brown\nShape: sloped flared arms, three back and seat cushions, two throw pillows, tapered angled legs, medium and lifted\nFeel: refined, calm, light\nGoes with: walnut, white walls, brass, blue accents; transitional or mid-century rooms\n",
+          "score": 0.8041884899139404,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082QCY5RF",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QCY5RF.jpg"
+          ],
+          "description": "Type: three-seat upholstered sofa\nUse: seating, lounging; living room\nStyle: mid-century modern, contemporary\nMaterials: textured woven fabric, dark wood plinth base and legs\nColors: dark grey, dark brown wood\nShape: curved continuous back flowing into flared sloping arms, tight seat and back, low wooden plinth, splayed tapered legs, medium size, tailored\nFeel: cozy, refined, calm\nGoes with: walnut wood, white or cream walls, brass accents; mid-century or modern living rooms\n",
+          "score": 0.8034811615943909,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082QDKRC5",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QDKRC5.jpg"
+          ],
+          "description": "Type: three-seat leather sofa\nUse: seating, lounging; living room\nStyle: mid-century modern, contemporary\nMaterials: smooth leather upholstery, dark wood plinth base and legs\nColors: warm cognac brown, dark brown wood\nShape: curved continuous back flowing into flared sloping arms, tight seat and back, low wooden plinth, splayed tapered legs, medium size, tailored\nFeel: warm, rich, inviting\nGoes with: walnut wood, cream walls, green plants, brass; mid-century or modern living rooms\n",
+          "score": 0.7981219291687012,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a rattan armchair across from the sofa, near the balcony door",
+      "spec": {
+        "piece": "a rattan armchair across from the sofa, near the balcony door",
+        "why": "the rattan brings natural texture and lightness, it is the quintessential bohemian piece, and it closes the conversation area facing the sofa",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: armchair, rattan lounge armchair\nUse: relaxed seating and reading; living room\nStyle: bohemian, coastal\nMaterials: natural rattan, woven cane, seat cushion\nColors: natural honey rattan, cream or terracotta cushion\nShape: curved open frame, airy woven back, light visual weight\nFeel: relaxed, natural, sunny\nGoes with: mustard velvet sofa, warm parquet, white walls; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "500.583.76",
+          "name": "AGEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/500.583.76.jpg"
+          ],
+          "description": "Type: rattan tub armchair\nUse: relaxing, extra seating, casual dining; living room, sunroom, bedroom, dining room\nStyle: bohemian, coastal, rustic\nMaterials: hand-woven natural rattan, bamboo legs\nColors: warm honey rattan, light natural tan\nShape: rounded tub back curving into the arms, arched openings between back and arms, woven diamond pattern detail, woven seat, four slim splayed bamboo legs, compact and light\nFeel: warm, relaxed, natural, airy\nGoes with: plants, linen cushions, light wood, white walls; bohemian, coastal or tropical living rooms and sunrooms\n",
+          "score": 0.9032961130142212,
+          "kind": "armchair"
+        },
+        {
+          "id": "202.016.82",
+          "name": "STORSELE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.016.82.jpg"
+          ],
+          "description": "Type: high-back rattan armchair\nUse: relaxing, reading; living room, sunroom, bedroom\nStyle: bohemian, coastal, retro\nMaterials: rattan frame in a black stained finish, woven rattan seat and spindles\nColors: black, dark charcoal\nShape: tall fan-shaped back of bent rattan spindles, curved open arms, slatted seat, four slim splayed legs, light and open frame, medium visual weight\nFeel: airy, graphic, relaxed, exotic\nGoes with: white walls, natural textiles, green plants, light wood; bohemian, coastal or eclectic living rooms\n",
+          "score": 0.872913122177124,
+          "kind": "armchair"
+        },
+        {
+          "id": "500.395.52",
+          "name": "IKEA PS GULLHOLMEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.395.52.jpg"
+          ],
+          "description": "Type: woven rocking lounge chair\nUse: lounging, rocking; living room, sunroom, kids' corner\nStyle: bohemian, coastal, rustic\nMaterials: hand-woven natural plant fiber over a frame\nColors: natural greige, warm sand, light brown\nShape: low sloping seat on a curved rocking base, tall narrow back ending in a looped handle, solid woven sides, sculptural, low and compact\nFeel: organic, quirky, relaxed, natural\nGoes with: natural fibers, plants, light wood, white walls; bohemian, coastal or rustic rooms\n",
+          "score": 0.8057534694671631,
+          "kind": "armchair"
+        },
+        {
+          "id": "903.200.97",
+          "name": "GRNADAL",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/903.200.97.jpg"
+          ],
+          "description": "Type: rattan rocking chair\nUse: rocking, relaxing, reading; living room, bedroom, nursery\nStyle: Scandinavian, Japandi, bohemian\nMaterials: hand-woven rattan back and seat, pale solid wood frame and runners, dark grey steel rods\nColors: light natural rattan, pale wood, dark grey\nShape: large rounded oval woven back, open lattice weave, thin wooden armrests on steel rods, slim spindle frame, curved wooden rockers, light and airy\nFeel: airy, crafted, calm, natural\nGoes with: light wood, white walls, linen, plants; Scandinavian, Japandi or bohemian living rooms\n",
+          "score": 0.7781191468238831,
+          "kind": "armchair"
+        },
+        {
+          "id": "502.954.72",
+          "name": "RDVIKEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/502.954.72.jpg"
+          ],
+          "description": "Type: woven lounge chair on wire base\nUse: relaxing, reading; living room, bedroom, sunroom\nStyle: mid-century modern, contemporary, bohemian\nMaterials: hand-woven rattan seat shell, black powder-coated steel frame\nColors: dark chocolate brown, black\nShape: deep scooped one-piece seat and back shell, low and reclined, armless, splayed steel wire base with crossed rods, light and open, medium visual weight\nFeel: relaxed, earthy, sculptural, airy\nGoes with: warm wood, cream or white walls, black accents, plants; mid-century, bohemian or modern living rooms\n",
+          "score": 0.7447548508644104,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a large patterned rug in the center of the room, under the sofa and the armchair",
+      "spec": {
+        "piece": "a large patterned rug in the center of the room, under the sofa and the armchair",
+        "why": "it defines the living area in this very open space and ties everything together with pattern and color over the parquet",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: rug, large patterned area rug\nUse: defining the seating area; living room\nStyle: bohemian, traditional\nMaterials: wool or cotton, low pile or flatweave\nColors: terracotta, rust, mustard, deep blue, cream\nShape: large rectangle, kilim or vintage Persian-style pattern, fringed edges\nFeel: warm, layered, lived-in\nGoes with: mustard velvet sofa, rattan armchair, honey parquet; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSHG86Y",
+          "name": "Amazon Brand \u2013 Stone & Beam Southwestern Vintage Area Rug, 7' 10\" x 11', Multi",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 335.3,
+            "depth": 238.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSHG86Y.jpg"
+          ],
+          "description": "Type: large southwestern area rug\nUse: anchoring a living or dining area; living room, dining room, bedroom\nStyle: traditional, bohemian, rustic\nMaterials: woven pile with vintage distressed finish\nColors: deep blue, rust orange, ivory, red accents\nShape: large rectangle, rows of medallion diamonds, small scattered motifs, patterned border, low pile, bold visual weight\nFeel: rich, warm, earthy\nGoes with: dark wood floors, leather, woven baskets, terracotta; bohemian or traditional rooms\n",
+          "score": 0.8543060421943665,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B071PB2H8H",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Regal Adornment Rug, 8' x 10', Burgundy",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 305.6,
+            "depth": 244.6,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071PB2H8H.jpg"
+          ],
+          "description": "Type: large traditional area rug\nUse: anchoring a living area; living room, dining room, bedroom\nStyle: traditional, bohemian, classic\nMaterials: low pile woven fibers, fringed ends\nColors: burgundy red, warm tan, ivory, blue and green accents\nShape: large rectangle, central diamond medallion on tan field, red corners, wide decorative tribal border, fringe\nFeel: warm, rich, inviting\nGoes with: wood floors, light grey sofas, warm woods; traditional or eclectic rooms\n",
+          "score": 0.8411293625831604,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0719STM8K",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Opulence Rug, 8' x 10', Burgundy",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 305.8,
+            "depth": 244.9,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STM8K.jpg"
+          ],
+          "description": "Type: large tribal medallion area rug\nUse: anchoring a large seating area; living room, dining room, bedroom\nStyle: traditional, bohemian, rustic\nMaterials: low flat pile, woven fibers\nColors: cream, burgundy red, warm brown, multicolor accents\nShape: rectangular, three stacked geometric medallions on cream field, scattered tribal motifs, multiple red patterned borders, large and bold\nFeel: vibrant, warm, lively, cultural\nGoes with: light wood floors, white or cream sofas, neutral walls; bohemian, farmhouse or eclectic rooms\n",
+          "score": 0.829708456993103,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSHMVM8",
+          "name": "Amazon Brand \u2013 Stone & Beam Southwestern Contemporary Area Rug, 5 x 8 Foot, Multi",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 243.8,
+            "depth": 152.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSHMVM8.jpg"
+          ],
+          "description": "Type: southwestern patterned area rug\nUse: colorful base for seating; living room, bedroom, dining room\nStyle: bohemian, contemporary\nMaterials: woven pile yarn\nColors: cream, magenta red, orange, navy, light blue\nShape: rectangular, rows of diamond motifs in stripes, zigzag edges, medium size, low pile\nFeel: lively, warm, eclectic\nGoes with: dark wood, woven baskets, white walls; boho or southwestern rooms\n",
+          "score": 0.8192383646965027,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B072PX4GR1",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Naturally Ornate Rug, 8' x 10', Charcoal",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072PX4GR1.jpg"
+          ],
+          "description": "Type: large ornate area rug\nUse: anchoring a sofa seating area; living room, bedroom, dining room\nStyle: traditional, contemporary, classic\nMaterials: woven low pile, dotted pattern\nColors: charcoal grey, white\nShape: large rectangle, dotted damask scrolls and central diamond, patterned border, flat\nFeel: elegant, calm, refined\nGoes with: white sofas, light wood floors, grey and cream textiles; classic or farmhouse rooms\n",
+          "score": 0.8165714740753174,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "colorful patterned cushions on the sofa and the armchair",
+      "spec": {
+        "piece": "colorful patterned cushions on the sofa and the armchair",
+        "why": "mixing patterns and colors is what makes the room look lived-in and cheerful, as the client asked",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, patterned throw pillows\nUse: decorating the sofa and armchair; living room\nStyle: bohemian\nMaterials: cotton, embroidered or woven fabric, tassels\nColors: terracotta, teal, pink, deep blue, cream\nShape: assorted square and rectangular, tassels or fringe, mixed patterns\nFeel: cheerful, eclectic, cozy\nGoes with: mustard velvet sofa, rattan armchair, patterned rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07JKJSRQG",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Tassel Diamond Throw Pillow - 18 x 18 Inch, Black / White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 45.7,
+            "height": 8.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JKJSRQG.jpg"
+          ],
+          "description": "Type: woven tasseled throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: bohemian, rustic, modern\nMaterials: chunky handwoven cotton blend, cotton tassels\nColors: heathered grey, cream white\nShape: square, central diamond pattern outlined by eight cream tassels, nubby striped weave, knife edges, medium size\nFeel: textured, cozy, crafted\nGoes with: natural wood, rattan, linen, white walls; bohemian, Scandinavian or modern farmhouse rooms\n",
+          "score": 0.842187762260437,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B079V9LW6Z",
+          "name": "Amazon Brand \u2013 Rivet Modern 100% Cotton Tufted Contrast Decorative Throw Pillow, 17\" x 17\", Black White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 12.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079V9LW6Z.jpg"
+          ],
+          "description": "Type: tufted woven cotton throw pillow\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, modern, farmhouse\nMaterials: woven cotton, raised tufted loops, textured weave\nColors: black, white\nShape: square, horizontal bands of checks with rows of chunky black tufted blocks and a rope stitch line, knife edges, compact\nFeel: tactile, graphic, cozy\nGoes with: white or grey sofas, natural wood, black and white decor; bohemian or modern farmhouse rooms\n",
+          "score": 0.8122047781944275,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JLSSWLL",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Tassel Throw Pillow - 17 x 17 Inch, Terracotta",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 14.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JLSSWLL.jpg"
+          ],
+          "description": "Type: tassel trim throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: bohemian, contemporary, modern\nMaterials: slubbed linen-look woven fabric, cotton tassels\nColors: warm terracotta orange, grey, beige, white tassels\nShape: square, solid color with a horizontal row of mini tassels across the middle, fine texture, knife edges, compact\nFeel: warm, playful, cheerful\nGoes with: cream or grey sofas, natural wood, leather, rust tones; bohemian or mid-century rooms\n",
+          "score": 0.8032025694847107,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B074VL1JQG",
+          "name": "Amazon Brand \u2013 Stone & Beam Medallion Decorative Throw Pillow, 17\" x 17\", Aqua",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 7.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B074VL1JQG.jpg"
+          ],
+          "description": "Type: medallion patterned throw pillow\nUse: decorating and resting on a sofa, bed or armchair; living room, bedroom\nStyle: bohemian, traditional, coastal\nMaterials: woven jacquard fabric\nColors: aqua blue, dark teal, off-white\nShape: square, large lacy medallion and floral tile pattern, knife edges, compact\nFeel: fresh, detailed, lively\nGoes with: white or navy sofas, light wood, rattan; coastal or bohemian living rooms\n",
+          "score": 0.8030612468719482,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B079V96B4C",
+          "name": "Amazon Brand \u2013 Stone & Beam Mojave-Inspired Decorative Throw Pillow Cover, 20\" x 20\", Blue and Red",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 50.8,
+            "depth": 50.8,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079V96B4C.jpg"
+          ],
+          "description": "Type: woven patterned cushion cover\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, rustic, traditional\nMaterials: textured woven jacquard fabric\nColors: dark navy blue, light beige, red, muted green\nShape: square, vertical stripes of stacked diamond motifs, red and green woven bands, nubby texture, knife edges, medium size\nFeel: warm, earthy, cozy, handcrafted\nGoes with: navy, rust and cream tones, leather, warm wood; bohemian, Southwestern or rustic rooms\n",
+          "score": 0.8017337918281555,
+          "kind": "cushion"
+        }
+      ]
+    },
+    {
+      "piece": "several plants in ceramic pots: a large one beside the balcony door and smaller ones on the bookcase and in the corners",
+      "spec": {
+        "piece": "several plants in ceramic pots: a large one beside the balcony door and smaller ones on the bookcase and in the corners",
+        "why": "the plants bring life and greenery to an empty room, and the ceramic pots add texture and earthy color",
+        "kinds": [
+          "plant",
+          "plant pot"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant, potted indoor plants in ceramic pots\nUse: bringing greenery and life; living room\nStyle: bohemian\nMaterials: glazed or handmade ceramic, terracotta\nColors: lush green, terracotta, cream, glazed blue\nShape: mix of tall leafy plant and small trailing plants, round pots of varied sizes\nFeel: lively, natural, fresh\nGoes with: rattan armchair, mustard sofa, warm parquet; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B083YFL9J5",
+          "name": "Amazon Brand \u2013 Stone & Beam Medium Fan-Embossed Planter, 6\"H, Blue",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.0,
+            "depth": 17.0,
+            "height": 15.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B083YFL9J5.jpg"
+          ],
+          "description": "Type: embossed ceramic plant pot\nUse: holding an indoor plant; on a shelf, table or windowsill in a living room, bedroom, home office\nStyle: bohemian, art deco, traditional\nMaterials: reactive glazed stoneware with embossed relief, ribbed interior\nColors: deep cobalt blue, light blue highlights, cream\nShape: rounded cylinder slightly tapered at the base, all-over fan motif, medium size\nFeel: rich, vibrant, crafted\nGoes with: white walls, brass, warm wood, green plants; bohemian or eclectic rooms\n",
+          "score": 0.8253350257873535,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B083YFPSHW",
+          "name": "Amazon Brand \u2013 Stone & Beam Large Fan-Embossed Planter, 7.5\"H, Arabesque Coral Pink",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 20.8,
+            "depth": 20.8,
+            "height": 19.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B083YFPSHW.jpg"
+          ],
+          "description": "Type: embossed ceramic plant pot\nUse: holding an indoor plant; on a shelf, table or floor in a living room, bedroom, home office\nStyle: bohemian, art deco, contemporary\nMaterials: glazed stoneware with embossed relief, ribbed interior\nColors: warm coral pink, cream highlights\nShape: rounded cylinder with a slightly tapered base, all-over fan motif, medium size, solid\nFeel: warm, cheerful, crafted\nGoes with: cream walls, rattan, light wood, green plants; bohemian or eclectic rooms\n",
+          "score": 0.8180971145629883,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B083YFS2FR",
+          "name": "Amazon Brand \u2013 Stone & Beam Medium Floral-Embossed Planter, 6\"H, Cloud Dancer White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.0,
+            "depth": 17.0,
+            "height": 15.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B083YFS2FR.jpg"
+          ],
+          "description": "Type: embossed ceramic planter\nUse: holding a small indoor plant; on a shelf, windowsill or side table; living room, bedroom, home office\nStyle: bohemian, contemporary, Scandinavian\nMaterials: matte glazed ceramic, embossed floral relief, ribbed interior\nColors: soft warm white, light beige interior\nShape: rounded cup shape with gently curved base, all-over medallion flower pattern, small to medium\nFeel: soft, light, delicate\nGoes with: light wood, rattan, cream and beige textiles; Scandinavian or boho rooms\n",
+          "score": 0.7757494449615479,
+          "kind": "plant pot"
+        },
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n",
+          "score": 0.7535911798477173,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n",
+          "score": 0.7451655864715576,
+          "kind": "plant"
+        }
+      ]
+    },
+    {
+      "piece": "a low bookcase with books under the back-wall window",
+      "spec": {
+        "piece": "a low bookcase with books under the back-wall window",
+        "why": "it fills the wall under the window without blocking the light, and the books and objects on top make the room look lived-in",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 40,
+        "max_height_cm": 85,
+        "query": "Type: bookcase, low open bookcase\nUse: storing books and displaying plants and objects; living room\nStyle: bohemian, mid-century modern\nMaterials: warm wood, rattan or cane details\nColors: warm honey or medium wood\nShape: long and low, open shelves, light visual weight\nFeel: warm, personal, relaxed\nGoes with: honey parquet, rattan armchair, ceramic pots; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B001BQ6TU2",
+          "name": "Pinzon Hayes Shelf",
+          "category": "shelf",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B001BQ6TU2.jpg"
+          ],
+          "description": "Type: open bookcase with drawers\nUse: storing books, display and small items; living room, bedroom, home office\nStyle: mid-century modern, contemporary, classic\nMaterials: wood frame and shelves, satin nickel bar pulls\nColors: warm honey wood, silver\nShape: tall open frame with square posts, three open shelves, two stacked drawers, low bottom shelf, slightly tapered legs, gallery top rail, medium visual weight\nFeel: warm, tidy, timeless\nGoes with: warm wood, cream walls, brushed metal accents; mid-century or classic rooms\n",
+          "score": 0.7719922065734863,
+          "kind": "bookcase"
+        },
+        {
+          "id": "703.233.51",
+          "name": "BILLY",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 80.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.233.51.jpg"
+          ],
+          "description": "Type: medium-height open bookcase\nUse: storing books, displaying decor; living room, home office, bedroom\nStyle: Scandinavian, traditional, minimalist\nMaterials: ash-patterned wood veneer in a brown stain, fibreboard back\nColors: medium warm brown, walnut-toned wood grain\nShape: simple boxy upright frame, two adjustable shelves above a base shelf, recessed plinth, flat top, straight edges, open front, medium visual weight\nFeel: warm, practical, orderly, familiar\nGoes with: cream or white walls, warm wood, leather or green accents; traditional studies, Scandinavian living rooms, home offices\n",
+          "score": 0.7609024047851562,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSGBB2D",
+          "name": "Stone & Beam Rylee Modern Bookcase 27.6\"W x 76.8\u201dH, Mixed Gray",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 31.9,
+            "height": 80.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSGBB2D.jpg"
+          ],
+          "description": "Type: tall narrow bookcase\nUse: storing books and display items; living room, home office, bedroom\nStyle: Scandinavian, mid-century modern, rustic\nMaterials: solid wood, rough-sawn drawer front, grey wash finish\nColors: light greyish natural wood\nShape: slim tall case, four open shelves, one middle drawer without handle, closed back, angled splayed legs, compact footprint\nFeel: calm, natural, crafted\nGoes with: white walls, light wood, linen, plants; Scandinavian or Japandi rooms\n",
+          "score": 0.7480440139770508,
+          "kind": "bookcase"
+        },
+        {
+          "id": "202.693.61",
+          "name": "LIATORP",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 96.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.693.61.jpg"
+          ],
+          "description": "Type: tall bookcase with crown molding\nUse: storing and displaying books and decor; living room, home office, library, dining room\nStyle: traditional, classic, farmhouse\nMaterials: painted wood board, beadboard back panel, molded trim\nColors: light grey, soft cool grey\nShape: tall rectangular open case with a stepped cornice on top, tongue-and-groove back, small curved brackets under each shelf, plinth base with a shaped cutout, substantial visual weight\nFeel: elegant, stately, calm, homely\nGoes with: white or cream walls, dark wood floors, linen sofas, brass details; classic, traditional or farmhouse living rooms\n",
+          "score": 0.713053286075592,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSLTLGP",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 140.5,
+            "depth": 20.8,
+            "height": 42.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLTLGP.jpg"
+          ],
+          "description": "Type: wide open etagere bookcase\nUse: displaying books and decor; living room, home office\nStyle: industrial, mid-century modern, contemporary\nMaterials: natural wood tray shelves, black metal tube frame\nColors: warm honey wood, black\nShape: tall wide frame with slim round posts, five shelves with raised tray edges, open back and sides, airy despite its size\nFeel: warm, light, organized\nGoes with: white walls, black accents, leather, plants; industrial or modern rooms\n",
+          "score": 0.7082064151763916,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "a round coffee table in front of the sofa, on the rug",
+      "spec": {
+        "piece": "a round coffee table in front of the sofa, on the rug",
+        "why": "the seating area needs a surface for drinks and books, and a round wood piece softens the arrangement",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, round low table\nUse: holding drinks, books and decor; living room\nStyle: bohemian, mid-century modern\nMaterials: solid wood, rattan or carved details\nColors: warm medium wood\nShape: round, low, sturdy base, medium visual weight\nFeel: warm, casual, earthy\nGoes with: mustard velvet sofa, patterned rug, rattan armchair; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 0.8507533073425293,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QFB1TLZ",
+          "name": "Amazon Brand \u2013 Stone & Beam Ryder Industrial Round Coffee Table, 43.3\" Diameter, Brushed Natural Antique Copper",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 110.0,
+            "depth": 110.0,
+            "height": 42.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QFB1TLZ.jpg"
+          ],
+          "description": "Type: round wood coffee table\nUse: holding drinks, books and decor; living room\nStyle: industrial, rustic, contemporary\nMaterials: thick wood top with visible grain, brushed antique metal base\nColors: warm honey wood, antique gold-copper\nShape: low round drum top with thick edge, four flat metal legs wrapping the top edge, X-shaped cross stretcher, low and substantial\nFeel: warm, earthy, solid\nGoes with: cream or leather sofas, brass accents, natural textures; rustic, industrial or modern rooms\n",
+          "score": 0.7719336152076721,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07DBGQ9DT",
+          "name": "Amazon Brand \u2013 Ravenna Home Anne Marie Round Wood Shelf Storage Curved Leg Coffee Table, 48\"W, Dark Espresso",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 91.4,
+            "depth": 91.4,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBGQ9DT.jpg"
+          ],
+          "description": "Type: round coffee table with shelf\nUse: holding drinks, books and baskets; living room\nStyle: traditional, classic\nMaterials: wood with glossy stained finish\nColors: dark cherry espresso brown\nShape: round top with apron, four gently curved cabriole-style legs, round lower shelf, medium size, compact\nFeel: warm, cozy, classic\nGoes with: traditional upholstery, warm wood, cream or burgundy tones; traditional living rooms\n",
+          "score": 0.7662898302078247,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: round black coffee table\nUse: holding drinks, books and decor; living room, family room\nStyle: Scandinavian, modern, mid-century modern\nMaterials: black painted solid wood legs, painted wood-based top\nColors: matte black\nShape: large round top with a molded edge, four angled splayed legs joined by a crossed stretcher, open base, medium visual weight\nFeel: graphic, calm, bold, grounded\nGoes with: light wood floors, white or grey sofas, brass or white accents; Scandinavian or modern living rooms\n",
+          "score": 0.765330970287323,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07HSLKFD5",
+          "name": "Amazon Brand \u2013 Stone & Beam Commodore Casual Round Coffee Table, 23.6\"W, Whitewash Mango Wood",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 60.9,
+            "depth": 60.9,
+            "height": 46.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLKFD5.jpg"
+          ],
+          "description": "Type: round carved drum coffee table\nUse: holding drinks and decor beside or in front of seating; living room, bedroom\nStyle: bohemian, rustic, coastal\nMaterials: carved mango wood, whitewashed finish\nColors: light warm greige wood, white wash\nShape: cylindrical drum, pierced lattice pattern all around, round top with molded rim, plinth base, compact but solid\nFeel: textured, relaxed, earthy, crafted\nGoes with: rattan, linen, plants, white walls, natural tones; bohemian or coastal living rooms\n",
+          "score": 0.7433245778083801,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp beside the sofa",
+      "spec": {
+        "piece": "a floor lamp beside the sofa",
+        "why": "the room is dark on the right-hand side, and a woven-shade lamp adds warm light and bohemian character",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, woven shade floor lamp\nUse: warm reading and ambient light; living room\nStyle: bohemian, coastal\nMaterials: rattan or woven natural fiber shade, wood stand\nColors: natural rattan, warm wood\nShape: tall slim stand, rounded woven shade, light visual weight\nFeel: warm, soft, cozy\nGoes with: mustard velvet sofa, rattan armchair; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "202.080.42",
+          "name": "KLABB",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.080.42.jpg"
+          ],
+          "description": "Type: rectangular shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: white fabric rectangular shade, nickel-plated metal frame and square base\nColors: white, brushed silver\nShape: boxy rectangular shade on a tall looped stand that splits into two parallel rails curving into a U near the floor, small square base, slim, tall and graphic\nFeel: elegant, calm, refined, crisp\nGoes with: grey or white upholstery, glass and metal tables, white walls; contemporary or modern living rooms\n",
+          "score": 0.737560510635376,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "102.911.31",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.911.31.jpg"
+          ],
+          "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+          "score": 0.7280991077423096,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: turned-column floor lamp\nUse: ambient reading light; living room, bedroom, home office, beside a sofa or armchair\nStyle: farmhouse, rustic, traditional\nMaterials: whitewashed distressed finish column, linen burlap drum shade\nColors: soft grey-green whitewash, warm oatmeal beige shade\nShape: slim turned pole with bulbous knob detail, round disc base, wide drum shade, tall and slender\nFeel: soft, cozy, relaxed, vintage\nGoes with: linen sofas, light or reclaimed wood, cream walls; farmhouse, cottage or coastal rooms\n",
+          "score": 0.7261909246444702,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "901.638.65",
+          "name": "RSTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/901.638.65.jpg"
+          ],
+          "description": "Type: floor lamp with pleated fabric shade\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom, reading corner\nStyle: classic, traditional, contemporary\nMaterials: brushed nickel-plated metal stem and domed base, white pleated fabric shade, pull-chain switch\nColors: white, brushed silver nickel\nShape: tapered empire shade with fine pleats, slim straight stem, round stepped domed base, tall and slender, light visual weight\nFeel: elegant, soft, calm, timeless\nGoes with: white or grey walls, dark or light wood, linen upholstery; classic, traditional or contemporary living rooms and bedrooms\n",
+          "score": 0.7145590782165527,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "302.865.67",
+          "name": "SAMTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.865.67.jpg"
+          ],
+          "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.7138895392417908,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a patterned throw over the sofa armrest",
+      "spec": {
+        "piece": "a patterned throw over the sofa armrest",
+        "why": "it adds another layer of texture and color, the casual lived-in look the client is after",
+        "kinds": [
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: throw, woven fringed blanket\nUse: layering on the sofa; living room\nStyle: bohemian\nMaterials: cotton or wool, woven texture, fringe\nColors: terracotta, rust, cream\nShape: rectangular, fringed edges, chunky weave\nFeel: cozy, relaxed, warm\nGoes with: mustard velvet sofa, patterned cushions and rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B075X53WD9",
+          "name": "Rivet Modern Global-Inspired Textured Tassel Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X53WD9.jpg"
+          ],
+          "description": "Type: textured tassel throw blanket\nUse: layering on an armchair, sofa or bed; living room, bedroom\nStyle: bohemian, rustic, contemporary\nMaterials: woven cotton with ribbed texture, twisted rope tassels\nColors: cream, natural off-white\nShape: rectangular throw, horizontal ribbed bands, thick twisted rope fringe with knotted tassel ends, chunky and substantial\nFeel: earthy, crafted, warm, relaxed\nGoes with: cognac leather, warm wood, black and white rugs; bohemian, rustic or mid-century rooms\n",
+          "score": 0.8245861530303955,
+          "kind": "throw"
+        },
+        {
+          "id": "202.121.62",
+          "name": "HERMINE",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.121.62.jpg"
+          ],
+          "description": "Type: plaid fringed throw blanket\nUse: warmth and a cozy layer on a sofa, armchair or bed; living room, bedroom\nStyle: traditional, Scandinavian, farmhouse\nMaterials: soft brushed woven fabric, twisted fringe on the short ends\nColors: light grey, warm brown and charcoal check stripes, off-white\nShape: flat rectangular blanket with a tartan check pattern, long tasseled fringe along both ends, soft drape, light visual weight\nFeel: cozy, warm, homey, relaxed\nGoes with: grey or beige sofas, warm wood, wool and leather; traditional, cabin-style or Scandinavian living rooms\n",
+          "score": 0.8193148374557495,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B078LDWJVN",
+          "name": "Stone & Beam Oversized Stripe Brushed Weave Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B078LDWJVN.jpg"
+          ],
+          "description": "Type: brushed weave throw blanket\nUse: warmth and layering on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, traditional, minimalist\nMaterials: brushed open weave, fuzzy mohair-like yarn, fringe\nColors: pale blush pink, soft white, light warm grey\nShape: oversized rectangle, subtle stripe, airy nubby texture, long soft fringe on the ends, light and lofty\nFeel: soft, gentle, cozy, airy\nGoes with: beige or cream upholstery, light neutrals, dark wood; traditional or soft contemporary bedrooms and living rooms\n",
+          "score": 0.8173662424087524,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B079TXJWT8",
+          "name": "Amazon Brand \u2013 Rivet Global Inspired Geometric Throw Blanket, Soft and Stylish, 50\" x 60\", Navy and Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079TXJWT8.jpg"
+          ],
+          "description": "Type: geometric jacquard throw blanket\nUse: warmth and layering on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, contemporary, rustic\nMaterials: soft woven herringbone-textured fabric, twisted fringe\nColors: navy blue, cream, warm tan accents\nShape: rectangular, bold diamond and lattice pattern, tan stripe borders, twisted tassel fringe on the ends, flat, medium weight\nFeel: graphic, cozy, global, lively\nGoes with: white walls, warm wood, leather, navy or rust accents; bohemian or eclectic living rooms\n",
+          "score": 0.8132220506668091,
+          "kind": "throw"
+        },
+        {
+          "id": "703.084.16",
+          "name": "MAJJE",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.084.16.jpg"
+          ],
+          "description": "Type: fringed fleece throw\nUse: warmth and color on a sofa, an armchair or a bed; living room, bedroom, children's room\nStyle: contemporary, Scandinavian\nMaterials: soft polyester fleece, short cut fringe along the ends, zigzag stitched edges\nColors: bright grass green, turquoise blue, navy, pale cream\nShape: folded flat rectangular blanket with a short cut fringe on the ends, smooth plain surface, light and thin\nFeel: cozy, cheerful, casual, soft\nGoes with: white or grey sofas, bright accents, light wood; casual family living rooms and children's rooms\n",
+          "score": 0.7914574146270752,
+          "kind": "throw"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

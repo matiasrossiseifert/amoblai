@@ -1,0 +1,70 @@
+{
+ "azar": {
+  "variante": "azar",
+  "ambientes": 7,
+  "piezas": 36,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 6,
+   "2": 7,
+   "3": 8,
+   "4": 8,
+   "5": 7
+  },
+  "elegido_es_el_primero": 0.1667,
+  "elegido_en_puestos_4_y_5": 0.4167,
+  "puntaje_del_primero": null,
+  "elegidos_sin_ninguna_medida": 0.3333,
+  "piezas_con_candidatos_del_mismo_modelo": 3,
+  "elegido_tiene_el_primer_estilo_pedido": 0.3333,
+  "elegidos_de_abo": 0.6667
+ },
+ "densa": {
+  "variante": "densa",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 33,
+   "2": 17,
+   "3": 7,
+   "4": 9,
+   "5": 9
+  },
+  "elegido_es_el_primero": 0.44,
+  "elegido_en_puestos_4_y_5": 0.24,
+  "puntaje_del_primero": {
+   "mediana": 0.8176,
+   "p10": 0.7595,
+   "p90": 0.8626
+  },
+  "elegidos_sin_ninguna_medida": 0.36,
+  "piezas_con_candidatos_del_mismo_modelo": 18,
+  "elegido_tiene_el_primer_estilo_pedido": 0.6267,
+  "elegidos_de_abo": 0.52
+ },
+ "hibrida": {
+  "variante": "hibrida",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 31,
+   "2": 22,
+   "3": 7,
+   "4": 9,
+   "5": 6
+  },
+  "elegido_es_el_primero": 0.4133,
+  "elegido_en_puestos_4_y_5": 0.2,
+  "puntaje_del_primero": {
+   "mediana": 1.7685,
+   "p10": 1.3198,
+   "p90": 2.5318
+  },
+  "elegidos_sin_ninguna_medida": 0.36,
+  "piezas_con_candidatos_del_mismo_modelo": 23,
+  "elegido_tiene_el_primer_estilo_pedido": 0.6,
+  "elegidos_de_abo": 0.4933
+ }
+}
