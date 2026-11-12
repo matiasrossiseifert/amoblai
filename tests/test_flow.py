@@ -307,6 +307,14 @@ def test_the_whole_flow_with_claude_and_fal_stays_within_the_caps(tmp_path, cfg,
     assert spent == pytest.approx(3 * (10000 * 4 + 1000 * 20) / 1e6)
     assert Ledger(cfg.budget.ledger, 0.1, "fal").spent() == pytest.approx(0.08)
 
+    # La misma carpeta con el mismo pedido se retoma sin llamar a nadie; con otro pedido se
+    # rechaza: devolvería la lista y la imagen del pedido anterior como si fueran del nuevo.
+    run_flow(photo, "un living con un sofá rojo", cfg, out, log=lambda _: None)
+    assert len(seen_claude) == 3
+    with pytest.raises(ValueError, match="another request"):
+        run_flow(photo, "un comedor para ocho", cfg, out, log=lambda _: None)
+    assert json.loads((out / "request.json").read_text())["request"] == "un living con un sofá rojo"
+
     # El tope de fal (US$0,10) deja una sola imagen: la segunda se corta antes de salir.
     with pytest.raises(BudgetExceeded):
         run_flow(photo, "otro pedido", cfg, tmp_path / "run2", log=lambda _: None)

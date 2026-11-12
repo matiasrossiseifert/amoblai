@@ -251,7 +251,10 @@ def amoblar(
 
     cfg = cfg_for(config, [*(overrides or []), f"furnish.generator={generador}"], paid=pagar)
     out = Path(cfg.runs_dir) / (nombre or foto.stem)
-    run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
+    try:
+        run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
+    except ValueError as e:  # la carpeta tiene la corrida de otro pedido
+        raise typer.BadParameter(str(e)) from e
     console.print(f"Corrida: {out}")
 
 
