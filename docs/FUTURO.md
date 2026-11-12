@@ -49,6 +49,12 @@ verdad. Esfuerzo aproximado: S ≈ días, M ≈ 1-2 semanas, L ≈ un mes o más
   si cambia la lista. (S)
 - **Un modelo más barato para elegir**: la elección con Opus cuesta US$0,14 por pedido. Medir
   cuánto se pierde con Sonnet. (S, unos US$5)
+- **Dónde deja de alcanzar el contexto largo**: con 1.502 productos, poner el catálogo entero en
+  el prompt empata con la búsqueda (T8d). Repetirlo con catálogos de 5 y 50 mil productos (ABO
+  tiene 147.702), donde el catálogo ya no entra o la caché ya no compensa, y con un modelo chico
+  eligiendo entre los candidatos de la búsqueda. (M, unos US$10)
+- **Un camino mixto**: que el modelo lea el catálogo entero (en caché) para proponer candidatos
+  en texto, y mirar las fotos solo de esos. No lo medimos. (M)
 
 ## Escala y geometría
 
