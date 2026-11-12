@@ -1,0 +1,301 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is a three-seat sofa",
+   "about": "691.249.46",
+   "supported": true,
+   "evidence": "Product line says three-seat sofa; the photo shows three seat cushions."
+  },
+  {
+   "claim": "Sofa is upholstered in light fabric",
+   "about": "691.249.46",
+   "supported": true,
+   "evidence": "The photo shows white or light grey upholstery."
+  },
+  {
+   "claim": "Sofa legs are birch",
+   "about": "691.249.46",
+   "supported": false,
+   "evidence": "The legs look like light wood, but no species is given."
+  },
+  {
+   "claim": "Sofa fits along the left wall",
+   "about": "691.249.46",
+   "supported": false,
+   "evidence": "The sofa's size is unknown, so fit cannot be checked."
+  },
+  {
+   "claim": "Room has a long left wall",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a long, uninterrupted white left wall."
+  },
+  {
+   "claim": "Rocking chair has a bentwood frame",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "Product line says bentwood rocking armchair."
+  },
+  {
+   "claim": "Rocking chair frame is birch",
+   "about": "490.904.81",
+   "supported": false,
+   "evidence": "The frame is light wood, but no species is stated."
+  },
+  {
+   "claim": "Rocking chair has a cream cushion",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "The photo shows an off-white cushion."
+  },
+  {
+   "claim": "Rocking chair wood matches the sofa legs in tone",
+   "about": "490.904.81",
+   "supported": true,
+   "evidence": "Both photos show similar light wood."
+  },
+  {
+   "claim": "Coffee table is light ash",
+   "about": "902.976.57",
+   "supported": false,
+   "evidence": "The line says only light wood; ash is not stated."
+  },
+  {
+   "claim": "Coffee table has tapered legs",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The photo shows tapered legs."
+  },
+  {
+   "claim": "Coffee table is from the same line as the dining table",
+   "about": "902.976.57",
+   "supported": false,
+   "evidence": "They look similar, but nothing states a shared line."
+  },
+  {
+   "claim": "Rug is speckled wool",
+   "about": "abo-B0725Z9MX3",
+   "supported": true,
+   "evidence": "Product line says speckled wool area rug."
+  },
+  {
+   "claim": "Rug is warm beige",
+   "about": "abo-B0725Z9MX3",
+   "supported": true,
+   "evidence": "The photo shows a beige, tan-speckled rug."
+  },
+  {
+   "claim": "Dining table is light ash",
+   "about": "702.943.39",
+   "supported": false,
+   "evidence": "The line says wooden; ash is not stated."
+  },
+  {
+   "claim": "Dining table seats six, two per side plus the ends",
+   "about": "702.943.39",
+   "supported": true,
+   "evidence": "At 140 x 78 cm, two 56 cm-wide chairs fit per long side (112 cm) and one at each 78 cm end."
+  },
+  {
+   "claim": "Room has a large window at the far end",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a sliding glass door to a balcony at the end."
+  },
+  {
+   "claim": "Request asks for a dining table for six near the window",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'cerca del ventanal, una mesa de comedor para seis'."
+  },
+  {
+   "claim": "Dining chairs are beech",
+   "about": "abo-B0857JM2NC",
+   "supported": false,
+   "evidence": "The line says wooden; beech is not stated."
+  },
+  {
+   "claim": "Dining chairs have woven cord seats",
+   "about": "abo-B0857JM2NC",
+   "supported": true,
+   "evidence": "The photo shows a woven cord seat."
+  },
+  {
+   "claim": "Dining chairs are armchairs",
+   "about": "abo-B0857JM2NC",
+   "supported": true,
+   "evidence": "Product line says wooden dining armchair."
+  },
+  {
+   "claim": "Pendant is woven bamboo",
+   "about": "703.116.97",
+   "supported": true,
+   "evidence": "Product line says woven bamboo pendant lamp."
+  },
+  {
+   "claim": "Floor lamp has a swing arm",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "Product line and photo show a swing arm."
+  },
+  {
+   "claim": "Floor lamp has a white shade",
+   "about": "302.865.67",
+   "supported": true,
+   "evidence": "The photo shows a white drum shade."
+  },
+  {
+   "claim": "Sideboard is warm-toned wood",
+   "about": "abo-B075Z8628K",
+   "supported": true,
+   "evidence": "The photo shows mid-brown wood."
+  },
+  {
+   "claim": "Sideboard has tapered legs",
+   "about": "abo-B075Z8628K",
+   "supported": true,
+   "evidence": "The photo shows splayed tapered legs."
+  },
+  {
+   "claim": "Sideboard has a textured front",
+   "about": "abo-B075Z8628K",
+   "supported": true,
+   "evidence": "Line says checkerboard front; the photo shows a carved block pattern."
+  },
+  {
+   "claim": "Curtains are white linen",
+   "about": "502.841.95",
+   "supported": true,
+   "evidence": "Product line says white linen curtains."
+  },
+  {
+   "claim": "Curtains are a pair",
+   "about": "502.841.95",
+   "supported": true,
+   "evidence": "Product line says pair."
+  },
+  {
+   "claim": "Cushion is cream and grey",
+   "about": "abo-B07JKJSRQG",
+   "supported": true,
+   "evidence": "The photo shows cream and grey weave."
+  },
+  {
+   "claim": "Cushion is woven with tassels",
+   "about": "abo-B07JKJSRQG",
+   "supported": true,
+   "evidence": "Line and photo show a woven, tasseled cushion."
+  },
+  {
+   "claim": "Throw is cream",
+   "about": "302.006.96",
+   "supported": true,
+   "evidence": "The photo shows a cream throw."
+  },
+  {
+   "claim": "Throw is cable-knit",
+   "about": "302.006.96",
+   "supported": true,
+   "evidence": "Product line says cable-knit."
+  },
+  {
+   "claim": "Plant is an areca palm",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "Product line says areca palm."
+  },
+  {
+   "claim": "Palm is tall",
+   "about": "468.040.05",
+   "supported": false,
+   "evidence": "The plant's size is unknown."
+  },
+  {
+   "claim": "Palm is green",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "The photo shows green fronds."
+  },
+  {
+   "claim": "Room has a corner between the two zones",
+   "about": "room",
+   "supported": false,
+   "evidence": "The photo shows no clear corner dividing the two zones."
+  },
+  {
+   "claim": "Wall art is a pair of prints",
+   "about": "abo-B073P13P7Q",
+   "supported": false,
+   "evidence": "The line describes a single print."
+  },
+  {
+   "claim": "Wall art is black and white",
+   "about": "abo-B073P13P7Q",
+   "supported": true,
+   "evidence": "The photo shows a black-and-white print."
+  },
+  {
+   "claim": "Wall art depicts a tree line",
+   "about": "abo-B073P13P7Q",
+   "supported": true,
+   "evidence": "Product line says abstract tree line print."
+  },
+  {
+   "claim": "Vases are a set of two",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "Product line says set of two."
+  },
+  {
+   "claim": "Vases are matte stoneware",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "Product line says matte stoneware."
+  },
+  {
+   "claim": "One vase is cream",
+   "about": "abo-B07QHL8W81",
+   "supported": true,
+   "evidence": "The photo shows an off-white vase."
+  },
+  {
+   "claim": "Other vase is sage green",
+   "about": "abo-B07QHL8W81",
+   "supported": false,
+   "evidence": "The photo shows a blue-grey vase, not clearly green."
+  },
+  {
+   "claim": "Room walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows white walls."
+  },
+  {
+   "claim": "Room floor is oak",
+   "about": "room",
+   "supported": false,
+   "evidence": "The floor is wood plank, but the species is not stated."
+  },
+  {
+   "claim": "Chair seats are paper cord",
+   "about": "abo-B0857JM2NC",
+   "supported": false,
+   "evidence": "The seat is woven cord, but the material is not stated."
+  },
+  {
+   "claim": "Request asks for a large sofa, reading chair, coffee table and rug",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá grande, un sillón para leer, una mesa ratona y una alfombra'."
+  },
+  {
+   "claim": "Request asks for light woods, cream textiles and some green",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Maderas claras, textiles en tonos crema y algo de verde'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.134796,
+ "_prompt": "juez_fidelidad_v2"
+}

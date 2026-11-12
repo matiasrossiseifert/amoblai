@@ -120,10 +120,25 @@ def test_text_retrieval_eval_finds_the_annotated_products(tmp_path, cfg, dataset
         Method("hashing", "description", "kind", dim=256),
         Method("hashing", "description", "kind", chunks="lines-max"),
         Method("hashing", "description", "kind", chunks="lines-aligned"),
+        Method("bm25", "description", "kind"),  # búsqueda léxica
+        Method("hashing", "description", "kind", fusion="bm25"),  # híbrida: densa + léxica
+        Method("hashing", "description", "kind", fusion="bm25", fusion_rule="rrf"),
+        Method("hashing", "seller-full", "none", query="piece"),  # naive: sin reescribir
+        Method("hashing", "description", "kind", drop="Feel+Goes with"),
     ]
     run = run_eval(cfg, qpath, dataset_root, tmp_path / "evals", methods, name="t", n_boot=50)
     m = json.loads((run / "metricas.json").read_text())
     ours = m["hashing|description|filtro-kind"]
+    # la léxica y la híbrida encuentran lo mismo en este catálogo chico, y cada método trae su
+    # diferencia pareada contra el primero y contra el anterior
+    for variant in ("bm25|description|filtro-kind", "hashing|description|filtro-kind|+bm25"):
+        assert m[variant]["hit@1"] == 1.0
+        assert m[variant]["vs_base"]["hit@1"] == 0.0 and "hit@5_ic95" in m[variant]["vs_anterior"]
+    assert "hashing|description|filtro-kind|+bm25|fusion-rrf" in m
+    assert "hashing|seller-full|filtro-none|consulta-piece" in m
+    assert "hashing|description|filtro-kind|sin-Feel+Goes with" in m
+    assert "vs_base" not in ours  # el primero es la base
+    assert json.loads((run / "corrida.json").read_text())["embedders"]["bm25"] == {"kind": "bm25"}
     # ChromaDB (HNSW) y la búsqueda exacta ordenan igual
     rows = [
         json.loads(x)
@@ -306,6 +321,14 @@ def test_the_whole_flow_with_claude_and_fal_stays_within_the_caps(tmp_path, cfg,
     spent = Ledger(cfg.budget.ledger, 1.0, "anthropic").spent()
     assert spent == pytest.approx(3 * (10000 * 4 + 1000 * 20) / 1e6)
     assert Ledger(cfg.budget.ledger, 0.1, "fal").spent() == pytest.approx(0.08)
+
+    # La misma carpeta con el mismo pedido se retoma sin llamar a nadie; con otro pedido se
+    # rechaza: devolvería la lista y la imagen del pedido anterior como si fueran del nuevo.
+    run_flow(photo, "un living con un sofá rojo", cfg, out, log=lambda _: None)
+    assert len(seen_claude) == 3
+    with pytest.raises(ValueError, match="another request"):
+        run_flow(photo, "un comedor para ocho", cfg, out, log=lambda _: None)
+    assert json.loads((out / "request.json").read_text())["request"] == "un living con un sofá rojo"
 
     # El tope de fal (US$0,10) deja una sola imagen: la segunda se corta antes de salir.
     with pytest.raises(BudgetExceeded):

@@ -4,9 +4,9 @@ Junta la última corrida de cada ablación hecha sobre el mismo catálogo y las 
 la más reciente (si un método está en varias, manda la más reciente); las de un catálogo o unas
 consultas anteriores van aparte, en su propia tabla. Escribe en `datos/resultados/reporte/`:
 - `reporte.md` y `retrieval_texto.csv`: una fila por método;
-- `camino_texto.png`: el camino incremental (naive → nuestras descripciones → filtro → mejor
-  embedder → reranking), con IC 95%;
-- `avanzado.png`: base vectorial (ChromaDB vs. exacta), query rewriting y reranking;
+- `camino_texto.png`: el camino incremental, un cambio por paso (naive → nuestras descripciones →
+  la consulta como ficha → filtro por kind → + léxica → + foto), con IC 95%;
+- `avanzado.png`: base vectorial (ChromaDB vs. exacta) y reranking (la técnica aislada);
 - `texto_vs_imagen.png`: el mejor método por texto contra la mejor configuración de la v0 (por
   imagen, datos/resultados/v0_imagen), sobre los mismos 65 ambientes y el mismo catálogo (la
   corrida `V0_TWIN`, con los 275 productos del primer alcance);
@@ -38,25 +38,30 @@ SERIES = ["#2a78d6", "#eb6834", "#1baf7a"]
 SURFACE, INK, INK2, GRID = "#fcfcfb", "#0b0b0b", "#52514e", "#e4e3df"
 
 # El camino incremental de la presentación: cada paso cambia una sola cosa.
+# (ablaciones/camino.yaml; hasta el 2026-11-12 el camino partía de una bolsa de palabras, juntaba
+# embedder y filtro en un paso y terminaba en el reranking, que no es un paso del flujo)
 CAMINO = [
-    ("T0 naive: hashing, texto del vendedor, sin filtro", "hashing|seller|filtro-none"),
-    ("T1 + nuestras descripciones", "hashing|description|filtro-none"),
-    ("T2 + filtro por tipo", "hashing|description|filtro-type"),
-    ("T2' filtro por kind (más fino)", "hashing|description|filtro-kind"),
-    ("T3 Qwen3-Embedding", "qwen3|description|filtro-type"),
-    ("T3' BGE", "bge|description|filtro-type"),
-    ("T4 + reranking (VLM)", "qwen3|description|filtro-type|rerank-opus"),
+    (
+        "1. naive: texto del vendedor,\nconsulta sin reescribir",
+        "qwen3|seller-full|filtro-none|consulta-piece",
+    ),
+    ("2. + nuestras descripciones", "qwen3|description|filtro-none|consulta-piece"),
+    ("3. + la consulta como ficha (HyDE)", "qwen3|description|filtro-none"),
+    ("4. + filtro por kind: el flujo", "qwen3|description|filtro-kind"),
+    ("5. + léxica (BM25)", "qwen3|description|filtro-kind|+bm25"),
+    ("6. + la foto (SigLIP 2)", "qwen3|description|filtro-kind|+bm25+siglip2"),
 ]
 
 # Advanced RAG sobre el mejor método: cada fila cambia una sola cosa.
 AVANZADO = [
     ("ChromaDB (HNSW)", "qwen3|description|filtro-type"),
     ("búsqueda exacta", "qwen3|description|filtro-type|exact"),
-    ("consulta: solo Type", "qwen3|description|filtro-type|consulta-type"),
-    ("consulta: solo el kind", "qwen3|description|filtro-type|consulta-kind"),
     ("+ reranking cross-encoder (MiniLM)", "qwen3|description|filtro-type|rerank-minilm-reranker"),
     ("+ reranking cross-encoder (Qwen3)", "qwen3|description|filtro-type|rerank-qwen3-reranker"),
-    ("+ reranking VLM (Opus 5.5)", "qwen3|description|filtro-type|rerank-opus"),
+    (
+        "+ un VLM ordena el top-10\nmirando las fotos (Opus 5.5)",
+        "qwen3|description|filtro-type|rerank-opus",
+    ),
 ]
 
 
@@ -318,7 +323,11 @@ def replicas_section(main: pd.DataFrame, replicas: list[Path]) -> list[str]:
     """Los mismos métodos con las consultas escritas tres veces: promedio ± desvío."""
     if not replicas:
         return []
-    by_rep = {replica_of(r): table(r).set_index("método") for r in replicas}
+    by_rep: dict[str, pd.DataFrame] = {}
+    for r in replicas:  # con la misma réplica se pueden haber corrido varias ablaciones
+        t, key = table(r).set_index("método"), replica_of(r)
+        prev = by_rep.get(key)
+        by_rep[key] = t if prev is None else pd.concat([prev[~prev.index.isin(t.index)], t])
     names = sorted({n for t in by_rep.values() for n in t.index})
     base = main.set_index("método")
     md = [
@@ -476,13 +485,14 @@ def answer_section(runs_dir: Path) -> list[str]:
     if not found:
         return []
     md = [
-        "## La respuesta en texto: faithfulness y answer relevance (RAGAS)",
+        "## La respuesta en texto: faithfulness y answer relevance, versión 1 de los jueces",
         "",
-        "Faithfulness: de las afirmaciones de hecho del porqué de cada producto, cuántas se "
-        "infieren de lo que vio el sistema (pedido, foto del ambiente, foto, descripción y medida "
-        "de cada producto). Answer relevance: coseno medio (Qwen3) entre el pedido original y tres "
-        "pedidos que un juez que no lo vio infiere de la respuesta; la vara es el mismo coseno con "
-        "pedidos de contraste. Jueces: subagentes de Claude Code.",
+        "**No comparar con la versión 2 (abajo).** Estos jueces (2026-10-23, subagentes de Claude "
+        "Code) tenían una fuga (el prompt traía de ejemplo el pedido evaluado) y leían la "
+        "descripción completa de cada producto, que el generador no ve. Faithfulness: de las "
+        "afirmaciones de hecho del porqué, cuántas se infieren del contexto. Answer relevance: "
+        "coseno medio (Qwen3) entre el pedido original y tres pedidos que un juez que no lo vio "
+        "infiere de la respuesta; la vara es el mismo coseno con pedidos sin relación.",
         "",
         "| corrida | afirmaciones | faithfulness | answer relevance | vara | no sostenidas |",
         "|---|---|---|---|---|---|",
@@ -494,6 +504,40 @@ def answer_section(runs_dir: Path) -> list[str]:
         md.append(
             f"| {r['corrida']} | {fi.get('afirmaciones')} | {fi.get('faithfulness')} "
             f"| {rel.get('answer_relevance')} | {rel.get('vara_contrastes')} | {bad} |"
+        )
+    return [*md, "", *answer_v2_section()]
+
+
+def answer_v2_section() -> list[str]:
+    """Los jueces versión 2 sobre las listas de la configuración final (answer.summary)."""
+    from amoblai.evaluation.answer import SUMMARY
+
+    if not SUMMARY.exists():
+        return []
+    data = json.loads(SUMMARY.read_text())
+    fid, rel = data.get("faithfulness") or {}, data.get("answer_relevance") or {}
+    md = [
+        "## La respuesta en texto, versión 2 de los jueces (la configuración final)",
+        "",
+        "El juez de faithfulness recibe lo que vio el generador (el pedido, la foto del ambiente "
+        "y, de cada producto elegido, su foto y la línea con su kind, su tipo y su medida); el de "
+        "answer relevance no tiene ejemplos de pedido. Vara cruzada: el pedido de cada corrida "
+        "contra los pedidos que el juez escribió para las otras corridas.",
+        "",
+        f"- Faithfulness: **{fid.get('global')}** ({fid.get('sostenidas')} de "
+        f"{fid.get('afirmaciones')} afirmaciones, {data.get('corridas')} corridas).",
+        f"- Answer relevance: **{rel.get('media')}**; vara cruzada {rel.get('vara_cruzada')} "
+        f"(la propia la supera en {rel.get('supera_a_la_cruzada')} corridas); vara de pedidos sin "
+        f"relación {rel.get('vara_contrastes')}.",
+        "",
+        "| corrida | afirmaciones | faithfulness | answer relevance |",
+        "|---|---|---|---|",
+    ]
+    for r in data.get("por_corrida", []):
+        fi, re_ = r.get("fidelidad", {}), r.get("relevancia", {})
+        md.append(
+            f"| {r['corrida']} | {fi.get('afirmaciones')} | {fi.get('faithfulness')} "
+            f"| {re_.get('answer_relevance')} |"
         )
     return [*md, ""]
 
@@ -588,11 +632,11 @@ def build_report(
                 "hit@1": [by.loc[k, "hit@1_ic95"] for k in keys],
                 "MRR@10": [by.loc[k, "mrr@10_ic95"] for k in keys],
             },
-            "Qwen3 + descripciones + filtro por tipo: base vectorial, consulta y reranking",
+            "Qwen3 + descripciones + filtro por tipo: base vectorial y reranking (técnica aislada)",
             out_dir / "avanzado.png",
         )
         md += [
-            "## Base vectorial, query rewriting y reranking",
+            "## Base vectorial y reranking",
             "",
             "![avanzado](avanzado.png)",
             "",
@@ -613,7 +657,7 @@ def build_report(
                 "hit@1": [by.loc[k, "hit@1_ic95"] for k in keys],
                 "MRR@10": [by.loc[k, "mrr@10_ic95"] for k in keys],
             },
-            "Retrieval por texto: camino incremental (IC 95% bootstrap por ambiente)",
+            "El buscador: camino incremental, un cambio por paso (IC 95% bootstrap por ambiente)",
             out_dir / "camino_texto.png",
         )
         md += ["![camino](camino_texto.png)", ""]

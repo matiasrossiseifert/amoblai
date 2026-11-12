@@ -1,0 +1,217 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is light grey",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "Image 2 shows a light grey upholstered sofa."
+  },
+  {
+   "claim": "Sofa is a three-seat sofa",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line says 'three-seat sofa'."
+  },
+  {
+   "claim": "Sofa has slim arms",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "Image 2 shows narrow track arms."
+  },
+  {
+   "claim": "Sofa has wooden legs",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "Image 2 shows dark tapered wooden legs."
+  },
+  {
+   "claim": "Sofa is 234 cm wide",
+   "about": "abo-B072M1WJF2",
+   "supported": true,
+   "evidence": "The product line gives 234 cm wide."
+  },
+  {
+   "claim": "The left wall is long",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a long, uninterrupted left wall running toward the balcony."
+  },
+  {
+   "claim": "Person asked for a light grey three-seat sofa against the left wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá de tres cuerpos gris claro contra la pared de la izquierda'."
+  },
+  {
+   "claim": "Rug is 170 x 240 cm",
+   "about": "302.837.81",
+   "supported": true,
+   "evidence": "The product line gives 170 cm wide and 240 cm deep."
+  },
+  {
+   "claim": "Rug is cream",
+   "about": "302.837.81",
+   "supported": true,
+   "evidence": "Image 3 shows a cream/off-white shaggy rug."
+  },
+  {
+   "claim": "Person asked for a large rug to define the area",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una alfombra grande que arme la zona'."
+  },
+  {
+   "claim": "Floor is grey-toned",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a greyish wood-look floor."
+  },
+  {
+   "claim": "Coffee table is light wood",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "The product line says 'light wood' and Image 4 shows pale wood."
+  },
+  {
+   "claim": "Coffee table is ash",
+   "about": "902.976.57",
+   "supported": false,
+   "evidence": "The product line only says 'light wood'; the species is not given."
+  },
+  {
+   "claim": "Coffee table has tapered legs",
+   "about": "902.976.57",
+   "supported": true,
+   "evidence": "Image 4 shows tapered legs."
+  },
+  {
+   "claim": "Person asked for a light wood coffee table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una mesa ratona de madera clara'."
+  },
+  {
+   "claim": "TV console is long",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "The product line says 'long TV console', 174 cm wide."
+  },
+  {
+   "claim": "TV console is low",
+   "about": "102.659.24",
+   "supported": false,
+   "evidence": "The product line gives no height."
+  },
+  {
+   "claim": "TV console is cream",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "Image 5 shows an off-white/cream unit."
+  },
+  {
+   "claim": "TV console has open shelves",
+   "about": "102.659.24",
+   "supported": true,
+   "evidence": "The product line and Image 5 show open shelves."
+  },
+  {
+   "claim": "Walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows white walls."
+  },
+  {
+   "claim": "Person asked for a low TV unit across from the sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un mueble bajo para la tele enfrente del sofá'."
+  },
+  {
+   "claim": "Lamp is a black arc floor lamp",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "The product line says arc floor lamp and Image 6 shows a black arc."
+  },
+  {
+   "claim": "Lamp has a drum shade",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "Image 6 shows a cylindrical drum shade."
+  },
+  {
+   "claim": "Lamp shade gives warm light",
+   "about": "abo-B07B4YXXS9",
+   "supported": true,
+   "evidence": "Image 6 shows a warm-toned glowing shade."
+  },
+  {
+   "claim": "Balcony door frame is black",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a black-framed door."
+  },
+  {
+   "claim": "Person asked for a floor lamp",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara de pie'."
+  },
+  {
+   "claim": "Cushions are cream",
+   "about": "abo-B07BMTN6GF",
+   "supported": true,
+   "evidence": "Image 7 shows a cream base."
+  },
+  {
+   "claim": "Cushions have small colorful geometric accents",
+   "about": "abo-B07BMTN6GF",
+   "supported": true,
+   "evidence": "Image 7 shows small red, green, blue and yellow geometric motifs."
+  },
+  {
+   "claim": "Person asked for cushions and a plant for color",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Almohadones y una planta para darle color'."
+  },
+  {
+   "claim": "Plant is an areca palm",
+   "about": "468.040.05",
+   "supported": true,
+   "evidence": "The product line says areca palm."
+  },
+  {
+   "claim": "Palm is tall",
+   "about": "468.040.05",
+   "supported": false,
+   "evidence": "The product line says size unknown."
+  },
+  {
+   "claim": "Balcony door area is the brightest spot",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows daylight entering through the glass door."
+  },
+  {
+   "claim": "Curtains are a pair of white sheer curtains",
+   "about": "500.460.48",
+   "supported": true,
+   "evidence": "The product line says white sheer, pair; Image 9 confirms."
+  },
+  {
+   "claim": "Balcony door is a wide sliding door",
+   "about": "room",
+   "supported": true,
+   "evidence": "Image 1 shows a wide two-panel sliding glass door."
+  },
+  {
+   "claim": "Person wants a modern, bright living room for having friends over",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'living moderno y luminoso para recibir amigos'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.089588,
+ "_prompt": "juez_fidelidad_v2"
+}

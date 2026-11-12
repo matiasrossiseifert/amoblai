@@ -99,12 +99,16 @@ def catalog_of(cfg: Config):
 
 
 def index_is_current(cfg: Config) -> bool:
+    """The index on disk was built from this catalog, these descriptions and this embedder."""
     f = index_path(cfg) / "index.json"
     if not f.exists():
         return False
     meta = json.loads(f.read_text())
-    return meta.get("schema") == INDEX_SCHEMA and meta.get("catalog_sha") == catalog_sha(
-        catalog_of(cfg)
+    return (
+        meta.get("schema") == INDEX_SCHEMA
+        and meta.get("catalog_sha") == catalog_sha(catalog_of(cfg))
+        and (meta.get("describer") or {}).get("key") == get_describer(cfg.rag.describer, cfg).key()
+        and (meta.get("embedder") or {}).get("key") == get_embedder(cfg.rag.embedder, cfg).key()
     )
 
 
@@ -115,6 +119,12 @@ def index_path(cfg: Config) -> Path:
 
 def open_index(cfg: Config) -> Index:
     return Index.load(index_path(cfg))
+
+
+def ensure_index(cfg: Config, log: Callable[[str], None] = lambda _: None) -> Index:
+    """The index of the config's catalog: the one on disk when it is current, built otherwise
+    (building it again would rewrite the files and leave the old ChromaDB segment behind)."""
+    return open_index(cfg) if index_is_current(cfg) else build_index(cfg, log=log)
 
 
 def describe_cached(

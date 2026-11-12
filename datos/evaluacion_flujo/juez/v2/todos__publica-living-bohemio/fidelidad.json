@@ -1,0 +1,229 @@
+{
+ "claims": [
+  {
+   "claim": "The user asked for a mustard velvet sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá de terciopelo color mostaza'."
+  },
+  {
+   "claim": "No mustard velvet sofa is offered",
+   "about": "abo-B082QDKRC5",
+   "supported": false,
+   "evidence": "Only the chosen products are shown; nothing shows what other sofas were available."
+  },
+  {
+   "claim": "Black, grey and beige sofa options were available",
+   "about": "abo-B082QDKRC5",
+   "supported": false,
+   "evidence": "No other sofa options appear in the inputs."
+  },
+  {
+   "claim": "The sofa is leather",
+   "about": "abo-B082QDKRC5",
+   "supported": true,
+   "evidence": "The product line says 'three-seat leather sofa'."
+  },
+  {
+   "claim": "The sofa is cognac colored",
+   "about": "abo-B082QDKRC5",
+   "supported": true,
+   "evidence": "The photo shows warm tan/cognac leather."
+  },
+  {
+   "claim": "The user asked for a rattan armchair",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sillón de ratán'."
+  },
+  {
+   "claim": "The armchair is a natural rattan tub chair",
+   "about": "500.583.76",
+   "supported": true,
+   "evidence": "The line says 'rattan tub armchair' and the photo shows natural woven rattan."
+  },
+  {
+   "claim": "The room has a wood floor",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a parquet wood floor."
+  },
+  {
+   "claim": "The user asked for a large patterned rug",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una alfombra estampada grande'."
+  },
+  {
+   "claim": "The rug is the largest rug offered",
+   "about": "abo-B07HSHG86Y",
+   "supported": false,
+   "evidence": "No other rugs are shown to compare against."
+  },
+  {
+   "claim": "The rug has a blue and orange tribal pattern",
+   "about": "abo-B07HSHG86Y",
+   "supported": true,
+   "evidence": "The photo shows a blue ground with orange and white diamond motifs; the line says southwestern."
+  },
+  {
+   "claim": "The room is big",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows a large, empty, open room."
+  },
+  {
+   "claim": "The cushion has a teal medallion pattern",
+   "about": "abo-B074VL1JQG",
+   "supported": true,
+   "evidence": "The line says 'medallion patterned' and the photo shows teal and white medallions."
+  },
+  {
+   "claim": "There are enough cushions for both the sofa and the armchair",
+   "about": "abo-B074VL1JQG",
+   "supported": false,
+   "evidence": "Only a single 43 cm cushion is listed; no quantity is given."
+  },
+  {
+   "claim": "The plant is a ZZ plant",
+   "about": "900.379.90",
+   "supported": true,
+   "evidence": "The line says 'ZZ plant in a nursery pot'."
+  },
+  {
+   "claim": "The plant pot is terracotta-toned",
+   "about": "900.379.90",
+   "supported": true,
+   "evidence": "The photo shows an orange-brown pot (a plastic nursery pot, not the ceramic pot requested)."
+  },
+  {
+   "claim": "There are plants for the balcony door, the bookcase and the corners",
+   "about": "900.379.90",
+   "supported": false,
+   "evidence": "Only one plant product is listed; nothing shows several plants."
+  },
+  {
+   "claim": "The room has a balcony door",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a glazed door opening onto a balcony with an awning."
+  },
+  {
+   "claim": "The user asked for a low bookshelf with books",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una estantería baja con libros'."
+  },
+  {
+   "claim": "The bookcase is wide",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The line gives 140 cm wide."
+  },
+  {
+   "claim": "The bookcase is low (43 cm high)",
+   "about": "abo-B07HSLTLGP",
+   "supported": false,
+   "evidence": "The line says 43 cm high, but the photo shows a tall five-shelf etagere, so it is not low."
+  },
+  {
+   "claim": "The bookcase is made of wood and metal",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The photo shows wood shelves on black metal posts."
+  },
+  {
+   "claim": "There is a window on the back wall",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a casement window on the back wall."
+  },
+  {
+   "claim": "The bookcase fits under the back-wall window",
+   "about": "abo-B07HSLTLGP",
+   "supported": false,
+   "evidence": "The photo shows a tall etagere that would not fit below the window sill."
+  },
+  {
+   "claim": "The bookcase has room for books and plants",
+   "about": "abo-B07HSLTLGP",
+   "supported": true,
+   "evidence": "The photo shows five open shelves."
+  },
+  {
+   "claim": "The coffee table is round",
+   "about": "abo-B07QFB1TLZ",
+   "supported": true,
+   "evidence": "The line says 'round wood coffee table' and the photo shows a round top."
+  },
+  {
+   "claim": "The coffee table is 110 cm across",
+   "about": "abo-B07QFB1TLZ",
+   "supported": true,
+   "evidence": "The line gives 110 cm wide and 110 cm deep."
+  },
+  {
+   "claim": "The coffee table top is warm wood",
+   "about": "abo-B07QFB1TLZ",
+   "supported": true,
+   "evidence": "The photo shows a warm-toned wood top."
+  },
+  {
+   "claim": "The lamp has a turned column",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The line says 'turned-column floor lamp'."
+  },
+  {
+   "claim": "The lamp column is wood",
+   "about": "abo-B07QD5SDWK",
+   "supported": false,
+   "evidence": "The line gives no material; the photo shows only a weathered wood-look finish."
+  },
+  {
+   "claim": "The lamp has a linen shade",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The photo shows a beige linen-textured drum shade."
+  },
+  {
+   "claim": "Chrome lamps were among the options",
+   "about": "abo-B07QD5SDWK",
+   "supported": false,
+   "evidence": "No other lamps appear in the inputs."
+  },
+  {
+   "claim": "The throw is navy and cream with a geometric pattern",
+   "about": "abo-B079TXJWT8",
+   "supported": true,
+   "evidence": "The line says 'geometric jacquard' and the photo shows a navy and cream diamond pattern."
+  },
+  {
+   "claim": "The throw has fringe",
+   "about": "abo-B079TXJWT8",
+   "supported": true,
+   "evidence": "The photo shows fringed edges."
+  },
+  {
+   "claim": "The room is bright",
+   "about": "room",
+   "supported": false,
+   "evidence": "The room has large windows, but the interior looks dim in the photo."
+  },
+  {
+   "claim": "The design has plenty of green plants",
+   "about": "900.379.90",
+   "supported": false,
+   "evidence": "Only one plant is listed."
+  },
+  {
+   "claim": "The user asked for colorful patterned cushions and several plants in ceramic pots",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'almohadones de colores y estampados, varias plantas en macetas de cerámica'."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.115344,
+ "_prompt": "juez_fidelidad_v2"
+}

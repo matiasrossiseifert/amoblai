@@ -1,0 +1,14 @@
+# La búsqueda del flujo (versión 1: densa sobre las descripciones) contra la búsqueda híbrida
+# (candidata a versión 2: densa + léxica + la foto del producto), de punta a punta en los 11
+# ambientes de pedidos.yaml, con el mismo plan y el mismo juez de listas que catalogos_estilos.yaml.
+# Las listas de la versión 1 ya están (la variante `todos`): solo se paga el choose de la híbrida
+# (11 llamadas, unos US$1,5) y el juez (22 llamadas, unos US$0,6).
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/hibrida.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/catalogos
+plan_de: todos
+variantes:
+  todos: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos}
+  hibrida: {rag.catalog: datos/catalogo/todos.yaml, rag.describer: written_todos, rag.hybrid: [bm25, siglip2]}
+comparaciones:
+  - [todos, hibrida]

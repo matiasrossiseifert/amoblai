@@ -33,7 +33,7 @@ from amoblai.infra.budget import BudgetExceeded, check_spend, ledger_for
 from amoblai.infra.http import ProviderError
 from amoblai.prompts import PromptTemplate, load_prompt
 from amoblai.rag.filters import Filters
-from amoblai.rag.index import build_index, index_is_current, open_index
+from amoblai.rag.index import Index, ensure_index
 from amoblai.rag.search import Hit, search
 
 
@@ -143,19 +143,17 @@ def plan(cfg: Config, room_photo: Path, request: str, views: Sequence[Path] = ()
 # retrieve --------------------------------------------------------------------------------------
 
 
-def find_candidates(cfg: Config, piece: dict) -> list[Hit]:
+def find_candidates(cfg: Config, piece: dict, index: Index | None = None) -> list[Hit]:
     """The catalog search for one piece: its filters, then its query, `furnish.candidates` hits.
     The size limits get `furnish.size_slack` more. With two kinds, each gets its share of the
     candidates, so the one nearer the query's words can't crowd out the other. No kinds: the
-    whole catalog, by the query alone."""
-    if not index_is_current(cfg):
-        build_index(cfg, log=lambda _: None)
-    index = open_index(cfg)
+    whole catalog, by the query alone. `index`: the open index (retrieve opens it once)."""
+    index = index or ensure_index(cfg)
     kinds = piece.get("kinds") or []
     most = {
         f"max_{a}_cm": round(v * (1 + cfg.furnish.size_slack), 1)
         for a in ("width", "depth", "height")
-        if (v := piece.get(f"max_{a}_cm")) is not None
+        if cfg.furnish.size_filter and (v := piece.get(f"max_{a}_cm")) is not None
     }
     hits: list[Hit] = []
     for i, group in enumerate([[k] for k in kinds] or [[]]):
@@ -194,8 +192,9 @@ def retrieve(cfg: Config, pieces: list[dict], out: Path | None = None) -> dict:
     for goes to `empty` and the flow goes on without it. With `out`, a contact sheet per piece
     (2_candidates.jpg, 2_candidates_2.jpg...)."""
     found, empty = [], []
+    index = ensure_index(cfg)  # once for every piece
     for piece in pieces:
-        hits = find_candidates(cfg, piece)
+        hits = find_candidates(cfg, piece, index)
         if not hits:
             empty.append(piece["piece"])
             continue

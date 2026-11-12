@@ -19,17 +19,28 @@ vecinos más cercanos por coseno) y se mira el ranking:
   cuántos trae el contexto de sus consultas) y recall@k por ítem anotado; la curva de hit@k hasta
   k=50 (cuántos candidatos pasarle al reranker); la calibración del score (AUROC de "el primero es
   correcto"); baseline aleatorio sobre lo que deja pasar el filtro; IC 95% por bootstrap de
-  ambientes.
+  ambientes; y cada método contra el primero de la ablación, con la diferencia pareada (las mismas
+  consultas) y su IC 95% (`vs_base`).
 
 Un método (las ablaciones de datos/configs/ablaciones/*.yaml) combina:
-- `embedder`: hashing, bge, qwen3 (rag.embedders);
+- `embedder`: hashing, bge, qwen3 (rag.embedders); `bm25`, la búsqueda léxica; o un modelo de
+  imagen y texto (siglip2, clip): la consulta en una frase corta contra la foto del producto, sin
+  descripción (rag/hybrid.py);
+- `fusion`: otros buscadores cuyo puntaje se fusiona con el del embedder ("bm25", "siglip2",
+  "bm25+siglip2": búsqueda híbrida), con `fusion_rule` `sum` (z-score, el promedio) o `rrf`;
 - `text`, lo que se embebe de cada producto: `description` (nuestras ocho líneas), `seller` (el
-  texto del vendedor) o `name+description` (el nombre comercial adelante);
+  texto del vendedor con nuestra categoría como tipo), `seller-full` (el texto del vendedor con
+  su propio tipo, "Easy chair": la línea de base honesta) o `name+description` (el nombre
+  comercial adelante);
 - `filter`: `kind` (el kind de la consulta), `type` (solo el tipo grueso) o `none`;
 - `store`, la base vectorial: `chroma` (ChromaDB, HNSW, los filtros como `where`) o `exact`
   (numpy sobre todos los vectores);
-- `query`, el query rewriting: `full` (las ocho líneas, como las escribe el plan), `type` (solo
-  la línea Type) o `kind` (solo el nombre del kind: sin reescribir);
+- `query`, cómo se escribe la consulta: `full` (las ocho líneas del catálogo, como las escribe el
+  plan: un documento hipotético), `piece` (la frase corta en lenguaje natural con que el redactor
+  nombró la pieza, "square pine coffee table": la consulta sin reescribir), `type` (solo la
+  línea Type) o `kind` (solo el nombre del kind);
+- `drop`: líneas que se sacan de las descripciones y de las consultas antes de embeber
+  ("Colors", "Feel+Goes with"): qué parte del documento hace el trabajo;
 - `dim`: los vectores truncados a sus primeras `dim` componentes y renormalizados (Qwen3-Embedding
   se entrenó con Matryoshka: la dimensión se elige sin reentrenar);
 - `chunks`, cómo se parte cada descripción: `whole` (un documento por producto), `lines-max`
@@ -85,7 +96,8 @@ from amoblai.prompts import load_prompt
 from amoblai.rag.describe import FieldsDescriber
 from amoblai.rag.embed import get_embedder
 from amoblai.rag.filters import Filters
-from amoblai.rag.index import Index, build_index, vectors_cached
+from amoblai.rag.hybrid import BM25, ImageTextEmbedder, fuse, visual_query
+from amoblai.rag.index import Index, ensure_index, vectors_cached
 from amoblai.rag.search import as_hit
 from amoblai.rag.store import ChromaStore
 
@@ -94,11 +106,27 @@ LOCAL_RERANKERS = ("minilm-reranker", "qwen3-reranker")  # cross-encoders locale
 CURVE = (1, 2, 3, 5, 10, 15, 20, 30, 50)  # hit@k: cuántos candidatos le llegan al reranker
 DEPTH = max(CURVE)  # cuántos trae la búsqueda; en rankings.jsonl.gz quedan los max(KS) primeros
 
+
+def seller_full(product: Product) -> str:
+    """Todo lo que da el vendedor de un producto: su tipo tal como lo escribe ("Easy chair",
+    "Rug, flatwoven"), el nombre, los colores, los materiales y su texto."""
+    i = product.info
+    lines = [f"Type: {i.get('type_ikea') or i['category'].replace('_', ' ')}", f"Name: {i['name']}"]
+    if i.get("colors"):
+        lines.append("Colors: " + ", ".join(i["colors"]))
+    if i.get("materials"):
+        lines.append("Materials: " + ", ".join(i["materials"]))
+    if i.get("description"):
+        lines.append(i["description"])
+    return "\n".join(lines) + "\n"
+
+
 # Lo que se embebe de cada producto (item del índice, producto del catálogo).
 TEXTS: dict[str, Callable[[dict, Product], str]] = {
     "description": lambda it, p: it["description"],  # nuestras ocho líneas
     "name+description": lambda it, p: f"Name: {it['name']}\n{it['description']}",
     "seller": lambda it, p: FieldsDescriber().describe(p).text,  # nombre, colores, texto
+    "seller-full": lambda it, p: seller_full(p),  # lo mismo con el tipo que le pone el vendedor
 }
 
 # kind (catalog/kinds.py) -> categoría del TP (la de la v0 y de datos/configs/categories.yaml).
@@ -155,10 +183,23 @@ class Method:
     rerank: str | None = None  # un reranker de evaluation.rerankers
     dim: int | None = None  # truncar los vectores (Matryoshka)
     chunks: str = "whole"  # whole | lines-max | lines-aligned
+    drop: str | None = None  # líneas que se sacan de documentos y consultas: "Feel+Goes with"
+    fusion: str | None = None  # otros buscadores, fusionados: "bm25", "siglip2", "bm25+siglip2"
+    fusion_rule: str = "sum"  # sum (z-score) | rrf
+
+    @property
+    def scorers(self) -> list[str]:
+        return [self.embedder, *(self.fusion.split("+") if self.fusion else [])]
 
     @property
     def name(self) -> str:
         name = f"{self.embedder}|{self.text}|filtro-{self.filter}"
+        if self.drop:
+            name += f"|sin-{self.drop}"
+        if self.fusion:
+            name += f"|+{self.fusion}"
+        if self.fusion_rule != "sum":
+            name += f"|fusion-{self.fusion_rule}"
         if self.store != "chroma":
             name += f"|{self.store}"
         if self.query != "full":
@@ -202,6 +243,7 @@ class Search:
     relevant: list[str]  # del mismo grupo que el kind
     relevant_any: list[str]  # cualquier producto anotado del catálogo
     prompt: str = "consultas_ambiente_v1"  # la pasada que escribió la consulta
+    phrase: str = ""  # la pieza en una frase corta, como la nombró el redactor
 
 
 def load_searches(queries_path: Path, raw_dir: Path, catalog_ids: dict[str, str]) -> list[Search]:
@@ -219,7 +261,16 @@ def load_searches(queries_path: Path, raw_dir: Path, catalog_ids: dict[str, str]
             group = group_of(kind)
             relevant = [s for s in gt if catalog_ids[s] == group]
             searches.append(
-                Search(room_id, i, kind, p["query"], relevant, gt, p.get("prompt", Search.prompt))
+                Search(
+                    room_id,
+                    i,
+                    kind,
+                    p["query"],
+                    relevant,
+                    gt,
+                    p.get("prompt", Search.prompt),
+                    p.get("piece", ""),
+                )
             )
     return searches
 
@@ -232,12 +283,22 @@ def filters_for(method: Method, kind: str) -> Filters:
     return Filters()
 
 
-# El query rewriting: la consulta como la escribe el plan, o menos.
+# Cómo se escribe la consulta: como la escribe el plan (un documento hipotético en las ocho
+# líneas), sin reescribir (la frase corta con que el redactor nombró la pieza), o menos.
 QUERIES: dict[str, Callable[[Search], str]] = {
     "full": lambda s: s.query,  # las ocho líneas
+    "piece": lambda s: s.phrase or s.kind,  # "square pine coffee table, front center"
     "type": lambda s: s.query.splitlines()[0],  # solo "Type: ..."
-    "kind": lambda s: s.kind,  # solo el nombre del kind, sin reescribir
+    "kind": lambda s: s.kind,  # solo el nombre del kind
 }
+
+
+def without_lines(text: str, drop: str | None) -> str:
+    """El texto sin las líneas de esos rótulos ("Feel+Goes with")."""
+    if not drop:
+        return text
+    labels = {x.strip() for x in drop.split("+")}
+    return "\n".join(ln for ln in text.splitlines() if ln.split(":", 1)[0].strip() not in labels)
 
 
 def truncate(vectors: np.ndarray, dim: int) -> np.ndarray:
@@ -438,17 +499,39 @@ def rank(
     `estimate`, en un método con reranking, solo las filas cuyo reranking no está en la caché
     (lo que costaría correrlo)."""
     catalog = {p.id: p for p in load_catalog(cfg.rag.catalog, cfg.root).products}
-    embedder = get_embedder(method.embedder, cfg)
-    ledger = ledger_for(cfg.budget, embedder.account)
-    texts = [TEXTS[method.text](it, catalog[it["id"]]) for it in index.items]
-    query_texts = [QUERIES[method.query](s) for s in searches]
+    texts = [
+        without_lines(TEXTS[method.text](it, catalog[it["id"]]), method.drop) for it in index.items
+    ]
+    query_texts = [without_lines(QUERIES[method.query](s), method.drop) for s in searches]
 
-    def embed(xs: list[str]) -> np.ndarray:
-        return vectors_cached(xs, embedder, cfg, ledger)[0]
+    def embed(xs: list[str], name: str = method.embedder) -> np.ndarray:
+        embedder = get_embedder(name, cfg)
+        return vectors_cached(xs, embedder, cfg, ledger_for(cfg.budget, embedder.account))[0]
 
-    chunked = None
+    def score_matrix(name: str) -> np.ndarray:
+        """(consultas, productos): el puntaje de cada producto con un buscador."""
+        if name == "bm25":
+            return BM25(texts).scores(query_texts)
+        params = cfg.rag.embedders.get(name) or {}
+        if params.get("kind") == "image_text":  # la consulta corta contra la foto del producto
+            model = ImageTextEmbedder(params, name, Path(cfg.cache_dir))
+            photos = [cfg.path(it["photos"][0]) for it in index.items]
+            queries = model.embed_texts([visual_query(q) for q in query_texts])
+            return queries @ model.embed_images(photos).T
+        docs, queries = embed(texts, name), embed(query_texts, name)
+        if method.dim:
+            docs, queries = truncate(docs, method.dim), truncate(queries, method.dim)
+        return queries @ docs.T
+
+    def vectorless(name: str) -> bool:
+        return name == "bm25" or (cfg.rag.embedders.get(name) or {}).get("kind") == "image_text"
+
+    chunked = fused = None
     if method.chunks != "whole":  # partida: búsqueda exacta sobre los chunks
         chunked = chunk_scores(method, texts, query_texts, embed)
+        docs = queries = None
+    elif method.fusion or vectorless(method.embedder):  # híbrida: exacta sobre los puntajes
+        fused = [score_matrix(name) for name in method.scorers]
         docs = queries = None
     else:
         docs, queries = embed(texts), embed(query_texts)
@@ -465,6 +548,8 @@ def rank(
         allowed = np.array([f.allows(it) for it in index.items], bool)
         if chunked is not None:
             hits = top_k(chunked[n], k, allowed)
+        elif fused is not None:
+            hits = top_k(fuse([m[n] for m in fused], allowed, method.fusion_rule), k, allowed)
         elif method.store == "exact":
             hits = ranked.nearest(queries[n], k, allowed)
         else:
@@ -629,12 +714,31 @@ def metrics(rows: list[dict], n_boot: int = 1000, seed: int = 0) -> dict[str, An
     return out
 
 
+def paired_difference(rows: list[dict], base: list[dict], n_boot: int = 1000) -> dict[str, Any]:
+    """Un método contra otro sobre las mismas consultas: la diferencia media de hit@1, hit@5,
+    hit@10 y MRR@10 y su IC 95% (bootstrap de ambientes sobre las diferencias). Un intervalo que
+    no toca el cero: la diferencia no es ruido del muestreo."""
+    pairs = [(r, b) for r, b in zip(rows, base, strict=True) if r["relevant"]]
+    groups = [r["room_id"] for r, _ in pairs]
+    out: dict[str, Any] = {}
+    for name, fn in (
+        ("hit@1", lambda r: hit_at_k(r["rank"], 1)),
+        ("hit@5", lambda r: hit_at_k(r["rank"], 5)),
+        ("hit@10", lambda r: hit_at_k(r["rank"], 10)),
+        ("mrr@10", lambda r: reciprocal_rank(r["rank"], max(KS))),
+    ):
+        diffs = [fn(r) - fn(b) for r, b in pairs]
+        out[name] = round(float(np.mean(diffs)), 4)
+        out[f"{name}_ic95"] = [round(v, 4) for v in bootstrap_ci(diffs, groups, n_boot)]
+    return out
+
+
 def estimate_reranks(
     cfg: Config, queries_path: Path, raw_dir: Path, methods: list[Method]
 ) -> dict[str, tuple[int, float]]:
     """Por método pago: cuántas llamadas al VLM faltan en la caché y cuánto costarían (según el
     estimate_usd del modelo). No llama a ninguna API."""
-    index = build_index(cfg, log=lambda _: None)
+    index = ensure_index(cfg)
     catalog_ids = {p.id: product_group(p) for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     searches = load_searches(queries_path, raw_dir, catalog_ids)
     out = {}
@@ -668,12 +772,14 @@ def run_eval(
 ) -> Path:
     """Corre todos los métodos y guarda una carpeta con config, métricas y rankings. `replica`:
     las consultas son otra escritura independiente de las mismas (reproducibilidad)."""
-    index = build_index(cfg, log=lambda _: None)  # las descripciones: el describer `written`
+    index = ensure_index(cfg)  # las descripciones: el describer `written`
     catalog_ids = {p.id: product_group(p) for p in load_catalog(cfg.rag.catalog, cfg.root).products}
     searches = load_searches(queries_path, raw_dir, catalog_ids)
     started = time.strftime("%Y%m%d-%H%M%S")
     results: dict[str, Any] = {}
     rankings: list[dict] = []
+    base: list[dict] | None = None  # las filas del primer método: contra él se compara el resto
+    previous: list[dict] | None = None  # y las del anterior: el camino incremental
     for m in methods:  # todo antes de escribir: una corrida que falla no deja nada a medias
         t0 = time.perf_counter()
         rows = rank(cfg, index, m, searches, DEPTH)
@@ -685,10 +791,15 @@ def run_eval(
             **metrics(rows, n_boot),
             "segundos": round(time.perf_counter() - t0, 1),
         }
-    run_dir = Path(out_root) / f"{started}_{name}"
-    run_dir.mkdir(parents=True)
-    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
-        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
+        if base is None:
+            base = rows
+        else:
+            results[m.name]["vs_base"] = {
+                "base": methods[0].name,
+                **paired_difference(rows, base, n_boot),
+            }
+            results[m.name]["vs_anterior"] = paired_difference(rows, previous, n_boot)
+        previous = rows
     meta = {
         "name": name,
         "queries": str(queries_path),
@@ -697,7 +808,10 @@ def run_eval(
         "replica": replica,
         "catalog": cfg.rag.catalog,
         "index": index.meta,
-        "embedders": {e: cfg.rag.embedders[e] for e in sorted({m.embedder for m in methods})},
+        "embedders": {
+            e: cfg.rag.embedders.get(e, {"kind": e})  # bm25 no es de rag.embedders
+            for e in sorted({name for m in methods for name in m.scorers})
+        },
         "hnsw": cfg.rag.hnsw,
         "rerankers": {
             r: cfg.evaluation.rerankers[r] for r in sorted({m.rerank for m in methods if m.rerank})
@@ -705,6 +819,10 @@ def run_eval(
         "git_commit": git_commit(),
         "python": platform.python_version(),
     }
+    run_dir = Path(out_root) / f"{started}_{name}"
+    run_dir.mkdir(parents=True)
+    with gzip.open(run_dir / "rankings.jsonl.gz", "wt") as fh:  # cientos de miles de ids
+        fh.writelines(json.dumps(r, ensure_ascii=False) + "\n" for r in rankings)
     (run_dir / "corrida.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2, default=str)
     )

@@ -14,129 +14,184 @@ ellos. El catálogo junta dos: IKEA (Tautkute et al., 819 productos) y Amazon Be
 ```mermaid
 flowchart LR
   subgraph IDX["Indexing pipeline (una vez)"]
-    A["Catálogo IKEA + ABO<br/>819 + 683 productos"] --> B["Descripciones<br/>en 8 líneas"]
+    A["Catálogo IKEA + ABO<br/>819 + 683 productos"] --> B["Descripción de cada producto<br/>desde su foto, en 8 líneas"]
     B --> E["Embedding<br/>Qwen3"]
     E --> V[("ChromaDB<br/>HNSW + metadata")]
   end
-  U["Foto + pedido"] --> P["plan<br/>query rewriting"]
-  P --> R["retrieve<br/>filtros + coseno"]
+  U["Foto + pedido"] --> P["plan<br/>piezas y una ficha por pieza"]
+  P --> R["retrieve<br/>filtro por kind + coseno"]
   V --> R
-  R --> C["choose<br/>reranking con VLM"]
-  C --> S["scene<br/>prompt de imagen"]
-  S --> G["generate<br/>Nano Banana 2"]
+  R --> C["choose<br/>elige la combinación"]
+  C --> S["scene<br/>plantilla del prompt"]
+  S --> G["generate<br/>Nano Banana 2 + control"]
   C --> L["Lista de compra"]
   G --> F["Ambiente amoblado"]
 ```
 
+En los términos de RAG: la base de conocimiento es el catálogo; la consulta no es el pedido del
+usuario sino una ficha por pieza que escribe el plan; lo recuperado son 5 candidatos por pieza; y
+hay dos generaciones aumentadas con lo recuperado: la lista (el LLM solo puede elegir entre los
+ids recuperados) y la imagen (el modelo de imagen recibe las fotos de los productos elegidos).
+
 | Etapa | Código (`src/amoblai/`) | Qué hace |
 |---|---|---|
-| Data loading | `dataset/` | Descarga el dataset IKEA fijado a un commit, lo carga con un unpickler restringido y une todo por SKU. |
-| Preprocesamiento | `catalog/` | Los productos del alcance (muebles de living, comedor y escritorio, lámparas y decoración) con su tipo, kind y medidas; correcciones y exclusiones a mano. |
-| Splitting | `datos/catalogo/descripciones.jsonl` | Un documento por producto (la descripción es corta): ocho líneas fijas (Type, Use, Style, Materials, Colors, Shape, Feel, Goes with), escritas por subagentes mirando la foto. |
-| Embedding y base vectorial | `rag/embed.py`, `rag/store.py`, `rag/index.py` | Qwen3-Embedding (local) → ChromaDB: vector, descripción y metadata por producto, índice HNSW en espacio coseno. |
-| Pre-retrieval: query rewriting | `furnish/steps.py` (`plan`) | Claude lee la foto y el pedido, decide las piezas (sin tope desde search_query_v4: las que pidan el pedido y el ambiente, las más importantes primero), su kind y su tamaño máximo, y escribe el producto ideal en las mismas ocho líneas que el catálogo. |
-| Retrieval | `rag/search.py`, `rag/filters.py` | Filtros duros de metadata (kind, medidas) como `where` de ChromaDB, después los k más cercanos por coseno. |
-| Post-retrieval: reranking | `furnish/steps.py` (`choose`) | Claude mira la foto y los candidatos de cada pieza y elige la mejor combinación. |
-| Generación | `furnish/steps.py` (`scene`), `furnish/image_models.py` | Claude escribe el prompt; el modelo de imagen (Nano Banana 2 por fal, gpt-image o a mano) pone los productos en la foto. |
-| Evaluación | `evaluation/` | Retrieval sobre los livings y comedores IKEA anotados (hit@k, MRR, context precision/recall, NDCG) y sus ablaciones (`datos/configs/ablaciones/`); relevancia graduada con un juez; la imagen generada (fidelidad de producto, ambiente preservado); RAGAS sobre la respuesta; el espacio de embeddings. |
+| Data loading | `dataset/`, `catalog/abo.py` | El dataset IKEA fijado a un commit (se carga con un unpickler restringido y se une todo por SKU) y la selección de listados de Amazon Berkeley Objects. |
+| Preprocesamiento: la base de conocimiento | `catalog/` | Los productos del alcance con su tipo, kind y medidas; correcciones y exclusiones a mano. Cada producto se describe **desde su foto** en ocho líneas fijas (Type, Use, Style, Materials, Colors, Shape, Feel, Goes with): IKEA con subagentes de Claude Code, ABO con Opus por la API, mismo formato y misma validación. |
+| Splitting | — | No se parte: un producto es un documento (unas 80 palabras). Partirlo por línea empeora; lo que se midió es qué líneas hacen el trabajo. |
+| Embedding y base vectorial | `rag/embed.py`, `rag/store.py`, `rag/index.py` | Qwen3-Embedding-0.6B (local, 1024 dimensiones) → ChromaDB: vector, descripción y metadata por producto, índice HNSW en espacio coseno. |
+| Pre-retrieval | `furnish/steps.py` (`plan`) | Claude lee la foto y el pedido, lo descompone en piezas y, para cada una, da su kind, su tamaño máximo y **el producto ideal escrito en las mismas ocho líneas que el catálogo**: esa ficha es la consulta (query expansion con respuesta hipotética, HyDE; el pedido nunca se embebe). |
+| Retrieval | `rag/search.py`, `rag/filters.py` | Filtros duros de metadata (kind, medidas) como `where` de ChromaDB, después los 5 más cercanos por coseno. Opcional (`rag.hybrid`): fusión con la búsqueda léxica (BM25) y con la foto del producto (SigLIP 2). |
+| Generación de la lista | `furnish/steps.py` (`choose`) | Claude ve el ambiente y las fotos de los candidatos de todas las piezas y elige una combinación, con cantidades y un porqué. Solo puede elegir ids recuperados: se valida. |
+| Generación de la imagen | `furnish/steps.py` (`scene`, `generate`), `furnish/room.py` | Una plantilla (sin LLM) arma el prompt desde la lista; Nano Banana 2 (por fal) recibe la foto y las fotos de los elegidos. Un control (SIFT + RANSAC contra la foto original) descarta la imagen si dejó de ser el mismo cuarto y reintenta, hasta 3 veces. |
+| Evaluación | `evaluation/` | El buscador sobre los ambientes IKEA anotados (hit@k, MRR, context precision y recall, diferencias pareadas) y sus ablaciones (`datos/configs/ablaciones/`); el flujo entero sobre ambientes vacíos reales (un juez que compara listas de a pares; diagnóstico sin juez); el generador (faithfulness, answer relevance); la imagen (fidelidad de producto, ambiente preservado). Qué mide cada una y cuánto creerle: `docs/METRICAS.md`. |
 
 ## Resultados
 
-Retrieval sobre los 65 livings y comedores de IKEA con productos anotados, con el catálogo
-ampliado y revisado (819 productos: se sacaron 36 con la foto de otro producto o que no son de
-living ni comedor). Hay 549 consultas con respuesta: muebles (sofás, sillones, sillas, mesas,
-alfombras) y lo que sumó la ampliación (lámparas, deco, guardado, estanterías...). IC 95%
-bootstrap por ambiente. Tablas completas en `datos/resultados/reporte/reporte.md`.
+Hay dos bancos de prueba y miden cosas distintas. Qué mide cada métrica y cuánto creerle está en
+`docs/METRICAS.md`; el registro de experimentos, en `docs/EXPERIMENTOS.md`; y la revisión crítica
+del trabajo (qué estaba mal, el ranking de experimentos y lo que falta decidir), en
+`docs/REVISION.md`.
 
-| Configuración | hit@1 | hit@10 | MRR@10 | context precision@10 | context recall@3 |
+- **El buscador, con ground truth.** 64 livings y comedores de IKEA con sus productos anotados.
+  Para cada mueble que se ve en la foto hay una consulta (549 con respuesta, sobre el catálogo
+  IKEA de 819 productos) y se mira si el producto anotado sale entre los primeros. Es una tarea
+  de "producto conocido": quien escribió la consulta veía el mueble. Mide bien el índice; no
+  dice cuán buena es la lista para un pedido abierto. IC 95% por bootstrap de ambientes, y cada
+  método se compara con otro sobre las mismas consultas (diferencia pareada).
+- **El flujo entero, sin ground truth.** 11 ambientes vacíos reales, cada uno con su pedido. Un
+  juez (Opus) compara a ciegas las listas de dos configuraciones, en los dos órdenes.
+
+### El buscador: el camino incremental, un cambio por paso
+
+| Paso | hit@1 [IC 95%] | hit@5 | hit@10 | MRR@10 | Cambio en hit@1 (pareado) |
 |---|---|---|---|---|---|
-| Naive: texto del vendedor, hashing de palabras, sin filtro | 0,077 | 0,312 | 0,142 | 0,141 | 0,205 |
-| + nuestras descripciones de ocho líneas | 0,495 | 0,871 | 0,618 | 0,604 | 0,745 |
-| + Qwen3-Embedding, filtro por tipo, ChromaDB | 0,535 [0,49–0,58] | 0,893 | 0,654 | 0,632 | 0,785 |
-| **+ reranking: Claude Opus 5.5 ordena el top-10 mirando las fotos** | **0,687** | 0,893 | **0,760** | | |
-| Azar (con el filtro por tipo) | 0,017 | 0,161 | | | |
+| 1. RAG naive: el texto del vendedor embebido, la consulta sin reescribir | 0,109 [0,08–0,14] | 0,299 | 0,439 | 0,194 | |
+| 2. + la base que armamos: cada producto descripto desde su foto, en 8 líneas | 0,297 [0,25–0,35] | 0,601 | 0,736 | 0,430 | +0,188 [0,137; 0,237] |
+| 3. + la consulta escrita como una ficha del catálogo (respuesta hipotética, HyDE) | 0,535 [0,49–0,58] | 0,811 | 0,885 | 0,652 | +0,239 [0,189; 0,287] |
+| **4. + filtro de metadata por kind: la búsqueda del flujo** | **0,530 [0,49–0,57]** | **0,790** | **0,863** | **0,641** | −0,005 [−0,015; +0,006] |
+| 5. + búsqueda léxica (BM25) fusionada | 0,581 [0,54–0,63] | 0,807 | 0,876 | 0,674 | +0,051 [0,013; 0,088] |
+| 6. + la foto del producto (SigLIP 2) fusionada: híbrida multimodal | 0,605 [0,56–0,65] | 0,825 | 0,883 | 0,701 | +0,024 [0,002; 0,045] |
+| Azar (con filtro por tipo) | 0,017 | | 0,161 | | |
 
-- **Por pasada:** en los muebles del primer alcance, hit@1 0,633 (0,636 con el catálogo de 268:
-  587 productos más casi no lo mueven); en lo nuevo, 0,476. Por categoría: sillas 0,84,
-  muebles de guardado 0,72, mesas 0,69, lámparas 0,59, deco 0,36, alfombras 0,31. Deco y
-  alfombras son lo difícil: muchos productos parecidos (53 almohadones, 89 alfombras) y la
-  anotación de IKEA no dice cuál de los del ambiente es.
-- **Reranking:** Opus 5.5 mirando las fotos del top-10 sube hit@1 de 0,535 a 0,687 en el
-  catálogo final (US$0,02 por consulta). Con el catálogo de 268 y solo muebles, de 0,636 a
-  0,803: el catálogo final tiene más productos parecidos.
-- **Query rewriting:** con la consulta en las ocho líneas del catálogo, hit@1 da 0,535. Con solo
-  la línea Type cae a 0,293, y con solo el nombre del kind (sin reescribir) a 0,064.
-- **Base vectorial:** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
-  consultas con filtro por tipo (con filtro por kind, en 863; el primero coincide en todas).
-- **Texto contra imagen:** con el mismo ground truth y el catálogo que vio la v0 (275), el
-  retrieval por texto da 0,618 de hit@1 y el mejor retrieval por imagen de la v0 (DINOv3), 0,508.
-- **Reproducibilidad:** con las consultas escritas tres veces por subagentes independientes,
-  el mejor método da hit@1 0,544 ± 0,026 y MRR 0,655 ± 0,017. Qwen3 le gana a BGE, a hashing y
-  al filtro por kind en las tres escrituras.
-- **Cuántos candidatos (k):** si el VLM elige entre los primeros k, acierta 0,637 con 3, 0,667
-  con 5 y 0,689 con 8 (sale del mismo reranking). El techo, hit@k, es 0,732, 0,812 y 0,876. El
-  flujo le pasa 5 por pieza.
-- **Dimensión del embedding:** Qwen3 truncado (Matryoshka) da 0,428 con 32 componentes, 0,506
-  con 128 y 0,532 con 512, casi igual que con 1024.
-- **Splitting:** un documento por producto (0,535) gana a un chunk por línea (0,273) y a comparar
-  línea contra línea (0,514).
-- **Reranking con un cross-encoder de texto** (MiniLM de MS MARCO, gratis): empeora (0,419). El
-  que sirve mira las fotos.
-- **Relevancia graduada** (un juez califica el top-3 con 2/1/0 contra la pieza del ambiente,
-  sobre 150 consultas): el primer candidato sirve en el 75% de los casos y alguno del top-3 en el
-  84%, también cuando el producto exacto no está en el catálogo (63% y 73%). El juez le da 2 al
-  anotado en el 81% de los casos y a los demás en el 5%.
-- **La imagen generada** (prueba-alvear2):
-  - los 4 productos aparecen;
-  - 3 de 4 se reconocen como el producto exacto al comparar el recorte con la foto del catálogo
-    (DINOv3), con coseno medio 0,68; con fotos reales de IKEA, ese reconocimiento da 0,444 y
-    coseno 0,41;
-  - SSIM fuera de los muebles 0,975, y la cámara no se movió (SIFT).
-- **RAGAS sobre la respuesta en texto:** faithfulness del porqué 0,89 a 0,96 (lo que no se
-  sostiene son medidas que el catálogo no tiene); answer relevance 0,69 a 0,73, contra 0,37 de
-  pedidos no relacionados.
-
-- **Qué catálogo, de punta a punta:** se usaron 11 ambientes vacíos reales, cada uno con un pedido
-  escrito como lo escribiría un usuario. Un juez (Opus, de a pares, en los dos órdenes) compara
-  las listas.
-  - Solo, ABO le pierde a IKEA 4 a 0 en los 5 ambientes propios, cuyos pedidos son nórdicos.
-  - IKEA + ABO le gana a IKEA solo 8 a 2 (1 empate). En los nórdicos empatan; en los 6 públicos,
-    con pedidos industrial, clásico, bohemio y otros, gana 6 a 0, y el porcentaje de productos
-    útiles sube de 0,46 a 0,71.
-  - Con ABO como distractores, el retrieval sobre el ground truth de IKEA casi no cambia: hit@1
-    pasa de 0,535 a 0,525.
-  - El flujo usa los dos catálogos. Las evaluaciones con ground truth, solo IKEA. Resultados en
-    `datos/resultados/punta_a_punta/`.
-- **Réplica de un ambiente real (el generador, con la lista ya decidida):** se toma un living del
-  ground truth de IKEA, se vacía con Nano Banana 2 y se vuelve a amoblar con sus 6 muebles
-  anotados, 3 veces sin cajas, 3 con rectángulos y 3 con cajas 3D dibujadas donde está cada mueble
-  en la foto real (y una ronda 2 con prompts cortos, abajo). Es una sola habitación: son resultados de una prueba, no una medición.
-  - Sin cajas: los 6 productos aparecen y se reconocen (coseno DINOv3 0,63), pero cada vez arma su
-    propio living: IoU medio con las cajas reales 0,20, 1 de 6 en su lugar (IoU ≥ 0,5).
-  - Con cajas: IoU 0,40 y 2,7 de 6 en su lugar. Las cajas acomodan los muebles grandes (sofá,
-    estantería, alfombra), no los chicos que se superponen (puf, mesa ratona, lámpara). En 2 de 3
-    imágenes quedaron las cajas dibujadas.
-  - Con cajas 3D (un prisma en perspectiva apoyado en el piso, con el volumen de cada mueble;
-    `evaluation/cajas3d.py`: profundidad métrica de Depth Pro, máscaras de SAM, piso y pared por
-    RANSAC, gratis): IoU 0,48 y 3,3 de 6 en su lugar. La que más gana es la lámpara (0,16 → 0,57:
-    el rectángulo marcaba solo lo que se veía; el prisma llega al piso). En 1 de 3 imágenes quedaron
-    las cajas dibujadas, y en otra repitió el puf.
-  - Ronda 2: prompts cortos que dicen qué hacer, iguales salvo en cómo dicen dónde va cada mueble,
-    y dos formas nuevas de decirlo: en palabras (una o dos frases por mueble, que escribe Opus
-    mirando la foto real) y con las cajas en una imagen guía aparte (la foto 1 va limpia). IoU / en
-    su lugar: sin cajas 0,20 / 0,7; en palabras 0,37 / 1,7, sin nada que borrar; cajas 2D 0,43 /
-    3,3; guía 2D 0,36 / 2,3; **cajas 3D 0,52 / 4,0, y ninguna quedó dibujada**; guía 3D 0,38 / 2,3.
-    La guía aparte ubica peor y tampoco evita que las dibuje (1 de 3).
-  - Resultados en `datos/resultados/replica/living-dagarna/` (US$2,40 de fal en total, una imagen
-    se perdió con el disco lleno; US$0,03 de Opus para los lugares en palabras).
+El flujo usa la búsqueda del paso 4, y le pasa 5 candidatos por pieza al que elige: hit@5 es el
+número que importa. Los pasos 5 y 6 están implementados y apagados (`rag.hybrid`): son la
+candidata a versión 2 (`docs/REVISION.md`).
 
 ![Camino incremental](datos/resultados/reporte/camino_texto.png)
-![Base vectorial, query rewriting y reranking](datos/resultados/reporte/avanzado.png)
 
-Una corrida completa del flujo cuesta unos US$0,30: plan y choose con Claude Opus 5.5 (US$0,07
-y US$0,16, con 5 candidatos por pieza) y la imagen con Nano Banana 2 (US$0,08 por intento; si el
-control SIFT la rechaza, se reintenta hasta 3 veces). Ejemplos: `datos/resultados/amoblar/caballito-living/`
-y `datos/resultados/amoblar/caballito-comedor/`.
+### Lo que dicen las ablaciones
+
+- **Qué se indexa.** Describir cada producto desde su foto es lo que más pesa: +0,19 con la
+  consulta sin reescribir y +0,42 [0,37; 0,47] con la consulta escrita como ficha. El texto del
+  vendedor es una frase de marketing que no dice cómo es el mueble.
+- **Cómo se escribe la consulta** (la técnica de Advanced RAG del paso plan: query expansion con
+  respuesta hipotética, más la descomposición del pedido en piezas; `ablaciones/consulta.yaml`).
+  Con la búsqueda del flujo, la consulta escrita como una ficha de ocho líneas da hit@1 0,530; la
+  misma pieza nombrada en una frase corta, sin reescribir ("square pine coffee table"), 0,324:
+  la ficha suma +0,206 [0,157; 0,254] (hit@5 0,790 contra 0,648). Con solo la línea Type, 0,299;
+  con solo el nombre del kind, 0,066 (el piso: no dice nada del producto). Un dato que no
+  esperábamos: buscando contra la **foto** con SigLIP 2, la frase corta sin reescribir da 0,479,
+  casi lo mismo que con la ficha (0,508). La descripción en texto necesita que la consulta hable
+  como el catálogo; la foto no.
+- **Búsqueda léxica y por foto** (`ablaciones/hibrido.yaml`). Sobre las mismas descripciones,
+  BM25 rinde como el embedder (hit@1 0,517 contra 0,530). Y buscar con un modelo de imagen y
+  texto (SigLIP 2: la consulta en una frase corta contra la **foto** del producto, sin ninguna
+  descripción) también: 0,508, con mejor hit@10 (0,889 contra 0,863). Es la otra ruta para un
+  catálogo con fotos (embeber la imagen en vez de pasarla a texto) y llega al mismo lugar; con
+  CLIP ViT-B/32 no (0,357). Lo que importa es que **los tres se equivocan en cosas distintas**:
+  fusionados (cada puntaje estandarizado, el promedio) dan hit@1 0,605 (+0,075 [0,041; 0,111]
+  sobre la búsqueda del flujo), hit@5 0,825 (+0,035 [0,013; 0,056]) y MRR 0,701. Densa + léxica:
+  0,581; densa + foto: 0,585; léxica + foto, sin embedder de texto: 0,597. La fusión por puestos
+  (RRF) rinde algo menos (0,590). Con las consultas escritas por otros dos redactores la mejora
+  se repite: +0,075 y +0,046 de hit@1, +0,035 y +0,048 de hit@5.
+- **El embedder casi no importa en este banco de prueba.** Qwen3 contra una bolsa de palabras:
+  +0,026 [−0,025; +0,077] de hit@1, y el mismo hit@10. Solo se sostiene Qwen3 sobre BGE (+0,057
+  [0,017; 0,095]). Consultas y descripciones las escribe el mismo modelo con el mismo molde, así
+  que contar palabras alcanza; Qwen3 queda por robustez a la paráfrasis, sin evidencia medida.
+- **Los filtros de metadata no suman acá.** Sin filtro y con filtro por tipo dan lo mismo (ninguna
+  consulta cambia de primero); el filtro por kind cuesta 2 puntos de hit@5 (−0,020 [−0,037;
+  −0,004]), porque a veces la consulta y el catálogo no coinciden en el kind fino (ratona /
+  auxiliar). El flujo lo usa igual, por algo que este banco no mide: en los 11 ambientes vacíos,
+  con filtro por tipo el 11% de los candidatos sería de otro kind que el pedido (se pide un
+  sillón y aparece una silla de comedor). El filtro por medidas no tiene evidencia: el límite lo
+  estima el plan a ojo y solo el 34% de los productos de IKEA tiene alguna medida.
+- **Elegir con un VLM** (técnica aislada, no un paso del flujo). Opus ordena el top-10 mirando
+  las fotos: hit@1 pasa de 0,535 a 0,687 (+0,151 [0,115; 0,190]; US$0,02 por búsqueda). Ordena
+  contra la consulta, sin ver el ambiente; el paso `choose` del flujo elige una combinación para
+  el cuarto y no tiene ground truth.
+- **Cuántos candidatos.** Si el VLM elige entre los primeros k, acierta 0,637 con 3, 0,667 con 5
+  y 0,689 con 8; de 3 a 5, +0,029 [0,015; 0,043] (`amoblai evaluar-candidatos`). El techo
+  (hit@k) es 0,732, 0,812 y 0,876. El flujo le pasa 5.
+- **Un reranker de texto empeora.** Dos cross-encoders locales, que leen la consulta y la
+  descripción juntas, reordenando el mismo top-10: el MiniLM de MS MARCO (el de la demo de la
+  clase) baja hit@1 de 0,535 a 0,419, y Qwen3-Reranker-0.6B (de la familia del embedder), a 0,474
+  (−0,062 [−0,111; −0,013]). Releen el mismo texto que ya usó la búsqueda; el que suma es el
+  que mira las fotos.
+- **Dimensión del embedding.** Qwen3 truncado (Matryoshka): 0,428 con 32 componentes, 0,506 con
+  128, 0,532 con 512, igual que con 1024. Con 1.500 productos la memoria no pesa: queda 1024.
+- **Splitting.** No se parte: un producto es un documento. Un chunk por línea da 0,273; comparar
+  línea contra línea no se distingue del documento entero (0,514 contra 0,535; +0,022 [−0,018;
+  +0,062]). La pregunta de splitting que este problema sí tiene es qué líneas de la
+  descripción hacen el trabajo: las de lo que se ve (colores y forma, sobre todo); Feel y Goes with
+  casi no aportan (`ablaciones/lineas.yaml`).
+- **Base vectorial.** ChromaDB (HNSW) y la búsqueda exacta dan el mismo ranking en las 864
+  consultas. Con 1.500 vectores es lo esperable; ChromaDB da los filtros de metadata en la misma
+  consulta y la persistencia.
+- **Tres redactores.** Con las consultas escritas tres veces por separado, la búsqueda del flujo
+  da hit@1 0,539 ± 0,025 y MRR 0,643 ± 0,015 (la híbrida, 0,604 ± 0,009). Una diferencia de 2
+  puntos entre dos métodos no es señal.
+- **Por imagen o por texto.** La primera aproximación buscaba por parecido visual entre un
+  recorte del mueble y la foto del catálogo (DINOv3). Con la misma unidad (los 232 productos
+  anotados): recall@1 0,43 por imagen contra 0,55 por texto (+0,12 [0,04; 0,20]).
+- **Relevancia graduada.** Un juez califica el top-3 con 2, 1 o 0 contra la pieza del ambiente
+  (150 consultas): el primer candidato sirve en el 78% y alguno del top-3 en el 87%
+  (reponderado a la población). El juez le da 2 al anotado el 81% de las veces y a los demás el
+  5%: el ground truth es incompleto, hay productos que sirven y no están anotados.
+- **Por categoría** (hit@1): sillas 0,84, guardado 0,72, mesas 0,69, lámparas 0,59, deco 0,36,
+  alfombras 0,31. Deco y alfombras son lo difícil: muchos productos parecidos (53 almohadones,
+  89 alfombras).
+
+### El flujo entero, sobre ambientes vacíos reales
+
+- **Qué catálogo.** IKEA + ABO le gana a IKEA solo en 8 ambientes de 11, pierde en 2 y empata
+  en 1 (test de signos, p = 0,11); productos útiles, 0,73 contra 0,63. En los 5 pedidos nórdicos
+  empatan (2 a 2); en los 6 de otros estilos (industrial, clásico, bohemio...) gana 6 a 0, pero
+  esos pedidos los escribimos sabiendo qué le falta a IKEA. ABO solo pierde 4 a 0 con IKEA en
+  los nórdicos. Con ABO como distractores, el buscador pierde 3,5 puntos de hit@5 (0,812 →
+  0,778). El flujo usa los dos catálogos. No hay corrida repetida: no sabemos cuántos ambientes
+  da vuelta el ruido solo.
+- **Qué hace el que elige** (`amoblai diagnostico-flujo`, sin juez): toma el primero del coseno
+  solo el 45% de las veces y el 24% de lo que elige sale de los puestos 4 y 5; nunca dejó una
+  pieza afuera (0 de 75), aunque puede: cuando el catálogo no tiene lo pedido, pone lo más
+  parecido sin avisar. El 37% de lo elegido no tiene ninguna medida en el catálogo.
+- **El generador** (11 listas de la configuración final; jueces por la API). Faithfulness del
+  porqué: 0,82 (289 de 351 afirmaciones se infieren de lo que vio el generador); lo que no se
+  sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer
+  relevance: 0,69, contra 0,55 de la vara cruzada (los pedidos reconstruidos para otras listas) y
+  0,40 de pedidos sin relación.
+- **La imagen** (8 imágenes con métricas, de 4 ambientes y varias configuraciones): 26 de 52
+  productos se reconocen como el producto exacto al comparar su recorte con la foto del catálogo
+  (DINOv3; coseno medio 0,48), entre 3 de 8 y 3 de 4 por imagen. El control del ambiente
+  (SIFT + RANSAC contra la foto original) rechazó 2 de 3 intentos en un caso y marcó el único en
+  que el modelo rehízo el cuarto. Ninguna imagen se generó todavía con el catálogo combinado.
+- **Costo.** Una corrida completa cuesta unos US$0,28: plan y choose con Claude Opus 5.5
+  (US$0,06 y US$0,14 de media; el choose va de US$0,05 a US$0,43 según cuántas piezas y de qué
+  catálogo) y la imagen con Nano Banana 2 (US$0,08 por intento; si el control del ambiente la
+  rechaza, se reintenta hasta 3 veces). Sale del registro de cada llamada paga
+  (`datos/resultados/gastos.jsonl`, `amoblai gastos`). Ejemplos con imagen:
+  `datos/resultados/amoblar/caballito-living/` y `caballito-comedor/` (anteriores al catálogo
+  combinado: sus productos son todos de IKEA). Las listas con IKEA + ABO están en
+  `datos/resultados/punta_a_punta/catalogos/todos/`.
+
+### Fuera del RAG: ubicar los muebles (la réplica)
+
+Se tomó un living del ground truth de IKEA, se vació con Nano Banana 2 y se volvió a amoblar con
+sus 6 muebles, indicando o no dónde va cada uno. Es un solo cuarto y 3 imágenes por variante: una
+prueba, no una medición. Lo que se sostiene: indicar el lugar ayuda mucho. IoU medio con la
+posición real: 0,20 sin indicar nada, 0,37 diciéndolo en palabras, 0,40–0,43 con rectángulos
+dibujados y 0,48–0,52 con cajas 3D (`evaluation/cajas3d.py`: profundidad de Depth Pro, máscaras
+de SAM, piso y pared por RANSAC). Es trabajo futuro: el flujo no tiene las medidas del ambiente.
+Resultados en `datos/resultados/replica/living-dagarna/` (US$2,40 de fal).
 
 ## Instalación
 
@@ -164,20 +219,28 @@ uv run amoblai indice            # descripciones → embeddings → ChromaDB (en
 uv run amoblai buscar "Type: armchair, lounge reading chair
 Materials: bentwood, leather" --kind armchair
 
-# El flujo completo (se retoma donde quedó; nada se paga dos veces)
+# El flujo completo (se retoma donde quedó; nada se paga dos veces). La carpeta de la corrida es
+# el nombre de la foto (o --nombre): para otro pedido sobre la misma foto, darle otro --nombre.
 uv run amoblai amoblar datos/ambientes_vacios/ambiente2-alvear/alvear2.jpg "un living nórdico y cálido" \
     --vista datos/ambientes_vacios/ambiente2-alvear/alvear1.jpg \
     --set 'budget.allow_paid_steps=[furnish.plan, furnish.choose, furnish.scene]'   # imagen a mano
 uv run amoblai amoblar foto.jpg "un comedor para seis" --generador nano_banana_2 --pagar
 
-# Evaluación: cada ablación es un YAML de datos/configs/ablaciones/
+# Evaluación: cada ablación es un YAML de datos/configs/ablaciones/ (el primer método es la base:
+# los demás se comparan con él y con el anterior, con la diferencia pareada y su IC 95%)
 uv run amoblai evaluar                                                        # gratis, local
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/camino.yaml    # el camino incremental
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/consulta.yaml  # la consulta, contra no reescribirla
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/hibrido.yaml   # búsqueda léxica, por foto y fusión
+uv run amoblai evaluar --ablacion datos/configs/ablaciones/lineas.yaml    # qué líneas de la descripción pesan
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking.yaml --estimar  # cuánto costaría
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking.yaml --pagar
 uv run amoblai evaluar --ablacion datos/configs/ablaciones/reproducibilidad.yaml --replica r2
 uv run amoblai evaluar-graduada  # relevancia graduada del top-3 (--armar N: los lotes del juez)
 uv run amoblai evaluar-imagen --referencia   # la imagen generada, y la vara con fotos reales
-uv run amoblai evaluar-respuesta # faithfulness y answer relevance (RAGAS) del porqué
+uv run amoblai evaluar-candidatos # cuántos candidatos por pieza (sale del reranking ya pago)
+uv run amoblai evaluar-respuesta <corridas> --juez opus --pagar   # faithfulness y answer relevance
+uv run amoblai diagnostico-flujo # el flujo real sin juez: qué puesto elige, medidas que faltan...
 uv run amoblai evaluar-espacio   # el espacio de embeddings: vecinos del mismo kind, UMAP
 uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/catalogos.yaml --pagar
                                  # variantes del flujo en ambientes reales, comparadas por un juez
@@ -213,7 +276,7 @@ datos/
   ambientes_vacios/   fotos de ambientes (dos vistas de cada uno)
   resultados/         corridas del flujo, evaluaciones, reporte, gastos; v0_imagen/
   dataset/ procesados/ cache/    (se commitean para no bajar ni pagar de nuevo; la CLI los rehace)
-deprecated/           la v0 (retrieval por imagen), completa
+deprecated/           el código de la primera aproximación (retrieval por imagen); solo se evaluó su buscador
 ```
 
 ## Desarrollo
@@ -223,8 +286,10 @@ uv run pytest
 uv run ruff check src tests apps && uv run ruff format --check src tests apps
 ```
 
-La v0 (retrieval por imagen: Grounding DINO, SAM, DINOv3) sigue en `deprecated/`, con sus
-propios tests:
+La primera aproximación (la de la propuesta: generar una imagen amoblada, recortar los muebles
+con Grounding DINO y SAM y buscarlos por parecido visual con DINOv3) sigue en `deprecated/`, con
+sus propios tests. De ella se construyó y se evaluó el buscador, sobre las fotos de ambientes de
+IKEA; nunca corrió de punta a punta. Es la línea de base del retrieval por texto:
 
 ```bash
 uv sync --extra cpu --extra imagen --group dev

@@ -1,0 +1,175 @@
+{
+ "claims": [
+  {
+   "claim": "No green velvet sofa is among the offered products",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The only sofa offered is charcoal grey, not green velvet."
+  },
+  {
+   "claim": "The request asked for a dark green velvet sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un sofá tapizado en terciopelo verde oscuro'."
+  },
+  {
+   "claim": "The sofa is charcoal",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The photo shows dark charcoal grey upholstery."
+  },
+  {
+   "claim": "The sofa has rolled arms",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The product line says 'rolled arms' and the photo shows them."
+  },
+  {
+   "claim": "The sofa is a three-seater",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The product line says 'three-seat sofa'."
+  },
+  {
+   "claim": "The sofa has black turned legs",
+   "about": "390.338.01",
+   "supported": true,
+   "evidence": "The photo shows black turned legs."
+  },
+  {
+   "claim": "The fireplace mantel is dark",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows a dark grey/black mantel."
+  },
+  {
+   "claim": "The request asked for two armchairs facing each other",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'dos sillones enfrentados'."
+  },
+  {
+   "claim": "The armchair is cream",
+   "about": "abo-B07DBB77DV",
+   "supported": true,
+   "evidence": "The photo shows cream/beige upholstery."
+  },
+  {
+   "claim": "The armchair is a wingback",
+   "about": "abo-B07DBB77DV",
+   "supported": true,
+   "evidence": "The product line says 'wingback accent armchair'."
+  },
+  {
+   "claim": "The armchair has dark tapered legs",
+   "about": "abo-B07DBB77DV",
+   "supported": true,
+   "evidence": "The photo shows dark wood tapered legs."
+  },
+  {
+   "claim": "The rug is large",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The product line gives 292 x 231 cm."
+  },
+  {
+   "claim": "The rug has a traditional medallion design",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The product line says 'medallion' and the photo shows a central medallion."
+  },
+  {
+   "claim": "The rug is charcoal and cream",
+   "about": "abo-B0719STM6D",
+   "supported": true,
+   "evidence": "The photo shows a charcoal field with cream border and medallion."
+  },
+  {
+   "claim": "The rug is big enough for the whole seating group",
+   "about": "abo-B0719STM6D",
+   "supported": false,
+   "evidence": "The sofa size is unknown, so the fit of the whole group cannot be checked."
+  },
+  {
+   "claim": "The coffee table is dark espresso wood",
+   "about": "abo-B07DBFFG9Z",
+   "supported": true,
+   "evidence": "The photo shows dark brown wood and the line says 'wood coffee table'."
+  },
+  {
+   "claim": "The coffee table has an X-base",
+   "about": "abo-B07DBFFG9Z",
+   "supported": true,
+   "evidence": "The product line says 'X-base' and the photo shows crossed legs."
+  },
+  {
+   "claim": "The table fits between sofa and fireplace",
+   "about": "abo-B07DBFFG9Z",
+   "supported": false,
+   "evidence": "No room dimensions or sofa size are given."
+  },
+  {
+   "claim": "The mirror frame is champagne-gold",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The photo shows a pale gold frame."
+  },
+  {
+   "claim": "The mirror has an overlay design",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The product line says 'overlay wall mirror' and the photo shows fretwork over the glass."
+  },
+  {
+   "claim": "The mirror is about a metre across",
+   "about": "abo-B0718ZKMW1",
+   "supported": true,
+   "evidence": "The product line gives a width of 102 cm."
+  },
+  {
+   "claim": "The mirror suits the size of the chimney breast",
+   "about": "abo-B0718ZKMW1",
+   "supported": false,
+   "evidence": "The width of the chimney breast is not given."
+  },
+  {
+   "claim": "The request asked for a large framed mirror over the fireplace",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'un espejo grande con marco sobre la chimenea'."
+  },
+  {
+   "claim": "The lamp has a turned column",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The product line says 'turned-column floor lamp'."
+  },
+  {
+   "claim": "The lamp has a drum shade",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The photo shows a cylindrical drum shade."
+  },
+  {
+   "claim": "The lamp shade is linen",
+   "about": "abo-B07QD5SDWK",
+   "supported": true,
+   "evidence": "The photo shows a beige woven fabric with a linen-like texture."
+  },
+  {
+   "claim": "The walls are pale mint",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows pale mint/blue-green walls."
+  },
+  {
+   "claim": "The room has mouldings",
+   "about": "room",
+   "supported": true,
+   "evidence": "The room photo shows panelled wainscoting and a coffered ceiling."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.090492,
+ "_prompt": "juez_fidelidad_v2"
+}

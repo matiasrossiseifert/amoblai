@@ -1,6 +1,7 @@
 """One furnishing run: a room photo and a request -> a run folder, the steps of `furnish.steps` in
 order. Each step writes its file; a step whose file exists is not done again (nothing is paid
-twice), so a run resumes where it stopped.
+twice), so a run resumes where it stopped. A folder that holds a run for another request is
+refused: its steps are that request's answer.
 
     room.jpg, request.json
     room_2.jpg ...      other photos of the same room (views), for the LLM only
@@ -127,6 +128,14 @@ def run_flow(
     of the same room, from other angles, for the LLM to understand it (the image model gets
     `photo` alone)."""
     out.mkdir(parents=True, exist_ok=True)
+    before = out / "request.json"
+    if before.exists() and json.loads(before.read_text()).get("request") not in (None, request):
+        # The steps on disk answer another request: resuming would return them as this one's.
+        raise ValueError(
+            f"{out} already holds a run for another request "
+            f"({json.loads(before.read_text())['request']!r}). Use another run folder "
+            "(amoblar --nombre) or delete this one."
+        )
     run = Run(cfg, out, request, log, extras or {})
     copies = {run.room: photo, **{out / f"room_{i}.jpg": v for i, v in enumerate(views, 2)}}
     for dst, src in copies.items():

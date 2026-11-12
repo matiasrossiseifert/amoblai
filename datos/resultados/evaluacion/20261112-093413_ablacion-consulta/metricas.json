@@ -1,0 +1,1981 @@
+{
+  "qwen3|description|filtro-kind": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "full",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.5301,
+    "hit@1_ic95": [
+      0.4857,
+      0.5734
+    ],
+    "hit@3": 0.714,
+    "hit@3_ic95": [
+      0.6733,
+      0.7558
+    ],
+    "hit@5": 0.7905,
+    "hit@5_ic95": [
+      0.7536,
+      0.8339
+    ],
+    "hit@10": 0.8634,
+    "hit@10_ic95": [
+      0.8271,
+      0.8989
+    ],
+    "mrr@10": 0.6407,
+    "mrr@10_ic95": [
+      0.6021,
+      0.6787
+    ],
+    "context_precision@10": 0.6244,
+    "context_precision@10_ic95": [
+      0.5886,
+      0.6625
+    ],
+    "ndcg@10": 0.6308,
+    "ndcg@10_ic95": [
+      0.5993,
+      0.6638
+    ],
+    "context_recall@3": 0.7605,
+    "context_recall@3_ic95": [
+      0.7216,
+      0.7989
+    ],
+    "context_recall@10": 0.8988,
+    "context_recall@10_ic95": [
+      0.8705,
+      0.9227
+    ],
+    "curva_hit@k": {
+      "1": 0.5301,
+      "2": 0.6612,
+      "3": 0.714,
+      "5": 0.7905,
+      "10": 0.8634,
+      "15": 0.8962,
+      "20": 0.9144,
+      "30": 0.9344,
+      "50": 0.9399
+    },
+    "confianza_auroc": 0.6641,
+    "confianza_umbral_f1": {
+      "threshold": 0.8093,
+      "f1": 0.7089,
+      "precision": 0.5685,
+      "recall": 0.9416
+    },
+    "literal_hit@10": 0.5547,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.5413,
+    "recall_item@1_ic95": [
+      0.5009,
+      0.5844
+    ],
+    "recall_item@10": 0.8848,
+    "recall_item@10_ic95": [
+      0.8592,
+      0.9093
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "bench": 1.0,
+      "cabinet": 0.6923,
+      "chair": 0.8444,
+      "deco": 0.3671,
+      "dresser": 1.0,
+      "lamp": 0.6094,
+      "ottoman": 1.0,
+      "rug": 0.3111,
+      "shelf": 0.4286,
+      "sofa": 0.5833,
+      "stool": 0.875,
+      "table": 0.6418
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.6131,
+        "hit@10": 0.8794,
+        "mrr@10": 0.7082
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.4829,
+        "hit@10": 0.8543,
+        "mrr@10": 0.6022
+      }
+    },
+    "segundos": 2.5
+  },
+  "qwen3|description|filtro-kind|consulta-piece": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "piece",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.3242,
+    "hit@1_ic95": [
+      0.2719,
+      0.3823
+    ],
+    "hit@3": 0.5392,
+    "hit@3_ic95": [
+      0.4872,
+      0.5925
+    ],
+    "hit@5": 0.6485,
+    "hit@5_ic95": [
+      0.6037,
+      0.6985
+    ],
+    "hit@10": 0.7778,
+    "hit@10_ic95": [
+      0.7372,
+      0.8202
+    ],
+    "mrr@10": 0.4599,
+    "mrr@10_ic95": [
+      0.4142,
+      0.5087
+    ],
+    "context_precision@10": 0.4479,
+    "context_precision@10_ic95": [
+      0.4071,
+      0.4939
+    ],
+    "ndcg@10": 0.4781,
+    "ndcg@10_ic95": [
+      0.4421,
+      0.5156
+    ],
+    "context_recall@3": 0.5691,
+    "context_recall@3_ic95": [
+      0.5184,
+      0.6192
+    ],
+    "context_recall@10": 0.827,
+    "context_recall@10_ic95": [
+      0.7841,
+      0.8672
+    ],
+    "curva_hit@k": {
+      "1": 0.3242,
+      "2": 0.4572,
+      "3": 0.5392,
+      "5": 0.6485,
+      "10": 0.7778,
+      "15": 0.8597,
+      "20": 0.8925,
+      "30": 0.9253,
+      "50": 0.9381
+    },
+    "confianza_auroc": 0.6257,
+    "confianza_umbral_f1": {
+      "threshold": 0.6279,
+      "f1": 0.5253,
+      "precision": 0.375,
+      "recall": 0.8764
+    },
+    "literal_hit@10": 0.5,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.3321,
+    "recall_item@1_ic95": [
+      0.2824,
+      0.3819
+    ],
+    "recall_item@10": 0.8119,
+    "recall_item@10_ic95": [
+      0.7757,
+      0.8469
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.3333,
+      "bench": 0.75,
+      "cabinet": 0.4359,
+      "chair": 0.3778,
+      "deco": 0.2174,
+      "dresser": 0.0,
+      "lamp": 0.4219,
+      "ottoman": 0.6667,
+      "rug": 0.1333,
+      "shelf": 0.2857,
+      "sofa": 0.2917,
+      "stool": 0.75,
+      "table": 0.5075
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.3518,
+        "hit@10": 0.7839,
+        "mrr@10": 0.476
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.3086,
+        "hit@10": 0.7743,
+        "mrr@10": 0.4508
+      }
+    },
+    "segundos": 2.7,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.2058,
+      "hit@1_ic95": [
+        -0.2536,
+        -0.1568
+      ],
+      "hit@5": -0.1421,
+      "hit@5_ic95": [
+        -0.1705,
+        -0.1123
+      ],
+      "hit@10": -0.0856,
+      "hit@10_ic95": [
+        -0.1145,
+        -0.0579
+      ],
+      "mrr@10": -0.1807,
+      "mrr@10_ic95": [
+        -0.2125,
+        -0.1505
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.2058,
+      "hit@1_ic95": [
+        -0.2536,
+        -0.1568
+      ],
+      "hit@5": -0.1421,
+      "hit@5_ic95": [
+        -0.1705,
+        -0.1123
+      ],
+      "hit@10": -0.0856,
+      "hit@10_ic95": [
+        -0.1145,
+        -0.0579
+      ],
+      "mrr@10": -0.1807,
+      "mrr@10_ic95": [
+        -0.2125,
+        -0.1505
+      ]
+    }
+  },
+  "qwen3|description|filtro-kind|consulta-type": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "type",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.2987,
+    "hit@1_ic95": [
+      0.2561,
+      0.3445
+    ],
+    "hit@3": 0.541,
+    "hit@3_ic95": [
+      0.4885,
+      0.5932
+    ],
+    "hit@5": 0.6412,
+    "hit@5_ic95": [
+      0.595,
+      0.6864
+    ],
+    "hit@10": 0.7996,
+    "hit@10_ic95": [
+      0.7606,
+      0.8388
+    ],
+    "mrr@10": 0.4458,
+    "mrr@10_ic95": [
+      0.4064,
+      0.4879
+    ],
+    "context_precision@10": 0.4322,
+    "context_precision@10_ic95": [
+      0.3925,
+      0.4734
+    ],
+    "ndcg@10": 0.4709,
+    "ndcg@10_ic95": [
+      0.4348,
+      0.5089
+    ],
+    "context_recall@3": 0.5864,
+    "context_recall@3_ic95": [
+      0.5301,
+      0.6432
+    ],
+    "context_recall@10": 0.8368,
+    "context_recall@10_ic95": [
+      0.8042,
+      0.8685
+    ],
+    "curva_hit@k": {
+      "1": 0.2987,
+      "2": 0.4335,
+      "3": 0.541,
+      "5": 0.6412,
+      "10": 0.7996,
+      "15": 0.8689,
+      "20": 0.9016,
+      "30": 0.929,
+      "50": 0.9362
+    },
+    "confianza_auroc": 0.5801,
+    "confianza_umbral_f1": {
+      "threshold": 0.6787,
+      "f1": 0.4824,
+      "precision": 0.3391,
+      "recall": 0.8354
+    },
+    "literal_hit@10": 0.514,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.3052,
+    "recall_item@1_ic95": [
+      0.2645,
+      0.3477
+    ],
+    "recall_item@10": 0.8215,
+    "recall_item@10_ic95": [
+      0.7928,
+      0.8504
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.3333,
+      "bench": 0.5,
+      "cabinet": 0.2308,
+      "chair": 0.6889,
+      "deco": 0.2367,
+      "dresser": 0.0,
+      "lamp": 0.2969,
+      "ottoman": 0.5,
+      "rug": 0.1333,
+      "shelf": 0.2857,
+      "sofa": 0.125,
+      "stool": 0.75,
+      "table": 0.3582
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.3518,
+        "hit@10": 0.8191,
+        "mrr@10": 0.5014
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.2686,
+        "hit@10": 0.7886,
+        "mrr@10": 0.4142
+      }
+    },
+    "segundos": 2.6,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.2313,
+      "hit@1_ic95": [
+        -0.2719,
+        -0.1946
+      ],
+      "hit@5": -0.1494,
+      "hit@5_ic95": [
+        -0.1777,
+        -0.1217
+      ],
+      "hit@10": -0.0638,
+      "hit@10_ic95": [
+        -0.0874,
+        -0.0423
+      ],
+      "mrr@10": -0.1949,
+      "mrr@10_ic95": [
+        -0.2208,
+        -0.1686
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.0255,
+      "hit@1_ic95": [
+        -0.0732,
+        0.0254
+      ],
+      "hit@5": -0.0073,
+      "hit@5_ic95": [
+        -0.0428,
+        0.0256
+      ],
+      "hit@10": 0.0219,
+      "hit@10_ic95": [
+        0.0,
+        0.0459
+      ],
+      "mrr@10": -0.0141,
+      "mrr@10_ic95": [
+        -0.049,
+        0.0209
+      ]
+    }
+  },
+  "qwen3|description|filtro-kind|consulta-kind": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "kind",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.0656,
+    "hit@1_ic95": [
+      0.0411,
+      0.0932
+    ],
+    "hit@3": 0.1876,
+    "hit@3_ic95": [
+      0.154,
+      0.2209
+    ],
+    "hit@5": 0.2641,
+    "hit@5_ic95": [
+      0.219,
+      0.3113
+    ],
+    "hit@10": 0.4645,
+    "hit@10_ic95": [
+      0.4151,
+      0.5147
+    ],
+    "mrr@10": 0.1566,
+    "mrr@10_ic95": [
+      0.1323,
+      0.1867
+    ],
+    "context_precision@10": 0.1525,
+    "context_precision@10_ic95": [
+      0.1297,
+      0.1796
+    ],
+    "ndcg@10": 0.1949,
+    "ndcg@10_ic95": [
+      0.1708,
+      0.2217
+    ],
+    "context_recall@3": 0.1529,
+    "context_recall@3_ic95": [
+      0.121,
+      0.1886
+    ],
+    "context_recall@10": 0.4183,
+    "context_recall@10_ic95": [
+      0.374,
+      0.4604
+    ],
+    "curva_hit@k": {
+      "1": 0.0656,
+      "2": 0.1111,
+      "3": 0.1876,
+      "5": 0.2641,
+      "10": 0.4645,
+      "15": 0.623,
+      "20": 0.714,
+      "30": 0.8434,
+      "50": 0.898
+    },
+    "confianza_auroc": 0.5364,
+    "confianza_umbral_f1": {
+      "threshold": 0.5733,
+      "f1": 0.1623,
+      "precision": 0.0906,
+      "recall": 0.7778
+    },
+    "literal_hit@10": 0.2965,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.0422,
+    "recall_item@1_ic95": [
+      0.0297,
+      0.0567
+    ],
+    "recall_item@10": 0.405,
+    "recall_item@10_ic95": [
+      0.3667,
+      0.4459
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.0556,
+      "bench": 0.0,
+      "cabinet": 0.0513,
+      "chair": 0.0667,
+      "deco": 0.1111,
+      "dresser": 0.0,
+      "lamp": 0.0156,
+      "ottoman": 0.0,
+      "rug": 0.0,
+      "shelf": 0.0,
+      "sofa": 0.0,
+      "stool": 0.25,
+      "table": 0.0597
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.0402,
+        "hit@10": 0.2663,
+        "mrr@10": 0.0908
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.08,
+        "hit@10": 0.5771,
+        "mrr@10": 0.194
+      }
+    },
+    "segundos": 2.7,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.4645,
+      "hit@1_ic95": [
+        -0.5108,
+        -0.4161
+      ],
+      "hit@5": -0.5264,
+      "hit@5_ic95": [
+        -0.5819,
+        -0.4737
+      ],
+      "hit@10": -0.3989,
+      "hit@10_ic95": [
+        -0.4506,
+        -0.349
+      ],
+      "mrr@10": -0.4841,
+      "mrr@10_ic95": [
+        -0.5241,
+        -0.4417
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.2332,
+      "hit@1_ic95": [
+        -0.2821,
+        -0.1846
+      ],
+      "hit@5": -0.377,
+      "hit@5_ic95": [
+        -0.4323,
+        -0.3304
+      ],
+      "hit@10": -0.3352,
+      "hit@10_ic95": [
+        -0.386,
+        -0.2862
+      ],
+      "mrr@10": -0.2892,
+      "mrr@10_ic95": [
+        -0.3301,
+        -0.2472
+      ]
+    }
+  },
+  "qwen3|description|filtro-none": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "none",
+      "store": "chroma",
+      "query": "full",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.5355,
+    "hit@1_ic95": [
+      0.4913,
+      0.5773
+    ],
+    "hit@3": 0.7304,
+    "hit@3_ic95": [
+      0.6894,
+      0.7716
+    ],
+    "hit@5": 0.8106,
+    "hit@5_ic95": [
+      0.7789,
+      0.8459
+    ],
+    "hit@10": 0.8852,
+    "hit@10_ic95": [
+      0.8563,
+      0.9162
+    ],
+    "mrr@10": 0.652,
+    "mrr@10_ic95": [
+      0.6157,
+      0.6878
+    ],
+    "context_precision@10": 0.6319,
+    "context_precision@10_ic95": [
+      0.597,
+      0.6671
+    ],
+    "ndcg@10": 0.6493,
+    "ndcg@10_ic95": [
+      0.6198,
+      0.6787
+    ],
+    "context_recall@3": 0.7895,
+    "context_recall@3_ic95": [
+      0.7526,
+      0.8264
+    ],
+    "context_recall@10": 0.9306,
+    "context_recall@10_ic95": [
+      0.9117,
+      0.9484
+    ],
+    "curva_hit@k": {
+      "1": 0.5355,
+      "2": 0.6721,
+      "3": 0.7304,
+      "5": 0.8106,
+      "10": 0.8852,
+      "15": 0.9235,
+      "20": 0.9454,
+      "30": 0.969,
+      "50": 0.9872
+    },
+    "confianza_auroc": 0.6541,
+    "confianza_umbral_f1": {
+      "threshold": 0.7748,
+      "f1": 0.7067,
+      "precision": 0.5528,
+      "recall": 0.9796
+    },
+    "literal_hit@10": 0.5977,
+    "azar_hit@1": 0.0018,
+    "azar_hit@10": 0.0177,
+    "azar_mrr@10": 0.0052,
+    "recall_item@1": 0.547,
+    "recall_item@1_ic95": [
+      0.5086,
+      0.5876
+    ],
+    "recall_item@10": 0.9079,
+    "recall_item@10_ic95": [
+      0.8864,
+      0.9292
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "bench": 1.0,
+      "cabinet": 0.7179,
+      "chair": 0.8444,
+      "deco": 0.3623,
+      "dresser": 1.0,
+      "lamp": 0.5938,
+      "ottoman": 1.0,
+      "rug": 0.3111,
+      "shelf": 0.4286,
+      "sofa": 0.625,
+      "stool": 0.875,
+      "table": 0.6866
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.6332,
+        "hit@10": 0.8995,
+        "mrr@10": 0.7331
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.48,
+        "hit@10": 0.8771,
+        "mrr@10": 0.606
+      }
+    },
+    "segundos": 2.3,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": 0.0055,
+      "hit@1_ic95": [
+        -0.0056,
+        0.0155
+      ],
+      "hit@5": 0.02,
+      "hit@5_ic95": [
+        0.0037,
+        0.0368
+      ],
+      "hit@10": 0.0219,
+      "hit@10_ic95": [
+        0.0018,
+        0.0412
+      ],
+      "mrr@10": 0.0114,
+      "mrr@10_ic95": [
+        0.0004,
+        0.0217
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": 0.4699,
+      "hit@1_ic95": [
+        0.4245,
+        0.5161
+      ],
+      "hit@5": 0.5464,
+      "hit@5_ic95": [
+        0.4939,
+        0.6023
+      ],
+      "hit@10": 0.4208,
+      "hit@10_ic95": [
+        0.371,
+        0.47
+      ],
+      "mrr@10": 0.4954,
+      "mrr@10_ic95": [
+        0.4551,
+        0.5343
+      ]
+    }
+  },
+  "qwen3|description|filtro-none|consulta-piece": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "none",
+      "store": "chroma",
+      "query": "piece",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.2969,
+    "hit@1_ic95": [
+      0.2461,
+      0.3531
+    ],
+    "hit@3": 0.5082,
+    "hit@3_ic95": [
+      0.4606,
+      0.5576
+    ],
+    "hit@5": 0.6011,
+    "hit@5_ic95": [
+      0.5559,
+      0.6498
+    ],
+    "hit@10": 0.7359,
+    "hit@10_ic95": [
+      0.6943,
+      0.7753
+    ],
+    "mrr@10": 0.4299,
+    "mrr@10_ic95": [
+      0.3879,
+      0.4736
+    ],
+    "context_precision@10": 0.4174,
+    "context_precision@10_ic95": [
+      0.3796,
+      0.4608
+    ],
+    "ndcg@10": 0.4464,
+    "ndcg@10_ic95": [
+      0.4133,
+      0.4826
+    ],
+    "context_recall@3": 0.5476,
+    "context_recall@3_ic95": [
+      0.4996,
+      0.5972
+    ],
+    "context_recall@10": 0.7837,
+    "context_recall@10_ic95": [
+      0.7434,
+      0.8226
+    ],
+    "curva_hit@k": {
+      "1": 0.2969,
+      "2": 0.4317,
+      "3": 0.5082,
+      "5": 0.6011,
+      "10": 0.7359,
+      "15": 0.8197,
+      "20": 0.8634,
+      "30": 0.9126,
+      "50": 0.9417
+    },
+    "confianza_auroc": 0.6435,
+    "confianza_umbral_f1": {
+      "threshold": 0.6696,
+      "f1": 0.5043,
+      "precision": 0.3869,
+      "recall": 0.7239
+    },
+    "literal_hit@10": 0.514,
+    "azar_hit@1": 0.0018,
+    "azar_hit@10": 0.0177,
+    "azar_mrr@10": 0.0052,
+    "recall_item@1": 0.3052,
+    "recall_item@1_ic95": [
+      0.2588,
+      0.355
+    ],
+    "recall_item@10": 0.762,
+    "recall_item@10_ic95": [
+      0.7271,
+      0.7955
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.2778,
+      "bench": 0.75,
+      "cabinet": 0.4103,
+      "chair": 0.3556,
+      "deco": 0.1981,
+      "dresser": 0.0,
+      "lamp": 0.3906,
+      "ottoman": 0.6667,
+      "rug": 0.1333,
+      "shelf": 0.2857,
+      "sofa": 0.3333,
+      "stool": 0.5,
+      "table": 0.4328
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.3216,
+        "hit@10": 0.7387,
+        "mrr@10": 0.4448
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.2829,
+        "hit@10": 0.7343,
+        "mrr@10": 0.4215
+      }
+    },
+    "segundos": 2.4,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.2332,
+      "hit@1_ic95": [
+        -0.2814,
+        -0.1843
+      ],
+      "hit@5": -0.1894,
+      "hit@5_ic95": [
+        -0.2263,
+        -0.153
+      ],
+      "hit@10": -0.1275,
+      "hit@10_ic95": [
+        -0.1642,
+        -0.0881
+      ],
+      "mrr@10": -0.2108,
+      "mrr@10_ic95": [
+        -0.2447,
+        -0.1791
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.2386,
+      "hit@1_ic95": [
+        -0.287,
+        -0.1888
+      ],
+      "hit@5": -0.2095,
+      "hit@5_ic95": [
+        -0.246,
+        -0.1754
+      ],
+      "hit@10": -0.1494,
+      "hit@10_ic95": [
+        -0.1867,
+        -0.1117
+      ],
+      "mrr@10": -0.2221,
+      "mrr@10_ic95": [
+        -0.2565,
+        -0.1879
+      ]
+    }
+  },
+  "bm25|description|filtro-kind": {
+    "method": {
+      "embedder": "bm25",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "full",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.5173,
+    "hit@1_ic95": [
+      0.4747,
+      0.5619
+    ],
+    "hit@3": 0.7086,
+    "hit@3_ic95": [
+      0.6654,
+      0.7522
+    ],
+    "hit@5": 0.8015,
+    "hit@5_ic95": [
+      0.7617,
+      0.8443
+    ],
+    "hit@10": 0.8689,
+    "hit@10_ic95": [
+      0.8333,
+      0.905
+    ],
+    "mrr@10": 0.631,
+    "mrr@10_ic95": [
+      0.597,
+      0.6688
+    ],
+    "context_precision@10": 0.6143,
+    "context_precision@10_ic95": [
+      0.582,
+      0.6504
+    ],
+    "ndcg@10": 0.6243,
+    "ndcg@10_ic95": [
+      0.5937,
+      0.6588
+    ],
+    "context_recall@3": 0.7443,
+    "context_recall@3_ic95": [
+      0.7024,
+      0.7867
+    ],
+    "context_recall@10": 0.8948,
+    "context_recall@10_ic95": [
+      0.868,
+      0.9203
+    ],
+    "curva_hit@k": {
+      "1": 0.5173,
+      "2": 0.6375,
+      "3": 0.7086,
+      "5": 0.8015,
+      "10": 0.8689,
+      "15": 0.8944,
+      "20": 0.9107,
+      "30": 0.9235,
+      "50": 0.9381
+    },
+    "confianza_auroc": 0.6741,
+    "confianza_umbral_f1": {
+      "threshold": 1.7802,
+      "f1": 0.7018,
+      "precision": 0.5689,
+      "recall": 0.9155
+    },
+    "literal_hit@10": 0.5581,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.5163,
+    "recall_item@1_ic95": [
+      0.4777,
+      0.5526
+    ],
+    "recall_item@10": 0.8752,
+    "recall_item@10_ic95": [
+      0.8502,
+      0.903
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.6667,
+      "bench": 1.0,
+      "cabinet": 0.6667,
+      "chair": 0.6889,
+      "deco": 0.3623,
+      "dresser": 1.0,
+      "lamp": 0.5625,
+      "ottoman": 1.0,
+      "rug": 0.4,
+      "shelf": 0.381,
+      "sofa": 0.4583,
+      "stool": 0.875,
+      "table": 0.7313
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.608,
+        "hit@10": 0.8945,
+        "mrr@10": 0.7143
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.4657,
+        "hit@10": 0.8543,
+        "mrr@10": 0.5836
+      }
+    },
+    "segundos": 0.7,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.0128,
+      "hit@1_ic95": [
+        -0.0633,
+        0.032
+      ],
+      "hit@5": 0.0109,
+      "hit@5_ic95": [
+        -0.0177,
+        0.0421
+      ],
+      "hit@10": 0.0055,
+      "hit@10_ic95": [
+        -0.0155,
+        0.0302
+      ],
+      "mrr@10": -0.0096,
+      "mrr@10_ic95": [
+        -0.0431,
+        0.02
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": 0.2204,
+      "hit@1_ic95": [
+        0.1638,
+        0.2701
+      ],
+      "hit@5": 0.2004,
+      "hit@5_ic95": [
+        0.1588,
+        0.2425
+      ],
+      "hit@10": 0.133,
+      "hit@10_ic95": [
+        0.0924,
+        0.172
+      ],
+      "mrr@10": 0.2011,
+      "mrr@10_ic95": [
+        0.1625,
+        0.2369
+      ]
+    }
+  },
+  "bm25|description|filtro-kind|consulta-piece": {
+    "method": {
+      "embedder": "bm25",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "piece",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.3315,
+    "hit@1_ic95": [
+      0.2844,
+      0.3819
+    ],
+    "hit@3": 0.5246,
+    "hit@3_ic95": [
+      0.4748,
+      0.5797
+    ],
+    "hit@5": 0.623,
+    "hit@5_ic95": [
+      0.5717,
+      0.6743
+    ],
+    "hit@10": 0.765,
+    "hit@10_ic95": [
+      0.723,
+      0.8074
+    ],
+    "mrr@10": 0.4565,
+    "mrr@10_ic95": [
+      0.4128,
+      0.5056
+    ],
+    "context_precision@10": 0.4454,
+    "context_precision@10_ic95": [
+      0.4038,
+      0.4919
+    ],
+    "ndcg@10": 0.4769,
+    "ndcg@10_ic95": [
+      0.4414,
+      0.5183
+    ],
+    "context_recall@3": 0.5501,
+    "context_recall@3_ic95": [
+      0.5024,
+      0.6007
+    ],
+    "context_recall@10": 0.7889,
+    "context_recall@10_ic95": [
+      0.749,
+      0.8262
+    ],
+    "curva_hit@k": {
+      "1": 0.3315,
+      "2": 0.4463,
+      "3": 0.5246,
+      "5": 0.623,
+      "10": 0.765,
+      "15": 0.847,
+      "20": 0.8816,
+      "30": 0.9162,
+      "50": 0.9326
+    },
+    "confianza_auroc": 0.6557,
+    "confianza_umbral_f1": {
+      "threshold": 1.8405,
+      "f1": 0.5294,
+      "precision": 0.3864,
+      "recall": 0.8407
+    },
+    "literal_hit@10": 0.4919,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.3301,
+    "recall_item@1_ic95": [
+      0.2896,
+      0.3726
+    ],
+    "recall_item@10": 0.7812,
+    "recall_item@10_ic95": [
+      0.7422,
+      0.8202
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.3333,
+      "bench": 0.75,
+      "cabinet": 0.5128,
+      "chair": 0.5778,
+      "deco": 0.2174,
+      "dresser": 1.0,
+      "lamp": 0.375,
+      "ottoman": 0.5,
+      "rug": 0.2444,
+      "shelf": 0.2857,
+      "sofa": 0.2917,
+      "stool": 0.5,
+      "table": 0.3881
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.3819,
+        "hit@10": 0.794,
+        "mrr@10": 0.5136
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.3029,
+        "hit@10": 0.7486,
+        "mrr@10": 0.4241
+      }
+    },
+    "segundos": 0.6,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.1985,
+      "hit@1_ic95": [
+        -0.2485,
+        -0.1482
+      ],
+      "hit@5": -0.1676,
+      "hit@5_ic95": [
+        -0.2133,
+        -0.1216
+      ],
+      "hit@10": -0.0984,
+      "hit@10_ic95": [
+        -0.1365,
+        -0.0586
+      ],
+      "mrr@10": -0.1841,
+      "mrr@10_ic95": [
+        -0.227,
+        -0.1418
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.1858,
+      "hit@1_ic95": [
+        -0.2356,
+        -0.1326
+      ],
+      "hit@5": -0.1785,
+      "hit@5_ic95": [
+        -0.2188,
+        -0.1354
+      ],
+      "hit@10": -0.1038,
+      "hit@10_ic95": [
+        -0.1378,
+        -0.0709
+      ],
+      "mrr@10": -0.1745,
+      "mrr@10_ic95": [
+        -0.2127,
+        -0.1335
+      ]
+    }
+  },
+  "siglip2|description|filtro-kind": {
+    "method": {
+      "embedder": "siglip2",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "full",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.5082,
+    "hit@1_ic95": [
+      0.4537,
+      0.5601
+    ],
+    "hit@3": 0.7195,
+    "hit@3_ic95": [
+      0.6648,
+      0.768
+    ],
+    "hit@5": 0.8069,
+    "hit@5_ic95": [
+      0.7657,
+      0.8445
+    ],
+    "hit@10": 0.8889,
+    "hit@10_ic95": [
+      0.8537,
+      0.9203
+    ],
+    "mrr@10": 0.632,
+    "mrr@10_ic95": [
+      0.5848,
+      0.6761
+    ],
+    "context_precision@10": 0.611,
+    "context_precision@10_ic95": [
+      0.5654,
+      0.6545
+    ],
+    "ndcg@10": 0.6218,
+    "ndcg@10_ic95": [
+      0.5832,
+      0.6598
+    ],
+    "context_recall@3": 0.7465,
+    "context_recall@3_ic95": [
+      0.6973,
+      0.7929
+    ],
+    "context_recall@10": 0.9179,
+    "context_recall@10_ic95": [
+      0.8873,
+      0.9445
+    ],
+    "curva_hit@k": {
+      "1": 0.5082,
+      "2": 0.6393,
+      "3": 0.7195,
+      "5": 0.8069,
+      "10": 0.8889,
+      "15": 0.9089,
+      "20": 0.9217,
+      "30": 0.9326,
+      "50": 0.9399
+    },
+    "confianza_auroc": 0.6984,
+    "confianza_umbral_f1": {
+      "threshold": 1.5524,
+      "f1": 0.7018,
+      "precision": 0.5628,
+      "recall": 0.9319
+    },
+    "literal_hit@10": 0.5709,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.5163,
+    "recall_item@1_ic95": [
+      0.4656,
+      0.5652
+    ],
+    "recall_item@10": 0.906,
+    "recall_item@10_ic95": [
+      0.8755,
+      0.9343
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.6667,
+      "bench": 1.0,
+      "cabinet": 0.5641,
+      "chair": 0.6444,
+      "deco": 0.43,
+      "dresser": 1.0,
+      "lamp": 0.4844,
+      "ottoman": 1.0,
+      "rug": 0.3333,
+      "shelf": 0.381,
+      "sofa": 0.5833,
+      "stool": 0.75,
+      "table": 0.6269
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.5628,
+        "hit@10": 0.9246,
+        "mrr@10": 0.6858
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.4771,
+        "hit@10": 0.8686,
+        "mrr@10": 0.6013
+      }
+    },
+    "segundos": 46.8,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.0219,
+      "hit@1_ic95": [
+        -0.0773,
+        0.0317
+      ],
+      "hit@5": 0.0164,
+      "hit@5_ic95": [
+        -0.0163,
+        0.0466
+      ],
+      "hit@10": 0.0255,
+      "hit@10_ic95": [
+        0.0054,
+        0.0456
+      ],
+      "mrr@10": -0.0087,
+      "mrr@10_ic95": [
+        -0.0479,
+        0.0259
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": 0.1767,
+      "hit@1_ic95": [
+        0.1243,
+        0.2242
+      ],
+      "hit@5": 0.184,
+      "hit@5_ic95": [
+        0.1405,
+        0.2251
+      ],
+      "hit@10": 0.1239,
+      "hit@10_ic95": [
+        0.0855,
+        0.1615
+      ],
+      "mrr@10": 0.1754,
+      "mrr@10_ic95": [
+        0.1366,
+        0.2125
+      ]
+    }
+  },
+  "siglip2|description|filtro-kind|consulta-piece": {
+    "method": {
+      "embedder": "siglip2",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "piece",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": null,
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.4791,
+    "hit@1_ic95": [
+      0.4236,
+      0.5332
+    ],
+    "hit@3": 0.674,
+    "hit@3_ic95": [
+      0.6228,
+      0.7245
+    ],
+    "hit@5": 0.7814,
+    "hit@5_ic95": [
+      0.7387,
+      0.8239
+    ],
+    "hit@10": 0.8798,
+    "hit@10_ic95": [
+      0.8486,
+      0.9134
+    ],
+    "mrr@10": 0.6058,
+    "mrr@10_ic95": [
+      0.5578,
+      0.6506
+    ],
+    "context_precision@10": 0.5864,
+    "context_precision@10_ic95": [
+      0.5437,
+      0.6276
+    ],
+    "ndcg@10": 0.5993,
+    "ndcg@10_ic95": [
+      0.5623,
+      0.6356
+    ],
+    "context_recall@3": 0.7123,
+    "context_recall@3_ic95": [
+      0.6641,
+      0.7572
+    ],
+    "context_recall@10": 0.9126,
+    "context_recall@10_ic95": [
+      0.8833,
+      0.9397
+    ],
+    "curva_hit@k": {
+      "1": 0.4791,
+      "2": 0.6175,
+      "3": 0.674,
+      "5": 0.7814,
+      "10": 0.8798,
+      "15": 0.9016,
+      "20": 0.9144,
+      "30": 0.929,
+      "50": 0.9399
+    },
+    "confianza_auroc": 0.685,
+    "confianza_umbral_f1": {
+      "threshold": 1.5316,
+      "f1": 0.6774,
+      "precision": 0.5227,
+      "recall": 0.962
+    },
+    "literal_hit@10": 0.5651,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.4914,
+    "recall_item@1_ic95": [
+      0.4438,
+      0.5372
+    ],
+    "recall_item@10": 0.9002,
+    "recall_item@10_ic95": [
+      0.8683,
+      0.9276
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "bench": 1.0,
+      "cabinet": 0.5385,
+      "chair": 0.6,
+      "deco": 0.4058,
+      "dresser": 0.0,
+      "lamp": 0.3594,
+      "ottoman": 0.6667,
+      "rug": 0.3778,
+      "shelf": 0.4762,
+      "sofa": 0.5417,
+      "stool": 0.75,
+      "table": 0.6119
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.5578,
+        "hit@10": 0.9146,
+        "mrr@10": 0.6776
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.4343,
+        "hit@10": 0.86,
+        "mrr@10": 0.565
+      }
+    },
+    "segundos": 44.8,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.051,
+      "hit@1_ic95": [
+        -0.1019,
+        -0.0033
+      ],
+      "hit@5": -0.0091,
+      "hit@5_ic95": [
+        -0.0411,
+        0.0199
+      ],
+      "hit@10": 0.0164,
+      "hit@10_ic95": [
+        -0.0057,
+        0.0383
+      ],
+      "mrr@10": -0.0348,
+      "mrr@10_ic95": [
+        -0.0723,
+        -0.0005
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.0291,
+      "hit@1_ic95": [
+        -0.065,
+        0.006
+      ],
+      "hit@5": -0.0255,
+      "hit@5_ic95": [
+        -0.0499,
+        -0.0034
+      ],
+      "hit@10": -0.0091,
+      "hit@10_ic95": [
+        -0.025,
+        0.0075
+      ],
+      "mrr@10": -0.0261,
+      "mrr@10_ic95": [
+        -0.0539,
+        -0.0009
+      ]
+    }
+  },
+  "qwen3|description|filtro-kind|+bm25+siglip2|consulta-piece": {
+    "method": {
+      "embedder": "qwen3",
+      "text": "description",
+      "filter": "kind",
+      "store": "chroma",
+      "query": "piece",
+      "rerank": null,
+      "dim": null,
+      "chunks": "whole",
+      "drop": null,
+      "fusion": "bm25+siglip2",
+      "fusion_rule": "sum"
+    },
+    "searches": 864,
+    "answerable": 549,
+    "hit@1": 0.4681,
+    "hit@1_ic95": [
+      0.4183,
+      0.5215
+    ],
+    "hit@3": 0.6667,
+    "hit@3_ic95": [
+      0.619,
+      0.7135
+    ],
+    "hit@5": 0.7614,
+    "hit@5_ic95": [
+      0.7145,
+      0.8092
+    ],
+    "hit@10": 0.8543,
+    "hit@10_ic95": [
+      0.8156,
+      0.8945
+    ],
+    "mrr@10": 0.5921,
+    "mrr@10_ic95": [
+      0.5491,
+      0.638
+    ],
+    "context_precision@10": 0.5779,
+    "context_precision@10_ic95": [
+      0.5376,
+      0.6229
+    ],
+    "ndcg@10": 0.5899,
+    "ndcg@10_ic95": [
+      0.5535,
+      0.6295
+    ],
+    "context_recall@3": 0.7122,
+    "context_recall@3_ic95": [
+      0.672,
+      0.754
+    ],
+    "context_recall@10": 0.8953,
+    "context_recall@10_ic95": [
+      0.8641,
+      0.923
+    ],
+    "curva_hit@k": {
+      "1": 0.4681,
+      "2": 0.6029,
+      "3": 0.6667,
+      "5": 0.7614,
+      "10": 0.8543,
+      "15": 0.8871,
+      "20": 0.9107,
+      "30": 0.9271,
+      "50": 0.9399
+    },
+    "confianza_auroc": 0.6712,
+    "confianza_umbral_f1": {
+      "threshold": 1.5319,
+      "f1": 0.6768,
+      "precision": 0.5547,
+      "recall": 0.8677
+    },
+    "literal_hit@10": 0.5488,
+    "azar_hit@1": 0.0534,
+    "azar_hit@10": 0.4445,
+    "azar_mrr@10": 0.1421,
+    "recall_item@1": 0.4798,
+    "recall_item@1_ic95": [
+      0.4371,
+      0.5267
+    ],
+    "recall_item@10": 0.8791,
+    "recall_item@10_ic95": [
+      0.848,
+      0.9098
+    ],
+    "hit@1_por_categoria": {
+      "armchair": 0.7222,
+      "bench": 0.75,
+      "cabinet": 0.5385,
+      "chair": 0.7111,
+      "deco": 0.3333,
+      "dresser": 1.0,
+      "lamp": 0.5156,
+      "ottoman": 0.8333,
+      "rug": 0.3111,
+      "shelf": 0.381,
+      "sofa": 0.375,
+      "stool": 0.875,
+      "table": 0.6269
+    },
+    "consultas_por_categoria": {
+      "table": 67,
+      "cabinet": 39,
+      "deco": 207,
+      "chair": 45,
+      "rug": 45,
+      "sofa": 24,
+      "ottoman": 6,
+      "lamp": 64,
+      "stool": 8,
+      "shelf": 21,
+      "armchair": 18,
+      "bench": 4,
+      "dresser": 1
+    },
+    "por_pasada": {
+      "consultas_ambiente_v1": {
+        "consultas": 199,
+        "hit@1": 0.5528,
+        "hit@10": 0.8894,
+        "mrr@10": 0.6689
+      },
+      "consultas_ambiente_v2": {
+        "consultas": 350,
+        "hit@1": 0.42,
+        "hit@10": 0.8343,
+        "mrr@10": 0.5485
+      }
+    },
+    "segundos": 70.8,
+    "vs_base": {
+      "base": "qwen3|description|filtro-kind",
+      "hit@1": -0.0619,
+      "hit@1_ic95": [
+        -0.1111,
+        -0.0099
+      ],
+      "hit@5": -0.0291,
+      "hit@5_ic95": [
+        -0.0614,
+        0.0042
+      ],
+      "hit@10": -0.0091,
+      "hit@10_ic95": [
+        -0.0331,
+        0.0149
+      ],
+      "mrr@10": -0.0485,
+      "mrr@10_ic95": [
+        -0.0833,
+        -0.0147
+      ]
+    },
+    "vs_anterior": {
+      "hit@1": -0.0109,
+      "hit@1_ic95": [
+        -0.0424,
+        0.0274
+      ],
+      "hit@5": -0.02,
+      "hit@5_ic95": [
+        -0.0481,
+        0.0059
+      ],
+      "hit@10": -0.0255,
+      "hit@10_ic95": [
+        -0.041,
+        -0.0094
+      ],
+      "mrr@10": -0.0137,
+      "mrr@10_ic95": [
+        -0.0353,
+        0.0128
+      ]
+    }
+  }
+}

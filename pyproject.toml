@@ -21,6 +21,8 @@ dependencies = [
     "python-dotenv>=1.0",
     "pyyaml>=6.0",
     "rich>=13.9",
+    "scikit-image>=0.24",  # el control del ambiente tras generar (SIFT, furnish/room.py) y SSIM
+    "scipy>=1.14",
     "tabulate>=0.9",
     "transformers>=5.0",
     "typer>=0.15",
@@ -37,8 +39,6 @@ imagen = [
     "google-genai>=2.0",
     "langsmith>=0.4",
     "pydantic-settings>=2.6",
-    "scikit-image>=0.24",
-    "scipy>=1.14",
 ]
 # Eliminación de fondo alternativa de la v0 (rembg + onnxruntime), opcional.
 rembg = ["rembg>=2.0.60", "onnxruntime>=1.19"]

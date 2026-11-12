@@ -40,6 +40,10 @@ class RagConfig(_Cfg):
     # Where the vectors are searched (store.py): "chroma", ChromaDB with an HNSW index in cosine
     # space and the filters as its `where`; "exact", every vector with numpy, the baseline.
     vector_store: Literal["chroma", "exact"] = "chroma"
+    # Hybrid search (hybrid.py): other scorers fused with the embedder's cosine, e.g. ["bm25"]
+    # (lexical) or ["bm25", "siglip2"] (plus the product's photo). Empty: the dense search alone.
+    hybrid: list[str] = Field(default_factory=list)
+    fusion: Literal["sum", "rrf"] = "sum"
     hnsw: dict[str, Any] = Field(default_factory=dict)  # ChromaDB's: ef_search, max_neighbors...
 
 
@@ -57,6 +61,9 @@ class FurnishConfig(_Cfg):
     max_pieces: int | None = None  # pieces of the plan carried on (most important first); None: all
     candidates: int = 3  # products the search brings for each piece
     # The plan's most-it-can-measure comes from a photo: the search allows this much more.
+    # size_filter false: the limits are not used as a hard filter (they are an estimate by eye,
+    # and most IKEA products have no size to check).
+    size_filter: bool = True
     size_slack: float = 0.15
     photo_max_side: int = 1024  # photos sent to the LLM
     query_prompt: str = "search_query_v4.md"

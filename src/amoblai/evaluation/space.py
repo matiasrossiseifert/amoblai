@@ -66,9 +66,9 @@ def separability(vectors: np.ndarray, kinds: list[str], types: list[str]) -> dic
 
 
 def analyze(cfg: Config, out: Path = OUT, figure: Path = paths.REPORT / "umap.png") -> dict:
-    from amoblai.rag.index import build_index
+    from amoblai.rag.index import ensure_index
 
-    index = build_index(cfg, log=lambda _: None)
+    index = ensure_index(cfg)
     items = index.items
     texts = [it["description"] for it in items]
     kinds = [it.get("kind") or "" for it in items]

@@ -1,0 +1,217 @@
+{
+ "claims": [
+  {
+   "claim": "Sofa is cognac leather",
+   "about": "abo-B07KTJGC7R",
+   "supported": true,
+   "evidence": "Photo shows a cognac/tan leather sectional"
+  },
+  {
+   "claim": "Sofa leather looks distressed/aged",
+   "about": "abo-B07KTJGC7R",
+   "supported": true,
+   "evidence": "Photo shows mottled, worn-looking leather"
+  },
+  {
+   "claim": "Sofa has slim black metal legs",
+   "about": "abo-B07KTJGC7R",
+   "supported": true,
+   "evidence": "Photo shows thin dark metal legs"
+  },
+  {
+   "claim": "Sofa has a chaise",
+   "about": "abo-B07KTJGC7R",
+   "supported": true,
+   "evidence": "Product line says L-shaped sectional with chaise; photo shows it on the right"
+  },
+  {
+   "claim": "The room has space for the sofa with its chaise",
+   "about": "abo-B07KTJGC7R",
+   "supported": false,
+   "evidence": "Sofa size is unknown, so the fit cannot be checked"
+  },
+  {
+   "claim": "Person asked for a brown aged-leather sofa",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request: 'sofá de cuero marrón envejecido'"
+  },
+  {
+   "claim": "Coffee table has a slatted wood top",
+   "about": "abo-B07QF9Y71V",
+   "supported": true,
+   "evidence": "Photo shows a wood top made of planks"
+  },
+  {
+   "claim": "Coffee table top is solid wood",
+   "about": "abo-B07QF9Y71V",
+   "supported": false,
+   "evidence": "Product line says only 'industrial rectangular coffee table'; solid wood is not stated"
+  },
+  {
+   "claim": "Coffee table has black metal sled legs",
+   "about": "abo-B07QF9Y71V",
+   "supported": true,
+   "evidence": "Photo shows black rectangular sled-style metal legs"
+  },
+  {
+   "claim": "Person asked for a solid wood coffee table with black metal legs",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request: 'mesa ratona de madera maciza con patas de metal negro'"
+  },
+  {
+   "claim": "Bookcase is low and wide",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Product line: low wide open bookcase, 160 cm wide, 90 cm high"
+  },
+  {
+   "claim": "Bookcase frame is black metal",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Photo shows a black metal frame and shelves"
+  },
+  {
+   "claim": "Bookcase top is wood",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Photo shows a light wood top"
+  },
+  {
+   "claim": "Bookcase top is reclaimed wood",
+   "about": "abo-B0723CV5P7",
+   "supported": false,
+   "evidence": "Reclaimed wood is not stated; the photo shows only a weathered-looking wood top"
+  },
+  {
+   "claim": "There is a door on the right wall",
+   "about": "room",
+   "supported": true,
+   "evidence": "Room photo shows an open white door on the right wall"
+  },
+  {
+   "claim": "Bookcase fits beside the door without crowding it",
+   "about": "abo-B0723CV5P7",
+   "supported": false,
+   "evidence": "Wall dimensions are not given, so the 160 cm fit next to the door cannot be checked"
+  },
+  {
+   "claim": "Person asked for the bookcase against the right wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request: 'contra la pared de la derecha'"
+  },
+  {
+   "claim": "Bookcase repeats the coffee table's wood and black metal",
+   "about": "abo-B0723CV5P7",
+   "supported": true,
+   "evidence": "Both photos show a wood top on a black metal frame"
+  },
+  {
+   "claim": "Lamp is a black swing-arm floor lamp",
+   "about": "003.313.78",
+   "supported": true,
+   "evidence": "Product line and photo show a black swing-arm lamp"
+  },
+  {
+   "claim": "Lamp has brass details",
+   "about": "003.313.78",
+   "supported": true,
+   "evidence": "Photo shows brass-colored joints and fittings"
+  },
+  {
+   "claim": "Rug has a warm tan centre",
+   "about": "abo-B071PB2H8H",
+   "supported": true,
+   "evidence": "Photo shows a tan/beige central field"
+  },
+  {
+   "claim": "Rug has a brick-red border",
+   "about": "abo-B071PB2H8H",
+   "supported": false,
+   "evidence": "Photo shows the red around the medallion area; the outer border is beige/cream with motifs"
+  },
+  {
+   "claim": "Rug measures 306 x 245 cm",
+   "about": "abo-B071PB2H8H",
+   "supported": true,
+   "evidence": "Product line gives 306 cm wide and 245 cm deep"
+  },
+  {
+   "claim": "Rug is large enough to anchor the sofa and table",
+   "about": "abo-B071PB2H8H",
+   "supported": false,
+   "evidence": "Sofa size is unknown, so the fit cannot be checked"
+  },
+  {
+   "claim": "Person asked for a large earth-tone rug",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request: 'una alfombra grande en tonos tierra'"
+  },
+  {
+   "claim": "Cushion is rust red",
+   "about": "503.265.29",
+   "supported": true,
+   "evidence": "Product line and photo show a rust red cushion"
+  },
+  {
+   "claim": "Two cushions are included",
+   "about": "503.265.29",
+   "supported": false,
+   "evidence": "No quantity is given"
+  },
+  {
+   "claim": "Cushion color picks up the red in the rug",
+   "about": "503.265.29",
+   "supported": true,
+   "evidence": "Both the cushion and the rug show a red tone"
+  },
+  {
+   "claim": "Planter is faceted metal",
+   "about": "abo-B07HSK628P",
+   "supported": true,
+   "evidence": "Product line: faceted metal planter"
+  },
+  {
+   "claim": "Planter is dark burnished metal",
+   "about": "abo-B07HSK628P",
+   "supported": false,
+   "evidence": "Photo shows a mostly light silvery-bronze mottled finish, not dark"
+  },
+  {
+   "claim": "Planter is the darkest pot available",
+   "about": "abo-B07HSK628P",
+   "supported": false,
+   "evidence": "No other pots are shown for comparison"
+  },
+  {
+   "claim": "Room has exposed wood beams",
+   "about": "room",
+   "supported": true,
+   "evidence": "Room photo shows exposed wooden ceiling beams"
+  },
+  {
+   "claim": "Room has a wood floor",
+   "about": "room",
+   "supported": true,
+   "evidence": "Room photo shows a wood parquet floor"
+  },
+  {
+   "claim": "Person asked for no bright white",
+   "about": "request",
+   "supported": true,
+   "evidence": "Request: 'Nada de blanco brillante'"
+  },
+  {
+   "claim": "Black metal repeats across sofa, table, bookcase and lamp",
+   "about": "combination",
+   "supported": true,
+   "evidence": "All four photos show black or dark metal parts"
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.103512,
+ "_prompt": "juez_fidelidad_v2"
+}

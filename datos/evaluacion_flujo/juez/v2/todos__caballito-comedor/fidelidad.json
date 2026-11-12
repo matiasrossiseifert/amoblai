@@ -1,0 +1,127 @@
+{
+ "claims": [
+  {
+   "claim": "The table is light-toned wood",
+   "about": "002.908.15",
+   "supported": true,
+   "evidence": "Image 2 shows a pale wood table, and the line says solid wood."
+  },
+  {
+   "claim": "The table is birch",
+   "about": "002.908.15",
+   "supported": false,
+   "evidence": "The line says only 'solid wood' and gives no species."
+  },
+  {
+   "claim": "The table is 125 cm wide",
+   "about": "002.908.15",
+   "supported": true,
+   "evidence": "The product line gives 125 cm wide."
+  },
+  {
+   "claim": "The table seats four",
+   "about": "002.908.15",
+   "supported": false,
+   "evidence": "The product line gives no seating capacity."
+  },
+  {
+   "claim": "There is open floor beside the kitchenette",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows an empty floor area next to and in front of the kitchenette."
+  },
+  {
+   "claim": "The kitchen has light wood finishes",
+   "about": "room",
+   "supported": true,
+   "evidence": "The lower cabinets and open upper shelving are light wood."
+  },
+  {
+   "claim": "The chairs are black",
+   "about": "003.015.26",
+   "supported": true,
+   "evidence": "Image 3 shows a black chair."
+  },
+  {
+   "claim": "The chairs are wooden",
+   "about": "003.015.26",
+   "supported": true,
+   "evidence": "The line says wooden dining chair."
+  },
+  {
+   "claim": "The chairs are from the same product family as the table",
+   "about": "003.015.26",
+   "supported": false,
+   "evidence": "Neither product line names a series or family."
+  },
+  {
+   "claim": "The user asked for black chairs with a light wood table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request asks for 'mesa de madera clara... con sillas negras'."
+  },
+  {
+   "claim": "The pendant lamp is a white bell shape",
+   "about": "000.379.80",
+   "supported": true,
+   "evidence": "The line says white bell pendant lamp, and Image 4 confirms it."
+  },
+  {
+   "claim": "The walls are white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows white walls."
+  },
+  {
+   "claim": "The ceiling is white",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows a white ceiling."
+  },
+  {
+   "claim": "The user asked for a simple Nordic style",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'Estilo nórdico, simple'."
+  },
+  {
+   "claim": "The user asked for a pendant lamp over the table",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'una lámpara colgante sobre la mesa'."
+  },
+  {
+   "claim": "The user wants the sideboard against the white right wall",
+   "about": "request",
+   "supported": true,
+   "evidence": "The request says 'contra la pared blanca de la derecha'."
+  },
+  {
+   "claim": "The sideboard body is white",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "Image 5 shows a white carcass."
+  },
+  {
+   "claim": "The sideboard fronts are pale wood",
+   "about": "abo-B07B7DMPX7",
+   "supported": true,
+   "evidence": "Image 5 shows light wood herringbone fronts."
+  },
+  {
+   "claim": "The kitchenette has white finishes",
+   "about": "room",
+   "supported": true,
+   "evidence": "The upper cabinets and surrounding panels are white."
+  },
+  {
+   "claim": "The floor is gray",
+   "about": "room",
+   "supported": true,
+   "evidence": "The photo shows a gray wood-look floor."
+  }
+ ],
+ "_juez": "claude-opus-5-5",
+ "_costo_usd": 0.050336,
+ "_prompt": "juez_fidelidad_v2"
+}

@@ -1,0 +1,36 @@
+{
+ "corrida": "todos__alvear-living-comedor",
+ "pedido": "Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.",
+ "fidelidad": {
+  "afirmaciones": 49,
+  "faithfulness": 0.7347,
+  "sobre_productos": 0.7317,
+  "sobre_el_ambiente": 0.6,
+  "no_sostenidas": [
+   "Sofa legs are birch",
+   "Sofa fits along the left wall",
+   "Rocking chair frame is birch",
+   "Coffee table is light ash",
+   "Coffee table is from the same line as the dining table",
+   "Dining table is light ash",
+   "Dining chairs are beech",
+   "Palm is tall",
+   "Room has a corner between the two zones",
+   "Wall art is a pair of prints",
+   "Other vase is sage green",
+   "Room floor is oak",
+   "Chair seats are paper cord"
+  ],
+  "juez": "claude-opus-5-5"
+ },
+ "relevancia": {
+  "pedidos_generados": [
+   "Quiero amueblar mi salón comedor de estilo nórdico, luminoso y tranquilo, con sofá, mesa de comedor con sillas, alfombra, lámparas, cortinas y algunas plantas y detalles decorativos",
+   "Acabo de mudarme a un piso pequeño con salón y comedor juntos. Busco algo escandinavo en tonos claros y madera natural: zona de estar con sofá, butaca y mesa de centro, una mesa para comer, un aparador y que quede acogedor con cojines, manta y algún cuadro",
+   "Ayúdame a decorar este salón con comedor en un estilo minimalista y cálido, madera clara y blanco, que se sienta relajado. Necesito sofá, mecedora para leer con lámpara de pie, comedor para cuatro con lámpara colgante encima, aparador, alfombra, cortinas de lino y una palmera"
+  ],
+  "answer_relevance": 0.6928,
+  "vara_contrastes": 0.4102,
+  "juez": "claude-opus-5-5"
+ }
+}

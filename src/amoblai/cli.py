@@ -251,7 +251,10 @@ def amoblar(
 
     cfg = cfg_for(config, [*(overrides or []), f"furnish.generator={generador}"], paid=pagar)
     out = Path(cfg.runs_dir) / (nombre or foto.stem)
-    run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
+    try:
+        run_flow(foto, pedido, cfg, out, log=console.print, views=vista or [])
+    except ValueError as e:  # la carpeta tiene la corrida de otro pedido
+        raise typer.BadParameter(str(e)) from e
     console.print(f"Corrida: {out}")
 
 
@@ -324,6 +327,30 @@ def evaluar(
         )
     console.print(table)
     console.print(f"Corrida: {run}")
+
+
+@app.command("evaluar-candidatos")
+def evaluar_candidatos(
+    corrida: Annotated[
+        Path | None,
+        typer.Argument(help="Una corrida de reranking (default: la última de evaluacion/)."),
+    ] = None,
+) -> None:
+    """Cuántos candidatos por pieza: el acierto de la elección del VLM según k (gratis: sale de
+    una corrida de reranking ya paga). Escribe evaluacion_candidatos/curva_k.json."""
+    from amoblai.evaluation.candidates import OUT, choice_curve
+
+    run = corrida or sorted(paths.EVAL_RUNS.glob("*_ablacion-reranking"))[-1]
+    data = choice_curve(run)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+    table = Table("k", "acierto de la elección", "techo (hit@k)")
+    for k, row in data["por_k"].items():
+        table.add_row(k, f"{row['acierto_eleccion']:.3f}", f"{row['techo_hit@k']:.3f}")
+    console.print(table)
+    for name, d in data["diferencias_pareadas"].items():
+        console.print(f"k {name}: {d['acierto_eleccion']:+.3f} {d['ic95']}")
+    console.print(f"Escrito: {OUT}")
 
 
 @app.command("evaluar-imagen")
@@ -406,7 +433,15 @@ def evaluar_respuesta(
     """RAGAS del lado del generador sobre la respuesta en texto (el porqué de cada producto):
     faithfulness (sus afirmaciones se infieren de lo que vio el sistema) y answer relevance (los
     pedidos que un juez infiere de la respuesta, contra el original)."""
-    from amoblai.evaluation.answer import JUDGE_DIR, JUDGES, judge_with_claude, score, write_tasks
+    from amoblai.evaluation.answer import (
+        JUDGE_DIR,
+        JUDGES,
+        judge_with_claude,
+        run_key,
+        score,
+        summary,
+        write_tasks,
+    )
 
     if juez not in ("archivo", "opus"):
         raise typer.BadParameter("--juez: archivo u opus")
@@ -414,8 +449,9 @@ def evaluar_respuesta(
         raise typer.BadParameter("el juez opus es pago: correr con --pagar")
     cfg = cfg_for(config, paid=pagar)
     runs = corridas or [d for d in sorted(paths.RUNS.glob("*")) if (d / "3_choice.json").exists()]
+    results = []
     for run in runs:
-        missing = [n for n in JUDGES if not (JUDGE_DIR / run.name / f"{n}.json").exists()]
+        missing = [n for n in JUDGES if not (JUDGE_DIR / run_key(run) / f"{n}.json").exists()]
         if missing and juez == "opus":
             for name in missing:
                 judge_with_claude(cfg, run, name)
@@ -425,13 +461,37 @@ def evaluar_respuesta(
                     console.print(f"{run.name}: falta el juez {task.stem}, tarea en {task}")
         r = score(cfg, run)
         if r:
+            results.append(r)
             fid = r.get("fidelidad", {})
             rel = r.get("relevancia", {})
             console.print(
-                f"{run.name}: faithfulness {fid.get('faithfulness')} "
+                f"{run_key(run)}: faithfulness {fid.get('faithfulness')} "
                 f"({fid.get('afirmaciones')} afirmaciones), answer relevance "
                 f"{rel.get('answer_relevance')} (vara {rel.get('vara_contrastes')})"
             )
+    if len(results) > 1:
+        s = summary(cfg, results)
+        console.print(f"Resumen ({s['corridas']} corridas): {s.get('faithfulness')}")
+        console.print(f"answer relevance: {s.get('answer_relevance')}")
+
+
+@app.command("diagnostico-flujo")
+def diagnostico_flujo(
+    raiz: Annotated[
+        Path, typer.Argument(help="Carpeta con una subcarpeta por variante (ikea, todos...).")
+    ] = paths.DATOS / "resultados" / "punta_a_punta" / "catalogos",
+) -> None:
+    """Lo que dicen, sin juez y gratis, las corridas guardadas sobre ambientes vacíos reales: el
+    puesto del producto elegido, piezas dejadas afuera, medidas que faltan, candidatos repetidos."""
+    from amoblai.evaluation.endtoend import diagnostics
+
+    out = {}
+    for variant in sorted(d for d in raiz.glob("*/") if any(d.glob("*/3_choice.json"))):
+        d = diagnostics(variant)
+        out[d["variante"]] = d
+        console.print(d)
+    (raiz / "diagnostico.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
+    console.print(f"Escrito: {raiz / 'diagnostico.json'}")
 
 
 @app.command("evaluar-punta-a-punta")
