@@ -3,7 +3,7 @@
     uv run --group apps python apps/amoblar.py      (http://127.0.0.1:7860)
 
 1. plan (Claude): cómo lee el ambiente y qué piezas hacen falta, con su consulta.
-2. retrieve (RAG): los candidatos del catálogo IKEA de cada pieza.
+2. retrieve (RAG): los candidatos del catálogo (IKEA + Amazon Berkeley Objects) de cada pieza.
 3. choose (Claude): la combinación elegida y por qué.
 4. scene (Claude): el prompt para el modelo de imagen.
 5. generate: la imagen final por API (Nano Banana 2 en fal) o a mano (te da las imágenes en
@@ -90,21 +90,20 @@ def render(out: Path, cfg, log: list[str]) -> tuple:
     shopping = []
     if choice:
         md.append(f"**Por qué esta combinación:** {choice['answer'].get('why', '')}")
-        items = {}
-        for line in (ROOT / paths.ITEMS).read_text().splitlines():
-            it = json.loads(line)
-            items[it["id"]] = it
         for f, c in zip(found["pieces"], choice["answer"]["choices"], strict=True):
             if not c.get("quantity", 1):
                 continue  # el LLM la dejó afuera
-            it = items.get(c["id"], {})
+            # los datos del elegido salen de sus candidatos: sirve para cualquier catálogo
+            it = next((h for h in f["candidates"] if h["id"] == c["id"]), {})
+            dims = it.get("dimensions_cm") or {}
+            size = " × ".join(f"{dims[a]:g}" for a in ("width", "depth", "height") if dims.get(a))
             shopping.append(
                 [
                     f["piece"],
                     f"{c['id']} x{c.get('quantity', 1)}",
                     it.get("name", ""),
-                    it.get("kind", ""),
-                    it.get("size_raw") or "—",
+                    it.get("kind") or it.get("category", ""),
+                    f"{size} cm" if size else "—",
                     c.get("why", ""),
                 ]
             )
@@ -179,7 +178,7 @@ def upload_result(result, generator, use_claude, pay_image, state):
 def build() -> gr.Blocks:
     with gr.Blocks(title="amoblai", analytics_enabled=False) as demo:
         gr.Markdown(
-            "# amoblai\nFoto de un ambiente + pedido → productos reales del catálogo IKEA, y el ambiente con ellos."
+            "# amoblai\nFoto de un ambiente + pedido → productos reales del catálogo (IKEA + Amazon Berkeley Objects), y el ambiente con ellos."
         )
         state = gr.State({})
         with gr.Row():
