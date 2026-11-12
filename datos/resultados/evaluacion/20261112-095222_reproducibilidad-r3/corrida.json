@@ -1,0 +1,80 @@
+{
+  "name": "reproducibilidad-r3",
+  "queries": "datos/evaluacion_ikea/replicas/consultas_r3.json",
+  "queries_meta": {
+    "prompt": "consultas_ambiente_v1@c2624d9066e4",
+    "by": "claude-opus-5-5 (Claude Code subagent), réplica r3",
+    "rooms": 65,
+    "passes": [
+      {
+        "prompt": "consultas_ambiente_v2",
+        "by": "claude-opus-5-5 (Claude Code subagent), réplica r3",
+        "pieces": 623,
+        "sha": "3f973071b723"
+      }
+    ],
+    "replica": "r3"
+  },
+  "rooms": 65,
+  "replica": "r3",
+  "catalog": "datos/catalogo/ikea.yaml",
+  "index": {
+    "schema": "amoblai.index/4",
+    "catalog": "ikea",
+    "catalog_file": "datos/catalogo/ikea.yaml",
+    "catalog_sha": "e04207fea2b2944694430bea",
+    "describer": {
+      "name": "written",
+      "key": {
+        "kind": "written",
+        "file": "descripciones.jsonl",
+        "sha": "c837c5f4d985"
+      }
+    },
+    "embedder": {
+      "name": "qwen3",
+      "key": {
+        "kind": "local",
+        "model": "Qwen/Qwen3-Embedding-0.6B",
+        "revision": null,
+        "pooling": "last",
+        "max_length": 512
+      }
+    },
+    "vector_store": {
+      "kind": "chromadb",
+      "space": "cosine",
+      "hnsw": {
+        "ef_search": 100,
+        "max_neighbors": 16
+      }
+    },
+    "products": 819,
+    "left_out": 0,
+    "built": "2026-11-10T00:36:42",
+    "cost_usd": 0.0
+  },
+  "embedders": {
+    "bge": {
+      "kind": "local",
+      "model": "BAAI/bge-base-en-v1.5",
+      "pooling": "cls"
+    },
+    "hashing": {
+      "kind": "hashing",
+      "dim": 1024
+    },
+    "qwen3": {
+      "kind": "local",
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "pooling": "last"
+    }
+  },
+  "hnsw": {
+    "ef_search": 100,
+    "max_neighbors": 16
+  },
+  "rerankers": {},
+  "git_commit": "0a0edcaa7e174d4e7a3bd25014e10f9852cdface",
+  "python": "3.12.3"
+}
