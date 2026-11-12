@@ -105,6 +105,7 @@ CAT_NEW = load(latest("_ablacion-catalogo-revisado") / "metricas.json")
 E2E = {Path(f).stem: load(f) for f in sorted(glob.glob(str(R / "punta_a_punta" / "*" / "juez_*.json")))}
 DIAG = load(R / "punta_a_punta" / "hibrida" / "diagnostico.json")
 DIAG_CAT = load(R / "punta_a_punta" / "catalogos" / "diagnostico.json")
+FM = load(R / "punta_a_punta" / "hibrida" / "filtro_medidas.json")  # qué cambia el filtro de medidas (T6h)
 RESP = load(R / "evaluacion_respuesta" / "resumen_version2.json")  # faithfulness y answer relevance (jueces v2), listas de la versión 2
 RESP1 = load(R / "evaluacion_respuesta" / "resumen.json")  # lo mismo sobre otras 11 listas (búsqueda de la versión 1): la réplica
 IMG_FIN = load(R / "evaluacion_imagen" / "final.json")  # las 11 imágenes de la configuración final (la plantilla)
@@ -1812,7 +1813,7 @@ slide(
     route(lit=("catalogo", "busqueda", "escena"), pins={"busqueda": [13, 14], "escena": [15]})
     + TH.replace("(hit@1)", "(hit@1 / hit@5)").replace("La pregunta", "Qué")
     + tram(13, "Filtros", f"sin filtro {h15(f_none)} · por tipo {h15(f_type)}<br><b>por kind {h15(B1)}</b>",
-           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa por algo que el banco no mide: en los pedidos reales evita un {num(100 * DOC["otro_kind"], 0)} % de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). El de medidas no tiene evidencia: solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida.')
+           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa por algo que el banco no mide: en los pedidos reales evita un {num(100 * DOC["otro_kind"], 0)} % de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). El de medidas actúa poco: cambia {FM["candidatos_reemplazados"]} de {FM["candidatos"]} candidatos en los ambientes reales, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida.')
     + tram(14, "Rerankers de texto", f'sin rerank {h15(RLOC[BASE])} · MiniLM {h15(mini)} · Qwen3-Reranker {h15(qrr)}',
            f'Empeoran ({nb(dif(qrr["vs_base"]))} el mejor): releen el mismo texto que ya usó la búsqueda. El que suma es el que mira las fotos (experimento 5).')
     + tram(None, "El catálogo, ampliado y revisado", f'268 productos {num(DOC["catalogo_268"], 3)} → 855: {num(old["hit@1"], 3)} → {len(ITEMS)}: {num(new["hit@1"], 3)} (hit@1)',
@@ -1822,10 +1823,10 @@ slide(
     + tram(15, "La escena", f'plantilla: {IMG_FIN["identificados"]} de {IMG_FIN["productos"]} productos reconocidos, {IMG_FIN["ambiente_conservado"]} de {IMG_FIN["corridas"]} cuartos conservados · escrita por el LLM: {IMG_ESC["identificados"]} y {IMG_ESC["ambiente_conservado"]}',
            f'Empate en los {IMG_FIN["corridas"]} ambientes, con las mismas listas ({nb(DOC["escena_pareado"])} de reconocidos, pareado). Queda la plantilla: una llamada y US${num(DOC["escena_usd"], 3)} menos por pedido.')
     + "</table>"
-    '<div class="take">Sin experimento que los sostenga quedan el modelo de imagen (comparación diseñada, sin correr) y los umbrales del control.</div>',
+    '<div class="take">Sin experimento: el modelo de imagen (comparación diseñada, sin correr) y los umbrales del control.</div>',
     kicker="Experimentos · de trámite (2 de 2)",
     title="De trámite: filtros, rerankers de texto, el catálogo y la escena",
-    notes=f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el {num(100 * DOC['otro_kind'], 0)} por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas no tiene evidencia. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {num(-100 * d_abo['hit@5'], 1)} puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.",
+    notes=f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el {num(100 * DOC['otro_kind'], 0)} por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas cambia uno de cada once candidatos, sin evidencia de que mejore la lista. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {num(-100 * d_abo['hit@5'], 1)} puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.",
     mins=0.8,
 )
 
@@ -2045,7 +2046,7 @@ slide(
     '<div class="grid2">'
     '<div class="card"><h3>Del sistema</h3><ul class="small">'
     f"<li><b>No dice “no hay”</b>: cuando el catálogo no tiene lo pedido, pone lo más parecido sin avisar (dejó afuera {dh['piezas_dejadas_afuera']} de {dh['piezas']} piezas).</li>"
-    f"<li><b>El tamaño no se puede verificar</b>: el límite lo estima el plan a ojo, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida. El filtro de medidas no tiene evidencia.</li>"
+    f"<li><b>El tamaño no se puede verificar</b>: el límite lo estima el plan a ojo, y solo el {num(100 * ikea_con_medida, 0)} % de IKEA tiene alguna medida. El filtro de medidas cambia {FM['candidatos_reemplazados']} de {FM['candidatos']} candidatos, sin evidencia de que mejore la lista.</li>"
     f"<li><b>La imagen es una visualización</b>: acierta el producto exacto 4 de cada 10 veces y conserva el cuarto en {IMG_TOT['pasan']} de {len(FINALES)}.</li>"
     f"<li><b>El generador afirma maderas que no ve</b>: el {num(100 * no_sostenido, 0)} % de las afirmaciones del porqué no se sostiene.</li>"
     "<li>Catálogos viejos y de uso no comercial (IKEA 2013, Amazon 2019–20).</li></ul></div>"
@@ -2097,7 +2098,7 @@ slide(
     '<div class="take">Lo próximo es del RAG y de cómo lo medimos. Ubicar cada mueble a escala pide medir el ambiente: queda como trabajo futuro.</div>',
     kicker="Cierre",
     title="Trabajo futuro",
-    notes="Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; validar al juez con nuestro voto a ciegas, y repetir corridas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.",
+    notes="Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; y validar al juez con nuestro voto a ciegas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.",
     mins=0.65,
 )
 
@@ -2106,9 +2107,9 @@ CIERRE = ["publica-loft-industrial", "publica-living-japandi", "publica-living-b
 assert all(f["img"]["attempts"][0]["ok"] for f in FINALES if f["slug"] in CIERRE), "las del cierre tienen que haber pasado el control al primer intento"
 slide(
     '<div class="steps" style="max-width:1080px">'
-    f'<div><p><b>Lo que más pesa es la base de conocimiento y cómo se escribe la consulta</b>: describir cada producto desde su foto ({sg(d_desc["hit@1"], 2)} de hit@1) y escribir la consulta como una ficha del catálogo ({sg(d_hyde["hit@1"], 2)}). El embedder, en este banco, casi no importa.</p></div>'
+    f'<div><p><b>Lo que más pesa es la base de conocimiento y cómo se escribe la consulta</b>: describir cada producto desde su foto ({sg(d_desc["hit@1"], 2)} de hit@1) y escribir la consulta como una ficha ({sg(d_hyde["hit@1"], 2)}). El embedder casi no importa.</p></div>'
     f'<div><p><b>La versión 2 es la búsqueda híbrida</b>: la descripción, sus palabras y la foto suman {sg(D21["hit@1"], 3)} de hit@1 sobre la versión 1, sin costo por pedido; de punta a punta gana {jv["hibrida"]["gana"]}, empata {JV["empates"]} y no pierde.</p></div>'
-    f'<div><p><b>La búsqueda aporta en la tarea real</b>: {sa["densa"]["gana"]} a {sa["azar"]["gana"]} contra candidatos al azar del mismo kind.</p></div>'
+    f'<div><p><b>La búsqueda aporta en la tarea real</b>: {sa["densa"]["gana"]} a {sa["azar"]["gana"]} contra candidatos al azar del mismo kind. Contra el catálogo entero en el prompt empata ({sx["hibrida"]["gana"]} a {sx["contexto"]["gana"]}): RAG es lo que escala, no lo que mejora la lista.</p></div>'
     "<div><p><b>Medir bien fue la mitad del trabajo</b>: diferencias pareadas, tres redactores, un juez en los dos órdenes, y las trampas dichas en voz alta. Nos hizo cambiar el número de cabecera y rehacer las métricas del generador.</p></div>"
     f'<div><p><b>La lista es confiable; la imagen es una visualización</b>: los productos son reales y validados, pero la imagen reconoce el {num(100 * IMG_TOT["reconocidos"] / IMG_TOT["productos"], 0)} % y conserva el cuarto en {IMG_TOT["pasan"]} de {len(FINALES)}.</p></div>'
     "</div>"
@@ -2117,7 +2118,7 @@ slide(
     f'<div class="tiny" style="margin-top:5px">Fotos de los ambientes: {credito(*CIERRE)}.</div>',
     kicker="Cierre",
     title="Conclusiones",
-    notes=f"Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde. Tres: la búsqueda aporta en la tarea real, {sa['densa']['gana']} a {sa['azar']['gana']} contra candidatos al azar. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.",
+    notes=f"Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana {jv['hibrida']['gana']}, empata {JV['empates']} y no pierde. Tres: la búsqueda aporta en la tarea real, {sa['densa']['gana']} a {sa['azar']['gana']} contra candidatos al azar; contra el catálogo entero en el prompt empata: RAG es lo que escala. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.",
     mins=0.7,
 )
 
