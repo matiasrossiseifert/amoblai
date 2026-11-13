@@ -1,28 +1,33 @@
-"""Los experimentos: qué guardamos (E1–E5), cómo buscamos (E6–E8), cuánto creerle (E9–E11) y de
-punta a punta (E12–E14, T4). Cada uno en el mismo orden: por qué → qué hicimos → resultados →
-decisión."""
+"""Los experimentos, por su ranking (docs/REVISION.md, sección 4): el buscador (el mapa, E1 a E3, el
+camino incremental y E4), la lista (E5 a E7), los de trámite (E8 y dos láminas con E9 a E14) y el
+Ejercicio 4 (versión 1 y versión 2, en tres láminas). Cada experimento con lámina propia va en el
+mismo orden: por qué → qué hicimos → resultados (con la diferencia pareada) → decisión."""
 
 from __future__ import annotations
 
-import re
-from pathlib import Path
+import statistics
 
 import img
-from base import (CAT_ES, KIND_ES, add, bloque, cab, esc, exp, f, ficha, llamada, pasos_x, pct, remate, usd)
-from datos_deck import RES
-from graf import dots_repro, dumbbell, hbars, heatmap, line_chart
-from laminas_1 import separador
-from laminas_r import replica_slides
+import laminas_rec
+from base import (KIND_ES, add, bloque, cab, ci95, dif, esc, exp, f, ficha, foto_producto, ic, llamada, media_desvio,
+                  miles, nb, pasos_x, pct, remate, sg, usd)
+from datos_deck import BASE, CASO, EJ_PIECE, EJ_ROOM, V1, V2, p_signos, rankings
+from graf import camino, dots_repro, hbars, line_chart
+from laminas_1 import credito, creditos, separador
 
-A = RES / "amoblar"
+AZUL, GRIS, CLARO, TINTA = "#2453D6", "#9AA4AF", "#C9CFD5", "#13202C"
+K_NAIVE = "qwen3|seller-full|filtro-none|consulta-piece"
+K_DESC = "qwen3|description|filtro-none|consulta-piece"
+K_HYDE = "qwen3|description|filtro-none"
+LAB = {"caballito-living": "living", "caballito-comedor": "comedor", "alvear-escritorio": "escritorio",
+       "alvear-living-comedor": "living comedor", "experimento-lectura": "lectura",
+       "publica-loft-industrial": "loft industrial", "publica-living-clasico": "clásico",
+       "publica-comedor-clasico-moderno": "comedor clásico", "publica-living-japandi": "japandi",
+       "publica-living-bohemio": "bohemio", "publica-estudio-sobrio": "estudio sobrio"}
 
 
-def ci(m, k="hit@1"):
-    return tuple(m[f"{k}_ic95"])
-
-
-def ley(*items, nota=""):
-    out = '<div class="ley" data-desde="1">'
+def ley(*items, nota="", desde=1):
+    out = f'<div class="ley" data-desde="{desde}">'
     for col, txt in items:
         out += f'<span><i style="background:{col}"></i>{txt}</span>'
     if nota:
@@ -30,662 +35,723 @@ def ley(*items, nota=""):
     return out + "</div>"
 
 
-AZUL, GRIS, CLARO, TINTA = "#2453D6", "#9AA4AF", "#C9CFD5", "#13202C"
-
-
 def xcab(num, rot, titulo):
     return (f'<div class="cuerpo"><div class="xcab">{llamada(num, rot)}{pasos_x()}</div>'
             f'<h2 class="t xt">{titulo}</h2></div>')
 
 
+def tira_votos(D, det: list[dict], gana: str, nombres: dict, desde=1) -> str:
+    """Los ambientes de una comparación de punta a punta: la foto, y un punto por cada orden del
+    juez (lleno: votó `gana`; gris: votó la otra; hueco: empate)."""
+    cells = ""
+    for x in det:
+        s = x["slug"]
+        votos = "".join(f'<i class="{"vt" if v == gana else "ve" if v == "tie" else "vi"}"></i>' for v in x["votos"])
+        w = nombres.get(x["ganador"], "empate")
+        cells += (f'<div class="jr{" pub" if s.startswith("publica") else ""}"><div class="th"><img src="{img.uri(D["pedidos"][s]["foto"], 300, 225, q=70)}" alt=""></div>'
+                  f'<div class="nm">{LAB.get(s, s)}</div><div class="v" data-desde="{desde}">{votos}<b class="{"t" if x["ganador"] == gana else ""}">{w}</b></div></div>')
+    return cells
+
+
+def micro(rows, xmax: float = 0.8) -> str:
+    """Barras chicas para una fila de trámite. rows: (rótulo, valor para la barra, texto, elegido)."""
+    return '<div class="mb">' + "".join(
+        f'<div class="mbr{" hi" if hi else ""}"><span>{esc(lab)}</span><i><em style="width:{min(1.0, v / xmax) * 100:.1f}%"></em></i><b>{txt}</b></div>'
+        for lab, v, txt, hi in rows) + "</div>"
+
+
 def build(D: dict, ctx: dict) -> None:
-    b = D["best"]
-    o = D["opus"]
+    CAM, CON, HIB, EMB, ABL = D["CAM"], D["CON"], D["HIB"], D["EMB"], D["ABL"]
+    B1, B2, D21 = D["B1"], D["B2"], D["D21"]
+    N_ANS = D["N_ANS"]
+    kf = D["cfg"].furnish.candidates
 
-    # ================================================================ 03 · qué guardamos
-    separador(3, ["Primer capítulo de experimentos: qué guardamos en el índice. Cinco decisiones del "
-                  "indexing. Y al cuarto se le suma el mueble de la tele."])
+    # ================================================================ 03 · el buscador
+    separador(3, ["Ahora los experimentos, por cuánto importan. Los que sostienen una decisión tienen su lámina; "
+                  "los de trámite van juntos. Llega el mueble de la tele."])
+    laminas_rec.mapa(D)
 
-    # ---------------------------------------------------------------- E1
-    v0 = D["v0_path"]
-    lab = {"E0-naive-clip": "CLIP, el recorte tal cual", "E1-quitar-fondo": "+ quitar el fondo",
-           "E2-filtro-categoria": "+ filtro por categoría", "E3-dinov2": "DINOv2 en lugar de CLIP",
-           "E3-dinov3": "DINOv3 en lugar de DINOv2", "E4-dinov3-sin-quitar-fondo": "DINOv3, sin quitar el fondo"}
-    rows = [dict(label=lab[p["paso"]], value=p["hit1"], ci=tuple(p["ic"]), kind="alt") for p in v0]
-    rows.append(dict(label="texto: descripciones + Qwen3", value=D["v1_275"]["hit@1"], ci=ci(D["v1_275"]), kind="main"))
-    v0b = v0[-1]
-    res = (ley((GRIS, "por imagen · v0"), (AZUL, "por texto · v1"), nota=f"hit@1 · IC 95% · catálogo de {D['n_275']}")
-           + hbars(rows, width=1150, label_w=400, row_h=64, bar_h=26, x_max=0.8, ticks=[0, .2, .4, .6, .8]))
-    exp("E1", 3, "¿Buscamos los muebles <em>por imagen o por texto?</em>",
-        "<p>La v0 buscaba por imagen: recortar cada mueble de una foto y compararlo con las fotos del "
-        "catálogo.</p><p>Pero en amoblai <strong>el ambiente está vacío</strong>: no hay nada que "
-        "recortar. Lo que hay es un pedido.</p>",
-        f"<p>El mismo ground truth y el catálogo que vio la v0 ({D['n_275']} productos):</p><ul>"
-        f"<li><strong>imagen:</strong> seis pasos acumulados, de CLIP a DINOv3;</li>"
-        f"<li><strong>texto:</strong> descripciones de ocho líneas y Qwen3.</li></ul>",
+    # ---------------------------------------------------------------- E1 · qué se indexa
+    n1, n2 = CAM[K_NAIVE], CAM[K_DESC]
+    d_idx = n2["vs_anterior"]
+    sf, df = ABL["qwen3|seller|filtro-none"], ABL["qwen3|description|filtro-none"]
+    d_ficha, d_name = D["d_ficha"], D["d_name"]
+    rows = [dict(label="texto del vendedor", sub="hit@1", value=n1["hit@1"], ci=ci95(n1), kind="alt"),
+            dict(label="nuestra descripción", sub="hit@1", value=n2["hit@1"], ci=ci95(n2), kind="main", nota=dif(d_idx)),
+            dict(label="texto del vendedor", sub="hit@5", value=n1["hit@5"], ci=ci95(n1, "hit@5"), kind="alt"),
+            dict(label="nuestra descripción", sub="hit@5", value=n2["hit@5"], ci=ci95(n2, "hit@5"), kind="main", nota=dif(d_idx, "hit@5"))]
+    res = (ley((GRIS, "texto del vendedor"), (AZUL, "descripción desde la foto"), nota=f"IC 95% · {N_ANS} consultas")
+           + hbars(rows, width=1150, label_w=300, row_h=84, bar_h=28, x_max=0.8, ticks=[0, .2, .4, .6, .8], right=350,
+                   gaps=(2,), nota_t="diferencia pareada · IC 95%")
+           + f'<p class="nota" data-desde="2">Con la consulta escrita como ficha la diferencia es mayor: de {f(sf["hit@1"])} a '
+             f'<b>{f(df["hit@1"])}</b> ({sg(d_ficha["hit@1"], 2)}): los dos cambios se potencian. Con el nombre comercial '
+             f'delante de la descripción, peor: {dif(d_name)}.</p>')
+    exp("E1", 3, "¿Texto del vendedor, <em>o describir cada producto?</em>",
+        "<p>El texto de IKEA es una frase de marketing, y un usuario pide <strong>estilo, color y materiales</strong>: "
+        "cosas que están en la foto, no en el texto.</p>",
+        "<p>Dos textos en el índice, con todo lo demás fijo:</p><ul>"
+        "<li><strong>el del vendedor</strong>: nombre, su tipo, colores y la frase;</li>"
+        "<li><strong>la descripción</strong> de ocho líneas, hecha desde la foto.</li></ul>"
+        "<p>Qwen3, sin filtro, y la consulta en una frase corta sin reescribir: un solo cambio.</p>",
         res,
-        f"<strong>Texto.</strong> Le gana al mejor retrieval por imagen ({f(D['v1_275']['hit@1'])} contra "
-        f"{f(v0b['hit1'])}), funciona con el cuarto vacío y deja que un LLM escriba la consulta.",
-        t=50, planta=[2, 3], notas=[
-            "Primer experimento, y el que cambió todo: ¿buscamos por imagen o por texto?",
-            "La v0 buscaba por imagen: detectaba cada mueble en la foto, lo recortaba y lo comparaba con "
-            "las fotos del catálogo. Pero en amoblai el ambiente está vacío: no hay nada que recortar, hay "
-            "un pedido.",
-            f"[paso] Mismo ground truth y mismo catálogo que vio la v0, {D['n_275']} productos. Por imagen, "
-            f"seis pasos acumulados, de CLIP a DINOv3. Por texto, las descripciones con Qwen3.",
-            f"[paso] La imagen mejoró mucho con cada paso: de {f(v0[0]['hit1'])} a {f(v0b['hit1'])}. Pero "
-            f"el texto llega a {f(D['v1_275']['hit@1'])}, con intervalos que apenas se tocan.",
-            "[paso] Decidimos texto. Gana, y además es lo único que funciona con el caso real: un cuarto "
-            "vacío y un pedido escrito.",
+        f"<strong>Se indexa la descripción hecha desde la foto.</strong> Casi triplica el acierto ({dif(d_idx)} de hit@1). "
+        f"Es el preprocesamiento que más pesa, y un costo único, offline: {usd(D['c_desc'], 3)} por producto.",
+        t=50, planta=[2], notas=[
+            "Experimento 1: qué se indexa. El texto de IKEA es una frase de marketing, y la gente pide estilo, "
+            "color y materiales, que están en la foto. ¿Vale la pena describir cada producto?",
+            "[paso] Indexamos dos textos, con todo lo demás fijo: el texto del vendedor y la descripción de ocho "
+            "líneas. La consulta, una frase corta sin reescribir, para medir un solo cambio.",
+            f"[paso] Con el texto del vendedor, hit@1 da {f(n1['hit@1'], 2)}; con la descripción, {f(n2['hit@1'], 2)}: "
+            f"casi el triple, y hit@5 pasa de {f(n1['hit@5'], 2)} a {f(n2['hit@5'], 2)}. La diferencia es pareada y "
+            f"su intervalo no toca el cero. Con la consulta escrita como ficha, la diferencia supera 0,4.",
+            "[paso] Se indexa la descripción hecha desde la foto. Es el preprocesamiento que más pesa de todo el "
+            "trabajo.",
         ])
 
-    # ---------------------------------------------------------------- E2
-    M = D["M"]
-    emb = [("hashing", "hashing"), ("bge", "BGE-base"), ("qwen3", "Qwen3")]
-    txt = [("seller", "vendedor"), ("description", "descripción")]
-    fil = [("none", "sin filtro"), ("type", "tipo grueso"), ("kind", "kind fino")]
-    rlab, vals = [], []
-    for tk, tl in txt:
-        for ek, el in emb:
-            rlab.append(f"{tl} · {el}")
-            vals.append([M[f"{ek}|{tk}|filtro-{fk}"]["hit@1"] for fk, _ in fil])
-    res = ('<div class="ley" data-desde="1"><span>hit@1 · filas: texto del producto y embedder · columnas: filtro de metadata</span></div>'
-           + heatmap(rlab, [x[1] for x in fil], vals, width=1080, label_w=330, cell_h=62, vmin=0.05, vmax=0.6,
-                     best=(5, 1), gaps=(3,))
-           + f'<p class="nota" data-desde="2">Con el nombre comercial delante de la descripción: <b>{f(D["namedesc"]["hit@1"])}</b> '
-             f'(Qwen3, kind), contra {f(D["kind"]["hit@1"])} sin el nombre. IC de la mejor celda: {f(ci(b)[0])}–{f(ci(b)[1])}.</p>')
-    exp("E2", 3, "¿Qué texto indexamos, <em>con qué embedder y qué filtro?</em>",
-        "<p>El catálogo trae el texto del vendedor: nombre y una frase de marketing.</p><p>La hipótesis: "
-        "describir cada producto en <strong>las mismas ocho líneas que la consulta</strong> hace que se "
-        "encuentren.</p>",
-        f"<p>La grilla completa, {D['n_resp']} búsquedas, catálogo de {D['n_ikea']}:</p><ul>"
-        "<li>2 textos: vendedor o descripción</li><li>3 embedders: hashing de palabras, BGE-base, Qwen3</li>"
-        "<li>3 filtros: ninguno, tipo grueso o kind fino</li></ul>",
+    # ---------------------------------------------------------------- E2 · cómo se escribe la consulta
+    q_full, q_piece = CON[V1], CON[V1 + "|consulta-piece"]
+    q_type, q_kind = CON[V1 + "|consulta-type"], CON[V1 + "|consulta-kind"]
+    s_full, s_piece = CON["siglip2|description|filtro-kind"], CON["siglip2|description|filtro-kind|consulta-piece"]
+    d_q = q_piece["vs_base"]  # la frase natural menos la ficha
+    frases = D["frases"]
+    med = statistics.median(len(x.split()) for x in frases)
+    rows = [dict(label="la ficha de 8 líneas", sub="densa · lo que escribe el plan", value=q_full["hit@1"], ci=ci95(q_full), kind="main",
+                 nota=dif(d_q, flip=True)),
+            dict(label="la frase natural", sub="densa · sin reescribir", value=q_piece["hit@1"], ci=ci95(q_piece), kind="alt"),
+            dict(label="solo la línea Type", sub="densa", value=q_type["hit@1"], ci=ci95(q_type), kind="muted"),
+            dict(label="solo el nombre del kind", sub="densa · el piso", value=q_kind["hit@1"], ci=ci95(q_kind), kind="muted"),
+            dict(label="la ficha", sub="por foto · SigLIP 2", value=s_full["hit@1"], ci=ci95(s_full), kind="alt"),
+            dict(label="la frase natural", sub="por foto · sin reescribir", value=s_piece["hit@1"], ci=ci95(s_piece), kind="main",
+                 nota=dif(s_piece["vs_anterior"]))]
+    res = (ley(nota="hit@1 · IC 95% · arriba, el coseno del flujo; abajo, la consulta contra la foto del producto")
+           + hbars(rows, width=1150, label_w=330, row_h=74, bar_h=24, x_max=0.8, ticks=[0, .2, .4, .6, .8], right=350,
+                   gaps=(4,), nota_t="contra la otra forma · IC 95%"))
+    exp("E2", 3, "¿Cuánto suma escribir la consulta <em>como una ficha?</em>",
+        "<p>El plan no busca con el pedido: escribe el producto ideal en las ocho líneas del catálogo "
+        "(<strong>respuesta hipotética, HyDE</strong>). Es la técnica de Advanced RAG del flujo, y no la habíamos "
+        "medido contra no hacerla.</p>",
+        f"<p><strong>La ficha</strong> contra <strong>la frase natural</strong>, sin reescribir: como el redactor nombró "
+        f"la pieza («{esc(frases[0])}»; {f(med, 0)} palabras de mediana).</p>"
+        "<p>Y el piso: solo la línea Type, solo el kind. Con el coseno del flujo y contra la foto.</p>",
         res,
-        f"<strong>Descripciones de ocho líneas con Qwen3.</strong> El texto pesa más que el embedder: con "
-        f"descripciones, hasta el hashing llega a {f(D['desc_hash']['hit@1'])} sin filtro. Los tres filtros "
-        f"quedan dentro del intervalo; el flujo usa el kind, que decide plan.",
-        t=55, planta=[2, 3, 6], notas=[
-            "Ya en texto: ¿qué texto ponemos de cada producto, con qué embedder y con qué filtro? La "
-            "hipótesis: describir cada producto en las mismas ocho líneas que la consulta hace que se "
-            "encuentren.",
-            "[paso] Corrimos la grilla completa: dos textos, tres embedders, desde contar palabras hasta "
-            "Qwen3, y tres filtros: ninguno, el tipo grueso o el kind fino.",
-            f"[paso] La lectura es por filas. Con el texto del vendedor, nada pasa de "
-            f"{f(max(max(v) for v in vals[:3]))}. Con nuestras descripciones, todo salta a más de 0,47. El "
-            f"embedder suma menos: Qwen3 es el mejor, pero el hashing queda cerca. Y poner el nombre "
-            f"comercial adelante empeora: agrega palabras que la consulta no tiene.",
-            "[paso] Decidimos descripciones con Qwen3. Los filtros casi no cambian nada, porque la línea "
-            "Type ya dice qué es cada cosa; el flujo filtra por el kind que decide plan.",
+        f"<strong>El plan escribe la ficha</strong>: {dif(d_q, flip=True)} sobre no reescribir. Antes la comparábamos con "
+        f"«solo el kind», que es azar por construcción (buscar «rug» entre {D['n_alfombras']} alfombras). Y un dato: "
+        f"la foto casi no necesita la reescritura.",
+        t=60, planta=[5], notas=[
+            "Experimento 2: cómo se escribe la consulta. El plan no busca con el pedido: escribe el producto "
+            "ideal en las ocho líneas del catálogo. Es la técnica de Advanced RAG del flujo, y no la habíamos "
+            "medido contra no hacerla: la comparábamos con buscar solo con el nombre del kind, que es azar por "
+            "construcción.",
+            "[paso] La ficha contra la frase natural, sin reescribir: las pocas palabras con que el redactor "
+            "nombró la pieza. Con la búsqueda del flujo, y también contra la foto del producto.",
+            f"[paso] La ficha da {f(q_full['hit@1'])} y la frase natural {f(q_piece['hit@1'])}: suma "
+            f"{sg(-d_q['hit@1'], 2)}, con un intervalo lejos del cero. Y lo que no esperábamos: contra la foto, la "
+            f"frase sin reescribir da {f(s_piece['hit@1'])}, casi lo mismo que la ficha. El texto necesita que la "
+            f"consulta hable como el catálogo; la foto, casi no.",
+            "[paso] El plan sigue escribiendo la ficha. Y queda un argumento para la búsqueda híbrida: las dos "
+            "rutas fallan distinto.",
         ])
 
-    # ---------------------------------------------------------------- E3
-    rows = [dict(label="un documento por producto", value=b["hit@1"], ci=ci(b), kind="main", sub="las ocho líneas juntas"),
-            dict(label="línea contra línea", value=D["chunks_al"]["hit@1"], ci=ci(D["chunks_al"]), kind="alt",
-                 sub="Colors con Colors…, promedio"),
-            dict(label="cada línea, un chunk", value=D["chunks_max"]["hit@1"], ci=ci(D["chunks_max"]), kind="alt",
-                 sub="el producto puntúa con su mejor línea")]
-    res = (ley(nota="hit@1 · IC 95% · Qwen3, filtro por tipo")
-           + hbars(rows, width=1150, label_w=400, row_h=118, bar_h=32, x_max=0.8, ticks=[0, .2, .4, .6, .8],
-                   refs=[(D["azar_h1"], "azar")]))
-    exp("E3", 3, "¿Partimos cada descripción <em>en chunks?</em>",
-        "<p>La receta de RAG dice partir los documentos en pedazos. Pero nuestra descripción ya es corta: "
-        "ocho líneas.</p><p>¿Conviene igual comparar por partes, los colores con los colores?</p>",
-        "<p>Tres formas de partir, con todo lo demás igual: el documento entero, cada línea como chunk, y "
-        "línea contra línea del mismo rótulo.</p>",
+    # ---------------------------------------------------------------- E3 · búsqueda léxica, por foto e híbrida
+    HK = {"lexica": "bm25|description|filtro-kind", "foto": "siglip2|description|filtro-kind", "clip": "clip|description|filtro-kind",
+          "densa+lexica": V1 + "|+bm25", "densa+foto": V1 + "|+siglip2", "lexica+foto": "bm25|description|filtro-kind|+siglip2",
+          "rrf": V2 + "|fusion-rrf"}
+
+    def hrow(key, label, kind="alt"):
+        x = HIB[key]
+        return dict(label=label, value=x["hit@1"], ci=ci95(x), kind=kind,
+                    nota=dif(x["vs_base"]) if "vs_base" in x else "la base: versión 1")
+
+    rows = [hrow(V1, "densa: Qwen3", "ink"), hrow(HK["lexica"], "léxica: BM25"), hrow(HK["foto"], "por foto: SigLIP 2"),
+            hrow(HK["clip"], "por foto: CLIP ViT-B/32", "muted"), hrow(HK["densa+lexica"], "densa + léxica"),
+            hrow(HK["densa+foto"], "densa + foto"), hrow(HK["lexica+foto"], "léxica + foto"),
+            hrow(V2, "densa + léxica + foto", "main")]
+    eo = D["ej_otros"]
+    res = (ley(nota="hit@1 · IC 95% · arriba, cada buscador solo; abajo, fusionados (z-score, promedio)")
+           + hbars(rows, width=1150, label_w=330, row_h=53, bar_h=22, x_max=0.8, ticks=[0, .2, .4, .6, .8], right=350,
+                   gaps=(4,), nota_t="contra la densa · IC 95%")
+           + f'<p class="nota" data-desde="2">La alfombra del ejemplo: la densa la deja {eo["densa"]}.ª; la léxica, {eo["lexica"]}.ª; '
+             f'por foto, <b>{eo["foto"]}.ª</b>; las tres juntas, {eo["hibrida"]}.ª.</p>')
+    exp("E3", 3, "¿Suman la búsqueda por palabras <em>y la foto del producto?</em>",
+        "<p>Dos dudas de fondo. ¿Hace falta el embedder neuronal, o alcanza con <strong>contar palabras</strong>?</p>"
+        "<p>Y el catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a texto (lo que hacíamos) o "
+        "<strong>embeberla directamente</strong>.</p>",
+        "<ul><li><strong>densa</strong> (Qwen3) y <strong>léxica</strong> (BM25), sobre las mismas descripciones;</li>"
+        "<li><strong>por foto</strong> (SigLIP 2 o CLIP): la consulta en una frase contra la foto, sin descripción;</li>"
+        "<li><strong>fusión</strong>: cada puntaje estandarizado, y el promedio.</li></ul>",
         res,
-        f"<strong>Un producto, un documento.</strong> Partir por líneas pierde el contexto "
-        f"({f(D['chunks_max']['hit@1'])}); alinear por rótulo casi empata ({f(D['chunks_al']['hit@1'])}) con "
-        f"ocho vectores por producto en lugar de uno.",
-        t=30, planta=[3], notas=[
-            "Splitting. La receta dice partir los documentos en chunks, pero la descripción ya es corta. "
-            "¿Conviene igual comparar por partes?",
-            "[paso] Probamos tres formas: el documento entero, cada línea como chunk, y línea contra línea "
-            "del mismo rótulo, colores con colores.",
-            f"[paso] Partir en líneas sueltas se cae a {f(D['chunks_max']['hit@1'])}: una línea sola no dice "
-            f"de qué producto habla. Alinear por rótulo casi empata.",
-            "[paso] Nos quedamos con un documento por producto: igual de bueno y ocho veces más simple.",
+        f"<strong>La búsqueda del flujo pasa a ser híbrida: es la versión 2</strong> (Ejercicio 4). Solos, los tres rinden "
+        f"parecido; se equivocan en cosas distintas, y juntos suman {dif(D21)} de hit@1 y {dif(D21, 'hit@5')} de hit@5.",
+        t=60, planta=[3, 6], notas=[
+            "Experimento 3: búsqueda léxica, por foto e híbrida. Dos dudas de fondo sobre el índice. ¿El embedder "
+            "neuronal hace falta, o alcanza con contar palabras? Y el catálogo tiene fotos: la clase dio dos "
+            "rutas, pasar la imagen a texto, que es lo que hacíamos, o embeberla directamente. Esa nunca la "
+            "habíamos medido.",
+            "[paso] Tres buscadores sobre las mismas consultas: el denso, Qwen3 sobre las descripciones; el "
+            "léxico, BM25; y por foto, SigLIP 2, con la consulta en una frase contra la foto del producto. Y sus "
+            "fusiones.",
+            f"[paso] Solos, los tres rinden parecido: {f(HIB[V1]['hit@1'])}, {f(HIB[HK['lexica']]['hit@1'])} y "
+            f"{f(HIB[HK['foto']]['hit@1'])}. Ni el embedder le gana a contar palabras, ni describir le gana a embeber "
+            f"la foto. Pero se equivocan en cosas distintas: fusionados dan {f(HIB[V2]['hit@1'])}, "
+            f"{sg(D21['hit@1'])} de hit@1, con un intervalo que no toca el cero.",
+            "[paso] La búsqueda híbrida pasa a ser la del flujo: es la versión 2, el Ejercicio 4. Usa las dos "
+            "rutas de la clase a la vez.",
         ])
 
-    # ---------------------------------------------------------------- E4
-    dims = sorted(D["dims"])
-    h1 = [D["dims"][d]["hit@1"] for d in dims]
-    h10 = [D["dims"][d]["hit@10"] for d in dims]
-    cis = [tuple(D["dims"][d]["hit@1_ic95"]) for d in dims]
-    res = (ley((AZUL, "hit@1, con IC 95%"), (GRIS, "hit@10"))
-           + line_chart([dict(name="hit@1", ys=h1, kind="main", ci=cis, label="hit@1"),
-                         dict(name="hit@10", ys=h10, kind="alt", dash=True, label="hit@10")],
-                        dims, width=1120, height=500, ymin=0.3, ymax=1.0, yticks=[.3, .5, .7, .9],
-                        xlab="dimensiones del vector (truncado y renormalizado)", right=130))
-    exp("E4", 3, "¿Cuántas dimensiones <em>necesita el embedding?</em>",
-        "<p>Qwen3-Embedding se entrenó con <strong>Matryoshka</strong>: las primeras componentes del vector "
-        "ya son un embedding válido.</p><p>Menos dimensiones: índice más chico, búsqueda más rápida. ¿Cuánto "
-        "se pierde?</p>",
-        f"<p>Truncamos los vectores a {', '.join(str(d) for d in dims[:-1])} y {dims[-1]} componentes y los "
-        f"renormalizamos, sin reentrenar nada.</p>",
-        res,
-        f"<strong>{dims[-1]} dimensiones.</strong> Desde 512 la curva está plana y dentro del intervalo, "
-        f"pero el catálogo entero ocupa {f(D['indice_mb'], 1)} MB: a esta escala no hay nada que ahorrar. Con "
-        f"millones de productos, 256 o 512.",
-        t=35, planta=[3], notas=[
-            "Dimensión del embedding. Qwen3 se entrenó con Matryoshka: las primeras componentes del vector "
-            "ya son un embedding válido, más barato de guardar y de buscar.",
-            "[paso] Truncamos a 32, 64, hasta 1024, y renormalizamos. Sin reentrenar.",
-            f"[paso] Con 32 componentes ya da {f(h1[0])}; desde 512 la curva se aplana "
-            f"({f(D['dims'][512]['hit@1'])} contra {f(h1[-1])}).",
-            f"[paso] Nos quedamos con las {dims[-1]}: todo el catálogo ocupa {f(D['indice_mb'], 1)} megas. "
-            f"Con un catálogo de millones, elegiríamos 256 o 512.",
-        ])
-
-    # ---------------------------------------------------------------- E5
-    tot = D["chroma_total_type"]
-    hn = D["hnsw"]
-    res = ('<div class="bign" data-desde="1">'
-           f'<div class="bn"><div class="bnv"><span data-desde="2">{D["chroma_igual_type"]}</span><small> / {tot}</small></div>'
-           '<p>búsquedas con el <strong>ranking completo idéntico</strong> · filtro por tipo</p></div>'
-           f'<div class="bn"><div class="bnv"><span data-desde="2">{D["chroma_igual_kind"]}</span><small> / {D["chroma_total_kind"]}</small></div>'
-           '<p>ídem, con filtro por kind</p></div>'
-           f'<div class="bn"><div class="bnv sm"><span data-desde="2">{f(D["exact"]["hit@1"])} = {f(b["hit@1"])}</span></div>'
-           '<p>hit@1 de la búsqueda exacta = hit@1 de ChromaDB</p></div></div>')
-    exp("E5", 3, "¿La base vectorial <em>se pierde resultados?</em>",
-        "<p>ChromaDB usa <strong>HNSW</strong>, una búsqueda aproximada: recorre un grafo de vecinos en lugar "
-        "de comparar contra todos.</p><p>«Aproximada» puede querer decir que se le escapa el correcto.</p>",
-        f"<p>Las {tot} búsquedas dos veces: con HNSW (coseno, ef_search {hn.get('ef_search', '—')}, "
-        f"{hn.get('max_neighbors', '—')} vecinos por nodo) y con búsqueda exacta en numpy. Comparamos el "
-        f"ranking completo, una por una.</p>",
-        res,
-        "<strong>ChromaDB.</strong> A esta escala la búsqueda aproximada es exacta, y suma filtros de "
-        "metadata, persistencia y la descripción guardada al lado del vector.",
-        t=25, planta=[3], notas=[
-            "ChromaDB usa HNSW, una búsqueda aproximada sobre un grafo de vecinos. ¿Se le escapa el correcto?",
-            "[paso] Corrimos todas las búsquedas con HNSW y con búsqueda exacta, y comparamos el ranking "
-            "entero.",
-            f"[paso] Idénticos en las {tot}. Con este tamaño de catálogo, aproximado es exacto.",
-            "[paso] Nos quedamos con Chroma: filtros, persistencia y el texto al lado del vector.",
-        ])
-
-    # ================================================================ 04 · cómo buscamos
-    separador(4, ["Segundo capítulo: lo que pasa en cada pedido, antes y después de buscar. Llega la mesa ratona."])
-
-    # ---------------------------------------------------------------- E6
-    rows = [dict(label="las ocho líneas", value=b["hit@1"], ci=ci(b), kind="main", sub="lo que escribe plan"),
-            dict(label="solo la línea Type", value=D["q_type"]["hit@1"], ci=ci(D["q_type"]), kind="alt",
-                 sub="«rug, high pile shag»"),
-            dict(label="solo el nombre del kind", value=D["q_kind"]["hit@1"], ci=ci(D["q_kind"]), kind="muted",
-                 sub="«rug»: sin reescribir")]
-    res = (ley(nota="hit@1 · IC 95% · la misma búsqueda con tres consultas")
-           + hbars(rows, width=1150, label_w=400, row_h=118, bar_h=32, x_max=0.8, ticks=[0, .2, .4, .6, .8],
-                   refs=[(D["azar_h1"], "azar")]))
-    exp("E6", 4, "¿Hace falta que el LLM <em>reescriba la consulta?</em>",
-        "<p>Plan podría buscar «alfombra» y listo. En cambio escribe el producto ideal en ocho líneas, como "
-        "un documento hipotético del catálogo: la idea de HyDE.</p><p>Es una llamada a Opus por pedido. ¿Se "
-        "paga?</p>",
-        "<p>La misma búsqueda con tres consultas: las ocho líneas, solo la línea Type, o solo el nombre del "
-        "kind.</p>",
-        res,
-        f"<strong>Reescribir, y en las ocho líneas.</strong> Es la decisión que más pesa en todo el "
-        f"retrieval: de {f(D['q_kind']['hit@1'])} a {f(b['hit@1'])}.",
-        t=35, planta=[5], notas=[
-            "Query rewriting. Vimos que plan escribe el producto ideal en las ocho líneas, como HyDE. Cuesta "
-            "una llamada a Opus por pedido: ¿vale la pena, o alcanza con buscar «alfombra»?",
-            "[paso] Misma búsqueda con tres consultas: las ocho líneas, solo la línea Type, o solo el kind.",
-            f"[paso] Con el nombre solo, {f(D['q_kind']['hit@1'])}, apenas arriba del azar. Con la línea "
-            f"Type, {f(D['q_type']['hit@1'])}. Con las ocho líneas, {f(b['hit@1'])}.",
-            "[paso] Es la decisión que más pesa del retrieval: los colores, la forma y el estilo distinguen "
-            "una alfombra de otras ochenta.",
-        ])
-
-    # ---------------------------------------------------------------- E7
-    rows = [dict(label="sin reranking", value=b["hit@1"], ci=ci(b), kind="alt", sub=f"Qwen3 · MRR@10 {f(b['mrr@10'])}"),
-            dict(label="cross-encoder de texto", value=D["minilm"]["hit@1"], ci=ci(D["minilm"]), kind="muted",
-                 sub=f"MiniLM, local · MRR@10 {f(D['minilm']['mrr@10'])}"),
-            dict(label="Opus mirando las fotos", value=o["hit@1"], ci=ci(o), kind="main",
-                 sub=f"{usd(D['rerank_costo_llamada'])} por búsqueda · MRR@10 {f(o['mrr@10'])}")]
-    res = (ley(nota="hit@1 · IC 95% · reordenando el top-10 de Qwen3")
-           + hbars(rows, width=1150, label_w=400, row_h=118, bar_h=32, x_max=0.8, ticks=[0, .2, .4, .6, .8]))
-    exp("E7", 4, "¿Conviene reordenar los candidatos <em>mirando las fotos?</em>",
-        "<p>El embedding compara textos. Pero dos alfombras crema de pelo largo se describen casi igual y "
-        "se distinguen a la vista.</p><p>La idea: que un modelo que ve reordene los primeros diez.</p>",
-        "<p>Dos rerankers sobre el top-10:</p><ul><li>un <strong>cross-encoder de texto</strong> (MiniLM de "
-        "MS MARCO, gratis);</li><li><strong>Claude Opus 5.5</strong> con la consulta y las fotos de los "
-        "candidatos (no la del ambiente).</li></ul>",
-        res, None, t=45, planta=[7], notas=[
-            "Reranking. El embedding compara textos, pero dos alfombras crema de pelo largo se describen casi "
-            "igual y se distinguen mirando. ¿Y si un modelo que ve reordena los primeros diez?",
-            f"[paso] Probamos dos: un cross-encoder de texto, gratis; y Opus con la consulta y las fotos de "
-            f"los candidatos, a unos {usd(D['rerank_costo_llamada'])} por búsqueda.",
-            f"[paso] El cross-encoder empeora: {f(D['minilm']['hit@1'])}; está entrenado en búsqueda web. Opus "
-            f"sube de {f(b['hit@1'])} a {f(o['hit@1'])}, con intervalos que no se tocan: la mejora más grande "
-            f"después del query rewriting.",
-        ])
-
-    # ---------------------------------------------------------------- E7 · dónde ayuda
-    opc = o.get("hit@1_por_categoria", {})
-    drows = [dict(label=CAT_ES.get(c, c), a=b["hit@1_por_categoria"][c], b=opc[c], n=D["cats_n"][c])
-             for c in D["cats"] if c in opc]
-    drows.sort(key=lambda r: r["a"])
-    ej, er = D["ej"], D["ej_rr"]
-    rel = set(ej["relevant"])
-    s1 = "".join(ficha(D, p, 112, cap=False, pos=i + 1, hi=p in rel) for i, p in enumerate(ej["ranked"][:5]))
-    s2 = "".join(ficha(D, p, 112, cap=False, pos=i + 1, hi=p in rel) for i, p in enumerate(er["ranked"][:5]))
-    rug = next((r for r in drows if r["label"] == "alfombras"), drows[0])
-    body = (xcab("E7", "Cómo buscamos", "Dónde ayuda <em>mirar las fotos</em>")
-            + '<div class="e7b"><div>'
-            + '<div class="ley"><span><i style="background:#fff;box-shadow:inset 0 0 0 3px #9AA4AF"></i>Qwen3</span>'
-              '<span><i style="background:#2453D6"></i>+ Opus</span><span>hit@1 por categoría · n = consultas</span></div>'
-            + dumbbell(drows, width=880, label_w=230, row_h=50)
-            + '</div><div class="e7r">'
-            + '<div class="etq">la alfombra de las métricas</div>'
-            + f'<p class="e7c">Qwen3: el anotado queda <b>{ej["rank"]}.º</b></p><div class="tira">{s1}</div>'
-            + f'<p class="e7c">Después de Opus: <b>{er["rank"]}.º</b></p><div class="tira">{s2}</div>'
-            + f'<p class="nota">Con el catálogo chico de {D["n_268"]} productos, solo muebles, el salto era de '
-              f'{f(D["base268"]["hit@1"])} a {f(D["opus268"]["hit@1"])}.</p>'
-            + '</div></div>'
-            + f'<div class="decision" data-desde="1"><div class="k">decisión</div><p><strong>Reordenar con un modelo que ve.</strong> '
-              f'Opus sube hit@1 de {f(b["hit@1"])} a {f(o["hit@1"])}, sobre todo donde los productos se parecen; el '
-              f'cross-encoder empeora. En el flujo, ese reranker es el paso choose.</p></div>')
-    add(body, titulo="E7 · Dónde ayuda", cap=4, t=35, fases="2,3", planta=[7], notas=[
-        f"Dónde ayuda: donde los productos se parecen entre sí. Alfombras, de {f(rug['a'], 2)} a "
-        f"{f(rug['b'], 2)}; estantes, deco, lámparas. Sillas, donde el texto ya alcanzaba, sube menos.",
-        f"A la derecha, la alfombra de las métricas: Qwen3 la dejó {ej['rank']}.ª; Opus la sube a la "
-        f"{er['rank']}.ª.",
-        "[paso] Decisión: reordenar con un modelo que ve. En el flujo, eso lo hace la elección, que además "
-        "arma la combinación entera.",
+    # ---------------------------------------------------------------- el camino incremental: un cambio por paso
+    r_opus = D["RER"][BASE + "|rerank-opus"]
+    k5 = D["CURVA"]["por_k"]["5"]["acierto_eleccion"]
+    pasos = []
+    for key, label, kind, fuerte in [
+            (K_NAIVE, "RAG naive: texto del vendedor, consulta sin reescribir", "muted", False),
+            (K_DESC, "+ cada producto descripto desde su foto", "alt", False),
+            (K_HYDE, "+ la consulta escrita como una ficha (HyDE)", "alt", False),
+            (V1, "+ filtro por kind: versión 1", "ink", True),
+            (V1 + "|+bm25", "+ búsqueda léxica (BM25) fusionada", "alt", False),
+            (V2, "+ la foto del producto (SigLIP 2): versión 2", "main", True)]:
+        x = CAM[key]
+        d = x.get("vs_anterior")
+        pasos.append(dict(label=label, value=x["hit@1"], ci=ci95(x), kind=kind, fuerte=fuerte, h5=f(x["hit@5"]),
+                          cambio=dif(d) if d else None, sube=bool(d and d["hit@1_ic95"][0] > 0)))
+    aparte = [dict(label="un VLM elige entre los 5 primeros", value=k5, nota="sobre el paso 3, con filtro por tipo"),
+              dict(label=f"un VLM reordena el top-10: el {f(r_opus['hit@1'], 2)} de antes", value=r_opus["hit@1"],
+                   nota="contra la consulta, sin el cuarto")]
+    d_desc, d_hyde, d_kind = CAM[K_DESC]["vs_anterior"], CAM[K_HYDE]["vs_anterior"], CAM[V1]["vs_anterior"]
+    body = ('<div class="cuerpo">' + cab("03", "El buscador · la ablación incremental",
+                                         f"El camino: de {f(n1['hit@1'], 2)} a {f(B2['hit@1'], 2)} de hit@1, <em>un cambio por paso</em>") + '</div>'
+            + '<div class="camino">'
+            + camino(pasos, aparte, width=1776, label_w=690, bar_w=470, row_h=60, bar_h=28)
+            + '</div>'
+            + remate(f"El {f(r_opus['hit@1'], 2)} que mostrábamos no era un escalón: es un VLM reordenando el top-10, <mark>una técnica aislada, no el flujo</mark>."))
+    add(body, titulo="El camino, un cambio por paso", cap=3, t=50, planta=[2, 5, 6], notas=[
+        f"La ablación incremental: un cambio por paso, con su diferencia pareada. Arrancamos del RAG naive, el "
+        f"texto del vendedor y la consulta sin reescribir: {f(n1['hit@1'], 2)}. Describir cada producto desde su "
+        f"foto lo lleva a {f(n2['hit@1'], 2)}; escribir la consulta como una ficha, a {f(CAM[K_HYDE]['hit@1'], 2)}. "
+        f"Esos dos pasos son los que más pesan. El filtro por kind no suma en este banco: lo usamos por otra "
+        f"razón, que vemos en los de trámite. Con el filtro, esa es la versión 1 del flujo. Con la búsqueda "
+        f"léxica, {f(CAM[V1 + '|+bm25']['hit@1'], 2)}; con la foto, {f(B2['hit@1'], 2)}: la versión 2.",
+        f"Aparte queda el {f(r_opus['hit@1'], 2)} que mostrábamos antes: es un VLM reordenando el top-10, una "
+        f"técnica aislada, no un escalón del flujo.",
     ])
 
-    # ---------------------------------------------------------------- E8
-    cv = D["curva"]["por_k"]
-    ks = sorted(int(k) for k in cv)
-    ac = [cv[str(k)]["acierto_eleccion"] for k in ks]
-    te = [cv[str(k)]["techo_hit@k"] for k in ks]
-    cis = [tuple(cv[str(k)]["ic95"]) for k in ks]
-    kf, ka = D["k_flujo"], D["k_antes"]
-    d35 = cv[str(kf)]["acierto_eleccion"] - cv[str(ka)]["acierto_eleccion"]
-    d58 = cv["8"]["acierto_eleccion"] - cv[str(kf)]["acierto_eleccion"]
-    res = (ley((AZUL, "acierto de la elección, IC 95%"), (GRIS, "techo: el anotado está entre los k"))
+    # ---------------------------------------------------------------- E4 · ¿error, o el mismo mueble en otro color?
+    e_q = EMB[V1]
+    util1, util3 = D["util1"], D["util3"]
+    G = D["GRAD"]["consultas"]
+    fam = {k_: EMB[f"{k_}|description|filtro-kind"]["vs_base"] for k_ in ("bm25", "siglip2", "bge")}
+    assert fam["bm25"]["familia_hit@1_ic95"][0] < 0 < fam["bm25"]["familia_hit@1_ic95"][1] and fam["bge"]["familia_hit@1_ic95"][1] < 0, \
+        "por familia cambió el orden entre buscadores: revisar el texto del experimento 4"
+    cada = round(1 / D["frac_variante"])
+    rk = rankings(D["EMB_DIR"])[V1]
+
+    def variante(pred, pie):
+        """Un caso donde el primero «falla» y es el mismo modelo: la foto del anotado y la del primero."""
+        r = next(x for x in rk if pred(x))
+        assert r.get("rank_family") == 1 and (r["rank"] or 99) > 1, "el caso de variante ya no lo es: elegir otro"
+        a, b = r["relevant"][0], r["ranked"][0]
+        ia, ib = D["items"][a], D["items"][b]
+        assert ia["name"] == ib["name"], "el caso de variante ya no es el mismo modelo"
+        return (f'<div class="vr2"><figure><img src="{img.uri(foto_producto(D, a), 180, 180, fit="contain")}" alt=""><figcaption>el anotado</figcaption></figure>'
+                f'<figure class="p"><img src="{img.uri(foto_producto(D, b), 180, 180, fit="contain")}" alt=""><figcaption>el 1.º de la búsqueda</figcaption></figure>'
+                f'<p>{pie(ia, ib)}</p></div>'), (ia, ib)
+
+    def dim(it):
+        d_ = it.get("dimensions_cm") or {}
+        return f'{d_["width"]:.0f} × {d_["depth"]:.0f} cm'
+
+    v_a, (ia, ib) = variante(lambda x: x["phrase"] == "birch nesting tables at front left",
+                             lambda ia, ib: "Mesas nido: la anotada, en abedul; la primera, <b>el mismo modelo en marrón negro</b>.")
+    assert "Birch" in ia["colors"][0] and "Black-brown" in ib["colors"][0], "cambiaron los colores del caso de variante"
+    v_b, _ = variante(lambda x: x["room_id"] == EJ_ROOM and x["piece"] == EJ_PIECE,
+                      lambda ia, ib: f"La alfombra del ejemplo: la anotada mide {dim(ia)}; la primera, <b>el mismo modelo de {dim(ib)}</b>.")
+    rows = [dict(label="el producto exacto", value=e_q["hit@1"], ci=ci95(e_q), kind="alt", sub="hit@1"),
+            dict(label="el mismo modelo", value=e_q["familia_hit@1"], ci=ci95(e_q, "familia_hit@1"), kind="alt",
+                 sub="otra variante también vale"),
+            dict(label="uno que sirve", value=util1, kind="main", sub="según un juez: nota 1 o 2")]
+    res = (ley(nota="el primer candidato de la búsqueda de la versión 1")
+           + hbars(rows, width=1150, label_w=330, row_h=76, bar_h=26, x_max=1.0, right=120)
+           + f'<div class="vars" data-desde="2">{v_a}{v_b}</div>'
+           + f'<p class="nota" data-desde="2">El juez: {G["todas"]["n"]} consultas, reponderado a todas (alguno del top-3 sirve: {f(util3, 2)}).</p>')
+    exp("E4", 3, "Cuando el primero no es el anotado, <em>¿se equivocó?</em>",
+        f"<p>hit@1 exige el producto anotado <strong>exacto</strong>, y el catálogo está lleno de variantes del mismo "
+        f"modelo: el {pct(D['con_variantes'])} de las consultas busca un producto que tiene variantes.</p>",
+        "<p>Tres niveles de correcto para el primer candidato:</p><ul>"
+        "<li><strong>exacto</strong>: el producto anotado;</li>"
+        "<li><strong>el mismo modelo</strong>: mismo nombre comercial y mismo grupo;</li>"
+        "<li><strong>sirve</strong>: un juez lo califica con 2, 1 o 0.</li></ul>",
+        res,
+        f"<strong>El banco subestima el nivel, no el orden.</strong> Una de cada {cada} veces que el primero «falla» es el mismo "
+        f"mueble en otra medida u otro color; por familia tampoco se distinguen Qwen3, BM25 y SigLIP 2, y BGE sigue peor. "
+        f"El exacto para comparar; los tres juntos para decir cuánto sirve.",
+        t=40, planta=[6], k_dec="conclusión", notas=[
+            "Experimento 4. hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del "
+            "mismo modelo. ¿Cuánto de lo que cuenta como error es el mismo mueble en otro color?",
+            "[paso] Tres niveles de correcto para el primer candidato: el producto exacto, el mismo modelo, y uno "
+            "que sirve según un juez.",
+            f"[paso] El exacto, {f(e_q['hit@1'], 2)}; el mismo modelo, {f(e_q['familia_hit@1'], 2)}; uno que sirve, "
+            f"{f(util1, 2)}. Una de cada {cada} veces que el primero falla es otra variante: las mismas mesas en otro "
+            f"color, la misma alfombra en otra medida.",
+            "[paso] El banco subestima el nivel, no el orden: la comparación entre buscadores no cambia.",
+        ])
+
+    # ================================================================ 04 · la lista
+    separador(4, ["Segundo grupo: quién elige, y el flujo entero en cuartos reales, con el juez. Llega la mesa ratona."])
+
+    # ---------------------------------------------------------------- E5 · elegir con un VLM, y cuántos candidatos
+    r0 = D["RER"][BASE]
+    d_opus = D["d_opus"]
+    cv = D["CURVA"]["por_k"]
+    ks = sorted(int(x) for x in cv)
+    ac = [cv[str(x)]["acierto_eleccion"] for x in ks]
+    te = [cv[str(x)]["techo_hit@k"] for x in ks]
+    cis = [tuple(cv[str(x)]["ic95"]) for x in ks]
+    d35 = D["CURVA"]["diferencias_pareadas"]["3->5"]
+    d35_txt = f'{sg(d35["acierto_eleccion"])} {ic(*d35["ic95"])}'
+    dh = D["DIAG"]["hibrida"]
+    res = (ley((AZUL, "acierto de la elección del VLM, IC 95%"), (GRIS, "techo: el anotado está entre los k"))
            + line_chart([dict(name="acierto", ys=ac, kind="main", ci=cis, label="acierto"),
                          dict(name="techo", ys=te, kind="alt", dash=True, label="techo")],
-                        ks, width=1120, height=500, ymin=0.4, ymax=1.0, yticks=[.4, .6, .8, 1.0],
-                        marks=[(ka, "antes"), (kf, "el flujo")], xlab="k: candidatos por pieza", right=130))
-    exp("E8", 4, "¿Cuántos candidatos le mostramos <em>a choose?</em>",
-        "<p>Choose mira k fotos por pieza. Con más candidatos es más probable que esté el correcto…</p>"
-        "<p>…pero son más imágenes por llamada: más costo, más latencia, más con qué confundirse.</p>",
-        "<p>Sin gastar de nuevo: del reranking de Opus sobre el top-10 sale qué elegiría entre los primeros "
-        "k. Lo comparamos con el <strong>techo</strong>: que el anotado esté entre los k.</p>",
+                        ks, width=1120, height=410, ymin=0.4, ymax=1.0, yticks=[.4, .6, .8, 1.0],
+                        marks=[(3, "antes"), (kf, "el flujo")], xlab="k: candidatos por pieza", right=130)
+           + '<div class="e5n" data-desde="2">'
+             f'<div><b>{f(r0["hit@1"])} → {f(r_opus["hit@1"])}</b><span>hit@1 reordenando el top-10 mirando las fotos: '
+             f'{dif(d_opus)}, a {usd(D["c_rerank"])} por búsqueda</span></div>'
+             f'<div><b>{d35_txt}</b><span>de 3 a 5 candidatos; a partir de 8 se aplana</span></div></div>')
+    exp("E5", 4, "Elegir con un VLM, <em>y cuántos candidatos</em>",
+        f"<p>hit@10 es {f(r0['hit@10'], 2)} pero hit@1 {f(r0['hit@1'], 2)}: el correcto casi siempre está entre los 10 "
+        f"primeros, pero no primero. En el flujo, quien elige <strong>mira las fotos</strong>.</p>",
+        "<p>Opus recibe la consulta y las fotos del top-10, y las ordena. De ahí sale gratis la curva: si eligiera "
+        "entre los primeros k, ¿acertaría? <strong>Techo</strong>: el correcto está entre esos k.</p>",
         res,
-        f"<strong>k = {kf}</strong> (antes, {ka}). De {ka} a {kf} suma {f(d35)} de acierto; de {kf} a 8, "
-        f"{f(d58)}, con un {pct(8 / kf - 1)} más de fotos en cada llamada.",
-        t=35, planta=[7], notas=[
-            "¿Cuántos candidatos le mostramos a choose? Más candidatos, más chance de que esté el correcto, "
-            "pero más fotos por llamada: más costo y más con qué confundirse.",
-            "[paso] Sin gastar de nuevo: del reranking de Opus sobre el top-10 sale qué elegiría entre los "
-            "primeros k. Contra el techo: que el correcto esté entre los k.",
-            f"[paso] El techo sube rápido, pero el acierto real se aplana: de {ka} a {kf} candidatos suma "
-            f"{f(d35)}; de {kf} a 8, {f(d58)}.",
-            f"[paso] Pasamos de {ka} a {kf}. Más allá, el costo crece más que el acierto.",
+        f"<strong>{kf} candidatos por pieza</strong> (antes 3). Ojo: es una <strong>técnica aislada</strong>, no un paso del "
+        f"flujo. Ese reranker ordena contra la consulta, sin ver el ambiente; el que elige en el flujo arma un conjunto "
+        f"para el cuarto, y no tiene ground truth.",
+        t=55, planta=[6, 7], notas=[
+            f"Experimento 5. hit@10 es {f(r0['hit@10'], 2)} pero hit@1 {f(r0['hit@1'], 2)}: el correcto casi siempre está "
+            f"entre los diez primeros, pero no primero. ¿Mirar las fotos ordena mejor que el coseno? ¿Y cuántos "
+            f"candidatos conviene pasar?",
+            "[paso] Opus recibe la consulta y las fotos de los diez primeros, y los ordena. De ahí sale gratis la "
+            "curva: si eligiera entre los primeros k, ¿acertaría? La punteada es el techo.",
+            f"[paso] Reordenando el top-10, hit@1 pasa de {f(r0['hit@1'])} a {f(r_opus['hit@1'])}. De 3 a 5 candidatos "
+            f"la elección sube {f(100 * d35['acierto_eleccion'], 0)} puntos, también significativo; a partir de 8 se "
+            f"aplana.",
+            f"[paso] Cinco candidatos por pieza. Pero ojo: es una técnica aislada, no un paso del flujo. Ese "
+            f"reranker ordena contra la consulta, sin ver el ambiente; el que elige en el flujo arma un conjunto "
+            f"para el cuarto, y no tiene ground truth. Por eso este número no es el del sistema.",
         ])
 
-    # ================================================================ 05 · cuánto creerle
-    separador(5, ["Tercer capítulo: cuánto creerle a todo esto. Se prende la lámpara."])
+    e6(D)
+    e7(D)
 
-    # ---------------------------------------------------------------- E9
-    rp = D["repro"]
-    rrows = [dict(label=r["label"], h=r["h"], mean=r["mean"], sd=r["sd"]) for r in rp if r["mean"] > 0.3]
-    nv = next(r for r in rp if r["mean"] <= 0.3)
-    q = rp[0]
-    res = ('<div class="ley" data-desde="1"><span>hit@1 en cada una de las tres escrituras · la raya es la media, la banda ± un desvío</span></div>'
-           + dots_repro(rrows, width=1140, label_w=340, row_h=96, xmin=0.44, xmax=0.60,
-                        ticks=[.44, .48, .52, .56, .60], tick_d=2, right=200)
-           + f'<p class="nota" data-desde="2">Fuera de escala: {esc(nv["label"])}, {f(nv["mean"])} ± {f(nv["sd"])}. '
-             f'Búsquedas con respuesta en cada escritura: {", ".join(str(n) for n in D["repro_n"])}.</p>')
-    exp("E9", 5, "Si otro escribe las consultas, <em>¿cambia el resultado?</em>",
-        "<p>Las consultas de la evaluación las escribieron subagentes de Claude. Otro redactor escribiría "
-        "otras.</p><p>Si el orden de los métodos depende de una redacción, las conclusiones no valen.</p>",
-        f"<p>Tres escrituras independientes de todas las consultas, mismo prompt y mismas fotos, catálogo de "
-        f"{D['repro_catalogo']}. Cinco métodos en cada una.</p>",
-        res,
-        f"<strong>Las conclusiones se sostienen.</strong> El mejor método da {f(q['mean'])} ± {f(q['sd'])} y "
-        f"le gana a BGE, a hashing y al filtro por kind en las tres. Diferencias de menos de ~{f(q['sd'], 2)} "
-        f"entre métodos las tratamos como empate.",
-        t=40, planta=[5], notas=[
-            "Reproducibilidad. Las consultas las escribieron subagentes de Claude; otro redactor escribiría "
-            "otras. Si el ranking de métodos depende de una redacción, no vale.",
-            "[paso] Hicimos escribir todas las consultas tres veces, de forma independiente, y corrimos cinco "
-            "métodos en cada escritura.",
-            f"[paso] El mejor método da {f(q['mean'])} más menos {f(q['sd'])}. El orden se mantiene en las "
-            f"tres: Qwen3 con filtro por tipo arriba, el texto del vendedor abajo de todo.",
-            "[paso] El orden es firme, pero dos o tres centésimas entre métodos son ruido de redacción: "
-            "empate.",
-        ])
+    # ================================================================ 05 · de trámite
+    separador(5, ["Lo que la cátedra dijo que iba a preguntar, con la respuesta corta. Se prende la lámpara."])
+    tramite(D)
 
-    # ---------------------------------------------------------------- E10
-    g = D["grad"]["consultas"]
-    ag = D["grad"]["acuerdo_con_gt"]
-    sin = 1 - D["n_resp"] / D["n_busquedas"]
-    rows = [dict(label="hit@1 exacto", value=D["h1_855"], kind="ink", sub="el SKU anotado, primero"),
-            dict(label="útil@1, todas", value=g["todas"]["util1"], ci=tuple(g["todas"]["util1_ic95"]), kind="main",
-                 sub="el primero tiene nota ≥ 1"),
-            dict(label="útil@3, todas", value=g["todas"]["util3"], ci=tuple(g["todas"]["util3_ic95"]), kind="main",
-                 sub="alguno de los tres tiene nota ≥ 1"),
-            dict(label="útil@1, sin el exacto", value=g["sin anotado"]["util1"], ci=tuple(g["sin anotado"]["util1_ic95"]),
-                 kind="alt", sub="el producto no está en el catálogo"),
-            dict(label="útil@3, sin el exacto", value=g["sin anotado"]["util3"], ci=tuple(g["sin anotado"]["util3_ic95"]),
-                 kind="alt")]
-    res = (ley(nota=f"proporción de búsquedas · IC 95% · catálogo de {D['grad_catalogo']}")
-           + hbars(rows, width=1150, label_w=400, row_h=78, bar_h=26, x_max=1.0)
-           + f'<p class="nota" data-desde="2"><b>¿Se le puede creer al juez?</b> Le pone 2 al producto anotado en el '
-             f'{pct(ag["anotado_con_2"])} de los casos, y a los demás en el {pct(ag["otros_con_2"])}. NDCG@3 graduado: '
-             f'{f(g["todas"]["ndcg3"])}.</p>')
-    exp("E10", 5, "¿Sirve lo que trae, <em>aunque no sea el producto exacto?</em>",
-        f"<p>hit@k solo cuenta el SKU anotado. Si el sofá correcto no está, uno muy parecido igual sirve.</p>"
-        f"<p>Y el {pct(sin)} de las búsquedas no tiene su producto en el catálogo: hit@k no las puede medir.</p>",
-        f"<p>Un juez LLM mira la foto y los tres primeros, sin saber cuál es el anotado: <strong>2</strong> el "
-        f"mismo o indistinguible, <strong>1</strong> alternativa aceptable, <strong>0</strong> no sirve. "
-        f"{g['todas']['n']} búsquedas al azar, {g['sin anotado']['n']} sin el producto en el catálogo.</p>",
-        res,
-        f"<strong>hit@1 subestima lo útil.</strong> El primero sirve en el {pct(g['todas']['util1'])} de los "
-        f"casos, y en el {pct(g['sin anotado']['util1'])} cuando el exacto no existe. El juez complementa a "
-        f"hit@k; no lo reemplaza.",
-        t=40, planta=[6], notas=[
-            "Relevancia graduada. hit@k solo cuenta el producto exacto, pero uno muy parecido sirve igual. Y "
-            "más de un tercio de las búsquedas no tiene su producto en el catálogo.",
-            f"[paso] Un juez LLM mira la foto y los tres primeros, sin saber cuál es el anotado, y les pone 2, "
-            f"1 o 0: el context precision de RAGAS sin ground truth.",
-            f"[paso] El primero sirve en el {pct(g['todas']['util1'])}, contra un hit@1 exacto de "
-            f"{f(D['h1_855'], 2)}; sin el producto en el catálogo, en el {pct(g['sin anotado']['util1'])}. El "
-            f"juez le pone 2 al anotado en el {pct(ag['anotado_con_2'])}.",
-            "[paso] hit@1 es una cota inferior de lo útil; el juez lo complementa.",
-        ])
-
-    # ---------------------------------------------------------------- E11
-    trs = ""
-    for r in D["ragas"]:
-        fa, rl = r["fidelidad"], r["relevancia"]
-        trs += (f'<div class="rg-l">{esc(r["label"])}</div>'
-                f'<div class="rg-b"><div class="rbar"><i style="width:{fa["faithfulness"] * 100:.1f}%"></i></div>'
-                f'<span class="rv">{f(fa["faithfulness"], 2)}</span><span class="rn">{fa["afirmaciones"]} afirm.</span></div>'
-                f'<div class="rg-b"><div class="rbar"><i style="width:{rl["answer_relevance"] * 100:.1f}%"></i>'
-                f'<em class="vara" style="left:{rl["vara_contrastes"] * 100:.1f}%"></em></div>'
-                f'<span class="rv">{f(rl["answer_relevance"], 2)}</span><span class="rn">vara {f(rl["vara_contrastes"], 2)}</span></div>')
-    bad = D["ragas"][0]["fidelidad"]["no_sostenidas"]
-    res = ('<div class="rg" data-desde="1"><div class="rg-h">respuesta</div><div class="rg-h">faithfulness</div>'
-           f'<div class="rg-h">answer relevance</div><div class="rg-res" data-desde="2">{trs}</div></div>'
-           '<p class="nota" data-desde="2">La raya roja es la vara: el mismo coseno contra pedidos sin relación.</p>'
-           '<div class="rq" data-desde="2"><div class="etq">lo que no se sostiene · living, vista 1</div>'
-           + "".join(f'<p class="cita">«{esc(x)}»</p>' for x in bad) + "</div>")
-    exp("E11", 5, "¿La respuesta inventa, <em>o responde lo que se pidió?</em>",
-        "<p>Choose explica cada elección. Una explicación que afirma algo falso, una medida o un material, es "
-        "una alucinación que el usuario va a creer.</p>",
-        "<p>Dos métricas de RAGAS, con un juez, sobre cuatro respuestas del flujo:</p><ul>"
-        "<li><strong>faithfulness:</strong> qué fracción de las afirmaciones se sostiene con lo que vio el "
-        "sistema;</li><li><strong>answer relevance:</strong> el juez, sin ver el pedido, escribe tres pedidos "
-        "que esa respuesta contesta; coseno con el original.</li></ul>",
-        res,
-        "<strong>El porqué es fiel; lo que falla son medidas.</strong> Lo no sostenido son tamaños que el "
-        "catálogo no tiene: los asientos de IKEA no traen medidas. Eso nos llevó a buscar otro catálogo.",
-        t=45, planta=[7, 11], notas=[
-            "RAGAS sobre la respuesta. Choose explica cada elección; si afirma una medida o un material "
-            "falso, es una alucinación que el usuario se va a creer.",
-            "[paso] Faithfulness: qué fracción de las afirmaciones se sostiene con lo que vio el sistema. "
-            "Answer relevance: el juez, sin ver el pedido, escribe tres que la respuesta contestaría, y medimos "
-            "el coseno con el original, contra una vara de pedidos sin relación.",
-            f"[paso] Faithfulness entre {f(min(r['fidelidad']['faithfulness'] for r in D['ragas']), 2)} y "
-            f"{f(max(r['fidelidad']['faithfulness'] for r in D['ragas']), 2)}; relevance muy por encima de la "
-            f"vara. Lo que no se sostiene son medidas y cosas que el catálogo no dice.",
-            "[paso] No inventa productos; le falta información: los asientos de IKEA no tienen medidas. Eso nos "
-            "llevó a otro catálogo.",
-        ])
-
-    # ================================================================ 06 · de punta a punta
-    separador(6, ["Último capítulo de experimentos: de punta a punta, en ambientes vacíos reales. Cortinas y planta."])
-    e12(D)
-    e13(D)
-    replica_slides(D)
-    t4(D)
+    # ================================================================ 06 · ejercicio 4
+    separador(6, ["El Ejercicio 4: versión 1 y versión 2 de la arquitectura. Cortinas y planta."])
+    ejercicio4(D)
 
 
-# ---------------------------------------------------------------- E12
+# ---------------------------------------------------------------- E6 · qué catálogo
 
-LAB12 = {"caballito-living": "living", "caballito-comedor": "comedor", "alvear-escritorio": "escritorio",
-         "alvear-living-comedor": "living comedor", "experimento-lectura": "lectura",
-         "publica-loft-industrial": "loft industrial", "publica-living-clasico": "clásico",
-         "publica-comedor-clasico-moderno": "comedor clásico", "publica-living-japandi": "japandi",
-         "publica-living-bohemio": "bohemio", "publica-estudio-sobrio": "estudio sobrio"}
-
-
-def credito(D, foto: str) -> str:
-    c = D["publicas"][foto.split("/")[-1]]
-    return f"{c['autor']}, {c['licencia']}"
-
-
-def e12(D):
-    b = D["best"]
-    jg, j11 = D["j_grupos"], D["j_todos11"]
-    # ---- diseño
-    body = (xcab("E12", "De punta a punta", "¿Alcanza con IKEA, <em>o hace falta otro catálogo?</em>")
-            + '<div class="e12a"><div class="xl">'
-            + bloque("por qué",
-                     f"<p>El catálogo de IKEA del dataset es de un solo estilo, y sus asientos <strong>no tienen "
-                     f"medidas</strong>. E11 mostró que lo que falla son justamente medidas.</p>"
-                     f"<p><strong>Amazon Berkeley Objects</strong>: publicaciones reales de Amazon, de muchos "
-                     f"estilos. Describimos {D['n_abo']} productos con las mismas ocho líneas.</p>")
-            + '<div class="cmp"><div></div><div class="ch">IKEA</div><div class="ch">ABO</div>'
-            f'<div class="cl">productos</div><div class="cv">{D["n_ikea"]}</div><div class="cv">{D["n_abo"]}</div>'
-            f'<div class="cl">con medidas</div><div class="cv">asientos: {pct(1 - D["ikea_asientos_sin_medidas"])}</div><div class="cv">{pct(D["abo_con_medidas"])}*</div>'
-            f'<div class="cl">ground truth</div><div class="cv">sí</div><div class="cv">no</div></div>'
-            '<p class="nota" style="margin-top:6px">* sobre todos los productos de ABO descriptos</p>'
-            '</div><div class="xl" data-desde="1">'
-            + bloque("qué hicimos",
-                     f"<p>Sin ground truth, de punta a punta: {j11['ambientes']} ambientes vacíos reales "
-                     f"({jg['propios']['n']} propios, con pedidos nórdicos; {jg['publicos']['n']} fotos públicas, "
-                     f"con otros estilos). El flujo con cada catálogo y un juez que compara las dos listas:</p>")
-            + '<div class="juez"><div class="jrow"><span class="jo">orden 1</span><span class="jb">A · IKEA</span>'
-              '<span class="jb t">B · IKEA + ABO</span><span class="jv">→ voto</span></div>'
-              '<div class="jrow"><span class="jo">orden 2</span><span class="jb t">A · IKEA + ABO</span>'
-              '<span class="jb">B · IKEA</span><span class="jv">→ voto</span></div>'
-              '<p>Opus ve la foto, el pedido y las fotos de las dos listas. <strong>Una lista gana solo si gana en '
-              'los dos órdenes</strong>; si no, empate.</p></div>'
-            + '<dl class="defs"><dt>sesgo de posición</dt><dd>fracción de votos para la lista que va primera; 0,5 es sin sesgo</dd>'
-              '<dt>acuerdo entre órdenes</dt><dd>fracción de ambientes donde los dos votos coinciden</dd>'
-              '<dt>cumple</dt><dd>fracción de productos con nota 2 del juez: lo pedido, y va con el cuarto</dd></dl>'
-            + '</div></div>')
-    add(body, titulo="E12 · Qué catálogo (diseño)", cap=6, t=40, fases="0,1", planta=[1], notas=[
-        "¿Alcanza con IKEA? Es de un solo estilo y sus asientos no tienen medidas, justo lo que E11 vio "
-        "fallar. ABO, el catálogo del primer ambiente del recorrido, trae muchos estilos y casi siempre medidas.",
-        f"[paso] Sin ground truth, lo medimos de punta a punta: {j11['ambientes']} ambientes vacíos reales, "
-        f"cinco nuestros con pedidos nórdicos y seis fotos públicas de otros estilos. El flujo con cada "
-        f"catálogo, y un juez compara las dos listas en los dos órdenes, porque los LLM prefieren la primera: "
-        f"una lista gana solo si gana en los dos.",
-    ])
-
-    # ---- resultados
-    det = {x["slug"]: x for x in j11["detalle"]}
-    orden = ["caballito-living", "caballito-comedor", "alvear-escritorio", "alvear-living-comedor", "experimento-lectura"]
-    slugs = orden + [s for s in det if s.startswith("publica")]
-    cells = ""
-    for s in slugs:
-        x = det[s]
-        ph = D["pedidos"][s]["foto"]
-        votos = "".join(f'<i class="{"vt" if v == "todos" else "vi" if v == "ikea" else "ve"}"></i>' for v in x["votos"])
-        w = {"todos": "IKEA+ABO", "ikea": "IKEA", "tie": "empate"}[x["ganador"]]
-        cells += (f'<div class="jr{" pub" if s.startswith("publica") else ""}"><div class="th"><img src="{img.uri(ph, 300, 225, q=70)}" alt=""></div>'
-                  f'<div class="nm">{LAB12.get(s, s)}</div><div class="v" data-desde="1">{votos}<b class="{"t" if x["ganador"] == "todos" else ""}">{w}</b></div></div>')
-    pubs = [s for s in slugs if s.startswith("publica")]
-    cred = "; ".join(f"{LAB12[s]}: {credito(D, D['pedidos'][s]['foto'])}" for s in pubs)
-    P, U = jg["propios"], jg["publicos"]
-    ja = D["j_abo5"]["resumen"]
-    body = (xcab("E12", "De punta a punta", "IKEA contra IKEA + ABO, <em>en once cuartos reales</em>")
-            + '<div class="e12b">'
-            + '<div class="ley"><span><i style="background:#9AA4AF"></i>votó IKEA</span><span><i style="background:#2453D6"></i>votó IKEA + ABO</span>'
+def e6(D):
+    JC, J5 = D["JC"], D["J5"]
+    jg = D["j_grupos"]
+    P, U, TT = jg["propios"], jg["publicos"], jg["total"]
+    p_cat = p_signos(TT["gana_todos"], TT["gana_ikea"])
+    det = {x["slug"]: x for x in JC["detalle"]}
+    slugs = [s for s in D["pedidos"] if s in det]
+    slugs = [s for s in slugs if not s.startswith("publica")] + [s for s in slugs if s.startswith("publica")]
+    cells = tira_votos(D, [det[s] for s in slugs], "todos", {"todos": "IKEA+ABO", "ikea": "IKEA"})
+    s5 = J5["resumen"]
+    body = (xcab("E6", "La lista", "¿Qué catálogo: <em>IKEA, Amazon o los dos?</em>")
+            + '<div class="e6a">'
+            + bloque("por qué", f"<p>IKEA 2013 tiene fotos chicas, asientos sin medidas y una sola estética. <strong>Amazon "
+                     f"Berkeley Objects</strong> tiene publicaciones reales, con medidas en el {pct(D['abo_con_medidas'])}, pero "
+                     f"no tiene ambientes anotados: hay que medirlo de punta a punta.</p>")
+            + bloque("qué hicimos", f"<p>Los mismos {JC['ambientes']} ambientes, pedidos y plan; cambia solo el catálogo. El juez "
+                     f"compara las dos listas a ciegas, en los dos órdenes.</p>", desde=0)
+            + '</div>'
+            + '<div class="e12b e6b">'
+            + '<div class="ley" data-desde="1"><span><i style="background:#9AA4AF"></i>votó IKEA</span><span><i style="background:#2453D6"></i>votó IKEA + ABO</span>'
               '<span>un punto por orden</span></div>'
             + f'<div class="jg"><div class="jgk"><span>departamentos propios · pedidos nórdicos</span><span>fotos públicas · otros estilos</span></div>{cells}</div>'
-            + f'<p class="credito">Fotos públicas (Wikimedia Commons / Flickr): {esc(cred)}.</p>'
+            + f'<p class="credito">Fotos públicas (Wikimedia Commons y Flickr): {esc(creditos(D, [s for s in slugs if s.startswith("publica")]))}.</p>'
             + '<div class="e12g" data-desde="1">'
-            + f'<div class="cc"><div class="etq">propios · nórdicos</div><p class="ccn">{P["gana_ikea"]} · {P["empates"]} · {P["gana_todos"]}</p>'
-              f'<p>IKEA · empate · IKEA+ABO<br>cumple: {f(P["util_ikea"])} contra {f(P["util_todos"])}</p></div>'
+            + f'<div class="cc"><div class="etq">propios · nórdicos</div><p class="ccn">{P["gana_ikea"]} a {P["gana_todos"]}</p>'
+              f'<p>empatan, con {P["empates"]} empate · útiles: {f(P["util_ikea"], 2)} y {f(P["util_todos"], 2)}</p></div>'
             + f'<div class="cc hi"><div class="etq">públicas · otros estilos</div><p class="ccn">{U["gana_todos"]} a {U["gana_ikea"]}</p>'
-              f'<p>para IKEA+ABO<br>cumple: de {f(U["util_ikea"])} a <strong>{f(U["util_todos"])}</strong></p></div>'
-            + f'<div class="cc"><div class="etq">y además</div><p>ABO solo contra IKEA, en los 5 propios: IKEA {ja["ikea"]["gana"]}, ABO {ja["abo"]["gana"]}.</p>'
-              f'<p>Con ABO como distractor, hit@1 sobre el ground truth de IKEA: {f(b["hit@1"])} → {f(D["todos_ret"]["hit@1"])}.</p>'
-              f'<p>Acuerdo entre órdenes {f(j11["acuerdo_entre_ordenes"], 2)} · votos a la posición A {f(j11["votos_por_posicion_A"], 2)}.</p></div>'
+              f'<p>para IKEA + ABO · útiles: de {f(U["util_ikea"], 2)} a <strong>{f(U["util_todos"], 2)}</strong></p></div>'
+            + f'<div class="cc"><div class="etq">en total</div><p class="ccn">{TT["gana_todos"]} a {TT["gana_ikea"]} <small>p = {f(p_cat, 2)}</small></p>'
+              f'<p>test de signos sobre los {TT["gana_todos"] + TT["gana_ikea"]} decididos · ABO solo contra IKEA, en los 5 propios: '
+              f'pierde {s5["ikea"]["gana"]} a {s5["abo"]["gana"]}</p></div>'
             + '</div></div>'
-            + f'<div class="decision" data-desde="2"><div class="k">decisión</div><p><strong>IKEA + ABO en el flujo.</strong> '
-              f'Empata en los pedidos nórdicos, gana {U["gana_todos"]} a {U["gana_ikea"]} en los demás estilos y, como '
-              f'distractor, casi no mueve el retrieval. Las evaluaciones con ground truth siguen siendo solo IKEA.</p></div>')
-    add(body, titulo="E12 · Resultados", cap=6, t=50, fases="2,2,3", planta=[1], notas=[
-        "Los resultados. Cada columna es un ambiente: los cinco primeros son departamentos propios, los seis "
-        "siguientes fotos públicas.",
-        f"[paso] Con los dos votos del juez: en los propios, con pedidos nórdicos, IKEA solo e IKEA más ABO "
-        f"empatan: {P['gana_ikea']} a {P['gana_todos']} con un empate. En las seis fotos públicas, con pedidos "
-        f"industrial, clásico, bohemio, gana IKEA más ABO {U['gana_todos']} a {U['gana_ikea']}, y la fracción "
-        f"de productos que cumplen sube de {f(U['util_ikea'], 2)} a {f(U['util_todos'], 2)}. Y sumar ABO como "
-        f"distractor casi no cambia el retrieval sobre el ground truth de IKEA. El juez coincide consigo mismo "
-        f"en los dos órdenes en el {pct(j11['acuerdo_entre_ordenes'])} de los casos.",
-        "[paso] Decisión: el flujo usa los dos catálogos. Lo que no cambia: las métricas con ground truth se "
-        "siguen calculando solo sobre IKEA.",
-    ])
-
-    # ---- un caso
-    lx = det["publica-loft-industrial"]
-    lph = D["pedidos"]["publica-loft-industrial"]["foto"]
-
-    def lista(cat):
-        grs = [s["grades"] for s in lx["puntajes"][cat]]
-        out = ""
-        for i, p in enumerate(lx["listas"][cat]):
-            it = D["abo_items"].get(p["id"]) if p["id"].startswith("abo-") else D["items"].get(p["id"])
-            kd = (it or {}).get("kind", "")
-            out += ficha(D, p["id"], 100, titulo=KIND_ES.get(kd, kd or p["type"]), sub="ABO" if p["id"].startswith("abo-") else "IKEA",
-                         cant=p.get("units"), notas=[gg[i] for gg in grs if i < len(gg)])
-        return out
-
-    body = (xcab("E12", "De punta a punta", "Un caso: <em>el loft industrial</em>")
-            + '<div class="loft"><div class="lfl">'
-            + f'<div class="foto" style="width:500px;height:375px"><img src="{img.uri(lph, 1000, 750, q=74)}" alt=""></div>'
-            + f'<p class="pie-foto">Foto: {esc(credito(D, lph))}</p>'
-            + f'<p class="cita pedido">«{esc(D["pedidos"]["publica-loft-industrial"]["pedido"])}»</p></div>'
-            + '<div class="lfr">'
-            + f'<div class="etq">IKEA solo</div><div class="tira lst">{lista("ikea")}</div>'
-            + f'<div class="etq" style="margin-top:20px;color:var(--cobalto)">IKEA + ABO · ganó en los dos órdenes</div><div class="tira lst">{lista("todos")}</div>'
-            + '<div class="gley"><span><i class="g2"></i>2 cumple</span><span><i class="g1"></i>1 aceptable</span><span><i class="g0"></i>0 no sirve</span>'
-              '<span>una barra por orden</span></div>'
-            + f'<p class="cita porque">«{esc(lx["por_que"][1])}»</p><p class="nota">el porqué del juez, en el orden 2 (A = IKEA + ABO)</p>'
-            + '</div></div>')
-    add(body, titulo="E12 · Un caso", cap=6, t=20, fases="2", planta=[1], notas=[
-        "Un caso: un loft con vigas y un pedido industrial, sofá de cuero envejecido, mesa con patas de metal "
-        "negro, biblioteca de metal y madera.",
-        "IKEA propone lo más cercano: cuero liso, una mesa toda de madera. Con ABO aparecen el cuero coñac y la "
-        "mesa industrial. Las barritas son la nota del juez.",
+            + f'<div class="decision" data-desde="2"><div class="k">decisión</div><p><strong>El flujo usa IKEA + ABO.</strong> '
+              f'Pero {TT["gana_todos"]} a {TT["gana_ikea"]} es p = {f(p_cat, 2)}, y los pedidos de otros estilos <strong>los escribimos '
+              f'sabiendo qué le falta a IKEA</strong>: la decisión es razonable; el titular «{U["gana_todos"]} a {U["gana_ikea"]}», no.</p></div>')
+    add(body, titulo="E6 · ¿Qué catálogo: IKEA, Amazon o los dos?", cap=4, t=55, fases="1,2,3", planta=[1], cls="lam-e6", notas=[
+        "Experimento 6: qué catálogo. IKEA es de 2013, con una sola estética, la nórdica. Amazon Berkeley Objects "
+        "tiene publicaciones reales, con medidas, pero no tiene ambientes anotados: hay que medirlo de punta a "
+        "punta. Los mismos ambientes, pedidos y plan; cambia solo el catálogo, y el juez compara las dos listas a "
+        "ciegas, en los dos órdenes.",
+        f"[paso] En nuestros cinco departamentos, con pedidos nórdicos, los dos juntos empatan con IKEA. En los seis "
+        f"ambientes públicos, con otros estilos, IKEA más Amazon gana {U['gana_todos']} a {U['gana_ikea']}. En total, "
+        f"{TT['gana_todos']} a {TT['gana_ikea']}.",
+        f"[paso] Usamos los dos catálogos. Con dos salvedades: {TT['gana_todos']} a {TT['gana_ikea']} en once ambientes "
+        f"da p igual a {f(p_cat, 2)}, no es concluyente; y los pedidos de otros estilos los escribimos nosotros, "
+        f"sabiendo qué le falta a IKEA. Muestra que Amazon cubre ese hueco, no cuán frecuente es.",
     ])
 
 
-# ---------------------------------------------------------------- E13
+# ---------------------------------------------------------------- E7 · con búsqueda contra sin búsqueda: los dos extremos
 
-def e13(D):
-    cl = D["img"]["caballito-living"]
-    cm = cl["met"]
-    prods = [p for p in cm["productos"] if p.get("detectado")]
-    final_cl = A / "caballito-living" / "final.png"
-    pairs = ""
-    for p in [x for x in prods if x["id"] in ("190.114.33", "202.080.42", "602.740.06")]:
-        pairs += (f'<div class="par"><img src="{img.uri(D["items"][p["id"]]["photos"][0], 200, 200, q=80, fit="contain")}" alt="">'
-                  f'<img src="{img.crop(final_cl, p["box"], 200, 200)}" alt="">'
-                  f'<span>{KIND_ES.get(p["kind"], p["kind"])}: {p["puesto"]}.º de {p["entre"]}</span></div>')
-    ri = D["ref_ikea"]
-    mask = img.ssim_mask(Path("datos/resultados/amoblar/caballito-living/final.png"), [p["box"] for p in prods])
-    pair, _ = img.sift_pair(Path("datos/resultados/amoblar/caballito-living/room.jpg"), final_cl)
-    body = ('<div class="cuerpo">' + cab("06", "De punta a punta · E13", "Cómo medimos una imagen, <em>sin ground truth</em>") + '</div>'
-            + '<div class="imet">'
-            + '<div class="im"><div class="imn"><i>1</i>SSIM fuera de los muebles</div><p>Similitud estructural entre la foto original y la '
-              'generada, <strong>solo fuera de las cajas de los muebles</strong>. 1 es idéntico: el cuarto se preservó.</p>'
-              f'<img class="imf" src="{img.uri(mask, 760, 570, q=74)}" alt=""><p class="nota">lo rayado no cuenta · el living de la portada</p></div>'
-            + '<div class="im" data-desde="1"><div class="imn"><i>2</i>SIFT + RANSAC</div><p>¿Cuántos puntos de la foto original se reencuentran '
-              'en la generada con una homografía consistente, y cuánto se movieron?</p>'
-              f'<img class="imf" src="{img.uri(pair, 1000, None, q=74)}" alt="">'
-              f'<p class="nota">{cm["ambiente"]["sift_inliers"]} inliers · control del flujo: ≥ {D["sift_min_inliers"]} inliers y '
-              f'desplazamiento ≤ {pct(D["sift_max_shift"])} del ancho, hasta {D["sift_attempts"]} intentos</p></div>'
-            + '<div class="im" data-desde="2"><div class="imn"><i>3</i>Fidelidad de producto</div><p>Grounding DINO detecta cada mueble; DINOv3 '
-              'compara el recorte con todas las fotos del catálogo de su tipo. ¿El de la lista sale primero?</p>'
-              f'<div class="pares">{pairs}</div><p class="nota">vara: con fotos reales de IKEA, identificados@1 = {f(ri["hit@1"])}</p></div>'
-            + '<div class="im" data-desde="3"><div class="imn"><i>4</i>Pedido ↔ imagen</div><p>SigLIP 2 mide la alineación entre el texto del '
-              'pedido y la imagen: cuánto sube respecto de la foto vacía, y en qué puesto queda el pedido real entre pedidos de contraste.</p>'
-              '</div>'
-            + '</div>'
-            + remate("Las cuatro corren <mark>local y gratis</mark>: se pueden calcular en cada corrida del flujo.", desde=3))
-    add(body, titulo="E13 · Métricas de imagen", cap=6, t=35, planta=[9, 10], notas=[
-        "La imagen no tiene ground truth: la comparamos con la foto original y con el catálogo.",
-        "**SSIM** fuera de los muebles: similitud estructural solo donde no hay muebles; cerca de uno, el "
-        "cuarto se preservó.",
-        "[paso] **SIFT con RANSAC**, la del control: si la cámara se movió, se reencuentran pocos puntos.",
-        f"[paso] **Fidelidad de producto**: recortamos cada mueble y vemos si el más parecido del catálogo es "
-        f"el de la lista. Con fotos reales de IKEA da {f(ri['hit@1'])}: es difícil.",
-        "[paso] Y SigLIP 2, imagen contra pedido. Todas locales y gratis.",
-    ])
-
-    # ---- el prompt de la escena
-    def tile(run, cap):
-        m = D["img"][run]["met"]["ambiente"]
-        bad = m["sift_desplazamiento_mediano"] > D["sift_max_shift"] or m["sift_inliers"] < D["sift_min_inliers"]
-        sello = '<span class="sello">cambió el cuarto</span>' if bad else ""
-        return (f'<figure class="vt"><div class="vi"><img src="{img.uri(A / run / "final.png", 660, 440, q=72)}" alt="">{sello}</div>'
-                f'<figcaption><b>{cap}</b><span>SSIM {f(m["ssim_fuera_de_los_muebles"], 2)} · SIFT {pct(m["sift_reencontrados"], 1)} · '
-                f'despl. {pct(m["sift_desplazamiento_mediano"], 2)}</span></figcaption></figure>')
-
-    orig = img.uri(A / "experimento" / "room.jpg", 660, 440, q=72)
-    ex_a = D["img"]["experimento"]["choice"]["answer"]["choices"]
-    ex_b = D["img"]["experimento-buen-pedido"]["choice"]["answer"]["choices"]
-    res = ('<div class="vgrid">'
-           f'<figure class="vt" data-desde="1"><div class="vi"><img src="{orig}" alt=""></div><figcaption><b>la foto · pedido corto</b>'
-           f'<span>{len(ex_a)} productos · foto de un integrante</span></figcaption></figure>'
-           f'<div class="vr" data-desde="2">{tile("experimento", "(a) el LLM escribe la escena")}{tile("experimento-libre", "(b) edición libre")}</div>'
-           f'<figure class="vt" data-desde="1"><div class="vi"><img src="{orig}" alt=""></div><figcaption><b>la misma foto · pedido detallado</b>'
-           f'<span>{len(ex_b)} productos</span></figcaption></figure>'
-           f'<div class="vr" data-desde="2">{tile("experimento-buen-pedido", "(c) edición libre")}{tile("experimento-buen-pedido-estricto", "(d) edición estricta")}</div>'
-           '</div>')
-    mb = D["img"]["experimento-buen-pedido"]["met"]["ambiente"]
-    ms = D["img"]["experimento-buen-pedido-estricto"]["met"]["ambiente"]
-    exp("E13", 6, "¿Cómo pedimos la imagen <em>para que no cambie el cuarto?</em>",
-        "<p>El modelo de imagen tiende a «mejorar» la foto: mueve la cámara, agranda ventanas, repinta. El "
-        "usuario compraría para un cuarto que no es el suyo.</p>",
-        "<p>Misma foto, misma lista; cambia solo el pedido de edición:</p><ul><li>(a) Claude escribe la escena;</li>"
-        "<li>(b, c) template de edición libre;</li><li>(d) edición estricta: «el mismo cuarto, exactamente».</li></ul>"
-        "<p>Una imagen por variante.</p>",
+def e7(D):
+    JA, JX = D["JA"], D["JX"]
+    sa, sx = JA["resumen"], JX["resumen"]
+    votos_a = [v for d in JA["detalle"] for v in d["votos"]]
+    p_azar = p_signos(sa["densa"]["gana"], sa["azar"]["gana"])
+    C = D["CTX"]
+    kf = D["cfg"].furnish.candidates
+    det_x = {d["slug"]: d for d in JX["detalle"]}
+    orden = [s_ for s_ in D["pedidos"] if s_ in det_x]
+    orden = [s_ for s_ in orden if not s_.startswith("publica")] + [s_ for s_ in orden if s_.startswith("publica")]
+    cells_a = tira_votos(D, JA["detalle"], "densa", {"densa": "búsqueda", "azar": "azar"}, desde=2)
+    cells_x = tira_votos(D, [det_x[s_] for s_ in orden], "hibrida", {"hibrida": "búsqueda", "contexto": "catálogo"}, desde=2)
+    pub = [s_ for s_ in orden if s_.startswith("publica")]
+    mil = round(C["tokens"] / 1000)
+    tercio = C["tokens"] / 1e6
+    assert 0.3 < tercio < 0.37 and sx["hibrida"]["gana"] == sx["contexto"]["gana"], "cambió el experimento del catálogo en el contexto: revisar E7"
+    res = ('<div class="ley" data-desde="1"><span><i style="background:#2453D6"></i>votó la lista con búsqueda</span>'
+           '<span><i style="background:#9AA4AF"></i>votó la otra</span><span>un punto por orden del juez</span></div>'
+           '<div class="x7" data-desde="1">'
+           f'<div class="x7k"><b>sin ranking</b><span>{kf} al azar del kind · {JA["ambientes"]} ambientes</span></div>'
+           f'<div class="x7a"><div class="jg">{cells_a}</div>'
+           f'<div class="cc hi" data-desde="2"><p class="ccn">{sa["densa"]["gana"]} a {sa["azar"]["gana"]}</p><p>los {len(votos_a)} votos · '
+           f'p = {f(p_azar, 3)} · útiles {f(sa["densa"]["util"], 2)} contra {f(sa["azar"]["util"], 2)}</p></div></div>'
+           f'<div class="x7k"><b>con todo a la vista</b><span>el catálogo entero en el prompt · {JX["ambientes"]} ambientes</span></div>'
+           f'<div class="x7a"><div class="jg">{cells_x}</div></div>'
+           '<div></div>'
+           f'<div class="cc x7s" data-desde="2"><p class="ccn">{sx["hibrida"]["gana"]} a {sx["contexto"]["gana"]}</p><p>y {JX["empates"]} empate · '
+           f'productos útiles {f(sx["hibrida"]["util"], 2)} y {f(sx["contexto"]["util"], 2)} · lo que eligió viendo todo estaba entre los '
+           f'{kf} de la búsqueda en {C["en5"]} de {C["piezas"]} piezas</p></div>'
+           '</div>'
+           f'<p class="credito" data-desde="1">Fotos públicas: {esc(creditos(D, pub))}.</p>'
+           '<div class="hoja rag" data-desde="3"><h3>¿Hacía falta RAG, si el catálogo entra en el contexto?</h3>'
+           f'<p><b>Por calidad, no: empatan.</b> Por costo, depende del tráfico: con el catálogo en la caché de prompt, {usd(C["caliente"])} '
+           f'por pedido contra {usd(C["rag_usd"], 3)} de elegir entre candidatos con foto; sin caché, {usd(C["sin_cache"])}. La búsqueda '
+           f'<b>escala</b> (las {miles(D["n_todos"])} fichas ya son {mil} mil tokens, un tercio del contexto; ABO completo son '
+           f'{D["abo_total"]} publicaciones) y no depende de la caché, que dura 5 minutos y se invalida con cualquier cambio del catálogo.</p></div>')
+    exp("E7", 4, "Con búsqueda contra sin búsqueda: <em>los dos extremos</em>",
+        "<p>Es el <strong>«con y sin retrieval»</strong> del flujo, con sus dos extremos: sin ranking, y con todo a la vista. "
+        "El segundo es la pregunta incómoda: si el catálogo entra en el contexto, ¿hacía falta RAG?</p>",
+        f"<p>Mismo plan, mismo modelo que elige, mismo juez. Cambia solo qué recibe el que elige:</p><ul>"
+        f"<li><strong>{kf} al azar</strong> entre los que pasan los mismos filtros;</li>"
+        f"<li><strong>las {miles(D['n_todos'])} fichas</strong> en el prompt, en texto, sin ranking ni fotos.</li></ul>",
         res,
-        f"<strong>Edición estricta, sin LLM, y un control automático.</strong> Con {len(ex_b)} productos la "
-        f"edición libre cambió el cuarto (SSIM {f(mb['ssim_fuera_de_los_muebles'], 2)}); la estricta lo "
-        f"preservó ({f(ms['ssim_fuera_de_los_muebles'], 2)}). Una imagen por variante es una anécdota: por eso "
-        f"el control en cada corrida.",
-        t=45, ancho=True, rot="De punta a punta", planta=[8], notas=[
-            "El modelo de imagen tiende a «mejorar» la foto: mueve la cámara, agranda ventanas. El usuario "
-            "compraría para un cuarto que no es el suyo.",
-            "[paso] Misma foto y misma lista; cambia el pedido de edición: Claude escribe la escena, edición "
-            "libre o estricta. Una imagen por variante.",
-            f"[paso] Con el pedido corto, las dos primeras preservan el cuarto parecido. Con el pedido detallado "
-            f"y {len(ex_b)} productos, la edición libre lo cambió: el SSIM fuera de los muebles cae a "
-            f"{f(mb['ssim_fuera_de_los_muebles'], 2)} y SIFT ve la cámara movida. La estricta lo preserva.",
-            "[paso] Edición estricta, sin LLM: más barata y más fiel. Y como una imagen por variante es una "
-            "anécdota, el control automático en cada corrida.",
+        f"<strong>La búsqueda hace falta cuando el que elige ve {kf} productos, y empata cuando puede leerlos todos.</strong> Con "
+        f"{miles(D['n_todos'])} productos, RAG no hace mejor la lista: es la arquitectura que escala.",
+        t=60, planta=[6], k_dec="conclusión", cls="lam-e7", notas=[
+            "Experimento 7: con búsqueda contra sin búsqueda. Es el con y sin retrieval del flujo, con dos "
+            "extremos. Uno: darle al que elige cinco productos al azar del kind pedido. Dos, la pregunta incómoda: "
+            "si el catálogo entra en el contexto, ¿hacía falta RAG?",
+            f"[paso] Mismo plan, mismo modelo que elige, mismo juez. Contra el azar, en {JA['ambientes']} ambientes. Y "
+            f"contra el catálogo entero en el prompt, las {miles(D['n_todos'])} fichas en texto, en los {JX['ambientes']}.",
+            f"[paso] Contra el azar, {sa['densa']['gana']} a {sa['azar']['gana']}, con los {len(votos_a)} votos. Contra el "
+            f"catálogo entero, {sx['hibrida']['gana']} a {sx['contexto']['gana']}, con los mismos productos útiles: empatan.",
+            "[paso] La búsqueda hace falta cuando el que elige ve cinco productos, y empata cuando puede leerlos "
+            "todos. Con el catálogo en la caché de prompt cuesta lo mismo; sin caché, diez veces más. Con mil "
+            "quinientos productos, RAG no hace mejor la lista: lo elegimos porque escala, y porque no depende del "
+            "tráfico ni de un modelo de contexto largo.",
         ])
 
 
-# ---------------------------------------------------------------- T4
+# ---------------------------------------------------------------- de trámite: E8 y dos láminas con E9 a E14
 
-def t4(D):
-    def md(s):
-        return re.sub(r"`([^`]+)`", r"<code>\1</code>", esc(s))
+def tramite(D):
+    CAM, HIB, EMB, ABL, LIN, RLOC = D["CAM"], D["HIB"], D["EMB"], D["ABL"], D["LIN"], D["RLOC"]
+    B1 = D["B1"]
+    HIB_R = D["HIB_R"]
 
-    trs = "".join(f'<div class="t4c b">{esc(r[0])}</div><div class="t4c">{md(r[1])}</div><div class="t4c">{md(r[2])}</div>'
-                  f'<div class="t4c m">{md(r[3])}</div><div class="t4c m">{md(r[4])}</div>' for r in D["t4"])
-    jr = D.get("t4_jueces", ["", "", "", "", ""])
-    trs += (f'<div class="t4c b"></div><div class="t4c">{md(jr[1])}</div><div class="t4c">{md(jr[2])}</div>'
-            f'<div class="t4c m">{md(jr[3])}</div><div class="t4c m">{md(jr[4])}</div>')
-    body = ('<div class="cuerpo">' + cab("06", "De punta a punta · T4", "Lo que sigue: <em>medir la imagen en serio</em>") + '</div>'
-            + '<div class="t4tag"><span class="chip pend">diseñado, sin correr: no hay resultados</span>'
-              '<span class="nota" style="margin:0">sobre los ambientes de pedidos.yaml, con la lista que eligió el flujo: solo cambia la imagen</span></div>'
-            + '<div class="t4"><div class="t4h">exp.</div><div class="t4h">pregunta</div><div class="t4h">variantes</div>'
-              f'<div class="t4h">imágenes</div><div class="t4h">costo estimado</div>{trs}</div>'
-            + f'<p class="t4tot"><b>Total estimado:</b> {esc(D["t4_total"])} Métricas: las de E13 más un juez de a pares en los dos órdenes, como en E12.</p>')
-    add(body, titulo="T4 · Lo que sigue", cap=6, t=15, planta=[9], notas=[
-        "Lo que sigue, diseñado y sin correr: repetir la imagen en todos los ambientes, con LLM o estricta, "
-        f"qué modelo, qué resolución, y calibrar el control SIFT. Cuesta {D['t4_total'].rstrip('.')}.",
+    # ---------------------------------------------------------------- E8 · tres redactores
+    tres = [HIB] + HIB_R
+
+    def serie(key):
+        return [x[key]["hit@1"] for x in tres]
+
+    v1s, v2s = serie(V1), serie(V2)
+    lex, fot = serie("bm25|description|filtro-kind"), serie("siglip2|description|filtro-kind")
+
+    def fila(label, xs):
+        return dict(label=label, h=xs, mean=statistics.mean(xs), sd=statistics.stdev(xs))
+
+    rrows = [fila("versión 2: híbrida", v2s), fila("versión 1: densa", v1s), fila("léxica sola: BM25", lex),
+             fila("por foto sola: SigLIP 2", fot)]
+    difs = " · ".join(sg(x[V2]["vs_base"]["hit@1"]) for x in tres)
+    assert all(x[V2]["vs_base"]["hit@1_ic95"][0] > 0 for x in tres), "la mejora de la híbrida ya no se repite con los tres redactores"
+    res = ('<div class="ley" data-desde="1"><span>hit@1 con cada una de las tres escrituras · la raya es la media, la banda ± un desvío</span></div>'
+           + dots_repro(rrows, width=1140, label_w=340, row_h=92, xmin=0.44, xmax=0.64,
+                        ticks=[.44, .48, .52, .56, .60, .64], tick_d=2, right=200)
+           + f'<p class="nota" data-desde="2">La versión 2 menos la versión 1, pareado, con cada redactor: <b>{difs}</b>; las tres con un '
+             f'intervalo que no toca el cero.</p>')
+    sd1 = statistics.stdev(v1s)
+    exp("E8", 5, "¿Cuánto cambia el número <em>según quién escribe?</em>",
+        "<p>Las consultas de evaluación las escribió un modelo. La clase pidió <strong>promedio de ejecuciones y "
+        "desvío</strong>: si el número cambia mucho con quién escribe, mide al redactor y no al sistema.</p>",
+        "<p>Las mismas consultas, escritas otras dos veces por subagentes independientes, mirando las mismas fotos. "
+        "Los mismos buscadores sobre cada escritura.</p>",
+        res,
+        f"<strong>El número se mueve unos {f(100 * sd1, 1)} puntos sin cambiar el sistema</strong>: versión 1, {media_desvio(v1s)}; "
+        f"versión 2, {media_desvio(v2s)}. Una diferencia de 2 puntos entre dos métodos no es señal: por eso los embedders "
+        f"«no se distinguen», y la híbrida sí.",
+        t=35, planta=[5, 6], k_dec="conclusión", notas=[
+            "Experimento 8: tres redactores. Las consultas de evaluación las escribió un modelo. La clase pidió "
+            "promedio y desvío: ¿cuánto cambia el número sin cambiar el sistema?",
+            "[paso] Las mismas consultas, escritas otras dos veces por subagentes independientes.",
+            f"[paso] La versión 1 da {media_desvio(v1s)}; la versión 2, {media_desvio(v2s)}. La mejora de la híbrida se "
+            f"repite con los tres.",
+            "[paso] El número se mueve unos dos puntos y medio según quién escribe: por eso no leemos diferencias "
+            "de dos puntos.",
+        ])
+
+    # ---------------------------------------------------------------- de trámite 1: el índice
+    def emb(k_):
+        return EMB[f"{k_}|description|filtro-kind"]
+
+    def sin(x):
+        return LIN[f"{V1}|sin-{x}"]
+
+    def h15(x):
+        return f'{f(x["hit@1"])} / {f(x["hit@5"])}'
+
+    dims = {d_: (ABL[f"{BASE}|dim-{d_}"] if d_ != 1024 else ABL[BASE])["hit@1"] for d_ in (32, 128, 512, 1024)}
+    doc_, chunk, alin = ABL[BASE], ABL[BASE + "|chunks-lines-max"], ABL[BASE + "|chunks-lines-aligned"]
+    visto = sin("Use+Style+Feel+Goes with")
+    d512 = D["d512"]
+
+    def fila_t(e, nombre, comp, resp, tipo="tram"):
+        c = laminas_rec.xref(e, f"<b>{nombre}</b>", tipo=tipo) if e else f'<div class="xrf sin"><span></span><p><b>{nombre}</b></p></div>'
+        return f'<div class="tr1">{c}</div><div class="tr2">{comp}</div><div class="tr3"><p>{resp}</p></div>'
+
+    TH = ('<div class="trh">la pregunta</div><div class="trh">{}</div><div class="trh">la respuesta</div>')
+    tabla = (TH.format("qué se comparó · hit@1")
+             + fila_t("E9", "Embedder",
+                      micro([("hashing", emb("hashing")["hit@1"], f(emb("hashing")["hit@1"]), False),
+                             ("BM25", emb("bm25")["hit@1"], f(emb("bm25")["hit@1"]), False),
+                             ("BGE-base", emb("bge")["hit@1"], f(emb("bge")["hit@1"]), False),
+                             ("Qwen3", EMB[V1]["hit@1"], f(EMB[V1]["hit@1"]), True)]),
+                      f'Solo se sostiene Qwen3 sobre BGE ({nb(dif(emb("bge")["vs_base"], flip=True))}). Contra contar palabras no se '
+                      f'distingue ({nb(dif(emb("hashing")["vs_base"], flip=True))}). Queda Qwen3 por robustez a la paráfrasis, sin '
+                      f'evidencia medida.')
+             + fila_t("E10", "Dimensión",
+                      micro([(miles(d_), v, f(v), d_ == 1024) for d_, v in dims.items()]),
+                      f'Con 512 da lo mismo que con 1.024 ({nb(dif(d512))}). Con {miles(D["n_todos"])} productos la memoria no pesa '
+                      f'({f(D["indice_mb"], 1)} MB): queda 1.024.')
+             + fila_t("E11", "Splitting y líneas",
+                      micro([("un documento", doc_["hit@1"], f(doc_["hit@1"]), True),
+                             ("un chunk por línea", chunk["hit@1"], f(chunk["hit@1"]), False),
+                             ("línea contra línea", alin["hit@1"], f(alin["hit@1"]), False)]),
+                      f'No se parte: un producto es un documento de unas 80 palabras. Lo que importa es qué líneas lo componen: sin '
+                      f'Colors, {nb(dif(sin("Colors")["vs_base"]))}; sin Shape, {nb(dif(sin("Shape")["vs_base"]))}; con solo las '
+                      f'cuatro de lo que se ve, igual que con las ocho ({f(visto["hit@1"])}).')
+             + fila_t("E12", "Base vectorial",
+                      f'<p class="tgr"><b>{D["chroma_igual"]} de {D["chroma_total"]}</b><span>consultas con el mismo ranking: ChromaDB '
+                      f'(HNSW, coseno) y recorrer todos los vectores con numpy</span></p>',
+                      'A este tamaño, aproximado es exacto. ChromaDB da la persistencia y los filtros de metadata en la misma '
+                      'consulta, y es la pieza que escala.'))
+    body = ('<div class="cuerpo">' + cab("05", "De trámite · 1 de 2", "Las cuatro preguntas <em>sobre el índice</em>") + '</div>'
+            + f'<div class="tram">{tabla}</div>'
+            + remate("Con el texto bien escrito, el índice casi no decide nada: son respuestas que hay que tener, <mark>no un gran experimento</mark>."))
+    add(body, titulo="De trámite · el índice", cap=5, t=45, planta=[3], cls="lam-tram", notas=[
+        f"Los de trámite: lo que la cátedra dijo que iba a preguntar, con la respuesta corta. Embedder: Qwen3 solo "
+        f"se sostiene sobre BGE; contra contar palabras no se distingue, porque consultas y descripciones comparten "
+        f"el molde. Dimensión: con 512 da lo mismo que con 1.024, y con {miles(D['n_todos'])} productos la memoria no "
+        f"pesa. Splitting: no partimos, un producto es un documento; lo que importa es qué líneas lo componen, y "
+        f"son las de lo que se ve: colores y forma. Base vectorial: ChromaDB da el mismo ranking que la búsqueda "
+        f"exacta en las {D['chroma_total']} consultas; la usamos por la persistencia y los filtros.",
+    ])
+
+    # ---------------------------------------------------------------- de trámite 2: filtros, rerankers de texto y el catálogo
+    f_none, f_type = HIB["qwen3|description|filtro-none"], HIB[BASE]
+    mini, qrr = ABL[BASE + "|rerank-minilm-reranker"], RLOC[BASE + "|rerank-qwen3-reranker"]
+    d_kind = CAM[V1]["vs_anterior"]
+    d_abo = D["d_abo"]
+    old, new = D["CAT_OLD"], D["CAT_NEW"]
+    E = D["ESCENA"]
+    FM = D["FM"]
+    fin, esc_ = D["IMG_FIN"], D["IMG_ESC"]
+    tabla = (TH.format("qué se comparó")
+             + fila_t("E13", "Filtros de metadata",
+                      micro([("sin filtro", f_none["hit@5"], h15(f_none), False), ("por tipo", f_type["hit@5"], h15(f_type), False),
+                             ("por kind", B1["hit@5"], h15(B1), True)], xmax=1.0),
+                      f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(d_kind, "hit@5"))}). Se usa porque en los '
+                      f'pedidos reales evita un {pct(D["otro_kind"])} de candidatos de otro kind (se pide un sillón y aparece una silla '
+                      f'de comedor). El de medidas cambia {FM["candidatos_reemplazados"]} de {FM["candidatos"]} candidatos '
+                      f'({pct(FM["candidatos_reemplazados"] / FM["candidatos"])}): queda como resguardo, sin evidencia de que mejore la lista.')
+             + fila_t("E14", "Rerankers de texto",
+                      micro([("sin rerank", RLOC[BASE]["hit@5"], h15(RLOC[BASE]), True), ("MiniLM", mini["hit@5"], h15(mini), False),
+                             ("Qwen3-Reranker", qrr["hit@5"], h15(qrr), False)], xmax=1.0),
+                      f'Empeoran ({nb(dif(qrr["vs_base"]))} de hit@1 el mejor): releen el mismo texto que ya usó la búsqueda. El que '
+                      f'suma es el que mira las fotos (E5).')
+             + fila_t("E15", "La escena",
+                      micro([("plantilla", fin["identificados"] / fin["productos"],
+                              f'{fin["identificados"]} de {fin["productos"]} · {fin["ambiente_conservado"]} de {fin["corridas"]}', True),
+                             ("escrita por el LLM", esc_["identificados"] / esc_["productos"],
+                              f'{esc_["identificados"]} de {esc_["productos"]} · {esc_["ambiente_conservado"]} de {esc_["corridas"]}', False)], xmax=1.0),
+                      E["fila"])
+             + fila_t(None, "El catálogo: ampliado, revisado y con ABO",
+                      micro([(f'{D["n_855"]} productos', old["hit@5"], h15(old), False), (f'{D["n_ikea"]}, revisado', new["hit@5"], h15(new), True),
+                             (f'+ {D["n_abo"]} de ABO', D["TODOS"]["hit@5"], h15(D["TODOS"]), False)], xmax=1.0),
+                      f'Decisiones de datos: revisar hace que la lista y la imagen muestren el mismo producto. Sumar ABO de distractores '
+                      f'solo puede bajar el número ({nb(dif(d_abo, "hit@5"))} de hit@5): es el costo, chico, de cubrir más estilos.'))
+    body = ('<div class="cuerpo">' + cab("05", "De trámite · 2 de 2", "Filtros, rerankers de texto <em>y el catálogo</em>") + '</div>'
+            + f'<div class="tram t2">{tabla}</div>'
+            + remate("Sin experimento quedan <mark>el modelo de imagen</mark> (comparación diseñada, sin correr) y <mark>los umbrales del control</mark>."))
+    add(body, titulo="De trámite · filtros, rerankers y catálogo", cap=5, t=45, planta=[1, 6], cls="lam-tram", notas=[
+        f"Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, "
+        f"por algo que el banco no mide: en los pedidos reales, sin él, el {pct(D['otro_kind'])} de los candidatos "
+        f"sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas cambia pocos candidatos y queda como "
+        f"resguardo. "
+        f"Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el "
+        f"texto que ya usó la búsqueda. La escena: la plantilla y la escrita por el LLM empatan en los once "
+        f"ambientes; queda la plantilla, que ahorra una llamada. Y el catálogo: sumar Amazon le cuesta al buscador "
+        f"{f(-100 * d_abo['hit@5'], 1)} puntos de hit@5.",
+    ])
+
+
+# ---------------------------------------------------------------- Ejercicio 4: versión 1 y versión 2
+
+def ejercicio4(D):
+    CAM, HIB = D["CAM"], D["HIB"]
+    B1, B2, D21 = D["B1"], D["B2"], D["D21"]
+    cfg = D["cfg"]
+    kf = cfg.furnish.candidates
+    caso = D["caso"]
+    assert caso[V1]["rank"] > kf and caso[V2]["rank"] == 1, "el caso del Ejercicio 4 ya no muestra la limitación: elegir otro"
+
+    def fila_caso(key):
+        r = caso[key]
+        return '<div class="tira f5">' + "".join(
+            ficha(D, pid, 108, cap=False, pos=i + 1, hi=pid in r["relevant"]) for i, pid in enumerate(r["ranked"][:5])) + "</div>"
+
+    cat1 = B1["hit@1_por_categoria"]
+    bm_solo, foto_solo = HIB["bm25|description|filtro-kind"], HIB["siglip2|description|filtro-kind"]
+    cada5 = round(1 / (1 - B1["hit@5"]))
+    anot = "".join(ficha(D, pid, 108, cap=False, hi=True) for pid in caso[V1]["relevant"])
+    body = ('<div class="cuerpo">' + cab("06", "Ejercicio 4 · 1 de 3 · la versión anterior y su limitación",
+                                         "Versión 1: <em>lee la descripción, no ve el producto</em>") + '</div>'
+            + '<div class="v1">'
+            + '<div class="v1l">'
+            + bloque("la versión 1: el sistema hasta el 11/11",
+                     "<p>La búsqueda era el coseno de Qwen3 entre la ficha y las descripciones, con el filtro por kind: "
+                     "<code>rag.hybrid: []</code>. Lo demás, igual que hoy.</p>")
+            + '<div class="bloque" data-desde="1"><div class="bt">su limitación, medida sobre el ground truth</div>'
+              '<div class="trio">'
+              f'<div><b>{f(B1["hit@1"], 2)}</b><span>hit@1: entre productos casi iguales, el primero es el anotado la mitad de las veces</span></div>'
+              f'<div><b>1 de cada {cada5}</b><span>piezas donde el correcto no llega a los {kf} candidatos (hit@5 {f(B1["hit@5"], 2)}): el que '
+              f'elige ya no puede acertar</span></div>'
+              f'<div><b>{f(cat1["rug"], 2)} · {f(cat1["deco"], 2)}</b><span>en alfombras y deco, donde hay muchos parecidos ({D["n_alfombras"]} '
+              f'alfombras, {D["n_almohadones"]} almohadones); en sillas, {f(cat1["chair"], 2)}</span></div>'
+              '</div></div>'
+            + '</div>'
+            + '<div class="v1r" data-desde="2"><div class="etq">un caso del banco de prueba</div>'
+              f'<p class="cita vend">Se busca: «{esc(CASO)}» (un almohadón blanco con un estampado de hojas negras).</p>'
+              f'<div class="etq e2">los {kf} candidatos de la versión 1</div>' + fila_caso(V1)
+            + f'<p class="nota">Blancos y negros, ninguno con hojas: el anotado quedó {caso[V1]["rank"]}.º, fuera de lo que ve el que elige.</p>'
+              f'<div class="etq e2">lo anotado en ese ambiente</div><div class="tira f5">{anot}</div>'
+            + '</div></div>'
+            + remate(f"Había información sin usar: contar palabras ({f(bm_solo['hit@1'])}) y la foto sola ({f(foto_solo['hit@1'])}) rendían "
+                     f"como el embedder, <mark>y fallaban en cosas distintas</mark>.", desde=2))
+    add(body, titulo="Ejercicio 4 · versión 1 y su limitación", cap=6, t=50, planta=[6], cls="lam-v1", notas=[
+        "El Ejercicio 4. La versión 1 es el sistema hasta el 11 de noviembre: la búsqueda era el coseno del "
+        "embedder sobre las descripciones, con el filtro por kind.",
+        f"[paso] Su limitación, medida: entre productos casi iguales, el primero es el anotado el "
+        f"{pct(B1['hit@1'])} de las veces, y en una de cada {cada5} piezas el correcto no llega a los cinco "
+        f"candidatos. Falla donde hay muchos parecidos: alfombras y deco.",
+        f"[paso] Un caso: se busca un almohadón blanco con hojas negras, y la versión 1 trae almohadones blancos y "
+        f"negros; el anotado quedó {caso[V1]['rank']}.º. El índice lee una descripción, pero no ve el producto ni "
+        f"aprovecha las palabras exactas. Y BM25 y la foto sola rendían como el embedder, fallando en cosas distintas.",
+    ])
+
+    # ---------------------------------------------------------------- 2 de 3: el cambio y la configuración
+    cfg_txt = D["cfg_txt"]
+    assert cfg.rag.hybrid == ["bm25", "siglip2"] and cfg.rag.fusion == "sum" and "  hybrid: [bm25, siglip2]" in cfg_txt, \
+        "amoblai.yaml ya no es la versión 2: revisar la lámina del cambio"
+    otros = [caso[V2]["ranked"].index(pid) + 1 for pid in caso[V2]["relevant"] if pid in caso[V2]["ranked"][1:5]]
+    otro_txt = f"; el otro anotado, {otros[0]}.º" if otros else ""
+    yaml_ = ('<div class="hoja js yml"><div class="prh"><span>datos/configs/amoblai.yaml</span><span>antes y después</span></div><pre>'
+             'rag:\n  embedder: qwen3\n'
+             '<span class="del">- hybrid: []                  # versión 1</span>\n'
+             '<span class="add">+ hybrid: [bm25, siglip2]     # versión 2</span>\n'
+             '  fusion: sum                 <i># z-score, y el promedio</i></pre></div>')
+    porque = [("Sale de una <strong>limitación medida</strong> de la versión 1: el índice no ve el producto ni usa las palabras exactas."),
+              ("Es una técnica de <strong>Advanced RAG</strong>: búsqueda híbrida (densa + léxica) y multimodal (la foto embebida)."),
+              ("<strong>No cuesta nada por pedido</strong>: BM25 y SigLIP 2 corren locales, y los vectores de las fotos se calculan una vez.")]
+    pq = "".join(f'<div class="apri"><span>{i + 1}</span><p>{x}</p></div>' for i, x in enumerate(porque))
+    body = ('<div class="cuerpo">' + cab("06", "Ejercicio 4 · 2 de 3 · el cambio y la configuración",
+                                         "Versión 2: <em>búsqueda híbrida, una línea de configuración</em>") + '</div>'
+            + '<div class="v2">'
+            + f'<div class="v2l"><div class="etq">el cambio: una línea de configuración</div>{yaml_}'
+              f'<div class="v2p" data-desde="1"><div class="etq">por qué este cambio</div>{pq}</div></div>'
+            + f'<div class="v2r"><div class="etq">la búsqueda, antes y después</div>{laminas_rec.esquema_hibrida("", kf, versiones=True, w=600)}'
+              f'<div class="v2c" data-desde="2"><div class="etq">el caso del almohadón, con la versión 2</div>'
+              f'<div class="v2f">{fila_caso(V2)}<p class="nota">El anotado sale <b>1.º</b> (antes, {caso[V1]["rank"]}.º){otro_txt}.</p></div></div></div>'
+            + '</div>'
+            + remate("Tres miradas del mismo producto: lo que dice <mark>su descripción</mark>, <mark>sus palabras</mark> exactas y <mark>su foto</mark>.", desde=2))
+    add(body, titulo="Ejercicio 4 · el cambio y la configuración", cap=6, t=40, planta=[3, 6], cls="lam-v2", notas=[
+        "El cambio es una línea de configuración: rag.hybrid pasa de una lista vacía a BM25 y SigLIP 2. La "
+        "búsqueda ahora calcula tres puntajes para cada producto que pasa el filtro: el coseno con la "
+        "descripción, que ya estaba; BM25, las palabras; y SigLIP 2, la ficha en una frase contra la foto. Se "
+        "estandarizan y se promedian.",
+        "[paso] ¿Por qué este cambio? Sale de una limitación medida; es una técnica de Advanced RAG, búsqueda "
+        "híbrida y multimodal; y no cuesta nada por pedido, porque corre local.",
+        "[paso] En el caso del almohadón, ahora el anotado sale primero.",
+    ])
+
+    # ---------------------------------------------------------------- 3 de 3: resultados en las dos versiones
+    JV = D["JV"]
+    jv = JV["resumen"]
+    votos = [v for d in JV["detalle"] for v in d["votos"]]
+    vh, vd = votos.count("hibrida"), votos.count("densa")
+    p_ver = p_signos(jv["hibrida"]["gana"], jv["densa"]["gana"])
+    tres = [HIB] + D["HIB_R"]
+    v1s, v2s = [x[V1]["hit@1"] for x in tres], [x[V2]["hit@1"] for x in tres]
+    difs_r = " · ".join(sg(x[V2]["vs_base"]["hit@1"]) for x in tres)
+    jr = D["JR"]["resumen"]
+
+    def fila(label, a, b, d="", cls=""):
+        return f'<div class="dl {cls}">{label}</div><div class="d1 {cls}">{a}</div><div class="d2 {cls}">{b}</div><div class="dd {cls}">{d}</div>'
+
+    tabla = ('<div class="dh"></div><div class="dh c">versión 1</div><div class="dh c v">versión 2</div><div class="dh">diferencia</div>'
+             + fila("Configuración", "<code>rag.hybrid: []</code>", "<code>rag.hybrid: [bm25, siglip2]</code>", "densa → densa + léxica + foto")
+             + f'<div class="ds">sobre el ground truth · {D["N_ANS"]} consultas con respuesta</div>'
+             + fila("hit@1", f(B1["hit@1"]), f(B2["hit@1"]), dif(D21))
+             + fila("hit@5 · lo que ve el que elige", f(B1["hit@5"]), f(B2["hit@5"]), dif(D21, "hit@5"))
+             + fila("MRR@10", f(B1["mrr@10"]), f(B2["mrr@10"]), dif(D21, "mrr@10"))
+             + fila("hit@1 con tres redactores · media ± desvío", media_desvio(v1s), media_desvio(v2s), f"{difs_r}: se repite con los tres")
+             + f'<div class="ds">de punta a punta · {JV["ambientes"]} ambientes vacíos reales, el mismo plan, el juez en los dos órdenes</div>'
+             + fila("Ambientes que gana", str(jv["densa"]["gana"]), str(jv["hibrida"]["gana"]),
+                    f'{JV["empates"]} empates · {vh} votos a {vd} · p = {f(p_ver, 2)}')
+             + fila("Productos útiles según el juez", f(jv["densa"]["util"], 2), f(jv["hibrida"]["util"], 2))
+             + fila("Costo por pedido", usd(D["c_pedido"]), "igual", "BM25 y SigLIP 2 corren locales"))
+    body = ('<div class="cuerpo">' + cab("06", "Ejercicio 4 · 3 de 3 · resultados en las dos versiones",
+                                         "Resultados: <em>gana en el banco y no pierde con el juez</em>") + '</div>'
+            + f'<div class="dosv">{tabla}</div>'
+            + '<div class="dosn" data-desde="1">'
+              '<div class="claro"><b>Lo que es claro.</b> En el ground truth, los intervalos de la diferencia no tocan el cero, y la '
+              'mejora se repite con los tres redactores.</div>'
+              f'<div class="no"><b>Lo que no.</b> De punta a punta son {JV["ambientes"]} ambientes: {jv["hibrida"]["gana"]} a '
+              f'{jv["densa"]["gana"]} da p = {f(p_ver, 2)}, y en {JV["empates"]} el juez no se decide. El ruido solo (la versión 2 contra sí misma) reparte '
+              f'{jr["hibrida"]["gana"]} a {jr["hibrida_bis"]["gana"]}.</div></div>'
+            + remate("La versión 2 es hoy la búsqueda del flujo: clara en el ground truth, y <mark>«no peor, probablemente mejor»</mark> en la tarea real.", desde=1))
+    add(body, titulo="Ejercicio 4 · resultados en las dos versiones", cap=6, t=60, planta=[6], cls="lam-dosv", notas=[
+        f"Los resultados en las dos versiones. Sobre el ground truth: hit@1 pasa de {f(B1['hit@1'])} a {f(B2['hit@1'])}, "
+        f"y hit@5, lo que ve el que elige, de {f(B1['hit@5'])} a {f(B2['hit@5'])}. Las diferencias son pareadas y sus "
+        f"intervalos no tocan el cero; con los otros dos redactores, la mejora se repite. De punta a punta, en los "
+        f"{JV['ambientes']} ambientes, con el mismo plan y el juez en los dos órdenes: la versión 2 gana "
+        f"{jv['hibrida']['gana']}, empata {JV['empates']} y no pierde ninguno. Los productos útiles pasan de "
+        f"{f(jv['densa']['util'], 2)} a {f(jv['hibrida']['util'], 2)}, y el costo es el mismo.",
+        f"[paso] Con honestidad: lo del ground truth es claro; de punta a punta son once ambientes, cinco a cero da "
+        f"p igual a {f(p_ver, 2)}, y en seis el juez no se decide; y la misma configuración corrida dos veces reparte "
+        f"{jr['hibrida']['gana']} a {jr['hibrida_bis']['gana']}. Clara en el banco; no peor, probablemente mejor, en la "
+        f"tarea real.",
     ])

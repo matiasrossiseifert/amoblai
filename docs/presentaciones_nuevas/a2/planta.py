@@ -197,6 +197,38 @@ def llave() -> str:
     return f'<svg class="pl llave" viewBox="-2 -2 {w_t + 4:.0f} {h + 10:.0f}" xmlns="http://www.w3.org/2000/svg">' + "".join(o) + "</svg>"
 
 
+# ---------------------------------------------------------------- una planta chica (desafíos)
+
+def enfilada(amb, w: float = 1500.0, h: float = 78.0, cls: str = "") -> str:
+    """Una fila de ambientes con sus puertas, para comparar dos plantas chicas. amb: [(nombre,
+    sub)]. Con cls="ante" es un anteproyecto: muros punteados, sin recorrido hecho."""
+    n = len(amb)
+    cw = w / n
+    te, tp = 6.0, 3.0
+    yp0, yp1 = h - 30.0, h - 9.0
+    yc = (yp0 + yp1) / 2
+    ante = "ante" in cls
+    o = [_rect(i * cw, 0, (i + 1) * cw, h, "piso") for i in range(n)]
+    o.append(f'<path class="circ{"" if ante else " hecho"}" d="M-20,{yc:.1f} L{w + 16:.1f},{yc:.1f}"/>'
+             + _flecha(w + 24, yc, "e", "fle" if ante else "fle hecho"))
+    o.append(_rect(0, 0, w, te, "muro") + _rect(0, h - te, w, h, "muro"))
+    for xx in (0, w - te):
+        o.append(_rect(xx, te, xx + te, yp0, "muro") + _rect(xx, yp1, xx + te, h - te, "muro"))
+    r = yp1 - yp0
+    for i in range(1, n):
+        xb = i * cw
+        o.append(_rect(xb - tp / 2, te, xb + tp / 2, yp0, "tab") + _rect(xb - tp / 2, yp1, xb + tp / 2, h - te, "tab"))
+        o.append(f'<path class="pta" d="M{xb + tp / 2:.1f},{yp1:.1f} L{xb + tp / 2 + r:.1f},{yp1:.1f} '
+                 f'M{xb + tp / 2:.1f},{yp0:.1f} A{r:.1f},{r:.1f} 0 0 1 {xb + tp / 2 + r:.1f},{yp1:.1f}"/>')
+    for i, (nom, sub) in enumerate(amb):
+        cx = i * cw + cw / 2
+        o.append(f'<text class="nom" x="{cx:.1f}" y="{27 if sub else 32}">{esc(nom)}</text>')
+        if sub:
+            o.append(f'<text class="subn" x="{cx:.1f}" y="44">{esc(sub)}</text>')
+    return (f'<svg class="pl enf {cls}" viewBox="-24 -3 {w + 56:.0f} {h + 6:.0f}" xmlns="http://www.w3.org/2000/svg">'
+            + "".join(o) + "</svg>")
+
+
 # ---------------------------------------------------------------- la llamada de detalle
 
 def llamada(cx, cy, exp, lam, tipo="si", r=22.0, ir=None) -> str:
@@ -237,15 +269,15 @@ CSS_P = r"""
 .pl .ll line{stroke:var(--cobalto);stroke-width:1.4}
 .pl .ll .le{font:700 14.5px var(--mono);fill:var(--cobalto);text-anchor:middle}
 .pl .ll .ln{font:400 13px var(--mono);fill:var(--tinta-2);text-anchor:middle}
-.pl .ll.prueba circle{stroke:var(--tinta-2);stroke-dasharray:4 3}.pl .ll.prueba line{stroke:var(--tinta-2)}
-.pl .ll.prueba .le{fill:var(--tinta)}
+.pl .ll.prueba circle,.pl .ll.tram circle{stroke:var(--tinta-2);stroke-dasharray:4 3}.pl .ll.prueba line,.pl .ll.tram line{stroke:var(--tinta-2)}
+.pl .ll.prueba .le,.pl .ll.tram .le{fill:var(--tinta)}
 .pl .ll.pend circle{stroke:var(--cota);stroke-dasharray:4 3}.pl .ll.pend line{stroke:var(--cota)}.pl .ll.pend .le{fill:var(--cota)}
 .pl [data-ir]{cursor:pointer}
 .pl .guia{fill:none;stroke:var(--tinta-2);stroke-width:1.2}
 .pl .guia-p{fill:var(--tinta-2)}
 .pl .lt{font:600 17px var(--sans);font-stretch:82%;fill:var(--tinta)}
 .pl .ld{font:400 13px var(--mono);fill:var(--cobalto)}
-.pl .ll.prueba~.ld,.pl .ld.prueba{fill:var(--tinta-2)}
+.pl .ll.prueba~.ld,.pl .ld.prueba,.pl .ld.tram{fill:var(--tinta-2)}
 .pl .ld.pend{fill:var(--cota)}
 /* el cuadro de locales (lámina de la planta) */
 .pl .cl{font:400 16px var(--mono);fill:var(--tinta-2)}
@@ -267,4 +299,15 @@ CSS_P = r"""
 #pie.sobre-plano .pl.llave .loc.act .piso{fill:var(--naranja)}
 #pie.sobre-plano .pl.llave .loc.act .numt{fill:var(--plano)}
 #pie.sobre-plano .pl.llave .pas{stroke:var(--trazo)}
+/* una planta chica (desafíos) */
+.pl.enf .nom{font:600 20px var(--sans);font-stretch:84%;fill:var(--tinta);text-anchor:middle}
+.pl.enf .subn{font:400 13.5px var(--mono);fill:var(--tinta-3);text-anchor:middle}
+.pl.enf.ante .muro{fill:var(--papel);stroke:var(--tinta-3);stroke-dasharray:5 4}
+.pl.enf.ante .tab{fill:var(--tinta-3)}
+.pl.enf.ante .piso{fill:var(--papel)}
+.pl.enf.ante .nom{fill:var(--tinta-2)}
+/* el banco de prueba, en el mapa */
+.pl .banco{fill:none;stroke:var(--tinta-2);stroke-width:1.2;stroke-dasharray:6 5}
+.pl .bk{font:700 15px var(--mono);fill:var(--tinta)}
+.pl .bs{font:400 13px var(--mono);fill:var(--tinta-3)}
 """
