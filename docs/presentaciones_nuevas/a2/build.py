@@ -2,8 +2,10 @@
 
     cd /home/fer/tp-llm && uv run python docs/presentaciones_nuevas/a2/build.py
 
-Ningún número está escrito a mano: todos salen de datos_deck.load() y de los resultados de la
-réplica. El HTML es autocontenido (fuentes recortadas y fotos embebidas) y anda sin conexión.
+Ningún número está escrito a mano: todos salen de datos_deck.load(), que lee los archivos de
+resultados del repo. El HTML es autocontenido (fuentes recortadas y fotos embebidas) y anda sin
+conexión. Al final avisa si el guion no suma entre 30 y 31 minutos, o si alguna lámina pide hablar
+más rápido de lo que se puede.
 
 Navegación: → ← espacio PgUp/PgDn (y clic: a la izquierda vuelve), Home/End, F pantalla completa,
 O índice, N notas del orador, B pantalla negra, Esc. `?all` muestra cada lámina con todos sus pasos;
@@ -74,15 +76,25 @@ def mmss(s: int) -> str:
     return f"{s // 60}:{s % 60:02d}"
 
 
+def palabras(s: dict) -> int:
+    """Las palabras que se dicen en una lámina (sus notas, sin las marcas)."""
+    return sum(len(n.replace("[paso]", "").replace("**", "").split()) for n in s["notas"])
+
+
 def guion(slides: list[dict]) -> str:
     main = [s for s in slides if not s["anexo"]]
     tot = sum(s["t"] for s in main)
+    dichas = sum(palabras(s) for s in main)
     out = ["# Guion · amoblai", "",
            "TP 3 · 73.69 Large Language Models · ITBA 2026 · Juan Bautista Albertoni Salini, Matias Juan "
            "Rossi Seifert, Junior Rambau", "",
-           f"Presentación: `presentacion.html` ({len(main)} láminas + {len(slides) - len(main)} de anexo). "
-           f"Duración estimada: **{mmss(tot)}**. «▸ paso» marca dónde se aprieta → para mostrar lo siguiente "
-           "de la lámina. Las notas también se ven en la presentación con la tecla N.", "",
+           f"Generado por `build.py` junto con `presentacion.html` ({len(main)} láminas + {len(slides) - len(main)} de anexo): "
+           f"los números salen de los mismos archivos de resultados que las láminas. Duración estimada: **{mmss(tot)}** "
+           f"(unas {round(dichas, -2):,} palabras, a {round(dichas / tot * 60)} por minuto).".replace(",", "."), "",
+           "«▸ paso» marca dónde se aprieta → para mostrar lo siguiente de la lámina. En cada experimento, primero se ve "
+           "el porqué; después qué hicimos, los resultados y la decisión. Las notas también se ven en la presentación con "
+           "la tecla N; con `presentacion.html?all` cada lámina aparece con todos sus pasos (para revisar o imprimir).", "",
+           "Si falta tiempo, se pueden pasar rápido las dos láminas de trámite y la del costo.", "",
            "| # | Lámina | Tiempo | Acumulado |", "|---|---|---|---|"]
     acc = 0
     for i, s in enumerate(main):
@@ -109,8 +121,10 @@ def guion(slides: list[dict]) -> str:
 
 
 # Las referencias a experimentos ({{LAM:E6}}: el número de su lámina; {{IR:E6}}: su índice, para el
-# clic) se resuelven al final, cuando ya se sabe en qué lámina quedó cada uno.
-LAM_TITULO = {"E13p": "E13 · ¿Cómo pedimos", "T4": "T4 · "}
+# clic) se resuelven al final, cuando ya se sabe en qué lámina quedó cada uno. Los de trámite (E9 a
+# E15) no tienen lámina propia: van juntos en dos.
+LAM_TITULO = {**{f"E{n}": "De trámite · el índice" for n in (9, 10, 11, 12)},
+              **{f"E{n}": "De trámite · filtros" for n in (13, 14, 15)}}
 
 
 def referencias(secs: str, slides: list[dict]) -> str:
@@ -160,10 +174,19 @@ def main() -> None:
     )
     OUT.write_text(html)
     GUION.write_text(guion(slides))
-    tot = sum(s["t"] for s in slides if not s["anexo"])
-    print(f"{main_n} láminas + {len(slides) - main_n} de anexo · {mmss(tot)} · "
+    main_s = [s for s in slides if not s["anexo"]]
+    tot = sum(s["t"] for s in main_s)
+    dichas = sum(palabras(s) for s in main_s)
+    print(f"{main_n} láminas + {len(slides) - main_n} de anexo · {mmss(tot)} · {dichas} palabras ({round(dichas / tot * 60)} por minuto) · "
           f"{OUT.stat().st_size / 1e6:.2f} MB · imágenes {img.STATS['n']} ({img.STATS['bytes'] / 1e6:.2f} MB) · "
           f"{time.time() - t0:.1f} s")
+    # el ritmo de cada lámina: avisa si alguna pide hablar más rápido de lo que se puede
+    for i, s in enumerate(main_s, 1):
+        if s["t"] >= 15 and palabras(s) / s["t"] * 60 > 165:
+            print(f"  ojo: la lámina {i} ({s['titulo'][:44]}) tiene {palabras(s)} palabras para {mmss(s['t'])}: "
+                  f"{round(palabras(s) / s['t'] * 60)} por minuto")
+    if not 30 * 60 <= tot <= 31 * 60:
+        print(f"  ojo: el guion dura {mmss(tot)}; tiene que quedar entre 30:00 y 31:00")
 
 
 if __name__ == "__main__":

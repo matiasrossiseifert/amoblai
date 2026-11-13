@@ -21,22 +21,31 @@ def _d(n):
 
 
 def hbars(rows, width=1000, label_w=380, row_h=96, bar_h=30, x_max=1.0, ticks=None, refs=None,
-          val_d=3, top=40, right=120, fmt=None, tick_fmt=None, esq=1, res=2, sub_dy=26):
-    """rows: dict(label, value, ci=(lo, hi)|None, kind='main'|'alt'|'muted'|'ink'|'good', sub=str)."""
+          val_d=3, top=40, right=120, fmt=None, tick_fmt=None, esq=1, res=2, sub_dy=26, nota_x=None,
+          nota_t=None, lab_fs=None, gaps=()):
+    """rows: dict(label, value, ci=(lo, hi)|None, kind='main'|'alt'|'muted'|'ink'|'good', sub=str,
+    nota=str). `nota`: un texto a la derecha del valor, en una columna fija (la diferencia pareada
+    con su intervalo); nota_x: dónde empieza esa columna, desde el fin del eje; nota_t: su título.
+    gaps: filas antes de las cuales va un espacio (para separar grupos)."""
     ticks = ticks if ticks is not None else [0, .2, .4, .6, .8, 1.0]
     fmt = fmt or (lambda v: f(v, val_d))
     tick_fmt = tick_fmt or (lambda t: f(t, 1))
     x0, x1 = label_w, width - right
     X = lambda v: x0 + (x1 - x0) * v / x_max
-    h = top + row_h * len(rows) + 10
+    gap = 18
+    h = top + row_h * len(rows) + gap * len([g for g in gaps if 0 < g < len(rows)]) + 10
     sk, rs = [], []
+    nx = x1 + (nota_x if nota_x is not None else 106)
+    lfs = f' style="font-size:{lab_fs}px"' if lab_fs else ""
+    if nota_t:
+        sk.append(f'<text class="tick" x="{nx:.1f}" y="{top - 18}">{esc(nota_t)}</text>')
     for t in ticks:
         sk.append(f'<line class="eje" x1="{X(t):.1f}" y1="{top - 10}" x2="{X(t):.1f}" y2="{h - 6}" stroke-dasharray="{"" if t == 0 else "2 6"}"/>'
                   f'<text class="tick" x="{X(t):.1f}" y="{top - 18}" text-anchor="middle">{tick_fmt(t)}</text>')
     for i, r in enumerate(rows):
-        yc = top + row_h * i + row_h / 2
+        yc = top + row_h * i + row_h / 2 + gap * len([g for g in gaps if 0 < g <= i])
         ly = yc + (0 if not r.get("sub") else -8)
-        sk.append(f'<text class="lab" x="0" y="{ly + 8:.1f}">{esc(r["label"])}</text>')
+        sk.append(f'<text class="lab" x="0" y="{ly + 8:.1f}"{lfs}>{esc(r["label"])}</text>')
         if r.get("sub"):
             sk.append(f'<text class="sub" x="0" y="{ly + 8 + sub_dy:.1f}">{esc(r["sub"])}</text>')
         sk.append(f'<rect class="riel" x="{x0}" y="{yc - bar_h / 2:.1f}" width="{x1 - x0}" height="{bar_h}"/>')
@@ -53,6 +62,8 @@ def hbars(rows, width=1000, label_w=380, row_h=96, bar_h=30, x_max=1.0, ticks=No
                       f'<line x1="{b:.1f}" y1="{yc - 11:.1f}" x2="{b:.1f}" y2="{yc + 11:.1f}"/></g>')
             end = max(end, b)
         rs.append(f'<text class="val{" main" if k == "main" else ""}" x="{end + 14:.1f}" y="{yc + 8:.1f}">{fmt(v)}</text>')
+        if r.get("nota"):
+            rs.append(f'<text class="notag{" main" if k == "main" else ""}" x="{nx:.1f}" y="{yc + 7:.1f}">{esc(r["nota"])}</text>')
     for v, lab in refs or []:
         sk.append(f'<g class="ref"><line x1="{X(v):.1f}" y1="{top - 4}" x2="{X(v):.1f}" y2="{h - 6}"/>'
                   f'<text x="{X(v) + 6:.1f}" y="{h + 14}">{esc(lab)}</text></g>')
@@ -216,5 +227,88 @@ def dots_repro(rows, width=980, label_w=330, row_h=96, top=50, right=190, xmin=0
         for v in r["h"]:
             rs.append(f'<circle cx="{X(v):.1f}" cy="{yc:.1f}" r="9" fill="{col}" stroke="#fff" stroke-width="2"/>')
         rs.append(f'<text x="{x1 + 18}" y="{yc + 7:.1f}" style="font:700 21px var(--mono);fill:{col}">{f(r["mean"])} ± {f(r["sd"])}</text>')
+    body = f'<g{_d(esq)}>{"".join(sk)}</g><g class="res{"" if res is not None else " visible"}"{_d(res)}>{"".join(rs)}</g>'
+    return _svg(width, h, body)
+
+
+def forest(rows, width=1100, label_w=470, row_h=104, top=46, right=300, xmin=-0.1, xmax=0.3, ticks=None,
+           esq=1, res=2):
+    """Diferencias pareadas con su IC 95%, alrededor del cero. rows: dict(label, sub, value, lo, hi,
+    texto=str). Si el intervalo toca el cero va en gris; si no, en cobalto (o en rojo si resta)."""
+    ticks = ticks if ticks is not None else [-0.1, 0, 0.1, 0.2, 0.3]
+    x0, x1 = label_w, width - right
+    X = lambda v: x0 + (x1 - x0) * (v - xmin) / (xmax - xmin)
+    h = top + row_h * len(rows) + 8
+    sk, rs = [], []
+    for t in ticks:
+        cero = abs(t) < 1e-9
+        sk.append(f'<line class="eje" x1="{X(t):.1f}" y1="{top - 10}" x2="{X(t):.1f}" y2="{h}"'
+                  + (' style="stroke:#13202C;stroke-width:1.6"' if cero else ' stroke-dasharray="2 6"') + "/>"
+                  f'<text class="tick" x="{X(t):.1f}" y="{top - 18}" text-anchor="middle"'
+                  + (' style="fill:#13202C;font-weight:700"' if cero else "") + f'>{"0" if cero else ("−" if t < 0 else "+") + f(abs(t), 1)}</text>')
+    for i, r in enumerate(rows):
+        yc = top + row_h * i + row_h / 2
+        toca = r["lo"] <= 0 <= r["hi"]
+        col = C["t3"] if toca else (C["cota"] if r["value"] < 0 else C["main"])
+        sk.append(f'<text class="lab" x="0" y="{yc - 2:.1f}">{esc(r["label"])}</text>')
+        if r.get("sub"):
+            sk.append(f'<text class="sub" x="0" y="{yc + 24:.1f}">{esc(r["sub"])}</text>')
+        sk.append(f'<line x1="{x0}" y1="{yc:.1f}" x2="{x1}" y2="{yc:.1f}" stroke="#D5DADD"/>')
+        a, b, m = X(r["lo"]), X(r["hi"]), X(r["value"])
+        rs.append(f'<rect x="{a:.1f}" y="{yc - 15:.1f}" width="{b - a:.1f}" height="30" fill="{col}" opacity=".16"/>'
+                  f'<g stroke="{col}" stroke-width="3"><line x1="{a:.1f}" y1="{yc:.1f}" x2="{b:.1f}" y2="{yc:.1f}"/>'
+                  f'<line x1="{a:.1f}" y1="{yc - 13:.1f}" x2="{a:.1f}" y2="{yc + 13:.1f}"/>'
+                  f'<line x1="{b:.1f}" y1="{yc - 13:.1f}" x2="{b:.1f}" y2="{yc + 13:.1f}"/></g>'
+                  f'<circle cx="{m:.1f}" cy="{yc:.1f}" r="9" fill="{col}" stroke="#fff" stroke-width="2"/>'
+                  f'<text x="{x1 + 22}" y="{yc - 2:.1f}" style="font:700 22px var(--mono);fill:{col}">{esc(r["texto"])}</text>'
+                  f'<text class="sub" x="{x1 + 22}" y="{yc + 24:.1f}" style="fill:{col if not toca else C["t3"]}">{esc(r["lectura"])}</text>')
+    body = f'<g{_d(esq)}>{"".join(sk)}</g><g class="res{"" if res is not None else " visible"}"{_d(res)}>{"".join(rs)}</g>'
+    return _svg(width, h + 6, body)
+
+
+def camino(pasos, aparte, width=1776, label_w=640, bar_w=520, row_h=62, bar_h=30, x_max=0.8, top=44,
+           esq=None, res=None, hl=()):
+    """El camino incremental. pasos: dict(label, value, ci, cambio=str|None, sube=bool, h5=str,
+    kind). aparte: dict(label, value): lo que no es un paso del flujo, con la barra punteada."""
+    x0, x1 = label_w, label_w + bar_w
+    xd, xh = x1 + 196, width
+    X = lambda v: x0 + bar_w * v / x_max
+    hp = top + row_h * len(pasos)
+    h = hp + 58 + 50 * len(aparte) + 6
+    sk, rs = [], []
+    for t, x, an in (("hit@1 · IC 95%", x0, "start"), ("cambio contra el paso anterior (pareado)", xd, "start"), ("hit@5", xh, "end")):
+        sk.append(f'<text class="tick" x="{x}" y="{top - 20}" text-anchor="{an}">{esc(t)}</text>')
+    for t in (0.2, 0.4, 0.6, 0.8):
+        sk.append(f'<line class="eje" x1="{X(t):.1f}" y1="{top - 8}" x2="{X(t):.1f}" y2="{h - 6}" stroke-dasharray="2 6"/>')
+    sk.append(f'<line class="eje" x1="{x0}" y1="{top - 8}" x2="{x0}" y2="{h - 6}"/>')
+    for i, r in enumerate(pasos):
+        yc = top + row_h * i + row_h / 2
+        k = r.get("kind", "alt")
+        fuerte = r.get("fuerte")
+        sk.append(f'<text class="lab" x="0" y="{yc + 8:.1f}" style="font-size:25px;font-weight:{680 if fuerte else 500}">'
+                  f'<tspan style="font:700 17px var(--mono);fill:#7E8A98">{i + 1}  </tspan>{esc(r["label"])}</text>')
+        sk.append(f'<rect class="riel" x="{x0}" y="{yc - bar_h / 2:.1f}" width="{bar_w}" height="{bar_h}"/>')
+        rs.append(f'<rect class="bar {k}" x="{x0}" y="{yc - bar_h / 2:.1f}" width="{X(r["value"]) - x0:.1f}" height="{bar_h}"/>')
+        lo, hi = r["ci"]
+        a, b = X(lo), X(hi)
+        rs.append(f'<g class="ic"><line x1="{a:.1f}" y1="{yc:.1f}" x2="{b:.1f}" y2="{yc:.1f}"/>'
+                  f'<line x1="{a:.1f}" y1="{yc - 10:.1f}" x2="{a:.1f}" y2="{yc + 10:.1f}"/>'
+                  f'<line x1="{b:.1f}" y1="{yc - 10:.1f}" x2="{b:.1f}" y2="{yc + 10:.1f}"/></g>')
+        rs.append(f'<text class="val{" main" if k == "main" else ""}" x="{b + 14:.1f}" y="{yc + 8:.1f}">{f(r["value"])}</text>')
+        if r.get("cambio"):
+            col = C["good"] if r.get("sube") else C["t3"]
+            rs.append(f'<text x="{xd}" y="{yc + 7:.1f}" style="font:{700 if r.get("sube") else 400} 21px var(--mono);fill:{col}">{esc(r["cambio"])}</text>')
+        rs.append(f'<text x="{xh}" y="{yc + 8:.1f}" text-anchor="end" style="font:{700 if fuerte else 400} 23px var(--mono);fill:#13202C">{esc(r["h5"])}</text>')
+    y0 = hp + 16
+    sk.append(f'<line x1="0" y1="{y0}" x2="{width}" y2="{y0}" stroke="#BCC4CA" stroke-dasharray="6 6"/>'
+              f'<text class="tick" x="0" y="{y0 + 26}" style="fill:#E2462F">aparte · una técnica aislada, no un paso del flujo</text>')
+    for j, r in enumerate(aparte):
+        yc = y0 + 58 + j * 50
+        w = X(r["value"]) - x0
+        sk.append(f'<text class="lab" x="0" y="{yc + 7:.1f}" style="font-size:23px;fill:#4A5767">{esc(r["label"])}</text>')
+        rs.append(f'<rect x="{x0 + 1}" y="{yc - 12:.1f}" width="{w - 2:.1f}" height="24" fill="none" stroke="#7E8A98" stroke-width="1.8" stroke-dasharray="7 5"/>'
+                  f'<text x="{x0 + w + 14:.1f}" y="{yc + 8:.1f}" style="font:400 24px var(--mono);fill:#4A5767">{f(r["value"])}</text>')
+        if r.get("nota"):
+            rs.append(f'<text x="{xd}" y="{yc + 7:.1f}" style="font:400 19px var(--mono);fill:#7E8A98">{esc(r["nota"])}</text>')
     body = f'<g{_d(esq)}>{"".join(sk)}</g><g class="res{"" if res is not None else " visible"}"{_d(res)}>{"".join(rs)}</g>'
     return _svg(width, h, body)

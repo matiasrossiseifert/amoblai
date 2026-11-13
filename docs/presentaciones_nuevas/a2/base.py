@@ -32,12 +32,11 @@ CAPS = {
     0: ("00 · El producto", []),
     1: ("01 · El recorrido", ["alfombra"]),
     2: ("02 · Cómo medimos", ["sofa"]),
-    3: ("03 · Qué guardamos", ["tv"]),
-    4: ("04 · Cómo buscamos", ["mesa"]),
-    5: ("05 · Cuánto creerle", ["lampara"]),
-    6: ("06 · De punta a punta", ["cortinas", "planta"]),
+    3: ("03 · El buscador", ["tv"]),
+    4: ("04 · La lista", ["mesa"]),
+    5: ("05 · De trámite", ["lampara"]),
+    6: ("06 · Ejercicio 4", ["cortinas", "planta"]),
     7: ("07 · Cierre", ["almohadones"]),
-    8: ("Pasos a futuro", []),
     9: ("Anexo", []),
 }
 
@@ -66,6 +65,44 @@ def pct(x, d: int = 0) -> str:
 
 def usd(x, d: int = 2) -> str:
     return "US$" + f(x, d)
+
+
+def miles(n: int) -> str:
+    """1.502 (punto de miles)."""
+    return f"{n:,}".replace(",", ".")
+
+
+def sg(x: float, d: int = 3) -> str:
+    """+0,075 o −0,005: con signo."""
+    return ("−" if x < 0 else "+") + f(abs(x), d)
+
+
+def ic(lo: float, hi: float, d: int = 3) -> str:
+    """[0,041; 0,111]; con signos cuando no es todo positivo: [−0,015; +0,006]."""
+    return f"[{f(lo, d)}; {f(hi, d)}]" if lo >= 0 else f"[{sg(lo, d)}; {sg(hi, d)}]"
+
+
+def dif(v: dict, k: str = "hit@1", d: int = 3, flip: bool = False) -> str:
+    """Una diferencia pareada con su IC 95%: +0,075 [0,041; 0,111]. `flip`: al revés (b − a)."""
+    x, (lo, hi) = v[k], v[f"{k}_ic95"]
+    if flip:
+        x, lo, hi = -x, -hi, -lo
+    return f"{sg(x, d)} {ic(lo, hi, d)}"
+
+
+def nb(s: str) -> str:
+    """Sin cortes de línea adentro (una diferencia con su intervalo)."""
+    return f'<span class="nb">{s}</span>'
+
+
+def media_desvio(xs: list[float]) -> str:
+    import statistics
+
+    return f"{f(statistics.mean(xs), 3)} ± {f(statistics.stdev(xs), 3)}"
+
+
+def ci95(m: dict, k: str = "hit@1") -> tuple:
+    return tuple(m[f"{k}_ic95"])
 
 
 def add(body: str, *, titulo: str, cap: int, t: int, notas: list[str], cls: str = "",
@@ -120,7 +157,7 @@ def bloque(titulo: str, html: str, desde: int | None = None, cls: str = "") -> s
 
 
 def exp(num, cap, titulo, por_que, que_hicimos, resultados, decision, *, t, notas, ancho=False,
-        rot=None, extra="", planta=None):
+        rot=None, extra="", planta=None, k_dec="decisión", cls=""):
     """Lámina de experimento: por qué → qué hicimos → resultados → decisión, en ese orden.
     'resultados' es el HTML del lado derecho; lo que deba aparecer recién en el paso 2 lo marca
     quien lo arma (data-desde="2"), y el esqueleto (ejes, nombres) puede aparecer en el paso 1."""
@@ -130,22 +167,37 @@ def exp(num, cap, titulo, por_que, que_hicimos, resultados, decision, *, t, nota
             + bloque("por qué", por_que)
             + bloque("qué hicimos", que_hicimos, desde=1)
             + f'</div><div class="xr">{resultados}</div></div>'
-            + (f'<div class="decision" data-desde="3"><div class="k">decisión</div><p>{decision}</p></div>' if decision else "")
+            + (f'<div class="decision" data-desde="3"><div class="k">{k_dec}</div><p>{decision}</p></div>' if decision else "")
             + extra)
-    add(body, titulo=f"{num} · " + re.sub("<[^>]+>", "", titulo), cap=cap, t=t, notas=notas, planta=planta)
+    add(body, titulo=f"{num} · " + re.sub("<[^>]+>", "", titulo), cap=cap, t=t, notas=notas, planta=planta, cls=cls)
 
 
 # ---------------------------------------------------------------- productos
 
+def item(D, pid: str) -> dict:
+    """El producto del catálogo (IKEA o ABO)."""
+    return D["abo_items"][pid] if pid.startswith("abo-") else D["items"][pid]
+
+
+def descripcion(D, pid: str) -> str:
+    return D["abo_desc"][pid] if pid.startswith("abo-") else D["desc"][pid]
+
+
+def catalogo(pid: str) -> str:
+    return "ABO" if pid.startswith("abo-") else "IKEA"
+
+
+def kind_es(D, pid: str) -> str:
+    k = item(D, pid).get("kind") or ""
+    return KIND_ES.get(k, k)
+
+
 def foto_producto(D, pid: str) -> str:
-    if pid.startswith("abo-"):
-        return D["abo_items"][pid]["photos"][0]
-    return D["items"][pid]["photos"][0]
+    return item(D, pid)["photos"][0]
 
 
 def medidas(D, pid: str) -> str:
-    it = D["abo_items"].get(pid) if pid.startswith("abo-") else D["items"].get(pid)
-    dims = (it or {}).get("dimensions_cm") or {}
+    dims = item(D, pid).get("dimensions_cm") or {}
     vals = [dims.get(k) for k in ("width", "depth", "height") if dims.get(k)]
     if not vals:
         return "sin medidas"
