@@ -1,0 +1,48 @@
+{
+  "generator": "openai",
+  "image": "final.png",
+  "pending": false,
+  "model": "openai/gpt-image-2",
+  "cost_usd": 0.4918,
+  "meta": {
+    "latency_s": 34.0,
+    "quality": "medium"
+  },
+  "attempts": [
+    {
+      "image": "final_intento_1.png",
+      "cost_usd": 0.163931,
+      "ok": false,
+      "ssim": 0.5765,
+      "sift_inliers": 29,
+      "sift_reencontrados": 0.0734,
+      "sift_desplazamiento_mediano": 0.101
+    },
+    {
+      "image": "final_intento_2.png",
+      "cost_usd": 0.163931,
+      "ok": false,
+      "ssim": 0.6237,
+      "sift_inliers": 25,
+      "sift_reencontrados": 0.0633,
+      "sift_desplazamiento_mediano": 0.0725
+    },
+    {
+      "image": "final_intento_3.png",
+      "cost_usd": 0.163931,
+      "ok": false,
+      "ssim": 0.6039,
+      "sift_inliers": 47,
+      "sift_reencontrados": 0.119,
+      "sift_desplazamiento_mediano": 0.0664
+    }
+  ],
+  "room_check": {
+    "image": "final_intento_3.png",
+    "ok": false,
+    "ssim": 0.6039,
+    "sift_inliers": 47,
+    "sift_reencontrados": 0.119,
+    "sift_desplazamiento_mediano": 0.0664
+  }
+}

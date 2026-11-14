@@ -1,0 +1,698 @@
+{
+  "pieces": [
+    {
+      "piece": "a gaming desk against the long right wall, near the balcony",
+      "spec": {
+        "piece": "a gaming desk against the long right wall, near the balcony",
+        "why": "it anchors the gamer request and takes the best daylight, and black with red accents is a bold, masculine look against the white walls",
+        "kinds": [
+          "desk"
+        ],
+        "max_width_cm": 160,
+        "max_depth_cm": 75,
+        "max_height_cm": null,
+        "query": "Type: desk, gaming desk\nUse: gaming and working at the computer; living room\nStyle: modern, industrial, contemporary\nMaterials: black metal frame, carbon fiber texture top\nColors: black, red accents\nShape: wide rectangular top, angular legs, cable management, medium visual weight\nFeel: bold, sporty, techy\nGoes with: white walls, exposed concrete ceiling, light oak floor, black window frames"
+      },
+      "candidates": [
+        {
+          "id": "102.447.43",
+          "name": "MICKE",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 105.0,
+            "depth": 50.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.447.43.jpg"
+          ],
+          "description": "Type: compact desk with drawers and cabinet\nUse: working, studying, a laptop setup; home office, bedroom, study corner\nStyle: modern, minimalist, contemporary\nMaterials: wood-effect foil-finished board, steel side leg, cable outlet in the top\nColors: dark black-brown wood grain, black metal\nShape: rectangular top over a wide drawer, a side storage column with a small drawer and a door, a slim U-shaped metal leg on the other end, compact, medium weight\nFeel: tidy, practical, sober, functional\nGoes with: black office chairs, white walls, dark wood, grey accents; modern or minimalist home offices\n",
+          "score": 0.6682681441307068,
+          "kind": "desk"
+        },
+        {
+          "id": "691.625.99",
+          "name": "KULLABERG",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 110.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/691.625.99.jpg"
+          ],
+          "description": "Type: industrial pine desk on pipe legs\nUse: working, crafts, a computer setup; home office, studio, living room\nStyle: industrial, rustic, farmhouse\nMaterials: solid pine top with knots, black powder-coated steel tube frame\nColors: light natural pine, black\nShape: thick rectangular plank top on four pipe legs with round feet, a large X cross brace and low stretchers, plumbing-joint details, open and sturdy\nFeel: rugged, warm, workmanlike, casual\nGoes with: black metal, brick walls, leather, raw wood; industrial lofts, rustic or farmhouse workspaces\n",
+          "score": 0.6510332226753235,
+          "kind": "desk"
+        },
+        {
+          "id": "290.007.16",
+          "name": "LINNMON,LERBERG",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/290.007.16.jpg"
+          ],
+          "description": "Type: rectangular table on trestle legs\nUse: working at a desk, crafts, casual dining; home office, study, kids room, kitchen\nStyle: industrial, minimalist, contemporary\nMaterials: white laminated top, dark grey powder-coated steel trestles\nColors: white, dark grey\nShape: thin flat rectangular top, two crossed X-shaped trestle legs with a footbar on each, open and light, simple workbench look\nFeel: practical, crisp, airy, functional\nGoes with: white walls, grey or black accents, office chairs or simple wooden chairs; modern home offices, studios or student rooms\n",
+          "score": 0.6332969665527344,
+          "kind": "desk"
+        }
+      ]
+    },
+    {
+      "piece": "a gaming chair at the desk",
+      "spec": {
+        "piece": "a gaming chair at the desk",
+        "why": "the desk needs a comfortable chair for long sessions, and a black-and-red racing chair is the most recognizable gamer touch",
+        "kinds": [
+          "desk chair"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: desk chair, ergonomic gaming chair\nUse: long gaming sessions at the desk; living room\nStyle: modern, contemporary\nMaterials: faux leather, black metal base\nColors: black, bright red\nShape: racing seat, high back, headrest, adjustable armrests, swivel wheels\nFeel: sporty, bold, comfortable\nGoes with: black and red gaming desk, white walls, light oak floor"
+      },
+      "candidates": [
+        {
+          "id": "790.066.93",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/790.066.93.jpg"
+          ],
+          "description": "Type: two-tone bentwood swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: Scandinavian, minimalist, modern\nMaterials: molded wood veneer shell in a black stain with a pale plywood edge, white powder-coated steel five-star base, casters\nColors: black, white, light wood edge\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, crisp contrast, compact\nFeel: graphic, crisp, fresh, practical\nGoes with: white desks, black accents, light wood floors; Scandinavian, monochrome or modern home offices\n",
+          "score": 0.6068723201751709,
+          "kind": "desk chair"
+        },
+        {
+          "id": "290.066.95",
+          "name": "VGSBERG,SPORREN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/290.066.95.jpg"
+          ],
+          "description": "Type: black bentwood swivel desk chair\nUse: working at a desk, studying; home office, study, bedroom\nStyle: minimalist, Scandinavian, contemporary\nMaterials: molded wood veneer shell in a black stain, pale plywood edge, black powder-coated steel five-star base, casters\nColors: black, light wood edge\nShape: one-piece curved shell seat and back with a round cut-out handle hole, armless, slim column on a five-star base with casters, sleek and compact\nFeel: graphic, sleek, focused, simple\nGoes with: black or white desks, light wood, metal accents; minimalist, Scandinavian or modern home offices\n",
+          "score": 0.6003298759460449,
+          "kind": "desk chair"
+        },
+        {
+          "id": "702.790.70",
+          "name": "ROBERGET",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/702.790.70.jpg"
+          ],
+          "description": "Type: perforated plastic swivel desk armchair\nUse: working at a desk, studying; home office, study, teen bedroom\nStyle: retro, contemporary, modern\nMaterials: glossy molded plastic shell with a pierced dot pattern, painted steel five-star base, black casters\nColors: turquoise, aqua blue, black\nShape: rounded shell back curving into low armrests, perforated sunburst dot pattern on the back and seat, slim column on a five-star base with casters, light and compact\nFeel: cheerful, playful, fresh, bright\nGoes with: white desks, light wood, coral or yellow accents; retro, playful or colorful home offices\n",
+          "score": 0.5997865796089172,
+          "kind": "desk chair"
+        }
+      ]
+    },
+    {
+      "piece": "a sofa against the left wall, in the middle of the room",
+      "spec": {
+        "piece": "a sofa against the left wall, in the middle of the room",
+        "why": "it turns the room into a living room for gaming on the console with friends, and dark graphite grounds the bright colors and gives a masculine feel",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 220,
+        "max_depth_cm": 95,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seater\nUse: lounging and console gaming; living room\nStyle: modern, minimalist\nMaterials: fabric upholstery, black metal legs\nColors: charcoal graphite gray\nShape: low and deep, straight arms, clean lines, medium visual weight\nFeel: masculine, comfortable, sober\nGoes with: white walls, concrete ceiling, light oak floor, black and red accents"
+      },
+      "candidates": [
+        {
+          "id": "799.019.69",
+          "name": "SDERHAMN",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/799.019.69.jpg"
+          ],
+          "description": "Type: deep three-seat sofa\nUse: seating, lounging, napping; living room, den, lounge\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven fabric upholstery, chrome-plated metal legs\nColors: dark charcoal grey, silver\nShape: low wide seat platform, thin slab arms with rounded corners, loose back pillows and scatter cushions, slim metal legs, deep and relaxed\nFeel: laid-back, casual, cozy, modern\nGoes with: light grey walls, light wood, white or yellow accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.8170880079269409,
+          "kind": "sofa"
+        },
+        {
+          "id": "601.985.93",
+          "name": "KIVIK",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/601.985.93.jpg"
+          ],
+          "description": "Type: three-seat leather sofa\nUse: seating, lounging, watching TV; living room, den, lounge\nStyle: contemporary, modern, minimalist\nMaterials: smooth leather upholstery with stitched seams, small black block feet\nColors: black, glossy black\nShape: deep boxy frame, wide low flat arms, two loose back and seat cushions, nearly floor-level base, low and bulky\nFeel: sleek, solid, comfortable, bold\nGoes with: white or grey walls, chrome or glass tables, light wood floors; modern, contemporary or industrial living rooms\n",
+          "score": 0.7795521020889282,
+          "kind": "sofa"
+        },
+        {
+          "id": "591.110.44",
+          "name": "NOCKEBY",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/591.110.44.jpg"
+          ],
+          "description": "Type: sofa with right-side chaise longue\nUse: seating, lounging, putting feet up; living room, den, TV room\nStyle: contemporary, minimalist, modern\nMaterials: woven fabric upholstery, chrome-plated metal legs and base\nColors: charcoal black, dark warm grey, silver\nShape: L-shaped corner form, wide boxy track arms, loose back cushions, chaise on the right, slim metal legs, low and substantial\nFeel: sleek, grounded, cozy, urban\nGoes with: light grey walls, glass and metal tables, white or wood accents; modern or contemporary living rooms\n",
+          "score": 0.7650119066238403,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a low TV stand against the right wall, facing the sofa",
+      "spec": {
+        "piece": "a low TV stand against the right wall, facing the sofa",
+        "why": "it holds the TV and consoles in front of the sofa without narrowing the passage, and its black finish matches the window frames",
+        "kinds": [
+          "TV stand"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 60,
+        "query": "Type: TV stand, low media console\nUse: holding the TV, consoles and controllers; living room\nStyle: modern, minimalist\nMaterials: matte black lacquered wood, black metal\nColors: matte black, built-in LED lighting\nShape: long and low, open compartments for consoles, flat front, light visual weight\nFeel: sleek, techy, bold\nGoes with: black window frames, charcoal sofa, white walls, light oak floor"
+      },
+      "candidates": [
+        {
+          "id": "102.659.24",
+          "name": "RAMSTRA",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 174.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.659.24.jpg"
+          ],
+          "description": "Type: long TV console with open shelves\nUse: holding a TV, media devices and remotes; living room, family room\nStyle: contemporary, minimalist, mid-century modern\nMaterials: smooth lacquered board, slim metal legs\nColors: warm off-white, cream\nShape: long low cabinet on four thin straight legs, three open compartments along the top, two wide fronts below with a gently curved lower edge, slim top, light and floating\nFeel: soft, airy, clean, calm\nGoes with: light wood floors, beige or grey sofas, brass or white accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.8016011714935303,
+          "kind": "TV stand"
+        },
+        {
+          "id": "202.397.17",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.397.17.jpg"
+          ],
+          "description": "Type: low TV console with wooden base\nUse: holding a TV and media devices, closed storage; living room, family room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: lacquered panels with inset fronts, walnut veneer base, solid wood legs\nColors: warm beige cream, medium brown walnut\nShape: long low box with three framed fronts in a row, set on a slender wooden base with four square legs and a long stretcher, sleek and floating\nFeel: warm, refined, calm, elegant\nGoes with: walnut or teak, beige and green tones, brass accents; mid-century modern or Scandinavian living rooms\n",
+          "score": 0.7757378816604614,
+          "kind": "TV stand"
+        },
+        {
+          "id": "503.376.98",
+          "name": "BRIMNES",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 120.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.376.98.jpg"
+          ],
+          "description": "Type: TV bench with glass-front drawers\nUse: holding a TV and media devices, storing games and cables; living room, bedroom\nStyle: contemporary, minimalist, modern\nMaterials: black laminated board, frosted glass drawer fronts, black bar handles\nColors: black, smoky frosted glass\nShape: low rectangular cabinet with two open shelves above two wide drawers with framed frosted glass panes, slim bar handles, cable hole, recessed plinth, solid and boxy, medium visual weight\nFeel: sleek, dark, practical, understated\nGoes with: grey or white walls, light or dark wood floors, chrome accents; modern living rooms and compact apartments\n",
+          "score": 0.7623940706253052,
+          "kind": "TV stand"
+        }
+      ]
+    },
+    {
+      "piece": "a coffee table in front of the sofa",
+      "spec": {
+        "piece": "a coffee table in front of the sofa",
+        "why": "a spot for controllers, snacks and drinks, compact so it does not block the way",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 100,
+        "max_depth_cm": 55,
+        "max_height_cm": null,
+        "query": "Type: coffee table, rectangular\nUse: holding controllers, snacks and drinks; living room\nStyle: industrial, modern\nMaterials: black metal, dark wood or tempered glass\nColors: black, dark gray\nShape: low rectangle, thin metal frame, lower shelf, light visual weight\nFeel: masculine, practical, urban\nGoes with: charcoal sofa, black TV stand, concrete ceiling, light oak floor"
+      },
+      "candidates": [
+        {
+          "id": "802.133.09",
+          "name": "VITTSJ",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.133.09.jpg"
+          ],
+          "description": "Type: round glass coffee table with shelf\nUse: holding drinks, books and decor; living room\nStyle: modern, industrial, minimalist\nMaterials: clear tempered glass top, black-brown powder-coated steel frame, dark wood-effect lower shelf\nColors: black-brown, clear glass\nShape: round glass top in a thin metal ring, four slim straight legs, large round lower shelf, light and see-through\nFeel: airy, sleek, light, urban\nGoes with: grey or leather sofas, black metal accents, light floors; modern apartments and industrial living rooms\n",
+          "score": 0.7348048686981201,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: round black coffee table\nUse: holding drinks, books and decor; living room, family room\nStyle: Scandinavian, modern, mid-century modern\nMaterials: black painted solid wood legs, painted wood-based top\nColors: matte black\nShape: large round top with a molded edge, four angled splayed legs joined by a crossed stretcher, open base, medium visual weight\nFeel: graphic, calm, bold, grounded\nGoes with: light wood floors, white or grey sofas, brass or white accents; Scandinavian or modern living rooms\n",
+          "score": 0.6792442798614502,
+          "kind": "coffee table"
+        },
+        {
+          "id": "502.084.51",
+          "name": "IKEA PS 2012",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 70.0,
+            "depth": 42.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/502.084.51.jpg"
+          ],
+          "description": "Type: low metal coffee table on casters\nUse: holding drinks, magazines or a TV, moving around easily; living room, kids room, studio\nStyle: industrial, retro, minimalist\nMaterials: white powder-coated steel, visible screws, rubber wheels\nColors: white, light grey wheels\nShape: rectangular top with rounded edges, open lower shelf, square tube legs, four swivel casters, cart-like, compact\nFeel: practical, clean, light, playful\nGoes with: white walls, light wood, colorful textiles; Scandinavian or industrial small living rooms and studios\n",
+          "score": 0.6679188013076782,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "wall shelves above the desk",
+      "spec": {
+        "piece": "wall shelves above the desk",
+        "why": "they display collectibles, figures and games without taking up floor space, an essential part of the gamer setup",
+        "kinds": [
+          "wall shelf"
+        ],
+        "max_width_cm": 160,
+        "max_depth_cm": 30,
+        "max_height_cm": null,
+        "query": "Type: wall shelf, floating set\nUse: displaying collectibles, figures and games; living room\nStyle: modern, industrial\nMaterials: black metal, wood\nColors: black\nShape: floating, geometric or hexagonal modules, light visual weight\nFeel: techy, orderly, bold\nGoes with: black and red gaming desk, white walls, black window frames"
+      },
+      "candidates": [
+        {
+          "id": "701.036.22",
+          "name": "LACK",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 30.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/701.036.22.jpg"
+          ],
+          "description": "Type: small floating wall shelf\nUse: displaying a plant, small speaker or keepsakes; living room, bedroom, hallway, home office\nStyle: minimalist, modern, contemporary\nMaterials: black-brown foil-finished board with concealed mounting\nColors: dark black-brown, near black\nShape: thick solid-looking block with square edges and hidden fixings so it seems to float, simple cuboid, compact but chunky\nFeel: graphic, bold, tidy, modern\nGoes with: white or light grey walls, light wood, brass or white decor; minimalist or modern rooms\n",
+          "score": 0.7524651885032654,
+          "kind": "wall shelf"
+        },
+        {
+          "id": "902.821.80",
+          "name": "LACK",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 110.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.821.80.jpg"
+          ],
+          "description": "Type: white floating wall shelf\nUse: displaying books, photos, plants and decor; living room, bedroom, home office, hallway\nStyle: minimalist, modern, Scandinavian\nMaterials: white painted fibreboard, smooth matte finish\nColors: white, soft off-white\nShape: long thick slab that seems to float on hidden fixings, squared ends, clean straight edges, chunky solid profile, medium visual weight\nFeel: clean, calm, simple, modern\nGoes with: white or colored walls, light wood, framed art, green plants; minimalist, Scandinavian or modern rooms\n",
+          "score": 0.7242858409881592,
+          "kind": "wall shelf"
+        },
+        {
+          "id": "898.703.40",
+          "name": "EKBY JRPEN,EKBY BJRNUM",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 79.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/898.703.40.jpg"
+          ],
+          "description": "Type: dark wall shelf with metal brackets\nUse: displaying books and decor; living room, home office, bedroom, hallway\nStyle: modern, minimalist, contemporary\nMaterials: black-brown wood-effect particleboard shelf, brushed aluminium brackets\nColors: dark black-brown, silver grey\nShape: flat board resting on two L-shaped brackets that wrap its ends, crisp square profile, slim and compact, light visual weight\nFeel: sleek, sharp, modern\nGoes with: white or grey walls, chrome or steel accents, dark wood furniture; modern, minimalist or contemporary rooms\n",
+          "score": 0.6798691153526306,
+          "kind": "wall shelf"
+        }
+      ]
+    },
+    {
+      "piece": "an RGB floor lamp in the corner next to the sofa",
+      "spec": {
+        "piece": "an RGB floor lamp in the corner next to the sofa",
+        "why": "the colored light is what gives the gamer atmosphere and the eye-catching colors without painting the walls",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, RGB LED corner lamp\nUse: colored ambient lighting; living room\nStyle: modern, contemporary\nMaterials: black aluminum, LED\nColors: black, multicolor RGB light, red and blue\nShape: thin vertical bar, minimal footprint, light visual weight\nFeel: vibrant, techy, immersive\nGoes with: white walls, concrete ceiling, black and red gaming setup"
+      },
+      "candidates": [
+        {
+          "id": "202.080.42",
+          "name": "KLABB",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.080.42.jpg"
+          ],
+          "description": "Type: rectangular shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: white fabric rectangular shade, nickel-plated metal frame and square base\nColors: white, brushed silver\nShape: boxy rectangular shade on a tall looped stand that splits into two parallel rails curving into a U near the floor, small square base, slim, tall and graphic\nFeel: elegant, calm, refined, crisp\nGoes with: grey or white upholstery, glass and metal tables, white walls; contemporary or modern living rooms\n",
+          "score": 0.728256344795227,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "601.109.01",
+          "name": "LERSTA",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/601.109.01.jpg"
+          ],
+          "description": "Type: slim aluminium floor reading lamp\nUse: reading light beside a sofa, an armchair or a bed; living room, bedroom, home office\nStyle: minimalist, industrial, Scandinavian\nMaterials: brushed aluminium shade, pole and base, black cord with inline switch\nColors: brushed silver, black\nShape: thin straight pole with a curved neck holding a small cone shade, adjustable head, round flat base, tall and very slender, light visual weight\nFeel: simple, practical, airy, functional\nGoes with: grey or white sofas, light wood, metal accents; minimalist, Scandinavian or industrial rooms\n",
+          "score": 0.7179176211357117,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "002.142.18",
+          "name": "JANSJ",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.142.18.jpg"
+          ],
+          "description": "Type: slim gooseneck LED floor reading lamp\nUse: focused reading light beside a sofa, armchair or bed; living room, bedroom, home office\nStyle: minimalist, modern, contemporary\nMaterials: thin black metal pole, flexible gooseneck neck, small LED spotlight head, round weighted base, foot switch on the cord\nColors: matte black\nShape: very tall thin stem that ends in a hooked gooseneck curve, tiny adjustable bell head, small round base, extremely light and linear, almost invisible\nFeel: sleek, discreet, graphic\nGoes with: black accents, white walls, light wood, grey upholstery; minimalist, Scandinavian or modern rooms\n",
+          "score": 0.7046002745628357,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a rug under the sofa and coffee table area",
+      "spec": {
+        "piece": "a rug under the sofa and coffee table area",
+        "why": "it defines the living area along the length of the room and brings in a strong graphic color over the light floor",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 170,
+        "max_height_cm": null,
+        "query": "Type: rug, geometric area rug\nUse: defining the lounge area; living room\nStyle: modern, contemporary\nMaterials: short pile polyester\nColors: black, graphite gray, red accents\nShape: rectangular, bold geometric pattern, low pile\nFeel: bold, masculine, dynamic\nGoes with: charcoal sofa, black furniture, light oak floor, white walls"
+      },
+      "candidates": [
+        {
+          "id": "503.208.48",
+          "name": "GRLSE",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 133.0,
+            "depth": 195.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.208.48.jpg"
+          ],
+          "description": "Type: striped low-pile area rug\nUse: anchoring a seating area or bedside; living room, bedroom, home office\nStyle: modern, minimalist, Scandinavian\nMaterials: short dense low pile\nColors: black, off-white stripes, high contrast\nShape: rectangular, flat low pile, thin wavy hand-drawn white stripes running lengthwise, graphic, medium visual weight\nFeel: graphic, bold, crisp\nGoes with: white walls, light wood, grey or white sofas, black metal; monochrome, Scandinavian or modern rooms\n",
+          "score": 0.7380537390708923,
+          "kind": "rug"
+        },
+        {
+          "id": "702.647.28",
+          "name": "IKEA PS 2014",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 128.0,
+            "depth": 180.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.647.28.jpg"
+          ],
+          "description": "Type: geometric flatwoven area rug\nUse: anchoring a seating area, statement floor piece; living room, bedroom, study\nStyle: contemporary, Scandinavian, bohemian\nMaterials: flatwoven wool-like yarn with a ribbed texture\nColors: light warm beige, aqua blue, taupe brown, blush pink, lemon yellow, navy\nShape: rectangular, flat, nested elongated diamonds and crossing lines drawn as thin colored strokes, airy linear pattern, light visual weight\nFeel: airy, artful, cheerful, light\nGoes with: light wood, white walls, pastel textiles, brass or black accents; Scandinavian, modern or eclectic rooms\n",
+          "score": 0.7360100746154785,
+          "kind": "rug"
+        },
+        {
+          "id": "602.307.91",
+          "name": "GSER",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 133.0,
+            "depth": 195.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.307.91.jpg"
+          ],
+          "description": "Type: long shaggy high-pile rug\nUse: adding softness underfoot, beside a bed or under a coffee table; living room, bedroom\nStyle: contemporary, modern, retro\nMaterials: extra long thick shag pile yarn\nColors: dark charcoal grey, cool\nShape: rectangular, very deep fluffy shag with tousled strands, soft irregular edges, bulky\nFeel: cozy, plush, moody, enveloping\nGoes with: white or light grey walls, black metal, light wood, cool textiles; modern or contemporary living rooms and bedrooms\n",
+          "score": 0.73228919506073,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "blackout curtains on the balcony door",
+      "spec": {
+        "piece": "blackout curtains on the balcony door",
+        "why": "they cut screen glare when gaming, and dark gray continues the black of the window frames",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, blackout panels\nUse: blocking light and glare on screens; living room\nStyle: modern, minimalist\nMaterials: thick blackout fabric\nColors: charcoal gray\nShape: floor-length, straight panels, simple rod\nFeel: sober, cozy, functional\nGoes with: black window frames, white walls, charcoal sofa"
+      },
+      "candidates": [
+        {
+          "id": "202.975.71",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.975.71.jpg"
+          ],
+          "description": "Type: white light-filtering curtains, pair\nUse: softening daylight, adding light privacy at a window; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: lightweight semi-sheer woven fabric, hidden tab heading\nColors: white\nShape: two full-length straight panels hanging in soft relaxed folds, plain fabric, gently translucent, airy and light\nFeel: airy, bright, fresh, calm\nGoes with: white walls, light wood floors, linen sofas, green plants; Scandinavian, minimalist or coastal rooms\n",
+          "score": 0.7249681949615479,
+          "kind": "curtains"
+        },
+        {
+          "id": "002.975.67",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.975.67.jpg"
+          ],
+          "description": "Type: pair of light grey sheer curtains\nUse: softening daylight and adding privacy at a window; living room, bedroom, dining room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: lightweight semi-sheer woven fabric, rod pocket heading\nColors: light warm grey, greige\nShape: two long straight panels hanging in soft vertical folds from a rod pocket, gathered top, plain hem, light and flowing\nFeel: soft, airy, calm, light\nGoes with: white walls, light wood, linen, grey sofas; Scandinavian, minimalist or modern rooms\n",
+          "score": 0.7184823751449585,
+          "kind": "curtains"
+        },
+        {
+          "id": "202.390.10",
+          "name": "SANELA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.390.10.jpg"
+          ],
+          "description": "Type: velvet eyelet curtains, pair\nUse: dressing a window, dimming light, adding privacy; living room, bedroom\nStyle: contemporary, glam, classic\nMaterials: soft cotton velvet with a subtle sheen, metal eyelet heading\nColors: light turquoise, soft aqua blue\nShape: two full-length straight panels with deep, even folds from an eyelet top, plain solid fabric, heavy and fluid drape\nFeel: soft, rich, calm, luxurious\nGoes with: white or grey walls, brass or chrome accents, velvet cushions, light wood; contemporary, glam or classic living rooms\n",
+          "score": 0.7160248756408691,
+          "kind": "curtains"
+        }
+      ]
+    },
+    {
+      "piece": "large gamer wall art above the sofa",
+      "spec": {
+        "piece": "large gamer wall art above the sofa",
+        "why": "it fills the long white wall with eye-catching color and personality",
+        "kinds": [
+          "wall art"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: wall art, gaming print set\nUse: decorating the wall above the sofa; living room\nStyle: modern, contemporary\nMaterials: canvas or framed print, black frame\nColors: black, red, electric blue, neon accents\nShape: large format or triptych, bold graphic design\nFeel: vibrant, bold, energetic\nGoes with: charcoal sofa, black frames, white walls, RGB lighting"
+      },
+      "candidates": [
+        {
+          "id": "402.958.73",
+          "name": "PJTTERYD",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.958.73.jpg"
+          ],
+          "description": "Type: set of three printed canvas pictures\nUse: decorating a wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: retro, contemporary, bohemian\nMaterials: printed canvas stretched on frames\nColors: light beige ground, pastel green, pink, lilac, orange, yellow, grey lettering\nShape: three square panels hung side by side, collage of vintage luggage tags and travel labels with city names and airport codes, light graphic layout\nFeel: playful, wanderlust, cheerful, nostalgic\nGoes with: light wood, white walls, pastel accents; retro, eclectic or youthful living rooms and home offices\n",
+          "score": 0.7054703235626221,
+          "kind": "wall art"
+        },
+        {
+          "id": "403.191.62",
+          "name": "GRNBY",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/403.191.62.jpg"
+          ],
+          "description": "Type: set of nine black and white photo prints\nUse: creating a gallery wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: industrial, modern, contemporary\nMaterials: printed photographic images\nColors: black, white, shades of grey\nShape: nine rectangular prints in mixed sizes showing a city skyline, skyscrapers and suspension bridges, arranged as a grid collage, graphic and high contrast\nFeel: urban, dramatic, sleek, moody\nGoes with: black frames, grey or white walls, leather, metal; industrial, modern or loft-style rooms\n",
+          "score": 0.6999216079711914,
+          "kind": "wall art"
+        },
+        {
+          "id": "602.384.19",
+          "name": "OLUNDA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.384.19.jpg"
+          ],
+          "description": "Type: framed graphic flower print\nUse: wall decoration above a sofa, sideboard or desk; living room, dining room, home office, hallway\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: printed artwork under clear glazing, slim black frame\nColors: white background, black, red, yellow\nShape: upright rectangle in a thin black frame, line drawing of tall seed-head flowers with thin stems and oval pods, sparse composition with lots of white space, light visual weight\nFeel: playful, graphic, airy\nGoes with: white walls, black accents, light wood, red or yellow touches; Scandinavian or mid-century modern rooms\n",
+          "score": 0.6372097134590149,
+          "kind": "wall art"
+        }
+      ]
+    },
+    {
+      "piece": "cushions on the sofa",
+      "spec": {
+        "piece": "cushions on the sofa",
+        "why": "they add touches of strong color to the graphite sofa and tie it to the red of the gamer setup",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, decorative throw pillows\nUse: color and comfort on the sofa; living room\nStyle: modern\nMaterials: velvet or cotton\nColors: red, black, electric blue\nShape: square, solid colors and geometric pattern\nFeel: bold, comfortable, vibrant\nGoes with: charcoal gray sofa, black and red gaming setup"
+      },
+      "candidates": [
+        {
+          "id": "903.210.30",
+          "name": "SANELA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/903.210.30.jpg"
+          ],
+          "description": "Type: velvet square cushion\nUse: on a sofa, an armchair or a bed; living room, bedroom\nStyle: contemporary, classic, glam\nMaterials: soft cotton velvet with a subtle sheen\nColors: light warm beige, sand\nShape: plain square cushion with a smooth plush surface, clean flat edges, plump and soft, simple and versatile\nFeel: soft, warm, luxurious, calm\nGoes with: grey or cream sofas, brass, dark wood, rust or green velvet; contemporary, classic or glam living rooms\n",
+          "score": 0.774598240852356,
+          "kind": "cushion"
+        },
+        {
+          "id": "602.967.01",
+          "name": "SANELA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.967.01.jpg"
+          ],
+          "description": "Type: red velvet cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: classic, glam, traditional\nMaterials: soft velvet with a gentle sheen\nColors: deep raspberry red\nShape: square plump cushion with a smooth plush surface that catches the light, softly rounded corners, plain edges, medium size\nFeel: rich, warm, cozy\nGoes with: grey, cream or navy sofas, dark wood, brass accents, festive tones; classic, glam or traditional living rooms\n",
+          "score": 0.755852460861206,
+          "kind": "cushion"
+        },
+        {
+          "id": "003.266.97",
+          "name": "SANELA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/003.266.97.jpg"
+          ],
+          "description": "Type: solid velvet square cushion\nUse: comfort and a color accent on a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, Scandinavian, glam\nMaterials: soft cotton velvet with a subtle sheen\nColors: warm golden yellow, ochre\nShape: square, plump and soft, plain smooth surface, neat straight seams, medium size\nFeel: warm, sunny, cozy, inviting\nGoes with: grey, navy or green sofas, light wood, brass accents, white walls; Scandinavian, contemporary or mid-century rooms\n",
+          "score": 0.7544031739234924,
+          "kind": "cushion"
+        }
+      ]
+    },
+    {
+      "piece": "a tall plant in a black pot near the balcony",
+      "spec": {
+        "piece": "a tall plant in a black pot near the balcony",
+        "why": "it softens all the black and tech with some green and connects to the trees outside",
+        "kinds": [
+          "plant"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant, tall indoor plant\nUse: adding greenery; living room\nStyle: modern, minimalist\nMaterials: matte black ceramic pot\nColors: green, matte black\nShape: tall, upright leaves, cylindrical pot\nFeel: fresh, sober, alive\nGoes with: black window frames, white walls, light oak floor"
+      },
+      "candidates": [
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n",
+          "score": 0.7195716500282288,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n",
+          "score": 0.7168622612953186,
+          "kind": "plant"
+        },
+        {
+          "id": "702.922.98",
+          "name": "FEJKA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.922.98.jpg"
+          ],
+          "description": "Type: artificial potted orchid\nUse: lasting decoration on a table, a desk, a shelf or a windowsill; living room, home office, bedroom\nStyle: contemporary, Scandinavian, minimalist\nMaterials: artificial plastic flowers and leaves, green stem on a support stake, dark grey plastic pot\nColors: soft pink flowers, fresh green leaves, dark charcoal grey\nShape: single tall arching flower stem with a cluster of pink blooms and buds, broad glossy leaves at the base, small round pot, slender and upright\nFeel: fresh, delicate, elegant, easy\nGoes with: white surfaces, light wood, ceramic cachepots, pastel tones; Scandinavian, minimalist or contemporary rooms\n",
+          "score": 0.6784696578979492,
+          "kind": "plant"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

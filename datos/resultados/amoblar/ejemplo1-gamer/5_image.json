@@ -1,0 +1,29 @@
+{
+  "generator": "openai",
+  "image": "final.png",
+  "pending": false,
+  "model": "openai/gpt-image-2",
+  "cost_usd": 0.1639,
+  "meta": {
+    "nota": "registro completado a mano tras el KeyError de room_check; misma imagen, sin nueva llamada"
+  },
+  "attempts": [
+    {
+      "image": "final_intento_1.png",
+      "cost_usd": 0.163921,
+      "ok": false,
+      "ssim": 0.5384,
+      "sift_inliers": 7,
+      "sift_reencontrados": 0.0177,
+      "sift_desplazamiento_mediano": 0.0376
+    }
+  ],
+  "room_check": {
+    "image": "final_intento_1.png",
+    "ok": false,
+    "ssim": 0.5384,
+    "sift_inliers": 7,
+    "sift_reencontrados": 0.0177,
+    "sift_desplazamiento_mediano": 0.0376
+  }
+}

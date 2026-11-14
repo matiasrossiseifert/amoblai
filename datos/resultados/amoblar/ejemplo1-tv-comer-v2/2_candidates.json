@@ -1,0 +1,690 @@
+{
+  "pieces": [
+    {
+      "piece": "a three-seat sofa against the long left wall, in the middle of the room, facing the right wall",
+      "spec": {
+        "piece": "a three-seat sofa against the long left wall, in the middle of the room, facing the right wall",
+        "why": "the sofa they asked for anchors the TV area, and a low light-grey fabric sofa on slim legs keeps this narrow room open and suits the concrete ceiling and oak floor",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 230,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seat upholstered\nUse: sitting and watching TV; living room\nStyle: minimalist, contemporary, Scandinavian\nMaterials: woven fabric upholstery, light oak or black metal legs\nColors: light warm grey, greige\nShape: low, straight track arms, slim raised legs, compact depth, medium visual weight\nFeel: calm, comfortable, airy\nGoes with: white walls, grey concrete ceiling, light oak floor, black window frames; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "691.249.46",
+          "name": "NORSBORG",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/691.249.46.jpg"
+          ],
+          "description": "Type: three-seat sofa with track arms\nUse: seating, lounging, family gatherings; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: woven fabric upholstery, solid birch wooden legs\nColors: off-white, very light cool grey, light natural wood\nShape: long straight frame, three loose back and seat cushions, slim track arms with a side pocket, round tapered wooden legs, raised and light\nFeel: airy, bright, calm, fresh\nGoes with: light wood floors, white walls, soft grey or pastel textiles; Scandinavian or minimalist living rooms\n",
+          "score": 0.8773915767669678,
+          "kind": "sofa"
+        },
+        {
+          "id": "799.019.69",
+          "name": "SDERHAMN",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/799.019.69.jpg"
+          ],
+          "description": "Type: deep three-seat sofa\nUse: seating, lounging, napping; living room, den, lounge\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven fabric upholstery, chrome-plated metal legs\nColors: dark charcoal grey, silver\nShape: low wide seat platform, thin slab arms with rounded corners, loose back pillows and scatter cushions, slim metal legs, deep and relaxed\nFeel: laid-back, casual, cozy, modern\nGoes with: light grey walls, light wood, white or yellow accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.8733726143836975,
+          "kind": "sofa"
+        },
+        {
+          "id": "190.114.33",
+          "name": "KIVIK",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/190.114.33.jpg"
+          ],
+          "description": "Type: three-seat sofa with wide arms\nUse: seating, lounging, napping; living room, family room\nStyle: contemporary, minimalist, Scandinavian\nMaterials: woven fabric upholstery, soft deep cushions\nColors: light warm grey, pale greige\nShape: low wide frame, broad box arms, two deep seat cushions, two loose back cushions, hidden feet, long and bulky\nFeel: calm, relaxed, roomy, soft\nGoes with: white walls, light wood, wool throws, black accents; Scandinavian, minimalist or modern living rooms\n",
+          "score": 0.8651963472366333,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a low TV stand on the right wall, facing the sofa, near the outlets",
+      "spec": {
+        "piece": "a low TV stand on the right wall, facing the sofa, near the outlets",
+        "why": "the TV needs a base at seated eye level, and a long, shallow oak and black stand holds it without narrowing the passage along the room",
+        "kinds": [
+          "TV stand"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 40,
+        "max_height_cm": 55,
+        "query": "Type: TV stand, low and long\nUse: holding the TV and storing media; living room\nStyle: minimalist, contemporary, Japandi\nMaterials: light oak wood, black metal\nColors: natural light oak, black\nShape: long and low, shallow depth, closed doors or drawers, slim black legs, light visual weight\nFeel: clean, orderly, warm\nGoes with: light oak floor, black window frames, white walls, grey concrete ceiling; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "102.659.24",
+          "name": "RAMSTRA",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 174.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.659.24.jpg"
+          ],
+          "description": "Type: long TV console with open shelves\nUse: holding a TV, media devices and remotes; living room, family room\nStyle: contemporary, minimalist, mid-century modern\nMaterials: smooth lacquered board, slim metal legs\nColors: warm off-white, cream\nShape: long low cabinet on four thin straight legs, three open compartments along the top, two wide fronts below with a gently curved lower edge, slim top, light and floating\nFeel: soft, airy, clean, calm\nGoes with: light wood floors, beige or grey sofas, brass or white accents; contemporary or Scandinavian living rooms\n",
+          "score": 0.7891704440116882,
+          "kind": "TV stand"
+        },
+        {
+          "id": "503.376.98",
+          "name": "BRIMNES",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 120.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/503.376.98.jpg"
+          ],
+          "description": "Type: TV bench with glass-front drawers\nUse: holding a TV and media devices, storing games and cables; living room, bedroom\nStyle: contemporary, minimalist, modern\nMaterials: black laminated board, frosted glass drawer fronts, black bar handles\nColors: black, smoky frosted glass\nShape: low rectangular cabinet with two open shelves above two wide drawers with framed frosted glass panes, slim bar handles, cable hole, recessed plinth, solid and boxy, medium visual weight\nFeel: sleek, dark, practical, understated\nGoes with: grey or white walls, light or dark wood floors, chrome accents; modern living rooms and compact apartments\n",
+          "score": 0.7638738751411438,
+          "kind": "TV stand"
+        },
+        {
+          "id": "502.970.46",
+          "name": "HEMNES",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 149.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.970.46.jpg"
+          ],
+          "description": "Type: long wooden TV bench with drawers\nUse: holding a TV and media devices, storing games and remotes; living room, family room\nStyle: traditional, farmhouse, Scandinavian\nMaterials: solid wood with a dark stained finish, round metal knobs\nColors: dark black-brown, dark grey knobs\nShape: long low cabinet with three open cubbies above three drawers, small round knobs, overhanging flat top, framed side panels, short square legs, sturdy and wide, heavy visual weight\nFeel: warm, solid, homey, classic\nGoes with: white walls, warm wood floors, cream or beige sofas; traditional, farmhouse or country living rooms\n",
+          "score": 0.763582706451416,
+          "kind": "TV stand"
+        }
+      ]
+    },
+    {
+      "piece": "a small round dining table by the balcony door, under the existing ceiling light",
+      "spec": {
+        "piece": "a small round dining table by the balcony door, under the existing ceiling light",
+        "why": "the table they asked for to eat at fits best in the bright window end, using the room's full length, and a round light-oak top on a black base keeps traffic flowing to the balcony",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 100,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: dining table, small round\nUse: eating meals for two to four; living-dining room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: light oak wood top, black metal base\nColors: natural light oak, black\nShape: round top about 90 cm, pedestal or slim legs, compact, light visual weight\nFeel: bright, simple, welcoming\nGoes with: light oak floor, black window frames, white walls, grey concrete ceiling; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "202.753.38",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 74.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/202.753.38.jpg"
+          ],
+          "description": "Type: small square dining table\nUse: dining for two, breakfast; kitchen, small dining room, studio apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquered finish\nColors: pale natural birch\nShape: square top with softly rounded corners, plain apron, four sturdy square legs splayed slightly outward, simple and compact, light visual weight\nFeel: calm, light, natural, friendly\nGoes with: birch or white chairs, white walls, linen and greenery; Scandinavian or Japandi kitchens and compact dining corners\n",
+          "score": 0.8045436143875122,
+          "kind": "dining table"
+        },
+        {
+          "id": "390.117.81",
+          "name": "MELLTORP",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 75.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/390.117.81.jpg"
+          ],
+          "description": "Type: small square dining table\nUse: dining for two, breakfast, small work surface; kitchen, small dining room, studio apartment\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white melamine top, white powder-coated steel frame\nColors: white\nShape: flat square top, thin metal apron, four slim square legs at the corners, simple boxy silhouette, compact and light\nFeel: clean, simple, bright, practical\nGoes with: white or light wood chairs, colorful seat cushions, pale walls; small kitchens, studios or modern dining nooks\n",
+          "score": 0.7753304243087769,
+          "kind": "dining table"
+        },
+        {
+          "id": "303.050.52",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 74.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/303.050.52.jpg"
+          ],
+          "description": "Type: square bar-height table\nUse: casual dining, drinks, standing or stool seating; kitchen, dining nook, bar area\nStyle: Scandinavian, minimalist, industrial\nMaterials: solid birch with clear lacquer, black metal footrest bars\nColors: pale natural birch, black\nShape: small square top with rounded corners, tall splayed square legs, low frame with a black footrest on each side, compact, light visual weight\nFeel: casual, sociable, light, natural\nGoes with: birch or black bar stools, white walls, black accents; Scandinavian kitchens, bar corners or small apartments\n",
+          "score": 0.7246853709220886,
+          "kind": "dining table"
+        }
+      ]
+    },
+    {
+      "piece": "two dining chairs at the round table by the balcony",
+      "spec": {
+        "piece": "two dining chairs at the round table by the balcony",
+        "why": "the table needs seats, and light chairs in oak and black match the floor and window frames without blocking the view",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 55,
+        "max_height_cm": null,
+        "query": "Type: dining chair, light wooden\nUse: sitting at the dining table; living-dining room\nStyle: Scandinavian, Japandi, minimalist\nMaterials: light oak wood, fabric or woven seat, black metal accents\nColors: natural light oak, black, warm grey\nShape: slim open back, rounded edges, light visual weight\nFeel: light, warm, simple\nGoes with: round light oak table, light oak floor, black window frames, white walls; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "402.753.42",
+          "name": "NORRKER",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/402.753.42.jpg"
+          ],
+          "description": "Type: solid wood dining chair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquer, visible wood grain\nColors: light natural birch, pale blond wood\nShape: wide flat panel backrest between straight posts, thick solid seat with a deep apron, square legs with low side stretchers, sturdy boxy frame, medium visual weight\nFeel: natural, calm, honest, sturdy\nGoes with: light wood tables, white walls, linen and black accents; Scandinavian or Japandi dining rooms and kitchens\n",
+          "score": 0.869711697101593,
+          "kind": "dining chair"
+        },
+        {
+          "id": "003.015.26",
+          "name": "NORRKER",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/003.015.26.jpg"
+          ],
+          "description": "Type: wooden dining chair\nUse: dining; dining room, kitchen\nStyle: Scandinavian, farmhouse, minimalist\nMaterials: solid wood in a black stain\nColors: black, dark charcoal\nShape: wide curved backrest panel between two posts, armless, thick flat wooden seat with an apron, square legs with low side stretchers, simple and sturdy, compact\nFeel: sturdy, honest, calm, simple\nGoes with: wood or black tables, white walls, warm textiles; Scandinavian, farmhouse or industrial kitchens\n",
+          "score": 0.8397746682167053,
+          "kind": "dining chair"
+        },
+        {
+          "id": "402.288.12",
+          "name": "IDOLF",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/402.288.12.jpg"
+          ],
+          "description": "Type: bistro-style wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: Scandinavian, classic, minimalist\nMaterials: solid wood frame with a white painted finish, curved wooden backrest\nColors: white, soft off-white\nShape: wide curved backrest panel on two rear posts, rounded seat, four slim round legs joined by a ring stretcher, bentwood caf\u00e9 look, light and open\nFeel: bright, airy, simple, friendly\nGoes with: white or light wood tables, pastel or grey walls; Scandinavian kitchens, cottage or bright dining rooms\n",
+          "score": 0.8175938725471497,
+          "kind": "dining chair"
+        }
+      ]
+    },
+    {
+      "piece": "a coffee table between the sofa and the TV stand",
+      "spec": {
+        "piece": "a coffee table between the sofa and the TV stand",
+        "why": "a low table in front of the sofa lets them set down a plate or drink while watching TV, and a rounded oak top softens the long straight room",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 110,
+        "max_depth_cm": 60,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, low rounded\nUse: snacks and drinks while watching TV; living room\nStyle: Japandi, minimalist, Scandinavian\nMaterials: light oak wood, black metal\nColors: natural light oak, black\nShape: oval or rounded rectangle, low, slim legs, light visual weight\nFeel: warm, soft, practical\nGoes with: light grey sofa, light oak floor, black window frames; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: round black coffee table\nUse: holding drinks, books and decor; living room, family room\nStyle: Scandinavian, modern, mid-century modern\nMaterials: black painted solid wood legs, painted wood-based top\nColors: matte black\nShape: large round top with a molded edge, four angled splayed legs joined by a crossed stretcher, open base, medium visual weight\nFeel: graphic, calm, bold, grounded\nGoes with: light wood floors, white or grey sofas, brass or white accents; Scandinavian or modern living rooms\n",
+          "score": 0.7510797381401062,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 0.7230156660079956,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.133.09",
+          "name": "VITTSJ",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.133.09.jpg"
+          ],
+          "description": "Type: round glass coffee table with shelf\nUse: holding drinks, books and decor; living room\nStyle: modern, industrial, minimalist\nMaterials: clear tempered glass top, black-brown powder-coated steel frame, dark wood-effect lower shelf\nColors: black-brown, clear glass\nShape: round glass top in a thin metal ring, four slim straight legs, large round lower shelf, light and see-through\nFeel: airy, sleek, light, urban\nGoes with: grey or leather sofas, black metal accents, light floors; modern apartments and industrial living rooms\n",
+          "score": 0.693384051322937,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a rug under the sofa and coffee table, spanning the seating area",
+      "spec": {
+        "piece": "a rug under the sofa and coffee table, spanning the seating area",
+        "why": "the rug they wanted defines the TV area within the long room, and a textured cream-grey rug warms the oak floor and the concrete ceiling",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 200,
+        "max_height_cm": null,
+        "query": "Type: rug, textured flat or low pile\nUse: defining the seating area; living room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: wool or cotton blend, natural fibers\nColors: cream, warm light grey, oatmeal\nShape: rectangular, subtle texture or tone-on-tone pattern, low profile\nFeel: soft, warm, calm\nGoes with: light grey sofa, light oak floor, white walls, concrete ceiling; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "402.035.57",
+          "name": "MORUM",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 230.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.035.57.jpg"
+          ],
+          "description": "Type: flatwoven area rug\nUse: softening and defining a floor area, under a sofa or dining table; living room, dining room, bedroom\nStyle: minimalist, modern, contemporary\nMaterials: flatwoven fibre with a fine basket-weave texture\nColors: dark charcoal grey, cool\nShape: rectangular, flat and thin, solid tone with a subtle woven dot texture, clean straight edges, large and quiet\nFeel: grounded, calm, understated\nGoes with: light wood, white or grey walls, black metal; minimalist, industrial or Scandinavian rooms\n",
+          "score": 0.8355384469032288,
+          "kind": "rug"
+        },
+        {
+          "id": "202.035.63",
+          "name": "MORUM",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 230.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.035.63.jpg"
+          ],
+          "description": "Type: flatwoven area rug\nUse: covering a dining or seating area; dining room, living room, kitchen\nStyle: minimalist, Scandinavian, coastal\nMaterials: tight synthetic-look flat weave, fine basket-weave texture\nColors: light beige, sand, off-white flecks\nShape: rectangle with small checked weave texture, thin flat profile, plain edges, medium-large, light visual weight\nFeel: neutral, calm, practical, airy\nGoes with: light wood, white walls, rattan, natural linen; Scandinavian, coastal or Japandi dining and living rooms\n",
+          "score": 0.8243277072906494,
+          "kind": "rug"
+        },
+        {
+          "id": "002.852.58",
+          "name": "SATTRUP",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 180.0,
+            "depth": 224.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.852.58.jpg"
+          ],
+          "description": "Type: striped flatwoven area rug\nUse: covering floors, defining a seating area; living room, bedroom, dining room\nStyle: Scandinavian, contemporary, bohemian\nMaterials: flatwoven cotton-look fibers, nubby stitched weave, three joined panels\nColors: charcoal and beige speckle, soft peach-beige, olive grey, thin green edge line\nShape: rectangular, three wide vertical panels in different tones, slightly offset pieced look, flat and low, nubby texture\nFeel: relaxed, crafted, natural, calm\nGoes with: light wood, white or grey sofas, green plants; Scandinavian or bohemian living rooms and bedrooms\n",
+          "score": 0.8137345910072327,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "a pendant lamp over the round dining table, replacing the bare bulb",
+      "spec": {
+        "piece": "a pendant lamp over the round dining table, replacing the bare bulb",
+        "why": "the bare bulb is already above where the table goes, and a black or concrete-toned pendant gives the eating corner its own light and matches the window frames",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, dome or bell shade\nUse: lighting the dining table; living-dining room\nStyle: industrial, minimalist, Scandinavian\nMaterials: black metal or concrete, oak accent\nColors: matte black, grey\nShape: medium dome shade, slim cord, light visual weight\nFeel: focused, warm, modern\nGoes with: grey concrete ceiling, black window frames, light oak table; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "401.928.51",
+          "name": "FOTO",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/401.928.51.jpg"
+          ],
+          "description": "Type: enamelled metal dome pendant lamp\nUse: light over a dining table, a kitchen island or a desk; dining room, kitchen, home office\nStyle: industrial, retro, Scandinavian\nMaterials: lacquered metal shade with a glossy finish, black fabric cord, matching ceiling cup\nColors: warm off-white cream, black cord, white inner shade\nShape: wide flared dome shade with a narrow neck, hangs on a long thin cord, clean rounded outline, medium size, light visual weight\nFeel: soft, friendly, workshop-inspired, warm\nGoes with: light wood tables, white or beige walls, black accents; Scandinavian, farmhouse or industrial kitchens\n",
+          "score": 0.8619390726089478,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "803.296.30",
+          "name": "RANARP",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/803.296.30.jpg"
+          ],
+          "description": "Type: black metal dome pendant lamp\nUse: light over a dining table, kitchen island or work table; dining room, kitchen, home office\nStyle: industrial, retro, farmhouse\nMaterials: matte black painted steel shade, brass-colored fittings, black-and-white braided textile cord, black ceiling cup\nColors: matte black, brass, white shade interior\nShape: wide flared dome shade with a narrow neck and brass yoke, hangs on a braided cord, classic workshop silhouette, medium visual weight\nFeel: bold, grounded, vintage, warm\nGoes with: wood dining tables, brick, concrete, black and brass accents; industrial or farmhouse kitchens and dining rooms\n",
+          "score": 0.8561103343963623,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "402.961.08",
+          "name": "HEKTAR",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.961.08.jpg"
+          ],
+          "description": "Type: industrial dark grey pendant lamp\nUse: directed light over a dining table, a bar or a kitchen island; kitchen, dining room, living room\nStyle: industrial, modern, minimalist\nMaterials: powder-coated steel shade with a matte finish, black cord woven through a metal chain, round steel ceiling plate\nColors: dark grey, charcoal black\nShape: deep bell shade with a cylindrical top and a flared lower rim, suspended from a link chain, solid and graphic, medium visual weight\nFeel: rugged, urban, strong, moody\nGoes with: concrete floors, dark wood, black metal, exposed brick; industrial or modern kitchens and lofts\n",
+          "score": 0.8418321013450623,
+          "kind": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp beside the sofa",
+      "spec": {
+        "piece": "a floor lamp beside the sofa",
+        "why": "soft side light is better than overhead light for watching TV, and a slim black lamp with a linen shade suits the minimalist palette",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 40,
+        "max_depth_cm": 40,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, slim with fabric shade\nUse: ambient light for watching TV; living room\nStyle: minimalist, Scandinavian, contemporary\nMaterials: black metal, linen shade\nColors: matte black, off-white\nShape: thin stem, small footprint, light visual weight\nFeel: soft, cozy, calm\nGoes with: light grey sofa, black window frames, white walls; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "102.911.31",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.911.31.jpg"
+          ],
+          "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+          "score": 0.8308812379837036,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "002.806.99",
+          "name": "VARV",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.806.99.jpg"
+          ],
+          "description": "Type: floor lamp with built-in side tray\nUse: ambient light beside a sofa, armchair or bed, with a small surface for a phone; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: textured white shade, white metal stem, round white shelf with wireless charging pad, round metal base\nColors: white, warm glow\nShape: soft paneled bell shade with gentle ribs on a tall thin pole, small round tray disc halfway up, flat round base, slender and light\nFeel: calm, practical, soft, airy\nGoes with: light wood, white walls, linen and wool textiles; Scandinavian or minimalist living rooms and bedrooms\n",
+          "score": 0.8103532195091248,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "202.080.42",
+          "name": "KLABB",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.080.42.jpg"
+          ],
+          "description": "Type: rectangular shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: white fabric rectangular shade, nickel-plated metal frame and square base\nColors: white, brushed silver\nShape: boxy rectangular shade on a tall looped stand that splits into two parallel rails curving into a U near the floor, small square base, slim, tall and graphic\nFeel: elegant, calm, refined, crisp\nGoes with: grey or white upholstery, glass and metal tables, white walls; contemporary or modern living rooms\n",
+          "score": 0.8057137727737427,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "sheer curtains across the balcony sliding door",
+      "spec": {
+        "piece": "sheer curtains across the balcony sliding door",
+        "why": "light linen curtains soften the hard black frame, control glare on the TV and add warmth to the bare room",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer linen panels\nUse: filtering light at the balcony door; living room\nStyle: minimalist, Scandinavian\nMaterials: linen or linen blend\nColors: off-white, natural ecru\nShape: floor-length, soft folds, light and airy\nFeel: soft, bright, calm\nGoes with: white walls, black window frames, light oak floor; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "502.841.95",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.841.95.jpg"
+          ],
+          "description": "Type: pair of white linen curtains\nUse: filtering daylight and softening windows; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: semi-sheer woven linen with a slubby natural texture, hidden tab heading\nColors: white, faint warm off-white\nShape: two long straight panels hanging in loose soft folds from a rod, airy translucent weave, plain hems, light and flowing\nFeel: airy, calm, natural, bright\nGoes with: light wood floors, white walls, rattan, pale grey or sand textiles; Scandinavian, coastal or Japandi rooms\n",
+          "score": 0.8549201488494873,
+          "kind": "curtains"
+        },
+        {
+          "id": "202.975.71",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.975.71.jpg"
+          ],
+          "description": "Type: white light-filtering curtains, pair\nUse: softening daylight, adding light privacy at a window; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: lightweight semi-sheer woven fabric, hidden tab heading\nColors: white\nShape: two full-length straight panels hanging in soft relaxed folds, plain fabric, gently translucent, airy and light\nFeel: airy, bright, fresh, calm\nGoes with: white walls, light wood floors, linen sofas, green plants; Scandinavian, minimalist or coastal rooms\n",
+          "score": 0.8256314992904663,
+          "kind": "curtains"
+        },
+        {
+          "id": "702.809.12",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.809.12.jpg"
+          ],
+          "description": "Type: pair of linen curtains\nUse: dressing windows, softening light and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, Japandi\nMaterials: semi-sheer washed linen with a slub texture, hidden tab top\nColors: dark charcoal grey\nShape: two long straight panels that hang in soft vertical folds from a rod, gathered tab-top heading, fine uneven weave, light and flowing\nFeel: calm, natural, relaxed, soft\nGoes with: light wood, white or grey walls, natural textiles, black accents; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 0.807183027267456,
+          "kind": "curtains"
+        }
+      ]
+    },
+    {
+      "piece": "cushions and a throw on the sofa",
+      "spec": {
+        "piece": "cushions and a throw on the sofa",
+        "why": "a few textured cushions and a throw in warm tones make the grey sofa inviting and break up the neutral palette",
+        "kinds": [
+          "cushion",
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, textured cover\nUse: comfort and accent on the sofa; living room\nStyle: Scandinavian, Japandi, minimalist\nMaterials: linen, cotton, boucle, knit\nColors: terracotta, ochre, cream, charcoal\nShape: square, simple, soft texture\nFeel: cozy, warm, inviting\nGoes with: light grey sofa, light oak floor, white walls; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "202.617.32",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.617.32.jpg"
+          ],
+          "description": "Type: linen cushion\nUse: back support and decoration on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, Japandi\nMaterials: washed linen with a fine slub texture\nColors: light warm beige, greige\nShape: square plain cushion, soft rounded corners, clean seamed edges, slightly crumpled natural texture, medium size\nFeel: calm, natural, soft, relaxed\nGoes with: white or grey sofas, light oak, wool throws, stone tones; Scandinavian, Japandi or minimalist living rooms\n",
+          "score": 0.8708833456039429,
+          "kind": "cushion"
+        },
+        {
+          "id": "902.049.03",
+          "name": "GURLI",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.049.03.jpg"
+          ],
+          "description": "Type: textured woven throw blanket\nUse: warming up on a sofa or an armchair, layering at the foot of a bed; living room, bedroom\nStyle: Scandinavian, Japandi, minimalist\nMaterials: soft loosely woven cotton-blend fabric with a slubby texture\nColors: natural beige, warm off-white\nShape: flat rectangular blanket with a subtle grid weave, uneven slubbed surface, simple hemmed edges, folds softly, light but cozy\nFeel: soft, warm, calm, cozy\nGoes with: grey or white sofas, light wood, linen cushions, neutral palettes; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 0.7421197891235352,
+          "kind": "throw"
+        },
+        {
+          "id": "102.864.60",
+          "name": "ORMHASSEL",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.864.60.jpg"
+          ],
+          "description": "Type: textured knitted throw\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: soft chunky knit yarn, ribbed knit hems\nColors: medium grey, white\nShape: long rectangle with fine horizontal stripes in a raised bubbly stitch, solid grey ribbed borders at the ends, soft and drapey\nFeel: cozy, soft, relaxed, warm\nGoes with: white or charcoal sofas, light wood, wool, black accents; Scandinavian, minimalist or contemporary rooms\n",
+          "score": 0.7126585245132446,
+          "kind": "throw"
+        }
+      ]
+    },
+    {
+      "piece": "a large plant in a pot near the balcony door",
+      "spec": {
+        "piece": "a large plant in a pot near the balcony door",
+        "why": "greenery echoes the trees outside and fills the corner between the dining table and the window",
+        "kinds": [
+          "plant"
+        ],
+        "max_width_cm": 60,
+        "max_depth_cm": 60,
+        "max_height_cm": null,
+        "query": "Type: plant, tall indoor\nUse: greenery and life; living room\nStyle: Scandinavian, minimalist, Japandi\nMaterials: living plant, ceramic or concrete pot\nColors: green, grey, off-white\nShape: tall leafy, medium visual weight\nFeel: fresh, natural, calm\nGoes with: white walls, concrete ceiling, light oak floor, balcony trees; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n",
+          "score": 0.7450888156890869,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n",
+          "score": 0.6916722059249878,
+          "kind": "plant"
+        },
+        {
+          "id": "001.185.23",
+          "name": "PACHIRA AQUATICA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+          ],
+          "description": "Type: braided money tree houseplant\nUse: indoor greenery by a window, in a bright corner or next to a sofa; living room, home office, dining room\nStyle: bohemian, Scandinavian, contemporary\nMaterials: living plant with a braided trunk, glossy hand-shaped leaves, brown plastic grower pot\nColors: fresh green, tan trunk, terracotta brown pot\nShape: several thin trunks braided into one stem topped by a rounded crown of leaves, tall and upright, slender and light\nFeel: lively, fresh, natural, calming\nGoes with: woven baskets, ceramic or rattan plant pots, light wood, white walls; bohemian, Scandinavian or Japandi rooms\n",
+          "score": 0.6897376775741577,
+          "kind": "plant"
+        }
+      ]
+    },
+    {
+      "piece": "wall art above the sofa on the long left wall",
+      "spec": {
+        "piece": "wall art above the sofa on the long left wall",
+        "why": "the long white wall needs a focal point, and a large simple print in warm neutrals and black ties the room together",
+        "kinds": [
+          "wall art"
+        ],
+        "max_width_cm": 150,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: wall art, large framed print\nUse: focal point above the sofa; living room\nStyle: minimalist, Japandi, contemporary\nMaterials: paper or canvas, black or oak frame\nColors: beige, terracotta, black, off-white\nShape: large rectangle or pair, abstract or line art\nFeel: calm, warm, artistic\nGoes with: white walls, light grey sofa, black window frames, light oak floor; contemporary minimalist living room"
+      },
+      "candidates": [
+        {
+          "id": "602.384.19",
+          "name": "OLUNDA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.384.19.jpg"
+          ],
+          "description": "Type: framed graphic flower print\nUse: wall decoration above a sofa, sideboard or desk; living room, dining room, home office, hallway\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: printed artwork under clear glazing, slim black frame\nColors: white background, black, red, yellow\nShape: upright rectangle in a thin black frame, line drawing of tall seed-head flowers with thin stems and oval pods, sparse composition with lots of white space, light visual weight\nFeel: playful, graphic, airy\nGoes with: white walls, black accents, light wood, red or yellow touches; Scandinavian or mid-century modern rooms\n",
+          "score": 0.6818736791610718,
+          "kind": "wall art"
+        },
+        {
+          "id": "402.958.73",
+          "name": "PJTTERYD",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.958.73.jpg"
+          ],
+          "description": "Type: set of three printed canvas pictures\nUse: decorating a wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: retro, contemporary, bohemian\nMaterials: printed canvas stretched on frames\nColors: light beige ground, pastel green, pink, lilac, orange, yellow, grey lettering\nShape: three square panels hung side by side, collage of vintage luggage tags and travel labels with city names and airport codes, light graphic layout\nFeel: playful, wanderlust, cheerful, nostalgic\nGoes with: light wood, white walls, pastel accents; retro, eclectic or youthful living rooms and home offices\n",
+          "score": 0.6528341770172119,
+          "kind": "wall art"
+        },
+        {
+          "id": "403.191.62",
+          "name": "GRNBY",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/403.191.62.jpg"
+          ],
+          "description": "Type: set of nine black and white photo prints\nUse: creating a gallery wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: industrial, modern, contemporary\nMaterials: printed photographic images\nColors: black, white, shades of grey\nShape: nine rectangular prints in mixed sizes showing a city skyline, skyscrapers and suspension bridges, arranged as a grid collage, graphic and high contrast\nFeel: urban, dramatic, sleek, moody\nGoes with: black frames, grey or white walls, leather, metal; industrial, modern or loft-style rooms\n",
+          "score": 0.649442732334137,
+          "kind": "wall art"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}
