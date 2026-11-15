@@ -1,5 +1,5 @@
 """Los datos de la presentación: todo número sale de los archivos de resultados, del catálogo y de
-la config (los mismos que lee docs/presentacion/build.py). Nada se escribe a mano, salvo lo de DOC:
+la config. Nada se escribe a mano, salvo lo de DOC:
 lo que solo está en los documentos, con la sección de la que sale."""
 
 from __future__ import annotations
@@ -8,7 +8,6 @@ import collections
 import gzip
 import html
 import json
-import re
 import statistics
 from math import comb
 from pathlib import Path
@@ -23,7 +22,7 @@ from amoblai.rag.filters import Filters
 from amoblai.rag.hybrid import visual_query
 
 OUT = Path(__file__).resolve().parent
-ROOT = OUT.parents[2]
+ROOT = OUT.parents[1]
 TRAB = OUT / "_trabajo"
 D_ = ROOT / "datos"
 RES = D_ / "resultados"
@@ -195,7 +194,6 @@ DOC = {
     "con_variantes": 0.69,                  # EXPERIMENTOS.md, T6g: consultas cuyo producto tiene variantes del mismo modelo
     "abo_listados": 147702,                 # EXPERIMENTOS.md, T1f
     "abo_mandados": 759,                    # EXPERIMENTOS.md, T1f: los listados de ABO que se mandaron a describir
-    "generador_v1": ("0,89–0,96", "0,69–0,73"),  # EXPERIMENTOS.md, T1d: faithfulness y answer relevance con los jueces viejos
     "escena_ic": (-0.103, 0.068),           # EXPERIMENTOS.md, T10: IC 95% de la diferencia pareada por ambiente (reconocidos, LLM − plantilla)
     "contexto": 1_000_000,                  # EXPERIMENTOS.md, T8d: el contexto de Opus 5.5, en tokens
     "cache_min": 5,                         # EXPERIMENTOS.md, T8d: lo que dura la caché de prompt, en minutos

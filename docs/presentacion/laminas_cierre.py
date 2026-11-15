@@ -5,9 +5,9 @@ ambiente real: indicar el lugar ayuda), las conclusiones y gracias."""
 from __future__ import annotations
 
 from datos import (AM, B1, B2, C_CHOOSE, C_CHOOSE_MAX, C_CHOOSE_MIN, C_DESC, C_IMG, C_PEDIDO, C_PLAN, N_ELEC, CAM, CASO, CASO_R, CFG, J_RUIDO, JR,
-                   RUIDO_CAMBIAN, RUIDO_IGUALES, RUIDO_PROD, f1, J_CTX,
+                   RUIDO_CAMBIAN, RUIDO_PROD, f1, J_CTX,
                    CFG_TXT, D, D21, DIAG, FINALES, GASTO, HIB, HIB_R, IMG_TOT, ITEMS, J_AZAR, J_VER, K, N_ANS, P_VER, POR_USO,
-                   REPL, REPL_N, RESP2, ROOM_CHECK, RV, TOPES, V1, V2, credito, dif, f2, f3, media_desvio, miles, nb, pct, sg, usd)
+                   REPL, REPL_N, RESP2, ROOM_CHECK, RV, TOPES, V1, V2, credito, dif, f2, f3, media_desvio, miles, pct, sg, usd)
 from laminas_exp import D_CONSULTA, K_DESC
 from piezas import barras, codigo_barras, flujo, foto, kick, producto
 from registro import lam
@@ -316,7 +316,7 @@ CONC = [
      f"{sg(D21['hit@1'])} de hit@1 sin costo por pedido; de punta a punta gana {J_VER['b']}, empata {J_VER['emp']} y no pierde."),
     ("La búsqueda aporta en la tarea real:", f"{J_AZAR['a']} a {J_AZAR['b']} contra candidatos al azar del mismo kind. Contra el catálogo "
      f"entero en el contexto empata ({J_CTX['a']} a {J_CTX['b']}): con {miles(D['prod_todos'])} productos, RAG no hace mejor la lista; es la arquitectura que escala."),
-    ("Medir bien fue la mitad del trabajo:", "nos hizo cambiar el número de cabecera y rehacer las métricas del generador."),
+    ("Medir bien fue la mitad del trabajo:", "nos hizo cambiar el número de cabecera."),
     ("La lista es confiable; la imagen es una visualización:",
      f"reconoce el {pct(IMG_TOT['reconocidos'] / IMG_TOT['productos'])} de los productos y conserva el cuarto en {IMG_TOT['pasan']} de {len(FINALES)}."),
 ]
@@ -336,7 +336,7 @@ lam("conclusiones", "Conclusiones", "Cierre", f'''
      f"empata {J_VER['emp']} y no pierde.",
      f"Tres: la búsqueda gana {J_AZAR['a']} a {J_AZAR['b']} contra el azar, y empata contra el catálogo entero en el contexto: "
      "RAG no hace mejor la lista, es la arquitectura que escala.",
-     "Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador.",
+     "Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera.",
      "Y cinco: la lista es confiable; la imagen es una visualización."],
     45)
 

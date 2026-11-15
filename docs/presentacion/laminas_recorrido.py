@@ -120,11 +120,10 @@ fase("rec-catalogo", "1", "Catálogo", "El catálogo: <em>dos fuentes</em>, un m
       f"de living y comedor y, revisado mirando cada foto, quedaron {D['prod_819']}. Y Amazon Berkeley Objects, listados "
       f"reales de Amazon: de casi 150 mil quedaron {D['n_abo']}. El flujo usa los dos, {miles(D['prod_todos'])} productos. "
       "Así viene una lámpara de IKEA: el texto es "
-      "marketing y no tiene medidas. Y así un sofá de Amazon, con medidas. Qué catálogo usar lo midió el experimento 6."],
-     actual=["catalogo"], pines={"catalogo": [6]},
+      "marketing y no tiene medidas. Y así un sofá de Amazon, con medidas."],
+     actual=["catalogo"],
      extra=f'<div class="rc-tot"><b>{miles(D["prod_todos"])}</b><span>productos en el catálogo del flujo: IKEA + ABO, en un mismo registro</span>'
-           + exps([(6, "IKEA + Amazon (ABO)", f"de punta a punta, en {D['n_ambientes_vacios']} ambientes"),
-                   ("—", "Ampliar y revisar", f"{D['prod_268']} → {D['prod_855']} → {D['prod_819']}: decisiones de datos")]) + '</div>')
+           + exps([("—", "Ampliar y revisar", f"{D['prod_268']} → {D['prod_855']} → {D['prod_819']}: decisiones de datos")]) + '</div>')
 
 # =============================================================================================
 # 2 · Descripción
@@ -227,10 +226,10 @@ fase("rec-indice", "3", "Índice", "Un vector por producto: <em>la descripción 
      f'local, {VEC["dim"]} componentes. <b>Dónde</b>: ChromaDB, con la metadata de los filtros al lado. Así queda el sofá:</p>',
      _indice_svg() + exps([
          (1, "Se embebe la descripción del VLM", "no el texto del vendedor"),
-         (9, "Qwen3-Embedding-0.6B", "contra hashing, BM25 y BGE-base"),
-         (12, "ChromaDB con HNSW", "contra recorrer todos los vectores con numpy"),
-         (11, "Un documento por producto", f"unas {D['palabras_med']} palabras, sin partir en chunks"),
-         (10, f"{VEC['dim']} dimensiones", "Matryoshka: se puede truncar sin reentrenar"),
+         (8, "Qwen3-Embedding-0.6B", "contra hashing, BM25 y BGE-base"),
+         (11, "ChromaDB con HNSW", "contra recorrer todos los vectores con numpy"),
+         (10, "Un documento por producto", f"unas {D['palabras_med']} palabras, sin partir en chunks"),
+         (9, f"{VEC['dim']} dimensiones", "Matryoshka: se puede truncar sin reentrenar"),
          (3, "Dos índices más, para la búsqueda híbrida", "léxico: BM25 sobre las mismas descripciones · por foto: SigLIP 2, un vector por la foto de cada producto"),
      ], cls="ri-dec"),
      ["Fase tres: el índice. Se embebe la descripción entera, un documento por producto, con Qwen3-Embedding, local, en CPU: "
@@ -238,7 +237,7 @@ fase("rec-indice", "3", "Índice", "Un vector por producto: <em>la descripción 
       "vectorial son preguntas de trámite: las contestamos juntas más adelante. Para la búsqueda "
       "híbrida se suman dos índices sobre los mismos productos: uno léxico, BM25 sobre las palabras de las descripciones, y uno "
       "por foto, con SigLIP 2, que pone la foto y el texto en un mismo espacio."],
-     actual=["indice"], pines={"indice": [9, 10, 11, 12]}, cls_banda="ri")
+     actual=["indice"], pines={"indice": [8, 9, 10, 11]}, cls_banda="ri")
 
 # =============================================================================================
 # 4 y 5 · Foto + pedido → plan
@@ -336,7 +335,7 @@ fase("rec-busqueda", "6", "Búsqueda", "Filtro por kind, y después <em>búsqued
       "descripción; y SigLIP 2, la ficha en una frase contra la foto del producto. Cada puntaje se estandariza y se "
       "promedian: es la búsqueda híbrida, la versión 2. Quedan los cinco mejores: "
       f"{_n_abo_c} de Amazon y {len(_cands) - _n_abo_c} de IKEA."],
-     actual=["busqueda"], pines={"busqueda": [3, 13]}, cls_banda="rb")
+     actual=["busqueda"], pines={"busqueda": [3, 12]}, cls_banda="rb")
 
 # =============================================================================================
 # 7 · Elección: la generación de la lista (la G del RAG)
@@ -426,7 +425,7 @@ fase("rec-escena", "8", "Escena", "El prompt de la imagen: <em>una plantilla, si
       f"{IMG_PL['productos']} con la plantilla y {IMG_LLM['identificados']} con la escena del LLM, y el ambiente se conserva en "
       f"{IMG_PL['ambiente_conservado']} y en {IMG_LLM['ambiente_conservado']}. Nos quedamos con la plantilla: da lo mismo y "
       "cuesta una llamada menos."],
-     actual=["escena"], pines={"escena": [15]})
+     actual=["escena"], pines={"escena": [14]})
 
 # =============================================================================================
 # 9 y 10 · Imagen y control: una corrida que pasa al primer intento y otra que no pasa en ninguno

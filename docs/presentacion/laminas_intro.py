@@ -6,14 +6,13 @@ from __future__ import annotations
 
 from PIL import Image
 
-from datos import (AM, B1, B2, D, D21, DIAG_CAT, DOC, EMB, ESTILO, F, FINALES, FOTO, G_ANOT2, G_OTROS2, GEN_BAJA, GEN_SUBE, GT_ANY,
+from datos import (AM, B1, B2, D, D21, DIAG_CAT, EMB, ESTILO, F, FINALES, FOTO, G_ANOT2, G_OTROS2, GEN_BAJA, GEN_SUBE, GT_ANY,
                    GT_ROOM_PATH, J_RUIDO, RESP2, ROOM_CHECK, RUIDO_CAMBIAN, RUIDO_PROD,
-                   HERO, HERO_MET, HERO_PICKS, HERO_REQ, HERO_SLUG, HIB_DIR, IMG_TOT, J_AZAR, J_CAT, J_VER, K, KIND_ES,
+                   HERO, HERO_MET, HERO_PICKS, HERO_REQ, HERO_SLUG, HIB_DIR, IMG_TOT, J_AZAR, J_VER, K, KIND_ES,
                    N_AMB, N_AMB_ANS, N_ANS, N_BUS, N_HERO, N_HERO_ABO, N_HERO_UNID, NO_PASAN, PEDIDOS, PUB_POR_ARCHIVO,
                    Q_LAMPARA, Q_MESA, RESP, ROOT, SOFA, V0_REC, V0_SOFA_OK, V1, VT, credito, dif, esc, f2, f3, ic_txt,
                    medida, miles, nb, pct, rankings, sg)
 from piezas import TRAMITE, barras, consulta, etq, flujo, foto, kick, producto, ranking
-from recorrido import prompt_tk
 from registro import lam
 
 import statistics
@@ -320,23 +319,17 @@ lam("met-juez", "El generador y los jueces", "Métricas", f'''
   <div class="jz"><h4>Answer relevance<b>{f2(_AR["media"])}</b></h4>
     <p>Un juez que no ve el pedido escribe tres pedidos que la lista contesta; se mide su coseno con el original. La vara: los pedidos escritos para <b>otras</b> listas dan <b>{f2(_AR["vara_cruzada"])}</b>; la propia les gana en {_AR["supera_a_la_cruzada"]} de {RESP2["corridas"]}.</p></div>
   <p class="jz-rep">Sobre las {RESP2["corridas"]} listas de la versión 2. Con otras {RESP["corridas"]} listas, las de la versión 1, dieron <b>{f2(_F1["global"])}</b> y <b>{f2(_AR1["media"])}</b> contra {f2(_AR1["vara_cruzada"])}: los dos números se repiten. No es una mejora de la versión 2: por ambiente, la faithfulness sube en {GEN_SUBE} y baja en {GEN_BAJA}.</p>
-  <div class="jz" data-paso="1"><h4><span>Las rehicimos: había <em>data leakage</em></span></h4>
-    <p>El prompt del juez traía de ejemplo el comienzo del pedido que se evaluaba, y lo copiaba. Y el juez de fidelidad leía la ficha completa, que el generador no ve. Daban {DOC["generador_v1"][0]} y {DOC["generador_v1"][1]}.</p>
-    {prompt_tk("juez_pedidos_v1.md", [("A furnishing app takes a photo of a room and a request in Spanish", '"un comedor para seis")')],
-               resaltar=['"un living nórdico y cálido"'], rotulo="el juez de antes · extracto", cls="jz-pr")}</div>
-  <div class="jz" data-paso="2"><h4>Jueces: validado contra el ground truth, uno</h4>
-    <p>El de relevancia graduada le da la nota máxima al producto anotado el {pct(G_ANOT2)} de las veces, y a los demás el {pct(G_OTROS2)}. <b>El de listas no está validado contra personas</b>: se le pregunta en los dos órdenes, y coinciden en {J_AZAR["acuerdo"]} de {J_AZAR["n"]} ambientes contra el azar, en {J_CAT["acuerdo"]} de {J_CAT["n"]} entre catálogos y en {J_VER["acuerdo"]} de {J_VER["n"]} entre versiones.</p>
+  <div class="jz" data-paso="1"><h4>Jueces: validado contra el ground truth, uno</h4>
+    <p>El de relevancia graduada le da la nota máxima al producto anotado el {pct(G_ANOT2)} de las veces, y a los demás el {pct(G_OTROS2)}. <b>El de listas no está validado contra personas</b>: se le pregunta en los dos órdenes, y coinciden en {J_AZAR["acuerdo"]} de {J_AZAR["n"]} ambientes contra el azar y en {J_VER["acuerdo"]} de {J_VER["n"]} entre versiones.</p>
     <div class="ordenes"><span><i>A</i><i>B</i></span><em>y</em><span><i>B</i><i>A</i></span></div></div>
 </div>
-<p class="remate chico" data-paso="2">El porqué se sostiene en casi <mark>9 de cada 10 afirmaciones</mark>; lo que agrega de más es la madera.</p>''',
+<p class="remate chico" data-paso="1">El porqué se sostiene en casi <mark>9 de cada 10 afirmaciones</mark>; lo que agrega de más es la madera.</p>''',
     [f"Faithfulness: partimos el porqué en afirmaciones, y un juez dice cuáles se "
      f"infieren de lo que el generador vio. Da {f2(_F['global'])}: {_F['sostenidas']} de {_F['afirmaciones']}. Lo que no se "
      "sostiene es casi siempre la especie de la madera. Answer relevance: un juez que no ve el "
      f"pedido escribe los pedidos que esa lista contesta. Da {f2(_AR['media'])}, contra {f2(_AR['vara_cruzada'])} con pedidos "
      f"escritos para otras listas. Con otras once listas, las de la versión 1, dieron {f2(_F1['global'])} y {f2(_AR1['media'])}: "
      "los números se repiten.",
-     "Estas métricas las rehicimos por data leakage: el prompt del juez traía de ejemplo «un living nórdico "
-     "y cálido», que era justo como empezaba el pedido evaluado, y lo copiaba.",
      "Y sobre los jueces: validado contra el ground truth hay uno solo; el de listas se controla con los dos órdenes."],
     50)
 
@@ -433,28 +426,27 @@ EXPS = [
     (3, "Léxica, por foto e híbrida", "Qwen3 · BM25 · SigLIP 2 · fusionadas"),
     (4, "¿Error, o una variante?", "exacto · el mismo modelo · sirve (juez)"),
     (5, "Elegir con un VLM, y cuántos", "top-10 mirando las fotos · k de 1 a 10"),
-    (6, "Qué catálogo", "IKEA · Amazon (ABO) · los dos (juez)"),
-    (7, "Con búsqueda o sin búsqueda", f"los {K} mejores · {K} al azar · el catálogo entero (juez)"),
-    (8, "Tres redactores", "las mismas consultas, escritas tres veces"),
-    (9, "Embedder", "hashing · BM25 · BGE · Qwen3"),
-    (10, "Dimensión del vector", "de 32 a 1024 (Matryoshka)"),
-    (11, "Splitting y líneas", "documento · por línea · qué líneas pesan"),
-    (12, "Base vectorial", "ChromaDB (HNSW) · búsqueda exacta"),
-    (13, "Filtros de metadata", "ninguno · por tipo · por kind"),
-    (14, "Rerankers de texto", "MiniLM · Qwen3-Reranker"),
-    (15, "La escena", "plantilla · escrita por el LLM"),
+    (6, "Con búsqueda o sin búsqueda", f"los {K} mejores · {K} al azar · el catálogo entero (juez)"),
+    (7, "Tres redactores", "las mismas consultas, escritas tres veces"),
+    (8, "Embedder", "hashing · BM25 · BGE · Qwen3"),
+    (9, "Dimensión del vector", "de 32 a 1024 (Matryoshka)"),
+    (10, "Splitting y líneas", "documento · por línea · qué líneas pesan"),
+    (11, "Base vectorial", "ChromaDB (HNSW) · búsqueda exacta"),
+    (12, "Filtros de metadata", "ninguno · por tipo · por kind"),
+    (13, "Rerankers de texto", "MiniLM · Qwen3-Reranker"),
+    (14, "La escena", "plantilla · escrita por el LLM"),
 ]
-assert {n for n, *_ in EXPS if n > 8} == TRAMITE
+assert {n for n, *_ in EXPS if n > 7} == TRAMITE
 _h = "".join(f'<li class="{"tram" if n in TRAMITE else ""}"><em>{n}</em><b>{q}</b><span>{o}</span></li>' for n, q, o in EXPS)
 lam("hiper", "El mapa de los experimentos", "Experimentos", f'''
 {kick("E", "experimentos · el mapa")}
-<h2 class="t chico">Quince preguntas: <em>ocho con lámina propia</em>, siete de trámite</h2>
+<h2 class="t chico">Catorce preguntas: <em>siete con lámina propia</em>, siete de trámite</h2>
 <ol class="hiper h14">{_h}</ol>
 <p class="hiper-pie">cada pin, sobre la fase a la que le hizo la pregunta · lleno: con lámina propia · hueco: de trámite · <b>sin experimento: el modelo de imagen y los umbrales del control</b></p>
-<div class="esq esq-hiper">{flujo(pines=range(1, 16), banco=f"{N_AMB} ambientes de IKEA anotados · {N_ANS} consultas con respuesta")}</div>''',
+<div class="esq esq-hiper">{flujo(pines=range(1, 15), banco=f"{N_AMB} ambientes de IKEA anotados · {N_ANS} consultas con respuesta")}</div>''',
     "Ahora los experimentos, por cuánto importan. El mismo mapa: cada pin es una pregunta que le "
-    "hicimos a una parte del sistema. Los llenos, del 1 al 8, tienen lámina propia. Dos de ellos, el 4 y el 8, no miden una "
-    "fase: miden al banco de prueba. Los huecos, del 9 al 15, son los de trámite. "
+    "hicimos a una parte del sistema. Los llenos, del 1 al 7, tienen lámina propia. Dos de ellos, el 4 y el 7, no miden una "
+    "fase: miden al banco de prueba. Los huecos, del 8 al 14, son los de trámite. "
     "Y dos cosas no las decidió ningún experimento: el modelo de imagen y "
     "los umbrales del control.",
     35)

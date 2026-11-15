@@ -20,7 +20,7 @@ ORDEN = [
     "rec-eleccion", "rec-escena", "rec-imagen", "rec-lista",
     "desafios",
     "gt", "vacios", "met-ret", "met-juez", "met-img", "trampas",
-    "hiper", "e1", "e1r", "e2", "e2r", "e3", "e3r", "camino", "e4", "e5", "e5r", "e6", "e6r", "e7", "e7r", "e8",
+    "hiper", "e1", "e1r", "e2", "e2r", "e3", "e3r", "camino", "e4", "e5", "e5r", "e6", "e6r", "e7",
     "tram1", "tram2",
     "ej4-v1", "ej4-v2", "ej4-res",
     "costo", "limites", "futuro", "conclusiones", "gracias",

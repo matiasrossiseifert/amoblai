@@ -922,7 +922,7 @@ CSS_REV = r"""
 .hiper.h14 b{font-size:24px}
 .hiper.h14 span{font-size:17.5px}
 .hiper li.tram em{background:none;box-shadow:inset 0 0 0 2.5px var(--coral);color:var(--coral)}
-.hiper.h14 li:nth-child(9){margin-top:14px;border-top:1px dotted var(--trazo-3)}
+.hiper.h14 li:nth-child(8){margin-top:14px;border-top:1px dotted var(--trazo-3)}
 .hiper-pie{left:96px;top:auto;bottom:84px;width:1010px;font-size:16px;line-height:1.45}
 .hiper-pie b{color:var(--coral);font-weight:600}
 .esq-hiper{left:1150px;top:226px;width:680px}

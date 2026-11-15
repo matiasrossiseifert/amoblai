@@ -12,14 +12,13 @@ import statistics
 
 from datos import (ABL_DIR, B1, B2, BASE, C268, C855, C_CHOOSE_V2, C_CTX_CACHE, C_CTX_SIN, C_DESC, CTX_EN_TOP5, CTX_PIEZAS, C_RERANK, C_SCENE, CTX_TOKENS, ESC_DIF,
                    IMG_LLM, IMG_PL, J_CTX, CAM, CON, CREV, CTOD, CURVA, D,
-                   D21, DIAG, DOC, EMB, ESTILO, F, FAM_R, FAM_REL, FAM_TOP, FRASES, G_N, HIB, HIB_R, ITEMS, J5, J_AZAR, J_CAT,
-                   J_NORD, J_OTROS, JA, K, LIN, N_ANS, P_AZAR, P_CAT, RLOC, RR, RR_DIR, TODOS_DIR, UTIL1, UTIL3, V1, V2, dif, esc,
-                   f1, f2, f3, ic, ic_txt, media_desvio, miles, nb, paired, pct, rankings, sg, usd, FM)
-from piezas import ETAPA_EXP, barras, flujo, kick, letra, lineas_svg, minimapa, producto, talon, variantes_html
+                   D21, DIAG, DOC, EMB, ESTILO, F, FAM_R, FAM_REL, FAM_TOP, FRASES, G_N, HIB, HIB_R, ITEMS, J_AZAR, JA, K, LIN, N_ANS, P_AZAR, RLOC, RR, RR_DIR, TODOS_DIR, UTIL1, V1, V2, dif, esc,
+                   f1, f2, f3, ic_txt, media_desvio, miles, nb, paired, pct, rankings, sg, usd, FM)
+from piezas import ETAPA_EXP, barras, flujo, kick, lineas_svg, minimapa, producto, talon, variantes_html
 from registro import lam
 
 ETAPA_TXT = {1: "descripción", 2: "plan", 3: "búsqueda", 4: "el banco de la búsqueda", 5: "búsqueda y elección",
-             6: "catálogo", 7: "búsqueda", 8: "el banco de la búsqueda"}
+             6: "búsqueda", 7: "el banco de la búsqueda"}
 
 
 def pregunta(n, tema, titulo, porque, variantes, metrica, notas, seg, extra="", ancho_t="", cls="", fuera=""):
@@ -365,7 +364,7 @@ resultado(5, "Elegir con un VLM, y cuántos candidatos", f'''
 
 
 # =============================================================================================
-# 6 · Qué catálogo (de punta a punta)
+# Piezas de las láminas con juez: los votos por ambiente y el marcador
 # =============================================================================================
 def _tiles(res, b_lbl):
     out = []
@@ -387,44 +386,13 @@ def _marcador(a_lbl, a, b, b_lbl, sub):
             f'<div class="mk-s">{sub}</div></div>')
 
 
-pregunta(6, "Qué catálogo", "¿Con qué catálogo <em>salen mejores listas</em> para ambientes reales?",
-         f"IKEA es de 2013: fotos de {D['foto_lado']} píxeles, asientos sin medidas y una sola estética, la nórdica. Amazon "
-         "Berkeley Objects tiene listados reales, con medidas, pero no tiene ambientes anotados: hay que medirlo de punta a punta.",
-         [("A", "IKEA", f"{D['prod_819']} productos: el único con ground truth"),
-          ("B", "Amazon (ABO)", f"{D['n_abo']} productos, descriptos con el mismo formato"),
-          ("C", "IKEA + Amazon", f"{miles(D['prod_todos'])} productos")],
-         "los mismos ambientes, pedidos y plan; cambia solo el catálogo · un juez compara las dos listas a ciegas, en los dos "
-         "órdenes: una gana un ambiente solo si gana en los dos",
-         ["IKEA es de 2013, con una sola estética, la nórdica. Amazon Berkeley Objects tiene listados reales, con medidas, pero "
-          "no tiene ambientes anotados: hay que medirlo de punta a punta.",
-          "Los mismos ambientes, pedidos y plan; cambia solo el catálogo. El juez compara las dos listas a ciegas, en los dos "
-          "órdenes."], 30)
-resultado(6, f"Qué catálogo: los {J_CAT['n']} ambientes", f'''
-<div class="r-10b r-6">
-  <div class="r10-col">{_marcador("IKEA", J_NORD["a"], J_NORD["b"], "IKEA + Amazon", f"nuestros {J_NORD['n']} departamentos, pedidos nórdicos · {J_NORD['emp']} empate")}{_tiles(J_NORD, "IKEA + Amazon")}</div>
-  <div class="r10-col">{_marcador("IKEA", J_OTROS["a"], J_OTROS["b"], "IKEA + Amazon", f"{J_OTROS['n']} ambientes públicos, otros estilos: industrial, clásico, bohemio…")}{_tiles(J_OTROS, "IKEA + Amazon")}</div>
-</div>
-<div class="r10-cifras" data-paso="1">
-  <div><b>{J_CAT["b"]} a {J_CAT["a"]} · p = {f2(P_CAT)}</b>en total, con {J_CAT["emp"]} empate: test de signos sobre los {J_CAT["a"] + J_CAT["b"]} decididos</div>
-  <div><b>{f2(J_OTROS["util_a"])} → {f2(J_OTROS["util_b"])}</b>productos útiles (nota 2) en los otros estilos; en total, {f2(J_CAT["util_a"])} → {f2(J_CAT["util_b"])}</div>
-  <div><b>{J5["a"]} a {J5["b"]}</b>IKEA contra Amazon solo, en nuestros {J5["n"]} departamentos: Amazon pierde por estilo</div>
-</div>''',
-          "catálogo", "IKEA + ABO", f"El flujo usa los dos. Pero {J_CAT['b']} a {J_CAT['a']} es <mark>p = {f2(P_CAT)}</mark>, y los "
-          f"pedidos de otros estilos los escribimos sabiendo qué le falta a IKEA: la decisión es razonable; el titular "
-          f"«{J_OTROS['b']} a {J_OTROS['a']}», no.",
-          [f"En nuestros cinco departamentos, con pedidos nórdicos, IKEA le gana a Amazon solo, y los dos juntos empatan con "
-           f"IKEA. Sumamos seis ambientes públicos con otros estilos: ahí, IKEA más Amazon gana {J_OTROS['b']} a {J_OTROS['a']}. "
-           f"En total, {J_CAT['b']} a {J_CAT['a']}.",
-           f"Decisión: usamos los dos catálogos. Con dos salvedades: {J_CAT['b']} a {J_CAT['a']} en once ambientes da p igual a "
-           f"{f2(P_CAT)}, no es concluyente; y los pedidos de otros estilos los escribimos nosotros, sabiendo qué le falta a "
-           "IKEA. Muestra que Amazon cubre ese hueco, no cuán frecuente es."], 40)
 
 # =============================================================================================
-# 7 · Con búsqueda, con 5 al azar, o con el catálogo entero en el prompt: ¿hacía falta RAG?
+# 6 · Con búsqueda, con 5 al azar, o con el catálogo entero en el prompt: ¿hacía falta RAG?
 # =============================================================================================
 _sa = JA["resumen"]
 _mil_fichas = miles(D["prod_todos"])
-pregunta(7, "Con búsqueda o sin búsqueda", "¿La búsqueda aporta en la tarea real? ¿Y hacía falta, <em>si el catálogo entra en el contexto</em>?",
+pregunta(6, "Con búsqueda o sin búsqueda", "¿La búsqueda aporta en la tarea real? ¿Y hacía falta, <em>si el catálogo entra en el contexto</em>?",
          "Es el «con y sin retrieval» del flujo, con sus dos extremos: sin ranking (5 al azar) y con todo a la vista (el catálogo "
          "entero en el prompt). El primero es además el control del juez: si no distinguiera esas dos listas, ninguna "
          "comparación de punta a punta diría nada.",
@@ -439,7 +407,7 @@ pregunta(7, "Con búsqueda o sin búsqueda", "¿La búsqueda aporta en la tarea 
           "punta diría nada. Dos, la pregunta incómoda: si el catálogo entra en el contexto, ¿hacía falta RAG?",
           f"Mismo plan, mismo modelo que elige, mismo juez. Contra el azar, en {J_AZAR['n']} ambientes. Contra el catálogo entero "
           f"en el prompt, las {_mil_fichas} fichas en texto, en los {J_CTX['n']}."], 35)
-resultado(7, "Con búsqueda, al azar, o con el catálogo entero", f'''
+resultado(6, "Con búsqueda, al azar, o con el catálogo entero", f'''
 <div class="r-7">
   <div>
     <span class="et r7-et">sin ranking · {K} al azar del kind · {J_AZAR["n"]} ambientes</span>
@@ -470,7 +438,7 @@ resultado(7, "Con búsqueda, al azar, o con el catálogo entero", f'''
           50)
 
 # =============================================================================================
-# 8 · Tres redactores
+# 7 · Tres redactores
 # =============================================================================================
 _v1s = [CAM[V1]["hit@1"]] + [h[V1]["hit@1"] for h in HIB_R]
 _v2s = [CAM[V2]["hit@1"]] + [h[V2]["hit@1"] for h in HIB_R]
@@ -498,7 +466,7 @@ def _rep_svg():
     return "".join(o)
 
 
-unica(8, "Tres redactores", "¿Cuánto cambia el número <em>según quién escribe las consultas</em>?",
+unica(7, "Tres redactores", "¿Cuánto cambia el número <em>según quién escribe las consultas</em>?",
       "Las consultas de evaluación las escribió un modelo. La clase pidió promedio de ejecuciones y desvío: si el número cambia "
       "mucho con quién escribe, mide al redactor y no al sistema.",
       [("A", "Tres redactores independientes", "las mismas consultas, escritas otras dos veces mirando las mismas fotos"),
@@ -557,35 +525,35 @@ _visto = _sin("Use+Style+Feel+Goes with")
 _ex_a, _ex_b = rankings(ABL_DIR)[BASE + "|exact"], rankings(ABL_DIR)[BASE]
 _iguales = sum(x["ranked"] == y["ranked"] for x, y in zip(_ex_a, _ex_b, strict=True))
 tramite("tram1", 1, "De trámite: <em>las cuatro preguntas sobre el índice</em>", "qué se comparó (hit@1)", [
-    _tram(9, "Embedder", f'hashing {f3(_emb("hashing")["hit@1"])} · BM25 {f3(_emb("bm25")["hit@1"])} · BGE {f3(_emb("bge")["hit@1"])} · <b>Qwen3 {f3(EMB[V1]["hit@1"])}</b>',
+    _tram(8, "Embedder", f'hashing {f3(_emb("hashing")["hit@1"])} · BM25 {f3(_emb("bm25")["hit@1"])} · BGE {f3(_emb("bge")["hit@1"])} · <b>Qwen3 {f3(EMB[V1]["hit@1"])}</b>',
           f'Solo se sostiene Qwen3 sobre BGE ({nb(dif(_emb("bge")["vs_base"], flip=True))}). Contra contar palabras no se distingue '
           f'({nb(dif(_emb("hashing")["vs_base"], flip=True))}). Queda Qwen3 por robustez a la paráfrasis, sin evidencia medida.'),
-    _tram(10, "Dimensión", " · ".join(f"{'<b>' if d == 1024 else ''}{d}: {f3(v)}{'</b>' if d == 1024 else ''}" for d, v in _dims.items()),
+    _tram(9, "Dimensión", " · ".join(f"{'<b>' if d == 1024 else ''}{d}: {f3(v)}{'</b>' if d == 1024 else ''}" for d, v in _dims.items()),
           f"Con 512 da lo mismo que con 1024 ({nb(dif(_d512))}). Con {miles(D['prod_todos'])} productos la memoria no pesa: queda 1024."),
-    _tram(11, "Splitting y líneas", f'<b>un documento {f3(_doc["hit@1"])}</b> · un chunk por línea {f3(_chunk["hit@1"])} · línea contra línea {f3(_alin["hit@1"])}',
+    _tram(10, "Splitting y líneas", f'<b>un documento {f3(_doc["hit@1"])}</b> · un chunk por línea {f3(_chunk["hit@1"])} · línea contra línea {f3(_alin["hit@1"])}',
           f'No se parte: un producto es un documento de unas {D["palabras_med"]} palabras. Lo que importa es qué líneas lo componen: sin Colors, '
           f'{nb(dif(_sin("Colors")["vs_base"]))}; sin Shape, {nb(dif(_sin("Shape")["vs_base"]))}; con solo las cuatro de lo que se ve se encuentra igual ({f3(_visto["hit@1"])}).'),
-    _tram(12, "Base vectorial", "ChromaDB (HNSW, coseno) contra recorrer todos los vectores con numpy",
-          f"El mismo top-10 en {_iguales} de {len(_ex_a)} consultas. ChromaDB guarda los vectores y la metadata de los filtros, y es la pieza que escala."),
+    _tram(11, "Base vectorial", "ChromaDB (HNSW, coseno) contra recorrer todos los vectores con numpy",
+          f"El mismo top-10 en {_iguales} de {len(_ex_a)} consultas. La híbrida no consulta el HNSW: puntúa a todos los que pasan el filtro (con {miles(D['prod_todos'])}, milisegundos); con millones, cada buscador traería su top-k de un índice."),
 ], "Con el texto bien escrito, el índice casi no decide nada: son <mark>respuestas que hay que tener</mark>, no un gran experimento.",
     "Los de trámite, con la respuesta corta. Embedder: Qwen3 solo se sostiene sobre "
     "BGE; contra contar palabras no se distingue, porque consultas y descripciones comparten el molde. Dimensión: con 512 da lo "
-    f"mismo que con {miles(1024)}, y con {miles(D['prod_todos'])} productos la memoria no pesa. Splitting: no partimos, un "
-    "producto es un documento; lo que importa es qué líneas lo componen: las de lo que se ve, colores y forma. Base "
+    f"mismo que con {miles(1024)}, y con {miles(D['prod_todos'])} productos la memoria no pesa. Splitting: no partimos; "
+    "lo que importa son las líneas de lo que se ve, colores y forma. Base "
     f"vectorial: ChromaDB da el mismo top-10 que la búsqueda exacta en las {len(_ex_a)} consultas; la usamos porque "
-    "persiste y escala.", (9, 10, 11, 12))
+    "persiste y escala; la híbrida no lo consulta, puntúa a todos los que pasan el filtro.", (8, 9, 10, 11))
 
 _f_none, _f_type = HIB["qwen3|description|filtro-none"], HIB[BASE]
 _mini, _qrr = F[BASE + "|rerank-minilm-reranker"], RLOC[BASE + "|rerank-qwen3-reranker"]
 _d_abo = paired(TODOS_DIR, BASE, BASE, run_b=ABL_DIR)  # el mismo buscador, con ABO de distractores
 tramite("tram2", 2, "De trámite: <em>filtros, rerankers de texto, la escena</em> y el catálogo", "qué se comparó", [
-    _tram(13, "Filtros", f"hit@1 / hit@5 · sin filtro {_h15(_f_none)} · por tipo {_h15(_f_type)} · <b>por kind {_h15(B1)}</b>",
+    _tram(12, "Filtros", f"hit@1 / hit@5 · sin filtro {_h15(_f_none)} · por tipo {_h15(_f_type)} · <b>por kind {_h15(B1)}</b>",
           f'No suman en este banco, y el de kind cuesta 2 puntos de hit@5 ({nb(dif(_d_kind, "hit@5"))}). Se usa por algo que el banco no mide: '
           f'en los pedidos reales evita un {round(100 * DOC["otro_kind"])}% de candidatos de otro kind (se pide un sillón y aparece una silla de comedor). '
           f'El de medidas actúa poco: cambia {FM["candidatos_reemplazados"]} de {FM["candidatos"]} candidatos en los ambientes reales, y solo el {round(100 * D["ikea_con_medida"])}% de IKEA tiene alguna medida.'),
-    _tram(14, "Rerankers de texto", f"hit@1 / hit@5 · sin rerank {_h15(RLOC[BASE])} · MiniLM {_h15(_mini)} · Qwen3-Reranker {_h15(_qrr)}",
+    _tram(13, "Rerankers de texto", f"hit@1 / hit@5 · sin rerank {_h15(RLOC[BASE])} · MiniLM {_h15(_mini)} · Qwen3-Reranker {_h15(_qrr)}",
           f'Empeoran ({nb(dif(_qrr["vs_base"]))} el mejor): releen el mismo texto que ya usó la búsqueda. El que suma es el que mira las fotos (experimento 5).'),
-    _tram(15, "La escena", f'<b>plantilla: {IMG_PL["identificados"]} de {IMG_PL["productos"]} reconocidos, el ambiente en {IMG_PL["ambiente_conservado"]} de {IMG_PL["corridas"]}</b> · '
+    _tram(14, "La escena", f'<b>plantilla: {IMG_PL["identificados"]} de {IMG_PL["productos"]} reconocidos, el ambiente en {IMG_PL["ambiente_conservado"]} de {IMG_PL["corridas"]}</b> · '
           f'escrita por el LLM: {IMG_LLM["identificados"]} de {IMG_LLM["productos"]}, en {IMG_LLM["ambiente_conservado"]} de {IMG_LLM["corridas"]}',
           f'Empate, medido en los {IMG_PL["corridas"]} ambientes con las mismas listas ({nb(sg(ESC_DIF) + " " + ic_txt(*DOC["escena_ic"]))} de reconocidos, pareado). '
           f'Queda la plantilla: da lo mismo y cuesta una llamada menos ({usd(C_SCENE, 3)} por pedido). No medimos si los muebles quedan mejor repartidos.'),
@@ -599,4 +567,4 @@ tramite("tram2", 2, "De trámite: <em>filtros, rerankers de texto, la escena</em
     "el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. La escena: la "
     "plantilla y la escrita por el LLM empatan, como vimos. Y el catálogo: "
     f"ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador {f1(-100 * _d_abo['hit@5'])} puntos "
-    "de hit@5.", (13, 14, 15))
+    "de hit@5.", (12, 13, 14))
