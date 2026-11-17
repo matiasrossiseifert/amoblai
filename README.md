@@ -156,9 +156,12 @@ del flujo buscaba como en el paso 4; la versión 2 (la actual) busca como en el 
 - **Tres redactores.** Con las consultas escritas tres veces por separado, la búsqueda del flujo
   da hit@1 0,539 ± 0,025 y MRR 0,643 ± 0,015 (la híbrida, 0,604 ± 0,009). Una diferencia de 2
   puntos entre dos métodos no es señal.
-- **Por imagen o por texto.** La primera aproximación buscaba por parecido visual entre un
-  recorte del mueble y la foto del catálogo (DINOv3). Con la misma unidad (los 232 productos
-  anotados): recall@1 0,43 por imagen contra 0,55 por texto (+0,12 [0,04; 0,20]).
+- **Por imagen o por texto.** Un experimento probó otra arquitectura, con la idea de que un
+  generador de imágenes sabe elegir, combinar y ubicar muebles: que amueble primero la foto con
+  muebles genéricos, recortar cada mueble y buscarlo por parecido visual con las fotos del
+  catálogo (DINOv3). Se midió el buscador, con la misma unidad (los 232 productos anotados):
+  recall@1 0,43 por imagen contra 0,55 por texto (+0,12 [0,04; 0,20]), y con recortes de fotos
+  reales, el mejor caso para la imagen. El flujo entero por imagen no se corrió.
 - **Relevancia graduada.** Un juez califica el top-3 con 2, 1 o 0 contra la pieza del ambiente
   (150 consultas): el primer candidato sirve en el 78% y alguno del top-3 en el 87%
   (reponderado a la población). El juez le da 2 al anotado el 81% de las veces y a los demás el
@@ -327,9 +330,9 @@ datos/
   catalogo/           descripciones (por lote), kinds, correcciones, ikea.yaml
   evaluacion_ikea/    consultas de evaluación sobre los ambientes IKEA
   ambientes_vacios/   fotos de ambientes (dos vistas de cada uno)
-  resultados/         corridas del flujo, evaluaciones, reporte, gastos; v0_imagen/
+  resultados/         corridas del flujo, evaluaciones, reporte, gastos; v0_imagen/ (el experimento por imagen)
   dataset/ procesados/ cache/    (se commitean para no bajar ni pagar de nuevo; la CLI los rehace)
-deprecated/           el código de la primera aproximación (retrieval por imagen); solo se evaluó su buscador
+deprecated/           el código del experimento de búsqueda por imagen; solo se evaluó su buscador
 ```
 
 ## Desarrollo
@@ -339,10 +342,10 @@ uv run pytest
 uv run ruff check src tests apps && uv run ruff format --check src tests apps
 ```
 
-La primera aproximación (la de la propuesta: generar una imagen amoblada, recortar los muebles
-con Grounding DINO y SAM y buscarlos por parecido visual con DINOv3) sigue en `deprecated/`, con
-sus propios tests. De ella se construyó y se evaluó el buscador, sobre las fotos de ambientes de
-IKEA; nunca corrió de punta a punta. Es la línea de base del retrieval por texto:
+El experimento de búsqueda por imagen (generar una imagen amoblada, recortar los muebles con
+Grounding DINO y SAM y buscarlos por parecido visual con DINOv3) está en `deprecated/`, con sus
+propios tests. Se construyó y se evaluó su buscador contra el de texto, sobre las fotos de
+ambientes de IKEA; nunca corrió de punta a punta:
 
 ```bash
 uv sync --extra cpu --extra imagen --group dev

@@ -1,31 +1,35 @@
-"""La hoja de estilo. Concepto: «el flujo y la lista». Pizarra verde de tienda (tablero perforado),
-el esquema del sistema en tiza clara, y encima los objetos de la compra: etiquetas de producto,
-tickets y talones. El coral de las etiquetas de precio marca la etapa que se prueba y lo que queda."""
+"""La hoja de estilo. Concepto: «el flujo y la lista». Todas las láminas en blanco: el esquema del sistema
+en trazo gris, y encima los objetos de la compra (etiquetas de producto, tickets y talones). Un solo
+acento, azul cobalto, marca la etapa que se prueba y lo que queda. Los nombres de las variables vienen
+de la paleta anterior (pizarra verde y coral): --fondo/--crema son el fondo y la tinta de las láminas
+que antes eran oscuras, --papel/--tinta los de las claras, --coral el acento y --noche el texto sobre él."""
 
 CSS = r"""
 :root{
-  --noche:#0A130F;
-  --fondo:#0F1F19;
-  --fondo-2:#152921;
-  --fondo-3:#1C3329;
-  --perfo:rgba(214,236,224,.055);
-  --hilo-o:rgba(214,236,224,.13);
-  --crema:#F3F0E7;
-  --trazo:#A6C2B4;
-  --trazo-2:#6F8E80;
-  --trazo-3:#4A6659;
-  --papel:#EDF0EA;
-  --papel-2:#E2E7E0;
-  --ticket:#FFFEFA;
-  --tinta:#10201A;
-  --tinta-2:#4F6158;
-  --tinta-3:#86968E;
-  --hilo:#CDD6CF;
-  --coral:#FF5B3F;
-  --coral-2:#E8462A;
-  --coral-s:rgba(255,91,63,.15);
-  --salvia:#B7CDC2;
-  --salvia-2:#8FA99C;
+  --noche:#FFFFFF;
+  --fondo:#FFFFFF;
+  --fondo-2:#F4F5F8;
+  --fondo-3:#E9ECF1;
+  --perfo:rgba(22,24,29,.06);
+  --hilo-o:rgba(22,24,29,.13);
+  --crema:#16181D;
+  --trazo:#4A5060;
+  --trazo-2:#767D8B;
+  --trazo-3:#B8BEC8;
+  --papel:#FFFFFF;
+  --papel-2:#F1F3F6;
+  --ticket:#FFFFFF;
+  --tinta:#16181D;
+  --tinta-2:#4A5060;
+  --tinta-3:#858B98;
+  --hilo:#DCDFE5;
+  --coral:#2A4BDB;
+  --coral-2:#2442C8;
+  --coral-s:rgba(42,75,219,.12);
+  --salvia:#C9D1DF;
+  --salvia-2:#98A3B8;
+  --perfo-c:rgba(22,24,29,.06);
+  --ticket-2:#F5F6F8;
   --display:'Ubuntu Sans','Ubuntu',system-ui,sans-serif;
   --sans:'Ubuntu Sans','Ubuntu',system-ui,sans-serif;
   --mono:'Ubuntu Sans Mono','Ubuntu Mono',ui-monospace,monospace;
@@ -43,7 +47,7 @@ ul,ol{list-style:none}
   background-image:radial-gradient(circle,var(--perfo) 1.6px,transparent 1.9px);background-size:36px 36px;background-position:18px 18px}
 .slide.activa{opacity:1;visibility:visible;transition:opacity .32s ease}
 .slide.clara{color:var(--tinta);background-color:var(--papel);
-  background-image:radial-gradient(circle,rgba(16,32,26,.075) 1.5px,transparent 1.8px)}
+  background-image:radial-gradient(circle,var(--perfo-c) 1.5px,transparent 1.8px)}
 [data-paso]{opacity:0;transform:translateY(14px);transition:opacity .38s ease,transform .38s ease}
 [data-paso].visto{opacity:1;transform:none}
 [data-hasta]{transition:opacity .3s ease}
@@ -78,7 +82,7 @@ code{font:500 .86em var(--mono);background:var(--fondo-3);padding:2px 8px;border
 
 /* etiqueta de producto (colgante) */
 .etq{position:relative;background:var(--ticket);color:var(--tinta);border-radius:8px;padding:16px 14px 12px;box-shadow:0 1px 0 rgba(0,0,0,.18),0 16px 30px -18px rgba(0,0,0,.6)}
-.etq::before{content:"";position:absolute;left:50%;top:7px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--fondo);box-shadow:inset 0 0 0 1.5px rgba(16,32,26,.25)}
+.etq::before{content:"";position:absolute;left:50%;top:7px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:var(--fondo);box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--tinta) 25%,transparent)}
 .clara .etq::before{background:var(--papel)}
 .etq .prod{width:100%!important;aspect-ratio:1;height:auto!important}
 .etq .art{display:block;font:500 15px/1.2 var(--mono);color:var(--tinta-3);margin-top:8px;letter-spacing:.02em}
@@ -105,7 +109,7 @@ code{font:500 .86em var(--mono);background:var(--fondo-3);padding:2px 8px;border
 
 /* talón: la decisión de cada experimento */
 .talon{position:absolute;left:96px;right:96px;bottom:100px;display:grid;grid-template-columns:300px 1fr;background:var(--ticket);color:var(--tinta);
-  border-radius:6px;box-shadow:0 22px 40px -24px rgba(16,32,26,.55),0 0 0 1px rgba(16,32,26,.06);min-height:124px}
+  border-radius:6px;box-shadow:0 22px 40px -24px color-mix(in srgb,var(--tinta) 55%,transparent),0 0 0 1px color-mix(in srgb,var(--tinta) 6%,transparent);min-height:124px}
 .talon-cod{position:relative;padding:16px 22px 14px 28px;display:flex;flex-direction:column;justify-content:center;border-right:2.5px dashed var(--hilo);color:var(--tinta-2)}
 .talon-cod::before,.talon-cod::after{content:"";position:absolute;right:-12px;width:22px;height:22px;border-radius:50%;background:var(--papel)}
 .slide:not(.clara) .talon-cod::before,.slide:not(.clara) .talon-cod::after{background:var(--fondo)}
@@ -273,7 +277,7 @@ CSS += r"""
 .pb-tags{height:390px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px 0;align-content:center;justify-items:center}
 .pb-tags .etq{transform:rotate(var(--r,0deg));padding:14px 12px 8px}
 .pb-tags .etq .nom{font-size:17px}.pb-tags .etq .art{font-size:13px;margin-top:4px}
-.pb-preg{position:absolute;left:96px;right:96px;bottom:104px;display:grid;grid-template-columns:repeat(3,1fr);gap:68px;border-top:2px dotted var(--trazo-3);padding-top:26px}
+.pb-preg{position:absolute;left:96px;right:96px;bottom:104px;display:grid;grid-template-columns:repeat(2,1fr);gap:68px;border-top:2px dotted var(--trazo-3);padding-top:26px}
 .pb-preg li{display:flex;gap:16px;align-items:baseline;font:700 30px/1.18 var(--display);font-stretch:86%}
 .pb-preg b{font:600 22px/1 var(--mono);color:var(--coral);flex:none}
 
@@ -281,6 +285,15 @@ CSS += r"""
 .pr-pie{font:400 20px/1.3 var(--mono);color:var(--trazo-2);margin-top:12px}
 
 /* por qué RAG */
+.rag-cmp{margin-top:84px;max-width:1500px}
+.rag-cmp .rc-cab,.rag-cmp .rc-f{display:grid;grid-template-columns:330px 1fr 1fr;gap:48px;align-items:baseline}
+.rag-cmp .rc-cab{padding-bottom:16px;border-bottom:2px solid var(--tinta)}
+.rag-cmp .rc-cab b{font:760 36px/1 var(--display);font-stretch:84%;color:var(--tinta-3)}
+.rag-cmp .rc-cab b.si{color:var(--coral-2)}
+.rag-cmp .rc-f{padding:34px 0;border-bottom:2px dotted var(--hilo)}
+.rag-cmp .rc-f .rag-d{margin:0;font-size:22px}
+.rag-cmp .rc-f p{font:500 32px/1.2 var(--sans);color:var(--tinta-3)}
+.rag-cmp .rc-f p.si{font-weight:700;color:var(--tinta)}
 .rag-tres{display:grid;grid-template-columns:1fr 1fr 1.18fr;gap:56px;margin-top:50px;align-items:start}
 .rag-c h3{font:760 34px/1.08 var(--display);font-stretch:84%}
 .rag-c>p{font:400 24px/1.3 var(--sans);color:var(--tinta-2);margin:8px 0 30px;min-height:62px}
@@ -480,7 +493,7 @@ CSS += r"""
 .nota.chica{font-size:21px;margin-top:16px}
 .nota b{color:var(--tinta)}
 .nota.aviso b{color:var(--coral-2)}
-.minimapa{position:absolute;right:96px;top:62px;width:250px;background:var(--fondo);border-radius:8px;padding:10px 12px 8px}
+.minimapa{position:absolute;right:96px;top:62px;width:250px;background:var(--fondo);border-radius:8px;padding:10px 12px 8px;box-shadow:0 0 0 1.5px var(--hilo)}
 .minimapa .flujo .reg{stroke-width:3}
 .minimapa .flujo .caja{stroke-width:3}
 .minimapa .flujo .fl{stroke-width:4}
@@ -828,7 +841,7 @@ body.modo-todo .slide{transition:none}
 .p13-l .letra{background:var(--tinta);color:var(--papel);min-width:32px;height:32px;font-size:16px}
 .p13-l b{display:block;font:700 20px/1.1 var(--display);font-stretch:88%;color:var(--tinta)}
 .p13-l p{font:400 15px/1.45 var(--mono);color:var(--tinta-2);margin-top:4px}
-.p13-l .hl{color:var(--tinta);font-weight:600;background:rgba(255,91,63,.17);box-shadow:inset 0 -2px 0 var(--coral);padding:0 2px;border-radius:2px}
+.p13-l .hl{color:var(--tinta);font-weight:600;background:color-mix(in srgb,var(--coral) 17%,transparent);box-shadow:inset 0 -2px 0 var(--coral);padding:0 2px;border-radius:2px}
 .r13{display:grid;grid-template-columns:968px 1fr;gap:44px;margin-top:40px}
 .r13-f{display:grid;grid-template-columns:272px 1fr 64px 112px 120px;column-gap:16px;align-items:center;min-height:50px;border-top:1px dotted var(--hilo)}
 .r13-f.cab{min-height:30px;border-top:0;align-items:end;font:400 15px/1.15 var(--mono);color:var(--tinta-3)}
@@ -913,7 +926,7 @@ CSS_REV = r"""
 .gb-fila.gana .gb-nota{color:var(--coral-2);font-weight:600}
 .graf-b.oscuro .gb-fila.gana .gb-val{color:var(--coral)}
 
-/* el mapa de los experimentos: pines llenos y huecos, y el banco de prueba */
+/* el mapa de los experimentos: pines llenos y huecos, y el set de evaluación */
 .flujo .pin.hueco circle{fill:var(--fondo);stroke:var(--coral);stroke-width:3}
 .flujo .pin.hueco text{fill:var(--coral)}
 .flujo .banco .sub{font:400 17px var(--mono);fill:var(--trazo)}
@@ -930,7 +943,7 @@ CSS_REV = r"""
 .rx em.hueco{background:none;box-shadow:inset 0 0 0 2.5px var(--coral);color:var(--coral)}
 .rx em.no{background:none;border:2px dashed var(--trazo-2);color:var(--trazo-2);font-size:18px}
 
-/* el generador y los jueces; las trampas */
+/* el generador y los jueces; las advertencias */
 .jz p b{color:var(--crema);font-weight:600}
 .jz-grilla.gen{gap:40px 90px;margin-top:38px}
 .jz-grilla.gen .jz h4{font-size:33px;display:flex;align-items:baseline;gap:16px}
@@ -1111,8 +1124,8 @@ CSS_REV = r"""
 .ej-anot .cz .prod{width:84px!important;height:84px!important}
 .ej-yaml{margin-bottom:26px}
 .ej-yaml .pr-tx{font-size:19px;line-height:1.62;padding:16px 22px 18px;white-space:pre}
-.ej-yaml .del{color:var(--tinta-3);text-decoration:line-through;text-decoration-color:rgba(16,32,26,.4)}
-.ej-yaml .add{display:inline-block;width:calc(100% + 44px);color:var(--tinta);font-weight:700;background:rgba(255,91,63,.17);box-shadow:inset 3px 0 0 var(--coral);margin:0 -22px;padding:0 22px}
+.ej-yaml .del{color:var(--tinta-3);text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--tinta) 40%,transparent)}
+.ej-yaml .add{display:inline-block;width:calc(100% + 44px);color:var(--tinta);font-weight:700;background:color-mix(in srgb,var(--coral) 17%,transparent);box-shadow:inset 3px 0 0 var(--coral);margin:0 -22px;padding:0 22px}
 .ej-yaml .com{font-style:normal;color:var(--tinta-3)}
 .ej-por{display:grid;gap:14px;counter-reset:p}
 .ej-por li{counter-increment:p;display:grid;grid-template-columns:40px 1fr;font:400 22px/1.38 var(--sans);color:var(--trazo)}

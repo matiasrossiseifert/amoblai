@@ -36,11 +36,11 @@ CSS = r"""
 
 /* =========================== el prompt, como se manda =========================== */
 .pr-tk{position:relative;background:var(--ticket);color:var(--tinta);border-radius:6px;box-shadow:0 26px 44px -26px rgba(0,0,0,.75);overflow:hidden}
-.pr-cab{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:13px 22px 11px;border-bottom:2px dashed var(--hilo);background:#F6F4EC}
+.pr-cab{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:13px 22px 11px;border-bottom:2px dashed var(--hilo);background:var(--ticket-2)}
 .pr-cab b{font:600 19px/1 var(--mono);color:var(--tinta)}
 .pr-cab span{font:400 15px/1 var(--mono);color:var(--tinta-3)}
 .pr-tx{margin:0;padding:14px 22px 16px;font:400 16.5px/1.5 var(--mono);white-space:pre-wrap;color:var(--tinta-2);tab-size:2}
-.pr-tx .hl{color:var(--tinta);font-weight:600;background:rgba(255,91,63,.17);box-shadow:inset 0 -2px 0 var(--coral);padding:0 2px;border-radius:2px}
+.pr-tx .hl{color:var(--tinta);font-weight:600;background:color-mix(in srgb,var(--coral) 17%,transparent);box-shadow:inset 0 -2px 0 var(--coral);padding:0 2px;border-radius:2px}
 .pr-tx .ph{font-style:normal;color:var(--coral-2);font-weight:600}
 .pr-tx .el{display:block;color:var(--tinta-3);line-height:1.1;margin:2px 0}
 
@@ -63,14 +63,14 @@ CSS = r"""
 .rx span{display:block;font:400 18px/1.3 var(--sans);color:var(--trazo);margin-top:2px}
 
 /* =========================== 0 · el mapa completo =========================== */
-.rm-izq{position:absolute;left:96px;top:78px;width:700px}
+.rm-izq{position:absolute;left:96px;top:78px;width:580px}
 .rm-grupos{display:grid;gap:26px;margin-top:40px}
 .rm-g{border-left:3px solid var(--trazo-3);padding:2px 0 4px 22px;transition:border-color .3s}
 .rm-g h3{font:600 20px/1.2 var(--mono);color:var(--coral);letter-spacing:.01em}
 .rm-g p{font:400 25px/1.36 var(--sans);color:var(--trazo);margin-top:8px;text-wrap:pretty}
 .rm-g p b{color:var(--crema);font-weight:600}
 .rm-g.actual{border-left-color:var(--coral)}
-.rm-esq{position:absolute;left:880px;top:84px;width:950px}
+.rm-esq{position:absolute;left:740px;top:84px;width:1084px}
 .rem-rm{left:96px;right:auto;width:700px;bottom:104px;font-size:38px}
 
 /* =========================== 1 · catálogo =========================== */
@@ -150,7 +150,7 @@ CSS = r"""
 .rp-pz .q{color:var(--tinta-3)}
 .rp-pz b{font-weight:600}
 .rp-pz .md{color:var(--tinta-3);white-space:nowrap}
-.rp-pz.uno{background:rgba(255,91,63,.1);box-shadow:inset 3px 0 0 var(--coral)}
+.rp-pz.uno{background:color-mix(in srgb,var(--coral) 10%,transparent);box-shadow:inset 3px 0 0 var(--coral)}
 .rp-q{width:560px}
 .rp-q .ficha-tk{margin-top:0}
 .rp-q .rp-why{font:italic 400 17px/1.38 var(--sans);color:var(--trazo);margin-top:14px;text-wrap:pretty}
@@ -300,4 +300,18 @@ CSS += r"""
 .rd-ej .ficha div{font-size:14px;gap:8px}
 .rd-ej .ficha{gap:3px}
 .rd-ej .ej-par{grid-template-columns:120px 1fr}
+/* fase 1 · catálogo: las dos fuentes como una suma, y el mismo registro en las dos */
+.rc-eq{display:flex;align-items:flex-start;gap:40px;margin-top:64px}
+.rc-n b{display:block;font:800 128px/.86 var(--display);font-stretch:76%;letter-spacing:-.01em;color:var(--crema)}
+.rc-n span{display:block;font:700 30px/1.1 var(--display);font-stretch:86%;margin-top:14px}
+.rc-n i{display:block;font:400 17px/1.3 var(--mono);font-style:normal;color:var(--trazo-2);margin-top:6px}
+.rc-n.tot b{color:var(--coral)}
+.rc-op{font:300 84px/1 var(--sans);color:var(--trazo-3);padding-top:16px}
+.rt-banda.rc-b{top:590px;justify-content:space-between;gap:0}
+.rc-b .reg-card{width:836px;grid-template-columns:190px 1fr;gap:0 30px;padding:24px 28px}
+.rc-b .reg-card>.prod{grid-row:auto;width:190px!important;height:190px!important}
+.rc-b .reg-card h4{font-size:19px}
+.rc-b .rg-n{font:600 22px/1.3 var(--mono);color:var(--tinta);margin:10px 0 12px}
+.rc-b .reg-card dl{gap:6px}
+.rc-b .reg-card dl div{grid-template-columns:120px 1fr;font-size:21px}
 """

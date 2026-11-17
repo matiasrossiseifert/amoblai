@@ -1,5 +1,10 @@
 # Revisión crítica de amoblai (2026-11-12)
 
+> **Corrección del 2026-11-15.** La propuesta que aceptó la cátedra es la de embeddings sobre
+> descripciones de los productos; la búsqueda por imagen es un experimento (el 8 de la
+> presentación), no una versión anterior ni la propuesta aprobada. Las líneas que decían otra cosa
+> están corregidas.
+
 Qué pide el enunciado, qué haría alguien que piensa el problema desde cero, qué tenemos, qué
 estaba mal y qué cambió. Está escrita para discutirla entre los tres antes de cerrar la entrega.
 
@@ -61,7 +66,7 @@ antes de darlo por cierto. Todo lo que dice "verificado" se recalculó.
 | Extras | webapp, registro de gastos y tokens, investigación | bien | LangSmith no (decir por qué) |
 | Ejercicio 3 (2 hojas) | `docs/entregas/ej3_informe.pdf` | bien | corregidas tres afirmaciones y el costo |
 | Ejercicio 4: versión 1, versión 2, configuración antes y después | una lámina de 30 s | **flojo** | decidir (sección 6) |
-| Oral: desafíos encontrados | disperso | flojo | una lámina: el cambio desde la propuesta aprobada |
+| Oral: desafíos encontrados | disperso | flojo | una lámina con los desafíos |
 | Oral: resultados en ambas versiones | no está | **falta** | sale de la sección 6 |
 
 ## 2. El problema pensado desde cero, contra lo que tenemos
@@ -78,7 +83,7 @@ Lo que dijo quien lo pensó sin ver el repo, y cómo estamos en cada punto:
 | El ground truth de IKEA es un **proxy** chico: sirve para comparar cambios grandes, no para elegir entre embedders. | Lo usábamos también para lo segundo. Corregido en cómo se cuenta. |
 | Elegir entre los candidatos es **selección conjunta** (un conjunto que combina), con derecho a decir "no hay". | Igual (`choose`, cantidad 0). En 187 piezas nunca dijo "no hay": sustituye. |
 | El prompt de la imagen lo arma **una plantilla** desde la lista validada, no un LLM. | Igual. |
-| No haría: generar primero y buscar después por imagen; un agente con herramientas; fine-tuning; layout 3D; comparar modelos de imagen. | La primera era nuestra propuesta original (la "v0"): se abandonó. El resto no lo hicimos. |
+| No haría: generar primero y buscar después por imagen; un agente con herramientas; fine-tuning; layout 3D; comparar modelos de imagen. | La primera la probamos como experimento (búsqueda por imagen) y perdió contra el texto. El resto no lo hicimos. |
 | La pregunta más incómoda: **"¿hacía falta RAG si el catálogo entra en el contexto?"** | Sin respuesta escrita hasta hoy. Desde el 12/11 a la tarde, medida (T8d): en calidad empatan; RAG se justifica por escala, tráfico y actualización. Sección 7. |
 
 **Complicaciones que tenemos y su justificación:**
@@ -125,7 +130,7 @@ Sin borrar ninguno. "Va" quiere decir que merece lugar en el oral.
 | **Cómo se escribe la consulta** (nuevo) | ¿Sirve escribir la consulta como una ficha, contra no reescribirla? | Es la técnica de Advanced RAG del flujo y no estaba medida contra no hacerla. Ver abajo. |
 | **Elección con el VLM** (rerank del top-10) | ¿Un VLM que mira las fotos ordena mejor que el coseno? | +0,151 [0,116; 0,188]. Es el techo de una técnica aislada, **no un paso del flujo**: el reranker ordena contra la consulta sin ver el ambiente; `choose` elige con la foto del ambiente y el pedido, y nunca se midió contra ground truth. |
 | **Cuántos candidatos** | ¿Por qué 5 y no 3 o 10? | De 3 a 5: +0,029 [0,015–0,043], significativo. Sumar que en los 11 ambientes el 24% de lo elegido salió de los puestos 4 y 5. |
-| **Texto contra imagen** (la propuesta original contra la actual) | ¿Buscar por descripción o por recorte? | Reportarlo con la misma unidad: por producto anotado, 0,43 contra 0,55 (+0,12 [0,04–0,20]). Y decir qué fue la v0: solo se construyó y evaluó su buscador; nunca corrió de punta a punta. |
+| **Texto contra imagen** (el experimento por imagen contra el flujo) | ¿Buscar por descripción o por recorte? | Reportarlo con la misma unidad: por producto anotado, 0,43 contra 0,55 (+0,12 [0,04–0,20]). Y decir qué se midió: solo se construyó y evaluó su buscador; nunca corrió de punta a punta. |
 | **Qué catálogo, de punta a punta** | ¿IKEA, ABO o los dos? | Lo único que evalúa el flujo entero. 8 a 2 da p = 0,11; el 6 a 0 es sobre pedidos escritos sabiendo qué le falta a IKEA. La decisión es razonable; el titular, no. |
 | **Tres redactores** | ¿Cuánto cambia el número según quién escribe la consulta? | ±2,5 puntos. Usarlo: no leer diferencias de 2 puntos. |
 | **Híbrida y multimodal** (nuevo) | ¿Suman la búsqueda por palabras y la foto del producto? | Ver abajo. Es la versión 2. |
@@ -140,7 +145,7 @@ honesto (no suma en el banco de prueba; se usa por otra razón). Dimensión (512
 Splitting por línea. ChromaDB contra búsqueda exacta. Cross-encoder MiniLM (empeora). Catálogo
 ampliado y revisado (son decisiones de datos, no experimentos). ABO como distractores (contarlo
 con hit@5: baja 3,5 puntos). Relevancia graduada (buena medición, no compara nada). La grilla de
-la v0 (el mejor diseño del repo, pero de la versión abandonada). La prueba del flujo (sirve para
+la búsqueda por imagen (el mejor diseño del repo, pero de una arquitectura que no se usa). La prueba del flujo (sirve para
 contar desafíos). Una lámina para todos los de trámite juntos.
 
 ### No sirven tal como están
@@ -374,7 +379,7 @@ Las otras maneras de contarlo, descartadas como Ejercicio 4:
 |---|---|
 | Por calendario: de 3 a 5 candidatos y de IKEA a IKEA + ABO | Son dos cambios juntos, y quedan mejor donde están: como experimentos del Ejercicio 2 |
 | Con y sin el que elige (0,535 → 0,687) | `choose` existió desde el primer día: es una ablación, no una iteración |
-| El cambio de arquitectura (de buscar por imagen a RAG por texto) | La primera nunca corrió de punta a punta. Va en la lámina de desafíos |
+| Buscar por imagen contra RAG por texto | La búsqueda por imagen nunca corrió de punta a punta. Va como experimento (el 8) |
 
 ## 7. Las preguntas difíciles del oral
 
@@ -455,12 +460,12 @@ Los números de lámina son los de la principal **antes** de actualizarla:
 | La imagen: del cuarto reimaginado al cuarto del cliente (36) | La edición estricta ganó | Una imagen por variante no decide. Con el experimento rehecho (T10): la plantilla y la escena del LLM empatan en 11 ambientes, y se usa la plantilla por costo y simplicidad. |
 | Qué catálogo (34) y conclusiones (41) | "8 a 2", "6 a 0" | Sumar p = 0,11 y que los pedidos de otros estilos se escribieron sabiendo qué le falta a IKEA. |
 | "El camino: de 0,08 a 0,69" (38) | Seis barras que terminan en el rerank | El camino de la sección 4: de 0,11 a 0,53 (el flujo), y 0,60 con la híbrida. El 0,69 va aparte, como techo de una técnica aislada. |
-| La v0 (fase 3 y desafíos) | "no sirve con un ambiente vacío: no hay nada que recortar" | Fue la propuesta aprobada; su diseño generaba primero una imagen. Construimos y medimos su buscador (0,43 de recall por producto contra 0,55 por texto) y cambiamos. Nunca corrió entera. |
+| La búsqueda por imagen (fase 3 y desafíos) | "no sirve con un ambiente vacío: no hay nada que recortar" | Es un experimento: un generador amuebla primero y se busca cada recorte por imagen. Medimos su buscador (0,43 de recall por producto contra 0,55 por texto). Nunca corrió entera. |
 | Ejercicio 4 (37) | Una tabla de 8 filas en 30 segundos | Versión 1, versión 2, configuración antes y después y los resultados de las dos: 3 láminas. |
 | Métricas del generador (22) | Faithfulness 0,89–0,96; answer relevance 0,69–0,73 contra 0,37 | 0,82 (289 de 351) y 0,69 contra 0,55 de la vara cruzada, sobre las 11 listas finales. |
 | La imagen (23) | 3 de 4 productos reconocidos | 31 de 75 (41%) en las 11 imágenes de la configuración final; el ambiente se conserva en 7 de 11. |
 | "Ocho de las once fases las decidió un experimento" | — | Sacarla: suena a volumen, y tres de esos experimentos no sostienen su decisión. |
-| Falta | — | Una lámina de desafíos (el cambio de arquitectura) y la respuesta a "¿hacía falta RAG?". |
+| Falta | — | Una lámina de desafíos y la respuesta a "¿hacía falta RAG?". |
 
 ## Informes completos
 

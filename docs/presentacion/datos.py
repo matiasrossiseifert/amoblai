@@ -387,10 +387,15 @@ def _pasos(step: str) -> list[float]:
     return [r["cost_usd"] for r in LEDGER if r.get("time", "") >= "2026-11-10" and not r.get("cached") and r["step"] == step]
 
 
+_MODELOS_16_11 = {"sonnet", "haiku", "openai"}   # experimentos de modelos del 16/11: van al final de presentacion_simple
+
+
 def _elecciones(carpeta: Path | None = None) -> list[float]:
     """El costo de cada elección del flujo guardada en las corridas de punta a punta."""
     out = []
     for f in sorted((carpeta or PAP).glob("*/3_choice.json" if carpeta else "*/*/*/3_choice.json")):
+        if not carpeta and f.parent.parent.name in _MODELOS_16_11:
+            continue
         c = jload(f)
         if c.get("prompt") == "choose_combination_v2" and c.get("cost_usd"):
             out.append(c["cost_usd"])

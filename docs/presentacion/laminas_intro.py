@@ -1,18 +1,17 @@
-"""El producto y por qué es un RAG; los desafíos (el cambio de arquitectura); los datos para medir,
-las métricas y sus trampas; y el mapa de los experimentos. (El catálogo y el flujo los cuenta el
+"""El producto y por qué es un RAG; los desafíos; los datos para medir,
+las métricas y sus advertencias; y el mapa de los experimentos. (El catálogo y el flujo los cuenta el
 recorrido por las fases: laminas_recorrido.py.)"""
 
 from __future__ import annotations
 
 from PIL import Image
 
-from datos import (AM, B1, B2, D, D21, DIAG_CAT, EMB, ESTILO, F, FINALES, FOTO, G_ANOT2, G_OTROS2, GEN_BAJA, GEN_SUBE, GT_ANY,
-                   GT_ROOM_PATH, J_RUIDO, RESP2, ROOM_CHECK, RUIDO_CAMBIAN, RUIDO_PROD,
-                   HERO, HERO_MET, HERO_PICKS, HERO_REQ, HERO_SLUG, HIB_DIR, IMG_TOT, J_AZAR, J_VER, K, KIND_ES,
-                   N_AMB, N_AMB_ANS, N_ANS, N_BUS, N_HERO, N_HERO_ABO, N_HERO_UNID, NO_PASAN, PEDIDOS, PUB_POR_ARCHIVO,
-                   Q_LAMPARA, Q_MESA, RESP, ROOT, SOFA, V0_REC, V0_SOFA_OK, V1, VT, credito, dif, esc, f2, f3, ic_txt,
-                   medida, miles, nb, pct, rankings, sg)
-from piezas import TRAMITE, barras, consulta, etq, flujo, foto, kick, producto, ranking
+from datos import (AM, B1, D, DIAG_CAT, EMB, ESTILO, F, GT_ANY,
+                   GT_ROOM_PATH, J_RUIDO, RUIDO_CAMBIAN, RUIDO_PROD,
+                   HERO, HERO_MET, HERO_PICKS, HERO_REQ, HIB_DIR, K, KIND_ES,
+                   N_AMB, N_AMB_ANS, N_ANS, N_BUS, N_HERO, N_HERO_ABO, N_HERO_UNID, PEDIDOS, PUB_POR_ARCHIVO,
+                   Q_LAMPARA, Q_MESA, V1, esc, f2, f3, miles, rankings, ROOT, jload, HERO_CHOOSE, ROOM_CHECK, JV)
+from piezas import TRAMITE, consulta, etq, flujo, foto, kick, producto, ranking
 from registro import lam
 
 import statistics
@@ -43,7 +42,7 @@ lam("problema", "El problema", "El problema", f'''
 <h2 class="t">¿Qué compro para este ambiente, <em>y cómo queda?</em></h2>
 <div class="pb-tres">
   <figure class="pb-p"><div class="pb-tags">{_tags}</div>
-    <figcaption><b>Los catálogos</b> muestran cada mueble suelto, sobre fondo blanco.</figcaption></figure>
+    <figcaption><b>Los catálogos</b> muestran cada mueble suelto.</figcaption></figure>
   <figure class="pb-p">{foto("gt-room-pb", GT_ROOM_PATH, 520, 390)}
     <figcaption><b>Las fotos de ambientes</b> muestran la casa de otro.</figcaption></figure>
   <figure class="pb-p tuyo">{foto("cab-living-pb", AM / "caballito-living" / "room.jpg", 520, 390)}
@@ -51,13 +50,11 @@ lam("problema", "El problema", "El problema", f'''
 </div>
 <ol class="pb-preg" data-paso="1">
   <li><b>1</b>Qué productos reales, que se puedan comprar, van</li>
-  <li><b>2</b>Cuántos, y de qué medida</li>
-  <li><b>3</b>Cómo queda el ambiente con ellos</li>
+  <li><b>2</b>Cómo queda el ambiente con ellos</li>
 </ol>''',
     ["Cuando te mudás a un lugar vacío tenés que decidir qué comprar sin poder verlo puesto. Los catálogos muestran cada "
-     "mueble suelto, sobre fondo blanco, y las fotos de ambientes muestran la casa de otro.",
-     "Queremos responder, para este ambiente y este pedido: qué productos reales van, cuántos, y cómo queda el ambiente con "
-     "ellos."],
+     "mueble suelto, y las fotos de ambientes muestran la casa de otro.",
+     "Queremos responder, para este ambiente y este pedido: qué productos reales van, y cómo queda el ambiente con ellos."],
     35)
 
 # =============================================================================================
@@ -66,10 +63,8 @@ lam("problema", "El problema", "El problema", f'''
 _filas = []
 for _h, _q, _rk, _c in HERO_PICKS:
     _k = _h.get("kind", "")
-    _md = medida(_h.get("dimensions_cm"))
-    _cat = "Amazon" if _h["id"].startswith("abo-") else "IKEA"
     _filas.append(f'<div class="li">{producto(_h["id"], 52)}<div class="li-t"><b>{KIND_ES.get(_k, _k)}</b>'
-                  f'<span>{_cat} · {_h["id"].removeprefix("abo-")}{" · " + _md if _md else ""}</span></div>'
+                  f'<span>{_h["id"].removeprefix("abo-")}</span></div>'
                   f'<span class="li-q">×{_q}</span></div>')
 lam("producto", "El producto", "El producto", f'''
 {kick("01", "el producto")}
@@ -82,8 +77,7 @@ lam("producto", "El producto", "El producto", f'''
 <div class="pr-img" data-paso="1">
   <span class="et">sale</span>
   {foto("hero-final", HERO / "final.png", 760, 507, q=82)}
-  <p class="pr-pie">El mismo ambiente, con esos productos puestos.</p>
-  <p class="cred-l">Foto del ambiente: {credito(HERO_SLUG)}</p>
+  <p class="pr-pie">El mismo ambiente, con muebles del catálogo.</p>
 </div>
 <div class="ticket pr-ticket" data-paso="1">
   <div class="tk-cab"><b>Lista de compra</b><span>amoblai<br>{N_HERO} productos</span></div>
@@ -98,138 +92,78 @@ lam("producto", "El producto", "El producto", f'''
 
 
 # =============================================================================================
-# 4 · Por qué RAG: los tres desafíos de la clase
+# 4 · Por qué RAG: lo que da contra un LLM solo, en los tres términos de la clase
 # =============================================================================================
-def _tk(cab, sub, lineas, pie=""):
-    ls = "".join(f'<div class="tk-l"><span class="tk-q">{i}</span><span class="tk-n">{a}</span><span class="tk-dots"></span>'
-                 f'<span class="tk-v">{b}</span></div>' for i, (a, b) in enumerate(lineas, 1))
-    return f'<div class="ticket rag-tk"><div class="tk-cab"><b>{cab}</b><span>{sub}</span></div>{ls}{pie}</div>'
-
-
+_RAG = [("información actualizada", "Para sumar productos, hay que reentrenarlo", "Un producto nuevo es una fila más en el índice"),
+        ("información personalizada", "No conoce este catálogo", f"La búsqueda le trae {K} candidatos por pieza"),
+        ("sin alucinaciones", "Puede recomendar un sillón que nadie vende", "Solo elige productos del catálogo")]
+_rag_f = "".join(f'<div class="rc-f" data-paso="{i}"><span class="rag-d">{d}</span><p>{no}</p><p class="si">{si}</p></div>'
+                 for i, (d, no, si) in enumerate(_RAG)).replace(' data-paso="0"', "", 1)
 lam("rag", "Por qué RAG", "El producto", f'''
-{kick("01", "por qué RAG · los tres desafíos de la clase")}
+{kick("01", "por qué RAG")}
 <h2 class="t">Recomendaciones atadas a <em>productos que existen</em></h2>
-<div class="rag-tres tres">
-  <div class="rag-c">
-    <span class="rag-d">información actualizada</span>
-    <h3>El catálogo cambia; el modelo no se reentrena</h3><p>Un producto nuevo es una fila más en el índice.</p>
-    {_tk("Alta de un producto", "indexing", [("Describirlo desde su foto", "VLM"), ("Embeberlo", "Qwen3"),
-                                             ("Insertarlo en el índice", "ChromaDB")], '<div class="sello-tk ok">sin reentrenar</div>')}
-  </div>
-  <div class="rag-c" data-paso="1">
-    <span class="rag-d">información personalizada</span>
-    <h3>Este catálogo, este ambiente, este pedido</h3><p>El LLM no conoce estos {miles(D["prod_todos"])} productos: la búsqueda se los trae.</p>
-    {_tk("Lo que ve el que elige", "contexto", [("La foto del ambiente", "1"), ("El pedido, en texto libre", "1"),
-                                                 ("Candidatos reales por pieza", f"{K}, con foto")])}
-  </div>
-  <div class="rag-c elegida" data-paso="2">
-    <span class="rag-d">sin alucinaciones</span>
-    <h3>Solo productos que existen</h3><p>Un LLM solo recomienda un sillón que nadie vende; un modelo de imagen solo inventa los muebles.</p>
-    <div class="ticket rag-tk"><div class="tk-cab"><b>Recomendación</b><span>LLM solo</span></div>
-      <div class="tk-l"><span class="tk-q">1</span><span class="tk-n">Sillón de cuero coñac</span><span class="tk-dots"></span><span class="tk-v">art. ———</span></div>
-      <div class="sello-tk">nadie lo vende</div>
-      <div class="tk-tot"><span>amoblai · art. {SOFA.removeprefix("abo-")}</span><span>id del catálogo</span></div></div>
-  </div>
-</div>
-<p class="remate" data-paso="2">No es un Q&amp;A: la consulta es una foto y un pedido abierto, y hay <mark>dos generaciones aumentadas</mark>: la lista y la imagen.</p>''',
-    ["¿Por qué un RAG? Por los tres desafíos de la clase. Información actualizada: el catálogo cambia y el modelo no se "
-     "reentrena; un producto nuevo es una fila más en el índice.",
-     f"Información personalizada: el LLM no conoce estos {miles(D['prod_todos'])} productos; la búsqueda le trae cinco "
-     "candidatos reales por pieza, y elige mirando sus fotos y la del cuarto.",
-     "Y sin alucinaciones: un LLM solo recomienda un sillón que nadie vende, y un modelo de imagen solo inventa los muebles; "
-     "acá la lista solo puede tener productos que trajo la búsqueda, y la imagen se genera desde sus fotos. No es un Q&A: "
-     "hay dos generaciones aumentadas, la lista y la imagen."],
+<div class="rag-cmp">
+  <div class="rc-cab"><span></span><b>Un LLM solo</b><b class="si">Con RAG</b></div>
+  {_rag_f}
+</div>''',
+    ["¿Por qué un RAG? Por tres cosas. Información actualizada: para que un LLM solo conozca "
+     "productos nuevos habría que reentrenarlo; acá un producto nuevo es una fila más en el índice.",
+     f"Información personalizada: el modelo no conoce estos {miles(D['prod_todos'])} productos; la búsqueda le trae, por "
+     f"cada pieza, {K} candidatos reales con su foto.",
+     "Y sin alucinaciones: un LLM solo puede recomendar un sillón que nadie vende; acá solo puede elegir productos que "
+     "trajo la búsqueda, y la imagen se arma con sus fotos."],
     45, clase="clara")
 
 
 # =============================================================================================
-# Desafíos: de la propuesta aprobada (buscar por imagen) a RAG por texto, y otros tres
+# Desafíos: los cuatro que más nos costaron, cada uno con cómo lo resolvimos (sin resultados: los
+# números van en los experimentos)
 # =============================================================================================
-def _fila_flujo(nombre, sub, chips, cls):
-    cs = "<i>→</i>".join(f'<div class="dz-c"><b>{t}</b>{f"<span>{s}</span>" if s else ""}</div>' for t, s in chips)
-    return f'<div class="dz-fila {cls}"><div class="dz-n"><b>{nombre}</b><span>{sub}</span></div>{cs}</div>'
-
-
-_room_im = Image.open(ROOT / GT_ROOM_PATH)
-_bx = [round(v) for v in V0_REC["box"]]
-_crop = _room_im.crop(_bx)
-_sx = 208 / _room_im.width
-_box_css = (f"left:{_bx[0] * _sx:.0f}px;top:{_bx[1] * _sx:.0f}px;width:{(_bx[2] - _bx[0]) * _sx:.0f}px;"
-            f"height:{(_bx[3] - _bx[1]) * _sx:.0f}px")
+_DZ = [("El texto del catálogo es marketing", "describimos cada producto mirando su foto"),
+       ("Catálogo", "IKEA y Amazon, revisados"),
+       ("No hay ground truth de la tarea real", "un juez compara dos listas, en los dos órdenes"),
+       ("El modelo de imagen rehace el cuarto", "un control: ¿es el mismo cuarto?")]
 lam("desafios", "Desafíos", "Desafíos", f'''
-{kick("02", "desafíos · el cambio de arquitectura")}
-<h2 class="t chico">De buscar por imagen a <em>RAG por texto</em>, y otros tres desafíos</h2>
-<div class="dz-flujos">
-  {_fila_flujo("La propuesta aprobada", "buscar por imagen", [("Foto + pedido", ""), ("Generar una imagen", "con muebles inventados"),
-               ("Recortar cada mueble", "Grounding DINO + SAM"), ("Buscar el más parecido", "por imagen (DINOv3)"),
-               ("Lista de compra", "lo que más se parezca")], "vieja")}
-  {_fila_flujo("Lo que quedó", "RAG por texto", [("Foto + pedido", ""), ("Plan", "una ficha por pieza"),
-               ("Búsqueda", "en el catálogo descripto"), ("Elección: la lista", "productos reales"), ("Imagen", "al final, con ellos")], "nueva")}
-</div>
-<div class="dz-abajo">
-  <div data-paso="1">
-    <span class="et">lo que construimos y medimos antes de cambiar: su buscador</span>
-    <div class="dz-v0">
-      <div class="v-foto">{foto("v0-room", GT_ROOM_PATH, 208, round(_room_im.height * _sx))}<div class="v-caja" style="{_box_css}"></div></div>
-      <span class="v-fl">→</span>{foto("v0-crop", _crop, 150, 74, modo="fit", q=82)}<span class="v-fl">→</span>{producto(V0_SOFA_OK, 84)}
-      <p>Detectar cada mueble, recortarlo y buscar la foto del catálogo más parecida.</p>
-    </div>
-    {barras([dict(et="Por imagen", v=VT["imagen"]),
-             dict(et="Por texto", v=VT["texto"], gana=True, nota=f'{sg(VT["dif"], 2)} {ic_txt(*VT["ic"], nd=2)}')],
-            titulo=f"encontrar primero el producto anotado · mismo ground truth, {VT['n']} productos",
-            paso=1, gana_paso=1, cls="dz-barras")}
-  </div>
-  <div data-paso="2">
-    <span class="et">otros tres</span>
-    <ol class="dz-otros">
-      <li><b>El catálogo traía fotos equivocadas</b><span>{D["rev_afuera"]} productos de IKEA con la foto de otro producto o de otra medida, o que no eran de living: la lista diría una cosa y la imagen otra. Se revisó mirando cada foto.</span></li>
-      <li><b>No hay ground truth de la tarea real</b><span>Nadie anotó la lista ideal para un ambiente vacío. Hay uno para la búsqueda y, para el flujo entero, un juez que compara listas.</span></li>
-      <li><b>El modelo de imagen rehace el cuarto</b><span>Mueve la cámara, inventa una ventana. Edición estricta y un control automático; aun así, {NO_PASAN} de {len(FINALES)} no se conservan.</span></li>
-    </ol>
-  </div>
-</div>
-<p class="remate chico" data-paso="1">La versión por imagen <mark>nunca corrió de punta a punta</mark>: comparamos buscadores, no sistemas.</p>''',
-    ["Los desafíos. El más grande fue cambiar la arquitectura que nos aprobaron. La propuesta era generar primero una imagen "
-     "amoblada, recortar cada mueble y buscar en el catálogo el más parecido, por imagen.",
-     f"Construimos y medimos su buscador sobre el mismo ground truth: encontraba primero el {round(100 * VT['imagen'])} por "
-     f"ciento de los productos anotados, contra {round(100 * VT['texto'])} buscando por texto. Con eso, y con una generación de "
-     "imagen menos por pedido, cambiamos a RAG por texto. Ojo: esa versión nunca corrió de punta a punta; comparamos "
-     "buscadores, no sistemas.",
-     "Los otros tres: el catálogo traía fotos de otro producto y hubo que revisarlo a mano; no hay ground truth de la tarea "
-     "real; y el modelo de imagen rehace el cuarto."],
-    55, clase="clara")
+{kick("02", "desafíos")}
+<h2 class="t chico">Cuatro desafíos, <em>y cómo los resolvimos</em></h2>
+<ol class="dz4">{"".join(f"<li><i>{n}</i><div><b>{a}</b><p>→ {b}</p></div></li>" for n, (a, b) in enumerate(_DZ, 1))}</ol>''',
+    ["Los desafíos. Uno: el texto del catálogo es marketing, y la gente pide estilo, color y materiales; hubo que describir "
+     "cada producto mirando su foto. Dos: el catálogo; algunos productos traían la foto de otro, o de otra medida. Revisamos "
+     "los dos, IKEA a mano, y en Amazon el modelo que describe descarta las fotos que no muestran el producto. Tres: no hay ground "
+     "truth de la tarea real; la búsqueda la medimos con fotos de IKEA anotadas, y la lista, con un juez que compara dos "
+     "listas. Y cuatro: el modelo de imagen rehace el cuarto; por eso, el control."],
+    40, clase="clara")
 
 # =============================================================================================
 # El banco de la búsqueda: ambientes de IKEA con sus productos anotados
 # =============================================================================================
 _gt_tags = "".join(producto(i, 78, "gt-p") for i in GT_ANY[:9])
-lam("gt", "El banco de la búsqueda", "Datos", f'''
+lam("gt", "Cómo medimos la búsqueda", "Datos", f'''
 {kick("03", "cómo evaluamos · con ground truth")}
-<h2 class="t">El banco de la búsqueda: <em>ambientes anotados</em></h2>
+<h2 class="t">Cómo medimos la búsqueda: <em>ambientes anotados</em></h2>
 <div class="gt-izq">
   {foto("gt-room", GT_ROOM_PATH, 760, 430)}
-  <span class="et">productos anotados en esta foto</span>
+  <span class="et">productos anotados</span>
   <div class="gt-strip">{_gt_tags}</div>
 </div>
 <div class="gt-der">
-  <span class="et">por cada mueble visible, un subagente escribe la consulta como la escribiría el plan, sin ver el catálogo</span>
-  {consulta(Q_MESA["query"], cls="gt-q")}
+  <span class="et">la consulta de un mueble</span>
+  {consulta(Q_MESA["query"], n=4, cls="gt-q")}
   <div data-paso="1">
-    <span class="et">lo que trae la búsqueda del flujo: acierta si el anotado sale primero (hit@1) o entre los k primeros (hit@k)</span>
-    {ranking(Q_MESA, 5, 112)}
+    <span class="et">lo que trae la búsqueda: acierta si el anotado sale primero</span>
+    {ranking(Q_MESA, 5, 140)}
   </div>
 </div>
-<div class="gt-cifras" data-paso="2">
-  <div><b>{N_AMB}</b>livings y comedores de IKEA, con sus productos anotados</div>
-  <div><b>{N_BUS}</b>consultas, una por mueble visible</div>
-  <div><b>{N_ANS}</b>con su producto en el catálogo de {D["prod_819"]}</div>
-  <div class="gt-ic">Es un banco de <b>producto conocido</b>: quien escribe la consulta ve el mueble. Mide el índice, no la recomendación.</div>
+<div class="gt-cifras b-gt" data-paso="2">
+  <div><b>{N_AMB}</b>ambientes de IKEA</div>
+  <div><b>{N_BUS}</b>consultas</div>
+  <div><b>{N_ANS}</b>con su producto en el catálogo</div>
 </div>''',
-    [f"Usamos dos bancos de prueba, que miden cosas distintas. Para la búsqueda, {N_AMB} ambientes de IKEA con sus productos "
+    [f"Usamos dos sets de evaluación, que miden cosas distintas. Para la búsqueda, {N_AMB} ambientes de IKEA con sus productos "
      "anotados. Por cada mueble visible, un subagente escribió la consulta como la escribiría el plan, sin ver el catálogo.",
      "Una consulta acierta si el anotado sale primero, o entre los k primeros.",
-     f"Son {N_BUS} consultas, {N_ANS} con su producto en el catálogo. Es un banco de producto conocido: quien escribe está "
-     "viendo el mueble, así que mide el índice, no la recomendación."],
+     f"Son {N_BUS} consultas, {N_ANS} con su producto en el catálogo de {D['prod_819']}. Es de producto conocido: "
+     "quien escribe está viendo el mueble, así que mide el índice, no la recomendación."],
     50, clase="clara")
 
 # =============================================================================================
@@ -239,99 +173,181 @@ _tiles = []
 for _p in PEDIDOS:
     _nombre, _estilo = ESTILO[_p["slug"]]
     _pub = PUB_POR_ARCHIVO.get(_p["foto"])
-    _cred = f'<span class="cred">{esc(_pub["autor"])} · {esc(_pub["licencia"])}</span>' if _pub else ""
     _tiles.append(f'<figure class="amb{" pub" if _pub else ""}">{foto("vac-" + _p["slug"], _p["foto"], 262, 176, q=76)}'
-                  f'<figcaption><b>{_nombre}</b><span>{_estilo}</span>{_cred}</figcaption></figure>')
+                  f'<figcaption><b>{_nombre}</b><span>{_estilo}</span></figcaption></figure>')
 lam("vacios", "Ambientes vacíos", "Datos", f'''
 {kick("03", "cómo evaluamos · sin ground truth")}
 <h2 class="t chico">Ambientes vacíos reales, <em>para probar de punta a punta</em></h2>
-<div class="vac-izq">
-  <div class="cifra"><span>{D["n_ambientes_vacios"]}</span></div>
-  <p class="cifra-pie">ambientes vacíos reales, cada uno con un pedido escrito como lo escribiría un usuario que sabe pedir</p>
-  <ul class="vac-datos">
-    <li><b>{D["n_propios"]}</b> de departamentos nuestros</li>
-    <li><b>{D["n_publicos"]}</b> públicos, de Wikimedia Commons y Flickr (Creative Commons), con estilos distintos del nórdico</li>
-    <li>elegidos entre <b>{D["n_publicas_revisadas"]}</b> que revisamos uno por uno para descartar renders y fotos generadas con IA</li>
-  </ul>
-  <p class="vac-nota">Acá no hay ground truth: un juez compara a ciegas las listas de dos configuraciones, <b>en los dos órdenes</b>. La imagen se mide aparte.</p>
+<div class="vac-izq b-vac">
+  <div class="lj">
+    <span class="et">sin ground truth · el juez de listas</span>
+    <ol>
+      <li><div class="lj-ab"><i>A</i><i>B</i></div><p>Ve la foto, el pedido y <b>dos listas</b>, sin saber de qué configuración es cada una.</p></li>
+      <li><div class="lj-ab lj-n"><i>2</i><i>1</i><i>0</i></div><p>Califica cada producto y <b>elige</b>: A, B o empate.</p></li>
+      <li><div class="lj-ab lj-o"><span><i>A</i><i>B</i></span><span><i>B</i><i>A</i></span></div><p>Se corre en los <b>dos órdenes</b>: gana el ambiente solo si gana en los dos.</p></li>
+    </ol>
+  </div>
 </div>
 <div class="vac-grilla">{"".join(_tiles)}</div>''',
-    f"Para el flujo entero, {D['n_ambientes_vacios']} ambientes vacíos reales, cada uno con su pedido: {D['n_propios']} de "
-    f"departamentos nuestros y {D['n_publicos']} públicos, con licencia Creative Commons y estilos distintos del nórdico. Ahí "
-    "no hay ground truth: un juez compara a ciegas las listas de dos configuraciones, en los dos órdenes, y una gana un "
-    "ambiente solo si gana en los dos. La imagen se mide aparte.",
+    f"Para el flujo entero, {D['n_ambientes_vacios']} ambientes vacíos reales, cada uno con su pedido: {D['n_propios']} "
+    f"nuestros y {D['n_publicos']} públicos, de estilos distintos del nórdico. Ahí no hay ground truth: compara un juez, que "
+    "vemos en un caso.",
     40)
 
 # =============================================================================================
-# Las métricas del buscador, con el valor de hoy
+# El juez de listas, en un caso: qué ve, cómo califica y qué elige (sin decir qué configuración es cada lista)
+# =============================================================================================
+_LJ = next(x for x in JV["detalle"] if x["slug"] == "publica-living-japandi")
+_la, _lb = JV["a"], JV["b"]                         # en el primer orden, A es la lista de JV["a"]
+assert _LJ["votos"] == [_lb, _lb], "cambió el veredicto del japandi: revisar la lámina del juez de listas"
+_pa, _pb = _LJ["puntajes"][_la][0], _LJ["puntajes"][_lb][0]
+_ia, _ib = _LJ["listas"][_la], _LJ["listas"][_lb]
+assert len(_ia) == len(_ib) == len(_pa["grades"]) == len(_pb["grades"])
+
+
+def _lj_lista(items, pts, otra):
+    filas = "".join(f'<li class="{"dif" if it["id"] != o["id"] else ""}">{producto(it["id"], 56)}<span>{esc(it["type"])}</span>'
+                    f'<i class="g{g}">{g}</i></li>' for it, g, o in zip(items, pts["grades"], otra, strict=True))
+    utiles = sum(g == 2 for g in pts["grades"])
+    return f'<ul class="lj-l">{filas}</ul><p class="lj-s">productos útiles (con 2): <b>{utiles} de {len(items)}</b></p>'
+
+
+_why = _LJ["por_que"][0].split(". ")[0] + "."
+_ped = next(x for x in PEDIDOS if x["slug"] == "publica-living-japandi")
+lam("met-lj", "El juez de listas, en un caso", "Datos", f'''
+{kick("03", "cómo evaluamos · el juez de listas, en un caso")}
+<h2 class="t chico">El juez de listas, en un caso: <em>el living japandi</em></h2>
+<div class="ljc-in">
+  <span class="et">entra · la foto y el pedido</span>
+  {foto("lj-room", ROOT / _ped["foto"], 440, 293, q=78)}
+  <p>«Quiero un living japandi: un sofá bajo de tela beige, una mesa ratona redonda de madera, una alfombra de fibra natural,
+    una lámpara de papel y una planta grande en maceta de cerámica…»</p>
+</div>
+<div class="ljc-listas" data-paso="1">
+  <div><span class="et">lista A</span>{_lj_lista(_ia, _pa, _ib)}</div>
+  <div><span class="et">lista B</span>{_lj_lista(_ib, _pb, _ia)}</div>
+  <p class="ljc-ley"><b>2</b> sirve · <b>1</b> aceptable · <b>0</b> no sirve</p>
+</div>
+<div class="ljc-out">
+  <div data-paso="2"><span class="et">sale</span><p class="ljc-el">elige <b>B</b></p>
+    <p class="ljc-why">«{esc(_why)}»</p></div>
+  <div class="ljc-rev" data-paso="3"><span class="et">y al revés</span>
+    <div class="lj-ab lj-o"><span><i>B</i><i>A</i></span></div>
+    <p>Elige otra vez la misma: <b>gana el ambiente</b>.</p></div>
+  <p class="fj-a" data-paso="3"><kbd>A</kbd> el prompt completo</p>
+</div>''',
+    ["Un caso. El juez ve la foto, el pedido y dos listas, sin saber de dónde viene cada una.",
+     "A cada producto le pone 2, 1 o 0; los que sacan 2 son los productos útiles.",
+     "Elige B, por el sofá beige.",
+     "Y al revés: si vuelve a elegir la misma, gana el ambiente; si no, empate."],
+    35, clase="clara")
+
+# =============================================================================================
+# Las métricas del buscador, con el valor de hoy: cada una en una línea
 # =============================================================================================
 _lr = Q_LAMPARA["rank"]
 _cotas = "".join(f'<div style="--k:{k}"><span>hit@{k} = {int(_lr <= k)}</span></div>' for k in (1, 3, 5))
 _corr = statistics.correlation([v["mrr@10"] for v in F.values()], [v["context_precision@10"] for v in F.values()])
 assert _corr > 0.99
 _mdefs = [
-    ("hit@k", f"¿El anotado está entre los k primeros? <b>hit@5 es el titular</b>: son los {K} candidatos que ve el que elige. "
-              f"Hoy: hit@1 {f3(B2['hit@1'])} y hit@5 <b>{f3(B2['hit@5'])}</b>."),
-    ("Diferencia pareada", f"Dos métodos sobre <b>las mismas consultas</b>: la diferencia media y su IC 95%. Si no toca el cero, "
-                           f"no es ruido. Versión 2 menos versión 1: {nb(dif(D21))}."),
-    ("IC 95% por bootstrap", "Se remuestrean <b>ambientes</b>, no consultas: las consultas de un mismo ambiente no son "
-                             f"independientes. hit@1 {f3(B2['hit@1'])} {ic_txt(*B2['hit@1_ic95'], nd=2)}."),
-    ("MRR@10", f"El promedio de 1 / posición del anotado: premia que esté arriba. Hoy {f3(B2['mrr@10'])}."),
-    ("Las de la clase", f"Context precision@10 ({f2(B2['context_precision@10'])}) y NDCG@10 ({f2(B2['ndcg@10'])}) repiten al MRR, "
-                        f"con uno o dos relevantes por consulta. Context recall es por ambiente: {f2(B2['context_recall@3'])} con k = 3."),
+    ("hit@k", f"¿Está entre los k primeros? El titular es hit@{K}: los {K} que ve el que elige."),
+    ("MRR@10", "El promedio de 1 / posición del anotado."),
+    ("Context precision y NDCG", "Con uno o dos relevantes por consulta, dan casi lo mismo que el MRR."),
+    ("Diferencia pareada", "Dos métodos, las mismas consultas: si el IC no toca el 0, no es ruido."),
+    ("IC 95% por bootstrap", "Se remuestrean ambientes, no consultas."),
 ]
-_md = "".join(f'<div class="md"><h4>{a}</h4><p>{b}</p></div>' for a, b in _mdefs)
+_md = "".join(f'<div class="md b-md"><h4>{a}</h4><p>{d}</p></div>' for a, d in _mdefs)
 lam("met-ret", "Métricas del buscador", "Métricas", f'''
 {kick("04", "cómo evaluamos · el buscador")}
 <h2 class="t">El buscador: <em>¿trae el producto anotado, y arriba?</em></h2>
 <div class="met-ej">
-  <span class="et">una consulta real del banco (una lámpara de pie): sus 10 primeros candidatos con la búsqueda del flujo</span>
+  <span class="et">una consulta real: sus 10 primeros candidatos</span>
   <div class="met-cotas">{_cotas}</div>
   {ranking(Q_LAMPARA, 10, 150)}
   <p class="met-rr">el anotado está en el puesto {_lr}: suma <b>1/{_lr}</b> al MRR</p>
 </div>
-<div class="met-defs" data-paso="1">{_md}</div>''',
+<div class="met-defs b-defs" data-paso="1">{_md}</div>''',
     [f"Las métricas del buscador. Arriba, una consulta real: el anotado sale en el puesto {_lr}, así que hit@1 da cero y "
      f"hit@{3 if _lr <= 3 else 5} da uno.",
-     f"El titular es hit@5, porque son los cinco candidatos que ve el que elige: hoy, {f3(B2['hit@5'])}. Para comparar dos "
+     "El titular es hit@5, porque son los cinco candidatos que ve el que elige. Para comparar dos "
      "métodos usamos la diferencia pareada: las mismas consultas, la diferencia media y su intervalo de 95 por ciento, por "
      "bootstrap de ambientes. Si no toca el cero, no es ruido. Mirar el intervalo de cada método por separado nos había hecho "
-     "leer mejoras que eran ruido. Las de la clase, context precision y NDCG, acá repiten al MRR; context recall es por "
-     "ambiente."],
+     "leer mejoras que eran ruido. Context precision y NDCG, con uno o dos relevantes por consulta, repiten al MRR."],
     50, clase="clara")
 
 # =============================================================================================
 # El generador (faithfulness y answer relevance) y los jueces
 # =============================================================================================
-_F, _AR = RESP2["faithfulness"], RESP2["answer_relevance"]     # sobre las 11 listas de la versión 2 (el flujo de hoy)
-_F1, _AR1 = RESP["faithfulness"], RESP["answer_relevance"]     # sobre otras 11 listas (la búsqueda de la versión 1): la réplica
-_MADERAS = ("ash", "birch", "beech", "oak", "pine", "walnut")
-_no_sost = [x for c in RESP2["por_corrida"] for x in c["fidelidad"]["no_sostenidas"] if any(w in x.lower().split() for w in _MADERAS)]
-_no_sost = [_no_sost[0], next(x for x in _no_sost[1:] if not (set(x.lower().split()) & set(_no_sost[0].lower().split()) & set(_MADERAS)))]
-assert len(_no_sost) == 2
-lam("met-juez", "El generador y los jueces", "Métricas", f'''
-{kick("04", "cómo evaluamos · el generador y los jueces")}
-<h2 class="t chico">El generador: <em>faithfulness {f2(_F["global"])}</em> y <em>answer relevance {f2(_AR["media"])}</em></h2>
-<div class="jz-grilla gen">
-  <div class="jz"><h4>Faithfulness del porqué<b>{f2(_F["global"])}</b></h4>
-    <p><b>{_F["sostenidas"]} de {_F["afirmaciones"]}</b> afirmaciones se infieren de lo que vio el generador: el pedido, la foto del cuarto y, de cada producto, su foto y una línea con su tipo y su medida. Lo que no se sostiene es casi siempre <b>la especie de la madera</b>:</p>
-    <div class="jz-q"><span>«{esc(_no_sost[0])}»</span><span>«{esc(_no_sost[1])}»</span></div></div>
-  <div class="jz"><h4>Answer relevance<b>{f2(_AR["media"])}</b></h4>
-    <p>Un juez que no ve el pedido escribe tres pedidos que la lista contesta; se mide su coseno con el original. La vara: los pedidos escritos para <b>otras</b> listas dan <b>{f2(_AR["vara_cruzada"])}</b>; la propia les gana en {_AR["supera_a_la_cruzada"]} de {RESP2["corridas"]}.</p></div>
-  <p class="jz-rep">Sobre las {RESP2["corridas"]} listas de la versión 2. Con otras {RESP["corridas"]} listas, las de la versión 1, dieron <b>{f2(_F1["global"])}</b> y <b>{f2(_AR1["media"])}</b> contra {f2(_AR1["vara_cruzada"])}: los dos números se repiten. No es una mejora de la versión 2: por ambiente, la faithfulness sube en {GEN_SUBE} y baja en {GEN_BAJA}.</p>
-  <div class="jz" data-paso="1"><h4>Jueces: validado contra el ground truth, uno</h4>
-    <p>El de relevancia graduada le da la nota máxima al producto anotado el {pct(G_ANOT2)} de las veces, y a los demás el {pct(G_OTROS2)}. <b>El de listas no está validado contra personas</b>: se le pregunta en los dos órdenes, y coinciden en {J_AZAR["acuerdo"]} de {J_AZAR["n"]} ambientes contra el azar y en {J_VER["acuerdo"]} de {J_VER["n"]} entre versiones.</p>
-    <div class="ordenes"><span><i>A</i><i>B</i></span><em>y</em><span><i>B</i><i>A</i></span></div></div>
+lam("met-juez", "El generador", "Métricas", f'''
+{kick("04", "cómo evaluamos · el generador")}
+<h2 class="t chico">El generador: <em>¿es cierto lo que dice?</em> ¿<em>contesta el pedido?</em></h2>
+<div class="b-gen">
+  <div class="b-m"><b class="fx">sostenidas ÷ afirmaciones</b><h4>Faithfulness del porqué</h4>
+    <p>Un juez parte el porqué en afirmaciones de hecho y marca cuáles se infieren de lo que vio el generador.</p></div>
+  <div class="b-m"><b class="fx">coseno(pedido del juez, pedido real)</b><h4>Answer relevance</h4>
+    <p>Un juez lee la lista, sin ver el pedido, y escribe el pedido que contesta.</p>
+    <span class="et">la vara: el mismo coseno, con pedidos de otras listas</span></div>
 </div>
-<p class="remate chico" data-paso="1">El porqué se sostiene en casi <mark>9 de cada 10 afirmaciones</mark>; lo que agrega de más es la madera.</p>''',
-    [f"Faithfulness: partimos el porqué en afirmaciones, y un juez dice cuáles se "
-     f"infieren de lo que el generador vio. Da {f2(_F['global'])}: {_F['sostenidas']} de {_F['afirmaciones']}. Lo que no se "
-     "sostiene es casi siempre la especie de la madera. Answer relevance: un juez que no ve el "
-     f"pedido escribe los pedidos que esa lista contesta. Da {f2(_AR['media'])}, contra {f2(_AR['vara_cruzada'])} con pedidos "
-     f"escritos para otras listas. Con otras once listas, las de la versión 1, dieron {f2(_F1['global'])} y {f2(_AR1['media'])}: "
-     "los números se repiten.",
-     "Y sobre los jueces: validado contra el ground truth hay uno solo; el de listas se controla con los dos órdenes."],
-    50)
+''',
+    ["El generador es Opus eligiendo, con un porqué por producto. Faithfulness: un juez parte el porqué en afirmaciones y "
+     "marca cuáles se infieren de lo que vio. Answer relevance: un juez que no ve el pedido escribe el que la lista contesta, "
+     "y medimos el coseno con el original; la vara, con pedidos de otras listas."],
+    40)
+
+# =============================================================================================
+# Faithfulness, en un caso: qué le entra al juez, qué hace y qué sale (el loft de la configuración final)
+# =============================================================================================
+_FJ = jload(ROOT / "datos" / "evaluacion_flujo" / "juez" / "v2" / "hibrida__publica-loft-industrial" / "fidelidad.json")
+_cl = {c["claim"]: c for c in _FJ["claims"]}
+_n_ok = sum(c["supported"] for c in _FJ["claims"])
+_MUESTRA = [("Sofa is leather", "lo dicen la línea y la foto"),
+            ("Coffee table has a wood top", "se ve en la foto"),
+            ("Coffee table top is solid wood", "la línea no lo dice"),
+            ("Person asked for a dark pot", "el pedido no habla de una maceta"),
+            ("Textiles introduce no bright white", "la alfombra tiene flecos blancos")]
+assert all(c in _cl for c, _ in _MUESTRA), "cambió la salida del juez del loft: revisar la lámina de faithfulness"
+assert sum(not _cl[c]["supported"] for c, _ in _MUESTRA) == len(_FJ["claims"]) - _n_ok, "no se muestran todas las no sostenidas"
+_resto = len(_FJ["claims"]) - len(_MUESTRA)
+_ch = {c["id"]: c["why"] for c in HERO_CHOOSE["answer"]["choices"]}
+_mesa, _maceta = (next(i for i in _ch if _ch[i].startswith(s)) for s in ("Its solid wood top", "A dark matte pot"))
+_porque = [(_ch[_mesa], "solid wood top"), (_ch[_maceta], "as requested"),
+           (HERO_CHOOSE["answer"]["why"].split(". ")[-1], "without introducing bright white")]
+assert all(m in s for s, m in _porque)
+_pq = "".join(f'<li>«{esc(s).replace(esc(m), f"<mark>{esc(m)}</mark>")}»</li>' for s, m in _porque)
+_sale = "".join(f'<li class="{"ok" if _cl[c]["supported"] else "no"}"><i>{"✓" if _cl[c]["supported"] else "✗"}</i>'
+                f'<div><code>{esc(c)}</code><span>{e}</span></div></li>' for c, e in _MUESTRA)
+_fotos_j = foto("fj-room", HERO / "room.jpg", 150, 100, q=78) + "".join(producto(h["id"], 52) for h, *_ in HERO_PICKS)
+lam("met-fid", "Faithfulness, en un caso", "Métricas", f'''
+{kick("04", "cómo evaluamos · faithfulness, en un caso")}
+<h2 class="t chico">Faithfulness, en un caso: <em>el loft</em></h2>
+<div class="fj-col fj-in">
+  <span class="et">entra · lo mismo que vio Opus al elegir</span>
+  <div class="fj-fotos">{_fotos_j}</div>
+  <p class="fj-l">y la línea de cada producto: <code>coffee table, industrial rectangular coffee table, 135 cm wide…</code></p>
+  <span class="et">el pedido</span>
+  <p class="fj-ped">«…una mesa ratona de madera maciza con patas de metal negro… Nada de blanco brillante…»</p>
+  <span class="et">el porqué de Opus · 3 de sus 8 líneas</span>
+  <ul class="fj-pq">{_pq}</ul>
+</div>
+<div class="fj-fl fj-f1">→</div>
+<div class="fj-col fj-juez" data-paso="1">
+  <span class="et">el juez · {esc(_FJ["_juez"]).replace("claude-opus-5-5", "Opus 5.5")}</span>
+  <ol><li>Parte el porqué en <b>afirmaciones de hecho</b>; las opiniones no cuentan.</li>
+      <li>¿Cada una <b>se infiere</b> del pedido, las fotos o las líneas?</li>
+      <li>Responde en JSON.</li></ol>
+  <p class="fj-a"><kbd>A</kbd> el prompt completo</p>
+</div>
+<div class="fj-fl fj-f2" data-paso="2">→</div>
+<div class="fj-col fj-out" data-paso="2">
+  <span class="et">sale · {len(_FJ["claims"])} afirmaciones</span>
+  <ul class="fj-cl">{_sale}<li class="ok resto"><i>✓</i><div><span>y {_resto} más, todas sostenidas</span></div></li></ul>
+  <p class="fj-res">faithfulness = {_n_ok} / {len(_FJ["claims"])} = <b>{f2(_n_ok / len(_FJ["claims"]))}</b></p>
+</div>''',
+    ["El loft. Al juez le entra lo que vio Opus: las fotos, la línea de cada producto, el pedido y el porqué.",
+     "Lo parte en afirmaciones y marca cada una.",
+     f"Sostiene {_n_ok} de {len(_FJ['claims'])}. Fallan «madera maciza», que la línea no dice; «como pediste», con una maceta "
+     "que nadie pidió; y «nada de blanco», con flecos blancos."],
+    35, clase="clara")
 
 # =============================================================================================
 # La imagen: las 11 corridas de la configuración final
@@ -344,78 +360,81 @@ for (_h, *_), _p in zip(HERO_PICKS, HERO_MET["productos"], strict=True):
         _pares.append(f'<div class="id-par{" ok" if _p["puesto"] == 1 else ""}">{producto(_p["id"], 66)}<span class="id-fl">↔</span>'
                       f'{foto("crop-" + _p["id"], _fin.crop(_p["box"]), 66, 66, modo="fit", q=82)}'
                       f'<span class="id-p"><b>{_p["puesto"]}.º</b> de {_p["entre"]}</span></div>')
-_no_det = [KIND_ES.get(p["kind"], p["kind"]).lower() for p in HERO_MET["productos"] if not p["detectado"]]
-_hero_rec = sum(p.get("puesto") == 1 for p in HERO_MET["productos"])
-_fin_th = "".join(
-    f'<figure class="fin{"" if f["img"]["room_check"]["ok"] else " no"}">{foto("fin-" + f["slug"], f["dir"] / "final.png", 170, 113, q=74)}'
-    f'<figcaption><b>{"pasa" if f["img"]["room_check"]["ok"] else "no pasa"}</b>'
-    f'{sum(p.get("puesto") == 1 for p in f["met"]["productos"])} de {len(f["met"]["productos"])}</figcaption></figure>'
-    for f in FINALES)
-_cred_fin = credito(*[f["slug"] for f in FINALES if FOTO[f["slug"]] in PUB_POR_ARCHIVO])
-assert IMG_TOT["pasan"] == IMG_TOT["pasan_al_primero"], "alguna corrida final pasó el control al reintentar: revisar la lámina de la imagen"
+_rc = jload(HERO / "5_image.json")["room_check"]
+assert _rc["ok"]
 lam("met-img", "La imagen", "Métricas", f'''
 {kick("04", "cómo evaluamos · la imagen")}
-<h2 class="t chico">La imagen: <em>{IMG_TOT["reconocidos"]} de {IMG_TOT["productos"]}</em> productos reconocidos, <em>{IMG_TOT["pasan"]} de {len(FINALES)}</em> cuartos</h2>
-<div class="img-dos">
+<h2 class="t chico">La imagen: <em>¿son esos productos?</em> ¿<em>es ese cuarto?</em></h2>
+<div class="img-dos b-img">
   <div class="it"><h4>¿Son esos productos? En el loft</h4>
     <div class="id-lista"><div class="id-cab"><span>en la lista</span><span>en la imagen</span><span>entre los de su tipo, sale</span></div>{"".join(_pares)}</div>
-    <p>Se detecta cada mueble, se recorta y se compara con las fotos del catálogo de su tipo (DINOv3). <b>Reconocido</b> si el más parecido es el de la lista: acá, {_hero_rec} de {len(HERO_MET["productos"])} ({" y ".join(_no_det)}: sin detectar).</p></div>
-  <div class="it" data-paso="1"><h4>Las {len(FINALES)} imágenes de la configuración final</h4>
-    <span class="et">el control del ambiente (¿es ese cuarto?) · productos reconocidos</span>
-    <div class="fines">{_fin_th}</div>
-    <div class="it-cifras tres"><div><b>{IMG_TOT["reconocidos"]} de {IMG_TOT["productos"]}</b>reconocidos como el producto exacto ({pct(IMG_TOT["reconocidos"] / IMG_TOT["productos"])})</div>
-      <div><b>{IMG_TOT["detectados"]}</b>aparecen (detectados) · coseno medio {f2(IMG_TOT["coseno"])}</div>
-      <div><b>{IMG_TOT["pasan"]} de {len(FINALES)}</b>conservan el cuarto, todas al primer intento; en las otras {NO_PASAN} fallaron los {ROOM_CHECK["attempts"]}</div></div>
-    <p class="cred-l">Fotos públicas: {_cred_fin}.</p></div>
-</div>
-<p class="remate chico" data-paso="1">La lista es confiable; la imagen es <mark>una visualización</mark>: acierta el producto exacto 4 de cada 10 veces y conserva el cuarto en {IMG_TOT["pasan"]} de {len(FINALES)}.</p>''',
-    [f"La imagen la medimos sobre las {len(FINALES)} corridas finales, no sobre la mejor. Primero: ¿son esos productos? "
-     "Detectamos cada mueble, lo recortamos y lo comparamos con las fotos del catálogo de su tipo: reconocido, si el más "
-     "parecido es el de la lista. En el loft, el sofá, la biblioteca y la lámpara salen primeros; la alfombra, no. En total se "
-     f"reconocen {IMG_TOT['reconocidos']} de {IMG_TOT['productos']}, el {round(100 * IMG_TOT['reconocidos'] / IMG_TOT['productos'])} "
-     f"por ciento, aunque aparecen {IMG_TOT['detectados']}.",
-     f"Segundo: ¿es ese cuarto? El control pasa en {IMG_TOT['pasan']} de {len(FINALES)}. O sea: la lista es confiable; la imagen "
-     "es una visualización, que acierta el producto exacto cuatro de cada diez veces."],
-    45, clase="clara")
+    <p><b>Reconocido</b>: el recorte se parece más a su producto que a cualquier otro de su tipo.</p></div>
+  <div class="it" data-paso="1"><h4>¿Es ese cuarto? El control, en el loft</h4>
+    <div class="rc-par"><figure>{foto("rc-antes", HERO / "room.jpg", 520, 347, q=78)}<figcaption>la foto</figcaption></figure>
+      <figure>{foto("rc-despues", HERO / "final.png", 520, 347, q=78)}<figcaption>la imagen</figcaption></figure></div>
+    <p>SIFT busca en la imagen los puntos de la foto. Pasa con <b>{int(ROOM_CHECK["min_inliers"])} o más</b> y la cámara quieta; si no,
+      se genera otra, hasta {int(ROOM_CHECK["attempts"])} veces. En el loft: {_rc["sift_inliers"]} puntos.</p></div>
+</div>''',
+    ["La imagen, con dos preguntas. ¿Son esos productos? Recortamos cada mueble y, con DINOv3, lo comparamos con los de su "
+     "tipo: reconocido, si el más parecido es el de la lista. En el loft, la alfombra no.",
+     "¿Es ese cuarto? SIFT busca en la imagen los puntos de la foto; si encuentra pocos, se genera otra."],
+    40, clase="clara")
 
 # =============================================================================================
-# Las trampas, dichas en voz alta
+# Advertencias: cuánto confiar en los números
 # =============================================================================================
 _cos_banco = statistics.median(r["scores"][0] for r in rankings(HIB_DIR)[V1] if r["relevant"] and r["scores"])
 _cos_flujo = sorted(DIAG_CAT[v]["puntaje_del_primero"]["mediana"] for v in ("ikea", "todos"))
 _bm = EMB["bm25|description|filtro-kind"]
 TRAMPAS = [
-    ("El banco de la búsqueda es de producto conocido",
-     f"Quien escribió la consulta veía el mueble: mide identificar un producto, no recomendar. En el flujo real el plan lo "
-     f"imagina, y sus consultas quedan más lejos del catálogo: el coseno del primer candidato baja de {f3(_cos_banco)} a "
-     f"{f2(_cos_flujo[0])}–{f2(_cos_flujo[1])}."),
+    ("El set de evaluación de la búsqueda es de producto conocido", "Quien escribe la consulta ve el mueble; en el flujo, el plan lo imagina."),
     ("El mismo modelo escribe los dos lados",
-     f"Consultas y descripciones salen del mismo modelo, con el mismo molde de 8 líneas. Por eso contar palabras rinde casi como "
-     f"el embedder (BM25: {f3(_bm['hit@1'])} contra {f3(B1['hit@1'])}). Representa al sistema; no a alguien que escribe con otras palabras."),
-    ("No hay conjunto apartado",
-     f"Todo se eligió y se reporta sobre los mismos {N_AMB_ANS} ambientes. Las diferencias grandes se sostienen igual; las de 2 "
-     "puntos no las leemos como señal."),
+     f"Por eso contar palabras rinde casi como el embedder: {f3(_bm['hit@1'])} contra {f3(B1['hit@1'])}."),
+    ("No hay conjunto apartado", f"Todo se eligió sobre los mismos {N_AMB_ANS} ambientes: 2 puntos no son señal."),
     (f"De punta a punta son {D['n_ambientes_vacios']} ambientes",
-     f"El juez es el mismo modelo que elige. Corrimos la versión 2 dos veces: el que elige cambia {RUIDO_CAMBIAN} de "
-     f"{RUIDO_PROD} productos, y el juez reparte los ambientes {J_RUIDO['a']} a {J_RUIDO['b']}. Que una variante «gane un "
-     "ambiente» no es evidencia por sí solo: cuenta la asimetría. Y el pedido abierto no está evaluado: los pedidos enumeran las piezas."),
+     f"El juez es el mismo modelo que elige: la misma versión, corrida dos veces, sale {J_RUIDO['a']} a {J_RUIDO['b']}."),
 ]
-_tr = "".join(f'<div class="jz" data-paso="{i}"><h4><i>{i + 1}</i>{a}</h4><p>{b}</p></div>' for i, (a, b) in enumerate(TRAMPAS))
-lam("trampas", "Las trampas", "Métricas", f'''
-{kick("04", "cómo evaluamos · cuánto creerle")}
-<h2 class="t">Las trampas, <em>dichas en voz alta</em></h2>
-<div class="jz-grilla tr">{_tr}</div>
-<p class="remate chico" data-paso="{len(TRAMPAS) - 1}">El ground truth sirve para comparar cambios grandes del índice. Lo que le sirve al usuario lo dice el juez, con <mark>n = {D["n_ambientes_vacios"]}</mark>.</p>''',
-    ["Las trampas, en voz alta. Uno: el banco de la búsqueda es de producto conocido; en el flujo real el plan imagina "
-     "el producto, no lo ve.",
-     "Dos: el mismo modelo escribe las consultas y las descripciones, con el mismo molde; por eso contar palabras rinde casi "
-     "como el embedder.",
-     "Tres: no hay conjunto apartado.",
-     f"Y cuatro: de punta a punta son {D['n_ambientes_vacios']} ambientes, y el juez es el mismo modelo que elige. Corrimos la "
-     f"misma configuración dos veces: el que elige cambió {RUIDO_CAMBIAN} de {RUIDO_PROD} productos, y el juez repartió los "
-     f"ambientes {J_RUIDO['a']} a {J_RUIDO['b']}. Ganar un ambiente no es evidencia: lo que cuenta es la "
-     "asimetría. Por eso leemos las diferencias grandes, y las de dos puntos, no."],
+_tr = "".join(f'<div class="b-trf" data-paso="{i}"><i>{i + 1}</i><b>{a}</b><p>{b}</p></div>' for i, (a, b) in enumerate(TRAMPAS))
+lam("trampas", "Advertencias", "Métricas", f'''
+{kick("04", "cómo evaluamos · cuánto confiar")}
+<h2 class="t">Advertencias</h2>
+<div class="b-tr">{_tr}</div>''',
+    ["Cuatro advertencias, y por qué medimos igual. Uno: el set de la búsqueda es de producto conocido. Quien escribe la "
+     "consulta ve el mueble; en el flujo, el plan lo imagina, y el coseno del primer candidato baja de "
+     f"{f3(_cos_banco)} a {f2(_cos_flujo[0])}–{f2(_cos_flujo[1])}: esos números son optimistas. Lo usamos porque es la única "
+     "forma de tener respuesta correcta para cientos de consultas, y todas las variantes reciben las mismas: sirve para comparar.",
+     "Dos: el mismo modelo escribe las descripciones y las consultas, con el mismo molde; por eso contar palabras rinde casi "
+     "como el embedder. Pero así funciona el sistema: el plan también escribe una ficha.",
+     f"Tres: no hay conjunto apartado; todo se eligió sobre los mismos {N_AMB_ANS} ambientes. Partirlos dejaba muy pocos. En "
+     "cambio, comparamos siempre de a pares, con su intervalo, y medimos el ruido con tres redactores: dos puntos no son señal.",
+     f"Y cuatro: de punta a punta son {D['n_ambientes_vacios']} ambientes, y el juez es el mismo modelo que elige. La misma "
+     f"configuración, corrida dos veces, cambió {RUIDO_CAMBIAN} de {RUIDO_PROD} productos, y el juez repartió los ambientes "
+     f"{J_RUIDO['a']} a {J_RUIDO['b']}. Por eso el juez corre en los dos órdenes y solo leemos resultados desparejos, como un "
+     "cinco a cero. Más ambientes, y validar al juez con personas, quedan para el trabajo futuro."],
     40)
+
+# =============================================================================================
+# Configuración inicial, fase por fase, y qué experimento la pone a prueba
+# =============================================================================================
+_PARTIDA = [("Qué se indexa", "el texto del vendedor", (1,)),
+            ("La consulta", "el pedido, sin reescribir", (2,)),
+            ("El índice", "Qwen3 · 1024 dimensiones · un documento por producto · ChromaDB", (9, 10, 11, 12)),
+            ("Filtros", "ninguno", (13,)),
+            ("La búsqueda", "solo densa: el coseno", (3,)),
+            ("Reordenar", "no se reordena", (5, 14)),
+            ("La elección", "Opus elige entre los 3 primeros, mirando las fotos", (5, 6)),
+            ("La escena", "la escribe el LLM", (15,))]
+_pt = "".join(f'<li><b>{a}</b><span>{b}</span><div>{"".join(f"<em class=tp>{n}</em>" for n in ns)}</div></li>'
+              for a, b, ns in _PARTIDA)
+lam("partida", "Configuración inicial", "Experimentos", f'''
+{kick("E", "experimentos · un RAG naive")}
+<h2 class="t">Configuración inicial</h2>
+<ul class="pt-l"><li class="pt-cab"><b>fase</b><span>arrancamos con</span><div>lo prueba</div></li>{_pt}</ul>
+<div class="pt-pie"><p><b>Lo que gana, se suma</b>: el camino incremental, después del experimento 3.</p>
+<p><b>Cada experimento cambia una sola cosa</b>; la lámina dice sobre qué configuración.</p></div>''',
+    ["Arrancamos de un RAG naive; al lado de cada fase, el experimento que la pone a prueba. Lo que gana se suma, y cada "
+     "experimento cambia una sola cosa."],
+    30, clase="clara")
 
 # =============================================================================================
 # El mapa de los experimentos: un pin por pregunta, sobre la fase a la que se la hicimos
@@ -428,25 +447,25 @@ EXPS = [
     (5, "Elegir con un VLM, y cuántos", "top-10 mirando las fotos · k de 1 a 10"),
     (6, "Con búsqueda o sin búsqueda", f"los {K} mejores · {K} al azar · el catálogo entero (juez)"),
     (7, "Tres redactores", "las mismas consultas, escritas tres veces"),
-    (8, "Embedder", "hashing · BM25 · BGE · Qwen3"),
-    (9, "Dimensión del vector", "de 32 a 1024 (Matryoshka)"),
-    (10, "Splitting y líneas", "documento · por línea · qué líneas pesan"),
-    (11, "Base vectorial", "ChromaDB (HNSW) · búsqueda exacta"),
-    (12, "Filtros de metadata", "ninguno · por tipo · por kind"),
-    (13, "Rerankers de texto", "MiniLM · Qwen3-Reranker"),
-    (14, "La escena", "plantilla · escrita por el LLM"),
+    (8, "Buscar por imagen", "el recorte de cada mueble · la descripción"),
+    (9, "Embedder", "hashing · BM25 · BGE · Qwen3"),
+    (10, "Dimensión del vector", "de 32 a 1024 (Matryoshka)"),
+    (11, "Splitting y líneas", "documento · por línea · qué líneas pesan"),
+    (12, "Base vectorial", "ChromaDB (HNSW) · búsqueda exacta"),
+    (13, "Filtros de metadata", "ninguno · por tipo · por kind"),
+    (14, "Rerankers de texto", "MiniLM · Qwen3-Reranker"),
+    (15, "La escena", "plantilla · escrita por el LLM"),
 ]
-assert {n for n, *_ in EXPS if n > 7} == TRAMITE
+assert {n for n, *_ in EXPS if n > 8} == TRAMITE
 _h = "".join(f'<li class="{"tram" if n in TRAMITE else ""}"><em>{n}</em><b>{q}</b><span>{o}</span></li>' for n, q, o in EXPS)
 lam("hiper", "El mapa de los experimentos", "Experimentos", f'''
 {kick("E", "experimentos · el mapa")}
-<h2 class="t chico">Catorce preguntas: <em>siete con lámina propia</em>, siete de trámite</h2>
+<h2 class="t">Experimentos</h2>
 <ol class="hiper h14">{_h}</ol>
-<p class="hiper-pie">cada pin, sobre la fase a la que le hizo la pregunta · lleno: con lámina propia · hueco: de trámite · <b>sin experimento: el modelo de imagen y los umbrales del control</b></p>
-<div class="esq esq-hiper">{flujo(pines=range(1, 15), banco=f"{N_AMB} ambientes de IKEA anotados · {N_ANS} consultas con respuesta")}</div>''',
+<div class="esq esq-hiper">{flujo(pines=range(1, 16), banco=f"{N_AMB} ambientes de IKEA anotados · {N_ANS} consultas con respuesta")}</div>''',
     "Ahora los experimentos, por cuánto importan. El mismo mapa: cada pin es una pregunta que le "
-    "hicimos a una parte del sistema. Los llenos, del 1 al 7, tienen lámina propia. Dos de ellos, el 4 y el 7, no miden una "
-    "fase: miden al banco de prueba. Los huecos, del 8 al 14, son los de trámite. "
+    "hicimos a una parte del sistema. Del 1 al 8, los que más pesan; el 4 y el 7 miden al set de evaluación. Del 9 al "
+    "15, los de trámite, una lámina rápida cada uno. "
     "Y dos cosas no las decidió ningún experimento: el modelo de imagen y "
     "los umbrales del control.",
     35)

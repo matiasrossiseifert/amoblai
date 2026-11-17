@@ -136,18 +136,19 @@ NODOS = [
 ]
 POS = {k: (COL[c], FILA[f], w) for k, _i, _n, _a, _b, c, f, w in NODOS}
 
-# Los catorce experimentos, por el ranking de la revisión (docs/REVISION.md, sección 4): del 1 al 7,
-# con lámina propia; del 8 al 14, de trámite (su pin va hueco). ETAPA_EXP: la etapa que se enciende
+# Los quince experimentos, por el ranking de la revisión (docs/REVISION.md, sección 4): del 1 al 8,
+# con lámina propia; del 9 al 15, de trámite (su pin va hueco). ETAPA_EXP: la etapa que se enciende
 # en la lámina de cada uno. PIN_NODO: sobre qué etapa va su pin en el mapa; el 4 y el 7 no miden
 # una etapa sino al banco de prueba de la búsqueda (en el mapa van en su caja; en un minimapa,
 # sobre la búsqueda).
 ETAPA_EXP = {1: ["descripcion"], 2: ["plan"], 3: ["busqueda"], 4: ["busqueda"], 5: ["busqueda", "eleccion"],
-             6: ["busqueda"], 7: ["busqueda"], 8: ["indice"], 9: ["indice"], 10: ["indice"],
-             11: ["indice"], 12: ["busqueda"], 13: ["busqueda"], 14: ["escena"]}
-TRAMITE = {8, 9, 10, 11, 12, 13, 14}
+             6: ["busqueda"], 7: ["busqueda"], 8: ["busqueda"], 9: ["indice"], 10: ["indice"], 11: ["indice"],
+             12: ["indice"], 13: ["busqueda"], 14: ["busqueda"], 15: ["escena"]}
+TRAMITE = {9, 10, 11, 12, 13, 14, 15}
 BANCO = {4, 7}
 PIN_NODO = {1: "descripcion", 2: "plan", 3: "busqueda", 4: "banco", 5: "eleccion", 6: "busqueda",
-            7: "banco", 8: "indice", 9: "indice", 10: "indice", 11: "indice", 12: "busqueda", 13: "busqueda", 14: "escena"}
+            7: "banco", 8: "busqueda", 9: "indice", 10: "indice", 11: "indice", 12: "indice", 13: "busqueda",
+            14: "busqueda", 15: "escena"}
 
 
 def _pines_por_nodo(pines, banco=False):
@@ -248,7 +249,7 @@ def flujo(pines=(), cls="", pin_paso=None, etiquetas_fin=None, on=(), ruta=False
     if banco:
         by, bh = 890, 98
         o.append(f'<g class="banco" data-k="banco"><rect class="reg reg-i" x="0" y="{by}" width="1008" height="{bh}" rx="10"/>'
-                 f'<text class="reg-t" x="20" y="{by + 34}">el instrumento · el banco de prueba de la búsqueda</text>'
+                 f'<text class="reg-t" x="20" y="{by + 34}">el instrumento · el set de evaluación de la búsqueda</text>'
                  f'<text class="sub" x="20" y="{by + 68}">{banco}</text></g>')
     pos = {**POS, "banco": (0, 890, 1008)}
     for k, ns in por_nodo.items():
