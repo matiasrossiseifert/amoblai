@@ -1,0 +1,33 @@
+{
+  "product": "003.014.99",
+  "text": "Type: stool\nName: NORRKER\nColors: White birch\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "003.014.99",
+      "name": "NORRKER",
+      "category": "stool",
+      "kind": "bar stool",
+      "dimensions_cm": null,
+      "type_ikea": "Bar stool with backrest",
+      "category_tp": "stool",
+      "size_raw": "74 cm",
+      "colors": [
+        "White birch"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "9807e7762ca9c83a"
+    ]
+  }
+}

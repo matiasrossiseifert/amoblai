@@ -1,0 +1,36 @@
+{
+  "product": "702.453.39",
+  "text": "Type: desk\nName: BEST BURS\nColors: High-gloss white\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "702.453.39",
+      "name": "BEST BURS",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 120.0,
+        "depth": 40.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "120x40 cm",
+      "colors": [
+        "High-gloss white"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "47473230764d2002"
+    ]
+  }
+}

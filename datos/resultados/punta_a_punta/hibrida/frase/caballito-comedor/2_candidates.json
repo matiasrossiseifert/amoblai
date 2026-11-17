@@ -1,0 +1,367 @@
+{
+  "pieces": [
+    {
+      "piece": "a light wood dining table for four, in the free floor beside the kitchenette",
+      "spec": {
+        "piece": "a light wood dining table for four, in the free floor beside the kitchenette",
+        "why": "a light oak table sits naturally next to the oak kitchen fronts and keeps the open space light and Nordic, sized for four without blocking the walkway to the entrance",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 140,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: dining table, light wood for four\nUse: everyday meals for four; open-plan dining area next to the kitchen\nStyle: Scandinavian, minimalist\nMaterials: light oak wood\nColors: natural light oak\nShape: rectangular or rounded rectangle, slim top, four simple tapered or straight legs, light visual weight\nFeel: bright, simple, warm\nGoes with: light oak kitchen fronts, white walls and cabinets, grey-brown oak floor, black chairs; Nordic dining area"
+      },
+      "candidates": [
+        {
+          "id": "146.300.09",
+          "name": "INGO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/146.300.09.jpg"
+          ],
+          "description": "Type: rectangular pine dining table\nUse: dining, everyday meals, crafts; kitchen, dining room, cabin\nStyle: rustic, Scandinavian, farmhouse\nMaterials: solid pine, untreated natural wood with visible knots\nColors: light warm natural pine, honey\nShape: rectangular top, plain apron, four straight square legs, simple boxy frame, medium visual weight\nFeel: warm, honest, homey, simple\nGoes with: wooden or white chairs, white walls, cotton textiles, woven baskets; rustic, farmhouse or Scandinavian kitchens and dining rooms\n",
+          "score": 1.0657063484881546,
+          "kind": "dining table"
+        },
+        {
+          "id": "202.753.38",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 74.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/202.753.38.jpg"
+          ],
+          "description": "Type: small square dining table\nUse: dining for two, breakfast; kitchen, small dining room, studio apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquered finish\nColors: pale natural birch\nShape: square top with softly rounded corners, plain apron, four sturdy square legs splayed slightly outward, simple and compact, light visual weight\nFeel: calm, light, natural, friendly\nGoes with: birch or white chairs, white walls, linen and greenery; Scandinavian or Japandi kitchens and compact dining corners\n",
+          "score": 1.038662762020481,
+          "kind": "dining table"
+        },
+        {
+          "id": "002.908.15",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 125.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/002.908.15.jpg"
+          ],
+          "description": "Type: rectangular solid wood dining table\nUse: dining, everyday meals, working; dining room, kitchen, small apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch, clear lacquer\nColors: light natural birch, pale blonde wood\nShape: rectangular top with soft rounded edges, thin apron, four square legs angled slightly outward, light and simple\nFeel: warm, calm, natural, honest\nGoes with: white or light grey walls, wooden or black chairs, linen textiles; Scandinavian or Japandi kitchens and dining rooms\n",
+          "score": 1.0304207161046548,
+          "kind": "dining table"
+        },
+        {
+          "id": "702.943.39",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 78.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/702.943.39.jpg"
+          ],
+          "description": "Type: rectangular wooden dining table\nUse: dining, working at a table; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: ash veneer top with clear lacquer, solid wood legs\nColors: light natural ash, pale blond wood\nShape: thin top with soft rounded corners and beveled edge, four slender round tapered legs slightly splayed, fixed right under the top, light and open\nFeel: airy, warm, calm, natural\nGoes with: white walls, light wood or black chairs, woven textiles; Scandinavian or Japandi dining rooms\n",
+          "score": 0.91945130600896,
+          "kind": "dining table"
+        },
+        {
+          "id": "302.868.45",
+          "name": "NORNS",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.868.45.jpg"
+          ],
+          "description": "Type: rectangular drop-leaf dining table\nUse: dining, extra seating when needed; dining room, kitchen\nStyle: rustic, farmhouse, Scandinavian\nMaterials: untreated solid pine with visible knots\nColors: light natural pine\nShape: long rectangular top, single hinged drop leaf at one end, plain apron, four tapered square legs, simple and sturdy, medium visual weight\nFeel: natural, homey, warm, relaxed\nGoes with: wooden or painted chairs, white walls, linen and greenery; farmhouse kitchens, cabins or Scandinavian dining rooms\n",
+          "score": 0.859043592325075,
+          "kind": "dining table"
+        }
+      ]
+    },
+    {
+      "piece": "four black dining chairs around the table",
+      "spec": {
+        "piece": "four black dining chairs around the table",
+        "why": "black chairs give the requested contrast against white walls and light wood, echoing the black oven so the dining area ties into the kitchen",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: dining chair, black Nordic side chair\nUse: seating at the dining table; open-plan dining area\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: black painted wood or black molded seat, wood or metal legs\nColors: black\nShape: armless, curved backrest, slim legs, light visual weight\nFeel: graphic, simple, comfortable\nGoes with: light oak dining table, white walls, light oak kitchen, black oven; Nordic dining area"
+      },
+      "candidates": [
+        {
+          "id": "402.808.43",
+          "name": "NORRARYD",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/402.808.43.jpg"
+          ],
+          "description": "Type: spindle-back dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: farmhouse, Scandinavian, traditional\nMaterials: solid wood with a black stained and lacquered finish\nColors: black, matte charcoal black\nShape: curved top rail over slim vertical spindles, shaped saddle seat, four round splayed legs with stretchers, Windsor-style silhouette, light and open\nFeel: graphic, homely, classic, crafted\nGoes with: light wood or white tables, white walls, warm wood floors; farmhouse kitchens, Scandinavian or modern country dining rooms\n",
+          "score": 2.1261546991273543,
+          "kind": "dining chair"
+        },
+        {
+          "id": "802.251.66",
+          "name": "IDOLF",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/802.251.66.jpg"
+          ],
+          "description": "Type: bistro-style wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: Scandinavian, classic, modern\nMaterials: solid wood frame with a black painted finish, curved wooden backrest\nColors: black, matte black\nShape: wide curved backrest panel on two rear posts, rounded seat, four slim round legs joined by a ring stretcher, bentwood caf\u00e9 look, light and open\nFeel: graphic, crisp, simple, timeless\nGoes with: light wood or white tables, white walls, brass or black accents; Scandinavian kitchens, modern bistro-style dining rooms\n",
+          "score": 1.9324724957845605,
+          "kind": "dining chair"
+        },
+        {
+          "id": "101.168.49",
+          "name": "BRJE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/101.168.49.jpg"
+          ],
+          "description": "Type: slat-back dining chair with padded seat\nUse: dining; dining room, kitchen\nStyle: traditional, Scandinavian, classic\nMaterials: solid wood frame in a brown-black stain, padded seat with white fabric cover\nColors: dark brown-black, white seat\nShape: tall upright back with four vertical slats, armless, cushioned seat, four straight square legs, slim and upright, light visual weight\nFeel: tidy, classic, calm, homey\nGoes with: dark wood tables, white walls, black and white schemes; classic or Scandinavian dining rooms\n",
+          "score": 1.8879979944057241,
+          "kind": "dining chair"
+        },
+        {
+          "id": "401.822.44",
+          "name": "KAUSTBY",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/401.822.44.jpg"
+          ],
+          "description": "Type: ladder-back wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: farmhouse, traditional, rustic\nMaterials: solid wood with a dark stained lacquered finish\nColors: black-brown, dark espresso\nShape: tall ladder back with four horizontal rails, flat solid wooden seat, square straight legs with low side stretchers, sturdy upright frame, medium visual weight\nFeel: solid, classic, grounded, homely\nGoes with: dark wood or white tables, light walls, linen textiles; farmhouse kitchens, traditional dining rooms\n",
+          "score": 1.700240802736154,
+          "kind": "dining chair"
+        },
+        {
+          "id": "602.178.22",
+          "name": "INGOLF",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/602.178.22.jpg"
+          ],
+          "description": "Type: cross-back wooden dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: farmhouse, traditional, rustic\nMaterials: solid wood with a dark brown-black stained finish\nColors: black-brown, dark espresso\nShape: curved top rail over an X-shaped cross back, flat solid seat with a straight apron, square tapered legs with side stretchers, upright frame, medium visual weight\nFeel: classic, solid, homely, warm\nGoes with: dark wood or white tables, cream walls, natural textiles; farmhouse kitchens, traditional or rustic dining rooms\n",
+          "score": 1.6138877797474362,
+          "kind": "dining chair"
+        }
+      ]
+    },
+    {
+      "piece": "a pendant lamp hung centered over the dining table",
+      "spec": {
+        "piece": "a pendant lamp hung centered over the dining table",
+        "why": "a simple pendant defines the dining zone within the open space and brings warm light low over the table, in a Nordic shape that suits the clean white ceiling",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": 60,
+        "max_depth_cm": 60,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, dome or bell shade\nUse: lighting over the dining table; open-plan dining area\nStyle: Scandinavian, minimalist\nMaterials: metal shade or light wood veneer, fabric cord\nColors: black or white with light wood accent\nShape: single dome or bell shade, 35 to 50 cm across, clean lines, medium visual weight\nFeel: warm, calm, simple\nGoes with: light oak table, black chairs, white walls and ceiling; Nordic dining area"
+      },
+      "candidates": [
+        {
+          "id": "702.808.13",
+          "name": "SVIRVEL",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.808.13.jpg"
+          ],
+          "description": "Type: double bell pendant lamp\nUse: light over a long dining table or a kitchen island; dining room, kitchen\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white lacquered metal shades, aluminium crossbar, steel suspension wires, transparent cords, grey ceiling cup\nColors: white, silver grey\nShape: two rounded bell shades joined by a long horizontal bar, hung on thin wires in a triangle from a single ceiling cup, wide and airy, light visual weight\nFeel: clean, balanced, light, functional\nGoes with: long white or light wood dining tables, grey accents; Scandinavian, minimalist or modern dining rooms\n",
+          "score": 1.6117231634307834,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B071HSMWGB",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Round Ceiling Pendant Chandelier Fixture - 12 Inch Shade, 12.5 - 60.5 Inch Cord, Brushed Nickel",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 30.5,
+            "depth": 30.5,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071HSMWGB.jpg"
+          ],
+          "description": "Type: nickel dome pendant lamp\nUse: light over a dining table or island; dining room, kitchen\nStyle: farmhouse, industrial, modern\nMaterials: brushed nickel metal\nColors: silver grey\nShape: deep rounded dome shade with stepped cylindrical neck, hangs on cord, medium size\nFeel: clean, bright, classic\nGoes with: white cabinets, grey tones, wood; farmhouse or modern kitchens and dining rooms\n",
+          "score": 1.057699010175177,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B071F6VV2T",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Caf&eacute; Ceiling Pendant Light Chandelier Fixture, 10.75\"W x 58.75\" Cord, Matte Black and Chrome",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 30.5,
+            "depth": 30.5,
+            "height": 149.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071F6VV2T.jpg"
+          ],
+          "description": "Type: black dome pendant lamp\nUse: light over a dining table; dining room, kitchen, home office\nStyle: industrial, retro, mid-century modern\nMaterials: matte black metal shade, polished chrome band and fitter, frosted diffuser\nColors: matte black, chrome silver, white\nShape: wide domed shade with chrome rim band and side screws, flat diffuser underneath, hangs on thin cord, medium size\nFeel: bold, crisp, nostalgic\nGoes with: dark wood, white walls, chrome accents; industrial or modern dining rooms\n",
+          "score": 0.7834523226383197,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B0719H3LG2",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Industrial Round Ceiling Pendant Chandelier Fixture - 6.5 Inch Shade, 10 - 58 Inch Cord, Chrome and Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 16.5,
+            "depth": 16.5,
+            "height": 147.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719H3LG2.jpg"
+          ],
+          "description": "Type: chrome dome pendant lamp\nUse: light over a kitchen island or dining table; dining room, kitchen, entryway\nStyle: industrial, farmhouse, traditional\nMaterials: polished chrome shade, dark bronze metal yoke, black cord\nColors: silver chrome, dark bronze black\nShape: rounded bell shade with rolled rim, adjustable yoke bracket and turned finial, hangs on cord, compact\nFeel: vintage, crisp, workmanlike\nGoes with: subway tile, dark wood, black hardware; industrial or farmhouse rooms\n",
+          "score": 0.7758610515950665,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "602.564.94",
+          "name": "RANARP",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.564.94.jpg"
+          ],
+          "description": "Type: off-white metal dome pendant lamp\nUse: light over a dining table or a kitchen island; dining room, kitchen, living room\nStyle: industrial, farmhouse, retro\nMaterials: off-white lacquered steel shade, brass-coloured cage fitting, braided grey and white textile cord, white ceiling cup\nColors: warm off-white, brass gold, grey\nShape: wide shallow dome with a rounded shoulder and a small brass cage at the top, hangs on a long cord, medium-to-large, clean and solid\nFeel: warm, nostalgic, homely, crafted\nGoes with: wood tables, white tiles, brass or black accents; farmhouse, industrial or Scandinavian kitchens\n",
+          "score": 0.762601353767098,
+          "kind": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a low sideboard against the long white wall on the right, near the table",
+      "spec": {
+        "piece": "a low sideboard against the long white wall on the right, near the table",
+        "why": "a low light-wood sideboard gives storage for dishes and table linen on the empty right wall, repeating the kitchen's oak and white to keep the room cohesive and uncluttered",
+        "kinds": [
+          "sideboard"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 85,
+        "query": "Type: sideboard, low with doors and drawers\nUse: storing dishes and table linen; open-plan dining area\nStyle: Scandinavian, minimalist\nMaterials: light oak wood, white lacquer\nColors: natural light oak, white\nShape: long and low, slim legs, flush or slatted fronts, clean lines, medium visual weight\nFeel: orderly, light, warm\nGoes with: light oak dining table, black chairs, white kitchen cabinets with oak fronts, white walls, grey-brown floor; Nordic dining area"
+      },
+      "candidates": [
+        {
+          "id": "402.397.21",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.397.21.jpg"
+          ],
+          "description": "Type: walnut veneer sideboard\nUse: storing tableware, linens or media, a surface for lamps and decor; dining room, living room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer with a fine vertical grain, solid wood legs and base frame\nColors: medium warm walnut brown\nShape: long low cabinet with a row of flush doors, set on a slim wooden base with four square legs and a long stretcher, clean edges, substantial yet lifted\nFeel: warm, refined, calm, timeless\nGoes with: cream or white walls, brass lamps, green plants, wool rugs; mid-century modern or Scandinavian dining and living rooms\n",
+          "score": 1.3082815940185009,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B07B7DMPX7",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood Media TV Console Stand Table, 59\"H, White &amp; Gray",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 150.1,
+            "depth": 50.0,
+            "height": 77.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DMPX7.jpg"
+          ],
+          "description": "Type: herringbone-front sideboard\nUse: storage, TV or display surface; living room, dining room\nStyle: mid-century modern, glam, contemporary\nMaterials: white lacquered case, limed wood chevron veneer fronts, brass handles and legs\nColors: white, light greige wood, gold\nShape: long low rectangular case, two doors flanking three drawers, chevron pattern, slim tab pulls, thin metal legs, raised and light\nFeel: elegant, bright, refined\nGoes with: white walls, light wood, brass accents; modern, glam or Scandinavian rooms\n",
+          "score": 1.023566672780067,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B07HSBD8DM",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 172.7,
+            "depth": 50.8,
+            "height": 82.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSBD8DM.jpg"
+          ],
+          "description": "Type: four-door buffet sideboard\nUse: storing tableware, serving, media storage; dining room, living room\nStyle: traditional, coastal, contemporary\nMaterials: brown wood, woven cane door panels, silver metal bar pulls\nColors: warm medium brown, silver\nShape: long rectangular case, four framed cane-panel doors, long vertical pulls, open base frame with stretchers, square legs, substantial\nFeel: warm, refined, relaxed\nGoes with: rattan, linen, cream walls, brushed nickel; traditional, coastal or transitional rooms\n",
+          "score": 0.22315186269357576,
+          "kind": "sideboard"
+        },
+        {
+          "id": "002.809.39",
+          "name": "NORNS",
+          "category": "cabinet",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.809.39.jpg"
+          ],
+          "description": "Type: open cube sideboard on metal base\nUse: open storage for books, baskets, records or a TV; living room, dining room, hallway\nStyle: rustic, Scandinavian, industrial\nMaterials: solid pine with visible knots, grey back panels, grey powder-coated steel base\nColors: light natural pine, dark grey base and back\nShape: low wide frame with eight open square compartments in two rows, raised on a simple metal frame with four square legs, sturdy and open\nFeel: warm, practical, honest, relaxed\nGoes with: woven baskets, vinyl records, linen, black or grey metal; rustic, Scandinavian or industrial living rooms\n",
+          "score": -0.7362477311438232,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075YQ8Q3T",
+          "name": "Amazon Brand \u2013 Stone & Beam Parson Rustic Buffet Sideboard Storage Cabinet 56\"W, Oak Wood",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 142.2,
+            "depth": 45.7,
+            "height": 81.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YQ8Q3T.jpg"
+          ],
+          "description": "Type: rustic oak sideboard\nUse: storing tableware and linens, serving surface; dining room, living room\nStyle: rustic, farmhouse, traditional\nMaterials: solid oak with distressed finish, metal knob pulls\nColors: warm honey oak, antique pewter\nShape: long rectangular case, overhanging top, three drawers over three paneled doors, short square legs, sturdy and substantial\nFeel: warm, homely, solid\nGoes with: cream walls, linen textiles, wrought iron accents; farmhouse or country dining rooms\n",
+          "score": -0.8457470802223638,
+          "kind": "sideboard"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

@@ -1,0 +1,33 @@
+{
+  "product": "102.911.31",
+  "text": "Type: lamp\nName: STOCKHOLM\nColors: White\nLight bulb sold separately. IKEA recommends LED bulb GU10 400 lumen. View more product information The textile shade provides a diffused and decorative light.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "102.911.31",
+      "name": "STOCKHOLM",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb GU10 400 lumen. View more product information The textile shade provides a diffused and decorative light."
+    },
+    "photos": [
+      "dca554d0dbc43858"
+    ]
+  }
+}

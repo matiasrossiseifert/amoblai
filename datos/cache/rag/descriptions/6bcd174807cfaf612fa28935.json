@@ -1,0 +1,33 @@
+{
+  "product": "903.007.25",
+  "text": "Type: sofa\nName: FRIHETEN\nColors: Skiftebo dark orange\nReadily converts into a bed.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "903.007.25",
+      "name": "FRIHETEN",
+      "category": "sofa",
+      "kind": "sofa bed",
+      "dimensions_cm": null,
+      "type_ikea": "Three-seat sofa-bed",
+      "category_tp": "sofa",
+      "size_raw": null,
+      "colors": [
+        "Skiftebo dark orange"
+      ],
+      "description": "Readily converts into a bed."
+    },
+    "photos": [
+      "495fe612ab0e9343"
+    ]
+  }
+}

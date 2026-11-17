@@ -1,0 +1,143 @@
+{
+ "corrida": "img-gpt_image_2-publica-loft-industrial",
+ "imagen": "final.png",
+ "generador": "gpt_image_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B07QBMQ4LN",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.633,
+   "box": [
+    552,
+    561,
+    851,
+    757
+   ],
+   "puesto": 1,
+   "entre": 95,
+   "coseno": 0.6853,
+   "mas_parecido": "abo-B07QBMQ4LN"
+  },
+  {
+   "id": "abo-B07QF9Y71V",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.305,
+   "box": [
+    764,
+    638,
+    988,
+    813
+   ],
+   "puesto": 1,
+   "entre": 176,
+   "coseno": 0.6313,
+   "mas_parecido": "abo-B07QF9Y71V"
+  },
+  {
+   "id": "abo-B07HSLTLGP",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": true,
+   "detector": "shelf",
+   "score_detector": 0.543,
+   "box": [
+    874,
+    442,
+    1074,
+    662
+   ],
+   "puesto": 1,
+   "entre": 91,
+   "coseno": 0.6774,
+   "mas_parecido": "abo-B07HSLTLGP"
+  },
+  {
+   "id": "003.313.78",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "floor lamp",
+   "score_detector": 0.404,
+   "box": [
+    796,
+    495,
+    867,
+    650
+   ],
+   "puesto": 2,
+   "entre": 172,
+   "coseno": 0.585,
+   "mas_parecido": "302.313.01"
+  },
+  {
+   "id": "abo-B07HSL753S",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.788,
+   "box": [
+    479,
+    651,
+    1097,
+    1022
+   ],
+   "puesto": 19,
+   "entre": 178,
+   "coseno": 0.242,
+   "mas_parecido": "abo-B07B4Z7WJH"
+  },
+  {
+   "id": "abo-B07BMTXJ12",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": false
+  },
+  {
+   "id": "002.857.91",
+   "kind": "plant pot",
+   "categoria": "deco",
+   "detectado": false
+  }
+ ],
+ "fidelidad": {
+  "productos": 7,
+  "detectados": 5,
+  "presencia": 0.7143,
+  "coseno_medio": 0.5642,
+  "identificados@1": 0.4286,
+  "mrr": 0.5075
+ },
+ "inventadas": [],
+ "repetidas": [],
+ "ambiente": {
+  "ssim": 0.8502,
+  "ssim_fuera_de_los_muebles": 0.9757,
+  "fraccion_fuera_de_los_muebles": 0.75,
+  "sift_puntos_original": 667,
+  "sift_matches": 397,
+  "sift_inliers": 383,
+  "sift_reencontrados": 0.5742,
+  "sift_desplazamiento_mediano": 0.0
+ },
+ "pedido_imagen": {
+  "pedido": "Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.",
+  "siglip_final": 0.0827,
+  "siglip_vacia": 0.0533,
+  "delta": 0.0294,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.019
+ }
+}

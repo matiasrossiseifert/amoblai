@@ -1,0 +1,36 @@
+{
+  "product": "202.708.02",
+  "text": "Type: dresser\nName: ASKVOLL\nColors: White stained oak effect, white\nOf course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.708.02",
+      "name": "ASKVOLL",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 70.0
+      },
+      "type_ikea": "Chest of 3 drawers",
+      "category_tp": "dresser",
+      "size_raw": "70x68 cm",
+      "colors": [
+        "White stained oak effect",
+        "white"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "e74fb39c3592e78e"
+    ]
+  }
+}

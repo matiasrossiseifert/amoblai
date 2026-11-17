@@ -1,0 +1,41 @@
+{
+  "product": "abo-B0725YNDBL",
+  "text": "Type: table\nName: Urban Living Coffee Tables\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "abo-B0725YNDBL",
+      "name": "Urban Living Coffee Tables",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 119.4,
+        "depth": 40.6,
+        "height": 69.8
+      },
+      "brand": "Rivet",
+      "product_type": "TABLE",
+      "colors": [],
+      "materials": [],
+      "style": null,
+      "description": "",
+      "image_path": "07/0753ed75.jpg",
+      "image_px": [
+        2000,
+        1333
+      ]
+    },
+    "photos": [
+      "0f22b22a89493283"
+    ]
+  }
+}

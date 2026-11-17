@@ -6,26 +6,18 @@
 # datos/ va completo (dataset, procesados, caché de las respuestas pagadas, fotos, corridas)
 # para que el equipo trabaje sin volver a bajar ni pagar nada. El repo es privado.
 
-# Documentación, consigna y material de la materia: solo local. Excepción: las presentaciones
-# (fuentes, guiones, .html y las fuentes tipográficas recortadas); no las capturas de trabajo.
+# Documentación, consigna y material de la materia: solo local. Excepción: la presentación
+# (fuentes, guion, .html y las fuentes tipográficas recortadas); no las capturas de trabajo.
 /docs/*
 !/docs/presentacion/
-!/docs/presentaciones_nuevas/
 !/docs/METRICAS.md
 !/docs/EXPERIMENTOS.md
 !/docs/FUTURO.md
 !/docs/REVISION.md
-/docs/presentaciones_nuevas/*/_trabajo/*
-!/docs/presentaciones_nuevas/b2/_trabajo/sift_*.json
-!/docs/presentaciones_nuevas/b2/_trabajo/vector_*.json
-!/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/
-/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*
-!/docs/presentaciones_nuevas/a_desde_cero/_trabajo/cache/*.woff2
-!/docs/presentaciones_nuevas/b_mismo_contenido/_trabajo/fuentes/
-!/docs/presentaciones_nuevas/a2/_trabajo/cache/
-/docs/presentaciones_nuevas/a2/_trabajo/cache/*
-!/docs/presentaciones_nuevas/a2/_trabajo/cache/fuentes/
-!/docs/presentaciones_nuevas/b2/_trabajo/fuentes/
+/docs/presentacion/_trabajo/*
+!/docs/presentacion/_trabajo/fuentes/
+!/docs/presentacion/_trabajo/sift_*.json
+!/docs/presentacion/_trabajo/vector_*.json
 /material-clases/
 
 # Python / herramientas

@@ -98,14 +98,21 @@ def text_block(text: str, cache: str | None = None) -> dict:
 
 def parse_json(text: str) -> dict:
     """The JSON object in an answer: the first one, with or without a ```json fence around it
-    and whatever the model wrote before or after (a note, a second block)."""
-    start = text.find("{")
-    try:
-        if start < 0:
-            raise json.JSONDecodeError("no JSON object", text, 0)
-        data, _ = json.JSONDecoder().raw_decode(text[start:])
-    except json.JSONDecodeError as e:
-        raise ProviderError(f"the answer is not the JSON asked for: {e}: {text[:300]!r}") from e
+    and whatever the model wrote before or after (a note, a second block). If the first one is
+    broken and the model wrote it again (a "correction"), the next one that starts a line."""
+    starts = [text.find("{")]
+    starts += [i + 1 for i in range(starts[0], len(text) - 1) if text[i : i + 2] == "\n{"]
+    err: json.JSONDecodeError | None = None
+    for start in starts:
+        try:
+            if start < 0:
+                raise json.JSONDecodeError("no JSON object", text, 0)
+            data, _ = json.JSONDecoder().raw_decode(text[start:])
+            break
+        except json.JSONDecodeError as e:
+            err = err or e
+    else:
+        raise ProviderError(f"the answer is not the JSON asked for: {err}: {text[:300]!r}") from err
     if not isinstance(data, dict):
         raise ProviderError(f"the answer is not a JSON object: {text[:300]!r}")
     return data

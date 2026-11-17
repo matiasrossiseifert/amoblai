@@ -1,0 +1,36 @@
+{
+  "product": "602.610.37",
+  "text": "Type: desk\nName: ARKELSTORP\nColors: Black\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "602.610.37",
+      "name": "ARKELSTORP",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 140.0,
+        "depth": 70.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "140x70 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "91f01dca7356230c"
+    ]
+  }
+}

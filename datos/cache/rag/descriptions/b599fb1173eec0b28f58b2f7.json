@@ -1,0 +1,35 @@
+{
+  "product": "802.970.21",
+  "text": "Type: cabinet\nName: HEMNES\nColors: White stain\nSolid wood has a natural feel.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "802.970.21",
+      "name": "HEMNES",
+      "category": "cabinet",
+      "kind": "TV stand",
+      "dimensions_cm": {
+        "width": 149.0
+      },
+      "type_ikea": "TV bench",
+      "category_tp": "cabinet",
+      "size_raw": "149x47 cm",
+      "colors": [
+        "White stain"
+      ],
+      "description": "Solid wood has a natural feel."
+    },
+    "photos": [
+      "097edb329efd35e5"
+    ]
+  }
+}

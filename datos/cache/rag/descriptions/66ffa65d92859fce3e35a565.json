@@ -1,0 +1,36 @@
+{
+  "product": "902.607.10",
+  "text": "Type: desk\nName: ALEX\nColors: Grey\nBuilt-in cable management for collecting cables and cords; out of sight but close at hand.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "902.607.10",
+      "name": "ALEX",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 131.0,
+        "depth": 60.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "131x60 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Built-in cable management for collecting cables and cords; out of sight but close at hand."
+    },
+    "photos": [
+      "14bf633dffa09b6b"
+    ]
+  }
+}

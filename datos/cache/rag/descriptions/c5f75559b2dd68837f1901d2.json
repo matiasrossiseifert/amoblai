@@ -1,0 +1,35 @@
+{
+  "product": "690.211.61",
+  "text": "Type: dresser\nName: NORDLI\nColors: White\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "690.211.61",
+      "name": "NORDLI",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 40.0
+      },
+      "type_ikea": "Chest of 6 drawers",
+      "category_tp": "dresser",
+      "size_raw": "40x143 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "ba8acbb681e7b310"
+    ]
+  }
+}

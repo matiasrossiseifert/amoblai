@@ -1,0 +1,33 @@
+{
+  "product": "002.753.44",
+  "text": "Type: stool\nName: NORRKER\nColors: White birch\nDurable and hard-wearing; meets the requirements on furniture for public use.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.753.44",
+      "name": "NORRKER",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "White birch"
+      ],
+      "description": "Durable and hard-wearing; meets the requirements on furniture for public use."
+    },
+    "photos": [
+      "875c9dc3ae265f73"
+    ]
+  }
+}

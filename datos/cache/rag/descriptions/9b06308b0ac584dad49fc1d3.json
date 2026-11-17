@@ -1,0 +1,33 @@
+{
+  "product": "802.017.40",
+  "text": "Type: chair\nName: SUNDVIK\nColors: White\nRocking helps develop the child's sense of balance and the brain to sort sensory impressions.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "802.017.40",
+      "name": "SUNDVIK",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Rocking-chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Rocking helps develop the child's sense of balance and the brain to sort sensory impressions."
+    },
+    "photos": [
+      "804196a5c8f51228"
+    ]
+  }
+}

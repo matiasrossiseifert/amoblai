@@ -1,0 +1,35 @@
+{
+  "product": "703.233.51",
+  "text": "Type: shelf\nName: BILLY\nColors: Brown ash veneer\nAdjustable shelves; adapt space between shelves according to your needs.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "703.233.51",
+      "name": "BILLY",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "80x28x106 cm",
+      "colors": [
+        "Brown ash veneer"
+      ],
+      "description": "Adjustable shelves; adapt space between shelves according to your needs."
+    },
+    "photos": [
+      "ccc6854a67334b0c"
+    ]
+  }
+}

@@ -1,0 +1,862 @@
+{
+  "pieces": [
+    {
+      "piece": "a mustard velvet sofa against the long right-hand wall, facing the balcony",
+      "spec": {
+        "piece": "a mustard velvet sofa against the long right-hand wall, facing the balcony",
+        "why": "it is the heart of the living room and the color anchor the client asked for: mustard velvet glows against the white walls and harmonizes with the warm parquet",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seater velvet sofa\nUse: lounging and conversation; living room\nStyle: bohemian, retro, mid-century modern\nMaterials: velvet upholstery, wooden legs\nColors: mustard yellow, warm wood\nShape: generous rounded silhouette, channel or soft cushions, tapered wooden legs, substantial visual weight\nFeel: cozy, joyful, inviting\nGoes with: honey parquet, white walls, rattan, patterned rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07P5LN16X",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Loveseat with Tufted Back, 64.2\"W, Caramel",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 163.1,
+            "depth": 90.9,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LN16X.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Sloane Modern Leather Loveseat with Tufted Back, 64.2\"W, Caramel\nColors: Caramel\nMaterials: Wood\nThis modern loveseat sports a tufted back, a strong profile, and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 64.2\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this loveseat as practical as it is stylish. A tufted back adds elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 2.1272675398831495,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07QFP4PV5",
+          "name": "Amazon Brand \u2013 Rivet Brooker Down-Filled Mid-Century Sofa, 76\"W, Quarry",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 194.0,
+            "depth": 97.0,
+            "height": 88.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QFP4PV5.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Brooker Down-Filled Mid-Century Sofa, 76\"W, Quarry\nColors: Quarry\nMaterials: Hardwood\nThis mid-century sofa with removable and reversible down-filled cushions offers comfort, while the hardwood frame and tapered legs increase its daily wear-and-tear durability. Whether used as a focus piece or a foundational piece, tufted back cushions add a touch of elegance to any room. 76\"W x 38\"D x 35\"H Solid hardwood frame, down-filled cushions, tapered wood legs Removable and reversible down-filled cushions This mid-century sofa adds elegance and comfort to any room. Assemble in 15 minutes or less Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.806446289314466,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07HZ7PFW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Blaine Modern Sleeper Sofa Bed, 78\"W, Beige",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 96.0,
+            "height": 88.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HZ7PFW4.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Stone & Beam Blaine Modern Sleeper Sofa Bed, 78\"W, Beige\nColors: Beige\nMaterials: Polyester\nAdd mid-century elegance to your living room with this beige sofa bed. The solid-wood frame and polyester upholstery make this sofa bed both sturdy and cozy, and the removable/reversible cushions ensure durability and comfort. Overall: 78\"W x 37.8\"D x 35\"H; seat height: 19.3\"H; seat depth: 21.7\"D; seat back height: 25.6\"H; arm height: 24.4\"H; leg height: 4.9\"H Solid-wood frame and legs with 100% polyester upholstery The tight, removable back cushions and fixed seat cushions ensure durability and comfort. Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty. This item is made to order just for you\n",
+          "score": 1.743063798371261,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082QDKRC5",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QDKRC5.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac\nColors: Cognac\nMaterials: Leather\nTapered legs, a rounded back and armrests, and a chic cognac-colored genuine leather upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame, genuine leather upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty\n",
+          "score": 1.4563072489086573,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B072M1WJF2",
+          "name": "Amazon Brand \u2013 Rivet Midtown Contemporary Upholstered Sofa Couch, 92.1\"W, Cream",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 233.9,
+            "depth": 94.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072M1WJF2.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Midtown Contemporary Upholstered Sofa Couch, 92.1\"W, Cream\nColors: Cream\nMaterials: hardwood frame/resilient cushions\nNestle in for an evening of movie marathon on this modern, smartly designed sofa. With seating for three and removable side and back cushions, you'll have plenty of room for snuggling with your pet or significant other. 37\"D x 92.1\u201dW x 31.5\"H Sturdy hardwood frame, resilient cushions and solid beech legs Contemporary Soft, removable cushions make sofa easier to move. Simple assembly; just attach legs Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.3882569629940695,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a rattan armchair across from the sofa, near the balcony door",
+      "spec": {
+        "piece": "a rattan armchair across from the sofa, near the balcony door",
+        "why": "the rattan brings natural texture and lightness, it is the quintessential bohemian piece, and it closes the conversation area facing the sofa",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: armchair, rattan lounge armchair\nUse: relaxed seating and reading; living room\nStyle: bohemian, coastal\nMaterials: natural rattan, woven cane, seat cushion\nColors: natural honey rattan, cream or terracotta cushion\nShape: curved open frame, airy woven back, light visual weight\nFeel: relaxed, natural, sunny\nGoes with: mustard velvet sofa, warm parquet, white walls; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B005T5ZQ8M",
+          "name": "Strathwood Paden All-Weather Wicker Lounge Chair",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 83.8,
+            "depth": 76.2,
+            "height": 61.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B005T5ZQ8M.jpg"
+          ],
+          "description": "Type: chair\nName: Strathwood Paden All-Weather Wicker Lounge Chair\nColors: Gray\nMaterials: Rattan\nAll-weather wicker lounge chair great for outdoor use Woven resin wicker wrapped around powder-coated aluminum frame; cushions/pillow with 100% polyester fabric cover Contemporary style; coordinates with matching Paden wicker table (sold separately) No assembly required; spot clean cushions/pillow; cover/store during inclement weather; imported Measures 33 inches long by 30 inches wide by 24 inches tall; weighs 20 pounds\n",
+          "score": 2.057742464034778,
+          "kind": "armchair"
+        },
+        {
+          "id": "500.583.76",
+          "name": "AGEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/500.583.76.jpg"
+          ],
+          "description": "Type: chair\nName: AGEN\nColors: Rattan, bamboo\nHandwoven; each piece of furniture is unique.\n",
+          "score": 1.1538092633502113,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07HZ9K9PG",
+          "name": "Amazon Brand \u2013 Stone & Beam Calhoun Living Room Accent Chair, 42\"W, Ecru",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 114.3,
+            "depth": 91.4,
+            "height": 109.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HZ9K9PG.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Calhoun Living Room Accent Chair, 42\"W, Ecru\nColors: Handloom Ecru\nOverall: 42\"W x 41\"D x 36\"H; seat height: 20.5\"H; seat depth: 27\"D; seat back height: 31\"H; arm height: 24\"H; leg height: 1.75\"H Solid-wood frame with mortise-and-tenon construction and 8-guage sinuous spring support system, fully padded and upholstered with performance fabric A classic design updated to suit contemporary tastes, perfect for transitional-style home decor Loose back and seat cushions are removable and reversible to ensure durability and comfort. No assembly required Free returns for 30 days. 3-year warranty. This item is made to order just for you.\n",
+          "score": 1.011299773311835,
+          "kind": "armchair"
+        },
+        {
+          "id": "202.016.82",
+          "name": "STORSELE",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.016.82.jpg"
+          ],
+          "description": "Type: chair\nName: STORSELE\nColors: Black, rattan\nThe furniture is handmade and therefore unique, with rounded shapes and nicely detailed patterns.\n",
+          "score": 0.9747790017703459,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B008U4QSFO",
+          "name": "Strathwood Rhodes Chaise Lounge Chair",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 191.0,
+            "depth": 68.6,
+            "height": 92.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B008U4QSFO.jpg"
+          ],
+          "description": "Type: chair\nName: Strathwood Rhodes Chaise Lounge Chair\nColors: Black\nMaterials: Aluminum\nChaise lounge chair for outdoor use; all-weather cushion with fabric ties to secure to frame Durable cast-aluminum frame with black powder-coat finish; 100-percent polyester cushion cover No assembly required; imported; coordinates with other pieces from the Rhodes collection (sold separately) Spot clean cushion; cover/store during inclement weather Measures 75.2 inches long by 27 inches wide by 36.4 inches high\n",
+          "score": 0.9400951454348047,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a large patterned rug in the center of the room, under the sofa and the armchair",
+      "spec": {
+        "piece": "a large patterned rug in the center of the room, under the sofa and the armchair",
+        "why": "it defines the living area in this very open space and ties everything together with pattern and color over the parquet",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: rug, large patterned area rug\nUse: defining the seating area; living room\nStyle: bohemian, traditional\nMaterials: wool or cotton, low pile or flatweave\nColors: terracotta, rust, mustard, deep blue, cream\nShape: large rectangle, kilim or vintage Persian-style pattern, fringed edges\nFeel: warm, layered, lived-in\nGoes with: mustard velvet sofa, rattan armchair, honey parquet; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSN3TVJ",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Global Bohemian Kilim Rug, 5 x 8 Foot, Multicolor",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSN3TVJ.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Modern Global Bohemian Kilim Rug, 5 x 8 Foot, Multicolor\nMaterials: stone\nThis stunning kilim rug will enhance your home decor with an exotic flair. Its beautifully colored and visually engaging design, embellished with fringe accents, will provide an ideal focal point for modern- or bohemian-style interior design. 5' x 8' 78% wool, 22% cotton This handcrafted rug is made by Craftmark-certified artisans, preserving the global craft tradition. The braided-trim detail and extra fringe give this reversible rug a classic look. Flatweave (pile is not applicable) Pair with rug pad (sold separately)\n",
+          "score": 1.5557895488756914,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSF58JY",
+          "name": "Amazon Brand \u2013 Rivet Modern Distressed Persian Area Rug, 5 x 8 Foot, Blue Multicolor",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSF58JY.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Modern Distressed Persian Area Rug, 5 x 8 Foot, Blue Multicolor\nMaterials: Nylon\nEnliven your home decor with this lovely Persian-inspired rug. Blue, pale yellow, and white hues create a traditional Persian design that will add interest to any room. A distressed look adds to this rug\u2019s authentic-vintage feel. 5' x 8' Pile: 100% nylon The soft, compact pile of this luxurious rug makes it both beautiful and practical. A handstitched binding gives it a handcrafted, elevated look. The low 0.25\" pile makes this rug perfect for medium- to high-traffic areas like bedrooms or living rooms. Pair with rug pad (sold separately)\n",
+          "score": 1.5203499360196826,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSF5CK9",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Textured Subtle Bohemian Area Rug, 4 x 6 Foot, Grey and White Multicolor",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 182.9,
+            "depth": 121.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSF5CK9.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Modern Textured Subtle Bohemian Area Rug, 4 x 6 Foot, Grey and White Multicolor\nMaterials: stone\nBring a sense of bohemian luxury into your home with this fashionable rug. The muted hues emphasize the beautiful diamond pattern, and the textured shapes make this rug soft and irresistible. 4' x 6' 79% wool, 21% cotton Preserving the global craft tradition, this beautifully textured rug is handcrafted by Craftmark-certified artisans. Flatweave (pile is not applicable) Pair with rug pad (sold separately)\n",
+          "score": 1.4926962049694386,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07QD6Z8SM",
+          "name": "Rivet Flatwoven Cubist-Inspired Rug, 4' x 6', Cream and Gray with Orange",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 182.9,
+            "depth": 121.9,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD6Z8SM.jpg"
+          ],
+          "description": "Type: rug\nName: Rivet Flatwoven Cubist-Inspired Rug, 4' x 6', Cream and Gray with Orange\nThis contemporary rug will add texture, depth, and color wherever you have a bare floor or need to create visual interest in a room. Though the pattern is bold, the blues, grays, and oranges of the soft wool-and-cotton pile are classic colors that will blend with almost any color scheme. 4'W x 6'L 71% wool, 24% cotton, 5% Lurex Transitional design in colors that can be paired with any decor Pair with rug pad (sold separately)\n",
+          "score": 1.3662778238525028,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSN8783",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Passionate Area Rug, 6' 7\" x 9' 6\", Navy",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSN8783.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Traditional Passionate Area Rug, 6' 7\" x 9' 6\", Navy\nColors: Navy\nMaterials: stone\nAdd elegance to your home decor with this lovely rug. With a blue-focused color scheme and a distinct flourish pattern, this rug is a perfect match for traditional-style interior design. Its captivating design also pairs well with modern and vintage home-decor styles. 6'7\" x 9'6\" Pile: 100% polypropylene; backing: 100% jute Advanced power-loom construction for excellent value and quality Medium 0.5'' pile ideal for moderate-traffic areas like bedrooms or sitting rooms\n",
+          "score": 1.3466782929585512,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "colorful patterned cushions on the sofa and the armchair",
+      "spec": {
+        "piece": "colorful patterned cushions on the sofa and the armchair",
+        "why": "mixing patterns and colors is what makes the room look lived-in and cheerful, as the client asked",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, patterned throw pillows\nUse: decorating the sofa and armchair; living room\nStyle: bohemian\nMaterials: cotton, embroidered or woven fabric, tassels\nColors: terracotta, teal, pink, deep blue, cream\nShape: assorted square and rectangular, tassels or fringe, mixed patterns\nFeel: cheerful, eclectic, cozy\nGoes with: mustard velvet sofa, rattan armchair, patterned rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07TFDD1MR",
+          "name": "AmazonBasics 2-Pack Velvet Fleece Decorative Throw Pillows - 18\" Square, Deep Teal",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 45.7,
+            "height": 20.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07TFDD1MR.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics 2-Pack Velvet Fleece Decorative Throw Pillows - 18\" Square, Deep Teal\nColors: Deep Teal Velvet\nMaterials: Polyester\nSet of 2 decorative 18 by 18 inches square throw pillows for sofas, lounge chairs, beds, and more 100% polyester velvet fleece is soft to the touch and durable Match to your existing decor or use as a contrasting accent piece; easy to care for by machine or hand washing Comes in a vacuum-sealed pack; allow 24 hours to decompress Made in a Green factory with an independent certification system that ensures textiles meet high safety and environmental standards\n",
+          "score": 2.186451718310504,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JLSSWLL",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Tassel Throw Pillow - 17 x 17 Inch, Terracotta",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 14.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JLSSWLL.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Contemporary Tassel Throw Pillow - 17 x 17 Inch, Terracotta\nColors: Terracotta\nMade in the United States and imported This bold terracotta throw pillow draws the eye and makes a statement with its vibrant burnt-orange hue. A muted neutral border and tassels add a dramatic, classy touch of fun. 17\"L x 17\"W Spot Clean.\n",
+          "score": 1.3154232331982936,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JLZC7JS",
+          "name": "Amazon Brand \u2013 Rivet Modern Macrame Fringe Lumbar Throw Pillow - 18 x 12 Inch, Blue",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 30.5,
+            "height": 7.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JLZC7JS.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Modern Macrame Fringe Lumbar Throw Pillow - 18 x 12 Inch, Blue\nColors: Blue\nImported This stylish modern throw pillow features a sky blue fabric and matching macram\u00e9 fringe for a tasseled bohemian aesthetic that can set your space apart. 18\"L x 12\"W macram\u00e9 fringe; hidden zipper closure Pillow cover and insert Spot clean only.\n",
+          "score": 1.2962896431157065,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JL5Q77N",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Patterned Throw Pillow - 12 x 24 Inch, Multicolored Red",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 61.0,
+            "depth": 30.5,
+            "height": 8.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JL5Q77N.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Modern Patterned Throw Pillow - 12 x 24 Inch, Multicolored Red\nColors: Multi\nThe lush textures and bright colors of this modern throw pillow create a blend of several geometric patterns in shades of red, white, and black, separated by lush, soft, fleece-like dividers. 100% cotton Imported 12\"L x 24\"W Beautiful pattern is printed on a machine-woven base. The tufted-yarn pattern adds texture and interest. 1 throw pillow Spot clean with a damp cloth, and then allow to air dry. Rather than pulling at any loose threads, please use scissors to trim them.\n",
+          "score": 1.2416817191862213,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JLZJFVL",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Graphic Throw Pillow - 17 x 17 Inch, Blue / Red",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 61.0,
+            "depth": 30.5,
+            "height": 10.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JLZJFVL.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Mid-Century Graphic Throw Pillow - 17 x 17 Inch, Blue / Red\nColors: Blue/Red\nMade in the United States and imported The 3-tone geometric pattern on this modern throw pillow is as bold as it is beautiful, making a contemporary statement with style. A solid cream back adds high contrast and drama. 17\"L x 17\"W Modern geometric pattern brings attitude to your decor. Back of pillow is solid cream-colored fabric. Hidden zipper at bottom of pillow. Pillow cover and insert Spot clean. Pillow insert arrives in vacuum sealed bag. Carefully remove insert from packaging and let it fully expand before putting inside of pillow cover.\n",
+          "score": 1.181098718910284,
+          "kind": "cushion"
+        }
+      ]
+    },
+    {
+      "piece": "several plants in ceramic pots: a large one beside the balcony door and smaller ones on the bookcase and in the corners",
+      "spec": {
+        "piece": "several plants in ceramic pots: a large one beside the balcony door and smaller ones on the bookcase and in the corners",
+        "why": "the plants bring life and greenery to an empty room, and the ceramic pots add texture and earthy color",
+        "kinds": [
+          "plant",
+          "plant pot"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant, potted indoor plants in ceramic pots\nUse: bringing greenery and life; living room\nStyle: bohemian\nMaterials: glazed or handmade ceramic, terracotta\nColors: lush green, terracotta, cream, glazed blue\nShape: mix of tall leafy plant and small trailing plants, round pots of varied sizes\nFeel: lively, natural, fresh\nGoes with: rattan armchair, mustard sofa, warm parquet; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B083YFQPPM",
+          "name": "Amazon Brand \u2013 Stone & Beam Small Fan-Embossed Planter, 4.3\"H, Blue",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 12.4,
+            "depth": 12.4,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B083YFQPPM.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Small Fan-Embossed Planter, 4.3\"H, Blue\nColors: Blue\nMaterials: Ceramic\nThis eye-catching planter is the perfect vessel for a plant, flower, or other greenery of your choice, or you can choose to keep it empty or use it to display other items in your home. The blue color will look great in any room or outdoor space. 4.9\" diameter x 4.3\"H; 4.25\" interior diameter 100% ceramic stoneware This natural stoneware pot is perfect for showing off your favorite flower or plant and includes a drainage hole. With an embossed fan pattern in blue glaze, there's no wrong way to display this classic pot. Fill it with your favorite plant or keep it empty. No assembly required Hand wash with a wet cloth.\n",
+          "score": 1.5012136417701294,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B083YFL9J5",
+          "name": "Amazon Brand \u2013 Stone & Beam Medium Fan-Embossed Planter, 6\"H, Blue",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.0,
+            "depth": 17.0,
+            "height": 15.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B083YFL9J5.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Medium Fan-Embossed Planter, 6\"H, Blue\nColors: Blue\nMaterials: Ceramic\nThis eye-catching planter is the perfect vessel for a plant, flower, or other greenery of your choice, or you can choose to keep it empty or use it to display other items in your home. The blue color will look great in any room or outdoor space. 6.7\" diameter x 6\"H; 6\" interior diameter 100% ceramic stoneware This natural stoneware pot is perfect for showing off your favorite flower or plant and includes a drainage hole. With an embossed fan pattern in blue glaze, there's no wrong way to display this classic pot. Fill it with your favorite plant or keep it empty. No assembly required Hand wash with a wet cloth.\n",
+          "score": 1.4345444228814968,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B078JJHJFX",
+          "name": "Amazon Brand \u2013 Rivet Modern Ceramic Indoor Window Sill Planter Box Pot - 3 x 12 x 3 Inch, Green and Blue",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 31.0,
+            "depth": 8.5,
+            "height": 8.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B078JJHJFX.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Modern Ceramic Indoor Window Sill Planter Box Pot - 3 x 12 x 3 Inch, Green and Blue\nMaterials: Ceramic\nThis crisp, cool green and grey planter will add a beautiful touch of color to your window sill. The bottom of the piece is hand-painted, while the main body is fired with a reactive glaze, making each of these charming pieces unique. 3.35\"D x 12\"W x 3.15\"H Designed to hold plants; does not have drainage Ceramic stoneware Fired with reactive glaze and hand-painted. No two will be exactly alike.\n",
+          "score": 1.3628684316967898,
+          "kind": "plant pot"
+        },
+        {
+          "id": "702.922.98",
+          "name": "FEJKA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.922.98.jpg"
+          ],
+          "description": "Type: deco\nName: FEJKA\nColors: Orchid pink\nLifelike artificial plant that remain just as fresh-looking year after year.\n",
+          "score": 0.3348446401894806,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: deco\nName: ALOE VERA\nColors: Aloe\n",
+          "score": 0.21820673751928257,
+          "kind": "plant"
+        }
+      ]
+    },
+    {
+      "piece": "a low bookcase with books under the back-wall window",
+      "spec": {
+        "piece": "a low bookcase with books under the back-wall window",
+        "why": "it fills the wall under the window without blocking the light, and the books and objects on top make the room look lived-in",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 40,
+        "max_height_cm": 85,
+        "query": "Type: bookcase, low open bookcase\nUse: storing books and displaying plants and objects; living room\nStyle: bohemian, mid-century modern\nMaterials: warm wood, rattan or cane details\nColors: warm honey or medium wood\nShape: long and low, open shelves, light visual weight\nFeel: warm, personal, relaxed\nGoes with: honey parquet, rattan armchair, ceramic pots; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSLTLGP",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 140.5,
+            "depth": 20.8,
+            "height": 42.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLTLGP.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame\nMaterials: wood\nLipped wood shelves keep your belongings securely stored within the simple black metal frame of this towering bookcase. With a modern industrial flair, it makes a perfect display medium to show off your collection without distracting from it. 55\u201dW x 15\u201dD x 72\u201dH 30% metal, 70% wood Sleek, simple design adds a minimalist flair to any office or library A simple black metal frame supports 5 sturdy wooden shelves. Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.67792667858136,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSGBB2D",
+          "name": "Stone & Beam Rylee Modern Bookcase 27.6\"W x 76.8\u201dH, Mixed Gray",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 31.9,
+            "height": 80.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSGBB2D.jpg"
+          ],
+          "description": "Type: shelf\nName: Stone & Beam Rylee Modern Bookcase 27.6\"W x 76.8\u201dH, Mixed Gray\nClassic style with a modern flair make this bookcase unique. A mixed-gray finish adorns the 4 spacious niches, and the built-in drawer makes for extra storage capacity. The slim profile is ideal for small offices, libraries, and bedrooms. 27.6\u201dW x 13.8\u201dD x 76.8\u201dH Wood Mixed gray finish adds a modern flair to this sturdy wood bookcase Full-size niches and a built-in drawer afford ample space for your collection. No assembly required Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.5878603908150062,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07QC876WJ",
+          "name": "Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 117.3,
+            "depth": 38.1,
+            "height": 86.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC876WJ.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal\nColors: Natural\nElm wood shelving and an airy metal frame give this bookcase a contemporary flair that fits with any decor. The ample space between shelves allows you to keep your home office clutter free. 34\"W x 15\"D x 70\"H Metal frame with elm wood shelves Ample space between shelves can contain books, souvenirs, and art objects. This spacious contemporary bookcase fits with any room and interior design. Assemble in 15-30 minutes Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.5394886011445166,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B082Z3TSZ1",
+          "name": "AmazonBasics Decorative Storage Shelf - 3-Tier",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 40.0,
+            "depth": 31.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082Z3TSZ1.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Decorative Storage Shelf - 3-Tier\n3-tiered decorative storage shelf for displaying home decor items and more Simple, contemporary design that complements most interior styles Durable iron frame with open sides and a smooth, painted finish Wood-finished MDF particle board shelves with generous storage space Easy assembly with included hardware and instructions Black painted finish\n",
+          "score": 0.9890324225209772,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B0723CV5P7",
+          "name": "Urban Living Bookcases",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 30.5,
+            "height": 90.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0723CV5P7.jpg"
+          ],
+          "description": "Type: shelf\nName: Urban Living Bookcases\n",
+          "score": 0.8031685213793703,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "a round coffee table in front of the sofa, on the rug",
+      "spec": {
+        "piece": "a round coffee table in front of the sofa, on the rug",
+        "why": "the seating area needs a surface for drinks and books, and a round wood piece softens the arrangement",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, round low table\nUse: holding drinks, books and decor; living room\nStyle: bohemian, mid-century modern\nMaterials: solid wood, rattan or carved details\nColors: warm medium wood\nShape: round, low, sturdy base, medium visual weight\nFeel: warm, casual, earthy\nGoes with: mustard velvet sofa, patterned rug, rattan armchair; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSLKFD5",
+          "name": "Amazon Brand \u2013 Stone & Beam Commodore Casual Round Coffee Table, 23.6\"W, Whitewash Mango Wood",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 60.9,
+            "depth": 60.9,
+            "height": 46.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLKFD5.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Commodore Casual Round Coffee Table, 23.6\"W, Whitewash Mango Wood\nMaterials: Stone\nBring an exotic feel into your home with this unique bunching coffee table. Made from solid mango, this casual-style coffee table is finished with new whitewash color that highlights the wood\u2019s grain. The intricate cut-out design in the table\u2019s base makes it a captivating centerpiece for any room. 23.6\"W x 23.6\"D x 17.7\"H Made of solid mango with an elegant whitewash finish. Each vertical section in the barrel design is hand carved by a skilled craftsman to create a lace design on the base. Combining modern geometry with a touch of the exotic, this drum-shaped coffee table crafts a stylish and sophisticated look with its lacy trellis base. This table is great in pairs in front of a sofa or sectional. No assembly required Care: Clean as required with a soft, damp cloth; wipe completely dry. Avoid placing furniture\u00a0near heat vents or open windows. Long periods of heat or excessive dampness can cause splitting, warping, and swelling in solid wood. Protect fine\u00a0furniture\u00a0finishes from hot dishes, alcohol, and excessive moisture or dampness. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.8531920946286136,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QFB1TLZ",
+          "name": "Amazon Brand \u2013 Stone & Beam Ryder Industrial Round Coffee Table, 43.3\" Diameter, Brushed Natural Antique Copper",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 110.0,
+            "depth": 110.0,
+            "height": 42.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QFB1TLZ.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Ryder Industrial Round Coffee Table, 43.3\" Diameter, Brushed Natural Antique Copper\nColors: Natural/Gold\nMaterials: Metal\nThis industrial round coffee table comes with a natural, antique-copper-finished elm top on an iron base in a brass finish. The open base keeps the table lightweight and gives the room an airy feel. This piece looks great in any contemporary or rustic space. 43.3\u201c diameter x 16.54\"H Elm, metal This industrial coffee table comes with a natural antique-copper-finished elm top and an iron base in a brass finish. The open design of this table's base helps keep it lightweight. Assemble in 15-30 minutes Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.3552700432697804,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07DBGQ9DT",
+          "name": "Amazon Brand \u2013 Ravenna Home Anne Marie Round Wood Shelf Storage Curved Leg Coffee Table, 48\"W, Dark Espresso",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 91.4,
+            "depth": 91.4,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBGQ9DT.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Ravenna Home Anne Marie Round Wood Shelf Storage Curved Leg Coffee Table, 48\"W, Dark Espresso\nColors: Dark Espresso\nMaterials: solid pine\nQuality construction of solid pine Table top holds snack trays and remotes; large lower shelf adds storage and display space A modern update to the traditional round coffee table Less than 15 minutes assembly required Free returns for 30 days. 1-year warranty. 36\"L x 36\"W x 18\"H\n",
+          "score": 1.3242118043437232,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: table\nName: KRAGSTA\nColors: Black\nThe round shape gives you a generous table top for trays, coffee or tea services. And the neat dimensions make the table easy to place in the room.\n",
+          "score": 1.1504672899833392,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: table\nName: STOCKHOLM\nColors: Walnut veneer\nThe table surface in walnut veneer and legs in solid walnut give a warm, natural feeling to your room.\n",
+          "score": 1.033694000341845,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp beside the sofa",
+      "spec": {
+        "piece": "a floor lamp beside the sofa",
+        "why": "the room is dark on the right-hand side, and a woven-shade lamp adds warm light and bohemian character",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, woven shade floor lamp\nUse: warm reading and ambient light; living room\nStyle: bohemian, coastal\nMaterials: rattan or woven natural fiber shade, wood stand\nColors: natural rattan, warm wood\nShape: tall slim stand, rounded woven shade, light visual weight\nFeel: warm, soft, cozy\nGoes with: mustard velvet sofa, rattan armchair; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash\nColors: Distressed Grey\nMaterials: Linen\nThe rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only\n",
+          "score": 2.19228407990273,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 1.0987133073844004,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "802.600.94",
+          "name": "IKEA PS 2014",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.600.94.jpg"
+          ],
+          "description": "Type: lamp\nName: IKEA PS 2014\nIts easy to switch between functional light for reading and decorative mood light just by tilting the lamp shade.\n",
+          "score": 0.7634094730470045,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "101.841.74",
+          "name": "HOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.841.74.jpg"
+          ],
+          "description": "Type: lamp\nName: HOLM\nGives a soft mood light.\n",
+          "score": 0.6897540192795867,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "901.638.65",
+          "name": "RSTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/901.638.65.jpg"
+          ],
+          "description": "Type: lamp\nName: RSTID\nColors: Nickel-plated, white\nThe textile shade provides a diffused and decorative light.\n",
+          "score": 0.6456920174586889,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a patterned throw over the sofa armrest",
+      "spec": {
+        "piece": "a patterned throw over the sofa armrest",
+        "why": "it adds another layer of texture and color, the casual lived-in look the client is after",
+        "kinds": [
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: throw, woven fringed blanket\nUse: layering on the sofa; living room\nStyle: bohemian\nMaterials: cotton or wool, woven texture, fringe\nColors: terracotta, rust, cream\nShape: rectangular, fringed edges, chunky weave\nFeel: cozy, relaxed, warm\nGoes with: mustard velvet sofa, patterned cushions and rug; bohemian living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07DTLKPJG",
+          "name": "AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 33.8,
+            "depth": 29.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTLKPJG.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel\nColors: Camel\nMaterials: 75% Polyester, 25% Acrylic\nBlanket with classic knit design and fringed edges Soft acrylic and polyester construction Comfortable to use in all seasons Fits in with both contemporary and classic d\u00e9cor styles Available in a variety of sizes and colors to complement your home\n",
+          "score": 1.5698011394257045,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B078LDWJVN",
+          "name": "Stone & Beam Oversized Stripe Brushed Weave Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B078LDWJVN.jpg"
+          ],
+          "description": "Type: deco\nName: Stone & Beam Oversized Stripe Brushed Weave Throw Blanket\n",
+          "score": 1.3599274183371912,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B075X53WD9",
+          "name": "Rivet Modern Global-Inspired Textured Tassel Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X53WD9.jpg"
+          ],
+          "description": "Type: deco\nName: Rivet Modern Global-Inspired Textured Tassel Throw Blanket\nColors: Gray\nMaterials: 100% cotton\nThis throw is a comfy, functional work of art. Inspired by archaelogical finds in Mexico's Tulum ruins, it features layers of texture and oversized, hand-tied tassels. Use on a bed, drape over your sofa or hang on the wall for a true style statement. 50\"W x 60\"L 100% cotton Spot clean only.\n",
+          "score": 1.3172520301992263,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B079TXJWT8",
+          "name": "Amazon Brand \u2013 Rivet Global Inspired Geometric Throw Blanket, Soft and Stylish, 50\" x 60\", Navy and Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079TXJWT8.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Global Inspired Geometric Throw Blanket, Soft and Stylish, 50\" x 60\", Navy and Natural\nColors: NAVY/NATURAL\nGeometric prints bring a global flair to this eye-catching throw blanket. Neutral colors, fringed edges and super soft, all-cotton texture make it ideal for snuggling in any style bedroom, or for draping across a couch or sofa. 50\" x 60\" 100% Cotton Dry clean for best results Made in Portugal\n",
+          "score": 1.2630952941592077,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B075X5B8CQ",
+          "name": "Amazon Brand \u2013 Rivet High Contrast Black and White Global Geometric 100% Cotton Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X5B8CQ.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet High Contrast Black and White Global Geometric 100% Cotton Throw Blanket\nColors: Gray\nMaterials: 100% cotton\nHigh contrast black and white and oversized tassels make this throw a standout that can even be hung as wall art. Hand-woven and hand-tied, this global-inspired piece is also soft enough to use as a blanket or snuggle up in on the sofa. 50\"W x 60\"L Hand woven of 100% cotton Spot clean only.\n",
+          "score": 1.1459222554514306,
+          "kind": "throw"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

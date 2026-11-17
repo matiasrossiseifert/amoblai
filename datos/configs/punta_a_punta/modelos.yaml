@@ -1,0 +1,12 @@
+# Experimento de modelos (2026-11-16): el que elige, con Sonnet 5.5 y con Haiku 5.5 en vez de
+# Opus 5.5. El mismo plan (el de la versión 2) y la misma búsqueda (la híbrida); el juez, Opus.
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: hibrida
+variantes:
+  hibrida: {rag.hybrid: [bm25, siglip2]}
+  sonnet: {rag.hybrid: [bm25, siglip2], furnish.llm.model: claude-sonnet-5-5}
+  haiku: {rag.hybrid: [bm25, siglip2], furnish.llm.model: claude-haiku-5-5}
+comparaciones:
+  - [hibrida, sonnet]
+  - [hibrida, haiku]

@@ -1,0 +1,35 @@
+{
+  "product": "203.238.05",
+  "text": "Type: cabinet\nName: BILLY\nColors: Dark blue\nGlass doors keep your favourite items free from dust but still visible.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "203.238.05",
+      "name": "BILLY",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Bookcase with glass door",
+      "category_tp": "cabinet",
+      "size_raw": "80x30x202 cm",
+      "colors": [
+        "Dark blue"
+      ],
+      "description": "Glass doors keep your favourite items free from dust but still visible."
+    },
+    "photos": [
+      "82d913a3bec74eac"
+    ]
+  }
+}

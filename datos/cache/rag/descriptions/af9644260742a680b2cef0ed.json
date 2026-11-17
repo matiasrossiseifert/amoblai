@@ -1,0 +1,37 @@
+{
+  "product": "103.220.62",
+  "text": "Type: rug\nName: BIRKET\nColors: Yellow, grey\nThe dense, thick pile dampens sound and provides a soft surface to walk on.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "103.220.62",
+      "name": "BIRKET",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 200.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, high pile",
+      "category_tp": "rug",
+      "size_raw": "200x200 cm",
+      "colors": [
+        "Yellow",
+        "grey"
+      ],
+      "description": "The dense, thick pile dampens sound and provides a soft surface to walk on."
+    },
+    "photos": [
+      "615b43cd8fbcce8a"
+    ]
+  }
+}

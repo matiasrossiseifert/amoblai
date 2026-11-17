@@ -1,0 +1,36 @@
+{
+  "product": "203.323.53",
+  "text": "Type: rug\nName: HEMMAHOS\nColors: Pink\nIf you combine many rugs you can create a colourful street with its own zebra crossing.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "203.323.53",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "50x75 cm",
+      "colors": [
+        "Pink"
+      ],
+      "description": "If you combine many rugs you can create a colourful street with its own zebra crossing."
+    },
+    "photos": [
+      "c9105870ca602c67"
+    ]
+  }
+}

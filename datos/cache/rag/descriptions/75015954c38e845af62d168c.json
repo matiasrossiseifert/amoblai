@@ -1,0 +1,35 @@
+{
+  "product": "090.178.26",
+  "text": "Type: shelf\nName: BILLY\nColors: White\nAdjustable shelves; adapt space between shelves according to your needs.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "090.178.26",
+      "name": "BILLY",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 240.0
+      },
+      "type_ikea": "Bookcase",
+      "category_tp": "shelf",
+      "size_raw": "240x106x28 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Adjustable shelves; adapt space between shelves according to your needs."
+    },
+    "photos": [
+      "c98c1cd66baf6ce8"
+    ]
+  }
+}

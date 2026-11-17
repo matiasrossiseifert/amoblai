@@ -1,0 +1,33 @@
+{
+  "product": "701.032.50",
+  "text": "Type: chair\nName: INGOLF\nColors: White\nSolid wood is a hardwearing natural material.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "701.032.50",
+      "name": "INGOLF",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Solid wood is a hardwearing natural material."
+    },
+    "photos": [
+      "0892b21aa4e848a5"
+    ]
+  }
+}

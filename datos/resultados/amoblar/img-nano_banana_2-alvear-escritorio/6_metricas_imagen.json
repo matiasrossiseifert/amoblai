@@ -1,0 +1,155 @@
+{
+ "corrida": "img-nano_banana_2-alvear-escritorio",
+ "imagen": "final.png",
+ "generador": "nano_banana_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "302.990.70",
+   "kind": "desk",
+   "categoria": "desk",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.541,
+   "box": [
+    341,
+    496,
+    608,
+    704
+   ],
+   "puesto": 1,
+   "entre": 34,
+   "coseno": 0.404,
+   "mas_parecido": "302.990.70"
+  },
+  {
+   "id": "abo-B07B7DKRVM",
+   "kind": "desk chair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.413,
+   "box": [
+    458,
+    491,
+    604,
+    697
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.4901,
+   "mas_parecido": "abo-B07B7DKRVM"
+  },
+  {
+   "id": "990.234.08",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": true,
+   "detector": "shelf",
+   "score_detector": 0.381,
+   "box": [
+    671,
+    298,
+    766,
+    631
+   ],
+   "puesto": 2,
+   "entre": 91,
+   "coseno": 0.6349,
+   "mas_parecido": "591.553.30"
+  },
+  {
+   "id": "490.904.81",
+   "kind": "armchair",
+   "categoria": "armchair",
+   "detectado": true,
+   "detector": "armchair",
+   "score_detector": 0.424,
+   "box": [
+    867,
+    493,
+    1195,
+    814
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.7925,
+   "mas_parecido": "490.904.81"
+  },
+  {
+   "id": "302.865.67",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "floor lamp",
+   "score_detector": 0.497,
+   "box": [
+    1007,
+    340,
+    1262,
+    793
+   ],
+   "puesto": 2,
+   "entre": 172,
+   "coseno": 0.3604,
+   "mas_parecido": "702.382.68"
+  }
+ ],
+ "fidelidad": {
+  "productos": 5,
+  "detectados": 5,
+  "presencia": 1.0,
+  "coseno_medio": 0.5364,
+  "identificados@1": 0.6,
+  "mrr": 0.8
+ },
+ "inventadas": [
+  {
+   "detector": "cabinet",
+   "categoria": "cabinet",
+   "score": 0.368,
+   "box": [
+    670,
+    263,
+    995,
+    670
+   ]
+  }
+ ],
+ "repetidas": [
+  {
+   "detector": "lamp",
+   "categoria": "lamp",
+   "score": 0.349,
+   "box": [
+    576,
+    22,
+    685,
+    92
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.7871,
+  "ssim_fuera_de_los_muebles": 0.9457,
+  "fraccion_fuera_de_los_muebles": 0.5631,
+  "sift_puntos_original": 899,
+  "sift_matches": 428,
+  "sift_inliers": 416,
+  "sift_reencontrados": 0.4627,
+  "sift_desplazamiento_mediano": 0.0
+ },
+ "pedido_imagen": {
+  "pedido": "Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón con una lámpara de pie para leer. Estilo nórdico, maderas claras.",
+  "siglip_final": 0.1444,
+  "siglip_vacia": 0.0452,
+  "delta": 0.0992,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0048
+ }
+}

@@ -1,0 +1,38 @@
+{
+  "product": "002.987.98",
+  "text": "Type: rug\nName: HODDE\nColors: In, outdoor grey, black\nDurable, stain resistant and easy to care for since the rug is made of synthetic fibres.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.987.98",
+      "name": "HODDE",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 200.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x200 cm",
+      "colors": [
+        "In",
+        "outdoor grey",
+        "black"
+      ],
+      "description": "Durable, stain resistant and easy to care for since the rug is made of synthetic fibres."
+    },
+    "photos": [
+      "a0518f5a308adb98"
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+{
+ "corrida": "img-gpt_image_15-alvear-living-comedor",
+ "imagen": "final.png",
+ "generador": "gpt_image_15",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B072M1WJF2",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.778,
+   "box": [
+    155,
+    535,
+    558,
+    817
+   ],
+   "puesto": 9,
+   "entre": 95,
+   "coseno": 0.5717,
+   "mas_parecido": "abo-B082Q9C9YJ"
+  },
+  {
+   "id": "503.056.16",
+   "kind": "armchair",
+   "categoria": "armchair",
+   "detectado": true,
+   "detector": "armchair",
+   "score_detector": 0.482,
+   "box": [
+    612,
+    527,
+    760,
+    690
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.5854,
+   "mas_parecido": "503.056.16"
+  },
+  {
+   "id": "902.976.57",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": false
+  },
+  {
+   "id": "801.982.95",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.862,
+   "box": [
+    134,
+    647,
+    976,
+    861
+   ],
+   "puesto": 102,
+   "entre": 178,
+   "coseno": 0.1692,
+   "mas_parecido": "abo-B07QGG4ZLB"
+  },
+  {
+   "id": "702.943.39",
+   "kind": "dining table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.587,
+   "box": [
+    1001,
+    543,
+    1280,
+    734
+   ],
+   "puesto": 6,
+   "entre": 176,
+   "coseno": 0.2834,
+   "mas_parecido": "abo-B002CM3J2A"
+  },
+  {
+   "id": "abo-B0857JM2NC",
+   "kind": "dining chair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.39,
+   "box": [
+    1194,
+    550,
+    1305,
+    731
+   ],
+   "puesto": 30,
+   "entre": 175,
+   "coseno": 0.2472,
+   "mas_parecido": "402.805.17"
+  },
+  {
+   "id": "703.116.97",
+   "kind": "pendant lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "lamp",
+   "score_detector": 0.543,
+   "box": [
+    1020,
+    280,
+    1086,
+    459
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.5495,
+   "mas_parecido": "703.116.97"
+  },
+  {
+   "id": "102.911.31",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "pendant lamp",
+   "score_detector": 0.453,
+   "box": [
+    430,
+    432,
+    501,
+    540
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.7031,
+   "mas_parecido": "102.911.31"
+  },
+  {
+   "id": "abo-B07B7DMPX7",
+   "kind": "sideboard",
+   "categoria": "cabinet",
+   "detectado": true,
+   "detector": "chest of drawers",
+   "score_detector": 0.466,
+   "box": [
+    1299,
+    609,
+    1406,
+    819
+   ],
+   "puesto": 3,
+   "entre": 95,
+   "coseno": 0.5131,
+   "mas_parecido": "402.397.21"
+  },
+  {
+   "id": "502.841.95",
+   "kind": "curtains",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "curtains",
+   "score_detector": 0.483,
+   "box": [
+    822,
+    367,
+    894,
+    601
+   ],
+   "puesto": 2,
+   "entre": 434,
+   "coseno": 0.6097,
+   "mas_parecido": "500.460.48"
+  },
+  {
+   "id": "602.740.06",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "curtains",
+   "score_detector": 0.368,
+   "box": [
+    941,
+    334,
+    1032,
+    632
+   ],
+   "puesto": 216,
+   "entre": 434,
+   "coseno": 0.0927,
+   "mas_parecido": "abo-B07CTJJNX4"
+  },
+  {
+   "id": "302.006.96",
+   "kind": "throw",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "curtains",
+   "score_detector": 0.46,
+   "box": [
+    517,
+    366,
+    591,
+    605
+   ],
+   "puesto": 122,
+   "entre": 434,
+   "coseno": 0.1497,
+   "mas_parecido": "abo-B07CTJJNX4"
+  },
+  {
+   "id": "468.040.05",
+   "kind": "plant",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.768,
+   "box": [
+    125,
+    399,
+    274,
+    843
+   ],
+   "puesto": 1,
+   "entre": 434,
+   "coseno": 0.4819,
+   "mas_parecido": "468.040.05"
+  },
+  {
+   "id": "abo-B073P13P7Q",
+   "kind": "wall art",
+   "categoria": "deco",
+   "detectado": false
+  },
+  {
+   "id": "abo-B07QHL8W81",
+   "kind": "vase",
+   "categoria": "deco",
+   "detectado": false
+  }
+ ],
+ "fidelidad": {
+  "productos": 15,
+  "detectados": 12,
+  "presencia": 0.8,
+  "coseno_medio": 0.413,
+  "identificados@1": 0.2667,
+  "mrr": 0.3445
+ },
+ "inventadas": [],
+ "repetidas": [
+  {
+   "detector": "lamp",
+   "categoria": "lamp",
+   "score": 0.531,
+   "box": [
+    1089,
+    239,
+    1169,
+    457
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.5736,
+  "ssim_fuera_de_los_muebles": 0.7297,
+  "fraccion_fuera_de_los_muebles": 0.5533,
+  "sift_puntos_original": 326,
+  "sift_matches": 22,
+  "sift_inliers": 6,
+  "sift_reencontrados": 0.0184,
+  "sift_desplazamiento_mediano": 0.261
+ },
+ "pedido_imagen": {
+  "pedido": "Un living comedor nórdico y cálido para este ambiente largo: en la mitad, un sofá grande, un sillón para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.",
+  "siglip_final": 0.1162,
+  "siglip_vacia": 0.0469,
+  "delta": 0.0693,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0257
+ }
+}

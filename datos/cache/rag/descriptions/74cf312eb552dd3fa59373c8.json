@@ -1,0 +1,35 @@
+{
+  "product": "502.236.25",
+  "text": "Type: bench\nName: HEMNES\nColors: White\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "502.236.25",
+      "name": "HEMNES",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 83.0
+      },
+      "type_ikea": "Bench",
+      "category_tp": "bench",
+      "size_raw": "83 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "3b36bb99d9f2f80e"
+    ]
+  }
+}

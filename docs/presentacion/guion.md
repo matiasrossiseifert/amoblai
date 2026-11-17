@@ -1,258 +1,358 @@
-# Guion de la presentación (amoblai)
+# Guion de la presentación (amoblai, versión b2)
 
-Generado por `docs/presentacion/build.py` junto con `amoblai.html`: los números salen de los mismos resultados que las slides y los extractos de los prompts, de los archivos de `src/amoblai/prompts/`. 44 slides, unos 31 minutos (30:51); son unas 4.200 palabras, a 135 por minuto.
+Generado por `build.py` junto con `presentacion.html`: los números salen de los mismos archivos de resultados que las láminas, y los extractos de los prompts, de `src/amoblai/prompts/`. 62 láminas, unos 35 minutos (35:14); son unas 4.600 palabras, contadas a 135 por minuto.
 
-**El recorrido** (slides 5 a 17). Arriba de cada lámina va el mapa de las once fases: la fase de la que se habla, encendida; las ya vistas, marcadas. Se sigue un mismo pedido real, con la configuración final (un loft de estilo industrial, sobre una foto pública), de la foto a la lista. El mismo mapa vuelve en la slide 26 con un pin por experimento sobre la fase a la que le hizo la pregunta (lleno: con lámina propia; hueco: de trámite), y cada lámina de experimento repite ese pin en un minimapa.
+**Cómo se pasa.** Flecha derecha, espacio o clic: avanza un paso; flecha izquierda: vuelve. F: pantalla completa; O: índice con miniaturas; N: estas notas abajo de la lámina; P: ventana del presentador (lámina actual, la siguiente, notas y reloj, sincronizadas); B: pantalla negra; A: en la lámina del prompt de la descripción, abre el anexo con el prompt completo, y en el anexo vuelve. `presentacion.html?all#/12` muestra la lámina 12 con todos sus pasos; `#/12.2` va al paso 2.
 
-**Cómo se pasa.** En cada experimento, primero se ve solo el porqué, la pregunta y qué se comparó. **Se cuentan esas dos cosas antes de avanzar.** La flecha (o espacio) muestra los resultados; otra flecha, la decisión. Flecha atrás vuelve un paso. Con `amoblai.html?todo` se ve todo de entrada (para revisar o imprimir).
+**El recorrido** (láminas 5 a 15) sigue un pedido real con la configuración final, un loft de estilo industrial sobre una foto pública, por las once fases del flujo, con el mapa arriba a la derecha: la fase actual encendida, las vistas con ✓ y el pin de los experimentos que le hicieron una pregunta a esa fase (lleno: con lámina propia; hueco: de trámite). En cada fase: qué entra y qué sale, y el prompt tal cual se manda (extracto, en inglés, con lo importante resaltado) con sus versiones. Ahí no se dan resultados: los números van en cada experimento.
+
+**Los experimentos** van por su ranking (el mapa, en la lámina 26). Cinco tienen dos láminas: la oscura es la pregunta, con el porqué y el esquema del flujo con la etapa encendida; con la flecha aparece qué se comparó. **Se cuentan esas dos cosas antes de pasar.** La clara es el resultado: una flecha muestra los resultados, con la diferencia pareada, y otra la decisión, que se imprime como un talón abajo. Los experimentos 4 y 7, que miden al set de evaluación, y el 8, buscar por imagen, van en una sola lámina; el camino incremental (lámina 35) resume los tres primeros; y los siete de trámite van de a uno, del 45 al 52. Los experimentos 1, 2, 5 y 13 tienen además una lámina con el mismo cambio de punta a punta en los 11 ambientes vacíos (láminas 29, 32, 39 y 50). Al final van el 5b, elegir con texto o con fotos, que se nos ocurrió después de decidir todo lo demás (láminas 53 y 54), y el coseno sin juez (55).
+
+**El Ejercicio 4** son las láminas 56 a 58: la versión 1 y su limitación, el cambio con la configuración antes y después, y los resultados en las dos versiones.
+
+En el texto, **→** marca dónde se avanza un paso. Si falta tiempo, se pueden pasar rápido las láminas de trámite (las marcadas con *). Los costos están en el anexo, después de «Gracias».
 
 **Reparto sugerido** (a definir entre los tres):
-- Parte 1: slides 1 a 17 (Portada → Sale la lista de compra y el ambiente amoblado), unos 10 min.
-- Parte 2: slides 18 a 30 (De buscar por imagen a RAG por texto, y otros tres desafíos → El camino: de 0,11 a 0,60 de hit@1, un cambio por paso), unos 10 min.
-- Parte 3: slides 31 a 44 (¿Error, o el mismo mueble en otro color? → Conclusiones), unos 11 min.
-
-Si falta tiempo, se pueden pasar rápido las dos láminas de trámite y la de costos (las marcadas con *).
+- Parte 1: láminas 1 a 19 (Portada → El juez de listas, en un caso), unos 11:25.
+- Parte 2: láminas 20 a 39 (Métricas del buscador → Exp. 5: en los 11 ambientes), unos 11:55.
+- Parte 3: láminas 40 a 62 (Exp. 6: Con búsqueda o sin búsqueda → Gracias), unos 11:55.
 
 ## 1. Portada
-*~0:21 min · desde el minuto 0:00*
+*Portada · ~0:25 · desde el minuto 0:00*
 
 Somos Juan Bautista, Matías y Junior. amoblai responde una pregunta concreta: tengo este ambiente vacío, ¿qué compro y cómo queda? Sacás una foto, escribís qué querés, y te devuelve una lista de productos reales de un catálogo y la imagen del mismo ambiente con esos productos.
 
-## 2. ¿Qué compro para este ambiente, y cómo queda?
-*El problema · ~0:24 min · desde el minuto 0:21*
+## 2. El problema
+*El problema · ~0:25 · desde el minuto 0:25*
 
-Cuando te mudás a un lugar vacío tenés que decidir qué comprar sin poder verlo puesto. Los catálogos muestran cada mueble suelto, sobre fondo blanco, y las fotos de ambientes muestran la casa de otro. Queremos responder, para este ambiente y este pedido: qué productos reales van, cuántos, y cómo queda el ambiente con ellos.
+Cuando te mudás a un lugar vacío tenés que decidir qué comprar sin poder verlo puesto. Los catálogos muestran cada mueble suelto, y las fotos de ambientes muestran la casa de otro. **→** Queremos responder, para este ambiente y este pedido: qué productos reales van, y cómo queda el ambiente con ellos.
 
-## 3. Foto + pedido → lista de compra + imagen
-*El producto · ~0:30 min · desde el minuto 0:45*
+## 3. El producto
+*El producto · ~0:30 · desde el minuto 0:50*
 
-Así se usa. La entrada es una foto del ambiente y un pedido en texto libre, como este: un rincón de lectura con una biblioteca alta de madera oscura. La salida son dos cosas: la lista de compra, con productos reales del catálogo, acá 7, entre IKEA y Amazon, y la foto del mismo ambiente con esos productos puestos.
+Así se usa. La entrada es una foto del ambiente y un pedido en texto libre, como este: un loft donde piden un living de estilo industrial, con un sofá de cuero envejecido. **→** La salida son dos cosas: la lista de compra, con productos reales del catálogo, acá 7, entre IKEA y Amazon, y la foto del mismo ambiente con esos productos puestos.
 
-## 4. Recomendaciones atadas a productos que existen
-*Por qué RAG · ~0:48 min · desde el minuto 1:15*
+## 4. Por qué RAG
+*El producto · ~0:35 · desde el minuto 1:20*
 
-¿Por qué un RAG? Por los tres desafíos de la clase. Información actualizada: el catálogo cambia y el modelo no se reentrena; un producto nuevo es una fila más en el índice. Información personalizada: el LLM no conoce estos 1.502 productos; la búsqueda le trae cinco candidatos reales por pieza. Y sin alucinaciones: un LLM solo recomienda un sillón que nadie vende, y un modelo de imagen solo inventa los muebles; acá la lista solo puede tener productos que trajo la búsqueda, y la imagen se genera desde sus fotos. No es un Q&A: la consulta es una foto y un pedido abierto, y hay dos generaciones aumentadas, la lista y la imagen.
+¿Por qué un RAG? Por tres cosas. Información actualizada: para que un LLM solo conozca productos nuevos habría que reentrenarlo; acá un producto nuevo es una fila más en el índice. **→** Información personalizada: el modelo no conoce estos 1.502 productos; la búsqueda le trae, por cada pieza, 5 candidatos reales con su foto. **→** Y sin alucinaciones: un LLM solo puede recomendar un sillón que nadie vende; acá solo puede elegir productos que trajo la búsqueda, y la imagen se arma con sus fotos.
 
 ## 5. El recorrido
-*Parte 1 · ~0:06 min · desde el minuto 2:03*
+*Recorrido · ~0:40 · desde el minuto 1:55*
 
-Primero, el recorrido: todo el pipeline, fase por fase, con un mapa que se va encendiendo.
+El sistema, fase por fase, sobre este mapa: once fases en dos pipelines. **→** Las tres primeras corren una vez, offline: el catálogo, la descripción de cada producto y el índice. **→** Las otras ocho corren en cada pedido: el plan decide las piezas, la búsqueda trae candidatos, la elección arma la lista, y después la escena, la imagen y el control. Solo tres llaman a un modelo: Opus en el plan y en la elección, y Nano Banana 2 en la imagen. **→** En cada fase vamos a ver qué entra, qué sale y el prompt.
 
-## 6. Once fases: una vez offline, y por cada pedido
-*El recorrido · el mapa · ~0:39 min · desde el minuto 2:09*
+## 6. Fase 1: Catálogo
+*Recorrido · 1 · ~0:40 · desde el minuto 2:35*
 
-Este es el mapa completo, con dos pipelines. Arriba, lo que se hace una vez, offline: el catálogo, la descripción de cada producto y el índice. Abajo, lo que pasa en cada pedido: entran la foto y el pedido, el plan decide las piezas, la búsqueda trae candidatos, la elección arma la lista, y después la escena, la imagen y el control. Por pedido se pagan solo tres llamadas: Opus en el plan y en la elección, y Nano Banana 2 en la imagen. Lo demás corre local.
+Fase uno, el catálogo: la base de conocimiento. Son dos fuentes. El dataset de IKEA: lo ampliamos a 855 productos de living y comedor y, revisado mirando cada foto, quedaron 819. Y Amazon Berkeley Objects, listados reales de Amazon: de casi 150 mil quedaron 683. En total, 1.502 productos. **→** Cada producto es un mismo registro: id, foto, tipo, kind y medidas. Tipo, kind y medidas sirven para filtrar; la foto, para describirlo. Así viene una lámpara de IKEA, sin medidas, y así un sofá de Amazon, con medidas.
 
-## 7. Dos catálogos de productos reales, con foto
-*El recorrido · fase 1 de 11 · Catálogo · ~0:36 min · desde el minuto 2:48*
+## 7. Fase 2: Descripción
+*Recorrido · 2 · ~0:40 · desde el minuto 3:15*
 
-Fase uno, el catálogo. Son dos. El dataset de IKEA: de sus 2.191 productos empezamos con 268 muebles, lo ampliamos a 855 de living y comedor y, revisado mirando cada foto, quedaron 819. Y Amazon Berkeley Objects, listados reales de Amazon: de casi 150 mil quedaron 683. El flujo usa los dos, 1.502 productos. De cada uno guardamos las fotos, el tipo, el kind y las medidas cuando hay. Así viene un sofá de IKEA: el texto es marketing y no tiene medidas.
+Fase dos: la descripción. Un VLM, Opus 5.5, mira la foto de cada producto y lo escribe en ocho líneas fijas: tipo, uso, estilo, materiales, colores, forma, sensación y con qué combina. El prompt pide exactamente esas ocho líneas, sin marca, precio ni medidas, y nada de lo que el producto no es, porque el embedding no entiende la negación. **→** Este es el sofá de Amazon que vamos a seguir: Amazon pasó por la API, con las mismas reglas. Es el preprocesamiento que más pesa: lo mide el experimento 1.
 
-## 8. Un VLM mira cada foto y escribe el producto en 8 líneas
-*El recorrido · fase 2 de 11 · Descripción · ~0:42 min · desde el minuto 3:24*
+## 8. Fase 3: Índice
+*Recorrido · 3 · ~0:40 · desde el minuto 3:55*
 
-Fase dos: la descripción. Un VLM mira la foto de cada producto y lo escribe en ocho líneas fijas: tipo, uso, estilo, materiales, colores, forma, sensación y con qué combina. Es el mismo sofá: a la izquierda, lo que dice IKEA; en el medio, lo que escribió el modelo. El prompt pide exactamente esas ocho líneas, sin marca, precio ni medidas, y nada de lo que el producto no es, porque el embedding no entiende la negación. Para Amazon usamos la misma receta, por la API. Es el preprocesamiento que más pesa: lo mide el experimento 1.
+Fase tres: el índice. Se embebe la descripción entera, un documento por producto, con Qwen3-Embedding, local, en CPU: 1.024 dimensiones, a ChromaDB, con la metadata de los filtros al lado. Así queda el sofá. Embedder, splitting, dimensión y base vectorial son preguntas de trámite: las contestamos juntas más adelante. **→** Para la búsqueda híbrida se suman dos índices sobre los mismos productos: uno léxico, BM25 sobre las palabras de las descripciones, y uno por foto, con SigLIP 2, que pone la foto y el texto en un mismo espacio.
 
-## 9. Un vector por producto: Qwen3, local, en ChromaDB
-*El recorrido · fase 3 de 11 · Índice · ~0:39 min · desde el minuto 4:06*
+## 9. Fase 4: Foto, pedido y plan
+*Recorrido · 4 · ~0:50 · desde el minuto 4:35*
 
-Fase tres: el índice. Se embebe la descripción entera, un documento por producto, con Qwen3-Embedding, local, en CPU: 1.024 dimensiones, a ChromaDB, con la metadata de los filtros. Embedder, splitting, dimensión y base vectorial son las preguntas de trámite, por eso su pin va hueco: las contestamos juntas más adelante. Para la búsqueda híbrida se suman dos índices sobre los mismos productos: uno léxico, BM25 sobre las palabras de las descripciones, y uno por foto, con SigLIP 2, que pone la foto y el texto de la consulta en un mismo espacio.
+Fases cuatro y cinco. Entra una foto del ambiente vacío y un pedido en texto libre. Vamos a seguir este loft hasta el final: un pedido de estilo industrial, sobre una foto pública. **→** El plan es la primera llamada a Opus, que hace de diseñador: lee el ambiente, descompone el pedido en piezas, acá 7, y para cada una da el kind, que va a ser el filtro, la medida máxima, y la consulta: el producto ideal escrito en las mismas ocho líneas que el catálogo. Es query expansion con respuesta hipotética, HyDE: en la base no hay preguntas, hay respuestas. Más la descomposición del pedido: una consulta por pieza.
 
-## 10. Entra una foto del ambiente vacío y un pedido libre
-*El recorrido · fase 4 de 11 · Foto + pedido · ~0:18 min · desde el minuto 4:45*
+## 10. Fase 5: Plan
+*Recorrido · 5 · ~0:40 · desde el minuto 5:25*
 
-Fase cuatro, lo que entra: una foto del ambiente vacío y un pedido en texto libre. Vamos a seguir este loft hasta el final: un pedido de estilo industrial, sobre una foto pública, con la configuración con la que entregamos.
+Es el prompt que más reescribimos, y cada versión salió de una corrida. La primera le dio un sillón a alguien que pidió una silla para su escritorio. La v2 pide la pieza como la nombró el usuario, el kind de una lista cerrada, las medidas máximas y la consulta en ocho líneas. La v3 pide terminar el ambiente, y la v4 saca el tope de piezas. La consulta en las ocho líneas no cambió desde la v2: es lo que mide el experimento 2.
 
-## 11. El plan descompone el pedido y escribe una ficha por pieza
-*El recorrido · fase 5 de 11 · Plan · ~0:54 min · desde el minuto 5:03*
+## 11. Fase 6: Búsqueda
+*Recorrido · 6 · ~0:45 · desde el minuto 6:00*
 
-Fase cinco, el plan. Opus recibe la foto y el pedido y hace de diseñador: lee el ambiente, descompone el pedido en piezas y, para cada una, da el kind, que va a ser el filtro, la medida máxima, y la consulta: el producto ideal escrito en las mismas ocho líneas que el catálogo. En los términos de la clase es query expansion con respuesta hipotética, HyDE: en la base no hay preguntas, hay respuestas, así que la consulta se escribe como una respuesta. Más la descomposición del pedido: una consulta por pieza. Del “sofá de cuero marrón envejecido” sale esta pieza: kind sofá, hasta 240 centímetros, y su ficha. Propuso 7 piezas. Cuánto suma escribir la ficha lo mide el experimento 2.
+Fase seis, la búsqueda. Para cada pieza, primero un filtro duro de metadata: el kind del plan y las medidas máximas, con 15% de margen porque salen de una foto. Acá quedan 76 de los 1.502 productos. **→** Sobre esos, tres puntajes con la misma ficha: el coseno de Qwen3 entre la ficha y la descripción; BM25, las palabras de la ficha que están en la descripción; y SigLIP 2, la ficha en una frase contra la foto del producto. Cada puntaje se estandariza y se promedian: es la búsqueda híbrida, la versión 2. Quedan los cinco mejores: 4 de Amazon y 1 de IKEA.
 
-## 12. Filtro por kind, después búsqueda híbrida: 5 candidatos
-*El recorrido · fase 6 de 11 · Búsqueda · ~0:51 min · desde el minuto 5:57*
+## 12. Fase 7: Elección
+*Recorrido · 7 · ~0:45 · desde el minuto 6:45*
 
-Fase seis, la búsqueda. Para cada pieza, primero un filtro duro de metadata: el kind del plan y las medidas máximas, con margen porque salen de una foto. Acá quedan 76 de los 1.502 productos. Sobre esos, tres puntajes: el coseno de Qwen3 entre la ficha y la descripción; BM25, las palabras de la ficha que están en la descripción; y SigLIP 2, la ficha en una frase contra la foto del producto. Cada puntaje se estandariza y se promedian: es la búsqueda híbrida, la versión 2 del sistema. Quedan los cinco mejores: estos sofás, 4 de Amazon y 1 de IKEA.
+Fase siete, la elección: es la generación de la lista, la G del RAG. Opus ve la foto del ambiente y los cinco candidatos de cada pieza, acá 36 imágenes, cada uno con su id, su tipo y su medida. El prompt le pide elegir las piezas juntas, como un solo look, y decir cuántas unidades; cero deja una pieza afuera. Solo puede elegir productos que trajo la búsqueda: si no, el código rechaza la respuesta. **→** No es un reranker: arma un conjunto para este cuarto. Acá tomó el primero de la búsqueda en 3 de las 7 piezas; la biblioteca era el quinto candidato.
 
-## 13. Opus ve el cuarto y los 5 de cada pieza, y arma la lista
-*El recorrido · fase 7 de 11 · Elección · ~0:48 min · desde el minuto 6:48*
+## 13. Fase 8: Escena
+*Recorrido · 8 · ~0:35 · desde el minuto 7:35*
 
-Fase siete, la elección: es la generación de la lista, la G del RAG. Opus ve la foto del ambiente y los cinco candidatos de cada pieza, acá 36 imágenes, cada uno con su id, su tipo y su medida. El prompt le pide elegir las piezas juntas, como un solo look, y decir cuántas unidades; cero deja una pieza afuera. Solo puede elegir productos que trajo la búsqueda: si no, el código rechaza la respuesta. No es un reranker: arma un conjunto para este cuarto. Acá tomó el primero de la búsqueda en 3 de las 7 piezas; la biblioteca era el quinto candidato.
+Fase ocho, la escena: el prompt para el modelo de imagen. Hay dos caminos: que Opus escriba dónde va cada producto, con una llamada más, o una plantilla sin LLM, que se completa con la lista y el pedido. Esta es la plantilla: una edición de la foto del cliente, con la misma cámara, sin tocar paredes ni ventanas, y exactamente estos productos. En la configuración final va la plantilla; por qué, lo vemos en los experimentos.
 
-## 14. El prompt de la imagen: una plantilla, sin LLM
-*El recorrido · fase 8 de 11 · Escena · ~0:39 min · desde el minuto 7:36*
+## 14. Fase 9: Imagen y control
+*Recorrido · 9 · ~0:45 · desde el minuto 8:10*
 
-Fase ocho, la escena: el prompt para el modelo de imagen. Probamos dos caminos: que Opus escriba dónde va cada producto, o una plantilla sin LLM, que se completa con la lista. La última versión de la plantilla es estricta: es una edición de la foto del cliente, con la misma cámara, las mismas paredes y ventanas, y exactamente estos productos. Las comparamos en los once ambientes, con las mismas listas: empatan en productos reconocidos y en cuartos conservados. Nos quedamos con la plantilla, que ahorra una llamada.
+La imagen la hace Nano Banana 2, en modo edición: recibe la foto del ambiente, las fotos de los productos y el prompt. Acepta 14 imágenes, así que muestra hasta 13 productos; el resto queda en la lista. **→** Después, el control: si la imagen no conserva el cuarto, se genera otra, hasta 3 veces. El loft pasó al primer intento. Este otro pedido, un living clásico, no: el modelo reencuadró hacia la chimenea en los tres intentos, y se entrega el que mejor conserva el cuarto. En las 11 corridas finales pasan 7, todas al primer intento.
 
-## 15. Nano Banana 2 edita la foto con las fotos de los productos
-*El recorrido · fase 9 de 11 · Imagen · ~0:24 min · desde el minuto 8:15*
+## 15. Fase 11: Lista + imagen
+*Recorrido · 11 · ~0:30 · desde el minuto 8:50*
 
-Fase nueve, la imagen. Nano Banana 2, en modo edición: recibe la foto del ambiente, las fotos de los productos y el prompt. Cuesta 8 centavos por intento. Acepta 14 imágenes, así que muestra hasta 13 productos; el resto queda en la lista. El modelo no lo elegimos con un experimento: esa comparación quedó sin correr.
+Y fase once, lo que sale: la lista de compra, con productos reales y cuántos de cada uno, y la foto del mismo ambiente con ellos. Cada línea tiene su recorrido: el kind lo puso el plan, la búsqueda trajo los candidatos y la elección tomó uno, a veces no el primero: acá se ve el puesto de cada uno en la búsqueda.
 
-## 16. ¿Es el mismo cuarto? SIFT lo controla, y si no, reintenta
-*El recorrido · fase 10 de 11 · Control · ~0:45 min · desde el minuto 8:39*
+## 16. Desafíos
+*Desafíos · ~0:45 · desde el minuto 9:20*
 
-Fase diez, el control. Comparamos la foto original con la generada con SIFT y RANSAC: si reencuentra al menos 50 puntos del cuarto y la cámara casi no se movió, se acepta; si no, se genera otra, hasta 3 veces. Los umbrales están puestos a mano. El loft pasó al primer intento. Este otro pedido, un living clásico, no: el modelo reencuadró hacia la chimenea en los tres intentos, y se entrega el mejor, marcado. En las 11 corridas finales pasan 7, todas al primer intento; en las otras 4 fallaron los tres. El control detecta; reintentar pocas veces arregla.
+Los desafíos. Uno: el texto del catálogo es marketing, y la gente pide estilo, color y materiales; hubo que describir cada producto mirando su foto. Dos: el catálogo; algunos productos traían la foto de otro, o de otra medida. Revisamos los dos, IKEA a mano, y en Amazon el modelo que describe descarta las fotos que no muestran el producto. Tres: no hay ground truth de la tarea real; la búsqueda la medimos con fotos de IKEA anotadas, y la lista, con un juez que compara dos listas. Y cuatro: el modelo de imagen rehace el cuarto; por eso, el control.
 
-## 17. Sale la lista de compra y el ambiente amoblado
-*El recorrido · fase 11 de 11 · Lista + imagen · ~0:24 min · desde el minuto 9:24*
+## 17. Cómo medimos la búsqueda
+*Datos · ~0:35 · desde el minuto 10:05*
 
-Y fase once, lo que sale: la lista de compra, con productos reales y cuántos de cada uno, acá 5 de Amazon y 2 de IKEA, y la foto del mismo ambiente con ellos. Este pedido costó unos 26 centavos de Claude y 8 de la imagen. Cada fase deja su archivo en la carpeta de la corrida.
+Usamos dos sets de evaluación, que miden cosas distintas. Para la búsqueda, 65 ambientes de IKEA con sus productos anotados. Por cada mueble visible, un subagente escribió la consulta como la escribiría el plan, sin ver el catálogo. **→** Una consulta acierta si el anotado sale primero, o entre los k primeros. **→** Son 864 consultas, 549 con su producto en el catálogo de 819. Es de producto conocido: quien escribe está viendo el mueble, así que mide el índice, no la recomendación.
 
-## 18. De buscar por imagen a RAG por texto, y otros tres desafíos
-*Desafíos · ~0:54 min · desde el minuto 9:48*
+## 18. Ambientes vacíos
+*Datos · ~0:20 · desde el minuto 10:40*
 
-Los desafíos. El más grande fue cambiar la arquitectura que nos aprobaron. La propuesta era generar primero una imagen amoblada, recortar cada mueble y buscar en el catálogo el más parecido, por imagen. Construimos y medimos su buscador sobre el mismo ground truth: encontraba primero el 43 por ciento de los productos anotados, contra 55 buscando por texto. Con eso, y con una generación de imagen menos por pedido, cambiamos a RAG por texto. Ojo: esa versión nunca corrió de punta a punta; comparamos buscadores, no sistemas. Los otros tres: el catálogo traía fotos de otro producto y hubo que revisarlo a mano; no hay ground truth de la tarea real; y el modelo de imagen rehace el cuarto.
+Para el flujo entero, 11 ambientes vacíos reales, cada uno con su pedido: 5 nuestros y 6 públicos, de estilos distintos del nórdico. Ahí no hay ground truth: compara un juez, que vemos en un caso.
 
-## 19. Cómo evaluamos
-*Parte 2 · ~0:06 min · desde el minuto 10:42*
+## 19. El juez de listas, en un caso
+*Datos · ~0:25 · desde el minuto 11:00*
 
-Antes de los experimentos, cómo evaluamos: qué mide cada número y cuánto creerle.
+Un caso. El juez ve la foto, el pedido y dos listas, sin saber de dónde viene cada una. **→** A cada producto le pone 2, 1 o 0; los que sacan 2 son los productos útiles. **→** Elige B, por el sofá beige. **→** Y al revés: si vuelve a elegir la misma, gana el ambiente; si no, empate.
 
-## 20. Ambientes IKEA anotados y ambientes vacíos reales
-*Cómo evaluamos · los datos · ~0:45 min · desde el minuto 10:48*
+## 20. Métricas del buscador
+*Métricas · ~0:45 · desde el minuto 11:25*
 
-Usamos dos bancos de prueba, que miden cosas distintas. Para la búsqueda, 65 ambientes de IKEA con sus productos anotados. Por cada mueble visible, un subagente escribió la consulta como la escribiría el plan, sin ver el catálogo: 864 consultas, 549 con su producto en el catálogo. Es un banco de producto conocido: quien escribe está viendo el mueble, así que mide el índice, no la recomendación. Para el flujo entero, 11 ambientes vacíos reales, cada uno con su pedido: ahí no hay ground truth, y un juez compara a ciegas las listas de dos configuraciones, en los dos órdenes.
+Las métricas del buscador. Arriba, una consulta real: el anotado sale en el puesto 3, así que hit@1 da cero y hit@3 da uno. **→** El titular es hit@5, porque son los cinco candidatos que ve el que elige. Para comparar dos métodos usamos la diferencia pareada: las mismas consultas, la diferencia media y su intervalo de 95 por ciento, por bootstrap de ambientes. Si no toca el cero, no es ruido. Mirar el intervalo de cada método por separado nos había hecho leer mejoras que eran ruido. Context precision y NDCG, con uno o dos relevantes por consulta, repiten al MRR.
 
-## 21. El buscador: ¿trae el producto anotado, y arriba?
-*Cómo evaluamos · el retriever · ~0:45 min · desde el minuto 11:33*
+## 21. El generador
+*Métricas · ~0:25 · desde el minuto 12:10*
 
-Las métricas del buscador, con el valor de hoy. hit@k: si el producto anotado está entre los k primeros. El titular es hit@5, porque son los cinco candidatos que ve el que elige: 0,825. Para comparar dos métodos usamos la diferencia pareada: las mismas consultas, la diferencia media y su intervalo de 95 por ciento, por bootstrap de ambientes. Si no toca el cero, no es ruido. Mirar el intervalo de cada método por separado nos había hecho leer mejoras que eran ruido. Las de la clase, context precision y NDCG, acá repiten al MRR; context recall es por ambiente.
+El generador es Opus eligiendo, con un porqué por producto. Faithfulness: un juez parte el porqué en afirmaciones y marca cuáles se infieren de lo que vio. Answer relevance: un juez que no ve el pedido escribe el que la lista contesta, y medimos el coseno con el original; la vara, con pedidos de otras listas.
 
-## 22. El generador: faithfulness 0,88 y answer relevance 0,70
-*Cómo evaluamos · el generador y los jueces · ~0:57 min · desde el minuto 12:18*
+## 22. Faithfulness, en un caso
+*Métricas · ~0:25 · desde el minuto 12:35*
 
-El generador es el paso que elige y explica. Faithfulness: partimos el porqué en afirmaciones, y un juez dice cuáles se infieren de lo que el generador vio. Da 0,88: 313 de 356. Lo que no se sostiene es casi siempre la especie de la madera, que afirma sin verla escrita. Answer relevance: un juez que no ve el pedido escribe los pedidos que esa lista contesta. Da 0,70, contra 0,56 con pedidos escritos para otras listas. Estas métricas las rehicimos, y es una historia de data leakage: el prompt del juez traía de ejemplo “un living nórdico y cálido”, que era justo como empezaba el pedido evaluado, y lo copiaba. Y sobre los jueces: validado contra el ground truth hay uno solo; el de listas se controla con los dos órdenes.
+El loft. Al juez le entra lo que vio Opus: las fotos, la línea de cada producto, el pedido y el porqué. **→** Lo parte en afirmaciones y marca cada una. **→** Sostiene 26 de 29. Fallan «madera maciza», que la línea no dice; «como pediste», con una maceta que nadie pidió; y «nada de blanco», con flecos blancos.
 
-## 23. La imagen: 31 de 75 productos reconocidos, 7 de 11 cuartos
-*Cómo evaluamos · la imagen · ~0:48 min · desde el minuto 13:15*
+## 23. La imagen
+*Métricas · ~0:25 · desde el minuto 13:00*
 
-La imagen la medimos sobre las 11 corridas finales, no sobre la mejor. Primero: ¿son esos productos? Detectamos cada mueble, lo recortamos y lo comparamos con las fotos del catálogo de su tipo: reconocido, si el más parecido es el de la lista. En el loft, el sofá, la biblioteca y la lámpara salen primeros; la alfombra, no. En total se reconocen 31 de 75, el 41 por ciento, aunque aparecen 71. Segundo: ¿es ese cuarto? El control pasa en 7 de 11. O sea: la lista es confiable; la imagen es una visualización, que acierta el producto exacto cuatro de cada diez veces.
+La imagen, con dos preguntas. ¿Son esos productos? Recortamos cada mueble y, con DINOv3, lo comparamos con los de su tipo: reconocido, si el más parecido es el de la lista. En el loft, la alfombra no. **→** ¿Es ese cuarto? SIFT busca en la imagen los puntos de la foto; si encuentra pocos, se genera otra.
 
-## 24. Las trampas, dichas en voz alta
-*Cómo evaluamos · cuánto creerle · ~0:39 min · desde el minuto 14:03*
+## 24. Advertencias
+*Métricas · ~1:35 · desde el minuto 13:25*
 
-Y las trampas, dichas en voz alta. Uno: el banco de la búsqueda es de producto conocido; en el flujo real el plan imagina el producto, no lo ve. Dos: el mismo modelo escribe las consultas y las descripciones, con el mismo molde; por eso contar palabras rinde casi como el embedder. Tres: no hay conjunto apartado. Y cuatro: de punta a punta son 11 ambientes y el juez es el mismo modelo que elige; con la misma configuración corrida dos veces reparte tres a tres, así que lo que cuenta es la asimetría. Por eso leemos las diferencias grandes, y las de dos puntos, no.
+Cuatro advertencias, y por qué medimos igual. Uno: el set de la búsqueda es de producto conocido. Quien escribe la consulta ve el mueble; en el flujo, el plan lo imagina, y el coseno del primer candidato baja de 0,875 a 0,80–0,82: esos números son optimistas. Lo usamos porque es la única forma de tener respuesta correcta para cientos de consultas, y todas las variantes reciben las mismas: sirve para comparar. **→** Dos: el mismo modelo escribe las descripciones y las consultas, con el mismo molde; por eso contar palabras rinde casi como el embedder. Pero así funciona el sistema: el plan también escribe una ficha. **→** Tres: no hay conjunto apartado; todo se eligió sobre los mismos 64 ambientes. Partirlos dejaba muy pocos. En cambio, comparamos siempre de a pares, con su intervalo, y medimos el ruido con tres redactores: dos puntos no son señal. **→** Y cuatro: de punta a punta son 11 ambientes, y el juez es el mismo modelo que elige. La misma configuración, corrida dos veces, cambió 9 de 75 productos, y el juez repartió los ambientes 3 a 3. Por eso el juez corre en los dos órdenes y solo leemos resultados desparejos, como un cinco a cero. Más ambientes, y validar al juez con personas, quedan para el trabajo futuro.
 
-## 25. Experimentos
-*Parte 3 · ~0:09 min · desde el minuto 14:42*
+## 25. Configuración inicial
+*Experimentos · ~0:20 · desde el minuto 15:00*
 
-Ahora los experimentos, por cuánto importan. Los que sostienen una decisión tienen su lámina; los de trámite van juntos al final.
+Arrancamos de un RAG naive; al lado de cada fase, el experimento que la pone a prueba. Lo que gana se suma, y cada experimento cambia una sola cosa.
 
-## 26. Quince experimentos: ocho con lámina propia, siete de trámite
-*Experimentos · el mapa · ~0:39 min · desde el minuto 14:51*
+## 26. El mapa de los experimentos
+*Experimentos · ~0:30 · desde el minuto 15:20*
 
-El mismo mapa, con los experimentos encima: cada pin es una pregunta que le hicimos a una parte del sistema. Los llenos, del 1 al 8, tienen lámina propia. Dos de ellos, el 4 y el 8, no miden una fase: miden al banco de prueba. Los huecos, del 9 al 15, son los de trámite: embedder, dimensión, splitting, base vectorial, filtros, rerankers de texto y la escena. Y dos cosas no las decidió ningún experimento: el modelo de imagen y los umbrales del control.
+Ahora los experimentos, por cuánto importan. El mismo mapa: cada pin es una pregunta que le hicimos a una parte del sistema. Del 1 al 8, los que más pesan; el 4 y el 7 miden al set de evaluación. Del 9 al 15, los de trámite, una lámina rápida cada uno. Y dos cosas no las decidió ningún experimento: el modelo de imagen y los umbrales del control.
 
-## 27. Qué se indexa
-*Experimento 1 · ~0:54 min · desde el minuto 15:30*
+## 27. Exp. 1: Qué se indexa
+*Experimentos · 1 · ~0:30 · desde el minuto 15:50*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): El texto de IKEA es una frase de marketing, y la gente pide estilo, color y materiales, que están en la foto. ¿Vale la pena describir cada producto?
-2. **Qué se comparó:** Indexamos dos textos, con todo lo demás fijo: el texto del vendedor y la descripción de ocho líneas. La consulta, una frase corta sin reescribir, para medir un solo cambio.
-3. **→ Resultados** (flecha): Con el texto del vendedor, hit@1 da 0,11; con la descripción, 0,30: casi el triple, y hit@5 pasa de 0,30 a 0,60. La diferencia es pareada y su intervalo no toca el cero. Con la consulta escrita como ficha, la diferencia supera 0,4.
-4. **→ Decisión** (flecha): Se indexa la descripción hecha desde la foto. Es el preprocesamiento que más pesa de todo el trabajo.
+El texto de IKEA es una frase de marketing, como esta, y la gente pide estilo, color y materiales, que están en la foto. ¿Vale la pena describir cada producto? Se hace una sola vez, offline. **→** Indexamos dos textos, con todo lo demás fijo: el texto del vendedor y la descripción de ocho líneas. La consulta, una frase corta sin reescribir, para medir un solo cambio.
 
-## 28. Cómo se escribe la consulta
-*Experimento 2 · ~1:06 min · desde el minuto 16:24*
+## 28. Exp. 1: resultados
+*Experimentos · 1 · ~0:30 · desde el minuto 16:20*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): El plan no busca con el pedido: escribe el producto ideal en las ocho líneas del catálogo. Es la técnica de Advanced RAG del flujo, y no la habíamos medido contra no hacerla: la comparábamos con buscar solo con el nombre del kind, que es azar por construcción.
-2. **Qué se comparó:** La ficha contra la frase natural, sin reescribir: las pocas palabras con que el redactor nombró la pieza. Con la búsqueda del flujo, y también contra la foto del producto.
-3. **→ Resultados** (flecha): La ficha da 0,530 y la frase natural 0,324: suma +0,21, con un intervalo lejos del cero. Y lo que no esperábamos: contra la foto, la frase sin reescribir da 0,479, casi lo mismo que la ficha. El texto necesita que la consulta hable como el catálogo; la foto, casi no.
-4. **→ Decisión** (flecha): El plan sigue escribiendo la ficha. Y queda un argumento para la búsqueda híbrida: las dos rutas fallan distinto.
+Con el texto del vendedor, hit@1 da 0,11; con la descripción, 0,30: casi el triple, y hit@5 pasa de 0,30 a 0,60. La diferencia es pareada y su intervalo no toca el cero; con la consulta escrita como ficha es mayor: los dos cambios se potencian. **→** Decisión: se indexa la descripción hecha desde la foto. Es el preprocesamiento que más pesa de todo el trabajo.
 
-## 29. Búsqueda léxica, por foto e híbrida
-*Experimento 3 · ~1:06 min · desde el minuto 17:30*
+## 29. Exp. 1: en los 11 ambientes
+*Experimentos · 1 · ~0:35 · desde el minuto 16:50*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): Dos dudas de fondo sobre el índice. ¿El embedder neuronal hace falta, o alcanza con contar palabras? Y el catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a texto, que es lo que hacíamos, o embeberla directamente. Esa nunca la habíamos medido.
-2. **Qué se comparó:** Tres buscadores sobre las mismas consultas: el denso, Qwen3 sobre las descripciones; el léxico, BM25; y por foto, SigLIP 2, con la consulta en una frase contra la foto del producto. Y sus fusiones.
-3. **→ Resultados** (flecha): Solos, los tres rinden parecido: 0,530, 0,517 y 0,508. Ni el embedder le gana a contar palabras, ni describir le gana a embeber la foto. Pero se equivocan en cosas distintas: fusionados dan 0,605, +0,075 de hit@1, con un intervalo que no toca el cero.
-4. **→ Decisión** (flecha): La búsqueda híbrida pasa a ser la del flujo: es la versión 2, el Ejercicio 4. Usa las dos rutas de la clase a la vez.
+¿Y en la tarea real? La versión 2 contra la misma con el índice sobre el texto del vendedor, en los once ambientes: mismo plan, mismo paso que elige, mismo juez, en los dos órdenes. **→** 9 a 1 para la descripción, con 1 empate: p igual a 0,02. Los productos útiles bajan de 0,77 a 0,60. Responde la duda del set de IKEA, donde consultas y descripciones las escribía el mismo modelo: acá el juez no lee descripciones, mira las fotos.
 
-## 30. El camino: de 0,11 a 0,60 de hit@1, un cambio por paso
-*Experimentos · la ablación incremental · ~0:51 min · desde el minuto 18:36*
+## 30. Exp. 2: Cómo se escribe la consulta
+*Experimentos · 2 · ~0:35 · desde el minuto 17:25*
 
-La ablación incremental: un cambio por paso, con su diferencia pareada. Arrancamos del RAG naive, el texto del vendedor y la consulta sin reescribir: 0,11. Describir cada producto desde su foto lo lleva a 0,30; escribir la consulta como una ficha, a 0,54. Esos dos pasos son los que más pesan. El filtro por kind no suma en este banco: lo usamos por otra razón, que vemos en los de trámite. Con el filtro, esa es la versión 1 del flujo. Con la búsqueda léxica, 0,58; con la foto, 0,60: la versión 2. Aparte queda el 0,69 que mostrábamos antes: es un VLM reordenando el top-10, una técnica aislada, no un escalón del flujo.
+El plan no busca con el pedido: escribe el producto ideal en las ocho líneas del catálogo. Es la técnica de Advanced RAG del flujo, y no la habíamos medido contra no hacerla: la comparábamos con buscar solo con el nombre del kind, que es azar por construcción. **→** La ficha contra la frase natural: las pocas palabras con que el redactor nombró la pieza, como «square pine coffee table, front center». Con la búsqueda densa del flujo, y también contra la foto del producto.
 
-## 31. ¿Error, o el mismo mueble en otro color?
-*Experimento 4 · ~0:42 min · desde el minuto 19:27*
+## 31. Exp. 2: resultados
+*Experimentos · 2 · ~0:20 · desde el minuto 18:05*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del mismo modelo. ¿Cuánto de lo que cuenta como error es el mismo mueble en otro color?
-2. **Qué se comparó:** Tres niveles de correcto para el primer candidato: el producto exacto, el mismo modelo, y uno que sirve según un juez.
-3. **→ Resultados** (flecha): El exacto, 0,53; el mismo modelo, 0,62; uno que sirve, 0,78. Una de cada 5 veces que el primero falla es otra variante del mismo mueble.
-4. **→ Decisión** (flecha): El banco subestima el nivel, no el orden: la comparación entre buscadores no cambia. Usamos el exacto para comparar, y los tres juntos para decir cuánto sirve.
+La ficha da 0,530 y la frase natural 0,324: suma +0,21, con un intervalo lejos del cero. El texto necesita que la consulta hable como el catálogo. **→** Decisión: el plan sigue escribiendo la ficha.
 
-## 32. Elegir con un VLM, y cuántos candidatos
-*Experimento 5 · ~1:03 min · desde el minuto 20:09*
+## 32. Exp. 2: en los 11 ambientes
+*Experimentos · 2 · ~0:25 · desde el minuto 18:25*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): hit@10 es 0,89 pero hit@1 0,54: el correcto casi siempre está entre los diez primeros, pero no primero. ¿Mirar las fotos ordena mejor que el coseno? ¿Y cuántos candidatos conviene pasar?
-2. **Qué se comparó:** Opus recibe la consulta y las fotos de los diez primeros, y los ordena. De ahí sale gratis la curva: si eligiera entre los primeros k, ¿acertaría? La punteada es el techo.
-3. **→ Resultados** (flecha): Reordenando el top-10, hit@1 pasa de 0,535 a 0,687. De 3 a 5 candidatos la elección sube 3 puntos, también significativo; a partir de 8 se aplana.
-4. **→ Decisión** (flecha): Cinco candidatos por pieza. Pero ojo: es una técnica aislada, no un paso del flujo. Ese reranker ordena contra la consulta, sin ver el ambiente; el que elige en el flujo arma un conjunto para el cuarto, y no tiene ground truth. Por eso este número no es el del sistema.
+De punta a punta, la ficha contra la frase con que el plan nombra la pieza, sin reescribirla. **→** 7 a 3 para la ficha, con 1 empate, y los productos útiles caen de 0,76 a 0,61. En ambientes ganados no alcanza para la significancia, p igual a 0,34, pero va para el mismo lado que en el set de IKEA.
 
-## 33. Qué catálogo
-*Experimento 6 · ~1:06 min · desde el minuto 21:12*
+## 33. Exp. 3: Léxica, por foto e híbrida
+*Experimentos · 3 · ~0:35 · desde el minuto 18:50*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): IKEA es de 2013, con una sola estética, la nórdica. Amazon Berkeley Objects tiene listados reales, con medidas, pero no tiene ambientes anotados: hay que medirlo de punta a punta.
-2. **Qué se comparó:** Los mismos ambientes, pedidos y plan; cambia solo el catálogo. El juez compara las dos listas a ciegas, en los dos órdenes.
-3. **→ Resultados** (flecha): En nuestros cinco departamentos, con pedidos nórdicos, IKEA le gana a Amazon solo, y los dos juntos empatan con IKEA. Sumamos seis ambientes públicos con otros estilos: ahí, IKEA más Amazon gana 6 a 0. En total, 8 a 2.
-4. **→ Decisión** (flecha): Usamos los dos catálogos. Con dos salvedades: 8 a 2 en once ambientes da p igual a 0,11, no es concluyente; y los pedidos de otros estilos los escribimos nosotros, sabiendo qué le falta a IKEA. Muestra que Amazon cubre ese hueco, no cuán frecuente es.
+Dos dudas sobre el índice. ¿El embedder neuronal hace falta, o alcanza con contar palabras? Y el catálogo tiene fotos: hay dos rutas, pasar la imagen a texto, que es lo que hacíamos, o embeberla directamente. Esa nunca la habíamos medido. **→** Tres buscadores sobre las mismas consultas, con el filtro por kind: el denso, Qwen3 sobre las descripciones; el léxico, BM25; y por foto, SigLIP 2, la consulta en una frase contra la foto. Y sus fusiones.
 
-## 34. Con búsqueda, sin búsqueda, o con el catálogo entero
-*Experimento 7 · ~1:15 min · desde el minuto 22:18*
+## 34. Exp. 3: resultados
+*Experimentos · 3 · ~0:40 · desde el minuto 19:25*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): Es el con y sin retrieval del flujo, con dos extremos. Uno: darle al que elige cinco productos al azar del kind pedido. Dos, la pregunta incómoda: si el catálogo entra en el contexto, ¿hacía falta RAG?
-2. **Qué se comparó:** Mismo plan, mismo modelo que elige, mismo juez. Contra el azar, en 7 ambientes. Y contra el catálogo entero en el prompt, las 1.502 fichas en texto, en los 11.
-3. **→ Resultados** (flecha): Contra el azar, 7 a 0, con los 14 votos. Contra el catálogo entero, 5 a 5, con los mismos productos útiles: empatan. Y con el catálogo en la caché de prompt cuesta lo mismo; sin caché, diez veces más.
-4. **→ Decisión** (flecha): La búsqueda hace falta cuando el que elige ve cinco productos, y empata cuando puede leerlos todos. Con mil quinientos productos, RAG no hace mejor la lista: lo elegimos porque escala, y porque no depende del tráfico ni de un modelo de contexto largo.
+Solos, los tres rinden parecido: 0,530, 0,517 y 0,508. Ni el embedder le gana a contar palabras, ni describir le gana a embeber la foto. Pero se equivocan en cosas distintas: fusionados dan 0,605, +0,075 de hit@1, con un intervalo que no toca el cero; y +0,035 de hit@5. Y contra la foto, la frase sin reescribir da 0,479, casi como la ficha, 0,508: la foto no necesita que la consulta hable como el catálogo. **→** Decisión: la búsqueda híbrida pasa a ser la del flujo: es la versión 2, el Ejercicio 4.
 
-## 35. Tres redactores
-*Experimento 8 · ~0:33 min · desde el minuto 23:33*
+## 35. El camino incremental
+*Experimentos · ~0:55 · desde el minuto 20:05*
 
-1. **Por qué lo hicimos y qué queríamos ver** (antes de avanzar): Las consultas de evaluación las escribió un modelo. La clase pidió promedio y desvío: ¿cuánto cambia el número sin cambiar el sistema?
-2. **Qué se comparó:** Las mismas consultas, escritas otras dos veces por subagentes independientes.
-3. **→ Resultados** (flecha): La versión 1 da 0,539 ± 0,025; la versión 2, 0,604 ± 0,009. La mejora de la híbrida se repite con los tres.
-4. **→ Decisión** (flecha): El número se mueve unos dos puntos y medio según quién escribe: por eso no leemos diferencias de dos puntos.
+La ablación incremental: un cambio por paso, con su diferencia pareada, sobre las 549 consultas. Arrancamos del RAG naive, el texto del vendedor y la consulta sin reescribir: 0,11. **→** Describir cada producto desde su foto lo lleva a 0,30; escribir la consulta como una ficha, a 0,54. Esos dos pasos son los que más pesan. **→** El filtro por kind no suma en este set de evaluación: lo usamos por otra razón, que vemos en los de trámite. Con el filtro, esa es la versión 1 del flujo. **→** Con la búsqueda léxica, 0,58; con la foto, 0,60: la versión 2. **→** Aparte queda el 0,69 que mostrábamos antes: es un VLM reordenando el top-10, una técnica aislada, no un escalón del flujo.
 
-## 36. De trámite: las cuatro preguntas sobre el índice *
-*Experimentos · de trámite (1 de 2) · ~0:48 min · desde el minuto 24:06*
+## 36. Exp. 4: ¿Error, o una variante?
+*Experimentos · 4 · ~0:55 · desde el minuto 21:00*
 
-Los de trámite: lo que la cátedra dijo que iba a preguntar, con la respuesta corta. Embedder: Qwen3 solo se sostiene sobre BGE; contra contar palabras no se distingue, porque consultas y descripciones comparten el molde. Dimensión: con 512 da lo mismo que con 1.024, y con 1.500 productos la memoria no pesa. Splitting: no partimos, un producto es un documento; lo que importa es qué líneas lo componen, y son las de lo que se ve: colores y forma. Base vectorial: ChromaDB da el mismo top-10 que la búsqueda exacta en las 864 consultas; la usamos por la persistencia y los filtros.
+hit@1 exige el producto anotado exacto, y el catálogo está lleno de variantes del mismo modelo. ¿Cuánto de lo que cuenta como error es el mismo mueble en otro color? **→** Tres niveles de correcto para el primer candidato: el producto exacto, el mismo modelo, y uno que sirve según un juez. Al juez lo probamos con las anotaciones: al producto anotado le dice que sirve el 81 por ciento de las veces, y a los otros candidatos, el 5. **→** El exacto, 0,53; el mismo modelo, 0,62; uno que sirve, 0,78. Una de cada 5 veces que el primero falla es otra variante del mismo mueble, como esta alfombra. **→** El exacto subestima el nivel, no el orden: sirve para comparar, y los tres juntos dicen cuánto sirve.
 
-## 37. De trámite: filtros, rerankers de texto, el catálogo y la escena *
-*Experimentos · de trámite (2 de 2) · ~0:48 min · desde el minuto 24:54*
+## 37. Exp. 5: Elegir con un VLM, y cuántos
+*Experimentos · 5 · ~0:30 · desde el minuto 21:55*
 
-Filtros de metadata: en este banco no suman, y el de kind cuesta dos puntos de hit@5. Lo usamos igual, por algo que el banco no mide: en los pedidos reales, sin él, el 11 por ciento de los candidatos sería de otro kind; pedís un sillón y aparece una silla de comedor. El de medidas cambia uno de cada once candidatos, sin evidencia de que mejore la lista. Rerankers de texto: probamos el MiniLM de la clase y Qwen3-Reranker, y los dos empeoran, porque releen el texto que ya usó la búsqueda. Y el catálogo: ampliarlo y revisarlo fueron decisiones de datos, y sumar Amazon le cuesta al buscador 3,5 puntos de hit@5. Y la escena: escrita por un LLM empata con la plantilla en los once ambientes; queda la plantilla.
+hit@10 es 0,89 pero hit@1 0,54: el correcto casi siempre está entre los diez primeros, pero no primero. ¿Mirar las fotos ordena mejor que el coseno? ¿Y cuántos candidatos conviene pasar? **→** Opus recibe la consulta y las fotos de los diez primeros, y los ordena. De ahí sale gratis la curva: si eligiera entre los primeros k, ¿acertaría? La punteada es el techo.
 
-## 38. Versión 1: el índice lee la descripción, no ve el producto
-*Ejercicio 4 · 1 de 3 · la versión anterior y su limitación · ~0:54 min · desde el minuto 25:42*
+## 38. Exp. 5: resultados
+*Experimentos · 5 · ~0:35 · desde el minuto 22:20*
 
-El Ejercicio 4. La versión 1 es el sistema hasta el 11 de noviembre: la búsqueda era el coseno del embedder sobre las descripciones, con el filtro por kind. Su limitación, medida: entre productos casi iguales, el primero es el anotado el 53 por ciento de las veces, y en una de cada cinco piezas el correcto no llega a los cinco candidatos. Falla donde hay muchos parecidos: alfombras y deco. Un caso: se busca un almohadón blanco con hojas negras, y la versión 1 trae almohadones blancos y negros; el anotado quedó sexto. El índice lee una descripción, pero no ve el producto ni aprovecha las palabras exactas. Y BM25 y la foto sola rendían como el embedder, fallando en cosas distintas.
+Reordenando el top-10, hit@1 pasa de 0,535 a 0,687. De 3 a 5 candidatos la elección sube 3 puntos, también significativo; a partir de 8 se aplana. En los ambientes reales, el 20 por ciento de lo elegido salió de los puestos 4 y 5. **→** Decisión: cinco candidatos por pieza. Ojo: es una técnica aislada, no un paso del flujo. Ese reranker ordena contra la consulta, sin ver el ambiente; el que elige arma un conjunto para el cuarto, y no tiene ground truth.
 
-## 39. Versión 2: búsqueda híbrida, una línea de configuración
-*Ejercicio 4 · 2 de 3 · el cambio y la configuración · ~0:48 min · desde el minuto 26:36*
+## 39. Exp. 5: en los 11 ambientes
+*Experimentos · 5 · ~0:20 · desde el minuto 23:00*
 
-El cambio es una línea de configuración: rag.hybrid pasa de una lista vacía a BM25 y SigLIP 2. La búsqueda ahora calcula tres puntajes para cada producto que pasa el filtro: el coseno con la descripción, que ya estaba; BM25, las palabras; y SigLIP 2, la ficha en una frase contra la foto. Se estandarizan y se promedian. ¿Por qué este cambio? Sale de una limitación medida; es una técnica de Advanced RAG, búsqueda híbrida y multimodal; y no cuesta nada por pedido, porque corre local. En el caso del almohadón, ahora el anotado sale primero.
+Y la cantidad de candidatos: los 5 del flujo contra 3. **→** 7 a 1 para cinco, con 3 empates: p igual a 0,07; productos útiles, 0,75 contra 0,66. Con tres, el que elige tiene menos para armar el conjunto: confirma la curva del set de IKEA.
 
-## 40. Resultados: gana en el ground truth y no pierde con el juez
-*Ejercicio 4 · 3 de 3 · resultados en las dos versiones · ~1:03 min · desde el minuto 27:24*
+## 40. Exp. 6: Con búsqueda o sin búsqueda
+*Experimentos · 6 · ~0:35 · desde el minuto 23:20*
 
-Los resultados en las dos versiones. Sobre el ground truth: hit@1 pasa de 0,530 a 0,605, y hit@5, lo que ve el que elige, de 0,790 a 0,825. Las diferencias son pareadas y sus intervalos no tocan el cero; con los otros dos redactores, la mejora se repite. De punta a punta, en los 11 ambientes, con el mismo plan y el juez en los dos órdenes: la versión 2 gana 5, empata 6 y no pierde ninguno. Los productos útiles pasan de 0,68 a 0,74, y el costo es el mismo. Con honestidad: lo del ground truth es claro; de punta a punta son once ambientes, cinco a cero da p igual a 0,06, y en seis el juez no se decide; la misma configuración contra sí misma reparte tres a tres. Clara en el banco; no peor, probablemente mejor, en la tarea real.
+Dos extremos. Uno: darle al que elige cinco productos al azar del kind pedido; es el control del juez, porque si no distinguiera esas dos listas, ninguna comparación de punta a punta diría nada. Dos, la pregunta incómoda: si el catálogo entra en el contexto, ¿hacía falta RAG? **→** Mismo plan, mismo modelo que elige, mismo juez, en los dos órdenes. Contra el azar, en 7 ambientes. Contra el catálogo entero en el prompt, las 1.502 fichas en texto, en los 11.
 
-## 41. Cuánto cuesta un pedido, y cuánto costó el trabajo *
-*Costo · ~0:30 min · desde el minuto 28:27*
+## 41. Exp. 6: resultados
+*Experimentos · 6 · ~0:20 · desde el minuto 23:55*
 
-Costos, del registro de gastos. Un pedido cuesta unos 28 centavos de dólar: 6 el plan, 14 la elección y 8 la imagen. Buscar no cuesta nada: todo corre local. El trabajo entero costó 45 dólares; lo más caro fue evaluar el reranking con el VLM. Cada llamada paga queda registrada, con topes por cuenta, y lo ya pagado queda en caché.
+Contra el azar, 7 a 0, en los dos órdenes: los productos útiles pasan de 0,26 a 0,82. Contra el catálogo entero, 5 a 5, con los mismos productos útiles: empatan. **→** Por calidad, a esta escala, no hacía falta.
 
-## 42. Limitaciones
-*Cierre · ~0:33 min · desde el minuto 28:57*
+## 42. Exp. 6: tokens y costo
+*Experimentos · 6 · ~0:45 · desde el minuto 24:15*
 
-Limitaciones. Del sistema: no dice “no hay”, pone lo más parecido sin avisar; el tamaño no se puede verificar; la imagen es una visualización; y el generador afirma maderas que no ve. De la evaluación: el banco de la búsqueda es de producto conocido y no hay conjunto apartado; de punta a punta son 11 ambientes, con un juez sin validar contra personas; y ninguna corrida se repitió.
+¿Por qué RAG, entonces? Con búsqueda, el que elige recibe unos 24 mil tokens; con el catálogo entero, 346 mil, un tercio del contexto: con el triple de productos no entra. **→** Elegir es una sola llamada a Opus: con búsqueda, US$0,14, la mitad del pedido entero. Con el catálogo sin caché, US$1,42; la caché del proveedor lo baja a US$0,12, pero dura cinco minutos. **→** Depende del caso. Con poco tráfico, o con un catálogo mucho más grande, conviene RAG, y por eso lo elegimos. Con un catálogo de este tamaño y muchos pedidos seguidos, el catálogo en caché saldría apenas más barato.
 
-## 43. Trabajo futuro
-*Cierre · ~0:39 min · desde el minuto 29:30*
+## 43. Exp. 7: Tres redactores
+*Experimentos · 7 · ~0:35 · desde el minuto 25:00*
 
-Trabajo futuro. Lo próximo es del RAG y de cómo lo medimos: que el sistema diga “no hay”; un banco de consultas escrito por personas, con un conjunto apartado; y validar al juez con nuestro voto a ciegas. Más lejos: medidas reales del ambiente y un catálogo actual. Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto; lo único que se sostiene es que indicarle al modelo dónde va cada mueble ayuda.
+Las consultas de evaluación las escribió un modelo. Por eso, promedio y desvío: ¿cuánto cambia el número sin cambiar el sistema? **→** Las mismas consultas, escritas otras dos veces por subagentes independientes. **→** La versión 1 da 0,539 ± 0,025; la versión 2, 0,604 ± 0,009. La mejora de la híbrida se repite con los tres. **→** El número se mueve unos dos puntos y medio según quién escribe: por eso no leemos diferencias de dos puntos. Los embedders no se distinguen; la híbrida sí.
 
-## 44. Conclusiones
-*Cierre · ~0:42 min · desde el minuto 30:09*
+## 44. Exp. 8: Buscar por imagen
+*Experimentos · 8 · ~0:50 · desde el minuto 25:40*
 
-Para cerrar. Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth, sin costo, y de punta a punta gana 5, empata 6 y no pierde. Tres: la búsqueda aporta en la tarea real, 7 a 0 contra candidatos al azar; contra el catálogo entero en el prompt empata: RAG es lo que escala. Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera y rehacer las métricas del generador. Y cinco: la lista es confiable; la imagen es una visualización. Gracias.
+Otra arquitectura, como experimento: un generador de imágenes sabe elegir, combinar y ubicar muebles; que amueble primero la foto, y buscar cada mueble recortado en el catálogo, por imagen. **→** Comparamos los dos buscadores con el mismo ground truth: la descripción contra el recorte de cada mueble. **→** Por imagen encuentra primero el 43 por ciento de los productos anotados; por texto, el 55. Y es el mejor caso para la imagen: los recortes salen de fotos reales; con un generador, los muebles serían genéricos. **→** Nos quedamos con el texto. Ojo: el flujo entero por imagen no lo corrimos; lo que el generador elegiría y dónde lo ubicaría no lo medimos.
+
+## 45. Exp. 9: Embedder *
+*Experimentos · 9 · ~0:15 · desde el minuto 26:25*
+
+¿Importa el embedder? Cuatro, de contar palabras a Qwen3. **→** Qwen3 solo se distingue de BGE; contra contar palabras no, por el molde compartido. Queda Qwen3.
+
+## 46. Exp. 10: Dimensión del vector *
+*Experimentos · 10 · ~0:15 · desde el minuto 26:40*
+
+Qwen3 deja recortar el vector, Matryoshka: probamos de 32 a 1024 dimensiones. **→** Con 512 da lo mismo; con este catálogo la memoria no pesa, y queda 1024.
+
+## 47. Exp. 11: Splitting y líneas *
+*Experimentos · 11 · ~0:15 · desde el minuto 26:55*
+
+¿Partir la descripción en pedazos? **→** No: las líneas solas pierden el contexto del producto. Un documento por producto.
+
+## 48. Exp. 12: Base vectorial *
+*Experimentos · 12 · ~0:15 · desde el minuto 27:10*
+
+ChromaDB busca con un índice aproximado. ¿Pierde algo contra comparar con todos? **→** Nada: el mismo top-10 en las 864 consultas. La usamos porque persiste y escala.
+
+## 49. Exp. 13: Filtros de metadata *
+*Experimentos · 13 · ~0:15 · desde el minuto 27:25*
+
+¿Suman los filtros? En el set de evaluación, no. **→** Usamos el de kind igual: en los pedidos reales, sin él, el 11 por ciento de los candidatos sería de otra categoría.
+
+## 50. Exp. 13: en los 11 ambientes
+*Experimentos · 13 · ~0:30 · desde el minuto 27:40*
+
+De punta a punta, sin el filtro por kind: la búsqueda trae candidatos de cualquier categoría, solo con el límite de medidas. **→** 4 a 3, con 4 empates: empatan, también en productos útiles. El que elige descarta solo lo que es de otra categoría. El filtro se queda porque no cuesta nada y asegura cinco candidatos del tipo pedido, no por una mejora medida.
+
+## 51. Exp. 14: Rerankers de texto *
+*Experimentos · 14 · ~0:15 · desde el minuto 28:10*
+
+¿Un reranker de texto ordena mejor? **→** No: los dos empeoran, porque releen el texto que ya usó la búsqueda. El que suma mira las fotos: el experimento 5.
+
+## 52. Exp. 15: La escena *
+*Experimentos · 15 · ~0:15 · desde el minuto 28:25*
+
+El prompt de la imagen: ¿una plantilla, o que lo escriba el LLM? **→** Empatan, y la plantilla ahorra una llamada: queda la plantilla.
+
+## 53. Exp. 5b: Elegir con texto o con fotos
+*Experimentos · 5b · ~0:40 · desde el minuto 28:40*
+
+El último, y por eso va al final: se nos ocurrió después de haber decidido todo lo demás. Elegir es, en el fondo, un reranker: ordena los candidatos y se queda con uno. El experimento 5 mostró que, mirando las fotos, ordena mucho mejor que la búsqueda. Pero nunca lo probamos sin las fotos. **→** Mismo Opus, mismo prompt; lo único que cambia es cómo ve a los candidatos: su foto, o su descripción de ocho líneas. En el set de IKEA, reordenando el top-10, y de punta a punta en los once ambientes.
+
+## 54. Exp. 5b: resultados
+*Experimentos · 5b · ~1:00 · desde el minuto 29:20*
+
+En el set de IKEA, reordenando el top-10: con fotos 0,687, solo con texto 0,681; la diferencia pareada es casi cero. Los dos, muy por encima de la búsqueda sola, 0,535. **→** De punta a punta, 6 a 4, con 1 empate: está dentro del ruido, que es 3 a 3. Productos útiles, 0,77 contra 0,74. Y con texto, elegir cuesta la mitad: US$0,07 en vez de US$0,14, porque entran 9 mil tokens en vez de 24 mil. **→** Los sesgos tiran para lados opuestos: en el set de IKEA, consulta y descripción las escribe el mismo modelo, y eso favorece al texto; el juez mira fotos. Aun así, empatan. Decisión: el flujo sigue con fotos, que es como se midió todo lo demás; con más ambientes, si sigue empatando, conviene el texto, por costo.
+
+## 55. ¿Sirve el coseno sin juez?
+*Experimentos · ~0:45 · desde el minuto 30:20*
+
+La pregunta de una métrica sin juez: el coseno entre la ficha que escribe el plan y el producto elegido, con el mismo embedder para todas las variantes. Es gratis. **→** Separa lo malo: al azar da 0,710; la frase natural y el texto del vendedor, 0,759. Pero no ordena lo bueno: la versión 1 saca más que la 2, 0,798 contra 0,791, y pierde cinco a cero. Mide parecido con la ficha, que es justo lo que la búsqueda densa maximiza, no si la lista le sirve al cliente. Sirve de alarma barata; no reemplaza al juez.
+
+## 56. Ejercicio 4: la versión 1
+*Ejercicio 4 · 1 de 3 · ~0:45 · desde el minuto 31:05*
+
+El Ejercicio 4. La versión 1, la densa: el coseno del embedder sobre las descripciones, con el filtro por kind. Su limitación, medida: entre productos casi iguales, el primero es el anotado el 53 por ciento de las veces, y en una de cada cinco piezas el correcto no llega a los cinco candidatos. **→** Un caso: se busca un almohadón blanco con hojas negras, y la versión 1 trae almohadones blancos y negros; el anotado quedó sexto. Y había información sin usar: BM25, contando palabras (0,517), y la foto sola (0,508) rendían como el embedder, fallando en cosas distintas.
+
+## 57. Ejercicio 4: la versión 2
+*Ejercicio 4 · 2 de 3 · ~0:35 · desde el minuto 31:45*
+
+El cambio es una línea de configuración: rag.hybrid pasa de una lista vacía a BM25 y SigLIP 2. ¿Por qué este cambio? Sale de una limitación medida; es una técnica de Advanced RAG, búsqueda híbrida y multimodal; y corre local, sin llamadas nuevas. **→** La búsqueda ahora promedia tres puntajes estandarizados: el coseno con la descripción, que ya estaba; BM25, las palabras; y SigLIP 2, la foto. En el caso del almohadón, ahora el anotado sale primero.
+
+## 58. Ejercicio 4: resultados
+*Ejercicio 4 · 3 de 3 · ~0:50 · desde el minuto 32:20*
+
+Sobre el ground truth: hit@1 pasa de 0,530 a 0,605, y hit@5, lo que ve el que elige, de 0,790 a 0,825. Los intervalos de la diferencia no tocan el cero, y con los otros dos redactores la mejora se repite. De punta a punta, en los 11 ambientes: la versión 2 gana 5, empata 6 y no pierde ninguno. Los productos útiles pasan de 0,68 a 0,74. **→** Con once ambientes, cinco a cero da p igual a 0,06. La versión 2 es hoy la búsqueda del flujo: clara en el set de evaluación; no peor, probablemente mejor, en la tarea real. **→** El generador da casi lo mismo; la imagen reconoce 31 de 75: es una visualización.
+
+## 59. Limitaciones
+*Cierre · ~0:30 · desde el minuto 33:15*
+
+Del sistema: no dice «no hay», pone lo más parecido sin avisar; el tamaño no se puede verificar, porque pocas fichas tienen medidas; la imagen es una visualización; y el generador afirma maderas que no ve. **→** De la evaluación, las advertencias que ya vimos, más dos: el pedido abierto no está evaluado, y el que elige no es determinístico. Ninguna invalida la lista, pero acotan cuánto podemos afirmar.
+
+## 60. Trabajo futuro
+*Cierre · ~0:40 · desde el minuto 33:45*
+
+Lo próximo es del RAG y de cómo lo medimos: que el sistema diga «no hay»; consultas de prueba escritas por personas, con un conjunto apartado, y nuestro voto a ciegas para validar al juez; probar un modelo más chico para elegir; y pasarle los materiales al que elige. Más lejos: medidas reales del ambiente y un catálogo actual. **→** Y fuera del RAG hicimos una prueba: vaciamos un living real y lo volvimos a amoblar con sus muebles. Es un solo cuarto: solo se sostiene que indicarle dónde va cada mueble ayuda.
+
+## 61. Conclusiones
+*Cierre · ~0:45 · desde el minuto 34:25*
+
+Uno: lo que más pesa es la base de conocimiento y cómo se escribe la consulta; el embedder casi no importa. **→** Dos: la versión 2 es la búsqueda híbrida: suma en el ground truth y de punta a punta gana 5, empata 6 y no pierde. **→** Tres: la búsqueda gana 7 a 0 contra el azar, y empata contra el catálogo entero en el contexto: RAG no hace mejor la lista, es la arquitectura que escala. **→** Cuatro: medir bien fue la mitad del trabajo; nos hizo cambiar el número de cabecera. **→** Y cinco: la lista es confiable; la imagen es una visualización.
+
+## 62. Gracias
+*Portada · ~0:05 · desde el minuto 35:10*
+
+Gracias. ¿Preguntas?
+
+## Anexo A: el prompt de la descripción
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Si preguntan qué recibe el modelo que describe: las fotos del producto, y en el texto su tipo, su nombre y sus medidas, que son los marcadores en color. Las medidas le dan la escala, pero no las puede escribir. Con la A se vuelve al recorrido.
+
+## Anexo B: cuánto cuesta
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Costos, del registro de gastos. Un pedido cuesta unos 29 centavos de dólar: 6 el plan, 14 la elección y 8 la imagen. Buscar no cuesta nada: todo corre local. **→** El trabajo entero costó 64 dólares; lo que más costó fue evaluar el reranking con un VLM. Cada llamada paga queda registrada con su costo, tokens y latencia, con topes por cuenta, y lo ya pagado queda en caché.
+
+## Anexo C: lo que cuesta cada opción
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Lo que cuesta cada opción. Describir un producto por la API, US$0,007, una vez. La escena escrita por el LLM suma US$0,056 por pedido; la plantilla, nada. Reordenar con un VLM, US$0,02 por búsqueda. Y elegir: entre 5 con foto, US$0,145; con el catálogo entero, US$0,12 con la caché caliente y US$1,42 sin caché.
+
+## Anexo D: las fotos de los ambientes
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Las 6 fotos públicas de los ambientes vacíos, con su autor y su licencia. Las otras son de departamentos reales, de uso privado.
+
+## Anexo E: el prompt del juez de faithfulness
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Si preguntan cómo juzga: le damos la foto del ambiente, la de cada producto elegido con su línea, el pedido y el porqué. Parte el porqué en afirmaciones y marca cada una. Con la A se vuelve al caso.
+
+## Anexo F: el prompt del juez de listas
+*Anexo · no se pasa: se abre con la A desde su lámina*
+
+Si preguntan cómo compara: ve la foto, el pedido y las dos listas con la foto de cada producto; califica cada producto, puntúa cada lista en tres criterios y elige. Con la A se vuelve al caso.

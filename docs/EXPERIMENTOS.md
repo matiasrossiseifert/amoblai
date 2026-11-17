@@ -4,9 +4,10 @@ Registro continuo: cada experimento con su configuración, los resultados y lo q
 
 - **v1 (actual): RAG por texto** (`src/amoblai/`). Evaluaciones en `datos/resultados/evaluacion/`, corridas
   del flujo en `datos/resultados/amoblar/`, reporte en `datos/resultados/reporte/` (`uv run amoblai reporte`).
-- **v0 (deprecada): retrieval por imagen.** Sus corridas están en `datos/resultados/v0_imagen/` y su
-  código en `deprecated/`. Se conserva abajo porque es la línea de base de la v1 (mismo ground
-  truth) y la historia de cómo se llegó al diseño actual.
+- **Experimento aparte: búsqueda por imagen.** Otra arquitectura: un generador amuebla primero la
+  foto con muebles genéricos, se recorta cada mueble y se lo busca por imagen. Sus corridas están en
+  `datos/resultados/v0_imagen/` y su código en `deprecated/`. Abajo, su metodología y su grilla; la
+  comparación con el texto (mismo ground truth), en «T1 contra la búsqueda por imagen».
 
 ## Ranking de los experimentos (revisión del 2026-11-12)
 
@@ -15,8 +16,8 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 
 | Grupo | Experimentos | Por qué |
 |---|---|---|
-| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · el piso de ruido (T8c) · RAG contra el catálogo entero en el contexto (T8d) · la escena: plantilla contra LLM (T10) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la v0) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
-| **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la v0 (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
+| **Sí o sí van** | Qué se indexa (T1, T6a) · cómo se escribe la consulta (T6b) · búsqueda léxica, por foto e híbrida (T6c) · versión 1 contra versión 2 y con búsqueda contra sin búsqueda, de punta a punta (T8) · las imágenes de la configuración final (T9) · el piso de ruido (T8c) · RAG contra el catálogo entero en el contexto (T8d) · la escena: plantilla contra LLM (T10) · elegir con un VLM y cuántos candidatos (T1b, T1e) · texto contra imagen (T1 contra la búsqueda por imagen) · qué catálogo, de punta a punta (T3b) · tres redactores (T1d) · las métricas del generador (T7) | Responden una duda real del pipeline, cambian (o sostienen) una decisión y están medidos con diferencias pareadas |
+| **Normalitos** | Embedder (T1: solo se sostiene Qwen3 sobre BGE) · filtros (T1: no suman en este banco; se usan por otra razón) · dimensión, splitting y cross-encoder MiniLM (T1d) · ChromaDB contra exacta (T1b) · reranker de texto local (T6e) · qué líneas pesan (T6d) · el acierto por familia (T6g) · catálogo ampliado y revisado (T1c, T1e) · ABO como distractores (T3b) · IKEA contra ABO en 5 ambientes (T3) · relevancia graduada (T1d) · el flujo sin juez (T6f) · la prueba del flujo (T2) · la grilla de la búsqueda por imagen (R1–R3) | Correctos, pero de trámite (los pregunta la cátedra y la respuesta era previsible), controles, o mediciones que no comparan nada |
 | **No sirven tal como están** | "Query rewriting" contra solo Type o solo el kind (T1b: reemplazado por T6b) · la escena sin LLM como estaba (una imagen por variante; reemplazada por T10) · la réplica con cajas (T5, T5b: un cuarto, 3 imágenes por variante, fuera del RAG) · los experimentos de imagen diseñados y sin correr (T4, salvo I1) · la imagen de un caso y las métricas del generador versión 1 como resultados (T1d) | Rival de paja, n = 1 con variables confundidas, sin poder para lo que concluyen, o el mejor caso de pocos |
 
 # v1: RAG por texto
@@ -24,16 +25,16 @@ revisión corrigió están anotadas en cada sección como *Corrección (2026-11-
 ## Metodología del retrieval
 
 - **Datos**: los mismos 65 ambientes de IKEA (livings y comedores con productos anotados del
-  catálogo) que la v0. El catálogo son los 268 productos del alcance (275 menos 7 cuya foto no
+  catálogo) que el experimento por imagen. El catálogo son los 268 productos del alcance (275 menos 7 cuya foto no
   los muestra, ver T1), cada uno con su descripción de ocho líneas (`datos/catalogo/descripciones.jsonl`).
 - **Consultas** (`datos/evaluacion_ikea/consultas.json`, prompt `consultas_ambiente_v1`): subagentes
   de Claude Code miraron cada foto, sin ver el catálogo ni las anotaciones, y escribieron una
   consulta por mueble del alcance que se ve (228 en total), en las mismas ocho líneas y con su
-  kind, como lo hace el paso `plan`. Es el equivalente en texto del recorte de la v0: mide el
+  kind, como lo hace el paso `plan`. Es el equivalente en texto del recorte de la búsqueda por imagen: mide el
   retrieval aislado, con consultas fijas para todos los métodos.
 - **Relevantes de una consulta**: los SKUs anotados en ese ambiente de la misma categoría del TP
   (sofá, sillón, silla, mesa, alfombra) que su kind; 198 consultas tienen al menos uno en el
-  catálogo. Es la misma definición permisiva que en la v0 (las anotaciones no dicen dónde está
+  catálogo. Es la misma definición permisiva que en la búsqueda por imagen (las anotaciones no dicen dónde está
   cada producto).
 - **Métricas**: hit@k (1, 3, 5, 10), MRR@10, recall por ítem anotado, baseline aleatorio sobre
   lo que deja pasar el filtro, IC 95% por bootstrap de ambientes (1000 remuestreos).
@@ -329,11 +330,11 @@ compara las listas de a pares en los dos órdenes (`evaluation/endtoend.py`, `pr
 Se usa el mismo plan para los dos catálogos, porque el plan no depende del catálogo. Configuración:
 `datos/configs/punta_a_punta/catalogos.yaml`. Resultados en T3.
 
-## T1 contra la v0 (mismo ground truth)
+## T1 contra la búsqueda por imagen (mismo ground truth)
 
 | | unidad | hit@1 | hit@10 | MRR@10 |
 |---|---|---|---|---|
-| v0 imagen: DINOv3, recorte con fondo, filtro por categoría | 325 recortes | 0,508 [0,44–0,57] | 0,819 | 0,603 |
+| por imagen: DINOv3, recorte con fondo, filtro por categoría | 325 recortes | 0,508 [0,44–0,57] | 0,819 | 0,603 |
 | v1 texto: Qwen3, descripción, filtro por tipo (mismo catálogo de 275) | 207 consultas | **0,618 [0,56–0,68]** | **0,908** | **0,717** |
 | v1 texto, catálogo actual de 268 | 198 consultas | 0,636 [0,58–0,70] | 0,914 | 0,737 |
 
@@ -729,7 +730,7 @@ de mediana).
 **Pregunta.** Dos dudas de fondo sobre el índice. (1) ¿El embedder neuronal hace falta, o con
 contar palabras alcanza? (2) El catálogo tiene fotos: la clase dio dos rutas, pasar la imagen a
 texto (lo que hacemos: un VLM describe cada producto) o embeber la imagen directamente. La
-segunda nunca se había medido para la consulta en texto (la primera aproximación buscaba imagen
+segunda nunca se había medido para la consulta en texto (el experimento por imagen buscaba imagen
 contra imagen).
 
 **Cómo.** `ablaciones/hibrido.yaml`, corrida `20261112-092807_ablacion-hibrido`. La base es la
@@ -1260,7 +1261,66 @@ falta y lo que cuesta está en `docs/REVISION.md` (secciones 4 y 8): el mejor em
 contra Qwen3 (la clave está vencida), el pedido abierto, un juez o personas para la
 distribución de los muebles en la imagen, y el voto a ciegas del equipo para validar al juez.
 
-# v0: retrieval por imagen (deprecada)
+## T11: elegir con texto o con fotos (5b) y los experimentos de punta a punta (2026-11-15)
+
+**5b: ¿el que elige necesita ver las fotos?** Elegir es reordenar los candidatos: el
+experimento 5 (T1b, T1e) midió a Opus ordenando el top-10 con las fotos, pero nunca sin ellas. Se
+nos ocurrió después de haber decidido todo lo demás. Mismo Opus, mismo prompt; solo cambia cómo
+ve a los candidatos: la foto, o su descripción de ocho líneas (`rerank_candidates_text_v1`,
+`choose_combination_text_v1`, `furnish.candidate_photos=false`).
+
+| | Solo la búsqueda | Con fotos | Solo texto |
+|---|---|---|---|
+| Set de IKEA, reordenar el top-10 (549 consultas): hit@1 | 0,535 | 0,687 | 0,681 |
+| De punta a punta, 11 ambientes: ambientes ganados | | 6 | 4 (1 empate) |
+| De punta a punta: productos útiles | | 0,77 | 0,74 |
+| Costo de elegir, por pedido | | US$0,14 (24 mil tokens) | US$0,07 (11 mil) |
+
+Solo texto menos con fotos, pareado: −0,005 [−0,024; +0,014]. De punta a punta, 6 a 4 está dentro
+del piso de ruido (3 a 3, T8c); cambian 23 de 75 productos (al repetir la misma configuración,
+9). Los sesgos van para lados opuestos (en el set de IKEA consulta y descripción las escribe el
+mismo modelo, lo que favorece al texto; el juez mira fotos) y aun así empatan. El flujo sigue con
+fotos, que es como se midió todo lo demás; con más ambientes, si sigue empatando, conviene el
+texto por costo. Corrida: `datos/resultados/evaluacion/20261115-234817_ablacion-reranking-texto`.
+
+**Los experimentos 1, 2, 5 y 13, de punta a punta.** La versión 2 contra la misma con un solo
+cambio, en los 11 ambientes vacíos, con el mismo plan y el juez de listas en los dos órdenes
+(`datos/configs/punta_a_punta/experimentos.yaml`). El juez ve siempre la línea Type de la
+descripción escrita, también cuando la variante busca sobre el texto del vendedor.
+
+| Cambio contra la versión 2 | Versión 2 – variante (empates) | p (signos) | Productos útiles (v2 / variante) | Productos que cambian |
+|---|---|---|---|---|
+| Exp. 1: índice sobre el texto del vendedor | 9 – 1 (1) | 0,02 | 0,77 / 0,60 | 44 de 75 |
+| Exp. 2: buscar con la frase de la pieza, sin la ficha | 7 – 3 (1) | 0,34 | 0,76 / 0,61 | 46 de 75 |
+| Exp. 5: 3 candidatos en vez de 5 | 7 – 1 (3) | 0,07 | 0,75 / 0,66 | 21 de 75 |
+| Exp. 13: sin el filtro por kind | 3 – 4 (4) | 1,00 | 0,73 / 0,72 | 18 de 75 |
+
+El 1 confirma en la tarea real lo del set de IKEA (y responde la duda de que ahí consultas y
+descripciones las escribe el mismo modelo). El 2 y el 5 van para el mismo lado que en el set de
+IKEA, sin llegar a la significancia en ambientes ganados, con una brecha grande en productos
+útiles. El 13 empata: el que elige descarta solo lo que es de otra categoría; el filtro se queda
+porque no cuesta nada y asegura cinco candidatos del tipo pedido.
+
+**El coseno sin juez** (`amoblai diagnostico-flujo`, `coseno_ficha_elegido`): el coseno (Qwen3)
+entre la ficha que escribe el plan y la descripción del producto elegido, gratis. Versión 1 0,798 ·
+3 candidatos 0,794 · versión 2 0,791 · versión 2 repetida 0,788 · sin kind 0,787 · solo texto
+0,786 · catálogo entero 0,773 · texto del vendedor 0,759 · frase natural 0,759 · al azar 0,710.
+Separa lo malo (azar, frase, vendedor) pero no ordena lo bueno: la versión 1 saca más que la 2 y
+pierde 0 a 5 con el juez. Mide parecido con la ficha, que es lo que la búsqueda densa maximiza.
+
+Costo: US$19,56 de Anthropic (el reranking solo con texto, US$7,97; las elecciones y el juez de
+las cinco comparaciones, el resto). Las láminas van en `docs/presentacion/presentacion.html`.
+
+# Experimento: búsqueda por imagen (generar, recortar y buscar)
+
+**Hipótesis.** Un generador de imágenes sabe elegir, combinar y ubicar muebles en un ambiente.
+**Diseño.** El generador amuebla la foto con muebles genéricos; un detector recorta cada mueble y
+se busca el producto más parecido por imagen; un segundo generador reemplaza cada mueble genérico
+por el real. **Qué se midió.** Solo el buscador, con recortes de las fotos reales de IKEA: el
+mejor caso para la imagen, porque el mueble recortado es el producto. El flujo entero no se
+corrió, así que lo que el generador elegiría y dónde lo ubicaría no está medido. **Resultado.**
+Por producto anotado, recall@1 0,43 contra 0,55 por texto (+0,12 [0,04; 0,20]); ver «T1 contra la
+búsqueda por imagen». Con muebles genéricos, además, el recorte ya no es un producto del catálogo.
 
 ## Metodología
 
@@ -1401,7 +1461,7 @@ Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
   ambiente. Con DINOv3 (0,51 → 0,47) y SigLIP 2 (0,46 → 0,32) perjudica, y con
   CLIP es neutro o negativo. Hipótesis: las máscaras de SAM recortan partes del
   mueble (patas, brazos, alfombras tapadas) y los embeddings más fuertes
-  aprovechan el contexto o son robustos al fondo. La hipótesis de la propuesta
+  aprovechan el contexto o son robustos al fondo. La hipótesis de partida
   ("quitar el fondo achica la brecha de dominio") solo se cumple para DINOv2.
 - **DINOv3 es el mejor embedder** en todas las combinaciones con filtro.
   **Default: DINOv3, recorte con fondo, filtro por categoría** — hit@1 0,508,
@@ -1415,7 +1475,7 @@ Sin filtro el universo es todo el catálogo indexado (2187 SKUs): hit@1 0,0006.
   calibrados están en `deprecated/configs/umbrales.yaml`, por colección, método de fondo y
   filtro.
 
-## Pendientes que quedaron de la v0
+## Pendientes del experimento por imagen
 
 - Repetir la grilla en la RTX 3070 (debería dar lo mismo salvo diferencias
   numéricas de fp16).

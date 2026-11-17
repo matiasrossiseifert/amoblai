@@ -1,0 +1,34 @@
+{
+  "product": "198.503.88",
+  "text": "Type: stool\nName: NILS\nColors: Black, blekinge white\nThe padded seat means you sit comfortably.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "198.503.88",
+      "name": "NILS",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "blekinge white"
+      ],
+      "description": "The padded seat means you sit comfortably."
+    },
+    "photos": [
+      "1245ab4b09d08330"
+    ]
+  }
+}

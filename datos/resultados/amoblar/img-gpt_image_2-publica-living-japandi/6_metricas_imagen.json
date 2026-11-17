@@ -1,0 +1,143 @@
+{
+ "corrida": "img-gpt_image_2-publica-living-japandi",
+ "imagen": "final.png",
+ "generador": "gpt_image_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B07K29TD1G",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.652,
+   "box": [
+    988,
+    530,
+    1446,
+    986
+   ],
+   "puesto": 3,
+   "entre": 95,
+   "coseno": 0.6061,
+   "mas_parecido": "391.109.84"
+  },
+  {
+   "id": "502.773.93",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.812,
+   "box": [
+    269,
+    700,
+    1288,
+    1029
+   ],
+   "puesto": 64,
+   "entre": 178,
+   "coseno": 0.2396,
+   "mas_parecido": "abo-B07QGG4ZLB"
+  },
+  {
+   "id": "302.397.12",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.392,
+   "box": [
+    0,
+    605,
+    76,
+    701
+   ],
+   "puesto": 39,
+   "entre": 176,
+   "coseno": 0.1507,
+   "mas_parecido": "abo-B001BQ7546"
+  },
+  {
+   "id": "101.841.74",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "lamp",
+   "score_detector": 0.523,
+   "box": [
+    1024,
+    337,
+    1089,
+    576
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.6622,
+   "mas_parecido": "101.841.74"
+  },
+  {
+   "id": "001.185.23",
+   "kind": "plant",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.912,
+   "box": [
+    241,
+    251,
+    487,
+    740
+   ],
+   "puesto": 1,
+   "entre": 434,
+   "coseno": 0.7751,
+   "mas_parecido": "001.185.23"
+  }
+ ],
+ "fidelidad": {
+  "productos": 5,
+  "detectados": 5,
+  "presencia": 1.0,
+  "coseno_medio": 0.4867,
+  "identificados@1": 0.4,
+  "mrr": 0.4749
+ },
+ "inventadas": [],
+ "repetidas": [
+  {
+   "detector": "picture frame",
+   "categoria": "deco",
+   "score": 0.394,
+   "box": [
+    806,
+    189,
+    988,
+    497
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.7443,
+  "ssim_fuera_de_los_muebles": 0.9298,
+  "fraccion_fuera_de_los_muebles": 0.4363,
+  "sift_puntos_original": 676,
+  "sift_matches": 294,
+  "sift_inliers": 278,
+  "sift_reencontrados": 0.4112,
+  "sift_desplazamiento_mediano": 0.0
+ },
+ "pedido_imagen": {
+  "pedido": "Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón. Pocas cosas, todas en tonos neutros.",
+  "siglip_final": 0.0979,
+  "siglip_vacia": 0.0009,
+  "delta": 0.097,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0046
+ }
+}

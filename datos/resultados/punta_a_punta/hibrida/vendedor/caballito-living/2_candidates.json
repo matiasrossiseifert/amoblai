@@ -1,0 +1,766 @@
+{
+  "pieces": [
+    {
+      "piece": "a light grey three-seat sofa against the long left wall, centered on the room",
+      "spec": {
+        "piece": "a light grey three-seat sofa against the long left wall, centered on the room",
+        "why": "it is the anchor of a living room for hosting friends, and light grey keeps the room bright and blends with the greige floor",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 95,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seat upholstered sofa\nUse: seating for hosting friends; living room\nStyle: modern, minimalist, Scandinavian\nMaterials: woven fabric upholstery, light wood or slim legs\nColors: light grey\nShape: clean straight lines, low back, deep comfortable seat, slim raised legs, medium visual weight\nFeel: airy, comfortable, inviting\nGoes with: white walls, light greige wood floor, black window frames; bright modern living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07J2YWSJN",
+          "name": "Amazon Brand \u2013 Rivet Alonzo Contemporary Upholstered Sofa Couch, 80\"W, Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 204.0,
+            "depth": 89.9,
+            "height": 96.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07J2YWSJN.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Alonzo Contemporary Upholstered Sofa Couch, 80\"W, Grey\nColors: Light Grey\nMaterials: Wood\nA single bench cushion brings visual unity and gently sloping armrests give it a sleek, comfortable style. With a solid-wood frame and strong brass legs, this sofa offers durability and elegance. Overall: 80.3\"W x 37.8\"D x 35.4\"H; Seat Height: 18.11\"H; Seat Depth: 22\"D; Seat Back Height: 17.3\"H; Arm Height: 23.6\"H; Leg Height: 7.1\"H Solid-wood frame with brass metal legs and fabric upholstery. Bench seat cushion with removable back cushions Simple assembly in less than 15 minutes Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.9947623355710478,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07HZ65PW3",
+          "name": "Amazon Brand \u2013 Rivet Goodwin Modern Loveseat, 61.8\"W, Light-Gray Fabric",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 157.0,
+            "depth": 91.9,
+            "height": 90.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HZ65PW3.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Goodwin Modern Loveseat, 61.8\"W, Light-Gray Fabric\nColors: Light Grey\nMaterials: Polyester\nThis striking loveseat will be the perfect finishing touch for your modern-style home decor. With its beautiful light-gray upholstery, this loveseat will nicely complement your existing interior design, and its sleek, classy design adds elegance to any room. Overall: 68.1\"W x 36.2\"D x 35.8\"H; Seat Height: 18.5\"H; Seat Depth 22\"D; Seat Back Height: 20.1\"H; Arm Height: 26.4\"H; Leg Height: 6.3\"H Solid-wood frame and legs with 100% polyester upholstery Strong slim legs elevate this piece and add modern flair. The soft, removable back and reversible cushions ensure durability and comfort. Assemble in 15 minutes or less Free returns for 30 days. 1-year warranty. This item is made to order just for you.\n",
+          "score": 1.7074738845895359,
+          "kind": "sofa"
+        },
+        {
+          "id": "190.114.33",
+          "name": "KIVIK",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/190.114.33.jpg"
+          ],
+          "description": "Type: sofa\nName: KIVIK\nColors: Ramna light grey\nKIVIK is a generous seating series with a soft, deep seat and comfortable support for your back.\n",
+          "score": 1.4725767490039725,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082QCY5RF",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QCY5RF.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey\nColors: Dark Grey\nMaterials: Fabric\nTapered legs, a rounded back and armrests, and a chic dark-gray upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame; polyester, linen, and rayon upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty\n",
+          "score": 1.4103201348898164,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07BWJCPTC",
+          "name": "Rivet Revolve Modern Upholstered Sofa Bed, 70\"W, Storm Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 177.0,
+            "depth": 93.0,
+            "height": 89.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07BWJCPTC.jpg"
+          ],
+          "description": "Type: sofa\nName: Rivet Revolve Modern Upholstered Sofa Bed, 70\"W, Storm Grey\nColors: Storm Grey\nMaterials: Polyester fabric, sturdy hardwood frame and solid beech wood legs\nThis modern sofa has enough classic elements to blend with your existing style. Plus, clean lines, comfortable seating and durable fabric give this piece functionality as well as smart design. When it's getting late, this piece transforms into a convenient sofa bed. 36.6\"D x 69.7\u201dW x 35.4\"H Solid wood frame and solid beech wood legs Contemporary, streamlined design This piece does double duty as a couch and a bed Simple assembly; just attach legs Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.3756744315875569,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a large rug in front of the sofa, under the coffee table and reaching toward the TV stand",
+      "spec": {
+        "piece": "a large rug in front of the sofa, under the coffee table and reaching toward the TV stand",
+        "why": "a big rug defines the seating area in this long, open room and softens the cool plank floor",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 220,
+        "max_height_cm": null,
+        "query": "Type: rug, large low-pile area rug\nUse: defining the seating area; living room\nStyle: modern, Scandinavian, minimalist\nMaterials: wool or soft woven fiber\nColors: warm off-white, cream, soft beige with subtle texture\nShape: large rectangle, low pile, subtle tone-on-tone pattern\nFeel: soft, warm, light\nGoes with: light grey sofa, greige wood floor, white walls"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07B4ZVLCN",
+          "name": "Amazon Brand \u2013 Stone & Beam Floral Wool Area Rug, 4 x 6 Foot, Taupe",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 182.9,
+            "depth": 121.9,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4ZVLCN.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Floral Wool Area Rug, 4 x 6 Foot, Taupe\nColors: Taupe\nMaterials: wool\nThe old-world style of floral design gets a modern update in this taupe rug, which is ready to create a soothing atmosphere in a living or dining room. The high-low pile combination creates warm and inviting textures and patterns. 4' x 6' High/low pile is easy to clean. Pair with rug pad (sold separately) Ships tightly rolled in a protective bag\n",
+          "score": 1.8971334448680395,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0735THVQK",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Linear Distressed Wool Area Rug, 8 x 10 Foot, Grey",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0735THVQK.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Contemporary Linear Distressed Wool Area Rug, 8 x 10 Foot, Grey\nColors: Grey\nMaterials: 80% Wool 20% Cotton\n80% Wool 20% Cotton Imported The muted tones in this pure wool, hand-tufted rug allow it to easily blend in with your existing d\u00e9cor. The muted grey details add an element of exciting visual texture. Distressed linear pattern Wool and cotton fibers hand-tufted in India Low, 0.3\" pile suits high-traffic, transitional indoor areas Pair with a rug pad (sold separately) 8' x 10' Ships tightly rolled in a protective bag\n",
+          "score": 1.3887894456370187,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07QHKV56Y",
+          "name": "Amazon Brand \u2013 Rivet Modern Lattice-Patterned Rug, 5' x 8', Beige and Cream",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 243.8,
+            "depth": 152.4,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QHKV56Y.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Modern Lattice-Patterned Rug, 5' x 8', Beige and Cream\nA beige and cream geometric pattern creates a rug that is textured enough to create an accent anywhere it is placed but subtle enough to work with almost any room\u2019s color scheme. The soft pile adds a warm and stylish cushioning to your bare floors. 5'W x 8'L Front: 91% cotton, 8% polyester, 1% viscose; backing: 100% cotton Modern geometric design in classic neutrals The medium pile makes this rug ideal for moderate traffic areas. Pair with rug pad (sold separately)\n",
+          "score": 1.3288969591676587,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0735T9WT9",
+          "name": "Amazon Brand \u2013 Stone & Beam Lottie Traditional Wool Area Rug, 8 x 10 Foot, Beige",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 1.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0735T9WT9.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Lottie Traditional Wool Area Rug, 8 x 10 Foot, Beige\nMaterials: wool\n80% Wool 20% Cotton Imported Eye-catching design in a classic pattern and neutral beige color will set a graceful tone to a dining area, entryway or bedroom. Soft wool exudes charm and warmth like no other fiber. Freshen up your home with this beautiful rug. 8' x 10' Hand-tufted in India Medium pile height makes it durable and easy to vacuum Vacuum, professionally clean Pair with a rug pad, which is sold separately Ships tightly rolled in a protective bag\n",
+          "score": 1.2560683259524756,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B073F7GFKB",
+          "name": "Amazon Brand \u2013 Rivet Modern Ombre Wool Rug, 7'6\" x 9'6\", Charcoal",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 292.1,
+            "depth": 231.1,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073F7GFKB.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Modern Ombre Wool Rug, 7'6\" x 9'6\", Charcoal\nColors: Charcoal\nMaterials: wool\nPile: 100% Wool, Backing: 100% Canvas Imported Deep and light hues fade into each other in this ombr\u00e9 pattern rug. Subtle yet striking, this 100% wool rug is high on style and softness. Area rug features an ombr\u00e9 pattern Hand-tufted with 100% wool fibers Plush .65'' pile suits high-traffic indoor areas Pair with a rug pad (sold separately) 7'6\" x 9'6\" Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle\n",
+          "score": 1.2072998234043473,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "a light wood coffee table on the rug, in front of the sofa",
+      "spec": {
+        "piece": "a light wood coffee table on the rug, in front of the sofa",
+        "why": "a light oak coffee table warms the grey-and-white palette and gives guests a place for drinks",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 130,
+        "max_depth_cm": 80,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, light wood\nUse: serving drinks and snacks for guests; living room\nStyle: Scandinavian, Japandi, modern\nMaterials: light oak wood\nColors: natural light oak\nShape: rectangular or rounded rectangle, low, solid top, simple legs, light visual weight\nFeel: warm, natural, simple\nGoes with: light grey sofa, cream rug, greige floor, white walls"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QC876Z6",
+          "name": "Amazon Brand \u2013 Rivet Modern Coffee Table, 39.37\"W, Pine Veneer and Natural Wood",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 100.0,
+            "depth": 55.0,
+            "height": 42.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC876Z6.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Modern Coffee Table, 39.37\"W, Pine Veneer and Natural Wood\nColors: Natural\nMaterials: Pine\nConstructed with simple miter joints and straight lines, this pine veneer coffee table in a natural color offers a sleek look. The moderate size allows plenty of room for magazines, coffee cups, and, of course, feet. Enjoy relaxing while the table adds comfort and functionality to any room. 39.37\"W x 21.65\"D x 16.54\"H 85% MDF, 10% solid pine, 5% pine veneer The simple design brings a modern look to this coffee table. The pine veneer in a natural color comes together with miter joints to create a sleek-looking contemporary coffee table. No assembly required Wipe with a soft, damp cloth; dry thoroughly. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.2493321395840653,
+          "kind": "coffee table"
+        },
+        {
+          "id": "902.976.57",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 70.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+          ],
+          "description": "Type: table\nName: LISABO\nColors: Ash veneer\nThe table surface in ash veneer and legs in solid birch give a warm, natural feeling to your room\n",
+          "score": 1.2461974586175077,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QFB1TH8",
+          "name": "Amazon Brand \u2013 Rivet Modern Sliding-Top Coffee Table, 47\"W",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 119.4,
+            "depth": 61.0,
+            "height": 33.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QFB1TH8.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Modern Sliding-Top Coffee Table, 47\"W\nColors: Walnut\nMaterials: Metal\nA light wood-patterned top slides away to reveal extra storage in this modern coffee table. Avoid mess and keep needed items close at hand. Strong metal legs give support. The natural coloring means that this item will match most color schemes, making it a must-have in any casual living space. 47\"W x 24\"D x 13\"H MDF and metal The wood finish will match any decor. Sliding top Assemble in 15-30 minutes Clean with a soft cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.1088191492686916,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B075Z85K2F",
+          "name": "Amazon Brand \u2013 Stone & Beam Culver Reclaimed Industrial Wood Coffee Table, 55.1\"W, Natural and Steel",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 80.0,
+            "height": 43.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z85K2F.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Culver Reclaimed Industrial Wood Coffee Table, 55.1\"W, Natural and Steel\nColors: Grey and Silver\nMaterials: reclaimed wood\nSleek, modern stainless steel legs are paired with a reclaimed wood top for a table that will bring rustic and industrial touches to your home. Top it with trays of snacks and beverages for many fun gatherings in the years to come. 55.1\"W x 31.5\"D x 17.3\"H Reclaimed wood and stainless steel Touches of modern, industrial and rustic Sturdy, durable and ideal for displaying magazines or snack trays Free returns for 30 days. 3-year warranty. Assembly required. Wipe with soft dry cloth.\n",
+          "score": 1.1018080696244688,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B075Z8KXW7",
+          "name": "Amazon Brand \u2013 Stone & Beam Coastal Breeze Rustic Farmhouse Coffee Table, 55.1\"W, Natural and White",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 80.0,
+            "height": 40.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z8KXW7.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Coastal Breeze Rustic Farmhouse Coffee Table, 55.1\"W, Natural and White\nColors: White & Wood\nMaterials: wood\nBring a relaxing coastal feel into your home with the simple beauty of this coffee table. A top of recycled elm is paired with a poplar wood base and given a distressed white painted finish. This piece also blends with modern farmhouse d\u00e9cor. 55.1\u201dW x 31.5\u201dD x 16.1\u201dH Reclaimed elm top on base of poplar wood Rustic wood makes this table work with coastal or modern farmhouse style A beautifully simple table great for magazines or snack trays Assembly required. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.0004150204165985,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a low TV stand against the right wall, facing the sofa",
+      "spec": {
+        "piece": "a low TV stand against the right wall, facing the sofa",
+        "why": "a long low unit holds the TV and media without blocking the light, and keeps the walkway to the balcony clear",
+        "kinds": [
+          "TV stand"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": 45,
+        "max_height_cm": 60,
+        "query": "Type: TV stand, long low media unit\nUse: holding the TV and storing media; living room\nStyle: modern, Scandinavian, minimalist\nMaterials: light oak wood, white or matte lacquer, slim black metal legs\nColors: light oak, white, black accents\nShape: long and low, closed storage with doors or drawers, clean lines, light visual weight\nFeel: tidy, light, modern\nGoes with: light oak coffee table, black window frames, white walls, greige floor"
+      },
+      "candidates": [
+        {
+          "id": "abo-B072ZMHBJ7",
+          "name": "Amazon Brand \u2013 Rivet King Street Industrial Three-Drawer TV Media Console, Walnut, Black Metal, Glass",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 150.1,
+            "depth": 39.9,
+            "height": 39.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072ZMHBJ7.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Rivet King Street Industrial Three-Drawer TV Media Console, Walnut, Black Metal, Glass\nColors: Oak\nMaterials: Metal\nA wooden console appears to float within a metal frame on this modern entertainment center. A tempered glass top will hold a wide-screen TV while your other AV equipment can be stored on the shelf below. 59.1\"L x 15.7\"W x 15.7\"H Engineered wood, walnut veneer drawers, metal legs and tempered glass top Modern Industrial Three drawers provide storage space No assembly required Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.9251614706317467,
+          "kind": "TV stand"
+        },
+        {
+          "id": "abo-B07QF9Y234",
+          "name": "Amazon Brand \u2013 Rivet Modern Media Cabinet with Self-Closing Doors, 59\"W",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 149.9,
+            "depth": 43.2,
+            "height": 53.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QF9Y234.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Rivet Modern Media Cabinet with Self-Closing Doors, 59\"W\nColors: Walnut/White\nThis media cabinet features 3 cabinets and 2 shelves for plenty of storage. Self-closing cabinet doors help you avoid damage and clutter. An all-over light finish means that this cabinet can blend in any living room, den, or media room, making it the perfect space for all your entertainment items. 59\"W x 17\"D x 21\"H MDF and metal The light finish will fit into most any room's color scheme. This cabinet has 3 self-closing cabinet doors and 2 shelves. Assemble in 15-30 minutes Clean with a soft cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.8174560149482724,
+          "kind": "TV stand"
+        },
+        {
+          "id": "abo-B07QJLYCBS",
+          "name": "Amazon Brand \u2013 Rivet Modern Media Cabinet, 47\"W, Gray",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 119.4,
+            "depth": 40.6,
+            "height": 40.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QJLYCBS.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Rivet Modern Media Cabinet, 47\"W, Gray\nColors: Grey\nThe shelving and pullout drawer in this sleek, modern media cabinet offer plenty of storage space for electronic and multimedia components. The strong lines and metal legs produce a contemporary flair, while the patterned panels add that touch of elegance every home needs. 47\"W x 16\"D x 16\"H Engineered wood with metal legs This modern media console makes a wonderful accent piece in any home. The shelving and 1 pull drawer make this media cabinet great for storage. Assemble in 15-30 minutes Wipe clean with a dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.800264874259709,
+          "kind": "TV stand"
+        },
+        {
+          "id": "602.397.15",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.397.15.jpg"
+          ],
+          "description": "Type: cabinet\nName: STOCKHOLM\nColors: Walnut veneer\nThe TV bench in walnut veneer with legs of solid ash brings a warm, natural feeling to your room.\n",
+          "score": 0.6248669639404733,
+          "kind": "TV stand"
+        },
+        {
+          "id": "abo-B07P7VBMKP",
+          "name": "AmazonBasics Modern 50-Inch Wood TV Console and Cube Organizer - Solid Black",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 120.7,
+            "depth": 39.9,
+            "height": 63.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P7VBMKP.jpg"
+          ],
+          "description": "Type: cabinet\nName: AmazonBasics Modern 50-Inch Wood TV Console and Cube Organizer - Solid Black\nColors: Solid Black\nMaterials: MDF & Particle board\nTV console and storage solution for the modern home Perfect for placing televisions, media players, gaming consoles, decor, and more Sturdy wood construction that\u2019s built to last Open-faced cubby hole storage makes it easy to access essentials Minimal, modern look blends in nicely with both contemporary and traditional decor\n",
+          "score": 0.5449356045478229,
+          "kind": "TV stand"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp in the corner beside the sofa, near the balcony end",
+      "spec": {
+        "piece": "a floor lamp in the corner beside the sofa, near the balcony end",
+        "why": "it gives warm evening light for gatherings, and a slim black frame echoes the black window frame",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, slim arc or tripod\nUse: warm ambient reading light by the sofa; living room\nStyle: modern, mid-century modern, Scandinavian\nMaterials: black metal, fabric or linen shade\nColors: matte black, white or natural linen shade\nShape: slender and tall, light visual weight\nFeel: warm, elegant, cozy\nGoes with: black window frames, light grey sofa, light oak wood"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash\nColors: Distressed Grey\nMaterials: Linen\nThe rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only\n",
+          "score": 1.2411054200186387,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07374SBFL",
+          "name": "Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 25.4,
+            "height": 149.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374SBFL.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel\nColors: Brushed Nickel\nMaterials: Metal\nModern style Brushed nickel finish from base to adjustable sleek metal shade Provides ample light while fitting in a small space 10\"Wx17\"Dx59\"H Easily assembled in 15 minutes Curl up with a good book under this adjustable floor reading lamp, which shines highly focused light. The brushed nickel finish and simple, minimalist design will add just the right modern splash to your d\u00e9cor.\n",
+          "score": 1.017166558415134,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 1.0135613911619448,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07B4SC9N7",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 29.5,
+            "depth": 25.0,
+            "height": 155.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4SC9N7.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass\nColors: Matte Black With Antique Brass\nThis very functional floor lamp has two multidirectional shades -- each with its own on/off switch -- that allow you to adjust the amount of light and point it in multiple directions. Brass and matte black metal combine for a striking contrast. 9.9\"W x 11.6\"D x 61.25\"H Metal shade and base with black finish; metal pole with antiqued brass finish Shades adjust to point light in multiple directions; each has on/off switch Integrated LED lamp Assemble in 15 minutes or less Intended for indoor use only\n",
+          "score": 0.9889170929610861,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082JHW29P",
+          "name": "Amazon Brand \u2013 Stone & Beam Contemporary Floor Lamp with Brushed Steel Accents, 63\"H, Matte-Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 30.5,
+            "depth": 20.3,
+            "height": 160.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082JHW29P.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Contemporary Floor Lamp with Brushed Steel Accents, 63\"H, Matte-Black\nColors: Matte Black\nMaterials: Metal\nWith a stunning contemporary design that will win over visitors, this LED floor lamp also saves you money and energy costs that will win over your wallet. Utilizing only 8.3-watts of energy, you have the perfect task light that adds style to any room! 8\"W x 12\"D x 63\"H Metal shade and base in a matte-black finish with brushed steel accents Contemporary design meets modern styling, perfect for every room in your home Integrated LED Assemble in 15 minutes or less For indoor use only\n",
+          "score": 0.6762807002619874,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "cushions on the sofa",
+      "spec": {
+        "piece": "cushions on the sofa",
+        "why": "a few cushions in warm accent colors bring the color they want to the neutral sofa",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, decorative throw pillow\nUse: adding color and comfort to the sofa; living room\nStyle: modern, Scandinavian, bohemian\nMaterials: linen, cotton, boucl\u00e9, textured weave\nColors: terracotta, mustard, sage green, cream\nShape: square, mixed textures\nFeel: warm, cheerful, cozy\nGoes with: light grey sofa, cream rug, light oak wood"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07JKJSTYT",
+          "name": "Amazon Brand \u2013 Rivet Modern Texture Throw Pillow - 18 x 18 Inch, Grey",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 45.7,
+            "height": 8.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JKJSTYT.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Modern Texture Throw Pillow - 18 x 18 Inch, Grey\nColors: Gray\nThe light gray field of this beautiful modern throw pillow is studded with sequin-like circles of white yarn that form a stylish asymmetrical chevron pattern that meets in the middle to create an \u201cX\u201d shape. Cotton/polyester Imported 18\"L x 18\"W The zipper on this pillow is placed on the back. It has a machine-woven base with added texture and a luxe handfeel. 1 throw pillow Spot clean with a damp cloth, and then allow to air dry. Rather than pulling at any loose threads, please use scissors to trim them.\n",
+          "score": 1.3203681765601767,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07BMTXJ12",
+          "name": "Amazon Brand \u2013 Stone & Beam Casual Woven Square Decorative Throw Pillow, 17\" x 17\", Black",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 15.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07BMTXJ12.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Casual Woven Square Decorative Throw Pillow, 17\" x 17\", Black\nColors: Black\nWoven squares of contrasting yarns create a crisp, contemporary appeal with a pleasing texture. Change up the look by flipping it over to display a solid flax color. Neutral colors will easily blend with a transitional or modern style room. Pillow cover features hidden bottom zipper 17\"L x 17\"W, Pillow cover dimensions are measured from seam to seam when cover is laid flat. Spot clean with damp white cloth and allow to air dry\n",
+          "score": 1.2642459064891949,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B079TXJXVX",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Geo Print Cotton Decorative Throw Pillow, Soft and Stylish, 17\" x 17\", Blush",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 14.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079TXJXVX.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Mid-Century Geo Print Cotton Decorative Throw Pillow, Soft and Stylish, 17\" x 17\", Blush\nColors: Blush\nBring mid-century flair into your home with retro prints and colors. Patterns of blush, green, gold and ivory add a cheerful, interesting update to couch, chair or bed. For a quick change-up, reverse it to the solid blush linen-look back. 17\" x 17\" Front: Cotton; Back: Polyster Polyester fiber-filled insert included Insert can be easily removed via a bottom zipper on the cover Wipe with damp white cloth and allow to air dry\n",
+          "score": 1.2458859605693018,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JLGCKKJ",
+          "name": "Amazon Brand \u2013 Stone & Beam Casual Lines Throw Pillow - 17 x 17 Inch, Flax",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 14.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JLGCKKJ.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Casual Lines Throw Pillow - 17 x 17 Inch, Flax\nColors: Linen\nMade in the United States and imported The serged stitch lines and flaxen linen fabric make this casual throw pillow ideal for contemporary color schemes and sophiticated places, but versatile enough to pair with any d\u00e9cor. 17\"L x 17\"W Spot Clean.\n",
+          "score": 1.1650087381233452,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07TFDD1MR",
+          "name": "AmazonBasics 2-Pack Velvet Fleece Decorative Throw Pillows - 18\" Square, Deep Teal",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 45.7,
+            "height": 20.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07TFDD1MR.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics 2-Pack Velvet Fleece Decorative Throw Pillows - 18\" Square, Deep Teal\nColors: Deep Teal Velvet\nMaterials: Polyester\nSet of 2 decorative 18 by 18 inches square throw pillows for sofas, lounge chairs, beds, and more 100% polyester velvet fleece is soft to the touch and durable Match to your existing decor or use as a contrasting accent piece; easy to care for by machine or hand washing Comes in a vacuum-sealed pack; allow 24 hours to decompress Made in a Green factory with an independent certification system that ensures textiles meet high safety and environmental standards\n",
+          "score": 1.1627983653152103,
+          "kind": "cushion"
+        }
+      ]
+    },
+    {
+      "piece": "a large plant in a pot by the balcony door, at the end of the sofa",
+      "spec": {
+        "piece": "a large plant in a pot by the balcony door, at the end of the sofa",
+        "why": "a tall plant fills the bright corner by the glass and adds fresh green to the white walls",
+        "kinds": [
+          "plant"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant, tall indoor plant in a pot\nUse: adding greenery and color; living room by the window\nStyle: modern, Scandinavian, bohemian\nMaterials: live or realistic foliage, ceramic or woven basket pot\nColors: deep green, natural terracotta or white pot\nShape: tall and leafy, like a fiddle leaf fig or monstera\nFeel: fresh, lively, natural\nGoes with: white walls, light oak wood, light grey sofa, bright window"
+      },
+      "candidates": [
+        {
+          "id": "702.922.98",
+          "name": "FEJKA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.922.98.jpg"
+          ],
+          "description": "Type: deco\nName: FEJKA\nColors: Orchid pink\nLifelike artificial plant that remain just as fresh-looking year after year.\n",
+          "score": 0.5406088714451543,
+          "kind": "plant"
+        },
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: deco\nName: ZAMIOCULCAS\nColors: Aroid palm\n",
+          "score": 0.3805570839278911,
+          "kind": "plant"
+        },
+        {
+          "id": "001.185.23",
+          "name": "PACHIRA AQUATICA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+          ],
+          "description": "Type: deco\nName: PACHIRA AQUATICA\nColors: Guinea chestnut\n",
+          "score": 0.20258225369768823,
+          "kind": "plant"
+        },
+        {
+          "id": "468.040.05",
+          "name": "CHRYSALIDOCARPUS LUTESCENS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+          ],
+          "description": "Type: deco\nName: CHRYSALIDOCARPUS LUTESCENS\nColors: Areca palm\n",
+          "score": 0.07631428979998696,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: deco\nName: ALOE VERA\nColors: Aloe\n",
+          "score": -0.43652015897622115,
+          "kind": "plant"
+        }
+      ]
+    },
+    {
+      "piece": "sheer curtains over the balcony sliding door",
+      "spec": {
+        "piece": "sheer curtains over the balcony sliding door",
+        "why": "light white sheers filter the strong light and soften the black frame while keeping the room bright",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer floor-length panels\nUse: filtering daylight on the balcony door; living room\nStyle: modern, minimalist, Scandinavian\nMaterials: linen-look sheer voile\nColors: white, warm off-white\nShape: floor-length, soft gentle folds, light visual weight\nFeel: airy, soft, luminous\nGoes with: white walls, black window frames, light grey sofa"
+      },
+      "candidates": [
+        {
+          "id": "500.460.48",
+          "name": "MATILDA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.460.48.jpg"
+          ],
+          "description": "Type: deco\nName: MATILDA\nColors: White\nThe sheer curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.656641375590908,
+          "kind": "curtains"
+        },
+        {
+          "id": "202.975.71",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.975.71.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: White\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.5752985935558554,
+          "kind": "curtains"
+        },
+        {
+          "id": "002.975.67",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.975.67.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: Grey\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.342527983760987,
+          "kind": "curtains"
+        },
+        {
+          "id": "902.975.63",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.975.63.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: Beige\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.1726042016898635,
+          "kind": "curtains"
+        },
+        {
+          "id": "abo-B07CTJJNX4",
+          "name": "Stone & Beam Sheer Transitional Curtain",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07CTJJNX4.jpg"
+          ],
+          "description": "Type: deco\nName: Stone & Beam Sheer Transitional Curtain\n",
+          "score": 1.0352472153865422,
+          "kind": "curtains"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

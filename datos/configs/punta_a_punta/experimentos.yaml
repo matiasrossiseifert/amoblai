@@ -1,0 +1,27 @@
+# Los experimentos sobre el set de evaluación, repetidos de punta a punta en los 11 ambientes
+# vacíos (sin ground truth): la versión 2 contra la misma con un solo cambio, con el mismo plan y
+# el mismo juez de listas (Opus, en los dos órdenes).
+# - texto (experimento 5b): el que elige lee las descripciones de los candidatos, sin sus fotos;
+# - vendedor (experimento 1): el índice sobre el texto del vendedor, no sobre la descripción;
+# - frase (experimento 2): la búsqueda con la frase con que el plan nombra la pieza, sin la ficha;
+# - k3 (experimento 5): 3 candidatos por pieza en vez de 5;
+# - sin_kind (experimento 13): sin el filtro de metadata por kind (solo las medidas).
+# El juez ve siempre la línea Type de la descripción escrita (también en `vendedor`).
+# Costo: unos US$2,5 por comparación (11 elecciones y 22 llamadas del juez).
+# `uv run amoblai evaluar-punta-a-punta datos/configs/punta_a_punta/experimentos.yaml --pagar`
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: hibrida
+variantes:
+  hibrida: {rag.hybrid: [bm25, siglip2]}
+  texto: {rag.hybrid: [bm25, siglip2], furnish.candidate_photos: false}
+  vendedor: {rag.hybrid: [bm25, siglip2], rag.describer: fields}
+  frase: {rag.hybrid: [bm25, siglip2], furnish.query_field: piece}
+  k3: {rag.hybrid: [bm25, siglip2], furnish.candidates: 3}
+  sin_kind: {rag.hybrid: [bm25, siglip2], furnish.kind_filter: false}
+comparaciones:
+  - [hibrida, texto]
+  - [hibrida, vendedor]
+  - [hibrida, frase]
+  - [hibrida, k3]
+  - [hibrida, sin_kind]

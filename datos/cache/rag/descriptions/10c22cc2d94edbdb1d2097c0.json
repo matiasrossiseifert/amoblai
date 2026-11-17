@@ -1,0 +1,36 @@
+{
+  "product": "302.990.70",
+  "text": "Type: desk\nName: LISABO\nColors: Ash veneer\nEach table has its own unique character due to the distinctive grain pattern.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.990.70",
+      "name": "LISABO",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 118.0,
+        "depth": 45.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "118x45 cm",
+      "colors": [
+        "Ash veneer"
+      ],
+      "description": "Each table has its own unique character due to the distinctive grain pattern."
+    },
+    "photos": [
+      "1e343c359d451160"
+    ]
+  }
+}

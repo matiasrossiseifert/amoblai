@@ -1,0 +1,559 @@
+{
+  "pieces": [
+    {
+      "piece": "a dark green velvet sofa facing the fireplace, centered on it in the middle of the room",
+      "spec": {
+        "piece": "a dark green velvet sofa facing the fireplace, centered on it in the middle of the room",
+        "why": "the client asked for a dark green velvet sofa, and a deep forest green with a classic rolled-arm shape anchors the room and looks rich against the pale mint walls and the dark mantel",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, classic three-seater velvet sofa\nUse: main seating facing the fireplace; living room\nStyle: classic, traditional\nMaterials: velvet upholstery, dark wood turned legs\nColors: deep forest green, dark wood\nShape: rolled arms, tight or buttoned back, turned legs, generous size, substantial visual weight\nFeel: elegant, rich, inviting\nGoes with: pale mint paneled walls, charcoal fireplace, honey pine floor, white coffered ceiling; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "702.450.56",
+          "name": "STOCKHOLM",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/702.450.56.jpg"
+          ],
+          "description": "Type: three-seat velvet sofa\nUse: seating, lounging, entertaining guests; living room, lounge, sitting room\nStyle: mid-century modern, contemporary, glam\nMaterials: soft velvet upholstery, solid wood tapered legs in a natural finish\nColors: deep black, warm honey wood\nShape: slim angled track arms, two long seat cushions, loose back cushions and side bolsters, splayed tapered wooden legs, long and refined\nFeel: luxurious, elegant, moody, soft\nGoes with: brass or gold accents, walnut or oak wood, jewel-tone textiles; mid-century or glam living rooms\n",
+          "score": 2.12312029198841,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07B4FZWCN",
+          "name": "Amazon Brand \u2013 Stone & Beam Isabel Traditional Sectional, 100\"W, Tan",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 162.3,
+            "depth": 77.5,
+            "height": 106.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4FZWCN.jpg"
+          ],
+          "description": "Type: sectional sofa with chaise\nUse: lounging, seating; living room, family room\nStyle: traditional, contemporary, classic\nMaterials: woven upholstery fabric, contrast piping, dark wood legs\nColors: warm tan beige, dark brown\nShape: left-facing chaise, three back cushions, two seat cushions, sloped track arms, short tapered legs, long and substantial\nFeel: welcoming, relaxed, warm\nGoes with: cream walls, warm wood, soft neutral textiles; traditional or transitional living rooms\n",
+          "score": 1.19478779431844,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07BWKD3BG",
+          "name": "Amazon Brand \u2013 Stone & Beam Dalton Chaise Sectional Sofa Couch, 91.5\", Stone",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 104.1,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07BWKD3BG.jpg"
+          ],
+          "description": "Type: chaise sectional sofa\nUse: seating, lounging; living room, family room\nStyle: contemporary, modern, minimalist\nMaterials: textured woven upholstery, welted seams, dark wood block feet\nColors: warm greige stone, dark brown\nShape: right-facing chaise, sloped track arms, three back cushions, box seats, low block feet, large but clean-lined\nFeel: calm, comfortable, neutral\nGoes with: wood tones, white or beige walls, soft textiles; transitional or modern family rooms\n",
+          "score": 1.129427638783916,
+          "kind": "sofa"
+        },
+        {
+          "id": "390.338.01",
+          "name": "STOCKSUND",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/390.338.01.jpg"
+          ],
+          "description": "Type: three-seat sofa with rolled arms\nUse: seating, lounging; living room, family room\nStyle: traditional, classic\nMaterials: woven fabric upholstery, turned black wood legs\nColors: dark charcoal grey, black legs\nShape: low scrolled arms, two loose back cushions and two seat cushions, piped edges, turned tapered legs, medium visual weight\nFeel: elegant, cozy, calm\nGoes with: dark wood, brass accents, cream or patterned textiles; classic, traditional or English-style living rooms\n",
+          "score": 1.085998125245658,
+          "kind": "sofa"
+        },
+        {
+          "id": "590.337.20",
+          "name": "STOCKSUND",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/590.337.20.jpg"
+          ],
+          "description": "Type: two-seat sofa with rolled arms\nUse: seating, conversation, relaxing; living room, sitting room, reading nook\nStyle: traditional, classic, contemporary\nMaterials: woven fabric upholstery with piping, turned wooden legs in a black finish\nColors: charcoal grey, dark cool grey, black\nShape: low rounded rolled arms, loose back and seat cushions, piped edges, short turned legs, compact and softly curved\nFeel: elegant, cozy, refined, inviting\nGoes with: dark wood, brass accents, patterned rugs, warm neutrals; classic or traditional living rooms\n",
+          "score": 1.0324245959643157,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "two matching armchairs facing each other on either side of the fireplace, between sofa and mantel",
+      "spec": {
+        "piece": "two matching armchairs facing each other on either side of the fireplace, between sofa and mantel",
+        "why": "a facing pair frames the fireplace symmetrically as in a classic salon, and a lighter neutral linen or velvet keeps the green sofa as the star",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 85,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: armchair, classic upholstered armchair\nUse: conversation seating beside the fireplace; living room\nStyle: classic, traditional\nMaterials: linen or velvet upholstery, dark wood legs\nColors: warm ivory or soft sand, dark wood\nShape: wingback or rolled-arm silhouette, turned or tapered legs, medium visual weight\nFeel: refined, comfortable, balanced\nGoes with: dark green velvet sofa, pale mint walls, charcoal fireplace, honey pine floor; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "500.583.76",
+          "name": "AGEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/500.583.76.jpg"
+          ],
+          "description": "Type: rattan tub armchair\nUse: relaxing, extra seating, casual dining; living room, sunroom, bedroom, dining room\nStyle: bohemian, coastal, rustic\nMaterials: hand-woven natural rattan, bamboo legs\nColors: warm honey rattan, light natural tan\nShape: rounded tub back curving into the arms, arched openings between back and arms, woven diamond pattern detail, woven seat, four slim splayed bamboo legs, compact and light\nFeel: warm, relaxed, natural, airy\nGoes with: plants, linen cushions, light wood, white walls; bohemian, coastal or tropical living rooms and sunrooms\n",
+          "score": 1.6393374370302654,
+          "kind": "armchair"
+        },
+        {
+          "id": "102.335.32",
+          "name": "NOLMYRA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/102.335.32.jpg"
+          ],
+          "description": "Type: armless lounge easy chair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: bent birch veneer frame, grey perforated mesh seat shell\nColors: light grey, light natural birch\nShape: one-piece curved seat and back shell sloping low, armless, open wooden frame with square legs and side stretchers, light and airy, compact\nFeel: relaxed, light, casual, fresh\nGoes with: light wood, white walls, grey textiles; Scandinavian living rooms, small apartments, student rooms\n",
+          "score": 1.0987336281013653,
+          "kind": "armchair"
+        },
+        {
+          "id": "991.506.46",
+          "name": "MELLBY",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/991.506.46.jpg"
+          ],
+          "description": "Type: boxy upholstered armchair\nUse: relaxing, sitting; living room, lounge, bedroom\nStyle: modern, minimalist, contemporary\nMaterials: woven fabric upholstery with piping, padded frame, chrome-plated steel sled legs\nColors: light beige, silver chrome\nShape: straight track arms, square back cushion, thick seat cushion, raised body on two chrome sled runners, clean right angles, compact, medium visual weight\nFeel: clean, calm, neutral, relaxed\nGoes with: grey or white walls, glass and chrome, light wood; modern or minimalist living rooms\n",
+          "score": 0.6331686465608429,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07DVTRT9V",
+          "name": "Amazon Brand \u2013 Ravenna Home Christian Mid-Century Modern Accent Chair, 31.89\"W",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DVTRT9V.jpg"
+          ],
+          "description": "Type: upholstered velvet accent armchair\nUse: seating, relaxing; living room, bedroom\nStyle: contemporary, mid-century modern, classic\nMaterials: velvet upholstery with self piping, dark wood block legs\nColors: warm light taupe beige, dark brown legs\nShape: square back, flared track arms, piped edges, loose seat cushion, short square tapered legs, compact and boxy\nFeel: soft, elegant, calm\nGoes with: neutral walls, dark wood, brass accents; modern or transitional living rooms\n",
+          "score": 0.6177700115805497,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075X342T5",
+          "name": "Stone & Beam Westport Modern Nailhead Upholstered Accent Arm Chair, 36\"W, Stone Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 95.9,
+            "depth": 91.4,
+            "height": 83.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X342T5.jpg"
+          ],
+          "description": "Type: nailhead upholstered accent armchair\nUse: lounging, reading; living room, bedroom, home office\nStyle: traditional, contemporary, classic\nMaterials: woven upholstery fabric, antique brass nailhead trim, dark stained wood base and legs\nColors: warm greige, dark brown wood, bronze\nShape: track arms with nailhead outline, loose back and seat cushions, plinth-style wood base on tapered square legs, boxy, medium visual weight\nFeel: tailored, refined, cozy\nGoes with: dark wood, leather, cream walls, brass accents; classic or transitional living rooms\n",
+          "score": 0.5551087374091274,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a large traditional rug under the whole seating group in front of the fireplace",
+      "spec": {
+        "piece": "a large traditional rug under the whole seating group in front of the fireplace",
+        "why": "a large rug with a traditional pattern ties the sofa and armchairs into one group and warms the bare pine floor, with green and faded red tones linking the sofa to the wood",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 250,
+        "max_height_cm": null,
+        "query": "Type: rug, large traditional patterned rug\nUse: anchoring the seating area by the fireplace; living room\nStyle: traditional, classic\nMaterials: wool\nColors: muted green, faded terracotta, cream, soft blue\nShape: rectangular, Persian or Oriental medallion pattern with border, large\nFeel: warm, timeless, elegant\nGoes with: dark green velvet sofa, honey pine floor, pale mint walls; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0719STM8K",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Opulence Rug, 8' x 10', Burgundy",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 305.8,
+            "depth": 244.9,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STM8K.jpg"
+          ],
+          "description": "Type: large tribal medallion area rug\nUse: anchoring a large seating area; living room, dining room, bedroom\nStyle: traditional, bohemian, rustic\nMaterials: low flat pile, woven fibers\nColors: cream, burgundy red, warm brown, multicolor accents\nShape: rectangular, three stacked geometric medallions on cream field, scattered tribal motifs, multiple red patterned borders, large and bold\nFeel: vibrant, warm, lively, cultural\nGoes with: light wood floors, white or cream sofas, neutral walls; bohemian, farmhouse or eclectic rooms\n",
+          "score": 2.2345980480157936,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B071PB2H8H",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Regal Adornment Rug, 8' x 10', Burgundy",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 305.6,
+            "depth": 244.6,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071PB2H8H.jpg"
+          ],
+          "description": "Type: large traditional area rug\nUse: anchoring a living area; living room, dining room, bedroom\nStyle: traditional, bohemian, classic\nMaterials: low pile woven fibers, fringed ends\nColors: burgundy red, warm tan, ivory, blue and green accents\nShape: large rectangle, central diamond medallion on tan field, red corners, wide decorative tribal border, fringe\nFeel: warm, rich, inviting\nGoes with: wood floors, light grey sofas, warm woods; traditional or eclectic rooms\n",
+          "score": 2.1065971354912127,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B072PX4GR1",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Naturally Ornate Rug, 8' x 10', Charcoal",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072PX4GR1.jpg"
+          ],
+          "description": "Type: large ornate area rug\nUse: anchoring a sofa seating area; living room, bedroom, dining room\nStyle: traditional, contemporary, classic\nMaterials: woven low pile, dotted pattern\nColors: charcoal grey, white\nShape: large rectangle, dotted damask scrolls and central diamond, patterned border, flat\nFeel: elegant, calm, refined\nGoes with: white sofas, light wood floors, grey and cream textiles; classic or farmhouse rooms\n",
+          "score": 2.0159996999537273,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0719STLRW",
+          "name": "Rivet Red Mosaic Multi-Print Wool Rug, 7'10\" x 11', Red",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 335.3,
+            "depth": 238.8,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STLRW.jpg"
+          ],
+          "description": "Type: large red mosaic wool rug\nUse: anchoring a large seating or dining area; living room, dining room, bedroom\nStyle: bohemian, traditional, rustic\nMaterials: wool, low textured pile\nColors: deep red, pink, cream, green, navy accents\nShape: rectangular, large diamond medallion with scattered geometric tile motifs, no border, oversized, bold\nFeel: warm, vibrant, eclectic, cozy\nGoes with: dark wood floors, grey or neutral upholstery, woven baskets; bohemian or eclectic rooms\n",
+          "score": 1.9128312920023813,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B071J4VYW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Contemporary Medallion Area Rug, 7' 10\" x 10', Brick",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 238.8,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071J4VYW4.jpg"
+          ],
+          "description": "Type: Persian-style medallion area rug\nUse: anchoring a sofa or dining area; living room, dining room, bedroom\nStyle: traditional, classic, bohemian\nMaterials: low-pile woven synthetic\nColors: brick red, gold, cream, sage green\nShape: rectangular, central ornate medallion on red field, floral motifs, wide multiple borders, large\nFeel: warm, rich, inviting\nGoes with: cream sofas, warm wood floors, white walls; traditional or farmhouse rooms\n",
+          "score": 1.7073429540897156,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "a dark wood coffee table centered between sofa and fireplace",
+      "spec": {
+        "piece": "a dark wood coffee table centered between sofa and fireplace",
+        "why": "the requested dark wood picks up the charcoal mantel and contrasts with the light floor, and a classic rectangular shape suits the molded room",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 130,
+        "max_depth_cm": 75,
+        "max_height_cm": 50,
+        "query": "Type: coffee table, classic dark wood\nUse: central table for the seating group; living room\nStyle: classic, traditional\nMaterials: dark walnut or mahogany wood\nColors: dark brown\nShape: rectangular, turned or carved legs, optional lower shelf, medium visual weight\nFeel: refined, solid, timeless\nGoes with: dark green velvet sofa, charcoal fireplace, traditional rug, honey pine floor; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07RG78QJS",
+          "name": "Amazon Brand - Solimo Essential Engineered Wood Coffee Table (Wenge Finish)",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 93.0,
+            "depth": 45.0,
+            "height": 33.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07RG78QJS.jpg"
+          ],
+          "description": "Type: minimalist open coffee table\nUse: holding drinks, books and decor in front of a sofa; living room\nStyle: minimalist, modern, contemporary\nMaterials: engineered wood, wenge laminate finish\nColors: dark chocolate brown\nShape: low rectangle, flat top over a lower shelf, slab panel supports at ends and center, no legs, compact and boxy\nFeel: clean, simple, grounded\nGoes with: white or light grey sofas, light rugs, white walls; minimalist or modern living rooms\n",
+          "score": 1.3389889107684407,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QF9WRNM",
+          "name": "Amazon Brand \u2013 Stone & Beam Garrett Rustic Acacia-Wood Coffee Table with Iron Legs, 52\"W, Gray and Raw Metal",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 132.1,
+            "depth": 66.0,
+            "height": 35.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QF9WRNM.jpg"
+          ],
+          "description": "Type: live-edge wood coffee table\nUse: holding drinks, books and decor in front of a sofa; living room\nStyle: rustic, industrial, modern\nMaterials: solid acacia wood slab with a grey wash, raw iron legs\nColors: dark grey-brown wood, black iron\nShape: long low slab top with natural wavy live edges, two U-shaped sled legs set inward, low and wide, substantial\nFeel: organic, grounded, moody\nGoes with: charcoal or leather sofas, stone or concrete, black accents; rustic modern or industrial living rooms\n",
+          "score": 1.0661836458197615,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07DBFFG9Z",
+          "name": "Amazon Brand \u2013 Ravenna Home Flush Mount Wood Cross Coffee Table, 23.6\"W, Dark Brown Walnut",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0,
+            "height": 46.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+          ],
+          "description": "Type: X-base wood coffee table\nUse: holding drinks, books and remotes; living room\nStyle: farmhouse, traditional, rustic\nMaterials: wood with dark stained finish\nColors: dark walnut brown\nShape: rectangular top with molded edge, X-shaped trestle legs at each end, long center stretcher, sturdy medium visual weight\nFeel: warm, grounded, classic\nGoes with: cream or grey sofas, warm woods, iron accents; farmhouse or traditional rooms\n",
+          "score": 1.0343576481329695,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B074KMJ96Q",
+          "name": "Amazon Brand \u2013 Stone & Beam Glenwood Storage Coffee Table, 46\"W, Oak",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 116.8,
+            "depth": 76.2,
+            "height": 43.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B074KMJ96Q.jpg"
+          ],
+          "description": "Type: storage coffee table with drawers\nUse: holding drinks and storing items in front of a sofa; living room\nStyle: industrial, modern, rustic\nMaterials: oak wood with a dark finish, brushed nickel metal base and pulls\nColors: dark warm brown wood, silver grey metal\nShape: boxy rectangular body with two front drawers and long bar pulls, raised on an open metal sled frame, chunky top, medium-wide and solid\nFeel: sturdy, warm, refined\nGoes with: leather or grey sofas, steel accents, neutral walls; industrial or modern living rooms\n",
+          "score": 1.0079784314512004,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07J29N3R4",
+          "name": "AmazonBasics Lift-top Coffee Table, Espresso",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 101.6,
+            "depth": 48.3,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07J29N3R4.jpg"
+          ],
+          "description": "Type: lift-top coffee table\nUse: holding drinks, eating or working from the sofa, storage; living room\nStyle: traditional, contemporary, classic\nMaterials: wood composite with a smooth espresso wood-grain finish\nColors: warm reddish dark brown\nShape: rectangular top that lifts up, deep apron, open lower shelf split in two cubbies, square tapered legs, medium and solid\nFeel: practical, warm, homely\nGoes with: beige or grey sofas, cream walls, warm wood; traditional or family living rooms\n",
+          "score": 0.8674683926654532,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a large framed mirror over the fireplace, centered on the chimney breast",
+      "spec": {
+        "piece": "a large framed mirror over the fireplace, centered on the chimney breast",
+        "why": "a big framed mirror fills the tall chimney breast, reflects the window light and finishes the classic composition the client asked for",
+        "kinds": [
+          "mirror"
+        ],
+        "max_width_cm": 130,
+        "max_depth_cm": null,
+        "max_height_cm": 160,
+        "query": "Type: mirror, large framed wall mirror\nUse: overmantel mirror above the fireplace; living room\nStyle: classic, traditional\nMaterials: carved wood frame, antique gilt or dark finish, glass\nColors: antique gold or dark bronze\nShape: tall rectangular or arched top, molded frame, large, strong presence\nFeel: elegant, luminous, stately\nGoes with: charcoal fireplace, pale mint paneled walls, white coffered ceiling; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0718ZKMW1",
+          "name": "Amazon Brand \u2013 Stone & Beam Wall Decor Mirror, 30\" x 40\", Champagne Gold",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 101.6,
+            "depth": 76.2,
+            "height": 2.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0718ZKMW1.jpg"
+          ],
+          "description": "Type: rectangular overlay wall mirror\nUse: decorating a wall, reflecting light; living room, dining room, bedroom, above a sideboard or fireplace\nStyle: traditional, glam, classic\nMaterials: champagne gold painted frame and fretwork overlay, mirror glass\nColors: champagne gold, pale warm beige\nShape: large rectangle with a raised oval and stepped Greek-key-like fretwork overlay over the glass, flat profile, substantial size\nFeel: elegant, refined, light\nGoes with: cream or soft grey walls, crystal, upholstered furniture; traditional or glam rooms\n",
+          "score": 1.771992254678674,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WJ2J8P",
+          "name": "Amazon Brand \u2013 Stone & Beam Rustic Wood Frame Hanging Wall Mirror, 39.75 Inch Height, Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 65.4,
+            "depth": 5.1,
+            "height": 101.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WJ2J8P.jpg"
+          ],
+          "description": "Type: wide wood framed wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, dining room, on a wall\nStyle: rustic, farmhouse, Scandinavian\nMaterials: natural solid wood frame with visible grain, mirror glass\nColors: light warm natural wood\nShape: large upright rectangle, wide beveled chunky wood frame, substantial\nFeel: warm, natural, grounded\nGoes with: light wood, white or beige walls, linen; rustic or Scandinavian rooms\n",
+          "score": 1.5444067264057424,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WH6N3R",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage-Look Square Hanging Wall Mirror, 39.5 Inch Height, Tan and White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 80.0,
+            "depth": 6.3,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WH6N3R.jpg"
+          ],
+          "description": "Type: square wood framed wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, entryway, above a mantel\nStyle: rustic, farmhouse\nMaterials: distressed whitewashed wood with stepped moulding, mirror glass\nColors: warm tan wood, white wash\nShape: square, wide layered stepped frame, chunky and substantial, large\nFeel: warm, cozy, weathered\nGoes with: white walls, linen, natural textures, reclaimed wood; farmhouse or rustic rooms\n",
+          "score": 1.4258401373856646,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WGQBPC",
+          "name": "Amazon Brand \u2013 Stone & Beam Square Rustic Wood Frame Hanging Wall Mirror, 25.75 Inch Height, Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 65.4,
+            "depth": 5.1,
+            "height": 65.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WGQBPC.jpg"
+          ],
+          "description": "Type: square wood framed wall mirror\nUse: decorating a wall, reflecting light; living room, bedroom, entryway, on a wall\nStyle: rustic, farmhouse, Scandinavian\nMaterials: natural solid wood frame with visible grain, mirror glass\nColors: light warm natural wood\nShape: square, wide beveled chunky wood frame, compact but solid\nFeel: warm, natural, cozy\nGoes with: light wood, white walls, woven textures; rustic or Scandinavian rooms\n",
+          "score": 1.062087630485002,
+          "kind": "mirror"
+        },
+        {
+          "id": "902.137.52",
+          "name": "HEMNES",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.137.52.jpg"
+          ],
+          "description": "Type: white framed rectangular wall mirror\nUse: reflecting light, checking an outfit, over a dresser or a console; hallway, bedroom, living room, bathroom\nStyle: traditional, classic, farmhouse\nMaterials: solid wood frame with a white painted finish, mirror glass\nColors: white frame, silver glass\nShape: portrait rectangle with a wide stepped moulded frame and raised edges, deep profile, medium visual weight\nFeel: classic, bright, homey, timeless\nGoes with: white or grey painted furniture, light wood, soft pastels; traditional, farmhouse or classic rooms\n",
+          "score": 0.9852957685988333,
+          "kind": "mirror"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp with fabric shade beside one armchair or sofa end",
+      "spec": {
+        "piece": "a floor lamp with fabric shade beside one armchair or sofa end",
+        "why": "a classic floor lamp with a pleated fabric shade gives warm reading light at night in a room that only has a ceiling spot",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": 170,
+        "query": "Type: floor lamp, classic with fabric shade\nUse: reading and ambient light by the seating; living room\nStyle: classic, traditional\nMaterials: antique brass metal, linen fabric shade\nColors: aged brass, ivory\nShape: slender column stem, round base, drum or pleated empire shade, light visual weight\nFeel: warm, elegant, cozy\nGoes with: dark green velvet sofa, gilt mirror, pale mint walls, dark wood coffee table; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "302.865.67",
+          "name": "SAMTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.865.67.jpg"
+          ],
+          "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n",
+          "score": 1.5166494665331314,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "202.080.42",
+          "name": "KLABB",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.080.42.jpg"
+          ],
+          "description": "Type: rectangular shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: contemporary, modern, minimalist\nMaterials: white fabric rectangular shade, nickel-plated metal frame and square base\nColors: white, brushed silver\nShape: boxy rectangular shade on a tall looped stand that splits into two parallel rails curving into a U near the floor, small square base, slim, tall and graphic\nFeel: elegant, calm, refined, crisp\nGoes with: grey or white upholstery, glass and metal tables, white walls; contemporary or modern living rooms\n",
+          "score": 1.332146421993449,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "102.911.31",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.911.31.jpg"
+          ],
+          "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+          "score": 1.2515697547654079,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "901.638.65",
+          "name": "RSTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/901.638.65.jpg"
+          ],
+          "description": "Type: floor lamp with pleated fabric shade\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom, reading corner\nStyle: classic, traditional, contemporary\nMaterials: brushed nickel-plated metal stem and domed base, white pleated fabric shade, pull-chain switch\nColors: white, brushed silver nickel\nShape: tapered empire shade with fine pleats, slim straight stem, round stepped domed base, tall and slender, light visual weight\nFeel: elegant, soft, calm, timeless\nGoes with: white or grey walls, dark or light wood, linen upholstery; classic, traditional or contemporary living rooms and bedrooms\n",
+          "score": 1.2308110022731433,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "800.895.74",
+          "name": "BAROMETER",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/800.895.74.jpg"
+          ],
+          "description": "Type: balance-arm floor reading lamp\nUse: reading light beside an armchair or a sofa; living room, bedroom, study\nStyle: industrial, classic, retro\nMaterials: nickel-plated steel shade, arm, pole and stepped round base, black cord with foot switch\nColors: brushed silver nickel, black\nShape: small dome shade at the end of a long horizontal swing arm with a knob counterweight, tall straight pole, heavy stepped base, light and linear\nFeel: refined, studious, vintage, elegant\nGoes with: leather armchairs, dark wood, bookshelves; classic studies, industrial or traditional living rooms\n",
+          "score": 1.0005554794584701,
+          "kind": "floor lamp"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

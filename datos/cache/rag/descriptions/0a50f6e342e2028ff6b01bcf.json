@@ -1,0 +1,37 @@
+{
+  "product": "302.608.07",
+  "text": "Type: table\nName: ARKELSTORP\nColors: Black\nSolid wood is a durable natural material.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.608.07",
+      "name": "ARKELSTORP",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 65.0,
+        "depth": 140.0,
+        "height": 52.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "65x140x52 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Solid wood is a durable natural material."
+    },
+    "photos": [
+      "e4b180828b8a02a8"
+    ]
+  }
+}

@@ -1,0 +1,595 @@
+{
+  "pieces": [
+    {
+      "piece": "a dark green velvet sofa facing the fireplace, centered on it in the middle of the room",
+      "spec": {
+        "piece": "a dark green velvet sofa facing the fireplace, centered on it in the middle of the room",
+        "why": "the client asked for a dark green velvet sofa, and a deep forest green with a classic rolled-arm shape anchors the room and looks rich against the pale mint walls and the dark mantel",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, classic three-seater velvet sofa\nUse: main seating facing the fireplace; living room\nStyle: classic, traditional\nMaterials: velvet upholstery, dark wood turned legs\nColors: deep forest green, dark wood\nShape: rolled arms, tight or buttoned back, turned legs, generous size, substantial visual weight\nFeel: elegant, rich, inviting\nGoes with: pale mint paneled walls, charcoal fireplace, honey pine floor, white coffered ceiling; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07P6JVMZD",
+          "name": "Amazon Brand \u2013 Stone & Beam Bradbury Chesterfield Classic Sofa, 92.9\"W, Slate",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 236.0,
+            "depth": 99.0,
+            "height": 77.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P6JVMZD.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Stone & Beam Bradbury Chesterfield Classic Sofa, 92.9\"W, Slate\nColors: Slate\nMaterials: Polyester\nThis lovely sofa has the low button-tufted back, scroll arms, and short legs that are the hallmark of the classic chesterfield style. Whether as a statement piece or part of a living-room suite, this sofa will be a welcome addition to any decor. Dimensions: 93\"W x 39\"D x 30\"H Solid hardwood frame; upholstery: 98% polyester, 2% nylon Removable and reversible seat cushions A classic style updated in stain-resistant fabric makes this perfect for the modern home. Assemble in 15 minutes or less Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.4519285225624508,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B082QCY5RF",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QCY5RF.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Bayard Contemporary Upholstered Couch with Curved Back and Armrests, 76\"W, Dark Grey\nColors: Dark Grey\nMaterials: Fabric\nTapered legs, a rounded back and armrests, and a chic dark-gray upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame; polyester, linen, and rayon upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty\n",
+          "score": 1.2841194442419066,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07BWJCPTC",
+          "name": "Rivet Revolve Modern Upholstered Sofa Bed, 70\"W, Storm Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 177.0,
+            "depth": 93.0,
+            "height": 89.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07BWJCPTC.jpg"
+          ],
+          "description": "Type: sofa\nName: Rivet Revolve Modern Upholstered Sofa Bed, 70\"W, Storm Grey\nColors: Storm Grey\nMaterials: Polyester fabric, sturdy hardwood frame and solid beech wood legs\nThis modern sofa has enough classic elements to blend with your existing style. Plus, clean lines, comfortable seating and durable fabric give this piece functionality as well as smart design. When it's getting late, this piece transforms into a convenient sofa bed. 36.6\"D x 69.7\u201dW x 35.4\"H Solid wood frame and solid beech wood legs Contemporary, streamlined design This piece does double duty as a couch and a bed Simple assembly; just attach legs Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.21135778195098,
+          "kind": "sofa"
+        },
+        {
+          "id": "190.948.24",
+          "name": "STOCKSUND",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/190.948.24.jpg"
+          ],
+          "description": "Type: sofa\nName: STOCKSUND\nColors: Nolhaga dark grey, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 1.1636470326156263,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07HZ7PFW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Blaine Modern Sleeper Sofa Bed, 78\"W, Beige",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 96.0,
+            "height": 88.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HZ7PFW4.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Stone & Beam Blaine Modern Sleeper Sofa Bed, 78\"W, Beige\nColors: Beige\nMaterials: Polyester\nAdd mid-century elegance to your living room with this beige sofa bed. The solid-wood frame and polyester upholstery make this sofa bed both sturdy and cozy, and the removable/reversible cushions ensure durability and comfort. Overall: 78\"W x 37.8\"D x 35\"H; seat height: 19.3\"H; seat depth: 21.7\"D; seat back height: 25.6\"H; arm height: 24.4\"H; leg height: 4.9\"H Solid-wood frame and legs with 100% polyester upholstery The tight, removable back cushions and fixed seat cushions ensure durability and comfort. Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty. This item is made to order just for you\n",
+          "score": 1.126222231033845,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "two matching armchairs facing each other on either side of the fireplace, between sofa and mantel",
+      "spec": {
+        "piece": "two matching armchairs facing each other on either side of the fireplace, between sofa and mantel",
+        "why": "a facing pair frames the fireplace symmetrically as in a classic salon, and a lighter neutral linen or velvet keeps the green sofa as the star",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 85,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: armchair, classic upholstered armchair\nUse: conversation seating beside the fireplace; living room\nStyle: classic, traditional\nMaterials: linen or velvet upholstery, dark wood legs\nColors: warm ivory or soft sand, dark wood\nShape: wingback or rolled-arm silhouette, turned or tapered legs, medium visual weight\nFeel: refined, comfortable, balanced\nGoes with: dark green velvet sofa, pale mint walls, charcoal fireplace, honey pine floor; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B075X467QG",
+          "name": "Amazon Brand \u2013 Stone & Beam Hillsboro Modern Wingback Living Room Accent Chair With Nailhead Trim, 29\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 94.0,
+            "depth": 73.7,
+            "height": 102.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X467QG.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Hillsboro Modern Wingback Living Room Accent Chair With Nailhead Trim, 29\"W, Beige\nColors: Beige\nMaterials: Stone\nStreamlined, gently curving \"wings\" and arms give a refined, modern refresh to the mid-century wingback chair. Hand-applied nailhead trim with brass finish adds an air of sophistication, while the seat cushion is removable for easy cleaning. 29\"W x 37''D x 40.5''H Rayon/linen/polyester blend fabric; metal nailhead trim with brass finish; wood legs. A modernized silhouette of the mid-century wingback style with removable seat cushion Assemble in 15 minutes or less. Vacuum or wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.7986076499217718,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07P5LM53Z",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 90.9,
+            "depth": 83.1,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LM53Z.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel\nColors: Caramel\nMaterials: Wood\nThis modern armchair sports a strong profile and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 32.7\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this armchair as practical as it is stylish. Tapered legs add elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.7303758431678575,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B0723H8D37",
+          "name": "Amazon Brand \u2013 Stone & Beam Highland Modern Living Room Wingback Accent Chair, 32\"W, Denim",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 96.0,
+            "depth": 81.0,
+            "height": 106.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0723H8D37.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Highland Modern Living Room Wingback Accent Chair, 32\"W, Denim\nColors: Denim\nMaterials: denim\nBridging classic and contemporary, this accent chair is a modern twist on the timeless wingback chair. The clean, updated style with thick-woven fabric brings welcoming comfort to your seating area. 31.9\"W x 37.8\"D x 42\"H Sustainably sourced solid beech wood covered in thick-woven fabric Contemporary Updated design on a classic piece blends well with existing d\u00e9cor. Minimal assembly; just attach legs Free returns for 30 days. 3 year warranty.\n",
+          "score": 1.6328626239214847,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B072Y6Y96S",
+          "name": "AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 69.0,
+            "depth": 66.5,
+            "height": 88.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072Y6Y96S.jpg"
+          ],
+          "description": "Type: chair\nName: AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black\nColors: Black\nMaterials: Caressoft upholstery; Mahogany wood finish legs\nReception chair provides a comfortable place to sit\u2014ideal for a lobby or waiting room Supremely soft and durable Caressoft upholstery in solid black Mahogany wood finish legs with a slight outward flare for added stability 250-pound weight capacity; sleek contemporary style Measures 26.5 by 26.5 by 35.5 inches (LxWxH); weighs 30.6 pounds; backed by an AmazonBasics one-year limited warranty\n",
+          "score": 1.6049354492382166,
+          "kind": "armchair"
+        },
+        {
+          "id": "590.335.55",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/590.335.55.jpg"
+          ],
+          "description": "Type: chair\nName: STOCKSUND\nColors: Nolhaga dark grey, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 1.1734437293526176,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a large traditional rug under the whole seating group in front of the fireplace",
+      "spec": {
+        "piece": "a large traditional rug under the whole seating group in front of the fireplace",
+        "why": "a large rug with a traditional pattern ties the sofa and armchairs into one group and warms the bare pine floor, with green and faded red tones linking the sofa to the wood",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 250,
+        "max_height_cm": null,
+        "query": "Type: rug, large traditional patterned rug\nUse: anchoring the seating area by the fireplace; living room\nStyle: traditional, classic\nMaterials: wool\nColors: muted green, faded terracotta, cream, soft blue\nShape: rectangular, Persian or Oriental medallion pattern with border, large\nFeel: warm, timeless, elegant\nGoes with: dark green velvet sofa, honey pine floor, pale mint walls; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0719STM8K",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Opulence Rug, 8' x 10', Burgundy",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 305.8,
+            "depth": 244.9,
+            "height": 0.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STM8K.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Traditional Opulence Rug, 8' x 10', Burgundy\nColors: Burgundy\nMaterials: stone\nPile: 100% Polypropylene, Backing: 100% Cotton Imported Get the look of classic opulence with modern durability in this Oriental-style rug. Its rich burgundy tones highlight an intricate geometric border that frames a traditional medallion pattern, finished with fringe for a timeless look. Traditional design with contemporary functionality Machine woven. Made in Turkey. 100% polypropylene Exceptionally durable for busy households 8' x 10' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow up to a week for synthetic fibers to settle\n",
+          "score": 1.892057320264266,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSN8783",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Passionate Area Rug, 6' 7\" x 9' 6\", Navy",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSN8783.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Traditional Passionate Area Rug, 6' 7\" x 9' 6\", Navy\nColors: Navy\nMaterials: stone\nAdd elegance to your home decor with this lovely rug. With a blue-focused color scheme and a distinct flourish pattern, this rug is a perfect match for traditional-style interior design. Its captivating design also pairs well with modern and vintage home-decor styles. 6'7\" x 9'6\" Pile: 100% polypropylene; backing: 100% jute Advanced power-loom construction for excellent value and quality Medium 0.5'' pile ideal for moderate-traffic areas like bedrooms or sitting rooms\n",
+          "score": 1.7525026068216614,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0725Z73ZP",
+          "name": "Amazon Brand \u2013 Rivet Charcoal Distressed Medallion Area Rug, 8 x 10 Foot",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 0.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z73ZP.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Charcoal Distressed Medallion Area Rug, 8 x 10 Foot\nColors: Charcoal\nMaterials: synthetic\nPile: 100% Polypropylene, Backing: 100% Jute Imported Drawing inspiration from traditional Persian textiles, this design bursts with a bright, all-over medallion pattern. Durable, machine-woven synthetic fibers keep this rug looking fresh and feeling soft to the touch, even in high-traffic spaces. Area rug features a bright medallion pattern Machine-woven with 100% polypropylene fibers Low .2'' pile suits low- to high-traffic indoor areas Pair with a rug pad (sold separately) 8' x 10' Ships tightly rolled in a protective bag\n",
+          "score": 1.7440161317576408,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B071J4VYW4",
+          "name": "Amazon Brand \u2013 Stone & Beam Contemporary Medallion Area Rug, 7' 10\" x 10', Brick",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 238.8,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B071J4VYW4.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Contemporary Medallion Area Rug, 7' 10\" x 10', Brick\nColors: Brick\nMaterials: stone\n100% Polypropylene Imported Get the look of classic opulence with modern durability in this Persian style rug. Warm brick red tones highlight an intricate floral border that frames a traditional medallion pattern, giving this rug the finest antique look. Antique look with contemporary functionality Machine woven. Made in Turkey. 100% Polypropylene Exceptional durability for high traffic areas 7'10\" x 10' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow up to a week for synthetic fibers to settle\n",
+          "score": 1.741853280475417,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0719STM6D",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Dusk Wool Rug, 8' x 10', Tan",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 292.1,
+            "depth": 231.1,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STM6D.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Modern Dusk Wool Rug, 8' x 10', Tan\nColors: Tan\nMaterials: wool\nPile: 80% Wool/20% Cotton, Backing: 100% Jute Imported This beautiful cream-colored rug combines a classic medallion pattern with durable and resilient natural fibers. Neutral colors and classic style will allow this rug to blend with any of your existing styles in high-traffic areas. Classic design with modern durability Hand-hooked in India. 80% wool, 20% cotton. Fashionable with minimal care 8' x 10' Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.\n",
+          "score": 1.7183992917057156,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "a dark wood coffee table centered between sofa and fireplace",
+      "spec": {
+        "piece": "a dark wood coffee table centered between sofa and fireplace",
+        "why": "the requested dark wood picks up the charcoal mantel and contrasts with the light floor, and a classic rectangular shape suits the molded room",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 130,
+        "max_depth_cm": 75,
+        "max_height_cm": 50,
+        "query": "Type: coffee table, classic dark wood\nUse: central table for the seating group; living room\nStyle: classic, traditional\nMaterials: dark walnut or mahogany wood\nColors: dark brown\nShape: rectangular, turned or carved legs, optional lower shelf, medium visual weight\nFeel: refined, solid, timeless\nGoes with: dark green velvet sofa, charcoal fireplace, traditional rug, honey pine floor; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07DBFFG9Z",
+          "name": "Amazon Brand \u2013 Ravenna Home Flush Mount Wood Cross Coffee Table, 23.6\"W, Dark Brown Walnut",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0,
+            "height": 46.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Ravenna Home Flush Mount Wood Cross Coffee Table, 23.6\"W, Dark Brown Walnut\nColors: Dark Brown\nMaterials: wood\nSolid hardwood with walnut veneer Durable and sturdy coffee table for any room Wood with decorative X side motif is ideal for traditional or modern farmhouse d\u00e9cor 15-30 minutes assembly required Free returns for 30 days. 1-year warranty. 47.24\"L x 23.62\"W x 18.11\"H\n",
+          "score": 1.8303933435394342,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07L8DT2XT",
+          "name": "Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 61.0,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07L8DT2XT.jpg"
+          ],
+          "description": "Type: table\nName: Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown\nColors: Brown\nMaterials: Pine\nRustic coffee table combines dark hardwood and steel for ultimate strength and a beautiful heirloom-quality aesthetic Planked top and open shelf made of distressed, solid wood with visible natural knots and grain in a warm tone Solid-steel legs with a dark patina and set at a slight angle; X-shaped bracing with exposed metal fasteners and rivets Industrial style mixes materials for edgy, eye-catching results Measures 48 by 24 by 18 inches (LxWxH); 10-inch height between top and open shelf\n",
+          "score": 1.6061051500512749,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07G527L5S",
+          "name": "Ameriwood Home Franklin Coffee Table, Black",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 104.5,
+            "depth": 52.3,
+            "height": 47.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07G527L5S.jpg"
+          ],
+          "description": "Type: table\nName: Ameriwood Home Franklin Coffee Table, Black\nColors: Black\nMaterials: Engineered Wood\nGet the table space you need in your living room with the Ameriwood Home Franklin Coffee Table Made of painted MDF and solid wood legs, the black finish gives the Table a modern feel Place remotes and electronics on the table top and keep books, magazines, or extra throws on the lower open shelf. The 2 drawers are perfect for small items and keep your table top free from clutter Finish your space with the entire Franklin collection (sold separately) The Table ships flat to your door and 2 adults are recommended to assemble. The table top can hold 75 lbs. and the lower shelf will hold 20 lbs. The drawers can hold up to 15 lbs. each. Assembled dimensions: 18.5\u201dH x 41.14\u201dW x 20.6\u201dD\n",
+          "score": 1.2211439493890754,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: table\nName: STOCKHOLM\nColors: Walnut veneer\nThe table surface in walnut veneer and legs in solid walnut give a warm, natural feeling to your room.\n",
+          "score": 0.9370870959191705,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07M7NSYC4",
+          "name": "Amazon Brand \u2013 Ravenna Home Classic Coffee Table with Side Cutouts, 42\"W, Merlot Wood",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 106.7,
+            "depth": 61.0,
+            "height": 50.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07M7NSYC4.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Ravenna Home Classic Coffee Table with Side Cutouts, 42\"W, Merlot Wood\nMaterials: Wood\n42\" W X 24\" D X 20\" H Solid wood Classic wood coffee table with cutout sides to lend a more transitional feel 2 drawers with side-mounted ball bearing slides Assemble in 15-30 minutes Wipe clean with soft, dry cloth.\n",
+          "score": 0.9061283773379781,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a large framed mirror over the fireplace, centered on the chimney breast",
+      "spec": {
+        "piece": "a large framed mirror over the fireplace, centered on the chimney breast",
+        "why": "a big framed mirror fills the tall chimney breast, reflects the window light and finishes the classic composition the client asked for",
+        "kinds": [
+          "mirror"
+        ],
+        "max_width_cm": 130,
+        "max_depth_cm": null,
+        "max_height_cm": 160,
+        "query": "Type: mirror, large framed wall mirror\nUse: overmantel mirror above the fireplace; living room\nStyle: classic, traditional\nMaterials: carved wood frame, antique gilt or dark finish, glass\nColors: antique gold or dark bronze\nShape: tall rectangular or arched top, molded frame, large, strong presence\nFeel: elegant, luminous, stately\nGoes with: charcoal fireplace, pale mint paneled walls, white coffered ceiling; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B073WGP8YJ",
+          "name": "Amazon Brand \u2013 Stone & Beam Curved Vintage-Look Wood Frame Wall Mirror - 28-Inch Height, White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 40.6,
+            "depth": 2.5,
+            "height": 71.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WGP8YJ.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Curved Vintage-Look Wood Frame Wall Mirror - 28-Inch Height, White\nColors: White\nMaterials: wood\nStraight lines are paired with graceful curves that peak at the top on this antique-style mirror. Distressed white paint on a hardwood frame adds more vintage charm. This mirror will look right at home in a classic style room. Antique-style shape and finish Made of glass and hardwood with distressed white finish 16\"W x 1\"D x 28\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.\n",
+          "score": 1.666387445826668,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WH6N3R",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage-Look Square Hanging Wall Mirror, 39.5 Inch Height, Tan and White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 80.0,
+            "depth": 6.3,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WH6N3R.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Vintage-Look Square Hanging Wall Mirror, 39.5 Inch Height, Tan and White\nColors: Glass\nMaterials: glass\nA subtly white-washed wood frame gives this mirror a vintage feel, and rows of molding give it substantial depth and texture. Hang it in any bedroom, hallway or living room where you want to add a rustic touch. Subtle white-wash finish and wide molded frame create vintage appeal Glass with solid fir wood frame 31.5\"W x 2.5\"D x 31.5\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.\n",
+          "score": 1.4416006574915208,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WJ2J8P",
+          "name": "Amazon Brand \u2013 Stone & Beam Rustic Wood Frame Hanging Wall Mirror, 39.75 Inch Height, Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 65.4,
+            "depth": 5.1,
+            "height": 101.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WJ2J8P.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Rustic Wood Frame Hanging Wall Mirror, 39.75 Inch Height, Natural\nColors: Natural\nMaterials: stone\nThis mirror's frame has the appearance of weathered, unstained wood, giving it a rustic touch. Its versatile size makes it easy to place in a traditional-style bedroom, hallway or living room. Natural wood color frame for classic style with a hint of rustic. Glass, solid rubber wood with distressed finish 25.75\"W x 39.75\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.\n",
+          "score": 1.2240175668904887,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B073WGQBPC",
+          "name": "Amazon Brand \u2013 Stone & Beam Square Rustic Wood Frame Hanging Wall Mirror, 25.75 Inch Height, Natural",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 65.4,
+            "depth": 5.1,
+            "height": 65.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073WGQBPC.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Stone & Beam Square Rustic Wood Frame Hanging Wall Mirror, 25.75 Inch Height, Natural\nColors: Glass\nMaterials: Stone\nThis mirror's frame has the appearance of weathered, unstained wood, giving it a rustic touch. Its versatile size and square shape makes it easy to place in a classic or casual-style bedroom, hallway or living room. Natural wood color frame for classic style with a hint of rustic. Glass, solid rubber wood with distressed finish 25.75\"W x 25.75\"H Avoid moisture. Wipes clean with soft, dry cloth. Hanging hardware not included.\n",
+          "score": 1.2021568185393963,
+          "kind": "mirror"
+        },
+        {
+          "id": "abo-B084DQ6BV4",
+          "name": "Amazon Brand - Ravenna Home Vintage Windowpane Metal Mantel Mirror, 25\"H, Gold",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 51.4,
+            "depth": 1.9,
+            "height": 63.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084DQ6BV4.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand - Ravenna Home Vintage Windowpane Metal Mantel Mirror, 25\"H, Gold\nMaterials: Metal\n25\"H x 20.25\"L x 0.75\"D Mirrored glass with solid metal decorative frame in a gold finish The windowpane effect of this mirror creates dimension in any space, making it stylish as well as functional. The chic gold color gives this mirror's classic frame a fresh look. Avoid moisture. Wipes clean with a soft, dry cloth. Hanging hardware not included. No assembly required.\n",
+          "score": 1.1009093875564473,
+          "kind": "mirror"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp with fabric shade beside one armchair or sofa end",
+      "spec": {
+        "piece": "a floor lamp with fabric shade beside one armchair or sofa end",
+        "why": "a classic floor lamp with a pleated fabric shade gives warm reading light at night in a room that only has a ceiling spot",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": 170,
+        "query": "Type: floor lamp, classic with fabric shade\nUse: reading and ambient light by the seating; living room\nStyle: classic, traditional\nMaterials: antique brass metal, linen fabric shade\nColors: aged brass, ivory\nShape: slender column stem, round base, drum or pleated empire shade, light visual weight\nFeel: warm, elegant, cozy\nGoes with: dark green velvet sofa, gilt mirror, pale mint walls, dark wood coffee table; classic sitting room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash\nColors: Distressed Grey\nMaterials: Linen\nThe rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only\n",
+          "score": 2.245593462451455,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07B4SC9N7",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 29.5,
+            "depth": 25.0,
+            "height": 155.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4SC9N7.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass\nColors: Matte Black With Antique Brass\nThis very functional floor lamp has two multidirectional shades -- each with its own on/off switch -- that allow you to adjust the amount of light and point it in multiple directions. Brass and matte black metal combine for a striking contrast. 9.9\"W x 11.6\"D x 61.25\"H Metal shade and base with black finish; metal pole with antiqued brass finish Shades adjust to point light in multiple directions; each has on/off switch Integrated LED lamp Assemble in 15 minutes or less Intended for indoor use only\n",
+          "score": 1.3073519567862328,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 1.0839558233562314,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07DTLF7DN",
+          "name": "Amazon Brand \u2013 Rivet Modern Gold Globe Floor Lamp 59.25\" H, Integrated LED light",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 33.7,
+            "depth": 26.4,
+            "height": 56.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTLF7DN.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Modern Gold Globe Floor Lamp 59.25\" H, Integrated LED light\nColors: Brushed Brass\nMaterials: Glass\nBring chic vibes with the eye-catching opal globe piece that is sure to bring style. Boldly designed and glamourous, yet functional, you'll never have to replace bulbs since Integrated LEDs are included, instead the piece will be starting striking conversations for you. 18.75\" W x 11\" D x 59.25\" H Metal in a satin brass (gold) plated finish with a white opal globe shade made of durable ABS On/off touch switch on base, perfect for an office, living room, or bedroom Energy Efficient Integrated LED technology, saving you time and money, no bulbs to replace\n",
+          "score": 0.7501292734729059,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07DTF76PJ",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 3 Light Living Room Standing Floor Lamp with Integrated LED Light - 67.5 Inches, Antique Brass Finish",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 42.5,
+            "depth": 12.4,
+            "height": 65.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTF76PJ.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 3 Light Living Room Standing Floor Lamp with Integrated LED Light - 67.5 Inches, Antique Brass Finish\nColors: Antique Brass\nRotate right, rotate left, rotate where you need lighting. Plated antique brass finishes with a wood inspired base bring design and convenience to help you complete tasks. No need to worry about replacing bulbs as the LEDs are integrated, saving you time and money. 25.75\" W x 10\" D x 67.5\u201cH Metal in a plated antique brass finish with a wood inspired base Adjust the 3 lights 180 degrees sideways for directional lighting where you need it, on/off switch on each arm, perfect for an office, living room, or bedroom Energy Efficient Integrated LED technology saves you time and money, no bulbs to replace\n",
+          "score": 0.7352696028899462,
+          "kind": "floor lamp"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

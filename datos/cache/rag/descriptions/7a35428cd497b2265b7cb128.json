@@ -1,0 +1,33 @@
+{
+  "product": "790.462.60",
+  "text": "Type: chair\nName: SNILLE\nColors: White\nYou sit comfortably since the chair is adjustable in height.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "790.462.60",
+      "name": "SNILLE",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "a639902a13cd522b"
+    ]
+  }
+}

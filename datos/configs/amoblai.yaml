@@ -80,6 +80,11 @@ furnish:
       claude-sonnet-5-5:
         usd_per_m: {input: 2.0, output: 10.0, cache_read: 0.10, cache_write_5m: 2.5, cache_write_1h: 4.0}
         estimate_usd: 0.08
+      # Haiku solo para el experimento de modelos (2026-11-16): hasta 100 mil tokens de entrada
+      # (por encima, 0,50 / 2,50). No es el modelo del flujo.
+      claude-haiku-5-5:
+        usd_per_m: {input: 0.10, output: 0.50, cache_read: 0.01, cache_write_5m: 0.125, cache_write_1h: 0.20}
+        estimate_usd: 0.01
   generator: manual               # gratis: deja una carpeta para pegar en ChatGPT o Gemini
   generators:
     manual: {kind: manual}
@@ -94,10 +99,44 @@ furnish:
       model: gpt-image-2
       quality: medium
       estimate_usd: 0.12
+    # El experimento de modelos de imagen (2026-11-16, `amoblai comparar-imagen`): las mismas
+    # listas y el mismo prompt de las imágenes finales, un intento por modelo. Precios de fal y de
+    # OpenAI consultados el 2026-11-16.
+    nano_banana_pro:              # Nano Banana Pro (Gemini 3 Pro Image) por fal, hasta 14 imágenes
+      kind: "amoblai.furnish.image_models:FalNanoBanana"
+      endpoint: fal-ai/nano-banana-pro/edit
+      resolution: 1K
+      aspect_ratio: auto
+      usd_per_image: {1K: 0.15, 2K: 0.15, 4K: 0.30}
+    seedream_45:                  # Seedream 4.5 (ByteDance) por fal: hasta 10 imágenes de entrada
+      kind: "amoblai.furnish.image_models:FalNanoBanana"
+      endpoint: fal-ai/bytedance/seedream/v4.5/edit
+      resolution: 2K
+      image_size: auto_2K         # no tiene 1K: su mínimo es 2560x1440 píxeles en total
+      max_images_in: 10           # la foto del ambiente y los primeros 9 productos
+      usd_per_image: {2K: 0.04}
+    gpt_image_2:                  # el mismo de `openai`, con su nombre (gpt-image-2, el actual)
+      kind: "amoblai.furnish.image_models:OpenAIImage"
+      model: gpt-image-2
+      quality: medium
+      estimate_usd: 0.15
+    gpt_image_15:                 # el modelo anterior de OpenAI
+      kind: "amoblai.furnish.image_models:OpenAIImage"
+      model: gpt-image-1.5
+      quality: medium
+      usd_per_m: {text_input: 5.0, image_input: 8.0, image_output: 32.0}
+      estimate_usd: 0.15
+    gpt_image_mini:               # el chico de OpenAI
+      kind: "amoblai.furnish.image_models:OpenAIImage"
+      model: gpt-image-1-mini
+      quality: medium
+      usd_per_m: {text_input: 2.0, image_input: 2.5, image_output: 8.0}
+      estimate_usd: 0.05
 
 evaluation:
   # Ablación de post-retrieval: un VLM reordena el top de la búsqueda mirando las fotos de los
-  # candidatos (evaluation/retrieval.py). Los mismos modelos y effort que el flujo; Haiku no.
+  # candidatos (evaluation/retrieval.py). Los mismos modelos y effort que el flujo (Haiku, solo en el
+  # experimento de modelos del 2026-11-16).
   rerank_top: 10
   rerankers:
     minilm-reranker:  # cross-encoder local (gratis), el BERT chico de MS MARCO de las demos
@@ -125,6 +164,24 @@ evaluation:
       timeout_s: 300
       models:
         claude-sonnet-5-5: {usd_per_m: {input: 2.0, output: 10.0}, estimate_usd: 0.03}
+    haiku:        # experimento de modelos (2026-11-16): el más chico, solo para comparar
+      kind: anthropic
+      model: claude-haiku-5-5
+      effort: medium
+      max_tokens: 16000
+      timeout_s: 300
+      models:
+        claude-haiku-5-5: {usd_per_m: {input: 0.10, output: 0.50}, estimate_usd: 0.002}
+    opus-texto:   # experimento 5b: el mismo Opus, con las descripciones de los candidatos en vez de sus fotos
+      kind: anthropic
+      model: claude-opus-5-5
+      effort: medium
+      max_tokens: 16000
+      timeout_s: 300
+      photos: false
+      prompt: rerank_candidates_text_v1.md
+      models:
+        claude-opus-5-5: {usd_per_m: {input: 4.0, output: 20.0}, estimate_usd: 0.04}
 
 budget:
   # Lo que no tiene cuenta propia (OpenAI) queda en 0: cualquier llamada se rechaza.
@@ -134,6 +191,9 @@ budget:
   # grande se aprueba aparte). fal: US$8,50 el 2026-11-12 (quedaban unos US$5,5 de saldo: las imágenes de la
   # configuración final; antes 3,23, 1,70, 1,60 y 0,80). openai: US$0,50 el 2026-11-12 (solo para
   # comparar el embedding text-embedding-3-large: centavos).
-  accounts: {anthropic: 50.0, fal: 8.5, openai: 0.5}
+  # anthropic: US$63 el 2026-11-15 (25 más, habilitados para los experimentos sin imágenes).
+  # anthropic: US$78 el 2026-11-16 (el usuario subió el tope de la cuenta y quedan US$20: los
+  # experimentos de modelos). openai: US$9 el 2026-11-16 (clave nueva, unos US$10 de saldo).
+  accounts: {anthropic: 78.0, fal: 8.5, openai: 9.0}
   allow_paid: false               # se habilita a propósito con --pagar (o --set budget.allow_paid=true)
   ledger: datos/resultados/gastos.jsonl

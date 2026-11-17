@@ -1,0 +1,35 @@
+{
+  "product": "202.805.99",
+  "text": "Type: dresser\nName: TARVA\nColors: Pine\nOf course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.805.99",
+      "name": "TARVA",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 39.0
+      },
+      "type_ikea": "Chest of 5 drawers",
+      "category_tp": "dresser",
+      "size_raw": "39x127 cm",
+      "colors": [
+        "Pine"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "923d9e31d68399a5"
+    ]
+  }
+}

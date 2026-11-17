@@ -1,0 +1,215 @@
+{
+ "corrida": "img-gpt_image_2-publica-living-bohemio",
+ "imagen": "final.png",
+ "generador": "gpt_image_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B082QDKRC5",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.628,
+   "box": [
+    440,
+    436,
+    1120,
+    722
+   ],
+   "puesto": 1,
+   "entre": 95,
+   "coseno": 0.5805,
+   "mas_parecido": "abo-B082QDKRC5"
+  },
+  {
+   "id": "500.583.76",
+   "kind": "armchair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.445,
+   "box": [
+    1203,
+    482,
+    1464,
+    785
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.7507,
+   "mas_parecido": "500.583.76"
+  },
+  {
+   "id": "abo-B07HSHG86Y",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.769,
+   "box": [
+    119,
+    602,
+    1535,
+    1022
+   ],
+   "puesto": 14,
+   "entre": 178,
+   "coseno": 0.385,
+   "mas_parecido": "abo-B07HSNF93H"
+  },
+  {
+   "id": "abo-B079V96B4C",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.52,
+   "box": [
+    485,
+    450,
+    632,
+    562
+   ],
+   "puesto": 7,
+   "entre": 434,
+   "coseno": 0.4323,
+   "mas_parecido": "abo-B075X5B8CQ"
+  },
+  {
+   "id": "abo-B083YFL9J5",
+   "kind": "plant pot",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.712,
+   "box": [
+    41,
+    416,
+    141,
+    487
+   ],
+   "puesto": 37,
+   "entre": 434,
+   "coseno": 0.1395,
+   "mas_parecido": "668.040.47"
+  },
+  {
+   "id": "abo-B07HSLTLGP",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": true,
+   "detector": "cabinet",
+   "score_detector": 0.432,
+   "box": [
+    26,
+    443,
+    362,
+    657
+   ],
+   "puesto": 4,
+   "entre": 91,
+   "coseno": 0.3672,
+   "mas_parecido": "abo-B07DMHTGJD"
+  },
+  {
+   "id": "abo-B07QFB1TLZ",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.354,
+   "box": [
+    781,
+    611,
+    1203,
+    849
+   ],
+   "puesto": 1,
+   "entre": 176,
+   "coseno": 0.5408,
+   "mas_parecido": "abo-B07QFB1TLZ"
+  },
+  {
+   "id": "abo-B07QD5SDWK",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "pendant lamp",
+   "score_detector": 0.452,
+   "box": [
+    1187,
+    259,
+    1303,
+    542
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.5041,
+   "mas_parecido": "abo-B07QD5SDWK"
+  },
+  {
+   "id": "abo-B079TXJWT8",
+   "kind": "throw",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.573,
+   "box": [
+    956,
+    537,
+    1050,
+    670
+   ],
+   "puesto": 46,
+   "entre": 434,
+   "coseno": 0.1323,
+   "mas_parecido": "900.379.90"
+  }
+ ],
+ "fidelidad": {
+  "productos": 9,
+  "detectados": 9,
+  "presencia": 1.0,
+  "coseno_medio": 0.4258,
+  "identificados@1": 0.4444,
+  "mrr": 0.5015
+ },
+ "inventadas": [],
+ "repetidas": [
+  {
+   "detector": "curtains",
+   "categoria": "deco",
+   "score": 0.334,
+   "box": [
+    88,
+    130,
+    227,
+    302
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.312,
+  "ssim_fuera_de_los_muebles": 0.4846,
+  "fraccion_fuera_de_los_muebles": 0.3376,
+  "sift_puntos_original": 711,
+  "sift_matches": 216,
+  "sift_inliers": 194,
+  "sift_reencontrados": 0.2729,
+  "sift_desplazamiento_mediano": 0.06
+ },
+ "pedido_imagen": {
+  "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+  "siglip_final": 0.1107,
+  "siglip_vacia": 0.0188,
+  "delta": 0.0919,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0247
+ }
+}

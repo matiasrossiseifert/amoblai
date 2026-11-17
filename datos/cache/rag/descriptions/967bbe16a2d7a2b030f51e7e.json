@@ -1,0 +1,36 @@
+{
+  "product": "802.694.19",
+  "text": "Type: desk\nName: LIATORP\nColors: Grey\nYou can fit a computer in the cabinet, since the shelf is adjustable.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "802.694.19",
+      "name": "LIATORP",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 145.0,
+        "depth": 65.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "145x65 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "You can fit a computer in the cabinet, since the shelf is adjustable."
+    },
+    "photos": [
+      "75e0881c2b6bbfe6"
+    ]
+  }
+}

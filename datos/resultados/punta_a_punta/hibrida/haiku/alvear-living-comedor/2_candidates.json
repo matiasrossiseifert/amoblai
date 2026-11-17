@@ -1,0 +1,1363 @@
+{
+  "pieces": [
+    {
+      "piece": "un sof\u00e1 grande de tres cuerpos, contra la pared izquierda en la mitad del ambiente",
+      "spec": {
+        "piece": "un sof\u00e1 grande de tres cuerpos, contra la pared izquierda en la mitad del ambiente",
+        "why": "es la pieza que define la zona de estar en el centro del largo; un sof\u00e1 crema de l\u00edneas n\u00f3rdicas y patas de madera clara da calidez sobre las paredes blancas",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, large three-seater\nUse: lounging and conversation; living room\nStyle: Scandinavian, contemporary\nMaterials: textured boucle or linen-blend upholstery, light oak legs\nColors: warm cream, off-white\nShape: low and deep, soft rounded arms, loose seat cushions, slim wooden legs, medium visual weight\nFeel: warm, cozy, relaxed\nGoes with: white walls, honey oak plank floor, light wood; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B072M1WJF2",
+          "name": "Amazon Brand \u2013 Rivet Midtown Contemporary Upholstered Sofa Couch, 92.1\"W, Cream",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 233.9,
+            "depth": 94.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072M1WJF2.jpg"
+          ],
+          "description": "Type: three-seat sofa\nUse: seating, lounging; living room\nStyle: contemporary, mid-century modern, minimalist\nMaterials: woven fabric upholstery, dark wood legs\nColors: light cream grey, dark brown legs\nShape: long low body, slim angled track arms, two seat cushions, loose corner back cushions, square tapered wooden legs, large but light\nFeel: airy, relaxed, soft\nGoes with: light wood, white walls, warm neutrals, black accents; contemporary or Scandinavian living rooms\n",
+          "score": 1.6713893551173948,
+          "kind": "sofa"
+        },
+        {
+          "id": "691.249.46",
+          "name": "NORSBORG",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/691.249.46.jpg"
+          ],
+          "description": "Type: three-seat sofa with track arms\nUse: seating, lounging, family gatherings; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: woven fabric upholstery, solid birch wooden legs\nColors: off-white, very light cool grey, light natural wood\nShape: long straight frame, three loose back and seat cushions, slim track arms with a side pocket, round tapered wooden legs, raised and light\nFeel: airy, bright, calm, fresh\nGoes with: light wood floors, white walls, soft grey or pastel textiles; Scandinavian or minimalist living rooms\n",
+          "score": 1.3598105733013348,
+          "kind": "sofa"
+        },
+        {
+          "id": "191.504.62",
+          "name": "NOCKEBY",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/191.504.62.jpg"
+          ],
+          "description": "Type: sofa with chaise longue\nUse: seating, lounging with legs up; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: textured fabric upholstery, dark stained wood legs and base frame\nColors: off-white, warm cream, dark brown wood\nShape: straight track arms, tall straight back with three cushions, deep chaise on the right, slim dark legs with a sled-like base, clean lines\nFeel: calm, bright, refined\nGoes with: light oak, black accents, wool and linen textiles; Scandinavian, Japandi or modern living rooms\n",
+          "score": 1.34583196494376,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07K29TD1G",
+          "name": "Trixie Linen Swatch, Stone & Beam",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07K29TD1G.jpg"
+          ],
+          "description": "Type: two-seat track arm sofa\nUse: sitting, lounging; living room, den\nStyle: contemporary, minimalist, mid-century modern\nMaterials: linen-blend woven fabric, dark wooden tapered legs\nColors: light warm greige, dark brown legs\nShape: slim track arms, two loose back cushions, two seat cushions, clean boxy frame, short tapered wooden legs, medium size\nFeel: calm, soft, airy\nGoes with: white walls, oak or walnut, soft neutral textiles; Scandinavian or modern rooms\n",
+          "score": 1.2810705701395004,
+          "kind": "sofa"
+        },
+        {
+          "id": "591.249.99",
+          "name": "NORSBORG",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/591.249.99.jpg"
+          ],
+          "description": "Type: sofa with chaise longue\nUse: seating, lounging, napping, stretching out; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: woven fabric upholstery, solid birch wooden legs\nColors: off-white, very light cool grey, light natural wood\nShape: L-shaped form, chaise on one side, three loose back cushions, slim track arms, round tapered wooden legs, raised and light\nFeel: airy, bright, relaxed, fresh\nGoes with: light wood floors, white walls, pastel or grey textiles, green plants; Scandinavian or minimalist living rooms\n",
+          "score": 1.2222710643021326,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "un sill\u00f3n para leer, frente al sof\u00e1 del otro lado de la mesa ratona, mirando hacia el ventanal",
+      "spec": {
+        "piece": "un sill\u00f3n para leer, frente al sof\u00e1 del otro lado de la mesa ratona, mirando hacia el ventanal",
+        "why": "completa la zona de estar y da un rinc\u00f3n de lectura; un sill\u00f3n de estructura de madera clara y tapizado crema o verde salvia suma el toque de verde pedido",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 85,
+        "max_depth_cm": 90,
+        "max_height_cm": null,
+        "query": "Type: armchair, reading lounge chair\nUse: reading and relaxing; living room\nStyle: Scandinavian, mid-century modern\nMaterials: solid light oak or ash frame, wool or boucle upholstery\nColors: cream, sage green accent\nShape: high back, open wooden armrests, generous cushioned seat, light visual weight\nFeel: cozy, inviting, crafted\nGoes with: cream sofa, honey oak floor, white walls; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "202.396.99",
+          "name": "STOCKHOLM",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.396.99.jpg"
+          ],
+          "description": "Type: high-back wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: mid-century modern, classic, contemporary\nMaterials: velvet upholstery, padded frame, attached neck cushion, solid wood legs in a warm brown stain\nColors: deep black, warm medium brown wood\nShape: tall upright back with subtle wings and a half-moon headrest pillow, rounded flared arms, thick seat cushion, four tapered wooden legs, tailored and slim, medium visual weight\nFeel: elegant, dramatic, refined, cozy\nGoes with: walnut or oak, brass accents, warm rugs, grey or green walls; mid-century or classic living rooms\n",
+          "score": 1.330943728497464,
+          "kind": "armchair"
+        },
+        {
+          "id": "503.056.16",
+          "name": "STRANDMON",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/503.056.16.jpg"
+          ],
+          "description": "Type: wingback armchair\nUse: relaxing, reading; living room, library, bedroom\nStyle: traditional, classic, retro\nMaterials: woven fabric upholstery with button tufting, padded frame, solid wood tapered legs\nColors: olive green, light brown wood\nShape: tall back with flared wings, button-tufted backrest, scrolled rolled arms, thick seat cushion with piping, four tapered wooden legs, upright and generous, medium visual weight\nFeel: cozy, classic, inviting, cheerful\nGoes with: warm wood, cream or white walls, brass lamps, patterned rugs; traditional or classic living rooms, reading corners\n",
+          "score": 1.2408325083002705,
+          "kind": "armchair"
+        },
+        {
+          "id": "390.108.90",
+          "name": "PONG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/390.108.90.jpg"
+          ],
+          "description": "Type: cantilever bentwood lounge armchair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, mid-century modern, minimalist\nMaterials: layer-glued bent wood frame in a dark brown stain, padded woven fabric cushion\nColors: medium grey heathered fabric, dark brown wood\nShape: long one-piece cushion with a padded headrest, curved bentwood arms flowing into a springy cantilever base, reclined seat, open sides, medium visual weight\nFeel: relaxed, cozy, calm, timeless\nGoes with: dark wood, grey or white walls, wool rugs; Scandinavian or modern living rooms\n",
+          "score": 1.1796091360394876,
+          "kind": "armchair"
+        },
+        {
+          "id": "102.335.32",
+          "name": "NOLMYRA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/102.335.32.jpg"
+          ],
+          "description": "Type: armless lounge easy chair\nUse: relaxing, reading; living room, bedroom, reading corner\nStyle: Scandinavian, minimalist, mid-century modern\nMaterials: bent birch veneer frame, grey perforated mesh seat shell\nColors: light grey, light natural birch\nShape: one-piece curved seat and back shell sloping low, armless, open wooden frame with square legs and side stretchers, light and airy, compact\nFeel: relaxed, light, casual, fresh\nGoes with: light wood, white walls, grey textiles; Scandinavian living rooms, small apartments, student rooms\n",
+          "score": 1.1342238832281126,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07P5LM53Z",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 90.9,
+            "depth": 83.1,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LM53Z.jpg"
+          ],
+          "description": "Type: leather lounge armchair\nUse: reading, relaxing; living room, bedroom, home office\nStyle: mid-century modern, retro, modern\nMaterials: top-grain leather, button tufting, dark wood legs\nColors: warm caramel brown, dark walnut\nShape: track arms with flared fronts, button-tufted back, deep seat cushion, angled tapered legs, medium weight\nFeel: warm, inviting, relaxed\nGoes with: walnut wood, cream walls, green or rust accents; mid-century or modern rooms\n",
+          "score": 1.052457142481402,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "una mesa ratona entre el sof\u00e1 y el sill\u00f3n, en el centro de la zona de estar",
+      "spec": {
+        "piece": "una mesa ratona entre el sof\u00e1 y el sill\u00f3n, en el centro de la zona de estar",
+        "why": "une sof\u00e1 y sill\u00f3n; una mesa baja de roble claro y bordes redondeados es liviana a la vista y no corta el recorrido del ambiente largo",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 120,
+        "max_depth_cm": 70,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, low wooden\nUse: serving and display in the seating area; living room\nStyle: Scandinavian, Japandi\nMaterials: solid light oak\nColors: natural light oak\nShape: oval or rounded rectangle, low, solid legs, lower shelf optional, medium visual weight\nFeel: natural, calm, warm\nGoes with: cream sofa, light oak armchair, honey oak floor; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "902.976.57",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 70.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+          ],
+          "description": "Type: square light wood coffee table\nUse: holding drinks, books and plants; living room, small apartments\nStyle: Scandinavian, Japandi, minimalist\nMaterials: ash veneer top with visible striped grain, solid wood legs\nColors: pale blond ash, light warm wood\nShape: square top with softly rounded corners and a beveled edge, four slender tapered legs angled outward, compact and light\nFeel: natural, calm, airy, friendly\nGoes with: light grey or white sofas, rattan, green plants; Scandinavian or Japandi living rooms\n",
+          "score": 1.7537355292372514,
+          "kind": "coffee table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 1.568100412765905,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07RG78QJS",
+          "name": "Amazon Brand - Solimo Essential Engineered Wood Coffee Table (Wenge Finish)",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 93.0,
+            "depth": 45.0,
+            "height": 33.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07RG78QJS.jpg"
+          ],
+          "description": "Type: minimalist open coffee table\nUse: holding drinks, books and decor in front of a sofa; living room\nStyle: minimalist, modern, contemporary\nMaterials: engineered wood, wenge laminate finish\nColors: dark chocolate brown\nShape: low rectangle, flat top over a lower shelf, slab panel supports at ends and center, no legs, compact and boxy\nFeel: clean, simple, grounded\nGoes with: white or light grey sofas, light rugs, white walls; minimalist or modern living rooms\n",
+          "score": 0.9281187384811836,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07L8DT2XT",
+          "name": "Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 61.0,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07L8DT2XT.jpg"
+          ],
+          "description": "Type: industrial coffee table with shelf\nUse: holding drinks, books and magazines in front of a sofa; living room\nStyle: industrial, rustic\nMaterials: solid wood top and lower shelf, black steel frame\nColors: warm reddish brown wood, black\nShape: rectangular plank top, open lower shelf, angled black steel legs with X-cross bracing on the sides, medium size, sturdy but open\nFeel: warm, rugged, casual\nGoes with: leather sofas, exposed brick, black metal accents, Edison lamps; industrial or rustic living rooms\n",
+          "score": 0.7142077652556447,
+          "kind": "coffee table"
+        },
+        {
+          "id": "802.622.53",
+          "name": "KRAGSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/802.622.53.jpg"
+          ],
+          "description": "Type: round black coffee table\nUse: holding drinks, books and decor; living room, family room\nStyle: Scandinavian, modern, mid-century modern\nMaterials: black painted solid wood legs, painted wood-based top\nColors: matte black\nShape: large round top with a molded edge, four angled splayed legs joined by a crossed stretcher, open base, medium visual weight\nFeel: graphic, calm, bold, grounded\nGoes with: light wood floors, white or grey sofas, brass or white accents; Scandinavian or modern living rooms\n",
+          "score": 0.6738960427739998,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "una alfombra grande bajo el sof\u00e1, el sill\u00f3n y la mesa ratona, en la mitad del ambiente",
+      "spec": {
+        "piece": "una alfombra grande bajo el sof\u00e1, el sill\u00f3n y la mesa ratona, en la mitad del ambiente",
+        "why": "delimita la zona de estar dentro del espacio largo y suaviza el piso de madera con textura crema",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 240,
+        "max_height_cm": null,
+        "query": "Type: rug, large wool area rug\nUse: anchoring the seating area; living room\nStyle: Scandinavian, minimalist\nMaterials: wool, natural fibers, low or medium pile\nColors: cream, oatmeal, subtle beige pattern\nShape: rectangular, soft textured weave, subtle tone-on-tone pattern\nFeel: soft, warm, cozy\nGoes with: cream sofa, light oak furniture, honey oak floor; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0725Z9MX3",
+          "name": "Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 152.4,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z9MX3.jpg"
+          ],
+          "description": "Type: speckled wool area rug\nUse: anchoring a seating area, adding texture; living room, bedroom, home office\nStyle: minimalist, contemporary, Scandinavian\nMaterials: wool, low textured pile\nColors: light warm beige, chestnut brown, cream speckles\nShape: rectangular, solid tone with subtle heathered speckle texture, plain edges, flat low profile, medium size\nFeel: warm, calm, natural, cozy\nGoes with: wood floors, charcoal or grey sofas, white walls; minimalist, Scandinavian or Japandi rooms\n",
+          "score": 2.3874174235024896,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B073F7GFKB",
+          "name": "Amazon Brand \u2013 Rivet Modern Ombre Wool Rug, 7'6\" x 9'6\", Charcoal",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 292.1,
+            "depth": 231.1,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073F7GFKB.jpg"
+          ],
+          "description": "Type: ombre wool area rug\nUse: anchoring a seating area; living room, bedroom, home office\nStyle: modern, minimalist, contemporary\nMaterials: woven wool, fine ribbed texture\nColors: charcoal grey fading to warm beige\nShape: large rectangle, smooth horizontal gradient from light to dark, flat low pile, clean edges, substantial\nFeel: calm, grounded, sophisticated\nGoes with: grey upholstery, dark wood, natural baskets; modern or minimalist rooms\n",
+          "score": 1.4158689283332493,
+          "kind": "rug"
+        },
+        {
+          "id": "202.987.97",
+          "name": "HODDE",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 200.0,
+            "depth": 300.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.987.97.jpg"
+          ],
+          "description": "Type: large flatwoven area rug\nUse: anchoring a seating or dining area; living room, dining room, kitchen\nStyle: minimalist, Scandinavian, contemporary\nMaterials: tight flat weave, space-dyed melange yarn, slim dark bound edge\nColors: grey-beige melange, light cream streaks, charcoal edge\nShape: large rectangle with fine horizontal streaked texture, thin flat profile, slim dark border, understated\nFeel: calm, neutral, practical\nGoes with: grey or beige sofas, light wood, white walls, black accents; Scandinavian or modern living and dining rooms\n",
+          "score": 1.339184134136624,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B072LXZ641",
+          "name": "Stone & Beam MFL nuLoom Rug B072LXZ641 5'X8' Grey",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 243.8,
+            "depth": 152.4,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072LXZ641.jpg"
+          ],
+          "description": "Type: floral wool area rug\nUse: anchoring a seating area; living room, bedroom, home office\nStyle: traditional, contemporary, farmhouse\nMaterials: hand-tufted wool, raised outline texture\nColors: cool grey, ivory\nShape: rectangular, all-over scrolling floral vine pattern in ivory on grey, low pile, medium size\nFeel: soft, calm, elegant\nGoes with: white or grey walls, light wood, linen upholstery; transitional or farmhouse rooms\n",
+          "score": 1.2966121520339218,
+          "kind": "rug"
+        },
+        {
+          "id": "801.982.95",
+          "name": "MORUM",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 200.0,
+            "depth": 300.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/801.982.95.jpg"
+          ],
+          "description": "Type: plain flatwoven area rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom, hallway\nStyle: Scandinavian, minimalist, coastal\nMaterials: tight flat weave with a fine basket texture, synthetic fiber\nColors: light warm beige, sand, cream flecks\nShape: large plain rectangle with a small woven grid texture, thin flat profile, quiet solid surface\nFeel: calm, natural, understated\nGoes with: light wood, white furniture, rattan and linen, green plants; Scandinavian, coastal or Japandi rooms\n",
+          "score": 1.2908243389663558,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "una mesa de comedor para seis, cerca del ventanal al fondo, centrada en el ancho",
+      "spec": {
+        "piece": "una mesa de comedor para seis, cerca del ventanal al fondo, centrada en el ancho",
+        "why": "la luz del ventanal es ideal para comer; una mesa rectangular de roble claro y patas robustas mantiene el tono n\u00f3rdico y c\u00e1lido",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: dining table, rectangular for six\nUse: dining for six people; dining room\nStyle: Scandinavian, Japandi\nMaterials: solid light oak or ash\nColors: natural light oak\nShape: rectangular, about 180-200 cm long, rounded corners, sturdy legs, medium visual weight\nFeel: warm, natural, welcoming\nGoes with: honey oak floor, white walls, cream textiles; Nordic living dining room"
+      },
+      "candidates": [
+        {
+          "id": "702.943.39",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 78.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/702.943.39.jpg"
+          ],
+          "description": "Type: rectangular wooden dining table\nUse: dining, working at a table; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: ash veneer top with clear lacquer, solid wood legs\nColors: light natural ash, pale blond wood\nShape: thin top with soft rounded corners and beveled edge, four slender round tapered legs slightly splayed, fixed right under the top, light and open\nFeel: airy, warm, calm, natural\nGoes with: white walls, light wood or black chairs, woven textiles; Scandinavian or Japandi dining rooms\n",
+          "score": 2.4709308754104913,
+          "kind": "dining table"
+        },
+        {
+          "id": "002.908.15",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 125.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/002.908.15.jpg"
+          ],
+          "description": "Type: rectangular solid wood dining table\nUse: dining, everyday meals, working; dining room, kitchen, small apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch, clear lacquer\nColors: light natural birch, pale blonde wood\nShape: rectangular top with soft rounded edges, thin apron, four square legs angled slightly outward, light and simple\nFeel: warm, calm, natural, honest\nGoes with: white or light grey walls, wooden or black chairs, linen textiles; Scandinavian or Japandi kitchens and dining rooms\n",
+          "score": 1.5979824521271102,
+          "kind": "dining table"
+        },
+        {
+          "id": "202.753.38",
+          "name": "NORRKER",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 74.0,
+            "depth": 74.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/202.753.38.jpg"
+          ],
+          "description": "Type: small square dining table\nUse: dining for two, breakfast; kitchen, small dining room, studio apartment\nStyle: Scandinavian, minimalist, Japandi\nMaterials: solid birch with a clear lacquered finish\nColors: pale natural birch\nShape: square top with softly rounded corners, plain apron, four sturdy square legs splayed slightly outward, simple and compact, light visual weight\nFeel: calm, light, natural, friendly\nGoes with: birch or white chairs, white walls, linen and greenery; Scandinavian or Japandi kitchens and compact dining corners\n",
+          "score": 1.3804978059033353,
+          "kind": "dining table"
+        },
+        {
+          "id": "146.300.09",
+          "name": "INGO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 75.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/146.300.09.jpg"
+          ],
+          "description": "Type: rectangular pine dining table\nUse: dining, everyday meals, crafts; kitchen, dining room, cabin\nStyle: rustic, Scandinavian, farmhouse\nMaterials: solid pine, untreated natural wood with visible knots\nColors: light warm natural pine, honey\nShape: rectangular top, plain apron, four straight square legs, simple boxy frame, medium visual weight\nFeel: warm, honest, homey, simple\nGoes with: wooden or white chairs, white walls, cotton textiles, woven baskets; rustic, farmhouse or Scandinavian kitchens and dining rooms\n",
+          "score": 1.2993486643459864,
+          "kind": "dining table"
+        },
+        {
+          "id": "402.937.70",
+          "name": "MCKELBY",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/402.937.70.jpg"
+          ],
+          "description": "Type: square drop-leaf dining table\nUse: dining, extra seating when needed; kitchen, small dining room\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid oak with a clear finish, visible joinery\nColors: light warm oak\nShape: square top with two hinged drop leaves, exposed joints at the top of the legs, four thick legs splayed slightly outward, sturdy and crafted, medium visual weight\nFeel: crafted, warm, honest, timeless\nGoes with: oak or black chairs, white or greige walls, linen; Scandinavian, Japandi or mid-century dining rooms\n",
+          "score": 1.0752697443044474,
+          "kind": "dining table"
+        }
+      ]
+    },
+    {
+      "piece": "seis sillas de comedor alrededor de la mesa, junto al ventanal",
+      "spec": {
+        "piece": "seis sillas de comedor alrededor de la mesa, junto al ventanal",
+        "why": "acompa\u00f1an la mesa para seis; sillas de madera clara con asiento tejido o tapizado crema aportan textura y calidez",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": 55,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: dining chair, wooden with woven seat\nUse: seating at the dining table; dining room\nStyle: Scandinavian, mid-century modern\nMaterials: solid light oak or beech, paper cord or cream fabric seat\nColors: natural light wood, cream\nShape: curved backrest, slim legs, light visual weight\nFeel: crafted, warm, light\nGoes with: light oak dining table, honey oak floor, white walls; Nordic dining room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0857JM2NC",
+          "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Beech and Rattan Dining Chair with Arms, 21.9\"W, Natural",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 55.6,
+            "depth": 49.5,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0857JM2NC.jpg"
+          ],
+          "description": "Type: wooden dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid beech frame, woven paper cord rattan seat\nColors: light natural wood, pale beige seat\nShape: curved panel back rail, straight flat arms on round posts, woven seat, round tapered legs with stretchers, light and open\nFeel: airy, calm, crafted\nGoes with: light oak tables, white walls, linen textiles; Scandinavian or Japandi rooms\n",
+          "score": 2.628046832179419,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B0853QJ6VS",
+          "name": "Amazon Brand \u2013 Rivet Woven Dining Chair, 22.83\"W, Brown",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 58.0,
+            "depth": 54.6,
+            "height": 85.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0853QJ6VS.jpg"
+          ],
+          "description": "Type: wooden dining armchair\nUse: dining, working at a desk; dining room, home office\nStyle: mid-century modern, traditional, rustic\nMaterials: stained solid wood frame, woven paper cord seat\nColors: warm medium brown wood, natural beige seat\nShape: horizontal slatted ladder back, open arms, woven seat, gently curved shaped legs, medium weight\nFeel: warm, crafted, inviting\nGoes with: walnut or oak tables, cream walls, woven textures; mid-century or traditional dining rooms\n",
+          "score": 2.006839213283073,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B07HSDY12Q",
+          "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Wishbone Dining Chair, 22.4\"W, White / Natural",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 57.9,
+            "depth": 56.9,
+            "height": 73.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSDY12Q.jpg"
+          ],
+          "description": "Type: wishbone dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid wood frame in matte white finish, woven paper cord seat\nColors: soft white, natural beige seat\nShape: curved top rail forming the arms, Y-shaped back, woven seat, round legs with stretchers, open and light, compact\nFeel: airy, calm, crafted\nGoes with: light wood tables, white walls, natural textures; Scandinavian, Japandi or coastal rooms\n",
+          "score": 1.6444899224417047,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B084RZVHD2",
+          "name": "Amazon Brand \u2013 Rivet Erikson Vegan Leather Woven Dining Chair, Set of 2, 18\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 54.6,
+            "depth": 45.7,
+            "height": 90.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084RZVHD2.jpg"
+          ],
+          "description": "Type: woven dining chair, set of two\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: wood frame in a warm stained finish, cane back panel, woven vegan leather strap seat\nColors: warm mid-brown wood, cream, light natural cane\nShape: armless, straight square back with inset cane panel, flat woven strap seat, four straight square legs, simple and compact\nFeel: warm, crafted, relaxed\nGoes with: walnut or oak tables, white or beige walls, rattan accents; Scandinavian, mid-century or coastal rooms\n",
+          "score": 1.6265946479287139,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B0857JWY13",
+          "name": "Amazon Brand \u2013 Stone & Beam Wood and Rattan Dining Chair with Arms, 24.8\"W, Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 63.0,
+            "depth": 50.8,
+            "height": 77.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0857JWY13.jpg"
+          ],
+          "description": "Type: wooden dining armchair\nUse: dining, working at a desk; dining room, kitchen, home office\nStyle: Scandinavian, Japandi, minimalist\nMaterials: wood frame in a matte black finish with visible grain, woven paper cord seat\nColors: matte black, natural beige seat\nShape: double horizontal back rails, flat arms, woven seat, straight round legs with stretchers, open and sturdy\nFeel: graphic, calm, crafted\nGoes with: light or dark wood tables, white walls, black accents; Scandinavian, Japandi or modern rooms\n",
+          "score": 1.2069209684235087,
+          "kind": "dining chair"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara colgante sobre la mesa de comedor",
+      "spec": {
+        "piece": "una l\u00e1mpara colgante sobre la mesa de comedor",
+        "why": "marca la zona del comedor y da luz c\u00e1lida de noche; una pantalla de papel o madera clara es cl\u00e1sica del estilo n\u00f3rdico",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, large shade over dining table\nUse: lighting the dining table; dining room\nStyle: Scandinavian, Japandi\nMaterials: rice paper, wood veneer or linen\nColors: warm white, natural wood\nShape: large rounded or dome shade, soft diffused glow, light visual weight\nFeel: warm, soft, airy\nGoes with: light oak dining table, cream textiles, white ceiling; Nordic dining room"
+      },
+      "candidates": [
+        {
+          "id": "401.522.80",
+          "name": "BJA",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/401.522.80.jpg"
+          ],
+          "description": "Type: woven bamboo dome pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: bohemian, Japandi, coastal\nMaterials: woven bamboo shade, brushed nickel ceiling cup and top fitting, white fabric cord\nColors: warm natural bamboo, light beige, silver\nShape: wide dome shade with an open diamond lattice weave that casts patterned light, hangs on a long cord, large but light and airy\nFeel: warm, natural, relaxed, cozy\nGoes with: light wood, linen, rattan, green plants, white walls; bohemian, Japandi or coastal rooms\n",
+          "score": 1.6566069383128532,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "401.928.51",
+          "name": "FOTO",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/401.928.51.jpg"
+          ],
+          "description": "Type: enamelled metal dome pendant lamp\nUse: light over a dining table, a kitchen island or a desk; dining room, kitchen, home office\nStyle: industrial, retro, Scandinavian\nMaterials: lacquered metal shade with a glossy finish, black fabric cord, matching ceiling cup\nColors: warm off-white cream, black cord, white inner shade\nShape: wide flared dome shade with a narrow neck, hangs on a long thin cord, clean rounded outline, medium size, light visual weight\nFeel: soft, friendly, workshop-inspired, warm\nGoes with: light wood tables, white or beige walls, black accents; Scandinavian, farmhouse or industrial kitchens\n",
+          "score": 1.5433006286989885,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "703.116.97",
+          "name": "SINNERLIG",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.116.97.jpg"
+          ],
+          "description": "Type: woven bamboo pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: Japandi, bohemian, Scandinavian\nMaterials: hand-woven bamboo shade in layered tiers, dark grey cord and ceiling cup\nColors: light natural bamboo, dark grey\nShape: three stacked cylinders of open lattice weave with a wider middle tier, casts patterned light, hangs on a long cord, large but light and airy\nFeel: warm, natural, relaxed, calm\nGoes with: light wood, linen, rattan, green plants, white walls; Japandi, bohemian or Scandinavian rooms\n",
+          "score": 1.2640927322700783,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07374QGD7",
+          "name": "Amazon Brand \u2013 Rivet Concrete Dome Ceiling Hanging Pendant Chandelier Light Fixture - 8 x 8 x 30 Inches, Concrete and Metal",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 20.3,
+            "depth": 20.3,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374QGD7.jpg"
+          ],
+          "description": "Type: concrete dome pendant lamp\nUse: light over a dining table or kitchen island; dining room, living room, kitchen\nStyle: industrial, minimalist, modern\nMaterials: cast concrete shade, brass fitting, black fabric cord\nColors: warm grey, brass, black\nShape: tall rounded dome shade, small brass top cap, hangs on a single cord, compact but solid, heavy visual weight\nFeel: raw, earthy, grounded\nGoes with: concrete, dark wood, black metal, brass; industrial or Japandi rooms\n",
+          "score": 1.1558524827426941,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "002.286.06",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.286.06.jpg"
+          ],
+          "description": "Type: white sculptural globe pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: Scandinavian, contemporary, modern\nMaterials: curved white plastic strips forming the shade, inner diffuser, white ceiling cup, thin suspension wires\nColors: white, soft warm glow\nShape: wide flattened globe made of overlapping curved bands with gaps that let light out, hangs from a dome canopy on fine wires, large but airy\nFeel: airy, elegant, soft, sculptural\nGoes with: white walls, light wood, grey or beige textiles; Scandinavian, contemporary or minimalist rooms\n",
+          "score": 1.139272933385379,
+          "kind": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara de pie junto al sill\u00f3n de lectura",
+      "spec": {
+        "piece": "una l\u00e1mpara de pie junto al sill\u00f3n de lectura",
+        "why": "el rinc\u00f3n de lectura necesita luz propia; una l\u00e1mpara de pie con base de madera clara y pantalla de lino da luz c\u00e1lida",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, reading lamp with fabric shade\nUse: reading light beside armchair; living room\nStyle: Scandinavian, minimalist\nMaterials: light oak, linen shade\nColors: natural wood, cream\nShape: slim tripod or straight stem, drum shade, light visual weight\nFeel: warm, calm, cozy\nGoes with: light oak armchair, cream sofa, white walls; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "102.911.31",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.911.31.jpg"
+          ],
+          "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+          "score": 1.7313913126687497,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "302.865.67",
+          "name": "SAMTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.865.67.jpg"
+          ],
+          "description": "Type: swing-arm floor lamp with drum shade\nUse: reading light that reaches over a sofa or armchair; living room, bedroom\nStyle: contemporary, minimalist, Scandinavian\nMaterials: white fabric drum shade, nickel-plated steel pole and arm, round metal base\nColors: white, brushed silver\nShape: cylindrical shade at the end of a long horizontal arm that swings out from a slim pole, round flat base, tall and angular, light visual weight\nFeel: calm, practical, elegant, soft\nGoes with: grey or beige sofas, light wood, white walls, silver accents; contemporary or Scandinavian living rooms\n",
+          "score": 1.4374160210404183,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "901.638.65",
+          "name": "RSTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/901.638.65.jpg"
+          ],
+          "description": "Type: floor lamp with pleated fabric shade\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom, reading corner\nStyle: classic, traditional, contemporary\nMaterials: brushed nickel-plated metal stem and domed base, white pleated fabric shade, pull-chain switch\nColors: white, brushed silver nickel\nShape: tapered empire shade with fine pleats, slim straight stem, round stepped domed base, tall and slender, light visual weight\nFeel: elegant, soft, calm, timeless\nGoes with: white or grey walls, dark or light wood, linen upholstery; classic, traditional or contemporary living rooms and bedrooms\n",
+          "score": 1.0279721165554807,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "601.109.01",
+          "name": "LERSTA",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/601.109.01.jpg"
+          ],
+          "description": "Type: slim aluminium floor reading lamp\nUse: reading light beside a sofa, an armchair or a bed; living room, bedroom, home office\nStyle: minimalist, industrial, Scandinavian\nMaterials: brushed aluminium shade, pole and base, black cord with inline switch\nColors: brushed silver, black\nShape: thin straight pole with a curved neck holding a small cone shade, adjustable head, round flat base, tall and very slender, light visual weight\nFeel: simple, practical, airy, functional\nGoes with: grey or white sofas, light wood, metal accents; minimalist, Scandinavian or industrial rooms\n",
+          "score": 0.9059239125871151,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: turned-column floor lamp\nUse: ambient reading light; living room, bedroom, home office, beside a sofa or armchair\nStyle: farmhouse, rustic, traditional\nMaterials: whitewashed distressed finish column, linen burlap drum shade\nColors: soft grey-green whitewash, warm oatmeal beige shade\nShape: slim turned pole with bulbous knob detail, round disc base, wide drum shade, tall and slender\nFeel: soft, cozy, relaxed, vintage\nGoes with: linen sofas, light or reclaimed wood, cream walls; farmhouse, cottage or coastal rooms\n",
+          "score": 0.8431812462913976,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "un aparador bajo contra la pared derecha, junto al comedor",
+      "spec": {
+        "piece": "un aparador bajo contra la pared derecha, junto al comedor",
+        "why": "da guardado para vajilla y manteler\u00eda cerca de la mesa y aprovecha el largo del ambiente sin recargarlo",
+        "kinds": [
+          "sideboard"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 85,
+        "query": "Type: sideboard, low with doors\nUse: storing dishes and table linen; dining room\nStyle: Scandinavian, Japandi\nMaterials: light oak, oak veneer, slatted or cane doors\nColors: natural light oak\nShape: long and low, slim legs, clean lines, medium visual weight\nFeel: orderly, warm, natural\nGoes with: light oak dining table, honey oak floor, white walls; Nordic living dining room"
+      },
+      "candidates": [
+        {
+          "id": "402.397.21",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.397.21.jpg"
+          ],
+          "description": "Type: walnut veneer sideboard\nUse: storing tableware, linens or media, a surface for lamps and decor; dining room, living room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer with a fine vertical grain, solid wood legs and base frame\nColors: medium warm walnut brown\nShape: long low cabinet with a row of flush doors, set on a slim wooden base with four square legs and a long stretcher, clean edges, substantial yet lifted\nFeel: warm, refined, calm, timeless\nGoes with: cream or white walls, brass lamps, green plants, wool rugs; mid-century modern or Scandinavian dining and living rooms\n",
+          "score": 1.3124056704634344,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B07HSBD8DM",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 172.7,
+            "depth": 50.8,
+            "height": 82.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSBD8DM.jpg"
+          ],
+          "description": "Type: four-door buffet sideboard\nUse: storing tableware, serving, media storage; dining room, living room\nStyle: traditional, coastal, contemporary\nMaterials: brown wood, woven cane door panels, silver metal bar pulls\nColors: warm medium brown, silver\nShape: long rectangular case, four framed cane-panel doors, long vertical pulls, open base frame with stretchers, square legs, substantial\nFeel: warm, refined, relaxed\nGoes with: rattan, linen, cream walls, brushed nickel; traditional, coastal or transitional rooms\n",
+          "score": 0.48332822599140596,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075YQ8Q3T",
+          "name": "Amazon Brand \u2013 Stone & Beam Parson Rustic Buffet Sideboard Storage Cabinet 56\"W, Oak Wood",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 142.2,
+            "depth": 45.7,
+            "height": 81.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YQ8Q3T.jpg"
+          ],
+          "description": "Type: rustic oak sideboard\nUse: storing tableware and linens, serving surface; dining room, living room\nStyle: rustic, farmhouse, traditional\nMaterials: solid oak with distressed finish, metal knob pulls\nColors: warm honey oak, antique pewter\nShape: long rectangular case, overhanging top, three drawers over three paneled doors, short square legs, sturdy and substantial\nFeel: warm, homely, solid\nGoes with: cream walls, linen textiles, wrought iron accents; farmhouse or country dining rooms\n",
+          "score": -0.09821396575587442,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B07B7DMPX7",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood Media TV Console Stand Table, 59\"H, White &amp; Gray",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 150.1,
+            "depth": 50.0,
+            "height": 77.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DMPX7.jpg"
+          ],
+          "description": "Type: herringbone-front sideboard\nUse: storage, TV or display surface; living room, dining room\nStyle: mid-century modern, glam, contemporary\nMaterials: white lacquered case, limed wood chevron veneer fronts, brass handles and legs\nColors: white, light greige wood, gold\nShape: long low rectangular case, two doors flanking three drawers, chevron pattern, slim tab pulls, thin metal legs, raised and light\nFeel: elegant, bright, refined\nGoes with: white walls, light wood, brass accents; modern, glam or Scandinavian rooms\n",
+          "score": -0.3365045500436475,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075Z8628K",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Checkerboard Reclaimed Elm Buffet Sideboard Credenza Cabinet, 55.1\"W, Natural",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 45.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z8628K.jpg"
+          ],
+          "description": "Type: checkerboard front sideboard\nUse: storing tableware, serving, media storage; dining room, living room\nStyle: mid-century modern, rustic\nMaterials: reclaimed solid elm, carved block door fronts, dark round knobs\nColors: warm light natural wood, dark bronze\nShape: rectangular case, two doors with raised checkerboard relief, three drawers, angled tapered peg legs, medium size\nFeel: warm, textured, crafted\nGoes with: warm woods, white walls, green plants, brass; mid-century, bohemian or rustic rooms\n",
+          "score": -0.6409002792740737,
+          "kind": "sideboard"
+        }
+      ]
+    },
+    {
+      "piece": "cortinas livianas en el ventanal del fondo",
+      "spec": {
+        "piece": "cortinas livianas en el ventanal del fondo",
+        "why": "suavizan el marco oscuro del ventanal, filtran la luz y suman calidez textil en crema",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer linen panels\nUse: filtering light at sliding glass door; living dining room\nStyle: Scandinavian, minimalist\nMaterials: linen, linen blend\nColors: cream, natural off-white\nShape: floor-length, soft folds, airy\nFeel: light, soft, calm\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room"
+      },
+      "candidates": [
+        {
+          "id": "502.841.95",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.841.95.jpg"
+          ],
+          "description": "Type: pair of white linen curtains\nUse: filtering daylight and softening windows; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: semi-sheer woven linen with a slubby natural texture, hidden tab heading\nColors: white, faint warm off-white\nShape: two long straight panels hanging in loose soft folds from a rod, airy translucent weave, plain hems, light and flowing\nFeel: airy, calm, natural, bright\nGoes with: light wood floors, white walls, rattan, pale grey or sand textiles; Scandinavian, coastal or Japandi rooms\n",
+          "score": 1.283286985799901,
+          "kind": "curtains"
+        },
+        {
+          "id": "802.841.94",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.841.94.jpg"
+          ],
+          "description": "Type: pair of linen curtains\nUse: dressing windows, filtering light and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, Japandi, coastal\nMaterials: semi-sheer washed linen with a slub texture, hidden tab top\nColors: natural beige, warm sand\nShape: two long straight panels that fall in soft vertical folds from a rod, gathered tab-top heading, fine uneven weave, light and airy\nFeel: calm, warm, natural, airy\nGoes with: light wood, white walls, rattan, cream or white textiles; Scandinavian, Japandi or coastal rooms\n",
+          "score": 1.2692655017772274,
+          "kind": "curtains"
+        },
+        {
+          "id": "202.975.71",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.975.71.jpg"
+          ],
+          "description": "Type: white light-filtering curtains, pair\nUse: softening daylight, adding light privacy at a window; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, coastal\nMaterials: lightweight semi-sheer woven fabric, hidden tab heading\nColors: white\nShape: two full-length straight panels hanging in soft relaxed folds, plain fabric, gently translucent, airy and light\nFeel: airy, bright, fresh, calm\nGoes with: white walls, light wood floors, linen sofas, green plants; Scandinavian, minimalist or coastal rooms\n",
+          "score": 1.261746572357073,
+          "kind": "curtains"
+        },
+        {
+          "id": "abo-B07CTJJNX4",
+          "name": "Stone & Beam Sheer Transitional Curtain",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07CTJJNX4.jpg"
+          ],
+          "description": "Type: sheer curtain panel\nUse: diffusing daylight at windows; living room, bedroom, dining room\nStyle: minimalist, coastal, contemporary\nMaterials: lightweight sheer voile fabric, rod pocket top\nColors: white, soft off-white\nShape: long straight panel, rod pocket gathers, translucent, floor length, light and airy\nFeel: airy, bright, calm\nGoes with: white walls, wainscoting, leather, light floors; coastal, Scandinavian or minimalist rooms\n",
+          "score": 1.163183475846313,
+          "kind": "curtains"
+        },
+        {
+          "id": "702.809.12",
+          "name": "AINA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.809.12.jpg"
+          ],
+          "description": "Type: pair of linen curtains\nUse: dressing windows, softening light and adding privacy; living room, bedroom, dining room\nStyle: Scandinavian, minimalist, Japandi\nMaterials: semi-sheer washed linen with a slub texture, hidden tab top\nColors: dark charcoal grey\nShape: two long straight panels that hang in soft vertical folds from a rod, gathered tab-top heading, fine uneven weave, light and flowing\nFeel: calm, natural, relaxed, soft\nGoes with: light wood, white or grey walls, natural textiles, black accents; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 1.1383199041955694,
+          "kind": "curtains"
+        }
+      ]
+    },
+    {
+      "piece": "almohadones para el sof\u00e1 y el sill\u00f3n",
+      "spec": {
+        "piece": "almohadones para el sof\u00e1 y el sill\u00f3n",
+        "why": "suman capas de textura y el toque de verde pedido sobre el tapizado crema",
+        "kinds": [
+          "cushion"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, textured throw pillows\nUse: decorating the sofa and armchair; living room\nStyle: Scandinavian, bohemian\nMaterials: wool, linen, boucle, knit\nColors: cream, oatmeal, sage green, olive green\nShape: square and lumbar, textured weaves\nFeel: cozy, soft, warm\nGoes with: cream sofa, light oak, honey oak floor; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07BMTXJ12",
+          "name": "Amazon Brand \u2013 Stone & Beam Casual Woven Square Decorative Throw Pillow, 17\" x 17\", Black",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 15.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07BMTXJ12.jpg"
+          ],
+          "description": "Type: woven textured throw cushion\nUse: accent comfort on a sofa, armchair or bed; living room, bedroom\nStyle: rustic, bohemian, contemporary\nMaterials: chunky woven cotton, raised basketweave texture\nColors: charcoal black, warm beige flecks\nShape: square, grid of textured blocks divided by flat woven bands, knife edges, compact, visually substantial\nFeel: earthy, grounded, crafted\nGoes with: cream or tan upholstery, leather, dark wood, jute rugs; rustic, bohemian or modern rooms\n",
+          "score": 1.7070423968023796,
+          "kind": "cushion"
+        },
+        {
+          "id": "602.740.06",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/602.740.06.jpg"
+          ],
+          "description": "Type: green linen-look cushion\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, bohemian, contemporary\nMaterials: woven linen-look fabric with a fine slub texture, plain sewn edge\nColors: medium leaf green, slightly warm\nShape: square plump cushion with a solid colored surface, softly rounded corners, simple flat seam, medium size\nFeel: fresh, natural, relaxed\nGoes with: natural wood, rattan, cream or grey sofas, green plants; Scandinavian or bohemian living rooms\n",
+          "score": 1.6454288928991152,
+          "kind": "cushion"
+        },
+        {
+          "id": "202.617.32",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.617.32.jpg"
+          ],
+          "description": "Type: linen cushion\nUse: back support and decoration on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, minimalist, Japandi\nMaterials: washed linen with a fine slub texture\nColors: light warm beige, greige\nShape: square plain cushion, soft rounded corners, clean seamed edges, slightly crumpled natural texture, medium size\nFeel: calm, natural, soft, relaxed\nGoes with: white or grey sofas, light oak, wool throws, stone tones; Scandinavian, Japandi or minimalist living rooms\n",
+          "score": 1.39875607727972,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07JKJSRQG",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Tassel Diamond Throw Pillow - 18 x 18 Inch, Black / White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 45.7,
+            "height": 8.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JKJSRQG.jpg"
+          ],
+          "description": "Type: woven tasseled throw cushion\nUse: accent seating comfort, on a sofa or a bed; living room, bedroom\nStyle: bohemian, rustic, modern\nMaterials: chunky handwoven cotton blend, cotton tassels\nColors: heathered grey, cream white\nShape: square, central diamond pattern outlined by eight cream tassels, nubby striped weave, knife edges, medium size\nFeel: textured, cozy, crafted\nGoes with: natural wood, rattan, linen, white walls; bohemian, Scandinavian or modern farmhouse rooms\n",
+          "score": 1.38176949396471,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B079V96B4C",
+          "name": "Amazon Brand \u2013 Stone & Beam Mojave-Inspired Decorative Throw Pillow Cover, 20\" x 20\", Blue and Red",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 50.8,
+            "depth": 50.8,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B079V96B4C.jpg"
+          ],
+          "description": "Type: woven patterned cushion cover\nUse: on a sofa, armchair or bed; living room, bedroom\nStyle: bohemian, rustic, traditional\nMaterials: textured woven jacquard fabric\nColors: dark navy blue, light beige, red, muted green\nShape: square, vertical stripes of stacked diamond motifs, red and green woven bands, nubby texture, knife edges, medium size\nFeel: warm, earthy, cozy, handcrafted\nGoes with: navy, rust and cream tones, leather, warm wood; bohemian, Southwestern or rustic rooms\n",
+          "score": 1.3715329173905602,
+          "kind": "cushion"
+        }
+      ]
+    },
+    {
+      "piece": "una manta tejida sobre el sof\u00e1",
+      "spec": {
+        "piece": "una manta tejida sobre el sof\u00e1",
+        "why": "refuerza la sensaci\u00f3n c\u00e1lida y acogedora del living n\u00f3rdico",
+        "kinds": [
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: throw, chunky knit blanket\nUse: warmth and decoration on sofa; living room\nStyle: Scandinavian\nMaterials: wool or cotton knit\nColors: cream, warm ivory\nShape: chunky knit texture, fringed edges\nFeel: cozy, soft, warm\nGoes with: cream sofa, sage cushions, light oak; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "302.006.96",
+          "name": "URSULA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.006.96.jpg"
+          ],
+          "description": "Type: cable-knit throw blanket\nUse: warmth and texture on a sofa, armchair or bed; living room, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: chunky knitted yarn, cable and seed stitch panels\nColors: off-white, cream\nShape: rectangular knitted blanket with raised cable braids and textured bands, softly scalloped edges, soft and heavy drape\nFeel: cozy, warm, soft, homey\nGoes with: grey or beige sofas, light wood, wool and sheepskin; Scandinavian, farmhouse or cabin-style living rooms and bedrooms\n",
+          "score": 1.9466605282996827,
+          "kind": "throw"
+        },
+        {
+          "id": "802.006.94",
+          "name": "URSULA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.006.94.jpg"
+          ],
+          "description": "Type: cable knit throw blanket\nUse: warmth on a sofa, an armchair or a bed; living room, bedroom\nStyle: Scandinavian, farmhouse, traditional\nMaterials: chunky knitted cotton yarn, cable knit pattern, ribbed borders\nColors: warm beige, light sand\nShape: folded rectangular throw with raised cable braids across the surface, ribbed knitted edges, soft and thick, medium visual weight\nFeel: cozy, warm, soft, homey\nGoes with: cream or grey sofas, light wood, wool and linen, warm neutrals; Scandinavian or farmhouse living rooms\n",
+          "score": 1.828503994575863,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B07DTLKPJG",
+          "name": "AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 33.8,
+            "depth": 29.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTLKPJG.jpg"
+          ],
+          "description": "Type: chunky knit fringed throw\nUse: warmth and texture on a sofa or bed; living room, bedroom\nStyle: rustic, farmhouse, bohemian\nMaterials: chunky chenille knit, yarn fringe\nColors: camel, warm taupe brown\nShape: rectangular throw, raised herringbone chevron knit, thick looped texture, long tassel fringe on ends, heavy and plush\nFeel: cozy, warm, earthy\nGoes with: cream, warm wood, leather, beige walls; farmhouse, rustic or bohemian rooms\n",
+          "score": 1.3902553299165306,
+          "kind": "throw"
+        },
+        {
+          "id": "101.033.14",
+          "name": "IKEA STOCKHOLM",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.033.14.jpg"
+          ],
+          "description": "Type: chunky boucle throw blanket\nUse: warmth on a sofa, armchair or bed, layering; living room, bedroom\nStyle: Scandinavian, Japandi, contemporary\nMaterials: looped boucle yarn with a soft woolly texture\nColors: warm taupe beige, cream flecks\nShape: folded rectangle, nubby curly loops over the whole surface, loose open weave, thick and drapey, medium visual weight\nFeel: cozy, soft, warm, tactile\nGoes with: oatmeal or cream sofas, light oak, linen, sheepskin, white walls; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 1.2325811592662277,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B07DT66Q2X",
+          "name": "AmazonBasics Knitted Chenille Throw Blanket - 50 x 60 Inches, White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 31.0,
+            "depth": 31.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DT66Q2X.jpg"
+          ],
+          "description": "Type: knitted chenille throw blanket\nUse: warmth and texture on a sofa or bed; living room, bedroom\nStyle: Scandinavian, minimalist, farmhouse\nMaterials: chenille rib knit\nColors: white, soft off-white\nShape: rectangular throw, horizontal ribbed knit rows, plain knit border, no fringe, plush and medium weight\nFeel: cozy, clean, soft\nGoes with: light wood, linen, grey and beige tones; Scandinavian, farmhouse or minimalist rooms\n",
+          "score": 1.083613013876904,
+          "kind": "throw"
+        }
+      ]
+    },
+    {
+      "piece": "una planta grande en maceta, en el rinc\u00f3n entre la zona de estar y el comedor",
+      "spec": {
+        "piece": "una planta grande en maceta, en el rinc\u00f3n entre la zona de estar y el comedor",
+        "why": "trae el verde pedido y conecta visualmente con el verde del balc\u00f3n",
+        "kinds": [
+          "plant"
+        ],
+        "max_width_cm": 70,
+        "max_depth_cm": 70,
+        "max_height_cm": null,
+        "query": "Type: plant, large indoor floor plant\nUse: adding greenery; living dining room\nStyle: Scandinavian, bohemian\nMaterials: live foliage, ceramic or woven basket planter\nColors: lush green, cream or natural planter\nShape: tall, leafy, fiddle leaf fig or olive tree, medium visual weight\nFeel: fresh, natural, lively\nGoes with: white walls, light oak furniture, cream textiles; Nordic living dining room"
+      },
+      "candidates": [
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n",
+          "score": 0.9820590945526889,
+          "kind": "plant"
+        },
+        {
+          "id": "001.185.23",
+          "name": "PACHIRA AQUATICA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+          ],
+          "description": "Type: braided money tree houseplant\nUse: indoor greenery by a window, in a bright corner or next to a sofa; living room, home office, dining room\nStyle: bohemian, Scandinavian, contemporary\nMaterials: living plant with a braided trunk, glossy hand-shaped leaves, brown plastic grower pot\nColors: fresh green, tan trunk, terracotta brown pot\nShape: several thin trunks braided into one stem topped by a rounded crown of leaves, tall and upright, slender and light\nFeel: lively, fresh, natural, calming\nGoes with: woven baskets, ceramic or rattan plant pots, light wood, white walls; bohemian, Scandinavian or Japandi rooms\n",
+          "score": 0.5557283653136771,
+          "kind": "plant"
+        },
+        {
+          "id": "468.040.05",
+          "name": "CHRYSALIDOCARPUS LUTESCENS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+          ],
+          "description": "Type: areca palm in a nursery pot\nUse: adding greenery and softness to a corner or beside a sofa; living room, home office, dining room\nStyle: bohemian, coastal, Scandinavian\nMaterials: live plant with feathery fronds, terracotta-colored plastic grower pot\nColors: fresh bright green, yellow-green stems, terracotta orange pot\nShape: tall upright clump of slender cane stems with arching feathery fronds, full and airy, large floor plant\nFeel: fresh, lush, tropical, relaxed\nGoes with: woven baskets, rattan, light wood, white walls; bohemian, coastal or Scandinavian rooms\n",
+          "score": 0.5275274941511844,
+          "kind": "plant"
+        },
+        {
+          "id": "668.040.47",
+          "name": "HEDERA HELIX",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/668.040.47.jpg"
+          ],
+          "description": "Type: trailing ivy houseplant\nUse: greenery on a shelf, a windowsill or in a hanging planter; living room, home office, bedroom\nStyle: bohemian, Scandinavian, contemporary\nMaterials: live ivy with glossy lobed leaves, terracotta-colored plastic nursery pot\nColors: deep green, variegated light green and cream, terracotta\nShape: bushy mound of small lobed leaves with long trailing vines that spill over the edge, small pot, loose and flowing\nFeel: fresh, natural, lively, relaxed\nGoes with: wood shelves, white walls, woven baskets, ceramic cachepots; bohemian or Scandinavian rooms\n",
+          "score": 0.09605514601922736,
+          "kind": "plant"
+        },
+        {
+          "id": "702.766.51",
+          "name": "ALOE VERA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.766.51.jpg"
+          ],
+          "description": "Type: potted aloe succulent\nUse: greenery on a windowsill, a desk or a shelf; living room, home office, kitchen\nStyle: bohemian, contemporary, Scandinavian\nMaterials: live succulent with thick fleshy leaves, terracotta-colored plastic nursery pot\nColors: fresh green with pale speckles, terracotta orange\nShape: upright rosette of long spiky pointed leaves that fan out from the center, small round pot, compact and sculptural\nFeel: fresh, natural, easygoing, lively\nGoes with: ceramic or woven cachepots, light wood, white walls, sunny windows; bohemian or Scandinavian rooms\n",
+          "score": -0.46081083315706967,
+          "kind": "plant"
+        }
+      ]
+    },
+    {
+      "piece": "cuadros sobre el sof\u00e1, en la pared izquierda",
+      "spec": {
+        "piece": "cuadros sobre el sof\u00e1, en la pared izquierda",
+        "why": "dan un punto focal a la pared larga y blanca sin romper la calma del estilo",
+        "kinds": [
+          "wall art"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: wall art, framed abstract prints set\nUse: decorating wall above sofa; living room\nStyle: Scandinavian, minimalist\nMaterials: paper print, light oak frames\nColors: cream, beige, sage green, soft terracotta\nShape: pair or trio of rectangular frames, organic abstract shapes, light visual weight\nFeel: calm, warm, artistic\nGoes with: cream sofa, light oak, white walls; Nordic living room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B073P13P7Q",
+          "name": "Amazon Brand \u2013 Rivet Abstract Black and White Print of Tree Line in Black Frame, 24\" x 16\"",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 45.7,
+            "depth": 1.3,
+            "height": 66.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073P13P7Q.jpg"
+          ],
+          "description": "Type: abstract tree line print\nUse: wall decoration above a sofa, bed or console; living room, bedroom, home office\nStyle: minimalist, modern, contemporary\nMaterials: printed paper, thin black frame\nColors: white, black\nShape: landscape rectangle, thin black frame, black brushy silhouette rising along bottom half, large empty white sky, graphic\nFeel: bold, calm, graphic\nGoes with: white or grey walls, black accents, light wood; minimalist, Scandinavian or modern rooms\n",
+          "score": 1.4391714757319123,
+          "kind": "wall art"
+        },
+        {
+          "id": "abo-B073NZPNN9",
+          "name": "Amazon Brand \u2013 Rivet Geometric Aqua and Black Angled Canvas Print in Silver Frame, 31.75\" x 31.75\"",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 80.6,
+            "depth": 3.8,
+            "height": 80.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073NZPNN9.jpg"
+          ],
+          "description": "Type: geometric abstract canvas print\nUse: wall decoration above a sofa or bed; living room, bedroom, home office\nStyle: contemporary, modern\nMaterials: printed canvas, silver metallic frame\nColors: white, aqua, black, grey, blush pink, cobalt blue accents\nShape: large square, thin silver float frame, layered angled triangles and fragments, busy composition\nFeel: fresh, lively, airy\nGoes with: white or grey walls, aqua or blush accents, chrome; modern or glam rooms\n",
+          "score": 1.0553076834956496,
+          "kind": "wall art"
+        },
+        {
+          "id": "abo-B073P1KFX5",
+          "name": "Amazon Brand \u2013 Rivet Modern Print Wall Art of Blue Geode Detail in Silver Frame, 13.75\" x 13.75\"",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 34.9,
+            "depth": 3.8,
+            "height": 34.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073P1KFX5.jpg"
+          ],
+          "description": "Type: framed abstract geode print\nUse: wall decoration; living room, bedroom, home office, gallery wall\nStyle: contemporary, modern, coastal\nMaterials: printed watercolor-style artwork, thin silver frame\nColors: light blue, navy, white, pale aqua\nShape: square, concentric watercolor rings radiating from a crystal center, slim floating frame, compact\nFeel: calm, fresh, soft\nGoes with: white walls, blue textiles, silver or chrome accents; contemporary or coastal rooms\n",
+          "score": 1.025511366851501,
+          "kind": "wall art"
+        },
+        {
+          "id": "abo-B07662RXRZ",
+          "name": "Amazon Brand \u2013 Rivet Modern Abstract Shapes Wall Art Decor on Canvas - 26 x 48 Inches",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 91.4,
+            "height": 3.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07662RXRZ.jpg"
+          ],
+          "description": "Type: abstract geometric canvas art\nUse: wall decoration above a sofa, bed or console; living room, bedroom, home office\nStyle: contemporary, modern, mid-century modern\nMaterials: painted-look canvas, gallery wrap\nColors: white, coral red, tan, sky blue, gold line, grey\nShape: tall portrait rectangle, frameless, chevron blocks, cube, hexagon outline, dotted circle, large\nFeel: light, playful, airy\nGoes with: white walls, light wood, coral or blue accents; modern or Scandinavian rooms\n",
+          "score": 1.0204059098021419,
+          "kind": "wall art"
+        },
+        {
+          "id": "402.958.73",
+          "name": "PJTTERYD",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.958.73.jpg"
+          ],
+          "description": "Type: set of three printed canvas pictures\nUse: decorating a wall above a sofa, a desk or a bed; living room, home office, bedroom\nStyle: retro, contemporary, bohemian\nMaterials: printed canvas stretched on frames\nColors: light beige ground, pastel green, pink, lilac, orange, yellow, grey lettering\nShape: three square panels hung side by side, collage of vintage luggage tags and travel labels with city names and airport codes, light graphic layout\nFeel: playful, wanderlust, cheerful, nostalgic\nGoes with: light wood, white walls, pastel accents; retro, eclectic or youthful living rooms and home offices\n",
+          "score": 0.8755199024778864,
+          "kind": "wall art"
+        }
+      ]
+    },
+    {
+      "piece": "un florero de cer\u00e1mica sobre la mesa de comedor o el aparador",
+      "spec": {
+        "piece": "un florero de cer\u00e1mica sobre la mesa de comedor o el aparador",
+        "why": "un \u00faltimo detalle natural con ramas verdes que une comedor y balc\u00f3n",
+        "kinds": [
+          "vase"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: vase, handmade ceramic\nUse: displaying branches or flowers; dining room\nStyle: Scandinavian, Japandi\nMaterials: matte stoneware ceramic\nColors: cream, warm off-white\nShape: organic rounded form, medium height, textured glaze\nFeel: natural, calm, crafted\nGoes with: light oak dining table, sideboard, green branches; Nordic dining room"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QHL8W81",
+          "name": "Amazon Brand \u2013 Rivet Modern Stoneware Vases, 2-Piece Set, 5.2\"H, White and Blue-Green",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 11.3,
+            "depth": 9.0,
+            "height": 13.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QHL8W81.jpg"
+          ],
+          "description": "Type: matte stoneware vases, set of two\nUse: holding stems or dried flowers; living room, bedroom, home office, on a shelf or side table\nStyle: minimalist, Scandinavian, modern\nMaterials: stoneware, smooth matte glaze\nColors: warm off-white, muted blue-green\nShape: small teardrop pebble body, slanted oval opening, smooth unadorned surface, compact\nFeel: calm, soft, organic\nGoes with: light wood, linen, sage and neutral tones; Scandinavian or Japandi rooms\n",
+          "score": 1.768511869191553,
+          "kind": "vase"
+        },
+        {
+          "id": "403.112.84",
+          "name": "VRVIND",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/403.112.84.jpg"
+          ],
+          "description": "Type: brown tinted glass vase\nUse: holding branches or a few stems on a table, sideboard or shelf; living room, dining room\nStyle: contemporary, Scandinavian, mid-century modern\nMaterials: tinted blown glass with a slightly irregular hand-formed look\nColors: warm smoky taupe brown, translucent\nShape: organic teardrop form, a bulbous uneven bottom tapering to a narrow neck and a tilted flared mouth, asymmetric and sculptural\nFeel: organic, warm, artful, calm\nGoes with: dried branches, walnut or oak, cream or beige tones; Scandinavian, mid-century or Japandi rooms\n",
+          "score": 1.3313450305873549,
+          "kind": "vase"
+        },
+        {
+          "id": "abo-B07QHL2D4B",
+          "name": "Amazon Brand \u2013 Rivet Modern Textured Stoneware Vase, 13.9\"H, White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 13.0,
+            "depth": 13.0,
+            "height": 35.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QHL2D4B.jpg"
+          ],
+          "description": "Type: textured stoneware cylinder vase\nUse: holding flowers or stems; living room, dining room, bedroom, on a table, shelf or console\nStyle: modern, minimalist, contemporary\nMaterials: matte stoneware with raised wave relief\nColors: white\nShape: tall straight cylinder, open round mouth, flowing diagonal wave ridges across the surface, slim and medium height\nFeel: soft, calm, clean\nGoes with: light wood, white or grey walls, greenery; minimalist, Scandinavian or modern rooms\n",
+          "score": 1.0167746162875135,
+          "kind": "vase"
+        },
+        {
+          "id": "603.112.83",
+          "name": "VRVIND",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/603.112.83.jpg"
+          ],
+          "description": "Type: smoky brown glass vase\nUse: holding single stems or a few branches on a table or shelf; living room, dining room, bedroom\nStyle: contemporary, Scandinavian, minimalist\nMaterials: tinted smoked glass with an organic, slightly irregular surface\nColors: smoky grey-brown, translucent\nShape: tall organic teardrop body that narrows into a long neck with a slanted flared lip, slightly lopsided handmade-looking silhouette, slender and light\nFeel: soft, organic, calm\nGoes with: oak or walnut, linen, dried grasses, warm neutrals; Japandi, Scandinavian or contemporary rooms\n",
+          "score": 0.9619737938441024,
+          "kind": "vase"
+        },
+        {
+          "id": "abo-B07QD6ZV84",
+          "name": "Amazon Brand \u2013 Stone & Beam Mid-Century Rustic Vase, 8.66\"H, Neutral",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.2,
+            "depth": 17.2,
+            "height": 26.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD6ZV84.jpg"
+          ],
+          "description": "Type: embossed ceramic table vase\nUse: holding flowers or decor; living room, dining room, bedroom, on a table, shelf or console\nStyle: mid-century modern, rustic, bohemian\nMaterials: glazed stoneware with embossed relief\nColors: soft pale yellow-green, cream rim\nShape: rounded cylinder with domed shoulders, raised feather leaf pattern, wide cream collar, medium size\nFeel: soft, natural, calm\nGoes with: light wood, linen, sage and cream; mid-century or rustic rooms\n",
+          "score": 0.8775296117044337,
+          "kind": "vase"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

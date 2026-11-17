@@ -1,0 +1,10 @@
+# Experimento de modelos (2026-11-16): el mismo paso de elegir (un VLM ordena el top-10 mirando
+# las fotos de los candidatos) con Opus 5.5 (el del flujo, ya en la caché), Sonnet 5.5 y Haiku 5.5.
+# Mismo prompt y mismo effort (medium). `uv run amoblai evaluar --ablacion
+# datos/configs/ablaciones/reranking-modelos.yaml --pagar` (Sonnet unos US$4, Haiku centavos).
+name: ablacion-reranking-modelos
+methods:
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: type, rerank: opus}
+  - {embedder: qwen3, filter: type, rerank: sonnet}
+  - {embedder: qwen3, filter: type, rerank: haiku}

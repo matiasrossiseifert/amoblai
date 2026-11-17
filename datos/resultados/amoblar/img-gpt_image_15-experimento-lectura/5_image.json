@@ -1,0 +1,30 @@
+{
+  "generator": "gpt_image_15",
+  "image": "final.png",
+  "pending": false,
+  "model": "gpt-image-1.5",
+  "cost_usd": 0.0642,
+  "meta": {
+    "latency_s": 15.09,
+    "quality": "medium"
+  },
+  "attempts": [
+    {
+      "image": "final_intento_1.png",
+      "cost_usd": 0.064155,
+      "ok": false,
+      "ssim": 0.2653,
+      "sift_inliers": 7,
+      "sift_reencontrados": 0.0046,
+      "sift_desplazamiento_mediano": 0.0538
+    }
+  ],
+  "room_check": {
+    "image": "final_intento_1.png",
+    "ok": false,
+    "ssim": 0.2653,
+    "sift_inliers": 7,
+    "sift_reencontrados": 0.0046,
+    "sift_desplazamiento_mediano": 0.0538
+  }
+}

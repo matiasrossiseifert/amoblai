@@ -1,0 +1,191 @@
+{
+ "corrida": "img-gpt_image_2-experimento-lectura",
+ "imagen": "final.png",
+ "generador": "gpt_image_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "802.456.40",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": true,
+   "detector": "shelf",
+   "score_detector": 0.386,
+   "box": [
+    399,
+    270,
+    574,
+    788
+   ],
+   "puesto": 1,
+   "entre": 91,
+   "coseno": 0.5016,
+   "mas_parecido": "802.456.40"
+  },
+  {
+   "id": "abo-B07P5LM53Z",
+   "kind": "armchair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.468,
+   "box": [
+    632,
+    561,
+    1008,
+    937
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.7492,
+   "mas_parecido": "abo-B07P5LM53Z"
+  },
+  {
+   "id": "302.865.67",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "floor lamp",
+   "score_detector": 0.368,
+   "box": [
+    966,
+    420,
+    1274,
+    941
+   ],
+   "puesto": 2,
+   "entre": 172,
+   "coseno": 0.4041,
+   "mas_parecido": "abo-B07B4YXXS9"
+  },
+  {
+   "id": "401.366.81",
+   "kind": "side table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.371,
+   "box": [
+    991,
+    690,
+    1210,
+    972
+   ],
+   "puesto": 10,
+   "entre": 176,
+   "coseno": 0.3032,
+   "mas_parecido": "abo-B07DMJN8H3"
+  },
+  {
+   "id": "abo-B0719STM26",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.8,
+   "box": [
+    242,
+    761,
+    996,
+    1084
+   ],
+   "puesto": 60,
+   "entre": 178,
+   "coseno": 0.3059,
+   "mas_parecido": "abo-B0735THVQK"
+  },
+  {
+   "id": "302.006.96",
+   "kind": "throw",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.311,
+   "box": [
+    763,
+    563,
+    980,
+    703
+   ],
+   "puesto": 31,
+   "entre": 434,
+   "coseno": 0.1518,
+   "mas_parecido": "abo-B075X53WD9"
+  },
+  {
+   "id": "802.841.94",
+   "kind": "curtains",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.492,
+   "box": [
+    655,
+    689,
+    843,
+    824
+   ],
+   "puesto": 200,
+   "entre": 434,
+   "coseno": 0.0895,
+   "mas_parecido": "abo-B075X53WD9"
+  }
+ ],
+ "fidelidad": {
+  "productos": 7,
+  "detectados": 7,
+  "presencia": 1.0,
+  "coseno_medio": 0.3579,
+  "identificados@1": 0.2857,
+  "mrr": 0.3791
+ },
+ "inventadas": [
+  {
+   "detector": "footstool",
+   "categoria": "ottoman",
+   "score": 0.464,
+   "box": [
+    140,
+    707,
+    242,
+    811
+   ]
+  }
+ ],
+ "repetidas": [
+  {
+   "detector": "shelf",
+   "categoria": "shelf",
+   "score": 0.391,
+   "box": [
+    82,
+    188,
+    575,
+    885
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.514,
+  "ssim_fuera_de_los_muebles": 0.7967,
+  "fraccion_fuera_de_los_muebles": 0.3944,
+  "sift_puntos_original": 1528,
+  "sift_matches": 366,
+  "sift_inliers": 345,
+  "sift_reencontrados": 0.2258,
+  "sift_desplazamiento_mediano": 0.0013
+ },
+ "pedido_imagen": {
+  "pedido": "Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.",
+  "siglip_final": 0.1417,
+  "siglip_vacia": 0.0674,
+  "delta": 0.0743,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0101
+ }
+}

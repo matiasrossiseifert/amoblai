@@ -1,0 +1,1964 @@
+{
+ "a": "hibrida",
+ "b": "texto",
+ "ambientes": 11,
+ "empates": 4,
+ "resumen": {
+  "hibrida": {
+   "gana": 4,
+   "productos_por_lista": 6.82,
+   "util": 0.8,
+   "aceptable": 1.0,
+   "request": 4.091,
+   "room": 3.818,
+   "together": 3.682
+  },
+  "texto": {
+   "gana": 3,
+   "productos_por_lista": 6.82,
+   "util": 0.78,
+   "aceptable": 0.987,
+   "request": 4.0,
+   "room": 3.773,
+   "together": 3.591
+  }
+ },
+ "acuerdo_entre_ordenes": 0.636,
+ "votos_por_posicion_A": 0.6818181818181818,
+ "costo_usd": 0.0298,
+ "detalle": [
+  {
+   "slug": "caballito-living",
+   "ganador": "tie",
+   "votos": [
+    "hibrida",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B072M1WJF2",
+      "type": "three-seat sofa",
+      "size": "234 cm wide, 94 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072M1WJF2.jpg"
+     },
+     {
+      "id": "801.982.95",
+      "type": "plain flatwoven area rug",
+      "size": "200 cm wide, 300 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.982.95.jpg"
+     },
+     {
+      "id": "902.976.57",
+      "type": "square light wood coffee table",
+      "size": "70 cm wide, 70 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+     },
+     {
+      "id": "102.659.24",
+      "type": "long TV console with open shelves",
+      "size": "174 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/102.659.24.jpg"
+     },
+     {
+      "id": "abo-B07B4YXXS9",
+      "type": "arc floor lamp",
+      "size": "142 cm wide, 25 cm deep, 193 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B4YXXS9.jpg"
+     },
+     {
+      "id": "abo-B07JLSSWLL",
+      "type": "tassel trim throw cushion",
+      "size": "43 cm wide, 43 cm deep, 14 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B07JLSSWLL.jpg"
+     },
+     {
+      "id": "468.040.05",
+      "type": "areca palm in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+     },
+     {
+      "id": "202.975.71",
+      "type": "white light-filtering curtains, pair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/202.975.71.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "691.249.46",
+      "type": "three-seat sofa with track arms",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/couch/691.249.46.jpg"
+     },
+     {
+      "id": "801.982.95",
+      "type": "plain flatwoven area rug",
+      "size": "200 cm wide, 300 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.982.95.jpg"
+     },
+     {
+      "id": "902.976.57",
+      "type": "square light wood coffee table",
+      "size": "70 cm wide, 70 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+     },
+     {
+      "id": "102.659.24",
+      "type": "long TV console with open shelves",
+      "size": "174 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/102.659.24.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     },
+     {
+      "id": "abo-B07JLSSWLL",
+      "type": "tassel trim throw cushion",
+      "size": "43 cm wide, 43 cm deep, 14 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B07JLSSWLL.jpg"
+     },
+     {
+      "id": "468.040.05",
+      "type": "areca palm in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+     },
+     {
+      "id": "502.841.95",
+      "type": "pair of white linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.841.95.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 5.0,
+      "together": 5.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both proposals cover every requested piece with the same rug, table, console, cushions and palm, but A's black arc lamp echoes the black door frame and suits the modern look, while B's chrome swing-arm lamp feels colder next to the light wood. A's dimensions are also all stated, so its fit is verified, whereas several of B's sizes are unknown.",
+    "Proposal A's light grey sofa matches the client's 'gris claro' and sits well with the light wood table and pale walls, and its orange tassel cushions add the requested colour. Proposal B's sofa is greige with dark wood legs that clash with the light wood table and floor, so B is a weaker match to the room and the brief."
+   ],
+   "costo_usd": 0.003
+  },
+  {
+   "slug": "caballito-comedor",
+   "ganador": "hibrida",
+   "votos": [
+    "hibrida",
+    "hibrida"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "002.908.15",
+      "type": "rectangular solid wood dining table",
+      "size": "125 cm wide, 74 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/002.908.15.jpg"
+     },
+     {
+      "id": "003.015.26",
+      "type": "wooden dining chair",
+      "size": "size unknown",
+      "units": 4,
+      "photo": "datos/dataset/ikea/images/chair/003.015.26.jpg"
+     },
+     {
+      "id": "000.379.80",
+      "type": "white bell pendant lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/000.379.80.jpg"
+     },
+     {
+      "id": "abo-B07B7DMPX7",
+      "type": "herringbone-front sideboard",
+      "size": "150 cm wide, 50 cm deep, 77 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DMPX7.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "002.908.15",
+      "type": "rectangular solid wood dining table",
+      "size": "125 cm wide, 74 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/002.908.15.jpg"
+     },
+     {
+      "id": "802.251.66",
+      "type": "bistro-style wooden dining chair",
+      "size": "size unknown",
+      "units": 4,
+      "photo": "datos/dataset/ikea/images/chair/802.251.66.jpg"
+     },
+     {
+      "id": "000.379.80",
+      "type": "white bell pendant lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/000.379.80.jpg"
+     },
+     {
+      "id": "abo-B075Z8628K",
+      "type": "checkerboard front sideboard",
+      "size": "140 cm wide, 45 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B075Z8628K.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       0
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 2.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 2.0
+     }
+    ]
+   },
+   "por_que": [
+    "Proposal A keeps the light wood and white palette the client described and matches the pale oak floor and light kitchen cabinets, so the set reads as one calm Nordic look. Its only weak point is the sideboard's gold legs, which add a touch of glamour. Proposal B's dark, carved, mid-century sideboard and bistro-style chairs pull away from the simple Nordic style and sit awkwardly against the light table and white walls.",
+    "Both proposals share the same light birch table and white bell pendant, which match the request. B's black straight-backed chairs and white-and-light-oak sideboard keep the palette light and Nordic, and they pick up the light floor and white walls. A's warm, textured brown checkerboard sideboard clashes with the light wood table and the simple Nordic look the client asked for."
+   ],
+   "costo_usd": 0.0022
+  },
+  {
+   "slug": "alvear-escritorio",
+   "ganador": "texto",
+   "votos": [
+    "texto",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "302.990.70",
+      "type": "wooden desk with one drawer",
+      "size": "118 cm wide, 45 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.990.70.jpg"
+     },
+     {
+      "id": "abo-B07B7DKRVM",
+      "type": "wood-frame swivel desk chair",
+      "size": "71 cm wide, 62 cm deep, 105 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DKRVM.jpg"
+     },
+     {
+      "id": "990.234.08",
+      "type": "glass-door bookcase wall",
+      "size": "200 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/990.234.08.jpg"
+     },
+     {
+      "id": "490.904.81",
+      "type": "bentwood rocking armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/490.904.81.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "302.990.70",
+      "type": "wooden desk with one drawer",
+      "size": "118 cm wide, 45 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.990.70.jpg"
+     },
+     {
+      "id": "090.066.63",
+      "type": "bentwood swivel desk chair on casters",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/090.066.63.jpg"
+     },
+     {
+      "id": "990.234.08",
+      "type": "glass-door bookcase wall",
+      "size": "200 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/990.234.08.jpg"
+     },
+     {
+      "id": "490.904.81",
+      "type": "bentwood rocking armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/490.904.81.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 5.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 5.0,
+      "together": 5.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both proposals share the same desk, bookcase, armchair and lamp, which are all light-wood or Nordic in character. B's birch bentwood chair matches the desk and the rest of the room's light wood, giving one coherent Nordic look. A's upholstered chair is more comfortable, but its traditional honey-oak frame sits awkwardly beside the birch pieces.",
+    "Proposal A keeps every piece in pale birch or ash with Nordic lines, so the desk, chair, bookcase and rocker read as one set against the white walls and light oak floor. Proposal B's swivel chair is a warmer, more traditional honey-oak office chair that breaks the light-wood palette the client asked for."
+   ],
+   "costo_usd": 0.0023
+  },
+  {
+   "slug": "alvear-living-comedor",
+   "ganador": "tie",
+   "votos": [
+    "hibrida",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B072M1WJF2",
+      "type": "three-seat sofa",
+      "size": "234 cm wide, 94 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072M1WJF2.jpg"
+     },
+     {
+      "id": "503.056.16",
+      "type": "wingback armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/503.056.16.jpg"
+     },
+     {
+      "id": "902.976.57",
+      "type": "square light wood coffee table",
+      "size": "70 cm wide, 70 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+     },
+     {
+      "id": "801.982.95",
+      "type": "plain flatwoven area rug",
+      "size": "200 cm wide, 300 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.982.95.jpg"
+     },
+     {
+      "id": "702.943.39",
+      "type": "rectangular wooden dining table",
+      "size": "140 cm wide, 78 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/702.943.39.jpg"
+     },
+     {
+      "id": "abo-B0857JM2NC",
+      "type": "wooden dining armchair",
+      "size": "56 cm wide, 50 cm deep, 76 cm high",
+      "units": 6,
+      "photo": "datos/dataset/abo/images/B0857JM2NC.jpg"
+     },
+     {
+      "id": "703.116.97",
+      "type": "woven bamboo pendant lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/703.116.97.jpg"
+     },
+     {
+      "id": "102.911.31",
+      "type": "drum shade floor lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/102.911.31.jpg"
+     },
+     {
+      "id": "abo-B07B7DMPX7",
+      "type": "herringbone-front sideboard",
+      "size": "150 cm wide, 50 cm deep, 77 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07B7DMPX7.jpg"
+     },
+     {
+      "id": "502.841.95",
+      "type": "pair of white linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.841.95.jpg"
+     },
+     {
+      "id": "602.740.06",
+      "type": "green linen-look cushion",
+      "size": "size unknown",
+      "units": 3,
+      "photo": "datos/dataset/ikea/images/objects/602.740.06.jpg"
+     },
+     {
+      "id": "302.006.96",
+      "type": "cable-knit throw blanket",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.006.96.jpg"
+     },
+     {
+      "id": "468.040.05",
+      "type": "areca palm in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+     },
+     {
+      "id": "abo-B073P13P7Q",
+      "type": "abstract tree line print",
+      "size": "46 cm wide, 1 cm deep, 66 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B073P13P7Q.jpg"
+     },
+     {
+      "id": "abo-B07QHL8W81",
+      "type": "matte stoneware vases, set of two",
+      "size": "11 cm wide, 9 cm deep, 13 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QHL8W81.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "691.249.46",
+      "type": "three-seat sofa with track arms",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/couch/691.249.46.jpg"
+     },
+     {
+      "id": "503.056.16",
+      "type": "wingback armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/503.056.16.jpg"
+     },
+     {
+      "id": "902.976.57",
+      "type": "square light wood coffee table",
+      "size": "70 cm wide, 70 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+     },
+     {
+      "id": "801.982.95",
+      "type": "plain flatwoven area rug",
+      "size": "200 cm wide, 300 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.982.95.jpg"
+     },
+     {
+      "id": "702.943.39",
+      "type": "rectangular wooden dining table",
+      "size": "140 cm wide, 78 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/702.943.39.jpg"
+     },
+     {
+      "id": "abo-B0857JM2NC",
+      "type": "wooden dining armchair",
+      "size": "56 cm wide, 50 cm deep, 76 cm high",
+      "units": 6,
+      "photo": "datos/dataset/abo/images/B0857JM2NC.jpg"
+     },
+     {
+      "id": "703.116.97",
+      "type": "woven bamboo pendant lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/703.116.97.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     },
+     {
+      "id": "abo-B075Z8628K",
+      "type": "checkerboard front sideboard",
+      "size": "140 cm wide, 45 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B075Z8628K.jpg"
+     },
+     {
+      "id": "802.841.94",
+      "type": "pair of linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.841.94.jpg"
+     },
+     {
+      "id": "602.740.06",
+      "type": "green linen-look cushion",
+      "size": "size unknown",
+      "units": 2,
+      "photo": "datos/dataset/ikea/images/objects/602.740.06.jpg"
+     },
+     {
+      "id": "302.006.96",
+      "type": "cable-knit throw blanket",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.006.96.jpg"
+     },
+     {
+      "id": "468.040.05",
+      "type": "areca palm in a nursery pot",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/468.040.05.jpg"
+     },
+     {
+      "id": "abo-B073P13P7Q",
+      "type": "abstract tree line print",
+      "size": "46 cm wide, 1 cm deep, 66 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B073P13P7Q.jpg"
+     },
+     {
+      "id": "abo-B07QHL2D4B",
+      "type": "textured stoneware cylinder vase",
+      "size": "13 cm wide, 13 cm deep, 35 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QHL2D4B.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both proposals cover every requested piece with a Nordic, warm palette. A's light-oak herringbone sideboard and cream curtains suit the pale floors and walls, while B's darker mid-century sideboard and beige curtains pull away from the light-wood, cream-and-green palette the client asked for.",
+    "Both cover every requested piece, but A's sofa has light wood legs that match the room's oak floor and the request's light woods, while B's sofa has dark legs and its gold-legged sideboard adds a glam note that clashes with the Nordic warmth. A's mismatches are limited to the chrome lamp, the rustic checkerboard sideboard and the black-and-white print."
+   ],
+   "costo_usd": 0.0047
+  },
+  {
+   "slug": "experimento-lectura",
+   "ganador": "tie",
+   "votos": [
+    "hibrida",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "802.456.40",
+      "type": "tall solid wood bookcase",
+      "size": "90 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.456.40.jpg"
+     },
+     {
+      "id": "abo-B07P5LM53Z",
+      "type": "leather lounge armchair",
+      "size": "91 cm wide, 83 cm deep, 84 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07P5LM53Z.jpg"
+     },
+     {
+      "id": "302.865.67",
+      "type": "swing-arm floor lamp with drum shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.865.67.jpg"
+     },
+     {
+      "id": "401.366.81",
+      "type": "round side table with lower shelf",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/401.366.81.jpg"
+     },
+     {
+      "id": "abo-B0719STM26",
+      "type": "round braided jute rug",
+      "size": "152 cm wide, 20 cm deep, 20 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM26.jpg"
+     },
+     {
+      "id": "302.006.96",
+      "type": "cable-knit throw blanket",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/302.006.96.jpg"
+     },
+     {
+      "id": "802.841.94",
+      "type": "pair of linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.841.94.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "802.456.40",
+      "type": "tall solid wood bookcase",
+      "size": "90 cm wide",
+      "units": 2,
+      "photo": "datos/dataset/ikea/images/objects/802.456.40.jpg"
+     },
+     {
+      "id": "abo-B07DBGXFVF",
+      "type": "rolled-arm upholstered armchair",
+      "size": "94 cm wide, 85 cm deep, 91 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07DBGXFVF.jpg"
+     },
+     {
+      "id": "901.638.65",
+      "type": "floor lamp with pleated fabric shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/901.638.65.jpg"
+     },
+     {
+      "id": "401.366.81",
+      "type": "round side table with lower shelf",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/401.366.81.jpg"
+     },
+     {
+      "id": "abo-B0719STM26",
+      "type": "round braided jute rug",
+      "size": "152 cm wide, 20 cm deep, 20 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM26.jpg"
+     },
+     {
+      "id": "802.006.94",
+      "type": "cable knit throw blanket",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.006.94.jpg"
+     },
+     {
+      "id": "802.841.94",
+      "type": "pair of linen curtains",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.841.94.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 5.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       1,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 5.0,
+      "together": 4.0
+     }
+    ]
+   },
+   "por_que": [
+    "Proposal A's cognac leather chair, mid-century legs and swing-arm reading lamp suit the concrete ceiling and dark wood floor and give the warm, cozy reading corner the client described. Proposal B's extra bookcase better meets the call for a large library, but its beige rolled-arm chair is traditional and blends into the pale walls, weakening the room's character.",
+    "Proposal A delivers every element the client named in the warm, natural palette they asked for: a dark wood bookcase matching the floor, a beige fabric armchair, and natural textiles. Its only weak point is the brushed-nickel lamp. Proposal B's cognac leather chair is attractive but is not the natural textile the client asked for, and its chrome lamp has the same mismatch."
+   ],
+   "costo_usd": 0.0029
+  },
+  {
+   "slug": "publica-loft-industrial",
+   "ganador": "hibrida",
+   "votos": [
+    "hibrida",
+    "hibrida"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B07QBMQ4LN",
+      "type": "leather three-seat sofa",
+      "size": "218 cm wide, 104 cm deep, 89 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QBMQ4LN.jpg"
+     },
+     {
+      "id": "abo-B07QF9Y71V",
+      "type": "industrial rectangular coffee table",
+      "size": "135 cm wide, 75 cm deep, 40 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QF9Y71V.jpg"
+     },
+     {
+      "id": "abo-B07HSLTLGP",
+      "type": "wide open etagere bookcase",
+      "size": "140 cm wide, 21 cm deep, 43 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLTLGP.jpg"
+     },
+     {
+      "id": "003.313.78",
+      "type": "black swing-arm floor reading lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/003.313.78.jpg"
+     },
+     {
+      "id": "abo-B07HSL753S",
+      "type": "vintage-look fringed area rug",
+      "size": "290 cm wide, 229 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSL753S.jpg"
+     },
+     {
+      "id": "abo-B07BMTXJ12",
+      "type": "woven textured throw cushion",
+      "size": "43 cm wide, 43 cm deep, 15 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B07BMTXJ12.jpg"
+     },
+     {
+      "id": "002.857.91",
+      "type": "dark grey plant pot with saucer",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/002.857.91.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "abo-B07QBMQ4LN",
+      "type": "leather three-seat sofa",
+      "size": "218 cm wide, 104 cm deep, 89 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QBMQ4LN.jpg"
+     },
+     {
+      "id": "abo-B07QF9Y71V",
+      "type": "industrial rectangular coffee table",
+      "size": "135 cm wide, 75 cm deep, 40 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QF9Y71V.jpg"
+     },
+     {
+      "id": "abo-B07HSLTLGP",
+      "type": "wide open etagere bookcase",
+      "size": "140 cm wide, 21 cm deep, 43 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLTLGP.jpg"
+     },
+     {
+      "id": "003.313.78",
+      "type": "black swing-arm floor reading lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/003.313.78.jpg"
+     },
+     {
+      "id": "abo-B07HSHG86Y",
+      "type": "large southwestern area rug",
+      "size": "335 cm wide, 239 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSHG86Y.jpg"
+     },
+     {
+      "id": "abo-B07BMTXJ12",
+      "type": "woven textured throw cushion",
+      "size": "43 cm wide, 43 cm deep, 15 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B07BMTXJ12.jpg"
+     },
+     {
+      "id": "002.857.91",
+      "type": "dark grey plant pot with saucer",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/002.857.91.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 5.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       0,
+       2,
+       2
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both proposals share the same sofa, table, shelving, lamp, cushions and pot, all matching the brief. Proposal A's neutral grey-black-cream rug is a near miss on the requested earth tones, but Proposal B's blue, rust and cream southwestern rug clashes with the industrial palette and the warm wood, so A is the better overall look.",
+    "Both proposals share the same sofa, table, shelving, lamp, cushions and pot, and those suit the industrial brief. Proposal B's grey-and-cream rug stays within the requested earth tones, while Proposal A's blue southwestern rug brings in a colour and pattern that clash with the industrial, dark-metal, leather and wood palette."
+   ],
+   "costo_usd": 0.0023
+  },
+  {
+   "slug": "publica-living-clasico",
+   "ganador": "hibrida",
+   "votos": [
+    "hibrida",
+    "hibrida"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "390.338.01",
+      "type": "three-seat sofa with rolled arms",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/couch/390.338.01.jpg"
+     },
+     {
+      "id": "abo-B075X467QG",
+      "type": "wingback accent chair",
+      "size": "94 cm wide, 74 cm deep, 103 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B075X467QG.jpg"
+     },
+     {
+      "id": "abo-B0719STM6D",
+      "type": "large medallion wool rug",
+      "size": "292 cm wide, 231 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM6D.jpg"
+     },
+     {
+      "id": "abo-B07DBFFG9Z",
+      "type": "X-base wood coffee table",
+      "size": "120 cm wide, 60 cm deep, 46 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+     },
+     {
+      "id": "abo-B0718ZKMW1",
+      "type": "rectangular overlay wall mirror",
+      "size": "102 cm wide, 76 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0718ZKMW1.jpg"
+     },
+     {
+      "id": "abo-B07QD5SDWK",
+      "type": "turned-column floor lamp",
+      "size": "43 cm wide, 43 cm deep, 154 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QD5SDWK.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "390.338.01",
+      "type": "three-seat sofa with rolled arms",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/couch/390.338.01.jpg"
+     },
+     {
+      "id": "abo-B075X467QG",
+      "type": "wingback accent chair",
+      "size": "94 cm wide, 74 cm deep, 103 cm high",
+      "units": 2,
+      "photo": "datos/dataset/abo/images/B075X467QG.jpg"
+     },
+     {
+      "id": "abo-B0719STM6D",
+      "type": "large medallion wool rug",
+      "size": "292 cm wide, 231 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0719STM6D.jpg"
+     },
+     {
+      "id": "abo-B07DBFFG9Z",
+      "type": "X-base wood coffee table",
+      "size": "120 cm wide, 60 cm deep, 46 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+     },
+     {
+      "id": "abo-B0718ZKMW1",
+      "type": "rectangular overlay wall mirror",
+      "size": "102 cm wide, 76 cm deep, 2 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0718ZKMW1.jpg"
+     },
+     {
+      "id": "901.638.65",
+      "type": "floor lamp with pleated fabric shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/901.638.65.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 3.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       1,
+       1,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 3.0,
+      "room": 4.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both share the same sofa, chairs, rug, table and mirror, and the sofa is grey rather than the requested dark green velvet in both. Proposal A's aged, warm-toned turned-column lamp with a linen drum shade suits the classic room and the other pieces, while B's brushed-nickel base with a pleated white shade reads more modern and breaks the look.",
+    "Both share the same sofa, chairs, rug, table and mirror, which miss the requested dark green velvet sofa and fit the room well overall. B's turned-column lamp with a linen drum shade is more classic and better matches the traditional moldings and the fabric-shade request than A's modern nickel lamp, so B works better as one designed look."
+   ],
+   "costo_usd": 0.0024
+  },
+  {
+   "slug": "publica-comedor-clasico-moderno",
+   "ganador": "tie",
+   "votos": [
+    "hibrida",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B076NNYB3P",
+      "type": "rectangular wood dining table",
+      "size": "198 cm wide, 102 cm deep, 76 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B076NNYB3P.jpg"
+     },
+     {
+      "id": "abo-B07QJ24FSL",
+      "type": "upholstered dining chair, set of two",
+      "size": "66 cm wide, 53 cm deep, 103 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B07QJ24FSL.jpg"
+     },
+     {
+      "id": "abo-B07GNSXX6B",
+      "type": "drum shade pendant chandelier",
+      "size": "51 cm wide, 51 cm deep, 107 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07GNSXX6B.jpg"
+     },
+     {
+      "id": "abo-B07HSBD8DM",
+      "type": "four-door buffet sideboard",
+      "size": "173 cm wide, 51 cm deep, 82 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSBD8DM.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "abo-B076NNYB3P",
+      "type": "rectangular wood dining table",
+      "size": "198 cm wide, 102 cm deep, 76 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B076NNYB3P.jpg"
+     },
+     {
+      "id": "202.013.33",
+      "type": "upholstered dining chair",
+      "size": "size unknown",
+      "units": 6,
+      "photo": "datos/dataset/ikea/images/chair/202.013.33.jpg"
+     },
+     {
+      "id": "abo-B07GNSXX6B",
+      "type": "drum shade pendant chandelier",
+      "size": "51 cm wide, 51 cm deep, 107 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07GNSXX6B.jpg"
+     },
+     {
+      "id": "402.397.21",
+      "type": "walnut veneer sideboard",
+      "size": "160 cm wide",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/402.397.21.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 5.0,
+      "room": 4.0,
+      "together": 5.0
+     },
+     {
+      "grades": [
+       2,
+       1,
+       1,
+       1
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 2.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       1,
+       2,
+       1
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       1,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ]
+   },
+   "por_que": [
+    "Proposal A delivers the classic-yet-warm look the client described, with a dark wood table, gray nailhead-trimmed upholstered chairs, a black drum pendant, and a wood buffet with warm cabinet doors, all in a coherent palette. Proposal B's table and pendant are the same, but its modern Scandinavian chairs and flat-front walnut sideboard pull away from the classic style the client asked for.",
+    "Proposal A's dark wood table, classic taupe upholstered chairs with nailhead trim, and warm walnut sideboard form one cohesive classic-but-current look that matches the client's 'clásico pero actual, cálido' brief. Proposal B's modern chairs and rattan-door buffet pull the room toward a more casual, mixed style, though both proposals share the same pendant, which is somewhat small for a large table."
+   ],
+   "costo_usd": 0.0022
+  },
+  {
+   "slug": "publica-living-japandi",
+   "ganador": "hibrida",
+   "votos": [
+    "hibrida",
+    "hibrida"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B07K29TD1G",
+      "type": "two-seat track arm sofa",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07K29TD1G.jpg"
+     },
+     {
+      "id": "502.773.93",
+      "type": "natural jute area rug",
+      "size": "160 cm wide, 230 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.773.93.jpg"
+     },
+     {
+      "id": "302.397.12",
+      "type": "large round low coffee table",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+     },
+     {
+      "id": "101.841.74",
+      "type": "tall rice paper floor lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/101.841.74.jpg"
+     },
+     {
+      "id": "001.185.23",
+      "type": "braided money tree houseplant",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "abo-B072M1WJF2",
+      "type": "three-seat sofa",
+      "size": "234 cm wide, 94 cm deep, 80 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072M1WJF2.jpg"
+     },
+     {
+      "id": "502.773.93",
+      "type": "natural jute area rug",
+      "size": "160 cm wide, 230 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/502.773.93.jpg"
+     },
+     {
+      "id": "302.397.12",
+      "type": "large round low coffee table",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+     },
+     {
+      "id": "101.841.74",
+      "type": "tall rice paper floor lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/101.841.74.jpg"
+     },
+     {
+      "id": "001.185.23",
+      "type": "braided money tree houseplant",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 3.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both share the same rug, table, lamp and plant, so the difference is the sofa: A's low two-seat beige track-arm sofa matches the request for a low sofa, while B's 80 cm-high three-seater is a standard height and much bulkier. Both plants come in a plastic-looking nursery pot rather than the ceramic one requested, which costs both the same point.",
+    "Both proposals share the same rug, coffee table, lamp and plant, so the sofa decides it: B's two-seat, slim-armed sofa in a soft neutral suits the sparse, serene japandi brief better than A's bulkier 234 cm three-seater, which is not low and would crowd the room. Both plants come in a plastic-looking pot rather than the ceramic the client asked for."
+   ],
+   "costo_usd": 0.0023
+  },
+  {
+   "slug": "publica-living-bohemio",
+   "ganador": "texto",
+   "votos": [
+    "texto",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "abo-B082QDKRC5",
+      "type": "three-seat leather sofa",
+      "size": "193 cm wide, 87 cm deep, 83 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082QDKRC5.jpg"
+     },
+     {
+      "id": "500.583.76",
+      "type": "rattan tub armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/500.583.76.jpg"
+     },
+     {
+      "id": "abo-B07HSHG86Y",
+      "type": "large southwestern area rug",
+      "size": "335 cm wide, 239 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSHG86Y.jpg"
+     },
+     {
+      "id": "abo-B079V96B4C",
+      "type": "woven patterned cushion cover",
+      "size": "51 cm wide, 51 cm deep, 1 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B079V96B4C.jpg"
+     },
+     {
+      "id": "abo-B083YFL9J5",
+      "type": "embossed ceramic plant pot",
+      "size": "17 cm wide, 17 cm deep, 15 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B083YFL9J5.jpg"
+     },
+     {
+      "id": "abo-B07HSLTLGP",
+      "type": "wide open etagere bookcase",
+      "size": "140 cm wide, 21 cm deep, 43 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLTLGP.jpg"
+     },
+     {
+      "id": "abo-B07QFB1TLZ",
+      "type": "round wood coffee table",
+      "size": "110 cm wide, 110 cm deep, 42 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QFB1TLZ.jpg"
+     },
+     {
+      "id": "abo-B07QD5SDWK",
+      "type": "turned-column floor lamp",
+      "size": "43 cm wide, 43 cm deep, 154 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07QD5SDWK.jpg"
+     },
+     {
+      "id": "abo-B079TXJWT8",
+      "type": "geometric jacquard throw blanket",
+      "size": "152 cm wide, 127 cm deep, 1 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B079TXJWT8.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "abo-B082QDKRC5",
+      "type": "three-seat leather sofa",
+      "size": "193 cm wide, 87 cm deep, 83 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B082QDKRC5.jpg"
+     },
+     {
+      "id": "500.583.76",
+      "type": "rattan tub armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/500.583.76.jpg"
+     },
+     {
+      "id": "abo-B07HSHG86Y",
+      "type": "large southwestern area rug",
+      "size": "335 cm wide, 239 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSHG86Y.jpg"
+     },
+     {
+      "id": "103.349.13",
+      "type": "folk-print rectangular cushion with tassels",
+      "size": "size unknown",
+      "units": 3,
+      "photo": "datos/dataset/ikea/images/objects/103.349.13.jpg"
+     },
+     {
+      "id": "abo-B083YFL9J5",
+      "type": "embossed ceramic plant pot",
+      "size": "17 cm wide, 17 cm deep, 15 cm high",
+      "units": 3,
+      "photo": "datos/dataset/abo/images/B083YFL9J5.jpg"
+     },
+     {
+      "id": "abo-B07HSLTLGP",
+      "type": "wide open etagere bookcase",
+      "size": "140 cm wide, 21 cm deep, 43 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLTLGP.jpg"
+     },
+     {
+      "id": "abo-B07HSLKFD5",
+      "type": "round carved drum coffee table",
+      "size": "61 cm wide, 61 cm deep, 47 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B07HSLKFD5.jpg"
+     },
+     {
+      "id": "802.600.94",
+      "type": "white floor lamp with perforated shade",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/802.600.94.jpg"
+     },
+     {
+      "id": "abo-B079TXJWT8",
+      "type": "geometric jacquard throw blanket",
+      "size": "152 cm wide, 127 cm deep, 1 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B079TXJWT8.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       1,
+       1,
+       1
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       1,
+       2,
+       2
+      ],
+      "request": 3.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       1,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     },
+     {
+      "grades": [
+       1,
+       2,
+       2,
+       2,
+       2,
+       1,
+       2,
+       1,
+       2
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both share the sofa, rattan chair, rug, plant pots and bookcase, so the difference is in the accents. B's folk-print tasselled cushions and carved mango-style drum table lean more bohemian and lived-in than A's gold-based coffee table and traditional turned lamp, though B's white perforated lamp is a minor stylistic clash.",
+    "Both share the leather sofa, which misses the mustard velvet, and the tall five-shelf etagere, which is not the low bookcase requested. Proposal A's bolder folk-print cushions and drum table give the livelier, more bohemian feel the client asked for, while Proposal B's gold-base coffee table and cushion covers pull toward a more modern, muted look, though its turned-column lamp suits the room better."
+   ],
+   "costo_usd": 0.0031
+  },
+  {
+   "slug": "publica-estudio-sobrio",
+   "ganador": "texto",
+   "votos": [
+    "texto",
+    "texto"
+   ],
+   "listas": {
+    "hibrida": [
+     {
+      "id": "102.447.43",
+      "type": "compact desk with drawers and cabinet",
+      "size": "105 cm wide, 50 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/102.447.43.jpg"
+     },
+     {
+      "id": "abo-B072Z6K34L",
+      "type": "ergonomic mesh office chair",
+      "size": "69 cm wide, 66 cm deep, 112 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072Z6K34L.jpg"
+     },
+     {
+      "id": "abo-B0723CV5P7",
+      "type": "low wide open bookcase",
+      "size": "160 cm wide, 30 cm deep, 90 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0723CV5P7.jpg"
+     },
+     {
+      "id": "801.060.12",
+      "type": "glossy black articulated work lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.060.12.jpg"
+     },
+     {
+      "id": "391.505.88",
+      "type": "cantilever bentwood leather lounge armchair",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/chair/391.505.88.jpg"
+     }
+    ],
+    "texto": [
+     {
+      "id": "102.447.43",
+      "type": "compact desk with drawers and cabinet",
+      "size": "105 cm wide, 50 cm deep",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/102.447.43.jpg"
+     },
+     {
+      "id": "abo-B072Z6K34L",
+      "type": "ergonomic mesh office chair",
+      "size": "69 cm wide, 66 cm deep, 112 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072Z6K34L.jpg"
+     },
+     {
+      "id": "abo-B0723CV5P7",
+      "type": "low wide open bookcase",
+      "size": "160 cm wide, 30 cm deep, 90 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B0723CV5P7.jpg"
+     },
+     {
+      "id": "801.060.12",
+      "type": "glossy black articulated work lamp",
+      "size": "size unknown",
+      "units": 1,
+      "photo": "datos/dataset/ikea/images/objects/801.060.12.jpg"
+     },
+     {
+      "id": "abo-B072Y6Y96S",
+      "type": "upholstered reception armchair",
+      "size": "69 cm wide, 66 cm deep, 88 cm high",
+      "units": 1,
+      "photo": "datos/dataset/abo/images/B072Y6Y96S.jpg"
+     }
+    ]
+   },
+   "puntajes": {
+    "hibrida": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 3.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 3.0,
+      "together": 3.0
+     }
+    ],
+    "texto": [
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       2
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 5.0
+     },
+     {
+      "grades": [
+       2,
+       2,
+       2,
+       2,
+       1
+      ],
+      "request": 4.0,
+      "room": 4.0,
+      "together": 4.0
+     }
+    ]
+   },
+   "por_que": [
+    "Both proposals share the same desk, chair, bookcase and lamp, which fit the dark wood, black and gray palette well. Proposal B's black leather armchair with dark wood legs keeps the palette unified, while Proposal A's cognac leather lounge chair introduces a warm tan that clashes with the black and gray scheme.",
+    "Both proposals share the same desk, chair, bookcase and lamp, all matching the black, dark wood and gray palette. Proposal A's black upholstered armchair keeps that palette intact, though it is a reception chair rather than a reading lounge. Proposal B's bentwood leather lounge chair suits the reading role better, but its cognac tan leather brings an off-palette warm accent that breaks the black-and-dark-wood look."
+   ],
+   "costo_usd": 0.0024
+  }
+ ]
+}

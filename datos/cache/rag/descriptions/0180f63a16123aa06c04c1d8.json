@@ -1,0 +1,34 @@
+{
+  "product": "003.101.06",
+  "text": "Type: lamp\nName: SINNERLIG\nColors: Frosted glass, cork\nLight bulb sold separately. IKEA recommends LED bulb E14 400 lumen. View more product information Gives a soft mood light.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "003.101.06",
+      "name": "SINNERLIG",
+      "category": "lamp",
+      "kind": "table lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Table lamp",
+      "category_tp": "lamp",
+      "size_raw": "22 cm",
+      "colors": [
+        "Frosted glass",
+        "cork"
+      ],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb E14 400 lumen. View more product information Gives a soft mood light."
+    },
+    "photos": [
+      "49f8e4036f660258"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "product": "402.708.20",
+  "text": "Type: dresser\nName: ASKVOLL\nColors: White stained oak effect, white\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "402.708.20",
+      "name": "ASKVOLL",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 45.0
+      },
+      "type_ikea": "Chest of 5 drawers",
+      "category_tp": "dresser",
+      "size_raw": "45x109 cm",
+      "colors": [
+        "White stained oak effect",
+        "white"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "e3ebc9dd6ef89e9c"
+    ]
+  }
+}

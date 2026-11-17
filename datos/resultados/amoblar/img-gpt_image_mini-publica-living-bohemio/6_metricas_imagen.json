@@ -1,0 +1,95 @@
+{
+ "corrida": "img-gpt_image_mini-publica-living-bohemio",
+ "imagen": "final.png",
+ "generador": "gpt_image_mini",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B082QDKRC5",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": false
+  },
+  {
+   "id": "500.583.76",
+   "kind": "armchair",
+   "categoria": "chair",
+   "detectado": false
+  },
+  {
+   "id": "abo-B07HSHG86Y",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": false
+  },
+  {
+   "id": "abo-B079V96B4C",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": false
+  },
+  {
+   "id": "abo-B083YFL9J5",
+   "kind": "plant pot",
+   "categoria": "deco",
+   "detectado": false
+  },
+  {
+   "id": "abo-B07HSLTLGP",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": false
+  },
+  {
+   "id": "abo-B07QFB1TLZ",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": false
+  },
+  {
+   "id": "abo-B07QD5SDWK",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": false
+  },
+  {
+   "id": "abo-B079TXJWT8",
+   "kind": "throw",
+   "categoria": "deco",
+   "detectado": false
+  }
+ ],
+ "fidelidad": {
+  "productos": 9,
+  "detectados": 0,
+  "presencia": 0.0,
+  "coseno_medio": null,
+  "identificados@1": 0.0,
+  "mrr": 0.0
+ },
+ "inventadas": [],
+ "repetidas": [],
+ "ambiente": {
+  "ssim": 0.2956,
+  "ssim_fuera_de_los_muebles": 0.2975,
+  "fraccion_fuera_de_los_muebles": 1.0,
+  "sift_puntos_original": 711,
+  "sift_matches": 11,
+  "sift_inliers": 4,
+  "sift_reencontrados": 0.0056,
+  "sift_desplazamiento_mediano": 0.333
+ },
+ "pedido_imagen": {
+  "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+  "siglip_final": -0.017,
+  "siglip_vacia": 0.0188,
+  "delta": -0.0359,
+  "puesto_entre_contrastes": 3,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.1235
+ }
+}

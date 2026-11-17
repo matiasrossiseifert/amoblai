@@ -1,0 +1,237 @@
+{
+ "corrida": "img-gpt_image_15-publica-living-bohemio",
+ "imagen": "final.png",
+ "generador": "gpt_image_15",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "abo-B082QDKRC5",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.645,
+   "box": [
+    152,
+    463,
+    859,
+    771
+   ],
+   "puesto": 21,
+   "entre": 95,
+   "coseno": 0.484,
+   "mas_parecido": "abo-B07KXZR3XL"
+  },
+  {
+   "id": "500.583.76",
+   "kind": "armchair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.471,
+   "box": [
+    884,
+    469,
+    1081,
+    708
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.8421,
+   "mas_parecido": "500.583.76"
+  },
+  {
+   "id": "abo-B07HSHG86Y",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.834,
+   "box": [
+    1,
+    645,
+    1535,
+    1022
+   ],
+   "puesto": 26,
+   "entre": 178,
+   "coseno": 0.2894,
+   "mas_parecido": "abo-B07B4WGZFT"
+  },
+  {
+   "id": "abo-B079V96B4C",
+   "kind": "cushion",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.466,
+   "box": [
+    591,
+    474,
+    714,
+    582
+   ],
+   "puesto": 2,
+   "entre": 434,
+   "coseno": 0.4819,
+   "mas_parecido": "abo-B07JM1XVHS"
+  },
+  {
+   "id": "abo-B083YFL9J5",
+   "kind": "plant pot",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "plant",
+   "score_detector": 0.553,
+   "box": [
+    1362,
+    430,
+    1435,
+    519
+   ],
+   "puesto": 21,
+   "entre": 434,
+   "coseno": 0.2145,
+   "mas_parecido": "702.766.51"
+  },
+  {
+   "id": "abo-B07HSLTLGP",
+   "kind": "bookcase",
+   "categoria": "shelf",
+   "detectado": true,
+   "detector": "cabinet",
+   "score_detector": 0.411,
+   "box": [
+    1222,
+    503,
+    1535,
+    693
+   ],
+   "puesto": 17,
+   "entre": 91,
+   "coseno": 0.2307,
+   "mas_parecido": "abo-B07MNQB6F3"
+  },
+  {
+   "id": "abo-B07QFB1TLZ",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.389,
+   "box": [
+    428,
+    664,
+    854,
+    902
+   ],
+   "puesto": 1,
+   "entre": 176,
+   "coseno": 0.6245,
+   "mas_parecido": "abo-B07QFB1TLZ"
+  },
+  {
+   "id": "abo-B07QD5SDWK",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "pendant lamp",
+   "score_detector": 0.421,
+   "box": [
+    785,
+    312,
+    881,
+    525
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.5222,
+   "mas_parecido": "abo-B07QD5SDWK"
+  },
+  {
+   "id": "abo-B079TXJWT8",
+   "kind": "throw",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "cushion",
+   "score_detector": 0.445,
+   "box": [
+    271,
+    478,
+    430,
+    602
+   ],
+   "puesto": 57,
+   "entre": 434,
+   "coseno": 0.2124,
+   "mas_parecido": "abo-B07TFDD1MR"
+  }
+ ],
+ "fidelidad": {
+  "productos": 9,
+  "detectados": 9,
+  "presencia": 1.0,
+  "coseno_medio": 0.4335,
+  "identificados@1": 0.3333,
+  "mrr": 0.4122
+ },
+ "inventadas": [],
+ "repetidas": [
+  {
+   "detector": "plant",
+   "categoria": "deco",
+   "score": 0.606,
+   "box": [
+    1453,
+    395,
+    1515,
+    526
+   ]
+  },
+  {
+   "detector": "plant",
+   "categoria": "deco",
+   "score": 0.561,
+   "box": [
+    1262,
+    393,
+    1409,
+    513
+   ]
+  },
+  {
+   "detector": "curtains",
+   "categoria": "deco",
+   "score": 0.326,
+   "box": [
+    462,
+    169,
+    634,
+    340
+   ]
+  }
+ ],
+ "ambiente": {
+  "ssim": 0.2328,
+  "ssim_fuera_de_los_muebles": 0.3695,
+  "fraccion_fuera_de_los_muebles": 0.349,
+  "sift_puntos_original": 711,
+  "sift_matches": 20,
+  "sift_inliers": 6,
+  "sift_reencontrados": 0.0084,
+  "sift_desplazamiento_mediano": 0.0582
+ },
+ "pedido_imagen": {
+  "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+  "siglip_final": 0.0919,
+  "siglip_vacia": 0.0188,
+  "delta": 0.0731,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0369
+ }
+}

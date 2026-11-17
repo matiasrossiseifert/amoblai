@@ -1,0 +1,35 @@
+{
+  "product": "500.772.47",
+  "text": "Type: shelf\nName: HENSVIK\nColors: White\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "500.772.47",
+      "name": "HENSVIK",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 75.0
+      },
+      "type_ikea": "Cabinet with shelf unit",
+      "category_tp": "cabinet",
+      "size_raw": "75x161 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "85512aeb429cc90e"
+    ]
+  }
+}

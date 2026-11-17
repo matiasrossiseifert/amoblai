@@ -1,0 +1,663 @@
+{
+  "pieces": [
+    {
+      "piece": "Biblioteca alta y ancha de madera oscura, contra la pared izquierda",
+      "spec": {
+        "piece": "Biblioteca alta y ancha de madera oscura, contra la pared izquierda",
+        "why": "Es la pieza principal que pidieron. Al ser alta y de madera oscura como el piso, ancla el cuarto, aporta calidez frente al hormig\u00f3n y el blanco, y guarda muchos libros.",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 260,
+        "max_depth_cm": 40,
+        "max_height_cm": 240,
+        "query": "Type: bookcase, tall wide open shelving\nUse: storing many books; reading room\nStyle: contemporary, Japandi, mid-century modern\nMaterials: solid wood, dark walnut veneer\nColors: dark walnut brown, warm gray-brown\nShape: tall and wide, many open shelves, clean lines, strong visual weight\nFeel: warm, cozy, bookish\nGoes with: dark wood-look floor, white walls, exposed concrete ceiling, black window frames"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07DMHTGJD",
+          "name": "2L Lifestyle Hyder Wood Shelf Bookcase Tall, Brown",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 75.9,
+            "depth": 40.4,
+            "height": 160.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DMHTGJD.jpg"
+          ],
+          "description": "Type: shelf\nName: 2L Lifestyle Hyder Wood Shelf Bookcase Tall, Brown\nColors: Brown\nMaterials: Wood\nDesigned with 5 wide shelves to offer ample room for storage Included anti-tilt safety feature fits securely to the wall and shelf Made of solid wood legs and MDF veneer with NC top finish Great for books storage or displaying decorative pieces Compact structure to fit in any small spaces(Dimension: 29.9\u201d L x 15.9\u201d W x 63\u201d H)\n",
+          "score": 1.938572639820037,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PSZHDNK",
+          "name": "AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PSZHDNK.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut\nColors: Walnut\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.6493315504687,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07ZPG5CL6",
+          "name": "AmazonBasics Modern Ladder Bookcase With Solid Rubber Wood Frame - Walnut (Renewed)",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 63.1,
+            "depth": 35.6,
+            "height": 178.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07ZPG5CL6.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Modern Ladder Bookcase With Solid Rubber Wood Frame - Walnut (Renewed)\nColors: Walnut\n5-tier ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.3830341842828755,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PQS58XN",
+          "name": "AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PQS58XN.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso\nColors: Espresso\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.354796196022493,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PSZHDMW",
+          "name": "AmazonBasics Modern 5-Tier Ladder Bookshelf Organizer with Solid Rubber Wood Frame, Walnut",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 63.1,
+            "depth": 35.6,
+            "height": 178.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PSZHDMW.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Modern 5-Tier Ladder Bookshelf Organizer with Solid Rubber Wood Frame, Walnut\nColors: Walnut\nMaterials: Wood\n5-tier ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood frame; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware Bookshelf Dimensions: 24.8 x 14 x 70.1 inches (WxDxH)\n",
+          "score": 1.271479195286889,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "Sill\u00f3n de lectura junto a la ventana, en la esquina",
+      "spec": {
+        "piece": "Sill\u00f3n de lectura junto a la ventana, en la esquina",
+        "why": "Junto a la ventana en esquina recibe la mejor luz natural para leer. Un sill\u00f3n envolvente tapizado en tela natural clara, con estructura de madera, suma confort y calidez.",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 90,
+        "max_depth_cm": 95,
+        "max_height_cm": null,
+        "query": "Type: armchair, deep comfortable reading chair\nUse: reading and relaxing; reading nook\nStyle: mid-century modern, Japandi, contemporary\nMaterials: wooden frame, linen or boucl\u00e9 upholstery\nColors: warm cream, oatmeal, dark wood\nShape: enveloping back, wide arms, wooden legs, medium visual weight\nFeel: cozy, warm, inviting\nGoes with: dark walnut bookcase, dark wood floor, white walls, concrete ceiling"
+      },
+      "candidates": [
+        {
+          "id": "590.335.55",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/590.335.55.jpg"
+          ],
+          "description": "Type: chair\nName: STOCKSUND\nColors: Nolhaga dark grey, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 1.7097916380219618,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07P5LM53Z",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 90.9,
+            "depth": 83.1,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LM53Z.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel\nColors: Caramel\nMaterials: Wood\nThis modern armchair sports a strong profile and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 32.7\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this armchair as practical as it is stylish. Tapered legs add elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.5670918047074904,
+          "kind": "armchair"
+        },
+        {
+          "id": "690.335.45",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/690.335.45.jpg"
+          ],
+          "description": "Type: chair\nName: STOCKSUND\nColors: Nolhaga grey-beige, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 1.4565129699212964,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B07J2R9TVF",
+          "name": "Amazon Brand \u2013 Rivet Brooke Contemporary Mid-Century Modern Tufted Living Room Accent Chair, 35\"W, Grey",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 109.2,
+            "depth": 78.7,
+            "height": 91.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07J2R9TVF.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Brooke Contemporary Mid-Century Modern Tufted Living Room Accent Chair, 35\"W, Grey\nColors: Gray Fabric\nMaterials: Textile\nAdd mid-century charm to your home decor with this striking living-room chair. Its crisp lines and distinct shape combine for an attractive contemporary-style look, and its beautiful fabric upholstery will blend well with your existing interior-design style. Overall: 35\"W x 35\"D x 31\"H; seat height: 19.29\"H; seat depth: 22.83\"D Solid-wood frame and fabric upholstery with brass legs Elegant contemporary-style design also pairs well with vintage or mid-century-modern home decor Simple assembly in less than 15 minutes Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.278001239876545,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B072Y6Y96S",
+          "name": "AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 69.0,
+            "depth": 66.5,
+            "height": 88.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072Y6Y96S.jpg"
+          ],
+          "description": "Type: chair\nName: AmazonBasics Classic Reception Office Chair with Mahogany Wood Finish Legs - Black\nColors: Black\nMaterials: Caressoft upholstery; Mahogany wood finish legs\nReception chair provides a comfortable place to sit\u2014ideal for a lobby or waiting room Supremely soft and durable Caressoft upholstery in solid black Mahogany wood finish legs with a slight outward flare for added stability 250-pound weight capacity; sleek contemporary style Measures 26.5 by 26.5 by 35.5 inches (LxWxH); weighs 30.6 pounds; backed by an AmazonBasics one-year limited warranty\n",
+          "score": 1.1674394776201964,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "L\u00e1mpara de pie al lado del sill\u00f3n",
+      "spec": {
+        "piece": "L\u00e1mpara de pie al lado del sill\u00f3n",
+        "why": "Da luz c\u00e1lida y dirigida para leer de noche, ya que la \u00fanica luz del techo es general. Una pantalla de tela o fibra suaviza el hormig\u00f3n.",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, reading lamp with shade\nUse: reading light beside armchair; reading nook\nStyle: mid-century modern, Japandi\nMaterials: wood stem, linen fabric shade\nColors: dark wood, natural linen, warm white light\nShape: slender, tall, soft shade, light visual weight\nFeel: warm, soft, calm\nGoes with: dark walnut bookcase, cream armchair, dark wood floor, black window frames"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash\nColors: Distressed Grey\nMaterials: Linen\nThe rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only\n",
+          "score": 1.8505843663111534,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07374SBFL",
+          "name": "Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 25.4,
+            "height": 149.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374SBFL.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel\nColors: Brushed Nickel\nMaterials: Metal\nModern style Brushed nickel finish from base to adjustable sleek metal shade Provides ample light while fitting in a small space 10\"Wx17\"Dx59\"H Easily assembled in 15 minutes Curl up with a good book under this adjustable floor reading lamp, which shines highly focused light. The brushed nickel finish and simple, minimalist design will add just the right modern splash to your d\u00e9cor.\n",
+          "score": 0.9191901438539724,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07B4SC9N7",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 29.5,
+            "depth": 25.0,
+            "height": 155.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4SC9N7.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass\nColors: Matte Black With Antique Brass\nThis very functional floor lamp has two multidirectional shades -- each with its own on/off switch -- that allow you to adjust the amount of light and point it in multiple directions. Brass and matte black metal combine for a striking contrast. 9.9\"W x 11.6\"D x 61.25\"H Metal shade and base with black finish; metal pole with antiqued brass finish Shades adjust to point light in multiple directions; each has on/off switch Integrated LED lamp Assemble in 15 minutes or less Intended for indoor use only\n",
+          "score": 0.8979331272484642,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 0.5321132291419695,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "901.638.65",
+          "name": "RSTID",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/901.638.65.jpg"
+          ],
+          "description": "Type: lamp\nName: RSTID\nColors: Nickel-plated, white\nThe textile shade provides a diffused and decorative light.\n",
+          "score": 0.4898455100996104,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "Mesita auxiliar junto al sill\u00f3n para el caf\u00e9",
+      "spec": {
+        "piece": "Mesita auxiliar junto al sill\u00f3n para el caf\u00e9",
+        "why": "Pidieron una mesita para apoyar el caf\u00e9. Una peque\u00f1a y redonda de madera oscura queda a mano sin recargar la esquina y combina con la biblioteca.",
+        "kinds": [
+          "side table"
+        ],
+        "max_width_cm": 50,
+        "max_depth_cm": 50,
+        "max_height_cm": 60,
+        "query": "Type: side table, small round\nUse: holding coffee and a book; reading nook\nStyle: mid-century modern, Japandi\nMaterials: solid wood, walnut\nColors: dark walnut brown\nShape: small round top, slim legs or pedestal, light visual weight\nFeel: warm, simple, handy\nGoes with: dark walnut bookcase, cream armchair, dark wood floor"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07B7ND7YH",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Nesting Metal Side Table, Set of 2, Brass and Walnut",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 52.1,
+            "depth": 45.5,
+            "height": 52.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7ND7YH.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Mid-Century Nesting Metal Side Table, Set of 2, Brass and Walnut\nColors: Brass+walnut\nMaterials: brass\nAdd mid-century modern flair to your room with these wood and brass nesting tables. Wood-grain patterning and retro tapered legs add visual interest. They're ideal for serving snacks to guests, but compact and stackable when you need to save space. (L): 20.5\"W x 20.5\"D x 21.9\"H; Leg Height: 20.5\"H; (S): 15.7\"W x 15.7\"D x 17.9\"H; Leg Height: 16.4\"H Fiberboard with walnut veneer; metal with brass finish Fun and functional retro style Compact design for small spaces Assembly in 15 minutes Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.4872071151500965,
+          "kind": "side table"
+        },
+        {
+          "id": "abo-B07B7J5XSQ",
+          "name": "Amazon Brand \u2013 Rivet Modern Round Metal Side End Accent Table, 15\"W, Black",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 55.1,
+            "depth": 39.1,
+            "height": 39.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7J5XSQ.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Modern Round Metal Side End Accent Table, 15\"W, Black\nColors: Black\nMaterials: metal\nThis simple end table adds a bit of modern style beside a chair or sofa, along with space for a lamp and your favorite beverage. A round tray top resting on slim, tapered legs brings a bit of mid-century influence to your room. 15.4\"W x 15.4\"D x 21.7\"H; Leg Height: 20.7\"H Metal top and legs with black finish Metal finished in black makes this ideal for a modern or industrial room Use for displaying small items, or as a place for your favorite beverage Assembly in 15 minutes; just screw on legs Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.4669895180212338,
+          "kind": "side table"
+        },
+        {
+          "id": "abo-B07HSCJZQQ",
+          "name": "Amazon Brand \u2013 Rivet Heather Modern End Table, 17.7 Inch Weight, Walnut",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 50.0,
+            "depth": 45.0,
+            "height": 57.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSCJZQQ.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Heather Modern End Table, 17.7 Inch Weight, Walnut\nColors: Multi Color\nMaterials: metal\nComplement your home\u2019s modern design with this beautifully simple mid-century-style end table. The 2 walnut-colored shelves and leather bag provide both elegance and organization options, and a strong metal frame keeps the table sturdy. 17.7\"W x 15.7\"D x 20.9\"H Walnut-colored MDF on a metal frame, with a leather bag Mid-century design updated to complement a modern simple style This end table's 2 layers of shelves and extra leather bag offer options for eazy organization. No assembly required Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.0235048174270835,
+          "kind": "side table"
+        },
+        {
+          "id": "abo-B07DBB7FVL",
+          "name": "Amazon Brand \u2013 Ravenna Home Morley Classic Round Pedestal Side End Table, 20\"W, Black",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 51.1,
+            "depth": 51.1,
+            "height": 64.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBB7FVL.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Ravenna Home Morley Classic Round Pedestal Side End Table, 20\"W, Black\nColors: Black\nMaterials: Pine\nSolid pine and medium-density fibreboard A classic round table that can hold a clock, lamp or favorite photos beside a chair or bed Traditional round top with pedestal legs Less than 15 minutes assembly required Free returns for 30 days. 1-year warranty. 20.1\"L x 20.1\"W x 25.2\"H\n",
+          "score": 1.0188565980716893,
+          "kind": "side table"
+        },
+        {
+          "id": "102.397.13",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/102.397.13.jpg"
+          ],
+          "description": "Type: table\nName: STOCKHOLM\nColors: Walnut veneer\nThe table surface in walnut veneer and legs in solid walnut give a warm, natural feeling to your room.\n",
+          "score": 0.8851766936278986,
+          "kind": "side table"
+        }
+      ]
+    },
+    {
+      "piece": "Alfombra redonda clara bajo el sill\u00f3n y la mesita",
+      "spec": {
+        "piece": "Alfombra redonda clara bajo el sill\u00f3n y la mesita",
+        "why": "Una alfombra redonda clara de fibras naturales define el rinc\u00f3n de lectura, aclara el piso oscuro y suma textura c\u00e1lida bajo los pies.",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 200,
+        "max_depth_cm": 200,
+        "max_height_cm": null,
+        "query": "Type: rug, round light-colored\nUse: defining the reading corner; reading nook\nStyle: Japandi, Scandinavian, contemporary\nMaterials: wool, jute, natural fibers\nColors: cream, ivory, light beige\nShape: round, soft textured weave, medium size\nFeel: soft, warm, cozy\nGoes with: dark wood floor, cream armchair, dark walnut bookcase, white walls"
+      },
+      "candidates": [
+        {
+          "id": "abo-B0719STM26",
+          "name": "nuLOOM Rikki Braided Border Jute Area Rug, 8' Round, Off-white",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 20.3,
+            "height": 20.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0719STM26.jpg"
+          ],
+          "description": "Type: rug\nName: nuLOOM Rikki Braided Border Jute Area Rug, 8' Round, Off-white\nColors: Off-white\nMaterials: jute\nThis inherently beautiful jute rug is left in its natural tan color. It will bring a neutral, classic accent to a low-traffic area such as a bedroom. Classic casual style Made of 100% jute Timeless look with durability 8' Diameter Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.\n",
+          "score": 2.412359069210233,
+          "kind": "rug"
+        },
+        {
+          "id": "302.290.77",
+          "name": "TEJN",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.290.77.jpg"
+          ],
+          "description": "Type: rug\nName: TEJN\nColors: White\nThe rug is super soft, warm and cosy. Ideal on the floor or draped across your favourite armchair.\n",
+          "score": 1.9016102586209673,
+          "kind": "rug"
+        },
+        {
+          "id": "302.944.97",
+          "name": "FRDRUP",
+          "category": "rug",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.944.97.jpg"
+          ],
+          "description": "Type: rug\nName: FRDRUP\nColors: Grey\nThe rug is super soft, warm and cosy. Ideal on the floor or draped across your favourite armchair.\n",
+          "score": 1.588499753404295,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0725Z9MX3",
+          "name": "Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 152.4,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z9MX3.jpg"
+          ],
+          "description": "Type: rug\nName: Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut\nColors: Chestnut\nMaterials: wool\n100% Wool Imported Gradated tones of chestnut give this rug a beautiful texture and a calming feel. Hand-tufted of 100% wool, this contemporary rug is durable and ready to blend with your existing styles. Transitional style Hand-tufted in India of 100% wool Timeless look with durability for high-traffic areas 5' x 7'6\" Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.\n",
+          "score": 1.5185228636724588,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07HSN3TVY",
+          "name": "Amazon Brand \u2013 Stone & Beam Modern Jute Area Rug, 3 x 5 Foot, Nuetral Multicolor",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 91.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSN3TVY.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Modern Jute Area Rug, 3 x 5 Foot, Nuetral Multicolor\nMaterials: stone\nUpgrade your home decor with this striking modern-style rug. Its bold shapes provide a focal point for your room, and its strong but neutral colors are sure to both complement and enhance your existing interior-design theme. 3' x 5' 100% jute Natural jute fibers give this rug a rustic feel. It is handcrafted by Craftmark-certified artisans, helping to preserve the global craft tradition. Flatweave (pile is not applicable) Pair with rug pad (sold separately)\n",
+          "score": 1.2040367552972915,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "Manta tejida sobre el sill\u00f3n",
+      "spec": {
+        "piece": "Manta tejida sobre el sill\u00f3n",
+        "why": "Pidieron textiles naturales y calidez. Una manta de lana o algod\u00f3n tejido en tono c\u00e1lido completa la sensaci\u00f3n acogedora del rinc\u00f3n.",
+        "kinds": [
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: throw, chunky knit blanket\nUse: warmth while reading; reading nook\nStyle: Scandinavian, Japandi\nMaterials: wool, cotton knit\nColors: warm terracotta, camel, oatmeal\nShape: soft chunky texture, draped over armchair\nFeel: cozy, warm, soft\nGoes with: cream armchair, dark walnut wood, round light rug"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07DTLKPJG",
+          "name": "AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 33.8,
+            "depth": 29.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTLKPJG.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel\nColors: Camel\nMaterials: 75% Polyester, 25% Acrylic\nBlanket with classic knit design and fringed edges Soft acrylic and polyester construction Comfortable to use in all seasons Fits in with both contemporary and classic d\u00e9cor styles Available in a variety of sizes and colors to complement your home\n",
+          "score": 1.7769519536388099,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B075X53WD9",
+          "name": "Rivet Modern Global-Inspired Textured Tassel Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X53WD9.jpg"
+          ],
+          "description": "Type: deco\nName: Rivet Modern Global-Inspired Textured Tassel Throw Blanket\nColors: Gray\nMaterials: 100% cotton\nThis throw is a comfy, functional work of art. Inspired by archaelogical finds in Mexico's Tulum ruins, it features layers of texture and oversized, hand-tied tassels. Use on a bed, drape over your sofa or hang on the wall for a true style statement. 50\"W x 60\"L 100% cotton Spot clean only.\n",
+          "score": 1.340501953502694,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B07DT66Q2X",
+          "name": "AmazonBasics Knitted Chenille Throw Blanket - 50 x 60 Inches, White",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 31.0,
+            "depth": 31.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DT66Q2X.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics Knitted Chenille Throw Blanket - 50 x 60 Inches, White\nColors: White\nMaterials: 100% Polyester\nBlanket with cozy, classic knit texture Ultra-soft chenille polyester construction Comfortable to use in all seasons Fits in with both contemporary and classic d\u00e9cor styles Available in a variety of sizes and colors to complement your home\n",
+          "score": 1.3056542728435598,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B078LDWJVN",
+          "name": "Stone & Beam Oversized Stripe Brushed Weave Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B078LDWJVN.jpg"
+          ],
+          "description": "Type: deco\nName: Stone & Beam Oversized Stripe Brushed Weave Throw Blanket\n",
+          "score": 1.0342141586665623,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B075X5B8CQ",
+          "name": "Amazon Brand \u2013 Rivet High Contrast Black and White Global Geometric 100% Cotton Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X5B8CQ.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet High Contrast Black and White Global Geometric 100% Cotton Throw Blanket\nColors: Gray\nMaterials: 100% cotton\nHigh contrast black and white and oversized tassels make this throw a standout that can even be hung as wall art. Hand-woven and hand-tied, this global-inspired piece is also soft enough to use as a blanket or snuggle up in on the sofa. 50\"W x 60\"L Hand woven of 100% cotton Spot clean only.\n",
+          "score": 0.9654918645659335,
+          "kind": "throw"
+        }
+      ]
+    },
+    {
+      "piece": "Cortinas de lino en la ventana en esquina",
+      "spec": {
+        "piece": "Cortinas de lino en la ventana en esquina",
+        "why": "El lino natural suaviza la gran ventana con marco negro, filtra la luz para leer sin reflejos y suma calidez textil al cuarto.",
+        "kinds": [
+          "curtains"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: curtains, sheer linen panels\nUse: filtering daylight; reading room\nStyle: Japandi, Scandinavian, contemporary\nMaterials: linen\nColors: natural linen, warm off-white\nShape: light flowing panels, floor length, light visual weight\nFeel: airy, soft, warm\nGoes with: black window frames, white walls, concrete ceiling, cream armchair"
+      },
+      "candidates": [
+        {
+          "id": "500.460.48",
+          "name": "MATILDA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.460.48.jpg"
+          ],
+          "description": "Type: deco\nName: MATILDA\nColors: White\nThe sheer curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.4140116504666802,
+          "kind": "curtains"
+        },
+        {
+          "id": "902.975.63",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.975.63.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: Beige\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.2085306575275272,
+          "kind": "curtains"
+        },
+        {
+          "id": "202.975.71",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.975.71.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: White\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.1425340423643322,
+          "kind": "curtains"
+        },
+        {
+          "id": "002.975.67",
+          "name": "VIVAN",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/002.975.67.jpg"
+          ],
+          "description": "Type: deco\nName: VIVAN\nColors: Grey\nThe curtains let the daylight through but provide privacy so they are perfect to use in a layered window solution.\n",
+          "score": 1.0770117355585689,
+          "kind": "curtains"
+        },
+        {
+          "id": "abo-B07JMP73CJ",
+          "name": "Stone & Beam Light Filtering Jacquard Diamond Curtain",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JMP73CJ.jpg"
+          ],
+          "description": "Type: deco\nName: Stone & Beam Light Filtering Jacquard Diamond Curtain\n",
+          "score": 1.010607044989227,
+          "kind": "curtains"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

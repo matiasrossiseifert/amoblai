@@ -1,0 +1,35 @@
+{
+  "product": "101.928.24",
+  "text": "Type: cabinet\nName: ALEX\nColors: White\nDrawer stops prevent the drawers from being pulled out too far.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "101.928.24",
+      "name": "ALEX",
+      "category": "cabinet",
+      "kind": "file cabinet",
+      "dimensions_cm": {
+        "width": 36.0
+      },
+      "type_ikea": "Drawer unit",
+      "category_tp": "cabinet",
+      "size_raw": "36x70 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Drawer stops prevent the drawers from being pulled out too far."
+    },
+    "photos": [
+      "925dd403694e8f17"
+    ]
+  }
+}

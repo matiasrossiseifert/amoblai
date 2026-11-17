@@ -1,0 +1,33 @@
+{
+  "product": "402.805.17",
+  "text": "Type: chair\nName: JANINGE\nColors: Grey\nYou can stack the chairs, so they take less space when you're not using them.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "402.805.17",
+      "name": "JANINGE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Grey"
+      ],
+      "description": "You can stack the chairs, so they take less space when you're not using them."
+    },
+    "photos": [
+      "4098c5ed3aff22a9"
+    ]
+  }
+}

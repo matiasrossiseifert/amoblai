@@ -1,0 +1,486 @@
+{
+  "pieces": [
+    {
+      "piece": "a light wood desk beside the large window, against the left part of the window wall",
+      "spec": {
+        "piece": "a light wood desk beside the large window, against the left part of the window wall",
+        "why": "they want to work in the natural light, and a slim desk in light oak with tapered legs matches the floor and the Nordic style without blocking the window",
+        "kinds": [
+          "desk"
+        ],
+        "max_width_cm": 140,
+        "max_depth_cm": 70,
+        "max_height_cm": null,
+        "query": "Type: desk, simple wooden writing desk\nUse: working and studying; home office corner by a window\nStyle: Scandinavian, minimalist\nMaterials: solid oak or ash wood, oak veneer\nColors: light natural oak\nShape: slim rectangular top, tapered wooden legs, one thin drawer, light visual weight\nFeel: airy, calm, functional\nGoes with: white walls, light oak-look floor, black window frames; Nordic work corner"
+      },
+      "candidates": [
+        {
+          "id": "abo-B082DFP8N8",
+          "name": "Amazon Brand \u2013 Rivet Avery Industrial Home Office Writing Desk with Metal Base, 40\"W, Weathered Gray Oak Finish",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 101.6,
+            "depth": 45.7,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082DFP8N8.jpg"
+          ],
+          "description": "Type: desk\nName: Amazon Brand \u2013 Rivet Avery Industrial Home Office Writing Desk with Metal Base, 40\"W, Weathered Gray Oak Finish\nColors: Weathered Gray Oak\nMaterials: Engineered Wood\nIndustrial style meets contemporary functionality in this sturdy, streamlined desk. This versatile piece makes a home office or workplace style statement while also standing up to daily use. A single slim drawer offers handy storage without spoiling the elegantly sparse lines of the desk. 40\"W x 18\"D x 30\"H Durable MDF wood with gray-washed-oak-finished hardwood veneer and an antique bronze-finished metal base A wide top offers ample workspace for writers, artists, or busy professionals. The single drawer slides easily. The clean lines of this desk speak to its industrial-chic roots. The distressed gray finish of the top pairs perfectly with the antiqued metal base. Assemble in 15-30 minutes Using a soft, damp cloth, wipe in the direction of the wood grain. Free returns for 30 days; 1-year warranty.\n",
+          "score": 1.862982276388496,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B07QC85X9J",
+          "name": "Amazon Brand \u2013 Stone & Beam Classic Home Office Desk with Drawer, 54\"W, Dark Espresso",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 137.2,
+            "depth": 59.7,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC85X9J.jpg"
+          ],
+          "description": "Type: desk\nName: Amazon Brand \u2013 Stone & Beam Classic Home Office Desk with Drawer, 54\"W, Dark Espresso\nColors: Dark Espresso\nMaterials: Engineered Wood\nThe classic design and rich dark-espresso finish of this desk make it a striking and useful addition to your home office or interior space. Ample writing space and plenty of leg room allow for maximum productivity. 54''W x 23.5''D x 30''H Solid pine and MDF; dark espresso finish This pine desk combines style and function to provide ample space for your home office needs. The dark espresso finish and the classic lines of this desk bring a distinctive flair to any home office or living space. Assemble in 15-30 minutes Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.3371618153923215,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B075ZBVZST",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Curved Wood Table Home Office Computer Desk, 48.4\"L, Walnut",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 122.9,
+            "depth": 56.4,
+            "height": 79.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075ZBVZST.jpg"
+          ],
+          "description": "Type: desk\nName: Amazon Brand \u2013 Rivet Mid-Century Curved Wood Table Home Office Computer Desk, 48.4\"L, Walnut\nColors: Brown\nMaterials: Wood\n48.4\"W x 22.2\"D x 31.1\"H Walnut veneer finish Simple, practical style with one-drawer storage A classic mid-century design, this desk features iconic clean lines and curves along the back edges for a style that blends with modern or contemporary d\u00e9cor. It features an open work area with a middle drawer underneath for storage. Easy assembly in 15-30 minutes. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.3147371764789122,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B0836YQ7QX",
+          "name": "Amazon Brand \u2013 Ravenna Home Solid Pine Writing Desk, 53.25\"W, Antique Espresso",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 135.3,
+            "depth": 57.4,
+            "height": 75.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0836YQ7QX.jpg"
+          ],
+          "description": "Type: desk\nName: Amazon Brand \u2013 Ravenna Home Solid Pine Writing Desk, 53.25\"W, Antique Espresso\nColors: Brown\nMaterials: Wood\n53.25\"W x 22.6\"D x 29.75\"H Solid pine construction with metal hardware This sturdy piece has two large drawers perfect for storage and a large working surface, making this the ideal work-at-home desk. The antique espresso finish is complemented by metal hardware and style details that give this writing desk a midcentury look. Assemble in 15-30 minutes Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.1876201932219665,
+          "kind": "desk"
+        },
+        {
+          "id": "abo-B075Z6YS29",
+          "name": "Amazon Brand \u2013 Rivet Modern Wood and Metal Hairpin Small Table Desk, 47.2\"W, Walnut",
+          "category": "desk",
+          "dimensions_cm": {
+            "width": 119.9,
+            "depth": 56.4,
+            "height": 78.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z6YS29.jpg"
+          ],
+          "description": "Type: desk\nName: Amazon Brand \u2013 Rivet Modern Wood and Metal Hairpin Small Table Desk, 47.2\"W, Walnut\nColors: Walnut\nMaterials: walnut veneer\n47.2\"W x 22.2\"D x 30.9\"H Metal legs with warm walnut wood veneer Highly functional with large work space and three storage compartments on the back edge Add industrial style to your home office or study space with this practical desk. Featuring a mix of engineered wood, walnut veneer, and metal, it provides ample storage and work space. The uniquely designed hairpin legs are both sturdy and sleek. Easy assembly in 15-30 minutes. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.9208781189239451,
+          "kind": "desk"
+        }
+      ]
+    },
+    {
+      "piece": "a comfortable desk chair at the desk, facing the window",
+      "spec": {
+        "piece": "a comfortable desk chair at the desk, facing the window",
+        "why": "they asked for a comfortable chair to work at the desk, and a padded wooden chair with armrests is comfortable for long sessions while staying Nordic and warm",
+        "kinds": [
+          "desk chair"
+        ],
+        "max_width_cm": 65,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: desk chair, upholstered wooden chair\nUse: sitting at the desk for long work sessions; home office\nStyle: Scandinavian, Japandi\nMaterials: light oak or beech wood frame, padded fabric seat and back\nColors: light natural wood, oatmeal or light grey fabric\nShape: curved backrest, armrests, wooden legs, compact and ergonomic, medium-light visual weight\nFeel: comfortable, warm, simple\nGoes with: light oak desk, white walls, oak-look floor; Nordic style"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07B7DKRVM",
+          "name": "Amazon Brand \u2013 Stone & Beam Alicia Contemporary Office Chair, 38\"H, Oak",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 71.0,
+            "depth": 61.5,
+            "height": 105.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DKRVM.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Alicia Contemporary Office Chair, 38\"H, Oak\nColors: Oak\nA mid-century influenced office chair with sloping minimalist arms gets a modern refresh in style and function. Warm rustic wood trim gives it a modern farmhouse appeal. The height and tilt can be adjusted, and it swivels 360 degrees. 24.2\"W x 28\"D x 38.4\"-41.3\"H Ashwood frame and legs; 100% linen fabric; foam cushion; iron base A style that blends with traditional, transitional and farmhouse d\u00e9cor 360 degree swivel function; height and tilt of chair can be adjusted Free returns for 30 days. 3-year warranty. Assembly in 30 minutes or less; assemble seat, insert base and casters\n",
+          "score": 1.735298829600166,
+          "kind": "desk chair"
+        },
+        {
+          "id": "103.203.41",
+          "name": "KULLABERG",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/103.203.41.jpg"
+          ],
+          "description": "Type: chair\nName: KULLABERG\nColors: Pine, black\nA desk chair inspired by old-fashioned industrial-style chairs, complete with modern functions.\n",
+          "score": 0.9588562115304805,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07CT6K8FB",
+          "name": "Rivet Edgemont Contemporary Home Office Desk Chair, 24\"H, Swivel, Zebra Print",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07CT6K8FB.jpg"
+          ],
+          "description": "Type: chair\nName: Rivet Edgemont Contemporary Home Office Desk Chair, 24\"H, Swivel, Zebra Print\n",
+          "score": 0.5935624937791252,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07HSG7KWF",
+          "name": "Amazon Brand \u2013 Rivet Modern Leather Swivel Desk Armless Office Chair 30.6 Inch Height, Adjustable Height, Grey",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 61.9,
+            "depth": 54.1,
+            "height": 73.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSG7KWF.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Modern Leather Swivel Desk Armless Office Chair 30.6 Inch Height, Adjustable Height, Grey\nMaterials: Leather\nThis high-backed modern desk chair lends any office an air of sleek sophistication with its chromed base and genuine gray leather seat, while its ability to swivel gives it an ergonomic edge over its stationary counterparts. 25.88\"W x 22.8\"D x 30.6\"H; Seat Height: 18.72-23.2\u201dH; Seat Depth: 17.16\u201dD; Seat Back Height: 21.45\u201dH 100% Genuine Leather A chromed base helps achieve a contemporary style for your work space . Carefully crafted gray genuine leather creates a welcoming atmosphere in your office. Simple assembly in 15-30 minutes Wipes clean with a soft, dry cloth. Avoid moisture. Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.5710058917496897,
+          "kind": "desk chair"
+        },
+        {
+          "id": "abo-B07B7DL3H8",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Office Desk Chair, 33\"-36\", Grey/Chrome",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 55.9,
+            "height": 61.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DL3H8.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Contemporary Office Desk Chair, 33\"-36\", Grey/Chrome\nColors: Grey/Chrome\nMaterials: Metal\nWith both height and tilt adjustments along with 360 degree swivel, this chair is functional and comfortable. The classic grey upholstery is paired with a metal base on casters, for a look that blends with modern or industrial decor. 22.6\"W x 24\"D x 33\"-36\"H Poplar, eucalyptus, iron base, and polyester fabric Mid-century minimalist, retro style 360 degree swivel function; height and tilt of chair can be adjusted Assembly in 15 minutes or less; simply screw on seat and casters Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.5249346284972977,
+          "kind": "desk chair"
+        }
+      ]
+    },
+    {
+      "piece": "a tall bookcase against the white wall on the right",
+      "spec": {
+        "piece": "a tall bookcase against the white wall on the right",
+        "why": "the long white wall on the right can hold all the books, and a tall open bookcase in light wood adds warmth without making the room feel heavy",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 40,
+        "max_height_cm": 240,
+        "query": "Type: bookcase, tall open wooden bookshelf\nUse: storing books and a few objects; living room reading corner\nStyle: Scandinavian, minimalist\nMaterials: light oak or ash wood\nColors: light natural oak\nShape: tall and wide, open shelves, slim frame, clean lines, medium visual weight\nFeel: orderly, warm, light\nGoes with: white walls, light oak-look floor, light wood desk; Nordic style"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSLTLGP",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 140.5,
+            "depth": 20.8,
+            "height": 42.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLTLGP.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame\nMaterials: wood\nLipped wood shelves keep your belongings securely stored within the simple black metal frame of this towering bookcase. With a modern industrial flair, it makes a perfect display medium to show off your collection without distracting from it. 55\u201dW x 15\u201dD x 72\u201dH 30% metal, 70% wood Sleek, simple design adds a minimalist flair to any office or library A simple black metal frame supports 5 sturdy wooden shelves. Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.6140153698613124,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07DMHTGJD",
+          "name": "2L Lifestyle Hyder Wood Shelf Bookcase Tall, Brown",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 75.9,
+            "depth": 40.4,
+            "height": 160.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DMHTGJD.jpg"
+          ],
+          "description": "Type: shelf\nName: 2L Lifestyle Hyder Wood Shelf Bookcase Tall, Brown\nColors: Brown\nMaterials: Wood\nDesigned with 5 wide shelves to offer ample room for storage Included anti-tilt safety feature fits securely to the wall and shelf Made of solid wood legs and MDF veneer with NC top finish Great for books storage or displaying decorative pieces Compact structure to fit in any small spaces(Dimension: 29.9\u201d L x 15.9\u201d W x 63\u201d H)\n",
+          "score": 1.3449334309294256,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07QC876WJ",
+          "name": "Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 117.3,
+            "depth": 38.1,
+            "height": 86.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC876WJ.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal\nColors: Natural\nElm wood shelving and an airy metal frame give this bookcase a contemporary flair that fits with any decor. The ample space between shelves allows you to keep your home office clutter free. 34\"W x 15\"D x 70\"H Metal frame with elm wood shelves Ample space between shelves can contain books, souvenirs, and art objects. This spacious contemporary bookcase fits with any room and interior design. Assemble in 15-30 minutes Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.323219162438701,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PQS58XN",
+          "name": "AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PQS58XN.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso\nColors: Espresso\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.2400156099780875,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PSZHDNK",
+          "name": "AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PSZHDNK.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut\nColors: Walnut\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.210930686407416,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "a reading armchair in the corner by the window, near the bookcase",
+      "spec": {
+        "piece": "a reading armchair in the corner by the window, near the bookcase",
+        "why": "they want a lounge armchair for reading, and a wooden-frame armchair with soft light upholstery is cozy and looks perfectly Nordic in the daylight",
+        "kinds": [
+          "armchair"
+        ],
+        "max_width_cm": 85,
+        "max_depth_cm": 85,
+        "max_height_cm": null,
+        "query": "Type: armchair, lounge reading chair\nUse: relaxing and reading; living room reading corner\nStyle: Scandinavian, mid-century modern\nMaterials: light oak wood frame, wool or boucle upholstery\nColors: light natural wood, cream or warm light grey\nShape: exposed wooden armrests and legs, slightly reclined back, thick cushions, medium visual weight\nFeel: cozy, inviting, soft\nGoes with: light oak bookcase and desk, white walls, oak-look floor; Nordic style"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07P5LM53Z",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 90.9,
+            "depth": 83.1,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LM53Z.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Sloane Modern Leather Armchair with Tapered Legs, 32.7\"W, Caramel\nColors: Caramel\nMaterials: Wood\nThis modern armchair sports a strong profile and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 32.7\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this armchair as practical as it is stylish. Tapered legs add elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.7019025179290084,
+          "kind": "armchair"
+        },
+        {
+          "id": "102.335.32",
+          "name": "NOLMYRA",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/102.335.32.jpg"
+          ],
+          "description": "Type: chair\nName: NOLMYRA\nColors: Birch veneer, grey\nThe armchair is lightweight and easy to move if you want to clean the floor or rearrange the furniture.\n",
+          "score": 1.1106403208202131,
+          "kind": "armchair"
+        },
+        {
+          "id": "abo-B075X467QG",
+          "name": "Amazon Brand \u2013 Stone & Beam Hillsboro Modern Wingback Living Room Accent Chair With Nailhead Trim, 29\"W, Beige",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 94.0,
+            "depth": 73.7,
+            "height": 102.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X467QG.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Hillsboro Modern Wingback Living Room Accent Chair With Nailhead Trim, 29\"W, Beige\nColors: Beige\nMaterials: Stone\nStreamlined, gently curving \"wings\" and arms give a refined, modern refresh to the mid-century wingback chair. Hand-applied nailhead trim with brass finish adds an air of sophistication, while the seat cushion is removable for easy cleaning. 29\"W x 37''D x 40.5''H Rayon/linen/polyester blend fabric; metal nailhead trim with brass finish; wood legs. A modernized silhouette of the mid-century wingback style with removable seat cushion Assemble in 15 minutes or less. Vacuum or wipe with soft dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.0299867679995824,
+          "kind": "armchair"
+        },
+        {
+          "id": "690.335.45",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/690.335.45.jpg"
+          ],
+          "description": "Type: chair\nName: STOCKSUND\nColors: Nolhaga grey-beige, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 0.9603913997368704,
+          "kind": "armchair"
+        },
+        {
+          "id": "590.335.55",
+          "name": "STOCKSUND",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/590.335.55.jpg"
+          ],
+          "description": "Type: chair\nName: STOCKSUND\nColors: Nolhaga dark grey, black, wood\nExtra wide and deep armchair with plenty of room for you to sit and relax comfortably.\n",
+          "score": 0.9161167982783089,
+          "kind": "armchair"
+        }
+      ]
+    },
+    {
+      "piece": "a floor lamp next to the armchair for reading",
+      "spec": {
+        "piece": "a floor lamp next to the armchair for reading",
+        "why": "they want a floor lamp for reading, and a slim lamp with a wooden stand and a fabric shade gives warm, directed light at night and ties in with the light wood",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, reading lamp\nUse: reading light beside an armchair; living room\nStyle: Scandinavian, minimalist\nMaterials: light wood stand, linen fabric shade\nColors: light natural wood, white or cream\nShape: slim tripod or straight stand, slightly angled shade, light visual weight\nFeel: warm, soft, calm\nGoes with: light oak armchair and bookcase, white walls, black window frames; Nordic style"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07QD5SDWK",
+          "name": "Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 43.2,
+            "height": 153.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QD5SDWK.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Vintage Floor Lamp with Linen Burlap Shade, 60.5\"H, Whitewash\nColors: Distressed Grey\nMaterials: Linen\nThe rounded white linen burlap shade allows a cozy glow to be cast from this floor lamp. The shade pairs with the whitewash pattern of the lamp\u2019s base, allowing it to be the bright spot in the room or to blend with the rest of the existing decor, as needed. The sturdy metal design makes it a great addition in any room. 17\"W x 17\"D x 60.5\"H Add warm, cozy ambient light to your room with this vintage-style lamp. A fine whitewash finish on the base is paired with a white linen burlap shade. With hints of rustic, this lamp is ideal for a modern farmhouse decor. LED bulb included Assemble in 15-30 minutes Indoor use only\n",
+          "score": 1.7769607424301572,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 0.7207416961373793,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07374SBFL",
+          "name": "Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 25.4,
+            "height": 149.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374SBFL.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel\nColors: Brushed Nickel\nMaterials: Metal\nModern style Brushed nickel finish from base to adjustable sleek metal shade Provides ample light while fitting in a small space 10\"Wx17\"Dx59\"H Easily assembled in 15 minutes Curl up with a good book under this adjustable floor reading lamp, which shines highly focused light. The brushed nickel finish and simple, minimalist design will add just the right modern splash to your d\u00e9cor.\n",
+          "score": 0.632255278598164,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07B4SC9N7",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 29.5,
+            "depth": 25.0,
+            "height": 155.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4SC9N7.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass\nColors: Matte Black With Antique Brass\nThis very functional floor lamp has two multidirectional shades -- each with its own on/off switch -- that allow you to adjust the amount of light and point it in multiple directions. Brass and matte black metal combine for a striking contrast. 9.9\"W x 11.6\"D x 61.25\"H Metal shade and base with black finish; metal pole with antiqued brass finish Shades adjust to point light in multiple directions; each has on/off switch Integrated LED lamp Assemble in 15 minutes or less Intended for indoor use only\n",
+          "score": 0.4812951030023917,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "802.600.94",
+          "name": "IKEA PS 2014",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/802.600.94.jpg"
+          ],
+          "description": "Type: lamp\nName: IKEA PS 2014\nIts easy to switch between functional light for reading and decorative mood light just by tilting the lamp shade.\n",
+          "score": 0.4489503374346229,
+          "kind": "floor lamp"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

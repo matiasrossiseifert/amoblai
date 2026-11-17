@@ -1,0 +1,379 @@
+{
+  "pieces": [
+    {
+      "piece": "una mesa de comedor rectangular de madera oscura, en el centro del espacio entre la pen\u00ednsula de la cocina y la escalera",
+      "spec": {
+        "piece": "una mesa de comedor rectangular de madera oscura, en el centro del espacio entre la pen\u00ednsula de la cocina y la escalera",
+        "why": "pidieron una mesa oscura para seis u ocho personas; en tono espresso repite los muebles de la cocina y el pasamanos, y contrasta con el suelo rojizo sin confundirse con \u00e9l",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 220,
+        "max_depth_cm": 105,
+        "max_height_cm": null,
+        "query": "Type: dining table, rectangular extendable wood table\nUse: family dinners for six to eight; open-plan dining area\nStyle: traditional, contemporary, classic\nMaterials: solid wood, espresso stained wood\nColors: dark espresso brown\nShape: rectangular, sturdy legs or trestle base, clean classic lines, substantial visual weight\nFeel: warm, timeless, welcoming\nGoes with: espresso kitchen cabinets, dark wood stair handrail, reddish hardwood floor, cream walls"
+      },
+      "candidates": [
+        {
+          "id": "701.162.62",
+          "name": "BJURSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/701.162.62.jpg"
+          ],
+          "description": "Type: extendable rectangular dining table\nUse: dining, hosting extra guests; dining room, kitchen\nStyle: modern, minimalist, traditional\nMaterials: black-brown stained wood veneer, solid wood legs, pull-out extension leaves\nColors: black-brown, dark espresso\nShape: rectangular top with a deep apron and a visible extension seam, four straight square legs, solid and plain, medium visual weight\nFeel: sturdy, calm, dark, versatile\nGoes with: white or beige chairs, light walls, black or chrome accents; modern or classic family dining rooms\n",
+          "score": 4.061767158311922,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B076NNYB3P",
+          "name": "Amazon Brand \u2013 Stone & Beam Dunbar Wood Dining Room Kitchen Table, 78\"L, Oak Finish",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 101.6,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B076NNYB3P.jpg"
+          ],
+          "description": "Type: rectangular wood dining table\nUse: family dining, gatherings; dining room, kitchen\nStyle: traditional, farmhouse, classic\nMaterials: solid wood, oak grain finish\nColors: dark warm brown wood\nShape: long rectangular top, straight apron, four tapered square legs, sturdy and large, simple clean lines\nFeel: warm, grounded, timeless\nGoes with: upholstered or wood chairs, beige or white walls, iron accents; traditional or farmhouse dining rooms\n",
+          "score": 3.876241494166454,
+          "kind": "dining table"
+        },
+        {
+          "id": "501.168.09",
+          "name": "BJURSTA",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/501.168.09.jpg"
+          ],
+          "description": "Type: extendable square dining table in dark wood\nUse: everyday dining, hosting more guests when extended; dining room, kitchen, family room\nStyle: classic, traditional, contemporary\nMaterials: brown-black stained wood veneer, pull-out leaves stored under the top\nColors: dark brown-black\nShape: square top, deep plain apron, extension leaves sliding out at both ends, four thick square legs, grounded and solid, medium visual weight\nFeel: dependable, warm, sober, sturdy\nGoes with: black or white chairs, light walls, warm wood floors, cream textiles; classic dining rooms or modern family kitchens\n",
+          "score": 3.6711863072463182,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B07DBFFG9Z",
+          "name": "Amazon Brand \u2013 Ravenna Home Flush Mount Wood Cross Coffee Table, 23.6\"W, Dark Brown Walnut",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 120.0,
+            "depth": 60.0,
+            "height": 46.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBFFG9Z.jpg"
+          ],
+          "description": "Type: X-base wood coffee table\nUse: holding drinks, books and remotes; living room\nStyle: farmhouse, traditional, rustic\nMaterials: wood with dark stained finish\nColors: dark walnut brown\nShape: rectangular top with molded edge, X-shaped trestle legs at each end, long center stretcher, sturdy medium visual weight\nFeel: warm, grounded, classic\nGoes with: cream or grey sofas, warm woods, iron accents; farmhouse or traditional rooms\n",
+          "score": 3.547232168237224,
+          "kind": "coffee table"
+        },
+        {
+          "id": "902.224.07",
+          "name": "INGATORP",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/902.224.07.jpg"
+          ],
+          "description": "Type: round extendable dining table on pedestal\nUse: dining, family meals, seating extra guests; dining room, kitchen\nStyle: classic, traditional, farmhouse\nMaterials: black stained solid wood, wood-based top, turned wood pedestal base\nColors: black, deep black-brown\nShape: round top with a profiled edge and deep apron, center leaf for an oval shape, turned column pedestal on four curved feet, solid and grounded\nFeel: cozy, elegant, sturdy, timeless\nGoes with: painted or wood windsor chairs, cream walls, rugs; classic kitchens and farmhouse dining rooms\n",
+          "score": 3.4860728435296395,
+          "kind": "dining table"
+        }
+      ]
+    },
+    {
+      "piece": "seis sillas de comedor tapizadas en tela gris, alrededor de la mesa",
+      "spec": {
+        "piece": "seis sillas de comedor tapizadas en tela gris, alrededor de la mesa",
+        "why": "son las sillas que pidieron; el gris enfr\u00eda con suavidad la madera oscura y la crema de las paredes, y el tapizado aporta comodidad y un aire actual",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": 55,
+        "max_depth_cm": 65,
+        "max_height_cm": null,
+        "query": "Type: dining chair, upholstered fabric chair\nUse: seating at the dining table; open-plan dining room\nStyle: contemporary, classic, traditional\nMaterials: grey fabric upholstery, dark wood legs\nColors: warm grey, espresso brown\nShape: upholstered seat and back, slightly curved or straight back, tapered dark legs, medium visual weight\nFeel: comfortable, elegant, cozy\nGoes with: dark espresso dining table, cream walls, reddish hardwood floor, dark wood stair handrail"
+      },
+      "candidates": [
+        {
+          "id": "abo-B084W2RH8Z",
+          "name": "Amazon Brand \u2013 Stone & Beam Linden Classic Upholstered Dining Chair, 18.9\"W, Set of 2, Cadet Blue",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 62.0,
+            "depth": 48.0,
+            "height": 87.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084W2RH8Z.jpg"
+          ],
+          "description": "Type: upholstered dining chair, set of two\nUse: dining, occasional seating; dining room, home office\nStyle: contemporary, minimalist, classic\nMaterials: woven textured fabric upholstery, dark stained wood legs\nColors: cool cadet blue, dark espresso brown\nShape: straight squared back, armless, padded box seat, four tapered square legs, clean and compact\nFeel: calm, tailored, cozy\nGoes with: walnut or white tables, grey or white walls, brass accents; contemporary or classic dining rooms\n",
+          "score": 3.7649473730324616,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B075YMN1BC",
+          "name": "Amazon Brand \u2013 Stone & Beam High-Back Dining Room Table Chairs, 38\"H, Set of 2, Navy",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 48.3,
+            "height": 96.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YMN1BC.jpg"
+          ],
+          "description": "Type: high-back upholstered dining chair, set of two\nUse: dining; dining room, kitchen\nStyle: contemporary, modern, mid-century modern\nMaterials: textured woven fabric upholstery, dark stained solid wood legs\nColors: dark navy blue, dark espresso brown\nShape: tall gently curved back with flared sides, armless, padded seat, four slim slightly splayed legs, upright and tailored\nFeel: refined, cool, cozy\nGoes with: dark wood or glass tables, white or grey walls, brass accents; modern or transitional dining rooms\n",
+          "score": 3.436963315747823,
+          "kind": "dining chair"
+        },
+        {
+          "id": "202.013.33",
+          "name": "PREBEN",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/chair/202.013.33.jpg"
+          ],
+          "description": "Type: upholstered dining chair\nUse: dining, sitting at a table; dining room, kitchen\nStyle: contemporary, modern, Scandinavian\nMaterials: woven textured fabric upholstery, dark stained wooden legs, chrome steel leg sleeves and stretchers\nColors: light beige-grey fabric, dark brown, silver chrome\nShape: tall straight upholstered back flowing into a padded seat, armless, four slim tapered legs with metal sleeves joined by chrome stretchers, slender and upright\nFeel: soft, neat, understated, comfortable\nGoes with: dark or light wood tables, grey or white walls, chrome accents; modern or Scandinavian dining rooms\n",
+          "score": 3.385572197646354,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B07WZDDQFB",
+          "name": "Ravenna Home Dining Chair 40.5\"H,-",
+          "category": "chair",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07WZDDQFB.jpg"
+          ],
+          "description": "Type: upholstered parsons dining chair\nUse: dining, occasional seating; dining room, living room\nStyle: traditional, classic, farmhouse\nMaterials: linen-look woven fabric, silver nailhead trim, dark stained wood legs\nColors: warm cream, dark espresso brown, pewter\nShape: tall camelback top with nailhead border, armless, padded seat, slightly flared back legs, tapered front legs, upright and stately\nFeel: elegant, soft, inviting\nGoes with: dark wood tables, neutral walls, brushed nickel accents; traditional or farmhouse dining rooms\n",
+          "score": 3.371361449330182,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B07QJ24FSL",
+          "name": "Amazon Brand \u2013 Ravenna Home Dining Chairs, Set of 2, 40\"H, Praline",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 53.3,
+            "height": 102.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QJ24FSL.jpg"
+          ],
+          "description": "Type: upholstered dining chair, set of two\nUse: dining; dining room\nStyle: traditional, classic\nMaterials: linen-look woven fabric, silver nailhead trim, dark wood legs\nColors: warm greige taupe, espresso legs, nickel\nShape: tall camelback with nailhead border, armless, padded seat, curved saber back legs, slim and upright\nFeel: elegant, formal, warm\nGoes with: dark wood tables, cream walls, silver accents; traditional or transitional dining rooms\n",
+          "score": 3.360552081632783,
+          "kind": "dining chair"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara colgante grande sobre el centro de la mesa",
+      "spec": {
+        "piece": "una l\u00e1mpara colgante grande sobre el centro de la mesa",
+        "why": "una sola pieza generosa define el comedor dentro de la planta abierta; en bronce envejecido o negro mate dialoga con las colgantes de la cocina y da una luz c\u00e1lida",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": 110,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, large dining chandelier\nUse: lighting over the dining table; open-plan dining room\nStyle: classic, contemporary, traditional\nMaterials: aged brass or matte black metal, frosted or linen shades\nColors: warm bronze, soft white\nShape: large linear or round chandelier, multiple lights, open airy frame, statement size\nFeel: warm, elegant, inviting\nGoes with: espresso wood table, grey upholstered chairs, cream walls, glass kitchen pendants"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HKGHTGT",
+          "name": "Amazon Brand \u2013 Ravenna Home Contemporary Modern Chandelier with 5 White Glass Light Shades - 26 x 26 x 40 Inches, Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 66.0,
+            "height": 101.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HKGHTGT.jpg"
+          ],
+          "description": "Type: five-arm chandelier\nUse: light over a dining table or room center; dining room, living room, bedroom\nStyle: traditional, classic, farmhouse\nMaterials: dark bronze metal, frosted glass shades, chain suspension\nColors: dark bronze black, frosted white\nShape: five curved scrolled arms with upturned bell shades, central column, hangs on a chain from round canopy, medium size, open\nFeel: classic, cozy, welcoming\nGoes with: dark or warm wood, cream walls, oil-rubbed bronze; traditional or farmhouse dining rooms\n",
+          "score": 4.5045252544031475,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07374QGD8",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Triple Glass Shade Ceiling Hanging Pendant Chandelier Fixture - 23 x 7 x 36 Inches, Gunmetal Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 17.8,
+            "height": 91.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374QGD8.jpg"
+          ],
+          "description": "Type: three-light linear pendant chandelier\nUse: light over a dining table or island; dining room, kitchen\nStyle: industrial, farmhouse, rustic\nMaterials: pipe-style metal frame in gunmetal finish, clear glass drum shades\nColors: dark gunmetal black, clear glass\nShape: horizontal pipe bar on two downrods, three sockets with wide short clear drum shades, exposed bulbs, long and linear, medium visual weight\nFeel: utilitarian, warm, open\nGoes with: reclaimed wood tables, white or brick walls, black metal accents; industrial or farmhouse dining rooms\n",
+          "score": 4.05969924904908,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07GNSXX6B",
+          "name": "Amazon Brand \u2013 Stone & Beam Classic Ceiling Pendant Chandelier Fixture With White Drum Shade- 20 x 20 x 42 Inches, Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 50.8,
+            "depth": 50.8,
+            "height": 106.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07GNSXX6B.jpg"
+          ],
+          "description": "Type: drum shade pendant chandelier\nUse: overhead light over a dining table or bed; dining room, bedroom, living room\nStyle: classic, traditional, contemporary\nMaterials: white fabric drum shade, black metal frame\nColors: off-white, black\nShape: wide shallow drum shade, four candle-style arms with finial below, long downrod, broad, medium visual weight\nFeel: soft, elegant, balanced\nGoes with: neutral walls, dark wood, linen fabrics; transitional or classic rooms\n",
+          "score": 4.0212191717763455,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07PY83NQL",
+          "name": "Amazon Brand \u2013 Rivet Modern Steel and Glass Pendant Lamp, 28.5\"H - Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 80.5,
+            "depth": 21.6,
+            "height": 72.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PY83NQL.jpg"
+          ],
+          "description": "Type: five-globe linear pendant\nUse: light over a dining table or kitchen island; dining room, kitchen, living room\nStyle: mid-century modern, contemporary, minimalist\nMaterials: matte black steel, opal frosted glass globes\nColors: white, matte black\nShape: long rectangular canopy with five black cords at staggered heights, round glass globes with black caps, wide and airy\nFeel: playful, soft, balanced\nGoes with: wood dining tables, white walls, black accents; modern or mid-century dining rooms\n",
+          "score": 3.5557364573415016,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "500.894.05",
+          "name": "KROBY",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/500.894.05.jpg"
+          ],
+          "description": "Type: frosted glass cone pendant lamp\nUse: light over a dining table or a kitchen counter; dining room, kitchen, hallway\nStyle: traditional, classic, Scandinavian\nMaterials: white frosted glass shade, nickel-plated metal fitting and link chain, white cord threaded through the chain\nColors: soft white, brushed silver\nShape: wide shallow cone shade under a cylindrical metal collar, hangs from an open link chain, simple and medium-sized, light visual weight\nFeel: soft, homely, timeless, calm\nGoes with: white or wood dining tables, nickel accents, pale walls; traditional, farmhouse or classic kitchens\n",
+          "score": 3.4352178159425066,
+          "kind": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "piece": "un aparador de madera oscura contra la pared de la escalera, en el tramo m\u00e1s alto, cerca del pasillo",
+      "spec": {
+        "piece": "un aparador de madera oscura contra la pared de la escalera, en el tramo m\u00e1s alto, cerca del pasillo",
+        "why": "pidieron un aparador en esa pared; bajo y en el mismo tono que la mesa, guarda la vajilla al lado del comedor y equilibra la pared vac\u00eda bajo la escalera",
+        "kinds": [
+          "sideboard"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 90,
+        "query": "Type: sideboard, wood buffet with doors\nUse: storing dishes and table linen; dining room\nStyle: traditional, contemporary, classic\nMaterials: solid wood, espresso stained wood, bronze hardware\nColors: dark espresso brown, warm bronze\nShape: long and low, paneled doors and drawers, short legs, medium visual weight\nFeel: warm, orderly, refined\nGoes with: espresso dining table, dark wood stair handrail, white balusters, cream walls, reddish hardwood floor"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSBD8DM",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 172.7,
+            "depth": 50.8,
+            "height": 82.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSBD8DM.jpg"
+          ],
+          "description": "Type: four-door buffet sideboard\nUse: storing tableware, serving, media storage; dining room, living room\nStyle: traditional, coastal, contemporary\nMaterials: brown wood, woven cane door panels, silver metal bar pulls\nColors: warm medium brown, silver\nShape: long rectangular case, four framed cane-panel doors, long vertical pulls, open base frame with stretchers, square legs, substantial\nFeel: warm, refined, relaxed\nGoes with: rattan, linen, cream walls, brushed nickel; traditional, coastal or transitional rooms\n",
+          "score": 3.8236709742021215,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075YQXQ5C",
+          "name": "Amazon Brand \u2013 Stone & Beam Dunbar Modern Wood Buffet, 55\"W, Oak",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 139.7,
+            "depth": 48.3,
+            "height": 91.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YQXQ5C.jpg"
+          ],
+          "description": "Type: buffet with wine storage\nUse: storing glassware and wine, serving; dining room, living room\nStyle: rustic, traditional, contemporary\nMaterials: oak with dark wire-brushed finish, glass sliding doors\nColors: dark warm brown, clear glass\nShape: rectangular case, two glass sliding doors over shelves, open X-shaped wine rack and stemware rail, short flared block feet, medium weight\nFeel: warm, inviting, cozy\nGoes with: dark wood, cream walls, bronze accents; rustic, traditional or farmhouse dining rooms\n",
+          "score": 3.172181447459043,
+          "kind": "display cabinet"
+        },
+        {
+          "id": "902.608.14",
+          "name": "ARKELSTORP",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 93.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.608.14.jpg"
+          ],
+          "description": "Type: two-door sideboard with gallery top\nUse: storing dishes, linens and serving pieces; dining room, living room, hallway\nStyle: traditional, farmhouse, classic\nMaterials: black-painted wood, vertical beadboard-paneled doors, small dark knobs\nColors: black, dark charcoal\nShape: upright cabinet with two tall doors of vertical grooved boards, raised gallery rim around the top, overhanging top, small knobs at the center, heavy plinth base, solid and tall, heavy visual weight\nFeel: rustic, sturdy, cozy, classic\nGoes with: white walls, warm wood, cream textiles, brass or pewter accents; farmhouse, country or traditional dining rooms\n",
+          "score": 3.123344997602644,
+          "kind": "storage cabinet"
+        },
+        {
+          "id": "402.397.21",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.397.21.jpg"
+          ],
+          "description": "Type: walnut veneer sideboard\nUse: storing tableware, linens or media, a surface for lamps and decor; dining room, living room\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer with a fine vertical grain, solid wood legs and base frame\nColors: medium warm walnut brown\nShape: long low cabinet with a row of flush doors, set on a slim wooden base with four square legs and a long stretcher, clean edges, substantial yet lifted\nFeel: warm, refined, calm, timeless\nGoes with: cream or white walls, brass lamps, green plants, wool rugs; mid-century modern or Scandinavian dining and living rooms\n",
+          "score": 3.0529669926716774,
+          "kind": "sideboard"
+        },
+        {
+          "id": "902.608.33",
+          "name": "REGISSR",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 78.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/902.608.33.jpg"
+          ],
+          "description": "Type: glass-door display cabinet with drawers\nUse: displaying dishes, glassware and books, storing linens in drawers; dining room, living room\nStyle: contemporary, classic, mid-century modern\nMaterials: dark brown stained wood veneer, clear glass doors, glass shelves, slim metal bar handle\nColors: dark chocolate brown, clear glass\nShape: tall slim cabinet with two framed glass doors over four stacked drawers, long vertical bar handle, small drawer knobs, tapered square legs, refined and upright, medium visual weight\nFeel: elegant, warm, refined, calm\nGoes with: white or beige walls, brass accents, cream textiles; classic, contemporary or mid-century dining rooms\n",
+          "score": 3.023991972718133,
+          "kind": "display cabinet"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

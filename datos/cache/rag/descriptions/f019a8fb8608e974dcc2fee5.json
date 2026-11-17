@@ -1,0 +1,34 @@
+{
+  "product": "102.604.60",
+  "text": "Type: chair\nName: GREGOR\nColors: Black, svanby grey\nYou sit comfortably since the chair is adjustable in height.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "102.604.60",
+      "name": "GREGOR",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black",
+        "svanby grey"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "940c9c655583aca1"
+    ]
+  }
+}

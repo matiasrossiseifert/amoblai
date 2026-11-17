@@ -1,0 +1,33 @@
+{
+  "product": "103.123.84",
+  "text": "Type: lamp\nName: STAN\nColors: White\nGives a diffused light; good for spreading light into larger areas of a bathroom.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "103.123.84",
+      "name": "STAN",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Ceiling,wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Gives a diffused light; good for spreading light into larger areas of a bathroom."
+    },
+    "photos": [
+      "22bc45512bc98642"
+    ]
+  }
+}

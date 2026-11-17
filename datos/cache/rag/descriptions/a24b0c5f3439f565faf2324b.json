@@ -1,0 +1,33 @@
+{
+  "product": "003.000.13",
+  "text": "Type: deco\nName: SOKNEDAL\nColors: Black\nFull-length mirror.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "003.000.13",
+      "name": "SOKNEDAL",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "70x190 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Full-length mirror."
+    },
+    "photos": [
+      "3d343e4da107114c"
+    ]
+  }
+}
