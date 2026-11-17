@@ -55,6 +55,8 @@ class FalNanoBanana:
         self.endpoint = str(p.get("endpoint", "fal-ai/nano-banana-2/edit"))
         self.resolution = str(p.get("resolution", "1K"))
         self.aspect_ratio = str(p.get("aspect_ratio", "auto"))
+        # Seedream y otros de fal piden `image_size` en vez de resolución y proporción.
+        self.image_size = p.get("image_size")
         self.prices = {
             str(k): float(v) for k, v in (p.get("usd_per_image") or {"1K": 0.08}).items()
         }
@@ -76,6 +78,9 @@ class FalNanoBanana:
     def payload(self, prompt: str, images: list[Path]) -> dict:
         uris = [data_uri(images[0], self.room_max_side, "PNG")]
         uris += [data_uri(p, self.ref_max_side, "JPEG") for p in images[1:]]
+        if self.image_size:
+            return {"prompt": prompt, "image_urls": uris, "num_images": 1, "max_images": 1,
+                    "image_size": self.image_size}  # fmt: skip
         return {
             "prompt": prompt,
             "image_urls": uris,

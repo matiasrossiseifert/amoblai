@@ -1,0 +1,36 @@
+{
+  "product": "802.180.24",
+  "text": "Type: dresser\nName: BRIMNES\nColors: White, frosted glass\nOf course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "802.180.24",
+      "name": "BRIMNES",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 78.0
+      },
+      "type_ikea": "Chest of 3 drawers",
+      "category_tp": "dresser",
+      "size_raw": "78x95 cm",
+      "colors": [
+        "White",
+        "frosted glass"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "6805a99465c33448"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "202.800.33",
+  "text": "Type: chair\nName: SKRUVSTA\nColors: Idhult white\nYou sit comfortably since the chair is adjustable in height.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.800.33",
+      "name": "SKRUVSTA",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Idhult white"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "2d49ec376b6b910e"
+    ]
+  }
+}

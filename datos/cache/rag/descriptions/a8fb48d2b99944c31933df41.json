@@ -1,0 +1,33 @@
+{
+  "product": "502.285.76",
+  "text": "Type: lamp\nName: STAN\nColors: White\nProvides an even light that is good for illuminating around a mirror and sink.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "502.285.76",
+      "name": "STAN",
+      "category": "lamp",
+      "kind": "wall lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Wall lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Provides an even light that is good for illuminating around a mirror and sink."
+    },
+    "photos": [
+      "b51114cde59585c4"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "901.840.47",
+  "text": "Type: stool\nName: MARIUS\nColors: White\nThe stool can be stacked, so you can keep several on hand and store them on the same space as one.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "901.840.47",
+      "name": "MARIUS",
+      "category": "stool",
+      "kind": "low stool",
+      "dimensions_cm": null,
+      "type_ikea": "Stool",
+      "category_tp": "stool",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "The stool can be stacked, so you can keep several on hand and store them on the same space as one."
+    },
+    "photos": [
+      "b9c75e2178258342"
+    ]
+  }
+}

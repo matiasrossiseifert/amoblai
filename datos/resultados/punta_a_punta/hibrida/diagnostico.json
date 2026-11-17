@@ -17,7 +17,14 @@
   "elegidos_sin_ninguna_medida": 0.3333,
   "piezas_con_candidatos_del_mismo_modelo": 3,
   "elegido_tiene_el_primer_estilo_pedido": 0.3333,
-  "elegidos_de_abo": 0.6667
+  "elegidos_de_abo": 0.6667,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 36,
+   "media": 0.7099,
+   "mediana": 0.6993,
+   "p10": 0.6207
+  }
  },
  "contexto": {
   "variante": "contexto",
@@ -73,7 +80,14 @@
   "elegidos_sin_ninguna_medida": 0.5067,
   "piezas_con_candidatos_del_mismo_modelo": 69,
   "elegido_tiene_el_primer_estilo_pedido": 0.7067,
-  "elegidos_de_abo": 0.32
+  "elegidos_de_abo": 0.32,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7731,
+   "mediana": 0.7759,
+   "p10": 0.69
+  }
  },
  "densa": {
   "variante": "densa",
@@ -97,7 +111,45 @@
   "elegidos_sin_ninguna_medida": 0.36,
   "piezas_con_candidatos_del_mismo_modelo": 18,
   "elegido_tiene_el_primer_estilo_pedido": 0.6267,
-  "elegidos_de_abo": 0.52
+  "elegidos_de_abo": 0.52,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.798,
+   "mediana": 0.8031,
+   "p10": 0.7432
+  }
+ },
+ "frase": {
+  "variante": "frase",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 26,
+   "2": 16,
+   "3": 15,
+   "4": 6,
+   "5": 12
+  },
+  "elegido_es_el_primero": 0.3467,
+  "elegido_en_puestos_4_y_5": 0.24,
+  "puntaje_del_primero": {
+   "mediana": 1.443,
+   "p10": 0.987,
+   "p90": 2.1766
+  },
+  "elegidos_sin_ninguna_medida": 0.4933,
+  "piezas_con_candidatos_del_mismo_modelo": 21,
+  "elegido_tiene_el_primer_estilo_pedido": 0.44,
+  "elegidos_de_abo": 0.36,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7587,
+   "mediana": 0.7516,
+   "p10": 0.6632
+  }
  },
  "hibrida": {
   "variante": "hibrida",
@@ -121,7 +173,14 @@
   "elegidos_sin_ninguna_medida": 0.36,
   "piezas_con_candidatos_del_mismo_modelo": 23,
   "elegido_tiene_el_primer_estilo_pedido": 0.6,
-  "elegidos_de_abo": 0.4933
+  "elegidos_de_abo": 0.4933,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7906,
+   "mediana": 0.8017,
+   "p10": 0.7092
+  }
  },
  "hibrida_bis": {
   "variante": "hibrida_bis",
@@ -145,6 +204,135 @@
   "elegidos_sin_ninguna_medida": 0.4133,
   "piezas_con_candidatos_del_mismo_modelo": 23,
   "elegido_tiene_el_primer_estilo_pedido": 0.64,
-  "elegidos_de_abo": 0.4533
+  "elegidos_de_abo": 0.4533,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7877,
+   "mediana": 0.7981,
+   "p10": 0.7064
+  }
+ },
+ "k3": {
+  "variante": "k3",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 35,
+   "2": 25,
+   "3": 15
+  },
+  "elegido_es_el_primero": 0.4667,
+  "elegido_en_puestos_4_y_5": 0.0,
+  "puntaje_del_primero": {
+   "mediana": 1.7685,
+   "p10": 1.3198,
+   "p90": 2.5318
+  },
+  "elegidos_sin_ninguna_medida": 0.4133,
+  "piezas_con_candidatos_del_mismo_modelo": 12,
+  "elegido_tiene_el_primer_estilo_pedido": 0.6533,
+  "elegidos_de_abo": 0.4133,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7943,
+   "mediana": 0.8055,
+   "p10": 0.7117
+  }
+ },
+ "sin_kind": {
+  "variante": "sin_kind",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 28,
+   "2": 22,
+   "3": 12,
+   "4": 6,
+   "5": 7
+  },
+  "elegido_es_el_primero": 0.3733,
+  "elegido_en_puestos_4_y_5": 0.1733,
+  "puntaje_del_primero": {
+   "mediana": 4.0635,
+   "p10": 3.5134,
+   "p90": 5.3533
+  },
+  "elegidos_sin_ninguna_medida": 0.4267,
+  "piezas_con_candidatos_del_mismo_modelo": 31,
+  "elegido_tiene_el_primer_estilo_pedido": 0.64,
+  "elegidos_de_abo": 0.4133,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7875,
+   "mediana": 0.7981,
+   "p10": 0.7064
+  }
+ },
+ "texto": {
+  "variante": "texto",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 27,
+   "2": 22,
+   "3": 10,
+   "4": 6,
+   "5": 10
+  },
+  "elegido_es_el_primero": 0.36,
+  "elegido_en_puestos_4_y_5": 0.2133,
+  "puntaje_del_primero": {
+   "mediana": 1.7685,
+   "p10": 1.3198,
+   "p90": 2.5318
+  },
+  "elegidos_sin_ninguna_medida": 0.44,
+  "piezas_con_candidatos_del_mismo_modelo": 23,
+  "elegido_tiene_el_primer_estilo_pedido": 0.6133,
+  "elegidos_de_abo": 0.3867,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 75,
+   "media": 0.7865,
+   "mediana": 0.7981,
+   "p10": 0.7016
+  }
+ },
+ "vendedor": {
+  "variante": "vendedor",
+  "ambientes": 11,
+  "piezas": 75,
+  "piezas_dejadas_afuera": 0,
+  "puesto_del_elegido": {
+   "1": 28,
+   "2": 20,
+   "3": 7,
+   "4": 10,
+   "5": 10
+  },
+  "elegido_es_el_primero": 0.3733,
+  "elegido_en_puestos_4_y_5": 0.2667,
+  "puntaje_del_primero": {
+   "mediana": 1.777,
+   "p10": 1.281,
+   "p90": 2.2286
+  },
+  "elegidos_sin_ninguna_medida": 0.2267,
+  "piezas_con_candidatos_del_mismo_modelo": 6,
+  "elegido_tiene_el_primer_estilo_pedido": 0.0,
+  "elegidos_de_abo": 0.7733,
+  "coseno_ficha_elegido": {
+   "embedder": "qwen3",
+   "n": 74,
+   "media": 0.7593,
+   "mediana": 0.7619,
+   "p10": 0.6755
+  }
  }
 }

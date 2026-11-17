@@ -71,7 +71,16 @@ class FurnishConfig(_Cfg):
     size_slack: float = 0.15
     photo_max_side: int = 1024  # photos sent to the LLM
     query_prompt: str = "search_query_v4.md"
+    # What the search reads of each piece: "query", the eight lines the plan writes (HyDE), or
+    # "piece", its few words as the plan names it (experiment 2, end to end).
+    query_field: Literal["query", "piece"] = "query"
+    # False: no metadata filter by kind (only the size limits): the search over the whole catalog.
+    kind_filter: bool = True
     choose_prompt: str = "choose_combination_v2.md"
+    # False: the choose step reads each candidate's description (its eight lines) instead of
+    # seeing its photo; the room photo stays (experiment 5b: does looking at the photos help?).
+    candidate_photos: bool = True
+    choose_text_prompt: str = "choose_combination_text_v1.md"
     # rag.mode whole_catalog (no search): the whole catalog goes in the prompt as text, and this
     # prompt asks for the same choice. `catalog_cache`: how long that block is cached as a prompt
     # prefix ("5m", "1h"; None: not cached, every call pays it whole).

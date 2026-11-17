@@ -1,0 +1,36 @@
+{
+  "product": "602.457.21",
+  "text": "Type: desk\nName: HEMNES\nColors: Black-brown\nYou can collect cables and extension leads on the shelf under the table top, so theyre hidden but still close at hand.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "602.457.21",
+      "name": "HEMNES",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 155.0,
+        "depth": 65.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "155x65 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "You can collect cables and extension leads on the shelf under the table top, so theyre hidden but still close at hand."
+    },
+    "photos": [
+      "558a18d203dcccf9"
+    ]
+  }
+}

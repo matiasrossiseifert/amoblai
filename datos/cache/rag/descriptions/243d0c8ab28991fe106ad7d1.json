@@ -1,0 +1,36 @@
+{
+  "product": "902.782.77",
+  "text": "Type: desk\nName: LILLSEN\nColors: Bamboo\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "902.782.77",
+      "name": "LILLSEN",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 102.0,
+        "depth": 49.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "102x49 cm",
+      "colors": [
+        "Bamboo"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "5f6e275fc8e91f78"
+    ]
+  }
+}

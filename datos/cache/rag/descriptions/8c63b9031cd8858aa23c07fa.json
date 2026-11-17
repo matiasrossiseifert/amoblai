@@ -1,0 +1,34 @@
+{
+  "product": "902.642.18",
+  "text": "Type: chair\nName: IKEA PS LMSK\nColors: Orange, light orange\nWith the hood pulled down the armchair is a secret hiding-place for the child.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "902.642.18",
+      "name": "IKEA PS LMSK",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Orange",
+        "light orange"
+      ],
+      "description": "With the hood pulled down the armchair is a secret hiding-place for the child."
+    },
+    "photos": [
+      "ee573351a0abcc73"
+    ]
+  }
+}

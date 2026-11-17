@@ -1,0 +1,36 @@
+{
+  "product": "302.126.75",
+  "text": "Type: rug\nName: TNUM\nColors: Assorted colours\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.126.75",
+      "name": "TNUM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 60.0,
+        "depth": 90.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "60x90 cm",
+      "colors": [
+        "Assorted colours"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "67bf039cef34c761"
+    ]
+  }
+}

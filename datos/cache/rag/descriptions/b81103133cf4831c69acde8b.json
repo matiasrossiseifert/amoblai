@@ -1,0 +1,35 @@
+{
+  "product": "603.057.05",
+  "text": "Type: dresser\nName: BUSUNGE\nColors: White\nComes with 2 drawers for a roomy storage space.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "603.057.05",
+      "name": "BUSUNGE",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 2 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x75 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "Comes with 2 drawers for a roomy storage space."
+    },
+    "photos": [
+      "351ae51dfa079f11"
+    ]
+  }
+}

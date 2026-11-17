@@ -1,0 +1,33 @@
+{
+  "product": "503.214.28",
+  "text": "Type: lamp\nName: FORS\nColors: Green\nProvides a directed light that is great for reading.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "503.214.28",
+      "name": "FORS",
+      "category": "lamp",
+      "kind": "desk lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Work lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Green"
+      ],
+      "description": "Provides a directed light that is great for reading."
+    },
+    "photos": [
+      "6a1f085272074d8b"
+    ]
+  }
+}

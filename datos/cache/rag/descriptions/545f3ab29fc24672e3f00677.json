@@ -1,0 +1,33 @@
+{
+  "product": "903.259.43",
+  "text": "Type: lamp\nName: FOTO\nColors: Blue\nGives a directed light; good for lighting up for example dining tables or bar tops.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "903.259.43",
+      "name": "FOTO",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Blue"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "440d2b783cbc7d83"
+    ]
+  }
+}

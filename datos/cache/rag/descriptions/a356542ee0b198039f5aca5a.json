@@ -1,0 +1,35 @@
+{
+  "product": "302.937.42",
+  "text": "Type: dresser\nName: UNDREDAL\nColors: Black\nOf course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.937.42",
+      "name": "UNDREDAL",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 87.0
+      },
+      "type_ikea": "Chest of 4 drawers",
+      "category_tp": "dresser",
+      "size_raw": "87x101 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Of course your home should be a safe place for the entire family. Thats why a safety fitting is included so that you can attach the chest of drawers to the wall."
+    },
+    "photos": [
+      "9d08d25d2bc00bc2"
+    ]
+  }
+}

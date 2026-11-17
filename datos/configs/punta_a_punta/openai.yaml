@@ -1,0 +1,10 @@
+# El embedding de OpenAI (text-embedding-3-large) en la búsqueda híbrida, contra Qwen3 (la versión
+# 2), de punta a punta: el mismo plan; cambia solo el embedder de la parte densa (2026-11-16).
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+plan_de: hibrida
+variantes:
+  hibrida: {rag.hybrid: [bm25, siglip2]}
+  openai: {rag.hybrid: [bm25, siglip2], rag.embedder: openai}
+comparaciones:
+  - [hibrida, openai]

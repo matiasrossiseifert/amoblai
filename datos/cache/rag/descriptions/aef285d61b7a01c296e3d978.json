@@ -1,0 +1,35 @@
+{
+  "product": "301.286.29",
+  "text": "Type: bench\nName: STUVA\nColors: White\nYou can transform the bench into an extra storage space by simply adding a storage box underneath, sold separately.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "301.286.29",
+      "name": "STUVA",
+      "category": "bench",
+      "kind": "bench",
+      "dimensions_cm": {
+        "width": 90.0
+      },
+      "type_ikea": "Bench",
+      "category_tp": "bench",
+      "size_raw": "90x50x50 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "You can transform the bench into an extra storage space by simply adding a storage box underneath, sold separately."
+    },
+    "photos": [
+      "59cb2807e49f153b"
+    ]
+  }
+}

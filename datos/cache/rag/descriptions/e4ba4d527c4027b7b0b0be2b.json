@@ -1,0 +1,33 @@
+{
+  "product": "202.396.99",
+  "text": "Type: chair\nName: STOCKHOLM\nColors: Sandbacka black\nThis chair is made from moulded high resilience foam that provides comfort and support  and keeps its shape for years.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.396.99",
+      "name": "STOCKHOLM",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "High-back armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Sandbacka black"
+      ],
+      "description": "This chair is made from moulded high resilience foam that provides comfort and support  and keeps its shape for years."
+    },
+    "photos": [
+      "40ad75ee54f28cb3"
+    ]
+  }
+}

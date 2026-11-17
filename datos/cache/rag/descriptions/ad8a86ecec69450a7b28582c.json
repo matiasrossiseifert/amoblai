@@ -1,0 +1,34 @@
+{
+  "product": "802.340.19",
+  "text": "Type: chair\nName: LMSTA\nColors: Rattan, black\nEach piece of furniture is unique as it is handmade.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "802.340.19",
+      "name": "LMSTA",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Rattan",
+        "black"
+      ],
+      "description": "Each piece of furniture is unique as it is handmade."
+    },
+    "photos": [
+      "8e2a3f864de3a186"
+    ]
+  }
+}

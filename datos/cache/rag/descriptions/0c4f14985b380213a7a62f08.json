@@ -1,0 +1,36 @@
+{
+  "product": "102.447.43",
+  "text": "Type: desk\nName: MICKE\nColors: Black-brown\nIts easy to keep sockets and cables out of sight but close at hand with the cable outlet at the back.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "102.447.43",
+      "name": "MICKE",
+      "category": "desk",
+      "kind": "desk",
+      "dimensions_cm": {
+        "width": 105.0,
+        "depth": 50.0
+      },
+      "type_ikea": "Desk",
+      "category_tp": "desk",
+      "size_raw": "105x50 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Its easy to keep sockets and cables out of sight but close at hand with the cable outlet at the back."
+    },
+    "photos": [
+      "fc985f786ac30413"
+    ]
+  }
+}

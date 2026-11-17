@@ -1,0 +1,36 @@
+{
+  "product": "002.394.12",
+  "text": "Type: rug\nName: STOCKHOLM\nColors: Handmade brown\nHandwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.394.12",
+      "name": "STOCKHOLM",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 170.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, low pile",
+      "category_tp": "rug",
+      "size_raw": "170x240 cm",
+      "colors": [
+        "Handmade brown"
+      ],
+      "description": "Handwoven by skilled craftspeople, each one is unique. Made in India in organised weaving centres with good working conditions and fair wages."
+    },
+    "photos": [
+      "18d611cbb2af0040"
+    ]
+  }
+}

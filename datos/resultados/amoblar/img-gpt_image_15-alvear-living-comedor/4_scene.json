@@ -1,0 +1,12 @@
+{
+  "answer": {
+    "prompt": "Edit image 1. It is a photo of the client's own room, and the result must still be that same room, exactly: the same camera position, angle, lens and framing; the same walls, ceiling, floor, light fixture and outlets; the same windows, with the same frames, in the same places. Do not add, remove, move or enlarge any wall, window, door or opening, do not extend, rotate or crop the room, and do not change its light. Wherever no new furniture goes, the result is image 1 unchanged.\n\nImages 2 to 14 are the products to add, one photo each:\nimage 2: three-seat sofa, 234 cm wide, 94 cm deep, 80 cm high\nimage 3: wingback armchair, size unknown\nimage 4: square light wood coffee table, 70 cm wide, 70 cm deep\nimage 5: plain flatwoven area rug, 200 cm wide, 300 cm deep\nimage 6: rectangular wooden dining table, 140 cm wide, 78 cm deep\nimage 7: wooden dining armchair, 56 cm wide, 50 cm deep, 76 cm high, 6 units\nimage 8: woven bamboo pendant lamp, size unknown\nimage 9: drum shade floor lamp, size unknown\nimage 10: herringbone-front sideboard, 150 cm wide, 50 cm deep, 77 cm high\nimage 11: pair of white linen curtains, size unknown\nimage 12: green linen-look cushion, size unknown, 3 units\nimage 13: cable-knit throw blanket, size unknown\nimage 14: areca palm in a nursery pot, size unknown\n\nAdd exactly these products and nothing else: no other furniture, lamps, plants, rugs or decoration than these (books on the shelves of a bookcase are fine). Each one must be the product of its photo, not a similar one: the same design, proportions, colors and materials. A product listed with \"2 units\" goes twice.\n\nThe client asked: \"Un living comedor n\u00f3rdico y c\u00e1lido para este ambiente largo: en la mitad, un sof\u00e1 grande, un sill\u00f3n para leer, una mesa ratona y una alfombra; cerca del ventanal, una mesa de comedor para seis con sus sillas. Maderas claras, textiles en tonos crema y algo de verde.\". Arrange the products as an interior designer would for that, against the walls and on the floor that image 1 shows, each at its real size for this room, lit by this room's light. The result must look like a real photograph of image 1's room."
+  },
+  "model": null,
+  "cost_usd": 0.0,
+  "prompt": "scene_prompt_libre_v4",
+  "left_out_of_image": [
+    "cuadros sobre el sof\u00e1, en la pared izquierda",
+    "un florero de cer\u00e1mica sobre la mesa de comedor o el aparador"
+  ]
+}

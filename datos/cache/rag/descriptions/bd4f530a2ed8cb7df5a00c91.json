@@ -1,0 +1,33 @@
+{
+  "product": "902.639.02",
+  "text": "Type: chair\nName: IVAR\nColors: Pine\nSolid wood is a hardwearing natural material which can be sanded and surface treated when required.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "902.639.02",
+      "name": "IVAR",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Pine"
+      ],
+      "description": "Solid wood is a hardwearing natural material which can be sanded and surface treated when required."
+    },
+    "photos": [
+      "a39adf20217e3506"
+    ]
+  }
+}

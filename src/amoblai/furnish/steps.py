@@ -155,13 +155,16 @@ def find_candidates(cfg: Config, piece: dict, index: Index | None = None) -> lis
         for a in ("width", "depth", "height")
         if cfg.furnish.size_filter and (v := piece.get(f"max_{a}_cm")) is not None
     }
+    if not cfg.furnish.kind_filter:
+        kinds = []
+    cats = (piece.get("categories") or []) if cfg.furnish.kind_filter else []
     hits: list[Hit] = []
     for i, group in enumerate([[k] for k in kinds] or [[]]):
-        filters = Filters(categories=piece.get("categories") or [], kinds=group, **most)
+        filters = Filters(categories=cats, kinds=group, **most)
         c = cfg.model_copy(deep=True)
         share = cfg.furnish.candidates // max(1, len(kinds))
         c.rag.top_k = cfg.furnish.candidates - len(hits) if i == len(kinds) - 1 else share
-        hits += search(index, piece["query"], filters, c)
+        hits += search(index, piece[cfg.furnish.query_field], filters, c)
     return sorted(hits, key=lambda h: -(h.score or 0.0))
 
 
@@ -237,6 +240,10 @@ def catalog_text(items: Sequence[dict]) -> str:
     return "\n".join(out)
 
 
+def _indent(text: str, pad: str = "    ") -> str:
+    return "\n".join(pad + line for line in (text or "").splitlines())
+
+
 def choose(
     cfg: Config,
     room_photo: Path,
@@ -262,6 +269,14 @@ def choose(
             image_block(room_photo, cfg.furnish.photo_max_side),
         ]
         n, step = 1, "furnish.choose_catalog"  # its own line in the ledger: not the flow's cost
+    elif not cfg.furnish.candidate_photos:  # the candidates as text: their descriptions
+        step = "furnish.choose"
+        tmpl = load_prompt(cfg.furnish.choose_text_prompt, cfg.root)
+        lines, content, n = [], [image_block(room_photo, cfg.furnish.photo_max_side)], 1
+        for k, (piece, hits) in enumerate(found, 1):
+            lines.append(f"Piece {k}: {piece['piece']}")
+            lines += [f"  [{h.id}] {size_text(h)}\n" + _indent(h.description) for h in hits]
+        text = tmpl.fill(request=request, pieces=len(found), candidates="\n".join(lines))
     else:
         step = "furnish.choose"
         tmpl = load_prompt(cfg.furnish.choose_prompt, cfg.root)

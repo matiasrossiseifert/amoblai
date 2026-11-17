@@ -1,0 +1,34 @@
+{
+  "product": "103.203.41",
+  "text": "Type: chair\nName: KULLABERG\nColors: Pine, black\nA desk chair inspired by old-fashioned industrial-style chairs, complete with modern functions.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "103.203.41",
+      "name": "KULLABERG",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Pine",
+        "black"
+      ],
+      "description": "A desk chair inspired by old-fashioned industrial-style chairs, complete with modern functions."
+    },
+    "photos": [
+      "af42dfeb7050b004"
+    ]
+  }
+}

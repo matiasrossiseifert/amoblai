@@ -1,0 +1,33 @@
+{
+  "product": "002.460.78",
+  "text": "Type: chair\nName: JANINGE\nColors: White\nYou can stack the chairs, so they take less space when you're not using them.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.460.78",
+      "name": "JANINGE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can stack the chairs, so they take less space when you're not using them."
+    },
+    "photos": [
+      "2ca0cc82ec28acdc"
+    ]
+  }
+}

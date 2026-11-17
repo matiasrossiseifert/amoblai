@@ -1,0 +1,34 @@
+{
+  "product": "202.068.06",
+  "text": "Type: table\nName: IKEA PS 2012\nColors: Bamboo, white\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.068.06",
+      "name": "IKEA PS 2012",
+      "category": "table",
+      "kind": "dining table",
+      "dimensions_cm": null,
+      "type_ikea": "Drop-leaf table",
+      "category_tp": "table",
+      "size_raw": "74,106,138x80 cm",
+      "colors": [
+        "Bamboo",
+        "white"
+      ],
+      "description": null
+    },
+    "photos": [
+      "e83caa60a87a6e1b"
+    ]
+  }
+}

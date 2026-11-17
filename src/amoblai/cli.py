@@ -443,7 +443,59 @@ def resumen_imagen(
     )
 
 
-@app.command("evaluar-respuesta")
+@app.command("comparar-imagen")
+def comparar_imagen(
+    generadores: Annotated[
+        list[str], typer.Argument(help="Generadores de furnish.generators (nano_banana_pro, ...).")
+    ],
+    pagar: Annotated[bool, typer.Option("--pagar", help="Habilitar las imágenes pagas.")] = False,
+    config: ConfigOpt = paths.CONFIG,
+) -> None:
+    """Experimento de modelos de imagen: la lista y el prompt de cada imagen final
+    (amoblar/final-*), un solo intento por modelo, en amoblar/img-<generador>-<ambiente>. De Nano
+    Banana 2 se copia su primer intento (no se vuelve a pagar). Un modelo que acepta menos
+    imágenes (`max_images_in`) recibe los primeros productos y el prompt de la plantilla con esos.
+    Después: `evaluar-imagen` y `resumen-imagen` sobre esas carpetas (gratis)."""
+    import shutil
+
+    from amoblai.furnish.flow import run_flow
+
+    load_env()
+    steps = ["request.json", "room.jpg", "1_searches.json", "2_candidates.json", "3_choice.json"]
+    for src in sorted(paths.RUNS.glob("final-*")):
+        slug = src.name.removeprefix("final-")
+        request = json.loads((src / "request.json").read_text())["request"]
+        catalog = cfg_of_run(config, src).rag
+        for gen in generadores:
+            out = paths.RUNS / f"img-{gen}-{slug}"
+            if (out / "5_image.json").exists():
+                continue
+            out.mkdir(parents=True, exist_ok=True)
+            for name in steps:
+                shutil.copyfile(src / name, out / name)
+            if gen == "nano_banana_2":  # el primer intento de la imagen final, tal cual
+                rec = json.loads((src / "5_image.json").read_text())
+                first = rec["attempts"][0]
+                shutil.copyfile(src / "4_scene.json", out / "4_scene.json")
+                shutil.copyfile(src / first["image"], out / "final.png")
+                rec |= {"image": "final.png", "cost_usd": first["cost_usd"], "attempts": [first],
+                        "room_check": {k: v for k, v in first.items() if k != "cost_usd"}}  # fmt: skip
+                (out / "5_image.json").write_text(json.dumps(rec, ensure_ascii=False, indent=1))
+                continue
+            over = [
+                f"rag.catalog={catalog.catalog}",
+                f"rag.describer={catalog.describer}",
+                f"furnish.generator={gen}",
+            ]
+            limit = cfg_for(config).furnish.generators[gen].get("max_images_in")
+            if limit:  # la foto del ambiente y los primeros productos: el prompt, con esos
+                over.append(f"furnish.max_image_products={int(limit) - 1}")
+            else:
+                shutil.copyfile(src / "4_scene.json", out / "4_scene.json")
+            cfg = cfg_for(config, over, paid=pagar)
+            cfg.furnish.room_check = {**cfg.furnish.room_check, "attempts": 1}  # un solo intento
+            run_flow(src / "room.jpg", request, cfg, out, log=console.print)
+            console.print(f"{out.name}: listo")
 def evaluar_respuesta(
     corridas: Annotated[
         list[Path] | None,
@@ -529,11 +581,11 @@ def diagnostico_flujo(
     puesto del producto elegido, piezas dejadas afuera, medidas que faltan, candidatos repetidos.
     Con --filtro-medidas <variante>: cuántos candidatos cambia el filtro de medidas (repite la
     búsqueda del flujo de hoy con y sin él; `filtro_medidas.json`)."""
-    from amoblai.evaluation.endtoend import diagnostics, size_filter_effect
+    from amoblai.evaluation.endtoend import diagnostics, match_cosine, size_filter_effect
 
     out = {}
     for variant in sorted(d for d in raiz.glob("*/") if any(d.glob("*/3_choice.json"))):
-        d = diagnostics(variant)
+        d = {**diagnostics(variant), **match_cosine(cfg_for(config), variant)}
         out[d["variante"]] = d
         console.print(d)
     (raiz / "diagnostico.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))
@@ -577,7 +629,7 @@ def evaluar_punta_a_punta(
         plan_from = root / first if first and name != first else None
         e2e.run_variant(cfg, rooms, root / name, plan_from=plan_from, log=console.print)
     cfg = cfg_for(config, paid=pagar)
-    llm = dict(cfg.evaluation.rerankers["opus"])
+    llm = dict(cfg.evaluation.rerankers[exp.get("juez", "opus")])  # otro juez: experimento de modelos
     for a, b in exp.get("comparaciones") or []:
         res = e2e.compare(cfg, llm, rooms, root, a, b)
         out = root / f"juez_{a}_vs_{b}{exp.get('sufijo', '')}.json"

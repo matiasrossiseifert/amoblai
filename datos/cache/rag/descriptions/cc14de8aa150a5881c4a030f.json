@@ -1,0 +1,36 @@
+{
+  "product": "103.286.67",
+  "text": "Type: cabinet\nName: LIXHULT\nColors: Metal, blue\nHelps you keep track of small items like chargers, keys and wallets, or more bulky items like handbags and toys. It all depends on which of the 3 cabinet sizes you choose.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "103.286.67",
+      "name": "LIXHULT",
+      "category": "cabinet",
+      "kind": "storage cabinet",
+      "dimensions_cm": {
+        "width": 35.0
+      },
+      "type_ikea": "Cabinet",
+      "category_tp": "cabinet",
+      "size_raw": "35x35 cm",
+      "colors": [
+        "Metal",
+        "blue"
+      ],
+      "description": "Helps you keep track of small items like chargers, keys and wallets, or more bulky items like handbags and toys. It all depends on which of the 3 cabinet sizes you choose."
+    },
+    "photos": [
+      "7e4249c1a629ef31"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "302.249.04",
+  "text": "Type: chair\nName: POPPTORP\nColors: White\nConcealed storage under the seat.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.249.04",
+      "name": "POPPTORP",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Armchair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "Concealed storage under the seat."
+    },
+    "photos": [
+      "07d71b0ccbb13bf7"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "503.002.99",
+  "text": "Type: deco\nName: THORINE\nColors: Dog multicolour\nThe cushion is playful and decorative.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "503.002.99",
+      "name": "THORINE",
+      "category": "deco",
+      "kind": "cushion",
+      "dimensions_cm": null,
+      "type_ikea": "Cushion",
+      "category_tp": "deco",
+      "size_raw": "43x47 cm",
+      "colors": [
+        "Dog multicolour"
+      ],
+      "description": "The cushion is playful and decorative."
+    },
+    "photos": [
+      "ff26ef10df4a7ca0"
+    ]
+  }
+}

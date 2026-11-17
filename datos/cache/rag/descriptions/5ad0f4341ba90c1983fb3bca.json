@@ -1,0 +1,33 @@
+{
+  "product": "001.258.11",
+  "text": "Type: lamp\nName: FOTO\nColors: Aluminium\nLight bulb sold separately. IKEA recommends LED bulb E27 400 lumen globe opal white. View more product information Gives a directed light; good for lighting up for example dining tables or bar tops.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "001.258.11",
+      "name": "FOTO",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "25 cm",
+      "colors": [
+        "Aluminium"
+      ],
+      "description": "Light bulb sold separately. IKEA recommends LED bulb E27 400 lumen globe opal white. View more product information Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "395cbe77d633c42f"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "803.296.30",
+  "text": "Type: lamp\nName: RANARP\nColors: Black\nGives a directed light; good for lighting up for example dining tables or bar tops.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "803.296.30",
+      "name": "RANARP",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": "38 cm",
+      "colors": [
+        "Black"
+      ],
+      "description": "Gives a directed light; good for lighting up for example dining tables or bar tops."
+    },
+    "photos": [
+      "36fc6792cc7e2365"
+    ]
+  }
+}

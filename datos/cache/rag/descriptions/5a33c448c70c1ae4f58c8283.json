@@ -1,0 +1,33 @@
+{
+  "product": "500.395.52",
+  "text": "Type: chair\nName: IKEA PS GULLHOLMEN\nColors: Banana fibre\nThe gentle rocking helps your body and mind to relax.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "500.395.52",
+      "name": "IKEA PS GULLHOLMEN",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Rocking-chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Banana fibre"
+      ],
+      "description": "The gentle rocking helps your body and mind to relax."
+    },
+    "photos": [
+      "7a837ca6a252f8ce"
+    ]
+  }
+}

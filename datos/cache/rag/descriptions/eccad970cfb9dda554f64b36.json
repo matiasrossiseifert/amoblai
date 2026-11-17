@@ -1,0 +1,34 @@
+{
+  "product": "102.460.25",
+  "text": "Type: lamp\nName: VITEMLLA\nColors: Metal, glass\nGives a diffused light; good for spreading light into larger areas of a bathroom.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "102.460.25",
+      "name": "VITEMLLA",
+      "category": "lamp",
+      "kind": "ceiling lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Ceiling lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Metal",
+        "glass"
+      ],
+      "description": "Gives a diffused light; good for spreading light into larger areas of a bathroom."
+    },
+    "photos": [
+      "01d8be97657d1b21"
+    ]
+  }
+}

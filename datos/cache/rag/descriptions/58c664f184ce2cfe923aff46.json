@@ -1,0 +1,34 @@
+{
+  "product": "302.865.67",
+  "text": "Type: lamp\nName: SAMTID\nColors: Nickel-plated, white\nGives both directed and diffused light.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.865.67",
+      "name": "SAMTID",
+      "category": "lamp",
+      "kind": "floor lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Floor,reading lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "Nickel-plated",
+        "white"
+      ],
+      "description": "Gives both directed and diffused light."
+    },
+    "photos": [
+      "32a2d4567db06e03"
+    ]
+  }
+}

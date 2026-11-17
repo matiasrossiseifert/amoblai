@@ -1,0 +1,12 @@
+# Experimento de modelos (2026-11-16): el juez de listas con Sonnet 5.5 en vez de Opus 5.5, sobre
+# cuatro comparaciones ya juzgadas por Opus (las mismas listas): ¿coincide con Opus?
+ambientes: datos/ambientes_vacios/pedidos.yaml
+salida: datos/resultados/punta_a_punta/hibrida
+juez: sonnet
+sufijo: _juez-sonnet
+variantes: {}
+comparaciones:
+  - [densa, hibrida]
+  - [hibrida, k3]
+  - [hibrida, vendedor]
+  - [hibrida, texto]

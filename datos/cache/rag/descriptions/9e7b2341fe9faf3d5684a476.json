@@ -1,0 +1,43 @@
+{
+  "product": "abo-B075Z9QBLL",
+  "text": "Type: stool\nName: Rivet Hengyin N/A Bar Stool\nColors: Rust Brown\nPlaceholder1 Placeholder2 Placeholder3 Placeholder4 Placeholder5 Placeholder6 Placeholder7 Placeholder8\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "abo-B075Z9QBLL",
+      "name": "Rivet Hengyin N/A Bar Stool",
+      "category": "stool",
+      "kind": "bar stool",
+      "dimensions_cm": {
+        "width": 40.0,
+        "depth": 30.5,
+        "height": 97.5
+      },
+      "brand": "Rivet",
+      "product_type": "STOOL_SEATING",
+      "colors": [
+        "Rust Brown"
+      ],
+      "materials": [],
+      "style": null,
+      "description": "Placeholder1 Placeholder2 Placeholder3 Placeholder4 Placeholder5 Placeholder6 Placeholder7 Placeholder8",
+      "image_path": "34/34222a63.jpg",
+      "image_px": [
+        2560,
+        2560
+      ]
+    },
+    "photos": [
+      "4e1dd3ff894760df"
+    ]
+  }
+}

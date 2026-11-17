@@ -1,0 +1,125 @@
+{
+ "corrida": "img-gpt_image_2-caballito-comedor",
+ "imagen": "final.png",
+ "generador": "gpt_image_2",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "002.908.15",
+   "kind": "dining table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.624,
+   "box": [
+    329,
+    459,
+    725,
+    747
+   ],
+   "puesto": 3,
+   "entre": 176,
+   "coseno": 0.4409,
+   "mas_parecido": "abo-B002CM3J2A"
+  },
+  {
+   "id": "003.015.26",
+   "kind": "dining chair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.511,
+   "box": [
+    564,
+    483,
+    729,
+    737
+   ],
+   "puesto": 1,
+   "entre": 175,
+   "coseno": 0.6195,
+   "mas_parecido": "003.015.26"
+  },
+  {
+   "id": "000.379.80",
+   "kind": "pendant lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "lamp",
+   "score_detector": 0.668,
+   "box": [
+    484,
+    9,
+    583,
+    333
+   ],
+   "puesto": 4,
+   "entre": 172,
+   "coseno": 0.6487,
+   "mas_parecido": "602.152.05"
+  },
+  {
+   "id": "abo-B07B7DMPX7",
+   "kind": "sideboard",
+   "categoria": "cabinet",
+   "detectado": true,
+   "detector": "cabinet",
+   "score_detector": 0.332,
+   "box": [
+    424,
+    99,
+    682,
+    215
+   ],
+   "puesto": 7,
+   "entre": 95,
+   "coseno": 0.3011,
+   "mas_parecido": "402.397.21"
+  }
+ ],
+ "fidelidad": {
+  "productos": 4,
+  "detectados": 4,
+  "presencia": 1.0,
+  "coseno_medio": 0.5026,
+  "identificados@1": 0.25,
+  "mrr": 0.4315
+ },
+ "inventadas": [
+  {
+   "detector": "chest of drawers",
+   "categoria": "dresser",
+   "score": 0.612,
+   "box": [
+    836,
+    446,
+    1301,
+    771
+   ]
+  }
+ ],
+ "repetidas": [],
+ "ambiente": {
+  "ssim": 0.8437,
+  "ssim_fuera_de_los_muebles": 0.9232,
+  "fraccion_fuera_de_los_muebles": 0.6749,
+  "sift_puntos_original": 226,
+  "sift_matches": 64,
+  "sift_inliers": 49,
+  "sift_reencontrados": 0.2168,
+  "sift_desplazamiento_mediano": 0.0013
+ },
+ "pedido_imagen": {
+  "pedido": "Al lado de la cocina quiero armar el comedor: una mesa de madera clara para cuatro con sillas negras, una lámpara colgante sobre la mesa y un aparador bajo contra la pared blanca de la derecha. Estilo nórdico, simple.",
+  "siglip_final": 0.1256,
+  "siglip_vacia": 0.0705,
+  "delta": 0.0551,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": 0.0086
+ }
+}

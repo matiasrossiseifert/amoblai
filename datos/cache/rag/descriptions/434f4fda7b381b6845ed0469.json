@@ -1,0 +1,35 @@
+{
+  "product": "602.236.20",
+  "text": "Type: shelf\nName: HEMNES\nColors: White\nThe open shelves give an easy overview and easy reach.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "602.236.20",
+      "name": "HEMNES",
+      "category": "shelf",
+      "kind": "bookcase",
+      "dimensions_cm": {
+        "width": 42.0
+      },
+      "type_ikea": "Shelving unit",
+      "category_tp": "shelf",
+      "size_raw": "42x84 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The open shelves give an easy overview and easy reach."
+    },
+    "photos": [
+      "8e5bc6c32145bee8"
+    ]
+  }
+}

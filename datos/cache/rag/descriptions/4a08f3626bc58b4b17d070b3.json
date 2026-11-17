@@ -1,0 +1,35 @@
+{
+  "product": "601.392.35",
+  "text": "Type: shelf\nName: STENSTORP\nColors: White\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "601.392.35",
+      "name": "STENSTORP",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 120.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "120 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "56ff27386f132130"
+    ]
+  }
+}

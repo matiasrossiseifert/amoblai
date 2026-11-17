@@ -1,0 +1,446 @@
+{
+  "pieces": [
+    {
+      "piece": "a low beige fabric sofa against the right wall, facing the balcony door",
+      "spec": {
+        "piece": "a low beige fabric sofa against the right wall, facing the balcony door",
+        "why": "this is the piece they asked for and it anchors the room; a low, deep, beige-linen silhouette brings the serenity of Japandi and warms up the dark floor and white walls",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 95,
+        "max_height_cm": null,
+        "query": "Type: sofa, low three-seater fabric sofa\nUse: seating and lounging; living room\nStyle: Japandi, minimalist\nMaterials: linen or textured cotton upholstery, light wood base\nColors: warm beige, oatmeal\nShape: low profile, deep seat, straight clean lines, low arms, short wooden legs or plinth base, medium visual weight\nFeel: serene, calm, grounded, soft\nGoes with: white walls, dark gray-brown floor, light oak, natural fibers; Japandi living room"
+      },
+      "candidates": [
+        {
+          "id": "191.504.62",
+          "name": "NOCKEBY",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/191.504.62.jpg"
+          ],
+          "description": "Type: sofa with chaise longue\nUse: seating, lounging with legs up; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: textured fabric upholstery, dark stained wood legs and base frame\nColors: off-white, warm cream, dark brown wood\nShape: straight track arms, tall straight back with three cushions, deep chaise on the right, slim dark legs with a sled-like base, clean lines\nFeel: calm, bright, refined\nGoes with: light oak, black accents, wool and linen textiles; Scandinavian, Japandi or modern living rooms\n",
+          "score": 3.8163671184994157,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07124WQLW",
+          "name": "Amazon Brand \u2013 Rivet Apex Modern Oversized Sofa Couch, 81\"W, Ash Grey",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 205.0,
+            "depth": 96.0,
+            "height": 74.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07124WQLW.jpg"
+          ],
+          "description": "Type: oversized two-seat sofa\nUse: sitting, lounging; living room\nStyle: modern, Japandi, minimalist\nMaterials: textured woven fabric, black wood frame and legs\nColors: medium grey, black\nShape: low wide body, thick padded arms on an exposed dark wood frame, two seat and back cushions, straight square legs, low and bulky\nFeel: grounded, calm, sophisticated\nGoes with: white or concrete walls, light wood, black accents; Japandi or modern rooms\n",
+          "score": 3.5669341738003273,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B072M1WJF2",
+          "name": "Amazon Brand \u2013 Rivet Midtown Contemporary Upholstered Sofa Couch, 92.1\"W, Cream",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 233.9,
+            "depth": 94.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B072M1WJF2.jpg"
+          ],
+          "description": "Type: three-seat sofa\nUse: seating, lounging; living room\nStyle: contemporary, mid-century modern, minimalist\nMaterials: woven fabric upholstery, dark wood legs\nColors: light cream grey, dark brown legs\nShape: long low body, slim angled track arms, two seat cushions, loose corner back cushions, square tapered wooden legs, large but light\nFeel: airy, relaxed, soft\nGoes with: light wood, white walls, warm neutrals, black accents; contemporary or Scandinavian living rooms\n",
+          "score": 3.2955724783775593,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07K29TD1G",
+          "name": "Trixie Linen Swatch, Stone & Beam",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07K29TD1G.jpg"
+          ],
+          "description": "Type: two-seat track arm sofa\nUse: sitting, lounging; living room, den\nStyle: contemporary, minimalist, mid-century modern\nMaterials: linen-blend woven fabric, dark wooden tapered legs\nColors: light warm greige, dark brown legs\nShape: slim track arms, two loose back cushions, two seat cushions, clean boxy frame, short tapered wooden legs, medium size\nFeel: calm, soft, airy\nGoes with: white walls, oak or walnut, soft neutral textiles; Scandinavian or modern rooms\n",
+          "score": 3.213134216506885,
+          "kind": "sofa"
+        },
+        {
+          "id": "691.249.46",
+          "name": "NORSBORG",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/couch/691.249.46.jpg"
+          ],
+          "description": "Type: three-seat sofa with track arms\nUse: seating, lounging, family gatherings; living room, family room\nStyle: Scandinavian, minimalist, contemporary\nMaterials: woven fabric upholstery, solid birch wooden legs\nColors: off-white, very light cool grey, light natural wood\nShape: long straight frame, three loose back and seat cushions, slim track arms with a side pocket, round tapered wooden legs, raised and light\nFeel: airy, bright, calm, fresh\nGoes with: light wood floors, white walls, soft grey or pastel textiles; Scandinavian or minimalist living rooms\n",
+          "score": 3.147353510180565,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "a natural fiber rug in the center, under the sofa and coffee table",
+      "spec": {
+        "piece": "a natural fiber rug in the center, under the sofa and coffee table",
+        "why": "it defines the seating area on the large dark floor, and jute or sisal in a natural tone adds the organic texture Japandi calls for",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 250,
+        "max_depth_cm": 200,
+        "max_height_cm": null,
+        "query": "Type: rug, natural fiber woven rug\nUse: defining the seating area; living room\nStyle: Japandi, minimalist\nMaterials: jute, sisal or seagrass\nColors: natural sand, light beige\nShape: rectangular, flat weave, subtle texture, light visual weight\nFeel: organic, calm, textured\nGoes with: beige linen sofa, light oak, dark gray-brown floor, white walls; Japandi living room"
+      },
+      "candidates": [
+        {
+          "id": "302.703.16",
+          "name": "OSTED",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 133.0,
+            "depth": 195.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/302.703.16.jpg"
+          ],
+          "description": "Type: natural fiber flatwoven rug\nUse: adding natural texture to a seating area; living room, bedroom, dining room\nStyle: coastal, Japandi, rustic\nMaterials: tightly woven sisal-look plant fiber, bound fabric edge\nColors: warm natural tan, light beige border\nShape: rectangle with fine herringbone-like weave, narrow bound border, thin and firm, medium size, light visual weight\nFeel: earthy, warm, natural, calm\nGoes with: light or warm wood, rattan, cream walls, linen textiles; coastal, Japandi or Scandinavian living rooms\n",
+          "score": 4.845824225077702,
+          "kind": "rug"
+        },
+        {
+          "id": "502.773.93",
+          "name": "LOHALS",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 230.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/502.773.93.jpg"
+          ],
+          "description": "Type: natural jute area rug\nUse: anchoring a seating or dining area; living room, dining room, bedroom\nStyle: coastal, bohemian, Scandinavian\nMaterials: chunky handwoven jute flatweave\nColors: warm natural tan, golden brown, light flecks\nShape: rectangular, flat, coarse chunky basket-weave texture with visible fibre loops, plain edges, large and relaxed\nFeel: earthy, natural, relaxed, warm\nGoes with: white walls, light wood, rattan, linen and plants; coastal, bohemian or Japandi rooms\n",
+          "score": 4.0644940152137545,
+          "kind": "rug"
+        },
+        {
+          "id": "202.035.63",
+          "name": "MORUM",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 160.0,
+            "depth": 230.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.035.63.jpg"
+          ],
+          "description": "Type: flatwoven area rug\nUse: covering a dining or seating area; dining room, living room, kitchen\nStyle: minimalist, Scandinavian, coastal\nMaterials: tight synthetic-look flat weave, fine basket-weave texture\nColors: light beige, sand, off-white flecks\nShape: rectangle with small checked weave texture, thin flat profile, plain edges, medium-large, light visual weight\nFeel: neutral, calm, practical, airy\nGoes with: light wood, white walls, rattan, natural linen; Scandinavian, coastal or Japandi dining and living rooms\n",
+          "score": 3.9306134653947375,
+          "kind": "rug"
+        },
+        {
+          "id": "203.074.81",
+          "name": "LOHALS",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 80.0,
+            "depth": 150.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/203.074.81.jpg"
+          ],
+          "description": "Type: jute flatwoven rug\nUse: adding natural texture by a door or bed; entryway, hallway, bedroom, living room\nStyle: coastal, rustic, bohemian\nMaterials: thick woven jute, chunky ribbed weave\nColors: warm natural tan, light straw, hints of rust\nShape: small rectangle with coarse vertical ribbed texture, plain edges, flat but chunky, compact\nFeel: earthy, warm, organic, relaxed\nGoes with: light wood, rattan, white walls, linen and cotton; coastal, bohemian or farmhouse rooms\n",
+          "score": 3.8790172311671562,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0725Z9MX3",
+          "name": "Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 152.4,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z9MX3.jpg"
+          ],
+          "description": "Type: speckled wool area rug\nUse: anchoring a seating area, adding texture; living room, bedroom, home office\nStyle: minimalist, contemporary, Scandinavian\nMaterials: wool, low textured pile\nColors: light warm beige, chestnut brown, cream speckles\nShape: rectangular, solid tone with subtle heathered speckle texture, plain edges, flat low profile, medium size\nFeel: warm, calm, natural, cozy\nGoes with: wood floors, charcoal or grey sofas, white walls; minimalist, Scandinavian or Japandi rooms\n",
+          "score": 3.693204126464067,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "a round wooden coffee table in front of the sofa, on the rug",
+      "spec": {
+        "piece": "a round wooden coffee table in front of the sofa, on the rug",
+        "why": "they asked for it round and wooden; in light oak or ash it contrasts with the dark floor, and its round shape softens a room of straight lines",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 100,
+        "max_depth_cm": 100,
+        "max_height_cm": 45,
+        "query": "Type: coffee table, round solid wood\nUse: center table in front of the sofa; living room\nStyle: Japandi, minimalist, Scandinavian\nMaterials: solid light oak or ash wood\nColors: light natural wood\nShape: round, low, thick top, sturdy legs or pedestal base, simple joinery, medium visual weight\nFeel: warm, simple, crafted\nGoes with: beige linen sofa, jute rug, white walls, dark floor; Japandi living room"
+      },
+      "candidates": [
+        {
+          "id": "902.976.57",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 70.0,
+            "depth": 70.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/902.976.57.jpg"
+          ],
+          "description": "Type: square light wood coffee table\nUse: holding drinks, books and plants; living room, small apartments\nStyle: Scandinavian, Japandi, minimalist\nMaterials: ash veneer top with visible striped grain, solid wood legs\nColors: pale blond ash, light warm wood\nShape: square top with softly rounded corners and a beveled edge, four slender tapered legs angled outward, compact and light\nFeel: natural, calm, airy, friendly\nGoes with: light grey or white sofas, rattan, green plants; Scandinavian or Japandi living rooms\n",
+          "score": 3.7443901351401174,
+          "kind": "coffee table"
+        },
+        {
+          "id": "402.937.70",
+          "name": "MCKELBY",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/402.937.70.jpg"
+          ],
+          "description": "Type: square drop-leaf dining table\nUse: dining, extra seating when needed; kitchen, small dining room\nStyle: Scandinavian, mid-century modern, Japandi\nMaterials: solid oak with a clear finish, visible joinery\nColors: light warm oak\nShape: square top with two hinged drop leaves, exposed joints at the top of the legs, four thick legs splayed slightly outward, sturdy and crafted, medium visual weight\nFeel: crafted, warm, honest, timeless\nGoes with: oak or black chairs, white or greige walls, linen; Scandinavian, Japandi or mid-century dining rooms\n",
+          "score": 3.742179241423276,
+          "kind": "dining table"
+        },
+        {
+          "id": "102.976.56",
+          "name": "LISABO",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 45.0,
+            "depth": 45.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/102.976.56.jpg"
+          ],
+          "description": "Type: square wooden side table\nUse: holding drinks, lamps and books; living room, bedroom, beside a sofa or bed\nStyle: Scandinavian, Japandi, mid-century modern\nMaterials: ash veneer top, solid birch legs, clear lacquer\nColors: light natural ash, pale blonde wood\nShape: square top with softly cut rounded corners, beveled edge, four round tapered legs set slightly outward, compact and light\nFeel: warm, calm, natural, crafted\nGoes with: white walls, linen sofas, black accents, green plants; Scandinavian or Japandi living rooms and bedrooms\n",
+          "score": 3.6372427099257476,
+          "kind": "side table"
+        },
+        {
+          "id": "302.397.12",
+          "name": "STOCKHOLM",
+          "category": "table",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/dining table/302.397.12.jpg"
+          ],
+          "description": "Type: large round low coffee table\nUse: holding drinks, books and decor in front of a sofa; living room, lounge\nStyle: mid-century modern, Scandinavian, contemporary\nMaterials: walnut veneer top, solid wood legs in a matching walnut tone\nColors: warm medium brown walnut\nShape: wide round top with a thin edge, four angled tapered legs set inward, low and broad, medium visual weight\nFeel: warm, refined, relaxed, timeless\nGoes with: leather or wool sofas, cream or green walls, brass accents; mid-century, Scandinavian or modern living rooms\n",
+          "score": 3.5609068705709213,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QFB1TLZ",
+          "name": "Amazon Brand \u2013 Stone & Beam Ryder Industrial Round Coffee Table, 43.3\" Diameter, Brushed Natural Antique Copper",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 110.0,
+            "depth": 110.0,
+            "height": 42.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QFB1TLZ.jpg"
+          ],
+          "description": "Type: round wood coffee table\nUse: holding drinks, books and decor; living room\nStyle: industrial, rustic, contemporary\nMaterials: thick wood top with visible grain, brushed antique metal base\nColors: warm honey wood, antique gold-copper\nShape: low round drum top with thick edge, four flat metal legs wrapping the top edge, X-shaped cross stretcher, low and substantial\nFeel: warm, earthy, solid\nGoes with: cream or leather sofas, brass accents, natural textures; rustic, industrial or modern rooms\n",
+          "score": 3.290073206127707,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "a paper lantern lamp in the corner beside the sofa, toward the back windows",
+      "spec": {
+        "piece": "a paper lantern lamp in the corner beside the sofa, toward the back windows",
+        "why": "the room only has recessed ceiling lights; a white paper lantern adds the soft, warm, diffused light that defines a serene Japandi living room",
+        "kinds": [
+          "floor lamp",
+          "pendant lamp"
+        ],
+        "max_width_cm": 60,
+        "max_depth_cm": 60,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, paper lantern lamp\nUse: soft ambient lighting; living room\nStyle: Japandi, minimalist\nMaterials: rice paper shade, light wood or bamboo frame\nColors: warm white, natural wood\nShape: rounded or cylindrical lantern shade, slim structure, light airy visual weight\nFeel: soft, glowing, serene\nGoes with: beige linen sofa, light oak table, jute rug, white walls; Japandi living room"
+      },
+      "candidates": [
+        {
+          "id": "101.841.74",
+          "name": "HOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.841.74.jpg"
+          ],
+          "description": "Type: tall rice paper floor lamp\nUse: soft ambient light in a corner or beside a sofa or bed; living room, bedroom\nStyle: Japandi, Scandinavian, minimalist\nMaterials: white rice paper shade with ribbed wire frame, dark metal base and short stem, foot switch on the cord\nColors: off-white, warm glow, dark grey base\nShape: tall slim column shade with horizontal ribs, standing on a short stem and small round base, lantern-like, tall but light\nFeel: calm, soft, warm, serene\nGoes with: light wood, linen, bamboo, green plants, white walls; Japandi, Scandinavian or minimalist rooms\n",
+          "score": 6.672531262272565,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "603.000.91",
+          "name": "SOLLEFTE",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/603.000.91.jpg"
+          ],
+          "description": "Type: white globe shade table lamp\nUse: soft ambient light on a side table, a sideboard or a bedside table; living room, bedroom\nStyle: Japandi, Scandinavian, minimalist\nMaterials: textured white woven-look shade, white painted metal stem and round base\nColors: white, soft warm white glow\nShape: wide oval lantern shade with a fine horizontal texture threaded on a slim straight stem, round flat base, tall and light\nFeel: soft, calm, airy, serene\nGoes with: light wood, linen, white walls, green plants; Japandi, Scandinavian or minimalist rooms\n",
+          "score": 4.830929888554821,
+          "kind": "table lamp"
+        },
+        {
+          "id": "703.116.97",
+          "name": "SINNERLIG",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/703.116.97.jpg"
+          ],
+          "description": "Type: woven bamboo pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: Japandi, bohemian, Scandinavian\nMaterials: hand-woven bamboo shade in layered tiers, dark grey cord and ceiling cup\nColors: light natural bamboo, dark grey\nShape: three stacked cylinders of open lattice weave with a wider middle tier, casts patterned light, hangs on a long cord, large but light and airy\nFeel: warm, natural, relaxed, calm\nGoes with: light wood, linen, rattan, green plants, white walls; Japandi, bohemian or Scandinavian rooms\n",
+          "score": 3.63473017472924,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "401.522.80",
+          "name": "BJA",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/401.522.80.jpg"
+          ],
+          "description": "Type: woven bamboo dome pendant lamp\nUse: ambient light over a dining table or a sitting area; dining room, living room, bedroom\nStyle: bohemian, Japandi, coastal\nMaterials: woven bamboo shade, brushed nickel ceiling cup and top fitting, white fabric cord\nColors: warm natural bamboo, light beige, silver\nShape: wide dome shade with an open diamond lattice weave that casts patterned light, hangs on a long cord, large but light and airy\nFeel: warm, natural, relaxed, cozy\nGoes with: light wood, linen, rattan, green plants, white walls; bohemian, Japandi or coastal rooms\n",
+          "score": 3.544525658688585,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "102.911.31",
+          "name": "STOCKHOLM",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/102.911.31.jpg"
+          ],
+          "description": "Type: drum shade floor lamp\nUse: ambient light beside a sofa, armchair or bed; living room, bedroom\nStyle: minimalist, contemporary, Scandinavian\nMaterials: white fabric drum shade, brushed stainless steel stem and flat round base\nColors: white, brushed silver\nShape: large cylindrical drum shade on a very slim straight stem, thin flat disc base, clean and tall, light visual weight\nFeel: calm, elegant, soft, refined\nGoes with: grey or beige upholstery, light or dark wood, white walls, silver accents; minimalist or contemporary living rooms\n",
+          "score": 3.3716328061327836,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "a large plant in a ceramic pot beside the balcony door, in the corner by the glass",
+      "spec": {
+        "piece": "a large plant in a ceramic pot beside the balcony door, in the corner by the glass",
+        "why": "that corner gets the most light and frames the view of the trees; a tall plant in a matte, earthy-neutral ceramic pot brings the touch of nature Japandi needs",
+        "kinds": [
+          "plant",
+          "plant pot"
+        ],
+        "max_width_cm": 70,
+        "max_depth_cm": 70,
+        "max_height_cm": null,
+        "query": "Type: plant, tall indoor plant in ceramic pot\nUse: natural accent beside the balcony door; living room\nStyle: Japandi, minimalist\nMaterials: matte stoneware ceramic, living greenery\nColors: green foliage, warm stone, cream or sand pot\nShape: tall sculptural plant like olive tree or fiddle leaf fig, rounded low pot, medium visual weight\nFeel: natural, calm, organic\nGoes with: beige linen sofa, light oak, jute rug, white walls, view of trees; Japandi living room"
+      },
+      "candidates": [
+        {
+          "id": "900.379.90",
+          "name": "ZAMIOCULCAS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/900.379.90.jpg"
+          ],
+          "description": "Type: ZZ plant in a nursery pot\nUse: indoor greenery on the floor, a sideboard or a shelf; living room, home office, bedroom, hallway\nStyle: Scandinavian, bohemian, contemporary\nMaterials: live plant with glossy waxy leaves, plastic nursery pot, potting soil\nColors: deep glossy green, terracotta brown pot\nShape: upright arching stems lined with oval pointed leaflets, bushy and tall above a compact pot, medium visual weight\nFeel: fresh, lush, natural, calm\nGoes with: woven baskets, ceramic or metal cachepots, light wood, white walls; Scandinavian, bohemian or Japandi rooms\n",
+          "score": 4.0992767795868605,
+          "kind": "plant"
+        },
+        {
+          "id": "001.185.23",
+          "name": "PACHIRA AQUATICA",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/001.185.23.jpg"
+          ],
+          "description": "Type: braided money tree houseplant\nUse: indoor greenery by a window, in a bright corner or next to a sofa; living room, home office, dining room\nStyle: bohemian, Scandinavian, contemporary\nMaterials: living plant with a braided trunk, glossy hand-shaped leaves, brown plastic grower pot\nColors: fresh green, tan trunk, terracotta brown pot\nShape: several thin trunks braided into one stem topped by a rounded crown of leaves, tall and upright, slender and light\nFeel: lively, fresh, natural, calming\nGoes with: woven baskets, ceramic or rattan plant pots, light wood, white walls; bohemian, Scandinavian or Japandi rooms\n",
+          "score": 3.8960838154539226,
+          "kind": "plant"
+        },
+        {
+          "id": "702.858.58",
+          "name": "HJORTRON",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/702.858.58.jpg"
+          ],
+          "description": "Type: plant pot with saucer\nUse: holding a potted plant on a floor, a windowsill or a shelf; living room, home office, bedroom\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte molded plastic with a smooth finish, matching saucer\nColors: light warm beige, greige\nShape: classic tapered round pot with a thick rolled rim band, wide shallow saucer underneath, simple and sturdy, medium visual weight\nFeel: calm, soft, natural, practical\nGoes with: green plants, light wood, white or beige walls, linen textiles; Scandinavian, Japandi or minimalist rooms\n",
+          "score": 3.7854724549020418,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B07HSLG6WN",
+          "name": "Amazon Brand \u2013 Stone & Beam Emerick Rustic Stoneware Planter Pot - 6 Inch, Brown and White",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLG6WN.jpg"
+          ],
+          "description": "Type: rustic stoneware plant pot\nUse: holding an indoor plant on a table, shelf or sill; living room, bedroom, home office\nStyle: bohemian, rustic, Japandi\nMaterials: speckled stoneware, partly white glazed, raw clay base\nColors: warm white, tan brown\nShape: cylindrical pot with narrower raw clay base, rows of dashes and dots in tribal pattern, compact\nFeel: earthy, warm, handmade\nGoes with: rattan, jute, natural wood, terracotta; bohemian or Japandi rooms\n",
+          "score": 3.7829718987101173,
+          "kind": "plant pot"
+        },
+        {
+          "id": "302.858.55",
+          "name": "HJORTRON",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/plant_pot/302.858.55.jpg"
+          ],
+          "description": "Type: beige plant pot with saucer\nUse: holding a potted plant on a windowsill, shelf or floor; living room, kitchen, balcony\nStyle: Scandinavian, minimalist, contemporary\nMaterials: matte plastic, matching saucer\nColors: light warm beige, sand\nShape: classic round pot tapering toward the base, thick banded rim, low matching saucer, simple and clean, medium size\nFeel: calm, neutral, simple, fresh\nGoes with: green leafy plants, white walls, light wood, linen; Scandinavian, minimalist or contemporary rooms\n",
+          "score": 3.7278605446604955,
+          "kind": "plant pot"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

@@ -1,0 +1,36 @@
+{
+  "product": "101.762.87",
+  "text": "Type: table\nName: HEMNES\nColors: White stain\nSolid wood has a natural feel.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "101.762.87",
+      "name": "HEMNES",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 90.0,
+        "depth": 90.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "90x90 cm",
+      "colors": [
+        "White stain"
+      ],
+      "description": "Solid wood has a natural feel."
+    },
+    "photos": [
+      "2572f7495a808441"
+    ]
+  }
+}

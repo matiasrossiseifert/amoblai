@@ -1,0 +1,36 @@
+{
+  "product": "303.323.43",
+  "text": "Type: rug\nName: HEMMAHOS\nColors: Green\nThe rugs thick piles dampens sound, creating a snug feeling, and are soft to walk on for all sizes of feet.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "303.323.43",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 133.0,
+        "depth": 133.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "133x133 cm",
+      "colors": [
+        "Green"
+      ],
+      "description": "The rugs thick piles dampens sound, creating a snug feeling, and are soft to walk on for all sizes of feet."
+    },
+    "photos": [
+      "5dab2b856f99f185"
+    ]
+  }
+}

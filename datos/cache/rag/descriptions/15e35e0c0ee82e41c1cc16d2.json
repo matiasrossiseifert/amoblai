@@ -1,0 +1,36 @@
+{
+  "product": "503.323.23",
+  "text": "Type: rug\nName: HEMMAHOS\nColors: Grey\nPlaying hopscotch on one or two legs helps your child develop both motor and balance skills.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "503.323.23",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 100.0,
+        "depth": 160.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "100x160 cm",
+      "colors": [
+        "Grey"
+      ],
+      "description": "Playing hopscotch on one or two legs helps your child develop both motor and balance skills."
+    },
+    "photos": [
+      "e6cd36ad3fdf5520"
+    ]
+  }
+}

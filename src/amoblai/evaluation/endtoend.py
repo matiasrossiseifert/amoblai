@@ -24,6 +24,7 @@ from typing import Any
 
 import yaml
 
+from amoblai import paths
 from amoblai.config import Config
 from amoblai.furnish import steps as st
 from amoblai.furnish.flow import run_flow
@@ -65,6 +66,64 @@ def run_variant(
         return first + list(pool.map(one, rooms[1:]))
 
 
+_WRITTEN: dict[str, str] = {}
+
+
+def _written(pid: str) -> str | None:
+    """La descripción escrita de un producto (las ocho líneas), busque sobre lo que busque la
+    variante."""
+    if not _WRITTEN:
+        for f in (paths.DESCRIPTIONS, paths.ABO_CATALOG / "descripciones.jsonl"):
+            for line in f.read_text().splitlines() if f.exists() else []:
+                d = json.loads(line)
+                _WRITTEN[d["id"]] = d["text"]
+    return _WRITTEN.get(pid)
+
+
+def _type_of(h: st.Hit) -> str:
+    """La línea Type de la descripción escrita del producto: la misma para el juez aunque la
+    variante busque sobre otro texto (el del vendedor, experimento 1)."""
+    text = _written(h.id)
+    return text.splitlines()[0].removeprefix("Type:").strip() if text else st.type_line(h)
+
+
+def match_cosine(cfg: Config, variant_dir: Path, embedder: str = "qwen3") -> dict[str, Any]:
+    """Gratis, sin juez: el coseno entre la ficha que escribió el plan para cada pieza y la
+    descripción escrita del producto elegido, con el mismo embedder para todas las variantes.
+    ¿Qué tan cerca de lo pedido queda lo que se eligió?"""
+    import numpy as np
+
+    from amoblai.infra.budget import ledger_for
+    from amoblai.rag.embed import get_embedder
+    from amoblai.rag.index import vectors_cached
+
+    queries, docs = [], []
+    for run in sorted(Path(variant_dir).glob("*/")):
+        if not (run / "3_choice.json").exists():
+            continue
+        found = json.loads((run / "2_candidates.json").read_text())
+        choice = json.loads((run / "3_choice.json").read_text())
+        for spec, h in st.picks(found, choice):
+            if _written(h.id):
+                queries.append(spec["query"])
+                docs.append(_written(h.id))
+    if not queries:
+        return {}
+    emb = get_embedder(embedder, cfg)
+    ledger = ledger_for(cfg.budget, emb.account)
+    q, d = vectors_cached(queries, emb, cfg, ledger)[0], vectors_cached(docs, emb, cfg, ledger)[0]
+    cos = np.sum(q * d, axis=1) / (np.linalg.norm(q, axis=1) * np.linalg.norm(d, axis=1))
+    return {
+        "coseno_ficha_elegido": {
+            "embedder": embedder,
+            "n": len(cos),
+            "media": round(float(np.mean(cos)), 4),
+            "mediana": round(float(np.median(cos)), 4),
+            "p10": round(float(np.quantile(cos, 0.1)), 4),
+        }
+    }
+
+
 def product_list(run_dir: Path) -> list[dict]:
     """Lo que el flujo eligió en una corrida: la lista de compra, en orden."""
     found = json.loads((run_dir / "2_candidates.json").read_text())
@@ -72,7 +131,7 @@ def product_list(run_dir: Path) -> list[dict]:
     return [
         {
             "id": h.id,
-            "type": st.type_line(h),
+            "type": _type_of(h),
             "size": st.size_text(h),
             "units": spec.get("quantity", 1),
             "photo": h.photos[0],

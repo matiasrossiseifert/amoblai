@@ -1,0 +1,33 @@
+{
+  "product": "101.033.14",
+  "text": "Type: deco\nName: IKEA STOCKHOLM\nColors: Beige\nMohair wool with a silky lustre.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "101.033.14",
+      "name": "IKEA STOCKHOLM",
+      "category": "deco",
+      "kind": "throw",
+      "dimensions_cm": null,
+      "type_ikea": "Throw",
+      "category_tp": "deco",
+      "size_raw": "130x170 cm",
+      "colors": [
+        "Beige"
+      ],
+      "description": "Mohair wool with a silky lustre."
+    },
+    "photos": [
+      "e1a2a2650364873a"
+    ]
+  }
+}

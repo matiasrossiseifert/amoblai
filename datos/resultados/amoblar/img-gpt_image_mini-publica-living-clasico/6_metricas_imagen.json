@@ -1,0 +1,161 @@
+{
+ "corrida": "img-gpt_image_mini-publica-living-clasico",
+ "imagen": "final.png",
+ "generador": "gpt_image_mini",
+ "modelos": {
+  "detector": "IDEA-Research/grounding-dino-tiny",
+  "embedder": "facebook/dinov3-vitb16-pretrain-lvd1689m",
+  "alineacion": "google/siglip2-base-patch16-224"
+ },
+ "productos": [
+  {
+   "id": "390.338.01",
+   "kind": "sofa",
+   "categoria": "sofa",
+   "detectado": true,
+   "detector": "couch",
+   "score_detector": 0.595,
+   "box": [
+    201,
+    488,
+    778,
+    807
+   ],
+   "puesto": 25,
+   "entre": 95,
+   "coseno": 0.6815,
+   "mas_parecido": "691.292.32"
+  },
+  {
+   "id": "abo-B075X467QG",
+   "kind": "armchair",
+   "categoria": "chair",
+   "detectado": true,
+   "detector": "chair",
+   "score_detector": 0.439,
+   "box": [
+    1074,
+    493,
+    1452,
+    879
+   ],
+   "puesto": 2,
+   "entre": 175,
+   "coseno": 0.6618,
+   "mas_parecido": "abo-B0723H8D37"
+  },
+  {
+   "id": "abo-B0719STM6D",
+   "kind": "rug",
+   "categoria": "rug",
+   "detectado": true,
+   "detector": "carpet",
+   "score_detector": 0.822,
+   "box": [
+    70,
+    699,
+    1241,
+    1022
+   ],
+   "puesto": 76,
+   "entre": 178,
+   "coseno": 0.1932,
+   "mas_parecido": "abo-B0735THVQK"
+  },
+  {
+   "id": "abo-B07DBFFG9Z",
+   "kind": "coffee table",
+   "categoria": "table",
+   "detectado": true,
+   "detector": "desk",
+   "score_detector": 0.341,
+   "box": [
+    512,
+    630,
+    979,
+    905
+   ],
+   "puesto": 1,
+   "entre": 176,
+   "coseno": 0.7855,
+   "mas_parecido": "abo-B07DBFFG9Z"
+  },
+  {
+   "id": "abo-B0718ZKMW1",
+   "kind": "mirror",
+   "categoria": "deco",
+   "detectado": true,
+   "detector": "mirror",
+   "score_detector": 0.768,
+   "box": [
+    987,
+    157,
+    1226,
+    409
+   ],
+   "puesto": 78,
+   "entre": 434,
+   "coseno": 0.3401,
+   "mas_parecido": "101.212.52"
+  },
+  {
+   "id": "abo-B07QD5SDWK",
+   "kind": "floor lamp",
+   "categoria": "lamp",
+   "detectado": true,
+   "detector": "pendant lamp",
+   "score_detector": 0.463,
+   "box": [
+    808,
+    356,
+    899,
+    643
+   ],
+   "puesto": 1,
+   "entre": 172,
+   "coseno": 0.7543,
+   "mas_parecido": "abo-B07QD5SDWK"
+  }
+ ],
+ "fidelidad": {
+  "productos": 6,
+  "detectados": 6,
+  "presencia": 1.0,
+  "coseno_medio": 0.5694,
+  "identificados@1": 0.3333,
+  "mrr": 0.4277
+ },
+ "inventadas": [
+  {
+   "detector": "chest of drawers",
+   "categoria": "dresser",
+   "score": 0.429,
+   "box": [
+    933,
+    435,
+    1270,
+    713
+   ]
+  }
+ ],
+ "repetidas": [],
+ "ambiente": {
+  "ssim": 0.387,
+  "ssim_fuera_de_los_muebles": 0.5198,
+  "fraccion_fuera_de_los_muebles": 0.3988,
+  "sift_puntos_original": 332,
+  "sift_matches": 13,
+  "sift_inliers": 4,
+  "sift_reencontrados": 0.012,
+  "sift_desplazamiento_mediano": 0.3867
+ },
+ "pedido_imagen": {
+  "pedido": "Una sala antigua con molduras y chimenea. Quiero un living clásico y elegante alrededor de la chimenea: un sofá tapizado en terciopelo verde oscuro, dos sillones enfrentados, una mesa ratona de madera oscura, una alfombra grande de diseño tradicional, una lámpara de pie con pantalla de tela y un espejo grande con marco sobre la chimenea.",
+  "siglip_final": 0.1343,
+  "siglip_vacia": 0.1128,
+  "delta": 0.0215,
+  "puesto_entre_contrastes": 1,
+  "contrastes": 6,
+  "vacio_final_vs_original": -0.0197
+ }
+}

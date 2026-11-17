@@ -1,0 +1,35 @@
+{
+  "product": "202.290.11",
+  "text": "Type: dresser\nName: BUSUNGE\nColors: Light pink\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "202.290.11",
+      "name": "BUSUNGE",
+      "category": "dresser",
+      "kind": "dresser",
+      "dimensions_cm": {
+        "width": 80.0
+      },
+      "type_ikea": "Chest of 2 drawers",
+      "category_tp": "dresser",
+      "size_raw": "80x75 cm",
+      "colors": [
+        "Light pink"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "f3cfac5a5f5dc0b3"
+    ]
+  }
+}

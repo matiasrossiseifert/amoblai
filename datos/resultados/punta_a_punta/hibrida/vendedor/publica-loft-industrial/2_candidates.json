@@ -1,0 +1,685 @@
+{
+  "pieces": [
+    {
+      "piece": "un sof\u00e1 de cuero marr\u00f3n envejecido, en el centro del espacio libre mirando hacia la pared derecha",
+      "spec": {
+        "piece": "un sof\u00e1 de cuero marr\u00f3n envejecido, en el centro del espacio libre mirando hacia la pared derecha",
+        "why": "es la pieza que pidieron y la que define el living; el cuero co\u00f1ac envejecido calienta la madera clara, y flotarlo en el centro deja libres los radiadores y la circulaci\u00f3n hacia la puerta",
+        "kinds": [
+          "sofa"
+        ],
+        "max_width_cm": 240,
+        "max_depth_cm": 100,
+        "max_height_cm": null,
+        "query": "Type: sofa, three-seater leather sofa\nUse: seating and lounging; open loft living room\nStyle: industrial, rustic, mid-century modern\nMaterials: distressed full-grain leather, wood frame, black metal legs\nColors: aged cognac brown, worn tan\nShape: long and low, square arms, tufted or plain cushions, slim metal legs, substantial visual weight\nFeel: worn-in, warm, relaxed\nGoes with: exposed pine beams, light oak parquet, black metal; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B082QDKRC5",
+          "name": "Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 193.0,
+            "depth": 87.0,
+            "height": 83.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082QDKRC5.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests, 76\"W, Cognac\nColors: Cognac\nMaterials: Leather\nTapered legs, a rounded back and armrests, and a chic cognac-colored genuine leather upholstery give this couch a contemporary feel, but this design is classic enough to blend with any decor. A solid wood frame and foam padding in the cushions make it a sturdy and comfortable place to relax. 76.0\"W x 34.3\"D x 32.7\"H; seat height: 17.7\"H; seat depth: 21.2\"D; seat back height: 16.53\"H; arm height: 24.8\"H; leg height: 8.27\"H Solid wood frame, genuine leather upholstery This couch combines chic, contemporary design elements in a classic structure, making it the perfect fit wherever you need seating. Assemble in 15 minutes or less Avoid moisture. Wipes clean with soft, dry cloth. Free returns for 30 days. 1-year warranty\n",
+          "score": 2.167120941891056,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07QBMQ4LN",
+          "name": "Amazon Brand \u2013 Stone & Beam Abigail Leather Sofa, 86\"W, Dark Brown",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 218.4,
+            "depth": 104.1,
+            "height": 88.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QBMQ4LN.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Stone & Beam Abigail Leather Sofa, 86\"W, Dark Brown\nColors: Dark Brown\nMaterials: Leather\nComfort meets class in this attractive transitional-style sofa. The angular shape makes a statement in your home decor, and four dark-colored legs add elegance to the piece. The back and seat cushions are reversible to prolong the life of this sofa. 86\"W x 41\"D x 35\"H; seat height: 20\"H; seat depth: 40\"D; seat back height: 15\"H; arm height: 25\"H; leg height: 1.5\"H Sturdy wood frame with rich 100% top grain leather The removable seat and back cushions ensure durability and comfort. Classy angular design pairs well with contemporary-style home decor. Assemble in 15 minutes or less Vacuum or wipe with a dry cloth. Spot clean if needed. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.9245586928122205,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07P5LN16X",
+          "name": "Amazon Brand \u2013 Rivet Sloane Modern Leather Loveseat with Tufted Back, 64.2\"W, Caramel",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 163.1,
+            "depth": 90.9,
+            "height": 84.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07P5LN16X.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Rivet Sloane Modern Leather Loveseat with Tufted Back, 64.2\"W, Caramel\nColors: Caramel\nMaterials: Wood\nThis modern loveseat sports a tufted back, a strong profile, and tapered wooden legs, giving it a minimalist yet retro feel that makes it instantly appealing. The leather upholstery and solid-wood frame make this piece both cozy and reliable. 64.2\"W x 35.8\"D x 33.1\"H Solid wood frame and legs; leather upholstery A solid wood frame and leather upholstery make this loveseat as practical as it is stylish. A tufted back adds elegance to this minimalist design. Assemble in 15 minutes or less Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.8103726884990827,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07DBDX446",
+          "name": "Amazon Brand \u2013 Ravenna Home Modern Faux Leather Loveseat Sofa, 86.5\"W, Brown",
+          "category": "sofa",
+          "dimensions_cm": {
+            "width": 219.7,
+            "depth": 88.3,
+            "height": 96.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DBDX446.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Ravenna Home Modern Faux Leather Loveseat Sofa, 86.5\"W, Brown\nColors: Brown\nMaterials: Artificial Leather\nMetal frame; faux leather upholstery The handsome style and faux leather will complement any d\u00e9cor Less than 15 minutes assembly required Free returns for 30 days. 1-year warranty. 34.75\"L x 86.5\"W x 38\"H\n",
+          "score": 1.8026367984663676,
+          "kind": "sofa"
+        },
+        {
+          "id": "abo-B07JY2XNLC",
+          "name": "Amazon Brand \u2013 Ravenna Home Saxon Recliner Sofa - 85.4 x 38.4 x 42.1 Inch, Black Leather",
+          "category": "sofa",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07JY2XNLC.jpg"
+          ],
+          "description": "Type: sofa\nName: Amazon Brand \u2013 Ravenna Home Saxon Recliner Sofa - 85.4 x 38.4 x 42.1 Inch, Black Leather\nColors: Black\nMaterials: Artificial Leather\nBeautiful Black leather sofa in a welcoming, traditional style that is at home in a cozy den or family room as it is in a formal living room or library. The well-cushioned seat and arms make this sofa the perfect place to curl up with a book or watch television. Overall: 85.4\"W x 39.4\"D x 42.1\"H; seat height: 21.25\"H; seat depth: 21.75\"D; seat back height: 42.1\"H; back cushion height: 23.5\"H; arm height: 26.5\"H Upholstery: top grain leather with PU match;  filling materials: foam and polyester batting; metal frame. Beautiful leather stretched over dense white foam and encased-metal pocket coils for maximum comfort. Generously padded arms, seats, and backs offer comfort, while full chaise recliners deliver optimal leg support. Assemble in 15 minutes or less Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.5020290572463535,
+          "kind": "sofa"
+        }
+      ]
+    },
+    {
+      "piece": "una mesa ratona de madera maciza con patas de metal negro, delante del sof\u00e1",
+      "spec": {
+        "piece": "una mesa ratona de madera maciza con patas de metal negro, delante del sof\u00e1",
+        "why": "la pidieron as\u00ed: una tapa de madera maciza m\u00e1s oscura que el parquet y patas de acero negro dan el contraste industrial sin pelearse con las vigas",
+        "kinds": [
+          "coffee table"
+        ],
+        "max_width_cm": 140,
+        "max_depth_cm": 80,
+        "max_height_cm": 50,
+        "query": "Type: coffee table, solid wood top, metal legs\nUse: coffee table in front of sofa; loft living room\nStyle: industrial, rustic\nMaterials: solid reclaimed wood top, black steel legs\nColors: warm dark oak or walnut brown, matte black\nShape: rectangular, thick plank top, hairpin or frame steel legs, sturdy medium visual weight\nFeel: raw, solid, warm\nGoes with: brown leather sofa, exposed pine beams, light oak floor; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07L8DT2XT",
+          "name": "Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 121.9,
+            "depth": 61.0,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07L8DT2XT.jpg"
+          ],
+          "description": "Type: table\nName: Phoenix Home Rustic Industrial Solid Wood and Steel Open Shelf Coffee Table, Brown\nColors: Brown\nMaterials: Pine\nRustic coffee table combines dark hardwood and steel for ultimate strength and a beautiful heirloom-quality aesthetic Planked top and open shelf made of distressed, solid wood with visible natural knots and grain in a warm tone Solid-steel legs with a dark patina and set at a slight angle; X-shaped bracing with exposed metal fasteners and rivets Industrial style mixes materials for edgy, eye-catching results Measures 48 by 24 by 18 inches (LxWxH); 10-inch height between top and open shelf\n",
+          "score": 2.328632087246444,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B075Z85K2F",
+          "name": "Amazon Brand \u2013 Stone & Beam Culver Reclaimed Industrial Wood Coffee Table, 55.1\"W, Natural and Steel",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 80.0,
+            "height": 43.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z85K2F.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Culver Reclaimed Industrial Wood Coffee Table, 55.1\"W, Natural and Steel\nColors: Grey and Silver\nMaterials: reclaimed wood\nSleek, modern stainless steel legs are paired with a reclaimed wood top for a table that will bring rustic and industrial touches to your home. Top it with trays of snacks and beverages for many fun gatherings in the years to come. 55.1\"W x 31.5\"D x 17.3\"H Reclaimed wood and stainless steel Touches of modern, industrial and rustic Sturdy, durable and ideal for displaying magazines or snack trays Free returns for 30 days. 3-year warranty. Assembly required. Wipe with soft dry cloth.\n",
+          "score": 1.7272549486968656,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QF9WRNM",
+          "name": "Amazon Brand \u2013 Stone & Beam Garrett Rustic Acacia-Wood Coffee Table with Iron Legs, 52\"W, Gray and Raw Metal",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 132.1,
+            "depth": 66.0,
+            "height": 35.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QF9WRNM.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Garrett Rustic Acacia-Wood Coffee Table with Iron Legs, 52\"W, Gray and Raw Metal\nColors: Grey/Raw Metal\nMaterials: Metal\nConstructed of acacia, this coffee table touts a beautiful rustic style with visual knots and cracks covered with a sheer gray finish. Each unique piece has a live-edge top that sits on an open metalwork base. This table complements rustic, farmhouse, and contemporary decor with ease. 52\"W x 26\"D x 14\"H Acacia and iron This rustic coffee table offers a natural beauty with a live-edge top that features knots and cracks, making each piece unique. A natural clear finish allows the beauty of the wood to shine through while protecting the surface. Assemble in 15-30 minutes Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.3906308965990235,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B07QF9Y71V",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Coffee Table, 53\"W, Antique Natural and Black",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 135.0,
+            "depth": 75.0,
+            "height": 40.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QF9Y71V.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Industrial Coffee Table, 53\"W, Antique Natural and Black\nColors: Antique Natural/Black\nMaterials: Stone\nThis industrial coffee table touts an iron base in a black powder-coated finish and a natural-antique, solid-wood top and has a contemporary-meets-country flair that looks great with most decor. The sturdy iron base adds durability to the rustic elegance and helps reduce daily wear and tear. 53.15\"W x 29.53\"D x 15.75\"H Solid wood tops an iron base. This casual coffee table with an iron base and a solid wood top in an antique finish looks great with most decor styles. The solid wood top and iron base add durability. Assemble in 15 minutes or less Wipe with a soft, damp cloth; dry thoroughly. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.1962619823987415,
+          "kind": "coffee table"
+        },
+        {
+          "id": "abo-B075Z8M2BW",
+          "name": "Amazon Brand \u2013 Stone & Beam Roland X-Frame Coffee Table, 36\"W, Pine",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 91.4,
+            "depth": 91.4,
+            "height": 45.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z8M2BW.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Roland X-Frame Coffee Table, 36\"W, Pine\nColors: Walnut + Metal\nMaterials: stone\n36\"L x 36\"W x 18\"H Solid pine top with metal frame Industrial, rustic and modern touches come together in a piece that blends with most d\u00e9cor This sturdy piece will last through years of family movie nights and entertaining guests Easy assembly in 15-30 minutes. Wipe with soft dry cloth. Free returns for 30 days. 3-year warranty. This wood and metal coffee table combines elements of industrial and rustic, allowing it to blend with many styles. The solid pine wood top has a natural distressed finish, while the metal base has modern \"x\" frames on either end.\n",
+          "score": 1.0854296186826937,
+          "kind": "coffee table"
+        }
+      ]
+    },
+    {
+      "piece": "una biblioteca de metal negro y madera, contra la pared derecha junto a la puerta",
+      "spec": {
+        "piece": "una biblioteca de metal negro y madera, contra la pared derecha junto a la puerta",
+        "why": "la pidieron para esa pared; la estructura de acero negro y los estantes de madera repiten la mesa ratona y la baranda negra de la escalera, y estantes abiertos no achican el espacio",
+        "kinds": [
+          "bookcase"
+        ],
+        "max_width_cm": 160,
+        "max_depth_cm": 40,
+        "max_height_cm": 220,
+        "query": "Type: bookcase, open metal frame shelving\nUse: books and display; loft living room\nStyle: industrial\nMaterials: black steel frame, solid wood shelves\nColors: matte black, warm medium brown wood\nShape: tall open shelving, ladder or grid steel frame, four to five wood shelves, airy visual weight\nFeel: raw, structured, warm\nGoes with: black stair railing, solid wood coffee table, brown leather sofa; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSLTLGP",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 140.5,
+            "depth": 20.8,
+            "height": 42.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSLTLGP.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Stone & Beam Industrial Bookcase, 72 Inch Height, Natural Wood, Black Metal Frame\nMaterials: wood\nLipped wood shelves keep your belongings securely stored within the simple black metal frame of this towering bookcase. With a modern industrial flair, it makes a perfect display medium to show off your collection without distracting from it. 55\u201dW x 15\u201dD x 72\u201dH 30% metal, 70% wood Sleek, simple design adds a minimalist flair to any office or library A simple black metal frame supports 5 sturdy wooden shelves. Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty.\n",
+          "score": 2.3419377013245293,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PQS58XN",
+          "name": "AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PQS58XN.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Shelf Open Bookcase Organizer with Solid Rubber Wood Frame - Espresso\nColors: Espresso\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.3709226429907257,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07HSKY884",
+          "name": "Amazon Brand \u2013 Stone & Beam Half-Moon Industrial Rustic Bookcase, 54\"W, Dark Fir Finish with Bronze Accents",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 138.9,
+            "depth": 8.4,
+            "height": 111.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSKY884.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Stone & Beam Half-Moon Industrial Rustic Bookcase, 54\"W, Dark Fir Finish with Bronze Accents\nMaterials: Stone\nThe seamless marriage of cool black metal and warm dark-fir finished wood make this 4-shelf bookcase a versatile addition to any room. The half-moon frame design and sturdy metal supports hold your collection in style. 54\u201dW x 13.75\u201dD x 41.8\u201dH Metal half-moon frame adds elegance and style to this 4-shelf bookcase A low height profile makes this bookcase ideal for displays against busy walls Simple assembly in less than 15 minutes Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.3269125677714078,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07QC876WJ",
+          "name": "Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 117.3,
+            "depth": 38.1,
+            "height": 86.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QC876WJ.jpg"
+          ],
+          "description": "Type: shelf\nName: Amazon Brand \u2013 Rivet Davenport Contemporary Shelf, 34\"W, Elm and Metal\nColors: Natural\nElm wood shelving and an airy metal frame give this bookcase a contemporary flair that fits with any decor. The ample space between shelves allows you to keep your home office clutter free. 34\"W x 15\"D x 70\"H Metal frame with elm wood shelves Ample space between shelves can contain books, souvenirs, and art objects. This spacious contemporary bookcase fits with any room and interior design. Assemble in 15-30 minutes Wipe clean with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.2834183346917152,
+          "kind": "bookcase"
+        },
+        {
+          "id": "abo-B07PSZHDNK",
+          "name": "AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut",
+          "category": "shelf",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 38.2,
+            "height": 189.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07PSZHDNK.jpg"
+          ],
+          "description": "Type: shelf\nName: AmazonBasics Classic 5-Tier Open Bookcase with Solid Rubber Wood - Walnut\nColors: Walnut\nMaterials: wood\n5-tier classic ladder-style bookcase for placing keepsakes, decor, books, awards, and more Descending design with shelf widths widening at the bottom Straight back allows you to place bookcase neatly against a wall; angled front saves space Solid rubber wood construction; each shelf holds 25 pounds Minimal, modern design complements a variety of interior aesthetics Easy to assemble with provided instructions and hardware\n",
+          "score": 1.2244753298925886,
+          "kind": "bookcase"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara de pie de metal, al costado del sof\u00e1",
+      "spec": {
+        "piece": "una l\u00e1mpara de pie de metal, al costado del sof\u00e1",
+        "why": "la pidieron, y de noche el techo alto e inclinado necesita una luz baja que arme el rinc\u00f3n de lectura; metal negro o bronce oscuro con aire de taller",
+        "kinds": [
+          "floor lamp"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: floor lamp, metal arc or adjustable arm\nUse: reading light beside sofa; loft living room\nStyle: industrial\nMaterials: black metal, aged brass details\nColors: matte black, dark bronze\nShape: tall slim stand, articulated arm, metal dome or cage shade, light visual weight\nFeel: utilitarian, warm, vintage\nGoes with: brown leather sofa, black steel shelving, exposed wood beams; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07B4SC9N7",
+          "name": "Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 29.5,
+            "depth": 25.0,
+            "height": 155.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4SC9N7.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Mid Century Modern 2 Light Living Room Floor Lamp With Integrated LED - 61 Inches, Matte Black &amp; Antique Brass\nColors: Matte Black With Antique Brass\nThis very functional floor lamp has two multidirectional shades -- each with its own on/off switch -- that allow you to adjust the amount of light and point it in multiple directions. Brass and matte black metal combine for a striking contrast. 9.9\"W x 11.6\"D x 61.25\"H Metal shade and base with black finish; metal pole with antiqued brass finish Shades adjust to point light in multiple directions; each has on/off switch Integrated LED lamp Assemble in 15 minutes or less Intended for indoor use only\n",
+          "score": 1.5834329184238278,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082XMFBY2",
+          "name": "Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 22.9,
+            "depth": 22.9,
+            "height": 175.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082XMFBY2.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Globe Stick Floor Lamp, 69\"H, Black Marble\nColors: Black\nMaterials: Acrylic\nThis floor lamp is sleek and subtle in design, the tall, slim metal upright rising from a solid, sturdy cylindrical base to end in a globe shade that will shed diffused light. As much sculpture as lamp, this piece will add a pop of interest to any room. This floor lamp is made out of metal, marble and acrylic. This floor lamp will help light your living space, providing a warm ambiance. The stylish combination of metal and acrylic gives this lamp structural appeal. 9\"W x 9\"D x 69\"H Simple assembly in 15-30 minutes This lamp comes with a bulb and is rated for indoor use.\n",
+          "score": 1.3646767256495667,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B07374SBFL",
+          "name": "Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 43.2,
+            "depth": 25.4,
+            "height": 149.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374SBFL.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Adjustable Arm Mid-Century Modern Living Room Standing Floor Lamp - 59 Inches, Brushed Nickel\nColors: Brushed Nickel\nMaterials: Metal\nModern style Brushed nickel finish from base to adjustable sleek metal shade Provides ample light while fitting in a small space 10\"Wx17\"Dx59\"H Easily assembled in 15 minutes Curl up with a good book under this adjustable floor reading lamp, which shines highly focused light. The brushed nickel finish and simple, minimalist design will add just the right modern splash to your d\u00e9cor.\n",
+          "score": 1.1523375355993621,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "abo-B082JHW29P",
+          "name": "Amazon Brand \u2013 Stone & Beam Contemporary Floor Lamp with Brushed Steel Accents, 63\"H, Matte-Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 30.5,
+            "depth": 20.3,
+            "height": 160.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B082JHW29P.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Contemporary Floor Lamp with Brushed Steel Accents, 63\"H, Matte-Black\nColors: Matte Black\nMaterials: Metal\nWith a stunning contemporary design that will win over visitors, this LED floor lamp also saves you money and energy costs that will win over your wallet. Utilizing only 8.3-watts of energy, you have the perfect task light that adds style to any room! 8\"W x 12\"D x 63\"H Metal shade and base in a matte-black finish with brushed steel accents Contemporary design meets modern styling, perfect for every room in your home Integrated LED Assemble in 15 minutes or less For indoor use only\n",
+          "score": 1.096558988513919,
+          "kind": "floor lamp"
+        },
+        {
+          "id": "003.313.78",
+          "name": "RANARP",
+          "category": "lamp",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/003.313.78.jpg"
+          ],
+          "description": "Type: lamp\nName: RANARP\nColors: Black\nYou can easily direct the light where you want it because the lamp arm and head are adjustable.\n",
+          "score": 0.758983132171624,
+          "kind": "floor lamp"
+        }
+      ]
+    },
+    {
+      "piece": "una alfombra grande en tonos tierra, debajo del sof\u00e1 y la mesa ratona",
+      "spec": {
+        "piece": "una alfombra grande en tonos tierra, debajo del sof\u00e1 y la mesa ratona",
+        "why": "la pidieron grande: ancla el living en medio del loft y sus terracotas, \u00f3xidos y marrones unen el cuero con el parquet claro",
+        "kinds": [
+          "rug"
+        ],
+        "max_width_cm": 300,
+        "max_depth_cm": 250,
+        "max_height_cm": null,
+        "query": "Type: rug, large area rug\nUse: anchoring seating area; loft living room\nStyle: industrial, bohemian, rustic\nMaterials: wool, jute\nColors: terracotta, rust, warm brown, sand, charcoal\nShape: large rectangle, faded vintage or distressed pattern, low pile\nFeel: earthy, warm, worn\nGoes with: brown leather sofa, light oak floor, black metal; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B075TZK7X2",
+          "name": "Rivet Natural Chevron Rug, 7'6\" x 9'6\", Tan",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 292.1,
+            "depth": 231.1,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075TZK7X2.jpg"
+          ],
+          "description": "Type: rug\nName: Rivet Natural Chevron Rug, 7'6\" x 9'6\", Tan\nColors: Tan\nMaterials: Jute\n100% Jute Imported With its chevron v-shaped pattern and neutral hues, this area rug is equal parts modern and earthy. Handwoven with 100% natural jute fibers, this durable essential is ideal for low- to medium-traffic spaces. Area rug features a two-tone chevron pattern Handwoven with 100% natural jute fibers Medium 0.33'' pile suits low- to medium-traffic indoor areas Pair with a rug pad (sold separately) 7'6\" x 9'6\" Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.\n",
+          "score": 1.8043920489827905,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B073F7GFKB",
+          "name": "Amazon Brand \u2013 Rivet Modern Ombre Wool Rug, 7'6\" x 9'6\", Charcoal",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 292.1,
+            "depth": 231.1,
+            "height": 1.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B073F7GFKB.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Modern Ombre Wool Rug, 7'6\" x 9'6\", Charcoal\nColors: Charcoal\nMaterials: wool\nPile: 100% Wool, Backing: 100% Canvas Imported Deep and light hues fade into each other in this ombr\u00e9 pattern rug. Subtle yet striking, this 100% wool rug is high on style and softness. Area rug features an ombr\u00e9 pattern Hand-tufted with 100% wool fibers Plush .65'' pile suits high-traffic indoor areas Pair with a rug pad (sold separately) 7'6\" x 9'6\" Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle\n",
+          "score": 1.606387074893122,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0725Z9MX3",
+          "name": "Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 152.4,
+            "height": 1.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z9MX3.jpg"
+          ],
+          "description": "Type: rug\nName: Stone & Beam Contemporary Speckle Wool Area Rug, 5' x 7' 6\", Chestnut\nColors: Chestnut\nMaterials: wool\n100% Wool Imported Gradated tones of chestnut give this rug a beautiful texture and a calming feel. Hand-tufted of 100% wool, this contemporary rug is durable and ready to blend with your existing styles. Transitional style Hand-tufted in India of 100% wool Timeless look with durability for high-traffic areas 5' x 7'6\" Pairs with a rug pad (sold separately) Ships tightly rolled in a protective bag Unroll, allow a few days for natural fibers to settle.\n",
+          "score": 1.5009236764708886,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B0725Z73ZP",
+          "name": "Amazon Brand \u2013 Rivet Charcoal Distressed Medallion Area Rug, 8 x 10 Foot",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 304.8,
+            "depth": 243.8,
+            "height": 0.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0725Z73ZP.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Rivet Charcoal Distressed Medallion Area Rug, 8 x 10 Foot\nColors: Charcoal\nMaterials: synthetic\nPile: 100% Polypropylene, Backing: 100% Jute Imported Drawing inspiration from traditional Persian textiles, this design bursts with a bright, all-over medallion pattern. Durable, machine-woven synthetic fibers keep this rug looking fresh and feeling soft to the touch, even in high-traffic spaces. Area rug features a bright medallion pattern Machine-woven with 100% polypropylene fibers Low .2'' pile suits low- to high-traffic indoor areas Pair with a rug pad (sold separately) 8' x 10' Ships tightly rolled in a protective bag\n",
+          "score": 1.4490159397095372,
+          "kind": "rug"
+        },
+        {
+          "id": "abo-B07B4ZVLCN",
+          "name": "Amazon Brand \u2013 Stone & Beam Floral Wool Area Rug, 4 x 6 Foot, Taupe",
+          "category": "rug",
+          "dimensions_cm": {
+            "width": 182.9,
+            "depth": 121.9,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B4ZVLCN.jpg"
+          ],
+          "description": "Type: rug\nName: Amazon Brand \u2013 Stone & Beam Floral Wool Area Rug, 4 x 6 Foot, Taupe\nColors: Taupe\nMaterials: wool\nThe old-world style of floral design gets a modern update in this taupe rug, which is ready to create a soothing atmosphere in a living or dining room. The high-low pile combination creates warm and inviting textures and patterns. 4' x 6' High/low pile is easy to clean. Pair with rug pad (sold separately) Ships tightly rolled in a protective bag\n",
+          "score": 1.4479439191647903,
+          "kind": "rug"
+        }
+      ]
+    },
+    {
+      "piece": "almohadones y una manta para el sof\u00e1",
+      "spec": {
+        "piece": "almohadones y una manta para el sof\u00e1",
+        "why": "terminan el sof\u00e1 con textura en lino y lana en \u00f3xido, oliva y carb\u00f3n, sin blanco brillante",
+        "kinds": [
+          "cushion",
+          "throw"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: cushion, textured linen and wool\nUse: decorating leather sofa; loft living room\nStyle: industrial, rustic\nMaterials: washed linen, wool, canvas\nColors: rust, olive, charcoal, camel\nShape: square, simple, chunky texture\nFeel: cozy, earthy, relaxed\nGoes with: cognac leather sofa, earth-tone rug; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "202.617.32",
+          "name": "VIGDIS",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/202.617.32.jpg"
+          ],
+          "description": "Type: deco\nName: VIGDIS\nColors: Beige\nThe cushion cover is made of ramie, a hard-wearing natural material with a slightly irregular texture.\n",
+          "score": 1.5717492413976675,
+          "kind": "cushion"
+        },
+        {
+          "id": "702.812.52",
+          "name": "STOCKHOLM",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/702.812.52.jpg"
+          ],
+          "description": "Type: deco\nName: STOCKHOLM\nColors: Check, beige\nThe cushion cover is made of ramie, a hard-wearing natural material with a slightly irregular texture.\n",
+          "score": 1.4630957450083244,
+          "kind": "cushion"
+        },
+        {
+          "id": "abo-B07DTLKPJG",
+          "name": "AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 33.8,
+            "depth": 29.0,
+            "height": 10.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07DTLKPJG.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics Chunky Knitted Fringed Throw Blanket - 50 x 60 Inches, Camel\nColors: Camel\nMaterials: 75% Polyester, 25% Acrylic\nBlanket with classic knit design and fringed edges Soft acrylic and polyester construction Comfortable to use in all seasons Fits in with both contemporary and classic d\u00e9cor styles Available in a variety of sizes and colors to complement your home\n",
+          "score": 1.4597520035276024,
+          "kind": "throw"
+        },
+        {
+          "id": "abo-B075X53WD9",
+          "name": "Rivet Modern Global-Inspired Textured Tassel Throw Blanket",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 152.4,
+            "depth": 127.0,
+            "height": 0.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075X53WD9.jpg"
+          ],
+          "description": "Type: deco\nName: Rivet Modern Global-Inspired Textured Tassel Throw Blanket\nColors: Gray\nMaterials: 100% cotton\nThis throw is a comfy, functional work of art. Inspired by archaelogical finds in Mexico's Tulum ruins, it features layers of texture and oversized, hand-tied tassels. Use on a bed, drape over your sofa or hang on the wall for a true style statement. 50\"W x 60\"L 100% cotton Spot clean only.\n",
+          "score": 1.277807371052921,
+          "kind": "throw"
+        },
+        {
+          "id": "101.033.14",
+          "name": "IKEA STOCKHOLM",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/101.033.14.jpg"
+          ],
+          "description": "Type: deco\nName: IKEA STOCKHOLM\nColors: Beige\nMohair wool with a silky lustre.\n",
+          "score": 1.2108228297058383,
+          "kind": "throw"
+        }
+      ]
+    },
+    {
+      "piece": "una planta grande en maceta oscura, junto a la ventana del fondo",
+      "spec": {
+        "piece": "una planta grande en maceta oscura, junto a la ventana del fondo",
+        "why": "aporta vida y verde al espacio amplio y luminoso, con una maceta de metal o cemento oscuro que sigue la paleta",
+        "kinds": [
+          "plant pot"
+        ],
+        "max_width_cm": null,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: plant pot, large floor planter\nUse: holding a large plant; loft living room\nStyle: industrial\nMaterials: concrete or black metal\nColors: charcoal grey, matte black\nShape: tall cylinder, simple, medium visual weight\nFeel: raw, grounded\nGoes with: black steel shelving, exposed wood beams; industrial loft"
+      },
+      "candidates": [
+        {
+          "id": "abo-B075HR7LHQ",
+          "name": "Amazon Brand \u2013 Rivet Rustic Stoneware Crosshatch Indoor Flower Plant Pot, 6.25\"H, Silver, Medium Planter",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.8,
+            "depth": 17.8,
+            "height": 15.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075HR7LHQ.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Rustic Stoneware Crosshatch Indoor Flower Plant Pot, 6.25\"H, Silver, Medium Planter\nColors: Silver\nMaterials: Stoneware\nWith or without a plant, this pot will add class and sophistication to any room. The exterior is white with an electroplated silver finish, and the interior is a darker grey. This piece will bridge modern and classic styles in your home. Clean, simple design and neutral colors will blend anywhere Planter is 100% stoneware with electroplated silver finish 7\" Diameter x 6.25\" High Durable stoneware pot great for display or holding a plant\n",
+          "score": 1.9904064425445263,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B07HSJVP6M",
+          "name": "Amazon Brand \u2013 Rivet Casual Metal Planter and Stand, 20.87\"H, Cement Gray and Gold",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSJVP6M.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Casual Metal Planter and Stand, 20.87\"H, Cement Gray and Gold\nMaterials: Metal\nThis casual planter in cement and gold tones can stand on the floor or on a table to house your favorite plant or fairy garden. The cement-toned planter brings a subtle wash of color to your room, while the open gold stand adds visual interest. 9.84\" diameter x 20.87\"H 100% iron This casual cement-hued planter in a gold-toned stand looks great with most decors. Wipe clean with a soft, dry cloth.\n",
+          "score": 1.3801312898051705,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B07HSK628P",
+          "name": "Amazon Brand \u2013 Rivet Industrial Hexagonal Planter, 9.06\"H, Gold",
+          "category": "deco",
+          "dimensions_cm": null,
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSK628P.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Industrial Hexagonal Planter, 9.06\"H, Gold\nThis beautiful, industrial-style metal planter comes in a gold tone. A hexagonal shape brings visual interest to this piece that is sure to draw some attention. The size makes it a great choice for use on a table or other flat surface. 9.45\"D x 8.27\"W x 9.06\"H 100% iron This metal planter is made of 100% iron and comes in a gold tone. Wipe clean with a soft, dry cloth.\n",
+          "score": 1.3004653935447685,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B075HXSW3N",
+          "name": "Amazon Brand \u2013 Rivet Triangular Wall Mount Planter, 7\"H, Modern Earthenware, Grey",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 17.8,
+            "depth": 14.0,
+            "height": 5.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075HXSW3N.jpg"
+          ],
+          "description": "Type: deco\nName: Amazon Brand \u2013 Rivet Triangular Wall Mount Planter, 7\"H, Modern Earthenware, Grey\nColors: Grey\nMaterials: earthenware\nThis triangular vase makes a wonderful decorative piece for your wall. It's glazed for a concrete-like appearance, adding a bit of an industrial touch. The neutral tone looks great with or without plants, by itself or in a group of vases. Modern shape with neutral coloring to blend with any style room. 100% earthenware 5.5\"W X 2.1\"D X 7\"H; interior 4.725\"W x 1.77\"D x 6.1\"H Durable piece with hole on back for easy mounting on wall\n",
+          "score": 1.0927962663176167,
+          "kind": "plant pot"
+        },
+        {
+          "id": "abo-B07SCNS9Q7",
+          "name": "AmazonBasics Tabletop Planter, Square - Grey/Copper",
+          "category": "deco",
+          "dimensions_cm": {
+            "width": 12.5,
+            "depth": 10.8,
+            "height": 12.5
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07SCNS9Q7.jpg"
+          ],
+          "description": "Type: deco\nName: AmazonBasics Tabletop Planter, Square - Grey/Copper\nColors: Grey/Copper\nMaterials: Copper\nIndoor desk planter for home or office, ideal for growing and displaying small indoor plants such as air plants or succulents like aloe vera or a pincushion cactus Enhances any home or office with on-trend style and beautiful eye-catching modern design aesthetics Made of stoneware ceramic and durable steel for beauty and strength; add gravel or pebbles to the bottom of the planter for drainage purposes Tabletop-style pot with square-shaped metal support; grey and copper color Backed by an AmazonBasics 1-year limited warranty\n",
+          "score": 1.061284519015935,
+          "kind": "plant pot"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

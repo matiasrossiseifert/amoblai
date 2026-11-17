@@ -1,0 +1,33 @@
+{
+  "product": "101.212.52",
+  "text": "Type: deco\nName: HEMNES\nColors: Black-brown\nFull-length mirror.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "101.212.52",
+      "name": "HEMNES",
+      "category": "deco",
+      "kind": "mirror",
+      "dimensions_cm": null,
+      "type_ikea": "Mirror",
+      "category_tp": "deco",
+      "size_raw": "74x165 cm",
+      "colors": [
+        "Black-brown"
+      ],
+      "description": "Full-length mirror."
+    },
+    "photos": [
+      "3c2c13be6078b17a"
+    ]
+  }
+}

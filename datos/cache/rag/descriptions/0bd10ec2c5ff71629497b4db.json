@@ -1,0 +1,36 @@
+{
+  "product": "002.804.92",
+  "text": "Type: rug\nName: OSTED\nColors: Brown\nThe rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.804.92",
+      "name": "OSTED",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 80.0,
+        "depth": 240.0
+      },
+      "type_ikea": "Rug, flatwoven",
+      "category_tp": "rug",
+      "size_raw": "80x240 cm",
+      "colors": [
+        "Brown"
+      ],
+      "description": "The rug is hard-wearing and durable because its made of sisal, a natural fibre taken from the agave plant."
+    },
+    "photos": [
+      "1b50a3431ad75741"
+    ]
+  }
+}

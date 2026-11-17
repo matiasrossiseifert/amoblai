@@ -1,0 +1,34 @@
+{
+  "product": "102.335.32",
+  "text": "Type: chair\nName: NOLMYRA\nColors: Birch veneer, grey\nThe armchair is lightweight and easy to move if you want to clean the floor or rearrange the furniture.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "102.335.32",
+      "name": "NOLMYRA",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Easy chair",
+      "category_tp": "armchair",
+      "size_raw": null,
+      "colors": [
+        "Birch veneer",
+        "grey"
+      ],
+      "description": "The armchair is lightweight and easy to move if you want to clean the floor or rearrange the furniture."
+    },
+    "photos": [
+      "9ac4bde7bcdafd8c"
+    ]
+  }
+}

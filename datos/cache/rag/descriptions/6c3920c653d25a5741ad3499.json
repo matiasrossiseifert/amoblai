@@ -1,0 +1,33 @@
+{
+  "product": "002.286.06",
+  "text": "Type: lamp\nName: STOCKHOLM\nColors: White\nYou can either hang the lamp close to the ceiling in your living room or low over a coffee table.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "002.286.06",
+      "name": "STOCKHOLM",
+      "category": "lamp",
+      "kind": "pendant lamp",
+      "dimensions_cm": null,
+      "type_ikea": "Pendant lamp",
+      "category_tp": "lamp",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You can either hang the lamp close to the ceiling in your living room or low over a coffee table."
+    },
+    "photos": [
+      "9aac02ec2ccfcdea"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "product": "003.158.87",
+  "text": "Type: shelf\nName: FALSTERBO\nThe shelves have a ledge to prevent whatever you place on it from sliding off.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "003.158.87",
+      "name": "FALSTERBO",
+      "category": "shelf",
+      "kind": "wall shelf",
+      "dimensions_cm": {
+        "width": 60.0
+      },
+      "type_ikea": "Wall shelf",
+      "category_tp": "shelf",
+      "size_raw": "60x100 cm",
+      "colors": [],
+      "description": "The shelves have a ledge to prevent whatever you place on it from sliding off."
+    },
+    "photos": [
+      "51f8117e4bb6ae03"
+    ]
+  }
+}

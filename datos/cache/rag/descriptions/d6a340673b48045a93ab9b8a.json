@@ -1,0 +1,33 @@
+{
+  "product": "402.177.95",
+  "text": "Type: chair\nName: FRODE\nColors: Turquoise\nYou can fold the chair, so it takes less space when you're not using it.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "402.177.95",
+      "name": "FRODE",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Folding chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Turquoise"
+      ],
+      "description": "You can fold the chair, so it takes less space when you're not using it."
+    },
+    "photos": [
+      "a6369b5dc3498c28"
+    ]
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "pieces": [
+    {
+      "piece": "una mesa de comedor rectangular de madera oscura, en el centro del espacio entre la pen\u00ednsula de la cocina y la escalera",
+      "spec": {
+        "piece": "una mesa de comedor rectangular de madera oscura, en el centro del espacio entre la pen\u00ednsula de la cocina y la escalera",
+        "why": "pidieron una mesa oscura para seis u ocho personas; en tono espresso repite los muebles de la cocina y el pasamanos, y contrasta con el suelo rojizo sin confundirse con \u00e9l",
+        "kinds": [
+          "dining table"
+        ],
+        "max_width_cm": 220,
+        "max_depth_cm": 105,
+        "max_height_cm": null,
+        "query": "Type: dining table, rectangular extendable wood table\nUse: family dinners for six to eight; open-plan dining area\nStyle: traditional, contemporary, classic\nMaterials: solid wood, espresso stained wood\nColors: dark espresso brown\nShape: rectangular, sturdy legs or trestle base, clean classic lines, substantial visual weight\nFeel: warm, timeless, welcoming\nGoes with: espresso kitchen cabinets, dark wood stair handrail, reddish hardwood floor, cream walls"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07B78G443",
+          "name": "Stone & Beam Jon Casual Farmhouse Expandable Wood Dining Table, 90\"W, Birch",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 228.6,
+            "depth": 101.6,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B78G443.jpg"
+          ],
+          "description": "Type: table\nName: Stone & Beam Jon Casual Farmhouse Expandable Wood Dining Table, 90\"W, Birch\nColors: Beige\nMaterials: wood\n40\"L x 74-90\"W x 30\"H Solid hardwood made of poplar; birch veneer A simple design and rustic finish make it casual and ideal for a modern farmhouse d\u00e9cor A great table for dining or homework; self-storing leaf Assembly in 30 minutes or less; attach base to top Free returns for 30 days. 3-year warranty. This handsome rustic rectangular table is ideal for a lake house -- or for adding a warm natural touch to your home. Solid hardwood and sturdy construction will last through many family dinners. An extra leaf allows you to accommodate more guests.\n",
+          "score": 1.8035009351833675,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B0853Q71J6",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Pine Extendable Dining Table, 39\"\u201377\"W, Brown",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 195.6,
+            "depth": 99.1,
+            "height": 73.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B0853Q71J6.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Rivet Mid-Century Modern Pine Extendable Dining Table, 39\"\u201377\"W, Brown\nColors: Brown\nMaterials: Pine\nThis sleek, stylish table recalls the simplicity of mid-century dining. The extendable top panel makes it flexible\u2014it can be small enough for a breakfast nook or big enough for a dining room. Its sturdy pine construction will make it a fixture at your family meals for many years to come. 39\"\u201377\"W x 39\"D x 29.1\"H Pine and MDF with pine veneer This mid-century dining table is extendable with solid pine legs. It's an ideal spot to share a meal at home. This classic table can be used in breakfast nooks, kitchens, and dining rooms. The extendable top panel is great for both big and small gatherings. Assemble in 15 minutes or less Using a soft, damp cloth, wipe in the direction of the grain. Free returns for 30 days; 1-year warranty.\n",
+          "score": 1.4583565396239608,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B076NNYB3P",
+          "name": "Amazon Brand \u2013 Stone & Beam Dunbar Wood Dining Room Kitchen Table, 78\"L, Oak Finish",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 101.6,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B076NNYB3P.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Dunbar Wood Dining Room Kitchen Table, 78\"L, Oak Finish\nColors: Oak\nMaterials: stone\nThis handsome modern table combines a vintage distressed wood top with industrial-style legs. Simple, clean lines and beautiful quarter-sawn oak veneer finish make this piece look at home in rustic or modern settings. 78\"L x 40\"D x 30\"H Hardwood table top with quarter-sawn oak veneer A simple modern piece with rustic and industrial influences Free returns for 30 days. 3-year warranty. Assembly is required. Wipe with soft dry cloth.\n",
+          "score": 1.2793322352576821,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B07B7B94D8",
+          "name": "Amazon Brand \u2013 Stone & Beam Bradhurst Rustic Wood Dining Table, 86.6\"L, Brown",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 239.8,
+            "depth": 89.9,
+            "height": 75.9
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7B94D8.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Bradhurst Rustic Wood Dining Table, 86.6\"L, Brown\nColors: Brown\nMaterials: Hardwood\nYou'll enjoy years of making family memories around this modern rustic table. With a natural finish that shows off the wood's natural grain, it will add simple beauty to a farmhouse-style room. Angular cross-tied legs give it a modern touch. 86.6\"L x 37.4\"D x 30\"H Hardwood made from fir A simple natural style that works with modern farmhouse or transitional d\u00e9cor A handsome table that can also be used in home office or as a craft table Assembly required Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.2507644360053904,
+          "kind": "dining table"
+        },
+        {
+          "id": "abo-B075YMW6LH",
+          "name": "Amazon Brand \u2013 Stone & Beam Glenwood Modern Industrial Metal Base Dining Room Table, 78\"L, Oak Wood",
+          "category": "table",
+          "dimensions_cm": {
+            "width": 198.1,
+            "depth": 101.6,
+            "height": 76.2
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YMW6LH.jpg"
+          ],
+          "description": "Type: table\nName: Amazon Brand \u2013 Stone & Beam Glenwood Modern Industrial Metal Base Dining Room Table, 78\"L, Oak Wood\nColors: Oak\nMaterials: stone\nThis handsome modern table combines an attractive wood top with an industrial-style metal base. Simple, clean lines and beautiful quarter-sawn oak veneer finish make this piece look at home in rustic or modern settings. 78\"L x 40\"D x 30\"H Hardwood table top with quarter-sawn oak veneer and metal base A simple modern piece with rustic and industrial influences Free returns for 30 days. 3-year warranty. Assembly is required. Wipe with soft dry cloth.\n",
+          "score": 1.1177663420520265,
+          "kind": "dining table"
+        }
+      ]
+    },
+    {
+      "piece": "seis sillas de comedor tapizadas en tela gris, alrededor de la mesa",
+      "spec": {
+        "piece": "seis sillas de comedor tapizadas en tela gris, alrededor de la mesa",
+        "why": "son las sillas que pidieron; el gris enfr\u00eda con suavidad la madera oscura y la crema de las paredes, y el tapizado aporta comodidad y un aire actual",
+        "kinds": [
+          "dining chair"
+        ],
+        "max_width_cm": 55,
+        "max_depth_cm": 65,
+        "max_height_cm": null,
+        "query": "Type: dining chair, upholstered fabric chair\nUse: seating at the dining table; open-plan dining room\nStyle: contemporary, classic, traditional\nMaterials: grey fabric upholstery, dark wood legs\nColors: warm grey, espresso brown\nShape: upholstered seat and back, slightly curved or straight back, tapered dark legs, medium visual weight\nFeel: comfortable, elegant, cozy\nGoes with: dark espresso dining table, cream walls, reddish hardwood floor, dark wood stair handrail"
+      },
+      "candidates": [
+        {
+          "id": "abo-B088K35C1X",
+          "name": "Rivet Alfred Mid-Century Modern Wide Curved Back Accent Kitchen Dining Room Chair, 25.2\"W, Canary Yellow (Renewed)",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 63.5,
+            "depth": 58.4,
+            "height": 81.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B088K35C1X.jpg"
+          ],
+          "description": "Type: chair\nName: Rivet Alfred Mid-Century Modern Wide Curved Back Accent Kitchen Dining Room Chair, 25.2\"W, Canary Yellow (Renewed)\nColors: Canary\nThis classic mid-century modern accent chair features a wide curved back and armrest combined with simple tapered legs. Plenty of padding makes it sturdy and comfortable to use in the dining room or anywhere else extra seating is needed. 25.2W\" x 23.2\"D x x31.9\"H Fabric is 100% polyester. Hardwood legs with espresso finish. Foam padding and elastic suspension system keep back and seat firm and springy Free returns for 30 days. 1-year warranty. Simple assembly; just attach legs. Wipe with soft dry cloth.\n",
+          "score": 1.9259645148860534,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B07QBQCG77",
+          "name": "Amazon Brand \u2013 Rivet Contemporary Curved-Back Dining Chair, 35\"H, Felt Gray",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 62.0,
+            "height": 88.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07QBQCG77.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Rivet Contemporary Curved-Back Dining Chair, 35\"H, Felt Gray\nColors: Felt Gray\nMaterials: Wood\nThe curved back and outside channel of this dining chair create an elegant touch to any room while providing comfortable support. Felt-gray fabric allows it to seamlessly fit into a number of decor schemes. The solid wood frame creates a sturdy dining seat. 24\"W x 26\"D x 35\"H; seat height: 19\"H; seat depth: 18\"D; seat back height: 15\"H 100% polyester fabric on solid wood frame Curved back with outside channel No assembly required Avoid moisture. Wipe with a soft, dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.825443458514913,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B084FMN5W9",
+          "name": "Rivet Malida Mid-Century Modern Open Back Kitchen Dining Room Accent Chair, 33\"H, Aqua (Renewed)",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 55.9,
+            "height": 83.8
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084FMN5W9.jpg"
+          ],
+          "description": "Type: chair\nName: Rivet Malida Mid-Century Modern Open Back Kitchen Dining Room Accent Chair, 33\"H, Aqua (Renewed)\nColors: Aqua\nMaterials: polyester. Hardwood\nA cut-out back and tapered legs give this accent chair a classic mid-century modern design. Plenty of padding makes it sturdy and comfortable to use in the dining room or anywhere else extra seating is needed. 22.8\"W x 22.1\"D x 33.1\"H; Seat Height is 18.5\" Fabric is 100% polyester. Hardwood legs with espresso finish. Foam padding and elastic suspension system keep back and seat firm and springy No assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 1.5945597449370972,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B07HSBRV6W",
+          "name": "Amazon Brand \u2013 Stone & Beam Levy Dining Room Kitchen Chair, 40 Inch Height, Ivory",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 64.8,
+            "depth": 57.1,
+            "height": 101.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSBRV6W.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Levy Dining Room Kitchen Chair, 40 Inch Height, Ivory\nColors: Navy\nIvory upholstery and natural wooden legs combine for a timeless classic dining chair, while a gently curved armrest provides a slight contemporary twist. Solid wood frame, fabric Curved armrests for style and comfort 22.5\"D x 22.5\"W x 40\"H\n",
+          "score": 1.4855193598609961,
+          "kind": "dining chair"
+        },
+        {
+          "id": "abo-B084W2RH8Z",
+          "name": "Amazon Brand \u2013 Stone & Beam Linden Classic Upholstered Dining Chair, 18.9\"W, Set of 2, Cadet Blue",
+          "category": "chair",
+          "dimensions_cm": {
+            "width": 62.0,
+            "depth": 48.0,
+            "height": 87.1
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B084W2RH8Z.jpg"
+          ],
+          "description": "Type: chair\nName: Amazon Brand \u2013 Stone & Beam Linden Classic Upholstered Dining Chair, 18.9\"W, Set of 2, Cadet Blue\nColors: Cadet\nThis set of two classically styled armless dining chairs are upholstered in a cadet-blue fabric that makes them equally perfect for a classic dining room or eat-in kitchen. Their luxury and practicality means they evoke both romantic dinners for two and fabulous banquets for the whole family. 18.9\"W x 24.4\"D x 34.3\"H; seat height: 19.3\"H; seat depth: 18.5\"D; seat back height: 19.7\"H; leg height: 14.6\"H Solid wood frame High back provides extra support and added flair. Simple dining chair boasts beautiful fabric. Assemble in 15 minutes or less Avoid moisture. Wipe clean with a soft, dry cloth. Free returns for 30 days. 3-year warranty.\n",
+          "score": 1.4840654225747898,
+          "kind": "dining chair"
+        }
+      ]
+    },
+    {
+      "piece": "una l\u00e1mpara colgante grande sobre el centro de la mesa",
+      "spec": {
+        "piece": "una l\u00e1mpara colgante grande sobre el centro de la mesa",
+        "why": "una sola pieza generosa define el comedor dentro de la planta abierta; en bronce envejecido o negro mate dialoga con las colgantes de la cocina y da una luz c\u00e1lida",
+        "kinds": [
+          "pendant lamp"
+        ],
+        "max_width_cm": 110,
+        "max_depth_cm": null,
+        "max_height_cm": null,
+        "query": "Type: pendant lamp, large dining chandelier\nUse: lighting over the dining table; open-plan dining room\nStyle: classic, contemporary, traditional\nMaterials: aged brass or matte black metal, frosted or linen shades\nColors: warm bronze, soft white\nShape: large linear or round chandelier, multiple lights, open airy frame, statement size\nFeel: warm, elegant, inviting\nGoes with: espresso wood table, grey upholstered chairs, cream walls, glass kitchen pendants"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07GNSXX6B",
+          "name": "Amazon Brand \u2013 Stone & Beam Classic Ceiling Pendant Chandelier Fixture With White Drum Shade- 20 x 20 x 42 Inches, Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 50.8,
+            "depth": 50.8,
+            "height": 106.7
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07GNSXX6B.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Classic Ceiling Pendant Chandelier Fixture With White Drum Shade- 20 x 20 x 42 Inches, Black\nColors: Black\nMaterials: Metal\nA modern spin on the classic chandelier, this light fixture has four arms covered by one rectangular shade. The metal hardware combines with a white fabric shade to blend with your existing styles. Modern with classic touches Metal hardware with black finish and fabric shade Creates a warm ambiance for a living room or dining room 42\"H x 20\"W x 20\"D Product is hardwired (professional installation recommended) For indoor use only\n",
+          "score": 2.02752576056481,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07374QGD8",
+          "name": "Amazon Brand \u2013 Stone & Beam Industrial Triple Glass Shade Ceiling Hanging Pendant Chandelier Fixture - 23 x 7 x 36 Inches, Gunmetal Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 58.4,
+            "depth": 17.8,
+            "height": 91.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07374QGD8.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Stone & Beam Industrial Triple Glass Shade Ceiling Hanging Pendant Chandelier Fixture - 23 x 7 x 36 Inches, Gunmetal Black\nColors: Black\nMaterials: Metal\nThis smartly designed industrial pendant chandelier will add a sophisticated twist to a modern kitchen, dining room or bar area. Black metal is paired with three clear glass shades. Modern industrial Metal hardware with gunmetal black finish, clear glass shades Provides ample light along with a strong, modern style statement 36\"H x \"23\"W x 7\"D. Rods can be removed to adjust to 22\"H. Product is hardwired (professional installation recommended) Intended for indoor use only\n",
+          "score": 1.5890772445118275,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B08B8TV5PR",
+          "name": "Amazon Basics Pendant Lamp - 15.7\" x 15.7\" x 60\", Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 39.9,
+            "depth": 39.9,
+            "height": 152.4
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B08B8TV5PR.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Basics Pendant Lamp - 15.7\" x 15.7\" x 60\", Matte Black\nColors: Matte Black\nMaterials: Metal\nFabric shade: gracefully diffuses light and offers a round shape for a visually pleasing profile Metal base: sturdy metal base offers long-lasting strength and a sleek appearance Modern style: coordinates effortlessly with surrounding contemporary or transitional decor Small size: relatively small size makes it a great choice for a bedroom, kitchen, living room, or office Simple set-up and warranty: designed to hang from the ceiling; assembles quickly and easily (screwdriver and light bulb needed, not included); backed by an Amazon Basics 1-year limited warranty\n",
+          "score": 1.5853577446672453,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07HKGHTGT",
+          "name": "Amazon Brand \u2013 Ravenna Home Contemporary Modern Chandelier with 5 White Glass Light Shades - 26 x 26 x 40 Inches, Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 66.0,
+            "height": 101.6
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HKGHTGT.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Ravenna Home Contemporary Modern Chandelier with 5 White Glass Light Shades - 26 x 26 x 40 Inches, Matte Black\nColors: Matte Black\nMaterials: Metal\nThis pendant light has 5 matte-black metal arms that curve upward. Each light is adorned with a flower-shaped white glass shade that faces upward, giving this light the appearance of a simple, classy chandelier. 26''W x 26''D x 40''H Matte-black metal with white glass shade 5 glass shades Bulb not included Professional installation recommended For indoor use only\n",
+          "score": 1.3364635790924304,
+          "kind": "pendant lamp"
+        },
+        {
+          "id": "abo-B07HKFRTVC",
+          "name": "Amazon Brand \u2013 Rivet Modern 6 Globe Flush Mount Metal Ceiling Pendant Chandelier Fixture - 26 x 26 x 8 Inches, Matte Black",
+          "category": "lamp",
+          "dimensions_cm": {
+            "width": 66.0,
+            "depth": 66.0,
+            "height": 20.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HKFRTVC.jpg"
+          ],
+          "description": "Type: lamp\nName: Amazon Brand \u2013 Rivet Modern 6 Globe Flush Mount Metal Ceiling Pendant Chandelier Fixture - 26 x 26 x 8 Inches, Matte Black\nColors: Matte Black\nMaterials: Metal\nBathe your interiors in light with this large, multifaceted pendant. The 6 matte-black metal branches hold up 6 spherical lights with white glass shades that emit warm light in all directions. 26\"W x 26\"D x 8\"H Matte-black metal; white glass shade 6 glass shades Type A, bulb not included Professional installation recommended For indoor use only\n",
+          "score": 1.3270351337377526,
+          "kind": "pendant lamp"
+        }
+      ]
+    },
+    {
+      "piece": "un aparador de madera oscura contra la pared de la escalera, en el tramo m\u00e1s alto, cerca del pasillo",
+      "spec": {
+        "piece": "un aparador de madera oscura contra la pared de la escalera, en el tramo m\u00e1s alto, cerca del pasillo",
+        "why": "pidieron un aparador en esa pared; bajo y en el mismo tono que la mesa, guarda la vajilla al lado del comedor y equilibra la pared vac\u00eda bajo la escalera",
+        "kinds": [
+          "sideboard"
+        ],
+        "max_width_cm": 180,
+        "max_depth_cm": 45,
+        "max_height_cm": 90,
+        "query": "Type: sideboard, wood buffet with doors\nUse: storing dishes and table linen; dining room\nStyle: traditional, contemporary, classic\nMaterials: solid wood, espresso stained wood, bronze hardware\nColors: dark espresso brown, warm bronze\nShape: long and low, paneled doors and drawers, short legs, medium visual weight\nFeel: warm, orderly, refined\nGoes with: espresso dining table, dark wood stair handrail, white balusters, cream walls, reddish hardwood floor"
+      },
+      "candidates": [
+        {
+          "id": "abo-B07HSBD8DM",
+          "name": "Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 172.7,
+            "depth": 50.8,
+            "height": 82.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07HSBD8DM.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Stone & Beam Traditional Buffet Storage Cabinet - 68 Inch, Brown\nColors: Brown\nMaterials: Wood\n68\u201dW x 20\u201dD x 32.3\u201dH Rubber Wood, MDF with a mahogany veneer. Buffet arrives assembled; adjustable shelves and handles require assembly Free returns for 30 days.1 year warranty. This cabinet has 4 doors with slow-closing hinges and 3 adjustable shelves\n",
+          "score": 0.6279908110649717,
+          "kind": "sideboard"
+        },
+        {
+          "id": "402.397.21",
+          "name": "STOCKHOLM",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 160.0
+          },
+          "source": "datos/procesados/items.jsonl",
+          "photos": [
+            "datos/dataset/ikea/images/objects/402.397.21.jpg"
+          ],
+          "description": "Type: cabinet\nName: STOCKHOLM\nColors: Walnut veneer\nThe sideboard in walnut veneer and solid ash brings a warm, natural feeling to your room.\n",
+          "score": 0.5769720616260405,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075Z8628K",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Checkerboard Reclaimed Elm Buffet Sideboard Credenza Cabinet, 55.1\"W, Natural",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 140.0,
+            "depth": 45.0,
+            "height": 80.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075Z8628K.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Rivet Mid-Century Modern Checkerboard Reclaimed Elm Buffet Sideboard Credenza Cabinet, 55.1\"W, Natural\nColors: Natural\nMaterials: Solid elm frame and legs\nFrom checkerboard accent front to its tapered legs, this handsome cabinet makes a true mid-century statement. Storage compartments make it useful as an entertainment center, a focal point for a hallway or entryway, or even a dining room buffet. 55.1\"W x 17.7\"D x 31.5\"H Reclaimed solid elm frame and legs A mid-century modern statement piece Soft closing drawers provide convenient storage for dishes, AV equipment and more No assembly required. Wipe with soft dry cloth. Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.5059610673335158,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B075YQ8Q3T",
+          "name": "Amazon Brand \u2013 Stone & Beam Parson Rustic Buffet Sideboard Storage Cabinet 56\"W, Oak Wood",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 142.2,
+            "depth": 45.7,
+            "height": 81.3
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B075YQ8Q3T.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Stone & Beam Parson Rustic Buffet Sideboard Storage Cabinet 56\"W, Oak Wood\nColors: Buffet\nMaterials: Hardwood\nThis beautiful buffet features sturdy, durable construction and timeless oak finish. Its transitional style has just the right touches of traditional and rustic, while concealed ball-bearing glides support smooth, self-closing drawers. 56\"W x 18\"D x 32\"H Hardwood frame and drawers with oak veneer Self-closing drawers move smoothly, thanks to concealed ball-bearing extension glides Free returns for 30 days. 3-year warranty. Assembly is required. Wipe with soft dry cloth.\n",
+          "score": 0.48831175084408623,
+          "kind": "sideboard"
+        },
+        {
+          "id": "abo-B07B7DMPX7",
+          "name": "Amazon Brand \u2013 Rivet Mid-Century Modern Wood Media TV Console Stand Table, 59\"H, White &amp; Gray",
+          "category": "cabinet",
+          "dimensions_cm": {
+            "width": 150.1,
+            "depth": 50.0,
+            "height": 77.0
+          },
+          "source": "datos/procesados/abo_items.jsonl",
+          "photos": [
+            "datos/dataset/abo/images/B07B7DMPX7.jpg"
+          ],
+          "description": "Type: cabinet\nName: Amazon Brand \u2013 Rivet Mid-Century Modern Wood Media TV Console Stand Table, 59\"H, White &amp; Gray\nMaterials: wood\nWith multiple doors, drawers and shelving, this console is ready to store dishes, books, electronics and more. White painted finish and ash veneers are paired with minimalist bronze legs, resulting in a head-turning mid-century piece. 19.7\"W x 59.1\"D x 30.3\"H Engineered hardwood and fiberboard; metal legs Minimalist, mid-century modern design Can serve as a sideboard in a kitchen area or as a media console in the living space Assembly in 1 hour or less; screw on legs Free returns for 30 days. 1-year warranty.\n",
+          "score": 0.24466175818880484,
+          "kind": "sideboard"
+        }
+      ]
+    }
+  ],
+  "empty": []
+}

@@ -1,0 +1,36 @@
+{
+  "product": "503.006.66",
+  "text": "Type: cabinet\nName: BRIMNES\nColors: Glass, white\nNo description\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "503.006.66",
+      "name": "BRIMNES",
+      "category": "cabinet",
+      "kind": "display cabinet",
+      "dimensions_cm": {
+        "width": 78.0
+      },
+      "type_ikea": "Cabinet with doors",
+      "category_tp": "cabinet",
+      "size_raw": "78x95 cm",
+      "colors": [
+        "Glass",
+        "white"
+      ],
+      "description": "No description"
+    },
+    "photos": [
+      "9e3804573bb43eb6"
+    ]
+  }
+}

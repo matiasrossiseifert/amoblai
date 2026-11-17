@@ -1,0 +1,36 @@
+{
+  "product": "703.323.55",
+  "text": "Type: rug\nName: HEMMAHOS\nColors: Turquoise\nIf you combine many rugs you can create a colourful street with its own zebra crossing.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "703.323.55",
+      "name": "HEMMAHOS",
+      "category": "rug",
+      "kind": "rug",
+      "dimensions_cm": {
+        "width": 50.0,
+        "depth": 75.0
+      },
+      "type_ikea": "Rug",
+      "category_tp": "rug",
+      "size_raw": "50x75 cm",
+      "colors": [
+        "Turquoise"
+      ],
+      "description": "If you combine many rugs you can create a colourful street with its own zebra crossing."
+    },
+    "photos": [
+      "a6dd486619d6aa57"
+    ]
+  }
+}

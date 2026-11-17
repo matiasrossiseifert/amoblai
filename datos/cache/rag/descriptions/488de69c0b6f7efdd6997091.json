@@ -1,0 +1,33 @@
+{
+  "product": "302.625.28",
+  "text": "Type: chair\nName: FEODOR\nColors: Black\nYou sit comfortably since the chair is adjustable in height.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.625.28",
+      "name": "FEODOR",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Black"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "e6950fed17d18b43"
+    ]
+  }
+}

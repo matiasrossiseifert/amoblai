@@ -383,12 +383,15 @@ def _candidate(answer: str, ids: list[str]) -> str | None:
 def _rerank_request(cfg: Config, reranker: str, query: str, items: list[dict]):
     """Lo que el VLM recibe para reordenar `items` y el archivo de la caché de su respuesta."""
     params = cfg.evaluation.rerankers[reranker]
-    tmpl = load_prompt(cfg.evaluation.rerank_prompt, cfg.root)
+    tmpl = load_prompt(params.get("prompt", cfg.evaluation.rerank_prompt), cfg.root)
     hits = [as_hit(it, None) for it in items]
-    lines = [
-        f"image {n}. {h.id}: {h.kind or h.category}, {type_line(h)}, {size_text(h)}"
-        for n, h in enumerate(hits, 1)
-    ]
+    if params.get("photos", True):
+        lines = [
+            f"image {n}. {h.id}: {h.kind or h.category}, {type_line(h)}, {size_text(h)}"
+            for n, h in enumerate(hits, 1)
+        ]
+    else:  # experiment 5b: the candidates' descriptions instead of their photos
+        lines = [f"{n}. [{h.id}] {size_text(h)}\n{h.description}" for n, h in enumerate(hits, 1)]
     text = tmpl.fill(query=query, n=len(hits), candidates="\n".join(lines))
     key = {"llm": params, "prompt": tmpl.version, "text": text}
     sha = hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()[:24]
@@ -481,9 +484,24 @@ def rerank(cfg: Config, reranker: str, query: str, items: list[dict]) -> list[st
     params, hits, text, f = _rerank_request(cfg, reranker, query, items)
     if f.exists():
         return json.loads(f.read_text())["ranking"]
-    content = [image_block(photo(cfg, h), cfg.furnish.photo_max_side) for h in hits]
-    a, data = ask(cfg, "eval.rerank", [*content, text_block(text)], params)
+    content = []
+    if params.get("photos", True):
+        content = [image_block(photo(cfg, h), cfg.furnish.photo_max_side) for h in hits]
+    llm = {k: v for k, v in params.items() if k not in ("photos", "prompt")}
     ids = [h.id for h in hits]
+    for intento in (1, 2):  # una respuesta que no es el JSON pedido: se pregunta una vez más
+        try:
+            a, data = ask(cfg, "eval.rerank", [*content, text_block(text)], llm)
+            break
+        except ProviderError as e:
+            if "not the JSON asked for" not in str(e) and "not a JSON object" not in str(e):
+                raise
+            if intento == 2:  # dos veces mal: cuenta como un fallo del modelo (queda el orden
+                # de la búsqueda) y se anota, para contarlo en el experimento de modelos
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_text(json.dumps({"ranking": ids, "model": params["model"],
+                                         "error": str(e)[:300]}))  # fmt: skip
+                return ids
     got = [i for i in dict.fromkeys(_candidate(x, ids) for x in data.get("ranking") or []) if i]
     if not got:
         raise ProviderError(f"eval.rerank: no ranking in the answer: {a.text[:200]!r}")

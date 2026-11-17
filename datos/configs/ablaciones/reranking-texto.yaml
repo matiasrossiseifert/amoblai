@@ -1,0 +1,9 @@
+# Experimento 5b: ¿mirar las fotos ayuda a elegir? El mismo Opus reordena el top-10 de la
+# búsqueda con las fotos de los candidatos (rerank: opus, el experimento 5) o con sus
+# descripciones, las ocho líneas que tiene el índice (rerank: opus-texto). Lo demás, igual.
+# `uv run amoblai evaluar --ablacion datos/configs/ablaciones/reranking-texto.yaml --pagar`
+name: ablacion-reranking-texto
+methods:
+  - {embedder: qwen3, filter: type}
+  - {embedder: qwen3, filter: type, rerank: opus}
+  - {embedder: qwen3, filter: type, rerank: opus-texto}

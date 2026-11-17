@@ -1,0 +1,34 @@
+{
+  "product": "500.583.76",
+  "text": "Type: chair\nName: AGEN\nColors: Rattan, bamboo\nHandwoven; each piece of furniture is unique.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "500.583.76",
+      "name": "AGEN",
+      "category": "chair",
+      "kind": "armchair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "Rattan",
+        "bamboo"
+      ],
+      "description": "Handwoven; each piece of furniture is unique."
+    },
+    "photos": [
+      "2e5bae5c60f78c77"
+    ]
+  }
+}

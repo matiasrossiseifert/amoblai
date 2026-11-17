@@ -1,0 +1,35 @@
+{
+  "schema": "amoblai.index/4",
+  "catalog": "todos",
+  "catalog_file": "datos/catalogo/todos.yaml",
+  "catalog_sha": "f3fabf3d9e2684213c2c1047",
+  "describer": {
+    "name": "fields",
+    "key": {
+      "kind": "fields",
+      "version": 1
+    }
+  },
+  "embedder": {
+    "name": "qwen3",
+    "key": {
+      "kind": "local",
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "revision": null,
+      "pooling": "last",
+      "max_length": 512
+    }
+  },
+  "vector_store": {
+    "kind": "chromadb",
+    "space": "cosine",
+    "hnsw": {
+      "ef_search": 100,
+      "max_neighbors": 16
+    }
+  },
+  "products": 1578,
+  "left_out": 0,
+  "built": "2026-11-16T00:19:20",
+  "cost_usd": 0.0
+}

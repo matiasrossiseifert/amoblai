@@ -1,0 +1,36 @@
+{
+  "product": "502.084.51",
+  "text": "Type: table\nName: IKEA PS 2012\nColors: White\nThe castors make it easy to move the table if needed.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "502.084.51",
+      "name": "IKEA PS 2012",
+      "category": "table",
+      "kind": "coffee table",
+      "dimensions_cm": {
+        "width": 70.0,
+        "depth": 42.0
+      },
+      "type_ikea": "Coffee table",
+      "category_tp": "table",
+      "size_raw": "70x42 cm",
+      "colors": [
+        "White"
+      ],
+      "description": "The castors make it easy to move the table if needed."
+    },
+    "photos": [
+      "d66bdfddfc4f8cf9"
+    ]
+  }
+}

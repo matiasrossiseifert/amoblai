@@ -1,0 +1,33 @@
+{
+  "product": "302.882.36",
+  "text": "Type: chair\nName: FEODOR\nColors: White\nYou sit comfortably since the chair is adjustable in height.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "302.882.36",
+      "name": "FEODOR",
+      "category": "chair",
+      "kind": "desk chair",
+      "dimensions_cm": null,
+      "type_ikea": "Swivel chair with armrests",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You sit comfortably since the chair is adjustable in height."
+    },
+    "photos": [
+      "b2fdeaf2841f3c5d"
+    ]
+  }
+}

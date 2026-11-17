@@ -1,0 +1,30 @@
+{
+ "generator": "gpt_image_15",
+ "image": "final.png",
+ "pending": false,
+ "model": "gpt-image-1.5",
+ "cost_usd": 0.075814,
+ "meta": {
+  "quality": "medium",
+  "nota": "rescatada: la corrida se cortó en el control del ambiente, después de pagar"
+ },
+ "attempts": [
+  {
+   "image": "final_intento_1.png",
+   "cost_usd": 0.075814,
+   "ok": false,
+   "ssim": 0.5993,
+   "sift_inliers": 14,
+   "sift_reencontrados": 0.0156,
+   "sift_desplazamiento_mediano": 0.0078
+  }
+ ],
+ "room_check": {
+  "image": "final_intento_1.png",
+  "ok": false,
+  "ssim": 0.5993,
+  "sift_inliers": 14,
+  "sift_reencontrados": 0.0156,
+  "sift_desplazamiento_mediano": 0.0078
+ }
+}

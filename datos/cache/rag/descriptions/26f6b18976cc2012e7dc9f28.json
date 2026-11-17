@@ -1,0 +1,33 @@
+{
+  "product": "402.288.12",
+  "text": "Type: chair\nName: IDOLF\nColors: White\nYou sit comfortably thanks to the shaped back.\n",
+  "model": "fields",
+  "cost_usd": 0.0,
+  "cost_source": "none",
+  "meta": {
+    "status": "completed"
+  },
+  "key_src": {
+    "describer": {
+      "kind": "fields",
+      "version": 1
+    },
+    "product": {
+      "id": "402.288.12",
+      "name": "IDOLF",
+      "category": "chair",
+      "kind": "dining chair",
+      "dimensions_cm": null,
+      "type_ikea": "Chair",
+      "category_tp": "chair",
+      "size_raw": null,
+      "colors": [
+        "White"
+      ],
+      "description": "You sit comfortably thanks to the shaped back."
+    },
+    "photos": [
+      "06979012edcb868c"
+    ]
+  }
+}
