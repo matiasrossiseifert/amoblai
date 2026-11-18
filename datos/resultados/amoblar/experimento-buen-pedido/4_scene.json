@@ -1,8 +1,0 @@
-{
-  "answer": {
-    "prompt": "Image 1 is a photo of a room. Images 2 to 10 are products, one photo each:\nimage 2: tall solid wood bookcase, 90 cm wide, 2 units\nimage 3: cantilever bentwood leather lounge armchair, size unknown\nimage 4: swing-arm floor lamp with drum shade, size unknown\nimage 5: round two-tier side table, size unknown\nimage 6: natural sheepskin rug, size unknown\nimage 7: cable-knit throw blanket, size unknown\nimage 8: rust red linen-look cushion, size unknown\nimage 9: pair of linen curtains, size unknown\nimage 10: braided money tree houseplant, size unknown\n\nThe person asked for this room: \"Quiero transformar este cuarto en un rinc\u00f3n de lectura acogedor. Lo principal es una biblioteca grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena parte de esa pared y donde entren muchos libros. Junto a la ventana, un sill\u00f3n c\u00f3modo para leer con una l\u00e1mpara de pie al lado y una mesita para apoyar el caf\u00e9. En el piso, una alfombra redonda clara. Que todo se sienta c\u00e1lido, con maderas y textiles naturales.\"\n\nFurnish the room in image 1 with these products, as an interior designer would for that request. You decide where each product goes and how the room is arranged. Use every product: one of each, or as many as its line says (\"2 units\": two of it).\n\nKeep image 1 as it is: the same framing and camera, walls, floor, ceiling, windows and light. Only add the products, each with the design, proportions, colors and materials of its photo, at its real size against the room, lit like the room. The result must look like a real photograph."
-  },
-  "model": null,
-  "cost_usd": 0.0,
-  "prompt": "scene_prompt_libre_v3"
-}
