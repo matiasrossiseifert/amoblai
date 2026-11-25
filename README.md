@@ -312,6 +312,14 @@ La webapp muestra cada paso del flujo, a medida que se hace:
 uv run --group apps python apps/amoblar.py      # http://127.0.0.1:7860
 ```
 
+La web, la interfaz que haríamos para el producto: el resultado con la lista de compra, las corridas
+de la web y de la terminal, la vista por dentro de cada una (`/dev`) y Ajustes, con las claves y un
+tope de gasto propio ([apps/web/README.md](apps/web/README.md)):
+
+```bash
+uv run --group apps python apps/web/server.py   # http://127.0.0.1:8000
+```
+
 **Costos y topes.** Las llamadas pagas se rechazan salvo que se habiliten (`--pagar`,
 `budget.allow_paid` o `budget.allow_paid_steps`) y nunca superan el tope de su cuenta
 (`budget.accounts` en `datos/configs/amoblai.yaml`). Cada una queda en
@@ -323,7 +331,7 @@ imágenes y el prompt para generar a mano en ChatGPT o Gemini.
 ```
 src/amoblai/          el código, un subpaquete por etapa (ver la tabla de arriba)
   paths.py            dónde está cada cosa de datos/
-apps/                 la webapp (Gradio)
+apps/                 la webapp (Gradio) y la web (apps/web/)
 tests/                pytest sin red: dataset sintético; Claude y fal simulados
 datos/
   configs/            amoblai.yaml, categories.yaml, ablaciones/*.yaml

@@ -1,0 +1,960 @@
+{
+ "ejemplos": [
+  {
+   "id": "rincon-de-lectura",
+   "corrida": "final-experimento-lectura",
+   "pedido": "Quiero transformar este cuarto en un rincón de lectura acogedor. Lo principal es una biblioteca grande y alta, de madera oscura como el piso, contra la pared de la izquierda, que ocupe buena parte de esa pared y donde entren muchos libros. Junto a la ventana, un sillón cómodo para leer con una lámpara de pie al lado y una mesita para apoyar el café. En el piso, una alfombra redonda clara. Que todo se sienta cálido, con maderas y textiles naturales.",
+   "estado": "listo",
+   "antes": "/static/img/rincon-de-lectura-antes.jpg",
+   "despues": "/static/img/rincon-de-lectura-despues.jpg",
+   "alineada": true,
+   "ambiente": "Un dormitorio o estudio chico y vacío, de estilo contemporáneo urbano: techo de hormigón a la vista, paredes blancas, piso símil madera oscura gris-marrón y un gran ventanal en esquina con marcos de aluminio negro que da a árboles y edificios.",
+   "resumen": "La madera oscura de la biblioteca y de la mesita repite el piso, mientras que el cuero coñac, el yute, el lino beige y la manta crema aportan calidez y textiles naturales frente a las paredes blancas y el techo de hormigón. El resultado es un rincón de lectura acogedor y bien integrado.",
+   "piezas": [
+    {
+     "tipo": "biblioteca",
+     "hasta": {
+      "width": 260,
+      "depth": 40,
+      "height": 240
+     }
+    },
+    {
+     "tipo": "sillón",
+     "hasta": {
+      "width": 90,
+      "depth": 95
+     }
+    },
+    {
+     "tipo": "lámpara de pie",
+     "hasta": {
+      "width": 50,
+      "depth": 50
+     }
+    },
+    {
+     "tipo": "mesa auxiliar",
+     "hasta": {
+      "width": 50,
+      "depth": 50,
+      "height": 60
+     }
+    },
+    {
+     "tipo": "alfombra",
+     "hasta": {
+      "width": 200,
+      "depth": 200
+     }
+    },
+    {
+     "tipo": "manta",
+     "hasta": {}
+    },
+    {
+     "tipo": "cortinas",
+     "hasta": {}
+    }
+   ],
+   "lista": [
+    {
+     "id": "802.456.40",
+     "nombre": "HEMNES",
+     "tipo": "biblioteca",
+     "medidas": {
+      "width": 90
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Es la única biblioteca de madera maciza que es alta, de 90 cm de ancho y con varios estantes cerrados a los costados. Su marrón negro combina con el piso oscuro y entran muchos libros contra la pared izquierda.",
+     "foto": "/static/img/productos/ikea_images_objects_802.456.40.jpg"
+    },
+    {
+     "id": "abo-B07P5LM53Z",
+     "nombre": "Rivet Sloane Modern Leather Armchair with Tapered Legs",
+     "tipo": "sillón",
+     "medidas": {
+      "width": 91,
+      "depth": 83,
+      "height": 84
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Un sillón de cuero coñac, mullido y de buen tamaño, que suma calidez y queda cómodo en la esquina, junto a la ventana.",
+     "foto": "/static/img/productos/abo_images_B07P5LM53Z.jpg"
+    },
+    {
+     "id": "302.865.67",
+     "nombre": "SAMTID",
+     "tipo": "lámpara de pie",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Su brazo articulado lleva la luz difusa de la pantalla de tela justo sobre el libro, ideal para leer en el sillón.",
+     "foto": "/static/img/productos/ikea_images_objects_302.865.67.jpg"
+    },
+    {
+     "id": "401.366.81",
+     "nombre": "VEJMON",
+     "tipo": "mesa auxiliar",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Es una mesita ratona redonda y compacta, en marrón negro, que hace juego con la biblioteca y tiene un estante inferior para dejar libros al lado del café.",
+     "foto": "/static/img/productos/ikea_images_dining table_401.366.81.jpg"
+    },
+    {
+     "id": "abo-B0719STM26",
+     "nombre": "nuLOOM Rikki Braided Border Jute Area Rug",
+     "tipo": "alfombra",
+     "medidas": {
+      "width": 152,
+      "depth": 20,
+      "height": 20
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Es una alfombra redonda de yute natural en tono claro con borde blanco, y con 152 cm cubre bien el rincón del sillón y la mesita.",
+     "foto": "/static/img/productos/abo_images_B0719STM26.jpg"
+    },
+    {
+     "id": "302.006.96",
+     "nombre": "URSULA",
+     "tipo": "manta",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Esta manta de punto trenzado color crema contrasta suavemente con el cuero coñac y suma una textura acogedora.",
+     "foto": "/static/img/productos/ikea_images_objects_302.006.96.jpg"
+    },
+    {
+     "id": "802.841.94",
+     "nombre": "AINA",
+     "tipo": "cortinas",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Las cortinas de lino beige suavizan el marco negro de la ventana y filtran la luz con un tono cálido y natural.",
+     "foto": "/static/img/productos/ikea_images_objects_802.841.94.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "living-bohemio",
+   "corrida": "final-publica-living-bohemio",
+   "pedido": "Un living bohemio y con mucho color: un sofá de terciopelo color mostaza, un sillón de ratán, una alfombra estampada grande, almohadones de colores y estampados, varias plantas en macetas de cerámica y una estantería baja con libros. Que se vea vivido y alegre.",
+   "estado": "listo",
+   "antes": "/static/img/living-bohemio-antes.jpg",
+   "despues": "/static/img/living-bohemio-despues.jpg",
+   "alineada": true,
+   "ambiente": "un living amplio, vacío y luminoso: paredes blancas, parquet cálido color miel, una puerta balcón con toldo a rayas azules y blancas afuera y una ventana en la pared del fondo; una base neutra y clara lista para un estilo bohemio y colorido",
+   "resumen": "Un sillón dorado, ratán natural y madera cálida se alegran con toques de azul y rojo anaranjado en la alfombra, los almohadones, las macetas y el plaid, para lograr un look boho alegre y habitado sobre el parquet. Ningún sillón es de pana mostaza; el de cuero color coñac es el que más se acerca en calidez.",
+   "piezas": [
+    {
+     "tipo": "sofá",
+     "hasta": {
+      "width": 260
+     }
+    },
+    {
+     "tipo": "sillón",
+     "hasta": {}
+    },
+    {
+     "tipo": "alfombra",
+     "hasta": {
+      "width": 300
+     }
+    },
+    {
+     "tipo": "almohadón",
+     "hasta": {}
+    },
+    {
+     "tipo": "planta o maceta",
+     "hasta": {}
+    },
+    {
+     "tipo": "biblioteca",
+     "hasta": {
+      "width": 180,
+      "depth": 40,
+      "height": 85
+     }
+    },
+    {
+     "tipo": "mesa ratona",
+     "hasta": {
+      "height": 45
+     }
+    },
+    {
+     "tipo": "lámpara de pie",
+     "hasta": {}
+    },
+    {
+     "tipo": "manta",
+     "hasta": {}
+    }
+   ],
+   "lista": [
+    {
+     "id": "abo-B082QDKRC5",
+     "nombre": "Rivet Bayard Contemporary Leather Couch with Curved Back and Armrests",
+     "tipo": "sofá",
+     "medidas": {
+      "width": 193,
+      "depth": 87,
+      "height": 83
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "No hay sillón de pana mostaza en el catálogo, así que este sillón de tres cuerpos color coñac, de 193 cm de ancho, es lo más cercano a un tono dorado y va bien en la pared derecha, que es larga.",
+     "foto": "/static/img/productos/abo_images_B082QDKRC5.jpg"
+    },
+    {
+     "id": "500.583.76",
+     "nombre": "AGEN",
+     "tipo": "sillón",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Un sillón tipo butaca de ratán natural, tal como lo pediste, que suma una textura boho liviana junto al balcón.",
+     "foto": "/static/img/productos/ikea_images_chair_500.583.76.jpg"
+    },
+    {
+     "id": "abo-B07HSHG86Y",
+     "nombre": "Stone & Beam Southwestern Vintage Area Rug",
+     "tipo": "alfombra",
+     "medidas": {
+      "width": 335,
+      "depth": 239
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Con 335x239 cm es la única alfombra lo bastante grande para ubicarse debajo del sillón y de la butaca, y su dibujo azul con naranja y blanco aporta mucho color.",
+     "foto": "/static/img/productos/abo_images_B07HSHG86Y.jpg"
+    },
+    {
+     "id": "abo-B079V96B4C",
+     "nombre": "Stone & Beam Mojave-Inspired Decorative Throw Pillow Cover",
+     "tipo": "almohadón",
+     "medidas": {
+      "width": 51,
+      "depth": 51,
+      "height": 1
+     },
+     "tienda": "Amazon",
+     "cantidad": 3,
+     "porque": "Almohadones tejidos con dibujo en azul marino y rojo, que retoman los colores de la alfombra y resaltan sobre el cuero coñac.",
+     "foto": "/static/img/productos/abo_images_B079V96B4C.jpg"
+    },
+    {
+     "id": "abo-B083YFL9J5",
+     "nombre": "Stone & Beam Medium Fan-Embossed Planter",
+     "tipo": "maceta",
+     "medidas": {
+      "width": 17,
+      "depth": 17,
+      "height": 15
+     },
+     "tienda": "Amazon",
+     "cantidad": 3,
+     "porque": "Macetas de cerámica azul cobalto con relieve que hacen eco de la alfombra y los almohadones; ponelas en la biblioteca y en los rincones.",
+     "foto": "/static/img/productos/abo_images_B083YFL9J5.jpg"
+    },
+    {
+     "id": "abo-B07HSLTLGP",
+     "nombre": "Stone & Beam Industrial Bookcase",
+     "tipo": "biblioteca",
+     "medidas": {
+      "width": 140,
+      "depth": 21,
+      "height": 43
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Bajo (43 cm) y ancho (140 cm), entra debajo de la ventana y su madera cálida y metal negro combinan con la mesa ratona.",
+     "foto": "/static/img/productos/abo_images_B07HSLTLGP.jpg"
+    },
+    {
+     "id": "abo-B07QFB1TLZ",
+     "nombre": "Stone & Beam Ryder Industrial Round Coffee Table",
+     "tipo": "mesa ratona",
+     "medidas": {
+      "width": 110,
+      "depth": 110,
+      "height": 42
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Una mesa redonda de 110 cm en madera cálida, bien proporcionada para el sillón y la alfombra grande.",
+     "foto": "/static/img/productos/abo_images_B07QFB1TLZ.jpg"
+    },
+    {
+     "id": "abo-B07QD5SDWK",
+     "nombre": "Stone & Beam Vintage Floor Lamp with Linen Burlap Shade",
+     "tipo": "lámpara de pie",
+     "medidas": {
+      "width": 43,
+      "depth": 43,
+      "height": 154
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Su pie torneado y su pantalla de lino le dan un aire cálido y habitado que va perfecto con un ambiente boho.",
+     "foto": "/static/img/productos/abo_images_B07QD5SDWK.jpg"
+    },
+    {
+     "id": "abo-B079TXJWT8",
+     "nombre": "Rivet Global Inspired Geometric Throw Blanket",
+     "tipo": "manta",
+     "medidas": {
+      "width": 152,
+      "depth": 127,
+      "height": 1
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Un plaid geométrico azul marino y crema con flecos que une los azules de la alfombra y las macetas con el sillón.",
+     "foto": "/static/img/productos/abo_images_B079TXJWT8.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "living-japandi",
+   "corrida": "final-publica-living-japandi",
+   "pedido": "Quiero un living japandi, sereno y despojado: un sofá bajo de tela beige contra la pared de la derecha, una mesa ratona redonda de madera, una alfombra de fibra natural, una lámpara de papel tipo farol y una planta grande en maceta de cerámica junto a la ventana del balcón. Pocas cosas, todas en tonos neutros.",
+   "estado": "listo",
+   "antes": "/static/img/living-japandi-antes.jpg",
+   "despues": "/static/img/living-japandi-despues.jpg",
+   "alineada": true,
+   "ambiente": "un living vacío y luminoso, con una puerta corrediza al balcón a la izquierda, dos ventanas en la pared del fondo y una pared larga libre a la derecha; paredes blancas, zócalos blancos, piso vinílico símil madera gris amarronado oscuro, luces embutidas en el techo; una base neutra, fría y despojada, lista para un Japandi cálido",
+   "resumen": "El beige, el yute, la madera cálida y el papel comparten una paleta neutra y natural que se destaca con suavidad contra las paredes blancas y el piso oscuro. Cada pieza es simple y baja, y mantiene el ambiente tranquilo y despejado, como pidió el usuario.",
+   "piezas": [
+    {
+     "tipo": "sofá",
+     "hasta": {
+      "width": 240,
+      "depth": 95
+     }
+    },
+    {
+     "tipo": "alfombra",
+     "hasta": {
+      "width": 250,
+      "depth": 200
+     }
+    },
+    {
+     "tipo": "mesa ratona",
+     "hasta": {
+      "width": 100,
+      "depth": 100,
+      "height": 45
+     }
+    },
+    {
+     "tipo": "lámpara de pie o lámpara colgante",
+     "hasta": {
+      "width": 60,
+      "depth": 60
+     }
+    },
+    {
+     "tipo": "planta o maceta",
+     "hasta": {
+      "width": 70,
+      "depth": 70
+     }
+    }
+   ],
+   "lista": [
+    {
+     "id": "abo-B07K29TD1G",
+     "nombre": "Trixie Linen Swatch",
+     "tipo": "sofá",
+     "medidas": null,
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Es la única opción realmente beige: un sillón de líneas limpias, con brazos rectos, perfil bajo y patas de madera oscura, que va perfecto con el estilo Japandi sereno contra la pared derecha.",
+     "foto": "/static/img/productos/abo_images_B07K29TD1G.jpg"
+    },
+    {
+     "id": "502.773.93",
+     "nombre": "LOHALS",
+     "tipo": "alfombra",
+     "medidas": {
+      "width": 160,
+      "depth": 230
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Con 160x230 cm, esta alfombra de yute natural es lo bastante grande para ordenar el sillón y la mesa ratona, y su textura cálida suaviza el piso oscuro.",
+     "foto": "/static/img/productos/ikea_images_objects_502.773.93.jpg"
+    },
+    {
+     "id": "302.397.12",
+     "nombre": "STOCKHOLM",
+     "tipo": "mesa ratona",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Esta mesa redonda, baja y simple, en madera cálida, es la opción más Japandi: no tiene el metal dorado de una alternativa ni la terminación negra de la otra.",
+     "foto": "/static/img/productos/ikea_images_dining table_302.397.12.jpg"
+    },
+    {
+     "id": "101.841.74",
+     "nombre": "HOLM",
+     "tipo": "lámpara de pie",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Es la única lámpara de pie con farol de papel y aporta la luz suave y escultórica que pidió el usuario para el rincón al lado del sillón.",
+     "foto": "/static/img/productos/ikea_images_objects_101.841.74.jpg"
+    },
+    {
+     "id": "001.185.23",
+     "nombre": "PACHIRA AQUATICA",
+     "tipo": "planta",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "El árbol del dinero trenzado es la planta más grande y de mayor presencia arquitectónica, y queda bien en el rincón junto al vidrio del balcón; lo ideal sería pasarla de la maceta de vivero a un macetero de cerámica neutro.",
+     "foto": "/static/img/productos/ikea_images_plant_pot_001.185.23.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "loft-industrial",
+   "corrida": "final-publica-loft-industrial",
+   "pedido": "Es un loft con vigas de madera a la vista. Quiero un living de estilo industrial: un sofá de cuero marrón envejecido, una mesa ratona de madera maciza con patas de metal negro, una biblioteca de metal negro y madera contra la pared de la derecha, una lámpara de pie de metal y una alfombra grande en tonos tierra. Nada de blanco brillante: metal oscuro, cuero y madera.",
+   "estado": "listo",
+   "antes": "/static/img/loft-industrial-antes.jpg",
+   "despues": "/static/img/loft-industrial-despues.jpg",
+   "alineada": true,
+   "ambiente": "un altillo tipo loft vacío, para usar como living: vigas y techo de pino color miel a la vista, escalera abierta de madera a la izquierda, paredes blancas, parquet de roble claro y ventanas con radiadores al fondo; estilo nórdico-rústico en tonos madera claros y blanco",
+   "resumen": "El cuero envejecido, la madera maciza y el metal negro se repiten en todas las piezas y retoman las vigas a la vista. Los textiles apagados aportan calidez sin sumar blancos brillantes.",
+   "piezas": [
+    {
+     "tipo": "sofá",
+     "hasta": {
+      "width": 240,
+      "depth": 100
+     }
+    },
+    {
+     "tipo": "mesa ratona",
+     "hasta": {
+      "width": 140,
+      "depth": 80,
+      "height": 50
+     }
+    },
+    {
+     "tipo": "biblioteca",
+     "hasta": {
+      "width": 160,
+      "depth": 40,
+      "height": 220
+     }
+    },
+    {
+     "tipo": "lámpara de pie",
+     "hasta": {}
+    },
+    {
+     "tipo": "alfombra",
+     "hasta": {
+      "width": 300,
+      "depth": 250
+     }
+    },
+    {
+     "tipo": "almohadón o manta",
+     "hasta": {}
+    },
+    {
+     "tipo": "maceta",
+     "hasta": {}
+    }
+   ],
+   "lista": [
+    {
+     "id": "abo-B07QBMQ4LN",
+     "nombre": "Stone & Beam Abigail Leather Sofa",
+     "tipo": "sofá",
+     "medidas": {
+      "width": 218,
+      "depth": 104,
+      "height": 89
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Un sillón de tres cuerpos de cuero marrón oscuro avejentado, de 218 cm, va bien en el centro del loft amplio y encaja justo con el estilo industrial.",
+     "foto": "/static/img/productos/abo_images_B07QBMQ4LN.jpg"
+    },
+    {
+     "id": "abo-B07QF9Y71V",
+     "nombre": "Stone & Beam Industrial Coffee Table",
+     "tipo": "mesa ratona",
+     "medidas": {
+      "width": 135,
+      "depth": 75,
+      "height": 40
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Con tapa de madera maciza sobre base trineo de metal negro, es la mesa industrial clásica y, con 135 cm, combina bien con el sillón.",
+     "foto": "/static/img/productos/abo_images_B07QF9Y71V.jpg"
+    },
+    {
+     "id": "abo-B07HSLTLGP",
+     "nombre": "Stone & Beam Industrial Bookcase",
+     "tipo": "biblioteca",
+     "medidas": {
+      "width": 140,
+      "depth": 21,
+      "height": 43
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Los parantes finos de metal negro con estantes de madera cálida responden a lo pedido y, con solo 21 cm de profundidad, entra al lado de la puerta sin molestar el paso.",
+     "foto": "/static/img/productos/abo_images_B07HSLTLGP.jpg"
+    },
+    {
+     "id": "003.313.78",
+     "nombre": "RANARP",
+     "tipo": "lámpara de pie",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Esta lámpara de brazo articulado de metal negro con detalles en latón le da al sillón luz de lectura en estilo industrial.",
+     "foto": "/static/img/productos/ikea_images_objects_003.313.78.jpg"
+    },
+    {
+     "id": "abo-B07HSL753S",
+     "nombre": "Stone & Beam Modern Vintage-Look Runner Rug",
+     "tipo": "alfombra",
+     "medidas": {
+      "width": 290,
+      "depth": 229
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Con 290x229 cm es lo bastante grande para anclar el sillón y la mesa, y sus tonos sobrios gris topo van bien con el cuero y la madera, sin colores estridentes.",
+     "foto": "/static/img/productos/abo_images_B07HSL753S.jpg"
+    },
+    {
+     "id": "abo-B07BMTXJ12",
+     "nombre": "Stone & Beam Casual Woven Square Decorative Throw Pillow",
+     "tipo": "almohadón",
+     "medidas": {
+      "width": 43,
+      "depth": 43,
+      "height": 15
+     },
+     "tienda": "Amazon",
+     "cantidad": 2,
+     "porque": "Un par de almohadones texturados en negro y beige suma calidez al cuero oscuro y repite los tonos de la alfombra.",
+     "foto": "/static/img/productos/abo_images_B07BMTXJ12.jpg"
+    },
+    {
+     "id": "002.857.91",
+     "nombre": "JUJUBR",
+     "tipo": "maceta",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Una maceta oscura y mate, como se pidió, que queda bien con el metal negro junto a la ventana.",
+     "foto": "/static/img/productos/ikea_images_plant_pot_002.857.91.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "escritorio-ventanal",
+   "corrida": "final-alvear-escritorio",
+   "pedido": "Quiero un rincón de trabajo y lectura junto al ventanal: un escritorio de madera con una silla cómoda, una biblioteca alta para mis libros contra la pared blanca de la derecha y un sillón con una lámpara de pie para leer. Estilo nórdico, maderas claras.",
+   "estado": "listo",
+   "antes": "/static/img/escritorio-ventanal-antes.jpg",
+   "despues": "/static/img/escritorio-ventanal-despues.jpg",
+   "alineada": true,
+   "ambiente": "un living o dormitorio vacío y luminoso, con paredes blancas, un gran ventanal corredizo con marco negro hacia el balcón y piso símil madera de roble de tono claro a medio; un espacio neutro y minimalista, listo para armar un rincón escandinavo de trabajo y lectura",
+   "resumen": "Maderas claras de abedul, fresno y roble, junto con textiles blancos y de lino, acompañan el piso claro y las paredes blancas, y logran un rincón nórdico luminoso y armónico para trabajar y leer junto a la ventana.",
+   "piezas": [
+    {
+     "tipo": "escritorio",
+     "hasta": {
+      "width": 140,
+      "depth": 70
+     }
+    },
+    {
+     "tipo": "silla de escritorio",
+     "hasta": {
+      "width": 65
+     }
+    },
+    {
+     "tipo": "biblioteca",
+     "hasta": {
+      "width": 180,
+      "depth": 40,
+      "height": 240
+     }
+    },
+    {
+     "tipo": "sillón",
+     "hasta": {
+      "width": 85,
+      "depth": 85
+     }
+    },
+    {
+     "tipo": "lámpara de pie",
+     "hasta": {}
+    }
+   ],
+   "lista": [
+    {
+     "id": "302.990.70",
+     "nombre": "LISABO",
+     "tipo": "escritorio",
+     "medidas": {
+      "width": 118,
+      "depth": 45
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Este escritorio de fresno claro con patas cónicas es la opción más nórdica y combina con el piso claro. Con 118 × 45 cm entra bien al lado de la ventana.",
+     "foto": "/static/img/productos/ikea_images_objects_302.990.70.jpg"
+    },
+    {
+     "id": "abo-B07B7DKRVM",
+     "nombre": "Stone & Beam Alicia Contemporary Office Chair",
+     "tipo": "silla de escritorio",
+     "medidas": {
+      "width": 71,
+      "depth": 62,
+      "height": 105
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Esta silla giratoria tiene estructura de madera clara y respaldo y asiento tapizados en color lino, así que es la opción más cómoda sin perder el aire de madera clara.",
+     "foto": "/static/img/productos/abo_images_B07B7DKRVM.jpg"
+    },
+    {
+     "id": "990.234.08",
+     "nombre": "BILLY",
+     "tipo": "biblioteca",
+     "medidas": {
+      "width": 200
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Esta biblioteca alta de abedul tiene mucho lugar para libros y queda bien en la pared blanca larga de la derecha, con una madera clara que combina con el escritorio.",
+     "foto": "/static/img/productos/ikea_images_objects_990.234.08.jpg"
+    },
+    {
+     "id": "490.904.81",
+     "nombre": "PONG",
+     "tipo": "sillón",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Esta mecedora de abedul claro con almohadón off-white es un asiento de lectura cálido y muy nórdico para el rincón junto a la ventana.",
+     "foto": "/static/img/productos/ikea_images_chair_490.904.81.jpg"
+    },
+    {
+     "id": "302.865.67",
+     "nombre": "SAMTID",
+     "tipo": "lámpara de pie",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Su brazo articulado dirige la luz justo al libro, por encima del sillón, y la pantalla blanca mantiene un look suave y nórdico.",
+     "foto": "/static/img/productos/ikea_images_objects_302.865.67.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "comedor-abierto",
+   "corrida": "final-publica-comedor-clasico-moderno",
+   "pedido": "En este espacio abierto, entre la cocina y la escalera, quiero el comedor: una mesa de madera oscura para seis u ocho personas, sillas tapizadas en tela gris, una lámpara colgante grande sobre la mesa y un aparador de madera contra la pared de la escalera. Clásico pero actual, cálido.",
+   "estado": "listo",
+   "antes": "/static/img/comedor-abierto-antes.jpg",
+   "despues": "/static/img/comedor-abierto-despues.jpg",
+   "alineada": true,
+   "ambiente": "un ambiente integrado de estilo tradicional y transicional: cocina con muebles de madera oscura y mesada de granito al fondo, escalera con pasamanos oscuro y balaustres blancos a la derecha, paredes color crema, molduras blancas y piso de madera rojiza oscura; el centro está vacío y es ideal para el comedor",
+   "resumen": "Las maderas oscuras y cálidas de la mesa y el aparador dialogan con el piso y los muebles de la cocina. El gris cálido de las sillas y la pantalla clara de la lámpara suman suavidad y un toque actual a una base clásica.",
+   "piezas": [
+    {
+     "tipo": "mesa de comedor",
+     "hasta": {
+      "width": 220,
+      "depth": 105
+     }
+    },
+    {
+     "tipo": "silla de comedor",
+     "hasta": {
+      "width": 55,
+      "depth": 65
+     }
+    },
+    {
+     "tipo": "lámpara colgante",
+     "hasta": {
+      "width": 110
+     }
+    },
+    {
+     "tipo": "aparador",
+     "hasta": {
+      "width": 180,
+      "depth": 45,
+      "height": 90
+     }
+    }
+   ],
+   "lista": [
+    {
+     "id": "abo-B076NNYB3P",
+     "nombre": "Stone & Beam Dunbar Wood Dining Room Kitchen Table",
+     "tipo": "mesa de comedor",
+     "medidas": {
+      "width": 198,
+      "depth": 102,
+      "height": 76
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Es la única mesa rectangular de madera oscura con veta visible y, con 198 cm, entran cómodos seis u ocho comensales; además combina con el piso de madera.",
+     "foto": "/static/img/productos/abo_images_B076NNYB3P.jpg"
+    },
+    {
+     "id": "abo-B07QJ24FSL",
+     "nombre": "Ravenna Home Dining Chairs",
+     "tipo": "silla de comedor",
+     "medidas": {
+      "width": 66,
+      "depth": 53,
+      "height": 103
+     },
+     "tienda": "Amazon",
+     "cantidad": 3,
+     "porque": "Tres sets de dos completan las seis sillas pedidas, tapizadas en gris cálido con tachuelas y patas oscuras: onda clásica pero actual, que combina con la mesa.",
+     "foto": "/static/img/productos/abo_images_B07QJ24FSL.jpg"
+    },
+    {
+     "id": "abo-B07GNSXX6B",
+     "nombre": "Stone & Beam Classic Ceiling Pendant Chandelier Fixture With White Drum Shade- 20 x 20 x 42 Inches",
+     "tipo": "lámpara colgante",
+     "medidas": {
+      "width": 51,
+      "depth": 51,
+      "height": 107
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "La lámpara de tambor de 51 cm tiene buena presencia sobre la mesa y da una luz suave y cálida; la pantalla clara y la estructura oscura son clásicas y actuales a la vez.",
+     "foto": "/static/img/productos/abo_images_B07GNSXX6B.jpg"
+    },
+    {
+     "id": "abo-B07HSBD8DM",
+     "nombre": "Stone & Beam Traditional Buffet Storage Cabinet",
+     "tipo": "aparador",
+     "medidas": {
+      "width": 173,
+      "depth": 51,
+      "height": 82
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Aparador de madera color nogal con puertas de rejilla, cálido y de líneas clásicas, que queda muy bien contra la pared de la escalera.",
+     "foto": "/static/img/productos/abo_images_B07HSBD8DM.jpg"
+    }
+   ],
+   "faltan": []
+  },
+  {
+   "id": "living-balcon",
+   "corrida": "final-caballito-living",
+   "pedido": "Es el living de mi departamento, con salida al balcón. Quiero un living moderno y luminoso para recibir amigos: un sofá de tres cuerpos gris claro contra la pared de la izquierda, una mesa ratona de madera clara, una alfombra grande que arme la zona, una lámpara de pie y un mueble bajo para la tele enfrente del sofá. Almohadones y una planta para darle color.",
+   "estado": "listo",
+   "antes": "/static/img/living-balcon-antes.jpg",
+   "despues": "/static/img/living-balcon-despues.jpg",
+   "alineada": false,
+   "ambiente": "un living moderno, luminoso y vacío: paredes blancas largas, piso símil madera en tablas de un greige claro, zócalos blancos, una puerta corrediza con marco negro al balcón y un aire acondicionado split en la pared; un espacio contemporáneo y prolijo en blanco, greige y negro",
+   "resumen": "Una paleta clara de gris, beige, blanco y fresno claro mantiene el living luminoso y moderno, con detalles en negro que repiten el marco de la ventana. Los almohadones color terracota y la palmera verde aportan calidez y color para recibir amigos.",
+   "piezas": [
+    {
+     "tipo": "sofá",
+     "hasta": {
+      "width": 240,
+      "depth": 95
+     }
+    },
+    {
+     "tipo": "alfombra",
+     "hasta": {
+      "width": 300,
+      "depth": 220
+     }
+    },
+    {
+     "tipo": "mesa ratona",
+     "hasta": {
+      "width": 130,
+      "depth": 80,
+      "height": 45
+     }
+    },
+    {
+     "tipo": "mueble de TV",
+     "hasta": {
+      "width": 200,
+      "depth": 45,
+      "height": 60
+     }
+    },
+    {
+     "tipo": "lámpara de pie",
+     "hasta": {}
+    },
+    {
+     "tipo": "almohadón",
+     "hasta": {}
+    },
+    {
+     "tipo": "planta",
+     "hasta": {}
+    },
+    {
+     "tipo": "cortinas",
+     "hasta": {}
+    }
+   ],
+   "lista": [
+    {
+     "id": "abo-B072M1WJF2",
+     "nombre": "Rivet Midtown Contemporary Upholstered Sofa Couch",
+     "tipo": "sofá",
+     "medidas": {
+      "width": 234,
+      "depth": 94,
+      "height": 80
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "Un sillón de tres cuerpos en un verdadero gris claro, de 234 cm de ancho, con líneas prolijas y sastreras que llena la pared larga de la izquierda sin abarrotarla.",
+     "foto": "/static/img/productos/abo_images_B072M1WJF2.jpg"
+    },
+    {
+     "id": "801.982.95",
+     "nombre": "MORUM",
+     "tipo": "alfombra",
+     "medidas": {
+      "width": 200,
+      "depth": 300
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Una alfombra tejida lisa beige de 200x300, grande, que delimita el sector de estar del sillón a la tele y se mantiene clara y fácil de limpiar cuando vienen amigos.",
+     "foto": "/static/img/productos/ikea_images_objects_801.982.95.jpg"
+    },
+    {
+     "id": "902.976.57",
+     "nombre": "LISABO",
+     "tipo": "mesa ratona",
+     "medidas": {
+      "width": 70,
+      "depth": 70
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Fresno claro con patas finas aguzadas, justo la madera clara que pidió el usuario, y lo bastante liviana como para mantener el living luminoso.",
+     "foto": "/static/img/productos/ikea_images_dining table_902.976.57.jpg"
+    },
+    {
+     "id": "102.659.24",
+     "nombre": "RAMSTRA",
+     "tipo": "mueble de TV",
+     "medidas": {
+      "width": 174
+     },
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Un mueble bajo blanco con estantes abiertos que se funde con las paredes blancas y deja el ambiente limpio, moderno y luminoso.",
+     "foto": "/static/img/productos/ikea_images_objects_102.659.24.jpg"
+    },
+    {
+     "id": "abo-B07B4YXXS9",
+     "nombre": "Stone & Beam Alexa-Enabled Lamp",
+     "tipo": "lámpara de pie",
+     "medidas": {
+      "width": 142,
+      "depth": 25,
+      "height": 193
+     },
+     "tienda": "Amazon",
+     "cantidad": 1,
+     "porque": "La lámpara de pie en arco negra repite el marco negro de la puerta del balcón y llega hasta el sillón con una luz cálida y acogedora para compartir.",
+     "foto": "/static/img/productos/abo_images_B07B4YXXS9.jpg"
+    },
+    {
+     "id": "abo-B07JLSSWLL",
+     "nombre": "Rivet Contemporary Tassel Throw Pillow",
+     "tipo": "almohadón",
+     "medidas": {
+      "width": 43,
+      "depth": 43,
+      "height": 14
+     },
+     "tienda": "Amazon",
+     "cantidad": 2,
+     "porque": "Un par de almohadones terracota da el toque de color que busca el usuario sobre el sillón gris claro, y sus borlas neutras combinan con la alfombra.",
+     "foto": "/static/img/productos/abo_images_B07JLSSWLL.jpg"
+    },
+    {
+     "id": "468.040.05",
+     "nombre": "CHRYSALIDOCARPUS LUTESCENS",
+     "tipo": "planta",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Una palmera areca alta y frondosa junto a la puerta del balcón suma altura y verde fresco, y se la banca bien con tanta luz.",
+     "foto": "/static/img/productos/ikea_images_plant_pot_468.040.05.jpg"
+    },
+    {
+     "id": "202.975.71",
+     "nombre": "VIVAN",
+     "tipo": "cortinas",
+     "medidas": null,
+     "tienda": "IKEA",
+     "cantidad": 1,
+     "porque": "Un par de paneles blancos que filtran la luz suaviza la puerta corrediza de marco negro y mantiene el living luminoso.",
+     "foto": "/static/img/productos/ikea_images_objects_202.975.71.jpg"
+    }
+   ],
+   "faltan": []
+  }
+ ],
+ "candidatos": {
+  "pieza": "sillón",
+  "fotos": [
+   "/static/img/productos/ikea_images_chair_202.396.99.jpg",
+   "/static/img/productos/abo_images_B07P5LM53Z.jpg",
+   "/static/img/productos/abo_images_B07DBGXFVF.jpg",
+   "/static/img/productos/ikea_images_chair_590.335.55.jpg",
+   "/static/img/productos/ikea_images_chair_391.505.88.jpg"
+  ],
+  "elegido": 1
+ }
+}
